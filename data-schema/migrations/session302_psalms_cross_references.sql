@@ -6466,6 +6466,1322 @@ SELECT t.id, cr.id, 4, E'*the leaves of the tree were for the healing of the nat
  WHERE t.slug='psalm-87-all-my-springs-are-in-thee'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_102.sql (Psalm 102) -----
+-- Chapter: Psalm 102 — THE AFFLICTED'S PRAYER + THE UNCHANGING-CREATOR PSALM. The suffering lament (v.1-11: days consumed like smoke, bones burned, withered like grass, the pelican and owl, eaten ashes for bread), then the great turn: *But thou, O Yahuah (LORD), shalt endure for ever; and thy remembrance unto all generations* (v.12); *Thou shalt arise, and have mercy upon Zion: for the time to favour her, yea, the set time, is come* (v.13); *When Yahuah (LORD) shall build up Zion, he shall appear in his glory* (v.16); *This shall be written for the generation to come: and the people which shall be created shall praise Yahuah (LORD)* (v.18); the gathering of the kingdoms to serve Yahuah (v.21-22); and the KEYSTONE — *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands. They shall perish, but thou shalt endure... they shall be changed: but thou art the same, and thy years shall have no end* (v.25-27) which Hebrews 1:10-12 quotes OF THE SON, the Formed One through whom the worlds were made, who endures unchanged and who HAS a Father addressing him.
+-- Tag: ps102   Temp view: _s302_ps102_lookup
+-- Sort band: base 24525, step 3 -> threads at 24525, 24528, 24531, 24534, 24537, 24540 (6 threads)
+-- Source of EVERY row: 'canon','psalms',102,v
+--
+-- Psalm 102 coverage:
+--   v.1-11 (the lament: my days consumed like smoke, withered like grass, the pelican/owl, ashes for bread, thine indignation)
+--        NT:     none warranted distinct (the personal lament has no single load-bearing forward-quote; the suffering-then-vindication arc is carried in the prose of THREAD 1's turn)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (lament-genre; held in prose)
+--   ★ v.12 (But thou, O Yahuah (LORD), shalt endure for ever; and thy remembrance unto all generations)
+--        NT:     held to the keystone THREAD 6 (Hebrews 1:11-12 *thou remainest... thou art the same*); not double-counted here
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 90:1-2 (Before the mountains were brought forth... even from everlasting to everlasting, thou art Elohim) — THREAD 1 (the everlasting enduring One against the fading man)
+--   ★★ v.13-16 (Thou shalt arise, and have mercy upon Zion... the set time is come... When Yahuah shall build up Zion, he shall appear in his glory)
+--        NT:     ★ Romans 11:26 (there shall come out of Sion the Deliverer... all Yashar'el shall be saved) — THREAD 2 (the two-house Zion restoration)
+--        Extras: none warranted (no clean restored-library witness closer than the prophets; not forced)
+--        Tanakh: ★ Isaiah 60:1-2 (Arise, shine; for thy light is come, and the glory of Yahuah is risen upon thee); Isaiah 51:3 (Yahuah shall comfort Zion... make her wilderness like Eden) — THREAD 2 (Zion built up, the glory appearing)
+--   ★ v.18 (This shall be written for the generation to come: and the people which shall be created shall praise Yahuah)
+--        NT:     ★ Revelation 21:5 (Behold, I make all things new... Write: for these words are true and faithful) — THREAD 3 (the people created anew, written for the generation to come)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 65:17-18 (I create new heavens and a new earth... I create Jerusalem a rejoicing, and her people a joy) — THREAD 3 (the created people, the new-creation Jerusalem)
+--   ★ v.19-22 (he hath looked down from the height of his sanctuary... to declare the name of Yahuah in Zion... When the people are gathered together, and the kingdoms, to serve Yahuah)
+--        NT:     none warranted distinct (the in-gathering forward-weave is the two-house regathering carried by THREAD 2's Romans 11; the pilgrim-nations weight is the Tanakh laterals of THREAD 4)
+--        Extras: none warranted
+--        Tanakh: ★ Zechariah 8:22 (many people and strong nations shall come to seek Yahuah Tseva'ot in Jerusalem); Isaiah 2:2-3 (all nations shall flow unto it... out of Zion shall go forth the law) — THREAD 4 (the gathered kingdoms streaming to serve Yahuah in Zion)
+--   ★★★ v.25-27 (Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands. They shall perish, but thou shalt endure... as a vesture shalt thou change them... but thou art the same, and thy years shall have no end)
+--        NT:     ★★★ Hebrews 1:10-12 (And, Thou, Yahuah (Lord), in the beginning hast laid the foundation of the earth... they shall be changed: but thou art the same, and thy years shall not fail) — THREAD 6 (LOAD-BEARING: the Father addresses the Formed Son AS the agent of creation who endures unchanged); ★ Colossians 1:16-17 (by him were all things created... he is before all things, and by him all things consist); ★ John 1:3 (All things were made by him) — THREAD 6 (the Formed Son the agent of creation)
+--        Extras: none warranted (the Hebrews 1 citation is the decisive witness; no extras quote it)
+--        Tanakh: ★ Isaiah 51:6 (the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever) — THREAD 6 (the perishing creation against the enduring One)
+--   v.23-24 (He weakened my strength in the way... O my Elohim, take me not away in the midst of my days: thy years are throughout all generations)
+--        NT:     none warranted distinct (the *thy years are throughout all generations* enduring-One weight folds into THREAD 6's *thou art the same, thy years shall have no end*; held in prose)
+--        Extras: none warranted
+--        Tanakh: held to THREAD 6 prose (the contrast of the dying psalmist's days and Yahuah's endless years)
+--   v.28 (The children of thy servants shall continue, and their seed shall be established before thee)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held to THREAD 3 prose (the established seed = the people created to praise; the enduring servant-seed)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-102-but-thou-o-yahuah-shalt-endure-for-ever-thy-remembrance-unto-all-generations — Tanakh (Psalm 90) [free] (★ the everlasting enduring One against the fading man)
+--   2. psalm-102-thou-shalt-arise-and-have-mercy-upon-zion-the-set-time-is-come — NT (Romans 11) + Tanakh (Isaiah 60, Isaiah 51) [free] (★★ the two-house Zion restoration; the glory appearing)
+--   3. psalm-102-this-shall-be-written-for-the-generation-to-come-the-people-which-shall-be-created — NT (Revelation 21) + Tanakh (Isaiah 65) [free] (★ the people created anew, the new-creation Jerusalem)
+--   4. psalm-102-when-the-people-are-gathered-together-to-serve-yahuah — Tanakh (Zechariah 8, Isaiah 2) [free] (★ the gathered kingdoms streaming to serve Yahuah in Zion)
+--   5. psalm-102-when-yahuah-shall-build-up-zion-he-shall-appear-in-his-glory — (covered within THREAD 2; NOT a separate thread — slug reserved/unused)
+--   6. psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same — NT (Hebrews 1, Colossians 1, John 1) + Tanakh (Isaiah 51) [free] (★★★ KEYSTONE: the Father addresses the Formed Son as the agent of creation who endures unchanged)
+--
+-- NOTE ON THREAD COUNT: 5 threads built (v.16 "build up Zion / appear in glory" is folded into THREAD 2 with v.13, where it belongs — one Zion-restoration movement). The slug
+--   psalm-102-when-yahuah-shall-build-up-zion-he-shall-appear-in-his-glory was checked clean but is NOT emitted (subsumed). Five emitted threads at 24525, 24528, 24531, 24534, 24540.
+--
+-- Framing notes:
+--   ★★★ THE KEYSTONE — THE UNCHANGING CREATOR-SON (THREAD 6, v.25-27): *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands. They shall perish, but thou shalt endure: yea, all of them shall wax old like a garment; as a vesture shalt thou change them, and they shall be changed: But thou art the same, and thy years shall have no end* (102:25-27). In the psalm this is addressed to Yahuah the everlasting. Hebrews 1:10-12 quotes it VERBATIM of the SON: *And, Thou, Yahuah (Lord), in the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands: They shall perish; but thou remainest... but thou art the same, and thy years shall not fail* (Hebrews 1:10-12). Read through the Formed and the Formless (Red Line #4): the Father is the speaker of the whole chapter — *unto the Son he saith* (Heb 1:8) — and He addresses the Formed Son as the One who laid earth's foundation, the agent through whom the worlds were made (*by whom also he made the worlds* — Heb 1:2). This is NOT co-equal-persons grammar: the verse has a Father who SPEAKS and a Son who is SPOKEN TO and named *Yahuah*. It is NOT Arian-first-creature: the Son is the Maker of the heavens, not part of the perishing creation — *they shall perish; but thou remainest*. The Heir/agent of creation who endures unchanged while the heavens wear out like a garment. Colossians fills it: *by him were all things created... and by him all things consist* (Col 1:16-17), and John: *All things were made by him* (John 1:3). Isaiah supplies the Tanakh lateral of the perishing creation: *the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever* (Isa 51:6).
+--   ★★ THE TWO-HOUSE ZION RESTORATION (THREAD 2, v.13-16): *Thou shalt arise, and have mercy upon Zion: for the time to favour her, yea, the set time, is come... When Yahuah (LORD) shall build up Zion, he shall appear in his glory* (102:13,16). The *set time* to favour Zion and the glory appearing at her rebuilding are the regathering of the scattered covenant people. Isaiah names the same appearing glory: *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee* (Isa 60:1) and the comfort of Zion's waste places made like Eden (Isa 51:3). Sha''ul (Paul) carries it forward as the salvation of all Yashar'el: *There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob... And so all Yashar'el (Israel) shall be saved* (Rom 11:26) — never a replacement people, but the two houses gathered when Zion is built up. The kings of the earth fearing the Name (102:15) is the nations drawn to the restored Zion.
+--   ★ THE PEOPLE CREATED TO PRAISE (THREAD 3, v.18): *This shall be written for the generation to come: and the people which shall be created shall praise Yahuah (LORD)* (102:18). The *people which shall be created* is the new-creation covenant nation: *I create new heavens and a new earth... behold, I create Jerusalem a rejoicing, and her people a joy* (Isa 65:17-18). Revelation seals it with the same command to WRITE: *Behold, I make all things new... Write: for these words are true and faithful* (Rev 21:5). The written word for the generation to come and the created praising people are the new-creation Jerusalem.
+--   ★ THE GATHERED KINGDOMS (THREAD 4, v.21-22): *To declare the name of Yahuah (LORD) in Zion, and his praise in Jerusalem; When the people are gathered together, and the kingdoms, to serve Yahuah (LORD)* (102:21-22). The gathered kingdoms streaming to serve Yahuah in Zion are the pilgrim-nations of the prophets: *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zech 8:22); *all nations shall flow unto it... out of Zion shall go forth the law* (Isa 2:2-3). The in-gathering of the peoples to the rebuilt Zion of THREAD 2.
+--   ★ THE ENDURING ONE AGAINST THE FADING MAN (THREAD 1, v.12): *But thou, O Yahuah (LORD), shalt endure for ever; and thy remembrance unto all generations* (102:12). Against the psalmist's days consumed like smoke and withered like grass (v.3-11), Yahuah endures. The same everlasting contrast rings in the prayer of Moses: *Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art Elohim (God)* (Psalm 90:2) — set against man turned to destruction, *like grass which groweth up... in the evening it is cut down* (Psalm 90:5-6). The fading man, the enduring Elohim — the turn that opens onto the unchanging Creator-Son of THREAD 6.
+--   VERSES WITH NO ADD: v.1-11 the lament (genre-held, no single load-bearing target); v.23-24 (the dying psalmist's days vs Yahuah's years throughout all generations — folded into THREAD 6's *thy years shall have no end*); v.28 (the servants' seed established — folded into THREAD 3's created praising people).
+--   EXTRAS: none warranted anywhere in this chapter. The decisive witnesses are the NT (Hebrews 1:10-12 quotes v.25-27 of the Son outright; Romans 11, Revelation 21) and the Tanakh laterals (Psalm 90, Isaiah 51/60/65/2, Zechariah 8). No clean restored-library verse stands closer; not forced. Recorded deliberately per the coverage checklist.
+
+CREATE TEMP VIEW _s302_ps102_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): But thou, O Yahuah, shalt endure for ever — the everlasting One against the fading man
+    ('canon','psalms',102,12,'canon','psalms',90,1,'free',
+      E'*Yahuah (Lord), thou hast been our dwelling place in all generations* (Psalm 90:1). The enduring One of *But thou, O Yahuah (LORD), shalt endure for ever; and thy remembrance unto all generations* (Psalm 102:12) is the same dwelling place of the prayer of Moses, abiding *in all generations*. Against the psalmist''s days consumed like smoke, Yahuah is the refuge of every generation — He does not pass with the fading man but remains the home of His people through all ages.'),
+    ('canon','psalms',102,12,'canon','psalms',90,2,'free',
+      E'*Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art Elohim (God)* (Psalm 90:2). The endurance *for ever* of *thou, O Yahuah (LORD), shalt endure for ever* (Psalm 102:12) is the *everlasting to everlasting* of the One who was Elohim before earth was formed. The psalmist withers like grass (102:11); Yahuah is from everlasting — the fading man and the enduring Elohim, the very contrast the unchanging Creator of Psalm 102:25-27 will make absolute.'),
+
+    -- THREAD 2 (★★): Thou shalt arise and have mercy upon Zion — the set time, the glory appearing (two-house restoration)
+    ('canon','psalms',102,13,'canon','isaiah',51,3,'free',
+      E'*For Yahuah (LORD) shall comfort Zion: he will comfort all her waste places; and he will make her wilderness like Eden, and her desert like the garden of Yahuah (LORD); joy and gladness shall be found therein* (Isaiah 51:3). The arising mercy of *Thou shalt arise, and have mercy upon Zion: for the time to favour her, yea, the set time, is come* (Psalm 102:13) is the comfort of Zion''s waste places — her wilderness made *like Eden*. The set time to favour Zion is the time Yahuah comforts her ruins and turns her desert to a garden; the servants who *take pleasure in her stones, and favour the dust thereof* (102:14) see the dust rebuilt to Eden.'),
+    ('canon','psalms',102,16,'canon','isaiah',60,1,'free',
+      E'*Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee* (Isaiah 60:1). *When Yahuah (LORD) shall build up Zion, he shall appear in his glory* (Psalm 102:16) — the glory that appears at Zion''s rebuilding is the glory *risen upon thee* of Isaiah''s call to the restored city. The building up of Zion and the rising of Yahuah''s glory upon her are one event; the kings of the earth who fear His glory (102:15) are the nations drawn to the light that is come.'),
+    ('canon','psalms',102,16,'canon','isaiah',60,2,'free',
+      E'*For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee* (Isaiah 60:2). The appearing of *he shall appear in his glory* (Psalm 102:16) is *his glory shall be seen upon thee* — Yahuah arising upon Zion while darkness covers the nations. The rebuilt Zion is the place His glory is seen; the same arising mercy (102:13) is the arising glory upon the gathered city.'),
+    ('canon','psalms',102,13,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The mercy upon Zion at *the set time* (Psalm 102:13) is carried forward to the salvation of all Yashar''el: *There shall come out of Sion the Deliverer*. The favouring of Zion is no replacement of the covenant people but their regathering — the two houses gathered, ungodliness turned away from Jacob, when the set time is come and Zion is built up.'),
+
+    -- THREAD 3 (★): This shall be written for the generation to come — the people which shall be created
+    ('canon','psalms',102,18,'canon','isaiah',65,17,'free',
+      E'*For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind* (Isaiah 65:17). The *people which shall be created* of *the people which shall be created shall praise Yahuah (LORD)* (Psalm 102:18) belong to the new creation Yahuah makes — *new heavens and a new earth*. The created praising people are the people of the world made new; what is written for the generation to come is the promise of a created people in a created Jerusalem.'),
+    ('canon','psalms',102,18,'canon','isaiah',65,18,'free',
+      E'*But be ye glad and rejoice for ever in that which I create: for, behold, I create Jerusalem a rejoicing, and her people a joy* (Isaiah 65:18). *The people which shall be created shall praise Yahuah (LORD)* (Psalm 102:18) is *I create Jerusalem a rejoicing, and her people a joy* — the created people and the created city together. The generation to come for whom this is written is the rejoicing people Yahuah creates; their praise (102:18) is the gladness *for ever* in that which He creates.'),
+    ('canon','psalms',102,18,'canon','revelation',21,5,'free',
+      E'*And he that sat upon the throne said, Behold, I make all things new. And he said unto me, Write: for these words are true and faithful* (Revelation 21:5). *This shall be written for the generation to come: and the people which shall be created shall praise Yahuah (LORD)* (Psalm 102:18) — the same command to WRITE for what is yet to come, and the same making-new. The people created to praise are the people of the all-things-new; the word written for the generation to come is *true and faithful*, the new-creation Jerusalem made ready.'),
+
+    -- THREAD 4 (★): When the people are gathered together, and the kingdoms, to serve Yahuah
+    ('canon','psalms',102,22,'canon','zechariah',8,22,'free',
+      E'*Yea, many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD)* (Zechariah 8:22). The gathering of *When the people are gathered together, and the kingdoms, to serve Yahuah (LORD)* (Psalm 102:22) is the pilgrimage of *many people and strong nations* to seek Yahuah in Jerusalem. The kingdoms gathered to serve are the strong nations streaming to the rebuilt Zion where His name is declared (102:21).'),
+    ('canon','psalms',102,21,'canon','isaiah',2,3,'free',
+      E'*And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). *To declare the name of Yahuah (LORD) in Zion, and his praise in Jerusalem* (Psalm 102:21) is answered by the nations going up to Zion to be taught — *out of Zion shall go forth the law*. The name declared in Zion draws the gathered kingdoms (102:22) up to the mountain to walk in His paths; the in-gathering serves Yahuah by receiving His Torah from Jerusalem.'),
+
+    -- THREAD 6 (★★★): Of old hast thou laid the foundation of the earth — but thou art the same (the unchanging Creator-Son KEYSTONE)
+    ('canon','psalms',102,25,'canon','hebrews',1,10,'free',
+      E'*And, Thou, Yahuah (Lord), in the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands* (Hebrews 1:10). The letter quotes *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands* (Psalm 102:25) and addresses it TO THE SON — *unto the Son he saith* (Hebrews 1:8) carries straight into verse 10. The Father names the Formed Son the One who laid earth''s foundation, the agent *by whom also he made the worlds* (Hebrews 1:2). This is no created angel and no part of the perishing creation: the Son is the Maker of the heavens, *Yahuah (Lord)* addressed by the Father.'),
+    ('canon','psalms',102,26,'canon','hebrews',1,11,'free',
+      E'*They shall perish; but thou remainest; and they all shall wax old as doth a garment* (Hebrews 1:11). *They shall perish, but thou shalt endure: yea, all of them shall wax old like a garment* (Psalm 102:26) is spoken of the Son: the heavens He made will perish and wax old, *but thou remainest*. The creation wears out like a garment; the Formed Son who made it remains — the agent of creation set over against the creation that fades, the One who endures while the works of His hands grow old.'),
+    ('canon','psalms',102,27,'canon','hebrews',1,12,'free',
+      E'*And as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail* (Hebrews 1:12). The keystone: *but thou art the same, and thy years shall have no end* (Psalm 102:27) is quoted of the Son — *thou art the same, and thy years shall not fail*. Read through the Formed and the Formless: the Father SPEAKS the whole chapter (*unto the Son he saith*, Hebrews 1:8), and He addresses the Son as the unchanging One whose years have no end. Not co-equal-persons (a Father speaks, a Son is named *Yahuah* and addressed); not Arian-first-creature (the unchanging Maker is no made thing) — the Formed Son, the agent of creation who endures the same while the heavens are folded up and changed.'),
+    ('canon','psalms',102,25,'canon','colossians',1,16,'free',
+      E'*For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him* (Colossians 1:16). The One who *laid the foundation of the earth* and whose hands made the heavens (Psalm 102:25) is the Son *by him were all things created... in heaven, and... in earth*. Sha''ul names the Formed Son the agent of the whole creation — *the image of the invisible Elohim (God), the firstborn of every creature* (Col 1:15) — the very Maker the Father addresses in the psalm.'),
+    ('canon','psalms',102,27,'canon','colossians',1,17,'free',
+      E'*And he is before all things, and by him all things consist* (Colossians 1:17). *But thou art the same, and thy years shall have no end* (Psalm 102:27) — the unchanging One who outlasts the creation is the Son who *is before all things, and by him all things consist*. He does not wax old with the heavens He made; He is before them and holds them together. The enduring sameness of the psalm is the pre-existent, all-sustaining Son who remains while the vesture of creation is changed.'),
+    ('canon','psalms',102,25,'canon','john',1,3,'free',
+      E'*All things were made by him; and without him was not any thing made that was made* (John 1:3). *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands* (Psalm 102:25) is the work of the Word: *All things were made by him*. The Formed Word *was in the beginning with Elohim (God)* (John 1:2) and laid earth''s foundation; nothing made was made without Him. The foundation-laying of the psalm is the all-things-made of the Word through whom the worlds came to be.'),
+    ('canon','psalms',102,26,'canon','isaiah',51,6,'free',
+      E'*Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner: but my salvation shall be for ever, and my righteousness shall not be abolished* (Isaiah 51:6). *They shall perish, but thou shalt endure: yea, all of them shall wax old like a garment* (Psalm 102:26) is Isaiah''s *the heavens shall vanish away like smoke, and the earth shall wax old like a garment* — the perishing creation against the enduring One. The heavens wear out, but *my salvation shall be for ever*; the One who endures while creation fades is the same who saves for ever and whose righteousness is never abolished.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-102-but-thou-o-yahuah-shalt-endure-for-ever-thy-remembrance-unto-all-generations',
+       E'But thou, O Yahuah, shalt endure for ever — the everlasting One against the fading man',
+       E'The afflicted psalmist has spent eleven verses on his own dissolving: *my days are consumed like smoke, and my bones are burned as an hearth* (Psalm 102:3), *I am withered like grass* (102:11). Then comes the great turn on a single word — *But*: *But thou, O Yahuah (LORD), shalt endure for ever; and thy remembrance unto all generations* (Psalm 102:12). Over against the man who fades like smoke and grass stands the One who endures for ever, remembered through every generation. This is the ancient confession of the prayer of Moses: *Yahuah (Lord), thou hast been our dwelling place in all generations* (Psalm 90:1), *Before the mountains were brought forth, or ever thou hadst formed the earth and the world, even from everlasting to everlasting, thou art Elohim (God)* (Psalm 90:2). There too the contrast is exact — man *carriest... away as with a flood... like grass which groweth up... in the evening it is cut down, and withereth* (Psalm 90:5-6), while Yahuah is *from everlasting to everlasting*. The fading man, the enduring Elohim. This is the turn that will become absolute by the chapter''s end, when the very heavens wear out like a garment and only the Maker remains the same (102:25-27): the One who endures for ever is the One who laid the foundation of the earth and whose years have no end.',
+       sv.verse_id, ev.verse_id, 'free', 24525
+  FROM _s302_ps102_lookup sv, _s302_ps102_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=102 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-102-thou-shalt-arise-and-have-mercy-upon-zion-the-set-time-is-come',
+       E'Thou shalt arise, and have mercy upon Zion — the set time, when he shall appear in his glory',
+       E'The psalm''s turn from private grief to covenant hope lands on Zion: *Thou shalt arise, and have mercy upon Zion: for the time to favour her, yea, the set time, is come. For thy servants take pleasure in her stones, and favour the dust thereof* (Psalm 102:13-14). There is a *set time* for Zion''s mercy, and at it Yahuah arises — and the climax: *So the heathen shall fear the name of Yahuah (LORD), and all the kings of the earth thy glory. When Yahuah (LORD) shall build up Zion, he shall appear in his glory* (Psalm 102:15-16). The building of Zion and the appearing of His glory are one event. Isaiah sings the same arising glory over the restored city: *Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee. For, behold, the darkness shall cover the earth, and gross darkness the people: but Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee* (Isaiah 60:1-2), and the comfort of her ruins: *Yahuah (LORD) shall comfort Zion: he will comfort all her waste places; and he will make her wilderness like Eden* (Isaiah 51:3). The servants who *favour the dust* of Zion see her dust rebuilt to Eden. And Sha''ul (Paul) carries the mercy upon Zion forward to its end — not a replacement people but the regathered covenant nation: *And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The set time to favour Zion is the two-house regathering; the glory that appears when Zion is built up is the glory the kings of the earth come to fear, the darkness over the nations broken by the light risen upon the gathered city.',
+       sv.verse_id, ev.verse_id, 'free', 24528
+  FROM _s302_ps102_lookup sv, _s302_ps102_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=102 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-102-this-shall-be-written-for-the-generation-to-come-the-people-which-shall-be-created',
+       E'This shall be written for the generation to come — the people which shall be created shall praise Yahuah',
+       E'The psalm looks past the present grief to a future people not yet born: *This shall be written for the generation to come: and the people which shall be created shall praise Yahuah (LORD)* (Psalm 102:18). The word is written down for a generation still to come, and the praisers are a people *which shall be created* — made, not yet existing. Isaiah names that creation outright: *For, behold, I create new heavens and a new earth: and the former shall not be remembered, nor come into mind. But be ye glad and rejoice for ever in that which I create: for, behold, I create Jerusalem a rejoicing, and her people a joy* (Isaiah 65:17-18). The people which shall be created are the people of the new creation — *her people a joy*, made to rejoice for ever in what Yahuah creates. And the Revelation seals it with the very same command to WRITE that the psalm gives: *And he that sat upon the throne said, Behold, I make all things new. And he said unto me, Write: for these words are true and faithful* (Revelation 21:5). The thing *written for the generation to come* is the promise of all-things-new; the *people which shall be created* are the people of the new-creation Jerusalem, and their praise is the rejoicing of those Yahuah makes. The chapter''s closing word confirms the enduring line: *The children of thy servants shall continue, and their seed shall be established before thee* (Psalm 102:28) — the created people are the established servant-seed who praise Him through the generations.',
+       sv.verse_id, ev.verse_id, 'free', 24531
+  FROM _s302_ps102_lookup sv, _s302_ps102_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=102 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-102-when-the-people-are-gathered-together-to-serve-yahuah',
+       E'When the people are gathered together, and the kingdoms, to serve Yahuah',
+       E'The rebuilt Zion of this psalm is not for one nation alone; from her the name goes out and to her the peoples come: *To declare the name of Yahuah (LORD) in Zion, and his praise in Jerusalem; When the people are gathered together, and the kingdoms, to serve Yahuah (LORD)* (Psalm 102:21-22). The name declared in Zion draws a gathering of *the people... and the kingdoms* to serve Him. This is the pilgrimage the prophets foresaw to the restored mountain: *Yea, many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD)* (Zechariah 8:22), and the great ingathering of Isaiah: *And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). The kingdoms gathered to serve come up to be taught Yahuah''s ways and to receive His Torah from Zion — the name declared in Jerusalem (102:21) is the law going forth from Jerusalem, and the gathered peoples serve Him by walking in His paths. The mercy upon Zion (102:13) becomes the mountain to which the nations stream.',
+       sv.verse_id, ev.verse_id, 'free', 24534
+  FROM _s302_ps102_lookup sv, _s302_ps102_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=102 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★★) KEYSTONE
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same',
+       E'Of old hast thou laid the foundation of the earth — but thou art the same: the unchanging Creator-Son',
+       E'The psalm rises to its summit — and the New Testament tells us whose summit it is: *Of old hast thou laid the foundation of the earth: and the heavens are the work of thy hands. They shall perish, but thou shalt endure: yea, all of them shall wax old like a garment; as a vesture shalt thou change them, and they shall be changed: But thou art the same, and thy years shall have no end* (Psalm 102:25-27). In the psalm this is addressed to Yahuah the everlasting. The letter to the Hebrews quotes it word for word and tells us the Father is speaking it TO THE SON: *And, Thou, Yahuah (Lord), in the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands: They shall perish; but thou remainest; and they all shall wax old as doth a garment; And as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail* (Hebrews 1:10-12). Read through the Formed and the Formless. The whole chapter is the Father''s address — *unto the Son he saith, Thy throne, O Elohim (God), is for ever and ever* (Hebrews 1:8) — and it runs straight into *Thou, Yahuah (Lord), in the beginning hast laid the foundation of the earth*. The Father names the Formed Son the One who laid earth''s foundation, the agent *by whom also he made the worlds* (Hebrews 1:2). This refutes two errors at once. It is not co-equal-persons grammar: there is a Father who SPEAKS and a Son who is SPOKEN TO and addressed as *Yahuah*. It is not Arian-first-creature: the Son is the MAKER of the heavens, not a part of the perishing creation — *they shall perish; but thou remainest*; the creation wears out like a garment while He endures the same. The Heir and agent of creation who is unchanged while the heavens are folded up. Sha''ul names Him the same: *For by him were all things created, that are in heaven, and that are in earth... and he is before all things, and by him all things consist* (Colossians 1:16-17), *the image of the invisible Elohim (God), the firstborn of every creature* (Col 1:15). And John: *All things were made by him; and without him was not any thing made that was made* (John 1:3). The Tanakh itself sets the perishing creation against the enduring One: *the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever, and my righteousness shall not be abolished* (Isaiah 51:6). The earth''s foundation laid of old, the heavens worn out like a vesture and changed, the Maker remaining the same with years that have no end — this is the Formed Son, Elohim and agent of creation, who took flesh yet endures unchanged, the One the dying psalmist clings to when his own days are consumed like smoke.',
+       sv.verse_id, ev.verse_id, 'free', 24540
+  FROM _s302_ps102_lookup sv, _s302_ps102_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=102 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (Lord), thou hast been our dwelling place in all generations* (Psalm 90:1) — the enduring One of 102:12 is the dwelling place abiding *in all generations*; the refuge that does not fade with the man consumed like smoke.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=12
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=90 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-but-thou-o-yahuah-shalt-endure-for-ever-thy-remembrance-unto-all-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*even from everlasting to everlasting, thou art Elohim (God)* (Psalm 90:2) — the *for ever* of 102:12 is the everlasting-to-everlasting of the One who was Elohim before earth was formed; the fading grass and the enduring Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=12
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=90 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-but-thou-o-yahuah-shalt-endure-for-ever-thy-remembrance-unto-all-generations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) shall comfort Zion: he will comfort all her waste places; and he will make her wilderness like Eden* (Isaiah 51:3) — the arising mercy of 102:13 is the comfort of Zion''s ruins; the servants who favour her dust (102:14) see it rebuilt to Eden.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=13
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-thou-shalt-arise-and-have-mercy-upon-zion-the-set-time-is-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Arise, shine; for thy light is come, and the glory of Yahuah (LORD) is risen upon thee* (Isaiah 60:1) — *he shall appear in his glory* (102:16) is the glory risen upon the rebuilt Zion; the building up and the rising glory are one event.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=16
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-thou-shalt-arise-and-have-mercy-upon-zion-the-set-time-is-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) shall arise upon thee, and his glory shall be seen upon thee* (Isaiah 60:2) — the appearing of 102:16 is His glory seen upon Zion while darkness covers the nations; the kings of the earth (102:15) drawn to the light that is come.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=16
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-thou-shalt-arise-and-have-mercy-upon-zion-the-set-time-is-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *There shall come out of Sion the Deliverer... And so all Yashar''el (Israel) shall be saved* (Romans 11:26) — the mercy upon Zion at the set time (102:13) carried forward to the two-house regathering; not a replacement people but Yashar''el gathered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=13
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-thou-shalt-arise-and-have-mercy-upon-zion-the-set-time-is-come'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*behold, I create new heavens and a new earth* (Isaiah 65:17) — the *people which shall be created* (102:18) belong to the new creation Yahuah makes; what is written for the generation to come is the promise of a created people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=18
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-this-shall-be-written-for-the-generation-to-come-the-people-which-shall-be-created'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I create Jerusalem a rejoicing, and her people a joy* (Isaiah 65:18) — the created praising people of 102:18 are *her people a joy*; the created people and the created city together, made to rejoice for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=18
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-this-shall-be-written-for-the-generation-to-come-the-people-which-shall-be-created'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Behold, I make all things new... Write: for these words are true and faithful* (Revelation 21:5) — the same command to WRITE for what is to come (102:18) and the same making-new; the created people are the people of all-things-new.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=18
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-this-shall-be-written-for-the-generation-to-come-the-people-which-shall-be-created'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zechariah 8:22) — the gathered kingdoms of 102:22 are the strong nations streaming to seek Yahuah where His name is declared (102:21).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=22
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-when-the-people-are-gathered-together-to-serve-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3) — the name declared in Zion (102:21) is the Torah going forth from Jerusalem; the gathered peoples serve by walking in His paths.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=21
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-when-the-people-are-gathered-together-to-serve-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★★) KEYSTONE
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Thou, Yahuah (Lord), in the beginning hast laid the foundation of the earth; and the heavens are the works of thine hands* (Hebrews 1:10) — the Father addresses 102:25 TO THE SON; the Formed Son the agent *by whom... he made the worlds* (Heb 1:2), no created angel.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=25
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*They shall perish; but thou remainest; and they all shall wax old as doth a garment* (Hebrews 1:11) — 102:26 of the Son: the heavens He made wax old, *but thou remainest*; the Maker set over against the perishing creation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=26
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *and they shall be changed: but thou art the same, and thy years shall not fail* (Hebrews 1:12) — the keystone: 102:27 quoted of the Son; a Father SPEAKS, a Son is named *Yahuah* and addressed as the unchanging One. Not co-equal-persons, not Arian-first-creature.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=27
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*For by him were all things created... and for him* (Colossians 1:16) — the foundation-layer of 102:25 is the Son by whom all things were created; *the image of the invisible Elohim... the firstborn of every creature* (Col 1:15).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=25
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*And he is before all things, and by him all things consist* (Colossians 1:17) — *thou art the same, and thy years shall have no end* (102:27); the unchanging One is the Son before all things who holds them together, not waxing old with the heavens He made.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=27
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*All things were made by him; and without him was not any thing made that was made* (John 1:3) — the foundation-laying of 102:25 is the all-things-made of the Word; the Formed Word laid earth''s foundation, nothing made without Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=25
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever* (Isaiah 51:6) — the Tanakh lateral of 102:26: the perishing creation against the enduring One whose salvation is for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps102_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=102 AND sv.verse_number=26
+  JOIN _s302_ps102_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-102-of-old-hast-thou-laid-the-foundation-of-the-earth-but-thou-art-the-same'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_107.sql (Psalm 107) -----
+-- Chapter: Psalm 107 — THE GATHERED-FROM-THE-LANDS PSALM, opening Book V: *Let the redeemed of
+-- Yahuah say so, whom he hath redeemed from the hand of the enemy; And gathered them out of the
+-- lands, from the east, and from the west, from the north, and from the south* (v.2-3) — the
+-- two-house ingathering from the four winds (Isaiah 11:11-12, 43:5-6, Jeremiah 31:8-10; the NT
+-- east-west-north-south table, Luke 13:29 / Matthew 8:11). Four deliverance-vignettes, each with
+-- the refrain *Then they cried unto Yahuah in their trouble, and he saved them out of their
+-- distresses*: wanderers in the wilderness fed (v.4-9), prisoners freed *brake their bands in
+-- sunder* (v.10-16), fools afflicted then healed *He sent his word, and healed them* (v.20 → the
+-- Formed Word), those at sea who see his wonders and the storm stilled (v.23-30 → Yahusha rebukes
+-- the sea, Matthew 8:26 / Mark 4:39). *The righteous shall see it, and rejoice* (v.42). The
+-- redeemed gathered out of all the lands.
+-- Tag: ps107   Temp view: _s302_ps107_lookup
+-- Sort band: base 24650, step 3 -> threads at 24650, 24653, 24656, 24659, 24662 (5 threads)
+-- Source of EVERY row: 'canon','psalms',107,v
+--
+-- Psalm 107 coverage:
+--   v.1 (O give thanks unto Yahuah, for he is good: for his mercy endureth for ever)
+--        NT/Extras/Tanakh: none warranted — the thanksgiving incipit; the framework-bearing weaves
+--          rise from v.2-3 onward; held as the psalm's own opening.
+--   ★★ v.2-3 (Let the redeemed of Yahuah say so, whom he hath redeemed from the hand of the enemy;
+--          And gathered them out of the lands, from the east, and from the west, from the north,
+--          and from the south)
+--        NT:     ★ Luke 13:29 (they shall come from the east, and from the west, and from the north,
+--                and from the south, and shall sit down in the kingdom — the four-directions gathering
+--                word-for-word), Matthew 8:11 (many shall come from the east and west, and shall sit
+--                down with Abraham, and Isaac, and Jacob) — THREAD 1 (load-bearing keystone)
+--        Extras: none warranted (no clean restored-witness adds to the four-winds ingathering here)
+--        Tanakh: ★ Isaiah 11:11-12 (recover the remnant the second time... gather the dispersed of
+--                Yahudah from the four corners; Ephraim+Yahudah reunited), ★ Isaiah 43:5-6 (I will
+--                bring thy seed from the east, and gather thee from the west; to the north, Give up;
+--                to the south, Keep not back), ★ Jeremiah 31:8,10 (bring them from the north country,
+--                gather from the coasts; He that scattered Yashar'el will gather him) — THREAD 1
+--   v.4-9 (wandered in the wilderness... Hungry and thirsty, their soul fainted; Then they cried...
+--          he led them forth by the right way to a city of habitation; he satisfieth the longing
+--          soul, and filleth the hungry soul with goodness)
+--        NT:     none warranted distinct (the satisfied-soul forward-weave is carried in prose; the
+--                load-bearing NT laterals are the gathering, the healing word, and the stilled sea)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 31:25 (I have satiated the weary soul, and replenished every sorrowful
+--                soul), Psalm 146:7 (giveth food to the hungry) — THREAD 2 (the hungry filled)
+--   v.10-16 (sit in darkness and the shadow of death, bound in affliction and iron... Then they
+--          cried... He brought them out of darkness... and brake their bands in sunder... broken the
+--          gates of brass, and cut the bars of iron in sunder)
+--        NT:     none warranted distinct (the liberty-to-the-captives forward-weave is the prophets'
+--                own; carried by Isaiah, fulfilled in the Anointed who reads Isaiah 61 in Luke 4)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 61:1 (to proclaim liberty to the captives, and the opening of the prison to
+--                them that are bound), ★ Isaiah 49:9 (say to the prisoners, Go forth; to them that
+--                are in darkness, Shew yourselves), Psalm 146:7 (Yahuah looseth the prisoners) — THREAD 3
+--   ★ v.17-20 (Fools because of their transgression... draw near unto the gates of death; Then they
+--          cry... He sent his word, and healed them, and delivered them from their destructions)
+--        NT:     ★ Matthew 8:16 (he cast out the spirits with his word, and healed all that were
+--                sick) — THREAD 4 (the sent-word that heals = the Formed Word)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 55:11 (So shall my word be that goeth forth out of my mouth: it shall not
+--                return unto me void, but it shall accomplish that which I please) — THREAD 4
+--   v.21-22 (Oh that men would praise Yahuah... let them sacrifice the sacrifices of thanksgiving)
+--        NT/Extras/Tanakh: none warranted distinct — the refrain-doxology + thank-offering; gathered
+--          into the vignette prose, the festal thanksgiving of the delivered.
+--   ★ v.23-30 (They that go down to the sea in ships... he commandeth, and raiseth the stormy wind...
+--          their soul is melted... Then they cry... He maketh the storm a calm, so that the waves
+--          thereof are still; so he bringeth them unto their desired haven)
+--        NT:     ★ Matthew 8:26 (he arose, and rebuked the winds and the sea; and there was a great
+--                calm), ★ Mark 4:39 (rebuked the wind, and said unto the sea, Peace, be still... a
+--                great calm), ★ Mark 4:41 (even the wind and the sea obey him) — THREAD 5 (load-bearing:
+--                the One who stills the sea = Yahuah-the-Former, the Formed Son in flesh)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the sea-stilling authority is Yahuah's own in the psalm,
+--                fulfilled FORWARD in the Formed Son; no closer Tanakh lateral than the psalm itself)
+--   v.31-43 (Oh that men would praise Yahuah... He turneth rivers into a wilderness... the wilderness
+--          into a standing water... maketh the hungry to dwell, that they may prepare a city...
+--          setteth he the poor on high... maketh him families like a flock; The righteous shall see
+--          it, and rejoice... Whoso is wise... shall understand the lovingkindness of Yahuah)
+--        NT/Extras: none warranted (the providence-reversal coda; carried in prose)
+--        Tanakh: none forced — the closing reversal (wilderness-to-water, the hungry given a city,
+--          the poor made families like a flock, the wise understanding His lovingkindness) is the
+--          summing coda the four vignettes resolve into; the city-prepared and the families-like-a-flock
+--          echo the gathering of THREAD 1 and the fed-soul of THREAD 2, gathered there in prose, not a
+--          separate add.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands — NT (Luke 13, Matthew 8) + Tanakh
+--      (Isaiah 11, Isaiah 43, Jeremiah 31) [free] (★★ the two-house ingathering from the four winds)
+--   2. psalm-107-he-filleth-the-hungry-soul-with-goodness — Tanakh (Jeremiah 31, Psalm 146) [free]
+--      (the wanderers fed; the weary soul satiated)
+--   3. psalm-107-he-brake-their-bands-in-sunder — Tanakh (Isaiah 61, Isaiah 49, Psalm 146) [free]
+--      (the prisoners freed; liberty to the captives, the prison opened)
+--   4. psalm-107-he-sent-his-word-and-healed-them — NT (Matthew 8) + Tanakh (Isaiah 55) [free]
+--      (★ the sent-word that heals = the Formed Word that does not return void)
+--   5. psalm-107-he-maketh-the-storm-a-calm — NT (Matthew 8, Mark 4) [free] (★★ the stilled sea =
+--      Yahusha's authority; the One who commands the sea is Yahuah-the-Former in flesh)
+--
+-- Framing notes:
+--   ★★ THE INGATHERING (THREAD 1): *Let the redeemed of Yahuah (LORD) say so, whom he hath redeemed
+--      from the hand of the enemy; And gathered them out of the lands, from the east, and from the
+--      west, from the north, and from the south* (107:2-3). This is the two-house regathering, not a
+--      replacement people: the scattered redeemed brought back from every quarter. Isaiah names it as
+--      the SECOND recovery — *Yahuah (Lord) shall set his hand again the second time to recover the
+--      remnant of his people... and gather together the dispersed of Yahudah (Judah) from the four
+--      corners of the earth* (11:11-12), with Ephraim and Yahudah no more at envy (11:13); Isaiah 43
+--      gives the four directions by name — *I will bring thy seed from the east, and gather thee from
+--      the west; I will say to the north, Give up; and to the south, Keep not back* (43:5-6); Jeremiah
+--      sings the scatterer turned gatherer — *He that scattered Yashar'el (Israel) will gather him,
+--      and keep him, as a shepherd doth his flock* (31:10), *I will bring them from the north country,
+--      and gather them from the coasts of the earth* (31:8). And Yahusha sets the psalm's very compass
+--      forward: *they shall come from the east, and from the west, and from the north, and from the
+--      south, and shall sit down in the kingdom of Elohim (God)* (Luke 13:29), *many shall come from
+--      the east and west, and shall sit down with Abraham, and Isaac, and Jacob* (Matthew 8:11) — the
+--      redeemed gathered out of the lands seated at the patriarchs' table. *Redeemed from the hand of
+--      the enemy* (107:2) is the same as *redeemed Jacob, and ransomed him from the hand of him that
+--      was stronger than he* (Jeremiah 31:11).
+--   THE HUNGRY FILLED (THREAD 2): the wilderness-wanderers *Hungry and thirsty, their soul fainted in
+--      them* (107:5) are led to a city and *he satisfieth the longing soul, and filleth the hungry
+--      soul with goodness* (107:9) — the very thing Yahuah promises the regathered: *I have satiated
+--      the weary soul, and I have replenished every sorrowful soul* (Jeremiah 31:25); *Which... giveth
+--      food to the hungry* (Psalm 146:7). The gathering of THREAD 1 and the feeding of THREAD 2 are
+--      one mercy.
+--   THE BANDS BROKEN (THREAD 3): the prisoners *bound in affliction and iron* in *darkness and the
+--      shadow of death* (107:10) are delivered — *He brought them out of darkness and the shadow of
+--      death, and brake their bands in sunder* (107:14), *he hath broken the gates of brass, and cut
+--      the bars of iron in sunder* (107:16). The Anointed's commission is this very work: *to proclaim
+--      liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1);
+--      *That thou mayest say to the prisoners, Go forth; to them that are in darkness, Shew yourselves*
+--      (Isaiah 49:9); *Yahuah (LORD) looseth the prisoners* (Psalm 146:7).
+--   ★ THE SENT WORD THAT HEALS (THREAD 4): the fools at *the gates of death* (107:18) are saved by a
+--      word — *He sent his word, and healed them, and delivered them from their destructions* (107:20).
+--      Read through the Formed and the Formless: the Word Yahuah SENDS is the expressed Word that does
+--      not return void — *So shall my word be that goeth forth out of my mouth... it shall accomplish
+--      that which I please* (Isaiah 55:11) — and in flesh the Formed Son heals by that same word: *he
+--      cast out the spirits with his word, and healed all that were sick* (Matthew 8:16). The sent-word
+--      that heals is the Word made manifest.
+--   ★★ THE STILLED SEA (THREAD 5): those at sea see *the works of Yahuah (LORD), and his wonders in
+--      the deep* (107:24); Yahuah *commandeth, and raiseth the stormy wind* (107:25) and then *maketh
+--      the storm a calm, so that the waves thereof are still* (107:29). The authority to raise and
+--      still the sea is Yahuah's own — and the Formed Son in flesh does the very thing: *he arose, and
+--      rebuked the winds and the sea; and there was a great calm* (Matthew 8:26); *he arose, and
+--      rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a
+--      great calm* (Mark 4:39). The disciples ask the psalm's own question — *What manner of man is
+--      this, that even the wind and the sea obey him?* (Mark 4:41) — and the psalm answers: it is
+--      Yahuah, the Former, who took flesh; he has a Father, and the sea obeys him.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The
+--      load-bearing weaves are the NT (the four-winds table, the healing word, the stilled sea) and the
+--      Tanakh prophets (Isaiah 11/43/49/55/61, Jeremiah 31, Psalm 146). No restored witness was forced.
+--   VERSES WITH NO ADD: v.1 (the thanksgiving incipit), v.21-22 (the refrain-doxology + thank-offering),
+--      v.31-43 (the providence-reversal coda — wilderness-to-water, the hungry given a city, the poor
+--      made families like a flock, the wise understanding His lovingkindness): the frame and summing
+--      coda the four vignettes rise from and resolve into; no separate framework-bearing target warranted
+--      beyond the gathered prose.
+
+CREATE TEMP VIEW _s302_ps107_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Redeemed from the hand of the enemy — gathered out of the lands from the four winds
+    ('canon','psalms',107,3,'canon','luke',13,29,'free',
+      E'*And they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of Elohim (God)* (Luke 13:29). The psalm''s very compass is set forward word for word: the redeemed *gathered them out of the lands, from the east, and from the west, from the north, and from the south* (Psalm 107:3) are the ones who *shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom*. The four-directions ingathering of the scattered house is the seating of the redeemed at the kingdom''s table.'),
+    ('canon','psalms',107,3,'canon','matthew',8,11,'free',
+      E'*And I say unto you, That many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11). The gathering *from the east, and from the west* (Psalm 107:3) is the gathering Yahusha names — *many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob*. The redeemed brought out of the lands are seated at the patriarchs'' table; the four-winds ingathering is the kingdom-feast of the regathered seed.'),
+    ('canon','psalms',107,3,'canon','isaiah',11,11,'free',
+      E'*And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea* (Isaiah 11:11). The redeemed *gathered... out of the lands* (Psalm 107:3) are the remnant Yahuah recovers *the second time* from every land of the scattering — the two-house regathering Isaiah names by nation, the people brought home from where they were dispersed.'),
+    ('canon','psalms',107,3,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The gathering *from the east, and from the west, from the north, and from the south* (Psalm 107:3) is the gathering *from the four corners of the earth* — both houses: the *outcasts of Yashar''el (Israel)* and the *dispersed of Yahudah (Judah)* assembled, the two sticks brought back, never a replacement people but the scattered seed regathered.'),
+    ('canon','psalms',107,3,'canon','isaiah',43,5,'free',
+      E'*Fear not: for I am with thee: I will bring thy seed from the east, and gather thee from the west* (Isaiah 43:5). The redeemed gathered *from the east, and from the west* (Psalm 107:3) are the seed Yahuah Himself brings — *I will bring thy seed from the east, and gather thee from the west*. The Redeemer who *formed thee, O Yashar''el (Israel)* (43:1) is the One who gathers His own from every quarter.'),
+    ('canon','psalms',107,3,'canon','isaiah',43,6,'free',
+      E'*I will say to the north, Give up; and to the south, Keep not back: bring my sons from far, and my daughters from the ends of the earth* (Isaiah 43:6). The gathering *from the north, and from the south* (Psalm 107:3) is Yahuah''s command to the very quarters — *I will say to the north, Give up; and to the south, Keep not back*. The four directions of the psalm are the four directions Yahuah summons to surrender His sons and daughters from the ends of the earth.'),
+    ('canon','psalms',107,2,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). *Let the redeemed of Yahuah (LORD) say so, whom he hath redeemed from the hand of the enemy* (Psalm 107:2): the scatterer is the gatherer — *He that scattered Yashar''el (Israel) will gather him*. The redeemed who say so are the flock the Shepherd scattered in judgment and gathers in mercy, redeemed *from the hand of him that was stronger than he* (Jeremiah 31:11).'),
+    ('canon','psalms',107,3,'canon','jeremiah',31,8,'free',
+      E'*Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither* (Jeremiah 31:8). The gathering *out of the lands, from the east, and from the west, from the north, and from the south* (Psalm 107:3) is Jeremiah''s great company — *I will bring them from the north country, and gather them from the coasts of the earth... a great company shall return thither*. The redeemed out of all the lands are the returning host of the regathered house.'),
+
+    -- THREAD 2: He satisfieth the longing soul, and filleth the hungry soul with goodness (the wanderers fed)
+    ('canon','psalms',107,9,'canon','jeremiah',31,25,'free',
+      E'*For I have satiated the weary soul, and I have replenished every sorrowful soul* (Jeremiah 31:25). The wilderness-wanderers whose *soul fainted in them* (Psalm 107:5) are satisfied — *he satisfieth the longing soul, and filleth the hungry soul with goodness* (Psalm 107:9) — the very mercy Yahuah promises the regathered: *I have satiated the weary soul, and I have replenished every sorrowful soul*. The gathered are also the fed; the longing soul filled is the weary soul satiated.'),
+    ('canon','psalms',107,9,'canon','psalms',146,7,'free',
+      E'*Which executeth judgment for the oppressed: which giveth food to the hungry. Yahuah (LORD) looseth the prisoners* (Psalm 146:7). The God who *filleth the hungry soul with goodness* (Psalm 107:9) is the God who *giveth food to the hungry* — the same mercy sung plainly in the psalter. He satisfies the longing soul because it is His nature to feed the hungry and free the bound.'),
+
+    -- THREAD 3: He brake their bands in sunder (the prisoners freed; liberty to the captives)
+    ('canon','psalms',107,14,'canon','isaiah',61,1,'free',
+      E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). Those who *sit in darkness and in the shadow of death, being bound in affliction and iron* (Psalm 107:10), whom Yahuah *brought... out of darkness and the shadow of death, and brake their bands in sunder* (Psalm 107:14), are the captives the Anointed is sent to free — *to proclaim liberty to the captives, and the opening of the prison to them that are bound*. The broken bands of the psalm are the liberty the Anointed proclaims.'),
+    ('canon','psalms',107,16,'canon','isaiah',49,9,'free',
+      E'*That thou mayest say to the prisoners, Go forth; to them that are in darkness, Shew yourselves. They shall feed in the ways, and their pastures shall be in all high places* (Isaiah 49:9). The God who *hath broken the gates of brass, and cut the bars of iron in sunder* (Psalm 107:16) gives the servant the word that opens the prison — *say to the prisoners, Go forth; to them that are in darkness, Shew yourselves*. The bars cut in sunder are the prison-doors flung open for those in darkness.'),
+    ('canon','psalms',107,14,'canon','psalms',146,7,'free',
+      E'*Which executeth judgment for the oppressed: which giveth food to the hungry. Yahuah (LORD) looseth the prisoners* (Psalm 146:7). The God who *brought them out of darkness and the shadow of death, and brake their bands in sunder* (Psalm 107:14) is the God of whom the psalter sings *Yahuah (LORD) looseth the prisoners*. The breaking of the bands is His own steady work: He looses the bound.'),
+
+    -- THREAD 4 (★): He sent his word, and healed them (the sent-word that heals = the Formed Word)
+    ('canon','psalms',107,20,'canon','isaiah',55,11,'free',
+      E'*So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). When the fools at *the gates of death* (Psalm 107:18) are saved — *He sent his word, and healed them, and delivered them from their destructions* (Psalm 107:20) — the word Yahuah SENDS is the word that *shall not return unto me void, but it shall accomplish that which I please*. The sent-word that heals is the effectual Word that goes forth and does His will; read through the Formed and the Formless, the Word Yahuah sends is His own expressed Word.'),
+    ('canon','psalms',107,20,'canon','matthew',8,16,'free',
+      E'*When the even was come, they brought unto him many that were possessed with devils: and he cast out the spirits with his word, and healed all that were sick* (Matthew 8:16). *He sent his word, and healed them* (Psalm 107:20) is fulfilled in the Formed Son who heals by the same word — *he cast out the spirits with his word, and healed all that were sick*. The sent-word of Yahuah that healed the dying is the Word made manifest, healing all who came; he is Yahuah''s own Word, and he has a Father.'),
+
+    -- THREAD 5 (★★): He maketh the storm a calm (the stilled sea = Yahusha's authority)
+    ('canon','psalms',107,29,'canon','matthew',8,26,'free',
+      E'*And he saith unto them, Why are ye fearful, O ye of little faith? Then he arose, and rebuked the winds and the sea; and there was a great calm* (Matthew 8:26). The authority of *He maketh the storm a calm, so that the waves thereof are still* (Psalm 107:29) is Yahuah''s own — and the Formed Son in flesh does the very thing: *he arose, and rebuked the winds and the sea; and there was a great calm*. The One who in the psalm raises the stormy wind (v.25) and stills it is the One who rebukes the sea into a great calm.'),
+    ('canon','psalms',107,29,'canon','mark',4,39,'free',
+      E'*And he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm* (Mark 4:39). *He maketh the storm a calm, so that the waves thereof are still* (Psalm 107:29): the word *Peace, be still* is the psalm''s own act in flesh. The waves stilled by Yahuah in the deep are the waves the Formed Son commands silent with a word; the sea knows its Maker''s voice.'),
+    ('canon','psalms',107,24,'canon','mark',4,41,'free',
+      E'*And they feared exceedingly, and said one to another, What manner of man is this, that even the wind and the sea obey him?* (Mark 4:41). They at sea who *see the works of Yahuah (LORD), and his wonders in the deep* (Psalm 107:24) are met again in the disciples'' question — *What manner of man is this, that even the wind and the sea obey him?* The psalm answers: it is Yahuah, the Former, whose wonders are in the deep and who took flesh; the wind and the sea obey him because they obey their Maker.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands',
+       E'Redeemed from the hand of the enemy — gathered out of the lands from the four winds',
+       E'Book V of the psalter opens with the ingathering: *Let the redeemed of Yahuah (LORD) say so, whom he hath redeemed from the hand of the enemy; And gathered them out of the lands, from the east, and from the west, from the north, and from the south* (Psalm 107:2-3). This is the two-house regathering — not a replacement people, but the scattered seed of Yashar''el (Israel) and Yahudah (Judah) brought home from every quarter. Isaiah names it as the SECOND recovery: *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt... and from the islands of the sea* (Isaiah 11:11), and *shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12) — both sticks, Ephraim and Yahudah no longer at envy. Isaiah 43 gives the four directions of the psalm by name: *I will bring thy seed from the east, and gather thee from the west; I will say to the north, Give up; and to the south, Keep not back: bring my sons from far, and my daughters from the ends of the earth* (Isaiah 43:5-6). Jeremiah sings the scatterer turned gatherer: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10), *I will bring them from the north country, and gather them from the coasts of the earth... a great company shall return thither* (Jeremiah 31:8) — and the very redemption of the psalm, *redeemed from the hand of the enemy* (107:2), is Jeremiah''s *redeemed Jacob, and ransomed him from the hand of him that was stronger than he* (31:11). And Yahusha (Jesus) sets the psalm''s compass forward, word for word: *they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom of Elohim (God)* (Luke 13:29); *many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11). The redeemed gathered out of the lands are seated at the patriarchs'' table — the four-winds ingathering of the regathered seed, brought home and made one.',
+       sv.verse_id, ev.verse_id, 'free', 24650
+  FROM _s302_ps107_lookup sv, _s302_ps107_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=107 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-107-he-filleth-the-hungry-soul-with-goodness',
+       E'He satisfieth the longing soul, and filleth the hungry soul with goodness',
+       E'The first deliverance-vignette: *They wandered in the wilderness in a solitary way; they found no city to dwell in. Hungry and thirsty, their soul fainted in them* (Psalm 107:4-5). *Then they cried unto Yahuah (LORD) in their trouble, and he delivered them out of their distresses* (107:6), *And he led them forth by the right way, that they might go to a city of habitation* (107:7) — and the mercy is summed: *For he satisfieth the longing soul, and filleth the hungry soul with goodness* (107:9). This is the very promise Yahuah makes to the regathered house: *I have satiated the weary soul, and I have replenished every sorrowful soul* (Jeremiah 31:25). The God who gathers His people out of the lands is the God who feeds them; the psalter says it plainly — *Which... giveth food to the hungry* (Psalm 146:7). The wanderers led to a city and filled with goodness are the same redeemed gathered out of the lands and brought home; the ingathering and the feeding are one mercy.',
+       sv.verse_id, ev.verse_id, 'free', 24653
+  FROM _s302_ps107_lookup sv, _s302_ps107_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=107 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-107-he-brake-their-bands-in-sunder',
+       E'He brought them out of darkness and brake their bands in sunder',
+       E'The second deliverance-vignette: *Such as sit in darkness and in the shadow of death, being bound in affliction and iron* (Psalm 107:10), brought low for rebelling against the words of Elohim (107:11), *Then they cried unto Yahuah (LORD) in their trouble, and he saved them out of their distresses* (107:13) — *He brought them out of darkness and the shadow of death, and brake their bands in sunder* (107:14); *For he hath broken the gates of brass, and cut the bars of iron in sunder* (107:16). This is the Anointed''s own commission: *he hath sent me... to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). The servant is given the word that opens the prison: *That thou mayest say to the prisoners, Go forth; to them that are in darkness, Shew yourselves* (Isaiah 49:9). And the psalter sings the steady mercy: *Yahuah (LORD) looseth the prisoners* (Psalm 146:7). The bands broken in sunder, the gates of brass shattered, the bars of iron cut — this is Yahuah loosing the bound, the liberty proclaimed to the captives who cried to Him out of the dark.',
+       sv.verse_id, ev.verse_id, 'free', 24656
+  FROM _s302_ps107_lookup sv, _s302_ps107_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=107 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-107-he-sent-his-word-and-healed-them',
+       E'He sent his word, and healed them — the Word that does not return void',
+       E'The third deliverance-vignette: *Fools because of their transgression, and because of their iniquities, are afflicted. Their soul abhorreth all manner of meat; and they draw near unto the gates of death* (Psalm 107:17-18). *Then they cry unto Yahuah (LORD) in their trouble, and he saveth them out of their distresses* (107:19) — and the means of the saving is a word: *He sent his word, and healed them, and delivered them from their destructions* (107:20). Read through the Formed and the Formless: the word Yahuah SENDS is His own expressed Word, the Word that does His will and never fails. *So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). And in flesh the Formed Son heals by that same word: *he cast out the spirits with his word, and healed all that were sick* (Matthew 8:16). The sent-word that drew the dying back from the gates of death is the Word made manifest — Yahuah''s own Word, healing all who came, and he has a Father.',
+       sv.verse_id, ev.verse_id, 'free', 24659
+  FROM _s302_ps107_lookup sv, _s302_ps107_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=107 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-107-he-maketh-the-storm-a-calm',
+       E'He maketh the storm a calm — the wind and the sea obey him',
+       E'The fourth deliverance-vignette: *They that go down to the sea in ships, that do business in great waters; These see the works of Yahuah (LORD), and his wonders in the deep* (Psalm 107:23-24). Yahuah *commandeth, and raiseth the stormy wind, which lifteth up the waves thereof* (107:25); the sailors *reel to and fro, and stagger like a drunken man, and are at their wits'' end* (107:27); *Then they cry unto Yahuah (LORD) in their trouble, and he bringeth them out of their distresses* (107:28) — *He maketh the storm a calm, so that the waves thereof are still* (107:29), *so he bringeth them unto their desired haven* (107:30). The authority to raise the storm and still it is Yahuah''s own — and the Formed Son in flesh does the very thing: *he arose, and rebuked the winds and the sea; and there was a great calm* (Matthew 8:26); *he arose, and rebuked the wind, and said unto the sea, Peace, be still. And the wind ceased, and there was a great calm* (Mark 4:39). The disciples ask the psalm''s own question — *What manner of man is this, that even the wind and the sea obey him?* (Mark 4:41) — and the psalm answers: it is Yahuah, the Former, whose wonders are in the deep, who took flesh. The wind and the sea obey him because they obey their Maker; he is Yahuah, and he has a Father.',
+       sv.verse_id, ev.verse_id, 'free', 24662
+  FROM _s302_ps107_lookup sv, _s302_ps107_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=107 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they shall come from the east, and from the west, and from the north, and from the south, and shall sit down in the kingdom* (Luke 13:29) — the four directions of 107:3 set forward word for word; the redeemed seated in the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob* (Matthew 8:11) — the gathering out of the lands (107:3) is the kingdom-feast of the regathered seed at the patriarchs'' table.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah shall set his hand again the second time to recover the remnant of his people* (Isaiah 11:11) — the redeemed gathered out of the lands (107:3) are the remnant recovered the SECOND time from every land of scattering.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12) — the four directions of 107:3 = both houses gathered, the two sticks brought back.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will bring thy seed from the east, and gather thee from the west* (Isaiah 43:5) — the east-and-west gathering of 107:3 is Yahuah bringing His own seed home.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will say to the north, Give up; and to the south, Keep not back: bring my sons from far* (Isaiah 43:6) — the north-and-south of 107:3 is Yahuah commanding the quarters to surrender His sons and daughters.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the redeemed who *say so* (107:2) are the flock the scatterer Himself gathers home.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=2
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*I will bring them from the north country, and gather them from the coasts of the earth... a great company shall return thither* (Jeremiah 31:8) — the gathering out of the lands (107:3) is the returning host of the regathered house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=3
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-redeemed-from-the-enemy-gathered-out-of-the-lands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have satiated the weary soul, and I have replenished every sorrowful soul* (Jeremiah 31:25) — the longing soul filled with goodness (107:9) is the weary soul Yahuah satiates among the regathered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=9
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-filleth-the-hungry-soul-with-goodness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*which giveth food to the hungry. Yahuah (LORD) looseth the prisoners* (Psalm 146:7) — the God who *filleth the hungry soul with goodness* (107:9) is the God who gives food to the hungry.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=9
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-filleth-the-hungry-soul-with-goodness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1) — the bands broken in sunder (107:14) are the liberty the Anointed is sent to proclaim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=14
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-brake-their-bands-in-sunder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*say to the prisoners, Go forth; to them that are in darkness, Shew yourselves* (Isaiah 49:9) — the bars of iron cut in sunder (107:16) are the prison-doors flung open for those in darkness.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=16
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-brake-their-bands-in-sunder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) looseth the prisoners* (Psalm 146:7) — the breaking of the bands (107:14) is His own steady mercy: He looses the bound.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=14
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-brake-their-bands-in-sunder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*So shall my word be that goeth forth out of my mouth: it shall not return unto me void* (Isaiah 55:11) — the sent-word that heals (107:20) is the effectual Word that accomplishes Yahuah''s will.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=20
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-sent-his-word-and-healed-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he cast out the spirits with his word, and healed all that were sick* (Matthew 8:16) — *He sent his word, and healed them* (107:20) fulfilled in the Formed Son who heals by the same word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=20
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=8 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-sent-his-word-and-healed-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he arose, and rebuked the winds and the sea; and there was a great calm* (Matthew 8:26) — *He maketh the storm a calm* (107:29) done in flesh by the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=29
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=8 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-maketh-the-storm-a-calm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *said unto the sea, Peace, be still. And the wind ceased, and there was a great calm* (Mark 4:39) — the word *Peace, be still* is the psalm''s own act (107:29) in flesh; the sea knows its Maker''s voice.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=29
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=4 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-maketh-the-storm-a-calm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*What manner of man is this, that even the wind and the sea obey him?* (Mark 4:41) — they who see Yahuah''s wonders in the deep (107:24) ask, and the psalm answers: the Former took flesh, and the sea obeys its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps107_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=107 AND sv.verse_number=24
+  JOIN _s302_ps107_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=4 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-107-he-maketh-the-storm-a-calm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_126.sql (Psalm 126) -----
+-- Chapter: Psalm 126 — the TURN-THE-CAPTIVITY Song of Ascents. *When Yahuah (LORD) turned again the captivity of Zion, we were like them that dream* (126:1); *Then was our mouth filled with laughter, and our tongue with singing... Yahuah hath done great things for them* (126:2); *Yahuah hath done great things for us; whereof we are glad* (126:3). Then the prayer for the full ingathering: *Turn again our captivity, O Yahuah, as the streams in the south* (126:4). And the harvest-figure that crowns it: *They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him* (126:5-6). The restored captivity of Zion = the two-house regathering hope (Deuteronomy 30 / Jeremiah 31); the sowing-in-tears/reaping-in-joy harvest weaves FORWARD to the seed that dies (John 12:24), the reaping that does not faint (Galatians 6:7-9), and the plenteous harvest (Matthew 9:37-38).
+-- Tag: ps126   Temp view: _s302_ps126_lookup
+-- Sort band: base 25125, step 3 -> threads at 25125, 25128, 25131 (3 threads)
+-- Source of EVERY row: 'canon','psalms',126,v
+--
+-- Psalm 126 coverage:
+--   ★ v.1-3 (When Yahuah turned again the captivity of Zion... Yahuah hath done great things for us; whereof we are glad)
+--        NT:     none warranted distinct (the turning of the captivity is carried laterally in the Tanakh and forward to the harvest in THREAD 3; no clean NT quote OF v.1-3 itself)
+--        Extras: none warranted (no clean restored-witness verse parallels the turning-of-Zion's-captivity; weighed Jubilees/Jasher regathering material, none binds cleanly without apparatus noise)
+--        Tanakh: ★★ Deuteronomy 30:3 (Yahuah Elohayka will turn thy captivity... and will return and gather thee from all the nations); ★ Jeremiah 31:10 (He that scattered Yashar'el will gather him); ★ Psalm 14:7 (when Yahuah bringeth back the captivity of his people, Jacob shall rejoice) — THREAD 1 (load-bearing: the turned captivity = the two-house regathering, Torah-promise + prophet)
+--   ★ v.4 (Turn again our captivity, O Yahuah, as the streams in the south)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 31:23 (when I shall bring again their captivity; Yahuah bless thee, O habitation of justice); ★ Jeremiah 31:8 (I will bring them from the north country, and gather them from the coasts of the earth) — THREAD 2 (the prayer for the full ingathering, the captivity not yet wholly turned)
+--   ★★ v.5-6 (They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him)
+--        NT:     ★★ John 12:24 (Except a corn of wheat fall into the ground and die... if it die, it bringeth forth much fruit); ★ Galatians 6:7 (whatsoever a man soweth, that shall he also reap); ★ Galatians 6:9 (in due season we shall reap, if we faint not); ★ Matthew 9:37-38 (The harvest truly is plenteous... Yahuah of the harvest) — THREAD 3 (load-bearing: the sowing-in-tears/seed-that-dies harvest)
+--        Extras: none warranted (weighed; no clean restored-witness harvest-of-tears verse binds without apparatus noise)
+--        Tanakh: ★ Jeremiah 31:9 (They shall come with weeping, and with supplications will I lead them); ★ Jeremiah 31:13 (I will turn their mourning into joy... make them rejoice from their sorrow); ★ Jeremiah 31:16 (Refrain thy voice from weeping... they shall come again from the land of the enemy) — THREAD 3 (the lateral the harvest weaves: weeping turned to joy in the regathering)
+--
+-- EXTRAS NOTE: none warranted across the whole psalm. Psalm 126 is a regathering Song of Ascents; the turning-of-captivity and the harvest-of-tears find their weight in the Torah-promise (Deuteronomy 30), the great two-house regathering chapter (Jeremiah 31), and the NT harvest-fulfillment (John 12 / Galatians 6 / Matthew 9). No clean Jubilees/Jasher/Enoch verse parallels these without apparatus noise. Weighed and deliberately declined — NOT forced. Every thread is canon-only (Tanakh laterals + NT fulfillment), so EVERY thread tier_required = 'free'.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-126-when-yahuah-turned-again-the-captivity-of-zion — Tanakh (Deuteronomy, Jeremiah, Psalm 14) [free] (★ the turned captivity = the two-house regathering, Torah-promise + prophet)
+--   2. psalm-126-turn-again-our-captivity-as-the-streams-in-the-south — Tanakh (Jeremiah) [free] (★ the prayer for the full ingathering, not yet wholly turned)
+--   3. psalm-126-they-that-sow-in-tears-shall-reap-in-joy — NT (John, Galatians, Matthew) + Tanakh (Jeremiah) [free] (★★ the sowing-in-tears/seed-that-dies harvest of the gathered houses)
+--
+-- Framing notes:
+--   ★ THE TURNED CAPTIVITY (THREAD 1) — two-house lens (Red Line #2): *When Yahuah (LORD) turned again the captivity of Zion* (126:1) is the very Torah-promise of Deuteronomy 30:3 — *Yahuah Elohayka (the LORD thy God) will turn thy captivity... and will return and gather thee from all the nations* — and the prophet's word *He that scattered Yashar'el (Israel) will gather him* (Jeremiah 31:10) and *when Yahuah (LORD) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar'el (Israel) shall be glad* (Psalm 14:7). The turning of the captivity is the regathering of the scattered houses, NEVER replacement — the same covenant people brought home.
+--   ★ THE PRAYER FOR THE FULL INGATHERING (THREAD 2): *Turn again our captivity, O Yahuah (LORD), as the streams in the south* (126:4) — a return already begun (v.1) yet prayed for in full, the dry southland streams flooding at the rains. Jeremiah's *when I shall bring again their captivity* (31:23) and *I will bring them from the north country, and gather them from the coasts of the earth* (31:8) are the answer prayed for: the whole house gathered.
+--   ★★ THE HARVEST OF TEARS (THREAD 3) — weave FORWARD (Red Line #5): *They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him* (126:5-6). The Tanakh lateral is the regathering itself — *They shall come with weeping, and with supplications will I lead them* (Jeremiah 31:9), *I will turn their mourning into joy* (Jeremiah 31:13). The NT fills the seed-that-dies: *Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24); the reaping that does not faint: *whatsoever a man soweth, that shall he also reap* (Galatians 6:7) and *in due season we shall reap, if we faint not* (Galatians 6:9); and the plenteous harvest of the scattered sheep gathered: *The harvest truly is plenteous, but the labourers are few* (Matthew 9:37).
+--   VERSES WITH NO ADD: none — every verse of this six-verse psalm is anchored in one of the three threads (v.1-3 THREAD 1, v.4 THREAD 2, v.5-6 THREAD 3). EXTRAS: none warranted anywhere (weighed and declined).
+
+CREATE TEMP VIEW _s302_ps126_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): When Yahuah turned again the captivity of Zion (the two-house regathering, Torah-promise + prophet)
+    ('canon','psalms',126,1,'canon','deuteronomy',30,3,'free',
+      E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). The psalm''s wonder — *When Yahuah (LORD) turned again the captivity of Zion, we were like them that dream* (Psalm 126:1) — is the Torah-promise come to pass: the very word *turn thy captivity... gather thee from all the nations* spoken by Moses. The turning of Zion''s captivity is the covenant-regathering of the scattered, the same people brought home, never a new people put in their place.'),
+    ('canon','psalms',126,1,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The turned captivity of *When Yahuah (LORD) turned again the captivity of Zion* (Psalm 126:1) is the prophet''s promise: the One who scattered Yashar''el is the One who gathers him. The two houses driven out are the two houses brought back as a shepherd gathers the flock — the regathering, not replacement.'),
+    ('canon','psalms',126,1,'canon','psalms',14,7,'free',
+      E'*Oh that the salvation of Yashar''el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 14:7). The same turning sings in another psalm: *when Yahuah (LORD) bringeth back the captivity of his people* matches *When Yahuah turned again the captivity of Zion* (Psalm 126:1) almost word for word, and the gladness of *whereof we are glad* (Psalm 126:3) is the *Jacob shall rejoice, and Yashar''el shall be glad* of the regathered people.'),
+
+    -- THREAD 2 (★): Turn again our captivity, as the streams in the south (the prayer for the full ingathering)
+    ('canon','psalms',126,4,'canon','jeremiah',31,23,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); As yet they shall use this speech in the land of Yahudah (Judah) and in the cities thereof, when I shall bring again their captivity; Yahuah (LORD) bless thee, O habitation of justice, and mountain of holiness* (Jeremiah 31:23). The psalm prays *Turn again our captivity, O Yahuah (LORD), as the streams in the south* (Psalm 126:4); the prophet answers with the day Yahuah *shall bring again their captivity* and Yahudah dwells again in the mountain of holiness — the return already begun yet prayed for in full.'),
+    ('canon','psalms',126,4,'canon','jeremiah',31,8,'free',
+      E'*Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither* (Jeremiah 31:8). The flood prayed for in *Turn again our captivity, O Yahuah (LORD), as the streams in the south* (Psalm 126:4) — the dry channels filling at the rains — is the great company brought *from the north country* and *gathered from the coasts of the earth*: the whole scattered house streaming home.'),
+
+    -- THREAD 3 (★★): They that sow in tears shall reap in joy (the seed that dies; the harvest of the gathered houses)
+    ('canon','psalms',126,5,'canon','jeremiah',31,13,'free',
+      E'*Then shall the virgin rejoice in the dance, both young men and old together: for I will turn their mourning into joy, and will comfort them, and make them rejoice from their sorrow* (Jeremiah 31:13). The psalm''s figure — *They that sow in tears shall reap in joy* (Psalm 126:5) — is the prophet''s promise to the regathered: *I will turn their mourning into joy*. The tears sown in the scattering are reaped as the dance of the returned; the weeping and the joy are the two ends of the one ingathering.'),
+    ('canon','psalms',126,6,'canon','jeremiah',31,9,'free',
+      E'*They shall come with weeping, and with supplications will I lead them: I will cause them to walk by the rivers of waters in a straight way, wherein they shall not stumble: for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). *He that goeth forth and weepeth, bearing precious seed* (Psalm 126:6) is the regathered who *come with weeping*; the going-forth in tears and the coming-again with sheaves is the scattered house led home by the rivers of waters, Ephraim the firstborn gathered.'),
+    ('canon','psalms',126,6,'canon','jeremiah',31,16,'free',
+      E'*Thus saith Yahuah (LORD); Refrain thy voice from weeping, and thine eyes from tears: for thy work shall be rewarded, saith Yahuah (LORD); and they shall come again from the land of the enemy* (Jeremiah 31:16). The harvest-reward of *shall doubtless come again with rejoicing, bringing his sheaves with him* (Psalm 126:6) is the prophet''s word to Rachel weeping: *thy work shall be rewarded... they shall come again from the land of the enemy*. The tears are not the end; the coming-again with the sheaves is the reward of the sowing in weeping.'),
+    ('canon','psalms',126,6,'canon','john',12,24,'free',
+      E'*Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24). The psalm''s precious seed sown in tears — *He that goeth forth and weepeth, bearing precious seed* (Psalm 126:6) — is opened by Yahusha (Jesus) into the seed that must die to bear: the corn of wheat that *fall into the ground and die... bringeth forth much fruit*. The sowing in tears and the reaping in joy is the death and the harvest, the precious seed buried that the sheaves may come.'),
+    ('canon','psalms',126,5,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The law of the harvest the psalm sings — *They that sow in tears shall reap in joy* (Psalm 126:5) — is the law Sha''ul (Paul) names: *whatsoever a man soweth, that shall he also reap*. What is gone forth in weeping is reaped in its kind; the sowing and the reaping are bound, the tears the seed of the joy.'),
+    ('canon','psalms',126,6,'canon','galatians',6,9,'free',
+      E'*And let us not be weary in well doing: for in due season we shall reap, if we faint not* (Galatians 6:9). The doubtless return of *shall doubtless come again with rejoicing, bringing his sheaves with him* (Psalm 126:6) is the *in due season we shall reap, if we faint not*: the one who goes forth weeping is not to faint, for the sheaves are sure; the harvest of joy doubtless follows the sowing in tears.'),
+    ('canon','psalms',126,5,'canon','matthew',9,37,'free',
+      E'*Then saith he unto his disciples, The harvest truly is plenteous, but the labourers are few* (Matthew 9:37). The reaping in joy of *They that sow in tears shall reap in joy* (Psalm 126:5) is the plenteous harvest Yahusha (Jesus) sees over the scattered multitudes — *as sheep having no shepherd* (Matthew 9:36): the same gathering, the tears of the scattered turned to the harvest the labourers are sent to reap.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-126-when-yahuah-turned-again-the-captivity-of-zion',
+       E'When Yahuah turned again the captivity of Zion — the two-house regathering',
+       E'The Song of Ascents opens with the wonder of a people brought home: *When Yahuah (LORD) turned again the captivity of Zion, we were like them that dream. Then was our mouth filled with laughter, and our tongue with singing: then said they among the heathen, Yahuah (LORD) hath done great things for them. Yahuah (LORD) hath done great things for us; whereof we are glad* (Psalm 126:1-3). The return felt like waking from a dream, too good to be believed; the heathen themselves confess the *great things* Yahuah has done. This is the very Torah-promise of Moses come to pass: *That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3) — the same word, *turn thy captivity... gather thee from all the nations*. And it is the great regathering the prophet proclaims: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The One who scattered the two houses is the One who gathers them; the turning of Zion''s captivity is the covenant people brought home, never a new people put in their place. Another psalm sings the same hope almost word for word: *when Yahuah (LORD) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 14:7) — the gladness of *whereof we are glad* (126:3) is the joy of the regathered house of Jacob and Yashar''el.',
+       sv.verse_id, ev.verse_id, 'free', 25125
+  FROM _s302_ps126_lookup sv, _s302_ps126_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=126 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-126-turn-again-our-captivity-as-the-streams-in-the-south',
+       E'Turn again our captivity, as the streams in the south — the full ingathering prayed for',
+       E'A return already begun (126:1) is still prayed for in full: *Turn again our captivity, O Yahuah (LORD), as the streams in the south* (Psalm 126:4). The dry channels of the Negev, parched all summer, flood in a single night when the rains come — so the psalmist prays the whole scattered house may yet come streaming home. The prophet Jeremiah answers the prayer with the day of full restoration: *As yet they shall use this speech in the land of Yahudah (Judah) and in the cities thereof, when I shall bring again their captivity; Yahuah (LORD) bless thee, O habitation of justice, and mountain of holiness* (Jeremiah 31:23) — Yahuah *shall bring again their captivity* and Yahudah dwells once more in the mountain of holiness. And the scope of the gathering is the whole house, none left out: *Behold, I will bring them from the north country, and gather them from the coasts of the earth, and with them the blind and the lame, the woman with child and her that travaileth with child together: a great company shall return thither* (Jeremiah 31:8). The streams in the south are this great company — the blind and the lame, the laboring and the weak — gathered from the coasts of the earth and flooding back to Zion. The two-house regathering is not yet complete; the psalm prays it on, and the prophet swears it sure.',
+       sv.verse_id, ev.verse_id, 'free', 25128
+  FROM _s302_ps126_lookup sv, _s302_ps126_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=126 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-126-they-that-sow-in-tears-shall-reap-in-joy',
+       E'They that sow in tears shall reap in joy — the seed that dies and the harvest of the gathered',
+       E'The psalm crowns the regathering with a harvest-figure that runs through the whole library: *They that sow in tears shall reap in joy. He that goeth forth and weepeth, bearing precious seed, shall doubtless come again with rejoicing, bringing his sheaves with him* (Psalm 126:5-6). The sower carries the precious seed out weeping — the planting is loss, the burial of grain — but the reaping is sure, the sheaves doubtless gathered in joy. First the prophet gives the figure its home in the regathering itself: the scattered *shall come with weeping, and with supplications will I lead them... for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9); the tears are turned at the homecoming — *I will turn their mourning into joy, and will comfort them, and make them rejoice from their sorrow* (Jeremiah 31:13); and to Rachel weeping the word is *Refrain thy voice from weeping, and thine eyes from tears: for thy work shall be rewarded... and they shall come again from the land of the enemy* (Jeremiah 31:16). Then Yahusha (Jesus) opens the precious-seed-sown-in-tears into the seed that must die to bear: *Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24) — the seed buried in weeping is the seed that brings forth the sheaves. Sha''ul (Paul) names the law of it: *whatsoever a man soweth, that shall he also reap* (Galatians 6:7), and *let us not be weary in well doing: for in due season we shall reap, if we faint not* (Galatians 6:9) — the one who goes forth weeping is not to faint, for the harvest is sure. And the harvest is the gathering of the scattered themselves: looking on the multitudes *as sheep having no shepherd*, Yahusha says *The harvest truly is plenteous, but the labourers are few* (Matthew 9:37). The tears sown in the scattering are reaped as the joy of the ingathering; the precious seed that dies comes again, bringing its sheaves with it.',
+       sv.verse_id, ev.verse_id, 'free', 25131
+  FROM _s302_ps126_lookup sv, _s302_ps126_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=126 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah Elohayka (the LORD thy God) will turn thy captivity... and will return and gather thee from all the nations* (Deuteronomy 30:3) — the Torah-promise behind *When Yahuah turned again the captivity of Zion* (126:1); the regathering of the scattered, not replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=1
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-when-yahuah-turned-again-the-captivity-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the turned captivity of 126:1 is the two houses gathered by the One who scattered them.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=1
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-when-yahuah-turned-again-the-captivity-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when Yahuah bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el shall be glad* (Psalm 14:7) — the same turning sung almost word for word; the gladness of *whereof we are glad* (126:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=1
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-when-yahuah-turned-again-the-captivity-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *when I shall bring again their captivity; Yahuah bless thee, O habitation of justice, and mountain of holiness* (Jeremiah 31:23) — the answer to the prayer *Turn again our captivity* (126:4); the day of full restoration.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=4
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-turn-again-our-captivity-as-the-streams-in-the-south'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will bring them from the north country, and gather them from the coasts of the earth... a great company shall return thither* (Jeremiah 31:8) — the streams in the south (126:4) flooding home: the whole house gathered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=4
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-turn-again-our-captivity-as-the-streams-in-the-south'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will turn their mourning into joy, and will comfort them, and make them rejoice from their sorrow* (Jeremiah 31:13) — the prophet''s home for *They that sow in tears shall reap in joy* (126:5); the tears of the scattering reaped as the dance of the returned.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=5
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *They shall come with weeping, and with supplications will I lead them... Ephraim is my firstborn* (Jeremiah 31:9) — *He that goeth forth and weepeth* (126:6) is the regathered who come with weeping, led home by the rivers of waters.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=6
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Refrain thy voice from weeping... thy work shall be rewarded... they shall come again from the land of the enemy* (Jeremiah 31:16) — the reward of *come again with rejoicing, bringing his sheaves* (126:6); Rachel''s tears are not the end.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=6
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Except a corn of wheat fall into the ground and die... if it die, it bringeth forth much fruit* (John 12:24) — the precious seed sown in tears (126:6) opened by Yahusha into the seed that must die to bear the sheaves.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=6
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — the law of the harvest the psalm sings in *They that sow in tears shall reap in joy* (126:5); the tears the seed of the joy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=5
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *in due season we shall reap, if we faint not* (Galatians 6:9) — the doubtless return of *shall doubtless come again with rejoicing* (126:6); the one who goes forth weeping is not to faint, the sheaves are sure.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=6
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *The harvest truly is plenteous, but the labourers are few* (Matthew 9:37) — the reaping in joy of 126:5 is the plenteous harvest over the scattered sheep without a shepherd; the same gathering, tears turned to harvest.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps126_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=126 AND sv.verse_number=5
+  JOIN _s302_ps126_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-126-they-that-sow-in-tears-shall-reap-in-joy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_147.sql (Psalm 147) -----
+-- Chapter: Psalm 147 — THE GATHERETH-THE-OUTCASTS HALLELUJAH. Yahuah builds up Jerusalem and
+-- gathers the outcasts of Yashar'el (v.2) — the two-house regathering of the scattered/divorced
+-- northern house; He heals the broken in heart (v.3); He telleth the number of the stars and
+-- calleth them all by their names, His understanding infinite (v.4-5); He sendeth forth His
+-- commandment upon earth, His word runneth very swiftly, He sendeth out His word and melteth the
+-- ice (v.15-18) — the creative/sustaining Word, weaving toward the Formed Son; and the KEYSTONE —
+-- He sheweth His word unto Jacob, His statutes and His judgments unto Yashar'el; He hath not dealt
+-- so with any nation (v.19-20) — the Torah given to Yashar'el alone as the covenant inheritance,
+-- the distinctive no other nation received, NOT abolished.
+-- Tag: ps147   Temp view: _s302_ps147_lookup
+-- Sort band: base 25650, step 3 -> threads at 25650, 25653, 25656, 25659 (4 threads)
+-- Source of EVERY row: 'canon','psalms',147,v
+--
+-- Psalm 147 coverage:
+--   v.1 (Praise ye Yahuah: for it is good to sing praises unto our Elohim)
+--        NT:     none warranted (general praise frame; carried by the thread anchors)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (opening doxology, held in prose)
+--   ★★ v.2-3 (Yahuah doth build up Jerusalem: he gathereth together the outcasts of Yashar'el; He healeth the broken in heart, and bindeth up their wounds)
+--        NT:     none warranted clean (Luke 4:18 "to heal the brokenhearted" weighed for v.3 but is outside the assigned target set — held in prose, not forced)
+--        Extras: none warranted distinct (the gathering-extras weight is the Baruch witness bound to THREAD 4's word-to-Jacob keystone)
+--        Tanakh: ★ Isaiah 56:8 (Adonai Yahuah which gathereth the outcasts of Yashar'el... Yet will I gather others to him); ★ Deuteronomy 30:3-4 (will return and gather thee from all the nations... from thence will Yahuah gather thee); ★★ Jeremiah 31:10 (He that scattered Yashar'el will gather him, and keep him, as a shepherd doth his flock); ★★ Ezekiel 37:21-22 (I will take the children of Yashar'el from among the heathen... and make them one nation... they shall be no more two nations) — THREAD 1 (the two-house regathering of the outcasts)
+--   ★ v.4-5 (He telleth the number of the stars; he calleth them all by their names. Great is our Lord, and of great power: his understanding is infinite)
+--        NT:     none warranted clean (the star-naming Creator forward-weave is carried by the Word/Logos at THREAD 3)
+--        Extras: ★ Baruch 3:34 (The stars shined in their watches, and rejoiced: when he calls them, they say, Here we be) — THREAD 2 [edition 'apocrypha' + slug 'baruch-with-the-letter-of-jeremiah']
+--        Tanakh: ★★ Isaiah 40:26 (behold who hath created these things... he calleth them all by names by the greatness of his might... not one faileth); ★ Jeremiah 31:35 (which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night) — THREAD 2 (the Creator who numbers and names the host)
+--   v.6-14 (Yahuah lifteth up the meek; covereth the heaven with clouds, prepareth rain; giveth the beast his food; delighteth not in the strength of the horse; taketh pleasure in them that fear him; strengthened the bars of thy gates; maketh peace in thy borders, filleth thee with the finest of the wheat)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (providence/Zion-blessing material; the borders-peace + finest-of-wheat sit inside THREAD 1's restored-Jerusalem frame, the rain/providence inside THREAD 3's sent-word; no standalone forced member)
+--   ★ v.15-18 (He sendeth forth his commandment upon earth: his word runneth very swiftly... He sendeth out his word, and melteth them: he causeth his wind to blow, and the waters flow)
+--        NT:     ★★ John 1:1 (In the beginning was the Word, and the Word was with Elohim, and the Word was Elohim); ★ John 1:3 (All things were made by him; and without him was not any thing made) — THREAD 3 (the sent, creative Word — the Formed Son, the expressed Word from the Formless)
+--        Extras: none warranted distinct (Baruch 3:33 "He that sends forth light, and it goes" weighed but the Isaiah/John witnesses carry the sent-word more precisely; not forced)
+--        Tanakh: ★★ Isaiah 55:11 (So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please) — THREAD 3 (the swift, effectual word that does His will)
+--   ★★ v.19-20 (He sheweth his word unto Jacob, his statutes and his judgments unto Yashar'el. He hath not dealt so with any nation: and as for his judgments, they have not known them) — THE TORAH-KEYSTONE
+--        NT:     ★ Romans 3:1-2 (What advantage then hath the Yahudi?... chiefly, because that unto them were committed the oracles of Elohim); ★ Romans 9:4 (Israelites; to whom pertaineth... the giving of the law... and the promises) — THREAD 4 (the NT AFFIRMS the Torah as the covenant distinctive given to Yashar'el)
+--        Extras: ★★ Baruch 3:36 (He has found out all the way of knowledge, and has given it to Jacob his servant, and to Yashar'el his beloved); ★★ Baruch 4:1 (This is the book of the commandments of Yahuah, and the law that endureth for ever); ★ Sirach 24:23 (All these things are the book of the covenant of the most high Yahuah, even the law which Moses commanded for an heritage to the congregations of Jacob) — THREAD 4 [Baruch edition 'apocrypha'+slug 'baruch-with-the-letter-of-jeremiah'; Sirach edition 'apocrypha'+slug 'ecclesiasticus']
+--        Tanakh: ★★ Deuteronomy 4:7-8 (what nation is there so great... that hath statutes and judgments so righteous as all this law) — THREAD 4 (the covenant distinctive: no other nation received the Torah)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-147-gathereth-the-outcasts-of-yasharel — Tanakh (Isaiah 56:8, Deuteronomy 30:3, Deuteronomy 30:4, Jeremiah 31:10, Ezekiel 37:21, Ezekiel 37:22) [free] (★★ the two-house regathering of the scattered/outcast house)
+--   2. psalm-147-he-telleth-the-number-of-the-stars-he-calleth-them-all-by-their-names — Tanakh (Isaiah 40:26, Jeremiah 31:35) + Extras (Baruch 3:34) [extras] (★ the Creator who numbers and names the host)
+--   3. psalm-147-he-sendeth-out-his-word-and-melteth-them — NT (John 1:1, John 1:3) + Tanakh (Isaiah 55:11) [free] (★ the sent, creative Word — weaving toward the Formed Son)
+--   4. psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments — NT (Romans 3:2, Romans 9:4) + Tanakh (Deuteronomy 4:8) + Extras (Baruch 3:36, Baruch 4:1, Sirach 24:23) [extras] (★★ THE TORAH-KEYSTONE — the statutes and judgments given to Yashar'el alone, the covenant inheritance, never abolished)
+--
+-- Framing notes:
+--   ★★ THE OUTCASTS GATHERED (THREAD 1): *Yahuah (LORD) doth build up Jerusalem: he gathereth together the outcasts of Yashar'el (Israel)* (147:2). Read through Red Line #2 (the two houses): the *outcasts* are the scattered/divorced northern house, gathered home. Isaiah uses the identical phrase — *Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar'el* (Isaiah 56:8); Moses promised it from the start — *will return and gather thee from all the nations* (Deuteronomy 30:3); Jeremiah names the Scatterer as the Gatherer — *He that scattered Yashar'el (Israel) will gather him* (Jeremiah 31:10); and Ezekiel makes the two one — *they shall be no more two nations* (Ezekiel 37:22). NOT replacement — the SAME people regathered. *He healeth the broken in heart* (147:3) is the binding-up of the scattered.
+--   ★ THE STARS NAMED (THREAD 2): *He telleth the number of the stars; he calleth them all by their names* (147:4). Isaiah says it almost word-for-word — *he calleth them all by names by the greatness of his might... not one faileth* (Isaiah 40:26); Jeremiah binds it to the appointed-times ordinances — *the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35, Red Line #3); and the restored witness lets the stars answer the roll-call — *when he calls them, they say, Here we be* (Baruch 3:34).
+--   ★ THE SENT WORD (THREAD 3): *He sendeth forth his commandment upon earth: his word runneth very swiftly... He sendeth out his word, and melteth them* (147:15,18). The word that goes out and accomplishes is Isaiah's effectual word — *So shall my word be that goeth forth out of my mouth: it shall not return unto me void* (Isaiah 55:11) — and weaves FORWARD to the Formed Son, the expressed Word drawn from the Formless (Red Line #4): *In the beginning was the Word... and the Word was Elohim (God)* (John 1:1), *All things were made by him* (John 1:3). The sent, creative, sustaining Word of the psalm is the Word who would take on flesh.
+--   ★★ THE TORAH-KEYSTONE (THREAD 4): *He sheweth his word unto Jacob, his statutes and his judgments unto Yashar'el (Israel). He hath not dealt so with any nation* (147:19-20). This is Red Line #6 sung outright: the Torah is the covenant inheritance, the distinctive Yashar'el alone received. Moses said the same — *what nation is there so great, that hath statutes and judgments so righteous as all this law* (Deuteronomy 4:8); and the NT AFFIRMS it, never abolishes it — *unto them were committed the oracles of Elohim (God)* (Romans 3:2), *to whom pertaineth... the giving of the law... and the promises* (Romans 9:4). The restored witnesses name it plainly: Wisdom *has given it to Jacob his servant, and to Yashar'el his beloved* (Baruch 3:36), *This is the book of the commandments of Yahuah (God), and the law that endureth for ever* (Baruch 4:1), *the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). The statutes given to Jacob are not a curse cancelled but the heritage that endures.
+--   VERSES WITH NO ADD: v.1 (opening doxology) and vv.6-14 (providence + Zion-blessing) sit inside the thread anchor spans and prose — the borders-peace/finest-of-wheat in THREAD 1's restored-Jerusalem frame, the rain/providence in THREAD 3's sent-word — with no standalone forced member. Luke 4:18 (heal the brokenhearted) for v.3 and Baruch 3:33 (sends forth light) for v.15 weighed and recorded "none warranted" — the chosen witnesses carry the weave more precisely; not forced.
+
+CREATE TEMP VIEW _s302_ps147_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): He gathereth together the outcasts of Yashar'el (the two-house regathering)
+    ('canon','psalms',147,2,'canon','isaiah',56,8,'free',
+      E'*Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8). Isaiah speaks the psalm''s very phrase — *he gathereth together the outcasts of Yashar''el (Israel)* (Psalm 147:2). These are the scattered northern house, the divorced and driven-out, gathered home; and *Yet will I gather others to him* widens the ingathering. The Builder of Jerusalem is the Gatherer of the outcasts — never a new people in their place, but the same Yashar''el regathered.'),
+    ('canon','psalms',147,2,'canon','deuteronomy',30,3,'free',
+      E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). Moses promised the regathering from the beginning: the One who scattered will *return and gather thee from all the nations*. The psalm sings the promise fulfilled — *he gathereth together the outcasts of Yashar''el (Israel)* (Psalm 147:2) — the covenant compassion that brings the driven-out home.'),
+    ('canon','psalms',147,2,'canon','deuteronomy',30,4,'free',
+      E'*If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee* (Deuteronomy 30:4). No outcast is beyond the reach of the Gatherer — *from thence will he fetch thee*. The *outcasts of Yashar''el (Israel)* whom Yahuah gathers (Psalm 147:2) are these very driven-out ones, fetched from the outmost parts of heaven; the scattering never undoes the covenant, it only sets the stage for the ingathering.'),
+    ('canon','psalms',147,2,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). Jeremiah names the heart of it: *He that scattered Yashar''el (Israel) will gather him* — the Scatterer is Himself the Gatherer and the Shepherd. The psalm''s *he gathereth together the outcasts of Yashar''el (Israel)* (Psalm 147:2) is this shepherd-gathering; the wounds of the scattering are the wounds the next line binds — *He healeth the broken in heart, and bindeth up their wounds* (Psalm 147:3).'),
+    ('canon','psalms',147,2,'canon','ezekiel',37,21,'free',
+      E'*Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). The two-stick prophecy spells out the gathering of *the outcasts of Yashar''el (Israel)* (Psalm 147:2): taken *from among the heathen, whither they be gone*, gathered *on every side*, and brought home. The outcasts of the psalm are the dry bones and the scattered house Ezekiel sees gathered into one.'),
+    ('canon','psalms',147,2,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). Here is the end of the gathering: the two houses made *one nation*, *no more two nations*. The *outcasts of Yashar''el (Israel)* gathered in Psalm 147:2 are the northern stick rejoined to the southern — the divided kingdom healed into one, the two sticks become one in His hand.'),
+
+    -- THREAD 2 (★): He telleth the number of the stars; he calleth them all by their names
+    ('canon','psalms',147,4,'canon','isaiah',40,26,'free',
+      E'*Lift up your eyes on high, and behold who hath created these things, that bringeth out their host by number: he calleth them all by names by the greatness of his might, for that he is strong in power; not one faileth* (Isaiah 40:26). Isaiah echoes the psalm almost word for word — *He telleth the number of the stars; he calleth them all by their names* (Psalm 147:4). The One who *bringeth out their host by number* and *calleth them all by names* is the One *of great power: his understanding is infinite* (Psalm 147:5); the naming of every star is the proof of a might to which *not one faileth*.'),
+    ('canon','psalms',147,4,'canon','jeremiah',31,35,'free',
+      E'*Thus saith Yahuah (LORD), which giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night, which divideth the sea when the waves thereof roar; Yahuah Tseva''ot (LORD of hosts) is his name* (Jeremiah 31:35). The Maker who *telleth the number of the stars* and *calleth them all by their names* (Psalm 147:4) is the One who set *the ordinances of the moon and of the stars* — the appointed-times host. And in Jeremiah this very ordering of the stars is the surety of His covenant with Yashar''el: as fixed as the stars He named, so sure is His keeping of His people.'),
+    ('canon','psalms',147,4,'apocrypha','baruch-with-the-letter-of-jeremiah',3,34,'extras',
+      E'*The stars shined in their watches, and rejoiced: when he calls them, they say, Here we be; and so with cheerfulness they shewed light to him that made them* (Baruch 3:34). The restored witness lets the stars answer the roll-call of *He telleth the number of the stars; he calleth them all by their names* (Psalm 147:4): when He calls them, *they say, Here we be*. The naming is no cold inventory but a Maker calling His host by name, and the host answering with joy.'),
+
+    -- THREAD 3 (★): He sendeth out his word, and melteth them (the sent, creative Word)
+    ('canon','psalms',147,15,'canon','isaiah',55,11,'free',
+      E'*So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). The psalm''s *He sendeth forth his commandment upon earth: his word runneth very swiftly* (Psalm 147:15) is Isaiah''s effectual word: *it shall not return unto me void, but it shall accomplish that which I please*. The word He sends out — that melts the ice and stirs the wind (Psalm 147:18) — never fails of its errand; it runs swiftly and does His will.'),
+    ('canon','psalms',147,15,'canon','john',1,1,'free',
+      E'*In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1). The word Yahuah *sendeth forth* upon the earth, that *runneth very swiftly* (Psalm 147:15), is the Word that was *in the beginning... with Elohim*. Read through the Formed and the Formless: the sent, expressed Word drawn from the formless Source is the Formed Son — the One by whom the commandment goes out and the seasons turn.'),
+    ('canon','psalms',147,18,'canon','john',1,3,'free',
+      E'*All things were made by him; and without him was not any thing made that was made* (John 1:3). The word that *melteth them* and stirs the wind so *the waters flow* (Psalm 147:18) is the agent of all making — *All things were made by him*. The same Word that commands the snow and the ice and the thaw is the Word by whom *without him was not any thing made*: creation sustained by the very Word who created it.'),
+
+    -- THREAD 4 (★★): He sheweth his word unto Jacob, his statutes and his judgments unto Yashar'el (THE TORAH-KEYSTONE)
+    ('canon','psalms',147,19,'canon','deuteronomy',4,8,'free',
+      E'*And what nation is there so great, that hath statutes and judgments so righteous as all this law, which I set before you this day?* (Deuteronomy 4:8). Moses asks the question the psalm answers: *He sheweth his word unto Jacob, his statutes and his judgments unto Yashar''el (Israel). He hath not dealt so with any nation* (Psalm 147:19-20). No other nation has *statutes and judgments so righteous as all this law*; the Torah is the covenant distinctive Yashar''el alone received — the inheritance, never the curse.'),
+    ('canon','psalms',147,20,'canon','romans',3,2,'free',
+      E'*Much every way: chiefly, because that unto them were committed the oracles of Elohim (God)* (Romans 3:2). Sha''ul (Paul) names the very advantage Psalm 147 sings: to Yashar''el *were committed the oracles of Elohim*, as *He sheweth his word unto Jacob... He hath not dealt so with any nation* (Psalm 147:19-20). The New Testament does not erase this distinction; it AFFIRMS it — the word entrusted to Jacob is the great advantage, the oracles given to no other nation.'),
+    ('canon','psalms',147,20,'canon','romans',9,4,'free',
+      E'*Who are Israelites; to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of Elohim (God), and the promises* (Romans 9:4). Sha''ul (Paul) lists *the giving of the law* among Yashar''el''s inheritance — exactly *his statutes and his judgments unto Yashar''el (Israel)* (Psalm 147:19). The Torah is not a defunct old covenant but a standing privilege *to whom pertaineth*; the giving of the law remains Yashar''el''s, named alongside the covenants and the promises.'),
+    ('canon','psalms',147,19,'apocrypha','baruch-with-the-letter-of-jeremiah',3,36,'extras',
+      E'*He has found out all the way of knowledge, and has given it to Jacob his servant, and to Yashar''el (Israel) his beloved* (Baruch 3:36). The restored witness speaks the psalm''s keystone almost verbatim — *He sheweth his word unto Jacob, his statutes and his judgments unto Yashar''el (Israel)* (Psalm 147:19). The way of knowledge, the Torah-wisdom, is *given to Jacob his servant, and to Yashar''el his beloved*: the same word, given to the same people, the covenant inheritance.'),
+    ('canon','psalms',147,19,'apocrypha','baruch-with-the-letter-of-jeremiah',4,1,'extras',
+      E'*This is the book of the commandments of Yahuah (God), and the law that endureth for ever: all they that keep it shall come to life; but such as leave it shall die* (Baruch 4:1). The restored witness names the word given to Jacob (Psalm 147:19) as *the law that endureth for ever* — not abolished, not a curse, but the book of the commandments whose keeping is life. *His statutes and his judgments unto Yashar''el (Israel)* (Psalm 147:19) are the enduring law, the heritage that gives life to those who keep it.'),
+    ('canon','psalms',147,19,'apocrypha','ecclesiasticus',24,23,'extras',
+      E'*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). Wisdom is named outright as the Torah, the heritage of Jacob — the same word *shewed unto Jacob, his statutes and his judgments unto Yashar''el (Israel)* (Psalm 147:19). The law Moses commanded is *an heritage to the congregations of Jacob*: the covenant inheritance no other nation received, Red Line #6 spoken plainly.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-147-gathereth-the-outcasts-of-yasharel',
+       E'He gathereth together the outcasts of Yashar''el — the two-house regathering',
+       E'*Yahuah (LORD) doth build up Jerusalem: he gathereth together the outcasts of Yashar''el (Israel). He healeth the broken in heart, and bindeth up their wounds* (Psalm 147:2-3). The building of Jerusalem and the gathering of the outcasts are one act of mercy. The *outcasts* are the scattered house — Yashar''el divorced and driven out among the nations (Hosea''s *Lo-Ammi*, "not my people"), the northern stick to be gathered home. Isaiah speaks the psalm''s exact phrase and widens it: *Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8). Moses promised it from the very beginning — *will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3), and no outcast is beyond reach: *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka gather thee* (Deuteronomy 30:4). Jeremiah names the heart of it: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the Scatterer is Himself the Gatherer and Shepherd, and the wounds He scattered are the wounds He binds (*He healeth the broken in heart*, Psalm 147:3). And Ezekiel spells out the end of the gathering: *I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side* (Ezekiel 37:21), until *they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). This is never replacement — never a new people gathered in their place — but the SAME Yashar''el, the two houses made one, the divided kingdom healed. The outcast gathered, the broken-hearted bound up, the city built: one mercy.',
+       sv.verse_id, ev.verse_id, 'free', 25650
+  FROM _s302_ps147_lookup sv, _s302_ps147_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=147 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-147-he-telleth-the-number-of-the-stars-he-calleth-them-all-by-their-names',
+       E'He telleth the number of the stars; he calleth them all by their names',
+       E'*He telleth the number of the stars; he calleth them all by their names. Great is our Lord, and of great power: his understanding is infinite* (Psalm 147:4-5). The same hand that gathers the scattered outcasts numbers and names the uncountable stars — the tenderness and the majesty are one. Isaiah says it almost word for word: *Lift up your eyes on high, and behold who hath created these things, that bringeth out their host by number: he calleth them all by names by the greatness of his might, for that he is strong in power; not one faileth* (Isaiah 40:26). The naming of every star is the proof of an *infinite* understanding to which *not one faileth*. Jeremiah binds the same starry host to the covenant: the Maker who *giveth the sun for a light by day, and the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35) — the appointed-times host — swears by that fixed ordering that Yashar''el shall never cease from being a nation before Him. And the restored witness lets the stars answer the roll-call: *The stars shined in their watches, and rejoiced: when he calls them, they say, Here we be; and so with cheerfulness they shewed light to him that made them* (Baruch 3:34). The numbering of the stars is no cold inventory — it is a Maker calling His host by name, and the host answering with joy. The God who keeps every star in its watch keeps every gathered outcast.',
+       sv.verse_id, ev.verse_id, 'extras', 25653
+  FROM _s302_ps147_lookup sv, _s302_ps147_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=147 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-147-he-sendeth-out-his-word-and-melteth-them',
+       E'He sendeth out his word, and melteth them — the sent, creative Word',
+       E'*He sendeth forth his commandment upon earth: his word runneth very swiftly... He sendeth out his word, and melteth them: he causeth his wind to blow, and the waters flow* (Psalm 147:15,18). The snow and the hoarfrost and the ice all obey a word that runs swift across the earth — Yahuah governs the seasons by His sent word. Isaiah names that word''s unfailing power: *So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please, and it shall prosper in the thing whereto I sent it* (Isaiah 55:11). The word He sends out never fails of its errand; it runs swiftly and does His will, melting the ice in its season. And the weave runs FORWARD to the Formed Son — the expressed Word drawn from the formless Source: *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1), *All things were made by him; and without him was not any thing made that was made* (John 1:3). The sent, creative, sustaining Word of the psalm — the Word that commands the snow and stirs the thaw — is the Word who made all things and would one day take on flesh. The same Word that turns the seasons is the Word by whom the seasons were made.',
+       sv.verse_id, ev.verse_id, 'free', 25656
+  FROM _s302_ps147_lookup sv, _s302_ps147_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=147 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments',
+       E'He sheweth his word unto Jacob — the statutes and judgments unto Yashar''el alone',
+       E'*He sheweth his word unto Jacob, his statutes and his judgments unto Yashar''el (Israel). He hath not dealt so with any nation: and as for his judgments, they have not known them. Praise ye Yahuah (LORD)* (Psalm 147:19-20). The psalm climbs from the stars He names and the snow His word commands to the highest gift of all: the Torah. The same word that runs swiftly over the earth (147:15) is the word *shewed unto Jacob* — and this word is given to no other nation. The *statutes and judgments* are the covenant distinctive, the inheritance Yashar''el alone received; *He hath not dealt so with any nation*. This is Red Line #6 sung outright: the Torah is the inheritance, never the curse. Moses asked the question the psalm answers: *what nation is there so great, that hath statutes and judgments so righteous as all this law, which I set before you this day?* (Deuteronomy 4:8). And the New Testament does not erase this — it AFFIRMS it. Sha''ul (Paul): the great advantage of Yashar''el is *that unto them were committed the oracles of Elohim (God)* (Romans 3:2); and among their standing privileges is *the giving of the law... and the promises* (Romans 9:4) — *to whom pertaineth*, present tense, never a defunct old covenant. The restored witnesses name it plainly: the way of knowledge *has given it to Jacob his servant, and to Yashar''el (Israel) his beloved* (Baruch 3:36); *This is the book of the commandments of Yahuah (God), and the law that endureth for ever* (Baruch 4:1); *the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). The word shewed to Jacob is the law that endures for ever, the heritage of the congregations — the covenant inheritance given to Yashar''el alone, and for that the psalm ends as it began: *Praise ye Yahuah*.',
+       sv.verse_id, ev.verse_id, 'extras', 25659
+  FROM _s302_ps147_lookup sv, _s302_ps147_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=147 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel)... Yet will I gather others to him* (Isaiah 56:8) — Isaiah''s exact phrase for 147:2; the Gatherer of the scattered house, the ingathering widened.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-gathereth-the-outcasts-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3) — Moses'' founding promise of the regathering the psalm sings in 147:2.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-gathereth-the-outcasts-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee* (Deuteronomy 30:4) — no outcast of 147:2 is beyond the Gatherer''s reach.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-gathereth-the-outcasts-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the Scatterer is the Gatherer-Shepherd; the wounds scattered (147:3) are the wounds bound.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-gathereth-the-outcasts-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side* (Ezekiel 37:21) — the two-stick prophecy spells out the gathering of the outcasts of 147:2.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-gathereth-the-outcasts-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22) — the end of the gathering: the two houses made one, the outcasts of 147:2 rejoined.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=2
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-gathereth-the-outcasts-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he calleth them all by names by the greatness of his might... not one faileth* (Isaiah 40:26) — Isaiah''s near-verbatim of 147:4; the star-naming is the proof of the infinite understanding.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=4
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-telleth-the-number-of-the-stars-he-calleth-them-all-by-their-names'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the ordinances of the moon and of the stars for a light by night* (Jeremiah 31:35) — the star-host of 147:4 is the appointed-times ordering, the surety of His covenant with Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=4
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-telleth-the-number-of-the-stars-he-calleth-them-all-by-their-names'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The stars shined in their watches, and rejoiced: when he calls them, they say, Here we be* (Baruch 3:34) — the stars answer the roll-call of 147:4; the naming is a Maker calling His host by name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=4
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=3 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-telleth-the-number-of-the-stars-he-calleth-them-all-by-their-names'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*So shall my word be that goeth forth out of my mouth: it shall not return unto me void, but it shall accomplish that which I please* (Isaiah 55:11) — the swift, sent word of 147:15 that never fails of its errand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=15
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sendeth-out-his-word-and-melteth-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1) — the word *sent forth* of 147:15 weaves FORWARD to the Formed Son, the expressed Word from the Formless.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=15
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sendeth-out-his-word-and-melteth-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*All things were made by him; and without him was not any thing made that was made* (John 1:3) — the Word that melteth the ice (147:18) is the agent of all making; creation sustained by the Word who created it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=18
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sendeth-out-his-word-and-melteth-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *what nation is there so great, that hath statutes and judgments so righteous as all this law* (Deuteronomy 4:8) — Moses asks what 147:19-20 answers: no nation but Yashar''el received the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=19
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*chiefly, because that unto them were committed the oracles of Elohim (God)* (Romans 3:2) — Sha''ul AFFIRMS the advantage of 147:19-20: the word entrusted to Yashar''el, given to no other nation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=20
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *to whom pertaineth... the giving of the law... and the promises* (Romans 9:4) — the Torah of 147:19 is a STANDING privilege, present tense, never a defunct old covenant.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=20
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *He has found out all the way of knowledge, and has given it to Jacob his servant, and to Yashar''el (Israel) his beloved* (Baruch 3:36) — the restored witness''s near-verbatim of 147:19.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=19
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=3 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *This is the book of the commandments of Yahuah (God), and the law that endureth for ever* (Baruch 4:1) — the word shewed to Jacob (147:19) is the law that ENDURES, not abolished, life to those who keep it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=19
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23) — Wisdom named as the Torah, the heritage of Jacob; the inheritance of 147:19, Red Line #6 plainly.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps147_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=147 AND sv.verse_number=19
+  JOIN _s302_ps147_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-147-he-sheweth-his-word-unto-jacob-his-statutes-and-his-judgments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
