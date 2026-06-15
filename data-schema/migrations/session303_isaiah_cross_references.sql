@@ -18533,6 +18533,1280 @@ SELECT t.id, cr.id, 3, E'★ *from one new moon to another, and from one sabbath
  WHERE t.slug='isaiah-33-zion-the-city-of-our-solemnities'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_10.sql (Isaiah 10) -----
+-- Chapter: Isaiah 10 — THE ASSYRIAN ROD AND THE REMNANT THAT RETURNS. Yahuah wields the
+-- Assyrian as *the rod of mine anger* (10:5) against a covenant-breaking people — yet the rod
+-- *meaneth not so* (10:7) and overreaches, so the boasting axe is itself cut down (*Shall the axe
+-- boast itself against him that heweth therewith?* 10:15). And out of the burning a stump survives:
+-- *the remnant of Yashar'el (Israel)... shall stay upon Yahuah (LORD), the Holy One of Yashar'el
+-- (Israel), in truth* (10:20); *the remnant shall return, even the remnant of Jacob, unto El Gibbor
+-- (the mighty God)* (10:21) — the very El Gibbor named in 9:6. Paul lifts 10:22-23 by name in
+-- Romans 9:27-28: the two-house remnant preserved, never a cast-off people (Romans 11:1-5, the
+-- guard). And the dread rod itself is broken — *be not afraid of the Assyrian* (10:24); *the yoke
+-- shall be destroyed because of the anointing* (10:27) — *according to the slaughter of Midian at
+-- the rock of Oreb* (10:26), the Gideon deliverance of 9:4. Come and see: the nations are the rod
+-- in His hand, the remnant is the seed in the stump, and the yoke is broken by the Anointed.
+-- Tag: isa10   Temp view: _s303_isa10_lookup
+-- Sort band: base 26225, step 3 -> threads at 26225, 26228, 26231, 26234 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',10,v
+--
+-- Isaiah 10 coverage:
+--   v.1-4 (Woe unto them that decree unrighteous decrees... to turn aside the needy from judgment)
+--        NT:     none warranted (the covenant-lawsuit against oppression woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the woe-oracle that the Assyrian rod (v.5) is sent to execute
+--   ★ v.5-7 (O Assyrian, the rod of mine anger... Howbeit he meaneth not so... but it is in his
+--          heart to destroy)
+--        NT:     none warranted distinct (the instrument-overreach forward-weave carried in THREAD 2)
+--        Extras: none warranted
+--        Tanakh: ★ Habakkuk 1:6 (I raise up the Chaldeans... to possess the dwellingplaces that are
+--                not theirs) — THREAD 1 (the next raised rod), ★ Isaiah 37:36 (the angel of Yahuah
+--                smote... a hundred and fourscore and five thousand) — THREAD 1 (the rod falls)
+--   ★ v.12-15 (I will punish... the king of Assyria... Shall the axe boast itself against him that
+--          heweth therewith?)
+--        NT:     ★ Romans 9:20-21 (Shall the thing formed say to him that formed it... Hath not the
+--                potter power over the clay) — THREAD 2 (the instrument cannot exalt over the wielder)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 14:13-15 (I will ascend into heaven... yet thou shalt be brought down to
+--                hell), ★ Daniel 4:30-31,37 (Is not this great Babylon, that I have built... those
+--                that walk in pride he is able to abase) — THREAD 2 (the boasting instrument abased)
+--   ★★★ v.20-23 (the remnant of Yashar'el... shall stay upon Yahuah... The remnant shall return,
+--          even the remnant of Jacob, unto El Gibbor... a remnant of them shall return)
+--        NT:     ★★★ Romans 9:27 (Esaias also crieth concerning Yashar'el... a remnant shall be
+--                saved), ★★★ Romans 9:28 (For he will finish the work, and cut it short in
+--                righteousness), ★★ Romans 11:5 (a remnant according to the election of grace) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 9:6 (his name shall be called... El Gibbor (The mighty God)) — THREAD 3
+--                (the El Gibbor the remnant returns to is the Child born of 9:6)
+--   ★ v.24-27 (be not afraid of the Assyrian... according to the slaughter of Midian at the rock of
+--          Oreb... the yoke shall be destroyed because of the anointing)
+--        NT:     none warranted distinct (the deliverance forward-weave carried in THREAD 4 prose)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 9:4 (thou hast broken the yoke of his burden... as in the day of Midian),
+--                ★ Judges 7:25 (they slew Oreb upon the rock Oreb) — THREAD 4 (the Midian deliverance)
+--   v.28-34 (He is come to Aiath... Behold, Yahuah... shall lop the bough with terror)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — the marching Assyrian halted and the proud forest hewn down,
+--                the judgment-frame THREAD 4's deliverance answers
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-10-the-rod-of-mine-anger-the-assyrian-meaneth-not-so — Tanakh (Habakkuk 1, Isaiah 37) [free]
+--      (★ Yahuah wields the nations as His rod; the unwitting instrument that overreaches and falls)
+--   2. isaiah-10-shall-the-axe-boast-itself-against-him-that-heweth — NT (Romans 9) + Tanakh (Isaiah 14, Daniel 4) [free]
+--      (★ the boasting instrument cannot exalt over the One who wields it; the proud abased)
+--   3. isaiah-10-the-remnant-shall-return-unto-el-gibbor — NT (Romans 9, Romans 11) + Tanakh (Isaiah 9) [free]
+--      (★★★ THE KEYSTONE — Paul quotes 10:22-23; the two-house remnant returns to El Gibbor; Rom 11 guard)
+--   4. isaiah-10-be-not-afraid-of-the-assyrian-the-yoke-destroyed — Tanakh (Isaiah 9, Judges 7) [free]
+--      (★ the dread rod itself broken; the Midian deliverance; the yoke destroyed by the anointing)
+--
+-- Framing notes:
+--   ★ THE ROD OF MINE ANGER (THREAD 1): *O Assyrian, the rod of mine anger, and the staff in their
+--      hand is mine indignation* (10:5). Yahuah wields the nations as His instrument of covenant-
+--      lawsuit against *an hypocritical nation* (10:6) — yet *he meaneth not so, neither doth his
+--      heart think so; but it is in his heart to destroy and cut off nations not a few* (10:7). The
+--      rod does not know it is a rod. The same pattern is the next raised instrument: *for, lo, I
+--      raise up the Chaldeans, that bitter and hasty nation* (Habakkuk 1:6) — Yahuah's own raised
+--      scourge that then overreaches. And the Assyrian rod falls exactly where it overreached: *the
+--      angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and
+--      fourscore and five thousand* (Isaiah 37:36). The rod is wielded, then the rod is broken.
+--   ★ THE BOASTING AXE (THREAD 2): *Shall the axe boast itself against him that heweth therewith? or
+--      shall the saw magnify itself against him that shaketh it?* (10:15). The king of Assyria boasts
+--      *By the strength of my hand I have done it, and by my wisdom* (10:13) — so Yahuah will *punish
+--      the fruit of the stout heart of the king of Assyria* (10:12). Paul argues the very thing of the
+--      clay: *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed
+--      say to him that formed it, Why hast thou made me thus?* (Romans 9:20); *Hath not the potter
+--      power over the clay* (9:21). The instrument cannot exalt over the One who wields it. Babylon's
+--      taunt-proverb is the same pride struck down: *I will ascend into heaven, I will exalt my throne
+--      above the stars of Elohim (God)... Yet thou shalt be brought down to hell* (Isaiah 14:13-15);
+--      and Nebuchadnezzar learns it abased: *Is not this great Babylon, that I have built... by the
+--      might of my power* (Daniel 4:30) — until *those that walk in pride he is able to abase* (4:37).
+--   ★★★ THE REMNANT RETURNS (THREAD 3 — KEYSTONE): out of the burning a stump survives. *The remnant
+--      of Yashar'el (Israel), and such as are escaped of the house of Jacob... shall stay upon Yahuah
+--      (LORD), the Holy One of Yashar'el (Israel), in truth* (10:20); *the remnant shall return, even
+--      the remnant of Jacob, unto El Gibbor (the mighty God)* (10:21). The El Gibbor the remnant
+--      returns to is the Child of the throne-word just before: *his name shall be called Wonderful,
+--      Counsellor, El Gibbor (The mighty God)* (Isaiah 9:6) — the Formed Son who is Yahuah and has a
+--      Father. *For though thy people Yashar'el (Israel) be as the sand of the sea, yet a remnant of
+--      them shall return: the consumption decreed shall overflow with righteousness* (10:22). Paul
+--      lifts this by name: *Esaias also crieth concerning Yashar'el (Israel), Though the number of the
+--      children of Yashar'el (Israel) be as the sand of the sea, a remnant shall be saved: For he will
+--      finish the work, and cut it short in righteousness* (Romans 9:27-28) — word for word from
+--      10:22-23. This is the two-house remnant (the *house of Jacob*, Yahudah and Yashar'el both),
+--      never a cast-off people: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans
+--      11:1); *even so then at this present time also there is a remnant according to the election of
+--      grace* (Romans 11:5). The consumption is decreed, but it *overflows with righteousness* — the
+--      seed in the stump returns to the mighty El.
+--   ★ THE YOKE DESTROYED (THREAD 4): the dread rod itself is broken. *O my people that dwellest in
+--      Zion, be not afraid of the Assyrian: he shall smite thee with a rod... after the manner of
+--      Egypt* (10:24) — *for yet a very little while, and the indignation shall cease* (10:25). The
+--      deliverance is the old Midian deliverance: *Yahuah Tseva'ot (LORD of hosts) shall stir up a
+--      scourge for him according to the slaughter of Midian at the rock of Oreb* (10:26) — *they slew
+--      Oreb upon the rock Oreb* (Judges 7:25), where three hundred men with trumpets and pitchers saw
+--      Yahuah set every man's sword against his fellow. And *the yoke shall be destroyed because of the
+--      anointing* (10:27) — the same broken yoke the Child-light brings: *for thou hast broken the yoke
+--      of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian*
+--      (Isaiah 9:4). The rod that smites is itself broken by the Anointed.
+
+CREATE TEMP VIEW _s303_isa10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The rod of mine anger — the Assyrian meaneth not so (the rod wielded, then broken)
+    ('canon','isaiah',10,5,'canon','habakkuk',1,6,'free',
+      E'*For, lo, I raise up the Chaldeans, that bitter and hasty nation, which shall march through the breadth of the land, to possess the dwellingplaces that are not theirs* (Habakkuk 1:6). The Assyrian who is *the rod of mine anger, and the staff in their hand is mine indignation* (Isaiah 10:5) is the same kind of raised instrument as the Chaldean: Yahuah Himself *raise[s] up* the bitter nation as His scourge. The nations are the rod in His hand — wielded for the covenant-lawsuit, never the author of their own power.'),
+    ('canon','isaiah',10,7,'canon','isaiah',37,36,'free',
+      E'*Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (Isaiah 37:36). The Assyrian who *meaneth not so... but it is in his heart to destroy and cut off nations not a few* (Isaiah 10:7) overreaches the charge he was given — so the rod itself is broken in a night. The instrument that thought the conquest its own is felled by the Angel of Yahuah, the Formed One who bears the Name.'),
+
+    -- THREAD 2 (★): Shall the axe boast itself — the instrument cannot exalt over the wielder (the proud abased)
+    ('canon','isaiah',10,15,'canon','romans',9,20,'free',
+      E'*Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). The taunt *Shall the axe boast itself against him that heweth therewith? or shall the saw magnify itself against him that shaketh it?* (Isaiah 10:15) is Paul''s very argument: the thing formed cannot reply against the One who formed it. The Assyrian axe, like the clay, has no power except as it is wielded — its boast is absurd.'),
+    ('canon','isaiah',10,15,'canon','romans',9,21,'free',
+      E'*Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). The rod that would *shake itself against them that lift it up* (Isaiah 10:15) is the clay that would dictate to the potter. Yahuah holds the same power over the nations He raises: He shapes the vessel of wrath and the vessel of mercy, and the instrument has no standing to magnify itself against His hand.'),
+    ('canon','isaiah',10,13,'canon','isaiah',14,13,'free',
+      E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north* (Isaiah 14:13). The Assyrian''s boast *By the strength of my hand I have done it, and by my wisdom; for I am prudent* (Isaiah 10:13) is the same self-exalting heart Isaiah arraigns in Babylon''s king — the pride that climbs, *yet thou shalt be brought down to hell, to the sides of the pit* (14:15). The boasting instrument is cut down to the ground.'),
+    ('canon','isaiah',10,12,'canon','daniel',4,30,'free',
+      E'*The king spake, and said, Is not this great Babylon, that I have built for the house of the kingdom by the might of my power, and for the honour of my majesty?* (Daniel 4:30). When Yahuah *punish[es] the fruit of the stout heart of the king of Assyria, and the glory of his high looks* (Isaiah 10:12), it is the same judgment that struck Nebuchadnezzar mid-boast: *those that walk in pride he is able to abase* (Daniel 4:37). The high looks of the proud instrument are humbled by the El Elyon who rules in the kingdom of men.'),
+
+    -- THREAD 3 (★★★ KEYSTONE): The remnant shall return unto El Gibbor — Romans 9:27-28 quotes it; the two-house remnant
+    ('canon','isaiah',10,22,'canon','romans',9,27,'free',
+      E'*Esaias also crieth concerning Yashar''el (Israel), Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved* (Romans 9:27). Paul lifts Isaiah 10:22 by name: *For though thy people Yashar''el (Israel) be as the sand of the sea, yet a remnant of them shall return*. The sand-of-the-sea multitude is the Abrahamic promise; the remnant that returns out of it is the two-house people preserved through the consumption — not a cast-off nation, but a saved remnant.'),
+    ('canon','isaiah',10,23,'canon','romans',9,28,'free',
+      E'*For he will finish the work, and cut it short in righteousness: because a short work will Yahuah (Lord) make upon the earth* (Romans 9:28). This is Isaiah 10:22-23 word for word — *the consumption decreed shall overflow with righteousness. For Adonai Yahuah (the Lord GOD) of hosts shall make a consumption, even determined, in the midst of all the land*. The decree is severe but it *overflow[s] with righteousness*: the judgment is finished, cut short, and a righteous remnant stands on the other side of it.'),
+    ('canon','isaiah',10,21,'canon','isaiah',9,6,'free',
+      E'*For unto us a child is born, unto us a son is given: and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace)* (Isaiah 9:6). The El Gibbor the remnant returns to — *the remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (Isaiah 10:21) — is the very Child of the throne-word: the Formed Son who is *El Gibbor (the mighty God)*, who bears the government and has a Father (the Avi-ad named beside Him). The remnant''s return is a return to the Mighty El who took flesh.'),
+    ('canon','isaiah',10,22,'canon','romans',11,5,'free',
+      E'*Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The remnant of Isaiah 10:22 — *yet a remnant of them shall return* — is the remnant Paul confirms still stands, and he guards it against every cast-off reading: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1). The consumption is decreed, but the people are not abandoned; a remnant according to the election of grace is preserved, the seed in the stump.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 cross_references (★): Be not afraid of the Assyrian — the Midian deliverance, the yoke destroyed
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','isaiah',10,26,'canon','judges',7,25,'free',
+      E'*And they took two princes of the Midianites, Oreb and Zeeb; and they slew Oreb upon the rock Oreb, and Zeeb they slew at the winepress of Zeeb* (Judges 7:25). When Yahuah promises to *stir up a scourge for him according to the slaughter of Midian at the rock of Oreb* (Isaiah 10:26), He reaches back to Gideon''s three hundred — the deliverance where He set every man''s sword against his fellow. The Assyrian rod will fall as Midian fell: by Yahuah''s hand, not by the strength of men.'),
+    ('canon','isaiah',10,27,'canon','isaiah',9,4,'free',
+      E'*For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian* (Isaiah 9:4). The promise that *his yoke [shall depart] from off thy neck, and the yoke shall be destroyed because of the anointing* (Isaiah 10:27) is the same broken yoke the Child-light brings — broken *as in the day of Midian*, by the staff snapped and the oppressor''s rod undone. The yoke that smites is destroyed by the Anointed One.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-10-the-rod-of-mine-anger-the-assyrian-meaneth-not-so',
+       E'The rod of mine anger — the Assyrian meaneth not so',
+       E'Yahuah names the conqueror as His own instrument: *O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation* (Isaiah 10:5). He sends the Assyrian *against an hypocritical nation... to take the spoil, and to take the prey, and to tread them down like the mire of the streets* (10:6) — a covenant-lawsuit on conduct, never a casual cruelty. Yet the rod does not know it is a rod: *Howbeit he meaneth not so, neither doth his heart think so; but it is in his heart to destroy and cut off nations not a few* (10:7). The instrument overreaches its charge. This is Yahuah''s steady way with the nations: *For, lo, I raise up the Chaldeans, that bitter and hasty nation, which shall march through the breadth of the land, to possess the dwellingplaces that are not theirs* (Habakkuk 1:6) — the next raised scourge, also wielded, also overreaching. And the overreach is answered: the Assyrian who meant to destroy is broken where he stood — *Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (Isaiah 37:36). The rod is wielded, then the rod is broken. The nations are never sovereign; they are the staff in His hand, and He sets it down when His work is done.',
+       sv.verse_id, ev.verse_id, 'free', 26225
+  FROM _s303_isa10_lookup sv, _s303_isa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=10 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-10-shall-the-axe-boast-itself-against-him-that-heweth',
+       E'Shall the axe boast itself — the instrument cannot exalt over the wielder',
+       E'The Assyrian forgets whose hand holds him and boasts: *By the strength of my hand I have done it, and by my wisdom; for I am prudent: and I have removed the bounds of the people, and have robbed their treasures* (Isaiah 10:13). So Yahuah will *punish the fruit of the stout heart of the king of Assyria, and the glory of his high looks* (10:12). Then comes the taunt that names the absurdity: *Shall the axe boast itself against him that heweth therewith? or shall the saw magnify itself against him that shaketh it? as if the rod should shake itself against them that lift it up, or as if the staff should lift up itself, as if it were no wood* (10:15). Paul argues the very thing of the clay: *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus? Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:20-21). The instrument has no standing to exalt itself over the One who wields it. The same self-exalting pride is arraigned in Babylon''s king: *I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)... Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:13,15); and Nebuchadnezzar learns it abased mid-boast — *Is not this great Babylon, that I have built... by the might of my power?* (Daniel 4:30), until *those that walk in pride he is able to abase* (4:37). The axe that boasts is broken; the high looks are humbled.',
+       sv.verse_id, ev.verse_id, 'free', 26228
+  FROM _s303_isa10_lookup sv, _s303_isa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=10 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-10-the-remnant-shall-return-unto-el-gibbor',
+       E'The remnant shall return unto El Gibbor — the two-house remnant Paul quotes',
+       E'Out of the burning a stump survives, and it turns home: *And it shall come to pass in that day, that the remnant of Yashar''el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar''el (Israel), in truth* (Isaiah 10:20). They no longer lean on the rod that smote them; they lean on the One who wielded it. *The remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (10:21) — and the El Gibbor they return to is the very Child of the throne-word just before: *his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace)* (Isaiah 9:6). The remnant returns to the Formed Son, the Mighty El who bears the government and has a Father (the Avi-ad named beside Him) — Yahuah who took flesh, not a co-equal second person. *For though thy people Yashar''el (Israel) be as the sand of the sea, yet a remnant of them shall return: the consumption decreed shall overflow with righteousness* (10:22). Paul lifts this by name: *Esaias also crieth concerning Yashar''el (Israel), Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved: For he will finish the work, and cut it short in righteousness* (Romans 9:27-28) — word for word from 10:22-23. This is the two-house remnant — the *house of Jacob*, Yahudah and Yashar''el both — preserved through the consumption, never a cast-off people: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The decree is determined, but it *overflow[s] with righteousness*. Come and see: the seed in the stump returns to the Mighty El, and the promise as the sand of the sea is kept in the remnant that comes home.',
+       sv.verse_id, ev.verse_id, 'free', 26231
+  FROM _s303_isa10_lookup sv, _s303_isa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=10 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-10-be-not-afraid-of-the-assyrian-the-yoke-destroyed',
+       E'Be not afraid of the Assyrian — the yoke destroyed as in the day of Midian',
+       E'After the remnant promise comes the comfort that breaks the fear: *Therefore thus saith Adonai Yahuah (the Lord GOD) of hosts, O my people that dwellest in Zion, be not afraid of the Assyrian: he shall smite thee with a rod, and shall lift up his staff against thee, after the manner of Egypt. For yet a very little while, and the indignation shall cease, and mine anger in their destruction* (Isaiah 10:24-25). The rod that smites has a short reach, and then the rod itself is broken. Yahuah names how: *And Yahuah Tseva''ot (LORD of hosts) shall stir up a scourge for him according to the slaughter of Midian at the rock of Oreb: and as his rod was upon the sea, so shall he lift it up after the manner of Egypt* (10:26) — reaching back to Gideon''s three hundred, where *they slew Oreb upon the rock Oreb, and Zeeb they slew at the winepress of Zeeb* (Judges 7:25), a victory won not by the strength of men but by Yahuah setting every man''s sword against his fellow. And the yoke is lifted clean off: *And it shall come to pass in that day, that his burden shall be taken away from off thy shoulder, and his yoke from off thy neck, and the yoke shall be destroyed because of the anointing* (10:27) — the same broken yoke the Child-light brings: *For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian* (Isaiah 9:4). The dread instrument is itself shattered; the yoke is destroyed *because of the anointing*, by the Anointed One. Be not afraid: the rod is in His hand, and His anger ceases in a very little while.',
+       sv.verse_id, ev.verse_id, 'free', 26234
+  FROM _s303_isa10_lookup sv, _s303_isa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=10 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For, lo, I raise up the Chaldeans, that bitter and hasty nation... to possess the dwellingplaces that are not theirs* (Habakkuk 1:6) — the same raised scourge as *the rod of mine anger* (Isaiah 10:5); Yahuah wields the nations.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=5
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-the-rod-of-mine-anger-the-assyrian-meaneth-not-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand* (Isaiah 37:36) — the rod that *meaneth not so* (Isaiah 10:7) overreaches and is broken in a night.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=7
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-the-rod-of-mine-anger-the-assyrian-meaneth-not-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20) — Paul''s very argument is the axe of Isaiah 10:15; the instrument cannot reply against the One who wields it.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=15
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-shall-the-axe-boast-itself-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Hath not the potter power over the clay... to make one vessel unto honour, and another unto dishonour?* (Romans 9:21) — the rod that would *shake itself against them that lift it up* (Isaiah 10:15) is the clay dictating to the potter.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=15
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-shall-the-axe-boast-itself-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)* (Isaiah 14:13) — the Assyrian''s *By the strength of my hand I have done it* (Isaiah 10:13) is the same self-exalting heart, cut down to the pit.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-shall-the-axe-boast-itself-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Is not this great Babylon, that I have built... by the might of my power?* (Daniel 4:30) — the *stout heart of the king of Assyria* (Isaiah 10:12) abased as Nebuchadnezzar was; *those that walk in pride he is able to abase* (4:37).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-shall-the-axe-boast-itself-against-him-that-heweth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Esaias also crieth concerning Yashar''el (Israel)... a remnant shall be saved* (Romans 9:27) — Paul quotes Isaiah 10:22 by name; the sand-of-the-sea promise kept in the remnant that returns.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=22
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-the-remnant-shall-return-unto-el-gibbor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *For he will finish the work, and cut it short in righteousness* (Romans 9:28) — Isaiah 10:22-23 word for word; the *consumption decreed* that *overflow[s] with righteousness*, a righteous remnant on the far side.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=23
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-the-remnant-shall-return-unto-el-gibbor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God)* (Isaiah 9:6) — the El Gibbor the remnant returns to (Isaiah 10:21) is the Formed Son, the Mighty El who has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=21
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-the-remnant-shall-return-unto-el-gibbor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5) — the remnant of Isaiah 10:22 still stands; never a cast-off people, *Elohim (God) forbid* (Romans 11:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=22
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-the-remnant-shall-return-unto-el-gibbor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they slew Oreb upon the rock Oreb, and Zeeb they slew at the winepress of Zeeb* (Judges 7:25) — the *slaughter of Midian at the rock of Oreb* (Isaiah 10:26); the rod falls as Midian fell, by Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=26
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-be-not-afraid-of-the-assyrian-the-yoke-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *thou hast broken the yoke of his burden... the rod of his oppressor, as in the day of Midian* (Isaiah 9:4) — the same broken yoke as *the yoke shall be destroyed because of the anointing* (Isaiah 10:27); shattered by the Anointed.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s303_isa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-10-be-not-afraid-of-the-assyrian-the-yoke-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_27.sql (Isaiah 27) -----
+-- Chapter: Isaiah 27 — "In that day" — the day of Yahuah's deliverance after the lawsuit of ch.24-26.
+-- The chapter opens with the SEED-WAR climax (27:1, leviathan/serpent/dragon slain), turns to the
+-- RESTORED vineyard that Yahuah Himself keeps (27:2-5, the deliberate reversal of the wasted vineyard
+-- of Isaiah 5), promises Jacob to take root and Yashar'el to fill the world with fruit (27:6) with the
+-- iniquity purged and the idols broken (27:9), and ends with the GREAT TRUMPET that gathers the
+-- scattered of BOTH houses one by one to worship in the holy mount (27:12-13) — one ingathering at the
+-- last trump, never replacement, the outcasts of Assyria and Egypt brought home.
+-- Tag: isa27   Temp view: _s303_isa27_lookup
+-- Sort band: base 26650, step 3 -> threads at 26650, 26653, 26656, 26659 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',27,v
+--
+-- Isaiah 27 coverage:
+--   ★ v.1 (Yahuah with his sore and great and strong sword shall punish leviathan the piercing serpent,
+--          even leviathan that crooked serpent; and he shall slay the dragon that is in the sea)
+--        NT:     ★ Revelation 12:9 (that old serpent, called the Devil), ★ Revelation 20:2 (he laid hold
+--                on the dragon... and bound him a thousand years) — THREAD 1
+--        Extras: none warranted (the serpent-war is carried canon-to-canon; no clean extras add forced)
+--        Tanakh: ★★ Genesis 3:15 (it shall bruise thy head), ★ Isaiah 51:9 (hath cut Rahab, and wounded
+--                the dragon — lateral) — THREAD 1
+--   v.2-5 (A vineyard of red wine. I Yahuah do keep it; I will water it every moment: lest any hurt it,
+--          I will keep it night and day)
+--        NT:     ★ John 15:1 (I am the true vine, and my Father is the husbandman — lateral) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 5:1-2/5-7 (the vineyard given to waste — the deliberate REVERSAL), ★ Psalm 80:8
+--                (a vine out of Egypt) — THREAD 2
+--   v.6 (He shall cause them that come of Jacob to take root: Yashar'el shall blossom and bud, and fill
+--          the face of the world with fruit) + v.9 (the iniquity of Jacob purged... the stones of the
+--          altar as chalkstones... the groves and images shall not stand up)
+--        NT:     none warranted distinct (the fruit-bearing root is woven into the vineyard thread's
+--                forward weave via John 15; held in prose)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 80:9 (didst cause it to take deep root, and it filled the land) — THREAD 3;
+--                idol-purging woven into THREAD 3 prose
+--   ★★ v.12-13 (ye shall be gathered one by one, O ye children of Yashar'el. And... the great trumpet
+--          shall be blown, and they shall come which were ready to perish in the land of Assyria, and the
+--          outcasts in the land of Egypt, and shall worship Yahuah in the holy mount at Jerusalem)
+--        NT:     ★★ Matthew 24:31 (a great sound of a trumpet... gather together his elect from the four
+--                winds), ★ 1 Corinthians 15:52 (at the last trump... the dead shall be raised), ★ 1
+--                Thessalonians 4:16 (the trump of Elohim... the dead in Messiah shall rise first) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 11:12 (assemble the outcasts of Yashar'el, and gather together the dispersed of
+--                Yahudah), ★ Leviticus 23:24 (a memorial of blowing of trumpets) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-27-he-shall-slay-the-dragon-that-is-in-the-sea — NT (Revelation 12, 20) + Tanakh (Genesis 3,
+--      Isaiah 51) [free] (★ the seed-war climax; the serpent's head bruised, the dragon bound and slain)
+--   2. isaiah-27-a-vineyard-of-red-wine-i-yahuah-do-keep-it — NT (John 15) + Tanakh (Isaiah 5, Psalm 80)
+--      [free] (the restored vineyard Yahuah keeps — the reversal of the wasted vineyard of Isaiah 5)
+--   3. isaiah-27-jacob-shall-take-root-and-fill-the-world-with-fruit — Tanakh (Psalm 80) [free]
+--      (two-house fruitfulness; Jacob rooted, Yashar'el blossoming, the iniquity purged and idols broken)
+--   4. isaiah-27-the-great-trumpet-gathered-one-by-one — NT (Matthew 24, 1 Corinthians 15, 1
+--      Thessalonians 4) + Tanakh (Isaiah 11, Leviticus 23) [free] (★★ the great trumpet = the two-house
+--      ingathering at the last trump; both houses brought home, NOT replacement)
+--
+-- Framing notes:
+--   ★ THE SEED-WAR (THREAD 1): *In that day Yahuah (LORD) with his sore and great and strong sword shall
+--      punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the
+--      dragon that is in the sea* (27:1). This is the climax of the enmity declared at the gate of Eden:
+--      *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise
+--      thy head* (Genesis 3:15). The Revelation names the serpent plainly — *that old serpent, called the
+--      Devil, and Satan* (Revelation 12:9) — and shows him bound and sentenced — *he laid hold on the
+--      dragon, that old serpent... and bound him a thousand years* (Revelation 20:2). Isaiah himself sang
+--      it earlier of the arm of Yahuah: *Art thou not it that hath cut Rahab, and wounded the dragon?*
+--      (51:9). One war, one slain serpent, head bruised, dragon bound and destroyed.
+--   THE VINEYARD KEPT (THREAD 2): *In that day sing ye unto her, A vineyard of red wine. I Yahuah (LORD)
+--      do keep it; I will water it every moment: lest any hurt it, I will keep it night and day* (27:2-3).
+--      This is the deliberate REVERSAL of Isaiah 5, where the same vineyard — *the house of Yashar'el
+--      (Israel)* (5:7) — was given to waste: *I will take away the hedge thereof... I will lay it waste*
+--      (5:5-6). The vine brought *out of Egypt* (Psalm 80:8) and broken down is now kept night and day by
+--      Yahuah Himself. The forward weave is the true vine: *I am the true vine, and my Father is the
+--      husbandman* (John 15:1) — the Formed Son the keeper, the Formless Father the husbandman.
+--   JACOB TAKES ROOT (THREAD 3): *He shall cause them that come of Jacob to take root: Yashar'el (Israel)
+--      shall blossom and bud, and fill the face of the world with fruit* (27:6). The kept vineyard becomes
+--      a fruitful people — the same deep-rooted vine of *thou... didst cause it to take deep root, and it
+--      filled the land* (Psalm 80:9). And the fruit comes with cleansing: *By this therefore shall the
+--      iniquity of Jacob be purged... the groves and images shall not stand up* (27:9) — the idols broken,
+--      the altar-stones ground to chalk. Two-house fruitfulness, the covenant people rooted and bearing.
+--   ★★ THE GREAT TRUMPET (THREAD 4): *ye shall be gathered one by one, O ye children of Yashar'el (Israel).
+--      And it shall come to pass in that day, that the great trumpet shall be blown, and they shall come
+--      which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall
+--      worship Yahuah (LORD) in the holy mount at Jerusalem* (27:12-13). The great trumpet is the
+--      two-house ingathering — the scattered of BOTH houses, Assyria (the exiled north) and Egypt,
+--      gathered home, the same two houses Isaiah names: *assemble the outcasts of Yashar'el (Israel), and
+--      gather together the dispersed of Yahudah (Judah)* (11:12). The NT carries the one trumpet forward:
+--      *he shall send his angels with a great sound of a trumpet, and they shall gather together his elect
+--      from the four winds* (Matthew 24:31); *at the last trump: for the trumpet shall sound, and the dead
+--      shall be raised* (1 Corinthians 15:52); *with the trump of Elohim (God): and the dead in Messiah
+--      (Christ) shall rise first* (1 Thessalonians 4:16). ONE ingathering at the last trump — the Trumpets
+--      memorial (*a memorial of blowing of trumpets*, Leviticus 23:24) fulfilled. NOT a severed secret
+--      rapture, NOT replacement — the outcasts of both houses brought home.
+--   VERSES WITH NO SEPARATE ADD: v.4-5 (fury is not in me / make peace — woven into THREAD 2's keeping),
+--      v.7-8 (measured chastening, not the slaughter of the oppressor — the lawsuit moderated, held in
+--      prose), v.9 (idol-purging — woven into THREAD 3), v.10-11 (the defenced city desolate — the
+--      judgment side of the lawsuit, recorded, not separately threaded). All weighed, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): He shall slay the dragon — the seed-war climax
+    ('canon','isaiah',27,1,'canon','genesis',3,15,'free',
+      E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The sword of *In that day Yahuah (LORD)... shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea* (Isaiah 27:1) is the verdict on the very enemy of Eden — the serpent whose head was promised to be bruised. The seed-war declared at the gate runs to this slaying of the dragon.'),
+    ('canon','isaiah',27,1,'canon','revelation',12,9,'free',
+      E'*And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him* (Revelation 12:9). The Revelation names the *piercing serpent... that crooked serpent... the dragon that is in the sea* of Isaiah 27:1: it is *that old serpent, called the Devil, and Satan*. The same dragon Yahuah''s sword is drawn against is cast down.'),
+    ('canon','isaiah',27,1,'canon','revelation',20,2,'free',
+      E'*And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:2). The dragon Yahuah''s *sore and great and strong sword* slays (Isaiah 27:1) is the dragon bound and sentenced — *that old serpent... bound him a thousand years* — then cast into the lake of fire (20:10). The slaying of the dragon in the sea is the end of the serpent-war.'),
+    ('canon','isaiah',27,1,'canon','isaiah',51,9,'free',
+      E'*Awake, awake, put on strength, O arm of Yahuah (LORD)... Art thou not it that hath cut Rahab, and wounded the dragon?* (Isaiah 51:9). Isaiah himself sang earlier of the arm that smites the dragon: the same hand that *hath cut Rahab, and wounded the dragon* draws *his sore and great and strong sword* to *slay the dragon that is in the sea* (Isaiah 27:1). One arm, one dragon wounded and slain.'),
+
+    -- THREAD 2: A vineyard of red wine — I Yahuah do keep it (the restored vineyard, reversal of Isaiah 5)
+    ('canon','isaiah',27,3,'canon','isaiah',5,7,'free',
+      E'*For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant: and he looked for judgment, but behold oppression* (Isaiah 5:7). The vineyard Yahuah now keeps — *I Yahuah (LORD) do keep it; I will water it every moment* (27:3) — is the very vineyard once named *the house of Yashar''el (Israel)*. Isaiah 27 is the deliberate reversal of Isaiah 5: there the hedge was taken away (5:5), here it is watered night and day.'),
+    ('canon','isaiah',27,2,'canon','isaiah',5,1,'free',
+      E'*Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill* (Isaiah 5:1). The new song — *In that day sing ye unto her, A vineyard of red wine* (27:2) — answers the first vineyard-song, but reversed: the vineyard once *brought forth wild grapes* and was laid waste (5:2,5-6); now it yields *red wine* and is kept. The same beloved''s vineyard, restored.'),
+    ('canon','isaiah',27,3,'canon','psalms',80,8,'free',
+      E'*Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8). The vineyard Yahuah keeps night and day (Isaiah 27:3) is the vine of the Psalm — *a vine out of Egypt*, planted by His own hand, whose hedges were broken down (80:12) and which now He returns to keep. The kept vineyard is the covenant people replanted.'),
+    ('canon','isaiah',27,3,'canon','john',15,1,'free',
+      E'*I am the true vine, and my Father is the husbandman* (John 15:1). The vineyard Yahuah keeps — *I Yahuah (LORD) do keep it; I will water it every moment: lest any hurt it, I will keep it night and day* (27:3) — finds its forward weave in the true vine: the Formed Son the vine, the Formless Father the husbandman who keeps it. The branch bears fruit only as it abides (15:4-5).'),
+
+    -- THREAD 3: Jacob shall take root and fill the world with fruit (two-house fruitfulness)
+    ('canon','isaiah',27,6,'canon','psalms',80,9,'free',
+      E'*Thou preparedst room before it, and didst cause it to take deep root, and it filled the land* (Psalm 80:9). The promise *He shall cause them that come of Jacob to take root: Yashar''el (Israel) shall blossom and bud, and fill the face of the world with fruit* (27:6) is the vine of the Psalm come to its purpose — *didst cause it to take deep root, and it filled the land*. The kept vineyard becomes a rooted, fruit-bearing, two-house people.'),
+
+    -- THREAD 4 (★★): The great trumpet — gathered one by one (the two-house ingathering)
+    ('canon','isaiah',27,13,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The great trumpet that gathers *they... which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt* (27:13) is the two-house ingathering Isaiah named: the *outcasts of Yashar''el (Israel)* and the *dispersed of Yahudah (Judah)*. Both houses, gathered one by one (27:12).'),
+    ('canon','isaiah',27,13,'canon','matthew',24,31,'free',
+      E'*And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other* (Matthew 24:31). The *great trumpet* that gathers the scattered to *worship Yahuah (LORD) in the holy mount at Jerusalem* (27:13) is the same trumpet of the Son of Adam''s coming — *a great sound of a trumpet... gather together his elect from the four winds*. One ingathering, one great trumpet.'),
+    ('canon','isaiah',27,13,'canon','1-corinthians',15,52,'free',
+      E'*In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52). The *great trumpet* of Isaiah 27:13, that brings home *they... which were ready to perish*, is the *last trump* — *the trumpet shall sound, and the dead shall be raised*. The ingathering of the scattered and the raising of the dead are one sounding.'),
+    ('canon','isaiah',27,13,'canon','1-thessalonians',4,16,'free',
+      E'*For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16). The *great trumpet* of Isaiah 27:13 is *the trump of Elohim (God)* at which *the dead in Messiah (Christ) shall rise first*. The same single trumpet gathers the living outcasts home and raises the sleeping dead — not a severed secret rapture but one ingathering.'),
+    ('canon','isaiah',27,13,'canon','leviticus',23,24,'free',
+      E'*Speak unto the children of Yashar''el (Israel), saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). The *great trumpet* of Isaiah 27:13 fills the appointed time itself — the Feast of Trumpets, *a memorial of blowing of trumpets*. The blast that gathers the scattered of both houses to the holy mount is the prophetic body of which the Trumpets memorial is the shadow.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-27-he-shall-slay-the-dragon-that-is-in-the-sea',
+       E'He shall slay the dragon that is in the sea — the seed-war comes to its end',
+       E'The day of Yahuah opens with the slaying of the ancient enemy: *In that day Yahuah (LORD) with his sore and great and strong sword shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea* (Isaiah 27:1). This is the climax of the enmity declared at the gate of Eden: *And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The serpent whose head was promised to be bruised is the serpent the sword now slays. The Revelation names him without a veil — *And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world* (Revelation 12:9) — and shows him bound and sentenced — *And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:2), then cast into the lake of fire. Isaiah himself had already sung of the arm that does it: *Awake, awake, put on strength, O arm of Yahuah (LORD)... Art thou not it that hath cut Rahab, and wounded the dragon?* (Isaiah 51:9). One war, one slain serpent — the head bruised at Eden, the dragon bound and destroyed in that day. Come and see the whole canon read its own ending.',
+       sv.verse_id, ev.verse_id, 'free', 26650
+  FROM _s303_isa27_lookup sv, _s303_isa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=27 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-27-a-vineyard-of-red-wine-i-yahuah-do-keep-it',
+       E'A vineyard of red wine — I Yahuah do keep it, the wasted vineyard restored',
+       E'In that day the vineyard-song is sung again, but reversed: *In that day sing ye unto her, A vineyard of red wine. I Yahuah (LORD) do keep it; I will water it every moment: lest any hurt it, I will keep it night and day* (Isaiah 27:2-3). This is the deliberate undoing of the first vineyard-song. There Yahuah sang of a vineyard that brought forth wild grapes and was given to waste — *Now will I sing to my wellbeloved a song of my beloved touching his vineyard* (Isaiah 5:1); *I will take away the hedge thereof... and break down the wall thereof* (5:5) — and named it plainly: *For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant* (5:7). The hedge once taken away is now a keeping night and day. It is the vine the Psalm remembers: *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8) — broken down, then kept again. And the forward weave is the true vine: *I am the true vine, and my Father is the husbandman* (John 15:1) — the Formed Son the vine, the Formless Father the husbandman who waters it every moment. The same beloved''s vineyard, no longer wasted but watered, no longer given up but kept.',
+       sv.verse_id, ev.verse_id, 'free', 26653
+  FROM _s303_isa27_lookup sv, _s303_isa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=27 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-27-jacob-shall-take-root-and-fill-the-world-with-fruit',
+       E'Jacob shall take root — Yashar''el shall fill the world with fruit',
+       E'The kept vineyard becomes a fruitful people: *He shall cause them that come of Jacob to take root: Yashar''el (Israel) shall blossom and bud, and fill the face of the world with fruit* (Isaiah 27:6). This is the vine of Egypt come to its purpose — *Thou preparedst room before it, and didst cause it to take deep root, and it filled the land* (Psalm 80:9). And the fruit comes only with cleansing: *By this therefore shall the iniquity of Jacob be purged; and this is all the fruit to take away his sin; when he maketh all the stones of the altar as chalkstones that are beaten in sunder, the groves and images shall not stand up* (27:9). The idols ground to chalk, the groves brought down — the rooted people purged of the very sin that laid the first vineyard waste. This is two-house fruitfulness: Jacob rooted, Yashar''el blossoming and budding, the covenant people filling the face of the world with fruit. Not a vine replaced by another, but the same vine made deep-rooted and clean. Come and see the root that bears.',
+       sv.verse_id, ev.verse_id, 'free', 26656
+  FROM _s303_isa27_lookup sv, _s303_isa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=27 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-27-the-great-trumpet-gathered-one-by-one',
+       E'The great trumpet shall be blown — gathered one by one, both houses home',
+       E'The chapter ends with the homecoming: *And it shall come to pass in that day, that Yahuah (LORD) shall beat off from the channel of the river unto the stream of Egypt, and ye shall be gathered one by one, O ye children of Yashar''el (Israel). And it shall come to pass in that day, that the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall worship Yahuah (LORD) in the holy mount at Jerusalem* (Isaiah 27:12-13). The great trumpet is the two-house ingathering — the scattered of BOTH houses, from Assyria (where the divorced north was exiled) and from Egypt, gathered home one by one. It is the very gathering Isaiah named earlier: *and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The whole library carries this one trumpet forward: *And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other* (Matthew 24:31); *In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52); *with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16). And the appointed time itself is its shadow: *a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). ONE ingathering at the last trump — not a secret rapture severed from Yashar''el, not a people replaced, but the outcasts of both houses brought home to worship in the holy mount.',
+       sv.verse_id, ev.verse_id, 'free', 26659
+  FROM _s303_isa27_lookup sv, _s303_isa27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=27 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15) — the serpent whose head was promised to be bruised at Eden is the dragon Yahuah''s sword now slays (Isaiah 27:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-he-shall-slay-the-dragon-that-is-in-the-sea'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *that old serpent, called the Devil, and Satan, which deceiveth the whole world* (Revelation 12:9) — the Revelation names the *crooked serpent... the dragon that is in the sea* (Isaiah 27:1) and shows him cast down.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-he-shall-slay-the-dragon-that-is-in-the-sea'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he laid hold on the dragon, that old serpent... and bound him a thousand years* (Revelation 20:2) — the dragon the sword slays (Isaiah 27:1) is the dragon bound, then cast into the lake of fire.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-he-shall-slay-the-dragon-that-is-in-the-sea'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Art thou not it that hath cut Rahab, and wounded the dragon?* (Isaiah 51:9) — Isaiah''s own earlier song of the arm of Yahuah that wounds the dragon, the same hand that slays it here (27:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=1
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-he-shall-slay-the-dragon-that-is-in-the-sea'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isaiah 5:7) — the vineyard Yahuah now keeps night and day (27:3) is the one once given to waste; ch.27 is the reversal of ch.5.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=3
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-a-vineyard-of-red-wine-i-yahuah-do-keep-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Now will I sing to my wellbeloved a song of my beloved touching his vineyard* (Isaiah 5:1) — the first vineyard-song; the new song *A vineyard of red wine* (27:2) answers it reversed.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-a-vineyard-of-red-wine-i-yahuah-do-keep-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou hast brought a vine out of Egypt... and planted it* (Psalm 80:8) — the kept vineyard (27:3) is the vine of Egypt, planted by Yahuah''s own hand and now kept again.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=3
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-a-vineyard-of-red-wine-i-yahuah-do-keep-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I am the true vine, and my Father is the husbandman* (John 15:1) — the forward weave of the kept vineyard (27:3): the Formed Son the vine, the Formless Father the husbandman.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=3
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-a-vineyard-of-red-wine-i-yahuah-do-keep-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *didst cause it to take deep root, and it filled the land* (Psalm 80:9) — the vine come to its purpose: *Jacob to take root... Yashar''el (Israel) shall... fill the face of the world with fruit* (Isaiah 27:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=6
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-jacob-shall-take-root-and-fill-the-world-with-fruit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12) — the great trumpet (27:13) gathers BOTH houses, the two-house ingathering Isaiah named.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-the-great-trumpet-gathered-one-by-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *a great sound of a trumpet... gather together his elect from the four winds* (Matthew 24:31) — the great trumpet of Isaiah 27:13 carried forward to the Son of Adam''s gathering; one ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-the-great-trumpet-gathered-one-by-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible* (1 Corinthians 15:52) — the great trumpet (27:13) is the last trump; the gathering and the raising are one sounding.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-the-great-trumpet-gathered-one-by-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16) — the great trumpet (27:13) is the trump of Elohim; one ingathering, not a severed secret rapture.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-the-great-trumpet-gathered-one-by-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24) — the Feast of Trumpets, the appointed-time shadow of which the great trumpet (27:13) is the prophetic body.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=27 AND sv.verse_number=13
+  JOIN _s303_isa27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-27-the-great-trumpet-gathered-one-by-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_36.sql (Isaiah 36) -----
+-- Chapter: Isaiah 36 — the SENNACHERIB / RABSHAKEH narrative. In Hezekiah's fourteenth year
+-- *Sennacherib king of Assyria came up against all the defenced cities of Yahudah (Judah), and took
+-- them* (36:1), and the Rabshakeh is sent to Jerusalem to break the people's trust before the wall.
+-- His speech is a three-fold assault: (1) trust not in Yahuah's covenant deliverer but lean on Egypt
+-- — *Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go
+-- into his hand, and pierce it* (36:6), the very flesh-arm Isaiah had already cried woe over (ch30, ch31);
+-- (2) the open blasphemy — *Hath any of the gods of the nations delivered his land out of the hand of
+-- the king of Assyria?... that Yahuah (LORD) should deliver Jerusalem out of my hand?* (36:18-20),
+-- equating the living El with the carved no-gods of Hamath and Sepharvaim; (3) and the silence of the
+-- faithful — *they held their peace, and answered him not a word* (36:21). The blasphemy is ANSWERED in
+-- ch37 (the angel of Yahuah smites the camp); this chapter sets the reviler's charge that heaven will
+-- repay. Conduct-and-judgment throughout: the reviler is the system, never a people.
+-- Tag: isa36   Temp view: _s303_isa36_lookup
+-- Sort band: base 26875, step 3 -> threads at 26875, 26878, 26881 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',36,v
+--
+-- Isaiah 36 coverage:
+--   v.1-3 (Sennacherib... took the defenced cities; Rabshakeh sent to the conduit of the upper pool)
+--        NT:     none warranted (historical setting; the parallel narrative is 2 Kings 18, woven in prose)
+--        Extras: none warranted
+--        Tanakh: 2 Kings 18:13,17 the same event — woven in the prose of THREAD 1, not forced as a row
+--   v.4-7 (What confidence is this wherein thou trustest?... Lo, thou trustest in the staff of this
+--          broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it)
+--        NT:     none warranted (the trust-not-in-flesh forward-weave carried in prose; no single NT
+--                verse fills the bruised-reed-of-Egypt better than Isaiah's own woes)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 30:2 (walk to go down into Egypt... to trust in the shadow of Egypt),
+--                Isaiah 30:3 (the trust in the shadow of Egypt your confusion), ★ Isaiah 31:1 (Woe to
+--                them that go down to Egypt for help... but they look not unto the Holy One of
+--                Yashar'el), ★ Isaiah 31:3 (the Egyptians are men, and not Elohim) — THREAD 1 (SELF-LINK)
+--   v.8-9 (give pledges... put thy trust on Egypt for chariots and for horsemen) — folded into THREAD 1
+--        (the Egypt-trust taunt; the same broken reed)
+--   v.10 (Am I now come up without Yahuah against this land?... Yahuah said unto me, Go up against this
+--          land, and destroy it) — the false claim of divine commission
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: the mocker's presumption of Yahuah's word — woven into THREAD 2's blasphemy prose
+--                (the reviler who claims the Name he reviles)
+--   ★ v.13-20 (Let not Hezekiah make you trust in Yahuah... Hath any of the gods of the nations
+--          delivered his land out of the hand of the king of Assyria?... that Yahuah should deliver
+--          Jerusalem out of my hand?)
+--        NT:     none warranted distinct (the reviling-of-the-living-El theme is answered within the
+--                Tanakh itself — ch37 — and the lateral defiance pattern; the NT weave is held in prose)
+--        Extras: none warranted
+--        Tanakh: ★ 1 Samuel 17:26 (who is this uncircumcised Philistine, that he should defy the armies
+--                of the living Elohim), 1 Samuel 17:36 (he hath defied the armies of the living Elohim),
+--                ★ Daniel 3:15 (who is that Elohim that shall deliver you out of my hands?), Psalm 79:10
+--                (Wherefore should the heathen say, Where is their Elohim?) — THREAD 2 (lateral)
+--   v.21 (they held their peace, and answered him not a word: for the king's commandment was, saying,
+--          Answer him not)
+--        NT:     none warranted (the silence-before-the-reviler type points to the Servant; held in prose)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 53:7 (as a sheep before her shearers is dumb, so he openeth not his mouth),
+--                Psalm 38:13 (I was as a dumb man that openeth not his mouth) — THREAD 3 (lateral)
+--   v.22 (Eliakim... told him the words of Rabshakeh, with their clothes rent) — the hand-off to ch37
+--          (Hezekiah's prayer); woven in THREAD 2's prose as the turn to the answer
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-36-the-staff-of-this-broken-reed-of-egypt — Tanakh (Isaiah 30, Isaiah 31; SELF-LINK) [free]
+--      (the bruised reed of Egypt; trust-not-in-the-flesh-arm that pierces the one who leans on it)
+--   2. isaiah-36-that-yahuah-should-deliver-jerusalem-out-of-my-hand — Tanakh (1 Samuel 17, Daniel 3,
+--      Psalm 79) [free]  (★ the reviler of the living El; equating Yahuah with the no-gods of the heathen)
+--   3. isaiah-36-they-held-their-peace-and-answered-him-not-a-word — Tanakh (Isaiah 53, Psalm 38) [free]
+--      (the silence before the reviler; the Servant-pattern of the mouth that opens not)
+--
+-- Framing notes:
+--   ★ THE BROKEN REED OF EGYPT (THREAD 1): The Rabshakeh's first lever is to mock Yahudah's trust and
+--      point it down to Egypt: *Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if
+--      a man lean, it will go into his hand, and pierce it: so is Pharaoh king of Egypt to all that trust
+--      in him* (36:6); *put thy trust on Egypt for chariots and for horsemen* (36:9). The taunt is, on its
+--      face, true diagnosis of a real sin — Isaiah had already cried woe over the very thing: *That walk
+--      to go down into Egypt, and have not asked at my mouth... to trust in the shadow of Egypt!* (30:2),
+--      *the trust in the shadow of Egypt your confusion* (30:3); *Woe to them that go down to Egypt for
+--      help; and stay on horses, and trust in chariots... but they look not unto the Holy One of Yashar'el
+--      (Israel), neither seek Yahuah (LORD)!* (31:1); *Now the Egyptians are men, and not Elohim (God);
+--      and their horses flesh, and not spirit* (31:3). The flesh-arm pierces the hand that leans on it.
+--      But the reviler's error is to fold YAHUAH HIMSELF into the list of broken reeds — and that is the
+--      lie ch37 destroys: the Holy One of Yashar'el is no reed, but the furnace whose fire is in Zion (31:9).
+--   ★ THE REVILER OF THE LIVING EL (THREAD 2): The speech climbs from mocking Egypt to open blasphemy:
+--      *Neither let Hezekiah make you trust in Yahuah (LORD), saying, Yahuah (LORD) will surely deliver
+--      us* (36:15); *Hath any of the gods of the nations delivered his land out of the hand of the king
+--      of Assyria?... Who are they among all the gods of these lands, that have delivered their land out
+--      of my hand, that Yahuah (LORD) should deliver Jerusalem out of my hand?* (36:18-20). The Rabshakeh
+--      sets Yahuah on the shelf beside the carved no-gods of Hamath and Sepharvaim — the living El reckoned
+--      a thing of wood. The library answers this with one voice: the heathen who defies the LIVING Elohim
+--      is struck down. Goliath drew the same charge: *who is this uncircumcised Philistine, that he should
+--      defy the armies of the living Elohim (God)?* (1 Samuel 17:26), *he hath defied the armies of the
+--      living Elohim (God)* (17:36) — and fell. Nebuchadnezzar boasts the identical taunt — *who is that
+--      Elohim (God) that shall deliver you out of my hands?* (Daniel 3:15) — and is answered when the
+--      fourth man walks in the furnace. And the Psalm gives the reviler's mockery its very words: *Wherefore
+--      should the heathen say, Where is their Elohim (God)?* (Psalm 79:10). Isaiah's own next chapter is the
+--      verdict: *the king of Assyria his master hath sent to reproach the living Elohim (God)* (37:4), and
+--      *the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore
+--      and five thousand* (37:36). The blasphemy of 36 is answered by the angel of 37. Conduct, not ethnicity:
+--      it is the reviling SYSTEM Yahuah breaks, the proud arm, never a people.
+--   ★ THE SILENCE BEFORE THE REVILER (THREAD 3): *But they held their peace, and answered him not a word:
+--      for the king's commandment was, saying, Answer him not* (36:21). The faithful do not trade taunt for
+--      taunt; the answer is left to Yahuah. This is the Servant's own posture: *He was oppressed, and he was
+--      afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep
+--      before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7); and the sufferer's: *I was
+--      as a dumb man that openeth not his mouth... a man that heareth not, and in whose mouth are no
+--      reproofs* (Psalm 38:13-14). Silence under reviling is not defeat but trust — the vindication is
+--      Yahuah's to give, and in ch37 he gives it.
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (Sennacherib/the embassy — setting, 2 Kings 18 parallel held in
+--      prose), v.8-9 (the horse-pledge taunt — folded into THREAD 1), v.10 (the false divine commission —
+--      woven into THREAD 2's reviler prose), v.11-12 (the Syrian-language exchange/the coarse threat —
+--      narrative), v.14,16-17 (deceive-you / make-an-agreement / the exile-promise — the reviler's lure,
+--      woven into THREAD 2), v.19 (the gods of Hamath and Arphad — the no-god list, in THREAD 2), v.22
+--      (the rent clothes / hand-off to ch37 — the turn to the answer, in THREAD 2 prose). All weighed.
+
+CREATE TEMP VIEW _s303_isa36_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The staff of this broken reed of Egypt — trust-not-in-the-flesh-arm (SELF-LINK)
+    ('canon','isaiah',36,6,'canon','isaiah',30,2,'free',
+      E'*That walk to go down into Egypt, and have not asked at my mouth; to strengthen themselves in the strength of Pharaoh, and to trust in the shadow of Egypt!* (Isaiah 30:2). The Rabshakeh''s taunt — *Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it* (Isaiah 36:6) — names a sin Isaiah had already cried woe over: the going-down to Egypt, the leaning on Pharaoh''s strength, the trusting in *the shadow of Egypt* instead of asking at Yahuah''s mouth. The flesh-arm is a broken reed in either mouth — the prophet''s and the reviler''s.'),
+    ('canon','isaiah',36,6,'canon','isaiah',30,3,'free',
+      E'*Therefore shall the strength of Pharaoh be your shame, and the trust in the shadow of Egypt your confusion* (Isaiah 30:3). The reed that *will go into his hand, and pierce it* (Isaiah 36:6) is the very confusion Isaiah foretold: *the strength of Pharaoh* turned to *shame*, *the trust in the shadow of Egypt* turned to *confusion*. Egypt cannot bear the weight laid on it; the hand that leans is wounded by the thing it grasps.'),
+    ('canon','isaiah',36,6,'canon','isaiah',31,1,'free',
+      E'*Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong; but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). The taunt to *put thy trust on Egypt for chariots and for horsemen* (Isaiah 36:9) is the woe Isaiah had already pronounced: chariots and horsemen leaned on, *but they look not unto the Holy One of Yashar''el (Israel)*. The reviler weaponizes a real sin — yet folds Yahuah Himself among the reeds, and that is the lie.'),
+    ('canon','isaiah',36,6,'canon','isaiah',31,3,'free',
+      E'*Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit. When Yahuah (LORD) shall stretch out his hand, both he that helpeth shall fall, and he that is holpen shall fall down* (Isaiah 31:3). Here is why Egypt is *this broken reed* (Isaiah 36:6): *the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit*. The helper and the helped fall together when the flesh-arm is leaned on — for it is flesh, not the living El whom the Rabshakeh dared set among the no-gods.'),
+
+    -- THREAD 2 (★): That Yahuah should deliver Jerusalem out of my hand — the reviler of the living El (lateral)
+    ('canon','isaiah',36,15,'canon','1-samuel',17,26,'free',
+      E'*And David spake to the men that stood by him, saying... for who is this uncircumcised Philistine, that he should defy the armies of the living Elohim (God)?* (1 Samuel 17:26). The Rabshakeh''s charge — *Neither let Hezekiah make you trust in Yahuah (LORD), saying, Yahuah (LORD) will surely deliver us* (Isaiah 36:15) — is Goliath''s charge over again: the heathen who *should defy the armies of the living Elohim (God)*. David named the blasphemy for what it was, and the stone answered it; the same living El the Rabshakeh reviles is no broken reed.'),
+    ('canon','isaiah',36,15,'canon','1-samuel',17,36,'free',
+      E'*Thy servant slew both the lion and the bear: and this uncircumcised Philistine shall be as one of them, seeing he hath defied the armies of the living Elohim (God)* (1 Samuel 17:36). The taunt that Yahuah *shall not be able to deliver you* (Isaiah 36:14) is the giant''s defiance of *the living Elohim (God)* — and it ends the giant''s way: *as one of them*, the lion and the bear. To reproach the living El is to call down the very deliverance the reviler denies.'),
+    ('canon','isaiah',36,20,'canon','daniel',3,15,'free',
+      E'*...and who is that Elohim (God) that shall deliver you out of my hands?* (Daniel 3:15). Nebuchadnezzar''s boast is the Rabshakeh''s word for word — *that Yahuah (LORD) should deliver Jerusalem out of my hand?* (Isaiah 36:20) — the proud king who reckons no god can reach into his furnace. The fourth man walking in the flame is the answer to both: the living El delivers out of the hand that swore He could not.'),
+    ('canon','isaiah',36,20,'canon','psalms',79,10,'free',
+      E'*Wherefore should the heathen say, Where is their Elohim (God)? let him be known among the heathen in our sight by the revenging of the blood of thy servants which is shed* (Psalm 79:10). The Rabshakeh gives the heathen''s mockery its very voice — *Who are they among all the gods of these lands, that have delivered their land out of my hand, that Yahuah (LORD) should deliver Jerusalem out of my hand?* (Isaiah 36:20). The Psalm asks that Yahuah make Himself *known among the heathen* by answering the taunt — and in the next chapter the angel of Yahuah does exactly that.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 3 cross_references (separate VALUES block, same INSERT shape)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★): They held their peace, and answered him not a word — the silence before the reviler (lateral)
+    ('canon','isaiah',36,21,'canon','isaiah',53,7,'free',
+      E'*He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7). The faithful who *held their peace, and answered him not a word* (Isaiah 36:21) keep the Servant''s own silence: *yet he opened not his mouth... as a sheep before her shearers is dumb*. Under reviling the answer is left to Yahuah; the dumb mouth is not defeat but trust that the vindication is His to give.'),
+    ('canon','isaiah',36,21,'canon','psalms',38,13,'free',
+      E'*But I, as a deaf man, heard not; and I was as a dumb man that openeth not his mouth* (Psalm 38:13). The commandment *Answer him not* (Isaiah 36:21) is the sufferer''s posture before the mocker — *a dumb man that openeth not his mouth*, *in whose mouth are no reproofs* (Psalm 38:14). The righteous do not trade taunt for taunt; they hold their peace and wait for Yahuah to rise and answer, as He does in the chapter that follows.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-36-the-staff-of-this-broken-reed-of-egypt',
+       E'The staff of this broken reed of Egypt — the flesh-arm that pierces the one who leans',
+       E'The Rabshakeh''s first lever is to mock Yahudah''s trust and bend it down toward Egypt: *What confidence is this wherein thou trustest?* (Isaiah 36:4); *Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it: so is Pharaoh king of Egypt to all that trust in him* (36:6); *put thy trust on Egypt for chariots and for horsemen* (36:9). On its face the taunt is a true diagnosis of a real sin — for Isaiah had already cried woe over the very thing. *That walk to go down into Egypt, and have not asked at my mouth; to strengthen themselves in the strength of Pharaoh, and to trust in the shadow of Egypt!* (Isaiah 30:2), and *the trust in the shadow of Egypt your confusion* (30:3). *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (31:1). And the reason the reed breaks: *Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit. When Yahuah (LORD) shall stretch out his hand, both he that helpeth shall fall, and he that is holpen shall fall down* (31:3). The flesh-arm pierces the hand that leans on it. But the Rabshakeh''s deadly error is to fold YAHUAH HIMSELF into the list of broken reeds — and that is the lie the next chapter destroys, for the Holy One of Yashar''el is no reed but the furnace *whose fire is in Zion* (31:9).',
+       sv.verse_id, ev.verse_id, 'free', 26875
+  FROM _s303_isa36_lookup sv, _s303_isa36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=36 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-36-that-yahuah-should-deliver-jerusalem-out-of-my-hand',
+       E'That Yahuah should deliver Jerusalem out of my hand — the reviler of the living El',
+       E'The speech climbs from mocking Egypt to open blasphemy. *Let not Hezekiah deceive you: for he shall not be able to deliver you* (Isaiah 36:14); *Neither let Hezekiah make you trust in Yahuah (LORD), saying, Yahuah (LORD) will surely deliver us* (36:15); and the climax: *Hath any of the gods of the nations delivered his land out of the hand of the king of Assyria?... Who are they among all the gods of these lands, that have delivered their land out of my hand, that Yahuah (LORD) should deliver Jerusalem out of my hand?* (36:18-20). The Rabshakeh sets Yahuah on the shelf beside the carved no-gods of Hamath and Sepharvaim — the living El reckoned a thing of wood. The library answers this defiance with one voice: the heathen who reviles the LIVING Elohim is struck down. Goliath drew the same charge — *who is this uncircumcised Philistine, that he should defy the armies of the living Elohim (God)?* (1 Samuel 17:26), *he hath defied the armies of the living Elohim (God)* (17:36) — and fell to a stone. Nebuchadnezzar boasts the identical taunt — *who is that Elohim (God) that shall deliver you out of my hands?* (Daniel 3:15) — and is answered when a fourth man walks unburnt in the furnace. And the Psalm gives the reviler''s mockery its very words: *Wherefore should the heathen say, Where is their Elohim (God)?* (Psalm 79:10). Isaiah''s own next chapter is the verdict: the Assyrian *hath sent to reproach the living Elohim (God)* (37:4), and *the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand* (37:36). The blasphemy of chapter 36 is answered by the angel of chapter 37. And it is conduct, never ethnicity: it is the reviling proud SYSTEM Yahuah breaks, never a people.',
+       sv.verse_id, ev.verse_id, 'free', 26878
+  FROM _s303_isa36_lookup sv, _s303_isa36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=36 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-36-they-held-their-peace-and-answered-him-not-a-word',
+       E'They held their peace, and answered him not a word — the silence before the reviler',
+       E'When the reviling is loudest, the faithful are silent: *But they held their peace, and answered him not a word: for the king''s commandment was, saying, Answer him not* (Isaiah 36:21). They do not trade taunt for taunt; the answer is left to Yahuah. This is the Servant''s own posture under affliction: *He was oppressed, and he was afflicted, yet he opened not his mouth: he is brought as a lamb to the slaughter, and as a sheep before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7). And the sufferer''s before the mocker: *But I, as a deaf man, heard not; and I was as a dumb man that openeth not his mouth... a man that heareth not, and in whose mouth are no reproofs* (Psalm 38:13-14). Silence under reviling is not defeat but trust — the vindication is Yahuah''s to give, and in the very next chapter He gives it, when the angel goes forth and the camp of the proud is left as corpses.',
+       sv.verse_id, ev.verse_id, 'free', 26881
+  FROM _s303_isa36_lookup sv, _s303_isa36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=36 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *to trust in the shadow of Egypt!* (Isaiah 30:2) — the going-down to Egypt without asking at Yahuah''s mouth is the very *broken reed* the Rabshakeh names (Isaiah 36:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=6
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-the-staff-of-this-broken-reed-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the trust in the shadow of Egypt your confusion* (Isaiah 30:3) — the reed that *will go into his hand, and pierce it* (Isaiah 36:6); Egypt''s strength turns to shame.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=6
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-the-staff-of-this-broken-reed-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe to them that go down to Egypt for help... but they look not unto the Holy One of Yashar''el (Israel)* (Isaiah 31:1) — the woe Isaiah already pronounced over the chariots-and-horsemen trust of Isaiah 36:9.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=6
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-the-staff-of-this-broken-reed-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit* (Isaiah 31:3) — why the reed breaks: the helper and the helped fall together, for it is flesh, not the living El.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=6
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-the-staff-of-this-broken-reed-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *who is this uncircumcised Philistine, that he should defy the armies of the living Elohim (God)?* (1 Samuel 17:26) — Goliath''s charge is the Rabshakeh''s (Isaiah 36:15), and the stone answered it.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=15
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-that-yahuah-should-deliver-jerusalem-out-of-my-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*this uncircumcised Philistine shall be as one of them, seeing he hath defied the armies of the living Elohim (God)* (1 Samuel 17:36) — to reproach the living El ends the reviler''s way: as the lion and the bear.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=15
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-that-yahuah-should-deliver-jerusalem-out-of-my-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *who is that Elohim (God) that shall deliver you out of my hands?* (Daniel 3:15) — Nebuchadnezzar''s boast is the Rabshakeh''s word for word (Isaiah 36:20); the fourth man in the flame answers both.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=20
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-that-yahuah-should-deliver-jerusalem-out-of-my-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Wherefore should the heathen say, Where is their Elohim (God)?* (Psalm 79:10) — the Psalm gives the reviler''s mockery its very voice (Isaiah 36:20); Yahuah makes Himself known by answering it.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=20
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-that-yahuah-should-deliver-jerusalem-out-of-my-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *as a sheep before her shearers is dumb, so he openeth not his mouth* (Isaiah 53:7) — the faithful who *answered him not a word* (Isaiah 36:21) keep the Servant''s own silence.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=21
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-they-held-their-peace-and-answered-him-not-a-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I was as a dumb man that openeth not his mouth* (Psalm 38:13) — the commandment *Answer him not* (Isaiah 36:21) is the sufferer''s trust: the vindication is left to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=36 AND sv.verse_number=21
+  JOIN _s303_isa36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=38 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-36-they-held-their-peace-and-answered-him-not-a-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_37.sql (Isaiah 37) -----
+-- Chapter: Isaiah 37 — SENNACHERIB'S FALL, the answer to the blasphemy of ch36. Hezekiah carries the
+-- Assyrian's letter into the house of Yahuah and spreads it before Him, praying the Shema-confession:
+-- *O Yahuah Tseva'ot (LORD of hosts), Elohim (God) of Yashar'el (Israel), that dwellest between the
+-- cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast
+-- made heaven and earth* (37:16); *that all the kingdoms of the earth may know that thou art Yahuah
+-- (LORD), even thou only* (37:20). Yahuah answers: the virgin daughter of Zion despises the reviler
+-- (37:22), for he has blasphemed *the Holy One of Yashar'el (Israel)* (37:23) — therefore the hook in
+-- his nose and the bridle in his lips (37:29). A remnant takes root downward and bears fruit upward,
+-- for the zeal of Yahuah Tseva'ot does this (37:31-32). And the deliverance comes by His own Angel-arm:
+-- *the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and
+-- fourscore and five thousand* (37:36) — the Angel of Yahuah who bears the Name and executes judgment
+-- is the Formed Son, who is Yahuah and HAS a Father; the same Destroyer who passed through Egypt, the
+-- Angel in whom the Name is (Exodus 23:21), who smote Herod in Acts. The city is defended *for my
+-- servant David's sake* — Yahuah saves Zion by His own arm.
+-- Tag: isa37   Temp view: _s303_isa37_lookup
+-- Sort band: base 26900, step 3 -> threads at 26900, 26903, 26906, 26909 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',37,v
+--
+-- Isaiah 37 coverage:
+--   ★★ v.16,20 (thou art the Elohim, even thou alone, of all the kingdoms of the earth... that all the
+--          kingdoms of the earth may know that thou art Yahuah, even thou only) — THE SHEMA-CONFESSION
+--        NT:     none warranted distinct (the confession is Tanakh-rooted; the one-Elohim weave is
+--                carried laterally and in the Christology of the Angel-thread below)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 6:4 (Yahuah Eloheinu is one Yahuah), ★★ Deuteronomy 4:35 (Yahuah he is
+--                Elohim; there is none else beside him), ★ 1 Kings 8:60 (that all the people of the earth
+--                may know that Yahuah is Elohim, and that there is none else) — THREAD 1
+--   ★ v.22-23,29 (The virgin, the daughter of Zion, hath despised thee... against whom hast thou exalted
+--          thy voice... even against the Holy One of Yashar'el... I will put my hook in thy nose)
+--        NT:     none warranted distinct (the reviler's overthrow is the lawsuit answered within the
+--                Tanakh frame)
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 38:4 (I will turn thee back, and put hooks into thy jaws) — THREAD 2 (the
+--                hook in Gog's jaws; the same divine restraint of the proud invader)
+--   ★ v.31-32 (the remnant that is escaped of the house of Yahudah shall again take root downward, and
+--          bear fruit upward... the zeal of Yahuah Tseva'ot shall do this)
+--        NT:     none warranted distinct (the remnant-root is the two-house Tanakh weave)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 10:20-22 (the remnant of Yashar'el... the remnant shall return), ★ Isaiah 9:7
+--                (the zeal of Yahuah Tseva'ot will perform this — the twin zeal-clause) — THREAD 3
+--   ★★★ v.35-36 (I will defend this city to save it... Then the angel of Yahuah went forth, and smote in
+--          the camp of the Assyrians a hundred and fourscore and five thousand) — THE ANGEL OF YAHUAH
+--        NT:     ★ Acts 12:23 (the angel of Yahuah smote him [Herod]... and he was eaten of worms) —
+--                THREAD 4 (the Name-bearing Angel executes judgment again)
+--        Extras: none warranted
+--        Tanakh: ★★ Exodus 23:20-21 (I send an Angel before thee... my name is in him), ★★ Exodus 12:23
+--                (the destroyer... Yahuah will pass over), ★★ 2 Kings 19:35 (the parallel account), ★
+--                Psalm 76:5-6 (the stouthearted are spoiled, they have slept their sleep), ★ Isaiah 31:8
+--                (the Assyrian shall fall with the sword, not of a mighty man — SELF-LINK) — THREAD 4
+--   v.38 (Sennacherib slain by his own sons in the house of Nisroch his god) — folded into THREAD 2's
+--        prose (the no-god cannot save its worshipper); no separate thread forced.
+--   v.1-15 (Hezekiah's distress, Rabshakeh's second threat, the letter received) — preface, woven into
+--        THREAD 1's prose; no separate add. v.24-28 (the boast of the cedars, the formed-of-old decree)
+--        woven into THREAD 2. v.30,33-34 (the sign, the Assyrian shall not enter) woven into THREADS 3-4.
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-37-thou-art-the-elohim-even-thou-alone — Tanakh (Deut 6, Deut 4, 1 Kings 8) [free]
+--      (★★ the Shema-confession spread before Yahuah; thou art Elohim alone)
+--   2. isaiah-37-the-virgin-daughter-of-zion-hath-despised-thee — Tanakh (Ezekiel 38) [free]
+--      (★ Zion despises the reviler of the Holy One; the hook in the proud invader's jaws)
+--   3. isaiah-37-the-remnant-shall-take-root-downward — Tanakh (Isaiah 10, Isaiah 9) [free]
+--      (★ the two-house remnant takes root; the zeal of Yahuah Tseva'ot does this)
+--   4. isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians — NT (Acts 12) + Tanakh (Exodus 23,
+--      Exodus 12, 2 Kings 19, Psalm 76, Isaiah 31 self-link) [free]
+--      (★★★ the Angel of Yahuah who bears the Name executes judgment = the Formed Son)
+--
+-- Framing notes:
+--   ★★ THE SHEMA-CONFESSION (THREAD 1): Hezekiah spreads the letter and prays *O Yahuah Tseva'ot (LORD
+--      of hosts), Elohim (God) of Yashar'el (Israel), that dwellest between the cherubims, thou art the
+--      Elohim (God), even thou alone... thou hast made heaven and earth* (37:16), *that all the kingdoms
+--      of the earth may know that thou art Yahuah (LORD), even thou only* (37:20). This is the Shema
+--      pleaded in the day of trouble: *Hear, O Yashar'el (Israel): Yahuah Eloheinu (The LORD our God) is
+--      one Yahuah (LORD)* (Deuteronomy 6:4); *Yahuah (LORD) he is Elohim (God); there is none else
+--      beside him* (Deuteronomy 4:35); and Solomon's own temple-prayer asked the same end: *that all the
+--      people of the earth may know that Yahuah (LORD) is Elohim (God), and that there is none else*
+--      (1 Kings 8:60). The no-gods of v.18-19 (*wood and stone... they were no gods*) are answered by
+--      the One who made heaven and earth.
+--   ★ ZION DESPISES THE REVILER (THREAD 2): *The virgin, the daughter of Zion, hath despised thee, and
+--      laughed thee to scorn* (37:22); *Whom hast thou reproached and blasphemed?... even against the
+--      Holy One of Yashar'el (Israel)* (37:23). The blasphemy of ch36 is answered: *therefore will I put
+--      my hook in thy nose, and my bridle in thy lips, and I will turn thee back* (37:29) — the same
+--      divine restraint laid on Gog: *I will turn thee back, and put hooks into thy jaws* (Ezekiel 38:4).
+--      The proud invader who *formed of old* knew nothing of the One who *formed it... of ancient times*
+--      (37:26); and the no-god Nisroch cannot save its own worshipper (37:38).
+--   ★ THE REMNANT TAKES ROOT (THREAD 3): *the remnant that is escaped of the house of Yahudah (Judah)
+--      shall again take root downward, and bear fruit upward: for out of Jerusalem shall go forth a
+--      remnant... the zeal of Yahuah Tseva'ot (LORD of hosts) shall do this* (37:31-32). The same remnant
+--      Isaiah names: *the remnant of Yashar'el (Israel)... shall stay upon Yahuah (LORD), the Holy One
+--      of Yashar'el (Israel)* (Isaiah 10:20), *the remnant shall return, even the remnant of Jacob*
+--      (10:21) — the two-house remnant. And the closing *zeal of Yahuah Tseva'ot* is the very twin of
+--      the throne-promise: *The zeal of Yahuah Tseva'ot (LORD of hosts) will perform this* (Isaiah 9:7).
+--   ★★★ THE ANGEL OF YAHUAH (THREAD 4): *For I will defend this city to save it for mine own sake, and
+--      for my servant David's sake. Then the angel of Yahuah (LORD) went forth, and smote in the camp of
+--      the Assyrians a hundred and fourscore and five thousand* (37:35-36). The Angel of Yahuah who
+--      bears the Name and executes judgment is the Formed Son — *Behold, I send an Angel before thee...
+--      for my name is in him* (Exodus 23:20-21) — the same who *passed over* while the destroyer smote
+--      Egypt: *Yahuah (LORD) will pass through to smite the Egyptians... and will not suffer the
+--      destroyer to come in* (Exodus 12:23). He is Yahuah and HAS a Father; not a co-equal trinitarian
+--      person, not a modalist mask — the visible Name-bearing arm of the Most High. The parallel account
+--      records it word for word (2 Kings 19:35); the Psalm sings it: *The stouthearted are spoiled, they
+--      have slept their sleep... At thy rebuke, O Elohim (God) of Jacob, both the chariot and horse are
+--      cast into a dead sleep* (Psalm 76:5-6); Isaiah's own earlier word is fulfilled — *Then shall the
+--      Assyrian fall with the sword, not of a mighty man* (Isaiah 31:8, self-link). And the same Angel
+--      of Yahuah smote the blasphemer Herod: *immediately the angel of Yahuah (Lord) smote him, because
+--      he gave not Elohim (God) the glory* (Acts 12:23). The city is defended *for David's sake* — the
+--      Davidic covenant; Yahuah saves Zion by His own Angel-arm.
+
+CREATE TEMP VIEW _s303_isa37_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Thou art the Elohim, even thou alone — the Shema-confession spread before Yahuah
+    ('canon','isaiah',37,16,'canon','deuteronomy',6,4,'free',
+      E'*Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4). Hezekiah''s prayer is the Shema pleaded in the day of trouble: *thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth* (Isaiah 37:16). The reviler''s no-gods are many; the Elohim of Yashar''el who dwells between the cherubims is ONE — the confession Moses laid on the whole people is the ground of Hezekiah''s plea.'),
+    ('canon','isaiah',37,16,'canon','deuteronomy',4,35,'free',
+      E'*Unto thee it was shewed, that thou mightest know that Yahuah (LORD) he is Elohim (God); there is none else beside him* (Deuteronomy 4:35). Hezekiah confesses the very thing Moses taught: *thou art the Elohim (God), even thou alone* (Isaiah 37:16). Against the cast-down gods of the nations — *wood and stone... they were no gods* (37:19) — stands the One beside whom *there is none else*; the maker of heaven and earth.'),
+    ('canon','isaiah',37,20,'canon','1-kings',8,60,'free',
+      E'*That all the people of the earth may know that Yahuah (LORD) is Elohim (God), and that there is none else* (1 Kings 8:60). Hezekiah''s plea ends where Solomon''s temple-prayer ended: *save us from his hand, that all the kingdoms of the earth may know that thou art Yahuah (LORD), even thou only* (Isaiah 37:20). The deliverance of Zion is for the Name''s sake — that the whole earth may know there is none else; the same purpose prayed at the same house of Yahuah.'),
+
+    -- THREAD 2 (★): The virgin daughter of Zion hath despised thee — the reviler of the Holy One
+    ('canon','isaiah',37,29,'canon','ezekiel',38,4,'free',
+      E'*And I will turn thee back, and put hooks into thy jaws, and I will bring thee forth, and all thine army* (Ezekiel 38:4). The word against Sennacherib — *therefore will I put my hook in thy nose, and my bridle in thy lips, and I will turn thee back by the way by which thou camest* (Isaiah 37:29) — is the same divine restraint laid on Gog: the proud invader hooked and led back like a beast. The One who *formed it... of ancient times* (37:26) bridles every blasphemer who exalts his voice against the Holy One of Yashar''el (Israel).'),
+
+    -- THREAD 3 (★): The remnant shall take root downward — the two-house remnant; the zeal of Yahuah
+    ('canon','isaiah',37,31,'canon','isaiah',10,20,'free',
+      E'*And it shall come to pass in that day, that the remnant of Yashar''el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar''el (Israel), in truth* (Isaiah 10:20). The *remnant that is escaped of the house of Yahudah (Judah)* that shall *take root downward, and bear fruit upward* (Isaiah 37:31) is the same remnant Isaiah named earlier — the escaped of Jacob who lean no more on Assyria but on the Holy One. The Assyrian crisis leaves a living root: the two-house remnant.'),
+    ('canon','isaiah',37,31,'canon','isaiah',10,21,'free',
+      E'*The remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (Isaiah 10:21). The remnant that *take root downward, and bear fruit upward* (Isaiah 37:31) is the returning remnant of Jacob — *the remnant shall return*. Out of Jerusalem and mount Zion a people escapes and roots again; the felled nation keeps its living seed.'),
+    ('canon','isaiah',37,32,'canon','isaiah',9,7,'free',
+      E'*Of the increase of his government and peace there shall be no end, upon the throne of David... The zeal of Yahuah Tseva''ot (LORD of hosts) will perform this* (Isaiah 9:7). The remnant going forth from Jerusalem is no work of man: *the zeal of Yahuah Tseva''ot (LORD of hosts) shall do this* (Isaiah 37:32) — the very twin clause that seals the throne-of-David promise. The same burning zeal that establishes the everlasting kingdom preserves the escaped remnant; one zeal, one purpose.'),
+
+    -- THREAD 4 (★★★): The angel of Yahuah smote the camp — the Name-bearing Angel = the Formed Son
+    ('canon','isaiah',37,36,'canon','exodus',23,20,'free',
+      E'*Behold, I send an Angel before thee, to keep thee in the way, and to bring thee into the place which I have prepared* (Exodus 23:20). The *angel of Yahuah (LORD)* who *went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand* (Isaiah 37:36) is the Angel Yahuah sent before His people — the One who keeps, leads, and now defends Zion. The same Formed messenger who went before Yashar''el (Israel) in the wilderness strikes the blasphemer''s host in a night.'),
+    ('canon','isaiah',37,36,'canon','exodus',23,21,'free',
+      E'*Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him* (Exodus 23:21). The Angel who smote the Assyrian camp (Isaiah 37:36) is the One in whom the Name dwells — *my name is in him*. This is the Formed Son who bears the Name of Yahuah and executes His judgment, who is Yahuah and yet HAS a Father who sends him; not a co-equal person, not a mask, but the visible Name-bearing arm of the Most High.'),
+    ('canon','isaiah',37,36,'canon','exodus',12,23,'free',
+      E'*For Yahuah (LORD) will pass through to smite the Egyptians; and when he seeth the blood upon the lintel, and on the two side posts, Yahuah (LORD) will pass over the door, and will not suffer the destroyer to come in unto your houses to smite you* (Exodus 12:23). The Angel that smote the Assyrians in a night (Isaiah 37:36) is the same Destroyer-arm that passed through Egypt — Yahuah Himself going forth to smite, sparing His covenant people and striking the oppressor. The Passover destroyer and the angel over Sennacherib''s camp are one executing Hand.'),
+    ('canon','isaiah',37,36,'canon','2-kings',19,35,'free',
+      E'*And it came to pass that night, that the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (2 Kings 19:35). This is the parallel account of Isaiah 37:36, word for word — *the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand*. Two witnesses to one deliverance: 185,000 fallen in a night by the Name-bearing Angel, and Zion saved without a sword lifted.'),
+    ('canon','isaiah',37,36,'canon','psalms',76,5,'free',
+      E'*The stouthearted are spoiled, they have slept their sleep: and none of the men of might have found their hands* (Psalm 76:5). The Psalm sings the night the angel smote the camp (Isaiah 37:36): the proud army that *arose early in the morning* found *they were all dead corpses* — *they have slept their sleep*. In Salem, in Zion, He *brake the arrows of the bow, the shield, and the sword* (76:2-3); the mighty men of Assyria never *found their hands*.'),
+    ('canon','isaiah',37,36,'canon','psalms',76,6,'free',
+      E'*At thy rebuke, O Elohim (God) of Jacob, both the chariot and horse are cast into a dead sleep* (Psalm 76:6). The slaughter of the Assyrian host (Isaiah 37:36) was no battle but a *rebuke* of the Elohim of Jacob: *chariot and horse... cast into a dead sleep*. The boast of *the multitude of my chariots* (37:24) is answered by a single word from heaven; the proud invader sleeps the sleep of the dead.'),
+    ('canon','isaiah',37,36,'canon','isaiah',31,8,'free',
+      E'*Then shall the Assyrian fall with the sword, not of a mighty man; and the sword, not of a mean man, shall devour him: but he shall flee from the sword* (Isaiah 31:8). Isaiah''s own earlier word is fulfilled when the angel of Yahuah smote the camp (Isaiah 37:36) — the Assyrian falls *with the sword, not of a mighty man*, by no human hand but the Name-bearing Angel of Yahuah. The deliverance Isaiah foretold is the deliverance Hezekiah''s night beholds.'),
+    ('canon','isaiah',37,36,'canon','acts',12,23,'free',
+      E'*And immediately the angel of Yahuah (Lord) smote him, because he gave not Elohim (God) the glory: and he was eaten of worms, and gave up the ghost* (Acts 12:23). The same Angel of Yahuah who smote the blaspheming Assyrian host (Isaiah 37:36) smites the blaspheming Herod who took the glory of Elohim to himself. The Name-bearing arm that struck Sennacherib''s camp strikes again in the gospel age — the One who *will not pardon* the proud who exalt themselves against the living Elohim (God).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-37-thou-art-the-elohim-even-thou-alone',
+       E'Thou art the Elohim, even thou alone — the Shema spread before Yahuah',
+       E'Hezekiah does not answer the Assyrian''s letter with armies; he carries it into the house of Yahuah: *And Hezekiah received the letter from the hand of the messengers, and read it: and Hezekiah went up unto the house of Yahuah (LORD), and spread it before Yahuah (LORD)* (Isaiah 37:14). Then he prays the Shema in the day of trouble: *O Yahuah Tseva''ot (LORD of hosts), Elohim (God) of Yashar''el (Israel), that dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth* (37:16), and *Now therefore, O Yahuah (LORD) our Elohim (God), save us from his hand, that all the kingdoms of the earth may know that thou art Yahuah (LORD), even thou only* (37:20). This is the confession Moses laid on the whole people: *Hear, O Yashar''el (Israel): Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4); *Yahuah (LORD) he is Elohim (God); there is none else beside him* (Deuteronomy 4:35). The reviler''s gods are *wood and stone... no gods* (37:18-19), cast into the fire; but the Elohim of Yashar''el made heaven and earth. And Hezekiah''s plea ends where Solomon''s temple-prayer ended, at the very same house: *that all the people of the earth may know that Yahuah (LORD) is Elohim (God), and that there is none else* (1 Kings 8:60). The deliverance of Zion is for the Name''s sake — that the whole earth may confess there is none else.',
+       sv.verse_id, ev.verse_id, 'free', 26900
+  FROM _s303_isa37_lookup sv, _s303_isa37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=37 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-37-the-virgin-daughter-of-zion-hath-despised-thee',
+       E'The virgin daughter of Zion hath despised thee — the reviler of the Holy One hooked and turned back',
+       E'Yahuah answers Hezekiah''s prayer with a word of scorn against the proud invader: *The virgin, the daughter of Zion, hath despised thee, and laughed thee to scorn; the daughter of Jerusalem hath shaken her head at thee* (Isaiah 37:22). The blasphemy of the field-threat is now named for what it is: *Whom hast thou reproached and blasphemed? and against whom hast thou exalted thy voice, and lifted up thine eyes on high? even against the Holy One of Yashar''el (Israel)* (37:23). Sennacherib boasted of his chariots, of cutting the tall cedars, of digging and drinking up rivers (37:24-25) — yet he is only a tool: *Hast thou not heard long ago, how I have done it; and of ancient times, that I have formed it? now have I brought it to pass* (37:26). The One who *formed it of ancient times* now bridles him: *therefore will I put my hook in thy nose, and my bridle in thy lips, and I will turn thee back by the way by which thou camest* (37:29). It is the same divine restraint Yahuah lays on the last proud invader: *I will turn thee back, and put hooks into thy jaws, and I will bring thee forth, and all thine army* (Ezekiel 38:4) — Gog hooked and led back as Sennacherib was. And the reviler''s end proves his god a no-god: *as he was worshipping in the house of Nisroch his god... his sons smote him with the sword* (37:38). The idol could not save its own worshipper; the Holy One of Yashar''el is not mocked.',
+       sv.verse_id, ev.verse_id, 'free', 26903
+  FROM _s303_isa37_lookup sv, _s303_isa37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=37 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-37-the-remnant-shall-take-root-downward',
+       E'The remnant shall take root downward — the two-house remnant; the zeal of Yahuah Tseva''ot does this',
+       E'The Assyrian crisis leaves a living root: *And the remnant that is escaped of the house of Yahudah (Judah) shall again take root downward, and bear fruit upward: for out of Jerusalem shall go forth a remnant, and they that escape out of mount Zion: the zeal of Yahuah Tseva''ot (LORD of hosts) shall do this* (Isaiah 37:31-32). This is the remnant Isaiah named earlier — the escaped of Jacob who lean no more on the arm that smote them: *the remnant of Yashar''el (Israel), and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon Yahuah (LORD), the Holy One of Yashar''el (Israel), in truth* (Isaiah 10:20), *the remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (10:21). The escaped of Yahudah rooting again is the two-house remnant preserved through judgment. And the deliverance is no work of man: *the zeal of Yahuah Tseva''ot (LORD of hosts) shall do this* (37:32) — the very twin of the clause that seals the everlasting throne: *Of the increase of his government and peace there shall be no end, upon the throne of David... The zeal of Yahuah Tseva''ot (LORD of hosts) will perform this* (Isaiah 9:7). The same burning zeal that establishes the Davidic kingdom preserves the rooting remnant; one zeal, one purpose, doing what no army could.',
+       sv.verse_id, ev.verse_id, 'free', 26906
+  FROM _s303_isa37_lookup sv, _s303_isa37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=37 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians',
+       E'The angel of Yahuah smote the camp of the Assyrians — the Name-bearing Angel, the Formed Son',
+       E'Zion is saved not by Hezekiah''s sword but by Yahuah''s own arm: *For I will defend this city to save it for mine own sake, and for my servant David''s sake. Then the angel of Yahuah (LORD) went forth, and smote in the camp of the Assyrians a hundred and fourscore and five thousand: and when they arose early in the morning, behold, they were all dead corpses* (Isaiah 37:35-36). The Angel of Yahuah who bears the Name and executes judgment is the Formed Son — the One Yahuah sent before His people: *Behold, I send an Angel before thee, to keep thee in the way... Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him* (Exodus 23:20-21). The Name is IN him; he is Yahuah and yet has a Father who sends him — the visible Name-bearing arm of the Most High, not a co-equal trinitarian person and not a modalist mask. He is the same Destroyer-arm that struck Egypt while sparing the blood-marked door: *Yahuah (LORD) will pass through to smite the Egyptians... and will not suffer the destroyer to come in unto your houses to smite you* (Exodus 12:23). The parallel account bears the same witness: *that night... the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand* (2 Kings 19:35). The Psalm sings the morning after: *The stouthearted are spoiled, they have slept their sleep... At thy rebuke, O Elohim (God) of Jacob, both the chariot and horse are cast into a dead sleep* (Psalm 76:5-6). And Isaiah''s own earlier word is fulfilled: *Then shall the Assyrian fall with the sword, not of a mighty man* (Isaiah 31:8) — by no human hand. The same Angel of Yahuah strikes again in the gospel age, smiting the blaspheming Herod who *gave not Elohim (God) the glory* (Acts 12:23). The city stands *for my servant David''s sake* — the Davidic covenant kept; Yahuah saves Zion by His own Name-bearing Son.',
+       sv.verse_id, ev.verse_id, 'free', 26909
+  FROM _s303_isa37_lookup sv, _s303_isa37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=37 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah Eloheinu (The LORD our God) is one Yahuah (LORD)* (Deuteronomy 6:4) — Hezekiah''s *thou art the Elohim (God), even thou alone* (Isaiah 37:16) is the Shema pleaded in the day of trouble.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=16
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-thou-art-the-elohim-even-thou-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahuah (LORD) he is Elohim (God); there is none else beside him* (Deuteronomy 4:35) — against the cast-down no-gods (Isaiah 37:19), the One beside whom there is none else, maker of heaven and earth (37:16).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=16
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-thou-art-the-elohim-even-thou-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *that all the people of the earth may know that Yahuah (LORD) is Elohim (God), and that there is none else* (1 Kings 8:60) — Hezekiah''s plea (Isaiah 37:20) ends where Solomon''s temple-prayer ended, at the same house of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=20
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=60
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-thou-art-the-elohim-even-thou-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will turn thee back, and put hooks into thy jaws* (Ezekiel 38:4) — the hook in Sennacherib''s nose (Isaiah 37:29) is the same restraint Yahuah lays on Gog; the proud invader hooked and led back.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=29
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=38 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-virgin-daughter-of-zion-hath-despised-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the remnant of Yashar''el (Israel)... shall stay upon Yahuah (LORD), the Holy One of Yashar''el (Israel)* (Isaiah 10:20) — the escaped of Yahudah taking root (Isaiah 37:31) is the same remnant that leans no more on Assyria.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=31
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-remnant-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The remnant shall return, even the remnant of Jacob, unto El Gibbor (the mighty God)* (Isaiah 10:21) — the rooting remnant of Yahudah (Isaiah 37:31) is the returning remnant of Jacob, the two-house seed preserved.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=31
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-remnant-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The zeal of Yahuah Tseva''ot (LORD of hosts) will perform this* (Isaiah 9:7) — the remnant going forth (Isaiah 37:32) is sealed by the same zeal-clause that establishes the everlasting throne of David.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=32
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-remnant-shall-take-root-downward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Behold, I send an Angel before thee, to keep thee in the way* (Exodus 23:20) — the angel of Yahuah who smote the camp (Isaiah 37:36) is the Formed messenger Yahuah sent before His people.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *Beware of him... for my name is in him* (Exodus 23:21) — the Name is IN the Angel; the One who smote the Assyrians (Isaiah 37:36) is the Formed Son who bears the Name, is Yahuah, and HAS a Father.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Yahuah (LORD) will pass through to smite the Egyptians... will not suffer the destroyer to come in* (Exodus 12:23) — the Angel over the Assyrian camp (Isaiah 37:36) is the same Destroyer-arm of the Passover night.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the angel of Yahuah (LORD) went out, and smote in the camp of the Assyrians an hundred fourscore and five thousand* (2 Kings 19:35) — the parallel account of Isaiah 37:36, word for word; two witnesses to the one deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=19 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *The stouthearted are spoiled, they have slept their sleep... none of the men of might have found their hands* (Psalm 76:5) — the Psalm sings the morning after the smiting (Isaiah 37:36); the proud host found dead corpses.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=76 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *At thy rebuke, O Elohim (God) of Jacob, both the chariot and horse are cast into a dead sleep* (Psalm 76:6) — the boast of *the multitude of my chariots* (Isaiah 37:24) answered by a single rebuke; the slaughter (37:36) was no battle.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=76 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Then shall the Assyrian fall with the sword, not of a mighty man* (Isaiah 31:8) — SELF-LINK: Isaiah''s own earlier word fulfilled when the angel of Yahuah smote the camp (Isaiah 37:36), by no human hand.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *immediately the angel of Yahuah (Lord) smote him, because he gave not Elohim (God) the glory* (Acts 12:23) — the same Name-bearing Angel that smote the Assyrian host (Isaiah 37:36) smites the blaspheming Herod in the gospel age.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=37 AND sv.verse_number=36
+  JOIN _s303_isa37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-37-the-angel-of-yahuah-smote-the-camp-of-the-assyrians'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
