@@ -27246,6 +27246,1956 @@ SELECT t.id, cr.id, 5, E'*let us offer the sacrifice of praise to Elohim (God) c
  WHERE t.slug='psalm-56-delivered-my-soul-from-death-to-walk-before-elohim'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_57.sql (Psalm 57) -----
+-- Chapter: Psalm 57 — *when he fled from Saul in the cave* (Engedi, 1 Samuel 24). David hunted, hidden
+-- in the rock, sings from the cave: *Be merciful unto me, O Elohim (God)... in the shadow of thy wings
+-- will I make my refuge* (v.1). The psalm climbs from the cave-floor through the lions' den of the
+-- enemy (v.4) to the twice-sung refrain that lifts Elohim over all the earth (vv.5,11), and closes with
+-- a heart fixed in praise *among the nations* (vv.7-10) — the two-house glory filling the earth. Five
+-- weaves: ★ the shadow of the wings = covenant shelter (v.1, Ps 36:7 / Ps 91:1,4 / Ruth 2:12 / the
+-- gathering hen Matthew 23:37); the mercy-and-truth SENT from heaven = the Formed Son full of grace and
+-- truth (v.3, John 1:14,17); among lions / the devouring tongue (v.4, Ps 22:13,21 / Daniel 6:22 /
+-- 1 Peter 5:8 / Ps 64:3); ★★ the refrain *let thy glory be above all the earth* = the ingathering glory
+-- filling the earth (vv.5,11, Numbers 14:21 / Isaiah 6:3 / Habakkuk 2:14 / Philippians 2:9-11 the Formed
+-- Son exalted / Ps 108:5 the twin psalm); and the fixed heart's praise AMONG THE NATIONS (vv.7-10,
+-- Romans 15:9 nations WITH His people / Ps 108:1,3 the twin / Ps 18:49). Ps 57:7-11 ≈ Psalm 108:1-5
+-- verbatim — cross-lateral, not one psalm.
+-- Tag: ps057   Temp view: _s302_ps057_lookup
+-- Sort band: base 23400, step 3 -> threads at 23400, 23403, 23406, 23409, 23412 (5 threads)
+-- Source of EVERY row: 'canon','psalms',57,v
+--
+-- Psalm 57 coverage:
+--   ★ v.1 (Be merciful unto me, O Elohim... in the shadow of thy wings will I make my refuge, until
+--          these calamities be overpast)
+--        NT:     ★ Matthew 23:37 (how often would I have gathered thy children together, even as a hen
+--                gathereth her chickens under her wings — the gathering wings; Rom 11:1-2 two-house guard
+--                in the prose, NOT Israel cast off) — THREAD 1
+--        Extras: none warranted (the refuge-under-wings is carried clean by the psalter + Ruth)
+--        Tanakh: ★ Psalm 36:7 (the children of men put their trust under the shadow of thy wings),
+--                ★ Psalm 91:1 (He that dwelleth in the secret place... shall abide under the shadow of the
+--                Almighty), Psalm 91:4 (under his wings shalt thou trust), Ruth 2:12 (under whose wings
+--                thou art come to trust) — THREAD 1
+--   v.2 (I will cry unto Elohim most high; unto Elohim that performeth all things for me)
+--        NT/Extras/Tanakh: none warranted as separate (folded into THREAD 1's refuge-cry)
+--   v.3 (He shall send from heaven, and save me... Elohim shall send forth his mercy and his truth)
+--        NT:     John 1:14 (the Word... full of grace and truth), John 1:17 (grace and truth came by
+--                Yahusha HaMashiach) — the mercy and truth SENT = the Formed Son — THREAD 2
+--        Extras: none warranted
+--        Tanakh: Psalm 43:3 (send out thy light and thy truth) is a LIVE thread — lateral, NOT duped here
+--   v.4 (My soul is among lions... even the sons of men, whose teeth are spears and arrows, and their
+--          tongue a sharp sword)
+--        NT:     1 Peter 5:8 (your adversary the devil, as a roaring lion, walketh about, seeking whom he
+--                may devour) — THREAD 3
+--        Extras: none warranted (the lion/tongue material is carried by the psalter + Daniel)
+--        Tanakh: Psalm 22:13 (they gaped upon me... as a ravening and a roaring lion), Psalm 22:21 (Save
+--                me from the lion's mouth), Daniel 6:22 (hath shut the lions' mouths), Psalm 64:3 (whet
+--                their tongue like a sword... bend their bows to shoot their arrows, even bitter words)
+--                — THREAD 3
+--   ★★ vv.5,11 (Be thou exalted, O Elohim, above the heavens; let thy glory be above all the earth — the
+--          twice-sung refrain)
+--        NT:     ★★ Philippians 2:9 (Elohim also hath highly exalted him, and given him a name which is
+--                above every name), Philippians 2:10 (at the name of Yahusha every knee should bow) — the
+--                Formed Son exalted — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Numbers 14:21 (all the earth shall be filled with the glory of Yahuah), ★ Isaiah 6:3
+--                (the whole earth is full of his glory), ★ Habakkuk 2:14 [LIB note: parse v.13 carries the
+--                labour-in-fire line; the earth-filled-with-glory is at 2:14] — see verse below,
+--                Psalm 108:5 (Be thou exalted... and thy glory above all the earth — the twin) — THREAD 4
+--   vv.6 (They have prepared a net for my steps... into the midst whereof they are fallen themselves)
+--        NT/Extras/Tanakh: none warranted as separate (the snare-falls-on-its-maker line folded as lead-in
+--                to THREAD 3's enemy material; the psalter's pit-digger motif not framework-load-bearing here)
+--   vv.7-10 (My heart is fixed, O Elohim... I will sing and give praise... I will praise thee, O Yahuah,
+--          among the people: I will sing unto thee among the nations)
+--        NT:     ★ Romans 15:9 (For this cause I will confess to thee among the Gentiles, and sing unto thy
+--                name — Paul quotes the among-the-nations praise; nations WITH His people, two-house NOT
+--                replacement) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 108:1 (O Elohim, my heart is fixed; I will sing and give praise — the twin),
+--                Psalm 108:3 (I will praise thee... among the people... among the nations — the twin),
+--                Psalm 18:49 (I will give thanks unto thee... among the heathen, and sing praises unto thy
+--                name) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. psalm-57-the-shadow-of-thy-wings-my-refuge — NT (Matthew 23) + Tanakh (Psalm 36, Psalm 91, Ruth 2)
+--      [free] (★ the shadow of the wings = covenant shelter; the gathering hen — Rom 11 two-house guard)
+--   2. psalm-57-he-shall-send-his-mercy-and-his-truth — NT (John 1) [free] (mercy and truth SENT from
+--      heaven = the Formed Son full of grace and truth; Ps 43:3 a LIVE thread — lateral, not duped)
+--   3. psalm-57-my-soul-is-among-lions — NT (1 Peter 5) + Tanakh (Psalm 22, Daniel 6, Psalm 64) [free]
+--      (among lions / the devouring tongue — the adversary as a roaring lion)
+--   4. psalm-57-be-thou-exalted-thy-glory-above-all-the-earth — NT (Philippians 2) + Tanakh (Numbers 14,
+--      Isaiah 6, Habakkuk 2, Psalm 108) [free] (★★ the refrain = the ingathering glory filling the earth;
+--      the Formed Son exalted, every knee; two-house glory-fills-the-earth)
+--   5. psalm-57-my-heart-is-fixed-i-will-praise-thee-among-the-nations — NT (Romans 15) + Tanakh
+--      (Psalm 108, Psalm 18) [free] (★ praise AMONG THE NATIONS — nations WITH His people, two-house NOT
+--      replacement; Ps 57:7-11 the twin of Ps 108:1-5)
+--
+-- Framework-load-bearing / contested verses + framing:
+--   ★ THE SHADOW OF THE WINGS (THREAD 1): *in the shadow of thy wings will I make my refuge* (57:1). The
+--      wings are covenant shelter — *the children of men put their trust under the shadow of thy wings*
+--      (Ps 36:7); *under his wings shalt thou trust* (Ps 91:4). Ruth the Moabitess is brought *under whose
+--      wings thou art come to trust* (Ruth 2:12) — the gathering of the stranger into the covenant. And
+--      the Formed Son names the same wings over Jerusalem: *how often would I have gathered thy children
+--      together, even as a hen gathereth her chickens under her wings* (Matthew 23:37). The longing of the
+--      gathering wings is two-house, NOT replacement: *I say then, Hath Elohim cast away his people? Elohim
+--      forbid* (Rom 11:1-2) — the wings still spread to gather Yashar''el and the nations come to trust.
+--   ★★ BE THOU EXALTED, THY GLORY ABOVE ALL THE EARTH (THREAD 4): the refrain twice — *Be thou exalted, O
+--      Elohim, above the heavens; let thy glory be above all the earth* (57:5,11). This is the oath of the
+--      ingathering: *all the earth shall be filled with the glory of Yahuah* (Numbers 14:21); the seraphim
+--      cry *the whole earth is full of his glory* (Isaiah 6:3); *the earth shall be filled with the
+--      knowledge of the glory of Yahuah, as the waters cover the sea* (Habakkuk 2:14). And it is worked out
+--      in the Formed Son exalted: *Elohim also hath highly exalted him, and given him a name which is above
+--      every name: That at the name of Yahusha every knee should bow* (Philippians 2:9-10). The twin psalm
+--      sings the very refrain — *Be thou exalted, O Elohim, above the heavens: and thy glory above all the
+--      earth* (Psalm 108:5).
+--   ★ PRAISE AMONG THE NATIONS (THREAD 5): *I will praise thee, O Yahuah, among the people: I will sing
+--      unto thee among the nations* (57:9). Paul sets this confession on the lips of the gathered when he
+--      shows the nations brought IN with Israel, not over it: *as it is written, For this cause I will
+--      confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9), under *Rejoice, ye
+--      Gentiles, with his people* (15:10). The nations sing WITH His people — two-house, not replacement.
+--      Psalm 57:7-11 ≈ Psalm 108:1-5 verbatim: the twin, cross-lateral, not one psalm.
+--   VERSES WITH NO SEPARATE ADD: vv.2,6,8,10 carry the cry to El most high, the snare-falls-on-its-maker,
+--      the awaking glory/psaltery, and the mercy-great-unto-the-heavens — recorded as folded (the cry into
+--      THREAD 1, the awaking/mercy lines into THREADS 4-5); v.3's mercy-and-truth-SENT is its own THREAD 2.
+
+CREATE TEMP VIEW _s302_ps057_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the shadow of thy wings — covenant shelter / the gathering hen
+    ('canon','psalms',57,1,'canon','psalms',36,7,'free',
+      E'*How excellent is thy lovingkindness, O Elohim (God)! therefore the children of men put their trust under the shadow of thy wings* (Psalm 36:7). *In the shadow of thy wings will I make my refuge* (Psalm 57:1): the cave-floor cry names the same shelter the neighbouring psalm sings — the children of men running to trust under the shadow of His wings. The wings are the covenant cover where the hunted hide.'),
+    ('canon','psalms',57,1,'canon','psalms',91,1,'free',
+      E'*He that dwelleth in the secret place of the El Elyon (most High) shall abide under the shadow of the Almighty* (Psalm 91:1). *In the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1): the secret place and the shadow are one — the hidden dwelling where no plague comes nigh, the refuge until the calamity is past. David in the cave is in the secret place of the Most High.'),
+    ('canon','psalms',57,1,'canon','psalms',91,4,'free',
+      E'*He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler* (Psalm 91:4). *In the shadow of thy wings will I make my refuge* (Psalm 57:1): the very image — covered with His feathers, trusting under His wings, His truth the shield. The shadow of the wings is the covenant shelter, and His truth is the buckler over the one who hides there.'),
+    ('canon','psalms',57,1,'canon','ruth',2,12,'free',
+      E'*Yahuah (LORD) recompense thy work, and a full reward be given thee of Yahuah Elohim (the LORD God) of Yashar''el (Israel), under whose wings thou art come to trust* (Ruth 2:12). *In the shadow of thy wings will I make my refuge* (Psalm 57:1): Boaz blesses Ruth the Moabitess as one *come to trust* under Yahuah''s wings — the stranger gathered into the covenant shelter. The same wings David hides under spread to draw the nations in to trust.'),
+    ('canon','psalms',57,1,'canon','matthew',23,37,'free',
+      E'*O Jerusalem, Jerusalem... how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!* (Matthew 23:37). *In the shadow of thy wings will I make my refuge* (Psalm 57:1): the Formed Son names the gathering wings of the psalm — the hen who would shelter her chicks. The longing is two-house and unspent — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1-2) — the wings still spread to gather Yashar''el and the nations to trust.'),
+
+    -- THREAD 2: He shall send his mercy and his truth — the Formed Son full of grace and truth
+    ('canon','psalms',57,3,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). *Elohim (God) shall send forth his mercy and his truth* (Psalm 57:3): the mercy and truth sent from heaven are gathered into one Person — the Word made flesh, *full of grace and truth*, the Formed Son drawn from the Formless Father. What the psalm asks Elohim to send forth, the Father sends forth in the Son.'),
+    ('canon','psalms',57,3,'canon','john',1,17,'free',
+      E'*For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17). *He shall send from heaven, and save me... Elohim (God) shall send forth his mercy and his truth* (Psalm 57:3): the grace and truth that came by the Formed Son are the mercy and truth Elohim sends from heaven to save — not against the Torah given by Moses but the saving mercy sent alongside it, the One sent forth to deliver the hunted from the reproach of him that would swallow him up.'),
+
+    -- THREAD 3: My soul is among lions — the devouring tongue
+    ('canon','psalms',57,4,'canon','psalms',22,13,'free',
+      E'*They gaped upon me with their mouths, as a ravening and a roaring lion* (Psalm 22:13). *My soul is among lions* (Psalm 57:4): the suffering-psalm sets the same beasts round about — the open mouths of the ravening, roaring lion. The hunted righteous one is hemmed in by lions on every side, the type of the Anointed beset by his enemies.'),
+    ('canon','psalms',57,4,'canon','psalms',22,21,'free',
+      E'*Save me from the lion''s mouth: for thou hast heard me from the horns of the unicorns* (Psalm 22:21). *My soul is among lions... whose teeth are spears and arrows* (Psalm 57:4): the cry of the psalm is to be saved from the lion''s mouth — the very deliverance Psalm 57 reaches for from among the lions. He is heard out of the mouth of the beast.'),
+    ('canon','psalms',57,4,'canon','daniel',6,22,'free',
+      E'*My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me: forasmuch as before him innocency was found in me* (Daniel 6:22). *My soul is among lions* (Psalm 57:4): Daniel in the den is the lived parable of the psalm — cast among the literal lions, Elohim sends His angel and shuts their mouths. The soul among lions is delivered by the One who shuts the lions'' mouths.'),
+    ('canon','psalms',57,4,'canon','1-peter',5,8,'free',
+      E'*Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour* (1 Peter 5:8). *My soul is among lions* (Psalm 57:4): Peter names the lion behind the lions — the adversary who, as a roaring lion, walks about seeking whom he may devour. The teeth and the sharp-sword tongue of the psalm''s enemies are the devouring work of the one who is resisted stedfast in the faith.'),
+    ('canon','psalms',57,4,'canon','psalms',64,3,'free',
+      E'*Who whet their tongue like a sword, and bend their bows to shoot their arrows, even bitter words* (Psalm 64:3). *Even the sons of men, whose teeth are spears and arrows, and their tongue a sharp sword* (Psalm 57:4): the neighbouring psalm gives the same weapon — the tongue whetted like a sword, arrows of bitter words. The enemy''s mouth is the sword that wounds; the devouring is done with the tongue.'),
+
+    -- THREAD 4 (★★): Be thou exalted, thy glory above all the earth — the ingathering glory
+    ('canon','psalms',57,5,'canon','numbers',14,21,'free',
+      E'*But as truly as I live, all the earth shall be filled with the glory of Yahuah (LORD)* (Numbers 14:21). *Let thy glory be above all the earth* (Psalm 57:5): the refrain prays the oath of Yahuah Himself — *all the earth shall be filled with the glory of Yahuah*. What David sings from the cave is the very thing Yahuah swore by His own life: the glory will fill the earth.'),
+    ('canon','psalms',57,5,'canon','isaiah',6,3,'free',
+      E'*And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3). *Let thy glory be above all the earth* (Psalm 57:5): the seraphim already cry it done — *the whole earth is full of his glory*. The psalm''s prayer is heaven''s settled song; the glory the cave-bound David asks for is the glory the throne-room declares.'),
+    ('canon','psalms',57,5,'canon','habakkuk',2,14,'free',
+      E'*For the earth shall be filled with the knowledge of the glory of Yahuah (LORD), as the waters cover the sea* (Habakkuk 2:14). *Let thy glory be above all the earth* (Psalm 57:5): the prophet seals the same promise — the earth filled with the knowledge of His glory as the waters cover the sea. The refrain of the psalm is the certainty of the prophets: the glory will flood the whole earth.'),
+    ('canon','psalms',57,5,'canon','philippians',2,9,'free',
+      E'*Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name* (Philippians 2:9). *Be thou exalted, O Elohim (God), above the heavens* (Psalm 57:5): the exaltation prayed in the refrain is worked out in the Formed Son — the Father highly exalts Him and gives Him the Name above every name. He is the One emptied and then lifted up, exalted BY the Father, never co-equal nor a made creature.'),
+    ('canon','psalms',57,5,'canon','philippians',2,10,'free',
+      E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). *Let thy glory be above all the earth* (Psalm 57:5): the glory above all the earth is every knee bowing at the name of the exalted Son — heaven, earth, and under the earth. The refrain''s glory-fills-the-earth is the universal homage to the Formed One the Father has exalted.'),
+    ('canon','psalms',57,11,'canon','psalms',108,5,'free',
+      E'*Be thou exalted, O Elohim (God), above the heavens: and thy glory above all the earth* (Psalm 108:5). *Be thou exalted, O Elohim (God), above the heavens: let thy glory be above all the earth* (Psalm 57:11): the twin psalm carries the refrain verbatim — Psalm 57:7-11 is woven into Psalm 108:1-5. The same prayer is sung twice across the psalter, the cave-song lifted into the later psalm of conquest.'),
+
+    -- THREAD 5 (★): My heart is fixed — I will praise thee among the nations
+    ('canon','psalms',57,9,'canon','romans',15,9,'free',
+      E'*And that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9). *I will praise thee, O Yahuah (Lord), among the people: I will sing unto thee among the nations* (Psalm 57:9): Paul sets the very among-the-nations confession on the gathered, then adds *Rejoice, ye Gentiles, with his people* (15:10). The nations sing WITH His people — two-house ingathering, not replacement.'),
+    ('canon','psalms',57,7,'canon','psalms',108,1,'free',
+      E'*O Elohim (God), my heart is fixed; I will sing and give praise, even with my glory* (Psalm 108:1). *My heart is fixed, O Elohim (God), my heart is fixed: I will sing and give praise* (Psalm 57:7): the twin psalm opens with the fixed heart of Psalm 57 — Psalm 57:7-11 is the seam Psalm 108 is sewn from. The steadied heart sings the same praise across both psalms.'),
+    ('canon','psalms',57,9,'canon','psalms',108,3,'free',
+      E'*I will praise thee, O Yahuah (LORD), among the people: and I will sing praises unto thee among the nations* (Psalm 108:3). *I will praise thee, O Yahuah (Lord), among the people: I will sing unto thee among the nations* (Psalm 57:9): the twin psalm repeats the line word for word — praise among the people, song among the nations. The among-the-nations praise is sung twice, the witness carried out to the gathered peoples.'),
+    ('canon','psalms',57,9,'canon','psalms',18,49,'free',
+      E'*Therefore will I give thanks unto thee, O Yahuah (LORD), among the heathen, and sing praises unto thy name* (Psalm 18:49). *I will sing unto thee among the nations* (Psalm 57:9): David''s deliverance-psalm sings the same among-the-nations thanks — the song lifted up among the heathen to His name. The praise of the hunted king reaches out to the nations, the seed of the two-house ingathering.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-57-the-shadow-of-thy-wings-my-refuge',
+       E'In the shadow of thy wings will I make my refuge — covenant shelter and the gathering hen',
+       E'David sings from the cave at Engedi, hunted by Saul: *Be merciful unto me, O Elohim (God), be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1). The wings are the covenant shelter where the hunted hide. The psalter sings the same shadow: *the children of men put their trust under the shadow of thy wings* (Psalm 36:7); *He that dwelleth in the secret place of the El Elyon (most High) shall abide under the shadow of the Almighty* (Psalm 91:1); *under his wings shalt thou trust: his truth shall be thy shield and buckler* (Psalm 91:4). And the wings draw in the stranger: Boaz blesses Ruth the Moabitess as one come to the covenant — *a full reward be given thee of Yahuah Elohim (the LORD God) of Yashar''el (Israel), under whose wings thou art come to trust* (Ruth 2:12). The Formed Son names these very wings over Jerusalem: *how often would I have gathered thy children together, even as a hen gathereth her chickens under her wings, and ye would not!* (Matthew 23:37). The longing of the gathering wings is two-house and unspent — *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1-2). The wings still spread: Yashar''el gathered and the nations come to trust.',
+       sv.verse_id, ev.verse_id, 'free', 23400
+  FROM _s302_ps057_lookup sv, _s302_ps057_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=57 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-57-he-shall-send-his-mercy-and-his-truth',
+       E'Elohim shall send forth his mercy and his truth — the Formed Son full of grace and truth',
+       E'*He shall send from heaven, and save me from the reproach of him that would swallow me up. Selah. Elohim (God) shall send forth his mercy and his truth* (Psalm 57:3). The mercy and truth that Elohim sends from heaven to save are gathered into one Person — the Word made flesh: *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). Read through the Formed and the Formless, this is the expressed Word drawn from the Father, sent forth to save: *For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — not against the Torah given by Moses but the saving mercy sent alongside it, the One the Father sends from heaven to deliver the hunted from the reproach of him that would swallow him up. (The kindred *send out thy light and thy truth* of Psalm 43:3 is woven in its own thread.)',
+       sv.verse_id, ev.verse_id, 'free', 23403
+  FROM _s302_ps057_lookup sv, _s302_ps057_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=57 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-57-my-soul-is-among-lions',
+       E'My soul is among lions — the devouring tongue and the roaring lion',
+       E'*My soul is among lions: and I lie even among them that are set on fire, even the sons of men, whose teeth are spears and arrows, and their tongue a sharp sword* (Psalm 57:4). The hunted righteous one is hemmed in by beasts. The suffering-psalm sets the same lions round about — *They gaped upon me with their mouths, as a ravening and a roaring lion* (Psalm 22:13) — and cries for the same deliverance — *Save me from the lion''s mouth* (Psalm 22:21). Daniel lived the parable: cast among the literal lions, *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22). Peter names the lion behind the lions: *your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour* (1 Peter 5:8). And the sharp-sword tongue is the enemy''s true weapon — *Who whet their tongue like a sword, and bend their bows to shoot their arrows, even bitter words* (Psalm 64:3). The soul among lions is delivered by the One who shuts the lions'' mouths.',
+       sv.verse_id, ev.verse_id, 'free', 23406
+  FROM _s302_ps057_lookup sv, _s302_ps057_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=57 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-57-be-thou-exalted-thy-glory-above-all-the-earth',
+       E'Be thou exalted, O Elohim, above the heavens; let thy glory be above all the earth — the ingathering glory',
+       E'Twice the psalm lifts the same refrain, the hinge of the whole song: *Be thou exalted, O Elohim (God), above the heavens; let thy glory be above all the earth* (Psalm 57:5,11). This is the oath of the ingathering, the glory that fills the earth. Yahuah swore it by His own life — *as truly as I live, all the earth shall be filled with the glory of Yahuah (LORD)* (Numbers 14:21); the seraphim cry it already done — *the whole earth is full of his glory* (Isaiah 6:3); the prophet seals it — *the earth shall be filled with the knowledge of the glory of Yahuah (LORD), as the waters cover the sea* (Habakkuk 2:14). And it is worked out in the Formed Son exalted: *Wherefore Elohim (God) also hath highly exalted him, and given him a name which is above every name: That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:9-10) — He who emptied Himself, exalted BY the Father, never co-equal nor a made creature, and every knee bowing is the glory above all the earth. The twin psalm sings the same refrain — *Be thou exalted, O Elohim (God), above the heavens: and thy glory above all the earth* (Psalm 108:5) — for Psalm 57:7-11 is woven into Psalm 108:1-5.',
+       sv.verse_id, ev.verse_id, 'free', 23409
+  FROM _s302_ps057_lookup sv, _s302_ps057_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=57 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-57-my-heart-is-fixed-i-will-praise-thee-among-the-nations',
+       E'My heart is fixed — I will praise thee among the nations',
+       E'The cave-song turns from fear to settled praise: *My heart is fixed, O Elohim (God), my heart is fixed: I will sing and give praise. Awake up, my glory... I will praise thee, O Yahuah (Lord), among the people: I will sing unto thee among the nations* (Psalm 57:7-9). The fixed heart sings out to the nations. Paul sets this very among-the-nations confession on the gathered, showing the nations brought IN with Israel, not over it: *as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9), under *Rejoice, ye Gentiles, with his people* (Romans 15:10) — the nations sing WITH His people, two-house ingathering, never replacement. David''s deliverance-psalm sings the same — *I will give thanks unto thee, O Yahuah (LORD), among the heathen, and sing praises unto thy name* (Psalm 18:49). And the twin psalm carries the fixed heart and the song verbatim — *O Elohim (God), my heart is fixed; I will sing and give praise* (Psalm 108:1); *I will praise thee, O Yahuah (LORD), among the people: and I will sing praises unto thee among the nations* (Psalm 108:3) — for Psalm 57:7-11 is the seam Psalm 108 is sewn from.',
+       sv.verse_id, ev.verse_id, 'free', 23412
+  FROM _s302_ps057_lookup sv, _s302_ps057_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=57 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the children of men put their trust under the shadow of thy wings* (Psalm 36:7) — the same shelter as 57:1: the wings the hunted hide under.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=1
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=36 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-the-shadow-of-thy-wings-my-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *He that dwelleth in the secret place of the El Elyon (most High) shall abide under the shadow of the Almighty* (Psalm 91:1) — the secret place = the refuge of 57:1 until the calamity is past.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=1
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-the-shadow-of-thy-wings-my-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*under his wings shalt thou trust: his truth shall be thy shield and buckler* (Psalm 91:4) — the very image of 57:1: covered, trusting under His wings.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=1
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-the-shadow-of-thy-wings-my-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*under whose wings thou art come to trust* (Ruth 2:12) — Ruth the Moabitess gathered into the covenant shelter; the wings draw in the stranger (57:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=1
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-the-shadow-of-thy-wings-my-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *even as a hen gathereth her chickens under her wings* (Matthew 23:37) — the Formed Son names the gathering wings of 57:1; two-house and unspent (Rom 11:1-2 guard).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=1
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-the-shadow-of-thy-wings-my-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the Word was made flesh... full of grace and truth* (John 1:14) — the mercy and truth Elohim sends forth (57:3) gathered into the Formed Son, the Word drawn from the Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=3
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-he-shall-send-his-mercy-and-his-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — the grace and truth of 57:3 sent in the Son; alongside the Torah given by Moses, not against it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=3
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-he-shall-send-his-mercy-and-his-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*as a ravening and a roaring lion* (Psalm 22:13) — the suffering-psalm sets the same lions round about as 57:4: the open mouths of the ravening beast.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=4
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-soul-is-among-lions'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Save me from the lion''s mouth* (Psalm 22:21) — the cry for the very deliverance 57:4 reaches for from among the lions.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=4
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-soul-is-among-lions'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22) — Daniel in the den is the lived parable of 57:4: the soul among lions delivered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=4
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=6 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-soul-is-among-lions'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*your adversary the devil, as a roaring lion, walketh about, seeking whom he may devour* (1 Peter 5:8) — Peter names the lion behind the lions of 57:4.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=4
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-soul-is-among-lions'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Who whet their tongue like a sword... even bitter words* (Psalm 64:3) — the sharp-sword tongue of 57:4: the enemy''s true weapon is the mouth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=4
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=64 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-soul-is-among-lions'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *all the earth shall be filled with the glory of Yahuah (LORD)* (Numbers 14:21) — the refrain of 57:5 is Yahuah''s own oath sworn by His life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=5
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-be-thou-exalted-thy-glory-above-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the whole earth is full of his glory* (Isaiah 6:3) — the seraphim already cry the glory-above-all-the-earth of 57:5 done.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=5
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-be-thou-exalted-thy-glory-above-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the earth shall be filled with the knowledge of the glory of Yahuah (LORD), as the waters cover the sea* (Habakkuk 2:14) — the prophet seals the refrain of 57:5.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=5
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-be-thou-exalted-thy-glory-above-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Elohim (God) also hath highly exalted him, and given him a name which is above every name* (Philippians 2:9) — the exaltation of 57:5 worked out in the Formed Son, exalted BY the Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=5
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-be-thou-exalted-thy-glory-above-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *at the name of Yahusha (Jesus) every knee should bow* (Philippians 2:10) — the glory above all the earth (57:5) is every knee bowing to the exalted Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=5
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-be-thou-exalted-thy-glory-above-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Be thou exalted, O Elohim (God), above the heavens: and thy glory above all the earth* (Psalm 108:5) — the twin psalm carries 57:11 verbatim; Ps 57:7-11 woven into Ps 108:1-5.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=11
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=108 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-be-thou-exalted-thy-glory-above-all-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9) — Paul quotes the among-the-nations praise of 57:9; nations WITH His people, two-house not replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=9
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-heart-is-fixed-i-will-praise-thee-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*O Elohim (God), my heart is fixed; I will sing and give praise* (Psalm 108:1) — the twin psalm opens with the fixed heart of 57:7.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=7
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=108 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-heart-is-fixed-i-will-praise-thee-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will praise thee, O Yahuah (LORD), among the people... among the nations* (Psalm 108:3) — the twin repeats 57:9 word for word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=9
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=108 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-heart-is-fixed-i-will-praise-thee-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will give thanks unto thee, O Yahuah (LORD), among the heathen* (Psalm 18:49) — David''s deliverance-psalm sings the among-the-nations thanks of 57:9.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps057_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=57 AND sv.verse_number=9
+  JOIN _s302_ps057_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-57-my-heart-is-fixed-i-will-praise-thee-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_58.sql (Psalm 58) -----
+-- Chapter: Psalm 58 — AN IMPRECATORY PSALM AGAINST CORRUPT JUDGES. The congregation of unjust rulers
+-- is arraigned — *Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons
+-- of men? Yea, in heart ye work wickedness; ye weigh the violence of your hands in the earth* (vv.1-2);
+-- their corruption is traced to the womb — ★ *The wicked are estranged from the womb... their poison
+-- is like the poison of a serpent... like the deaf adder that stoppeth her ear* (vv.3-5), the serpent's
+-- brood by works not ethnicity; the imprecation calls Elohim to dissolve them — *Break their teeth, O
+-- Elohim... let them melt away as waters... as a snail which melteth* (vv.6-9); and it closes in the
+-- vindication of the righteous Judge — ★ *Verily there is a reward for the righteous: verily he is a
+-- Elohim (God) that judgeth in the earth* (vv.10-11). Runs LEAN: 4 threads.
+-- Tag: ps058   Temp view: _s302_ps058_lookup   Prefix: s302
+-- Sort band: base 23425, step 3 -> threads at 23425, 23428, 23431, 23434 (4 threads)
+-- Source of EVERY row: 'canon','psalms',58,v
+--
+-- Psalm 58 coverage:
+--   vv.1-2 (Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of men?
+--           Yea, in heart ye work wickedness; ye weigh the violence of your hands in the earth)
+--        NT:     ★ John 7:24 (Judge not according to the appearance, but judge righteous judgment) — THREAD 1
+--        Extras: none warranted (weighed Sirach on unjust judges; the canon just-judgment witnesses
+--                carry the weave cleaner; no clean extras add forced)
+--        Tanakh: ★ Leviticus 19:15 (Ye shall do no unrighteousness in judgment... in righteousness shalt
+--                thou judge thy neighbour — the Torah just-judgment law AFFIRMED), Isaiah 10:1-2 (Woe unto
+--                them that decree unrighteous decrees... to turn aside the needy from judgment), Psalm 82:1-2
+--                (Elohim... judgeth among the gods. How long will ye judge unjustly?) — THREAD 1
+--   ★ vv.3-5 (The wicked are estranged from the womb: they go astray as soon as they be born, speaking
+--           lies. Their poison is like the poison of a serpent: they are like the deaf adder that
+--           stoppeth her ear)
+--        NT:     ★ Romans 3:13 (the poison of asps is under their lips — the depravity catena) — THREAD 2
+--                (kept LATERAL to the live Ps 5/10/14/140 catena threads; this is the SERPENT-POISON line
+--                bound to the estranged-from-the-womb framing, not a dupe of the throat/feet lines)
+--        Extras: none warranted (the serpent's-seed framing is carried by Genesis 3 + Romans 3)
+--        Tanakh: ★ Genesis 3:14-15 (the serpent... upon thy belly shalt thou go... I will put enmity
+--                between thy seed and her seed — the serpent's brood, the deaf adder), Psalm 51:5 (Behold,
+--                I was shapen in iniquity; and in sin did my mother conceive me — estranged from the womb) — THREAD 2
+--   vv.6-9 (Break their teeth, O Elohim... Let them melt away as waters... As a snail which melteth, let
+--           every one of them pass away... he shall take them away as with a whirlwind)
+--        NT:     none warranted (the imprecation's dissolution is sung within the psalter)
+--        Extras: none warranted (weighed Sirach on the end of the unjust; not framework-load-bearing here)
+--        Tanakh: ★ Psalm 64:7-8 (But Elohim shall shoot at them with an arrow... so they shall make their
+--                own tongue to fall upon themselves — the wicked's own weapon turned), Psalm 112:10 (The
+--                wicked shall see it... and melt away: the desire of the wicked shall perish — the melting
+--                away) — THREAD 3
+--   ★ vv.10-11 (The righteous shall rejoice when he seeth the vengeance... So that a man shall say,
+--           Verily there is a reward for the righteous: verily he is a Elohim (God) that judgeth in the earth)
+--        NT:     ★ Romans 12:19 (Vengeance is mine; I will repay, saith Yahuah (Lord) — vengeance is His
+--                alone), Revelation 19:1-2 (true and righteous are his judgments... hath avenged the blood
+--                of his servants) — THREAD 4
+--        Extras: none warranted (the righteous-Judge vindication is carried by Genesis 18 + Malachi 4 +
+--                Romans 12 + Revelation 19)
+--        Tanakh: ★ Genesis 18:25 (Shall not the Judge of all the earth do right? — Elohim that judgeth in
+--                the earth), Malachi 4:1-3 (the day... shall burn as an oven... ye shall tread down the
+--                wicked — the reward for them that fear, the wicked trodden) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-58-do-ye-indeed-judge-uprightly-o-ye-sons-of-men — NT (John 7) + Tanakh (Leviticus 19,
+--      Isaiah 10, Psalm 82) [free] (corrupt judges arraigned; the Torah just-judgment law affirmed)
+--   2. psalm-58-the-wicked-estranged-from-the-womb-the-serpents-poison — NT (Romans 3) + Tanakh
+--      (Genesis 3, Psalm 51) [free] (★ the estranged-from-the-womb wicked = the serpent's brood by works,
+--      the poison of the serpent — kept lateral to the live Ps 5/10/14/140 Rom 3 catena)
+--   3. psalm-58-let-them-melt-away-as-waters — Tanakh (Psalm 64, Psalm 112) [free] (the imprecation;
+--      the wicked dissolved, their own weapon turned upon them, the desire of the wicked perishing)
+--   4. psalm-58-verily-he-is-an-elohim-that-judgeth-in-the-earth — NT (Romans 12, Revelation 19) +
+--      Tanakh (Genesis 18, Malachi 4) [free] (★ the vindication of the righteous Judge; vengeance is His,
+--      true and righteous are His judgments, the Judge of all the earth does right, the reward for the righteous)
+--
+-- Framing notes:
+--   THE CORRUPT JUDGES ARRAIGNED (THREAD 1): *Do ye indeed speak righteousness, O congregation? do ye
+--      judge uprightly, O ye sons of men? Yea, in heart ye work wickedness; ye weigh the violence of your
+--      hands in the earth* (58:1-2). The Formed Son sets the standard the judges abandoned — *Judge not
+--      according to the appearance, but judge righteous judgment* (John 7:24); the Torah had already laid
+--      it down — *Ye shall do no unrighteousness in judgment... but in righteousness shalt thou judge thy
+--      neighbour* (Leviticus 19:15), the just-judgment law affirmed not abolished; the prophet pronounces
+--      the woe — *Woe unto them that decree unrighteous decrees... To turn aside the needy from judgment*
+--      (Isaiah 10:1-2); and Elohim Himself stands over the bench of the judges — *Elohim (God) standeth in
+--      the congregation of the mighty; he judgeth among the gods. How long will ye judge unjustly?* (Psalm
+--      82:1-2). The judges who weigh violence will themselves be judged.
+--   ★ ESTRANGED FROM THE WOMB / THE SERPENT'S POISON (THREAD 2): *The wicked are estranged from the womb:
+--      they go astray as soon as they be born, speaking lies. Their poison is like the poison of a serpent:
+--      they are like the deaf adder that stoppeth her ear* (58:3-4). This is the seed-war of Genesis read
+--      into conduct — the curse on the serpent and the enmity of the two seeds: *upon thy belly shalt thou
+--      go... And I will put enmity between thee and the woman, and between thy seed and her seed* (Genesis
+--      3:14-15). Paul gathers the very line into his catena of the universal depravity — *the poison of
+--      asps is under their lips* (Romans 3:13) — the serpent's poison under the lips of the wicked. The
+--      estrangement reaches to conception itself, as David confessed — *Behold, I was shapen in iniquity;
+--      and in sin did my mother conceive me* (Psalm 51:5). The wicked are the serpent's brood — not by
+--      ethnicity but by the works of the serpent, the deaf adder that will not hear.
+--   THE IMPRECATION — LET THEM MELT AWAY (THREAD 3): *Break their teeth, O Elohim (God), in their mouth...
+--      Let them melt away as waters which run continually... As a snail which melteth, let every one of them
+--      pass away* (58:6-8). The psalter sings the dissolution: the wicked who bent the bow are met by the
+--      Archer who never misses — *But Elohim (God) shall shoot at them with an arrow; suddenly shall they
+--      be wounded. So they shall make their own tongue to fall upon themselves* (Psalm 64:7-8), their own
+--      weapon turned back; and the wisdom-psalm seals the end — *The wicked shall see it, and be grieved;
+--      he shall gnash with his teeth, and melt away: the desire of the wicked shall perish* (Psalm 112:10).
+--      The violence weighed in the hands melts away as waters.
+--   ★ VERILY HE IS AN ELOHIM THAT JUDGETH IN THE EARTH (THREAD 4): *The righteous shall rejoice when he
+--      seeth the vengeance... So that a man shall say, Verily there is a reward for the righteous: verily
+--      he is a Elohim (God) that judgeth in the earth* (58:10-11). The vengeance is not the righteous
+--      man's to take — *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)*
+--      (Romans 12:19); and heaven sings the verdict — *true and righteous are his judgments: for he hath
+--      judged the great whore... and hath avenged the blood of his servants at her hand* (Revelation 19:1-2).
+--      Abraham named the ground of it before Sodom — *Shall not the Judge of all the earth do right?*
+--      (Genesis 18:25) — the very Yahuah who appeared in the plains of Mamre. And the last prophet promised
+--      the reward of the righteous over the wicked — *the day cometh, that shall burn as an oven... And ye
+--      shall tread down the wicked; for they shall be ashes under the soles of your feet* (Malachi 4:1-3).
+--      There IS a reward for the righteous; Elohim judges in the earth.
+--   VERSES WITH NO SEPARATE ADD: v.5 (the deaf adder refrain, folded into THREAD 2's serpent framing),
+--      v.9 (the whirlwind close of the imprecation, folded into THREAD 3) — recorded as folded; the
+--      chapter's framework weight sits on vv.1-2, 3-4, 6-8, 10-11, woven there.
+
+CREATE TEMP VIEW _s302_ps058_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Do ye indeed judge uprightly, O ye sons of men? — corrupt judges arraigned
+    ('canon','psalms',58,1,'canon','john',7,24,'free',
+      E'*Judge not according to the appearance, but judge righteous judgment* (John 7:24). *Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of men?* (Psalm 58:1): the Formed Son sets the very standard the corrupt judges abandoned — not judgment by appearance, but righteous judgment. The psalm''s arraignment of the congregation finds its answer in his charge.'),
+    ('canon','psalms',58,1,'canon','leviticus',19,15,'free',
+      E'*Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15). *Do ye judge uprightly, O ye sons of men?* (Psalm 58:1): the Torah had already laid down the just-judgment law — no unrighteousness in judgment, no respect of persons. The psalm indicts judges who broke a commandment that still stands, affirmed not abolished.'),
+    ('canon','psalms',58,1,'canon','isaiah',10,1,'free',
+      E'*Woe unto them that decree unrighteous decrees, and that write grievousness which they have prescribed; To turn aside the needy from judgment, and to take away the right from the poor of my people* (Isaiah 10:1-2). *Yea, in heart ye work wickedness; ye weigh the violence of your hands in the earth* (Psalm 58:2): the prophet pronounces the woe the psalm''s judges are under — they that decree unrighteous decrees and rob the poor of judgment. The weighed violence of the hands draws the woe of Yahuah.'),
+    ('canon','psalms',58,1,'canon','psalms',82,1,'free',
+      E'*Elohim (God) standeth in the congregation of the mighty; he judgeth among the gods. How long will ye judge unjustly, and accept the persons of the wicked?* (Psalm 82:1-2). *Do ye indeed speak righteousness, O congregation?* (Psalm 58:1): the companion psalm sets Elohim Himself over the bench — He stands in the congregation of the judges and arraigns them, How long will ye judge unjustly? The judges who weigh violence are themselves under judgment.'),
+
+    -- THREAD 2 (★): The wicked estranged from the womb — the serpent's poison
+    ('canon','psalms',58,4,'canon','romans',3,13,'free',
+      E'*Their throat is an open sepulchre; with their tongues they have used deceit; the poison of asps is under their lips* (Romans 3:13). *Their poison is like the poison of a serpent: they are like the deaf adder that stoppeth her ear* (Psalm 58:4): Paul gathers the serpent-poison line into his catena of the universal depravity — the poison of asps under the lips. The wicked carry the venom of the serpent in their very speech.'),
+    ('canon','psalms',58,3,'canon','genesis',3,15,'free',
+      E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). *The wicked are estranged from the womb: they go astray as soon as they be born, speaking lies* (Psalm 58:3): the estrangement is the seed-war of Eden read into conduct — the enmity between the serpent''s seed and the woman''s. The wicked are the serpent''s brood, not by ethnicity but by the works of the father of lies.'),
+    ('canon','psalms',58,4,'canon','genesis',3,14,'free',
+      E'*And Yahuah Elohim (the LORD God) said unto the serpent, Because thou hast done this, thou art cursed above all cattle... upon thy belly shalt thou go, and dust shalt thou eat all the days of thy life* (Genesis 3:14). *Their poison is like the poison of a serpent: they are like the deaf adder that stoppeth her ear* (Psalm 58:4): the cursed serpent of Eden is the very pattern of the venomous, deaf-eared wicked. They bear the poison and the deafness of the cursed serpent.'),
+    ('canon','psalms',58,3,'canon','psalms',51,5,'free',
+      E'*Behold, I was shapen in iniquity; and in sin did my mother conceive me* (Psalm 51:5). *The wicked are estranged from the womb: they go astray as soon as they be born* (Psalm 58:3): David''s own confession names how deep the estrangement reaches — to conception itself. The going-astray from birth is the iniquity in which man is shapen, the root the serpent''s brood grows from.'),
+
+    -- THREAD 3: Let them melt away as waters — the imprecation, the wicked dissolved
+    ('canon','psalms',58,7,'canon','psalms',64,7,'free',
+      E'*But Elohim (God) shall shoot at them with an arrow; suddenly shall they be wounded* (Psalm 64:7). *Let them melt away as waters which run continually: when he bendeth his bow to shoot his arrows, let them be as cut in pieces* (Psalm 58:7): the wicked who bend the bow are met by the Archer who never misses — Elohim shoots at them with an arrow and they are suddenly wounded. The drawn bow of the wicked is answered by the bow of Elohim.'),
+    ('canon','psalms',58,7,'canon','psalms',64,8,'free',
+      E'*So they shall make their own tongue to fall upon themselves: all that see them shall flee away* (Psalm 64:8). *Let them melt away as waters which run continually... let them be as cut in pieces* (Psalm 58:7): the imprecation is answered by the wicked''s own weapon turned back — their tongue falls upon themselves. The violence they weighed in their hands recoils upon their own heads.'),
+    ('canon','psalms',58,8,'canon','psalms',112,10,'free',
+      E'*The wicked shall see it, and be grieved; he shall gnash with his teeth, and melt away: the desire of the wicked shall perish* (Psalm 112:10). *As a snail which melteth, let every one of them pass away* (Psalm 58:8): the wisdom-psalm seals the same end — the wicked melts away and his desire perishes. The melting of the snail is the melting away of the wicked, his desire come to nothing.'),
+
+    -- THREAD 4 (★): Verily he is an Elohim that judgeth in the earth — the righteous Judge vindicates
+    ('canon','psalms',58,10,'canon','romans',12,19,'free',
+      E'*Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). *The righteous shall rejoice when he seeth the vengeance* (Psalm 58:10): the vengeance the righteous rejoices to see is not his own to take — it is Yahuah''s alone, Vengeance is mine, I will repay. The righteous waits on the Judge, not his own hand.'),
+    ('canon','psalms',58,10,'canon','revelation',19,2,'free',
+      E'*For true and righteous are his judgments: for he hath judged the great whore, which did corrupt the earth with her fornication, and hath avenged the blood of his servants at her hand* (Revelation 19:2). *The righteous shall rejoice when he seeth the vengeance* (Psalm 58:10): heaven sings the very vengeance the psalm awaits — true and righteous are His judgments, the blood of His servants avenged. The rejoicing of the righteous is the Alleluia of the redeemed.'),
+    ('canon','psalms',58,11,'canon','genesis',18,25,'free',
+      E'*That be far from thee to do after this manner, to slay the righteous with the wicked... Shall not the Judge of all the earth do right?* (Genesis 18:25). *Verily he is a Elohim (God) that judgeth in the earth* (Psalm 58:11): Abraham named the ground of the psalm''s confession before Sodom — the Judge of all the earth will do right. The Elohim who judges in the earth is the One who appeared to Abraham in the plains of Mamre.'),
+    ('canon','psalms',58,11,'canon','malachi',4,3,'free',
+      E'*And ye shall tread down the wicked; for they shall be ashes under the soles of your feet in the day that I shall do this, saith Yahuah Tseva''ot (LORD of hosts)* (Malachi 4:3). *Verily there is a reward for the righteous* (Psalm 58:11): the last prophet promises the reward — the righteous tread down the wicked, who are ashes under their feet in the day of Yahuah. The reward for them that fear is the wicked trodden down.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-58-do-ye-indeed-judge-uprightly-o-ye-sons-of-men',
+       E'Do ye indeed judge uprightly, O ye sons of men? — the corrupt judges arraigned',
+       E'The psalm opens as a covenant-lawsuit against the bench of corrupt judges: *Do ye indeed speak righteousness, O congregation? do ye judge uprightly, O ye sons of men? Yea, in heart ye work wickedness; ye weigh the violence of your hands in the earth* (Psalm 58:1-2). The Formed Son sets the standard they abandoned — *Judge not according to the appearance, but judge righteous judgment* (John 7:24). And the Torah had already laid the law down: *Ye shall do no unrighteousness in judgment: thou shalt not respect the person of the poor, nor honour the person of the mighty: but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15) — the just-judgment commandment that still stands, affirmed not abolished. The prophet pronounces the woe these judges are under: *Woe unto them that decree unrighteous decrees... To turn aside the needy from judgment, and to take away the right from the poor of my people* (Isaiah 10:1-2). And the companion psalm sets Elohim Himself over the bench: *Elohim (God) standeth in the congregation of the mighty; he judgeth among the gods. How long will ye judge unjustly, and accept the persons of the wicked?* (Psalm 82:1-2). The judges who weigh violence in their hands will themselves be weighed.',
+       sv.verse_id, ev.verse_id, 'free', 23425
+  FROM _s302_ps058_lookup sv, _s302_ps058_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=58 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-58-the-wicked-estranged-from-the-womb-the-serpents-poison',
+       E'The wicked are estranged from the womb — the serpent''s poison under their lips',
+       E'The psalm traces the corruption of the wicked down to its root: *The wicked are estranged from the womb: they go astray as soon as they be born, speaking lies. Their poison is like the poison of a serpent: they are like the deaf adder that stoppeth her ear; Which will not hearken to the voice of charmers* (Psalm 58:3-5). This is the seed-war of Eden read into conduct. The serpent was cursed — *upon thy belly shalt thou go, and dust shalt thou eat all the days of thy life* (Genesis 3:14) — and the enmity set between the two seeds: *I will put enmity between thee and the woman, and between thy seed and her seed* (Genesis 3:15). Paul gathers the very line into his catena of the universal depravity: *the poison of asps is under their lips* (Romans 3:13) — the serpent''s venom carried in the speech of the wicked. And the estrangement reaches to conception itself, as David confessed of his own flesh: *Behold, I was shapen in iniquity; and in sin did my mother conceive me* (Psalm 51:5). The wicked are the serpent''s brood — not by bloodline or ethnicity but by the works of the father of lies, the deaf adder that stops her ear and will not hear.',
+       sv.verse_id, ev.verse_id, 'free', 23428
+  FROM _s302_ps058_lookup sv, _s302_ps058_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=58 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-58-let-them-melt-away-as-waters',
+       E'Let them melt away as waters — the imprecation, the wicked dissolved',
+       E'The psalm turns to imprecation, calling Elohim to dissolve the violence the wicked weighed: *Break their teeth, O Elohim (God), in their mouth: break out the great teeth of the young lions, O Yahuah (LORD). Let them melt away as waters which run continually: when he bendeth his bow to shoot his arrows, let them be as cut in pieces. As a snail which melteth, let every one of them pass away* (Psalm 58:6-8). The psalter answers the imprecation. The wicked who bend the bow are met by the Archer who never misses: *But Elohim (God) shall shoot at them with an arrow; suddenly shall they be wounded. So they shall make their own tongue to fall upon themselves* (Psalm 64:7-8) — their own weapon turned back upon them. And the wisdom-psalm seals the same end: *The wicked shall see it, and be grieved; he shall gnash with his teeth, and melt away: the desire of the wicked shall perish* (Psalm 112:10). The violence weighed in the hands melts away as waters; the desire of the wicked comes to nothing.',
+       sv.verse_id, ev.verse_id, 'free', 23431
+  FROM _s302_ps058_lookup sv, _s302_ps058_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=58 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-58-verily-he-is-an-elohim-that-judgeth-in-the-earth',
+       E'Verily he is an Elohim that judgeth in the earth — the righteous Judge vindicates',
+       E'The psalm closes in the vindication of the righteous Judge: *The righteous shall rejoice when he seeth the vengeance... So that a man shall say, Verily there is a reward for the righteous: verily he is a Elohim (God) that judgeth in the earth* (Psalm 58:10-11). The vengeance the righteous rejoices to see is not his own to take — it belongs to Yahuah alone: *avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). Heaven sings that vengeance executed: *true and righteous are his judgments: for he hath judged the great whore... and hath avenged the blood of his servants at her hand* (Revelation 19:2). Abraham named the very ground of the psalm''s confession before Sodom: *Shall not the Judge of all the earth do right?* (Genesis 18:25) — the Yahuah who appeared to him in the plains of Mamre. And the last prophet promised the reward of the righteous over the wicked: *the day cometh, that shall burn as an oven... And ye shall tread down the wicked; for they shall be ashes under the soles of your feet in the day that I shall do this* (Malachi 4:1-3). There IS a reward for the righteous; Elohim judges in the earth.',
+       sv.verse_id, ev.verse_id, 'free', 23434
+  FROM _s302_ps058_lookup sv, _s302_ps058_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=58 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Judge not according to the appearance, but judge righteous judgment* (John 7:24) — the Formed Son sets the standard the judges of 58:1 abandoned.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=1
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-do-ye-indeed-judge-uprightly-o-ye-sons-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Ye shall do no unrighteousness in judgment... but in righteousness shalt thou judge thy neighbour* (Leviticus 19:15) — the Torah just-judgment law (58:1) affirmed not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=1
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-do-ye-indeed-judge-uprightly-o-ye-sons-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Woe unto them that decree unrighteous decrees... To turn aside the needy from judgment* (Isaiah 10:1-2) — the prophet''s woe upon the judges who weigh violence (58:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=1
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-do-ye-indeed-judge-uprightly-o-ye-sons-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Elohim (God)... judgeth among the gods. How long will ye judge unjustly?* (Psalm 82:1-2) — the companion psalm sets Elohim over the bench arraigned in 58:1.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=1
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=82 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-do-ye-indeed-judge-uprightly-o-ye-sons-of-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the poison of asps is under their lips* (Romans 3:13) — Paul gathers the serpent-poison of 58:4 into his catena of universal depravity.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=4
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-the-wicked-estranged-from-the-womb-the-serpents-poison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will put enmity between thee and the woman, and between thy seed and her seed* (Genesis 3:15) — the estranged-from-the-womb wicked (58:3) are the serpent''s seed by works.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=3
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-the-wicked-estranged-from-the-womb-the-serpents-poison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the serpent... upon thy belly shalt thou go, and dust shalt thou eat* (Genesis 3:14) — the cursed serpent is the pattern of the venomous, deaf-eared wicked (58:4).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=4
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-the-wicked-estranged-from-the-womb-the-serpents-poison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Behold, I was shapen in iniquity; and in sin did my mother conceive me* (Psalm 51:5) — the estrangement of 58:3 reaches to conception itself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=3
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-the-wicked-estranged-from-the-womb-the-serpents-poison'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Elohim (God) shall shoot at them with an arrow; suddenly shall they be wounded* (Psalm 64:7) — the wicked who bend the bow (58:7) met by the Archer who never misses.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=7
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=64 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-let-them-melt-away-as-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they shall make their own tongue to fall upon themselves* (Psalm 64:8) — the imprecation of 58:7 answered: the wicked''s own weapon turned back.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=7
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=64 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-let-them-melt-away-as-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the wicked... shall melt away: the desire of the wicked shall perish* (Psalm 112:10) — the melting snail of 58:8: the wicked''s desire come to nothing.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=8
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=112 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-let-them-melt-away-as-waters'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — the vengeance the righteous rejoices to see (58:10) is Yahuah''s alone, not his own hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=10
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-verily-he-is-an-elohim-that-judgeth-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *true and righteous are his judgments... hath avenged the blood of his servants* (Revelation 19:2) — heaven sings the vengeance the righteous awaits (58:10).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=10
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-verily-he-is-an-elohim-that-judgeth-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Shall not the Judge of all the earth do right?* (Genesis 18:25) — Abraham named the ground of 58:11: the Elohim who judges in the earth, who appeared at Mamre.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=11
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-verily-he-is-an-elohim-that-judgeth-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*ye shall tread down the wicked; for they shall be ashes under the soles of your feet* (Malachi 4:3) — the reward for the righteous (58:11): the wicked trodden in the day of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps058_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=58 AND sv.verse_number=11
+  JOIN _s302_ps058_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-58-verily-he-is-an-elohim-that-judgeth-in-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_59.sql (Psalm 59) -----
+-- Chapter: Psalm 59 — *when Saul sent, and they watched the house to kill him* (1 Samuel 19:11).
+-- David's psalm of deliverance from murderers who *lie in wait for my soul... not for my
+-- transgression, nor for my sin* (vv.3-4) — the guiltless man hunted by the snarling-dog enemies
+-- who *make a noise like a dog, and go round about the city* (vv.6,14) with *swords in their lips*
+-- (v.7), while Yahuah *shall laugh at them... have all the heathen in derision* (v.8) and the
+-- delivered sings *of thy power... in the morning: for thou hast been my defence and refuge* (v.16).
+-- Four threads: ★ the innocent sufferer delivered / they lie in wait without cause (1 Peter 2);
+-- ★ the snarling-dog enemies, the mouth full of swords (Psalm 22 / Psalm 57 / Proverbs 12);
+-- ★★ Yahuah laughs at the raging nations, the Son set as King (Psalm 2 / Acts 4 / Psalm 37 —
+-- Formed/Formless held); ★ Elohim my strength, defence, refuge — the morning song (Psalm 18 /
+-- Psalm 46 / Jeremiah 16 two-house ingathering, Rom 11 guard).
+-- Tag: ps059   Temp view: _s302_ps059_lookup
+-- Sort band: base 23450, step 3 -> threads at 23450, 23453, 23456, 23459 (4 threads)
+-- Source of EVERY row: 'canon','psalms',59,v
+--
+-- Psalm 59 coverage:
+--   vv.1-4 (Deliver me from mine enemies, O my Elohim... save me from bloody men... they lie in
+--           wait for my soul... not for my transgression, nor for my sin, O Yahuah)
+--        NT:     ★ 1 Peter 2:22 (Who did no sin, neither was guile found in his mouth),
+--                1 Peter 2:23 (when he was reviled, reviled not again... committed himself to him
+--                that judgeth righteously — the guiltless sufferer who entrusts his cause) — THREAD 1
+--        Extras: none warranted (the guiltless-sufferer weave is carried clean by the canon Peter
+--                + the 1 Samuel frame; Sirach deliverance-from-enemies weighed, not forced)
+--        Tanakh: ★ 1 Samuel 19:11 (Saul also sent messengers unto David's house, to watch him, and
+--                to slay him in the morning — the psalm's own historical occasion) + 1 Samuel 19:5
+--                (slay David without a cause — the innocent blood); ⟂ LATERAL to John 15:25 /
+--                Psalm 35:19 (hated without a cause — LIVE Ps 35 threads, NAMED in prose, NOT duped) — THREAD 1
+--   v.5 (Thou therefore, O Yahuah Elohim of hosts, the Elohim of Yashar'el, awake to visit all the
+--        heathen) — folded as lead-in to THREAD 3 (the visiting of the nations -> the derision of v.8)
+--   ★ vv.6-7,14-15 (They return at evening: they make a noise like a dog, and go round about the
+--        city... they belch out with their mouth: swords are in their lips)
+--        NT:     none warranted (the snarling-dog/mouth-of-swords motif is carried by the psalter +
+--                Proverbs; no clean NT add forced)
+--        Extras: none warranted (weighed; the dog/sword-lips weave is canon-dense already)
+--        Tanakh: ★ Psalm 22:16 (dogs have compassed me... they pierced my hands and my feet),
+--                Psalm 57:4 (their teeth are spears and arrows, and their tongue a sharp sword),
+--                Proverbs 12:18 (There is that speaketh like the piercings of a sword) — THREAD 2
+--   ★★ vv.8-9 (But thou, O Yahuah, shalt laugh at them; thou shalt have all the heathen in derision.
+--        Because of his strength will I wait upon thee: for Elohim is my defence)
+--        NT:     ★★ Acts 4:25 (Why did the heathen rage, and the people imagine vain things?),
+--                Acts 4:26 (The kings of the earth stood up... against Yahuah, and against his Messiah
+--                — the apostles pray Psalm 2 over the raging against the Anointed) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 2:1 (Why do the heathen rage), Psalm 2:4 (He that sitteth in the heavens
+--                shall laugh: Yahuah shall have them in derision — the Father's laughter), Psalm 2:6
+--                (Yet have I set my king upon my holy hill of Zion — the Son set as King),
+--                Psalm 37:13 (Yahuah shall laugh at him: for he seeth that his day is coming) — THREAD 3
+--   v.10-13 (Elohim shall let me see my desire upon mine enemies... Slay them not, lest my people
+--        forget... let them know that Elohim ruleth in Jacob unto the ends of the earth)
+--        NT/Extras/Tanakh: none warranted as separate (the covenant-lawsuit/ruleth-in-Jacob refrain
+--        folds toward the derision of the nations in THREAD 3 and the deliverance close in THREAD 4)
+--   ★ vv.16-17 (But I will sing of thy power... for thou hast been my defence and refuge in the day
+--        of my trouble. Unto thee, O my strength, will I sing: for Elohim is my defence)
+--        NT:     none warranted (the strength/refuge morning-song is carried by the psalter + Jeremiah)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 18:1 (I will love thee, O Yahuah, my strength), Psalm 18:2 (Yahuah is my
+--                rock, and my fortress, and my deliverer), Psalm 46:1 (Elohim is our refuge and
+--                strength, a very present help in trouble), ★ Jeremiah 16:19 (O Yahuah, my strength,
+--                and my fortress, and my refuge... the Gentiles shall come unto thee — two-house
+--                ingathering, Rom 11 guard) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-59-they-lie-in-wait-for-my-soul-not-for-my-sin — NT (1 Peter 2) + Tanakh (1 Samuel 19)
+--      [free] (★ the guiltless sufferer hunted without cause; David's house watched; ⟂ lateral John 15:25/Ps 35:19 in prose)
+--   2. psalm-59-they-make-a-noise-like-a-dog-swords-in-their-lips — Tanakh (Psalm 22, Psalm 57, Proverbs 12)
+--      [free] (★ the snarling-dog enemies prowling the city, the mouth full of swords)
+--   3. psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision — NT (Acts 4) + Tanakh (Psalm 2, Psalm 37)
+--      [free] (★★ the Father's derision of the raging nations, the Son set as King — Formed/Formless held)
+--   4. psalm-59-elohim-my-defence-and-refuge-the-morning-song — Tanakh (Psalm 18, Psalm 46, Jeremiah 16)
+--      [free] (★ Elohim my strength, defence, refuge; the morning praise; Jeremiah's two-house ingathering, Rom 11 guard)
+--
+-- Framing notes:
+--   ★ THEY LIE IN WAIT FOR MY SOUL (THREAD 1): the superscription sets the scene — *when Saul sent,
+--      and they watched the house to kill him* — *Saul also sent messengers unto David's house, to
+--      watch him, and to slay him in the morning* (1 Samuel 19:11); and the charge against the hunt is
+--      that the blood is innocent — *wherefore then wilt thou sin against innocent blood, to slay
+--      David without a cause?* (1 Samuel 19:5). The psalm pleads exactly this: *they lie in wait for
+--      my soul... not for my transgression, nor for my sin, O Yahuah (LORD)* (59:3). It runs forward to
+--      the One hated without a cause (the live Psalm 35:19 / John 15:25 weave) and lands on the
+--      guiltless Sufferer who entrusts His cause — *Who did no sin, neither was guile found in his
+--      mouth* (1 Peter 2:22), *who, when he was reviled, reviled not again; when he suffered, he
+--      threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). The
+--      innocent man, lain-in-wait-for without cause, does not avenge himself but commits his soul to
+--      the One who judges righteously, and is delivered.
+--   ★ A NOISE LIKE A DOG, SWORDS IN THEIR LIPS (THREAD 2): *They return at evening: they make a noise
+--      like a dog, and go round about the city... they belch out with their mouth: swords are in their
+--      lips* (59:6-7), repeated as the refrain *at evening let them return; and let them make a noise
+--      like a dog, and go round about the city* (59:14). The prowling-dog enemy and the mouth full of
+--      swords run through the psalter — *For dogs have compassed me: the assembly of the wicked have
+--      inclosed me* (Psalm 22:16); *whose teeth are spears and arrows, and their tongue a sharp sword*
+--      (Psalm 57:4) — and the proverb names the wound of the tongue — *There is that speaketh like the
+--      piercings of a sword: but the tongue of the wise is health* (Proverbs 12:18). The snarling
+--      pack circles the city, but the swords are in their lips; the violence is first of the mouth.
+--   ★★ THOU SHALT LAUGH — THE HEATHEN IN DERISION (THREAD 3): set under the cry *awake to visit all
+--      the heathen* (59:5), the psalm turns to the Father's answer — *But thou, O Yahuah (LORD), shalt
+--      laugh at them; thou shalt have all the heathen in derision. Because of his strength will I wait
+--      upon thee: for Elohim (God) is my defence* (59:8-9). This is the laughter of the Most High over
+--      the raging nations of the second psalm — *Why do the heathen rage, and the people imagine a
+--      vain thing?... He that sitteth in the heavens shall laugh: Yahuah (Lord) shall have them in
+--      derision* (Psalm 2:1,4) — the Father who derides, having *set my king upon my holy hill of
+--      Zion* (Psalm 2:6): the formless Source laughs, and the Formed Son is set as King (no co-equal
+--      grammar; the Son HAS a Father who enthrones him). The apostles prayed the very words over the
+--      gathering against the Anointed — *Why did the heathen rage, and the people imagine vain things?
+--      The kings of the earth stood up, and the rulers were gathered together against Yahuah (Lord),
+--      and against his Messiah (Christ)* (Acts 4:25-26). And the same laughter falls on the lone
+--      plotter — *Yahuah (Lord) shall laugh at him: for he seeth that his day is coming* (Psalm 37:13).
+--      The believer waits on His strength while the Father derides the raging.
+--   ★ ELOHIM MY DEFENCE AND REFUGE — THE MORNING SONG (THREAD 4): the psalm of the night closes in
+--      morning praise — *But I will sing of thy power; yea, I will sing aloud of thy mercy in the
+--      morning: for thou hast been my defence and refuge in the day of my trouble. Unto thee, O my
+--      strength, will I sing: for Elohim (God) is my defence* (59:16-17). The strength-and-refuge
+--      confession is the psalter's own — *I will love thee, O Yahuah (LORD), my strength* (Psalm
+--      18:1); *Yahuah (LORD) is my rock, and my fortress, and my deliverer* (Psalm 18:2); *Elohim
+--      (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1). And Jeremiah
+--      lifts the same words into the ingathering of the nations — *O Yahuah (LORD), my strength, and
+--      my fortress, and my refuge in the day of affliction, the Gentiles shall come unto thee from the
+--      ends of the earth* (Jeremiah 16:19): the strength who is the delivered man's defence is the
+--      refuge the scattered come home to — the two-house regathering (the wild branch grown back to
+--      its own root, never a new people replacing Yashar'el). The day of trouble ends in the morning
+--      song of the delivered.
+--   VERSES WITH NO SEPARATE ADD: v.5 (folded as lead-in to THREAD 3); vv.10-13 (the see-my-desire /
+--      slay-them-not-lest-my-people-forget / Elohim-ruleth-in-Jacob covenant-lawsuit refrain folds
+--      toward the derision of the nations in THREAD 3 and the deliverance close in THREAD 4) — the
+--      chapter's framework weight sits on vv.1-4,6-7/14-15,8-9,16-17, woven there.
+
+CREATE TEMP VIEW _s302_ps059_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): They lie in wait for my soul — not for my sin (the guiltless sufferer)
+    ('canon','psalms',59,3,'canon','1-samuel',19,11,'free',
+      E'*Saul also sent messengers unto David''s house, to watch him, and to slay him in the morning: and Michal David''s wife told him, saying, If thou save not thy life to night, to morrow thou shalt be slain* (1 Samuel 19:11). *For, lo, they lie in wait for my soul: the mighty are gathered against me; not for my transgression, nor for my sin, O Yahuah (LORD)* (Psalm 59:3): this is the psalm''s own occasion — the watchers set upon David''s house to kill him in the morning. The lying-in-wait is no figure; it is Saul''s messengers at the door.'),
+    ('canon','psalms',59,4,'canon','1-samuel',19,5,'free',
+      E'*For he did put his life in his hand, and slew the Philistine, and Yahuah (LORD) wrought a great salvation for all Yashar''el (Israel)... wherefore then wilt thou sin against innocent blood, to slay David without a cause?* (1 Samuel 19:5). *They run and prepare themselves without my fault: awake to help me, and behold* (Psalm 59:4): Jonathan names what the psalm pleads — the blood is innocent, the man is hunted *without a cause*. The fault is not David''s; the murderers prepare themselves against innocent blood.'),
+    ('canon','psalms',59,3,'canon','1-peter',2,22,'free',
+      E'*Who did no sin, neither was guile found in his mouth* (1 Peter 2:22). *They lie in wait for my soul... not for my transgression, nor for my sin, O Yahuah (LORD)* (Psalm 59:3): the innocent hunted-one foreshadows the Guiltless Sufferer in whom no sin and no guile were found. As David was lain-in-wait-for without fault, so the Messiah suffered though He did no sin — the hatred is without a cause (the same enmity the live Psalm 35:19 / John 15:25 thread names).'),
+    ('canon','psalms',59,4,'canon','1-peter',2,23,'free',
+      E'*Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). *They run and prepare themselves without my fault: awake to help me, and behold* (Psalm 59:4): the innocent man does not avenge himself but cries *awake to help me* and commits his cause to the One who judges righteously. The guiltless Sufferer answers the plot not with threats but by entrusting his soul to the righteous Judge.'),
+
+    -- THREAD 2 (★): A noise like a dog, swords in their lips (the snarling-dog enemies)
+    ('canon','psalms',59,6,'canon','psalms',22,16,'free',
+      E'*For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet* (Psalm 22:16). *They return at evening: they make a noise like a dog, and go round about the city* (Psalm 59:6): the prowling pack of the night-psalm is the dog-pack of the passion-psalm — *dogs have compassed me*. The snarling enemies circling the city are the same dogs that close in upon the pierced One.'),
+    ('canon','psalms',59,7,'canon','psalms',57,4,'free',
+      E'*My soul is among lions: and I lie even among them that are set on fire, even the sons of men, whose teeth are spears and arrows, and their tongue a sharp sword* (Psalm 57:4). *Behold, they belch out with their mouth: swords are in their lips: for who, say they, doth hear?* (Psalm 59:7): the twin psalm of David''s flight names the same weaponed mouth — *their tongue a sharp sword*. The swords are in their lips; the violence is first of the tongue.'),
+    ('canon','psalms',59,7,'canon','proverbs',12,18,'free',
+      E'*There is that speaketh like the piercings of a sword: but the tongue of the wise is health* (Proverbs 12:18). *Swords are in their lips: for who, say they, doth hear?* (Psalm 59:7): the proverb names the wound the psalm describes — words that pierce like a sword. The belching mouth of the enemies is the sword-tongue the wise are warned against, set over against the tongue that is health.'),
+
+    -- THREAD 3 (★★): Thou shalt laugh at them — the heathen in derision (the Son set as King)
+    ('canon','psalms',59,8,'canon','psalms',2,1,'free',
+      E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1). *But thou, O Yahuah (LORD), shalt laugh at them; thou shalt have all the heathen in derision* (Psalm 59:8): the heathen David''s psalm derides are the raging heathen of the second psalm — they rage and imagine a vain thing, and Yahuah holds them in derision. The plotting of the nations against the righteous is the same vain raging the Most High laughs to scorn.'),
+    ('canon','psalms',59,8,'canon','psalms',2,4,'free',
+      E'*He that sitteth in the heavens shall laugh: Yahuah (Lord) shall have them in derision* (Psalm 2:4). *But thou, O Yahuah (LORD), shalt laugh at them; thou shalt have all the heathen in derision* (Psalm 59:8): the very words are one — the Father enthroned in the heavens laughs, the nations are held in derision. This is the formless Source on high deriding the raging; the laughter of Heaven over the murderous plot.'),
+    ('canon','psalms',59,9,'canon','psalms',2,6,'free',
+      E'*Yet have I set my king upon my holy hill of Zion* (Psalm 2:6). *Because of his strength will I wait upon thee: for Elohim (God) is my defence* (Psalm 59:9): while the nations rage, the Father derides and sets His King in Zion — the Formed Son enthroned by the Father (the Son who HAS a Father). The believer waits on His strength because Elohim has already set the King upon the holy hill; the defence is the enthroned One.'),
+    ('canon','psalms',59,8,'canon','acts',4,25,'free',
+      E'*Who by the mouth of thy servant David hast said, Why did the heathen rage, and the people imagine vain things?* (Acts 4:25). *Thou shalt have all the heathen in derision* (Psalm 59:8): the assembled believers prayed David''s very words back over the threatening rulers — the raging of the heathen and the vain imagining of the people. The derision-psalm becomes the church''s prayer against the gathering of the nations.'),
+    ('canon','psalms',59,8,'canon','acts',4,26,'free',
+      E'*The kings of the earth stood up, and the rulers were gathered together against Yahuah (Lord), and against his Messiah (Christ)* (Acts 4:26). *Thou shalt have all the heathen in derision* (Psalm 59:8): the apostles read the raging as the gathering against Yahuah and His Anointed — the nations stood up against the Father and the Formed Son. The heathen held in derision are those who set themselves against the Messiah.'),
+    ('canon','psalms',59,8,'canon','psalms',37,13,'free',
+      E'*Yahuah (Lord) shall laugh at him: for he seeth that his day is coming* (Psalm 37:13). *But thou, O Yahuah (LORD), shalt laugh at them* (Psalm 59:8): the same laughter falls on the lone plotter who *gnasheth upon him with his teeth* (Psalm 37:12) — Yahuah laughs because He sees the wicked''s day is coming. Whether the nations or the single foe, the derision of Heaven is the answer to the plot.'),
+
+    -- THREAD 4 (★): Elohim my defence and refuge — the morning song
+    ('canon','psalms',59,17,'canon','psalms',18,1,'free',
+      E'*I will love thee, O Yahuah (LORD), my strength* (Psalm 18:1). *Unto thee, O my strength, will I sing: for Elohim (God) is my defence, and the Elohim (God) of my mercy* (Psalm 59:17): David''s great song of deliverance opens with the same confession — Yahuah my strength. The strength the night-psalm sings to is the strength the deliverance-psalm loves; the delivered man names Yahuah his strength.'),
+    ('canon','psalms',59,17,'canon','psalms',18,2,'free',
+      E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower* (Psalm 18:2). *For Elohim (God) is my defence, and the Elohim (God) of my mercy* (Psalm 59:17): the defence of the morning-song is unfolded — rock, fortress, deliverer, high tower. Elohim my defence is Yahuah my rock and fortress, the One in whom the delivered trust.'),
+    ('canon','psalms',59,16,'canon','psalms',46,1,'free',
+      E'*Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1). *Thou hast been my defence and refuge in the day of my trouble* (Psalm 59:16): the refuge-in-trouble of the morning-song is the refuge of the great psalm — Elohim our refuge and strength, a very present help in trouble. The defence and refuge David sang of is the present help of the city of Elohim.'),
+    ('canon','psalms',59,16,'canon','jeremiah',16,19,'free',
+      E'*O Yahuah (LORD), my strength, and my fortress, and my refuge in the day of affliction, the Gentiles shall come unto thee from the ends of the earth, and shall say, Surely our fathers have inherited lies* (Jeremiah 16:19). *Thou hast been my defence and refuge in the day of my trouble* (Psalm 59:16): the strength-fortress-refuge of David''s song becomes the refuge the nations come home to — the scattered of Yashar''el (Israel), grown wild among the Gentiles, returning from the ends of the earth to their own root (the two-house regathering, never a new people replacing Israel — Romans 11:1-2 stands). The day-of-trouble refuge is the ingathering refuge of the latter days.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-59-they-lie-in-wait-for-my-soul-not-for-my-sin',
+       E'They lie in wait for my soul — not for my transgression, nor for my sin',
+       E'The psalm''s occasion is the night Saul''s men watched the house to kill David: *Saul also sent messengers unto David''s house, to watch him, and to slay him in the morning: and Michal David''s wife told him, saying, If thou save not thy life to night, to morrow thou shalt be slain* (1 Samuel 19:11). And the charge against the hunt is the innocence of the blood — *wherefore then wilt thou sin against innocent blood, to slay David without a cause?* (1 Samuel 19:5). So the psalm pleads: *Deliver me from mine enemies, O my Elohim (God)... For, lo, they lie in wait for my soul: the mighty are gathered against me; not for my transgression, nor for my sin, O Yahuah (LORD). They run and prepare themselves without my fault* (Psalm 59:1-4). The lying-in-wait without cause runs forward to the One hated without a cause (the live Psalm 35:19 / John 15:25 weave) and lands on the guiltless Sufferer who does not avenge but entrusts His cause: *Who did no sin, neither was guile found in his mouth: who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:22-23). The innocent man, lain-in-wait-for without fault, cries *awake to help me, and behold*, and commits his soul to the righteous Judge — and is delivered.',
+       sv.verse_id, ev.verse_id, 'free', 23450
+  FROM _s302_ps059_lookup sv, _s302_ps059_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=59 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-59-they-make-a-noise-like-a-dog-swords-in-their-lips',
+       E'They make a noise like a dog, and go round about the city — swords are in their lips',
+       E'The enemies prowl the city like a snarling pack: *They return at evening: they make a noise like a dog, and go round about the city. Behold, they belch out with their mouth: swords are in their lips: for who, say they, doth hear?* (Psalm 59:6-7) — and the refrain returns, *at evening let them return; and let them make a noise like a dog, and go round about the city. Let them wander up and down for meat* (Psalm 59:14-15). The dog-pack circling the city is the dog-pack of the passion-psalm — *For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet* (Psalm 22:16); and the weaponed mouth is the same David named in his twin flight-psalm — *whose teeth are spears and arrows, and their tongue a sharp sword* (Psalm 57:4). The proverb names the very wound — *There is that speaketh like the piercings of a sword: but the tongue of the wise is health* (Proverbs 12:18). The pack snarls and circles, but the swords are in their lips: the violence is first of the mouth, the belching tongue that pierces.',
+       sv.verse_id, ev.verse_id, 'free', 23453
+  FROM _s302_ps059_lookup sv, _s302_ps059_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=59 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision',
+       E'Thou shalt laugh at them; thou shalt have all the heathen in derision',
+       E'Against the cry *awake to visit all the heathen* (Psalm 59:5) the psalm turns to the Father''s answer: *But thou, O Yahuah (LORD), shalt laugh at them; thou shalt have all the heathen in derision. Because of his strength will I wait upon thee: for Elohim (God) is my defence* (Psalm 59:8-9). This is the laughter of the Most High over the raging nations of the second psalm — *Why do the heathen rage, and the people imagine a vain thing?... He that sitteth in the heavens shall laugh: Yahuah (Lord) shall have them in derision* (Psalm 2:1,4) — the Father who derides, having *set my king upon my holy hill of Zion* (Psalm 2:6). Hold the Formed and the Formless: the formless Source enthroned in the heavens laughs, and the Formed Son is set as King by the Father (the Son who HAS a Father, never co-equal). The first believers prayed these very words over the rulers who threatened them: *Why did the heathen rage, and the people imagine vain things? The kings of the earth stood up, and the rulers were gathered together against Yahuah (Lord), and against his Messiah (Christ)* (Acts 4:25-26) — the raging read as the gathering against the Anointed. And the same laughter falls on the lone plotter who gnashes with his teeth — *Yahuah (Lord) shall laugh at him: for he seeth that his day is coming* (Psalm 37:13). The believer waits on the King''s strength while the Father derides the raging; the murderous plot is met with the laughter of Heaven.',
+       sv.verse_id, ev.verse_id, 'free', 23456
+  FROM _s302_ps059_lookup sv, _s302_ps059_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=59 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-59-elohim-my-defence-and-refuge-the-morning-song',
+       E'I will sing aloud of thy mercy in the morning — for thou hast been my defence and refuge',
+       E'The psalm of the night closes in the song of the morning: *But I will sing of thy power; yea, I will sing aloud of thy mercy in the morning: for thou hast been my defence and refuge in the day of my trouble. Unto thee, O my strength, will I sing: for Elohim (God) is my defence, and the Elohim (God) of my mercy* (Psalm 59:16-17). The strength-and-refuge confession is David''s own great song of deliverance — *I will love thee, O Yahuah (LORD), my strength* (Psalm 18:1); *Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower* (Psalm 18:2). It is the refuge of the city of Elohim — *Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1). And Jeremiah lifts the same words into the ingathering of the nations — *O Yahuah (LORD), my strength, and my fortress, and my refuge in the day of affliction, the Gentiles shall come unto thee from the ends of the earth, and shall say, Surely our fathers have inherited lies* (Jeremiah 16:19): the strength who is the delivered man''s defence is the refuge the scattered come home to — the children of Yashar''el (Israel), grown wild among the Gentiles, returning from the ends of the earth to their own root (the two-house regathering, never a new people replacing Israel — Romans 11:1-2 stands). The day of trouble ends in the morning song of the delivered, and the defence of the one is the refuge of the gathered many.',
+       sv.verse_id, ev.verse_id, 'free', 23459
+  FROM _s302_ps059_lookup sv, _s302_ps059_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=59 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Saul also sent messengers unto David''s house, to watch him, and to slay him in the morning* (1 Samuel 19:11) — the psalm''s own occasion: the watchers set upon the house (59:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=3
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=19 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-lie-in-wait-for-my-soul-not-for-my-sin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*to slay David without a cause?* (1 Samuel 19:5) — Jonathan names the innocence the psalm pleads (59:4): the blood is guiltless, the man hunted without fault.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=4
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-lie-in-wait-for-my-soul-not-for-my-sin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Who did no sin, neither was guile found in his mouth* (1 Peter 2:22) — *not for my transgression, nor for my sin* (59:3): the Guiltless Sufferer hunted though He did no sin, hated without a cause.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=3
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-lie-in-wait-for-my-soul-not-for-my-sin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *committed himself to him that judgeth righteously* (1 Peter 2:23) — the innocent man of 59:4 does not avenge but cries *awake to help me* and entrusts his cause to the righteous Judge.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=4
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-lie-in-wait-for-my-soul-not-for-my-sin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For dogs have compassed me: the assembly of the wicked have inclosed me* (Psalm 22:16) — the prowling pack of 59:6 is the dog-pack closing in upon the pierced One.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=6
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-make-a-noise-like-a-dog-swords-in-their-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*their tongue a sharp sword* (Psalm 57:4) — the twin flight-psalm names the same weaponed mouth as 59:7: swords in their lips.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=7
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=57 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-make-a-noise-like-a-dog-swords-in-their-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*There is that speaketh like the piercings of a sword* (Proverbs 12:18) — the proverb names the wound of 59:7: the sword-tongue, set against the tongue of the wise that is health.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=7
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-they-make-a-noise-like-a-dog-swords-in-their-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1) — the heathen 59:8 derides are the raging nations of the second psalm: vain raging held in derision.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=8
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *He that sitteth in the heavens shall laugh: Yahuah (Lord) shall have them in derision* (Psalm 2:4) — the very words of 59:8: the Father enthroned on high laughs at the raging.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=8
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yet have I set my king upon my holy hill of Zion* (Psalm 2:6) — while the Father derides, the Formed Son is set as King; the believer waits on His strength (59:9). The Son HAS a Father who enthrones him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=9
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Why did the heathen rage, and the people imagine vain things?* (Acts 4:25) — the believers pray David''s derision-psalm (59:8) over the threatening rulers.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=8
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the rulers were gathered together against Yahuah (Lord), and against his Messiah (Christ)* (Acts 4:26) — the raging of 59:8 read as the gathering against the Father and the Anointed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=8
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Yahuah (Lord) shall laugh at him: for he seeth that his day is coming* (Psalm 37:13) — the same laughter of 59:8 upon the lone plotter; Yahuah sees the wicked''s day coming.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=8
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-thou-shalt-laugh-at-them-the-heathen-in-derision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will love thee, O Yahuah (LORD), my strength* (Psalm 18:1) — David''s deliverance-song opens with the confession of 59:17: Yahuah my strength.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=17
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-elohim-my-defence-and-refuge-the-morning-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer... my high tower* (Psalm 18:2) — the defence of 59:17 unfolded: rock, fortress, deliverer, high tower.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=17
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-elohim-my-defence-and-refuge-the-morning-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1) — the refuge-in-trouble of 59:16: the present help of the city of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=16
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-elohim-my-defence-and-refuge-the-morning-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *O Yahuah (LORD), my strength, and my fortress, and my refuge... the Gentiles shall come unto thee from the ends of the earth* (Jeremiah 16:19) — the refuge of 59:16 become the ingathering refuge: the scattered of Yashar''el home to their root (Rom 11 guard).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps059_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=59 AND sv.verse_number=16
+  JOIN _s302_ps059_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=16 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-59-elohim-my-defence-and-refuge-the-morning-song'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_60.sql (Psalm 60) -----
+-- Chapter: Psalm 60 — A NATIONAL LAMENT TURNED TO CONFIDENCE IN ELOHIM'S WORD OVER THE LAND.
+-- Written from the Edom / Aram-Zobah campaigns (2 Samuel 8 superscription), the psalm opens in
+-- defeat — *O Elohim (God), thou hast cast us off, thou hast scattered us, thou hast been
+-- displeased; O turn thyself to us again* (v.1) — passes through the displeasure as chastening
+-- (vv.1-3), and rises to the oracle in which ★★ ELOHIM'S OWN WORD APPORTIONS THE LAND and names
+-- the two houses BOTH His — *Ephraim also is the strength of mine head; Yahudah (Judah) is my
+-- lawgiver* (vv.6-8) — before closing on the vanity of man's help (v.11) and victory through
+-- Elohim alone (v.12). Runs LEAN: 4 threads. The body of the psalm (vv.5-12) is the twin of
+-- Psalm 108:6-13 — cross-lateral, NOT merged.
+-- Tag: ps060   Temp view: _s302_ps060_lookup
+-- Sort band: base 23475, step 3 -> threads at 23475, 23478, 23481, 23484 (4 threads)
+-- Source of EVERY row: 'canon','psalms',60,v
+--
+-- Psalm 60 coverage:
+--   vv.1-3 (thou hast cast us off, thou hast scattered us... O turn thyself to us again... Thou hast
+--          shewed thy people hard things)
+--        NT:     ★ Romans 11:1-2 (Hath Elohim cast away his people? Elohim forbid... hath not cast
+--                away his people which he foreknew) + Romans 11:15 (the casting away... the receiving)
+--                — the two-house guard: the displeasure is chastening, the covenant stands — THREAD 1
+--        Extras: none warranted (the cast-off-yet-restored weave is carried clean by the canon)
+--        Tanakh: ★ Psalm 80:3,7,19 (Turn us again, O Elohim... and we shall be saved — the refrain;
+--                LIVE Psalm 80 turn-us-again thread, cited laterally, NOT duped) — THREAD 1
+--   ★★ vv.6-8 (Elohim hath spoken in his holiness... Gilead is mine, and Manasseh is mine; Ephraim
+--          also is the strength of mine head; Yahudah is my lawgiver; Moab is my washpot...)
+--        NT:     none warranted as a separate add (the two-house map is rooted in Torah + the
+--                prophets; the NT regathering is carried elsewhere — kept LEAN here)
+--        Extras: none warranted (weighed Sirach; nothing genuinely fits the land-oracle — not forced)
+--        Tanakh: ★★ Genesis 49:10 (The sceptre shall not depart from Yahudah, nor a lawgiver from
+--                between his feet — Judah the lawgiver), ★★ Genesis 48:19 (his seed shall become a
+--                multitude of nations — Ephraim the fulness), ★★ Ezekiel 37:16-22 (the two sticks,
+--                Joseph/Ephraim + Judah made one), ★ Psalm 108:7-9 (the twin oracle, same words) — THREAD 2
+--   vv.4-5,9-10 (Thou hast given a banner to them that fear thee... Who will bring me into the strong
+--          city? who will lead me into Edom?... which hadst cast us off)
+--        NT/Extras/Tanakh: none warranted as separate (the banner/strong-city material is folded —
+--                the cast-us-off echo of v.10 belongs to THREAD 1, the Edom/land to THREAD 2)
+--   v.11 (Give us help from trouble: for vain is the help of man)
+--        NT:     none warranted (the vanity-of-man's-help weave is fully carried by the psalter +
+--                Isaiah + Zechariah witnesses)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 108:12 (twin), ★ Psalm 146:3 (Put not your trust in princes, nor in the son
+--                of Adam, in whom there is no help), ★ Isaiah 31:1 (Woe to them that go down to Egypt
+--                for help... but they look not unto the Holy One of Yashar'el), ★ Zechariah 4:6 (Not by
+--                might, nor by power, but by my spirit) — THREAD 3
+--   ★ v.12 (Through Elohim we shall do valiantly: for he it is that shall tread down our enemies)
+--        NT:     ★ Romans 16:20 (the Elohim of peace shall bruise Satan under your feet — Genesis 3:15
+--                echo) + ★ Ephesians 6:10 (be strong in Yahuah, and in the power of his might) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 108:13 (twin), ★ Psalm 44:5 (Through thee will we push down our enemies:
+--                through thy name will we tread them under) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again — NT (Romans 11) + Tanakh (Psalm 80)
+--      [free] (cast off yet restored; the two-house guard — Elohim hath NOT cast away his people)
+--   2. psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land — Tanakh (Genesis 49,
+--      Genesis 48, Ezekiel 37, Psalm 108) [free] (★★ KEYSTONE two-house map: both houses His)
+--   3. psalm-60-vain-is-the-help-of-man — Tanakh (Psalm 108, Psalm 146, Isaiah 31, Zechariah 4)
+--      [free] (the help of man is vain; salvation is of Elohim — not by might nor by power)
+--   4. psalm-60-through-elohim-we-shall-do-valiantly — NT (Romans 16, Ephesians 6) + Tanakh
+--      (Psalm 108, Psalm 44) [free] (★ victory through Elohim; He treads down the enemy)
+--
+-- Framing notes:
+--   THE COVENANT STANDS THROUGH THE CHASTENING (THREAD 1): the lament opens cast-off and scattered —
+--      *O Elohim (God), thou hast cast us off, thou hast scattered us, thou hast been displeased; O
+--      turn thyself to us again* (60:1) — yet the displeasure is chastening, never abandonment. Paul
+--      sets the very question and answers it: *Hath Elohim (God) cast away his people? Elohim (God)
+--      forbid* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (11:2);
+--      and the casting-away is itself unto a receiving — *if the casting away of them be the reconciling
+--      of the world, what shall the receiving of them be, but life from the dead?* (11:15). The
+--      psalter's own refrain is the prayer that turns it — *Turn us again, O Elohim (God), and cause
+--      thy face to shine; and we shall be saved* (Psalm 80:3,7,19). Cast off for a moment; turned again
+--      and saved — the covenant stands.
+--   ★★ EPHRAIM AND YAHUDAH BOTH MINE — THE WORD APPORTIONS THE LAND (THREAD 2): the oracle is Elohim's
+--      own speech dividing the inheritance — *Elohim (God) hath spoken in his holiness; I will rejoice,
+--      I will divide Shechem... Gilead is mine, and Manasseh is mine; Ephraim also is the strength of
+--      mine head; Yahudah (Judah) is my lawgiver* (60:6-7). The TWO HOUSES are named together and both
+--      belong to Him: Ephraim the strength of the northern house, Yahudah the lawgiver of the south.
+--      Judah's title reaches back to the patriarch's blessing — *The sceptre shall not depart from
+--      Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come* (Genesis 49:10); and
+--      Ephraim's strength is the fulness Jacob foretold — *his seed shall become a multitude of nations*
+--      (Genesis 48:19). What the psalm names as two-both-His the prophet binds into one — *I will take
+--      the stick of Joseph, which is in the hand of Ephraim... and the stick of Yahudah (Judah), and make
+--      them one stick, and they shall be one in mine hand* (Ezekiel 37:19), *they shall be no more two
+--      nations* (37:22). The twin psalm sings the identical oracle — *Ephraim also is the strength of
+--      mine head; Yahudah (Judah) is my lawgiver* (Psalm 108:8). NOT replacement: both houses are
+--      Yashar'el, named by Elohim's own word, gathered into one.
+--   VAIN IS THE HELP OF MAN (THREAD 3): the psalm turns from the field to the source — *Give us help
+--      from trouble: for vain is the help of man* (60:11). The twin psalm repeats it word for word —
+--      *Give us help from trouble: for vain is the help of man* (Psalm 108:12) — and the psalter sets
+--      the warning broad: *Put not your trust in princes, nor in the son of Adam, in whom there is no
+--      help* (Psalm 146:3). Isaiah cries the same woe over the horses of Egypt — *Woe to them that go
+--      down to Egypt for help; and stay on horses, and trust in chariots... but they look not unto the
+--      Holy One of Yashar'el (Israel), neither seek Yahuah (LORD)* (Isaiah 31:1) — and Zechariah names
+--      the whole principle: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva'ot (LORD
+--      of hosts)* (Zechariah 4:6). The help of man is vain; deliverance is of Elohim alone.
+--   ★ THROUGH ELOHIM WE SHALL DO VALIANTLY (THREAD 4): the lament closes in confidence — *Through Elohim
+--      (God) we shall do valiantly: for he it is that shall tread down our enemies* (60:12). The twin
+--      seals it — *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our
+--      enemies* (Psalm 108:13) — and another psalm names the same treading by His name, not the sword —
+--      *Through thee will we push down our enemies: through thy name will we tread them under that rise
+--      up against us... For I will not trust in my bow* (Psalm 44:5-6). Paul carries the treading forward
+--      to the seed-war of Genesis 3:15 — *the Elohim (God) of peace shall bruise Satan under your feet
+--      shortly* (Romans 16:20) — and the strength is His, not ours — *be strong in Yahuah (Lord), and in
+--      the power of his might* (Ephesians 6:10). It is Elohim who treads down the enemy; the valour is
+--      His might in His people.
+--   VERSES WITH NO SEPARATE ADD: vv.4-5 (the banner / save with thy right hand) and vv.9-10 (the strong
+--      city / who will lead me into Edom) carry the campaign-frame and are recorded as folded — the
+--      cast-us-off echo of v.10 into THREAD 1, the Edom/land material into THREAD 2; the chapter's
+--      framework weight sits on vv.1, 6-8, 11, 12, woven there.
+
+CREATE TEMP VIEW _s302_ps060_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Thou hast cast us off — O turn thyself to us again (the two-house guard)
+    ('canon','psalms',60,1,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). *O Elohim (God), thou hast cast us off, thou hast scattered us, thou hast been displeased; O turn thyself to us again* (Psalm 60:1): the lament''s cast-off cry is answered by Paul''s own question and his thunderous denial — Elohim hath not cast away His people. The displeasure of the psalm is chastening, never the covenant undone.'),
+    ('canon','psalms',60,1,'canon','romans',11,2,'free',
+      E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). *Thou hast cast us off... O turn thyself to us again* (Psalm 60:1): the apparent casting-off of the psalm is the very thing Paul forbids reading as final — His people, foreknown, are not cast away. The two-house guard: the scattering is for a season, the foreknowing stands.'),
+    ('canon','psalms',60,1,'canon','romans',11,15,'free',
+      E'*For if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?* (Romans 11:15). *Thou hast cast us off, thou hast scattered us... O turn thyself to us again* (Psalm 60:1): the casting-away is itself unto a receiving — the very prayer to be turned again is answered in Paul as life from the dead. Cast off for a moment, received again unto life.'),
+    ('canon','psalms',60,1,'canon','psalms',80,3,'free',
+      E'*Turn us again, O Elohim (God), and cause thy face to shine; and we shall be saved* (Psalm 80:3). *O turn thyself to us again* (Psalm 60:1): the lament''s turning-prayer is the threefold refrain of the neighbouring psalm — turn us again, cause thy face to shine, and we shall be saved. The cry to be turned is the cry that the covenant-face shine once more on the scattered.'),
+    ('canon','psalms',60,1,'canon','psalms',80,19,'free',
+      E'*Turn us again, O Yahuah Elohim (LORD God) of hosts, cause thy face to shine; and we shall be saved* (Psalm 80:19). *O turn thyself to us again* (Psalm 60:1): the refrain rises a third time over the vine brought out of Egypt and broken down — turn us again, and we shall be saved. The same prayer, the same hope: the cast-off people turned again and delivered.'),
+
+    -- THREAD 2 (★★): Ephraim and Yahudah both mine — the word apportions the land (two-house map)
+    ('canon','psalms',60,7,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). *Yahudah (Judah) is my lawgiver* (Psalm 60:7): the title Elohim speaks over Judah in the land-oracle reaches back to the patriarch''s blessing — the lawgiver who shall not depart from between his feet until Shiloh come. The sceptre of the south is Elohim''s own, named in His holiness.'),
+    ('canon','psalms',60,7,'canon','genesis',48,19,'free',
+      E'*And his father refused, and said, I know it, my son, I know it... but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19). *Ephraim also is the strength of mine head* (Psalm 60:7): the strength of the northern house is the fulness Jacob foretold over Ephraim — *his seed shall become a multitude of nations* — the multitude that fills the nations, yet still Elohim''s own, *the strength of mine head*.'),
+    ('canon','psalms',60,7,'canon','ezekiel',37,19,'free',
+      E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). *Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 60:7): the two houses the psalm names as both His the prophet binds into one stick in His hand — Joseph/Ephraim and Yahudah made one, no more two nations.'),
+    ('canon','psalms',60,7,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). *Gilead is mine, and Manasseh is mine; Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 60:7): the houses named separately in the land-oracle are gathered into one nation that shall be divided no more — both His, made one upon the mountains.'),
+    ('canon','psalms',60,7,'canon','psalms',108,8,'free',
+      E'*Gilead is mine; Manasseh is mine; Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 108:8). *Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 60:7): the twin psalm sings the identical oracle word for word — the same two houses, both belonging to Elohim, named again in His holiness. One mouth, two psalms, the same land-claim.'),
+
+    -- THREAD 3: Vain is the help of man — salvation is of Elohim
+    ('canon','psalms',60,11,'canon','psalms',108,12,'free',
+      E'*Give us help from trouble: for vain is the help of man* (Psalm 108:12). *Give us help from trouble: for vain is the help of man* (Psalm 60:11): the twin psalm repeats the cry word for word — the help of man is empty; the help must come from Elohim. The same prayer rises from both songs of the same campaign.'),
+    ('canon','psalms',60,11,'canon','psalms',146,3,'free',
+      E'*Put not your trust in princes, nor in the son of Adam, in whom there is no help* (Psalm 146:3). *vain is the help of man* (Psalm 60:11): the psalter sets the warning broad — trust not in princes nor in the son of Adam, whose breath goeth forth and whose thoughts perish. The help of man is vain because man himself is mortal; the hope is in the Elohim of Jacob.'),
+    ('canon','psalms',60,11,'canon','isaiah',31,1,'free',
+      E'*Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). *vain is the help of man* (Psalm 60:11): Isaiah names the vain help by its idol — Egypt''s horses and chariots, trusted in place of the Holy One. To lean on the arm of flesh is to look away from Yahuah; the help of man is woe, not deliverance.'),
+    ('canon','psalms',60,11,'canon','zechariah',4,6,'free',
+      E'*This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). *vain is the help of man* (Psalm 60:11): Zechariah states the whole principle the psalm prays — not by might, not by power, but by His Spirit. The vanity of man''s help is the obverse of this word: the work is done by the Spirit of Yahuah, never the strength of the flesh.'),
+
+    -- THREAD 4 (★): Through Elohim we shall do valiantly — He treads down the enemy
+    ('canon','psalms',60,12,'canon','psalms',108,13,'free',
+      E'*Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies* (Psalm 108:13). *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies* (Psalm 60:12): the twin psalm closes with the identical confession — the valour is through Elohim, the treading-down is His work. Both songs end where the help begins: in Him.'),
+    ('canon','psalms',60,12,'canon','psalms',44,5,'free',
+      E'*Through thee will we push down our enemies: through thy name will we tread them under that rise up against us* (Psalm 44:5). *he it is that shall tread down our enemies* (Psalm 60:12): the treading is by His name, not the sword — *For I will not trust in my bow* (44:6). The valour of the psalm is the victory of Psalm 44: the enemy trodden under by the name of Elohim, not the arm of man.'),
+    ('canon','psalms',60,12,'canon','romans',16,20,'free',
+      E'*And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20). *he it is that shall tread down our enemies* (Psalm 60:12): Paul carries the treading forward to the seed-war — the Elohim of peace bruising Satan under the feet of His people, the enmity of Genesis 3:15 worked out. The enemy trodden down in the psalm is the serpent crushed at the last.'),
+    ('canon','psalms',60,12,'canon','ephesians',6,10,'free',
+      E'*Finally, my brethren, be strong in Yahuah (Lord), and in the power of his might* (Ephesians 6:10). *Through Elohim (God) we shall do valiantly* (Psalm 60:12): the valour of the psalm is the strength Paul commands — be strong in Yahuah, and in the power of HIS might, not our own. We do valiantly only as His might is upon us.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again',
+       E'Thou hast cast us off — O turn thyself to us again: the covenant stands through the chastening',
+       E'The lament opens in defeat: *O Elohim (God), thou hast cast us off, thou hast scattered us, thou hast been displeased; O turn thyself to us again* (Psalm 60:1). Cast off, scattered, displeased — yet the displeasure is chastening, and the prayer is to be turned again, not abandoned. Paul takes up the very question the cry implies and crushes the wrong reading: *I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The casting-away is not the end but the doorway to a receiving: *if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?* (Romans 11:15). The psalter''s own refrain is the turning-prayer answered: *Turn us again, O Elohim (God), and cause thy face to shine; and we shall be saved* (Psalm 80:3); *Turn us again, O Yahuah Elohim (LORD God) of hosts, cause thy face to shine; and we shall be saved* (Psalm 80:19). This is the two-house guard: Elohim hath not cast away His people — the scattering is for a season, the covenant-face will shine again, and the cast-off are turned again unto life.',
+       sv.verse_id, ev.verse_id, 'free', 23475
+  FROM _s302_ps060_lookup sv, _s302_ps060_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=60 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land',
+       E'Ephraim the strength of mine head, Yahudah my lawgiver — Elohim''s word apportions the land, both houses His',
+       E'The heart of the psalm is Elohim''s own speech dividing the inheritance: *Elohim (God) hath spoken in his holiness; I will rejoice, I will divide Shechem, and mete out the valley of Succoth. Gilead is mine, and Manasseh is mine; Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 60:6-7). The TWO HOUSES are named together, and both belong to Him — Ephraim the strength of the northern house, Yahudah the lawgiver of the south. Judah''s title reaches back to the patriarch''s blessing: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). And Ephraim''s strength is the fulness Jacob foretold over the younger son: *his seed shall become a multitude of nations* (Genesis 48:19). What the psalm names as two-both-His, the prophet binds into one in His hand: *Behold, I will take the stick of Joseph, which is in the hand of Ephraim... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19); *they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The twin psalm sings the identical oracle: *Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 108:8). This is NOT replacement and not a new people grafted in — both houses are Yashar''el, named by Elohim''s own word, the scattered northern fulness and the sceptred south gathered into one nation under His hand.',
+       sv.verse_id, ev.verse_id, 'free', 23478
+  FROM _s302_ps060_lookup sv, _s302_ps060_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=60 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-60-vain-is-the-help-of-man',
+       E'Give us help from trouble: for vain is the help of man',
+       E'From the field the psalm turns to the only true source of help: *Give us help from trouble: for vain is the help of man* (Psalm 60:11). The twin psalm repeats the cry word for word — *Give us help from trouble: for vain is the help of man* (Psalm 108:12) — and the psalter sets the warning broad: *Put not your trust in princes, nor in the son of Adam, in whom there is no help* (Psalm 146:3), for *His breath goeth forth, he returneth to his earth; in that very day his thoughts perish* (Psalm 146:4). Isaiah names the vain help by its idol: *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). And Zechariah states the whole principle the psalm prays: *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The help of man is vain because man is mortal and the arm of flesh fails; deliverance is of Elohim alone, done by His Spirit and not by the strength of horses.',
+       sv.verse_id, ev.verse_id, 'free', 23481
+  FROM _s302_ps060_lookup sv, _s302_ps060_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=60 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-60-through-elohim-we-shall-do-valiantly',
+       E'Through Elohim we shall do valiantly — he it is that shall tread down our enemies',
+       E'The lament ends in confidence, not in the strength of the army but in Elohim: *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies* (Psalm 60:12). The twin psalm seals it with the identical confession — *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies* (Psalm 108:13). Another psalm names the same treading by His name and not the sword: *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us* (Psalm 44:5), *For I will not trust in my bow, neither shall my sword save me* (Psalm 44:6). Paul carries the treading forward to the seed-war of Genesis 3:15: *And the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20) — the enemy trodden down is at the last the serpent crushed. And the strength for the standing is His, not ours: *be strong in Yahuah (Lord), and in the power of his might* (Ephesians 6:10). It is Elohim who treads down the enemy; the valour of His people is His might working in them.',
+       sv.verse_id, ev.verse_id, 'free', 23484
+  FROM _s302_ps060_lookup sv, _s302_ps060_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=60 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — Paul sets and denies the very cry of 60:1: His people are not cast away.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=1
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2) — the apparent casting-off of 60:1 is not final: the foreknown people stand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=1
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the casting away of them... the receiving of them... but life from the dead?* (Romans 11:15) — the cast-off of 60:1 is unto a receiving: turned again unto life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=1
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Turn us again, O Elohim (God), and cause thy face to shine; and we shall be saved* (Psalm 80:3) — the turning-prayer of 60:1 is the refrain of the neighbouring psalm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=1
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Turn us again, O Yahuah Elohim (LORD God) of hosts, cause thy face to shine; and we shall be saved* (Psalm 80:19) — the refrain''s third rising: the cast-off turned again and saved (60:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=1
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-thou-hast-cast-us-off-o-turn-thyself-to-us-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come* (Genesis 49:10) — *Yahudah is my lawgiver* (60:7): the south''s sceptre, Elohim''s own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=7
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *his seed shall become a multitude of nations* (Genesis 48:19) — *Ephraim... the strength of mine head* (60:7): the northern fulness, Ephraim the multitude, still His.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=7
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the stick of Joseph... even with the stick of Yahudah (Judah), and make them one stick* (Ezekiel 37:19) — the two houses of 60:7 bound into one in His hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=7
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they shall be no more two nations, neither shall they be divided into two kingdoms any more* (Ezekiel 37:22) — the houses of 60:7 made one nation, divided no more.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=7
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Ephraim also is the strength of mine head; Yahudah (Judah) is my lawgiver* (Psalm 108:8) — the twin psalm sings the identical two-house oracle word for word (60:7).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=7
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=108 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-ephraim-and-yahudah-both-mine-the-word-apportions-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Give us help from trouble: for vain is the help of man* (Psalm 108:12) — the twin psalm repeats 60:11 word for word: man''s help is empty.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=11
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=108 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-vain-is-the-help-of-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Put not your trust in princes, nor in the son of Adam, in whom there is no help* (Psalm 146:3) — *vain is the help of man* (60:11): trust not the mortal arm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=11
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-vain-is-the-help-of-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe to them that go down to Egypt for help... but they look not unto the Holy One of Yashar''el* (Isaiah 31:1) — the vain help of 60:11 by its idol: Egypt''s horses.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=11
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-vain-is-the-help-of-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot* (Zechariah 4:6) — the principle behind 60:11: the work is by His Spirit, not flesh.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=11
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-vain-is-the-help-of-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Through Elohim (God) we shall do valiantly: for he it is that shall tread down our enemies* (Psalm 108:13) — the twin psalm closes with 60:12 word for word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=12
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=108 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-through-elohim-we-shall-do-valiantly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*through thy name will we tread them under... For I will not trust in my bow* (Psalm 44:5-6) — the treading of 60:12 is by His name, not the sword.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=12
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-through-elohim-we-shall-do-valiantly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the Elohim (God) of peace shall bruise Satan under your feet shortly* (Romans 16:20) — the enemy trodden in 60:12 is at the last the serpent crushed (Genesis 3:15).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=12
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=16 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-through-elohim-we-shall-do-valiantly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *be strong in Yahuah (Lord), and in the power of his might* (Ephesians 6:10) — the valour of 60:12 is HIS might in His people, not their own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps060_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=60 AND sv.verse_number=12
+  JOIN _s302_ps060_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-60-through-elohim-we-shall-do-valiantly'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_61.sql (Psalm 61) -----
+-- Chapter: Psalm 61 — A SHORT EXILE'S PRAYER for the King and the everlasting throne. From the
+-- end of the earth the overwhelmed heart cries to be led to *the rock that is higher than I*
+-- (v.2), finds *a shelter... and a strong tower from the enemy* (v.3), longs to *abide in thy
+-- tabernacle for ever... in the covert of thy wings* (v.4), and turns to the KING: *Thou wilt
+-- prolong the king''s life... He shall abide before Elohim (God) for ever* (vv.6-7) — the Davidic
+-- everlasting throne, the Messiah enthroned who HAS a Father (Formed/Formless held). It closes in
+-- *I will sing praise unto thy name for ever, that I may daily perform my vows* (v.8).
+-- Tag: ps061   Temp view: _s302_ps061_lookup
+-- Sort band: base 23500, step 3 -> threads at 23500, 23503, 23506, 23509, 23512 (5 threads)
+-- Source of EVERY row: 'canon','psalms',61,v
+--
+-- Psalm 61 coverage:
+--   ★ vv.1-2 (Hear my cry, O Elohim... from the end of the earth will I cry unto thee, when my
+--          heart is overwhelmed: lead me to the rock that is higher than I)
+--        NT:     ★ 1 Corinthians 10:4 (that spiritual Rock that followed them: and that Rock was
+--                Messiah), Matthew 7:24-25 (a wise man, which built his house upon a rock... founded
+--                upon a rock) — THREAD 1
+--        Extras: none warranted (the Rock-of-refuge weave is carried fully by the canon witnesses;
+--                Sirach weighed at v.8, not forced here)
+--        Tanakh: ★ Psalm 18:2 (Yahuah is my rock... my high tower), Isaiah 26:4 (in Yahuah JEHOVAH
+--                is everlasting strength) — THREAD 1
+--   v.3 (For thou hast been a shelter for me, and a strong tower from the enemy)
+--        NT:     none warranted (the strong-tower image is the Name-tower of the Tanakh; no clean NT add forced)
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 18:10 (the name of Yahuah is a strong tower: the righteous runneth into
+--                it, and is safe), Psalm 91:2 (He is my refuge and my fortress), 2 Samuel 22:3 (my
+--                high tower, and my refuge) — THREAD 2
+--   ★ v.4 (I will abide in thy tabernacle for ever: I will trust in the covert of thy wings)
+--        NT:     ★ John 14:2-3 (In my Father''s house are many mansions... I go to prepare a place
+--                for you) — THREAD 3
+--        Extras: none warranted (the everlasting-dwelling weave is carried by the psalter + John)
+--        Tanakh: ★ Psalm 23:6 (I will dwell in the house of Yahuah for ever), Psalm 27:4-5 (that I
+--                may dwell in the house of Yahuah... in the secret of his tabernacle shall he hide
+--                me), Psalm 57:1 (in the shadow of thy wings will I make my refuge) — THREAD 3
+--   v.5 (For thou, O Elohim, hast heard my vows: thou hast given me the heritage of those that
+--          fear thy name)
+--        NT/Extras/Tanakh: none warranted as a separate add (heard-my-vows lead-in folds into
+--                THREAD 5''s vow/praise close; the heritage-of-those-that-fear-the-Name is the
+--                two-house inheritance, recorded but not over-threaded here)
+--   ★★ vv.6-7 (Thou wilt prolong the king''s life: and his years as many generations. He shall
+--          abide before Elohim for ever: O prepare mercy and truth, which may preserve him)
+--        NT:     ★★ Luke 1:32-33 (the throne of his father David... of his kingdom there shall be
+--                no end), Hebrews 7:16,24-25 (after the power of an endless life... he continueth
+--                ever... seeing he ever liveth) — THREAD 4 (load-bearing King-Priest)
+--        Extras: none warranted (the Davidic-covenant everlasting throne is carried by 2 Samuel 7 +
+--                Psalm 89 + Luke 1 + Hebrews 7)
+--        Tanakh: ★★ 2 Samuel 7:13,16 (I will stablish the throne of his kingdom for ever... thy
+--                throne shall be established for ever), Psalm 89:36-37 (His seed shall endure for
+--                ever, and his throne as the sun before me) — THREAD 4
+--   v.8 (So will I sing praise unto thy name for ever, that I may daily perform my vows)
+--        NT:     ★ Hebrews 13:15 (let us offer the sacrifice of praise to Elohim continually... the
+--                fruit of our lips giving thanks to his name) — THREAD 5
+--        Extras: none warranted (weighed Sirach; no clean vow/praise verse strong enough to force)
+--        Tanakh: ★ Psalm 116:14 (I will pay my vows unto Yahuah now in the presence of all his
+--                people), Psalm 116:18 (I will pay my vows unto Yahuah...) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. psalm-61-lead-me-to-the-rock-that-is-higher-than-i — NT (1 Corinthians 10, Matthew 7) +
+--      Tanakh (Psalm 18, Isaiah 26) [free] (★ the Rock higher than I = the Formed Son the believer
+--      is led to; that Rock was Messiah)
+--   2. psalm-61-a-strong-tower-from-the-enemy — Tanakh (Proverbs 18, Psalm 91, 2 Samuel 22) [free]
+--      (the Name of Yahuah is the strong tower of refuge)
+--   3. psalm-61-i-will-abide-in-thy-tabernacle-for-ever — NT (John 14) + Tanakh (Psalm 23, Psalm
+--      27, Psalm 57) [free] (★ the everlasting dwelling / under His wings; in my Father''s house
+--      are many mansions)
+--   4. psalm-61-the-king-who-abideth-before-elohim-for-ever — NT (Luke 1, Hebrews 7) + Tanakh (2
+--      Samuel 7, Psalm 89) [free] (★★ the Davidic-covenant Messiah enthroned, the everlasting King
+--      who HAS a Father; the throne with no end after the power of an endless life)
+--   5. psalm-61-i-will-sing-praise-unto-thy-name-for-ever — NT (Hebrews 13) + Tanakh (Psalm 116)
+--      [free] (the daily vows and praise to the Name; the sacrifice of praise, the fruit of the lips)
+--
+-- Framework-load-bearing / framing notes:
+--   ★ THE ROCK HIGHER THAN I (THREAD 1): *lead me to the rock that is higher than I* (61:2). The
+--      Rock the overwhelmed heart is led to is the Formed Son: *they drank of that spiritual Rock
+--      that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The psalter
+--      already named Him — *Yahuah (LORD) is my rock, and my fortress* (Psalm 18:2) — and Isaiah
+--      seals the refuge as everlasting — *in Yahuah (LORD) JEHOVAH is everlasting strength* (Isaiah
+--      26:4). The wise man builds on Him and the floods cannot move the house (Matthew 7:24-25).
+--   ★★ THE KING WHO ABIDETH FOR EVER (THREAD 4): *Thou wilt prolong the king''s life... He shall
+--      abide before Elohim (God) for ever* (61:6-7). This is the Davidic covenant: *I will stablish
+--      the throne of his kingdom for ever... thy throne shall be established for ever* (2 Samuel
+--      7:13,16); *His seed shall endure for ever, and his throne as the sun before me* (Psalm
+--      89:36-37). Gabriel names the heir: *Yahuah Elohim (the Lord God) shall give unto him the
+--      throne of his father David... of his kingdom there shall be no end* (Luke 1:32-33) — and
+--      Hebrews makes the everlasting King the King-Priest *after the power of an endless life...
+--      seeing he ever liveth* (Hebrews 7:16,24-25). The everlasting King abides BEFORE Elohim — He
+--      HAS a Father; Formed and Formless held, never co-equal-persons, never a first creature.
+--
+-- VERSES WITH NO SEPARATE ADD: v.5 (heard my vows / heritage of those that fear the Name) folds as
+--   lead-in to THREAD 5''s vow-and-praise close; recorded, not over-threaded. No extras member in
+--   this chapter — Sirach was weighed at vv.1-2 and v.8 and not forced; every thread is canon = 'free'.
+
+CREATE TEMP VIEW _s302_ps061_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): lead me to the rock that is higher than I — that Rock was Messiah
+    ('canon','psalms',61,2,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). *From the end of the earth will I cry unto thee, when my heart is overwhelmed: lead me to the rock that is higher than I* (Psalm 61:2): the Rock the overwhelmed heart is led to is the Formed Son — the Rock that followed Yashar''el (Israel) in the wilderness, *and that Rock was Messiah*. He is the rock higher than I, higher than the man who cries.'),
+    ('canon','psalms',61,2,'canon','psalms',18,2,'free',
+      E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower* (Psalm 18:2). *Lead me to the rock that is higher than I* (Psalm 61:2): David already named the Rock — Yahuah Himself the rock and fortress and high tower. The rock higher than the overwhelmed man is the same Rock of refuge David trusted, the deliverer and high tower.'),
+    ('canon','psalms',61,2,'canon','isaiah',26,4,'free',
+      E'*Trust ye in Yahuah (LORD) for ever: for in Yahuah (LORD) JEHOVAH is everlasting strength* (Isaiah 26:4). *Lead me to the rock that is higher than I* (Psalm 61:2): the margin reads the Rock of ages — *in Yahuah (LORD) JEHOVAH is everlasting strength*. The rock higher than I is the everlasting strength, the refuge that stands when the heart is overwhelmed.'),
+    ('canon','psalms',61,2,'canon','matthew',7,24,'free',
+      E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock* (Matthew 7:24-25). *Lead me to the rock that is higher than I* (Psalm 61:2): the one led to the Rock builds upon Him — the house founded on the Rock stands when the floods come. To be led to the rock higher than I is to hear His sayings and do them, and not be moved.'),
+
+    -- THREAD 2: a strong tower from the enemy — the Name of Yahuah is the strong tower
+    ('canon','psalms',61,3,'canon','proverbs',18,10,'free',
+      E'*The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10). *For thou hast been a shelter for me, and a strong tower from the enemy* (Psalm 61:3): the strong tower is the Name — *the name of Yahuah (LORD) is a strong tower*. The righteous run into the Name and are safe; the shelter from the enemy is the Name of Yahuah itself.'),
+    ('canon','psalms',61,3,'canon','psalms',91,2,'free',
+      E'*I will say of Yahuah (LORD), He is my refuge and my fortress: my Elohim (God); in him will I trust* (Psalm 91:2). *Thou hast been a shelter for me, and a strong tower from the enemy* (Psalm 61:3): the same confession of refuge — Yahuah the refuge and fortress, the One trusted against the enemy. The shelter of the one psalm is the refuge and fortress of the other.'),
+    ('canon','psalms',61,3,'canon','2-samuel',22,3,'free',
+      E'*The Elohim (God) of my rock; in him will I trust: he is my shield, and the horn of my salvation, my high tower, and my refuge, my saviour; thou savest me from violence* (2 Samuel 22:3). *Thou hast been a shelter for me, and a strong tower from the enemy* (Psalm 61:3): David''s song of deliverance names Yahuah *my high tower, and my refuge* — the strong tower from the enemy, the saviour from violence. The shelter of Psalm 61 is the high tower of the song of the delivered king.'),
+
+    -- THREAD 3 (★): I will abide in thy tabernacle for ever — the covert of thy wings
+    ('canon','psalms',61,4,'canon','psalms',23,6,'free',
+      E'*Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6). *I will abide in thy tabernacle for ever: I will trust in the covert of thy wings* (Psalm 61:4): the same everlasting dwelling — *I will dwell in the house of Yahuah (LORD) for ever*. To abide in His tabernacle for ever is to dwell in His house all the days, and beyond.'),
+    ('canon','psalms',61,4,'canon','psalms',27,4,'free',
+      E'*One thing have I desired of Yahuah (LORD), that will I seek after; that I may dwell in the house of Yahuah (LORD) all the days of my life, to behold the beauty of Yahuah (LORD), and to enquire in his temple* (Psalm 27:4). *I will abide in thy tabernacle for ever* (Psalm 61:4): the one desire — *that I may dwell in the house of Yahuah (LORD) all the days of my life*. The longing to abide in the tabernacle for ever is the one thing sought, to behold His beauty in His house.'),
+    ('canon','psalms',61,4,'canon','psalms',27,5,'free',
+      E'*For in the time of trouble he shall hide me in his pavilion: in the secret of his tabernacle shall he hide me; he shall set me up upon a rock* (Psalm 27:5). *I will abide in thy tabernacle for ever: I will trust in the covert of thy wings* (Psalm 61:4): the covert and the secret of the tabernacle are one — *in the secret of his tabernacle shall he hide me*. The trusting under the wings is the hiding in His pavilion, the tabernacle-shelter that sets the hidden one upon a rock.'),
+    ('canon','psalms',61,4,'canon','psalms',57,1,'free',
+      E'*Be merciful unto me, O Elohim (God), be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1). *I will trust in the covert of thy wings* (Psalm 61:4): the same trust under the wings — *in the shadow of thy wings will I make my refuge*. The covert of the wings is the shadow of the wings, the refuge held until the storm is overpast.'),
+    ('canon','psalms',61,4,'canon','john',14,2,'free',
+      E'*In my Father''s house are many mansions: if it were not so, I would have told you. I go to prepare a place for you. And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also* (John 14:2-3). *I will abide in thy tabernacle for ever* (Psalm 61:4): the everlasting abiding is made sure by the Formed Son — *In my Father''s house are many mansions... I go to prepare a place for you*. The tabernacle abode for ever is the place He prepares in the Father''s house, that where He is, there His own may be also.'),
+
+    -- THREAD 4 (★★): the king who abideth before Elohim for ever — the everlasting throne
+    ('canon','psalms',61,6,'canon','2-samuel',7,13,'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). *Thou wilt prolong the king''s life: and his years as many generations* (Psalm 61:6): the prolonged years of the king are the everlasting throne of the covenant — *I will stablish the throne of his kingdom for ever*. The king whose life is prolonged is the seed of David whose throne Yahuah establishes for ever.'),
+    ('canon','psalms',61,7,'canon','2-samuel',7,16,'free',
+      E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). *He shall abide before Elohim (God) for ever* (Psalm 61:7): the king who abides BEFORE Elohim for ever is the king whose throne is *established for ever* by the covenant — the everlasting Davidic throne, the King who stands before the Father, having a Father.'),
+    ('canon','psalms',61,7,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). *He shall abide before Elohim (God) for ever* (Psalm 61:7): Gabriel names the King who fulfils it — given *the throne of his father David*, reigning *for ever*, *of his kingdom there shall be no end*. He is the Son of the Highest who reigns for ever and HAS a Father who gives Him the throne.'),
+    ('canon','psalms',61,7,'canon','hebrews',7,16,'free',
+      E'*Who is made, not after the law of a carnal commandment, but after the power of an endless life* (Hebrews 7:16). *He shall abide before Elohim (God) for ever* (Psalm 61:7): the King who abides for ever is the King-Priest *after the power of an endless life* — His abiding is no mere prolonging of years but an endless life, the throne that cannot pass.'),
+    ('canon','psalms',61,7,'canon','hebrews',7,24,'free',
+      E'*But this man, because he continueth ever, hath an unchangeable priesthood. Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:24-25). *He shall abide before Elohim (God) for ever* (Psalm 61:7): the One who *abideth before Elohim (God) for ever* is the One who *continueth ever* and *ever liveth to make intercession* — the everlasting King who stands before the Father on behalf of His own, saving to the uttermost.'),
+    ('canon','psalms',61,7,'canon','psalms',89,36,'free',
+      E'*His seed shall endure for ever, and his throne as the sun before me. It shall be established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:36-37). *He shall abide before Elohim (God) for ever* (Psalm 61:7): the covenant-psalm seals the everlasting throne — *his throne as the sun before me... established for ever as the moon*. The king who abides before Elohim for ever sits on the throne sworn to endure as the sun and moon, the faithful witness in heaven.'),
+
+    -- THREAD 5: I will sing praise unto thy name for ever — the daily vows
+    ('canon','psalms',61,8,'canon','hebrews',13,15,'free',
+      E'*By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). *So will I sing praise unto thy name for ever, that I may daily perform my vows* (Psalm 61:8): the singing of praise to the Name becomes the continual sacrifice — *the fruit of our lips giving thanks to his name*. The daily vow is the daily sacrifice of praise, the lips giving thanks to the Name for ever.'),
+    ('canon','psalms',61,8,'canon','psalms',116,14,'free',
+      E'*I will pay my vows unto Yahuah (LORD) now in the presence of all his people* (Psalm 116:14). *That I may daily perform my vows* (Psalm 61:8): the daily performing of vows is the paying of vows before all His people — *I will pay my vows unto Yahuah (LORD) now in the presence of all his people*. The vow sung to the Name is paid openly, day by day, among the people of Yahuah.'),
+    ('canon','psalms',61,8,'canon','psalms',116,18,'free',
+      E'*I will pay my vows unto Yahuah (LORD) now in the presence of all his people* (Psalm 116:18). *So will I sing praise unto thy name for ever, that I may daily perform my vows* (Psalm 61:8): the vow repeated is the vow kept — the psalmist of the cup of salvation also binds himself to *pay my vows unto Yahuah (LORD)* before the people. The daily vow of Psalm 61 is the paid vow of thanksgiving, the Name praised for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-61-lead-me-to-the-rock-that-is-higher-than-i',
+       E'Lead me to the rock that is higher than I — that Rock was Messiah',
+       E'From the place of exile the overwhelmed heart cries to be carried up to a refuge it cannot reach alone: *From the end of the earth will I cry unto thee, when my heart is overwhelmed: lead me to the rock that is higher than I* (Psalm 61:2). The Rock higher than the man is the Formed Son. Paul names Him in the wilderness: *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). The psalter already knew Him — *Yahuah (LORD) is my rock, and my fortress, and my deliverer... my high tower* (Psalm 18:2) — and Isaiah seals the Rock as everlasting: *Trust ye in Yahuah (LORD) for ever: for in Yahuah (LORD) JEHOVAH is everlasting strength* (Isaiah 26:4). The one led to the Rock builds upon Him and stands: *a wise man, which built his house upon a rock... and it fell not: for it was founded upon a rock* (Matthew 7:24-25). To be led to the rock higher than I is to be set upon the Messiah, the everlasting strength the floods cannot move.',
+       sv.verse_id, ev.verse_id, 'free', 23500
+  FROM _s302_ps061_lookup sv, _s302_ps061_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=61 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-61-a-strong-tower-from-the-enemy',
+       E'A strong tower from the enemy — the Name of Yahuah is the strong tower',
+       E'*For thou hast been a shelter for me, and a strong tower from the enemy* (Psalm 61:3). The strong tower is the Name itself: *The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10). The same confession runs through the psalms of refuge — *I will say of Yahuah (LORD), He is my refuge and my fortress: my Elohim (God); in him will I trust* (Psalm 91:2) — and through David''s song of deliverance, where Yahuah is *my high tower, and my refuge, my saviour; thou savest me from violence* (2 Samuel 22:3). The shelter from the enemy is no fortress of stone but the Name of Yahuah, the strong tower into which the righteous run and are safe.',
+       sv.verse_id, ev.verse_id, 'free', 23503
+  FROM _s302_ps061_lookup sv, _s302_ps061_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=61 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-61-i-will-abide-in-thy-tabernacle-for-ever',
+       E'I will abide in thy tabernacle for ever — the covert of thy wings',
+       E'*I will abide in thy tabernacle for ever: I will trust in the covert of thy wings* (Psalm 61:4). The longing is for an everlasting dwelling with Yahuah, and the psalter sings it again and again: *I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6); the one thing desired — *that I may dwell in the house of Yahuah (LORD) all the days of my life, to behold the beauty of Yahuah (LORD)* (Psalm 27:4) — for *in the secret of his tabernacle shall he hide me; he shall set me up upon a rock* (Psalm 27:5). The covert of the wings is the shadow of the wings: *in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1). And the Formed Son makes the everlasting abode sure: *In my Father''s house are many mansions... I go to prepare a place for you... that where I am, there ye may be also* (John 14:2-3). To abide in His tabernacle for ever is to dwell in the place He prepares in the Father''s house, hidden under His wings until every calamity is overpast.',
+       sv.verse_id, ev.verse_id, 'free', 23506
+  FROM _s302_ps061_lookup sv, _s302_ps061_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=61 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-61-the-king-who-abideth-before-elohim-for-ever',
+       E'The king who abideth before Elohim for ever — the everlasting Davidic throne',
+       E'The prayer lifts from the exile to the King: *Thou wilt prolong the king''s life: and his years as many generations. He shall abide before Elohim (God) for ever: O prepare mercy and truth, which may preserve him* (Psalm 61:6-7). The king whose years run to many generations, who abides before Elohim for ever, is the Davidic-covenant Messiah enthroned. Yahuah swore it to David: *He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13); *thy throne shall be established for ever* (2 Samuel 7:16). The covenant-psalm seals it — *His seed shall endure for ever, and his throne as the sun before me. It shall be established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:36-37). Gabriel names the heir who fulfils it: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David... of his kingdom there shall be no end* (Luke 1:32-33). And Hebrews shows the everlasting King is the King-Priest *after the power of an endless life* (Hebrews 7:16), who *continueth ever... seeing he ever liveth to make intercession for them* (Hebrews 7:24-25). The everlasting King abides BEFORE Elohim — He stands before the Father, having a Father; the Formed and the Formless held, never co-equal-persons, never a first creature. His is the throne with no end.',
+       sv.verse_id, ev.verse_id, 'free', 23509
+  FROM _s302_ps061_lookup sv, _s302_ps061_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=61 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-61-i-will-sing-praise-unto-thy-name-for-ever',
+       E'I will sing praise unto thy name for ever — that I may daily perform my vows',
+       E'The psalm closes in praise and vow: *So will I sing praise unto thy name for ever, that I may daily perform my vows* (Psalm 61:8) — answering the earlier *thou, O Elohim (God), hast heard my vows* (61:5). The singing to the Name becomes the continual offering: *By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). And the daily performing of vows is the open paying of vows among the people: *I will pay my vows unto Yahuah (LORD) now in the presence of all his people* (Psalm 116:14,18). The vow is no private murmur but a daily, public sacrifice of praise — the fruit of the lips giving thanks to the Name of Yahuah for ever.',
+       sv.verse_id, ev.verse_id, 'free', 23512
+  FROM _s302_ps061_lookup sv, _s302_ps061_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=61 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the rock higher than I (61:2) is the Formed Son, the Rock that followed Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=2
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-lead-me-to-the-rock-that-is-higher-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) is my rock, and my fortress... my high tower* (Psalm 18:2) — the rock higher than I (61:2) is the Rock David trusted, the deliverer and high tower.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=2
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-lead-me-to-the-rock-that-is-higher-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in Yahuah (LORD) JEHOVAH is everlasting strength* (Isaiah 26:4) — the rock higher than I (61:2) is the Rock of ages, the everlasting strength that stands when the heart is overwhelmed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=2
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-lead-me-to-the-rock-that-is-higher-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a wise man, which built his house upon a rock... it fell not: for it was founded upon a rock* (Matthew 7:24-25) — the one led to the Rock (61:2) builds on Him and the floods cannot move the house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=2
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-lead-me-to-the-rock-that-is-higher-than-i'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The name of Yahuah (LORD) is a strong tower: the righteous runneth into it, and is safe* (Proverbs 18:10) — the strong tower of 61:3 is the Name itself, the refuge the righteous run into.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=3
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-a-strong-tower-from-the-enemy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He is my refuge and my fortress: my Elohim (God); in him will I trust* (Psalm 91:2) — the shelter of 61:3 is the same refuge and fortress, Yahuah trusted against the enemy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=3
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-a-strong-tower-from-the-enemy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*my high tower, and my refuge, my saviour; thou savest me from violence* (2 Samuel 22:3) — David''s song names Yahuah the high tower, the strong tower from the enemy of 61:3.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=3
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=22 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-a-strong-tower-from-the-enemy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6) — the everlasting abiding of 61:4: to dwell in His house all the days, and beyond.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=4
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-abide-in-thy-tabernacle-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that I may dwell in the house of Yahuah (LORD) all the days of my life... and to enquire in his temple* (Psalm 27:4) — the one thing desired, the abiding in the tabernacle of 61:4.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=4
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-abide-in-thy-tabernacle-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in the secret of his tabernacle shall he hide me; he shall set me up upon a rock* (Psalm 27:5) — the covert of the wings (61:4) is the hiding in His tabernacle-pavilion, set upon a rock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=4
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-abide-in-thy-tabernacle-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1) — the covert of the wings (61:4) is the shadow of the wings, the refuge held till the storm is overpast.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=4
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=57 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-abide-in-thy-tabernacle-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *In my Father''s house are many mansions... I go to prepare a place for you... that where I am, there ye may be also* (John 14:2-3) — the everlasting abode of 61:4 made sure by the Formed Son, the place He prepares in the Father''s house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=4
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=14 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-abide-in-thy-tabernacle-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — the prolonged years of the king (61:6) are the everlasting throne of the Davidic covenant.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=6
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-the-king-who-abideth-before-elohim-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thy throne shall be established for ever* (2 Samuel 7:16) — the king who abides before Elohim for ever (61:7) is the king whose throne the covenant establishes for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=7
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-the-king-who-abideth-before-elohim-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the throne of his father David... of his kingdom there shall be no end* (Luke 1:32-33) — Gabriel names the King of 61:7 who reigns for ever and HAS a Father who gives Him the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=7
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-the-king-who-abideth-before-elohim-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *after the power of an endless life* (Hebrews 7:16) — the King who abides for ever (61:7) is the King-Priest of an endless life, the throne that cannot pass.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=7
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-the-king-who-abideth-before-elohim-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *he continueth ever... seeing he ever liveth to make intercession for them* (Hebrews 7:24-25) — the One who abideth before Elohim for ever (61:7) ever liveth before the Father to intercede, saving to the uttermost.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=7
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-the-king-who-abideth-before-elohim-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *His seed shall endure for ever, and his throne as the sun before me... established for ever as the moon* (Psalm 89:36-37) — the everlasting throne of 61:7, sworn to endure as the sun and moon, the faithful witness in heaven.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=7
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-the-king-who-abideth-before-elohim-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*let us offer the sacrifice of praise to Elohim (God) continually... the fruit of our lips giving thanks to his name* (Hebrews 13:15) — the praise to the Name of 61:8 become the continual sacrifice, the fruit of the lips.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=8
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-sing-praise-unto-thy-name-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will pay my vows unto Yahuah (LORD) now in the presence of all his people* (Psalm 116:14) — the daily performing of vows (61:8) is the open paying of vows among the people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=8
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-sing-praise-unto-thy-name-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will pay my vows unto Yahuah (LORD) now in the presence of all his people* (Psalm 116:18) — the vow repeated is the vow kept; the daily vow of 61:8 is the paid vow of thanksgiving.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps061_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=61 AND sv.verse_number=8
+  JOIN _s302_ps061_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-61-i-will-sing-praise-unto-thy-name-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
