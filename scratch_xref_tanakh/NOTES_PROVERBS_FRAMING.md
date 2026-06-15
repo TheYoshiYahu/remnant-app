@@ -87,3 +87,50 @@ Proverbs is left untouched — distinct slug namespace from `proverbs-NN-*`.
   Ammi/Eph5:32/Rev19:8 — measured two-house figurative register, restoration NOT replacement).
 
 ## STATUS: 10/31 chapters done (1,2,3,4,6,8,9,28,30,31) = 55 threads / 280 members LIVE+PUSHED.
+
+## ★ Packs 3-5 (session304 resume, 2026-06-15) — ch 5,7,10–22 — 85 threads/597 members LIVE
+The antithetic-couplet collection. All clustered by THEME (not per-verse). Live cumulative after Pack 5:
+**140 threads / 877 members** (proverbs-% slug), 0 orphans/0 empty, 5 gates green each pack.
+
+- **Pack 3 (ch 5,7,10,11,12)** = 5/5/6/6/4 thr, 152 mem, bands 28100/28150/28225/28250/28275.
+  ★ch5/ch7 the two full strange-woman chapters: covenant-marriage faithfulness (5:15-18 *drink waters
+  out of thine own cistern / the wife of thy youth*→Mal2:14-15 wife-of-thy-covenant/Gen2:24/Heb13:4) +
+  the seventh word (Exod20:14/Deut5:18, Torah affirmed) + all-seeing eye (5:21→Heb4:13) + her-house-the-
+  way-to-Sheol (7:27); ch7 ★keep-my-commandments-and-LIVE / Torah-as-apple-of-the-eye (7:2-3→Deut6:6-8/
+  Jer31:33, anti-antinomian). VICTIMS-not-enemies: the seduced youth a lost sheep. ★★ch10:12 love-covereth-
+  all-sins (→1Pet4:8/Jas5:20, quoted twice in NT); ★★ch11:30 fruit-of-righteous=tree-of-life + ★★11:31
+  righteous-recompensed (→1Pet4:18 near-verbatim LXX); ★11:1 false-balance=Torah weights (Lev19:36/Deut25:13-16);
+  ★12:15 the-two-ways/way-that-seemeth-right (twin 14:12/16:25→Matt7:13); ★12:10 beast-mercy=Torah-righteousness
+  (Deut25:4/22:6-7/Num22→1Cor9:9/1Tim5:18 Paul quotes muzzle-law AS binding).
+- **Pack 4 (ch 13,14,15,16,17)** = 6/6/6/7/6 thr, 209 mem, bands 28300/28325/28350/28375/28400.
+  ★★ch16 THE SOVEREIGNTY HEAVYWEIGHT: man-proposes-Yahuah-disposes (16:1,9→Jer10:23/Prov19:21/20:24/Jas4:13-15) +
+  16:4 made-all-for-himself + ★16:25 two-ways + ★16:6 mercy-and-truth-purge-iniquity (→John1:14,17) + ★16:18
+  pride-before-destruction (Isa14/Ezek28/Dan4→1Pet5:5) + 16:11 just-weights. ★★ch15:8/29 sacrifice-of-the-wicked-
+  abomination/prayer-of-upright-heard (parallel to live ch28:9 heavyweight, anchored in ch15; obedience-above-ritual
+  NOT anti-sacrifice) + 15:3 eyes-of-Yahuah-everywhere + 15:33 fear-of-Yahuah+humility-before-honour. ★ch14:12
+  way-that-seemeth-right (KEYSTONE, parallel to ch12) + ★14:31 oppress-the-poor=reproach-his-Maker (twin 17:5) +
+  ★14:34 righteousness-exalteth-a-nation (Deut28, Yashar'el never replacement). ★ch17:3 fining-pot/Yahuah-trieth-
+  hearts (Mal3:2-3/Zech13:9→1Pet1:7/Rev2:23 Formed-Son claims heart-trying) + ★17:5 mock-poor=reproach-Maker +
+  ★17:9 covereth-transgression-seeketh-love (cross-lat 10:12) + ★17:15 justifieth-the-wicked-abomination (Rom4:5
+  framed: Yahuah satisfies justice by atonement, does NOT call evil good — proverb+gospel both stand). ★ch13:13
+  despise-not-the-word/fear-the-commandment (Torah affirmed) + 13:24 the-rod=Father's-chastening (→Heb12:6).
+- **Pack 5 (ch 18,19,20,21,22)** = 5/6/6/5/6 thr, 236 mem, bands 28425/28450/28475/28500/28525.
+  ★ch18:10 the-Name-of-Yahuah-a-strong-tower (Ps18:2/Joel2:32→Acts4:12/Phil2:9-10; the Name borne by the Formed
+  Son, set against 18:11 wealth=false-refuge) + 18:21 death/life-in-the-tongue + 18:22 findeth-a-wife=Yahuah's-gift +
+  18:24 friend-sticketh-closer-than-a-brother (→John15:13). ★ch19:17 pity-on-poor=loan-to-Yahuah (KEYSTONE anchored
+  in ch19→Matt25:40, parallel live ch28:27) + 19:21 counsel-of-Yahuah-shall-stand (cross-lat ch16) + ★19:5/9 false-
+  witness-ninth-word (Exod20:16/Deut19:18-19) + 19:23 fear-of-Yahuah-tendeth-to-life + 19:16 keep-the-commandment=
+  keep-thy-soul. ★★ch20:9 who-can-say-I-made-my-heart-clean (universal sin Eccl7:20/Rom3:23/1John1:8; the ANSWER =
+  new-covenant heart Yahuah cleanses Ezek36:25-27, NOT a charter for permanent sin) + ★20:22 wait-on-Yahuah-not-
+  vengeance (Deut32:35/Lev19:18→Rom12:17-19) + 20:10 divers-weights-abomination (cross-lat 11:1/16:11) + 20:12
+  hearing-ear/seeing-eye-Yahuah-made (Exod4:11/Ps94:9) + 20:24 man's-goings-of-Yahuah. ★★ch21:3 justice-and-judgment-
+  MORE-acceptable-than-sacrifice (1Sam15:22/Hos6:6/Mic6:8→Matt9:13/12:7 Yahusha quotes Hosea; obedience-and-mercy-
+  ABOVE-empty-ritual, NOT abolition — same Torah commands both) + ★21:1 king's-heart-in-Yahuah's-hand (turns even
+  pagan kings; John19:11 the Formed Son before Pilate) + 21:30-31 no-wisdom-against-Yahuah/safety-is-of-Yahuah
+  (Ps20:7/33:17/Zech4:6→1Cor1:25). ★★ch22:6 train-up-a-child=disciple-the-next-generation-into-the-covenant-way
+  (Deut6:6-7/Gen18:19/Ps78→Eph6:4/2Tim3:15, Torah handed down NOT generic parenting) + ★★22:28 remove-not-the-
+  ancient-landmark=the Torah/covenant-inheritance-boundary not to be moved (Deut19:14/27:17 + Deut4:2/12:32 add-not/
+  diminish-not + Prov30:6→Jude3 faith-once-delivered) + 22:1 a-good-name + 22:2 rich+poor-one-Maker (Jas2/Acts10:34).
+⚑ GATE2 still flags ONLY the known-benign Eph4:9 in ch30 (Pack 2) — fully-parenthetical verse, 4-gram-shingle false
+positive, quote verbatim, ignore. No new flags Packs 3-5. ⚑ EXISTING_SLUGS rebase-conflict recurred every push
+(concurrent Psalms/Isaiah) — union-dedup one-liner resolved clean each time; pushed clean every pack.
