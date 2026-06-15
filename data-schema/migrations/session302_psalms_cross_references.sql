@@ -9322,6 +9322,1257 @@ SELECT t.id, cr.id, 3, E'★ *He that saith, I know him, and keepeth not his com
  WHERE t.slug='psalm-97-ye-that-love-yahuah-hate-evil'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_98.sql (Psalm 98) -----
+-- Chapter: Psalm 98 — THE ENTHRONEMENT "NEW SONG" OF THE HOLY ARM AND THE SALVATION SEEN BY ALL.
+-- *O sing unto Yahuah (LORD) a new song; for he hath done marvellous things: his right hand, and
+-- his holy arm, hath gotten him the victory* (v.1) — the holy arm bared is the salvation revealed,
+-- the Formed Son in whom Yahuah's arm is made manifest (Isaiah 52:10; Isaiah 53:1; the new song of
+-- the redeemed, Revelation 5:9). *Yahuah hath made known his salvation... He hath remembered his
+-- mercy and his truth toward the house of Yashar'el (Israel): all the ends of the earth have seen
+-- the salvation of our Elohim* (v.2-3) — salvation to the house of Israel FIRST and the nations
+-- seeing (Luke 2:30-32; Luke 3:6), the two-house ingathering plus the nations, never replacement.
+-- *With trumpets and sound of cornet make a joyful noise before Yahuah (LORD), the King* (v.6) — the
+-- appointed-times trumpet acclaiming the King (Leviticus 23:24; Numbers 10:10). *For he cometh to
+-- judge the earth: with righteousness shall he judge the world* (v.9) — the coming Judge is the
+-- Formed Son ordained as a man (Revelation 19:11; Acts 17:31; twin of Psalm 96:13).
+-- Tag: ps098   Temp view: _s302_ps098_lookup
+-- Sort band: base 24425, step 3 -> threads at 24425, 24428, 24431, 24434 (4 threads)
+-- Source of EVERY row: 'canon','psalms',98,v
+--
+-- Psalm 98 coverage:
+--   ★ v.1 (O sing unto Yahuah a new song... his right hand, and his holy arm, hath gotten him the victory)
+--        NT:     ★ Revelation 5:9 (And they sung a new song... thou wast slain, and hast redeemed us
+--                to Elohim by thy blood out of every kindred, and tongue, and people, and nation) —
+--                THREAD 1 (the new song of the redeemed)
+--        Extras: none warranted (no clean restored-witness adds to the new-song/holy-arm here)
+--        Tanakh: ★ Isaiah 52:10 (Yahuah hath made bare his holy arm in the eyes of all the nations;
+--                and all the ends of the earth shall see the salvation of our Elohim — verbatim twin),
+--                ★ Isaiah 53:1 (to whom is the arm of Yahuah revealed?) — THREAD 1 (the holy arm =
+--                the salvation revealed = the Formed Son)
+--   ★★ v.2-3 (Yahuah hath made known his salvation: his righteousness hath he openly shewed in the
+--          sight of the heathen. He hath remembered his mercy and his truth toward the house of
+--          Yashar'el (Israel): all the ends of the earth have seen the salvation of our Elohim)
+--        NT:     ★ Luke 2:30 (For mine eyes have seen thy salvation), ★ Luke 2:32 (A light to lighten
+--                the Gentiles, and the glory of thy people Yashar'el), ★ Luke 3:6 (all flesh shall see
+--                the salvation of Elohim) — THREAD 2 (load-bearing: salvation to the house first AND
+--                the ends of the earth seeing)
+--        Extras: none warranted
+--        Tanakh: Isaiah 52:10 carried in THREAD 1 (the ends of the earth seeing the salvation); no
+--                separate add here beyond the NT two-house fulfillment
+--   v.4-6 (Make a joyful noise... With trumpets and sound of cornet make a joyful noise before
+--          Yahuah, the King)
+--        NT:     none warranted (the festal acclamation; carried by the Torah appointed-times lateral)
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 23:24 (a sabbath, a memorial of blowing of trumpets, an holy
+--                convocation — the Feast of Trumpets), Numbers 10:10 (in your solemn days... ye shall
+--                blow with the trumpets... a memorial before your Elohim) — THREAD 3 (the appointed-
+--                times trumpet acclaiming the King)
+--   v.7-8 (Let the sea roar, and the fulness thereof... Let the floods clap their hands)
+--        NT/Extras/Tanakh: none warranted distinct — the creation-doxology summoning the sea, the
+--          world, the floods, the hills to acclaim the coming King; gathered into THREAD 3/4 prose,
+--          the creation-wide acclamation before Yahuah the King who comes to judge.
+--   ★ v.9 (Before Yahuah; for he cometh to judge the earth: with righteousness shall he judge the
+--          world, and the people with equity)
+--        NT:     ★ Revelation 19:11 (in righteousness he doth judge and make war), ★ Acts 17:31 (he
+--                will judge the world in righteousness by that man whom he hath ordained) — THREAD 4
+--                (the coming Judge = the Formed Son, ordained as a man; twin of Psalm 96:13)
+--        Extras: none warranted
+--        Tanakh: the twin Psalm 96:13 (he cometh to judge the earth: he shall judge the world with
+--                righteousness) is the same enthronement-psalm refrain — carried in THREAD 4 prose as
+--                the psalter's own paired witness, not a separate cross-row
+--
+-- Threads (slug — target libraries):
+--   1. psalm-98-his-holy-arm-hath-gotten-him-the-victory — NT (Revelation 5) + Tanakh (Isaiah 52,
+--      Isaiah 53) [free] (★ the new song + the holy arm bared = the salvation revealed = the Formed Son)
+--   2. psalm-98-all-the-ends-of-the-earth-have-seen-the-salvation — NT (Luke 2, Luke 3) [free]
+--      (★★ salvation to the house of Yashar'el FIRST and the nations seeing — two-house + the nations,
+--      never replacement)
+--   3. psalm-98-with-trumpets-make-a-joyful-noise-before-the-king — Tanakh (Leviticus 23, Numbers 10)
+--      [free] (the appointed-times trumpet acclaiming Yahuah the King)
+--   4. psalm-98-he-cometh-to-judge-the-earth-with-righteousness — NT (Revelation 19, Acts 17) [free]
+--      (★ the coming Judge = the Formed Son ordained as a man; twin of Psalm 96:13)
+--
+-- Framing notes:
+--   ★ THE HOLY ARM (THREAD 1): *O sing unto Yahuah (LORD) a new song; for he hath done marvellous
+--      things: his right hand, and his holy arm, hath gotten him the victory* (98:1). Isaiah gives the
+--      verbatim twin: *Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations; and
+--      all the ends of the earth shall see the salvation of our Elohim (God)* (52:10) — the holy arm
+--      bared IS the salvation seen by all. And Isaiah asks who that arm is: *Who hath believed our
+--      report? and to whom is the arm of Yahuah (LORD) revealed?* (53:1) — the suffering servant, the
+--      one *wounded for our transgressions* (53:5). Read through the Formed and the Formless: the holy
+--      arm of Yahuah, His own strength bared and revealed, is the Formed Son in whom the victory is
+--      gotten. And the new song the psalm calls for is sung in heaven by the redeemed of that very arm:
+--      *And they sung a new song, saying, Thou art worthy to take the book, and to open the seals
+--      thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every
+--      kindred, and tongue, and people, and nation* (Revelation 5:9). The new song of the marvellous
+--      victory is the new song of the Lamb who is the bared arm.
+--   ★★ THE SALVATION SEEN BY ALL (THREAD 2): *Yahuah (LORD) hath made known his salvation: his
+--      righteousness hath he openly shewed in the sight of the heathen. He hath remembered his mercy
+--      and his truth toward the house of Yashar'el (Israel): all the ends of the earth have seen the
+--      salvation of our Elohim (God)* (98:2-3). The mercy is *toward the house of Yashar'el (Israel)*
+--      FIRST — the covenant people remembered, never replaced (Romans 11:1-2 guards it: *Hath Elohim
+--      cast away his people? Elohim forbid*) — AND the ends of the earth see. Simeon holds the very
+--      thing in his arms: *For mine eyes have seen thy salvation, which thou hast prepared before the
+--      face of all people; A light to lighten the Gentiles, and the glory of thy people Yashar'el
+--      (Israel)* (Luke 2:30-32) — salvation that is BOTH a light to the nations AND the glory of the
+--      house of Israel, exactly the psalm's order. And the Baptist's herald-cry seals the universal
+--      sight: *And all flesh shall see the salvation of Elohim (God)* (Luke 3:6) — *all the ends of
+--      the earth have seen the salvation of our Elohim* fulfilled. This is the two-house ingathering
+--      plus the nations seeing, never the house cast off.
+--   THE TRUMPET BEFORE THE KING (THREAD 3): *Make a joyful noise unto Yahuah (LORD), all the earth...
+--      With trumpets and sound of cornet make a joyful noise before Yahuah (LORD), the King* (98:4,6).
+--      The trumpet-blast before the King is the Torah's own appointed-times acclamation: *In the
+--      seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of
+--      trumpets, an holy convocation* (Leviticus 23:24) — the Feast of Trumpets, a statute for ever;
+--      and *Also in the day of your gladness, and in your solemn days, and in the beginnings of your
+--      months, ye shall blow with the trumpets over your burnt offerings... that they may be to you for
+--      a memorial before your Elohim (God)* (Numbers 10:10). The cornet acclaiming Yahuah the King in
+--      the psalm is the appointed-times trumpet of the assembly — the feast that is never abolished,
+--      sounding the enthronement of the King who comes.
+--   ★ THE COMING JUDGE (THREAD 4): *Let the sea roar, and the fulness thereof; the world, and they
+--      that dwell therein. Let the floods clap their hands: let the hills be joyful together Before
+--      Yahuah (LORD); for he cometh to judge the earth: with righteousness shall he judge the world,
+--      and the people with equity* (98:7-9). This is the twin of the sister enthronement-psalm —
+--      *for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness,
+--      and the people with his truth* (Psalm 96:13). The coming Judge who judges in righteousness is
+--      the rider on the white horse: *And I saw heaven opened, and behold a white horse; and he that
+--      sat upon him was called Faithful and True, and in righteousness he doth judge and make war*
+--      (Revelation 19:11) — *his name is called The Word of Elohim (God)* (19:13), the Formed Son.
+--      And Paul names him plainly as the Man ordained to judge: *Because he hath appointed a day, in
+--      the which he will judge the world in righteousness by that man whom he hath ordained; whereof he
+--      hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The
+--      One who cometh to judge the world with righteousness is the Formed Son, ordained as a man; he is
+--      Yahuah's own arm, and he has a Father.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The load-
+--      bearing weaves are the NT (the new song of the Lamb, Simeon's salvation, the righteous Judge)
+--      and the Tanakh (Isaiah 52/53 the holy arm, Leviticus 23 / Numbers 10 the trumpet, Psalm 96 the
+--      twin enthronement-refrain). No restored witness was forced.
+--   VERSES WITH NO ADD: v.5 (Sing unto Yahuah with the harp — the festal instrumentation, gathered
+--      into THREAD 3's acclamation prose); v.7-8 (Let the sea roar... Let the floods clap their hands
+--      — the creation-wide doxology summoning sea, world, floods, and hills before the coming King,
+--      gathered into THREAD 4's prose as the acclamation the Judge's coming evokes): no separate
+--      framework-bearing target warranted beyond the threaded prose.
+
+CREATE TEMP VIEW _s302_ps098_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): His holy arm hath gotten him the victory — the new song + the bared arm revealed
+    ('canon','psalms',98,1,'canon','isaiah',52,10,'free',
+      E'*Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our Elohim (God)* (Isaiah 52:10). This is the verbatim twin of the psalm: *his right hand, and his holy arm, hath gotten him the victory* (Psalm 98:1), and *all the ends of the earth have seen the salvation of our Elohim (God)* (98:3). The holy arm BARED in the sight of all the nations is the very salvation the ends of the earth see — Yahuah''s own strength made manifest, the victory revealed to every nation.'),
+    ('canon','psalms',98,1,'canon','isaiah',53,1,'free',
+      E'*Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1). The psalm''s *his holy arm, hath gotten him the victory* (Psalm 98:1) is the arm Isaiah asks after — and the answer is the suffering servant, the one *wounded for our transgressions* (53:5). Read through the Formed and the Formless: the holy arm of Yahuah revealed, His own strength expressed and made visible, is the Formed Son in whom the victory is gotten and the salvation made known.'),
+    ('canon','psalms',98,1,'canon','revelation',5,9,'free',
+      E'*And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9). The psalm calls for it — *O sing unto Yahuah (LORD) a new song; for he hath done marvellous things* (Psalm 98:1) — and heaven sings it: the new song of the marvellous victory is the new song of the Lamb who was slain, the bared arm who redeemed a people out of every nation. The new song the psalm summons is the song of the redeemed before the throne.'),
+
+    -- THREAD 2 (★★): All the ends of the earth have seen the salvation — the house of Yashar'el first AND the nations
+    ('canon','psalms',98,3,'canon','luke',2,30,'free',
+      E'*For mine eyes have seen thy salvation* (Luke 2:30). *Yahuah (LORD) hath made known his salvation... all the ends of the earth have seen the salvation of our Elohim (God)* (Psalm 98:2-3) is held in Simeon''s arms: *mine eyes have seen thy salvation*. The salvation the psalm says all the ends of the earth shall see is the child Simeon beholds — the made-known salvation now seen by human eyes.'),
+    ('canon','psalms',98,3,'canon','luke',2,32,'free',
+      E'*A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32). The psalm''s exact order is here: *He hath remembered his mercy and his truth toward the house of Yashar''el (Israel): all the ends of the earth have seen the salvation* (Psalm 98:3) — salvation that is BOTH *the glory of thy people Yashar''el (Israel)* AND *a light to lighten the Gentiles*. The mercy toward the house FIRST and the nations seeing, never the house cast off (Romans 11:1-2: *Hath Elohim cast away his people? Elohim forbid*) — the two-house glory and the light to the nations together.'),
+    ('canon','psalms',98,3,'canon','luke',3,6,'free',
+      E'*And all flesh shall see the salvation of Elohim (God)* (Luke 3:6). The Baptist''s herald-cry is the psalm fulfilled: *all the ends of the earth have seen the salvation of our Elohim (God)* (Psalm 98:3) becomes *all flesh shall see the salvation of Elohim (God)*. The made-known, openly-shewed salvation is set before every eye — the ends of the earth, all flesh, seeing what Yahuah has wrought.'),
+
+    -- THREAD 3: With trumpets make a joyful noise before Yahuah, the King — the appointed-times trumpet
+    ('canon','psalms',98,6,'canon','leviticus',23,24,'free',
+      E'*Speak unto the children of Yashar''el (Israel), saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). *With trumpets and sound of cornet make a joyful noise before Yahuah (LORD), the King* (Psalm 98:6): the trumpet acclaiming the King is the Torah''s own Feast of Trumpets — *a memorial of blowing of trumpets, an holy convocation*, a statute for ever. The cornet before the King is the appointed-times trumpet of the assembly, never abolished, sounding His enthronement.'),
+    ('canon','psalms',98,6,'canon','numbers',10,10,'free',
+      E'*Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings, and over the sacrifices of your peace offerings; that they may be to you for a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God)* (Numbers 10:10). The psalm''s *With trumpets and sound of cornet make a joyful noise before Yahuah (LORD), the King* (Psalm 98:6) is the Torah-commanded blast of the solemn days — the trumpets blown *for a memorial before your Elohim* in the days of gladness, acclaiming Yahuah the King.'),
+
+    -- THREAD 4 (★): He cometh to judge the earth with righteousness — the Judge ordained as a man
+    ('canon','psalms',98,9,'canon','revelation',19,11,'free',
+      E'*And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11). *He cometh to judge the earth: with righteousness shall he judge the world, and the people with equity* (Psalm 98:9): the coming Judge who judges in righteousness is the rider Faithful and True, *and in righteousness he doth judge* — whose *name is called The Word of Elohim (God)* (19:13), the Formed Son. The psalm''s righteous-judging King is the One who comes on the white horse.'),
+    ('canon','psalms',98,9,'canon','acts',17,31,'free',
+      E'*Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). *He cometh to judge the earth: with righteousness shall he judge the world* (Psalm 98:9) is named plainly: Yahuah *will judge the world in righteousness by that man whom he hath ordained*. The One who cometh to judge with righteousness is the Formed Son, ordained as a man and raised from the dead; he is Yahuah''s own arm, and he has a Father.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-98-his-holy-arm-hath-gotten-him-the-victory',
+       E'His holy arm hath gotten him the victory — the new song of the bared arm',
+       E'The enthronement psalm opens with a new song for a marvellous victory: *O sing unto Yahuah (LORD) a new song; for he hath done marvellous things: his right hand, and his holy arm, hath gotten him the victory* (Psalm 98:1). Isaiah gives the verbatim twin and names the arm''s work: *Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our Elohim (God)* (Isaiah 52:10) — the holy arm BARED is the salvation SEEN by all. And Isaiah asks who that arm is: *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1) — the suffering servant, *wounded for our transgressions* (53:5). Read through the Formed and the Formless: the holy arm of Yahuah, His own strength bared and revealed, is the Formed Son in whom the victory is gotten and the salvation made known — he is Yahuah''s arm, and he has a Father. And the new song the psalm calls for is sung in heaven by the redeemed of that very arm: *And they sung a new song, saying, Thou art worthy to take the book, and to open the seals thereof: for thou wast slain, and hast redeemed us to Elohim (God) by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9). The new song of the marvellous victory is the song of the Lamb — the bared arm who redeemed a people out of every nation.',
+       sv.verse_id, ev.verse_id, 'free', 24425
+  FROM _s302_ps098_lookup sv, _s302_ps098_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=98 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-98-all-the-ends-of-the-earth-have-seen-the-salvation',
+       E'All the ends of the earth have seen the salvation — toward the house of Yashar''el first, and the nations seeing',
+       E'*Yahuah (LORD) hath made known his salvation: his righteousness hath he openly shewed in the sight of the heathen. He hath remembered his mercy and his truth toward the house of Yashar''el (Israel): all the ends of the earth have seen the salvation of our Elohim (God)* (Psalm 98:2-3). The order is exact and never to be inverted: the mercy is *toward the house of Yashar''el (Israel)* FIRST — the covenant people remembered, never replaced (*Hath Elohim cast away his people? Elohim forbid*, Romans 11:1-2) — AND the ends of the earth see. Simeon holds the salvation in his arms: *For mine eyes have seen thy salvation, which thou hast prepared before the face of all people; A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:30-32) — the very pairing of the psalm: salvation that is BOTH a light to the nations AND the glory of the house of Israel. And the Baptist''s herald-cry seals the universal sight: *And all flesh shall see the salvation of Elohim (God)* (Luke 3:6). This is the two-house ingathering plus the nations seeing — the made-known salvation set before every eye, the house remembered and the ends of the earth beholding, never the house cast off.',
+       sv.verse_id, ev.verse_id, 'free', 24428
+  FROM _s302_ps098_lookup sv, _s302_ps098_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=98 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-98-with-trumpets-make-a-joyful-noise-before-the-king',
+       E'With trumpets and sound of cornet make a joyful noise before Yahuah, the King',
+       E'The psalm summons the whole earth to acclaim the King with sound: *Make a joyful noise unto Yahuah (LORD), all the earth: make a loud noise, and rejoice, and sing praise. Sing unto Yahuah (LORD) with the harp; with the harp, and the voice of a psalm. With trumpets and sound of cornet make a joyful noise before Yahuah (LORD), the King* (Psalm 98:4-6). The trumpet-blast before the King is the Torah''s own appointed-times acclamation. The Feast of Trumpets stands as a statute for ever: *In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). And the solemn-day trumpet is commanded for a memorial: *Also in the day of your gladness, and in your solemn days, and in the beginnings of your months, ye shall blow with the trumpets over your burnt offerings... that they may be to you for a memorial before your Elohim (God): I am Yahuah Elohaychem (the LORD your God)* (Numbers 10:10). The cornet acclaiming Yahuah the King in the psalm is the appointed-times trumpet of the assembly — the feast that is never abolished, sounding the enthronement of the King who comes.',
+       sv.verse_id, ev.verse_id, 'free', 24431
+  FROM _s302_ps098_lookup sv, _s302_ps098_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=98 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-98-he-cometh-to-judge-the-earth-with-righteousness',
+       E'He cometh to judge the earth — the Judge ordained as a man',
+       E'The psalm closes with all creation summoned to acclaim the coming Judge: *Let the sea roar, and the fulness thereof; the world, and they that dwell therein. Let the floods clap their hands: let the hills be joyful together Before Yahuah (LORD); for he cometh to judge the earth: with righteousness shall he judge the world, and the people with equity* (Psalm 98:7-9). This is the twin of the sister enthronement-psalm — *for he cometh, for he cometh to judge the earth: he shall judge the world with righteousness, and the people with his truth* (Psalm 96:13). The coming Judge who judges in righteousness is the rider on the white horse: *And I saw heaven opened, and behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge and make war* (Revelation 19:11), whose *name is called The Word of Elohim (God)* (19:13) — the Formed Son. And Paul names him plainly as the Man ordained to judge: *Because he hath appointed a day, in the which he will judge the world in righteousness by that man whom he hath ordained; whereof he hath given assurance unto all men, in that he hath raised him from the dead* (Acts 17:31). The One who cometh to judge the world with righteousness is the Formed Son, ordained as a man and raised from the dead — Yahuah''s own arm bared to judge, and he has a Father.',
+       sv.verse_id, ev.verse_id, 'free', 24434
+  FROM _s302_ps098_lookup sv, _s302_ps098_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=98 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our Elohim* (Isaiah 52:10) — the verbatim twin: the holy arm of 98:1 BARED is the salvation seen by all.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=1
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-his-holy-arm-hath-gotten-him-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *to whom is the arm of Yahuah revealed?* (Isaiah 53:1) — the holy arm of 98:1 is the suffering servant; the arm revealed = the Formed Son in whom the victory is gotten.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=1
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-his-holy-arm-hath-gotten-him-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they sung a new song... thou wast slain, and hast redeemed us to Elohim by thy blood out of every kindred, and tongue, and people, and nation* (Revelation 5:9) — the new song of 98:1 is the song of the Lamb, the bared arm who redeemed every nation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=1
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-his-holy-arm-hath-gotten-him-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For mine eyes have seen thy salvation* (Luke 2:30) — the made-known salvation of 98:2-3 held in Simeon''s arms; the salvation all the ends of the earth shall see, now seen by human eyes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=3
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-all-the-ends-of-the-earth-have-seen-the-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *A light to lighten the Gentiles, and the glory of thy people Yashar''el (Israel)* (Luke 2:32) — the psalm''s exact order (98:3): mercy toward the house of Israel FIRST AND the nations seeing; never replacement (Rom 11:1-2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=3
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-all-the-ends-of-the-earth-have-seen-the-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And all flesh shall see the salvation of Elohim* (Luke 3:6) — *all the ends of the earth have seen the salvation* (98:3) fulfilled; the salvation set before every eye.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=3
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-all-the-ends-of-the-earth-have-seen-the-salvation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24) — the trumpet acclaiming the King (98:6) is the Torah''s Feast of Trumpets, a statute for ever, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=6
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-with-trumpets-make-a-joyful-noise-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*in your solemn days... ye shall blow with the trumpets... for a memorial before your Elohim* (Numbers 10:10) — the cornet before the King (98:6) is the Torah-commanded solemn-day blast acclaiming Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=6
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-with-trumpets-make-a-joyful-noise-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *behold a white horse; and he that sat upon him was called Faithful and True, and in righteousness he doth judge* (Revelation 19:11) — the coming Judge of 98:9 is the rider whose name is The Word of Elohim, the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=9
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-he-cometh-to-judge-the-earth-with-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he will judge the world in righteousness by that man whom he hath ordained... raised him from the dead* (Acts 17:31) — *he cometh to judge the earth with righteousness* (98:9) named plainly: the Judge is the Formed Son ordained as a man.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps098_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=98 AND sv.verse_number=9
+  JOIN _s302_ps098_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-98-he-cometh-to-judge-the-earth-with-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_99.sql (Psalm 99) -----
+-- Chapter: Psalm 99 — THE ENTHRONEMENT-HOLINESS PSALM: *Yahuah (LORD) reigneth; let the people
+-- tremble: he sitteth between the cherubims* (v.1) — the One enthroned above the mercy seat, with
+-- the thrice-repeated *holy* (v.3, v.5, v.9) marking the three movements of the psalm. The Holy
+-- One enthroned between the cherubims is the One Isaiah saw — the Formed Son (John 12:41); the
+-- thrice-holy of Isaiah 6 and Revelation 4 is the holiness of THIS throne. Moses, Aaron, and
+-- Samuel called on the Name and were answered; *He spake unto them in the cloudy pillar: they kept
+-- his testimonies, and the ordinance that he gave them* (v.7) — the Formed Son who led Yashar'el
+-- spoke from the pillar, and the Torah was kept by the faithful, never abolished. Worship at his
+-- footstool, worship at his holy hill (v.5, v.9).
+-- Tag: ps099   Temp view: _s302_ps099_lookup
+-- Sort band: base 24450, step 3 -> threads at 24450, 24453, 24456, 24459 (4 threads)
+-- Source of EVERY row: 'canon','psalms',99,v
+--
+-- Psalm 99 coverage:
+--   ★ v.1 (Yahuah reigneth; let the people tremble: he sitteth between the cherubims; let the earth
+--          be moved)
+--        NT:     none warranted distinct (the enthroned-Holy-One forward-weave is carried by the
+--                thrice-holy thread, v.3/5/9 → Isaiah 6 / Revelation 4 / John 12:41)
+--        Extras: none warranted (no clean restored witness adds to the cherubim-throne here)
+--        Tanakh: ★ Exodus 25:22 (there I will meet with thee... from between the two cherubims),
+--                1 Samuel 4:4 (the ark of Yahuah Tseva'ot, which dwelleth between the cherubims),
+--                Isaiah 37:16 (O Yahuah Tseva'ot... that dwellest between the cherubims) — THREAD 1
+--   v.2 (Yahuah is great in Zion; and he is high above all the people)
+--        NT/Extras/Tanakh: none warranted distinct — the exaltation-in-Zion couplet; gathered into
+--          the enthronement prose; the load-bearing weaves rise from v.1 and the thrice-holy refrain.
+--   ★★ v.3 (Let them praise thy great and terrible name; for it is holy)  [first "holy"]
+--        NT:     ★ Revelation 4:8 (Holy, holy, holy, Yahuah Elohim Almighty) — THREAD 2
+--        Extras: none warranted (1 Enoch's trisagion-echoes carry editorial/apparatus drift in this
+--                parse; not quoted as a clean member; the canon thrice-holy is load-bearing)
+--        Tanakh: ★ Isaiah 6:3 (Holy, holy, holy, is Yahuah Tseva'ot) — THREAD 2 (load-bearing)
+--   v.4 (The king's strength also loveth judgment... thou executest judgment and righteousness in Jacob)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: weighed (the righteous reign in Jacob = the covenant two-house people) — held in the
+--                enthronement-thread prose; *judgment and righteousness in Jacob* is the King's reign
+--                over His own covenant people, not a separate clean add; recorded none-warranted-distinct.
+--   ★★ v.5 (Exalt ye Yahuah Eloheinu, and worship at his footstool; for he is holy)  [second "holy"]
+--        NT:     none warranted distinct (the thrice-holy NT weave is anchored at v.3; v.5 holds the
+--                second "holy" + the footstool)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 66:1 (the earth is my footstool) lateral, 1 Chronicles 28:2 (the footstool of
+--                our Elohim = the ark) — THREAD 4 (the footstool worshipped at); the second "holy" itself
+--                is carried in THREAD 2's summary as part of the threefold refrain.
+--   ★ v.6 (Moses and Aaron among his priests, and Samuel among them that call upon his name; they
+--          called upon Yahuah, and he answered them)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 15:1 (Though Moses and Samuel stood before me — the great intercessors) — THREAD 3
+--   ★ v.7 (He spake unto them in the cloudy pillar: they kept his testimonies, and the ordinance that
+--          he gave them)
+--        NT:     none warranted distinct (Torah-kept forward-filter is 1 John 2:3-4, woven in prose, not
+--                quoted as a member here — the v.7 add stays in the cloudy-pillar/Torah-kept Tanakh thread)
+--        Extras: none warranted
+--        Tanakh: ★ Exodus 33:9 (the cloudy pillar descended... and Yahuah talked with Moses) — THREAD 3
+--                (load-bearing: the Formed Son spake in the pillar; the testimonies-and-ordinance kept)
+--   v.8 (Thou answeredst them... thou wast a Elohim that forgavest them, though thou tookest vengeance
+--          of their inventions)
+--        NT/Extras/Tanakh: none warranted distinct — the forgiving-yet-chastening answer; gathered into
+--          THREAD 3's prose (the God who answered Moses, Aaron, Samuel both forgave and corrected).
+--   ★★ v.9 (Exalt Yahuah Eloheinu, and worship at his holy hill; for Yahuah Eloheinu is holy)  [third "holy"]
+--        NT:     none warranted distinct (thrice-holy NT anchored at v.3)
+--        Extras: none warranted
+--        Tanakh: the third "holy" closes the refrain (carried in THREAD 2); *worship at his holy hill*
+--                = Zion, the throne-mount; gathered with the footstool of THREAD 4.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-99-he-sitteth-between-the-cherubims-the-enthroned-presence — Tanakh (Exodus 25, 1 Samuel 4,
+--      Isaiah 37) [free] (★ the One enthroned above the mercy seat; the throne of the Formed Presence)
+--   2. psalm-99-holy-holy-holy-the-thrice-holy-of-the-throne — NT (Revelation 4, John 12) + Tanakh
+--      (Isaiah 6) [free] (★★ the threefold "holy" = the thrice-holy of the throne-vision; the One
+--      Isaiah saw is the Formed Son — John 12:41)
+--   3. psalm-99-he-spake-in-the-cloudy-pillar-they-kept-his-testimonies — Tanakh (Exodus 33, Jeremiah 15)
+--      [free] (★ the Formed Son spake from the pillar; the great intercessors; Torah testimonies kept)
+--   4. psalm-99-worship-at-his-footstool — Tanakh (Isaiah 66, 1 Chronicles 28) [free] (worship at his
+--      footstool / holy hill — heaven His throne, earth His footstool; the ark His footstool)
+--
+-- Framing notes:
+--   ★ THE ENTHRONED PRESENCE (THREAD 1): *Yahuah (LORD) reigneth; let the people tremble: he sitteth
+--      between the cherubims; let the earth be moved* (99:1). The throne is the mercy seat over the ark,
+--      where Yahuah Himself promised to meet His people: *And there I will meet with thee, and I will
+--      commune with thee from above the mercy seat, from between the two cherubims which are upon the ark
+--      of the testimony* (Exodus 25:22). When Yashar'el (Israel) carried the ark into battle it was *the
+--      ark of the covenant of Yahuah Tseva'ot (LORD of hosts), which dwelleth between the cherubims*
+--      (1 Samuel 4:4); and Hezekiah prayed to the same enthroned One: *O Yahuah Tseva'ot (LORD of hosts),
+--      Elohim (God) of Yashar'el (Israel), that dwellest between the cherubims, thou art the Elohim (God),
+--      even thou alone* (Isaiah 37:16). The One enthroned between the cherubims is the visible, Formed
+--      Presence — the One who met with Israel from above the mercy seat. *Judgment and righteousness in
+--      Jacob* (99:4) is this King's reign over His own covenant people.
+--   ★★ THE THRICE-HOLY OF THE THRONE (THREAD 2): the psalm sounds *holy* three times — *for it is holy*
+--      (99:3), *for he is holy* (99:5), *for Yahuah Eloheinu (the LORD our God) is holy* (99:9). This is
+--      the holiness of the throne-vision: *Holy, holy, holy, is Yahuah Tseva'ot (LORD of hosts): the
+--      whole earth is full of his glory* (Isaiah 6:3); *Holy, holy, holy, Yahuah Elohim (Lord God)
+--      Almighty, which was, and is, and is to come* (Revelation 4:8). And the One Isaiah saw upon the
+--      throne is named by the Spirit as the Formed Son: *These things said Esaias, when he saw his glory,
+--      and spake of him* (John 12:41). The thrice-holy is the holiness of the Holy One enthroned between
+--      the cherubims (THREAD 1) — Yahuah the Former, who took flesh, and who has a Father.
+--   ★ THE CLOUDY PILLAR / THE TESTIMONIES KEPT (THREAD 3): *Moses and Aaron among his priests, and Samuel
+--      among them that call upon his name; they called upon Yahuah (LORD), and he answered them. He spake
+--      unto them in the cloudy pillar: they kept his testimonies, and the ordinance that he gave them*
+--      (99:6-7). The cloudy pillar is the Formed Presence who led Yashar'el and spoke with Moses: *as
+--      Moses entered into the tabernacle, the cloudy pillar descended, and stood at the door of the
+--      tabernacle, and Yahuah (LORD) talked with Moses* (Exodus 33:9). Moses and Samuel are remembered as
+--      the great intercessors who stood before Him: *Though Moses and Samuel stood before me* (Jeremiah
+--      15:1). And the Torah-affirming clause stands at the center: *they kept his testimonies, and the
+--      ordinance that he gave them* — the faithful kept His commandments; the testimonies and the ordinance
+--      are never abolished, but kept (the 1 John 2:3-4 filter: he that saith I know him and keepeth not his
+--      commandments is a liar). The God who spoke from the pillar both forgave and chastened: *thou wast a
+--      Elohim (God) that forgavest them, though thou tookest vengeance of their inventions* (99:8).
+--   THE FOOTSTOOL (THREAD 4): *worship at his footstool; for he is holy* (99:5); *worship at his holy hill*
+--      (99:9). The footstool is His own: *Thus saith Yahuah (LORD), The heaven is my throne, and the earth
+--      is my footstool* (Isaiah 66:1); and David named the ark itself the footstool — *an house of rest for
+--      the ark of the covenant of Yahuah (LORD), and for the footstool of our Elohim (God)* (1 Chronicles
+--      28:2). The footstool worshipped at is the place of the enthroned Presence (THREAD 1); the holy hill
+--      is Zion, the throne-mount of *Yahuah (LORD) is great in Zion* (99:2).
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The thrice-holy
+--      echoes in 1 Enoch carry apparatus/editorial drift in this parse and were not quoted as clean members;
+--      the load-bearing weaves are the NT (Revelation 4, John 12) and the Tanakh (Exodus 25/33, 1 Samuel 4,
+--      Isaiah 6/37/66, Jeremiah 15, 1 Chronicles 28). No restored witness was forced.
+--   VERSES WITH NO ADD: v.2 (the exaltation-in-Zion couplet, gathered into the enthronement/footstool prose),
+--      v.4 (judgment-and-righteousness-in-Jacob, the King's reign over the covenant people, held in THREAD 1's
+--      prose), v.8 (the forgiving-yet-chastening answer, gathered into THREAD 3): the frame the threads rise
+--      from; no separate framework-bearing target warranted beyond the gathered prose.
+
+CREATE TEMP VIEW _s302_ps099_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): He sitteth between the cherubims — the enthroned Presence over the mercy seat
+    ('canon','psalms',99,1,'canon','exodus',25,22,'free',
+      E'*And there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims which are upon the ark of the testimony, of all things which I will give thee in commandment unto the children of Yashar''el (Israel)* (Exodus 25:22). When the psalm sings *he sitteth between the cherubims* (Psalm 99:1), this is the throne: the mercy seat over the ark, where Yahuah promised to meet His people and speak *from between the two cherubims*. The enthroned One of the psalm is the Presence that communed with Yashar''el above the mercy seat — the visible, Formed Presence over the testimony.'),
+    ('canon','psalms',99,1,'canon','1-samuel',4,4,'free',
+      E'*So the people sent to Shiloh, that they might bring from thence the ark of the covenant of Yahuah Tseva''ot (LORD of hosts), which dwelleth between the cherubims* (1 Samuel 4:4). *He sitteth between the cherubims* (Psalm 99:1) names the very title carried in Yashar''el''s memory: the ark of *Yahuah Tseva''ot (LORD of hosts), which dwelleth between the cherubims*. The throne of the psalm is the throne of the One who dwells above the mercy seat — His Presence among His covenant people.'),
+    ('canon','psalms',99,1,'canon','isaiah',37,16,'free',
+      E'*O Yahuah Tseva''ot (LORD of hosts), Elohim (God) of Yashar''el (Israel), that dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth* (Isaiah 37:16). Hezekiah prays to the One the psalm enthrones — *he sitteth between the cherubims* (Psalm 99:1) is Isaiah''s *that dwellest between the cherubims*. The enthroned One above the mercy seat is the Maker of heaven and earth, the Elohim (God) of Yashar''el (Israel) alone — the King who reigneth (99:1).'),
+
+    -- THREAD 2 (★★): Holy, holy, holy — the thrice-holy of the throne (the One Isaiah saw = the Formed Son)
+    ('canon','psalms',99,3,'canon','isaiah',6,3,'free',
+      E'*And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3). The psalm sounds *holy* three times — *for it is holy* (99:3), *for he is holy* (99:5), *for Yahuah Eloheinu (the LORD our God) is holy* (99:9) — and Isaiah hears the same threefold cry before the throne. The holiness of the One enthroned between the cherubims is the *Holy, holy, holy* of the seraphim; the psalm and the throne-vision name the one Holy One.'),
+    ('canon','psalms',99,3,'canon','revelation',4,8,'free',
+      E'*And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8). The thrice-repeated *holy* of the psalm (99:3, 99:5, 99:9) is the unceasing cry at the throne in the Spirit''s last vision — *Holy, holy, holy, Yahuah Elohim (Lord God) Almighty*. The One enthroned between the cherubims (99:1) is the One the living creatures praise without rest; the thrice-holy spans the whole canon to the same throne.'),
+    ('canon','psalms',99,3,'canon','john',12,41,'free',
+      E'*These things said Esaias, when he saw his glory, and spake of him* (John 12:41). The thrice-holy *Yahuah Tseva''ot (LORD of hosts)* whom Isaiah saw upon the throne (Isaiah 6:1-3) is named here by the Spirit as the Formed Son — *Esaias... saw his glory, and spake of him*. So the Holy One the psalm enthrones, the One who *sitteth between the cherubims* and whose name is *holy* (Psalm 99:1,3), is Yahuah the Former who took flesh; the enthroned Holy One is the Son, and he has a Father.'),
+
+    -- THREAD 3 (★): He spake in the cloudy pillar — the great intercessors; the testimonies kept
+    ('canon','psalms',99,7,'canon','exodus',33,9,'free',
+      E'*And it came to pass, as Moses entered into the tabernacle, the cloudy pillar descended, and stood at the door of the tabernacle, and Yahuah (LORD) talked with Moses* (Exodus 33:9). *He spake unto them in the cloudy pillar* (Psalm 99:7) is this very scene: the pillar descending, the door of the tabernacle, Yahuah talking with Moses. The Presence who spoke from the cloudy pillar — the One who led Yashar''el (Israel) — is the Formed Son; and the clause that follows, *they kept his testimonies, and the ordinance that he gave them* (99:7), holds the Torah kept by the faithful, never abolished but kept.'),
+    ('canon','psalms',99,6,'canon','jeremiah',15,1,'free',
+      E'*Then said Yahuah (LORD) unto me, Though Moses and Samuel stood before me, yet my mind could not be toward this people: cast them out of my sight, and let them go forth* (Jeremiah 15:1). *Moses and Aaron among his priests, and Samuel among them that call upon his name; they called upon Yahuah (LORD), and he answered them* (Psalm 99:6) — the same pairing of the great intercessors who *stood before* Yahuah. The psalm remembers them as those whose call He answered; Jeremiah remembers them as the standard of intercession, the men who stood before Him for the people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 footstool cross_references (kept separate for clarity; same INSERT pattern)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','psalms',99,5,'canon','isaiah',66,1,'free',
+      E'*Thus saith Yahuah (LORD), The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?* (Isaiah 66:1). *Worship at his footstool; for he is holy* (Psalm 99:5): the footstool worshipped at is His own — *the earth is my footstool*. The enthroned Holy One whose throne is between the cherubims (99:1) is the One whose footstool is the earth itself; to worship at His footstool is to bow before the throne of the One who made heaven and earth.'),
+    ('canon','psalms',99,5,'canon','1-chronicles',28,2,'free',
+      E'*Then David the king stood up upon his feet, and said, Hear me, my brethren, and my people: As for me, I had in mine heart to build an house of rest for the ark of the covenant of Yahuah (LORD), and for the footstool of our Elohim (God), and had made ready for the building* (1 Chronicles 28:2). David names the ark — the throne between the cherubims — *the footstool of our Elohim (God)*; so *worship at his footstool* (Psalm 99:5) is worship at the place of the enthroned Presence, the ark over which Yahuah dwells between the cherubims (99:1). The footstool and the throne are one holy place.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-99-he-sitteth-between-the-cherubims-the-enthroned-presence',
+       E'He sitteth between the cherubims — the enthroned Presence over the mercy seat',
+       E'The enthronement psalm opens at the throne: *Yahuah (LORD) reigneth; let the people tremble: he sitteth between the cherubims; let the earth be moved* (Psalm 99:1). That throne is the mercy seat over the ark, where Yahuah Himself promised to meet His people: *And there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims which are upon the ark of the testimony* (Exodus 25:22). It is the title Yashar''el (Israel) carried in her memory of the ark — *the ark of the covenant of Yahuah Tseva''ot (LORD of hosts), which dwelleth between the cherubims* (1 Samuel 4:4) — and the title Hezekiah prayed to in his distress: *O Yahuah Tseva''ot (LORD of hosts), Elohim (God) of Yashar''el (Israel), that dwellest between the cherubims, thou art the Elohim (God), even thou alone, of all the kingdoms of the earth: thou hast made heaven and earth* (Isaiah 37:16). The One enthroned above the mercy seat is the visible, Formed Presence — Yahuah who met His people and spoke from between the cherubims, *high above all the people* and *great in Zion* (99:2). His reign is *judgment and righteousness in Jacob* (99:4): the King over His own covenant people, the two-house seed of Yashar''el (Israel), never a throne over a replacement nation but over the very people He gathered to Himself.',
+       sv.verse_id, ev.verse_id, 'free', 24450
+  FROM _s302_ps099_lookup sv, _s302_ps099_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=99 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-99-holy-holy-holy-the-thrice-holy-of-the-throne',
+       E'Holy, holy, holy — the thrice-holy of the throne; the One Isaiah saw is the Formed Son',
+       E'Three times the psalm sounds the throne''s holiness: *Let them praise thy great and terrible name; for it is holy* (Psalm 99:3); *Exalt ye Yahuah Eloheinu (the LORD our God), and worship at his footstool; for he is holy* (99:5); *Exalt Yahuah Eloheinu (the LORD our God), and worship at his holy hill; for Yahuah Eloheinu (the LORD our God) is holy* (99:9). This threefold *holy* is the cry of the throne-vision. Isaiah, brought before the throne, hears it from the seraphim: *And one cried unto another, and said, Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3). And in the Spirit''s final vision the living creatures cry it without rest: *they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8). The One Isaiah saw upon the throne, *high and lifted up* (Isaiah 6:1), is named by the Spirit as the Formed Son: *These things said Esaias, when he saw his glory, and spake of him* (John 12:41). So the Holy One the psalm enthrones — He who *sitteth between the cherubims* (99:1) and whose name is *holy* — is Yahuah the Former, the expressed Word drawn from the Formless, who took flesh. He is Yahuah, and he has a Father: no co-equal-persons grammar, no modalist collapse, but the Son enthroned in the holiness the whole canon cries.',
+       sv.verse_id, ev.verse_id, 'free', 24453
+  FROM _s302_ps099_lookup sv, _s302_ps099_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=99 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-99-he-spake-in-the-cloudy-pillar-they-kept-his-testimonies',
+       E'He spake in the cloudy pillar — the great intercessors, and the testimonies kept',
+       E'The psalm turns to those who called upon the Name and were answered: *Moses and Aaron among his priests, and Samuel among them that call upon his name; they called upon Yahuah (LORD), and he answered them* (Psalm 99:6). The pairing of Moses and Samuel is Yashar''el (Israel)''s very standard of intercession — *Then said Yahuah (LORD) unto me, Though Moses and Samuel stood before me, yet my mind could not be toward this people* (Jeremiah 15:1): the two men who stood before Yahuah for the people. And the manner of His speaking is the cloudy pillar: *He spake unto them in the cloudy pillar: they kept his testimonies, and the ordinance that he gave them* (99:7). This is the scene of Exodus — *as Moses entered into the tabernacle, the cloudy pillar descended, and stood at the door of the tabernacle, and Yahuah (LORD) talked with Moses* (Exodus 33:9). The Presence who spoke from the pillar, who led Yashar''el (Israel) through the wilderness, is the Formed Son, the visible Glory. And the center of the verse is the Torah kept, not abolished: *they kept his testimonies, and the ordinance that he gave them* — the faithful kept His commandments (the filter of *He that saith, I know him, and keepeth not his commandments, is a liar*, 1 John 2:3-4). The God who spoke from the pillar both pardoned and corrected His own: *Thou answeredst them, O Yahuah (LORD) our Elohim (God): thou wast a Elohim (God) that forgavest them, though thou tookest vengeance of their inventions* (99:8) — covenant mercy and covenant discipline together, never the curse on the Torah itself.',
+       sv.verse_id, ev.verse_id, 'free', 24456
+  FROM _s302_ps099_lookup sv, _s302_ps099_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=99 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-99-worship-at-his-footstool',
+       E'Worship at his footstool — the earth his footstool, the ark his footstool',
+       E'Twice the psalm calls the people to bow at the holy place: *Exalt ye Yahuah Eloheinu (the LORD our God), and worship at his footstool; for he is holy* (Psalm 99:5); *Exalt Yahuah Eloheinu (the LORD our God), and worship at his holy hill; for Yahuah Eloheinu (the LORD our God) is holy* (99:9). The footstool is His own: *Thus saith Yahuah (LORD), The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?* (Isaiah 66:1) — the enthroned One whose throne is between the cherubims (99:1) is the One whose footstool is the earth itself. And David named the ark, the throne between the cherubims, the footstool of God: *I had in mine heart to build an house of rest for the ark of the covenant of Yahuah (LORD), and for the footstool of our Elohim (God)* (1 Chronicles 28:2). So to worship at His footstool is to bow before the place of the enthroned Presence — the ark over which He dwells, the *holy hill* of Zion where *Yahuah (LORD) is great* (99:2). The footstool and the throne and the holy hill are one holy place, and the call is the same: exalt Him, worship, *for he is holy*.',
+       sv.verse_id, ev.verse_id, 'free', 24459
+  FROM _s302_ps099_lookup sv, _s302_ps099_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=99 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *there I will meet with thee... from between the two cherubims which are upon the ark of the testimony* (Exodus 25:22) — *he sitteth between the cherubims* (99:1) is the throne over the mercy seat, where Yahuah meets His people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=1
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-he-sitteth-between-the-cherubims-the-enthroned-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the ark of the covenant of Yahuah Tseva''ot (LORD of hosts), which dwelleth between the cherubims* (1 Samuel 4:4) — the very title of 99:1; the enthroned One dwells above the mercy seat among His people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=1
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-he-sitteth-between-the-cherubims-the-enthroned-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*O Yahuah Tseva''ot (LORD of hosts)... that dwellest between the cherubims... thou hast made heaven and earth* (Isaiah 37:16) — Hezekiah prays to the enthroned One of 99:1, the Maker of heaven and earth, Elohim of Yashar''el alone.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=1
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-he-sitteth-between-the-cherubims-the-enthroned-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Holy, holy, holy, is Yahuah Tseva''ot (LORD of hosts): the whole earth is full of his glory* (Isaiah 6:3) — the threefold *holy* of 99:3/5/9 is the seraphim''s cry before the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=3
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-holy-holy-holy-the-thrice-holy-of-the-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8) — the same thrice-holy cried without rest at the throne; 99:1''s enthroned One praised by the living creatures.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=3
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-holy-holy-holy-the-thrice-holy-of-the-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *These things said Esaias, when he saw his glory, and spake of him* (John 12:41) — the One Isaiah saw thrice-holy upon the throne is the Formed Son; so the Holy One of Psalm 99 is Yahuah the Former, who took flesh and has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=3
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-holy-holy-holy-the-thrice-holy-of-the-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the cloudy pillar descended, and stood at the door of the tabernacle, and Yahuah (LORD) talked with Moses* (Exodus 33:9) — *He spake unto them in the cloudy pillar* (99:7); the Formed Presence who led Yashar''el spoke from the pillar.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=7
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-he-spake-in-the-cloudy-pillar-they-kept-his-testimonies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Though Moses and Samuel stood before me* (Jeremiah 15:1) — *Moses and Aaron... and Samuel... called upon Yahuah, and he answered them* (99:6); the great intercessors who stood before Him for the people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=6
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-he-spake-in-the-cloudy-pillar-they-kept-his-testimonies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The heaven is my throne, and the earth is my footstool* (Isaiah 66:1) — *worship at his footstool* (99:5); the enthroned One''s footstool is the earth itself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=5
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-worship-at-his-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*an house of rest for the ark of the covenant of Yahuah (LORD), and for the footstool of our Elohim (God)* (1 Chronicles 28:2) — David names the ark His footstool; *worship at his footstool* (99:5) is worship at the throne between the cherubims.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps099_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=99 AND sv.verse_number=5
+  JOIN _s302_ps099_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-99-worship-at-his-footstool'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_100.sql (Psalm 100) -----
+-- Chapter: Psalm 100 — THE DOXOLOGY OF THE ENTHRONEMENT COLLECTION: *Make a joyful noise unto Yahuah
+-- (LORD), all ye lands... Know ye that Yahuah (LORD) he is Elohim (God): it is he that hath made us,
+-- and not we ourselves; we are his people, and the sheep of his pasture* (v.1,3). Five verses; the
+-- congregation called to the gates with thanksgiving, the flock confessing its Shepherd-Maker, the
+-- covenant-refrain sung at the close: *For Yahuah (LORD) is good; his mercy is everlasting; and his
+-- truth endureth to all generations* (v.5).
+-- Tag: ps100   Temp view: _s302_ps100_lookup
+-- Sort band: base 24475, step 3 -> threads at 24475, 24478, 24481 (3 threads)
+-- Source of EVERY row: 'canon','psalms',100,v
+--
+-- Psalm 100 coverage:
+--   v.1-2 (Make a joyful noise unto Yahuah, all ye lands. Serve Yahuah with gladness: come before his
+--          presence with singing)
+--        NT:     none warranted — the call to worship; the *all ye lands* opening + *serve with gladness*
+--                are the festal summons gathered into the THREAD 3 covenant-praise prose, not a separate add.
+--        Extras: none warranted
+--        Tanakh: none warranted distinct — Psalm 95:1-2 (O come, let us make a joyful noise to the rock
+--                of our salvation; come before his presence with thanksgiving) is the near-twin summons,
+--                carried alongside the v.3 flock-confession in THREAD 1 prose (95:7 is the load-bearing
+--                member there); not double-bound here.
+--   ★★ v.3 (Know ye that Yahuah he is Elohim: it is he that hath made us, and not we ourselves; we are
+--          his people, and the sheep of his pasture)
+--        NT:     ★ John 10:11 (I am the good shepherd: the good shepherd giveth his life for the sheep),
+--                ★ John 10:14 (I am the good shepherd, and know my sheep, and am known of mine),
+--                ★ John 10:27 (My sheep hear my voice, and I know them, and they follow me) — THREAD 1
+--                (load-bearing keystone: the flock + the Shepherd = the Formed Son who shepherds Israel)
+--        Extras: none warranted (no clean restored-witness adds to the flock-Shepherd confession here)
+--        Tanakh: ★★ Ezekiel 34:31 (ye my flock, the flock of my pasture, are men, and I am your Elohim —
+--                the near-exact twin), ★ Ezekiel 34:23 (I will set up one shepherd over them... even my
+--                servant David), ★ Psalm 95:7 (we are the people of his pasture, and the sheep of his
+--                hand — the keystone-collection twin), ★ Psalm 23:1 (Yahuah Ra'ah / The LORD is my
+--                shepherd; I shall not want) — THREAD 1
+--   v.4 (Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him,
+--          and bless his name)
+--        NT:     ★ Hebrews 13:15 (By him therefore let us offer the sacrifice of praise to Elohim
+--                continually, that is, the fruit of our lips giving thanks to his name) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 116:17 (I will offer to thee the sacrifice of thanksgiving, and will call upon
+--                the name of Yahuah), Psalm 116:19 (In the courts of the LORD'S house, in the midst of
+--                thee, O Jerusalem) — THREAD 2 (the thanksgiving worship in the courts)
+--   ★ v.5 (For Yahuah is good; his mercy is everlasting; and his truth endureth to all generations)
+--        NT:     none warranted distinct — the great covenant-refrain is the psalter's own antiphon,
+--                load-bearing FORWARD only as the worship-praise of v.4 (Heb 13:15, THREAD 2); the
+--                mercy-everlasting refrain laterals are the psalter's, gathered in THREAD 3.
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 107:1 (O give thanks unto Yahuah, for he is good: for his mercy endureth for
+--                ever), ★ Psalm 136:1 (O give thanks unto Yahuah; for he is good: for his mercy endureth
+--                for ever), ★ 1 Chronicles 16:34 (O give thanks unto Yahuah; for he is good; for his mercy
+--                endureth for ever — David's ark-psalm, the refrain's home) — THREAD 3 (the covenant
+--                steadfast-mercy refrain sung across the psalter)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-100-we-are-his-people-and-the-sheep-of-his-pasture — NT (John 10) + Tanakh (Ezekiel 34,
+--      Psalm 95, Psalm 23) [free] (★★ the flock + the Shepherd = the Formed Son who shepherds Israel,
+--      one shepherd over the regathered two-house flock; never a replacement people)
+--   2. psalm-100-enter-his-gates-with-thanksgiving-the-sacrifice-of-praise — NT (Hebrews 13) + Tanakh
+--      (Psalm 116) [free] (the thanksgiving worship in the courts; the fruit of the lips that bless His name)
+--   3. psalm-100-for-yahuah-is-good-his-mercy-is-everlasting — Tanakh (Psalm 107, Psalm 136,
+--      1 Chronicles 16) [free] (the great covenant steadfast-mercy refrain sung across the psalter)
+--
+-- Framing notes:
+--   ★★ THE FLOCK AND THE SHEPHERD (THREAD 1): *Know ye that Yahuah (LORD) he is Elohim (God): it is he
+--      that hath made us, and not we ourselves; we are his people, and the sheep of his pasture* (100:3).
+--      The confession is read through the Formed and the Formless. Ezekiel gives the near-exact twin —
+--      *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (34:31) — in the very
+--      chapter where Yahuah, against the false shepherds who scattered the flock, declares *I, even I,
+--      will both search my sheep, and seek them out* (34:11) and *I will set up one shepherd over them...
+--      even my servant David; he shall feed them, and he shall be their shepherd* (34:23): ONE shepherd
+--      over the regathered house, Yahuah Himself in the person of the Formed Son who took flesh, never a
+--      replacement people but the scattered flock of Yashar'el (Israel) gathered home. Psalm 95, the
+--      enthronement-collection twin, says it the same way — *we are the people of his pasture, and the
+--      sheep of his hand* (95:7) — and Psalm 23 sings the personal confession — *Yahuah Ra'ah (The LORD
+--      is my shepherd); I shall not want* (23:1). And the Formed Son claims the title in flesh: *I am the
+--      good shepherd: the good shepherd giveth his life for the sheep* (John 10:11); *I am the good
+--      shepherd, and know my sheep, and am known of mine* (John 10:14); *My sheep hear my voice, and I
+--      know them, and they follow me* (John 10:27). The Maker who made us is the Shepherd who feeds us;
+--      *we are his people, and the sheep of his pasture* because Yahuah, the Former, is the one Shepherd.
+--   THE SACRIFICE OF PRAISE (THREAD 2): *Enter into his gates with thanksgiving, and into his courts with
+--      praise: be thankful unto him, and bless his name* (100:4). The worship of the gates and courts is
+--      taken FORWARD as the continual offering of the redeemed: *By him therefore let us offer the
+--      sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to
+--      his name* (Hebrews 13:15) — not a replacement of the Tabernacle worship but its heart, the thank-
+--      offering of the lips that bless His name. The psalter gives the lateral: *I will offer to thee the
+--      sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17), offered
+--      *In the courts of the LORD'S house, in the midst of thee, O Jerusalem* (116:19) — the very gates
+--      and courts of Psalm 100:4.
+--   ★ THE EVERLASTING MERCY (THREAD 3): *For Yahuah (LORD) is good; his mercy is everlasting; and his
+--      truth endureth to all generations* (100:5). This is the great covenant-refrain that runs the
+--      psalter: *O give thanks unto Yahuah (LORD), for he is good: for his mercy endureth for ever*
+--      (Psalm 107:1, opening Book V); *O give thanks unto Yahuah (LORD); for he is good: for his mercy
+--      endureth for ever* sung six-and-twenty times in Psalm 136:1; and the refrain's home in David's
+--      ark-psalm — *O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever*
+--      (1 Chronicles 16:34). The steadfast covenant-faithfulness (the chesed) of Yahuah, everlasting and
+--      enduring to all generations, is the ground of the joyful noise the whole psalm rises from.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The load-
+--      bearing weaves are the NT (the good shepherd, the sacrifice of praise) and the Tanakh (Ezekiel 34's
+--      one shepherd, the enthronement-collection twins Psalm 95/23, the covenant-mercy refrain Psalm
+--      107/136/1 Chronicles 16). No restored witness was forced.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the festal call to worship — *Make a joyful noise unto Yahuah
+--      (LORD), all ye lands. Serve Yahuah (LORD) with gladness*): the summons the psalm rises from,
+--      gathered into the surrounding thread-prose (Psalm 95:1-2 is the twin); no separate framework-
+--      bearing target warranted beyond the flock-confession of v.3 and the covenant-mercy of v.5.
+
+CREATE TEMP VIEW _s302_ps100_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): We are his people, and the sheep of his pasture — the flock and the Shepherd
+    ('canon','psalms',100,3,'canon','john',10,11,'free',
+      E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). The flock that confesses *we are his people, and the sheep of his pasture* (Psalm 100:3) is the flock the Formed Son claims as his own — *I am the good shepherd: the good shepherd giveth his life for the sheep*. The Maker who *hath made us, and not we ourselves* (100:3) is the very Shepherd who lays down his life for the sheep he made; Yahuah, the Former, took flesh to feed his flock.'),
+    ('canon','psalms',100,3,'canon','john',10,14,'free',
+      E'*I am the good shepherd, and know my sheep, and am known of mine* (John 10:14). *We are his people, and the sheep of his pasture* (Psalm 100:3) is the mutual knowing the Formed Son names — *I am the good shepherd, and know my sheep, and am known of mine*. The pasture-flock of the psalm is the flock the Shepherd knows by name; he is Yahuah our Maker (100:3) in the person of the Son, and he has a Father.'),
+    ('canon','psalms',100,3,'canon','john',10,27,'free',
+      E'*My sheep hear my voice, and I know them, and they follow me* (John 10:27). The *sheep of his pasture* (Psalm 100:3) are the sheep who hear and follow — *My sheep hear my voice, and I know them, and they follow me*. The congregation called to *make a joyful noise* and confess its Maker (100:1,3) is the flock that hears the Shepherd''s voice; the Former who made them is the One whose voice they know.'),
+    ('canon','psalms',100,3,'canon','ezekiel',34,31,'free',
+      E'*And ye my flock, the flock of my pasture, are men, and I am your Elohim (God), saith Adonai Yahuah (the Lord GOD)* (Ezekiel 34:31). The confession *we are his people, and the sheep of his pasture* (Psalm 100:3) is the near-exact twin of Yahuah''s own word — *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)*. The psalm''s congregation singing *Yahuah (LORD) he is Elohim (God)... we are his people* (100:3) is the very flock Yahuah claims in Ezekiel: his people, his pasture, his Elohim.'),
+    ('canon','psalms',100,3,'canon','ezekiel',34,23,'free',
+      E'*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The *sheep of his pasture* (Psalm 100:3) — scattered by the false shepherds whom Yahuah judges (34:2-10) — are gathered under ONE shepherd: *I will set up one shepherd over them... he shall feed them, and he shall be their shepherd*. This is Yahuah Himself shepherding the regathered two-house flock in the person of the Formed Son, the Davidic Shepherd; never a replacement people, but the lost sheep of Yashar''el (Israel) brought home and fed.'),
+    ('canon','psalms',100,3,'canon','psalms',95,7,'free',
+      E'*For he is our Elohim (God); and we are the people of his pasture, and the sheep of his hand. To day if ye will hear his voice* (Psalm 95:7). The enthronement-collection twin says it the same way: *we are his people, and the sheep of his pasture* (Psalm 100:3) is *we are the people of his pasture, and the sheep of his hand* (95:7). The same flock, the same Maker — *he is our Elohim (God)* — and the same summons to hear his voice (which the Formed Son fulfils, John 10:27).'),
+    ('canon','psalms',100,3,'canon','psalms',23,1,'free',
+      E'*Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1). The congregation''s confession *we are... the sheep of his pasture* (Psalm 100:3) is the personal confession of Psalm 23: *Yahuah Ra''ah (The LORD is my shepherd); I shall not want*. The flock of Psalm 100 sings what the single sheep of Psalm 23 knows — Yahuah is the Shepherd, who *maketh me to lie down in green pastures* (23:2); the pasture-flock is the Shepherd''s own.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2: Enter his gates with thanksgiving — the sacrifice of praise
+    ('canon','psalms',100,4,'canon','hebrews',13,15,'free',
+      E'*By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). *Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name* (Psalm 100:4) is carried FORWARD as the continual offering of the redeemed — *the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name*. The thanksgiving brought into the courts is the heart of the worship, the lips that bless His name (100:4) offered continually.'),
+    ('canon','psalms',100,4,'canon','psalms',116,17,'free',
+      E'*I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17). The call to *enter into his gates with thanksgiving* and *bless his name* (Psalm 100:4) is the psalter''s thank-offering — *I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)*. The thanksgiving the gates open to is the sacrifice of thanksgiving the heart brings, calling on the Name.'),
+    ('canon','psalms',100,4,'canon','psalms',116,19,'free',
+      E'*In the courts of the LORD''S house, in the midst of thee, O Jerusalem. Praise ye Yahuah (LORD)* (Psalm 116:19). *Enter... into his courts with praise* (Psalm 100:4) names the very place of the thank-offering: *In the courts of the LORD''S house, in the midst of thee, O Jerusalem. Praise ye Yahuah (LORD)*. The courts of Psalm 100 are the courts of the LORD''S house where the vows are paid and the Name is praised.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3: For Yahuah is good; his mercy is everlasting — the covenant-refrain
+    ('canon','psalms',100,5,'canon','psalms',107,1,'free',
+      E'*O give thanks unto Yahuah (LORD), for he is good: for his mercy endureth for ever* (Psalm 107:1). *For Yahuah (LORD) is good; his mercy is everlasting* (Psalm 100:5) is the great covenant-refrain that opens Book V of the psalter — *O give thanks unto Yahuah (LORD), for he is good: for his mercy endureth for ever*. The same two pillars, His goodness and His everlasting mercy (chesed), the ground of all the thanksgiving the psalm rises from.'),
+    ('canon','psalms',100,5,'canon','psalms',136,1,'free',
+      E'*O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* (Psalm 136:1). *For Yahuah (LORD) is good; his mercy is everlasting* (Psalm 100:5) is the antiphon Psalm 136 sings six-and-twenty times over creation and the exodus — *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever*. The everlasting mercy of Psalm 100:5 is the refrain that carries the whole great hymn of His covenant-faithfulness.'),
+    ('canon','psalms',100,5,'canon','1-chronicles',16,34,'free',
+      E'*O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever* (1 Chronicles 16:34). The refrain *For Yahuah (LORD) is good; his mercy is everlasting* (Psalm 100:5) has its home in David''s ark-psalm, sung when the ark came to Jerusalem — *O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever*. The everlasting mercy is the steadfast covenant-faithfulness David first set in Israel''s mouth before the ark, sung on across the psalter.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-100-we-are-his-people-and-the-sheep-of-his-pasture',
+       E'We are his people, and the sheep of his pasture — the flock and the Shepherd',
+       E'The heart of the psalm is a confession: *Know ye that Yahuah (LORD) he is Elohim (God): it is he that hath made us, and not we ourselves; we are his people, and the sheep of his pasture* (Psalm 100:3). Read through the Formed and the Formless, the Maker who made us is the Shepherd who feeds us. Ezekiel gives the near-exact twin — *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (Ezekiel 34:31) — in the chapter where Yahuah, against the false shepherds who let the flock be scattered, declares *I, even I, will both search my sheep, and seek them out* (34:11) and *I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (34:23): ONE shepherd over the regathered house, Yahuah Himself in the person of the Formed Son, the Davidic Shepherd — never a replacement people, but the lost sheep of Yashar''el (Israel) and Yahudah (Judah) gathered home and fed. Psalm 95, the enthronement-collection twin, sings it the same way — *he is our Elohim (God); and we are the people of his pasture, and the sheep of his hand* (95:7) — and Psalm 23 makes it the single soul''s confession — *Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (23:1). And the Formed Son claims the title in flesh: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11); *I am the good shepherd, and know my sheep, and am known of mine* (John 10:14); *My sheep hear my voice, and I know them, and they follow me* (John 10:27). The Maker who *hath made us, and not we ourselves* is the Shepherd who lays down his life for the sheep he made; he is Yahuah, the Former, and he has a Father.',
+       sv.verse_id, ev.verse_id, 'free', 24475
+  FROM _s302_ps100_lookup sv, _s302_ps100_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=100 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-100-enter-his-gates-with-thanksgiving-the-sacrifice-of-praise',
+       E'Enter into his gates with thanksgiving — the sacrifice of praise, the fruit of the lips',
+       E'The congregation is called to the house: *Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name* (Psalm 100:4). The thanksgiving brought into the gates and courts is taken FORWARD as the continual offering of the redeemed — *By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15) — not a setting-aside of the Tabernacle worship but its very heart, the thank-offering of the lips that bless His name. The psalter gives the lateral, the same thanksgiving in the same place: *I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17), offered *In the courts of the LORD''S house, in the midst of thee, O Jerusalem. Praise ye Yahuah (LORD)* (116:19). The gates and courts of Psalm 100:4 are the courts of the LORD''S house where the vows are paid, the Name is blessed, and the sacrifice of thanksgiving — the fruit of the lips — rises continually.',
+       sv.verse_id, ev.verse_id, 'free', 24478
+  FROM _s302_ps100_lookup sv, _s302_ps100_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=100 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-100-for-yahuah-is-good-his-mercy-is-everlasting',
+       E'For Yahuah is good; his mercy is everlasting — the covenant-refrain of the psalter',
+       E'The psalm closes on the great covenant-refrain: *For Yahuah (LORD) is good; his mercy is everlasting; and his truth endureth to all generations* (Psalm 100:5). This antiphon — His goodness and His everlasting mercy (chesed) — runs the whole psalter. It opens Book V: *O give thanks unto Yahuah (LORD), for he is good: for his mercy endureth for ever* (Psalm 107:1). It is sung six-and-twenty times, once for every line, in the great hymn of creation and the exodus: *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* (Psalm 136:1). And it has its home in David''s ark-psalm, first set in Israel''s mouth when the ark came up to Jerusalem: *O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever* (1 Chronicles 16:34). The everlasting mercy and the truth that *endureth to all generations* are the steadfast covenant-faithfulness of Yahuah — the unchanging ground from which all the joyful noise of Psalm 100 rises, and the refrain the whole congregation of Yashar''el (Israel) sings on.',
+       sv.verse_id, ev.verse_id, 'free', 24481
+  FROM _s302_ps100_lookup sv, _s302_ps100_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=100 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11) — the *sheep of his pasture* (100:3) are the flock the Formed Son lays down his life for; the Maker is the Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I am the good shepherd, and know my sheep, and am known of mine* (John 10:14) — *we are... the sheep of his pasture* (100:3) is the mutual knowing of the Shepherd and his flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *My sheep hear my voice, and I know them, and they follow me* (John 10:27) — the pasture-flock (100:3) is the flock that hears the Shepherd''s voice and follows.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (Ezekiel 34:31) — the near-exact twin of *we are his people, and the sheep of his pasture* (100:3); Yahuah claims the flock as his own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I will set up one shepherd over them... even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23) — the scattered flock (100:3) gathered under ONE shepherd: Yahuah in the Formed Son over the regathered two-house people, never a replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *we are the people of his pasture, and the sheep of his hand* (Psalm 95:7) — the enthronement-collection twin of 100:3; the same flock, the same Maker-Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=95 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1) — the congregation''s confession (100:3) made the single soul''s: Yahuah is the Shepherd of the pasture-flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=3
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-we-are-his-people-and-the-sheep-of-his-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15) — *enter... with thanksgiving... bless his name* (100:4) carried forward as the continual thank-offering of the lips.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=4
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-enter-his-gates-with-thanksgiving-the-sacrifice-of-praise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17) — the thanksgiving the gates open to (100:4) is the psalter''s thank-offering, calling on the Name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=4
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-enter-his-gates-with-thanksgiving-the-sacrifice-of-praise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*In the courts of the LORD''S house, in the midst of thee, O Jerusalem. Praise ye Yahuah (LORD)* (Psalm 116:19) — *his courts with praise* (100:4) named: the courts of the LORD''S house where the Name is praised.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=4
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-enter-his-gates-with-thanksgiving-the-sacrifice-of-praise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *O give thanks unto Yahuah (LORD), for he is good: for his mercy endureth for ever* (Psalm 107:1) — the same refrain opening Book V; His goodness + everlasting mercy of 100:5.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=5
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=107 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-for-yahuah-is-good-his-mercy-is-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *O give thanks unto Yahuah (LORD); for he is good: for his mercy endureth for ever* (Psalm 136:1) — the refrain sung six-and-twenty times; the everlasting mercy of 100:5 carrying the whole hymn.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=5
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-for-yahuah-is-good-his-mercy-is-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *O give thanks unto Yahuah (LORD); for he is good; for his mercy endureth for ever* (1 Chronicles 16:34) — the refrain''s home in David''s ark-psalm; the covenant steadfast-mercy of 100:5 first set in Israel''s mouth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps100_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=100 AND sv.verse_number=5
+  JOIN _s302_ps100_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=16 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-100-for-yahuah-is-good-his-mercy-is-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_101.sql (Psalm 101) -----
+-- Chapter: Psalm 101 — DAVID'S VOW OF INTEGRITY, the righteous king's rule. A Davidic psalm of the
+-- just sovereign: *I will sing of mercy and judgment... I will behave myself wisely in a perfect way.
+-- O when wilt thou come unto me? I will walk within my house with a perfect heart* (v.1-2). The king
+-- vows to set no wicked thing before his eyes (v.3-4), to cut off the slanderer and abase the proud
+-- (v.5), to gather the faithful of the land to serve him (v.6), to bar the deceitful from his house
+-- (v.7), and to *early destroy all the wicked of the land; that I may cut off all wicked doers from
+-- the city of Yahuah (LORD)* (v.8). David's vow of a perfect reign is the foreshadow of the Branch's
+-- perfect rule — the just ruler ideal that only the Messiah, the Formed Son, fulfills (2 Samuel 23:3,
+-- Isaiah 11:3-5); and the purged city of Yahuah is the New Jerusalem cleansed of all that defileth
+-- (Revelation 21:27, 22:15; Isaiah 52:1; Matthew 13:41).
+-- Tag: ps101   Temp view: _s302_ps101_lookup
+-- Sort band: base 24500, step 3 -> threads at 24500, 24503, 24506, 24509 (4 threads)
+-- Source of EVERY row: 'canon','psalms',101,v
+--
+-- Psalm 101 coverage:
+--   ★ v.1-2 (I will sing of mercy and judgment... I will behave myself wisely in a perfect way.
+--          O when wilt thou come unto me? I will walk within my house with a perfect heart)
+--        NT:     none warranted distinct (the perfect-king ideal is filled FORWARD in the Branch, but
+--                its closest witnesses are the Tanakh laterals below; the NT fulfillment is carried in
+--                prose — the just ruler is the Messiah)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Samuel 23:3 (He that ruleth over men must be just, ruling in the fear of Elohim),
+--                ★ Isaiah 11:3-5 (with righteousness shall he judge the poor... righteousness shall be
+--                the girdle of his loins) — THREAD 1 (the just ruler ideal the Branch perfectly fulfills)
+--   v.3-4 (I will set no wicked thing before mine eyes... A froward heart shall depart from me)
+--        NT/Extras/Tanakh: none warranted distinct — the king's resolve of inward integrity; gathered
+--          into THREAD 1's perfect-heart frame (the *perfect way* of v.2 worked out in the eyes and heart).
+--   v.5 (Whoso privily slandereth his neighbour, him will I cut off: him that hath an high look and a
+--          proud heart will not I suffer)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 6:16-17 (six things doth Yahuah hate... A proud look, a lying tongue),
+--                Proverbs 21:4 (An high look, and a proud heart... is sin) — THREAD 2 (the proud abased)
+--   v.6 (Mine eyes shall be upon the faithful of the land, that they may dwell with me: he that walketh
+--          in a perfect way, he shall serve me)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 15:1-2 (who shall abide in thy tabernacle?... He that walketh uprightly) — THREAD 3
+--                (the faithful gathered to dwell with and serve the king; one clean lateral)
+--   v.7 (He that worketh deceit shall not dwell within my house: he that telleth lies shall not tarry
+--          in my sight)
+--        NT/Extras/Tanakh: none warranted distinct — the deceitful barred from the king's house; the
+--          inverse of v.6, gathered into THREAD 3 (only the upright dwell with him) and answered in the
+--          purged city of THREAD 4 (the liar shut out).
+--   ★★ v.8 (I will early destroy all the wicked of the land; that I may cut off all wicked doers from
+--          the city of Yahuah (LORD))
+--        NT:     ★ Revelation 21:27 (there shall in no wise enter into it any thing that defileth),
+--                ★ Revelation 22:15 (without are dogs, and sorcerers... whosoever loveth and maketh a
+--                lie), ★ Matthew 13:41 (gather out of his kingdom all things that offend, and them which
+--                do iniquity) — THREAD 4 (load-bearing keystone: the purged holy city / cleansed kingdom)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 52:1 (there shall no more come into thee the uncircumcised and the unclean)
+--                — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-101-i-will-behave-myself-wisely-in-a-perfect-way — Tanakh (2 Samuel 23, Isaiah 11) [free]
+--      (★ the just ruler ideal that only the Messiah, the Branch, perfectly fulfills)
+--   2. psalm-101-an-high-look-and-a-proud-heart-will-not-i-suffer — Tanakh (Proverbs 6, Proverbs 21) [free]
+--      (the proud abased; the high look Yahuah hates)
+--   3. psalm-101-mine-eyes-shall-be-upon-the-faithful-of-the-land — Tanakh (Psalm 15) [free]
+--      (the faithful gathered to dwell with and serve the king)
+--   4. psalm-101-i-will-cut-off-all-wicked-doers-from-the-city-of-yahuah — NT (Revelation 21, Revelation 22,
+--      Matthew 13) + Tanakh (Isaiah 52) [free] (★★ the purged holy city = the New Jerusalem cleansed)
+--
+-- Framing notes:
+--   ★ THE JUST RULER (THREAD 1): David's vow — *I will behave myself wisely in a perfect way... I will
+--      walk within my house with a perfect heart* (101:2) — is the king's pledge of a perfect reign, the
+--      ideal that the throne of David requires and that only the Messiah, the Formed Son, the Branch,
+--      perfectly fulfills. David's own last words name the standard: *He that ruleth over men must be
+--      just, ruling in the fear of Elohim (God)* (2 Samuel 23:3); and Isaiah unfolds the Branch who meets
+--      it without fail — *with righteousness shall he judge the poor, and reprove with equity for the
+--      meek of the earth... And righteousness shall be the girdle of his loins, and faithfulness the
+--      girdle of his reins* (Isaiah 11:4-5). The plaintive *O when wilt thou come unto me?* (101:2) is the
+--      king's longing for the Presence — the cry of the throne for the One whose perfect rule David's vow
+--      can only foreshadow.
+--   THE PROUD ABASED (THREAD 2): the king will not suffer pride — *him that hath an high look and a
+--      proud heart will not I suffer* (101:5) — and this is Yahuah's own posture: *These six things doth
+--      Yahuah (LORD) hate... A proud look, a lying tongue* (Proverbs 6:16-17); *An high look, and a proud
+--      heart... is sin* (Proverbs 21:4). The just king hates what Yahuah hates; the slanderer and the
+--      proud are cut off because the throne is conformed to the heart of the One it serves.
+--   THE FAITHFUL GATHERED (THREAD 3): *Mine eyes shall be upon the faithful of the land, that they may
+--      dwell with me: he that walketh in a perfect way, he shall serve me* (101:6). The king gathers the
+--      upright to dwell with him and serve him — the same who may stand in Yahuah's own presence: *Yahuah
+--      (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill? He that walketh
+--      uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:1-2). The
+--      perfect way of the servant (101:6) is the upright walk of the one who dwells on the holy hill; and
+--      the deceitful barred from the king's house (101:7) are the inverse — only the upright dwell with him.
+--   ★★ THE PURGED CITY (THREAD 4): the king's final vow — *I will early destroy all the wicked of the
+--      land; that I may cut off all wicked doers from the city of Yahuah (LORD)* (101:8) — is the cleansing
+--      of the holy city, fulfilled forward in the New Jerusalem from which all that defileth is shut out:
+--      *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh
+--      abomination, or maketh a lie* (Revelation 21:27); *For without are dogs, and sorcerers, and
+--      whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie* (Revelation
+--      22:15). Isaiah sings the same purging of the city by name — *put on thy beautiful garments, O
+--      Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and
+--      the unclean* (Isaiah 52:1). And the Son of Adam does the cutting off: *The Son of Adam shall send
+--      forth his angels, and they shall gather out of his kingdom all things that offend, and them which
+--      do iniquity* (Matthew 13:41). David's vow to purge his city is the King's purging of the kingdom;
+--      the city of Yahuah cleansed of every wicked doer is the New Jerusalem, the holy city made pure.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — a deliberate, recorded answer. The
+--      load-bearing weaves are the Tanakh (2 Samuel 23, Isaiah 11, Isaiah 52, Proverbs 6/21, Psalm 15)
+--      and the NT (Revelation 21/22, Matthew 13). No restored witness was forced.
+--   VERSES WITH NO ADD: v.3-4 (the king's resolve of inward integrity — the perfect heart of v.2 worked
+--      out in the eyes and heart; gathered into THREAD 1) and v.7 (the deceitful barred from the king's
+--      house — the inverse of v.6, gathered into THREAD 3 and answered in the purged city of THREAD 4).
+
+CREATE TEMP VIEW _s302_ps101_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): I will behave myself wisely in a perfect way — the just ruler ideal the Branch fulfills
+    ('canon','psalms',101,2,'canon','2-samuel',23,3,'free',
+      E'*The Elohim (God) of Yashar''el (Israel) said, the Rock of Yashar''el (Israel) spake to me, He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3). David''s vow — *I will behave myself wisely in a perfect way... I will walk within my house with a perfect heart* (Psalm 101:2) — is the very standard his last words name: *He that ruleth over men must be just, ruling in the fear of Elohim (God)*. The king pledges the perfect reign the throne requires; the ideal points past David to the One who rules it without fail.'),
+    ('canon','psalms',101,2,'canon','isaiah',11,4,'free',
+      E'*But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). The king who vows to *behave myself wisely in a perfect way* (Psalm 101:2) foreshadows the Branch whose rule is perfect: *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth*. David''s vow of a just reign is the shadow; the Branch is the substance, the One who slays the wicked with the breath of his lips.'),
+    ('canon','psalms',101,2,'canon','isaiah',11,5,'free',
+      E'*And righteousness shall be the girdle of his loins, and faithfulness the girdle of his reins* (Isaiah 11:5). The *perfect heart* and *perfect way* of the king (Psalm 101:2) are perfected only in the Branch, who wears righteousness and faithfulness as his very girding — *righteousness shall be the girdle of his loins, and faithfulness the girdle of his reins*. The integrity David vows is the Messiah''s by nature, the just rule the throne of David was always reaching toward.'),
+
+    -- THREAD 2: An high look and a proud heart will not I suffer — the proud abased
+    ('canon','psalms',101,5,'canon','proverbs',6,16,'free',
+      E'*These six things doth Yahuah (LORD) hate: yea, seven are an abomination unto him* (Proverbs 6:16). The king who will not suffer *an high look and a proud heart* (Psalm 101:5) hates what Yahuah hates; the catalogue of the abominable opens here — *These six things doth Yahuah (LORD) hate*. The just throne is conformed to the heart of the One it serves.'),
+    ('canon','psalms',101,5,'canon','proverbs',6,17,'free',
+      E'*A proud look, a lying tongue, and hands that shed innocent blood* (Proverbs 6:17). The king cuts off *whoso privily slandereth his neighbour* and will not suffer *an high look and a proud heart* (Psalm 101:5) — the very first two things Yahuah hates: *A proud look, a lying tongue*. The slanderer''s tongue and the proud look are abominations the righteous king will not abide.'),
+    ('canon','psalms',101,5,'canon','proverbs',21,4,'free',
+      E'*An high look, and a proud heart, and the plowing of the wicked, is sin* (Proverbs 21:4). *Him that hath an high look and a proud heart will not I suffer* (Psalm 101:5) names the very thing Proverbs calls sin — *An high look, and a proud heart... is sin*. The king will not tolerate in his court what Yahuah marks as sin in the heart.'),
+
+    -- THREAD 3: Mine eyes shall be upon the faithful of the land — the faithful gathered to serve
+    ('canon','psalms',101,6,'canon','psalms',15,1,'free',
+      E'*Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill?* (Psalm 15:1). The king sets his eyes on the faithful *that they may dwell with me* (Psalm 101:6) — the same question Yahuah''s own dwelling poses: *who shall abide in thy tabernacle? who shall dwell in thy holy hill?* Those gathered to dwell with the king are those fit to dwell with Yahuah.'),
+    ('canon','psalms',101,6,'canon','psalms',15,2,'free',
+      E'*He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2). *He that walketh in a perfect way, he shall serve me* (Psalm 101:6): the servant of the king is the one who *walketh uprightly, and worketh righteousness, and speaketh the truth in his heart*. The perfect way of the king''s servant is the upright walk of the one who dwells on the holy hill; the deceitful (101:7) are shut out, only the upright dwell with him.'),
+
+    -- THREAD 4 (★★): I will cut off all wicked doers from the city of Yahuah — the purged holy city
+    ('canon','psalms',101,8,'canon','revelation',21,27,'free',
+      E'*And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). The king''s vow to *cut off all wicked doers from the city of Yahuah (LORD)* (Psalm 101:8) is fulfilled in the New Jerusalem, from which *there shall in no wise enter into it any thing that defileth*. The city of Yahuah purged of every wicked doer is the holy city made pure, only the written-in-the-book remaining.'),
+    ('canon','psalms',101,8,'canon','revelation',22,15,'free',
+      E'*For without are dogs, and sorcerers, and whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie* (Revelation 22:15). *I will early destroy all the wicked of the land; that I may cut off all wicked doers from the city of Yahuah (LORD)* (Psalm 101:8): the wicked doers cut off from the city are those left *without* — *dogs, and sorcerers... and whosoever loveth and maketh a lie*. David''s purging of his city is the New Jerusalem with the wicked shut outside its gates.'),
+    ('canon','psalms',101,8,'canon','isaiah',52,1,'free',
+      E'*Awake, awake; put on thy strength, O Zion; put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean* (Isaiah 52:1). The vow to *cut off all wicked doers from the city of Yahuah (LORD)* (Psalm 101:8) is Isaiah''s cleansing of the city by name — *Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean*. The city of Yahuah is the holy city purged, clothed in beautiful garments, the wicked barred from her gates.'),
+    ('canon','psalms',101,8,'canon','matthew',13,41,'free',
+      E'*The Son of Adam shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity* (Matthew 13:41). The king who would *cut off all wicked doers from the city of Yahuah (LORD)* (Psalm 101:8) is answered by the Son of Adam who does the cutting off from his kingdom — *they shall gather out of his kingdom all things that offend, and them which do iniquity*. David''s vow to purge his city is the King''s purging of the whole kingdom; the wicked doers are gathered out and the city of Yahuah is left clean.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-101-i-will-behave-myself-wisely-in-a-perfect-way',
+       E'I will behave myself wisely in a perfect way — the just ruler the Branch fulfills',
+       E'Psalm 101 is David''s vow of integrity, the righteous king''s pledge of a perfect reign: *I will sing of mercy and judgment: unto thee, O Yahuah (LORD), will I sing. I will behave myself wisely in a perfect way. O when wilt thou come unto me? I will walk within my house with a perfect heart* (Psalm 101:1-2). This is the ideal the throne of David requires — and it is the ideal that only the Messiah, the Formed Son, the Branch, perfectly fulfills. David''s own last words name the standard: *He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3). Isaiah unfolds the Branch who meets that standard without fail: *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4); *And righteousness shall be the girdle of his loins, and faithfulness the girdle of his reins* (Isaiah 11:5). The *perfect heart* and *perfect way* David vows are the Messiah''s by nature; the integrity the king pledges is the integrity the Branch wears as his very girding. And the plaintive cry *O when wilt thou come unto me?* (101:2) is the throne''s longing for the Presence — the king reaching for the One whose perfect rule his own vow can only foreshadow. David''s vow of a just reign is the shadow; the just King is the substance.',
+       sv.verse_id, ev.verse_id, 'free', 24500
+  FROM _s302_ps101_lookup sv, _s302_ps101_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=101 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-101-an-high-look-and-a-proud-heart-will-not-i-suffer',
+       E'An high look and a proud heart will not I suffer — the proud abased',
+       E'The righteous king will not tolerate pride or slander in his court: *Whoso privily slandereth his neighbour, him will I cut off: him that hath an high look and a proud heart will not I suffer* (Psalm 101:5). The king hates what Yahuah hates. The catalogue of the abominable opens with these very things: *These six things doth Yahuah (LORD) hate: yea, seven are an abomination unto him: A proud look, a lying tongue, and hands that shed innocent blood* (Proverbs 6:16-17) — the proud look and the lying tongue heading the list, the same two the king cuts off. And Proverbs names the high look as sin in itself: *An high look, and a proud heart, and the plowing of the wicked, is sin* (Proverbs 21:4). The just throne is conformed to the heart of the One it serves: the slanderer''s tongue and the proud heart are abominations to Yahuah, and so the king will not suffer them near him.',
+       sv.verse_id, ev.verse_id, 'free', 24503
+  FROM _s302_ps101_lookup sv, _s302_ps101_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=101 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-101-mine-eyes-shall-be-upon-the-faithful-of-the-land',
+       E'Mine eyes shall be upon the faithful of the land — gathered to dwell with the king',
+       E'Over against the proud cut off, the king gathers the faithful to himself: *Mine eyes shall be upon the faithful of the land, that they may dwell with me: he that walketh in a perfect way, he shall serve me* (Psalm 101:6). The ones fit to dwell with the king are the ones fit to dwell with Yahuah — the very question the psalter poses of Yahuah''s own holy hill: *Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill? He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:1-2). The *perfect way* of the king''s servant (101:6) is the upright walk of the one who abides in the tabernacle; the same integrity admits a man to the king''s table and to Yahuah''s hill. And the inverse stands: *He that worketh deceit shall not dwell within my house: he that telleth lies shall not tarry in my sight* (101:7) — the deceitful are shut out, only the upright dwell with him.',
+       sv.verse_id, ev.verse_id, 'free', 24506
+  FROM _s302_ps101_lookup sv, _s302_ps101_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=101 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-101-i-will-cut-off-all-wicked-doers-from-the-city-of-yahuah',
+       E'I will cut off all wicked doers from the city of Yahuah — the purged holy city',
+       E'The king''s vow ends with the cleansing of the city: *I will early destroy all the wicked of the land; that I may cut off all wicked doers from the city of Yahuah (LORD)* (Psalm 101:8). David purges his city of every wicked doer — and this is the foreshadow of the New Jerusalem, the holy city from which all that defileth is shut out forever. *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27); *For without are dogs, and sorcerers, and whoremongers, and murderers, and idolaters, and whosoever loveth and maketh a lie* (Revelation 22:15) — the wicked doers cut off from the city are those left outside its gates. Isaiah sings the same purging of the city by name: *put on thy beautiful garments, O Jerusalem, the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean* (Isaiah 52:1). And the Son of Adam does the cutting off the king vowed: *The Son of Adam shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity* (Matthew 13:41). David''s vow to purge his city is the King''s purging of the whole kingdom; the city of Yahuah cleansed of every wicked doer is the New Jerusalem, the holy city made pure.',
+       sv.verse_id, ev.verse_id, 'free', 24509
+  FROM _s302_ps101_lookup sv, _s302_ps101_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=101 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3) — David''s last words name the standard his vow of a *perfect way* (101:2) pledges.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=2
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-behave-myself-wisely-in-a-perfect-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4) — the perfect reign David vows (101:2) is fulfilled in the Branch who judges without fail.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=2
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-behave-myself-wisely-in-a-perfect-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*righteousness shall be the girdle of his loins, and faithfulness the girdle of his reins* (Isaiah 11:5) — the *perfect heart* of the king (101:2) is the Branch''s very girding.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=2
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-behave-myself-wisely-in-a-perfect-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *These six things doth Yahuah (LORD) hate: yea, seven are an abomination unto him* (Proverbs 6:16) — the king who will not suffer the proud (101:5) hates what Yahuah hates.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=5
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-an-high-look-and-a-proud-heart-will-not-i-suffer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*A proud look, a lying tongue, and hands that shed innocent blood* (Proverbs 6:17) — the high look and the slanderer''s tongue (101:5) head the list of what Yahuah hates.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=5
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-an-high-look-and-a-proud-heart-will-not-i-suffer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*An high look, and a proud heart, and the plowing of the wicked, is sin* (Proverbs 21:4) — *an high look and a proud heart will not I suffer* (101:5) names the very thing Proverbs calls sin.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=5
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-an-high-look-and-a-proud-heart-will-not-i-suffer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*who shall abide in thy tabernacle? who shall dwell in thy holy hill?* (Psalm 15:1) — those gathered to dwell with the king (101:6) are those fit to dwell with Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=6
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-mine-eyes-shall-be-upon-the-faithful-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2) — the *perfect way* of the king''s servant (101:6) is the upright walk that abides on the holy hill.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=6
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-mine-eyes-shall-be-upon-the-faithful-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *there shall in no wise enter into it any thing that defileth... or maketh a lie* (Revelation 21:27) — the city of Yahuah cut clean of wicked doers (101:8) is the New Jerusalem barred to all that defileth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=8
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-cut-off-all-wicked-doers-from-the-city-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *without are dogs, and sorcerers... and whosoever loveth and maketh a lie* (Revelation 22:15) — the wicked doers cut off from the city (101:8) are those left outside its gates.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=8
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-cut-off-all-wicked-doers-from-the-city-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the holy city: for henceforth there shall no more come into thee the uncircumcised and the unclean* (Isaiah 52:1) — the city of Yahuah (101:8) is the holy city purged, clothed in beautiful garments.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=8
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-cut-off-all-wicked-doers-from-the-city-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *gather out of his kingdom all things that offend, and them which do iniquity* (Matthew 13:41) — the Son of Adam does the cutting off the king vowed (101:8); David''s city purged = the kingdom cleansed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps101_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=101 AND sv.verse_number=8
+  JOIN _s302_ps101_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-101-i-will-cut-off-all-wicked-doers-from-the-city-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
