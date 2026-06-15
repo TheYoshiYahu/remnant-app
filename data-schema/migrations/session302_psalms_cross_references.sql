@@ -1200,6 +1200,1212 @@ SELECT t.id, cr.id, 3, E'*yet is their hope full of immortality* (Wisdom of Solo
  WHERE t.slug='psalm-16-thou-wilt-shew-me-the-path-of-life-fulness-of-joy'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_19.sql (Psalm 19) -----
+-- Chapter: Psalm 19 — THE TWO BOOKS: creation speaks, and the Torah is perfect. Two halves bound by one Author. v.1-6: general revelation — *The heavens declare the glory of Elohim; and the firmament sheweth his handywork... Their line is gone out through all the earth, and their words to the end of the world... the sun... rejoiceth as a strong man to run a race* — the wordless preaching of the luminaries (the appointed-times root of Genesis 1:14, the fingers-work of Psalm 8), whose sound Sha'ul (Paul) takes up for the gospel's reach (Romans 10:18). v.7-11 (★★ THE TORAH-KEYSTONE, Red Line #6): *The law of Yahuah is perfect, converting the soul: the testimony of Yahuah is sure, making wise the simple. The statutes of Yahuah are right, rejoicing the heart: the commandment of Yahuah is pure, enlightening the eyes... More to be desired are they than gold... sweeter also than honey... in keeping of them there is great reward* — the perfect Torah that converts the soul and rewards the keeping, the inheritance never the curse, affirmed (not abolished) in the NT and sung in Psalm 119. v.12-14: the cleansing/redeemer close — *Cleanse thou me from secret faults... Let the words of my mouth, and the meditation of my heart, be acceptable in thy sight, O Yahuah, my strength, and my redeemer.*
+-- Tag: ps019   Temp view: _s302_ps019_lookup
+-- Sort band: base 22450, step 3 -> threads at 22450, 22453, 22456, 22459 (4 threads)
+-- Source of EVERY row: 'canon','psalms',19,v
+--
+-- Psalm 19 coverage:
+--   v.1-6 (The heavens declare the glory of Elohim; the firmament his handywork; their line gone out through all the earth, and their words to the end of the world; a tabernacle for the sun; rejoiceth as a strong man to run a race)
+--        NT:     ★ Romans 10:18 (their sound went into all the earth, and their words unto the ends of the world — Sha'ul takes up Ps 19:4 for the gospel's universal reach) — THREAD 1 (load-bearing FORWARD weave)
+--        Extras: none warranted (the Sirach/Wisdom witness is the Torah-as-wisdom material, bound to THREAD 3 below; no clean creation-speech extras lateral closer than the luminaries themselves)
+--        Tanakh: ★ Genesis 1:14 (lights in the firmament... for signs, and for seasons — the appointed-times root of the speaking heavens); Psalm 8:3 (the moon and the stars, which thou hast ordained — the fingers-work that provokes wonder) — THREAD 1
+--   ★★ v.7-9 (The law of Yahuah is perfect, converting the soul; the testimony sure, making wise the simple; the statutes right, rejoicing the heart; the commandment pure, enlightening the eyes; the fear clean; the judgments true and righteous) — THE TORAH-KEYSTONE
+--        NT:     ★ Romans 7:12 (the law is holy, and the commandment holy, and just, and good — Sha'ul AFFIRMING Torah); James 1:25 (the perfect law of liberty... a doer of the work, this man shall be blessed) — THREAD 2 (load-bearing: NT never abolishes the perfect Torah)
+--        Extras: none warranted distinct here (the wisdom=Torah extras witness is bound to THREAD 3's sweeter-than-honey/inheritance weave)
+--        Tanakh: ★ Psalm 1:2 (his delight is in the law of Yahuah; and in his law doth he meditate day and night); Psalm 119:7 (I will praise thee... when I shall have learned thy righteous judgments) — THREAD 2; Jeremiah 31:33 + Ezekiel 36:27 (the perfect Torah written on the heart, the Spirit causing the keeping — the new covenant is Torah-internalized, NOT Torah replaced) — THREAD 2 laterals
+--   ★★ v.10-11 (More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb. Moreover by them is thy servant warned: and in keeping of them there is great reward)
+--        NT:     none warranted distinct (the keeping-rewarded forward-weave is held by James 1:25 at THREAD 2; not doubled here)
+--        Extras: ★ Sirach/Ecclesiasticus 24:20 (my memorial is sweeter than honey, and my inheritance than the honeycomb); 24:23 (All these things are the book of the covenant of the most high Yahuah, even the law which Moses commanded for an heritage) — THREAD 3 (Wisdom=the Torah, sweeter than honey, the inheritance) [edition 'apocrypha' + slug 'ecclesiasticus' — NOT double-written]
+--        Tanakh: ★ Psalm 119:103 (How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!); Psalm 119:72 (The law of thy mouth is better unto me than thousands of gold and silver); Psalm 119:97 (O how love I thy law!) — THREAD 3
+--   v.12-14 (Who can understand his errors? cleanse thou me from secret faults. Keep back thy servant also from presumptuous sins... Let the words of my mouth, and the meditation of my heart, be acceptable in thy sight, O Yahuah, my strength, and my redeemer)
+--        NT:     none warranted (no clean NT lateral closer than the general cleansing/redemption theme; not forced)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 119:11 (Thy word have I hid in mine heart, that I might not sin against thee — the Torah kept against secret faults); Psalm 119:133 (Order my steps in thy word: and let not any iniquity have dominion over me — answers "let them not have dominion over me") — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-19-the-heavens-declare-their-words-to-the-end-of-the-world — NT (Romans 10:18) + Tanakh (Genesis 1:14, Psalm 8:3) [free] (the speaking heavens; FORWARD to the gospel's reach; the appointed-times luminary root)
+--   2. psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul — NT (Romans 7:12, James 1:25) + Tanakh (Psalm 1:2, Psalm 119:7, Jeremiah 31:33, Ezekiel 36:27) [free] (★★ THE TORAH-KEYSTONE — the perfect Torah affirmed, never abolished, written on the heart)
+--   3. psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward — Extras (Sirach 24:20, 24:23) + Tanakh (Psalm 119:103, 119:72, 119:97) [extras] (★★ the Torah more than gold, sweeter than honey, the inheritance, the keeping rewarded)
+--   4. psalm-19-cleanse-thou-me-let-the-meditation-of-my-heart-be-acceptable — Tanakh (Psalm 119:11, Psalm 119:133) [free] (the cleansing/redeemer close — the Word hid in the heart against secret faults)
+--
+-- Framing notes:
+--   ★ THE TWO BOOKS (THREAD 1): *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (19:1). The wordless preaching of creation — *There is no speech nor language, where their voice is not heard* (19:3) — is read FORWARD with Sha'ul (Paul), who lifts *Their line is gone out through all the earth, and their words to the end of the world* (19:4) straight into the gospel's reach: *their sound went into all the earth, and their words unto the ends of the world* (Romans 10:18). The luminaries that declare are the same lights set *for signs, and for seasons* (Genesis 1:14) — the appointed-times root (Red Line #3); and the moon and stars are *the work of thy fingers... which thou hast ordained* (Psalm 8:3). The heavens preach what the Torah will speak in words.
+--   ★★ THE TORAH-KEYSTONE (THREAD 2): *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple* (19:7). This is Red Line #6 sung outright — the Torah is the covenant inheritance, never the curse. The framework reads the NT as AFFIRMING this perfect law, never abolishing it: Sha'ul (Paul) — *Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12); Ya'aqob (James) — *whoso looketh into the perfect law of liberty, and continueth therein... a doer of the work, this man shall be blessed in his deed* (James 1:25). The new covenant is this same perfect Torah written on the heart — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33), *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27) — Torah internalized by the Spirit, NOT Torah replaced (the 1 John 2:3-4 filter). Psalm 1:2 and Psalm 119 sing the delight of the same perfect law.
+--   ★★ SWEETER THAN HONEY (THREAD 3): *More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb. Moreover by them is thy servant warned: and in keeping of them there is great reward* (19:10-11). Psalm 119 echoes it note-for-note — *sweeter than honey to my mouth* (119:103), *better unto me than thousands of gold and silver* (119:72), *O how love I thy law!* (119:97). And the restored wisdom witness binds it to the Torah by name: Wisdom says *my memorial is sweeter than honey, and my inheritance than the honeycomb* (Sirach 24:20), then *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage* (Sirach 24:23) — Wisdom IS the Torah, the inheritance sweeter than honey, the keeping rewarded.
+--   THE CLEANSING CLOSE (THREAD 4): *cleanse thou me from secret faults... let them not have dominion over me... be acceptable in thy sight, O Yahuah (LORD), my strength, and my redeemer* (19:12-14). The man who has tasted the perfect law turns it inward against his own hidden sin — *Thy word have I hid in mine heart, that I might not sin against thee* (Psalm 119:11), *Order my steps in thy word: and let not any iniquity have dominion over me* (Psalm 119:133). The Torah delighted in (vv.7-11) becomes the Torah prayed in.
+--   EXTRAS: Sirach 24 (edition 'apocrypha', book slug 'ecclesiasticus' — NOT double-written, unlike Jubilees/Jasher) is the clean wisdom=Torah witness; vv.20,23 are the members. Wisdom of Solomon 6:18 (love is the keeping of her laws) weighed but not added — Sirach carries the honey/inheritance tie far more precisely. No Jubilees/Jasher creation-speech or Torah-praise verse warranted closer than the canon laterals.
+--   VERSES WITH NO ADD beyond their threads: vv.5-6 (the sun as a bridegroom / strong man to run a race) sit inside THREAD 1's anchor span and prose; v.9b (the judgments true and righteous) inside THREAD 2; no standalone forced member.
+
+CREATE TEMP VIEW _s302_ps019_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The heavens declare — their words to the end of the world (general revelation; FORWARD to the gospel's reach)
+    ('canon','psalms',19,4,'canon','romans',10,18,'free',
+      E'*But I say, Have they not heard? Yes verily, their sound went into all the earth, and their words unto the ends of the world* (Romans 10:18). Sha''ul (Paul) lifts the psalm''s own words — *Their line is gone out through all the earth, and their words to the end of the world* (Psalm 19:4) — and presses them FORWARD: as the wordless witness of the heavens reaches every place, so the report of the gospel has gone out to the ends of the world. The speaking creation becomes the figure of the message that none can say they never heard.'),
+    ('canon','psalms',19,1,'canon','genesis',1,14,'free',
+      E'*And Elohim (God) said, Let there be lights in the firmament of the heaven to divide the day from the night; and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14). The heavens that *declare the glory of Elohim (God)* and the firmament that *sheweth his handywork* (Psalm 19:1) are the very lights set on the fourth day *for signs, and for seasons* — the appointed-times root. The luminaries do not merely shine; they were ordained to mark Yahuah''s calendar, and so their silent shining is already a declaring.'),
+    ('canon','psalms',19,1,'canon','psalms',8,3,'free',
+      E'*When I consider thy heavens, the work of thy fingers, the moon and the stars, which thou hast ordained* (Psalm 8:3). The same wonder answers *The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1): the firmament is *the work of thy fingers*, the moon and stars *which thou hast ordained*. To consider the handywork is to hear it preach the glory of the One who made it.'),
+
+    -- THREAD 2 (★★): The law of Yahuah is perfect, converting the soul (THE TORAH-KEYSTONE)
+    ('canon','psalms',19,7,'canon','romans',7,12,'free',
+      E'*Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12). Sha''ul (Paul) — so often misread as the Torah''s undoer — says outright what the psalm sings: the commandment is *holy, and just, and good*, matching *The law of Yahuah (LORD) is perfect, converting the soul... the commandment of Yahuah (LORD) is pure* (Psalm 19:7-8). The perfect, soul-converting law is not abolished in the letter to the Romans; it is called holy. The fault is in the flesh that breaks it, never in the law itself.'),
+    ('canon','psalms',19,7,'canon','james',1,25,'free',
+      E'*But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed* (James 1:25). Ya''aqob (James) names the very thing the psalm names — *the perfect law* — and calls it *the perfect law of liberty*, the law looked into and DONE. *The law of Yahuah (LORD) is perfect, converting the soul* (Psalm 19:7) is the same perfect law whose doer *shall be blessed in his deed*; the blessing is in the keeping, exactly as *in keeping of them there is great reward* (Psalm 19:11).'),
+    ('canon','psalms',19,7,'canon','psalms',1,2,'free',
+      E'*But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2). The Psalter''s opening blessing rhymes with this one: the law that is *perfect, converting the soul* (Psalm 19:7) is the law the blessed man delights in and *meditate[s] day and night*. What Psalm 19 declares about the Torah, Psalm 1 makes the shape of the righteous life — delight, not burden.'),
+    ('canon','psalms',19,8,'canon','psalms',119,7,'free',
+      E'*I will praise thee with uprightness of heart, when I shall have learned thy righteous judgments* (Psalm 119:7). The great Torah-psalm answers *The statutes of Yahuah (LORD) are right, rejoicing the heart... the judgments of Yahuah (LORD) are true and righteous altogether* (Psalm 19:8-9): the *righteous judgments* learned bring *uprightness of heart* and praise. Psalm 19''s confession that the statutes *rejoic[e] the heart* opens into the whole hundred-and-seventy-six-verse song of the same delight.'),
+    ('canon','psalms',19,7,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The perfect Torah that *convert[s] the soul* (Psalm 19:7) is not set aside in the new covenant but written deeper — *I will put my law in their inward parts, and write it in their hearts*. The same law praised here is the law internalized there; the covenant renewed is Torah-on-the-heart, never Torah replaced.'),
+    ('canon','psalms',19,8,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The promise binds the Spirit to the very *statutes* and *judgments* the psalm calls *right* and *true and righteous altogether* (Psalm 19:8-9): the Spirit given is the Spirit that *cause[s] you to walk in my statutes*. The Ruach and the Torah are one work — the perfect law kept from within, the keeping that holds *great reward* (Psalm 19:11).'),
+
+    -- THREAD 3 (★★): More to be desired than gold, sweeter than honey, in keeping great reward
+    ('canon','psalms',19,10,'canon','psalms',119,103,'free',
+      E'*How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!* (Psalm 119:103). The Torah-psalm tastes exactly what Psalm 19 tastes: *sweeter also than honey and the honeycomb* (Psalm 19:10). The words of Yahuah are not bitter restraint but sweetness on the tongue — the same delight, twice sung, the law desired and savoured.'),
+    ('canon','psalms',19,10,'canon','psalms',119,72,'free',
+      E'*The law of thy mouth is better unto me than thousands of gold and silver* (Psalm 119:72). Psalm 19''s scale — *More to be desired are they than gold, yea, than much fine gold* (Psalm 19:10) — is weighed again here: the law *better... than thousands of gold and silver*. The Torah outvalues every treasure; the one who has tasted it would not trade it for fine gold.'),
+    ('canon','psalms',19,11,'canon','psalms',119,97,'free',
+      E'*O how love I thy law! it is my meditation all the day* (Psalm 119:97). The servant *warned* by the commandments, who finds *in keeping of them there is great reward* (Psalm 19:11), is the very voice of *O how love I thy law!* — the keeping is love, and the love is all-day meditation. The reward of the Torah is the delight of the one who keeps it.'),
+    ('canon','psalms',19,10,'apocrypha','ecclesiasticus',24,20,'extras',
+      E'*For my memorial is sweeter than honey, and my inheritance than the honeycomb* (Sirach 24:20). Wisdom speaks the psalm''s own words — *sweeter also than honey and the honeycomb* (Psalm 19:10) — and adds *inheritance*: the sweetness is a possession handed down. The restored witness sets Wisdom and the Torah side by side as the one honeyed inheritance, the treasure that is tasted and owned.'),
+    ('canon','psalms',19,11,'apocrypha','ecclesiasticus',24,23,'extras',
+      E'*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). Here the restored witness names plainly what Psalm 19 has been praising: the Wisdom sweeter than honey IS *the law which Moses commanded for an heritage*. The Torah whose keeping holds *great reward* (Psalm 19:11) is *the book of the covenant of the most high Yahuah*, the inheritance of the congregations — Red Line #6 spoken outright: the law is the heritage, never the curse.'),
+
+    -- THREAD 4: Cleanse thou me — let the meditation of my heart be acceptable (the cleansing/redeemer close)
+    ('canon','psalms',19,12,'canon','psalms',119,11,'free',
+      E'*Thy word have I hid in mine heart, that I might not sin against thee* (Psalm 119:11). The prayer *Who can understand his errors? cleanse thou me from secret faults* (Psalm 19:12) is answered by the Word taken inward — *Thy word have I hid in mine heart, that I might not sin against thee*. The perfect law just praised becomes the guard against the hidden sin; the cleansing is the Torah laid up in the heart.'),
+    ('canon','psalms',19,13,'canon','psalms',119,133,'free',
+      E'*Order my steps in thy word: and let not any iniquity have dominion over me* (Psalm 119:133). Psalm 19''s plea — *Keep back thy servant also from presumptuous sins; let them not have dominion over me* (Psalm 19:13) — is prayed again almost word for word: *let not any iniquity have dominion over me*. The steps ordered in the Word are the steps kept from the dominion of sin; the Torah delighted in is the Torah that keeps the servant upright.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-19-the-heavens-declare-their-words-to-the-end-of-the-world',
+       E'The heavens declare — their words to the end of the world',
+       E'*The heavens declare the glory of Elohim (God); and the firmament sheweth his handywork* (Psalm 19:1). The first half of the psalm is the wordless sermon of creation: *Day unto day uttereth speech, and night unto night sheweth knowledge. There is no speech nor language, where their voice is not heard* (Psalm 19:2-3). It is a voice without words, heard in every tongue. And the reach is total — *Their line is gone out through all the earth, and their words to the end of the world* (Psalm 19:4) — the sun set like *a bridegroom coming out of his chamber, and rejoiceth as a strong man to run a race* (Psalm 19:5), nothing *hid from the heat thereof* (Psalm 19:6). These are the same lights Yahuah set on the fourth day: *Let there be lights in the firmament of the heaven... and let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — the appointed-times root, the luminaries ordained to mark His calendar. And the psalmist''s wonder is the wonder of *When I consider thy heavens, the work of thy fingers, the moon and the stars, which thou hast ordained* (Psalm 8:3). Then Sha''ul (Paul) takes the psalm''s own line and presses it FORWARD to the gospel: *But I say, Have they not heard? Yes verily, their sound went into all the earth, and their words unto the ends of the world* (Romans 10:18). As the heavens'' wordless witness reaches every place, so the report of salvation has gone out — the speaking creation a figure of the message none can say they never heard.',
+       sv.verse_id, ev.verse_id, 'free', 22450
+  FROM _s302_ps019_lookup sv, _s302_ps019_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=19 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul',
+       E'The law of Yahuah is perfect, converting the soul',
+       E'The psalm turns from the book of the heavens to the book of the Torah, and the praise is unbroken: *The law of Yahuah (LORD) is perfect, converting the soul: the testimony of Yahuah (LORD) is sure, making wise the simple. The statutes of Yahuah (LORD) are right, rejoicing the heart: the commandment of Yahuah (LORD) is pure, enlightening the eyes. The fear of Yahuah (LORD) is clean, enduring for ever: the judgments of Yahuah (LORD) are true and righteous altogether* (Psalm 19:7-9). This is the Torah-keystone of the Psalter — the law is the covenant inheritance, never the curse; it is *perfect*, it *convert[s] the soul*, it *enduring for ever*. The default Christian reading hears "Old Testament law, now done away" — but the New Testament itself will not say it. Sha''ul (Paul), so often pressed into Torah''s undoing, says plainly: *Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12). Ya''aqob (James) calls it *the perfect law of liberty*, and the blessing is in the doing: *whoso looketh into the perfect law of liberty, and continueth therein... a doer of the work, this man shall be blessed in his deed* (James 1:25). And the Psalter itself frames the whole life of the righteous around it — *his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:2), *I will praise thee with uprightness of heart, when I shall have learned thy righteous judgments* (Psalm 119:7). Where does this perfect law go in the new covenant? Not away, but inward: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33), *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The Ruach (Spirit) and the Torah are one work; the perfect law that converts the soul is the perfect law written on the heart.',
+       sv.verse_id, ev.verse_id, 'free', 22453
+  FROM _s302_ps019_lookup sv, _s302_ps019_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=19 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward',
+       E'Sweeter than honey — in keeping of them there is great reward',
+       E'The praise of the Torah crests into the language of treasure and taste: *More to be desired are they than gold, yea, than much fine gold: sweeter also than honey and the honeycomb. Moreover by them is thy servant warned: and in keeping of them there is great reward* (Psalm 19:10-11). The law outvalues fine gold and outsweetens the honeycomb — and the keeping of it carries *great reward*. The great Torah-psalm sings the very same notes: *How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!* (Psalm 119:103), *The law of thy mouth is better unto me than thousands of gold and silver* (Psalm 119:72), *O how love I thy law! it is my meditation all the day* (Psalm 119:97). And the restored wisdom witness binds the honey and the gold to the Torah by name. Wisdom speaks: *For my memorial is sweeter than honey, and my inheritance than the honeycomb* (Sirach 24:20) — and then she is named outright: *All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage to the congregations of Jacob* (Sirach 24:23). The Wisdom sweeter than honey IS the Torah, the heritage of the congregations. Red Line #6 spoken plainly: the law is the inheritance, the treasure tasted and owned and kept — never the curse, never the burden, but the sweetness whose keeping holds the reward.',
+       sv.verse_id, ev.verse_id, 'extras', 22456
+  FROM _s302_ps019_lookup sv, _s302_ps019_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=19 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-19-cleanse-thou-me-let-the-meditation-of-my-heart-be-acceptable',
+       E'Cleanse thou me — let the meditation of my heart be acceptable',
+       E'Having tasted the perfect law, the psalmist turns it inward against his own hidden sin: *Who can understand his errors? cleanse thou me from secret faults. Keep back thy servant also from presumptuous sins; let them not have dominion over me: then shall I be upright, and I shall be innocent from the great transgression* (Psalm 19:12-13). And he ends with the prayer that the whole inner man be made fit for Yahuah: *Let the words of my mouth, and the meditation of my heart, be acceptable in thy sight, O Yahuah (LORD), my strength, and my redeemer* (Psalm 19:14). The Torah delighted in becomes the Torah prayed in. The great Torah-psalm answers both pleas: against the secret faults — *Thy word have I hid in mine heart, that I might not sin against thee* (Psalm 119:11); against the dominion of sin — *Order my steps in thy word: and let not any iniquity have dominion over me* (Psalm 119:133). The perfect law that converts the soul is the law hidden in the heart that guards it; the steps ordered in the Word are the steps kept upright. The psalm of the two books — creation''s wordless preaching and the Torah''s sure word — closes with the heart that has heard both, asking to be cleansed and kept by its strength and redeemer.',
+       sv.verse_id, ev.verse_id, 'free', 22459
+  FROM _s302_ps019_lookup sv, _s302_ps019_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=19 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*their sound went into all the earth, and their words unto the ends of the world* (Romans 10:18) — Sha''ul (Paul) lifts *their words to the end of the world* (19:4) FORWARD to the gospel''s universal reach.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-heavens-declare-their-words-to-the-end-of-the-world'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*let them be for signs, and for seasons, and for days, and years* (Genesis 1:14) — the heavens that *declare the glory of Elohim* (19:1) are the appointed-times luminaries, ordained to mark Yahuah''s calendar.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-heavens-declare-their-words-to-the-end-of-the-world'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the work of thy fingers, the moon and the stars, which thou hast ordained* (Psalm 8:3) — the same wonder at *his handywork* (19:1); to consider the firmament is to hear it preach the glory of its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-heavens-declare-their-words-to-the-end-of-the-world'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12) — Sha''ul (Paul) AFFIRMS the perfect, soul-converting law of 19:7; it is not abolished but called holy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=7
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the perfect law of liberty... a doer of the work, this man shall be blessed in his deed* (James 1:25) — the same *perfect* law of 19:7, the blessing in the keeping (cf. *in keeping of them there is great reward*, 19:11).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=7
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*his delight is in the law of Yahuah; and in his law doth he meditate day and night* (Psalm 1:2) — the perfect law of 19:7 is the Psalter''s delight, the shape of the righteous life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=7
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will praise thee with uprightness of heart, when I shall have learned thy righteous judgments* (Psalm 119:7) — the *true and righteous* judgments of 19:8-9 learned, bringing uprightness and praise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=8
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the perfect law that *convert[s] the soul* (19:7) written deeper in the new covenant, NOT replaced.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=7
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the Spirit bound to the *statutes* and *judgments* of 19:8-9; the Ruach and the Torah are one work.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=8
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-the-law-of-yahuah-is-perfect-converting-the-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*How sweet are thy words unto my taste! yea, sweeter than honey to my mouth!* (Psalm 119:103) — the Torah-psalm tastes what 19:10 tastes: *sweeter also than honey and the honeycomb*.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=103
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The law of thy mouth is better unto me than thousands of gold and silver* (Psalm 119:72) — the law outvalues fine gold, as in *More to be desired are they than gold* (19:10).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=72
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*O how love I thy law! it is my meditation all the day* (Psalm 119:97) — the keeping that holds *great reward* (19:11) is love; the reward is the delight of the one who keeps it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=97
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*For my memorial is sweeter than honey, and my inheritance than the honeycomb* (Sirach 24:20) — Wisdom speaks the psalm''s *sweeter... than honey and the honeycomb* (19:10) and adds *inheritance*: the sweetness is a possession handed down.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*All these things are the book of the covenant of the most high Yahuah (God), even the law which Moses commanded for an heritage* (Sirach 24:23) — the Wisdom sweeter than honey IS the Torah, the inheritance whose keeping holds *great reward* (19:11). Red Line #6 outright.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=24 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-sweeter-than-honey-in-keeping-of-them-great-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thy word have I hid in mine heart, that I might not sin against thee* (Psalm 119:11) — the Word taken inward answers *cleanse thou me from secret faults* (19:12); the perfect law is the guard against hidden sin.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-cleanse-thou-me-let-the-meditation-of-my-heart-be-acceptable'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Order my steps in thy word: and let not any iniquity have dominion over me* (Psalm 119:133) — prayed almost word for word with *let them not have dominion over me* (19:13); the steps ordered in the Word kept from the dominion of sin.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps019_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=19 AND sv.verse_number=13
+  JOIN _s302_ps019_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=133
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-19-cleanse-thou-me-let-the-meditation-of-my-heart-be-acceptable'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_22.sql (Psalm 22) -----
+-- Chapter: Psalm 22 — THE GREAT CRUCIFIXION PSALM, the single most-fulfilled-at-the-cross psalm in all the Tanakh. The suffering one cries *My Elohim, my Elohim, why hast thou forsaken me?* (the very words Yahusha cried from the tree); the mockers shoot out the lip and shake the head — *He trusted on Yahuah that he would deliver him: let him deliver him*; the body poured out like water, bones out of joint, tongue cleaving to the jaws, brought into the dust of death; *they pierced my hands and my feet*; *they part my garments among them, and cast lots upon my vesture*. Then the great turn — heard, vindicated, raised: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (the risen One to the brethren); and the ingathering — *All the ends of the world shall remember and turn unto Yahuah... and all the kindreds of the nations shall worship before thee... A seed shall serve him... they shall come, and shall declare his righteousness unto a people that shall be born, that he hath done this.*
+-- Tag: ps022   Temp view: _s302_ps022_lookup
+-- Sort band: base 22525, step 3 -> threads at 22525, 22528, 22531, 22534, 22537, 22540, 22543 (7 threads)
+-- Source of EVERY row: 'canon','psalms',22,v
+--
+-- Psalm 22 coverage:
+--   ★★ v.1 (My Elohim, my Elohim, why hast thou forsaken me?)
+--        NT:     Matthew 27:46 (Eli, Eli, lama sabachthani... My Elohim, my Elohim, why hast thou forsaken me?); Mark 15:34 (Eloi, Eloi, lama sabachthani) — THREAD 1 (load-bearing: the Formed Son cries the very words from the tree)
+--        Extras: none warranted (no clean restored-witness parallel to the dereliction-cry; Psalm 22 is a Davidic crucifixion psalm with no Jubilees/Jasher/Enoch counterpart)
+--        Tanakh: none warranted distinct (the cry is carried forward to its NT fulfillment; the psalm IS the lateral the gospels reach back to)
+--   ★★ v.7-8 (All they that see me laugh me to scorn: they shoot out the lip, they shake the head... He trusted on Yahuah that he would deliver him: let him deliver him)
+--        NT:     Matthew 27:39 (they that passed by reviled him, wagging their heads); Matthew 27:43 (He trusted in Elohim; let him deliver him now, if he will have him) — THREAD 2 (load-bearing: the mockers' very words foretold); Mark 15:29 (railed on him, wagging their heads) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: none warranted distinct
+--   v.14-15 (I am poured out like water... my strength is dried up like a potsherd; my tongue cleaveth to my jaws; brought into the dust of death)
+--        NT:     John 19:28 (Yahusha... saith, I thirst) — THREAD 3 (the physical agony of the cross, the dried strength and thirst)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★★ v.16 (For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet)
+--        NT:     John 19:37 (They shall look on him whom they pierced — paired with John 19:34 spear); John 20:25 (Except I shall see in his hands the print of the nails); John 20:27 (Reach hither thy finger, and behold my hands); Luke 24:39 (Behold my hands and my feet) — THREAD 4 (load-bearing: the pierced hands and feet, the nail-prints shown)
+--        Extras: none warranted
+--        Tanakh: ★ Zechariah 12:10 (they shall look upon me whom they have pierced... mourn for him, as one mourneth for his only son) — THREAD 4 (the lateral the gospel quotes alongside)
+--   ★★ v.18 (They part my garments among them, and cast lots upon my vesture)
+--        NT:     John 19:23-24 (the soldiers... took his garments, and made four parts... and also his coat... let us not rend it, but cast lots for it... that the scripture might be fulfilled... They parted my raiment among them, and for my vesture they did cast lots); Matthew 27:35 (parted his garments, casting lots... They parted my garments among them, and upon my vesture did they cast lots) — THREAD 5 (load-bearing: quoted as fulfillment by name)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★★ v.22 (I will declare thy name unto my brethren: in the midst of the congregation will I praise thee)
+--        NT:     Hebrews 2:12 (I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee); Hebrews 2:11 (he is not ashamed to call them brethren); John 20:17 (go to my brethren... I ascend unto my Father, and your Father) — THREAD 6 (load-bearing: the risen One declaring the Name to the brethren; suffering turned to the gathered congregation)
+--        Extras: none warranted   Tanakh: none warranted distinct (v.23 the seed of Jacob / seed of Yashar'el carries the two-house weight in-psalm; held to THREAD 6/7 prose)
+--   ★ v.27-31 (All the ends of the world shall remember and turn unto Yahuah... all the kindreds of the nations shall worship before thee... A seed shall serve him... they shall come, and shall declare his righteousness unto a people that shall be born, that he hath done this)
+--        NT:     Luke 24:46-47 (it behoved Messiah to suffer, and to rise from the dead the third day: And that repentance and remission of sins should be preached in his name among all nations) — THREAD 7 (load-bearing: the resurrection-vindication preached to the nations, the gospel-RESULT of the suffering); Luke 24:26 (Ought not Messiah to have suffered these things, and to enter into his glory?) — THREAD 7
+--        Extras: none warranted
+--        Tanakh: none warranted distinct here (the ingathering of the nations and the seed that serves is carried forward to its NT preaching; the two-house/seed weight woven in THREAD 7 prose: a seed shall serve him + all the kindreds of the nations gathered = covenant-gathering, NEVER false-inclusion)
+--   v.2-6, v.9-13, v.17, v.19-21, v.23-26 (the daytime cry unheard; the worm and reproach; the womb-trust; the bulls of Bashan and the lion's mouth; the bones told and stared upon; the prayer for nearness; the praise-vow in the great congregation)
+--        NT:     none warranted distinct (the suffering-and-vindication frame is carried by THREADS 1-7; these verses are the body of the lament that those threads anchor)
+--        Extras: none warranted   Tanakh: none warranted distinct (v.23 seed-of-Jacob/seed-of-Yashar'el woven in THREAD 6 prose as the two-house congregation)
+--
+-- EXTRAS NOTE: none warranted across the whole psalm. Psalm 22 is a Davidic crucifixion/vindication psalm; the restored extra-canonical library (1 Enoch, Jubilees, Jasher, Apocrypha, Pseudepigrapha) carries no clean verse that parallels the dereliction-cry, the piercing, the parted garments, or the declaring-of-the-Name. Weighed and deliberately declined — NOT forced. Every thread here is canon-only (NT fulfillment + one Zechariah 12:10 Tanakh lateral), so EVERY thread tier_required = 'free'.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-22-my-elohim-my-elohim-why-hast-thou-forsaken-me — NT (Matthew, Mark) [free] (★★ the Formed Son cries the very words from the tree)
+--   2. psalm-22-they-shoot-out-the-lip-let-him-deliver-him — NT (Matthew, Mark) [free] (★★ the mockers' very words foretold)
+--   3. psalm-22-poured-out-like-water-the-dust-of-death — NT (John) [free] (the physical agony; I thirst)
+--   4. psalm-22-they-pierced-my-hands-and-my-feet — NT (John, Luke) + Tanakh (Zechariah 12:10) [free] (★★ the pierced hands and feet, the nail-prints shown)
+--   5. psalm-22-they-part-my-garments-and-cast-lots — NT (John, Matthew) [free] (★★ quoted as fulfillment by name)
+--   6. psalm-22-i-will-declare-thy-name-unto-my-brethren — NT (Hebrews, John) [free] (★★ the risen One declaring the Name to the brethren; the turn to the congregation)
+--   7. psalm-22-the-ends-of-the-world-shall-turn-a-seed-shall-serve-him — NT (Luke) [free] (★ the ingathering of the nations and the seed that serves; the gospel-result preached)
+--
+-- Framing notes:
+--   ★★ THE DERELICTION-CRY (THREAD 1) — Formed-and-Formless lens (Red Line #4): *My Elohim (God), my Elohim (God), why hast thou forsaken me?* (22:1) is the verse Yahusha cries from the tree — *Eli, Eli, lama sabachthani... My Elohim, my Elohim, why hast thou forsaken me?* (Matthew 27:46). Framed strictly: the FORMED Son in the flesh cries to the Father. He IS Yahuah and HAS a Father; the forsaking is real suffering in the body, NOT a rupture of the one Elohim into co-equal persons, NOT a tearing of the Godhead. The Son who appeared and spoke in the Tanakh took flesh and, in that flesh, knew the dust of death and cried the psalm.
+--   ★★ THE MOCKERS' WORDS (THREAD 2): *they shoot out the lip, they shake the head, saying, He trusted on Yahuah (LORD) that he would deliver him: let him deliver him* (22:7-8) — foretold a thousand years before, then spoken almost verbatim at the cross: *they that passed by reviled him, wagging their heads* (Matthew 27:39) and *He trusted in Elohim (God); let him deliver him now* (Matthew 27:43). VICTIMS-NOT-ENEMIES (Red Line #7): the mockery is the conduct foretold, the reproach the suffering one bears — not a charge laid against a people; the psalm's "I" is the despised and afflicted one heard at the last.
+--   ★★ THE PIERCING (THREAD 4): *they pierced my hands and my feet* (22:16), paired with the Tanakh lateral *they shall look upon me whom they have pierced... mourn for him, as one mourneth for his only son* (Zechariah 12:10) — the same piercing the gospel names: *They shall look on him whom they pierced* (John 19:37), the nail-prints shown to Thomas (John 20:25-27), *Behold my hands and my feet* (Luke 24:39-40).
+--   ★★ THE DECLARED NAME (THREAD 6): the great turn from suffering to the gathered congregation — *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (22:22) — taken up of the RISEN One: *he is not ashamed to call them brethren, Saying, I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee* (Hebrews 2:11-12); *go to my brethren* (John 20:17). The psalm's "seed of Jacob... seed of Yashar'el (Israel)" (22:23) is the two-house congregation in whose midst the Name is declared.
+--   ★ THE INGATHERING (THREAD 7): the gospel-RESULT of the suffering — *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee... A seed shall serve him... they shall come, and shall declare his righteousness unto a people that shall be born, that he hath done this* (22:27-31). The resurrection-vindication preached: *thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day: And that repentance and remission of sins should be preached in his name among all nations* (Luke 24:46-47). TWO-HOUSE/SEED WEIGHT woven but kept covenant-gathering, NEVER false-inclusion (Red Line #2): *a seed shall serve him* and *all the kindreds of the nations* are gathered IN to worship the One who *hath done this* — the families of the earth drawn to the covenant, not the covenant dissolved into the nations.
+--   VERSES WITH NO ADD: v.2-6, v.9-13, v.17, v.19-21, v.23-26 — the body of the lament (the unheard daytime cry, the worm and reproach, the womb-trust, the bulls of Bashan and the lion's mouth, the bones told and stared upon, the prayer for nearness, the praise-vow). No distinct framework-bearing target warranted; these are the verses the seven threads anchor and unfold. EXTRAS: none warranted anywhere in the psalm (weighed and declined).
+
+CREATE TEMP VIEW _s302_ps022_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): My Elohim, my Elohim, why hast thou forsaken me? (the Formed Son cries the very words from the tree)
+    ('canon','psalms',22,1,'canon','matthew',27,46,'free',
+      E'*And about the ninth hour Yahusha (Jesus) cried with a loud voice, saying, Eli, Eli, lama sabachthani? that is to say, My Elohim (God), my Elohim (God), why hast thou forsaken me?* (Matthew 27:46). The psalm''s opening cry — *My Elohim (God), my Elohim (God), why hast thou forsaken me? why art thou so far from helping me* (Psalm 22:1) — is the very word Yahusha cries from the tree, a thousand years foretold and spoken almost letter for letter. Read through the Formed-and-the-Formless: the Formed Son in the flesh cries to the Father; He is Yahuah and has a Father, and the forsaking is real suffering borne in the body — never a tearing of the one Elohim into co-equal persons.'),
+    ('canon','psalms',22,1,'canon','mark',15,34,'free',
+      E'*And at the ninth hour Yahusha (Jesus) cried with a loud voice, saying, Eloi, Eloi, lama sabachthani? which is, being interpreted, My Elohim (God), my Elohim (God), why hast thou forsaken me?* (Mark 15:34). The second gospel carries the same dereliction-cry, naming Psalm 22:1 from the cross — *My Elohim, my Elohim, why hast thou forsaken me?* The suffering one of the psalm and the suffering Son on the tree speak with one voice; the Formed Son took flesh and, in that flesh, cried the words David sang of the afflicted who is heard at the last.'),
+
+    -- THREAD 2 (★★): They shoot out the lip, they shake the head — let him deliver him (the mockers' very words foretold)
+    ('canon','psalms',22,7,'canon','matthew',27,39,'free',
+      E'*And they that passed by reviled him, wagging their heads* (Matthew 27:39). The psalm foretold the very scorn — *All they that see me laugh me to scorn: they shoot out the lip, they shake the head* (Psalm 22:7) — and at the cross *they that passed by reviled him, wagging their heads*. The shaking of the head David saw in the spirit is the head wagged at Golgotha; the mockery is the conduct foretold, the reproach the afflicted one bears.'),
+    ('canon','psalms',22,8,'canon','matthew',27,43,'free',
+      E'*He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God)* (Matthew 27:43). The mockers'' very taunt was written before they spoke it: *He trusted on Yahuah (LORD) that he would deliver him: let him deliver him, seeing he delighted in him* (Psalm 22:8). The chief priests at the cross sneer the words of the psalm almost unaltered — *let him deliver him now* — the foretold scorn fulfilled out of their own mouths.'),
+    ('canon','psalms',22,7,'canon','mark',15,29,'free',
+      E'*And they that passed by railed on him, wagging their heads, and saying, Ah, thou that destroyest the temple, and buildest it in three days* (Mark 15:29). The second gospel keeps the same picture of *they shake the head* (Psalm 22:7): *they that passed by railed on him, wagging their heads*. The head-wagging scorn the psalm sang of the despised one is the scorn poured on the Son at the tree, the reproach of men and despised of the people made plain.'),
+
+    -- THREAD 3: I am poured out like water — the dust of death (the physical agony; I thirst)
+    ('canon','psalms',22,15,'canon','john',19,28,'free',
+      E'*After this, Yahusha (Jesus) knowing that all things were now accomplished, that the scripture might be fulfilled, saith, I thirst* (John 19:28). The psalm''s bodily agony — *My strength is dried up like a potsherd; and my tongue cleaveth to my jaws; and thou hast brought me into the dust of death* (Psalm 22:15) — is the thirst of the cross: the dried-up strength, the tongue cleaving to the jaws, answered in the single word *I thirst*, spoken that the scripture might be fulfilled. The suffering David sang in figure the Son endured in the flesh, brought to the dust of death.'),
+
+    -- THREAD 4 (★★): They pierced my hands and my feet (the pierced hands and feet, the nail-prints shown)
+    ('canon','psalms',22,16,'canon','john',19,37,'free',
+      E'*And again another scripture saith, They shall look on him whom they pierced* (John 19:37). The psalm''s wound — *they pierced my hands and my feet* (Psalm 22:16) — is the piercing the gospel names at the cross: *They shall look on him whom they pierced*. The hands and feet bored through in the psalm are the hands and feet nailed to the tree; the scripture of the pierced one is read as fulfilled before the watching eyes.'),
+    ('canon','psalms',22,16,'canon','zechariah',12,10,'free',
+      E'*And I will pour upon the house of David, and upon the inhabitants of Jerusalem, the spirit of grace and of supplications: and they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn* (Zechariah 12:10). The Tanakh itself doubles the wound of *they pierced my hands and my feet* (Psalm 22:16): the prophet sees the day Yahuah''s own people *look upon me whom they have pierced* and mourn *as one mourneth for his only son*. The pierced One of the psalm is the pierced One of Zechariah — the two houses of David and Jerusalem brought to look and grieve over the One they thrust through.'),
+    ('canon','psalms',22,16,'canon','john',20,25,'free',
+      E'*The other disciples therefore said unto him, We have seen Yahuah (Lord). But he said unto them, Except I shall see in his hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe* (John 20:25). After the rising, the pierced hands still bear the mark of *they pierced my hands and my feet* (Psalm 22:16): T''oma (Thomas) asks for *the print of the nails*, the very piercing of the psalm now risen with the body, the wounds carried through death into life.'),
+    ('canon','psalms',22,16,'canon','john',20,27,'free',
+      E'*Then saith he to Thomas, Reach hither thy finger, and behold my hands; and reach hither thy hand, and thrust it into my side: and be not faithless, but believing* (John 20:27). The risen One offers the pierced hands of *they pierced my hands and my feet* (Psalm 22:16) to be handled — *behold my hands... thrust it into my side*. The nail-prints the psalm foretold are shown as proof; the One who came up from the dust of death keeps the marks of the piercing.'),
+    ('canon','psalms',22,16,'canon','luke',24,39,'free',
+      E'*Behold my hands and my feet, that it is I myself: handle me, and see; for a spirit hath not flesh and bones, as ye see me have* (Luke 24:39). The risen Yahusha points to the very members of *they pierced my hands and my feet* (Psalm 22:16): *Behold my hands and my feet*. The pierced hands and feet of the psalm are shown to the gathered ones as the sign of who He is — flesh and bone, the same body that bore the wounds, raised.'),
+
+    -- THREAD 5 (★★): They part my garments among them, and cast lots upon my vesture (quoted as fulfillment by name)
+    ('canon','psalms',22,18,'canon','john',19,24,'free',
+      E'*They said therefore among themselves, Let us not rend it, but cast lots for it, whose it shall be: that the scripture might be fulfilled, which saith, They parted my raiment among them, and for my vesture they did cast lots. These things therefore the soldiers did* (John 19:24). The gospel quotes Psalm 22:18 by name as fulfilled at the cross — *They part my garments among them, and cast lots upon my vesture* (Psalm 22:18). The soldiers part the garments and, over the seamless coat, *cast lots for it... that the scripture might be fulfilled*: the psalm''s words become the soldiers'' deed, line for line.'),
+    ('canon','psalms',22,18,'canon','matthew',27,35,'free',
+      E'*And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots* (Matthew 27:35). The first gospel too names Psalm 22:18 as fulfilled — *They part my garments among them, and cast lots upon my vesture* (Psalm 22:18) — *that it might be fulfilled which was spoken by the prophet*. The dividing of the clothes and the lot cast over the vesture, sung by David, is done at the foot of the cross.'),
+
+    -- THREAD 6 (★★): I will declare thy name unto my brethren (the risen One to the brethren; the turn to the congregation)
+    ('canon','psalms',22,22,'canon','hebrews',2,12,'free',
+      E'*Saying, I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee* (Hebrews 2:12). The great turn of the psalm — from the dust of death to the gathered praise — is put in the mouth of the risen Son: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22). Hebrews takes the verse whole as His own word; the One who cried *why hast thou forsaken me* is heard, and now stands in the midst of the congregation to declare the Name.'),
+    ('canon','psalms',22,22,'canon','hebrews',2,11,'free',
+      E'*For both he that sanctifieth and they who are sanctified are all of one: for which cause he is not ashamed to call them brethren* (Hebrews 2:11). The setting of *I will declare thy name unto my brethren* (Psalm 22:22) is named here: *he is not ashamed to call them brethren*. The suffering One of the psalm, raised, owns the sanctified as His brethren — *all of one* — and in their midst declares the Name; the turn from affliction to the congregation is the turn from the cross to the gathered people.'),
+    ('canon','psalms',22,22,'canon','john',20,17,'free',
+      E'*Yahusha (Jesus) saith unto her, Touch me not; for I am not yet ascended to my Father: but go to my brethren, and say unto them, I ascend unto my Father, and your Father; and to my Elohim (God), and your Elohim (God)* (John 20:17). The risen Yahusha does the very thing of *I will declare thy name unto my brethren* (Psalm 22:22): on the first morning He sends word *to my brethren* and names the Father — *my Father, and your Father... my Elohim, and your Elohim*. The declaring of the Name to the brethren begins at the empty tomb, the psalm''s vindication breaking into the dawn.'),
+
+    -- THREAD 7 (★): All the ends of the world shall turn — a seed shall serve him (the ingathering; the gospel-result preached)
+    ('canon','psalms',22,27,'canon','luke',24,47,'free',
+      E'*And that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem* (Luke 24:47). The psalm''s ingathering — *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* (Psalm 22:27) — is the gospel-result of the suffering: the Name preached *among all nations, beginning at Jerusalem*, the kindreds of the nations turned to worship. The families of the earth are drawn IN to the One who *hath done this* — covenant-gathering, the nations brought to the covenant, never the covenant dissolved into them.'),
+    ('canon','psalms',22,31,'canon','luke',24,46,'free',
+      E'*And said unto them, Thus it is written, and thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day* (Luke 24:46). The psalm''s closing word — *they shall come, and shall declare his righteousness unto a people that shall be born, that he hath done this* (Psalm 22:31) — is the risen Messiah''s own reading of the suffering-and-rising: *it behoved Messiah to suffer, and to rise from the dead the third day*. The "he hath done this" the psalm declares to the people yet to be born is the finished work the gospel carries: the suffering ended, the vindication preached, the righteousness declared.'),
+    ('canon','psalms',22,26,'canon','luke',24,26,'free',
+      E'*Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26). The psalm''s turn to the satisfied and the living — *The meek shall eat and be satisfied: they shall praise Yahuah (LORD) that seek him: your heart shall live for ever* (Psalm 22:26) — follows the suffering into glory, exactly as the risen One opens the scriptures: *Ought not Messiah to have suffered these things, and to enter into his glory?* The afflicted who is heard becomes the One in whose vindication the meek eat and the heart lives for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-my-elohim-my-elohim-why-hast-thou-forsaken-me',
+       E'My Elohim, my Elohim, why hast thou forsaken me — the cry from the tree',
+       E'Psalm 22 opens with the loneliest words in all the Scriptures: *My Elohim (God), my Elohim (God), why hast thou forsaken me? why art thou so far from helping me, and from the words of my roaring?* (Psalm 22:1). David sings the cry of the afflicted one who feels the silence of heaven — *O my Elohim (God), I cry in the daytime, but thou hearest not* (Psalm 22:2) — yet holds fast: *But thou art holy, O thou that inhabitest the praises of Yashar''el (Israel)* (Psalm 22:3). A thousand years later the same cry breaks from the cross, almost letter for letter: *And about the ninth hour Yahusha (Jesus) cried with a loud voice, saying, Eli, Eli, lama sabachthani? that is to say, My Elohim (God), my Elohim (God), why hast thou forsaken me?* (Matthew 27:46), and *Eloi, Eloi, lama sabachthani... My Elohim, my Elohim, why hast thou forsaken me?* (Mark 15:34). This is the great crucifixion psalm, and the framework reads the cry through the Formed-and-the-Formless: the FORMED Son, the One who appeared and spoke and led Yashar''el in the Tanakh, took on flesh, and in that flesh — at the dust of death — cried to the Father. He IS Yahuah and HAS a Father; the forsaking is real suffering borne in the body, the afflicted one feeling the far silence — NOT a rupture of the one Elohim into co-equal persons, NOT a tearing of the Godhead in two. The psalm that opens with the cry of dereliction ends with the cry HEARD (Psalm 22:24); the Son who cried *why hast thou forsaken me* is the Son raised and vindicated, the whole psalm spanning the tree and the empty tomb.',
+       sv.verse_id, ev.verse_id, 'free', 22525
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-they-shoot-out-the-lip-let-him-deliver-him',
+       E'They shoot out the lip, let him deliver him — the mockers'' words foretold',
+       E'The psalm sees the scorn of the cross before there was a cross: *But I am a worm, and no man; a reproach of men, and despised of the people. All they that see me laugh me to scorn: they shoot out the lip, they shake the head, saying, He trusted on Yahuah (LORD) that he would deliver him: let him deliver him, seeing he delighted in him* (Psalm 22:6-8). The shaking head, the curled lip, the sneer that dares Yahuah to rescue — all written a thousand years before, then spoken almost unaltered at Golgotha. *And they that passed by reviled him, wagging their heads* (Matthew 27:39), and the chief priests sneered the psalm''s own taunt: *He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God)* (Matthew 27:43) — *let him deliver him now*, the very words of Psalm 22:8 out of their own mouths. The second gospel keeps the same picture: *they that passed by railed on him, wagging their heads* (Mark 15:29). Victims, not enemies: the mockery is the conduct the psalm foretold, the reproach the despised one bears — not a charge laid against a people, but the suffering of the afflicted one who is heard at the last. The mockers thought to expose a failed trust; they were reciting prophecy, fulfilling the psalm even as they jeered it.',
+       sv.verse_id, ev.verse_id, 'free', 22528
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-poured-out-like-water-the-dust-of-death',
+       E'I am poured out like water — brought into the dust of death',
+       E'The psalm pours out the very physiology of crucifixion centuries before the Romans made it a craft: *I am poured out like water, and all my bones are out of joint: my heart is like wax; it is melted in the midst of my bowels. My strength is dried up like a potsherd; and my tongue cleaveth to my jaws; and thou hast brought me into the dust of death* (Psalm 22:14-15). The body hung and stretched until the bones pull from joint, the heart failing, the strength baked dry as a broken shard, the tongue stuck to the jaws for thirst. At the cross the dried strength of the psalm finds its single word: *After this, Yahusha (Jesus) knowing that all things were now accomplished, that the scripture might be fulfilled, saith, I thirst* (John 19:28). The tongue that cleaved to the jaws speaks the thirst; the One brought *into the dust of death* tastes death for every man. David sang the agony in figure; the Formed Son endured it in the flesh — poured out like water, and on the third day raised from the dust.',
+       sv.verse_id, ev.verse_id, 'free', 22531
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-they-pierced-my-hands-and-my-feet',
+       E'They pierced my hands and my feet — the wound foretold and the nail-prints shown',
+       E'The psalm names the wound with terrible precision: *For dogs have compassed me: the assembly of the wicked have inclosed me: they pierced my hands and my feet* (Psalm 22:16). Hands and feet bored through — the very form of the death the Son would die. The Tanakh itself doubles the prophecy: *they shall look upon me whom they have pierced, and they shall mourn for him, as one mourneth for his only son, and shall be in bitterness for him, as one that is in bitterness for his firstborn* (Zechariah 12:10) — the pierced One the two houses of David and Jerusalem are brought at last to look upon and grieve. The gospel quotes the piercing as fulfilled: *And again another scripture saith, They shall look on him whom they pierced* (John 19:37). And the wound survives the grave: the risen One still bears the marks — *Except I shall see in his hands the print of the nails... I will not believe* (John 20:25), and He answers, *Reach hither thy finger, and behold my hands; and reach hither thy hand, and thrust it into my side* (John 20:27), and to the gathered ones, *Behold my hands and my feet, that it is I myself: handle me, and see* (Luke 24:39). The hands and feet pierced in the psalm are the hands and feet shown after the rising — the nail-prints carried through death into life, the proof of who He is. What was bored through on the tree is what is beheld at the resurrection.',
+       sv.verse_id, ev.verse_id, 'free', 22534
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-they-part-my-garments-and-cast-lots',
+       E'They part my garments and cast lots upon my vesture — fulfilled at the cross',
+       E'Among the bones told and the body stared upon — *I may tell all my bones: they look and stare upon me* (Psalm 22:17) — the psalm sees even the soldiers'' gambling: *They part my garments among them, and cast lots upon my vesture* (Psalm 22:18). The garments divided, and over the one seamless piece a lot cast. Both gospels name this verse by name as fulfilled at the foot of the cross. John watches it happen to the seamless coat: *Then the soldiers, when they had crucified Yahusha (Jesus), took his garments, and made four parts, to every soldier a part; and also his coat: now the coat was without seam, woven from the top throughout. They said therefore among themselves, Let us not rend it, but cast lots for it, whose it shall be: that the scripture might be fulfilled, which saith, They parted my raiment among them, and for my vesture they did cast lots* (John 19:23-24). And Matthew: *And they crucified him, and parted his garments, casting lots: that it might be fulfilled which was spoken by the prophet, They parted my garments among them, and upon my vesture did they cast lots* (Matthew 27:35). The detail is so exact that the gospel writers simply lay the psalm beside the deed: David''s words and the soldiers'' dice are the same line. The mockers stripped Him and gambled for the cloth, and in doing so wrote their names into the prophecy.',
+       sv.verse_id, ev.verse_id, 'free', 22537
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-i-will-declare-thy-name-unto-my-brethren',
+       E'I will declare thy name unto my brethren — the risen One in the midst of the congregation',
+       E'At verse 22 the psalm turns. The cry of dereliction is answered — *For he hath not despised nor abhorred the affliction of the afflicted; neither hath he hid his face from him; but when he cried unto him, he heard* (Psalm 22:24) — and the suffering one, vindicated, stands up in the gathered people: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22). This is the hinge of the whole psalm: from the dust of death to the declared Name, from the lone cry to the praise in the great congregation. The letter to the Hebrews puts the verse in the mouth of the RISEN Son: *For both he that sanctifieth and they who are sanctified are all of one: for which cause he is not ashamed to call them brethren, Saying, I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee* (Hebrews 2:11-12). The One who tasted death is not ashamed to call the sanctified His brethren, and in their midst declares the Name. The declaring begins at the empty tomb itself: *go to my brethren, and say unto them, I ascend unto my Father, and your Father; and to my Elohim (God), and your Elohim (God)* (John 20:17). And the congregation is named in the psalm — *all ye the seed of Jacob... all ye the seed of Yashar''el (Israel)* (Psalm 22:23): the two-house people in whose midst the risen One declares the Name He bore through the dust of death.',
+       sv.verse_id, ev.verse_id, 'free', 22540
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-22-the-ends-of-the-world-shall-turn-a-seed-shall-serve-him',
+       E'All the ends of the world shall turn — a seed shall serve him',
+       E'The psalm that began in the dust of death ends in the ingathering of the earth — the gospel-RESULT of the suffering. *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee. For the kingdom is the LORD''S: and he is the governor among the nations* (Psalm 22:27-28). The afflicted one heard becomes the One before whom the families of the earth bow; *A seed shall serve him; it shall be accounted to Yahuah (Lord) for a generation. They shall come, and shall declare his righteousness unto a people that shall be born, that he hath done this* (Psalm 22:30-31). The seed that serves, the people yet to be born, the righteousness declared — this is the harvest of the cross, and the risen Messiah reads it so: *Thus it is written, and thus it behoved Messiah (Christ) to suffer, and to rise from the dead the third day: And that repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem* (Luke 24:46-47), for *Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26). The two-house and seed weight is woven but kept covenant-gathering, never false-inclusion: *a seed shall serve him* and *all the kindreds of the nations* are drawn IN to worship the One who *hath done this* — the families of the earth brought to the covenant, beginning at Jerusalem, not the covenant dissolved into the nations. The psalm spans the whole arc: the forsaken cry, the pierced hands, the parted garments, the Name declared to the brethren, and at last the ends of the world turning to the One who has done it.',
+       sv.verse_id, ev.verse_id, 'free', 22543
+  FROM _s302_ps022_lookup sv, _s302_ps022_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=22 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Eli, Eli, lama sabachthani... My Elohim (God), my Elohim (God), why hast thou forsaken me?* (Matthew 27:46) — Yahusha cries Psalm 22:1 from the tree; the Formed Son in the flesh cries to the Father, real suffering, not a torn Godhead.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-my-elohim-my-elohim-why-hast-thou-forsaken-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Eloi, Eloi, lama sabachthani... My Elohim, my Elohim, why hast thou forsaken me?* (Mark 15:34) — the second gospel carries the same dereliction-cry of 22:1; one voice, the suffering one of the psalm and the suffering Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=15 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-my-elohim-my-elohim-why-hast-thou-forsaken-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they that passed by reviled him, wagging their heads* (Matthew 27:39) — the shaking head of *they shake the head* (22:7) at the cross; the foretold scorn fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-shoot-out-the-lip-let-him-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He trusted in Elohim (God); let him deliver him now, if he will have him* (Matthew 27:43) — the chief priests sneer the very taunt of *let him deliver him* (22:8) out of their own mouths.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-shoot-out-the-lip-let-him-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they that passed by railed on him, wagging their heads* (Mark 15:29) — the head-wagging scorn of *they shake the head* (22:7) kept in the second gospel.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=15 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-shoot-out-the-lip-let-him-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahusha (Jesus)... saith, I thirst* (John 19:28) — the dried strength and tongue cleaving to the jaws of *brought me into the dust of death* (22:15) answered in one word at the cross.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=15
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-poured-out-like-water-the-dust-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They shall look on him whom they pierced* (John 19:37) — the wound of *they pierced my hands and my feet* (22:16) named as fulfilled at the cross.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-pierced-my-hands-and-my-feet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall look upon me whom they have pierced... mourn for him, as one mourneth for his only son* (Zechariah 12:10) — the Tanakh lateral doubling *they pierced my hands and my feet* (22:16); the two houses brought to look on the pierced One.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-pierced-my-hands-and-my-feet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Except I shall see in his hands the print of the nails... I will not believe* (John 20:25) — the pierced hands of 22:16 still marked after the rising; T''oma (Thomas) asks for the nail-prints.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=20 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-pierced-my-hands-and-my-feet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*behold my hands; and reach hither thy hand, and thrust it into my side* (John 20:27) — the risen One offers the pierced hands of 22:16 to be handled, the nail-prints shown as proof.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=20 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-pierced-my-hands-and-my-feet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Behold my hands and my feet, that it is I myself: handle me, and see* (Luke 24:39) — the pierced hands AND feet of 22:16 shown to the gathered ones as the sign of who He is, raised.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-pierced-my-hands-and-my-feet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Let us not rend it, but cast lots for it... that the scripture might be fulfilled... They parted my raiment among them, and for my vesture they did cast lots* (John 19:24) — Psalm 22:18 quoted by name; the soldiers'' deed and David''s words one line.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-part-my-garments-and-cast-lots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*parted his garments, casting lots: that it might be fulfilled... They parted my garments among them, and upon my vesture did they cast lots* (Matthew 27:35) — the first gospel too names 22:18 as fulfilled at the cross.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-they-part-my-garments-and-cast-lots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will declare thy name unto my brethren, in the midst of the church will I sing praise unto thee* (Hebrews 2:12) — Psalm 22:22 put in the mouth of the risen Son; the cry heard, the Name declared in the midst of the congregation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-i-will-declare-thy-name-unto-my-brethren'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he is not ashamed to call them brethren* (Hebrews 2:11) — the setting of *unto my brethren* (22:22); the raised One owns the sanctified as His own, all of one.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-i-will-declare-thy-name-unto-my-brethren'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*go to my brethren... I ascend unto my Father, and your Father; and to my Elohim (God), and your Elohim (God)* (John 20:17) — the declaring of the Name to the brethren of 22:22 begins at the empty tomb.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-i-will-declare-thy-name-unto-my-brethren'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*repentance and remission of sins should be preached in his name among all nations, beginning at Jerusalem* (Luke 24:47) — the ingathering of *all the kindreds of the nations shall worship* (22:27) preached; covenant-gathering, never false-inclusion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=27
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-the-ends-of-the-world-shall-turn-a-seed-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*it behoved Messiah (Christ) to suffer, and to rise from the dead the third day* (Luke 24:46) — the closing *he hath done this* (22:31) read by the risen Messiah; the finished work declared to the people yet to be born.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=31
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-the-ends-of-the-world-shall-turn-a-seed-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Ought not Messiah (Christ) to have suffered these things, and to enter into his glory?* (Luke 24:26) — the meek satisfied and the heart living for ever (22:26) follows the suffering into glory.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps022_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=22 AND sv.verse_number=26
+  JOIN _s302_ps022_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=24 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-22-the-ends-of-the-world-shall-turn-a-seed-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_23.sql (Psalm 23) -----
+-- Chapter: Psalm 23 — THE SHEPHERD PSALM (Yahuah my shepherd → the Formed Son the good shepherd): *Yahuah Ra'ah (The LORD is my shepherd); I shall not want* — He maketh me lie down in green pastures, leadeth beside still waters, restoreth my soul, leadeth in the paths of righteousness for His name's sake; through the valley of the shadow of death *thou art with me*; a table prepared in the presence of enemies, the head anointed, the cup running over; *goodness and mercy shall follow me all the days of my life: and I will dwell in the house of Yahuah (LORD) for ever*. Read Yahuah-the-shepherd FORWARD to the Formed Son who took flesh, laid down His life for the sheep, and shepherds the regathered two-house flock.
+-- Tag: ps023   Temp view: _s302_ps023_lookup
+-- Sort band: base 22550, step 3 -> threads at 22550, 22553, 22556, 22559, 22562 (5 threads)
+-- Source of EVERY row: 'canon','psalms',23,v
+--
+-- Psalm 23 coverage:
+--   ★★ v.1 (Yahuah Ra'ah / The LORD is my shepherd; I shall not want)
+--        NT:     John 10:11 (I am the good shepherd: the good shepherd giveth his life for the sheep), John 10:14 (I am the good shepherd, and know my sheep), John 10:16 (other sheep I have... one fold, and one shepherd — the two-house ingathering), Hebrews 13:20 (that great shepherd of the sheep), 1 Peter 2:25 (the Shepherd and Bishop of your souls), 1 Peter 5:4 (the chief Shepherd) — THREAD 1 (load-bearing: Yahuah-the-shepherd = the Formed Son)
+--        Extras: none warranted (the shepherd-fulfillment weave is NT + Tanakh prophets; no extra-canonical witness adds to the shepherd type cleanly here)
+--        Tanakh: ★ Ezekiel 34:11-12 (I, even I, will both search my sheep, and seek them out), Ezekiel 34:23 (I will set up one shepherd over them... even my servant David), Isaiah 40:11 (He shall feed his flock like a shepherd) — THREAD 1 (Yahuah-the-shepherd Himself comes to gather, and sets up the one David-shepherd = the two-house regathering)
+--   v.2-3 (He maketh me to lie down in green pastures... He restoreth my soul: he leadeth me in the paths of righteousness for his name's sake)
+--        NT:     Revelation 7:17 (the Lamb... shall feed them, and shall lead them unto living fountains of waters) — THREAD 2 (the Lamb-shepherd leads to the living waters; the still waters consummated)
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 34:14-15 (I will feed them in a good pasture... there shall they lie in a good fold... I will cause them to lie down) — THREAD 2 (the same shepherd makes the flock lie down in good pasture)
+--   v.4 (Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me)
+--        NT:     Hebrews 13:5 (I will never leave thee, nor forsake thee), Hebrews 13:6 (Yahuah is my helper, and I will not fear what man shall do unto me) — THREAD 3 (the presence in death = the Immanuel comfort; I will not fear)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the *thou art with me* presence is carried forward by Hebrews; Isaiah 41:10 fear-not sits in its own pack)
+--   v.5 (Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over)
+--        NT:     Revelation 7:16 (They shall hunger no more, neither thirst any more), Revelation 7:17 (the Lamb... shall feed them) — THREAD 4 (the prepared table consummated: the flock fed and satisfied before the throne)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the table/anointing forward-weave is the throne-feast of Rev 7; no closer Tanakh lateral than the shepherd-feeds of Ezek 34, already at THREADS 1-2)
+--   ★ v.6 (Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of Yahuah for ever)
+--        NT:     Revelation 21:3 (the tabernacle of Elohim is with men, and he will dwell with them), Revelation 22:3-4 (his servants shall serve him: And they shall see his face) — THREAD 5 (the house of Yahuah for ever = the dwelling-with-Yahuah consummated, the everlasting habitation)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the dwell-for-ever forward-weave is the New Jerusalem dwelling of Rev 21-22)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-23-yahuah-is-my-shepherd-the-good-shepherd — NT (John, Hebrews, 1 Peter) + Tanakh (Ezekiel, Isaiah) [free] (★★ Yahuah-the-shepherd = the Formed Son; one-shepherd-over-the-regathered-flock = two-house ingathering)
+--   2. psalm-23-green-pastures-still-waters-he-restoreth-my-soul — NT (Revelation) + Tanakh (Ezekiel) [free] (the lie-down-in-good-pasture / lead-to-living-waters consummation)
+--   3. psalm-23-the-valley-of-the-shadow-of-death-thou-art-with-me — NT (Hebrews) [free] (the presence in death = Immanuel comfort; I will not fear)
+--   4. psalm-23-thou-preparest-a-table-before-me-my-cup-runneth-over — NT (Revelation) [free] (the prepared table consummated: hunger no more before the throne)
+--   5. psalm-23-i-will-dwell-in-the-house-of-yahuah-for-ever — NT (Revelation) [free] (★ the house of Yahuah for ever = the everlasting dwelling-with-Yahuah)
+--
+-- Framing notes:
+--   ★★ YAHUAH THE SHEPHERD = THE FORMED SON (THREAD 1): *Yahuah Ra'ah (The LORD is my shepherd); I shall not want* (Psalm 23:1). Read through the Formed-and-the-Formless (lens #4): the Yahuah who shepherds in the psalm is the Formed Son who took flesh and said *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11) — the same One, now in flesh, laying down His life. NOT a co-equal-persons grammar, NOT a modalist collapse: the Formed Son is Yahuah and has a Father. Hebrews names Him *that great shepherd of the sheep* (13:20); Kepha (Peter) *the Shepherd and Bishop of your souls* (1 Peter 2:25) and *the chief Shepherd* (5:4). And the two-house weight: Ezekiel 34 has Yahuah Himself come to *search my sheep, and seek them out* (34:11) and *set up one shepherd over them, even my servant David* (34:23) — the scattered flock gathered and the one David-shepherd over them, which John 10:16 names *other sheep I have, which are not of this fold: them also I must bring... one fold, and one shepherd* — the regathering of the scattered house of Yashar'el (Israel) into one flock under one shepherd. Isaiah 40:11 sings the same coming One: *He shall feed his flock like a shepherd*.
+--   GREEN PASTURES / LIVING WATERS (THREAD 2): *He maketh me to lie down in green pastures... He restoreth my soul* (Psalm 23:2-3). Ezekiel's shepherd-Yahuah does the very thing — *I will feed them in a good pasture... there shall they lie in a good fold* (34:14) — and Revelation consummates it: *the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters* (7:17). The still waters the shepherd leads beside become the living fountains the Lamb leads to.
+--   THE VALLEY / THOU ART WITH ME (THREAD 3): *though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me* (Psalm 23:4). The comfort is the PRESENCE — Immanuel, Yahuah-with-us, even in death. Hebrews quotes the covenant word *I will never leave thee, nor forsake thee* (13:5) and draws the same fearlessness: *Yahuah (Lord) is my helper, and I will not fear what man shall do unto me* (13:6). The rod and staff comfort because the Shepherd Himself is in the valley.
+--   THE PREPARED TABLE (THREAD 4): *Thou preparest a table before me in the presence of mine enemies... my cup runneth over* (Psalm 23:5). The shepherd-host spreads the feast; Revelation shows it consummated before the throne — *They shall hunger no more, neither thirst any more* (7:16), *the Lamb... shall feed them* (7:17). The table set in the enemies' presence becomes the throne-feast where every want is filled.
+--   ★ THE HOUSE FOR EVER (THREAD 5): *I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6). The shepherd-psalm ends in the everlasting dwelling — and Revelation names it: *the tabernacle of Elohim (God) is with men, and he will dwell with them* (21:3), *his servants shall serve him: And they shall see his face* (22:3-4). The house of Yahuah for ever is the New Jerusalem dwelling-with-Yahuah, the flock home with the Shepherd at the last.
+--   EXTRAS: NONE WARRANTED anywhere in Psalm 23. The shepherd type's fulfillment is carried entirely by the NT (John 10, Hebrews 13, 1 Peter, Revelation 7/21/22) and the Tanakh shepherd-prophets (Ezekiel 34, Isaiah 40). No clean extra-canonical witness (1 Enoch, Jubilees, Jasher, the Apocrypha, the Pseudepigrapha) adds to the shepherd/table/house weave here; recorded deliberately, not forced. ALL FIVE THREADS ARE 'free' (every member is canon Tanakh or NT).
+--   VERSES WITH NO STANDALONE THREAD: none — every verse-block (v.1; v.2-3; v.4; v.5; v.6) carries a thread.
+
+CREATE TEMP VIEW _s302_ps023_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Yahuah is my shepherd — the Formed good shepherd; the one-shepherd-over-the-regathered-flock
+    ('canon','psalms',23,1,'canon','john',10,11,'free',
+      E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). When the psalm sings *Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1), the Yahuah who shepherds is the Formed Son who took flesh and said *I am the good shepherd*. Read through the Formed-and-the-Formless: the One who shepherded Yashar''el (Israel) in the Tanakh is the One who *giveth his life for the sheep* — Yahuah the Shepherd, and He has a Father; not two co-equal persons, not a collapse, but the Formed Son who is the Shepherd of the psalm now laying down His life.'),
+    ('canon','psalms',23,1,'canon','john',10,14,'free',
+      E'*I am the good shepherd, and know my sheep, and am known of mine* (John 10:14). The trust of *I shall not want* (Psalm 23:1) rests on being KNOWN by the Shepherd — *I am the good shepherd, and know my sheep, and am known of mine*. The sheep that lacks nothing is the sheep the Shepherd knows by name; the Formed Son who is Yahuah-my-shepherd knows His own and is known of them.'),
+    ('canon','psalms',23,1,'canon','john',10,16,'free',
+      E'*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd* (John 10:16). The shepherd of *Yahuah is my shepherd* (Psalm 23:1) is the Shepherd who gathers the scattered into ONE flock — *other sheep I have, which are not of this fold... one fold, and one shepherd*. This is the two-house ingathering: the scattered house of Yashar''el (Israel) and the house of Yahudah (Judah) brought back under one Shepherd, the divided flock made one.'),
+    ('canon','psalms',23,1,'canon','hebrews',13,20,'free',
+      E'*Now the Elohim (God) of peace, that brought again from the dead our Lord Yahusha (Lord Jesus), that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20). The Shepherd of *Yahuah is my shepherd* (Psalm 23:1) is named in the letter as *that great shepherd of the sheep*, raised from the dead *through the blood of the everlasting covenant* — the Good Shepherd who laid down His life for the flock and was brought again, the living Shepherd the psalm trusts.'),
+    ('canon','psalms',23,1,'canon','1-peter',2,25,'free',
+      E'*For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). The flock of *Yahuah is my shepherd* (Psalm 23:1) is the flock that strayed and is brought home — *ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls*. The Shepherd who keeps so that the sheep *shall not want* is the One the straying are RETURNED to; the regathering of the lost sheep is His own work.'),
+    ('canon','psalms',23,1,'canon','1-peter',5,4,'free',
+      E'*And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away* (1 Peter 5:4). The Shepherd of *Yahuah is my shepherd* (Psalm 23:1) is *the chief Shepherd* whose appearing crowns the flock — the under-shepherds feed Elohim''s heritage, but He is the Chief over them all, the One the whole psalm leans upon for the want that never comes.'),
+    ('canon','psalms',23,1,'canon','ezekiel',34,11,'free',
+      E'*For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11). The confession *Yahuah is my shepherd* (Psalm 23:1) is the promise Ezekiel makes plain: Yahuah Himself will not leave the flock to hirelings — *I, even I, will both search my sheep, and seek them out*. The Shepherd of the psalm is the Shepherd who comes in person to gather the scattered sheep.'),
+    ('canon','psalms',23,1,'canon','ezekiel',34,23,'free',
+      E'*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The single Shepherd of *Yahuah is my shepherd* (Psalm 23:1) is the ONE shepherd Yahuah promises to set over the regathered flock — *one shepherd over them... even my servant David*. The scattered two houses are gathered under one David-shepherd; the Good Shepherd of John 10 is this promised One, root and offspring of David, over one flock.'),
+    ('canon','psalms',23,1,'canon','isaiah',40,11,'free',
+      E'*He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom, and shall gently lead those that are with young* (Isaiah 40:11). Isaiah sings the coming One in the very tenderness of *Yahuah is my shepherd; I shall not want* (Psalm 23:1) — *He shall feed his flock like a shepherd... carry them in his bosom, and shall gently lead*. The Yahuah who comes with strong hand (40:10) is the Shepherd who carries the lambs in His bosom; might and gentleness are one in Him.'),
+
+    -- THREAD 2: Green pastures, still waters, He restoreth my soul (the good-pasture lie-down; the living-waters consummation)
+    ('canon','psalms',23,2,'canon','ezekiel',34,14,'free',
+      E'*I will feed them in a good pasture, and upon the high mountains of Yashar''el (Israel) shall their fold be: there shall they lie in a good fold, and in a fat pasture shall they feed upon the mountains of Yashar''el (Israel)* (Ezekiel 34:14). The shepherd who *maketh me to lie down in green pastures* (Psalm 23:2) is the shepherd-Yahuah of Ezekiel who *will feed them in a good pasture... there shall they lie in a good fold*. The green pasture of the psalm is the good fold of the regathered flock on the mountains of Yashar''el (Israel) — the gathered sheep made to lie down in plenty.'),
+    ('canon','psalms',23,3,'canon','ezekiel',34,15,'free',
+      E'*I will feed my flock, and I will cause them to lie down, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 34:15). The restoring, leading shepherd of *He restoreth my soul: he leadeth me in the paths of righteousness for his name''s sake* (Psalm 23:3) is the Yahuah who declares *I will feed my flock, and I will cause them to lie down*. The leading-in-righteousness of the psalm is the shepherd''s own act — He feeds, He restores, He causes the flock to rest, for His name''s sake.'),
+    ('canon','psalms',23,2,'canon','revelation',7,17,'free',
+      E'*For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). The shepherd who *leadeth me beside the still waters* (Psalm 23:2) is consummated in the Lamb-Shepherd who *shall feed them, and shall lead them unto living fountains of waters*. The still waters the Shepherd leads beside become the living fountains the Lamb leads to — the same Shepherd, the same flock, the leading brought to its end.'),
+
+    -- THREAD 3: The valley of the shadow of death — thou art with me (the Immanuel comfort)
+    ('canon','psalms',23,4,'canon','hebrews',13,5,'free',
+      E'*Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). The comfort of *thou art with me* (Psalm 23:4) is the covenant word Hebrews quotes: *I will never leave thee, nor forsake thee*. The fearlessness in the valley of the shadow of death is not the sheep''s courage but the Shepherd''s presence — He who promised never to leave is the *thou* who is WITH us in the dark valley.'),
+    ('canon','psalms',23,4,'canon','hebrews',13,6,'free',
+      E'*So that we may boldly say, Yahuah (Lord) is my helper, and I will not fear what man shall do unto me* (Hebrews 13:6). The *I will fear no evil* of the valley (Psalm 23:4) is the very boldness Hebrews draws: *Yahuah (Lord) is my helper, and I will not fear what man shall do unto me*. Because the Shepherd is with us — *thy rod and thy staff they comfort me* — there is no evil in the shadow of death to dread; the presence answers the fear.'),
+
+    -- THREAD 4: Thou preparest a table before me — my cup runneth over (the throne-feast consummated)
+    ('canon','psalms',23,5,'canon','revelation',7,16,'free',
+      E'*They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat* (Revelation 7:16). The table prepared by the shepherd-host — *Thou preparest a table before me in the presence of mine enemies... my cup runneth over* (Psalm 23:5) — is consummated where the flock *shall hunger no more, neither thirst any more*. The cup that runs over in the enemies'' presence becomes the never-thirst of the throne; every want of the gathered sheep is filled.'),
+    ('canon','psalms',23,5,'canon','revelation',7,17,'free',
+      E'*For the Lamb which is in the midst of the throne shall feed them... and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). The shepherd-host who *preparest a table before me... thou anointest my head with oil; my cup runneth over* (Psalm 23:5) is the Lamb who *shall feed them* before the throne and wipe away all tears. The table spread in the presence of enemies becomes the throne-feast where the Shepherd Himself is the host and the flock wants for nothing.'),
+
+    -- THREAD 5 (★): I will dwell in the house of Yahuah for ever (the everlasting dwelling-with-Yahuah)
+    ('canon','psalms',23,6,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The psalm''s last word — *I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6) — is consummated where *the tabernacle of Elohim (God) is with men, and he will dwell with them*. The house of Yahuah for ever is the New Jerusalem dwelling: the flock home with the Shepherd, Yahuah dwelling with His people without end.'),
+    ('canon','psalms',23,6,'canon','revelation',22,3,'free',
+      E'*And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). The dwelling of *I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6) is the house where *the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* — no more curse, the everlasting habitation where the sheep dwell with the Shepherd and serve Him for ever.'),
+    ('canon','psalms',23,6,'canon','revelation',22,4,'free',
+      E'*And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The forever-dwelling of *I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6) is the place where *they shall see his face; and his name shall be in their foreheads*. The goodness and mercy that followed all the days of life end in this: the flock face to face with the Shepherd in His house, marked with His name, at home for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-23-yahuah-is-my-shepherd-the-good-shepherd',
+       E'Yahuah is my shepherd — the Formed Son the good shepherd, one flock under one shepherd',
+       E'*Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1). The whole psalm rests on this: the Most High is the Shepherd, and the sheep under Him lacks nothing. Read through the Formed-and-the-Formless: the Yahuah who shepherded Yashar''el (Israel) in the Tanakh is the Formed Son who took flesh and said *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11), *I am the good shepherd, and know my sheep, and am known of mine* (John 10:14). He is Yahuah the Shepherd, and He has a Father — not two co-equal persons, not a collapse into one, but the Formed Son who is the Shepherd of the psalm now laying down His life for the flock. The letter names Him *that great shepherd of the sheep* brought again from the dead *through the blood of the everlasting covenant* (Hebrews 13:20); Kepha (Peter) names Him *the Shepherd and Bishop of your souls* to whom the straying are *returned* (1 Peter 2:25), and *the chief Shepherd* whose appearing crowns the flock (1 Peter 5:4). And the two-house weight is written into the shepherd-promise itself: *Behold, I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11) — Yahuah comes in person — *And I will set up one shepherd over them... even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The scattered flock is gathered under ONE David-shepherd; and the Good Shepherd names it Himself: *other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd* (John 10:16) — the house of Yashar''el (Israel) scattered among the nations and the house of Yahudah (Judah) brought back into one flock under one Shepherd, the divided sticks made one. Isaiah sings the same coming One: *He shall feed his flock like a shepherd: he shall gather the lambs with his arm, and carry them in his bosom* (Isaiah 40:11). The Shepherd of the psalm is the Shepherd who comes, who dies, who gathers, and who is known of His own.',
+       sv.verse_id, ev.verse_id, 'free', 22550
+  FROM _s302_ps023_lookup sv, _s302_ps023_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=23 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-23-green-pastures-still-waters-he-restoreth-my-soul',
+       E'Green pastures and still waters — He restoreth my soul, the good fold and the living fountains',
+       E'*He maketh me to lie down in green pastures: he leadeth me beside the still waters. He restoreth my soul: he leadeth me in the paths of righteousness for his name''s sake* (Psalm 23:2-3). The Shepherd does the leading and the resting and the restoring — the sheep is made to lie down, led to water, restored, guided in right paths, and all of it *for his name''s sake*. The same shepherd-Yahuah of Ezekiel does the very thing for the regathered flock: *I will feed them in a good pasture... there shall they lie in a good fold, and in a fat pasture shall they feed upon the mountains of Yashar''el (Israel)* (Ezekiel 34:14), *I will feed my flock, and I will cause them to lie down, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 34:15). The green pasture of the psalm is the good fold of the gathered sheep on the mountains of Yashar''el (Israel). And Revelation carries the still-waters leading to its consummation: *the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). The still waters the Shepherd leads beside in the psalm become the living fountains the Lamb leads to at the last — the same Shepherd, the same leading, brought home.',
+       sv.verse_id, ev.verse_id, 'free', 22553
+  FROM _s302_ps023_lookup sv, _s302_ps023_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=23 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-23-the-valley-of-the-shadow-of-death-thou-art-with-me',
+       E'The valley of the shadow of death — thou art with me (the Shepherd''s presence, the fearless walk)',
+       E'*Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me* (Psalm 23:4). The deepest comfort of the psalm is not a place but a PRESENCE — *thou art with me*. Through the darkest valley the sheep fears no evil, not by its own courage but because the Shepherd Himself walks in the dark with it, His rod and staff at hand. The letter to the Hebrews names the ground of that fearlessness in the covenant word: *for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5), and draws the very boldness of the psalm: *So that we may boldly say, Yahuah (Lord) is my helper, and I will not fear what man shall do unto me* (Hebrews 13:6). The *I will fear no evil* of the valley and the *I will not fear what man shall do unto me* of the letter are one confidence — the Shepherd who promised never to leave is the *thou* who is WITH the flock in the shadow of death. This is the Immanuel comfort: Yahuah-with-us, even in the dark.',
+       sv.verse_id, ev.verse_id, 'free', 22556
+  FROM _s302_ps023_lookup sv, _s302_ps023_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=23 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-23-thou-preparest-a-table-before-me-my-cup-runneth-over',
+       E'Thou preparest a table before me — my cup runneth over (the throne-feast consummated)',
+       E'*Thou preparest a table before me in the presence of mine enemies: thou anointest my head with oil; my cup runneth over* (Psalm 23:5). The Shepherd turns Host: a table spread, the head anointed, the cup overflowing — and all of it set out *in the presence of mine enemies*, the flock fed in safety while the foe looks on. Revelation shows that table consummated before the throne. *They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat* (Revelation 7:16) — the cup that runs over becomes the thirst that never returns. *For the Lamb which is in the midst of the throne shall feed them... and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17) — the same Shepherd-Host who prepared the table in the enemies'' presence is the Lamb who feeds the flock at the throne, where every want is filled and every tear wiped. The overflowing cup of the psalm is the foretaste of the throne-feast where the gathered sheep hunger and thirst no more.',
+       sv.verse_id, ev.verse_id, 'free', 22559
+  FROM _s302_ps023_lookup sv, _s302_ps023_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=23 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-23-i-will-dwell-in-the-house-of-yahuah-for-ever',
+       E'I will dwell in the house of Yahuah for ever — the everlasting dwelling with the Shepherd',
+       E'*Surely goodness and mercy shall follow me all the days of my life: and I will dwell in the house of Yahuah (LORD) for ever* (Psalm 23:6). The shepherd-psalm ends not in the pasture but in the HOUSE — goodness and mercy at the heels all the days of life, and then the everlasting dwelling with Yahuah. Revelation names that house. *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3) — the dwelling-with-Yahuah made forever. *And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3) — the house where the flock serves the Shepherd without end. *And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4) — the sheep at last face to face with the Shepherd, marked with His name. The house of Yahuah for ever is the New Jerusalem: the flock home with the One who shepherded them through the green pastures, the dark valley, and the spread table — dwelling with Yahuah, and wanting for nothing, world without end.',
+       sv.verse_id, ev.verse_id, 'free', 22562
+  FROM _s302_ps023_lookup sv, _s302_ps023_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=23 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11) — Yahuah-my-shepherd (23:1) is the Formed Son in flesh, laying down His life for the flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I am the good shepherd, and know my sheep, and am known of mine* (John 10:14) — the *I shall not want* (23:1) of the sheep the Shepherd knows by name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*other sheep I have, which are not of this fold... one fold, and one shepherd* (John 10:16) — the one Shepherd of 23:1 gathers the scattered two houses into one flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20) — the Shepherd of 23:1 raised from the dead, the living Good Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25) — the straying sheep brought home to the Shepherd of 23:1; the regathering of the lost.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*when the chief Shepherd shall appear, ye shall receive a crown of glory* (1 Peter 5:4) — the Shepherd of 23:1 is the chief Shepherd over all, the One the psalm leans upon.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11) — the Shepherd of 23:1 comes in person to gather the scattered flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*I will set up one shepherd over them... even my servant David* (Ezekiel 34:23) — the one Shepherd of 23:1 is the David-shepherd over the regathered two-house flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*He shall feed his flock like a shepherd... carry them in his bosom* (Isaiah 40:11) — the coming One sung in the tenderness of *Yahuah is my shepherd; I shall not want* (23:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-yahuah-is-my-shepherd-the-good-shepherd'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will feed them in a good pasture... there shall they lie in a good fold* (Ezekiel 34:14) — the green pastures of 23:2 = the good fold of the regathered flock on the mountains of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-green-pastures-still-waters-he-restoreth-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will feed my flock, and I will cause them to lie down* (Ezekiel 34:15) — the restoring, leading shepherd of 23:3 is Yahuah''s own act for His flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-green-pastures-still-waters-he-restoreth-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the Lamb... shall feed them, and shall lead them unto living fountains of waters* (Revelation 7:17) — the still waters of 23:2 consummated in the living fountains the Lamb leads to.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-green-pastures-still-waters-he-restoreth-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will never leave thee, nor forsake thee* (Hebrews 13:5) — the ground of *thou art with me* (23:4): the Shepherd''s covenant promise of presence in the valley.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-the-valley-of-the-shadow-of-death-thou-art-with-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (Lord) is my helper, and I will not fear what man shall do unto me* (Hebrews 13:6) — the same boldness as *I will fear no evil* (23:4); the presence answers the fear.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-the-valley-of-the-shadow-of-death-thou-art-with-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They shall hunger no more, neither thirst any more* (Revelation 7:16) — the overflowing cup of 23:5 becomes the never-thirst of the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-thou-preparest-a-table-before-me-my-cup-runneth-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Lamb... shall feed them... and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17) — the prepared table of 23:5 consummated: the Shepherd-Host feeds the flock at the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-thou-preparest-a-table-before-me-my-cup-runneth-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the house of Yahuah for ever (23:6) = the New Jerusalem dwelling-with-Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-i-will-dwell-in-the-house-of-yahuah-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3) — the house of 23:6 where the flock serves the Shepherd without end.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-i-will-dwell-in-the-house-of-yahuah-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they shall see his face; and his name shall be in their foreheads* (Revelation 22:4) — the forever-dwelling of 23:6: the flock face to face with the Shepherd, marked with His name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps023_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s302_ps023_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-23-i-will-dwell-in-the-house-of-yahuah-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_24.sql (Psalm 24) -----
+-- Chapter: Psalm 24 — THE EARTH IS YAHUAH'S; THE CLEAN HANDS ASCEND THE HILL; THE KING OF GLORY ENTERS (a processional/enthronement psalm): "The earth is the LORD'S, and the fulness thereof... For he hath founded it upon the seas"; "Who shall ascend into the hill of Yahuah? ... He that hath clean hands, and a pure heart"; "This is the generation of them that seek him"; "Lift up your heads, O ye gates... and the King of glory shall come in. Who is this King of glory? Yahuah strong and mighty, Yahuah mighty in battle... Yahuah Tseva'ot (LORD of hosts), he is the King of glory."
+-- Tag: ps024   Temp view: _s302_ps024_lookup
+-- Sort band: base 22575, step 3 -> threads at 22575, 22578, 22581 (3 threads)
+-- Source of EVERY row: 'canon','psalms',24,v
+--
+-- Psalm 24 coverage:
+--   ★ v.1-2 (The earth is the LORD'S, and the fulness thereof; the world, and they that dwell therein. For he hath founded it upon the seas, and established it upon the floods)
+--        NT:     ★ 1 Corinthians 10:26 (For the earth is Yahuah's, and the fulness thereof) — Sha'ul (Paul) quotes Psalm 24:1 verbatim; 1 Corinthians 10:28 (repeats the quote: for the earth is Yahuah's, and the fulness thereof) — THREAD 1 (load-bearing: the apostle hands the psalm forward as the ground of liberty)
+--        Extras: none warranted (no clean creation-by-the-Word parallel in the extras set tied to this verse-block; the founding-on-the-seas is carried by the Genesis lateral)
+--        Tanakh: ★ Genesis 1:9-10 (let the waters under the heaven be gathered together... and the gathering together of the waters called he Seas) — the founding of the earth UPON the seas, the Formed Son the agent of the founding word — THREAD 1
+--   ★ v.3-6 (Who shall ascend into the hill of Yahuah? or who shall stand in his holy place? He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully... This is the generation of them that seek him)
+--        NT:     ★ Matthew 5:8 (Blessed are the pure in heart: for they shall see Elohim) — the pure heart that ascends shall SEE Elohim; the conduct-keeping that ascends, never lawless — THREAD 2 (load-bearing NT forward)
+--        Extras: none warranted (no clean ascend-the-hill conduct parallel in the extras set)
+--        Tanakh: ★ Psalm 15:1-2 (Yahuah, who shall abide in thy tabernacle? who shall dwell in thy holy hill? He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart) — the close twin psalm, the entrance liturgy of the holy hill — THREAD 2
+--   ★★ v.7-10 (Lift up your heads, O ye gates... and the King of glory shall come in. Who is this King of glory? Yahuah strong and mighty, Yahuah mighty in battle... Yahuah Tseva'ot (LORD of hosts), he is the King of glory)
+--        NT:     ★ 1 Corinthians 2:8 (they would not have crucified Yahuah (Lord) of glory) — the King of glory = the Lord of glory, the Formed Son; Acts 1:9-11 (he was taken up; and a cloud received him out of their sight... shall so come in like manner) — the ascension/enthronement of the King of glory through the everlasting doors — THREAD 3 (load-bearing: King of glory entering = the Formed Son ascended, who is Yahuah of hosts)
+--        Extras: none warranted (no clean Zion-entry / enthronement parallel in the extras set warranted here)
+--        Tanakh: ★ Psalm 68:18 (Thou hast ascended on high, thou hast led captivity captive... that Yahuah Elohim might dwell among them) — the lateral ascent-to-the-holy-hill, Yahuah going up to His dwelling (the text Ephesians 4:8 quotes, kept here as its own Tanakh lateral) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. psalm-24-the-earth-is-the-lords-and-the-fulness-thereof — NT (1 Corinthians 10:26, 10:28) + Tanakh (Genesis 1:9-10) [free] (★ Paul quotes the psalm; the earth founded by the Word)
+--   2. psalm-24-who-shall-ascend-the-clean-hands-and-pure-heart — NT (Matthew 5:8) + Tanakh (Psalm 15:1-2) [free] (★ the conduct that ascends the holy hill; the pure heart shall see Elohim)
+--   3. psalm-24-the-king-of-glory-shall-come-in — NT (1 Corinthians 2:8, Acts 1:9, 1:11) + Tanakh (Psalm 68:18) [free] (★★ the King of glory = Yahuah of hosts = the Formed Son ascended/enthroned)
+--
+-- Framing notes:
+--   ★ THE EARTH IS YAHUAH'S (THREAD 1): *The earth is the LORD'S, and the fulness thereof* (24:1). Sha'ul (Paul) lifts it verbatim into the dispute over meat: *For the earth is Yahuah's (Lord's), and the fulness thereof* (1 Corinthians 10:26, repeated 10:28). The psalm grounds the apostle: all is the Creator's, made by His word. *For he hath founded it upon the seas, and established it upon the floods* (24:2) reaches back to Genesis 1, where the Formed Son speaks the dry land out of the waters: *let the waters under the heaven be gathered together unto one place, and let the dry land appear* (Genesis 1:9). The founding is by the Word — the Formed agent of the Most High's creating speech — never a co-equal-persons grammar; the One who spoke the seas into their place is the One the psalm sings as owner of all.
+--   ★ WHO SHALL ASCEND (THREAD 2): *Who shall ascend into the hill of Yahuah? ... He that hath clean hands, and a pure heart* (24:3-4). This is the entrance liturgy of the holy hill, and Psalm 15 is its close twin: *Yahuah, who shall abide in thy tabernacle? ... He that walketh uprightly, and worketh righteousness* (Psalm 15:1-2). The ascent is conduct-bound — clean hands, a pure heart, no vanity, no deceit — never lawless ascent. Yahusha (Jesus) carries the pure-heart requirement forward whole: *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). The generation that seeks Yahuah is the generation that keeps clean hands; the seeing of Elohim is for the pure heart that ascends.
+--   ★★ THE KING OF GLORY (THREAD 3): *Lift up your heads, O ye gates... and the King of glory shall come in. Who is this King of glory? Yahuah (LORD) strong and mighty, Yahuah (LORD) mighty in battle* (24:7-8), *Yahuah Tseva'ot (LORD of hosts), he is the King of glory* (24:10). Read through the Formed-and-the-Formless: the King of glory who enters the everlasting doors is the Formed Son, who IS Yahuah of hosts and is mighty in the seed-war battle — *they would not have crucified Yahuah (Lord) of glory* (1 Corinthians 2:8). The entering through the gates is the ascension and enthronement: *he was taken up; and a cloud received him out of their sight... this same Yahusha (Jesus)... shall so come in like manner* (Acts 1:9,11). The lateral Tanakh ascent: *Thou hast ascended on high, thou hast led captivity captive... that Yahuah Elohim (the LORD God) might dwell among them* (Psalm 68:18) — Yahuah going up to His holy hill. King-of-glory = Yahuah strong and mighty = the Formed Son: no co-equal-persons grammar, no modalist collapse; the One mighty in battle who took flesh, ascended, and is enthroned.
+--   EXTRAS: none warranted for this chapter. No clean creation-by-the-Word, ascend-the-hill, or Zion-entry/enthronement parallel in the restored extras set (1 Enoch, Jubilees, Jasher, the Apocrypha, the Pseudepigrapha, Adam-Eve, etc.) was found to bear this processional psalm without forcing — recorded as deliberately weighed and declined, not silently skipped. All three threads are therefore [free] (every member canon).
+--   VERSES WITH NO ADD: none as a distinct gap — every verse-block (v.1-2, v.3-6, v.7-10) is carried by a thread. v.5-6 (He shall receive the blessing from Yahuah... This is the generation of them that seek him) and v.9 (the second Lift-up-your-heads refrain) are folded into THREADS 2 and 3 respectively, not given separate threads.
+
+CREATE TEMP VIEW _s302_ps024_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The earth is the LORD'S, and the fulness thereof (Paul quotes the psalm; the earth founded by the Word)
+    ('canon','psalms',24,1,'canon','1-corinthians',10,26,'free',
+      E'*For the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:26). Sha''ul (Paul) lifts the opening of the psalm word-for-word — *The earth is the LORD''S, and the fulness thereof; the world, and they that dwell therein* (Psalm 24:1) — and makes it the ground of the believer''s liberty at the table: all that is sold in the market is the Creator''s, for the whole earth and its fulness belong to Yahuah. The psalm''s confession becomes the apostle''s settled rule.'),
+    ('canon','psalms',24,1,'canon','1-corinthians',10,28,'free',
+      E'*But if any man say unto you, This is offered in sacrifice unto idols, eat not for his sake that shewed it, and for conscience sake: for the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:28). Sha''ul (Paul) repeats the psalm a second time as the reason behind the conscience-rule — *for the earth is Yahuah''s, and the fulness thereof* — driving home *The earth is the LORD''S, and the fulness thereof* (Psalm 24:1): because all is the Creator''s, nothing is unclean of itself, yet love yields for the brother''s sake.'),
+    ('canon','psalms',24,2,'canon','genesis',1,9,'free',
+      E'*And Elohim (God) said, Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so* (Genesis 1:9). The psalm''s *For he hath founded it upon the seas, and established it upon the floods* (Psalm 24:2) reaches straight back to the third day, when the dry land was spoken up out of the waters. The earth is the Maker''s because His word founded it upon the seas — the Formed who spoke is the agent of the founding.'),
+    ('canon','psalms',24,2,'canon','genesis',1,10,'free',
+      E'*And Elohim (God) called the dry land Earth; and the gathering together of the waters called he Seas: and Elohim (God) saw that it was good* (Genesis 1:10). The very *seas* and *floods* the psalm names — *he hath founded it upon the seas, and established it upon the floods* (Psalm 24:2) — are the Seas gathered and named at creation. The earth set firm above the waters is the work of the creating Word, the ground of the psalm''s claim that the whole earth is Yahuah''s.'),
+
+    -- THREAD 2: Who shall ascend the hill — clean hands and a pure heart (the conduct that ascends; the pure heart shall see Elohim)
+    ('canon','psalms',24,4,'canon','matthew',5,8,'free',
+      E'*Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). The psalm asks who may ascend and answers *He that hath clean hands, and a pure heart* (Psalm 24:4); Yahusha (Jesus) carries the pure heart forward to its end — the pure in heart *shall see Elohim*. The conduct that ascends the holy hill is the conduct that beholds the Most High; the requirement is not loosened in the kingdom but fulfilled — clean hands and a pure heart, never lawless ascent.'),
+    ('canon','psalms',24,3,'canon','psalms',15,1,'free',
+      E'*Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill?* (Psalm 15:1). The twin psalm asks the same question as *Who shall ascend into the hill of Yahuah? or who shall stand in his holy place?* (Psalm 24:3) — the entrance liturgy of the holy hill, the gate-question put to all who would draw near to Yahuah''s dwelling.'),
+    ('canon','psalms',24,4,'canon','psalms',15,2,'free',
+      E'*He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2). Psalm 15 answers the ascent-question exactly as Psalm 24 does — *He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully* (Psalm 24:4): the one who walks uprightly and speaks truth in his heart. The two psalms together are one liturgy of the clean conduct that abides in the holy hill; the seeking of Yahuah and the keeping of His way are one walk.'),
+
+    -- THREAD 3 (★★): The King of glory shall come in (the King of glory = Yahuah of hosts = the Formed Son ascended/enthroned)
+    ('canon','psalms',24,7,'canon','1-corinthians',2,8,'free',
+      E'*Which none of the princes of this world knew: for had they known it, they would not have crucified Yahuah (Lord) of glory* (1 Corinthians 2:8). The King who enters the everlasting doors — *the King of glory shall come in* (Psalm 24:7) — is the *Yahuah (Lord) of glory* Sha''ul (Paul) names: the Formed Son who is Yahuah strong and mighty, the One the rulers crucified not knowing the glory they handled. The King of glory of the psalm and the Lord of glory of the gospel are one.'),
+    ('canon','psalms',24,7,'canon','acts',1,9,'free',
+      E'*And when he had spoken these things, while they beheld, he was taken up; and a cloud received him out of their sight* (Acts 1:9). The cry *Lift up your heads, O ye gates... and the King of glory shall come in* (Psalm 24:7) is the ascension: the Formed Son taken up, the cloud receiving him, the everlasting doors opening for the King of glory to enter and be enthroned. The processional of the psalm is the going-up of the risen One to His holy hill.'),
+    ('canon','psalms',24,7,'canon','acts',1,11,'free',
+      E'*Which also said, Ye men of Galilee, why stand ye gazing up into heaven? this same Yahusha (Jesus), which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven* (Acts 1:11). The King of glory who enters the gates — *the King of glory shall come in* (Psalm 24:7) — is *this same Yahusha (Jesus)* taken up, who *shall so come in like manner*. The same One who ascends through the everlasting doors will descend again the same way; the enthronement of the psalm and the promised return are bound in the one Formed Son.'),
+    ('canon','psalms',24,8,'canon','psalms',68,18,'free',
+      E'*Thou hast ascended on high, thou hast led captivity captive: thou hast received gifts for men; yea, for the rebellious also, that Yahuah Elohim (the LORD God) might dwell among them* (Psalm 68:18). The King of glory who is *Yahuah (LORD) strong and mighty, Yahuah (LORD) mighty in battle* (Psalm 24:8) is the One who has *ascended on high* to His holy hill, leading captivity captive. The lateral psalm sings the same ascent the gates fling open for — Yahuah going up to dwell among His people, the mighty-in-battle One enthroned.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-24-the-earth-is-the-lords-and-the-fulness-thereof',
+       E'The earth is the LORD''S, and the fulness thereof — founded upon the seas',
+       E'The psalm opens with a confession of the whole creation: *The earth is the LORD''S, and the fulness thereof; the world, and they that dwell therein* (Psalm 24:1), *For he hath founded it upon the seas, and established it upon the floods* (Psalm 24:2). All is the Creator''s — the ground of the whole psalm''s claim of His kingship. Sha''ul (Paul) takes the line up verbatim and makes it the rule of the believer''s liberty at the table: *For the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:26), and again *eat not for his sake that shewed it, and for conscience sake: for the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:28) — because all is the Maker''s, nothing is unclean of itself, yet love yields for the brother. And the founding *upon the seas* reaches back to the third day of creation, when the dry land was spoken up out of the waters: *Let the waters under the heaven be gathered together unto one place, and let the dry land appear: and it was so* (Genesis 1:9), *and the gathering together of the waters called he Seas: and Elohim (God) saw that it was good* (Genesis 1:10). The earth set firm above the floods is the work of the creating Word — the Formed who spoke, the agent of the Most High''s founding speech, never a co-equal-persons grammar. The One who set the seas in their place owns the earth and its fulness.',
+       sv.verse_id, ev.verse_id, 'free', 22575
+  FROM _s302_ps024_lookup sv, _s302_ps024_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=24 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-24-who-shall-ascend-the-clean-hands-and-pure-heart',
+       E'Who shall ascend the hill — clean hands and a pure heart',
+       E'The processional turns to the gate-question: *Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place?* (Psalm 24:3). And the answer is conduct, not confession alone: *He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully* (Psalm 24:4). The one who ascends *shall receive the blessing from Yahuah (LORD), and righteousness from the Elohim (God) of his salvation* (Psalm 24:5) — *This is the generation of them that seek him* (Psalm 24:6). The seeking and the clean hands are one walk; the ascent is bound to the keeping. Psalm 15 is the close twin, the same entrance liturgy of the holy hill: *Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill?* (Psalm 15:1) — *He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2). And Yahusha (Jesus) carries the pure-heart requirement forward to its end, never loosening it but fulfilling it: *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). The conduct that ascends the holy hill is the conduct that beholds the Most High; the generation that seeks Yahuah with clean hands is the generation that shall see Him. This is never lawless ascent — the pure heart and the clean hands are the very gate.',
+       sv.verse_id, ev.verse_id, 'free', 22578
+  FROM _s302_ps024_lookup sv, _s302_ps024_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=24 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-24-the-king-of-glory-shall-come-in',
+       E'Lift up your heads, O ye gates — the King of glory shall come in',
+       E'The psalm climbs to its great cry, the gates flung open for the One who comes: *Lift up your heads, O ye gates; and be ye lift up, ye everlasting doors; and the King of glory shall come in* (Psalm 24:7). And the question is asked and answered twice: *Who is this King of glory? Yahuah (LORD) strong and mighty, Yahuah (LORD) mighty in battle* (Psalm 24:8), *Yahuah Tseva''ot (LORD of hosts), he is the King of glory* (Psalm 24:10). Read through the Formed-and-the-Formless: the King of glory who enters the everlasting doors is the Formed Son, who IS Yahuah of hosts and is mighty in the seed-war battle — and Sha''ul (Paul) names him by this very title: *they would not have crucified Yahuah (Lord) of glory* (1 Corinthians 2:8). The King of glory of the psalm and the Lord of glory of the gospel are one. The entering through the gates is the ascension and enthronement: *while they beheld, he was taken up; and a cloud received him out of their sight* (Acts 1:9) — *this same Yahusha (Jesus), which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven* (Acts 1:11): the One who ascends through the everlasting doors will descend the same way. And the lateral psalm sings the same ascent the gates open for: *Thou hast ascended on high, thou hast led captivity captive... that Yahuah Elohim (the LORD God) might dwell among them* (Psalm 68:18) — Yahuah going up to His holy hill to dwell with His people. King-of-glory = Yahuah strong and mighty = the Formed Son: no co-equal-persons grammar, no modalist collapse; the One mighty in battle who took flesh, ascended, and is enthroned the King of glory.',
+       sv.verse_id, ev.verse_id, 'free', 22581
+  FROM _s302_ps024_lookup sv, _s302_ps024_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=24 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *For the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:26) — Sha''ul (Paul) quotes Psalm 24:1 verbatim as the ground of the believer''s liberty: all is the Creator''s.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-earth-is-the-lords-and-the-fulness-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*eat not... for the earth is Yahuah''s (Lord''s), and the fulness thereof* (1 Corinthians 10:28) — Paul repeats Psalm 24:1 a second time as the reason behind the conscience-rule; love yields, yet all is the Maker''s.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-earth-is-the-lords-and-the-fulness-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Let the waters under the heaven be gathered together... and let the dry land appear* (Genesis 1:9) — the founding *upon the seas* of 24:2 is the third-day word; the Formed who spoke is the agent of the founding.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-earth-is-the-lords-and-the-fulness-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the gathering together of the waters called he Seas: and Elohim (God) saw that it was good* (Genesis 1:10) — the *seas* and *floods* of 24:2 are the Seas named at creation; the earth set firm above the waters is the creating Word''s work.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-earth-is-the-lords-and-the-fulness-thereof'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8) — the *pure heart* that ascends (24:4) is the heart that shall see Elohim; the requirement fulfilled, never loosened.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-who-shall-ascend-the-clean-hands-and-pure-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD), who shall abide in thy tabernacle? who shall dwell in thy holy hill?* (Psalm 15:1) — the twin psalm asks the same gate-question as *Who shall ascend into the hill of Yahuah?* (24:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-who-shall-ascend-the-clean-hands-and-pure-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2) — Psalm 15 answers the ascent-question exactly as *clean hands, and a pure heart* (24:4); one liturgy of the clean conduct.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-who-shall-ascend-the-clean-hands-and-pure-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they would not have crucified Yahuah (Lord) of glory* (1 Corinthians 2:8) — the King of glory who comes in (24:7) is the Lord of glory, the Formed Son; Paul names him by the psalm''s own title.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-king-of-glory-shall-come-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he was taken up; and a cloud received him out of their sight* (Acts 1:9) — the everlasting doors opening for *the King of glory* to come in (24:7) is the ascension of the Formed Son to His holy hill.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-king-of-glory-shall-come-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*this same Yahusha (Jesus), which is taken up... shall so come in like manner* (Acts 1:11) — the King who enters the gates (24:7) is the One taken up who shall return the same way; enthronement and promised return in the one Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-king-of-glory-shall-come-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou hast ascended on high, thou hast led captivity captive... that Yahuah Elohim (the LORD God) might dwell among them* (Psalm 68:18) — the lateral ascent of *Yahuah strong and mighty* (24:8); Yahuah going up to His holy hill to dwell with His people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps024_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s302_ps024_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-24-the-king-of-glory-shall-come-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
