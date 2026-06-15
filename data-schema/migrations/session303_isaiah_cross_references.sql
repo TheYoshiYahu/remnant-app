@@ -24747,6 +24747,1245 @@ SELECT t.id, cr.id, 7, E'★ *Cursed be the man that trusteth in man, and maketh
  WHERE t.slug='isaiah-20-ashamed-of-egypt-their-glory-whither-we-flee-for-help'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_21.sql (Isaiah 21) -----
+-- Chapter: Isaiah 21 — THE BURDEN OF THE DESERT OF THE SEA (Babylon's fall); the WATCHMAN set
+-- to declare what he sees; the burdens of Dumah ("Watchman, what of the night?") and Arabia.
+-- The keystone is 21:9 — *Babylon is fallen, is fallen; and all the graven images of her gods
+-- he hath broken unto the ground* — the cry Revelation takes up word for word over the final
+-- world-system. Frame Babylon as a SYSTEM judged (victims-not-enemies): the prophet does not
+-- hate a people; he reports the collapse of the proud idolatrous power that spoiled the nations
+-- and Zion. And the watchman set *to declare what he seeth* (21:6) is the faithful witness — the
+-- one who stands on the tower and tells the truth he is shown, the office Ezekiel and Habakkuk
+-- carry. The haunting night-oracle of Dumah (*Watchman, what of the night?*, 21:11-12) holds the
+-- whole apparatus together: the morning cometh, and also the night.
+-- Tag: isa21   Temp view: _s303_isa21_lookup
+-- Sort band: base 26500, step 3 -> threads at 26500, 26503, 26506 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',21,v
+--
+-- Isaiah 21 coverage:
+--   v.1-2 (The burden of the desert of the sea... Go up, O Elam: besiege, O Media)
+--        NT:     none warranted (the Elam/Media summons against Babylon is carried in THREAD 1's
+--                prose as the historical means of the fall; the NT weave is on the fall-cry of v.9)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 51:11 (Yahuah hath raised up the spirit of the kings of the Medes...
+--                his device is against Babylon) and Daniel 5:28/5:30 (the Medes/Persians) — woven
+--                in THREAD 1 prose; the Media-summons binds to the parallel Babylon oracle
+--   v.3-5 (my loins filled with pain... Prepare the table... arise, ye princes, and anoint the shield)
+--        NT:     none warranted (the prophet's anguish + the interrupted feast = Belshazzar's
+--                night feast; folded into THREAD 1's Daniel 5 weave)
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 5:1-5 (the feast, the wine, the writing on the wall) — woven THREAD 1
+--   ★ v.6-8 (Go, set a watchman, let him declare what he seeth... And he cried, A lion: My lord, I
+--          stand continually upon the watchtower in the daytime, and I am set in my ward whole nights)
+--        NT:     none warranted distinct (the faithful-witness motif's NT fill is the night/day
+--                summons of THREAD 3; the watchman's office itself is best lit by Tanakh prophets)
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 33:7 (I have set thee a watchman unto the house of Yashar'el), ★ Habakkuk
+--                2:1 (I will stand upon my watch, and set me upon the tower) — THREAD 2
+--   ★★ v.9 (Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto
+--          the ground)
+--        NT:     ★★ Revelation 14:8 (Babylon is fallen, is fallen, that great city), ★★ Revelation
+--                18:2 (Babylon the great is fallen, is fallen) — THREAD 1 (the fall-cry taken up verbatim)
+--        Extras: none warranted (the canon carries the doubled cry in full)
+--        Tanakh: ★ Jeremiah 51:8 (Babylon is suddenly fallen and destroyed), ★ Daniel 5:30 (In that
+--                night was Belshazzar the king of the Chaldeans slain) — THREAD 1 (the parallel oracle
+--                + the historic night the city fell)
+--   v.10 (O my threshing, and the corn of my floor... have I declared unto you)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — Yashar'el is the threshed grain; the burden is *declared* to the
+--                covenant people (the faithful-witness note of THREAD 2)
+--   ★ v.11-12 (The burden of Dumah... Watchman, what of the night? Watchman, what of the night?
+--          The watchman said, The morning cometh, and also the night)
+--        NT:     ★ Romans 13:12 (The night is far spent, the day is at hand... cast off the works of
+--                darkness, and let us put on the armour of light) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: none separate (the night/morning question stands; its forward weave is Romans 13)
+--   v.13-17 (The burden upon Arabia... all the glory of Kedar shall fail)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted — the Arabia/Kedar burden is a dated oracle ("within a year") held
+--                in prose; no library add forced; recorded, not silently skipped
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-21-babylon-is-fallen-is-fallen — NT (Revelation 14, Revelation 18) + Tanakh (Jeremiah 51,
+--      Daniel 5) [free]  (★★ the doubled fall-cry; Babylon as the SYSTEM Revelation takes up)
+--   2. isaiah-21-set-a-watchman-let-him-declare-what-he-seeth — Tanakh (Ezekiel 33, Habakkuk 2) [free]
+--      (★ the faithful watchman who tells what he is shown)
+--   3. isaiah-21-watchman-what-of-the-night — NT (Romans 13) [free]
+--      (the night-oracle of Dumah; the morning cometh, the day at hand)
+--
+-- Framing notes:
+--   ★★ BABYLON IS FALLEN (THREAD 1): The watchman's report is the doubled cry — *And he answered and
+--      said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto
+--      the ground* (21:9). Revelation takes the very words for the final world-system: *Babylon is
+--      fallen, is fallen, that great city* (Revelation 14:8); *Babylon the great is fallen, is fallen*
+--      (Revelation 18:2). The parallel oracle in Jeremiah sounds it too — *Babylon is suddenly fallen
+--      and destroyed* (Jeremiah 51:8) — and Daniel records the very night it came: *In that night was
+--      Belshazzar the king of the Chaldeans slain* (Daniel 5:30). Frame it as a SYSTEM judged, not a
+--      people hated: the proud, idolatrous, Zion-spoiling power whose graven gods are broken to the
+--      ground. Babylon is the TYPE; Revelation reads Isaiah's burden forward to the last great city.
+--   ★ THE WATCHMAN (THREAD 2): *For thus hath Yahuah (Lord) said unto me, Go, set a watchman, let him
+--      declare what he seeth* (21:6); *I stand continually upon the watchtower in the daytime, and I am
+--      set in my ward whole nights* (21:8). The watchman's office is the faithful witness who tells the
+--      truth he is shown — Ezekiel given the same charge: *So thou, O son of Adam, I have set thee a
+--      watchman unto the house of Yashar'el (Israel)* (Ezekiel 33:7); Habakkuk taking the same post:
+--      *I will stand upon my watch, and set me upon the tower, and will watch to see what he will say
+--      unto me* (Habakkuk 2:1). The prophet does not invent the word; he declares what he sees.
+--   THE NIGHT-ORACLE (THREAD 3): *Watchman, what of the night? Watchman, what of the night? The
+--      watchman said, The morning cometh, and also the night* (21:11-12). The cry out of Seir is the
+--      ache of those in the dark asking how near the dawn. Paul answers in the same key: *The night is
+--      far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put
+--      on the armour of light* (Romans 13:12). The morning cometh — but also the night; the question
+--      *if ye will enquire, enquire ye: return, come* (21:12) is the call still open.
+--   VERSES WITH NO ADD: v.13-17 (the Arabia/Kedar burden) — a dated regional oracle ("within a year,
+--      according to the years of an hireling"); no NT/extras/Tanakh weave warranted, held in prose.
+--      Recorded deliberately, not silently skipped.
+
+CREATE TEMP VIEW _s303_isa21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Babylon is fallen, is fallen — the doubled fall-cry, Babylon as the SYSTEM
+    ('canon','isaiah',21,9,'canon','revelation',14,8,'free',
+      E'*And there followed another angel, saying, Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8). The watchman''s report — *Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9) — is taken up word for word over the final world-system. Babylon is the TYPE: the proud, idolatrous power that made the nations drunk; Revelation reads Isaiah''s burden forward to the last great city. A system judged, not a people hated.'),
+    ('canon','isaiah',21,9,'canon','revelation',18,2,'free',
+      E'*And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit* (Revelation 18:2). The doubled cry the watchman raised — *Babylon is fallen, is fallen* (Isaiah 21:9) — sounds again over the great city at the end. The graven images *broken unto the ground* become the haunt of devils; the idolatrous system collapses, and the cry Isaiah heard is the cry John hears.'),
+    ('canon','isaiah',21,9,'canon','jeremiah',51,8,'free',
+      E'*Babylon is suddenly fallen and destroyed: howl for her; take balm for her pain, if so be she may be healed* (Jeremiah 51:8). Jeremiah''s parallel Babylon oracle sounds the very fall the watchman declares — *Babylon is fallen, is fallen* (Isaiah 21:9). The two burdens are one word: the golden cup that made all the earth drunken (Jeremiah 51:7) is suddenly broken; the system that spoiled Zion comes down.'),
+    ('canon','isaiah',21,9,'canon','daniel',5,30,'free',
+      E'*In that night was Belshazzar the king of the Chaldeans slain* (Daniel 5:30). The watchman''s cry — *Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9) — is the very night recorded: while the king praised the gods of gold and silver over the looted vessels of the temple (Daniel 5:4, 5:23), the hand wrote *Thy kingdom is divided, and given to the Medes and Persians* (Daniel 5:28), and the city fell. The prophet''s burden is history''s ledger.'),
+
+    -- THREAD 3 (★): Watchman, what of the night — the night-oracle of Dumah, the morning cometh
+    ('canon','isaiah',21,11,'canon','romans',13,12,'free',
+      E'*The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light* (Romans 13:12). The cry out of Seir — *Watchman, what of the night? Watchman, what of the night?* (Isaiah 21:11) — is the ache of those in the dark asking how near the dawn; Paul answers in the same key: *the day is at hand*. The morning cometh; therefore wake, and put on the light.'),
+
+    -- THREAD 2 (★): Set a watchman, let him declare what he seeth — the faithful witness
+    ('canon','isaiah',21,6,'canon','ezekiel',33,7,'free',
+      E'*So thou, O son of Adam, I have set thee a watchman unto the house of Yashar''el (Israel); therefore thou shalt hear the word at my mouth, and warn them from me* (Ezekiel 33:7). The charge laid on Isaiah''s watchman — *Go, set a watchman, let him declare what he seeth* (Isaiah 21:6) — is the same office Ezekiel is given: the faithful witness set on the wall who hears the word and tells it. He does not invent the message; he declares what he is shown.'),
+    ('canon','isaiah',21,8,'canon','habakkuk',2,1,'free',
+      E'*I will stand upon my watch, and set me upon the tower, and will watch to see what he will say unto me, and what I shall answer when I am reproved* (Habakkuk 2:1). The watchman''s posture — *I stand continually upon the watchtower in the daytime, and I am set in my ward whole nights* (Isaiah 21:8) — is Habakkuk''s own: the prophet takes his station on the tower and waits to see what Yahuah will say. The faithful watcher tells the truth he is shown, by day and through the night.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-21-babylon-is-fallen-is-fallen',
+       E'Babylon is fallen, is fallen — the cry Revelation takes up over the world-system',
+       E'The watchman set on the tower (21:6-8) sees the chariots come and raises the cry: *And he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9). This is the burden of the desert of the sea — *Go up, O Elam: besiege, O Media* (21:2) — the proud, idolatrous power that spoiled Zion brought low. Revelation takes the very words for the final world-system: *Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8); *Babylon the great is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2). Babylon is the TYPE — the system, not a people — that Revelation reads forward to the last great city. Jeremiah''s parallel oracle sounds the same fall: *Babylon is suddenly fallen and destroyed* (Jeremiah 51:8), for she was *a golden cup in the LORD''S hand, that made all the earth drunken* (Jeremiah 51:7). And Daniel records the very night it came: while Belshazzar praised the gods of gold and silver over the temple''s looted vessels, the hand wrote *Thy kingdom is divided, and given to the Medes and Persians* (Daniel 5:28), and *in that night was Belshazzar the king of the Chaldeans slain* (Daniel 5:30). The graven images broken to the ground (21:9) are the verdict on every idol-system that exalts itself against heaven. Read it as judgment on a SYSTEM, victims not enemies: the cry is the collapse of the proud power, never hatred of a nation.',
+       sv.verse_id, ev.verse_id, 'free', 26500
+  FROM _s303_isa21_lookup sv, _s303_isa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=21 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-21-set-a-watchman-let-him-declare-what-he-seeth',
+       E'Set a watchman, let him declare what he seeth — the faithful witness on the tower',
+       E'The whole burden hangs on a faithful witness: *For thus hath Yahuah (Lord) said unto me, Go, set a watchman, let him declare what he seeth* (Isaiah 21:6). The watchman takes his post and keeps it: *And he cried, A lion: My lord, I stand continually upon the watchtower in the daytime, and I am set in my ward whole nights* (21:8) — and when the chariots come he reports exactly what he sees, the fall of Babylon (21:9). This is the prophet''s own office, the one who tells the truth he is shown and warns the people. Ezekiel is given the same charge: *So thou, O son of Adam, I have set thee a watchman unto the house of Yashar''el (Israel); therefore thou shalt hear the word at my mouth, and warn them from me* (Ezekiel 33:7) — and the watchman who sees the sword and blows not the trumpet bears the people''s blood (Ezekiel 33:6). Habakkuk takes the very same station: *I will stand upon my watch, and set me upon the tower, and will watch to see what he will say unto me* (Habakkuk 2:1). The watchman does not invent the message; he hears the word at Yahuah''s mouth and declares what he sees. And so Isaiah declares his burden to the threshed people: *that which I have heard of Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel), have I declared unto you* (21:10).',
+       sv.verse_id, ev.verse_id, 'free', 26503
+  FROM _s303_isa21_lookup sv, _s303_isa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=21 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-21-watchman-what-of-the-night',
+       E'Watchman, what of the night? — the morning cometh, and also the night',
+       E'The burden of Dumah is the haunting night-oracle: *He calleth to me out of Seir, Watchman, what of the night? Watchman, what of the night? The watchman said, The morning cometh, and also the night: if ye will enquire, enquire ye: return, come* (Isaiah 21:11-12). It is the cry of those in the dark asking the man on the tower how near the dawn — and the answer holds both: morning is coming, but so is more night, and the call *return, come* stays open to whoever will enquire. Paul answers in the same key, the watchman''s word carried forward: *The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armour of light* (Romans 13:12). The morning cometh; therefore wake out of sleep (Romans 13:11), put off the dark, and put on the light. The question the watchman is asked — what of the night? — is answered by the dawn that is at hand and the call still open to return.',
+       sv.verse_id, ev.verse_id, 'free', 26506
+  FROM _s303_isa21_lookup sv, _s303_isa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=21 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Babylon is fallen, is fallen, that great city* (Revelation 14:8) — the watchman''s doubled cry of Isaiah 21:9 taken up word for word over the final world-system; Babylon the TYPE.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-babylon-is-fallen-is-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Babylon the great is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2) — the doubled cry of Isaiah 21:9 sounds again; the graven images broken to the ground become the haunt of devils.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-babylon-is-fallen-is-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Babylon is suddenly fallen and destroyed* (Jeremiah 51:8) — the parallel Babylon oracle; the golden cup that made all the earth drunken (Jeremiah 51:7) is suddenly broken.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-babylon-is-fallen-is-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *In that night was Belshazzar the king of the Chaldeans slain* (Daniel 5:30) — the very night the watchman''s cry came true; *Thy kingdom is divided, and given to the Medes and Persians* (Daniel 5:28).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=5 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-babylon-is-fallen-is-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I have set thee a watchman unto the house of Yashar''el (Israel)... and warn them from me* (Ezekiel 33:7) — the same office laid on Isaiah''s watchman *to declare what he seeth* (Isaiah 21:6); the faithful witness who tells what he is shown.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-set-a-watchman-let-him-declare-what-he-seeth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will stand upon my watch, and set me upon the tower, and will watch to see what he will say unto me* (Habakkuk 2:1) — the watchman''s posture of Isaiah 21:8 (*I stand continually upon the watchtower... whole nights*); the prophet waits to see, then declares.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-set-a-watchman-let-him-declare-what-he-seeth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The night is far spent, the day is at hand... put on the armour of light* (Romans 13:12) — Paul answers the cry *Watchman, what of the night?* (Isaiah 21:11) in the same key: the morning cometh, so wake and put on the light.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=21 AND sv.verse_number=11
+  JOIN _s303_isa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-21-watchman-what-of-the-night'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_23.sql (Isaiah 23) -----
+-- Chapter: Isaiah 23 — THE BURDEN OF TYRE: the crowning merchant-city brought low, her pride abased
+-- by Yahuah's purpose, and — the surprising turn — her traffic at last consecrated to Yahuah. *Who hath
+-- taken this counsel against Tyre, the crowning city, whose merchants are princes, whose traffickers are
+-- the honourable of the earth? Yahuah Tseva'ot (LORD of hosts) hath purposed it, to stain the pride of
+-- all glory, and to bring into contempt all the honourable of the earth* (23:8-9). Tyre is the TYPE of
+-- the trading-power judged: her sea-commerce lament (Ezekiel 27), her prince who said *I am a Elohim*
+-- (Ezekiel 28:2 — the creature usurping the Creator, the Formless and the Formed), the pride-abased
+-- motif where *Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11,17). The merchant-city
+-- fallen is the very template Revelation takes up for Babylon-the-merchant — *the merchants of the earth
+-- shall weep and mourn over her... What city is like unto this great city!* (Revelation 18:11,18). And
+-- the reversal: *her merchandise and her hire shall be holiness to Yahuah (LORD)... for them that dwell
+-- before Yahuah (LORD)* (23:18) — the wealth of the nations brought home to Zion (Zechariah 14:20-21
+-- *HOLINESS UNTO THE Yahuah*; Isaiah 60:5-9 the ships of Tarshish bringing silver and gold *unto the
+-- name of Yahuah*), even Tyre's later faith owned by the Messiah (*if the mighty works... had been done
+-- in Tyre and Sidon, they would have repented*, Matthew 11:21). Frame: pride-of-the-SYSTEM abased
+-- (victims-not-enemies); wealth consecrated as HOMAGE to Yahuah's house, never replacement (Rom 11
+-- guard); the *I am a Elohim* boast is the creature usurping the Creator — the Formed/Formless lens.
+-- Tag: isa23   Temp view: _s303_isa23_lookup
+-- Sort band: base 26550, step 3 -> threads at 26550, 26553, 26556 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',23,v
+--
+-- Isaiah 23 coverage:
+--   ★ v.8-9 (Who hath taken this counsel against Tyre, the crowning city, whose merchants are princes...
+--          Yahuah Tseva'ot hath purposed it, to stain the pride of all glory)
+--        NT:     none warranted distinct here (the NT weave on the fallen-city is the Rev 18 thread, THREAD 2)
+--        Extras: ★ Sirach (Ecclesiasticus) 26:29 (A merchant shall hardly keep himself from doing wrong;
+--                and an huckster shall not be freed from sin) — THREAD 1 (the wisdom-witness on the
+--                merchant's pride/sin)
+--        Tanakh: ★ Ezekiel 27:3 (O Tyrus, thou hast said, I am of perfect beauty), ★★ Ezekiel 28:2 (I am
+--                a Elohim, I sit in the seat of Elohim... yet thou art a man), ★ Ezekiel 28:9 (Wilt thou
+--                yet say... I am Elohim? but thou shalt be a man), ★ Isaiah 2:11 (the lofty looks of man
+--                shall be humbled... Yahuah alone shall be exalted), ★ Isaiah 2:17 (the loftiness of man
+--                shall be bowed down) — THREAD 1 (the proud trading-power abased by Yahuah's purpose;
+--                the I-am-a-Elohim usurpation = creature against Creator, Formed/Formless)
+--   ★ v.8 + v.11 + v.14 (whose merchants are princes / a commandment against the merchant city / howl,
+--          ye ships of Tarshish, your strength is laid waste)
+--        NT:     ★★ Revelation 18:11 (the merchants of the earth shall weep and mourn over her),
+--                ★ Revelation 18:15 (the merchants... made rich by her, shall stand afar off),
+--                ★ Revelation 18:17 (every shipmaster... as many as trade by sea, stood afar off),
+--                ★★ Revelation 18:18 (What city is like unto this great city!),
+--                ★ Revelation 18:19 (Alas, alas, that great city... made desolate) — THREAD 2 (the
+--                merchant-lament is the very template Revelation takes up for Babylon-the-merchant)
+--        Extras: none warranted (the cargo-lament forward-weave is the NT's own taking-up of Tyre)
+--        Tanakh: ★★ Ezekiel 27:32 (What city is like Tyrus, like the destroyed in the midst of the sea?)
+--                — THREAD 2 (the OT merchant-city dirge Revelation echoes verbatim)
+--   ★ v.15-18 (Tyre's hire/merchandise shall be holiness to Yahuah... for them that dwell before Yahuah)
+--        NT:     ★ Matthew 11:21 (if the mighty works... had been done in Tyre and Sidon, they would
+--                have repented long ago), ★ Matthew 11:22 (It shall be more tolerable for Tyre and Sidon
+--                at the day of judgment) — THREAD 3 (Tyre's surprising turn toward faith, owned by the
+--                Messiah)
+--        Extras: none warranted (clean Tyre-mercy witness is the NT + the Zion-ingathering Tanakh)
+--        Tanakh: ★★ Zechariah 14:20 (In that day shall there be upon the bells of the horses, HOLINESS
+--                UNTO THE Yahuah), ★★ Zechariah 14:21 (every pot in Jerusalem... shall be holiness unto
+--                Yahuah Tseva'ot), ★ Isaiah 60:5 (the abundance of the sea shall be converted unto thee,
+--                the forces of the Gentiles shall come unto thee), ★ Isaiah 60:9 (the ships of Tarshish
+--                first, to bring thy sons from far, their silver and their gold with them, unto the name
+--                of Yahuah) — THREAD 3 (the wealth of the nations consecrated to Yahuah's house at Zion;
+--                homage, not replacement)
+--   v.1-7 (Howl, ye ships of Tarshish... thou whom the merchants of Zidon... have replenished... her own
+--          feet shall carry her afar off) — woven into THREAD 1 (the prideful merchant-glory) and THREAD 2
+--          (the ships of Tarshish howling) as preface; no separate add forced. RECORDED, not skipped.
+--   v.10-14 (Pass through thy land... Yahuah hath given a commandment against the merchant city... your
+--          strength is laid waste) — the merchant-city judgment-clause itself, bound into THREAD 2;
+--          v.13 (the land of the Chaldeans/Assyrian) held in prose as historical frame. RECORDED.
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased
+--        — Tanakh (Ezekiel 27, Ezekiel 28, Isaiah 2) + Extras (Sirach 26) [extras]
+--        (★ the proud trading-power abased by Yahuah's purpose; the I-am-a-Elohim boast = creature
+--         usurping Creator, the Formed and the Formless; pride-of-the-system, victims-not-enemies)
+--   2. isaiah-23-what-city-is-like-the-merchant-city-fallen
+--        — NT (Revelation 18) + Tanakh (Ezekiel 27) [free]
+--        (★ the merchant-city's cargo-lament is the template Revelation takes up for Babylon-the-merchant)
+--   3. isaiah-23-her-merchandise-shall-be-holiness-to-yahuah
+--        — NT (Matthew 11) + Tanakh (Zechariah 14, Isaiah 60) [free]
+--        (★ the reversal: even Tyre's traffic ends in holiness before Yahuah; the wealth of the nations
+--         brought home to Zion as homage, not replacement — Rom 11 guard)
+--
+-- Framing notes:
+--   ★ THE PRIDE OF THE CROWNING CITY ABASED (THREAD 1): *Who hath taken this counsel against Tyre, the
+--      crowning city, whose merchants are princes, whose traffickers are the honourable of the earth?
+--      Yahuah Tseva'ot (LORD of hosts) hath purposed it, to stain the pride of all glory, and to bring
+--      into contempt all the honourable of the earth* (23:8-9). Tyre is the type of the trading-power
+--      whose wealth swelled into pride. Ezekiel draws the same self-exalting boast: *O Tyrus, thou hast
+--      said, I am of perfect beauty* (Ezekiel 27:3), and then the prince's blasphemy: *Because thine
+--      heart is lifted up, and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God),
+--      in the midst of the seas; yet thou art a man, and not Elohim (God)* (Ezekiel 28:2). This is the
+--      creature usurping the Creator — the very inversion of the Formed and the Formless: a man setting
+--      *thine heart as the heart of Elohim*, when the only One who is Yahuah-yet-bears-a-Father is the
+--      Formed Son, never a self-deifying king. Yahuah answers the boast: *Wilt thou yet say before him
+--      that slayeth thee, I am Elohim? but thou shalt be a man, and no Elohim* (Ezekiel 28:9). Isaiah's
+--      own day-of-Yahuah word is the rule: *The lofty looks of man shall be humbled, and the haughtiness
+--      of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11),
+--      *and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:17). The wisdom-witness names the
+--      merchant's snare: *A merchant shall hardly keep himself from doing wrong; and an huckster shall
+--      not be freed from sin* (Sirach 26:29). The SYSTEM of proud traffic is abased — not a people hated;
+--      victims, not enemies.
+--   ★ WHAT CITY IS LIKE THE MERCHANT-CITY FALLEN (THREAD 2): *Yahuah (LORD) hath given a commandment
+--      against the merchant city, to destroy the strong holds thereof* (23:11); *Howl, ye ships of
+--      Tarshish: for your strength is laid waste* (23:14). Ezekiel's dirge over the same Tyre supplies
+--      the cry: *What city is like Tyrus, like the destroyed in the midst of the sea?* (Ezekiel 27:32).
+--      Revelation takes up the very template for Babylon-the-merchant: *the merchants of the earth shall
+--      weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11); *every
+--      shipmaster, and all the company in ships, and sailors, and as many as trade by sea, stood afar
+--      off* (18:17); *What city is like unto this great city!* (18:18) — the same dirge, the same ships,
+--      the same merchants weeping over the fallen trading-power. Tyre's commerce-lament is the seed of
+--      Revelation's Babylon-the-merchant.
+--   ★ HER MERCHANDISE SHALL BE HOLINESS TO YAHUAH (THREAD 3): the burden ends not in extinction but in
+--      consecration: *And it shall come to pass after the end of seventy years, that Yahuah (LORD) will
+--      visit Tyre, and she shall turn to her hire... And her merchandise and her hire shall be holiness
+--      to Yahuah (LORD): it shall not be treasured nor laid up; for her merchandise shall be for them
+--      that dwell before Yahuah (LORD)* (23:17-18). The hoarded gain is at last set apart for Yahuah's
+--      house. Zechariah carries the same word to its end: *In that day shall there be upon the bells of
+--      the horses, HOLINESS UNTO THE Yahuah (LORD)* (Zechariah 14:20); *every pot in Jerusalem and in
+--      Yahudah (Judah) shall be holiness unto Yahuah Tseva'ot* (14:21) — even the common traffic made
+--      holy. Isaiah's Zion-ingathering shows the wealth of the nations brought home: *the abundance of
+--      the sea shall be converted unto thee, the forces of the Gentiles shall come unto thee* (Isaiah
+--      60:5); *the ships of Tarshish first, to bring thy sons from far, their silver and their gold with
+--      them, unto the name of Yahuah Elohayka (the LORD thy God)* (60:9) — the very ships of Tarshish
+--      that howled (23:14) now bear silver and gold to the Name. And the Messiah owns Tyre's latent
+--      faith: *if the mighty works, which were done in you, had been done in Tyre and Sidon, they would
+--      have repented long ago in sackcloth and ashes* (Matthew 11:21); *It shall be more tolerable for
+--      Tyre and Sidon at the day of judgment* (11:22). The wealth consecrated is HOMAGE to Yahuah's
+--      house, never a replacement of His people — the nations bringing their glory IN to Zion (Rom 11
+--      guard: the root bears them, they do not bear the root).
+--   EXTRAS: Sirach 26:29 (the merchant and wrong) woven on the merchant-pride (THREAD 1); clean witness.
+--      No extras forced on the fallen-city dirge (the NT's own Babylon-template carries it) or on the
+--      holiness-consecration (the Zion-ingathering Tanakh carries it).
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the howling ships, the merchants of Zidon, the joyous city —
+--      preface to THREADS 1 and 2), v.10,12,13 (the judgment-clause and the Chaldean/Assyrian historical
+--      frame — bound into THREAD 2 in prose), v.15-16 (the seventy years, the harlot's harp — preface to
+--      the turn of THREAD 3). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the crowning city, pride abased — the I-am-a-Elohim usurpation (Formed/Formless)
+    ('canon','isaiah',23,8,'canon','ezekiel',27,3,'free',
+      E'*And say unto Tyrus, O thou that art situate at the entry of the sea, which art a merchant of the people for many isles, Thus saith Adonai Yahuah (the Lord GOD); O Tyrus, thou hast said, I am of perfect beauty* (Ezekiel 27:3). The *crowning city, whose merchants are princes, whose traffickers are the honourable of the earth* (Isaiah 23:8) is the same self-exalting Tyre Ezekiel names — the merchant of the peoples who *said, I am of perfect beauty*. The pride that Yahuah purposes to *stain* (23:9) is this glorying of the trading-power in itself.'),
+    ('canon','isaiah',23,9,'canon','ezekiel',28,2,'free',
+      E'*Son of Adam, say unto the prince of Tyrus... Because thine heart is lifted up, and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God), in the midst of the seas; yet thou art a man, and not Elohim (God)* (Ezekiel 28:2). Yahuah purposed Tyre''s fall *to stain the pride of all glory, and to bring into contempt all the honourable of the earth* (Isaiah 23:9) — and the prince''s blasphemy shows that pride at its peak: a man setting *thine heart as the heart of Elohim*. This is the creature usurping the Creator, the inversion of the Formed and the Formless; the only One who is Yahuah yet bears a Father is the Formed Son, never a self-deifying king.'),
+    ('canon','isaiah',23,9,'canon','ezekiel',28,9,'free',
+      E'*Wilt thou yet say before him that slayeth thee, I am Elohim (God)? but thou shalt be a man, and no Elohim (God), in the hand of him that slayeth thee* (Ezekiel 28:9). The purpose *to bring into contempt all the honourable of the earth* (Isaiah 23:9) is Yahuah''s answer to the boast: the self-deifying prince is unmasked as *a man, and no Elohim*. Pride that lifts the creature into the Creator''s seat is stained to contempt in the day of reckoning.'),
+    ('canon','isaiah',23,9,'canon','isaiah',2,11,'free',
+      E'*The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11). Tyre''s abasement enacts Isaiah''s own day-of-Yahuah rule: *to stain the pride of all glory* (23:9) is *the lofty looks of man... humbled* so that *Yahuah (LORD) alone shall be exalted*. The crowning merchant-city is one instance of the universal levelling of human pride before the One who alone is high.'),
+    ('canon','isaiah',23,9,'canon','isaiah',2,17,'free',
+      E'*And the loftiness of man shall be bowed down, and the haughtiness of men shall be made low: and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:17). The purpose *to bring into contempt all the honourable of the earth* (Isaiah 23:9) is this same word: *the loftiness of man... bowed down* that *Yahuah (LORD) alone shall be exalted*. The honourable of the earth are brought low not in ethnic hatred but as the proud SYSTEM abased before Yahuah''s sole exaltation.'),
+    ('canon','isaiah',23,8,'apocrypha','ecclesiasticus',26,29,'extras',
+      E'*A merchant shall hardly keep himself from doing wrong; and an huckster shall not be freed from sin* (Sirach 26:29). The *crowning city, whose merchants are princes* (Isaiah 23:8) is the trading-power at the height of the very snare the wisdom-witness names: *a merchant shall hardly keep himself from doing wrong*. The honour and traffic that made Tyre''s merchants princes is the ground in which pride and sin grew until Yahuah purposed to stain it.'),
+
+    -- THREAD 2 (★): the merchant-city fallen — the dirge Revelation takes up for Babylon-the-merchant
+    ('canon','isaiah',23,11,'canon','ezekiel',27,32,'free',
+      E'*And in their wailing they shall take up a lamentation for thee, and lament over thee, saying, What city is like Tyrus, like the destroyed in the midst of the sea?* (Ezekiel 27:32). When *Yahuah (LORD) hath given a commandment against the merchant city, to destroy the strong holds thereof* (Isaiah 23:11), the dirge that rises is Ezekiel''s: *What city is like Tyrus, like the destroyed in the midst of the sea?* The fall of the great trading-city draws the same lament in both prophets — and Revelation will take up its very words.'),
+    ('canon','isaiah',23,8,'canon','revelation',18,11,'free',
+      E'*And the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11). Tyre, *whose merchants are princes, whose traffickers are the honourable of the earth* (Isaiah 23:8), is the type Revelation lifts onto Babylon-the-merchant: when she falls, *the merchants of the earth shall weep and mourn over her*. The grief of the world''s traffickers over a fallen trading-power is the very lament Isaiah pronounced over Tyre.'),
+    ('canon','isaiah',23,8,'canon','revelation',18,15,'free',
+      E'*The merchants of these things, which were made rich by her, shall stand afar off for the fear of her torment, weeping and wailing* (Revelation 18:15). The *traffickers* who were *the honourable of the earth* (Isaiah 23:8) become, in Revelation''s Babylon, *the merchants... which were made rich by her* standing *afar off... weeping and wailing*. The honourable made rich by the trading-power mourn its sudden ruin — Tyre''s fall written large.'),
+    ('canon','isaiah',23,14,'canon','revelation',18,17,'free',
+      E'*For in one hour so great riches is come to nought. And every shipmaster, and all the company in ships, and sailors, and as many as trade by sea, stood afar off* (Revelation 18:17). *Howl, ye ships of Tarshish: for your strength is laid waste* (Isaiah 23:14) — and Revelation echoes the seafarers'' grief: *every shipmaster... and as many as trade by sea, stood afar off*. The ships that carried Tyre''s commerce, and the ships that mourn Babylon, raise the same howl over riches come to nought.'),
+    ('canon','isaiah',23,11,'canon','revelation',18,18,'free',
+      E'*And cried when they saw the smoke of her burning, saying, What city is like unto this great city!* (Revelation 18:18). Against *the merchant city* whose strongholds Yahuah destroys (Isaiah 23:11), Revelation raises Ezekiel''s very cry transposed: *What city is like unto this great city!* The dirge over fallen Tyre — *What city is like Tyrus* (Ezekiel 27:32) — becomes the dirge over fallen Babylon-the-merchant; one lament over the trading-power judged.'),
+    ('canon','isaiah',23,11,'canon','revelation',18,19,'free',
+      E'*And they cast dust on their heads, and cried, weeping and wailing, saying, Alas, alas, that great city, wherein were made rich all that had ships in the sea by reason of her costliness! for in one hour is she made desolate* (Revelation 18:19). The *commandment against the merchant city* (Isaiah 23:11) finds its fullest echo here: the city *wherein were made rich all that had ships in the sea* is *made desolate*. Tyre the merchant-city is the seed of this Babylon whose sea-commerce is brought to dust.'),
+
+    -- THREAD 3 (★): her merchandise shall be holiness to Yahuah — wealth consecrated to Zion (homage)
+    ('canon','isaiah',23,18,'canon','zechariah',14,20,'free',
+      E'*In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20). The promise that *her merchandise and her hire shall be holiness to Yahuah (LORD)* (Isaiah 23:18) reaches its fullness here: in that day even the common things — the bells of the horses, the pots of the house — bear *HOLINESS UNTO THE Yahuah*. Tyre''s consecrated traffic is one stream into the day when all is set apart to the Name.'),
+    ('canon','isaiah',23,18,'canon','zechariah',14,21,'free',
+      E'*Yea, every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva''ot (LORD of hosts): and all they that sacrifice shall come and take of them, and seethe therein* (Zechariah 14:21). When Tyre''s *merchandise... shall be holiness to Yahuah... for them that dwell before Yahuah (LORD)* (Isaiah 23:18), it joins the day when *every pot in Jerusalem... shall be holiness unto Yahuah Tseva''ot*. The merchant-city''s gain is not hoarded but made holy, fit for the service of the house — homage brought in, never a replacement of His people.'),
+    ('canon','isaiah',23,18,'canon','isaiah',60,5,'free',
+      E'*Then thou shalt see, and flow together, and thine heart shall fear, and be enlarged; because the abundance of the sea shall be converted unto thee, the forces of the Gentiles shall come unto thee* (Isaiah 60:5). Tyre''s sea-traffic consecrated — *her merchandise... shall be holiness to Yahuah... for them that dwell before Yahuah* (Isaiah 23:18) — is the wealth of the nations brought home to Zion: *the abundance of the sea shall be converted unto thee, the forces of the Gentiles shall come unto thee*. The trading-power''s riches end as homage carried IN to the Holy One of Yashar''el.'),
+    ('canon','isaiah',23,18,'canon','isaiah',60,9,'free',
+      E'*Surely the isles shall wait for me, and the ships of Tarshish first, to bring thy sons from far, their silver and their gold with them, unto the name of Yahuah Elohayka (the LORD thy God), and to the Holy One of Yashar''el (Israel)* (Isaiah 60:9). The very *ships of Tarshish* that howled over fallen Tyre (Isaiah 23:14) now *bring... their silver and their gold... unto the name of Yahuah* — and Tyre''s *merchandise and her hire* become *holiness to Yahuah* (23:18). The consecrated wealth flows to the Name and to the Holy One of Yashar''el; the nations bring their glory in, the root bears them.'),
+    ('canon','isaiah',23,17,'canon','matthew',11,21,'free',
+      E'*Woe unto thee, Chorazin! woe unto thee, Bethsaida! for if the mighty works, which were done in you, had been done in Tyre and Sidon, they would have repented long ago in sackcloth and ashes* (Matthew 11:21). The visiting of Tyre — *Yahuah (LORD) will visit Tyre, and she shall turn* (Isaiah 23:17) — toward a hire made *holiness to Yahuah* (23:18) is owned by the Messiah: Tyre and Sidon *would have repented long ago in sackcloth and ashes*. The merchant-city the prophets judged carries a latent readiness to turn that shames the unrepentant.'),
+    ('canon','isaiah',23,17,'canon','matthew',11,22,'free',
+      E'*But I say unto you, It shall be more tolerable for Tyre and Sidon at the day of judgment, than for you* (Matthew 11:22). When Yahuah *will visit Tyre, and she shall turn* (Isaiah 23:17), the surprising mercy is confirmed: *It shall be more tolerable for Tyre and Sidon at the day of judgment*. The crowning merchant-city, abased and then consecrated, is nearer the kingdom than the favoured towns that saw the mighty works and would not turn.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased',
+       E'The crowning city, whose merchants are princes — the proud trading-power abased',
+       E'Tyre is the type of the trading-power swollen into pride: *Who hath taken this counsel against Tyre, the crowning city, whose merchants are princes, whose traffickers are the honourable of the earth? Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory, and to bring into contempt all the honourable of the earth* (Isaiah 23:8-9). Ezekiel draws the same self-exalting Tyre: *O Tyrus, thou hast said, I am of perfect beauty* (Ezekiel 27:3) — and then the prince''s blasphemy at the height of his riches: *Because thine heart is lifted up, and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God), in the midst of the seas; yet thou art a man, and not Elohim (God)* (Ezekiel 28:2). This is the creature usurping the Creator — the very inversion of the Formed and the Formless: a man setting *thine heart as the heart of Elohim*, when the only One who is Yahuah and yet bears a Father is the Formed Son, never a self-deifying king. Yahuah unmasks the boast: *Wilt thou yet say before him that slayeth thee, I am Elohim? but thou shalt be a man, and no Elohim* (Ezekiel 28:9). Isaiah''s own day-of-Yahuah rule governs it all: *The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11); *the loftiness of man shall be bowed down... and Yahuah (LORD) alone shall be exalted in that day* (2:17). And the wisdom-witness names the merchant''s very snare: *A merchant shall hardly keep himself from doing wrong; and an huckster shall not be freed from sin* (Sirach 26:29). It is the SYSTEM of proud traffic that is abased — not a people hated. Victims, not enemies; the trading-power brought low so that Yahuah alone is exalted.',
+       sv.verse_id, ev.verse_id, 'extras', 26550
+  FROM _s303_isa23_lookup sv, _s303_isa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=23 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-23-what-city-is-like-the-merchant-city-fallen',
+       E'What city is like — the merchant-city fallen, the dirge Revelation takes up',
+       E'Against the great sea-mart Yahuah pronounces ruin: *He stretched out his hand over the sea, he shook the kingdoms: Yahuah (LORD) hath given a commandment against the merchant city, to destroy the strong holds thereof* (Isaiah 23:11); *Howl, ye ships of Tarshish: for your strength is laid waste* (23:14). Ezekiel''s great Tyre-lament supplies the dirge: *And in their wailing they shall take up a lamentation for thee... saying, What city is like Tyrus, like the destroyed in the midst of the sea?* (Ezekiel 27:32). And Revelation takes up this very template for Babylon-the-merchant: *the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11); *the merchants... which were made rich by her, shall stand afar off for the fear of her torment, weeping and wailing* (18:15); *every shipmaster, and all the company in ships, and sailors, and as many as trade by sea, stood afar off* (18:17); *What city is like unto this great city!* (18:18); *Alas, alas, that great city, wherein were made rich all that had ships in the sea by reason of her costliness! for in one hour is she made desolate* (18:19). The merchant-lament over Tyre is the seed of Revelation''s Babylon-the-merchant: the same dirge, the same howling ships, the same merchants weeping over a trading-power judged in an hour.',
+       sv.verse_id, ev.verse_id, 'free', 26553
+  FROM _s303_isa23_lookup sv, _s303_isa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=23 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-23-her-merchandise-shall-be-holiness-to-yahuah',
+       E'Her merchandise shall be holiness to Yahuah — the wealth consecrated to Zion',
+       E'The burden of Tyre ends not in extinction but in a surprising consecration: *And it shall come to pass after the end of seventy years, that Yahuah (LORD) will visit Tyre, and she shall turn to her hire... And her merchandise and her hire shall be holiness to Yahuah (LORD): it shall not be treasured nor laid up; for her merchandise shall be for them that dwell before Yahuah (LORD), to eat sufficiently, and for durable clothing* (Isaiah 23:17-18). The hoarded gain of the trading-power is at last set apart to Yahuah''s house. Zechariah carries that word to its end: *In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20); *every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva''ot* (14:21) — even the common things made holy. Isaiah''s Zion-ingathering shows the wealth of the nations brought home: *the abundance of the sea shall be converted unto thee, the forces of the Gentiles shall come unto thee* (Isaiah 60:5); *the ships of Tarshish first, to bring thy sons from far, their silver and their gold with them, unto the name of Yahuah Elohayka (the LORD thy God), and to the Holy One of Yashar''el (Israel)* (60:9) — the very ships of Tarshish that howled over fallen Tyre now bear silver and gold to the Name. And the Messiah owns Tyre''s latent faith: *if the mighty works, which were done in you, had been done in Tyre and Sidon, they would have repented long ago in sackcloth and ashes* (Matthew 11:21); *It shall be more tolerable for Tyre and Sidon at the day of judgment, than for you* (11:22). Even Tyre''s traffic ends in holiness before Yahuah — the wealth of the nations carried IN to Zion as HOMAGE, never a replacement of His people; the root bears the branches, they do not bear the root.',
+       sv.verse_id, ev.verse_id, 'free', 26556
+  FROM _s303_isa23_lookup sv, _s303_isa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=23 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *O Tyrus, thou hast said, I am of perfect beauty* (Ezekiel 27:3) — the *crowning city, whose merchants are princes* (Isaiah 23:8) glorying in itself, the pride Yahuah purposes to stain.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=27 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thou hast said, I am a Elohim (God)... yet thou art a man, and not Elohim* (Ezekiel 28:2) — the prince''s boast is the creature usurping the Creator; the inversion of the Formed and the Formless, the pride *to stain* (Isaiah 23:9).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=9
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Wilt thou yet say... I am Elohim? but thou shalt be a man, and no Elohim* (Ezekiel 28:9) — Yahuah unmasks the self-deifying prince; the honourable *brought into contempt* (Isaiah 23:9).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=9
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the lofty looks of man shall be humbled... and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:11) — Tyre''s abasement is the universal levelling of pride; the system humbled, not a people hated.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=9
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the loftiness of man shall be bowed down... and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:17) — the same rule that brings *into contempt all the honourable of the earth* (Isaiah 23:9): Yahuah alone is high.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=9
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*A merchant shall hardly keep himself from doing wrong; and an huckster shall not be freed from sin* (Sirach 26:29) — the wisdom-witness on the very snare in which Tyre''s *merchants are princes* (Isaiah 23:8) grew proud.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=26 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-the-crowning-city-whose-merchants-are-princes-pride-abased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *What city is like Tyrus, like the destroyed in the midst of the sea?* (Ezekiel 27:32) — the dirge over the same Tyre against which *Yahuah... hath given a commandment* (Isaiah 23:11); the cry Revelation will take up.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=27 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-what-city-is-like-the-merchant-city-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11) — Tyre, *whose merchants are princes* (Isaiah 23:8), is the type lifted onto Babylon-the-merchant.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-what-city-is-like-the-merchant-city-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the merchants... which were made rich by her, shall stand afar off... weeping and wailing* (Revelation 18:15) — the *traffickers... the honourable of the earth* (Isaiah 23:8) mourning the trading-power''s ruin.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-what-city-is-like-the-merchant-city-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *every shipmaster... and as many as trade by sea, stood afar off* (Revelation 18:17) — the howling *ships of Tarshish* whose *strength is laid waste* (Isaiah 23:14) raise the same grief over riches come to nought.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-what-city-is-like-the-merchant-city-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *What city is like unto this great city!* (Revelation 18:18) — Ezekiel''s dirge over Tyre (27:32) transposed onto Babylon; the *merchant city* (Isaiah 23:11) judged, written large.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-what-city-is-like-the-merchant-city-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Alas, alas, that great city, wherein were made rich all that had ships in the sea... for in one hour is she made desolate* (Revelation 18:19) — the *commandment against the merchant city* (Isaiah 23:11) in its fullest echo: sea-commerce brought to dust.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-what-city-is-like-the-merchant-city-fallen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD)* (Zechariah 14:20) — Tyre''s *merchandise... holiness to Yahuah* (Isaiah 23:18) is one stream into the day when even common things are set apart to the Name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-her-merchandise-shall-be-holiness-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva''ot* (Zechariah 14:21) — Tyre''s gain *for them that dwell before Yahuah* (Isaiah 23:18) joins the day when all is made holy for the house.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-her-merchandise-shall-be-holiness-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the abundance of the sea shall be converted unto thee, the forces of the Gentiles shall come unto thee* (Isaiah 60:5) — Tyre''s consecrated sea-traffic is the wealth of the nations carried home to Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-her-merchandise-shall-be-holiness-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the ships of Tarshish first, to bring thy sons from far, their silver and their gold with them, unto the name of Yahuah* (Isaiah 60:9) — the very ships that howled over Tyre (23:14) now bear silver and gold to the Name; homage in, never replacement (Rom 11 guard).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-her-merchandise-shall-be-holiness-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *if the mighty works... had been done in Tyre and Sidon, they would have repented long ago in sackcloth and ashes* (Matthew 11:21) — the Messiah owns Tyre''s latent readiness to turn; *Yahuah will visit Tyre, and she shall turn* (Isaiah 23:17).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-her-merchandise-shall-be-holiness-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *It shall be more tolerable for Tyre and Sidon at the day of judgment, than for you* (Matthew 11:22) — the abased-then-consecrated merchant-city nearer the kingdom than the favoured towns that would not turn.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s303_isa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-23-her-merchandise-shall-be-holiness-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_38.sql (Isaiah 38) -----
+-- Chapter: Isaiah 38 — HEZEKIAH'S MORTAL SICKNESS AND HEALING; THE SUNDIAL SIGN; THE WRITING OF
+-- THANKSGIVING. The prophet brings the death-sentence: *Set thine house in order: for thou shalt die,
+-- and not live* (38:1). Hezekiah turns his face to the wall and weeps and prays (38:2-3), and the word
+-- returns: *I have heard thy prayer, I have seen thy tears: behold, I will add unto thy days fifteen
+-- years* (38:5) — the prayer of a man in truth and a perfect heart turns the sentence; Yahuah hears
+-- tears. The sign is cosmic: *I will bring again the shadow of the degrees, which is gone down in the
+-- sun dial of Ahaz, ten degrees backward. So the sun returned ten degrees* (38:8) — the Creator who
+-- commands the sun confirms the word (the Formed Son who led Yashar'el, the One Joshua's long day
+-- obeyed; the Formless Father's purpose enacted in the heavens). Then Hezekiah's writing — the song of
+-- a saint at the pre-resurrection horizon: *the grave cannot praise thee, death can not celebrate thee...
+-- The living, the living, he shall praise thee* (38:18-19) — the OT hope of life answered FULLY only in
+-- the One who *hath abolished death, and hath brought life and immortality to light* (2 Timothy 1:10),
+-- *Death is swallowed up in victory* (1 Corinthians 15:54) — woven as the forward-answer Hezekiah longed
+-- for, NOT as if the OT saint already held it. And *thou hast cast all my sins behind thy back* (38:17) —
+-- forgiveness as the very deliverance from the pit (Isaiah 43:25; Micah 7:19).
+-- Tag: isa38   Temp view: _s303_isa38_lookup
+-- Sort band: base 26925, step 3 -> threads at 26925, 26928, 26931, 26934 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',38,v
+--
+-- Isaiah 38 coverage:
+--   ★ v.1-5 (Set thine house in order: for thou shalt die... Hezekiah turned his face toward the wall,
+--          and prayed... Hezekiah wept sore... I have heard thy prayer, I have seen thy tears: behold,
+--          I will add unto thy days fifteen years)
+--        NT:     none warranted distinct (the prayer-heard / tears-seen motif is OT-and-lateral; the
+--                NT forward-answer to death itself is carried in THREAD 3, not forced here)
+--        Extras: none warranted (Sirach 48:20-22 names Hezekiah's deliverance but as the Sennacherib
+--                rescue, not the sickness-prayer; the clean sundial witness 48:23 belongs to THREAD 2)
+--        Tanakh: ★ 2 Kings 20:1 + 20:5 (the parallel account — the same sentence, the same prayer,
+--                the same *I have heard thy prayer, I have seen thy tears... behold, I will heal thee*) —
+--                THREAD 1 (lateral parallel), and ★ Psalm 116:1 + 116:8 (*he hath heard my voice...
+--                thou hast delivered my soul from death, mine eyes from tears*) — THREAD 1 (prayer-heard)
+--   ★ v.7-8 (And this shall be a sign... I will bring again the shadow of the degrees, which is gone
+--          down in the sun dial of Ahaz, ten degrees backward. So the sun returned ten degrees)
+--        NT:     none warranted distinct (the cosmic-sign / Creator-commands-the-sun weave is OT +
+--                Joshua's long day + the clean Sirach witness)
+--        Extras: ★ Sirach (Ecclesiasticus) 48:23 (In his time the sun went backward, and he lengthened
+--                the king's life) — THREAD 2 (the restored witness names the sundial sign by name)
+--        Tanakh: ★ 2 Kings 20:9 + 20:11 (the parallel — *shall the shadow go forward ten degrees, or
+--                go back ten degrees?... he brought the shadow ten degrees backward*) — THREAD 2
+--                (lateral parallel), and ★ Joshua 10:13 (*And the sun stood still... and hasted not to
+--                go down about a whole day*) — THREAD 2 (the Creator who commands the sun)
+--   ★ v.17 (thou hast in love to my soul delivered it from the pit of corruption: for thou hast cast
+--          all my sins behind thy back)
+--        NT:     none warranted distinct (the blotting-out is woven by the Tanakh's own prophets)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 43:25 (*I, even I, am he that blotteth out thy transgressions for mine own
+--                sake, and will not remember thy sins*), ★ Micah 7:19 (*he will subdue our iniquities;
+--                and thou wilt cast all their sins into the depths of the sea*) — THREAD 4
+--   ★★ v.18-19 (the grave cannot praise thee, death can not celebrate thee... The living, the living,
+--          he shall praise thee, as I do this day)
+--        NT:     ★★ 2 Timothy 1:10 (who hath abolished death, and hath brought life and immortality to
+--                light through the gospel), ★★ 1 Corinthians 15:54 (Death is swallowed up in victory) —
+--                THREAD 3 (the forward-answer to Hezekiah's pre-resurrection horizon — woven as the hope
+--                he LONGED for, NOT as if he already held it)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 6:5 (in death there is no remembrance of thee: in the grave who shall give
+--                thee thanks?), ★ Psalm 115:17 (The dead praise not Yahuah, neither any that go down
+--                into silence) — THREAD 3 (the same saint's-horizon cry)
+--   v.6 (I will deliver thee and this city out of the hand of the king of Assyria) — woven into THREAD 1
+--          prose as the second half of the same answer; the Sennacherib deliverance has its own home in
+--          Isaiah 36-37 (not duplicated here)
+--   v.9-16, v.20-22 (the body of the writing; the figs-plaister; the sign-question) — the lament and
+--          thanksgiving frame for THREADS 3 and 4; v.21-22 are the lateral-detail echo of 2 Kings
+--          20:7-8 (recorded, woven into prose, not separately threaded)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-38-i-have-heard-thy-prayer-i-have-seen-thy-tears — Tanakh (2 Kings 20, Psalm 116) [free]
+--      (★ the prayer and the tears that turn the death-sentence; Yahuah who hears)
+--   2. isaiah-38-the-sun-returned-ten-degrees-backward — Tanakh (2 Kings 20, Joshua 10) + Extras (Sirach 48) [extras]
+--      (★ the sundial sign; the Creator who commands the sun confirms the word)
+--   3. isaiah-38-the-living-the-living-he-shall-praise-thee — Tanakh (Psalm 6, Psalm 115) + NT (2 Timothy 1, 1 Corinthians 15) [free]
+--      (★★ the saint's pre-resurrection horizon answered forward in the One who abolished death)
+--   4. isaiah-38-thou-hast-cast-all-my-sins-behind-thy-back — Tanakh (Isaiah 43, Micah 7) [free]
+--      (★ forgiveness AS deliverance from the pit; sins blotted out, cast into the depths)
+--
+-- Framing notes:
+--   ★ THE PRAYER THAT TURNS THE SENTENCE (THREAD 1): the sentence is flat — *for thou shalt die, and
+--      not live* (38:1) — yet Hezekiah *turned his face toward the wall, and prayed* (38:2) and *wept
+--      sore* (38:3), and the word returns: *I have heard thy prayer, I have seen thy tears: behold, I
+--      will add unto thy days fifteen years* (38:5). 2 Kings 20 is the same scene word for word — the
+--      lateral parallel — and Psalm 116 sings the same mercy: *I love Yahuah (LORD), because he hath
+--      heard my voice and my supplications* (116:1), *thou hast delivered my soul from death, mine eyes
+--      from tears* (116:8). Yahuah hears tears; teshuvah and a perfect heart turn the sentence.
+--   ★ THE SUNDIAL SIGN (THREAD 2): *I will bring again the shadow of the degrees... ten degrees backward.
+--      So the sun returned ten degrees* (38:8). The Creator commands the sun to confirm His word — the
+--      same Power that stayed the sun for Joshua: *the sun stood still, and the moon stayed... and hasted
+--      not to go down about a whole day* (Joshua 10:13). The Formed Son who led Yashar'el rules the
+--      heavens; the cosmic sign seals the covenant-word. 2 Kings 20:9-11 is the parallel, and the restored
+--      witness names it by name: *In his time the sun went backward, and he lengthened the king's life*
+--      (Sirach 48:23) — clean parse, names Ezekias (Hezekiah) and the sundial sign together. EXTRAS thread.
+--   ★★ THE LIVING SHALL PRAISE THEE (THREAD 3): Hezekiah's writing reaches the edge of the OT saint's
+--      horizon: *the grave cannot praise thee, death can not celebrate thee: they that go down into the
+--      pit cannot hope for thy truth. The living, the living, he shall praise thee, as I do this day*
+--      (38:18-19). The Psalms cry the same: *in death there is no remembrance of thee: in the grave who
+--      shall give thee thanks?* (Psalm 6:5); *The dead praise not Yahuah (LORD), neither any that go down
+--      into silence* (Psalm 115:17). This is the pre-resurrection horizon — the hope of LIFE, longed for
+--      and not yet seen in full. It is answered FORWARD in the One who *hath abolished death, and hath
+--      brought life and immortality to light through the gospel* (2 Timothy 1:10), when *Death is swallowed
+--      up in victory* (1 Corinthians 15:54). Frame carefully: Hezekiah does NOT yet hold the resurrection;
+--      he longs from the grave's edge for the life only the Formed Son brings to light. The forward-answer
+--      is the gospel the saint reached toward, not an anachronism placed in his mouth.
+--   ★ SINS CAST BEHIND THY BACK (THREAD 4): the deliverance from the pit IS the forgiveness — *thou hast
+--      in love to my soul delivered it from the pit of corruption: for thou hast cast all my sins behind
+--      thy back* (38:17). The Tanakh's own prophets sing the blotting-out: *I, even I, am he that blotteth
+--      out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25); *he will
+--      subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19).
+--      Healing and pardon are one act of covenant mercy.
+--   VERSES WITH NO SEPARATE ADD: v.6 (the Assyrian deliverance — woven into THREAD 1 prose; its own home
+--      is Isaiah 36-37), v.9-16 (the lament body — frame for THREADS 3-4), v.20-22 (the songs in the house
+--      of Yahuah, the figs-plaister, the sign-question — lateral echo of 2 Kings 20:7-8, woven into prose).
+--      All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa38_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): I have heard thy prayer, I have seen thy tears — the prayer that turns the sentence
+    ('canon','isaiah',38,1,'canon','2-kings',20,1,'free',
+      E'*In those days was Hezekiah sick unto death. And the prophet Isaiah the son of Amoz came to him, and said unto him, Thus saith Yahuah (LORD), Set thine house in order; for thou shalt die, and not live* (2 Kings 20:1). This is the lateral parallel to *Set thine house in order: for thou shalt die, and not live* (Isaiah 38:1) — the same prophet, the same flat sentence, the same king. Two witnesses to one history; the death-word stands before the prayer turns it.'),
+    ('canon','isaiah',38,5,'canon','2-kings',20,5,'free',
+      E'*Turn again, and tell Hezekiah the captain of my people, Thus saith Yahuah (LORD), the Elohim (God) of David thy father, I have heard thy prayer, I have seen thy tears: behold, I will heal thee: on the third day thou shalt go up unto the house of Yahuah (LORD)* (2 Kings 20:5). The lateral parallel to *I have heard thy prayer, I have seen thy tears: behold, I will add unto thy days fifteen years* (Isaiah 38:5). Yahuah who SEES the tears and HEARS the prayer reverses the sentence — the prayer of teshuvah in a perfect heart (38:3) turns the death-word to fifteen added years.'),
+    ('canon','isaiah',38,3,'canon','psalms',116,1,'free',
+      E'*I love Yahuah (LORD), because he hath heard my voice and my supplications* (Psalm 116:1). When Hezekiah *prayed unto Yahuah (LORD)* and *wept sore* (Isaiah 38:2-3), he prayed the very faith the psalmist sings: the love of the One who *hath heard my voice*. The death-bed cry is heard; the prayer is not lost in the grave''s shadow.'),
+    ('canon','isaiah',38,3,'canon','psalms',116,8,'free',
+      E'*For thou hast delivered my soul from death, mine eyes from tears, and my feet from falling* (Psalm 116:8). Hezekiah *wept sore* (Isaiah 38:3) and Yahuah *saw the tears* (38:5) — the same deliverance the psalm names: *delivered my soul from death, mine eyes from tears*. The tears Yahuah sees are the tears He wipes; the soul at the grave''s edge is drawn back to the land of the living.'),
+
+    -- THREAD 2 (★): The sun returned ten degrees backward — the Creator commands the sun
+    ('canon','isaiah',38,8,'canon','2-kings',20,9,'free',
+      E'*And Isaiah said, This sign shalt thou have of Yahuah (LORD), that Yahuah (LORD) will do the thing that he hath spoken: shall the shadow go forward ten degrees, or go back ten degrees?* (2 Kings 20:9). The lateral parallel to the sundial sign — *I will bring again the shadow of the degrees... ten degrees backward* (Isaiah 38:8). The same shadow, the same ten degrees offered as the seal that Yahuah will do *the thing that he hath spoken*.'),
+    ('canon','isaiah',38,8,'canon','2-kings',20,11,'free',
+      E'*And Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11). The parallel to *So the sun returned ten degrees, by which degrees it was gone down* (Isaiah 38:8). The prophet cries and the heavens obey — the shadow on the dial of Ahaz driven backward; the cosmic sign confirms the covenant-word.'),
+    ('canon','isaiah',38,8,'canon','joshua',10,13,'free',
+      E'*And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies... So the sun stood still in the midst of heaven, and hasted not to go down about a whole day* (Joshua 10:13). The same Creator who *brought again the shadow... ten degrees backward* (Isaiah 38:8) is the One who held the sun for Joshua. The Formed Son who led Yashar''el commands the lights of heaven; the sun obeys His word, whether to stay its course or to turn back the shadow as a sign.'),
+    ('canon','isaiah',38,8,'apocrypha','ecclesiasticus',48,23,'extras',
+      E'*In his time the sun went backward, and he lengthened the king''s life* (Sirach 48:23). The restored witness names the sundial sign and its fruit in one breath: *the sun went backward* (the shadow of Isaiah 38:8) and the king''s life *lengthened* (the fifteen years of 38:5). Ezekias (Hezekiah) and the turning-back of the sun, remembered together — the cosmic sign sealing the added days.'),
+
+    -- THREAD 3 (★★): The living, the living, he shall praise thee — the saint's horizon answered forward
+    ('canon','isaiah',38,18,'canon','psalms',6,5,'free',
+      E'*For in death there is no remembrance of thee: in the grave who shall give thee thanks?* (Psalm 6:5). The same cry as Hezekiah''s *the grave cannot praise thee, death can not celebrate thee: they that go down into the pit cannot hope for thy truth* (Isaiah 38:18). This is the OT saint''s horizon — from the edge of the pit, praise belongs to the living; the grave is silence. The longing presses toward a life it cannot yet see.'),
+    ('canon','isaiah',38,18,'canon','psalms',115,17,'free',
+      E'*The dead praise not Yahuah (LORD), neither any that go down into silence* (Psalm 115:17). Hezekiah''s *the grave cannot praise thee, death can not celebrate thee* (Isaiah 38:18) sings the same horizon: *the dead praise not Yahuah... that go down into silence*. The saint values life because life is the place of praise — and reaches, from the grave''s mouth, for the One who can break the silence.'),
+    ('canon','isaiah',38,19,'canon','2-timothy',1,10,'free',
+      E'*But is now made manifest by the appearing of our Saviour Yahusha HaMashiach (Jesus Christ), who hath abolished death, and hath brought life and immortality to light through the gospel* (2 Timothy 1:10). Hezekiah''s cry *The living, the living, he shall praise thee, as I do this day* (Isaiah 38:19) is the hope he LONGED for, answered FORWARD: the life and immortality the OT saint reached toward from the pit''s edge is *brought to light* in the One who *hath abolished death*. Hezekiah did not yet hold this — he stretched toward it; the gospel is the fulness of the life he begged for.'),
+    ('canon','isaiah',38,19,'canon','1-corinthians',15,54,'free',
+      E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). The grave that *cannot praise thee* (Isaiah 38:18) and the living who alone *shall praise thee* (38:19) meet their answer here: *Death is swallowed up in victory*. The horizon Hezekiah could not cross — the pit that ends praise — is the very enemy abolished in the resurrection; the longing of his writing is the gospel''s promise, not yet his possession.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 (★): cross_references for the sins-cast-behind-the-back weave (separate VALUES block, same template)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','isaiah',38,17,'canon','isaiah',43,25,'free',
+      E'*I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25). Hezekiah''s *thou hast cast all my sins behind thy back* (Isaiah 38:17) is the same mercy Yahuah declares of Himself: He *blotteth out thy transgressions for mine own sake, and will not remember thy sins*. The sins set behind the back are the sins no longer brought to remembrance — the healing of the body and the pardon of the soul are one act.'),
+    ('canon','isaiah',38,17,'canon','micah',7,19,'free',
+      E'*He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). The deliverance *from the pit of corruption* that is also the casting of *all my sins behind thy back* (Isaiah 38:17) is the very mercy Micah sings: sins *cast... into the depths of the sea*, drowned and gone. To deliver the soul from the pit IS to bury its sins where they are remembered no more.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-38-i-have-heard-thy-prayer-i-have-seen-thy-tears',
+       E'I have heard thy prayer, I have seen thy tears — the prayer that turns the sentence',
+       E'The word the prophet brings is flat and final: *In those days was Hezekiah sick unto death. And Isaiah the prophet the son of Amoz came unto him, and said unto him, Thus saith Yahuah (LORD), Set thine house in order: for thou shalt die, and not live* (Isaiah 38:1). Yet Hezekiah does not resign — he turns to Yahuah: *Then Hezekiah turned his face toward the wall, and prayed unto Yahuah (LORD), And said, Remember now, O Yahuah (LORD), I beseech thee, how I have walked before thee in truth and with a perfect heart, and have done that which is good in thy sight. And Hezekiah wept sore* (38:2-3). And the death-word is reversed: *Go, and say to Hezekiah, Thus saith Yahuah (LORD), the Elohim (God) of David thy father, I have heard thy prayer, I have seen thy tears: behold, I will add unto thy days fifteen years* (38:5). The parallel account tells it the same: *I have heard thy prayer, I have seen thy tears: behold, I will heal thee: on the third day thou shalt go up unto the house of Yahuah (LORD)* (2 Kings 20:5). And the psalmist sings the very faith Hezekiah prayed: *I love Yahuah (LORD), because he hath heard my voice and my supplications* (Psalm 116:1); *thou hast delivered my soul from death, mine eyes from tears, and my feet from falling* (Psalm 116:8). Yahuah is the One who SEES tears and HEARS the cry from the death-bed; teshuvah in a perfect heart turns the sentence — the death-word becomes fifteen added years, and the deliverance of the city besides (38:6).',
+       sv.verse_id, ev.verse_id, 'free', 26925
+  FROM _s303_isa38_lookup sv, _s303_isa38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=38 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★) — EXTRAS (Sirach member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-38-the-sun-returned-ten-degrees-backward',
+       E'The sun returned ten degrees backward — the Creator commands the sun',
+       E'The added years are sealed with a sign that only the Creator of the heavens can give: *And this shall be a sign unto thee from Yahuah (LORD), that Yahuah (LORD) will do this thing that he hath spoken; Behold, I will bring again the shadow of the degrees, which is gone down in the sun dial of Ahaz, ten degrees backward. So the sun returned ten degrees, by which degrees it was gone down* (Isaiah 38:7-8). The parallel account frames the choice: *shall the shadow go forward ten degrees, or go back ten degrees?* (2 Kings 20:9) — and *Isaiah the prophet cried unto Yahuah (LORD): and he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11). This is the same Power that held the sun for Joshua: *And the sun stood still, and the moon stayed, until the people had avenged themselves upon their enemies... So the sun stood still in the midst of heaven, and hasted not to go down about a whole day* (Joshua 10:13). The Formed Son who led Yashar''el rules the lights of heaven — He stays the sun, or turns its shadow back, at His word; the cosmic sign confirms the covenant-promise of the Formless Father whose purpose it enacts. The restored witness remembers it by name: *In his time the sun went backward, and he lengthened the king''s life* (Sirach 48:23) — the sun reversed and the king''s days lengthened, bound together as one wonder.',
+       sv.verse_id, ev.verse_id, 'extras', 26928
+  FROM _s303_isa38_lookup sv, _s303_isa38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=38 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-38-the-living-the-living-he-shall-praise-thee',
+       E'The living, the living, he shall praise thee — the saint''s horizon answered in the One who abolished death',
+       E'Hezekiah''s writing reaches the very edge of the Tanakh saint''s horizon, where death is silence and praise belongs to the living alone: *For the grave cannot praise thee, death can not celebrate thee: they that go down into the pit cannot hope for thy truth. The living, the living, he shall praise thee, as I do this day: the father to the children shall make known thy truth* (Isaiah 38:18-19). The Psalms cry from the same edge: *For in death there is no remembrance of thee: in the grave who shall give thee thanks?* (Psalm 6:5); *The dead praise not Yahuah (LORD), neither any that go down into silence* (Psalm 115:17). This is the pre-resurrection horizon — the saint prizes LIFE because life is the place of praise, and from the grave''s mouth he reaches, longing, for a life he cannot yet see in full. That longing is answered FORWARD — not placed anachronistically in Hezekiah''s mouth, but fulfilled in the One he stretched toward: *our Saviour Yahusha HaMashiach (Jesus Christ), who hath abolished death, and hath brought life and immortality to light through the gospel* (2 Timothy 1:10); and *when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). The pit that ends praise is the last enemy destroyed; the silence Hezekiah dreaded is broken. He sang from the grave''s edge of the life he begged for — and the Formed Son brought that very life to light, that the living might praise forever, the father making known the truth to the children.',
+       sv.verse_id, ev.verse_id, 'free', 26931
+  FROM _s303_isa38_lookup sv, _s303_isa38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=38 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-38-thou-hast-cast-all-my-sins-behind-thy-back',
+       E'Thou hast cast all my sins behind thy back — forgiveness as the deliverance from the pit',
+       E'At the heart of Hezekiah''s thanksgiving, the healing of the body and the pardon of the soul are one mercy: *Behold, for peace I had great bitterness: but thou hast in love to my soul delivered it from the pit of corruption: for thou hast cast all my sins behind thy back* (Isaiah 38:17). To be drawn back from *the pit of corruption* is to have the sins themselves set out of sight — and the Tanakh''s own prophets sing exactly this blotting-out. Yahuah declares it of Himself: *I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25). And Micah closes his book with it: *He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). Sins cast behind the back, blotted out and not remembered, drowned in the depths of the sea — one mercy under three figures. The deliverance from death is not bare survival; it is forgiveness, the covenant-Elohim turning His face from the sin He has buried.',
+       sv.verse_id, ev.verse_id, 'free', 26934
+  FROM _s303_isa38_lookup sv, _s303_isa38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=38 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Thus saith Yahuah (LORD), Set thine house in order; for thou shalt die, and not live* (2 Kings 20:1) — the lateral parallel; the same flat death-sentence (Isaiah 38:1) the prayer will turn.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=1
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-i-have-heard-thy-prayer-i-have-seen-thy-tears'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I have heard thy prayer, I have seen thy tears: behold, I will heal thee* (2 Kings 20:5) — the parallel to Isaiah 38:5; Yahuah who sees tears reverses the sentence to fifteen added years.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=5
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-i-have-heard-thy-prayer-i-have-seen-thy-tears'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I love Yahuah (LORD), because he hath heard my voice and my supplications* (Psalm 116:1) — the faith Hezekiah prayed (Isaiah 38:2-3): the cry from the death-bed is heard.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=3
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-i-have-heard-thy-prayer-i-have-seen-thy-tears'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*thou hast delivered my soul from death, mine eyes from tears, and my feet from falling* (Psalm 116:8) — the tears Yahuah saw (Isaiah 38:5) He wipes; the soul is drawn back to the land of the living.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=3
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-i-have-heard-thy-prayer-i-have-seen-thy-tears'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★) — EXTRAS
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *shall the shadow go forward ten degrees, or go back ten degrees?* (2 Kings 20:9) — the lateral parallel; the same sundial sign offered as the seal of the spoken word (Isaiah 38:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-sun-returned-ten-degrees-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he brought the shadow ten degrees backward, by which it had gone down in the dial of Ahaz* (2 Kings 20:11) — the prophet cries and the heavens obey; the parallel to Isaiah 38:8.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-sun-returned-ten-degrees-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the sun stood still, and the moon stayed... hasted not to go down about a whole day* (Joshua 10:13) — the Formed Son who led Yashar''el commands the sun; the same Power that turned back the shadow (Isaiah 38:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-sun-returned-ten-degrees-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *In his time the sun went backward, and he lengthened the king''s life* (Sirach 48:23) — the restored witness names the sundial sign by name: the sun reversed and the added days (Isaiah 38:5,8) bound as one wonder.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=8
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=48 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-sun-returned-ten-degrees-backward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *in death there is no remembrance of thee: in the grave who shall give thee thanks?* (Psalm 6:5) — the same horizon as *the grave cannot praise thee* (Isaiah 38:18); the OT saint''s edge where the pit is silence.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=18
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-living-the-living-he-shall-praise-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The dead praise not Yahuah (LORD), neither any that go down into silence* (Psalm 115:17) — Hezekiah''s *death can not celebrate thee* (Isaiah 38:18); praise belongs to the living, and he reaches for the breaking of the silence.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=18
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-living-the-living-he-shall-praise-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *who hath abolished death, and hath brought life and immortality to light through the gospel* (2 Timothy 1:10) — the forward-answer to *the living, the living, he shall praise thee* (Isaiah 38:19); the life Hezekiah LONGED for from the pit''s edge, brought to light in the Formed Son (not yet his possession).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=19
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-living-the-living-he-shall-praise-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Death is swallowed up in victory* (1 Corinthians 15:54) — the pit that *cannot praise thee* (Isaiah 38:18) is the last enemy destroyed; Hezekiah''s dread of silence answered in the resurrection he reached toward.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=19
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-the-living-the-living-he-shall-praise-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25) — the sins *cast behind thy back* (Isaiah 38:17) are the sins no longer brought to remembrance.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=17
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-thou-hast-cast-all-my-sins-behind-thy-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19) — the deliverance from the pit (Isaiah 38:17) is the drowning of its sins; healing and pardon are one mercy.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=38 AND sv.verse_number=17
+  JOIN _s303_isa38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-38-thou-hast-cast-all-my-sins-behind-thy-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_39.sql (Isaiah 39) -----
+-- Chapter: Isaiah 39 — THE HINGE. The envoys of Babylon come to Hezekiah after his recovery;
+-- *Hezekiah was glad of them, and shewed them the house of his precious things... there was nothing
+-- in his house, nor in all his dominion, that Hezekiah shewed them not* (39:2). The prophet draws out
+-- the imprudence: *there is nothing among my treasures that I have not shewed them* (39:4) — the
+-- lifted-up heart after deliverance, the very fault the Chronicler names: *Hezekiah rendered not again
+-- according to the benefit done unto him; for his heart was lifted up* (2 Chronicles 32:25), and in the
+-- matter of the envoys *Elohim (God) left him, to try him, that he might know all that was in his heart*
+-- (32:31). Then the sentence: *Behold, the days come, that all that is in thine house... shall be carried
+-- to Babylon... and of thy sons... they shall be eunuchs in the palace of the king of Babylon* (39:6-7)
+-- — THE seed of the exile foretold, fulfilled to the letter in the carrying-away (2 Chronicles 36:18-20)
+-- and in Daniel and the youths taken to the palace of the king of Babylon (Daniel 1:1-7). Hezekiah bows:
+-- *Good is the word of Yahuah (LORD) which thou hast spoken* (39:8) — submission to the sure word, with
+-- the sober note that judgment is deferred, not undone (*there shall be peace and truth in my days*).
+-- This chapter closes the Assyrian section; ch40 *Comfort ye, comfort ye my people* (40:1) opens with
+-- the answer to THIS very Babylon exile — point forward in prose; ch40 already built, do NOT duplicate.
+-- Tag: isa39   Temp view: _s303_isa39_lookup
+-- Sort band: base 26950, step 3 -> threads at 26950, 26953, 26956 (3 threads)
+-- Source of EVERY row: 'canon','isaiah',39,v
+--
+-- Isaiah 39 coverage:
+--   v.1-2 (Merodach-baladan... sent letters and a present to Hezekiah... And Hezekiah was glad of them,
+--          and shewed them the house of his precious things... there was nothing... that Hezekiah shewed
+--          them not)
+--        NT:     none warranted (the display-of-glory is a Tanakh covenant-conduct beat; no NT add forced)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Chronicles 32:31 (in the business of the ambassadors of the princes of Babylon...
+--                Elohim (God) left him, to try him, that he might know all that was in his heart) — THREAD 1
+--   ★ v.3-4 (What have they seen in thine house?... All that is in mine house have they seen: there is
+--          nothing among my treasures that I have not shewed them)
+--        NT:     none warranted (the lifted-up-heart-after-deliverance is read against the Chronicler)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Chronicles 32:25 (Hezekiah rendered not again according to the benefit done unto him;
+--                for his heart was lifted up), ★ 2 Chronicles 32:26 (Hezekiah humbled himself for the pride
+--                of his heart) — THREAD 1 (the heart that loves to display its glory)
+--   v.5 (Hear the word of Yahuah Tseva'ot (LORD of hosts)) — the prophetic-word preface; held in prose,
+--        the sentence it introduces is v.6-7 (THREAD 2)
+--        NT/Extras/Tanakh: none separate (preface to the captivity oracle)
+--   ★★ v.6-7 (Behold, the days come, that all that is in thine house... shall be carried to Babylon...
+--          and of thy sons... they shall be eunuchs in the palace of the king of Babylon)
+--        NT:     none warranted distinct (the fulfillment is Tanakh-internal — the carrying-away and
+--                Daniel; the forward-weave to ch40's comfort is held in prose, ch40 already built)
+--        Extras: none warranted (clean Tanakh fulfillment chain carries it)
+--        Tanakh: ★★ 2 Kings 20:17 (the parallel sentence), ★★ 2 Kings 20:18 (they shall be eunuchs in
+--                the palace of the king of Babylon), ★★ 2 Chronicles 36:18 (the treasures... he brought
+--                to Babylon), ★★ 2 Chronicles 36:20 (them that had escaped... carried he away to Babylon),
+--                ★★★ Daniel 1:1-2 (Nebuchadnezzar... carried into the land of Shinar... the vessels into
+--                the treasure house of his god), ★★★ Daniel 1:3 (children of Yashar'el (Israel), and of
+--                the king's seed... master of his eunuchs), ★★★ Daniel 1:6 (among these were of the
+--                children of Yahudah (Judah), Daniel, Hananiah, Mishael, and Azariah) — THREAD 2 (the sure
+--                word that comes to pass: the seed of the exile foretold and fulfilled to the letter)
+--   v.8 (Good is the word of Yahuah (LORD) which thou hast spoken... there shall be peace and truth in my
+--          days)
+--        NT:     none warranted (Hezekiah's submission to the word is a Tanakh beat)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Kings 20:19 (Good is the word of Yahuah (LORD)... Is it not good, if peace and truth
+--                be in my days?) — THREAD 3 (submission to the sure word; judgment deferred, not undone)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-39-hezekiah-shewed-them-all-his-treasures-the-lifted-up-heart — Tanakh (2 Chronicles 32) [free]
+--      (★ the heart lifted up after deliverance, that loves to display its glory; God left him to try him)
+--   2. isaiah-39-carried-to-babylon-the-captivity-foretold — Tanakh (2 Kings 20, 2 Chronicles 36, Daniel 1) [free]
+--      (★★ THE Babylonian-captivity prophecy, the seed of the exile; the sure word fulfilled to the letter)
+--   3. isaiah-39-good-is-the-word-of-yahuah-the-deferred-judgment — Tanakh (2 Kings 20) [free]
+--      (Hezekiah's submission to the sure word; the judgment is deferred, not undone)
+--
+-- Framing notes:
+--   ★ THE LIFTED-UP HEART (THREAD 1): After the angel smites Sennacherib's host and the sundial turns
+--      back, after deliverance heaped on deliverance, Hezekiah meets the Babylonian envoys and *shewed
+--      them the house of his precious things... there was nothing... that Hezekiah shewed them not* (39:2),
+--      confessing to the prophet *there is nothing among my treasures that I have not shewed them* (39:4).
+--      The Chronicler names the fault: *Hezekiah rendered not again according to the benefit done unto him;
+--      for his heart was lifted up* (2 Chronicles 32:25), and in this very matter *Elohim (God) left him,
+--      to try him, that he might know all that was in his heart* (32:31). The trial exposed the glory-loving
+--      heart that displays its treasure rather than its Elohim. Mercy: *Hezekiah humbled himself for the
+--      pride of his heart* (32:26). Covenant-conduct, the heart tried — not ethnic, the king's own self.
+--   ★★ THE CAPTIVITY FORETOLD (THREAD 2): The displayed treasure becomes the measure of the spoil:
+--      *Behold, the days come, that all that is in thine house, and that which thy fathers have laid up in
+--      store until this day, shall be carried to Babylon: nothing shall be left, saith Yahuah (LORD). And
+--      of thy sons that shall issue from thee... shall they take away; and they shall be eunuchs in the
+--      palace of the king of Babylon* (39:6-7). This is the seed of the exile — the first naming of the
+--      Babylon captivity in Isaiah, the hinge from the Assyrian deliverance to the Babylonian judgment.
+--      The parallel stands in 2 Kings 20:17-18. And the word comes to pass to the letter: *the treasures
+--      of the house of Yahuah (LORD)... all these he brought to Babylon... them that had escaped from the
+--      sword carried he away to Babylon* (2 Chronicles 36:18,20); and the very sons — *children of
+--      Yashar'el (Israel), and of the king's seed* — given to *the master of his eunuchs* in the palace:
+--      *among these were of the children of Yahudah (Judah), Daniel, Hananiah, Mishael, and Azariah*
+--      (Daniel 1:3,6), *the vessels into the treasure house of his god* (1:2). The treasure shewn and the
+--      sons begotten are carried to the very Babylon Isaiah named. The sure word of Yahuah fulfilled —
+--      and the comfort beyond it opens the next breath: *Comfort ye, comfort ye my people* (40:1).
+--   THE SURE WORD, DEFERRED (THREAD 3): Hezekiah bows: *Good is the word of Yahuah (LORD) which thou hast
+--      spoken* (39:8) — submission, not protest, to the covenant-lawsuit verdict. The parallel adds his
+--      reckoning: *Is it not good, if peace and truth be in my days?* (2 Kings 20:19). The judgment is
+--      certain but deferred — peace in his days, the sentence falling on the generations after. The sober
+--      grace of a delay is not a reversal; the word stands, and the exile comes.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the envoys' letters and present — preface, woven into THREAD 1 with
+--      v.2), v.5 (Hear the word of Yahuah Tseva'ot — the prophetic preface to the captivity oracle of
+--      v.6-7, THREAD 2). All recorded, none silently skipped. No NT or extra-canonical member is forced
+--      on this chapter: the whole weight is the Tanakh-internal fulfillment chain (Chronicles, Kings,
+--      Daniel) of the sure word, and the forward-comfort of ch40 is pointed to in prose (already built).
+
+CREATE TEMP VIEW _s303_isa39_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the lifted-up heart that displays its glory
+    ('canon','isaiah',39,4,'canon','2-chronicles',32,25,'free',
+      E'*But Hezekiah rendered not again according to the benefit done unto him; for his heart was lifted up: therefore there was wrath upon him, and upon Yahudah (Judah) and Jerusalem* (2 Chronicles 32:25). When Hezekiah confesses *there is nothing among my treasures that I have not shewed them* (Isaiah 39:4), the Chronicler names the root: a heart *lifted up* after deliverance, rendering not again according to the benefit. The glory-loving heart that displays its precious things rather than its Elohim is the very pride that brings the wrath.'),
+    ('canon','isaiah',39,2,'canon','2-chronicles',32,31,'free',
+      E'*Howbeit in the business of the ambassadors of the princes of Babylon, who sent unto him to enquire of the wonder that was done in the land, Elohim (God) left him, to try him, that he might know all that was in his heart* (2 Chronicles 32:31). The Chronicler reads the same scene: when Hezekiah *shewed them the house of his precious things... there was nothing... that Hezekiah shewed them not* (Isaiah 39:2), it was the trial of the envoys — *Elohim (God) left him, to try him, that he might know all that was in his heart*. The display exposed what was in the heart.'),
+    ('canon','isaiah',39,2,'canon','2-chronicles',32,26,'free',
+      E'*Notwithstanding Hezekiah humbled himself for the pride of his heart, both he and the inhabitants of Jerusalem, so that the wrath of Yahuah (LORD) came not upon them in the days of Hezekiah* (2 Chronicles 32:26). The same king who *shewed them... all that was found in his treasures* (Isaiah 39:2) in the pride of his heart afterward *humbled himself for the pride of his heart* — and mercy answered the humbling, the wrath deferred from his own days. The lifted-up heart can yet be brought low.'),
+
+    -- THREAD 2 (★★): the captivity foretold — the sure word fulfilled to the letter
+    ('canon','isaiah',39,6,'canon','2-kings',20,17,'free',
+      E'*Behold, the days come, that all that is in thine house, and that which thy fathers have laid up in store unto this day, shall be carried into Babylon: nothing shall be left, saith Yahuah (LORD)* (2 Kings 20:17). The parallel of the Kings record stands word for word with Isaiah''s sentence — *all that is in thine house... shall be carried to Babylon: nothing shall be left* (Isaiah 39:6). The treasure shewn to the envoys becomes the measure of the spoil; the same Spirit speaks the same verdict through the prophet in both books.'),
+    ('canon','isaiah',39,7,'canon','2-kings',20,18,'free',
+      E'*And of thy sons that shall issue from thee, which thou shalt beget, shall they take away; and they shall be eunuchs in the palace of the king of Babylon* (2 Kings 20:18). The Kings parallel matches Isaiah''s word exactly — *of thy sons that shall issue from thee... they shall be eunuchs in the palace of the king of Babylon* (Isaiah 39:7). Not only the treasure but the seed begotten of the king is named for the carrying-away; the prophecy is one in both witnesses.'),
+    ('canon','isaiah',39,6,'canon','2-chronicles',36,18,'free',
+      E'*And all the vessels of the house of Elohim (God), great and small, and the treasures of the house of Yahuah (LORD), and the treasures of the king, and of his princes; all these he brought to Babylon* (2 Chronicles 36:18). Isaiah''s word — *all that is in thine house... shall be carried to Babylon* (Isaiah 39:6) — comes to pass to the letter: *the treasures of the house of Yahuah (LORD)... all these he brought to Babylon*. The sure word of Yahuah stands; what was foretold is fulfilled.'),
+    ('canon','isaiah',39,6,'canon','2-chronicles',36,20,'free',
+      E'*And them that had escaped from the sword carried he away to Babylon; where they were servants to him and his sons until the reign of the kingdom of Persia* (2 Chronicles 36:20). The captivity Isaiah named — *carried to Babylon: nothing shall be left* (Isaiah 39:6) — is accomplished: the survivors *carried he away to Babylon*, servants there till Persia. The prophet''s word was not idle; the exile fell exactly as spoken.'),
+    ('canon','isaiah',39,6,'canon','daniel',1,2,'free',
+      E'*And Yahuah (Lord) gave Jehoiakim king of Yahudah (Judah) into his hand, with part of the vessels of the house of Elohim (God): which he carried into the land of Shinar to the house of his god; and he brought the vessels into the treasure house of his god* (Daniel 1:2). The very treasure Hezekiah displayed and Isaiah said *shall be carried to Babylon* (Isaiah 39:6) is carried into Shinar — *the vessels into the treasure house of his god*. What was shewn to the envoys ends in the Babylonian temple''s treasure house; the word came to pass.'),
+    ('canon','isaiah',39,7,'canon','daniel',1,3,'free',
+      E'*And the king spake unto Ashpenaz the master of his eunuchs, that he should bring certain of the children of Yashar''el (Israel), and of the king''s seed, and of the princes* (Daniel 1:3). Isaiah''s sentence on the sons — *of thy sons that shall issue from thee... they shall be eunuchs in the palace of the king of Babylon* (Isaiah 39:7) — is fulfilled in *the king''s seed* given to *the master of his eunuchs*. The royal seed of Yahudah is taken into the palace, the very fate the prophet named.'),
+    ('canon','isaiah',39,7,'canon','daniel',1,6,'free',
+      E'*Now among these were of the children of Yahudah (Judah), Daniel, Hananiah, Mishael, and Azariah* (Daniel 1:6). The sons foretold — *they shall be eunuchs in the palace of the king of Babylon* (Isaiah 39:7) — are named: *of the children of Yahudah (Judah), Daniel, Hananiah, Mishael, and Azariah*, the youths set in the king of Babylon''s palace. The prophecy walks onto the page in flesh and name; the sure word of Yahuah comes to pass.'),
+
+    -- THREAD 3: good is the word — the deferred judgment
+    ('canon','isaiah',39,8,'canon','2-kings',20,19,'free',
+      E'*Then said Hezekiah unto Isaiah, Good is the word of Yahuah (LORD) which thou hast spoken. And he said, Is it not good, if peace and truth be in my days?* (2 Kings 20:19). The Kings parallel carries Hezekiah''s whole answer to Isaiah''s *Good is the word of Yahuah (LORD) which thou hast spoken... there shall be peace and truth in my days* (Isaiah 39:8). He submits to the verdict — *good is the word* — and reckons the mercy of delay: the judgment is certain but deferred, *peace and truth* in his own days, the sentence falling on the generations after. Submission, not protest; the word stands.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-39-hezekiah-shewed-them-all-his-treasures-the-lifted-up-heart',
+       E'Hezekiah shewed them all his treasures — the lifted-up heart after deliverance',
+       E'After the angel smote Sennacherib''s host and the sundial turned back, mercy heaped upon mercy, the envoys of Babylon come; and *Hezekiah was glad of them, and shewed them the house of his precious things, the silver, and the gold, and the spices, and the precious ointment, and all the house of his armour, and all that was found in his treasures: there was nothing in his house, nor in all his dominion, that Hezekiah shewed them not* (Isaiah 39:2). To the prophet''s question he confesses it again: *All that is in mine house have they seen: there is nothing among my treasures that I have not shewed them* (39:4). The Chronicler reads the same scene and names the fault — the heart lifted up after deliverance: *But Hezekiah rendered not again according to the benefit done unto him; for his heart was lifted up: therefore there was wrath upon him, and upon Yahudah (Judah) and Jerusalem* (2 Chronicles 32:25). And it was a trial: *Howbeit in the business of the ambassadors of the princes of Babylon, who sent unto him to enquire of the wonder that was done in the land, Elohim (God) left him, to try him, that he might know all that was in his heart* (32:31). The display of glory exposed the glory-loving heart — the heart that shews its treasure rather than its Elohim. Yet mercy is in the chapter too: *Notwithstanding Hezekiah humbled himself for the pride of his heart, both he and the inhabitants of Jerusalem, so that the wrath of Yahuah (LORD) came not upon them in the days of Hezekiah* (32:26). This is covenant-conduct, the king''s own heart tried — never ethnic judgment, but the pride that can yet be brought low.',
+       sv.verse_id, ev.verse_id, 'free', 26950
+  FROM _s303_isa39_lookup sv, _s303_isa39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=39 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-39-carried-to-babylon-the-captivity-foretold',
+       E'Carried to Babylon — the captivity foretold, the sure word fulfilled to the letter',
+       E'The treasure displayed becomes the measure of the spoil. Isaiah pronounces the sentence: *Behold, the days come, that all that is in thine house, and that which thy fathers have laid up in store until this day, shall be carried to Babylon: nothing shall be left, saith Yahuah (LORD). And of thy sons that shall issue from thee, which thou shalt beget, shall they take away; and they shall be eunuchs in the palace of the king of Babylon* (Isaiah 39:6-7). This is the seed of the exile — the first naming of the Babylon captivity in Isaiah, the hinge that turns from the Assyrian deliverance just past to the Babylonian judgment to come. The Kings record carries the same word: *all that is in thine house... shall be carried into Babylon: nothing shall be left* (2 Kings 20:17), *and they shall be eunuchs in the palace of the king of Babylon* (20:18). And the sure word of Yahuah comes to pass to the letter. The treasure: *the treasures of the house of Yahuah (LORD), and the treasures of the king... all these he brought to Babylon* (2 Chronicles 36:18); the people: *them that had escaped from the sword carried he away to Babylon* (36:20). The very vessels Hezekiah shewed are carried into Shinar — *he brought the vessels into the treasure house of his god* (Daniel 1:2); and the very sons begotten of the king are taken — *the king''s seed* given to *the master of his eunuchs* (Daniel 1:3), named at last in flesh: *of the children of Yahudah (Judah), Daniel, Hananiah, Mishael, and Azariah* (1:6). The prophet''s word was not idle; what was foretold walked onto the page exactly as spoken. And the comfort beyond the exile opens the very next breath of the book — *Comfort ye, comfort ye my people, saith your Elohim (God)* (Isaiah 40:1) — the answer to this captivity is already in the LORD''s mouth.',
+       sv.verse_id, ev.verse_id, 'free', 26953
+  FROM _s303_isa39_lookup sv, _s303_isa39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=39 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-39-good-is-the-word-of-yahuah-the-deferred-judgment',
+       E'Good is the word of Yahuah — submission to the sure word, the judgment deferred not undone',
+       E'Hezekiah does not protest the verdict; he bows to it: *Then said Hezekiah to Isaiah, Good is the word of Yahuah (LORD) which thou hast spoken. He said moreover, For there shall be peace and truth in my days* (Isaiah 39:8). The Kings parallel carries his whole answer: *Good is the word of Yahuah (LORD) which thou hast spoken. And he said, Is it not good, if peace and truth be in my days?* (2 Kings 20:19). He submits — *good is the word* — and reckons the mercy of a delay: the judgment is certain, but deferred; *peace and truth* in his own days, the sentence falling on the generations after. This is the sober grace of a postponement, not a reversal. The covenant-lawsuit word stands; the exile foretold will come. To call the sure word *good* even when it spells judgment for the house is the posture of a heart at last laid low before Yahuah — the sentence received, the LORD justified in his speaking.',
+       sv.verse_id, ev.verse_id, 'free', 26956
+  FROM _s303_isa39_lookup sv, _s303_isa39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=39 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Hezekiah rendered not again according to the benefit done unto him; for his heart was lifted up* (2 Chronicles 32:25) — the Chronicler names the root of the display of Isaiah 39:4: the heart lifted up after deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=4
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-hezekiah-shewed-them-all-his-treasures-the-lifted-up-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Elohim (God) left him, to try him, that he might know all that was in his heart* (2 Chronicles 32:31) — the envoys'' visit was the trial; Hezekiah''s shewing them all his treasures (Isaiah 39:2) exposed the heart.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=2
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-hezekiah-shewed-them-all-his-treasures-the-lifted-up-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Hezekiah humbled himself for the pride of his heart... so that the wrath of Yahuah (LORD) came not upon them in the days of Hezekiah* (2 Chronicles 32:26) — the lifted-up heart of Isaiah 39:2 can yet be brought low; mercy answers the humbling.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=2
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=32 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-hezekiah-shewed-them-all-his-treasures-the-lifted-up-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *all that is in thine house... shall be carried into Babylon: nothing shall be left* (2 Kings 20:17) — the Kings parallel of Isaiah 39:6, word for word; the treasure shewn becomes the measure of the spoil.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=6
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *of thy sons that shall issue from thee... they shall be eunuchs in the palace of the king of Babylon* (2 Kings 20:18) — the Kings parallel of Isaiah 39:7; the king''s own seed named for the carrying-away.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=7
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the treasures of the house of Yahuah (LORD), and the treasures of the king... all these he brought to Babylon* (2 Chronicles 36:18) — Isaiah 39:6 fulfilled: the treasure carried to Babylon to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=6
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *them that had escaped from the sword carried he away to Babylon* (2 Chronicles 36:20) — the captivity Isaiah named (39:6) accomplished; the survivors servants in Babylon till Persia.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=6
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★★ *he brought the vessels into the treasure house of his god* (Daniel 1:2) — the very treasure Hezekiah shewed (Isaiah 39:6) carried into Shinar, into the Babylonian temple''s treasure house.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=6
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★★ *certain of the children of Yashar''el (Israel), and of the king''s seed... master of his eunuchs* (Daniel 1:3) — Isaiah 39:7 fulfilled: the king''s seed given to the master of eunuchs in the palace.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=7
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★★ *of the children of Yahudah (Judah), Daniel, Hananiah, Mishael, and Azariah* (Daniel 1:6) — the sons foretold (Isaiah 39:7) named in flesh; the prophecy walks onto the page.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=7
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-carried-to-babylon-the-captivity-foretold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Good is the word of Yahuah (LORD)... Is it not good, if peace and truth be in my days?* (2 Kings 20:19) — Hezekiah''s whole answer to Isaiah 39:8; submission to the sure word, the judgment deferred not undone.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=39 AND sv.verse_number=8
+  JOIN _s303_isa39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-39-good-is-the-word-of-yahuah-the-deferred-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
