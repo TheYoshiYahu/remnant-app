@@ -44,3 +44,46 @@ Proverbs is left untouched — distinct slug namespace from `proverbs-NN-*`.
   Eccl12:13 fear-Elohim-keep-commandments + Sirach1:14/1John2:3); by-me-thy-days-multiplied (3:2,16 +
   Sirach1:20); foolish-woman/Dame-Folly=depths-of-sheol (9:13-18, counterfeit table = the two ways/two
   banquets Matt7:13-14/Prov7:27/2:18/5:5, seed-war by conduct victims-not-enemies).
+
+## Pack 2 (ch 4,6,28,30,31) — remaining heavyweights + capstone — 27 threads / 143 members LIVE
+- **ch4** (6/30): forsake-ye-not-my-torah=father's-transmitted-instruction (Deut6:6-7/Ps78:4-5/Prov1:8 +
+  Sirach4:11,6:18, covenant transmission); wisdom-is-the-principal-thing (Job28:28/Matt13:44,46/Jas1:5);
+  take-fast-hold-she-is-thy-life (Sirach4:13,6:26-27); ★★path-of-the-just=shining-light-vs-darkness
+  (4:18-19; John8:12/1John1:7/2:11/Phil2:15/Isa2:5/Dan12:3 + WisSol5:6, the Formed Light, two-ways);
+  ★★keep-thy-heart=issues-of-life (4:23; Matt12:34-35/15:19/Luke6:45/Prov23:7); ponder-the-path/turn-not-
+  right-or-left (Deut5:32/28:14/Isa35:8/Heb12:13, Torah-affirmed straight path).
+- **ch6** (5/24): go-to-the-ant (Prov24:30-34/10:4/2Thess3:10, diligence from creation); man-of-Belial-
+  soweth-discord (Rom16:17-18 + Sirach27:22); ★these-six/seven-Yahuah-hates (6:16-19; Deut25:16/Gen9:6
+  innocent-blood=image-of-Elohim/Deut19:10/Prov12:22 + Sirach25:2); ★★THE-COMMANDMENT-IS-A-LAMP-THE-
+  TORAH-IS-LIGHT (6:23 framework-heavyweight; Ps119:105/Ps19:8/Deut6:8 Shema-binding/Isa8:20/1John2:8/
+  Matt5:14/5:17-18 not-one-jot-passes — anti-antinomian centerpiece, Torah-as-light NOT abolished);
+  commandment-keepeth-from-the-strange-woman (Exod20:14/Deut5:18 seventh-word + Sirach23, covenant-
+  faithfulness victims-not-enemies). ⚑v.1-5 suretyship folded (surety motif lives Gen43-44/Heb7:22).
+- **ch28** (5/29): wicked-flee-righteous-bold-as-lion (28:1; Lev26:17,36 covenant-curse/Rom8:31);
+  ★★HE-THAT-TURNETH-HIS-EAR-FROM-THE-TORAH-HIS-PRAYER-ABOMINATION (28:9 framework-heavyweight, folds
+  28:4/5/7/18; 11 members Isa1:15/Jer6:19/7:24/Zech7:13/Prov15:8,29/John9:31/1John3:22 + Sirach34:24,26/
+  35:1 — Torah-hearing inseparable from acceptable prayer, the NT KEEPS the same rule); confesseth-and-
+  forsaketh=mercy (28:13; Ps32:5/1John1:9/Luke18:13-14 publican); happy-feareth-alway-vs-trusteth-own-
+  heart (28:14,26; Prov1:7/3:5/Jer17:9); giveth-to-the-poor-shall-not-lack (28:27; Deut15:7,11/Prov19:17/
+  2Cor9:7/Matt25:40 + Sirach3:30/4:1,6 alms→atonement).
+- **★★★ch30** (5/29 — the Agur Christology): ★★★WHO-HATH-ASCENDED=THE-FATHER-AND-HIS-SON'S-NAME (30:4;
+  13 members; the question names BOTH the Formless Father (established-the-ends-of-the-earth, named FIRST
+  =the Source) AND the Formed Son (ascended/descended, gathered-the-wind, bound-the-waters=agent of
+  creation): John3:13 Son-of-Adam-came-down/Eph4:9-10/Deut30:12/Rom10:6/Ps2:7/John1:3/Col1:16/Prov8:22,27
+  self-link/Mark4:39 wind-and-sea-obey-him + WisSol9:1/Sirach18:4. GUARDS: NOT co-equal-Trinitarian (Son
+  has a Father, named first), NOT a created creature (agent BY whom all made). FLAGGED for Yoshi.);
+  every-word-of-Elohim-pure/add-thou-not (30:5-6; Ps12:6/18:30/Deut4:2/12:32/Rev22:18 + Sirach18:6, canon
+  guarded Torah-affirmed); neither-poverty-nor-riches/food-convenient (30:7-9; Deut8:3,18/Matt6:11/1Tim6:8
+  daily-bread); generation-pure-in-own-eyes (Prov6:17/Isa65:5/Luke18:11); little-upon-earth-but-exceeding-
+  wise (30:24-28; Prov6:6/Job12:7-8 creation-teaches). ⚑Eph4:9 GATE2 flag = BENIGN (fully-parenthetical
+  verse trips 4-gram shingle; quote verbatim — eyeballed vs parse).
+- **ch31** (6/31 — the capstone): king-charged-to-plead-the-cause-of-the-poor (31:1-9; Deut1:16-17/Exod23:6/
+  Lev19:15/Isa1:17/Ps72:2,12/Jer22:16 judged-the-poor=to-know-me — righteous-king anticipates Messiah);
+  who-can-find-a-virtuous-woman=eshet-chayil (Prov12:4/18:22/19:14 + Sirach26:1,3/7:19); she-stretcheth-
+  her-hand-to-the-poor (Deut15:11); in-her-tongue-is-the-torah-of-kindness (31:26; Prov3:3/Ps37:30-31
+  Torah-on-the-heart, "law" intact in parse); ★a-woman-that-feareth-Yahuah-shall-be-praised (31:30 the
+  fear-of-Yahuah INCLUSIO with 1:7/9:10 closing the book; 1Pet3:3-4 hidden-adornment/1Tim2:9-10 + Sirach
+  1:11); the-bride-made-ready=Yashar'el-restored (Isa54:5,7 forsaken-wife-gathered/Hosea2:19-20 Lo-Ammi→
+  Ammi/Eph5:32/Rev19:8 — measured two-house figurative register, restoration NOT replacement).
+
+## STATUS: 10/31 chapters done (1,2,3,4,6,8,9,28,30,31) = 55 threads / 280 members LIVE+PUSHED.
