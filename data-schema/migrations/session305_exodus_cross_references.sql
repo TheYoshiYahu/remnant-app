@@ -4608,6 +4608,1545 @@ SELECT t.id, cr.id, 6, E'*I will put my spirit within you, and cause you to walk
  WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_25.sql (Exodus 25) -----
+-- Chapter: Exodus 25 — THE TABERNACLE BEGUN: the willing offering; "let them make me a sanctuary; that I may dwell among them"; the ark of shittim wood overlaid with gold and the testimony put within; the mercy seat of pure gold with the two cherubims, "there I will meet with thee, and I will commune with thee from above the mercy seat"; the table of shewbread "before me alway"; the candlestick of pure gold with its seven lamps — ALL to be made "after the pattern of the tabernacle... which was shewed thee in the mount." THE FRAMEWORK CORE: the earthly tabernacle is the copy/shadow of the heavenly things (Hebrews 8:5; 9:23-24), the indwelling-Presence of Yahuah among His people.
+-- Tag: ex25   Temp view: _s305_ex25_lookup
+-- Sort band: base 29600, step 3 -> threads at 29600, 29603, 29606, 29609, 29612, 29615 (6 threads)
+-- Source of EVERY row: 'canon','exodus',25,v
+--
+-- Exodus 25 coverage:
+--   v.1-7 (the willing offering; gold, silver, brass, blue, purple, scarlet, linen, oil, spices, onyx)
+--        NT:     none warranted distinct (the materials prepare the sanctuary built in v.8; the heart-offering is carried by THREAD 1's dwelling-among-them)
+--        Extras: none warranted distinct here
+--        Tanakh: none warranted distinct (the offering-list is preparatory; no framework-bearing target closer than the sanctuary it builds)
+--   ★ v.8 (And let them make me a sanctuary; that I may dwell among them) — THE indwelling-Presence
+--        NT:     John 1:14 (the Word was made flesh, and dwelt among us); Revelation 21:3 (the tabernacle of Elohim is with men, and he will dwell with them); 2 Corinthians 6:16 (I will dwell in them, and walk in them) — THREAD 1
+--        Extras: Jubilees 1:17 (I shall build My sanctuary in their midst, and I shall dwell with them); Jasher 82:27 (make a sanctuary for Yahuah, that his name might rest in it) — THREAD 1 (dbl-write both)
+--        Tanakh: ★ Ezekiel 37:27 (My tabernacle also shall be with them: yea, I will be their Elohim, and they shall be my people) — two-house lateral — THREAD 1
+--   ★★ v.9,40 (According to all that I shew thee, after the pattern of the tabernacle... look that thou make them after their pattern, which was shewed thee in the mount) — THE KEYSTONE: copy of the heavenly
+--        NT:     Hebrews 8:5 (the example and shadow of heavenly things... that thou make all things according to the pattern shewed to thee in the mount — quotes v.40); Hebrews 9:23 (the patterns of things in the heavens); Hebrews 9:24 (the figures of the true... heaven itself); Acts 7:44 (the tabernacle of witness... according to the fashion that he had seen) — THREAD 2
+--        Extras: Wisdom 9:8 (a resemblance of the holy tabernacle, which you have prepared from the beginning); Jasher 82:27 (Yahuah showed him the likeness of the sanctuary and the likeness of all its vessels) — THREAD 2 (Jasher dbl-write)
+--        Tanakh: none warranted distinct (the pattern-in-the-mount forward-weave is held by Hebrews/Acts; no closer Tanakh lateral)
+--   ★ v.10-16 (the ark of shittim wood overlaid with pure gold; put into the ark the testimony which I shall give thee)
+--        NT:     Hebrews 9:4 (the ark of the covenant... wherein was... the tables of the covenant); Revelation 11:19 (there was seen in his temple the ark of his testament) — THREAD 3
+--        Extras: none warranted distinct (Jubilees/Jasher do not narrate the ark-construction cleanly here)
+--        Tanakh: none warranted distinct (the testimony enshrined is carried forward by Hebrews/Revelation)
+--   ★ v.17-22 (the mercy seat of pure gold; the two cherubims; there I will meet with thee, and commune with thee from above the mercy seat)
+--        NT:     Romans 3:25 (whom Elohim hath set forth to be a propitiation [hilasterion = mercy seat]); Hebrews 9:5 (over it the cherubims of glory shadowing the mercyseat) — THREAD 4
+--        Extras: none warranted distinct
+--        Tanakh: ★ Leviticus 16:2 (I will appear in the cloud upon the mercy seat) — the Atonement meeting-place, lateral — THREAD 4
+--   v.23-30 (the table of shittim wood overlaid with gold; the dishes, spoons, covers, bowls; set upon the table shewbread before me alway)
+--        NT:     Hebrews 9:2 (a tabernacle... wherein was the candlestick, and the table, and the shewbread) — THREAD 5
+--        Extras: none warranted distinct (John 6 bread-of-life is the clean lateral but the table-of-shewbread weave is carried by Hebrews + Leviticus; John 6 not forced)
+--        Tanakh: ★ Leviticus 24:5-9 (the pure table... an everlasting covenant; the continual bread before Yahuah) — THREAD 5
+--   ★ v.31-40 (the candlestick of pure gold; six branches; the seven lamps that give light over against it; one beaten work of pure gold)
+--        NT:     Revelation 1:12-13 (seven golden candlesticks... one like unto the Son of Adam); Revelation 1:20 (the seven candlesticks... are the seven churches); Revelation 11:4 (the two olive trees, and the two candlesticks standing before the Elohim of the earth) — THREAD 6
+--        Extras: none warranted distinct
+--        Tanakh: ★ Zechariah 4:2 (a candlestick all of gold... his seven lamps thereon); Leviticus 24:4 (He shall order the lamps upon the pure candlestick before Yahuah continually) — THREAD 6
+--
+-- Threads (slug — target libraries):
+--   1. exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them — NT (John, Revelation, 2 Corinthians) + Tanakh (Ezekiel) + Extras (Jubilees, Jasher) [extras] (★ the indwelling Presence; two-house dwelling)
+--   2. exodus-25-after-the-pattern-shewed-thee-in-the-mount — NT (Hebrews x3, Acts) + Extras (Wisdom, Jasher) [extras] (★★ THE KEYSTONE: the earthly is a copy of the heavenly)
+--   3. exodus-25-the-ark-of-the-covenant-and-the-testimony-within — NT (Hebrews, Revelation) [free] (★ the Torah-testimony enshrined at the center, honored not abolished)
+--   4. exodus-25-the-mercy-seat-there-i-will-meet-with-thee — NT (Romans, Hebrews) + Tanakh (Leviticus 16) [free] (★ the meeting-place; the propitiation = mercy seat)
+--   5. exodus-25-the-table-of-shewbread-before-me-alway — NT (Hebrews) + Tanakh (Leviticus 24) [free] (the continual bread of the Presence)
+--   6. exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps — NT (Revelation x3) + Tanakh (Zechariah, Leviticus 24) [free] (★ the light of the Presence; seven lamps = seven assemblies)
+--
+-- Framing notes:
+--   ★ THE INDWELLING (THREAD 1): *let them make me a sanctuary; that I may dwell among them* (25:8). The whole purpose of the tabernacle is Yahuah dwelling among His people. Woven FORWARD to *the Word was made flesh, and dwelt among us* (John 1:14 — the Greek "tabernacled"), to *the tabernacle of Elohim is with men, and he will dwell with them* (Revelation 21:3), to *I will dwell in them, and walk in them* (2 Corinthians 6:16). The two-house lateral is Ezekiel 37:27 — *My tabernacle also shall be with them* — the same dwelling-Presence promised to the gathered, regathered house of Yashar'el, NOT a new people. The restored witnesses keep the purpose: *I shall build My sanctuary in their midst, and I shall dwell with them* (Jubilees 1:17); *make a sanctuary for Yahuah, that his name might rest in it* (Jasher 82:27). Jubilees + Jasher DOUBLE-WRITTEN.
+--   ★★ THE PATTERN (THREAD 2 — KEYSTONE): *According to all that I shew thee, after the pattern of the tabernacle... even so shall ye make it* (25:9) and *look that thou make them after their pattern, which was shewed thee in the mount* (25:40). Hebrews quotes v.40 outright — *See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — and names the earthly as *the example and shadow of heavenly things*; *the patterns of things in the heavens* (Hebrews 9:23); *the figures of the true* (Hebrews 9:24); *the tabernacle of witness... according to the fashion that he had seen* (Acts 7:44). The earthly tabernacle is the COPY of the heavenly reality — built EXACTLY as shown, never improvised. Wisdom 9:8 is a clean strong pattern-parallel: *a resemblance of the holy tabernacle, which you have prepared from the beginning*. Jasher 82:27 (dbl) — *Yahuah showed him the likeness of the sanctuary and the likeness of all its vessels*.
+--   ★ THE ARK + THE TESTIMONY (THREAD 3): *thou shalt put into the ark the testimony which I shall give thee* (25:16). The Torah-testimony enshrined at the very center of the dwelling — *the ark of the covenant... the tables of the covenant* (Hebrews 9:4), seen again in heaven, *the ark of his testament* (Revelation 11:19). The Torah is honored at the heart of the sanctuary, not abolished.
+--   ★ THE MERCY SEAT (THREAD 4): *there I will meet with thee, and I will commune with thee from above the mercy seat* (25:22). The meeting-place of Yahuah with His people. Romans 3:25 names the propitiation — *whom Elohim hath set forth to be a propitiation* (hilasterion, the very word for the mercy seat) — and Hebrews 9:5, *the cherubims of glory shadowing the mercyseat*. Leviticus 16:2 is the Atonement lateral — *I will appear in the cloud upon the mercy seat* — the once-a-year meeting where the blood is sprinkled.
+--   THE TABLE (THREAD 5): *thou shalt set upon the table shewbread before me alway* (25:30) — the continual bread of the Presence, named in Hebrews 9:2 (*the candlestick, and the table, and the shewbread*) and ordered in Leviticus 24:5-9 (*the pure table before Yahuah... an everlasting covenant*). The John 6 bread-of-life lateral was weighed and not forced (carried in prose, the table-weave held by Hebrews + Leviticus).
+--   ★ THE CANDLESTICK (THREAD 6): *thou shalt make the seven lamps thereof... that they may give light* (25:37) — the light of the Presence, one beaten work of pure gold. Revelation 1:12-13,20 reads the seven golden candlesticks as *the seven churches* with *one like unto the Son of Adam* in the midst; Revelation 11:4 the two candlesticks before Yahuah. Zechariah 4:2 sees the same all-gold candlestick with seven lamps; Leviticus 24:4 keeps the lamps burning *before Yahuah continually*.
+--   VERSES WITH NO ADD: v.1-7 (the willing offering and the list of materials) — preparatory to the sanctuary built in v.8, no framework-bearing target warranted distinct from THREAD 1. Interior construction-detail verses (the rings, staves, cubits, branches, knops) are carried within their threads' anchors, not separately bound.
+
+CREATE TEMP VIEW _s305_ex25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Let them make me a sanctuary; that I may dwell among them (the indwelling Presence)
+    ('canon','exodus',25,8,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). The whole aim of *let them make me a sanctuary; that I may dwell among them* (Exodus 25:8) is the dwelling of Yahuah (LORD) with His people — and the Word *dwelt (tabernacled) among us*, the Formed Son pitching His tent in flesh. The tent of the wilderness foreshadows the Presence come to abide in the midst.'),
+    ('canon','exodus',25,8,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The purpose first spoken at Sinai — *that I may dwell among them* (Exodus 25:8) — is brought to its consummation: *the tabernacle of Elohim is with men, and he will dwell with them*. The sanctuary of shittim wood was the beginning of a dwelling that ends with Yahuah forever among His people.'),
+    ('canon','exodus',25,8,'canon','2-corinthians',6,16,'free',
+      E'*And what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). Sha''ul (Paul) carries the Sinai-word forward — *I will dwell in them, and walk in them* — the same promise as *that I may dwell among them* (Exodus 25:8). The sanctuary made of gold and linen pointed to the living Presence that would dwell in the gathered people themselves.'),
+    ('canon','exodus',25,8,'canon','ezekiel',37,27,'free',
+      E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The dwelling-purpose of *let them make me a sanctuary; that I may dwell among them* (Exodus 25:8) is renewed to the two houses made one: in the chapter of the joined sticks of Yahudah (Judah) and Joseph (Ezekiel 37:19), Yahuah promises *My tabernacle also shall be with them*. The same Presence that filled the wilderness tent is pledged to the regathered, reunited people of Yashar''el (Israel) — never a new people, but the scattered house brought home.'),
+    ('canon','exodus',25,8,'jubilees','jubilees',1,17,'extras',
+      E'*And I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people in truth and righteousness* (Jubilees 1:17). The restored witness keeps the very purpose of *let them make me a sanctuary; that I may dwell among them* (Exodus 25:8): *I shall build My sanctuary in their midst, and I shall dwell with them*. The dwelling-among is Yahuah''s own declared intent, the sanctuary the place He chose to abide with His covenant people.'),
+    ('canon','exodus',25,8,'jasher','jasher',82,27,'extras',
+      E'*And Yahuah (the Lord) commanded him respecting the children of Israel that they should make a sanctuary for Yahuah (the Lord), that his name might rest in it, and Yahuah (the Lord) showed him the likeness of the sanctuary and the likeness of all its vessels* (Jasher 82:27). The extended witness gives the command whole — *make a sanctuary for Yahuah, that his name might rest in it* — matching *let them make me a sanctuary; that I may dwell among them* (Exodus 25:8): the Name resting in the midst is the Presence dwelling among the people.'),
+
+    -- THREAD 2 (★★): After the pattern shewed thee in the mount (the copy of the heavenly — KEYSTONE)
+    ('canon','exodus',25,40,'canon','hebrews',8,5,'free',
+      E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The letter quotes Exodus outright — *that thou make all things according to the pattern shewed to thee in the mount* — taking up *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The earthly tabernacle is *the example and shadow of heavenly things*: a copy of the true sanctuary above, built exactly as Moses was shown.'),
+    ('canon','exodus',25,9,'canon','hebrews',9,23,'free',
+      E'*It was therefore necessary that the patterns of things in the heavens should be purified with these; but the heavenly things themselves with better sacrifices than these* (Hebrews 9:23). The command *According to all that I shew thee, after the pattern of the tabernacle... even so shall ye make it* (Exodus 25:9) is named exactly here — the earthly are *the patterns of things in the heavens*, the figures of a heavenly reality. The tabernacle of shittim wood is the shadow; the heavenly things themselves are what it copies.'),
+    ('canon','exodus',25,9,'canon','hebrews',9,24,'free',
+      E'*For Messiah (Christ) is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of Elohim (God) for us* (Hebrews 9:24). The pattern of *after the pattern of the tabernacle... even so shall ye make it* (Exodus 25:9) is the figure; the true is heaven itself. The earthly holy places *made with hands* are *the figures of the true* — copies of the heavenly sanctuary where the Presence truly dwells, just as the mountain-pattern foreshadowed.'),
+    ('canon','exodus',25,40,'canon','acts',7,44,'free',
+      E'*Our fathers had the tabernacle of witness in the wilderness, as he had appointed, speaking unto Moses, that he should make it according to the fashion that he had seen* (Acts 7:44). Stephen recounts *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40): the tabernacle was made *according to the fashion that he had seen* — not a thing of man''s devising but the copy of a shown heavenly fashion, the witness-tent built to the seen pattern.'),
+    ('canon','exodus',25,9,'apocrypha','the-wisdom-of-solomon',9,8,'extras',
+      E'*You have commanded me to build a temple upon your holy mount, and an altar in the city in which you dwellest, a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8). The restored witness names the temple Solomon would build *a resemblance of the holy tabernacle, which you have prepared from the beginning* — the same truth as *after the pattern of the tabernacle... even so shall ye make it* (Exodus 25:9). The earthly sanctuary is a resemblance of the heavenly pattern prepared from the beginning, the copy of what was already made above.'),
+    ('canon','exodus',25,40,'jasher','jasher',82,27,'extras',
+      E'*And Yahuah (the Lord) commanded him respecting the children of Israel that they should make a sanctuary for Yahuah (the Lord), that his name might rest in it, and Yahuah (the Lord) showed him the likeness of the sanctuary and the likeness of all its vessels* (Jasher 82:27). The extended witness keeps the showing — *Yahuah showed him the likeness of the sanctuary and the likeness of all its vessels* — the very thing of *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The likeness of the sanctuary and all its vessels was shown to Moses, that the earthly might be made after the heavenly.'),
+
+    -- THREAD 3 (★): The ark of the covenant and the testimony within
+    ('canon','exodus',25,16,'canon','hebrews',9,4,'free',
+      E'*Which had the golden censer, and the ark of the covenant overlaid round about with gold, wherein was the golden pot that had manna, and Aaron''s rod that budded, and the tables of the covenant* (Hebrews 9:4). The command *thou shalt put into the ark the testimony which I shall give thee* (Exodus 25:16) is the ark Hebrews names — *the ark of the covenant overlaid round about with gold, wherein was... the tables of the covenant*. The testimony enshrined in the ark is the Torah at the heart of the dwelling, the covenant-word kept at the center of the sanctuary.'),
+    ('canon','exodus',25,16,'canon','revelation',11,19,'free',
+      E'*And the temple of Elohim (God) was opened in heaven, and there was seen in his temple the ark of his testament: and there were lightnings, and voices, and thunderings, and an earthquake, and great hail* (Revelation 11:19). The ark made to hold *the testimony which I shall give thee* (Exodus 25:16) is seen at last in the heavenly temple — *the ark of his testament* opened in heaven. The earthly ark of the testimony is the copy of the true ark above; the Torah-testimony is honored at the very center of the heavenly sanctuary.'),
+
+    -- THREAD 4 (★): The mercy seat — there I will meet with thee
+    ('canon','exodus',25,22,'canon','romans',3,25,'free',
+      E'*Whom Elohim (God) hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of Elohim (God)* (Romans 3:25). The mercy seat where *there I will meet with thee, and I will commune with thee* (Exodus 25:22) is the very place Sha''ul (Paul) names: *a propitiation* — the Greek hilasterion, the mercy seat itself. The place of meeting above the ark, where the blood was sprinkled on the Day of Atonement, is the figure of the propitiation set forth in blood.'),
+    ('canon','exodus',25,18,'canon','hebrews',9,5,'free',
+      E'*And over it the cherubims of glory shadowing the mercyseat; of which we can not now speak particularly* (Hebrews 9:5). The two cherubims commanded — *make two cherubims of gold... in the two ends of the mercy seat* (Exodus 25:18) — are named in the letter as *the cherubims of glory shadowing the mercyseat*. The winged figures with faces toward the mercy seat (Exodus 25:20) overshadow the place where Yahuah (LORD) would meet His people.'),
+    ('canon','exodus',25,22,'canon','leviticus',16,2,'free',
+      E'*And Yahuah (LORD) said unto Moses, Speak unto Aaron thy brother, that he come not at all times into the holy place within the vail before the mercy seat, which is upon the ark; that he die not: for I will appear in the cloud upon the mercy seat* (Leviticus 16:2). The promise *there I will meet with thee, and I will commune with thee from above the mercy seat* (Exodus 25:22) is kept in the Day of Atonement: *I will appear in the cloud upon the mercy seat*. The meeting-place of the mercy seat is the very place Yahuah appears in the cloud to be met once a year, the holiest point of the sanctuary.'),
+
+    -- THREAD 5: The table of shewbread before me alway
+    ('canon','exodus',25,30,'canon','hebrews',9,2,'free',
+      E'*For there was a tabernacle made; the first, wherein was the candlestick, and the table, and the shewbread; which is called the sanctuary* (Hebrews 9:2). The command *thou shalt set upon the table shewbread before me alway* (Exodus 25:30) is recalled as the furnishing of the holy place — *the candlestick, and the table, and the shewbread*. The continual bread set before Yahuah (LORD) is named among the things of the first tabernacle, the bread of the Presence kept ever before His face.'),
+    ('canon','exodus',25,30,'canon','leviticus',24,5,'free',
+      E'*And thou shalt take fine flour, and bake twelve cakes thereof: two tenth deals shall be in one cake* (Leviticus 24:5). The shewbread of *thou shalt set upon the table shewbread before me alway* (Exodus 25:30) is ordered in full: the twelve cakes set *in two rows, six on a row, upon the pure table before Yahuah (LORD)* (Leviticus 24:6), renewed every sabbath *by an everlasting covenant* (Leviticus 24:8). The continual bread is the twelve-tribe bread of the Presence, kept before Yahuah by everlasting covenant — never a passing rite.'),
+
+    -- THREAD 6 (★): The candlestick of pure gold and the seven lamps
+    ('canon','exodus',25,37,'canon','revelation',1,12,'free',
+      E'*And I turned to see the voice that spake with me. And being turned, I saw seven golden candlesticks* (Revelation 1:12). The lampstand of *thou shalt make the seven lamps thereof... that they may give light* (Exodus 25:37) opens out into John''s vision of *seven golden candlesticks*, and *in the midst of the seven candlesticks one like unto the Son of Adam* (Revelation 1:13). The one beaten work of pure gold with its seven lamps becomes the seven golden lampstands with the Formed Son walking in their midst.'),
+    ('canon','exodus',25,37,'canon','revelation',1,20,'free',
+      E'*The mystery of the seven stars which thou sawest in my right hand, and the seven golden candlesticks. The seven stars are the angels of the seven churches: and the seven candlesticks which thou sawest are the seven churches* (Revelation 1:20). The seven lamps of *thou shalt make the seven lamps thereof* (Exodus 25:37) are read as *the seven churches* — the seven assemblies bearing the light of the Presence. The single golden lampstand of the wilderness foreshadows the people set as lights before Yahuah (LORD).'),
+    ('canon','exodus',25,37,'canon','revelation',11,4,'free',
+      E'*These are the two olive trees, and the two candlesticks standing before the Elohim (God) of the earth* (Revelation 11:4). The lampstand giving light before Yahuah — *thou shalt make the seven lamps thereof... that they may give light over against it* (Exodus 25:37) — appears again as *the two candlesticks standing before the Elohim of the earth*, the witnesses bearing light in His presence, drawing on the same golden-lampstand and olive-tree imagery of Zechariah''s vision.'),
+    ('canon','exodus',25,31,'canon','zechariah',4,2,'free',
+      E'*And said unto me, What seest thou? And I said, I have looked, and behold a candlestick all of gold, with a bowl upon the top of it, and his seven lamps thereon, and seven pipes to the seven lamps, which are upon the top thereof* (Zechariah 4:2). The candlestick *of pure gold... all it shall be one beaten work of pure gold* (Exodus 25:31,36) is the very vision Zechariah is shown — *a candlestick all of gold... his seven lamps thereon* — the golden lampstand burning by the Spirit (*Not by might, nor by power, but by my spirit*, Zechariah 4:6), the light of the Presence among the people.'),
+    ('canon','exodus',25,37,'canon','leviticus',24,4,'free',
+      E'*He shall order the lamps upon the pure candlestick before Yahuah (LORD) continually* (Leviticus 24:4). The seven lamps of *thou shalt make the seven lamps thereof... that they may give light* (Exodus 25:37) are kept burning by Aaron *from the evening unto the morning before Yahuah continually* (Leviticus 24:3) — *a statute for ever in your generations*. The light of the lampstand is the continual light of the Presence, never let go out before Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them',
+       E'Let them make me a sanctuary; that I may dwell among them — the indwelling Presence',
+       E'After the offering is called for — *of every man that giveth it willingly with his heart ye shall take my offering* (Exodus 25:2) — the whole purpose is named in one verse: *And let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). Yahuah (LORD) does not want a house to be far off in; He wants to DWELL in the midst of His people. This is the heartbeat of the tabernacle, and it runs to the end of the Scriptures. The Formed Son took flesh to do it: *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14) — the word *dwelt* is "tabernacled," the Presence pitching His tent among men. Sha''ul (Paul) carries it into the gathered people: *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). And it ends where it began, only forever: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3). The two-house promise is the same dwelling: in the chapter of the joined sticks of Yahudah (Judah) and Joseph, *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — the regathered, reunited house of Yashar''el (Israel), not a new people grafted in by confession, but the scattered brought home to the Presence. The restored witnesses keep the purpose whole: *I shall build My sanctuary in their midst, and I shall dwell with them* (Jubilees 1:17), and *make a sanctuary for Yahuah (the Lord), that his name might rest in it* (Jasher 82:27). The tent of shittim wood and gold is the first form of the one desire of Yahuah — to dwell among His people.',
+       sv.verse_id, ev.verse_id, 'extras', 29600
+  FROM _s305_ex25_lookup sv, _s305_ex25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=25 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-25-after-the-pattern-shewed-thee-in-the-mount',
+       E'After the pattern shewed thee in the mount — the earthly a copy of the heavenly',
+       E'Twice the chapter binds the whole work to one rule: *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9), and at the close, *And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). Nothing is left to man''s devising; the tabernacle and every vessel are made after a heavenly pattern Moses was shown on the mountain. This is the keystone of the whole framework, and the letter to the Hebrews quotes Exodus 25:40 outright: *Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The earthly is *the example and shadow of heavenly things* — *the patterns of things in the heavens* (Hebrews 9:23), *the figures of the true* (Hebrews 9:24), the copies of a real sanctuary above into which the Messiah entered, *into heaven itself, now to appear in the presence of Elohim (God) for us*. Stephen says the same: the tabernacle was made *according to the fashion that he had seen* (Acts 7:44). The restored witnesses keep the truth: Solomon''s temple is *a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8), and *Yahuah (the Lord) showed him the likeness of the sanctuary and the likeness of all its vessels* (Jasher 82:27). The earthly sanctuary is no invention — it is the true copy of the heavenly, shown in the mount and built exactly so.',
+       sv.verse_id, ev.verse_id, 'extras', 29603
+  FROM _s305_ex25_lookup sv, _s305_ex25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=25 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-25-the-ark-of-the-covenant-and-the-testimony-within',
+       E'The ark of the covenant — the testimony enshrined at the center',
+       E'The first vessel commanded is the ark: *And they shall make an ark of shittim wood... And thou shalt overlay it with pure gold, within and without shalt thou overlay it* (Exodus 25:10-11). And what goes inside it is the heart of the whole sanctuary: *And thou shalt put into the ark the testimony which I shall give thee* (Exodus 25:16). The testimony — the tables of the covenant, the Torah-word — is enshrined at the very center of the dwelling, overlaid with pure gold, borne on staves that *shall not be taken from it* (Exodus 25:15). The letter to the Hebrews names this ark exactly: *the ark of the covenant overlaid round about with gold, wherein was the golden pot that had manna, and Aaron''s rod that budded, and the tables of the covenant* (Hebrews 9:4). And John sees the true ark in the heavenly temple: *And the temple of Elohim (God) was opened in heaven, and there was seen in his temple the ark of his testament* (Revelation 11:19). The earthly ark is the copy of the heavenly; the Torah-testimony is kept at the center of both, honored at the heart of the Presence — not abolished, but enshrined in gold where Yahuah (LORD) chose to dwell.',
+       sv.verse_id, ev.verse_id, 'free', 29606
+  FROM _s305_ex25_lookup sv, _s305_ex25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=25 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-25-the-mercy-seat-there-i-will-meet-with-thee',
+       E'The mercy seat — there I will meet with thee, and commune with thee',
+       E'Upon the ark goes the mercy seat: *And thou shalt make a mercy seat of pure gold... And thou shalt make two cherubims of gold, of beaten work shalt thou make them, in the two ends of the mercy seat* (Exodus 25:17-18), the cherubims with wings outstretched and *their faces shall look one to another; toward the mercy seat shall the faces of the cherubims be* (Exodus 25:20). And here is the appointed place of meeting: *And there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims which are upon the ark of the testimony* (Exodus 25:22). The mercy seat is where Yahuah (LORD) meets His people — and where the blood is brought. On the Day of Atonement, *I will appear in the cloud upon the mercy seat* (Leviticus 16:2), the high priest sprinkling the blood before it. Sha''ul (Paul) names the Messiah by the very word for this seat: *Whom Elohim (God) hath set forth to be a propitiation through faith in his blood* (Romans 3:25) — the Greek hilasterion, the mercy seat itself. And Hebrews recalls *the cherubims of glory shadowing the mercyseat* (Hebrews 9:5). The golden lid between the cherubims, where the cloud appeared and the blood was sprinkled, is the meeting-place of Yahuah with His people and the figure of the propitiation set forth in blood.',
+       sv.verse_id, ev.verse_id, 'free', 29609
+  FROM _s305_ex25_lookup sv, _s305_ex25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=25 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-25-the-table-of-shewbread-before-me-alway',
+       E'The table of shewbread — the continual bread before me alway',
+       E'The second vessel of the holy place is the table: *Thou shalt also make a table of shittim wood... And thou shalt overlay it with pure gold, and make thereto a crown of gold round about* (Exodus 25:23-24), with its dishes and bowls *of pure gold* (Exodus 25:29). And upon it goes the bread of the Presence: *And thou shalt set upon the table shewbread before me alway* (Exodus 25:30) — bread kept continually before the face of Yahuah (LORD). Leviticus orders it in full: *thou shalt take fine flour, and bake twelve cakes thereof* (Leviticus 24:5), set *in two rows, six on a row, upon the pure table before Yahuah (LORD)* (Leviticus 24:6), renewed *every sabbath... by an everlasting covenant* (Leviticus 24:8). The twelve cakes are the twelve tribes set before the Presence, the continual bread of an everlasting covenant. And Hebrews recalls it among the furnishings of the first tabernacle: *wherein was the candlestick, and the table, and the shewbread; which is called the sanctuary* (Hebrews 9:2). The bread of the Presence kept ever before His face is the people held continually before Yahuah, fed and remembered at His table.',
+       sv.verse_id, ev.verse_id, 'free', 29612
+  FROM _s305_ex25_lookup sv, _s305_ex25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=25 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps',
+       E'The candlestick of pure gold — the seven lamps, the light of the Presence',
+       E'The last vessel of the chapter is the lampstand: *And thou shalt make a candlestick of pure gold: of beaten work shall the candlestick be made* (Exodus 25:31), with six branches, bowls like almonds, knops and flowers, *all it shall be one beaten work of pure gold* (Exodus 25:36), bearing *the seven lamps thereof... that they may give light over against it* (Exodus 25:37). It is the light of the Presence in the holy place, and its lamps are kept burning *before Yahuah (LORD) continually* (Leviticus 24:4) — *a statute for ever in your generations* (Leviticus 24:3). The prophet Zechariah is shown the very vision: *behold a candlestick all of gold... his seven lamps thereon* (Zechariah 4:2), burning *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6) — the light kept by the Spirit. And John sees it opened out: *seven golden candlesticks* (Revelation 1:12) with *one like unto the Son of Adam* (Revelation 1:13) in their midst, and the word is given plainly — *the seven candlesticks which thou sawest are the seven churches* (Revelation 1:20) — the assemblies set as lights before Yahuah. The two witnesses are *the two candlesticks standing before the Elohim (God) of the earth* (Revelation 11:4). The single golden lampstand of the wilderness, one beaten work of pure gold, is the light of the Presence — and the people Yahuah sets to burn before His face by His Spirit.',
+       sv.verse_id, ev.verse_id, 'free', 29615
+  FROM _s305_ex25_lookup sv, _s305_ex25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=25 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the Word was made flesh, and dwelt among us* (John 1:14) — the Word "tabernacled" among men; the Presence sought in *that I may dwell among them* (25:8) come in flesh.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will dwell in them, and walk in them* (2 Corinthians 6:16) — the Sinai-word *that I may dwell among them* (25:8) carried into the gathered people themselves.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*My tabernacle also shall be with them... and they shall be my people* (Ezekiel 37:27) — the two-house lateral; the dwelling of 25:8 pledged to the regathered, reunited Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the purpose of 25:8 brought to its everlasting consummation.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I shall build My sanctuary in their midst, and I shall dwell with them* (Jubilees 1:17) — the restored witness keeps the declared intent of *that I may dwell among them* (25:8).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*make a sanctuary for Yahuah (the Lord), that his name might rest in it* (Jasher 82:27) — the extended witness gives the command of 25:8; the Name resting in the midst is the Presence dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-let-them-make-me-a-sanctuary-that-i-may-dwell-among-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — Hebrews quotes 25:40 outright; the earthly tabernacle is the example and shadow of heavenly things.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=40
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-after-the-pattern-shewed-thee-in-the-mount'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the patterns of things in the heavens* (Hebrews 9:23) — the earthly of *after the pattern of the tabernacle* (25:9) are copies of the heavenly reality.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-after-the-pattern-shewed-thee-in-the-mount'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the figures of the true; but into heaven itself* (Hebrews 9:24) — the holy places made with hands of 25:9 are figures of the true heavenly sanctuary.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-after-the-pattern-shewed-thee-in-the-mount'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the tabernacle of witness... according to the fashion that he had seen* (Acts 7:44) — Stephen recounts 25:40; the tent built to the seen heavenly fashion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=40
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-after-the-pattern-shewed-thee-in-the-mount'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8) — a clean pattern-parallel to *after the pattern of the tabernacle* (25:9); the heavenly prepared from the beginning.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-after-the-pattern-shewed-thee-in-the-mount'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Yahuah (the Lord) showed him the likeness of the sanctuary and the likeness of all its vessels* (Jasher 82:27) — the extended witness keeps the showing of *which was shewed thee in the mount* (25:40).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=40
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-after-the-pattern-shewed-thee-in-the-mount'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the ark of the covenant... wherein was... the tables of the covenant* (Hebrews 9:4) — the ark of 25:16 holding the testimony; the Torah at the heart of the sanctuary.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=16
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-ark-of-the-covenant-and-the-testimony-within'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there was seen in his temple the ark of his testament* (Revelation 11:19) — the true ark of 25:16 seen in the heavenly temple; the testimony honored at the center above.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=16
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-ark-of-the-covenant-and-the-testimony-within'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*whom Elohim (God) hath set forth to be a propitiation* (Romans 3:25) — hilasterion, the mercy seat itself; the meeting-place of *there I will meet with thee* (25:22) named as the propitiation in blood.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=22
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-mercy-seat-there-i-will-meet-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the cherubims of glory shadowing the mercyseat* (Hebrews 9:5) — the two cherubims of 25:18 overshadowing the place of meeting.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=18
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-mercy-seat-there-i-will-meet-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will appear in the cloud upon the mercy seat* (Leviticus 16:2) — the Atonement lateral; the meeting promised in *commune with thee from above the mercy seat* (25:22) kept where the blood is brought.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=22
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-mercy-seat-there-i-will-meet-with-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the candlestick, and the table, and the shewbread; which is called the sanctuary* (Hebrews 9:2) — the table and shewbread of 25:30 named among the things of the first tabernacle.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-table-of-shewbread-before-me-alway'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt take fine flour, and bake twelve cakes thereof* (Leviticus 24:5) — the shewbread of 25:30 ordered in full: twelve cakes (the twelve tribes) on the pure table by an everlasting covenant.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=30
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=24 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-table-of-shewbread-before-me-alway'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I saw seven golden candlesticks* (Revelation 1:12) — the lampstand of 25:37 opened into seven golden candlesticks with the Son of Adam in their midst.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=37
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the seven candlesticks which thou sawest are the seven churches* (Revelation 1:20) — the seven lamps of 25:37 read as the seven assemblies bearing the light of the Presence.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=37
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the two olive trees, and the two candlesticks standing before the Elohim (God) of the earth* (Revelation 11:4) — the lampstand before Yahuah of 25:37 as the witnesses bearing light in His presence.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=37
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*behold a candlestick all of gold... his seven lamps thereon* (Zechariah 4:2) — the lateral vision of the all-gold candlestick of 25:31, burning by the Spirit, not by might.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=31
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He shall order the lamps upon the pure candlestick before Yahuah (LORD) continually* (Leviticus 24:4) — the seven lamps of 25:37 kept burning continually; a statute for ever, the light of the Presence.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=25 AND sv.verse_number=37
+  JOIN _s305_ex25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=24 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-25-the-candlestick-of-pure-gold-and-the-seven-lamps'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_32.sql (Exodus 32) -----
+-- Chapter: Exodus 32 — THE GOLDEN CALF: the great apostasy at the foot of Sinai. While Moses tarries on the mount, the people gather to Aaron — "Up, make us gods, which shall go before us"; the molten calf is fashioned; "These be thy gods, O Yashar'el (Israel), which brought thee up out of the land of Egypt"; "they rose up to play." Yahuah's wrath against the stiffnecked people — "let me alone, that my wrath may wax hot... and I will make of thee a great nation." Moses the intercessor stands in the breach — "Remember Abraham, Isaac, and Yashar'el (Israel)... to whom thou swarest by thine own self" — and Yahuah repented of the evil. Moses breaks the tables, burns and grinds the calf. "Who is on Yahuah's side?" — the sons of Levi gather and execute judgment within the camp; "Consecrate yourselves." Moses offers himself: "blot me, I pray thee, out of thy book which thou hast written" — and Yahuah answers, "Whosoever hath sinned against me, him will I blot out of my book."
+-- Tag: ex32   Temp view: _s305_ex32_lookup   Session prefix: s305
+-- Sort band: base 29775, step 3 -> threads at 29775, 29778, 29781, 29784, 29787 (5 threads)
+-- Source of EVERY row: 'canon','exodus',32,v
+--
+-- Exodus 32 coverage:
+--   ★★ v.1-6 (Up, make us gods; the molten calf; These be thy gods O Yashar'el; a feast to Yahuah; they rose up to play)
+--        NT:     ★ Acts 7:39-41 (Stephen: in their hearts turned back again into Egypt... they made a calf in those days, and offered sacrifice unto the idol); ★ 1 Corinthians 10:7 (Paul quotes v.6: as it is written, The people sat down to eat and drink, and rose up to play); Romans 1:23 (changed the glory of the uncorruptible Elohim into an image, lateral) — THREAD 1
+--        Extras: Jasher 82:12-14 (the people gather to Aaron, make us a god... he made it into a molten calf) — THREAD 1
+--        Tanakh: ★ Psalm 106:19-21 (They made a calf in Horeb... changed their glory into the similitude of an ox); Nehemiah 9:18 (when they had made them a molten calf... This is thy Elohim that brought thee up out of Egypt) — THREAD 1
+--   ★ v.7-10 (thy people have corrupted themselves; turned aside quickly; stiffnecked; let me alone that my wrath may wax hot; I will make of thee a great nation)
+--        NT:     none warranted distinct (the apostasy's NT weave is carried by THREAD 1; the wrath/testing belongs to the Tanakh+extras here)
+--        Extras: ★ Jubilees 1:7-9 (Yahuah's own forewarning: I know their rebellion and their stiff neck... they will turn to strange gods... forget all My commandments); Jasher 82:15-16 (Get you down, for your people... have corrupted themselves... leave me, that I may consume them) — THREAD 2
+--        Tanakh: none warranted distinct beyond THREAD 2 (Psalm 106/Nehemiah 9 used at THREAD 1; the corruption is the same act)
+--   ★★ v.11-14 (Moses besought Yahuah; why doth thy wrath wax hot; Remember Abraham, Isaac, and Yashar'el, to whom thou swarest by thine own self; and Yahuah repented of the evil)
+--        NT:     none warranted as a distinct member (the greater-Intercessor weave — Hebrews 7:25 / Romans 8:34 — is framed carefully in THREAD 3 PROSE as foreshadow, NOT flattened into identity; not forced as a member, the type is Moses-stands-in-the-breach)
+--        Extras: Jasher 82:17 (Moses besought the countenance of Yahuah, and he prayed to Yahuah for the people); Jasher 82:23 (Moses entreat Yahuah in behalf of the children of Israel, and Yahuah hearkened) — THREAD 3
+--        Tanakh: ★★ Psalm 106:23 (had not Moses his chosen stood before him in the breach, to turn away his wrath); Exodus 2:24 (Elohim remembered his covenant with Abraham, with Isaac, and with Jacob — the oath Moses pleads) — THREAD 3
+--   v.15-25 (the two tables; Joshua's noise of war; Moses brake the tables; burnt the calf, ground it to powder; Aaron's excuse — there came out this calf)
+--        NT:     none warranted   Extras: Jasher 82:18-19 (Moses broke the tablets... burned it with fire, and ground it till it became fine dust) — narrative parallel, folded into THREAD 1's calf-act / THREAD 3's descent, NOT a separate thread (the broken tables tie forward to ch34 the re-hewn tables, that pack's concern)
+--        Tanakh: none warranted distinct (the broken-covenant act is bound to the calf-apostasy of THREAD 1)
+--   ★ v.26-29 (Who is on Yahuah's side? the sons of Levi gathered; slay every man his brother; Consecrate yourselves... that he may bestow upon you a blessing)
+--        NT:     none warranted distinct (the zeal-of-Levi weave is Tanakh-internal — the priesthood's origin)
+--        Extras: Jasher 82:20 (there died of the people by the swords of each other about three thousand men who had made the calf) — narrative parallel only, NOT forced (the consecration-blessing of Levi is the framework weight, carried by the Tanakh laterals)
+--        Tanakh: ★ Deuteronomy 33:9 (Levi: I have not seen him... for they have observed thy word, and kept thy covenant — the blessing earned at the calf); ★ Numbers 25:11-13 (Phinehas... zealous for my sake... the covenant of an everlasting priesthood) — THREAD 4
+--   ★★ v.30-33 (peradventure I shall make an atonement; blot me, I pray thee, out of thy book which thou hast written; Whosoever hath sinned against me, him will I blot out of my book)
+--        NT:     ★★ Romans 9:3 (Paul: I could wish that myself were accursed from Messiah for my brethren); ★ Revelation 3:5 (I will not blot out his name out of the book of life); Revelation 20:15 (not found written in the book of life); Revelation 21:27 (written in the Lamb's book of life) — THREAD 5
+--        Extras: Jasher 82:21 (I will go up to Yahuah, peradventure I may make atonement for your sins) — THREAD 5
+--        Tanakh: ★ Psalm 69:28 (Let them be blotted out of the book of the living, and not be written with the righteous) — THREAD 5
+--   v.34-35 (mine Angel shall go before thee; in the day when I visit I will visit their sin; Yahuah plagued the people)
+--        NT:     none warranted   Extras: none warranted   Tanakh: none warranted (the Angel-going-before — the Formed who leads — is developed at Exodus 23/33, those packs' concern; the visitation closes the chapter, no distinct framework target)
+--
+-- Threads (slug — target libraries):
+--   1. exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play — NT (Acts, 1 Corinthians, Romans) + Tanakh (Psalm 106, Nehemiah 9) + Extras (Jasher) [extras] (★★ THE keystone apostasy quoted forward; first-commandment broken at the very mount)
+--   2. exodus-32-thy-people-have-corrupted-themselves-let-me-alone — Extras (Jubilees, Jasher) [extras] (★ the wrath; the stiffnecked people forewarned; the testing of the mediator)
+--   3. exodus-32-moses-stood-in-the-breach-remember-abraham-isaac-and-israel — Tanakh (Psalm 106, Exodus 2) + Extras (Jasher) [extras] (★★ the intercessor type; Moses pleads the Abrahamic oath; foreshadow of the greater Intercessor framed carefully)
+--   4. exodus-32-who-is-on-yahuahs-side-the-sons-of-levi — Tanakh (Deuteronomy 33, Numbers 25) [free] (★ the zeal of Levi; the priesthood's origin; judgment within the covenant, victims-not-enemies)
+--   5. exodus-32-blot-me-out-of-thy-book-the-book-of-life — NT (Romans, Revelation x3) + Tanakh (Psalm 69) + Extras (Jasher) [extras] (★★ Moses offers himself; the substitution-intercession foreshadow; the book of life)
+--
+-- Framing notes:
+--   ★★ THE KEYSTONE APOSTASY (THREAD 1): *These be thy gods, O Yashar'el (Israel), which brought thee up out of the land of Egypt* (32:4) and *the people sat down to eat and to drink, and rose up to play* (32:6). The first commandment broken at the very mount where it was given. Stephen quotes it as the turning-back of the heart: *in their hearts turned back again into Egypt... they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands* (Acts 7:39-41). Sha'ul (Paul) quotes v.6 word-for-word as the warning to the Corinthians: *The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7). Romans 1:23 is the lateral: the same exchange of glory — *changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man... and fourfooted beasts*. Psalm 106 sings the history: *They made a calf in Horeb, and worshipped the molten image. Thus they changed their glory into the similitude of an ox that eateth grass* (106:19-20). The seed-war of idolatry at its source.
+--   ★ THE WRATH (THREAD 2): *thy people, which thou broughtest out of the land of Egypt, have corrupted themselves... it is a stiffnecked people... let me alone, that my wrath may wax hot against them... and I will make of thee a great nation* (32:7-10). Jubilees 1:7-9 carries Yahuah's OWN forewarning of this very apostasy, spoken on the mount: *I know their rebellion and their stiff neck... they will turn to strange gods... For they will forget all My commandments*. The breach is no surprise to Yahuah; it is the testing of the mediator — the offer to make of Moses a great nation is the crucible in which Moses' intercession is proven (THREAD 3). Framed victims-not-enemies (Red Line #7): the covenant-lawsuit language is conduct-within-the-covenant, the stiff neck a sickness in the people Yahuah will not abandon, not a casting-off.
+--   ★★ THE INTERCESSOR (THREAD 3): *Moses besought Yahuah Elohav (the LORD his God)... Remember Abraham, Isaac, and Yashar'el (Israel), thy servants, to whom thou swarest by thine own self... And Yahuah (LORD) repented of the evil which he thought to do unto his people* (32:11-14). Psalm 106:23 names the office: *had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them*. Moses pleads not his own merit but the OATH — the covenant with the fathers of Exodus 2:24 (*Elohim remembered his covenant with Abraham, with Isaac, and with Jacob*). This is the great TYPE of the mediator who stands between wrath and the people — pointing FORWARD to the greater Intercessor, the Formed Son who *ever liveth to make intercession* (Hebrews 7:25), *who also maketh intercession for us* (Romans 8:34). Framed strictly as foreshadow through the Formed-and-the-Formless lens (Red Line #4): Moses' standing-in-the-breach prefigures the Son's intercession — NOT identical, NOT a flattening; the man Moses who pleads the covenant is a shadow of the One who pleads it forever. (NT intercession verses framed in PROSE only, not forced as members — the type is Moses stands in the breach.)
+--   ★ THE ZEAL OF LEVI (THREAD 4): *Who is on Yahuah's (the LORD'S) side? let him come unto me. And all the sons of Levi gathered themselves together unto him* (32:26); *Consecrate yourselves to day to Yahuah (LORD)... that he may bestow upon you a blessing this day* (32:29). This is the origin of the Levitical priesthood's standing — the tribe that chose Yahuah's side at the calf. Deuteronomy 33:9 blesses Levi for exactly this hour: *for they have observed thy word, and kept thy covenant*. Numbers 25:11-13 is the lateral pattern — Phinehas *zealous for my sake* receives *the covenant of an everlasting priesthood*. Framed victims-not-enemies (Red Line #7): the sword at the calf is judgment WITHIN the covenant on the apostasy itself, the consecration of those who would not bow — never ethnic, never enmity against the people; the three thousand fell for the conduct of the calf, and Levi was consecrated for refusing it.
+--   ★★ BLOT ME OUT OF THY BOOK (THREAD 5): *peradventure I shall make an atonement for your sin* (32:30); *if not, blot me, I pray thee, out of thy book which thou hast written* (32:32); *Whosoever hath sinned against me, him will I blot out of my book* (32:33). Moses offers HIMSELF — to be blotted out in the people's stead — the substitution-intercession foreshadow. Sha'ul (Paul) takes up the very same heart for the same people: *I could wish that myself were accursed from Messiah (Christ) for my brethren, my kinsmen according to the flesh* (Romans 9:3). The book of Yahuah runs through the canon to the end: Psalm 69:28 (*Let them be blotted out of the book of the living*), Revelation 3:5 (*I will not blot out his name out of the book of life*), 20:15 (*not found written in the book of life*), 21:27 (*written in the Lamb's book of life*). Framed as type pointing FORWARD to the One who was *made a curse for us* (the substitution Moses could only offer, the Formed Son accomplished) — Moses' offer is the shadow; the bearing-of-the-curse is the substance.
+--   EXTRAS: Jasher 82 carries the calf account verse-for-verse (clean parse): the gathering to Aaron and the molten calf (82:12-14), the corruption and "leave me, that I may consume them" (82:15-16), Moses besought Yahuah (82:17), the broken tablets and ground calf (82:18-19), the three thousand fallen (82:20), and "peradventure I may make atonement" (82:21). NOTE on the mixed multitude: the prompt flags Jasher's tie of the calf to the mixed multitude that came up out of Egypt; THIS parse attributes the calf to "the people" / Aaron without naming the mixed multitude in the clean verses, so the conduct-not-ethnicity frame holds without forcing it — the apostasy is conduct, the door any may walk through, never an ethnic verdict. Jasher DOUBLE-WRITTEN 'jasher','jasher'. Jubilees 1:7-9 (Yahuah's forewarning of the stiff neck and turning to strange gods) is the clean witness for the wrath (THREAD 2); Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'.
+--   VERSES WITH NO ADD: v.15-25 (the two tables, Joshua's "noise of war," Moses breaking the tables, grinding the calf, Aaron's excuse) — narrative carried into THREADS 1/3; the broken tables tie forward to ch34's re-hewn tables, that pack's concern, so no separate thread here. v.34-35 (mine Angel shall go before thee; the visitation; Yahuah plagued the people) — the Angel-going-before (the Formed who leads) is developed at Exodus 23/33, those packs' concern; the closing visitation warrants no distinct framework target in this pack.
+
+CREATE TEMP VIEW _s305_ex32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: The molten calf — these be thy gods — they rose up to play (the keystone apostasy)
+    ('canon','exodus',32,4,'canon','acts',7,41,'free',
+      E'*And they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands* (Acts 7:41). Stephen quotes the calf-apostasy of *These be thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (Exodus 32:4) as the great proof of the hardened heart — *they made a calf in those days, and offered sacrifice unto the idol*. The molten image was the work of their own hands set in the place of the One who brought them out; the apostasy named at the foot of Sinai is the apostasy Stephen lays at the feet of his hearers.'),
+    ('canon','exodus',32,1,'canon','acts',7,39,'free',
+      E'*To whom our fathers would not obey, but thrust him from them, and in their hearts turned back again into Egypt* (Acts 7:39). The cry *make us gods, which shall go before us; for as for this Moses... we wot not what is become of him* (Exodus 32:1) is the heart Stephen names — *in their hearts turned back again into Egypt*. To reject the mediator on the mount and demand a god of gold is to turn the heart back to the house of bondage; the longing for Egypt and the molten calf are one rebellion.'),
+    ('canon','exodus',32,6,'canon','1-corinthians',10,7,'free',
+      E'*Neither be ye idolaters, as were some of them; as it is written, The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7). Sha''ul (Paul) quotes Exodus 32:6 word-for-word — *the people sat down to eat and to drink, and rose up to play* — as the standing warning to the assembly: the calf-feast is the pattern of idolatry that *were our examples* (1 Corinthians 10:6). The eating and drinking before the molten image, the rising up to play, is named *as it is written* — the apostasy of Horeb held up so that the gathered would not repeat it.'),
+    ('canon','exodus',32,4,'canon','romans',1,23,'free',
+      E'*And changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man, and to birds, and fourfooted beasts, and creeping things* (Romans 1:23). The fashioning of *a molten calf* and the cry *These be thy gods, O Yashar''el (Israel)* (Exodus 32:4) is the very exchange Sha''ul (Paul) names as the root of idolatry — *changed the glory of the uncorruptible Elohim into an image... and fourfooted beasts*. The calf is the glory of the living Elohim traded for the similitude of a beast; the apostasy at Sinai is the pattern of the whole turning-away.'),
+    ('canon','exodus',32,4,'canon','psalms',106,19,'free',
+      E'*They made a calf in Horeb, and worshipped the molten image* (Psalm 106:19). The psalmist sings the apostasy of *a molten calf... These be thy gods, O Yashar''el (Israel)* (Exodus 32:4) into the long memory of the people — *They made a calf in Horeb, and worshipped the molten image*. The mount of the giving of the commandments is the mount of the breaking of the first; Horeb is named as the place of the great shame.'),
+    ('canon','exodus',32,4,'canon','psalms',106,20,'free',
+      E'*Thus they changed their glory into the similitude of an ox that eateth grass* (Psalm 106:20). The cry *These be thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (Exodus 32:4) is named by the psalmist as the trading away of their own glory — *they changed their glory into the similitude of an ox that eateth grass*. The Elohim of their salvation was exchanged for the image of a grass-eating beast; the deliverance of Egypt credited to a thing that cannot save.'),
+    ('canon','exodus',32,8,'canon','nehemiah',9,18,'free',
+      E'*Yea, when they had made them a molten calf, and said, This is thy Elohim (God) that brought thee up out of Egypt, and had wrought great provocations* (Nehemiah 9:18). The Levites'' confession recalls Exodus 32:8 — *they have made them a molten calf, and have worshipped it... These be thy gods, O Yashar''el (Israel), which have brought thee up out of the land of Egypt* — almost word-for-word: *made them a molten calf, and said, This is thy Elohim that brought thee up out of Egypt*. The provocation is owned in the great prayer of return; the calf is remembered as the height of the people''s rebellion against the One who delivered them.'),
+    ('canon','exodus',32,4,'jasher','jasher',82,14,'extras',
+      E'*And Aaron was greatly afraid of the people, and he ordered them to bring him gold and he made it into a molten calf for the people* (Jasher 82:14). The restored witness keeps the fashioning of *a molten calf* (Exodus 32:4) — *he ordered them to bring him gold and he made it into a molten calf for the people* — and adds that Aaron acted in fear of the people; the calf came of the priest''s yielding to the crowd''s demand for a god of gold.'),
+
+    -- THREAD 2: Thy people have corrupted themselves — let me alone (the wrath; the stiffnecked people)
+    ('canon','exodus',32,9,'jubilees','jubilees',1,7,'extras',
+      E'*And do you write for yourself all these words which I declare to you this day, for I know their rebellion and their stiff neck, before I bring them into the land of which I sware to their fathers* (Jubilees 1:7). The restored witness carries Yahuah''s OWN forewarning of *it is a stiffnecked people* (Exodus 32:9), spoken on the mount before ever the calf was made — *I know their rebellion and their stiff neck*. The breach is no surprise to Yahuah; He named the stiff neck before He named the land of the oath, and still swore to bring them in.'),
+    ('canon','exodus',32,8,'jubilees','jubilees',1,8,'extras',
+      E'*And they will eat and be satisfied, and they will turn to strange gods, to (gods) which cannot deliver them from aught of their tribulation* (Jubilees 1:8). The turning of *They have turned aside quickly out of the way which I commanded them: they have made them a molten calf* (Exodus 32:8) is Yahuah''s own prophecy in the restored witness — *they will turn to strange gods, to (gods) which cannot deliver them*. The molten calf is the first of the strange gods that cannot save; the turning-aside at Sinai is the seed of the whole later apostasy.'),
+    ('canon','exodus',32,8,'jubilees','jubilees',1,9,'extras',
+      E'*For they will forget all My commandments, (even) all that I command them, and they will walk after the nations, and after their uncleanness... and will serve their gods* (Jubilees 1:9). The forsaking of *the way which I commanded them* (Exodus 32:8) is foretold in the restored witness — *they will forget all My commandments... and will serve their gods*. To make the calf is to forget the commandment given days before; the apostasy is the abandonment of the very Torah just spoken from the mount.'),
+    ('canon','exodus',32,7,'jasher','jasher',82,15,'extras',
+      E'*And Yahuah (the Lord) said to Moses, before he had come down from the mount, Get you down, for your people whom you did bring forth from Egypt have corrupted themselves* (Jasher 82:15). The restored witness keeps the word of Exodus 32:7 — *Go, get thee down; for thy people, which thou broughtest out of the land of Egypt, have corrupted themselves* — verse-for-verse: *Get you down, for your people... have corrupted themselves*. The corruption is laid at the people''s own door even as Moses still stands on the holy mount.'),
+    ('canon','exodus',32,10,'jasher','jasher',82,16,'extras',
+      E'*They have made to themselves a molten calf, and have bowed down to it, now therefore leave me, that I may consume them from off the earth, for they are a stiffnecked people* (Jasher 82:16). The restored witness carries the wrath of *let me alone, that my wrath may wax hot against them, and that I may consume them* (Exodus 32:10) — *leave me, that I may consume them from off the earth, for they are a stiffnecked people*. The "leave me" / "let me alone" is the very hinge on which Moses'' intercession turns: Yahuah leaves the door open by asking to be left alone.'),
+
+    -- THREAD 3 (★★): Moses stood in the breach — Remember Abraham, Isaac, and Yashar'el (the intercessor)
+    ('canon','exodus',32,11,'canon','psalms',106,23,'free',
+      E'*Therefore he said that he would destroy them, had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). The psalmist names the office of *Moses besought Yahuah Elohav (the LORD his God)... why doth thy wrath wax hot against thy people* (Exodus 32:11): Moses *stood before him in the breach, to turn away his wrath*. The mediator places himself in the gap between the wrath and the people; the intercession is the standing-in-the-breach that holds back the consuming fire.'),
+    ('canon','exodus',32,13,'canon','exodus',2,24,'free',
+      E'*And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24). Moses pleads the very oath that began the deliverance — *Remember Abraham, Isaac, and Yashar''el (Israel), thy servants, to whom thou swarest by thine own self* (Exodus 32:13) — the covenant Yahuah *remembered* to bring them out (Exodus 2:24). The intercessor does not plead the people''s merit but Yahuah''s own sworn word to the fathers; the same covenant that opened Egypt''s door now stands between the people and the fire.'),
+    ('canon','exodus',32,11,'jasher','jasher',82,17,'extras',
+      E'*And Moses besought the countenance of Yahuah (the Lord), and he prayed to Yahuah (the Lord) for the people on account of the calf which they had made* (Jasher 82:17). The restored witness keeps the intercession of *Moses besought Yahuah Elohav (the LORD his God)* (Exodus 32:11) — *Moses besought the countenance of Yahuah, and he prayed to Yahuah for the people*. The mediator turns at once to plead for the very people who have just made the calf; his face is set toward Yahuah on their behalf.'),
+    ('canon','exodus',32,14,'jasher','jasher',82,23,'extras',
+      E'*And during the forty days did Moses entreat Yahuah (the Lord) in behalf of the children of Israel, and Yahuah (the Lord) hearkened to the prayer of Moses, and Yahuah (the Lord) was entreated of him in behalf of Israel* (Jasher 82:23). The turning of *And Yahuah (LORD) repented of the evil which he thought to do unto his people* (Exodus 32:14) is carried in the restored witness — *Yahuah hearkened to the prayer of Moses, and Yahuah was entreated of him in behalf of Israel*. The wrath is turned away by the entreaty of the mediator; the intercession prevails.'),
+
+    -- THREAD 4: Who is on Yahuah's side? — the sons of Levi (the zeal of Levi)
+    ('canon','exodus',32,29,'canon','deuteronomy',33,9,'free',
+      E'*Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren, nor knew his own children: for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9). The blessing of Levi looks back to the hour of *Who is on Yahuah''s (the LORD''S) side?... Consecrate yourselves to day to Yahuah* (Exodus 32:26,29): the tribe that put covenant above kin — *for they have observed thy word, and kept thy covenant* — is blessed for the very zeal shown at the calf. The consecration promised that day (*that he may bestow upon you a blessing*) is sealed in Moses'' last blessing on the tribe.'),
+    ('canon','exodus',32,26,'canon','numbers',25,13,'free',
+      E'*And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel)* (Numbers 25:13). The gathering of *all the sons of Levi... unto him* at *Who is on Yahuah''s (the LORD''S) side?* (Exodus 32:26) is the same zeal that, in Phinehas, wins *the covenant of an everlasting priesthood... because he was zealous for his Elohim*. The priesthood is born of those who stood for Yahuah against the apostasy; zeal for the covenant — not lineage alone — is what consecrates.'),
+
+    -- THREAD 5 (★★): Blot me out of thy book — the book of life (Moses offers himself)
+    ('canon','exodus',32,32,'canon','romans',9,3,'free',
+      E'*For I could wish that myself were accursed from Messiah (Christ) for my brethren, my kinsmen according to the flesh* (Romans 9:3). Moses'' offer — *if not, blot me, I pray thee, out of thy book which thou hast written* (Exodus 32:32) — is taken up word for heart by Sha''ul (Paul): *I could wish that myself were accursed from Messiah for my brethren*. Both mediators offer to be cut off in the people''s stead; the love that would be blotted out for the kinsmen is the shadow of the substitution that bore the curse for the people.'),
+    ('canon','exodus',32,33,'canon','revelation',3,5,'free',
+      E'*He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels* (Revelation 3:5). The word *Whosoever hath sinned against me, him will I blot out of my book* (Exodus 32:33) is answered at the end of the canon with the promise to the overcomer — *I will not blot out his name out of the book of life*. The book Moses pleaded at Sinai is the book of life kept to the last day; to be blotted out is the loss the calf-makers risked, to be kept written is the overcomer''s reward.'),
+    ('canon','exodus',32,32,'canon','psalms',69,28,'free',
+      E'*Let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28). The book Moses names — *blot me, I pray thee, out of thy book which thou hast written* (Exodus 32:32) — is the same *book of the living* the psalmist invokes against the persecutors: *Let them be blotted out of the book of the living, and not be written with the righteous*. To be written in Yahuah''s book is to be numbered with the living and the righteous; the blotting-out Moses offered to bear is the very judgment the wicked earn.'),
+    ('canon','exodus',32,33,'canon','revelation',20,15,'free',
+      E'*And whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). The sentence *him will I blot out of my book* (Exodus 32:33) reaches its uttermost at the white throne — *whosoever was not found written in the book of life was cast into the lake of fire*. The book kept by Yahuah is the register of life itself; the blotting-out warned at Sinai is the final exclusion from the life of the age to come.'),
+    ('canon','exodus',32,33,'canon','revelation',21,27,'free',
+      E'*And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). The book of *him will I blot out of my book* (Exodus 32:33) is named at the last as *the Lamb''s book of life*: only *they which are written* enter the city. The register Moses pleaded over the calf-makers is the same book that gates the New Jerusalem; to be kept written is to enter, to be blotted out is to be shut out.'),
+    ('canon','exodus',32,30,'jasher','jasher',82,21,'extras',
+      E'*And on the morrow Moses said to the people, I will go up to Yahuah (the Lord), peradventure I may make atonement for your sins which you have sinned to Yahuah (the Lord)* (Jasher 82:21). The restored witness keeps the mediator''s resolve of *now I will go up unto Yahuah; peradventure I shall make an atonement for your sin* (Exodus 32:30) — *I will go up to Yahuah, peradventure I may make atonement for your sins*. Moses goes up not to accuse but to atone; the intercessor climbs the mount again to stand between the people and the wrath their sin has earned.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play',
+       E'The molten calf — these be thy gods, O Yashar''el — they rose up to play',
+       E'While the mediator tarries on the mount, the people break the first commandment at the very place it was given: *Up, make us gods, which shall go before us; for as for this Moses, the man that brought us up out of the land of Egypt, we wot not what is become of him* (Exodus 32:1). The gold of their ears becomes a calf, and the cry goes up: *These be thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (Exodus 32:4). Then the feast: *they rose up early on the morrow, and offered burnt offerings... and the people sat down to eat and to drink, and rose up to play* (Exodus 32:6). This is the keystone apostasy, quoted forward through the whole library. Stephen names the heart behind it: *To whom our fathers would not obey, but thrust him from them, and in their hearts turned back again into Egypt* (Acts 7:39), *And they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands* (Acts 7:41). Sha''ul (Paul) quotes verse 6 word-for-word as a standing warning: *Neither be ye idolaters, as were some of them; as it is written, The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7) — these things *were our examples* (10:6). Romans 1:23 names the exchange at its root: *changed the glory of the uncorruptible Elohim (God) into an image made like to corruptible man... and fourfooted beasts*. And the psalmist sings it into the long memory: *They made a calf in Horeb, and worshipped the molten image. Thus they changed their glory into the similitude of an ox that eateth grass* (Psalm 106:19-20). The Levites'' confession owns it: *when they had made them a molten calf, and said, This is thy Elohim (God) that brought thee up out of Egypt* (Nehemiah 9:18). The restored witness keeps the fashioning: *Aaron was greatly afraid of the people, and he ordered them to bring him gold and he made it into a molten calf for the people* (Jasher 82:14). The glory of the living Elohim traded for the image of a grass-eating beast — the seed-war of idolatry at its very source, on the mount of the giving of the Law.',
+       sv.verse_id, ev.verse_id, 'extras', 29775
+  FROM _s305_ex32_lookup sv, _s305_ex32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=32 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-32-thy-people-have-corrupted-themselves-let-me-alone',
+       E'Thy people have corrupted themselves — let me alone, that my wrath may wax hot',
+       E'Before Moses has even come down, Yahuah names the breach: *Go, get thee down; for thy people, which thou broughtest out of the land of Egypt, have corrupted themselves* (Exodus 32:7). *They have turned aside quickly out of the way which I commanded them: they have made them a molten calf* (Exodus 32:8). The verdict is the stiff neck: *I have seen this people, and, behold, it is a stiffnecked people: Now therefore let me alone, that my wrath may wax hot against them, and that I may consume them: and I will make of thee a great nation* (Exodus 32:9-10). The breach is no surprise to Yahuah — the restored witness carries His own forewarning of it, spoken on the mount: *I know their rebellion and their stiff neck, before I bring them into the land of which I sware to their fathers* (Jubilees 1:7); *they will turn to strange gods, to (gods) which cannot deliver them from aught of their tribulation* (Jubilees 1:8); *For they will forget all My commandments... and will serve their gods* (Jubilees 1:9). He named the stiff neck before He named the land of the oath, and swore to bring them in still. Jasher keeps the word of the mount entire: *Get you down, for your people whom you did bring forth from Egypt have corrupted themselves* (Jasher 82:15), and *They have made to themselves a molten calf... now therefore leave me, that I may consume them from off the earth, for they are a stiffnecked people* (Jasher 82:16). And here is the hinge: *let me alone* — *leave me*. The very asking to be left alone leaves the door open; it is the testing of the mediator, the offer to make of Moses a great nation the crucible in which his intercession is proven. Read victims-not-enemies: the stiff neck is a sickness in the people Yahuah will not abandon, the covenant-lawsuit the cry of a betrayed love, never a casting-off of the people He swore to the fathers.',
+       sv.verse_id, ev.verse_id, 'extras', 29778
+  FROM _s305_ex32_lookup sv, _s305_ex32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=32 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-32-moses-stood-in-the-breach-remember-abraham-isaac-and-israel',
+       E'Moses stood in the breach — Remember Abraham, Isaac, and Yashar''el',
+       E'*And Moses besought Yahuah Elohav (the LORD his God), and said, Yahuah (LORD), why doth thy wrath wax hot against thy people, which thou hast brought forth out of the land of Egypt with great power, and with a mighty hand?* (Exodus 32:11). The mediator does not plead the people''s merit — there is none — but pleads Yahuah''s own honour before the nations and Yahuah''s own oath to the fathers: *Remember Abraham, Isaac, and Yashar''el (Israel), thy servants, to whom thou swarest by thine own self, and saidst unto them, I will multiply your seed as the stars of heaven... and they shall inherit it for ever* (Exodus 32:13). And the wrath is turned: *And Yahuah (LORD) repented of the evil which he thought to do unto his people* (Exodus 32:14). The psalmist names the office exactly: *Therefore he said that he would destroy them, had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). The oath Moses pleads is the very covenant that opened Egypt''s door: *Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24) — the same sworn word now stands between the people and the fire. The restored witness keeps the intercession: *Moses besought the countenance of Yahuah (the Lord), and he prayed to Yahuah (the Lord) for the people on account of the calf which they had made* (Jasher 82:17), and *Yahuah (the Lord) hearkened to the prayer of Moses, and Yahuah (the Lord) was entreated of him in behalf of Israel* (Jasher 82:23). This is the great type of the mediator who stands in the gap — pointing FORWARD to the greater Intercessor, the Formed Son who *ever liveth to make intercession* (Hebrews 7:25), *who also maketh intercession for us* (Romans 8:34). Read through the Formed-and-the-Formless: Moses'' standing-in-the-breach is a shadow of the Son''s intercession, never identical, never a flattening — the man who pleads the covenant prefigures the One who pleads it forever.',
+       sv.verse_id, ev.verse_id, 'extras', 29781
+  FROM _s305_ex32_lookup sv, _s305_ex32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=32 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-32-who-is-on-yahuahs-side-the-sons-of-levi',
+       E'Who is on Yahuah''s side? — the sons of Levi (the zeal of Levi)',
+       E'*Then Moses stood in the gate of the camp, and said, Who is on the LORD''S side? let him come unto me. And all the sons of Levi gathered themselves together unto him* (Exodus 32:26). The judgment that follows falls within the camp, on the apostasy itself, and Moses seals it as a consecration: *Consecrate yourselves to day to Yahuah (LORD), even every man upon his son, and upon his brother; that he may bestow upon you a blessing this day* (Exodus 32:29). This hour is the origin of the Levitical standing — the tribe that chose Yahuah''s side at the calf. Moses'' last blessing looks back to it: *Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren... for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9) — Levi blessed for putting the covenant above kin in the very hour of the calf. The pattern repeats in Phinehas, *zealous for my sake among them* (Numbers 25:11), who wins *the covenant of an everlasting priesthood... because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel)* (Numbers 25:13). The priesthood is born of zeal for the covenant — not lineage alone, but those who stood for Yahuah against the apostasy. Read victims-not-enemies: the sword at the calf is judgment within the covenant on the conduct of the calf, the consecration of those who would not bow — never ethnic, never enmity against the people; the three thousand fell for the apostasy, and Levi was consecrated for refusing it.',
+       sv.verse_id, ev.verse_id, 'free', 29784
+  FROM _s305_ex32_lookup sv, _s305_ex32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=32 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-32-blot-me-out-of-thy-book-the-book-of-life',
+       E'Blot me, I pray thee, out of thy book — the book of life',
+       E'The morrow after the calf, Moses climbs the mount again — not to accuse, but to atone: *Ye have sinned a great sin: and now I will go up unto Yahuah (LORD); peradventure I shall make an atonement for your sin* (Exodus 32:30). And then the mediator offers HIMSELF: *Yet now, if thou wilt forgive their sin—; and if not, blot me, I pray thee, out of thy book which thou hast written* (Exodus 32:32). Yahuah answers, *Whosoever hath sinned against me, him will I blot out of my book* (Exodus 32:33). Moses would be cut off in the people''s stead — the substitution-intercession foreshadow. Sha''ul (Paul) takes up the very same heart for the same people: *I could wish that myself were accursed from Messiah (Christ) for my brethren, my kinsmen according to the flesh* (Romans 9:3). The book Yahuah keeps runs through the whole canon. The psalmist invokes it against the persecutors: *Let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28). And it stands open at the end: *I will not blot out his name out of the book of life, but I will confess his name before my Father* (Revelation 3:5); *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15); and only *they which are written in the Lamb''s book of life* (Revelation 21:27) enter the city. The restored witness keeps the mediator''s resolve: *I will go up to Yahuah (the Lord), peradventure I may make atonement for your sins which you have sinned* (Jasher 82:21). Framed as type pointing FORWARD: Moses could only OFFER to be blotted out — the One who was *made a curse for us* accomplished the substitution Moses could only plead. The mediator''s willingness to be cut off for the people is the shadow; the bearing of the curse is the substance.',
+       sv.verse_id, ev.verse_id, 'extras', 29787
+  FROM _s305_ex32_lookup sv, _s305_ex32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=32 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*in their hearts turned back again into Egypt* (Acts 7:39) — Stephen names the heart behind *make us gods... we wot not what is become of him* (32:1): rejecting the mediator is turning back to bondage.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=1
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they made a calf in those days, and offered sacrifice unto the idol, and rejoiced in the works of their own hands* (Acts 7:41) — Stephen quotes the calf-apostasy of 32:4 as the proof of the hardened heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *as it is written, The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7) — Sha''ul (Paul) quotes 32:6 word-for-word as the standing warning against idolatry.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=6
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*changed the glory of the uncorruptible Elohim (God) into an image... and fourfooted beasts* (Romans 1:23) — the calf of 32:4 is the very exchange at the root of all idolatry.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*They made a calf in Horeb, and worshipped the molten image* (Psalm 106:19) — the psalmist sings the apostasy of 32:4 into the long memory of the people; the mount of the Law is the mount of the calf.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they changed their glory into the similitude of an ox that eateth grass* (Psalm 106:20) — *These be thy gods, O Yashar''el* (32:4) traded the living Elohim for the image of a grass-eating beast.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*when they had made them a molten calf, and said, This is thy Elohim (God) that brought thee up out of Egypt* (Nehemiah 9:18) — the Levites'' confession owns the calf of 32:8 as the height of the rebellion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=8
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*he ordered them to bring him gold and he made it into a molten calf for the people* (Jasher 82:14) — the restored witness keeps the fashioning of 32:4; the calf came of Aaron''s yielding to the crowd.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-the-molten-calf-these-be-thy-gods-they-rose-up-to-play'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I know their rebellion and their stiff neck, before I bring them into the land of which I sware to their fathers* (Jubilees 1:7) — Yahuah''s own forewarning of *it is a stiffnecked people* (32:9), spoken before ever the calf was made.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=9
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-thy-people-have-corrupted-themselves-let-me-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they will turn to strange gods, to (gods) which cannot deliver them* (Jubilees 1:8) — the turning-aside of 32:8; the molten calf is the first of the strange gods that cannot save.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=8
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-thy-people-have-corrupted-themselves-let-me-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*For they will forget all My commandments... and will serve their gods* (Jubilees 1:9) — to make the calf is to forget the Torah just spoken from the mount (32:8).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=8
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-thy-people-have-corrupted-themselves-let-me-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Get you down, for your people... have corrupted themselves* (Jasher 82:15) — the word of 32:7 kept verse-for-verse in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=7
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-thy-people-have-corrupted-themselves-let-me-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*now therefore leave me, that I may consume them... for they are a stiffnecked people* (Jasher 82:16) — the wrath of 32:10; the "leave me" / "let me alone" is the hinge on which Moses'' intercession turns.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=10
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-thy-people-have-corrupted-themselves-let-me-alone'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *had not Moses his chosen stood before him in the breach, to turn away his wrath* (Psalm 106:23) — the psalmist names the office of *Moses besought Yahuah* (32:11): the mediator in the gap between wrath and people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=11
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-moses-stood-in-the-breach-remember-abraham-isaac-and-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24) — the oath Moses pleads in 32:13; the same covenant that opened Egypt''s door now stands between the people and the fire.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=13
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=2 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-moses-stood-in-the-breach-remember-abraham-isaac-and-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Moses besought the countenance of Yahuah (the Lord), and he prayed to Yahuah for the people on account of the calf* (Jasher 82:17) — the intercession of 32:11 in the restored witness; the mediator pleads at once for the calf-makers.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=11
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-moses-stood-in-the-breach-remember-abraham-isaac-and-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (the Lord) hearkened to the prayer of Moses, and Yahuah was entreated of him in behalf of Israel* (Jasher 82:23) — the turning of *Yahuah repented of the evil* (32:14); the wrath turned away by the mediator''s entreaty.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=14
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-moses-stood-in-the-breach-remember-abraham-isaac-and-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9) — Moses'' blessing on Levi looks back to *Consecrate yourselves... that he may bestow upon you a blessing* (32:29): the tribe that put covenant above kin.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=29
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-who-is-on-yahuahs-side-the-sons-of-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the covenant of an everlasting priesthood; because he was zealous for his Elohim (God)* (Numbers 25:13) — the same zeal that gathered the sons of Levi at *Who is on Yahuah''s side?* (32:26) wins the priesthood in Phinehas; zeal for the covenant, not lineage alone, consecrates.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=26
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-who-is-on-yahuahs-side-the-sons-of-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I could wish that myself were accursed from Messiah (Christ) for my brethren, my kinsmen according to the flesh* (Romans 9:3) — Sha''ul (Paul) takes up the very heart of *blot me, I pray thee, out of thy book* (32:32): the mediator offering to be cut off in the people''s stead.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=32
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-blot-me-out-of-thy-book-the-book-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Let them be blotted out of the book of the living, and not be written with the righteous* (Psalm 69:28) — the same book Moses names in 32:32; to be written is to be numbered with the living and the righteous.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=32
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-blot-me-out-of-thy-book-the-book-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will not blot out his name out of the book of life, but I will confess his name before my Father* (Revelation 3:5) — the book of *him will I blot out of my book* (32:33) is the book of life kept to the last day; the overcomer is not blotted out.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=33
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-blot-me-out-of-thy-book-the-book-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15) — the sentence of 32:33 reaches its uttermost at the white throne; the blotting-out is final exclusion from the life of the age.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=33
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-blot-me-out-of-thy-book-the-book-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they which are written in the Lamb''s book of life* (Revelation 21:27) — the book of 32:33 named at the last as the Lamb''s book of life; only the written enter the city.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=33
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-blot-me-out-of-thy-book-the-book-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will go up to Yahuah (the Lord), peradventure I may make atonement for your sins* (Jasher 82:21) — the mediator''s resolve of *peradventure I shall make an atonement* (32:30) in the restored witness; Moses climbs the mount to atone, not to accuse.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=32 AND sv.verse_number=30
+  JOIN _s305_ex32_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-32-blot-me-out-of-thy-book-the-book-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_33.sql (Exodus 33) -----
+-- Chapter: Exodus 33 — the presence, the tent of meeting, "show me thy glory"
+-- Session prefix: s305   TAG: ex33   temp view: _s305_ex33_lookup
+-- sort_order BAND: 29800 start, step 3
+-- SOURCE always 'canon','exodus',33,<v>. Thread tier 'free' unless any member is extras.
+--
+-- Exodus 33 coverage:
+--   v.1-3  (go up to the land sworn to Abraham/Isaac/Jacob; "I will not go up in the midst";
+--           the Angel sent before; stiffnecked people)
+--          NT:     none warranted as own thread (the Angel-before is carried in the
+--                  presence/rest thread via Exod 23:20-21; v.1 "unto thy seed" is the seed-
+--                  promise but better held in Genesis source-chapters)
+--          Extras: none warranted
+--          Tanakh: Angel-before woven into the presence thread (Exod 23:20-21)
+--   v.4-6  (the people strip off their ornaments, mourning by Horeb after the calf)
+--          NT:     none warranted   Extras: none warranted   Tanakh: none warranted
+--                  (penitential strip-down; no clean framework-bearing forward weave; left
+--                  unthreaded deliberately)
+--   v.7-11 (tent of meeting without the camp; cloudy pillar; Yahuah talked with Moses;
+--           v.11 face to face as a man speaketh unto his friend; Joshua departs not)
+--          NT:     John 15:14-15 (ye are my friends); James 2:23 (friend of Elohim)
+--          Extras: none warranted (clean canon witnesses suffice)
+--          Tanakh: Numbers 12:6-8 (mouth to mouth, similitude of Yahuah he beholds);
+--                  Deuteronomy 34:10 (no prophet like Moses, known face to face)
+--                  → THREAD 2 face-to-face / friend
+--   v.12-17 (my presence shall go with thee + I will give thee rest; I know thee by name;
+--            I and thy people separated from all the people on the face of the earth)
+--          NT:     Matthew 28:20 (lo I am with you alway); Hebrews 4:8-9 (Yahusha/rest)
+--          Extras: none warranted
+--          Tanakh: Exodus 23:20-21 (the Angel who bears the Name); Isaiah 63:9 (the angel
+--                  of his presence saved them) → THREAD 3 presence/rest;
+--                  Deuteronomy 7:6 + Leviticus 20:26 (separated/severed from all people)
+--                  → THREAD 5 I-and-thy-people
+--   v.18-20,22-23 ("shew me thy glory" / "I will proclaim the name" / "gracious to whom I
+--            will be gracious" / v.20 no man see my face and live / back parts seen)
+--          NT:     John 1:18 (no man hath seen Elohim, the only begotten Son declared him);
+--                  1 Timothy 6:16 (whom no man hath seen nor can see); John 6:46 (not that
+--                  any man hath seen the Father); Romans 9:15 (mercy clause quoted)
+--          Extras: none warranted in THREAD 1 (Wisdom 7:26 held for the Rock/glory thread)
+--          Tanakh: Exodus 34:5-6 (the Name proclaimed, the goodness passing) → THREAD 1
+--   v.21-22 (stand upon a rock; the clift of the rock; cover thee with my hand; glory passeth)
+--          NT:     1 Corinthians 10:4 (that Rock was Messiah) → THREAD 4
+--          Extras: Wisdom of Solomon 7:26 (brightness of the everlasting light, image of his
+--                  goodness) → THREAD 4 (extras member → thread tier 'extras')
+--          Tanakh: held with the glory thread
+--
+-- THREADS (5):
+--   1 exodus-33-show-me-thy-glory-no-man-see-my-face  → NT (John, 1 Timothy) + Tanakh (Exodus 34, Romans 9)  [free]
+--   2 exodus-33-face-to-face-as-a-man-speaketh-unto-his-friend → NT (John, James) + Tanakh (Numbers, Deuteronomy)  [free]
+--   3 exodus-33-my-presence-shall-go-with-thee-and-give-thee-rest → NT (Matthew, Hebrews) + Tanakh (Exodus 23, Isaiah 63)  [free]
+--   4 exodus-33-the-rock-and-the-passing-glory → NT (1 Corinthians) + Extras (Wisdom of Solomon)  [extras]
+--   5 exodus-33-i-and-thy-people-separated-from-all-people → Tanakh (Deuteronomy 7, Leviticus 20)  [free]
+--
+-- Framework-load-bearing / contested framing:
+--   ★★★ v.20 "no man see my face and live" beside v.11 "face to face" is the Formed/Formless
+--       keystone: the Formless Father is unseeable (John 1:18, 1 Tim 6:16, John 6:46); what
+--       Moses is granted is the Formed Son's passing GOODNESS and the proclaimed NAME (Exod
+--       34:5-6), not the Father's face. The "face to face" of v.11 is the visible Formed One;
+--       the unseeable face of v.20 is the Formless Source — one passage holds both.
+--   ★ v.19 mercy clause is quoted verbatim by Paul (Rom 9:15) — sovereign mercy of Yahuah,
+--       NOT a replacement-election proof-text; framed as the same covenant Elohim showing
+--       mercy to his own people.
+--   ★ v.21-22 the Rock = the Formed Messiah (1 Cor 10:4); Wisdom 7:26 the "image of his
+--       goodness" set beside "all my goodness pass before thee" (v.19) as the extra-canonical
+--       witness to the radiant Formed glory drawn from the Formless.
+
+CREATE TEMP VIEW _s305_ex33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================ B. cross_references
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: show me thy glory / no man see my face (Formed/Formless)
+    ('canon','exodus',33,18,'canon','john',1,18,'free',
+      E'*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.* (John 1:18). Moses pleads *shew me thy glory* — but the Formless Father has never been seen by any man. What can be declared is the Formed Son drawn out of the Father''s bosom; the glory Moses is granted is the passing goodness of the One who later took flesh, not the unseeable Source.'),
+    ('canon','exodus',33,20,'canon','john',1,18,'free',
+      E'*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him.* (John 1:18). *Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20) is the same word: the Formless Father is unseeable, and only the Formed Son declares him.'),
+    ('canon','exodus',33,20,'canon','1-timothy',6,16,'free',
+      E'*Who only hath immortality, dwelling in the light which no man can approach unto; whom no man hath seen, nor can see: to whom be honour and power everlasting. Amen.* (1 Timothy 6:16). Paul states flatly what Yahuah tells Moses — *there shall no man see me, and live*: the Formless Source cannot be seen, then or ever, by mortal eyes.'),
+    ('canon','exodus',33,20,'canon','john',6,46,'free',
+      E'*Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father.* (John 6:46). The face Moses may not see is the Father''s; only the One who is of Elohim — the Formed Son — has seen the Father, which is why he alone can let his *goodness pass before thee* (Exodus 33:19).'),
+    ('canon','exodus',33,19,'canon','exodus',34,6,'free',
+      E'*And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6). The promise *I will make all my goodness pass before thee, and I will proclaim the name of Yahuah* (Exodus 33:19) is kept in the very next chapter: the goodness that passes by IS the proclaimed Name.'),
+    ('canon','exodus',33,19,'canon','romans',9,15,'free',
+      E'*For he saith to Moses, I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion.* (Romans 9:15). Paul quotes this verse word for word — *will be gracious to whom I will be gracious, and will shew mercy on whom I will shew mercy* (Exodus 33:19): the sovereign mercy of the covenant Elohim toward his own people, never a casting-off of them.'),
+    -- THREAD 2: face to face, as a man speaketh unto his friend
+    ('canon','exodus',33,11,'canon','numbers',12,8,'free',
+      E'*With him will I speak mouth to mouth, even apparently, and not in dark speeches; and the similitude of Yahuah (LORD) shall he behold: wherefore then were ye not afraid to speak against my servant Moses?* (Numbers 12:8). The *face to face, as a man speaketh unto his friend* of Exodus 33:11 is the same singular intimacy — Moses beholds the *similitude*, the visible Formed One, not the Formless face of verse 20.'),
+    ('canon','exodus',33,11,'canon','deuteronomy',34,10,'free',
+      E'*And there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face,* (Deuteronomy 34:10). Moses'' epitaph names this very gift: *Yahuah (LORD) spake unto Moses face to face* (Exodus 33:11) — no prophet after him stood in that nearness to the One who bore the Name.'),
+    ('canon','exodus',33,11,'canon','john',15,15,'free',
+      E'*Henceforth I call you not servants; for the servant knoweth not what his lord doeth: but I have called you friends; for all things that I have heard of my Father I have made known unto you.* (John 15:15). The Formed Son who spoke to Moses *as a man speaketh unto his friend* (Exodus 33:11) opens that same friendship to his disciples — made known, not held in dark speeches.'),
+    ('canon','exodus',33,11,'canon','james',2,23,'free',
+      E'*And the scripture was fulfilled which saith, Abraham believed Elohim (God), and it was imputed unto him for righteousness: and he was called the Friend of Elohim (God).* (James 2:23). Abraham before Moses was the Friend of Elohim; the *as a man speaketh unto his friend* of Exodus 33:11 places Moses in the same covenant friendship — believing trust answered by face-to-face nearness.'),
+    -- THREAD 3: my presence shall go with thee, and I will give thee rest
+    ('canon','exodus',33,14,'canon','exodus',23,21,'free',
+      E'*Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him.* (Exodus 23:21). The *presence* that shall go with them (Exodus 33:14) is the Angel who bears the Name — the Formed Son leading Yashar''el (Israel); to go without his presence is to go without Yahuah himself.'),
+    ('canon','exodus',33,14,'canon','isaiah',63,9,'free',
+      E'*In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old.* (Isaiah 63:9). Isaiah names the *presence* that goes with them: *the angel of his presence* — the Formed One who *I will give thee rest* (Exodus 33:14) by bearing and carrying his people.'),
+    ('canon','exodus',33,14,'canon','matthew',28,20,'free',
+      E'*Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.* (Matthew 28:20). The same Formed Presence who told Moses *My presence shall go with thee* (Exodus 33:14) says it again in flesh — *I am with you alway* — the going-with-them that defines his people.'),
+    ('canon','exodus',33,14,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God).* (Hebrews 4:9). The rest promised at Sinai — *I will give thee rest* (Exodus 33:14) — is not exhausted in Canaan; Hebrews holds it open as the Sabbath-rest that still *remaineth* for the people of Elohim, the appointed rest never abolished.'),
+    ('canon','exodus',33,16,'canon','hebrews',4,8,'free',
+      E'*For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day.* (Hebrews 4:8). The plea *so shall we be separated, I and thy people* (Exodus 33:16) leans on the going-with-them that grants rest; Hebrews reads that very rest forward to the Formed Son, Yahusha, and the day still kept for his people.'),
+    -- THREAD 4: the Rock and the passing glory
+    ('canon','exodus',33,22,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ).* (1 Corinthians 10:4). Moses is hidden *in a clift of the rock* (Exodus 33:22) while the glory passes — and Paul names the wilderness Rock: it *was Messiah*, the Formed One who is both the shelter and the passing glory.'),
+    ('canon','exodus',33,19,'apocrypha','the-wisdom-of-solomon',7,26,'extras',
+      E'*For she is the brightness of the everlasting light, the unspotted mirror of the power of Yahuah (God), and the image of his goodness.* (Wisdom of Solomon 7:26). When Yahuah makes *all my goodness pass before thee* (Exodus 33:19), the witness of Wisdom answers: the radiance is *the image of his goodness* — the Formed brightness drawn from the everlasting light of the Formless.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 5 cross_references (separate block; Tanakh-only)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','exodus',33,16,'canon','deuteronomy',7,6,'free',
+      E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth.* (Deuteronomy 7:6). Moses pleads *so shall we be separated, I and thy people, from all the people that are upon the face of the earth* (Exodus 33:16); Deuteronomy names that separation as election — a *special people* set apart, never replaced.'),
+    ('canon','exodus',33,13,'canon','leviticus',20,26,'free',
+      E'*And ye shall be holy unto me: for I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine.* (Leviticus 20:26). *Consider that this nation is thy people* (Exodus 33:13): the severing is so *that ye should be mine* — Yahuah''s distinct possession, the two-house people set apart for himself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================ C. threads
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-33-show-me-thy-glory-no-man-see-my-face',
+  E'Shew Me Thy Glory: No Man Shall See My Face',
+  E'Moses dares the highest ask — *I beseech thee, shew me thy glory* (Exodus 33:18) — and Yahuah answers with a goodness and a Name, but a guarded face: *I will make all my goodness pass before thee, and I will proclaim the name of Yahuah (LORD) before thee* (Exodus 33:19), then *Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20). This is the Formed and the Formless held in one breath. The Formless Father is unseeable: *No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18); *whom no man hath seen, nor can see* (1 Timothy 6:16); *Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father* (John 6:46). What passes before Moses is the Formed Son''s glory — and the proclaimed Name is kept the very next chapter: *And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6). The mercy-clause Paul takes up word for word: *For he saith to Moses, I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion* (Romans 9:15) — sovereign covenant mercy toward his own people, not a casting-off of them.',
+  sv.verse_id, ev.verse_id, 'free', 29800
+  FROM _s305_ex33_lookup sv, _s305_ex33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=33 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=33 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-33-face-to-face-as-a-man-speaketh-unto-his-friend',
+  E'Face to Face, As a Man Speaketh Unto His Friend',
+  E'In the tent of meeting *Yahuah (LORD) spake unto Moses face to face, as a man speaketh unto his friend* (Exodus 33:11) — and this same chapter says *there shall no man see me, and live* (Exodus 33:20). The tension is the Formed and the Formless: Moses beholds the visible Formed One, not the unseeable face of the Source. Numbers names the gift: *With him will I speak mouth to mouth, even apparently, and not in dark speeches; and the similitude of Yahuah (LORD) shall he behold* (Numbers 12:8), and his epitaph seals it: *there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10). The Formed Son who met Moses in friendship opens that friendship wider in flesh: *but I have called you friends; for all things that I have heard of my Father I have made known unto you* (John 15:15). And Abraham before Moses bore the same name — *he was called the Friend of Elohim (God)* (James 2:23) — covenant trust answered by face-to-face nearness.',
+  sv.verse_id, ev.verse_id, 'free', 29818
+  FROM _s305_ex33_lookup sv, _s305_ex33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=33 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=33 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-33-my-presence-shall-go-with-thee-and-give-thee-rest',
+  E'My Presence Shall Go With Thee, and I Will Give Thee Rest',
+  E'When Yahuah threatens to send an angel but not go up *in the midst* (Exodus 33:3), Moses will not move without him — and the answer comes: *My presence shall go with thee, and I will give thee rest* (Exodus 33:14). That Presence is no lesser messenger; it is the Angel who bears the Name: *Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him* (Exodus 23:21). Isaiah names him plainly — *the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old* (Isaiah 63:9). The Formed Son who promised *My presence shall go with thee* says it again in flesh: *lo, I am with you alway, even unto the end of the world* (Matthew 28:20). And the rest he gives is not spent in Canaan — *For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8); *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9): the Sabbath-rest still kept for his people, never abolished.',
+  sv.verse_id, ev.verse_id, 'free', 29833
+  FROM _s305_ex33_lookup sv, _s305_ex33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=33 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=33 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-33-the-rock-and-the-passing-glory',
+  E'The Rock and the Passing Glory',
+  E'Yahuah sets Moses where the glory can pass without consuming him: *Behold, there is a place by me, and thou shalt stand upon a rock... I will put thee in a clift of the rock, and will cover thee with my hand while I pass by* (Exodus 33:21-22). Paul names that wilderness Rock: *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the Formed One is both the shelter that hides Moses and the glory that passes by. And what passes is the goodness Yahuah promised: *I will make all my goodness pass before thee* (Exodus 33:19); the witness of Wisdom answers, *For she is the brightness of the everlasting light, the unspotted mirror of the power of Yahuah (God), and the image of his goodness* (Wisdom of Solomon 7:26) — the radiant Formed glory drawn out of the everlasting light of the Formless.',
+  sv.verse_id, ev.verse_id, 'extras', 29848
+  FROM _s305_ex33_lookup sv, _s305_ex33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=33 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=33 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-33-i-and-thy-people-separated-from-all-people',
+  E'I and Thy People, Separated From All the People',
+  E'Moses presses the plea that ties Yahuah to a distinct people: *consider that this nation is thy people* (Exodus 33:13), and *so shall we be separated, I and thy people, from all the people that are upon the face of the earth* (Exodus 33:16). The separation he asks for is the election Yahuah had already declared: *Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth* (Deuteronomy 7:6), and *I Yahuah (LORD) am holy, and have severed you from other people, that ye should be mine* (Leviticus 20:26). It is the going-with-them that marks them off — Yahuah''s own possession, the covenant people set apart for himself, never to be exchanged for another.',
+  sv.verse_id, ev.verse_id, 'free', 29863
+  FROM _s305_ex33_lookup sv, _s305_ex33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=33 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=33 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================ D. thread_members
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (33,18,'canon','john',1,18,1,E'*the only begotten Son... he hath declared him* (John 1:18) — the Formless Father unseen; the Formed Son declares him.'),
+    (33,20,'canon','john',1,18,2,E'*No man hath seen Elohim (God) at any time* (John 1:18) — the same word as *no man see me, and live* (Exodus 33:20).'),
+    (33,20,'canon','1-timothy',6,16,3,E'*whom no man hath seen, nor can see* (1 Timothy 6:16) — Paul states the Formless Source cannot be seen, then or ever.'),
+    (33,20,'canon','john',6,46,4,E'*Not that any man hath seen the Father* (John 6:46) — only the One who is of Elohim has seen the Father.'),
+    (33,19,'canon','exodus',34,6,5,E'*proclaimed... merciful and gracious... abundant in goodness* (Exodus 34:6) — the promised goodness and Name kept the next chapter.'),
+    (33,19,'canon','romans',9,15,6,E'*I will have mercy on whom I will have mercy* (Romans 9:15) — Paul quotes verse 19; sovereign covenant mercy, not casting-off.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-33-show-me-thy-glory-no-man-see-my-face'
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (33,11,'canon','numbers',12,8,1,E'*I will speak mouth to mouth... the similitude of Yahuah (LORD) shall he behold* (Numbers 12:8) — the visible Formed One, not the Formless face.'),
+    (33,11,'canon','deuteronomy',34,10,2,E'*whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10) — no prophet after Moses stood in that nearness.'),
+    (33,11,'canon','john',15,15,3,E'*I have called you friends* (John 15:15) — the Formed Son opens the same friendship to his disciples.'),
+    (33,11,'canon','james',2,23,4,E'*he was called the Friend of Elohim (God)* (James 2:23) — Abraham bore the name before Moses; covenant friendship.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-33-face-to-face-as-a-man-speaketh-unto-his-friend'
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (33,14,'canon','exodus',23,21,1,E'*for my name is in him* (Exodus 23:21) — the Presence is the Angel who bears the Name, the Formed Son.'),
+    (33,14,'canon','isaiah',63,9,2,E'*the angel of his presence saved them... he bare them, and carried them* (Isaiah 63:9) — Isaiah names the Presence.'),
+    (33,14,'canon','matthew',28,20,3,E'*lo, I am with you alway* (Matthew 28:20) — the going-with-them said again in flesh.'),
+    (33,14,'canon','hebrews',4,9,4,E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — the rest still kept, never abolished.'),
+    (33,16,'canon','hebrews',4,8,5,E'*if Yahusha (Jesus) had given them rest... another day* (Hebrews 4:8) — the rest read forward to the Formed Son.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-33-my-presence-shall-go-with-thee-and-give-thee-rest'
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (33,22,'canon','1-corinthians',10,4,1,E'*that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the Formed One is both the shelter and the passing glory.'),
+    (33,19,'apocrypha','the-wisdom-of-solomon',7,26,2,E'*the brightness of the everlasting light... the image of his goodness* (Wisdom of Solomon 7:26) — the radiant Formed glory from the Formless.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-33-the-rock-and-the-passing-glory'
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (33,16,'canon','deuteronomy',7,6,1,E'*chosen thee to be a special people unto himself, above all people* (Deuteronomy 7:6) — the separation Moses asks is the election already declared.'),
+    (33,13,'canon','leviticus',20,26,2,E'*have severed you from other people, that ye should be mine* (Leviticus 20:26) — Yahuah''s own possession, set apart, never replaced.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-33-i-and-thy-people-separated-from-all-people'
+  JOIN _s305_ex33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex33_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_40.sql (Exodus 40) -----
+-- Chapter: Exodus 40 — THE TABERNACLE REARED; THE GLORY FILLS IT (the FINAL chapter of Exodus):
+--   On the first day of the first month the tabernacle of the tent of the congregation is set up;
+--   the ark, the table, the candlestick, the golden altar, the altar of burnt offering, the laver,
+--   the court — each placed, anointed, hallowed; Aaron and his sons washed and clothed for an
+--   everlasting priesthood. "Thus did Moses: according to all that Yahuah commanded him, so did he"
+--   (v.16) — and the refrain "as Yahuah commanded Moses" tolls through vv.19-32. Then the keystone:
+--   "a cloud covered the tent of the congregation, and the glory of Yahuah filled the tabernacle;
+--   and Moses was not able to enter" (vv.34-35). The book closes with the guiding Presence:
+--   "when the cloud was taken up... the children of Yashar'el went onward... the cloud of Yahuah
+--   was upon the tabernacle by day, and fire was on it by night... throughout all their journeys"
+--   (vv.36-38). The Presence purposed in 25:8 ("that I may dwell among them") now dwells and leads.
+-- Tag: ex40   Temp view: _s305_ex40_lookup
+-- Sort band: base 29975, step 3 -> threads at 29975, 29978, 29981, 29984 (4 threads)
+-- Source of EVERY row: 'canon','exodus',40,v
+--
+-- Exodus 40 coverage:
+--   v.1-15 (the order to rear and anoint the tabernacle, its vessels, and the priesthood)
+--        NT:     none warranted distinct (the setting-up commands are the build that v.16 fulfils
+--                "according to all that Yahuah commanded"; carried by THREAD 1's obedience-frame)
+--        Extras: none warranted distinct here (the command list; Jubilees 1:17 dwelling-purpose is
+--                woven at THREAD 2/3)
+--        Tanakh: Exodus 25:8-9 (the purpose "that I may dwell among them" + "after the pattern")
+--                — woven at THREAD 1 (v.9 pattern) and THREAD 3 (v.8 purpose)
+--   ★ v.16-33 (Thus did Moses: according to all that Yahuah commanded him, so did he; the refrain
+--                "as Yahuah commanded Moses" repeated through vv.19,21,23,25,27,29,32; v.33 "So
+--                Moses finished the work")
+--        NT:     ★ Hebrews 8:5 (See... that thou make all things according to the pattern shewed to
+--                thee in the mount) — THREAD 1; ★ Hebrews 3:2,5 (Moses was faithful in all his house)
+--                — THREAD 1 (the faithful obedience that builds EXACTLY as shown)
+--        Extras: none warranted distinct (the obedience-refrain is canon/NT carried)
+--        Tanakh: ★ Exodus 25:9 (According to all that I shew thee, after the pattern... even so shall
+--                ye make it); Exodus 25:40 (look that thou make them after their pattern, which was
+--                shewed thee in the mount) — THREAD 1 (the pattern obeyed)
+--   ★★ v.34-35 (a cloud covered the tent, and the glory of Yahuah filled the tabernacle; Moses was
+--                not able to enter)
+--        NT:     ★★ Revelation 15:8 (the temple was filled with smoke from the glory of Elohim... no
+--                man was able to enter) — THREAD 2; ★ John 1:14 (the Word was made flesh, and dwelt
+--                among us, and we beheld his glory) — THREAD 2 AND THREAD 3 (the Formed Glory tabernacling
+--                in flesh); ★ 2 Corinthians 3:18 (beholding... the glory of Yahuah... changed into the
+--                same image from glory to glory) — THREAD 2
+--        Extras: ★ Jubilees 1:17 (I shall build My sanctuary in their midst, and I shall dwell with them,
+--                and I shall be their Elohim and they will be My people) — THREAD 2 AND THREAD 3
+--        Tanakh: ★★ 1 Kings 8:10-11 (the cloud filled the house... the glory of Yahuah had filled the
+--                house) — THREAD 2 (the SAME Glory fills Solomon's temple); ★ Ezekiel 43:4-5 (the glory
+--                of Yahuah came into the house... the glory of Yahuah filled the house) — THREAD 2 (the
+--                Glory returns to the future temple, restoration); ★ Haggai 2:7,9 (I will fill this house
+--                with glory... the glory of this latter house shall be greater) — THREAD 2 (latter-house
+--                glory); ★ Exodus 25:8 (let them make me a sanctuary; that I may dwell among them) —
+--                THREAD 3 (the purposed dwelling now realized)
+--   ★ v.34-35 framed through Red Line #4 — the visible Glory = the Formed Son who dwells among His people
+--        NT:     ★ John 1:14 (dwelt among us... we beheld his glory); ★ Revelation 21:3,22 (the
+--                tabernacle of Elohim is with men... I saw no temple... the Lord God Almighty and the
+--                Lamb are the temple of it) — THREAD 3 (the trajectory: tabernacle -> temple -> Word
+--                made flesh -> New Jerusalem)
+--        Extras: ★ Jubilees 1:17 (I shall dwell with them) — THREAD 3
+--        Tanakh: ★ Exodus 25:8 (that I may dwell among them) — THREAD 3
+--   ★ v.36-38 (when the cloud was taken up, Yashar'el went onward... the cloud by day and fire by
+--                night, in the sight of all the house of Yashar'el, throughout all their journeys)
+--        NT:     ★ 1 Corinthians 10:1 (all our fathers were under the cloud, and all passed through
+--                the sea) — THREAD 4 (lateral-forward: the guiding cloud the fathers were under)
+--        Extras: none warranted (Jasher's exodus chapters track the itinerary, not the reared-up
+--                dwelling/glory; no clean verse-for-verse parallel — not forced)
+--        Tanakh: ★ Exodus 13:21-22 (Yahuah went before them by day in a pillar of a cloud... by night
+--                in a pillar of fire) — THREAD 4 (the guiding Presence first given at the exodus);
+--                ★ Numbers 9:15-23 (on the day the tabernacle was reared the cloud covered it... when
+--                the cloud was taken up the children of Yashar'el journeyed) — THREAD 4 (the very
+--                continuation of Exodus 40:36-38)
+--
+-- Threads (slug — target libraries):
+--   1. exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded — NT (Hebrews) + Tanakh (Exodus 25) [free] (★ the obedience that builds EXACTLY as shown; Moses faithful in all his house)
+--   2. exodus-40-the-glory-of-yahuah-filled-the-tabernacle — Tanakh (1 Kings, Ezekiel, Haggai) + NT (Revelation, John, 2 Corinthians) + Extras (Jubilees) [extras] (★★ THE keystone: the Glory fills the dwelling)
+--   3. exodus-40-the-glory-the-formed-dwelling-among-his-people — Tanakh (Exodus 25:8) + NT (John, Revelation) + Extras (Jubilees) [extras] (★ Red Line #4: the visible Glory = the Formed Son; tabernacle -> temple -> Word made flesh -> New Jerusalem)
+--   4. exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys — Tanakh (Exodus 13, Numbers 9) + NT (1 Corinthians) [free] (★ the guiding Presence leading the two-house people through all their journeys)
+--
+-- Framing notes:
+--   ★ THE OBEDIENCE THAT BUILDS EXACTLY AS SHOWN (THREAD 1): *Thus did Moses: according to all that
+--     Yahuah (LORD) commanded him, so did he* (40:16), and the refrain *as Yahuah (LORD) commanded
+--     Moses* tolls through the chapter (40:19,21,23,25,27,29,32). This is Torah-obedience completed —
+--     the dwelling raised not by Moses' design but to the pattern shewn: *After the pattern of the
+--     tabernacle... even so shall ye make it* (Exodus 25:9), *after their pattern, which was shewed
+--     thee in the mount* (Exodus 25:40). Hebrews names the pattern (*See... that thou make all things
+--     according to the pattern shewed to thee in the mount*, Hebrews 8:5) and names the faithfulness
+--     (*Moses was faithful in all his house*, Hebrews 3:2,5). Framed as obedience HONORED, never as a
+--     shadow discarded — the faithful servant builds the dwelling of Yahuah exactly as commanded.
+--   ★★ THE GLORY FILLS THE DWELLING (THREAD 2): *the glory of Yahuah (LORD) filled the tabernacle;
+--     and Moses was not able to enter* (40:34-35). The keystone. The SAME Glory fills Solomon's temple
+--     (*the glory of Yahuah had filled the house of Yahuah*, 1 Kings 8:11), RETURNS to the future
+--     temple of the restored two houses (*the glory of Yahuah filled the house*, Ezekiel 43:5), is
+--     promised to the latter house (*I will fill this house with glory... the glory of this latter
+--     house shall be greater*, Haggai 2:7,9), and is seen in the heavenly temple (*the temple was
+--     filled with smoke from the glory of Elohim... no man was able to enter*, Revelation 15:8 — the
+--     very *not able to enter* of 40:35). The Word made flesh tabernacles the Glory (*dwelt among us,
+--     and we beheld his glory*, John 1:14); the people are changed by beholding it (*from glory to
+--     glory*, 2 Corinthians 3:18). Jubilees keeps the dwelling-purpose: *I shall build My sanctuary in
+--     their midst, and I shall dwell with them* (Jubilees 1:17).
+--   ★ RED LINE #4 — THE FORMED GLORY DWELLING (THREAD 3): the visible Glory that fills the tabernacle
+--     (40:34-35) is the Formed Son who dwells among His people. The purpose was named at the start:
+--     *let them make me a sanctuary; that I may dwell among them* (Exodus 25:8) — now realized. The
+--     trajectory runs tabernacle -> temple -> *the Word was made flesh, and dwelt among us* (John 1:14)
+--     -> the New Jerusalem where *the tabernacle of Elohim is with men, and he will dwell with them*
+--     and *I saw no temple therein: for Yahuah Elohim Almighty and the Lamb are the temple of it*
+--     (Revelation 21:3,22). Framed strictly through the Formed-and-Formless lens: the visible Glory is
+--     the Formed Son, who has a Father — no co-equal-persons grammar, no modalist collapse.
+--   ★ THE GUIDING PRESENCE (THREAD 4): *when the cloud was taken up... the children of Yashar'el
+--     (Israel) went onward... the cloud of Yahuah (LORD) was upon the tabernacle by day, and fire was
+--     on it by night, in the sight of all the house of Yashar'el, throughout all their journeys*
+--     (40:36-38). The same pillar first given at the exodus (*Yahuah went before them by day in a
+--     pillar of a cloud... by night in a pillar of fire*, Exodus 13:21-22), continued verse-for-verse
+--     in Numbers (*on the day the tabernacle was reared the cloud covered it... when the cloud was
+--     taken up the children of Yashar'el journeyed*, Numbers 9:15-23). Sha'ul names the fathers under
+--     it (*all our fathers were under the cloud*, 1 Corinthians 10:1). The book ends with the Presence
+--     dwelling AND leading the two-house people on.
+--   VERSES WITH NO ADD: v.1-15 (the command to rear and anoint the dwelling and ordain the priesthood)
+--     — these are the build that v.16 fulfils "according to all that Yahuah commanded," carried by
+--     THREAD 1; no distinct framework-bearing target warranted beyond the obedience-frame.
+--   EXTRAS: Jubilees 1:17 (clean parse) carries the dwelling-purpose for THREADS 2 and 3, DOUBLE-WRITTEN
+--     'jubilees','jubilees'. Jasher's exodus chapters (81+) track the wilderness itinerary, not the
+--     reared-up tabernacle or the indwelling glory of Exodus 40 — no clean verse-for-verse parallel, so
+--     Jasher is deliberately NOT forced as a member. Apocrypha: none warranted (no clean tabernacle-glory
+--     parallel in scope).
+
+CREATE TEMP VIEW _s305_ex40_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Thus did Moses, according to all that Yahuah commanded (the obedience that builds exactly as shown)
+    ('canon','exodus',40,16,'canon','exodus',25,9,'free',
+      E'*According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9). The seal of the finished work — *Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he* (Exodus 40:16) — answers the charge given at the start: the dwelling is raised not by Moses'' own design but *after the pattern* shewn him. The obedience that builds is obedience to the very form Yahuah revealed; nothing added, nothing withheld.'),
+    ('canon','exodus',40,16,'canon','exodus',25,40,'free',
+      E'*And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The refrain of the reared tabernacle — *as Yahuah (LORD) commanded Moses* (Exodus 40:19,21,23,25,27,29,32), sealed by *so did he* (40:16) — fulfils this charge to the letter: every vessel made *after their pattern, which was shewed thee in the mount*. The pattern in the mount and the work on the plain are one; the faithful builder copies exactly what he was shown.'),
+    ('canon','exodus',40,16,'canon','hebrews',8,5,'free',
+      E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The letter names the very obedience of *Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he* (Exodus 40:16): Moses *make[s] all things according to the pattern shewed to thee in the mount*. The earthly dwelling is patterned on the heavenly — built exactly as shown, the obedience honoured, not a thing improvised.'),
+    ('canon','exodus',40,16,'canon','hebrews',3,2,'free',
+      E'*Who was faithful to him that appointed him, as also Moses was faithful in all his house* (Hebrews 3:2). The whole chapter is the proof of it — *Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he* (Exodus 40:16) — and the letter names it: *Moses was faithful in all his house*. The reared tabernacle, every board and vessel set *as Yahuah commanded*, is the faithfulness the letter holds up as a pattern for the faithfulness of the Son.'),
+    ('canon','exodus',40,16,'canon','hebrews',3,5,'free',
+      E'*And Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after* (Hebrews 3:5). The finished work of *so did he* (Exodus 40:16) is Moses *faithful in all his house, as a servant, for a testimony of those things which were to be spoken after* — the dwelling raised exactly as commanded is itself a testimony, the shadow that points to the substance, the faithful servant building toward the Son over his own house.'),
+
+    -- THREAD 2 (★★): The glory of Yahuah filled the tabernacle (the keystone — the Glory fills the dwelling)
+    ('canon','exodus',40,34,'canon','1-kings',8,10,'free',
+      E'*And it came to pass, when the priests were come out of the holy place, that the cloud filled the house of Yahuah (LORD)* (1 Kings 8:10). What fills the tabernacle in the wilderness — *a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — fills the temple Solomon builds on the chosen hill: *the cloud filled the house of Yahuah*. The same Presence, the same cloud, the same Glory; the dwelling moves from tent to house, but the One who fills it is unchanged.'),
+    ('canon','exodus',40,35,'canon','1-kings',8,11,'free',
+      E'*So that the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house of Yahuah (LORD)* (1 Kings 8:11). As Moses *was not able to enter into the tent of the congregation, because the cloud abode thereon, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:35), so the priests *could not stand to minister because of the cloud: for the glory of Yahuah had filled the house*. The Glory that bars even the mediator''s entry is the same in tent and temple — the weight of the Presence too great to stand before.'),
+    ('canon','exodus',40,34,'canon','ezekiel',43,5,'free',
+      E'*So the spirit took me up, and brought me into the inner court; and, behold, the glory of Yahuah (LORD) filled the house* (Ezekiel 43:5). The Glory that *filled the tabernacle* (Exodus 40:34) departed the defiled temple and now RETURNS to the temple of the restored two houses: *the glory of Yahuah filled the house*. Yahuah says of it, *the place of my throne... where I will dwell in the midst of the children of Yashar''el (Israel) for ever* (Ezekiel 43:7) — the indwelling of Exodus 40 carried forward to the everlasting dwelling among His regathered people.'),
+    ('canon','exodus',40,34,'canon','haggai',2,7,'free',
+      E'*And I will shake all nations, and the desire of all nations shall come: and I will fill this house with glory, saith Yahuah Tseva''ot (LORD of hosts)* (Haggai 2:7). The Glory that *filled the tabernacle* (Exodus 40:34) is promised again to the rebuilt house: *I will fill this house with glory*. The same filling Presence that crowned the wilderness dwelling will crown the latter house — the dwelling of Yahuah glorified yet again among His people.'),
+    ('canon','exodus',40,34,'canon','haggai',2,9,'free',
+      E'*The glory of this latter house shall be greater than of the former, saith Yahuah Tseva''ot (LORD of hosts): and in this place will I give peace, saith Yahuah Tseva''ot (LORD of hosts)* (Haggai 2:9). The Glory first seen filling the tabernacle — *the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — is promised in greater measure: *the glory of this latter house shall be greater than of the former*. The indwelling Presence is not diminished across the ages but increases toward its fullness.'),
+    ('canon','exodus',40,35,'canon','revelation',15,8,'free',
+      E'*And the temple was filled with smoke from the glory of Elohim (God), and from his power; and no man was able to enter into the temple, till the seven plagues of the seven angels were fulfilled* (Revelation 15:8). The vision keeps the very shape of Exodus 40: *the temple was filled with smoke from the glory of Elohim... no man was able to enter* — as *Moses was not able to enter into the tent of the congregation... the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:35). The heavenly temple too is filled past entering with the Glory; the wilderness dwelling foreshadowed the throne-room of the end.'),
+    ('canon','exodus',40,34,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). The Glory that *filled the tabernacle* (Exodus 40:34) took flesh and pitched His tent among His people: *the Word was made flesh, and dwelt among us, and we beheld his glory*. The same Presence that no man could enter the tent to behold (40:35) is now beheld — the Formed Son, the Glory of the Father, dwelling among men.'),
+    ('canon','exodus',40,34,'canon','2-corinthians',3,18,'free',
+      E'*But we all, with open face beholding as in a glass the glory of Yahuah (Lord), are changed into the same image from glory to glory, even as by the Spirit of Yahuah (Lord)* (2 Corinthians 3:18). Where Moses could not enter the tent for the Glory that *filled the tabernacle* (Exodus 40:34), the people of the renewed covenant *with open face behold[] the glory of Yahuah* and are *changed into the same image from glory to glory*. The Presence that once barred entry now transforms those who behold it.'),
+    ('canon','exodus',40,34,'jubilees','jubilees',1,17,'extras',
+      E'*And I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people in truth and righteousness* (Jubilees 1:17). The restored witness names the purpose the filling Glory accomplishes — *I shall dwell with them, and I shall be their Elohim and they will be My people* — the very thing realized when *the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34). The sanctuary built in their midst is the dwelling Yahuah fills, that He may dwell among His people.'),
+
+    -- THREAD 3 (★): The Glory the Formed presence dwelling among His people (Red Line #4)
+    ('canon','exodus',40,34,'canon','exodus',25,8,'free',
+      E'*And let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). The whole work was for this one end, now fulfilled: *the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34). The sanctuary was built *that I may dwell among them*, and at the chapter''s close the Glory comes down and dwells. The purpose spoken at the start of the building is answered at the end of the book — the Presence among His people.'),
+    ('canon','exodus',40,35,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). The visible Glory that filled the tent so that *Moses was not able to enter* (Exodus 40:35) is the Formed Son — the One who appeared and spoke in the Tanakh — who would *dwell among us*, His glory beheld in flesh. The Glory in the tabernacle and the Glory made flesh are one Presence: the Formed Son of the Father, dwelling among His people. He is Yahuah and has a Father — not a co-equal person, not the Father collapsed into the Son.'),
+    ('canon','exodus',40,34,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The dwelling that began when *the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) reaches its consummation: *the tabernacle of Elohim is with men, and he will dwell with them*. Tabernacle, temple, the Word made flesh — and at the last the Glory dwells with His people forever, the whole trajectory of the Presence brought home.'),
+    ('canon','exodus',40,35,'canon','revelation',21,22,'free',
+      E'*And I saw no temple therein: for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22). The Glory that filled the tent past entering (Exodus 40:35) becomes, in the end, the temple itself: *I saw no temple therein: for Yahuah Elohim Almighty and the Lamb are the temple of it*. No structure to bar the entry then — the Presence is the dwelling, the Formed Son and the Father the temple of the New Jerusalem.'),
+    ('canon','exodus',40,34,'jubilees','jubilees',1,17,'extras',
+      E'*And I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people in truth and righteousness* (Jubilees 1:17). The restored witness frames the indwelling of *the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) as Yahuah''s own settled purpose — *I shall dwell with them* — the dwelling-among-His-people that runs from the tent to the everlasting sanctuary.'),
+
+    -- THREAD 4 (★): The cloud by day and fire by night, throughout all their journeys (the guiding Presence)
+    ('canon','exodus',40,38,'canon','exodus',13,21,'free',
+      E'*And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night* (Exodus 13:21). The Presence that now rests on the finished dwelling — *the cloud of Yahuah (LORD) was upon the tabernacle by day, and fire was on it by night* (Exodus 40:38) — is the same pillar that led them out of Egypt: *a pillar of a cloud... by night in a pillar of fire*. The Guide of the exodus has come to dwell on the tabernacle; the One who led now leads from the midst of His house.'),
+    ('canon','exodus',40,38,'canon','exodus',13,22,'free',
+      E'*He took not away the pillar of the cloud by day, nor the pillar of fire by night, from before the people* (Exodus 13:22). The unfailing Guide of *He took not away the pillar of the cloud by day, nor the pillar of fire by night* is the Presence that *was upon the tabernacle by day, and fire was on it by night, in the sight of all the house of Yashar''el (Israel), throughout all their journeys* (Exodus 40:38). The pillar never withdrawn at the exodus is the cloud and fire never failing over the dwelling to the end of the book.'),
+    ('canon','exodus',40,36,'canon','numbers',9,17,'free',
+      E'*And when the cloud was taken up from the tabernacle, then after that the children of Yashar''el (Israel) journeyed: and in the place where the cloud abode, there the children of Yashar''el (Israel) pitched their tents* (Numbers 9:17). This is the very continuation of Exodus 40: *when the cloud was taken up from over the tabernacle, the children of Yashar''el (Israel) went onward in all their journeys* (Exodus 40:36). Numbers takes up the same Guide — *when the cloud was taken up... then... the children of Yashar''el journeyed* — the Presence dwelling and leading, the people moving only as He moves.'),
+    ('canon','exodus',40,37,'canon','numbers',9,18,'free',
+      E'*At the commandment of Yahuah (LORD) the children of Yashar''el (Israel) journeyed, and at the commandment of Yahuah (LORD) they pitched: as long as the cloud abode upon the tabernacle they rested in their tents* (Numbers 9:18). What Exodus states — *if the cloud were not taken up, then they journeyed not till the day that it was taken up* (Exodus 40:37) — Numbers unfolds: *at the commandment of Yahuah... they journeyed, and at the commandment of Yahuah they pitched*. The cloud over the dwelling is the will of Yahuah made visible; the people stop and go at His sign.'),
+    ('canon','exodus',40,38,'canon','1-corinthians',10,1,'free',
+      E'*Moreover, brethren, I would not that ye should be ignorant, how that all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1). Sha''ul (Paul) names the people who lived beneath the Presence of Exodus 40: *all our fathers were under the cloud*. The cloud that *was upon the tabernacle by day, and fire was on it by night, in the sight of all the house of Yashar''el (Israel), throughout all their journeys* (Exodus 40:38) is the cloud the fathers were under — the guiding Glory over the whole congregation, every soul of the two-house people led by the same Presence.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded',
+       E'Thus did Moses, according to all that Yahuah commanded — the obedience that builds exactly as shown',
+       E'The chapter that closes Exodus is a chapter of obedience completed. The command goes out to rear and anoint the dwelling and its vessels (Exodus 40:1-15), and then the seal: *Thus did Moses: according to all that Yahuah (LORD) commanded him, so did he* (Exodus 40:16). Through the reared tabernacle the refrain tolls again and again — *as Yahuah (LORD) commanded Moses* (40:19,21,23,25,27,29,32) — until *So Moses finished the work* (40:33). Nothing of his own design; everything to the pattern shewn. For the charge was given at the start: *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9), and *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The letter to the Hebrews names that pattern — *See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — and names the faithfulness that obeyed it: *Moses was faithful in all his house* (Hebrews 3:2), *faithful in all his house, as a servant, for a testimony of those things which were to be spoken after* (Hebrews 3:5). This is Torah-obedience honoured, never a shadow discarded: the dwelling of Yahuah raised exactly as commanded, the faithful servant copying what he was shown, and the work itself a testimony pointing toward the Son who would be faithful over His own house.',
+       sv.verse_id, ev.verse_id, 'free', 29975
+  FROM _s305_ex40_lookup sv, _s305_ex40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=40 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-40-the-glory-of-yahuah-filled-the-tabernacle',
+       E'The glory of Yahuah filled the tabernacle — the Glory fills the dwelling',
+       E'The book of Exodus ends not with a word but with a Presence. The work is finished, and then: *Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle. And Moses was not able to enter into the tent of the congregation, because the cloud abode thereon, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34-35). The Glory comes down and fills the dwelling, so weighty that even the mediator cannot enter. This is the keystone, and it echoes through the whole canon. When Solomon''s temple is dedicated, *the cloud filled the house of Yahuah (LORD)... for the glory of Yahuah (LORD) had filled the house of Yahuah (LORD)* (1 Kings 8:10-11) — the same Glory, the same priests unable to stand. When Ezekiel sees the future temple of the regathered two houses, *the glory of Yahuah (LORD) filled the house* (Ezekiel 43:5), the throne where Yahuah will *dwell in the midst of the children of Yashar''el (Israel) for ever*. Haggai promises the latter house: *I will fill this house with glory* (Haggai 2:7), and *the glory of this latter house shall be greater than of the former* (Haggai 2:9). And the heavenly temple keeps the very shape: *the temple was filled with smoke from the glory of Elohim (God)... and no man was able to enter into the temple* (Revelation 15:8) — Moses'' *not able to enter* fulfilled at the throne of the end. The Word made flesh tabernacled that Glory among men: *the Word was made flesh, and dwelt among us, and we beheld his glory* (John 1:14); and those of the renewed covenant *with open face beholding... the glory of Yahuah (Lord), are changed into the same image from glory to glory* (2 Corinthians 3:18). The restored witness names the purpose: *I shall build My sanctuary in their midst, and I shall dwell with them, and I shall be their Elohim (God) and they will be My people* (Jubilees 1:17). One Glory, one Presence, filling tent and temple and flesh and the city to come.',
+       sv.verse_id, ev.verse_id, 'extras', 29978
+  FROM _s305_ex40_lookup sv, _s305_ex40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=40 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-40-the-glory-the-formed-dwelling-among-his-people',
+       E'The Glory that dwells among His people — the Formed Son in the midst',
+       E'The visible Glory that filled the tabernacle so that *Moses was not able to enter* (Exodus 40:34-35) is not an impersonal radiance — it is the Presence of the Formed Son, the One who appeared and spoke and led Yashar''el (Israel) throughout the Tanakh. The whole work of building was for this one purpose, spoken at the very start: *And let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). Now the purpose is answered — the Glory comes down and dwells. And the trajectory runs onward: the same Presence took flesh — *the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father)* (John 1:14) — the Formed Son, the Glory of the Father, pitching His tent among men. Read through the Formed-and-the-Formless: He is Yahuah and has a Father — not a co-equal person, not the Father collapsed into the Son, but the expressed Glory drawn from the Formless, dwelling visibly with His people. The trajectory ends in the New Jerusalem: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3), where *I saw no temple therein: for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22) — no structure to bar the entry then, for the Presence Himself is the dwelling. The restored witness keeps the settled purpose: *I shall dwell with them, and I shall be their Elohim (God) and they will be My people* (Jubilees 1:17). Tabernacle, temple, the Word made flesh, the city to come — one Presence, dwelling among His people forever.',
+       sv.verse_id, ev.verse_id, 'extras', 29981
+  FROM _s305_ex40_lookup sv, _s305_ex40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=40 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys',
+       E'The cloud by day and fire by night, throughout all their journeys — the guiding Presence',
+       E'The book closes with the Presence not only dwelling but leading. *And when the cloud was taken up from over the tabernacle, the children of Yashar''el (Israel) went onward in all their journeys: but if the cloud were not taken up, then they journeyed not till the day that it was taken up. For the cloud of Yahuah (LORD) was upon the tabernacle by day, and fire was on it by night, in the sight of all the house of Yashar''el (Israel), throughout all their journeys* (Exodus 40:36-38). This is the same Guide that brought them out of Egypt: *Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light* (Exodus 13:21), the pillar *He took not away... from before the people* (Exodus 13:22). And it is the very Presence Numbers takes up verse-for-verse: *when the cloud was taken up from the tabernacle, then after that the children of Yashar''el (Israel) journeyed* (Numbers 9:17), *at the commandment of Yahuah (LORD) the children of Yashar''el (Israel) journeyed, and at the commandment of Yahuah (LORD) they pitched* (Numbers 9:18) — the cloud over the dwelling making the will of Yahuah visible, the people stopping and going as He moves. Sha''ul (Paul) names the whole congregation that lived beneath it: *all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1). The Presence that filled the tent now goes before the two-house people through every stage of the way — Yahuah dwelling in the midst, and Yahuah leading them on, throughout all their journeys.',
+       sv.verse_id, ev.verse_id, 'free', 29984
+  FROM _s305_ex40_lookup sv, _s305_ex40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=40 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*According to all that I shew thee, after the pattern of the tabernacle... even so shall ye make it* (Exodus 25:9) — the charge that *Thus did Moses... so did he* (40:16) fulfils; built after the pattern shewn, nothing of his own design.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=16
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40) — the refrain *as Yahuah commanded Moses* (40:16ff.) keeps every vessel to the pattern in the mount.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=16
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — the obedience of 40:16 named: the earthly dwelling patterned on the heavenly, built exactly as shown.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=16
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Moses was faithful in all his house* (Hebrews 3:2) — the whole chapter is the proof: every board set *as Yahuah commanded* (40:16), the faithfulness held up as a pattern for the Son.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=16
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after* (Hebrews 3:5) — *so did he* (40:16) is the faithful servant''s work, itself a testimony pointing to the substance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=16
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-thus-did-moses-according-to-all-that-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the cloud filled the house of Yahuah (LORD)* (1 Kings 8:10) — the Glory that filled the tent (40:34) fills Solomon''s temple; the same cloud, the same Presence, tent to house.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house* (1 Kings 8:11) — as Moses could not enter (40:35), the priests could not stand; the Glory bars even the mediator.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=35
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the glory of Yahuah (LORD) filled the house* (Ezekiel 43:5) — the Glory of 40:34 RETURNS to the future temple of the restored two houses, to dwell in their midst for ever.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=43 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will fill this house with glory, saith Yahuah Tseva''ot (LORD of hosts)* (Haggai 2:7) — the filling Glory of 40:34 promised again to the rebuilt house.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*The glory of this latter house shall be greater than of the former* (Haggai 2:9) — the indwelling Glory of 40:34 increases toward its fullness, not diminished across the ages.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the temple was filled with smoke from the glory of Elohim (God)... and no man was able to enter* (Revelation 15:8) — the *not able to enter* of 40:35 fulfilled at the throne of the end; the heavenly temple filled past entering.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=35
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=15 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the Word was made flesh, and dwelt among us, and we beheld his glory* (John 1:14) — the Glory that filled the tent (40:34) took flesh and tabernacled among men, now beheld.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*beholding... the glory of Yahuah (Lord), are changed into the same image from glory to glory* (2 Corinthians 3:18) — the Presence that barred Moses (40:34) now transforms those who behold it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*I shall build My sanctuary in their midst, and I shall dwell with them* (Jubilees 1:17) — the restored witness names the purpose the filling Glory (40:34) accomplishes: Yahuah dwelling among His people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-of-yahuah-filled-the-tabernacle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*let them make me a sanctuary; that I may dwell among them* (Exodus 25:8) — the purpose spoken at the start, now answered when the Glory fills the dwelling (40:34); the Presence among His people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-the-formed-dwelling-among-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Word was made flesh, and dwelt among us... the glory as of the only begotten of the Father* (John 1:14) — the visible Glory that barred Moses (40:35) is the Formed Son, who dwelt among us; He is Yahuah and has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=35
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-the-formed-dwelling-among-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the dwelling that began at 40:34 reaches its consummation: the Glory with His people forever.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-the-formed-dwelling-among-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I saw no temple therein: for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22) — the Glory that filled past entering (40:35) becomes the temple itself; the Presence is the dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=35
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-the-formed-dwelling-among-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I shall dwell with them, and I shall be their Elohim (God) and they will be My people* (Jubilees 1:17) — the restored witness keeps the settled purpose of the indwelling (40:34): the Presence among His people, tent to eternity.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=34
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-glory-the-formed-dwelling-among-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) went before them by day in a pillar of a cloud... by night in a pillar of fire* (Exodus 13:21) — the Presence now resting on the dwelling (40:38) is the Guide that led them out of Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=38
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He took not away the pillar of the cloud by day, nor the pillar of fire by night, from before the people* (Exodus 13:22) — the unfailing pillar is the cloud and fire never failing over the dwelling (40:38).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=38
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when the cloud was taken up from the tabernacle, then after that the children of Yashar''el (Israel) journeyed* (Numbers 9:17) — the very continuation of 40:36; the people move only as the Presence moves.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=36
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=9 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*at the commandment of Yahuah (LORD)... they journeyed, and at the commandment of Yahuah (LORD) they pitched* (Numbers 9:18) — unfolds 40:37: the cloud over the dwelling is the will of Yahuah made visible.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=37
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1) — Sha''ul names the whole congregation that lived beneath the guiding Glory of 40:38, every soul of the two-house people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=40 AND sv.verse_number=38
+  JOIN _s305_ex40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
