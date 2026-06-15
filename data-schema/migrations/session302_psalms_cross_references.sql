@@ -22921,6 +22921,2002 @@ SELECT t.id, cr.id, 1, E'★ *Help us, O Elohim (God) of our salvation, for the 
  WHERE t.slug='psalm-44-awake-arise-redeem-us-for-thy-mercies-sake'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_46.sql (Psalm 46) -----
+-- Chapter: Psalm 46 — THE KORAHITE "CITY OF ELOHIM" PSALM, *Elohim (God) is our refuge and strength*.
+-- Zion's song of the unshakeable refuge amid cosmic upheaval: *though the earth be removed, and though
+-- the mountains be carried into the midst of the sea* (v.2), yet *Elohim is in the midst of her; she
+-- shall not be moved* (v.5). Four load-bearing weaves: ★ the refuge that cannot be shaken (vv.1-3) bound
+-- to Hebrews 12 (the things shaken removed, the kingdom that cannot be moved); ★★ THE RIVER of the city
+-- of Elohim (vv.4-5) = the waters from the temple (Ezekiel 47), the living waters from Jerusalem
+-- (Zechariah 14:8), the river of life and the New Jerusalem coming down (Revelation 22 / 21); ★★ THE
+-- REFRAIN *Yahuah Tseva'ot (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge* (vv.7,11)
+-- = Immanuel, El-with-us — the Formed Son in the midst (Isaiah 7:14 / 8:10; Matthew 1:23); the cessation
+-- of war and *Be still, and know that I am Elohim* with the heathen gathered to the Elohim of Jacob
+-- (vv.8-10; Isaiah 2:4 / Micah 4:3 / Psalm 47, with the Romans 11:1-2 ingathering guard).
+-- Tag: ps046   Temp view: _s302_ps046_lookup
+-- Sort band: base 23125, step 3 -> threads at 23125, 23128, 23131, 23134 (4 threads)
+-- Source of EVERY row: 'canon','psalms',46,v
+--
+-- Psalm 46 coverage:
+--   ★ vv.1-3 (Elohim (God) is our refuge and strength, a very present help in trouble. Therefore will not
+--          we fear, though the earth be removed... though the mountains shake with the swelling thereof)
+--        NT:     ★ Hebrews 12:26-28 (Yet once more I shake not the earth only, but also heaven... the
+--                removing of those things that are shaken... that those things which cannot be shaken may
+--                remain. Wherefore we receiving a kingdom which cannot be moved) — THREAD 1
+--        Extras: none warranted (the unshakeable-refuge weave is carried cleaner by Hebrews + the psalter;
+--                no clean Sirach/Wisdom witness illuminates the cosmic-upheaval refuge without forcing)
+--        Tanakh: ★ Psalm 65:7 (Which stilleth the noise of the seas, the noise of their waves, and the
+--                tumult of the people) — the sea-rage stilled — THREAD 1
+--   ★★ vv.4-5 (There is a river, the streams whereof shall make glad the city of Elohim (God), the holy
+--          place of the tabernacles of the El Elyon (most High). Elohim is in the midst of her; she shall
+--          not be moved)
+--        NT:     ★★ Revelation 22:1 (a pure river of water of life... proceeding out of the throne of
+--                Elohim and of the Lamb), Revelation 22:2 (the tree of life... the leaves... for the
+--                healing of the nations), Revelation 21:2-3 (the holy city, new Jerusalem... the
+--                tabernacle of Elohim is with men) — THREAD 2
+--        Extras: none warranted (the river-of-the-city weave is fully borne by the prophets + Revelation;
+--                no clean extra-canonical river-of-Zion witness adds without forcing)
+--        Tanakh: ★★ Ezekiel 47:1 (waters issued out from under the threshold of the house), Ezekiel 47:9
+--                (every thing shall live whither the river cometh), Ezekiel 47:12 (all trees for meat...
+--                the leaf thereof for medicine), ★ Zechariah 14:8 (living waters shall go out from
+--                Jerusalem) — THREAD 2
+--   ★★ vv.7,11 (Yahuah Tseva'ot (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge. Selah)
+--        NT:     ★★ Matthew 1:23 (they shall call his name Emmanuel, which being interpreted is, Elohim
+--                (God) with us) — THREAD 3
+--        Extras: none warranted (Immanuel = El-with-us is carried by Isaiah + Matthew; no extra add forced)
+--        Tanakh: ★★ Isaiah 7:14 (a virgin shall conceive, and bear a son, and shall call his name
+--                Immanuel), ★★ Isaiah 8:10 (speak the word, and it shall not stand: for Elohim (God) is
+--                with us) — THREAD 3
+--   ★ vv.8-10 (Come, behold the works of Yahuah (LORD)... He maketh wars to cease unto the end of the
+--          earth... Be still, and know that I am Elohim (God): I will be exalted among the heathen)
+--        NT:     ★ Romans 11:25-26 (blindness in part is happened to Yashar'el (Israel), until the fulness
+--                of the Gentiles be come in. And so all Yashar'el (Israel) shall be saved) — the heathen
+--                gathered TO the Elohim of Jacob, WITH the Romans 11:1-2 not-cast-away guard — THREAD 4
+--        Extras: none warranted (the swords-into-plowshares ingathering is carried by Isaiah/Micah/Psalms)
+--        Tanakh: ★ Isaiah 2:4 (they shall beat their swords into plowshares... neither shall they learn
+--                war any more), ★ Micah 4:3 (same, the wars-cease oracle), Psalm 47:8 (Elohim reigneth
+--                over the heathen) — THREAD 4
+--   v.6 (The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted)
+--        NT/Extras/Tanakh: none warranted as separate (the raging-heathen / earth-melted at His voice
+--                folds into THREAD 1's upheaval and THREAD 4's exalted-among-the-heathen; recorded as folded)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-46-elohim-our-refuge-the-things-that-cannot-be-shaken — NT (Hebrews 12) + Tanakh (Psalm 65)
+--      [free] (★ the refuge amid cosmic upheaval = the kingdom that cannot be moved)
+--   2. psalm-46-there-is-a-river-the-city-of-elohim — NT (Revelation 22, Revelation 21) + Tanakh
+--      (Ezekiel 47, Zechariah 14) [free] (★★ the river of the city of Elohim = waters from the temple,
+--      living waters from Jerusalem, the river of life, the New Jerusalem)
+--   3. psalm-46-yahuah-of-hosts-is-with-us-immanuel — NT (Matthew 1) + Tanakh (Isaiah 7, Isaiah 8)
+--      [free] (★★ the refrain = Immanuel, El-with-us, the Formed Son in the midst)
+--   4. psalm-46-he-maketh-wars-to-cease-be-still-and-know — NT (Romans 11) + Tanakh (Isaiah 2, Micah 4,
+--      Psalm 47) [free] (★ wars cease, exalted among the heathen = the ingathering, w/ Rom 11:1-2 guard)
+--
+-- Framing notes:
+--   ★ THE UNSHAKEABLE REFUGE (THREAD 1): *Elohim (God) is our refuge and strength, a very present help in
+--      trouble. Therefore will not we fear, though the earth be removed, and though the mountains be
+--      carried into the midst of the sea* (46:1-2). Hebrews names the shaking and the remaining: *Yet once
+--      more I shake not the earth only, but also heaven... the removing of those things that are shaken...
+--      that those things which cannot be shaken may remain. Wherefore we receiving a kingdom which cannot
+--      be moved* (Hebrews 12:26-28) — the earth and mountains may be removed, but the refuge, the city,
+--      the kingdom cannot be moved. And the sea that roars is the sea He stills: *Which stilleth the noise
+--      of the seas, the noise of their waves, and the tumult of the people* (Psalm 65:7).
+--   ★★ THERE IS A RIVER (THREAD 2): *There is a river, the streams whereof shall make glad the city of
+--      Elohim (God), the holy place of the tabernacles of the El Elyon (most High). Elohim is in the midst
+--      of her; she shall not be moved* (46:4-5). The river is the waters from the sanctuary that Ezekiel
+--      saw — *waters issued out from under the threshold of the house* (Ezekiel 47:1), *every thing shall
+--      live whither the river cometh* (47:9), *all trees for meat... the leaf thereof for medicine*
+--      (47:12) — and the living waters Zechariah saw: *living waters shall go out from Jerusalem*
+--      (Zechariah 14:8). John sees the consummation of the same river and city: *a pure river of water of
+--      life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation
+--      22:1), *the tree of life... the leaves of the tree were for the healing of the nations* (22:2), *the
+--      holy city, new Jerusalem, coming down from Elohim (God) out of heaven... Behold, the tabernacle of
+--      Elohim (God) is with men* (Revelation 21:2-3). One river, one city of Elohim — the holy place of
+--      the tabernacles of the El Elyon — Zion that shall not be moved because Elohim is in the midst of her.
+--   ★★ YAHUAH OF HOSTS IS WITH US — IMMANUEL (THREAD 3): the refrain twice sounded — *Yahuah Tseva'ot
+--      (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge* (46:7,11). This is Immanuel,
+--      El-with-us: *Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel*
+--      (Isaiah 7:14); *speak the word, and it shall not stand: for Elohim (God) is with us* (Isaiah 8:10).
+--      Matthew names the fulfillment — *they shall call his name Emmanuel, which being interpreted is,
+--      Elohim (God) with us* (Matthew 1:23). Read through the Formed and the Formless, the One who is
+--      Elohim-with-us in the midst is the Formed Son, the expressed Word who took flesh; and *the Elohim
+--      (God) of Jacob* is the covenant God of the patriarchs — election, not replacement, the God of
+--      Abraham, Isaac, and Jacob who is our refuge.
+--   ★ WARS CEASE, BE STILL AND KNOW (THREAD 4): *Come, behold the works of Yahuah (LORD)... He maketh wars
+--      to cease unto the end of the earth... Be still, and know that I am Elohim (God): I will be exalted
+--      among the heathen, I will be exalted in the earth* (46:8-10). The wars-cease oracle is Isaiah's and
+--      Micah's: *they shall beat their swords into plowshares, and their spears into pruninghooks: nation
+--      shall not lift up sword against nation, neither shall they learn war any more* (Isaiah 2:4 / Micah
+--      4:3). To be exalted among the heathen is the ingathering of the nations TO the Elohim of Jacob —
+--      *Elohim (God) reigneth over the heathen* (Psalm 47:8) — and Paul guards it from any cast-off reading:
+--      *blindness in part is happened to Yashar'el (Israel), until the fulness of the Gentiles be come in.
+--      And so all Yashar'el (Israel) shall be saved* (Romans 11:25-26), for *Elohim (God) hath not cast
+--      away his people which he foreknew* (Romans 11:2). The heathen are gathered IN to the Elohim of
+--      Jacob, never Israel cast out; He is exalted in all the earth.
+--   VERSES WITH NO SEPARATE ADD: v.6 (the heathen raged, the earth melted at His voice) is recorded as
+--      folded — the raging/upheaval into THREAD 1, the voice-that-melts-the-earth and the heathen into
+--      THREAD 4 — the chapter's framework weight sits on vv.1-3,4-5,7-11, woven there.
+
+CREATE TEMP VIEW _s302_ps046_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Elohim our refuge — the things that cannot be shaken
+    ('canon','psalms',46,1,'canon','hebrews',12,28,'free',
+      E'*Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve Elohim (God) acceptably with reverence and godly fear* (Hebrews 12:28). *Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1): the refuge of the psalm is the kingdom that cannot be moved — what we receive of Elohim cannot be shaken, and so He is our strength and very present help.'),
+    ('canon','psalms',46,2,'canon','hebrews',12,26,'free',
+      E'*Whose voice then shook the earth: but now he hath promised, saying, Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26). *Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea* (Psalm 46:2): the earth and heaven shall be shaken, yet they that take Elohim for refuge will not fear — the very shaking the psalm names is the shaking Hebrews promises, the prelude to what remains.'),
+    ('canon','psalms',46,2,'canon','hebrews',12,27,'free',
+      E'*And this word, Yet once more, signifieth the removing of those things that are shaken, as of things that are made, that those things which cannot be shaken may remain* (Hebrews 12:27). *Though the earth be removed, and though the mountains be carried into the midst of the sea* (Psalm 46:2): the removing of the things that are shaken is the very upheaval the psalm sings — earth removed, mountains carried into the sea — so that the unshakeable refuge, the city of Elohim, may remain.'),
+    ('canon','psalms',46,3,'canon','psalms',65,7,'free',
+      E'*Which stilleth the noise of the seas, the noise of their waves, and the tumult of the people* (Psalm 65:7). *Though the waters thereof roar and be troubled, though the mountains shake with the swelling thereof* (Psalm 46:3): the roaring waters of the one psalm are the seas stilled by the other — the same hand that is our refuge stills the noise of the seas and the tumult of the people; the rage cannot move the city of Elohim.'),
+
+    -- THREAD 2 (★★): There is a river — the city of Elohim
+    ('canon','psalms',46,4,'canon','ezekiel',47,1,'free',
+      E'*Afterward he brought me again unto the door of the house; and, behold, waters issued out from under the threshold of the house eastward... at the south side of the altar* (Ezekiel 47:1). *There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4): the river of the city is the waters Ezekiel saw issuing from under the threshold of the house — the river flows out of the sanctuary itself, the holy place of the tabernacles of the Most High.'),
+    ('canon','psalms',46,4,'canon','ezekiel',47,9,'free',
+      E'*And it shall come to pass, that every thing that liveth, which moveth, whithersoever the rivers shall come, shall live... for they shall be healed; and every thing shall live whither the river cometh* (Ezekiel 47:9). *There is a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4): the streams that make glad the city are the temple-waters that bring life and healing wherever they flow — the river of Elohim gives gladness because it gives life.'),
+    ('canon','psalms',46,4,'canon','ezekiel',47,12,'free',
+      E'*And by the river upon the bank thereof... shall grow all trees for meat, whose leaf shall not fade... because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12). *There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4): the river of the holy place bears the trees of healing on its banks — the same river of the sanctuary, its fruit for meat and its leaf for medicine.'),
+    ('canon','psalms',46,4,'canon','zechariah',14,8,'free',
+      E'*And it shall be in that day, that living waters shall go out from Jerusalem; half of them toward the former sea, and half of them toward the hinder sea: in summer and in winter shall it be* (Zechariah 14:8). *There is a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4): the river of the city is the living waters that go out from Jerusalem in that day, flowing summer and winter — the perennial river of the city of Elohim.'),
+    ('canon','psalms',46,4,'canon','revelation',22,1,'free',
+      E'*And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). *There is a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4): John sees the same river at its consummation — the river of the water of life proceeding out of the throne, in the midst of the city of Elohim. The river the psalm sings flows from where Elohim dwells.'),
+    ('canon','psalms',46,4,'canon','revelation',22,2,'free',
+      E'*In the midst of the street of it, and on either side of the river, was there the tree of life... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). *There is a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4): the river of the city bears the tree of life on its banks, its leaves for the healing of the nations — the same river-and-trees Ezekiel saw, the gladness of the city of Elohim made full.'),
+    ('canon','psalms',46,5,'canon','revelation',21,2,'free',
+      E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). *Elohim (God) is in the midst of her; she shall not be moved* (Psalm 46:5): the city in whose midst Elohim dwells is the holy city, new Jerusalem, coming down from Elohim — the city that cannot be moved because Elohim Himself is her midst.'),
+    ('canon','psalms',46,5,'canon','revelation',21,3,'free',
+      E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). *Elohim (God) is in the midst of her; she shall not be moved: Elohim (God) shall help her, and that right early* (Psalm 46:5): the promise that Elohim is in the midst of the city is consummated in the tabernacle of Elohim with men — He dwells in the midst of His people, and so she shall not be moved.'),
+
+    -- THREAD 3 (★★): Yahuah of hosts is with us — Immanuel
+    ('canon','psalms',46,7,'canon','isaiah',7,14,'free',
+      E'*Therefore Yahuah (Lord) himself shall give you a sign; Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14). *Yahuah Tseva''ot (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge* (Psalm 46:7): the refrain is the meaning of the sign — Immanuel, El-with-us. The Yahuah of hosts who is with us is the Son to be named Immanuel, Elohim with His people.'),
+    ('canon','psalms',46,7,'canon','isaiah',8,10,'free',
+      E'*Take counsel together, and it shall come to nought; speak the word, and it shall not stand: for Elohim (God) is with us* (Isaiah 8:10). *Yahuah Tseva''ot (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge* (Psalm 46:7): Isaiah turns the Immanuel-name into the people''s confidence against every confederacy — *for Elohim (God) is with us* — the very assurance of the psalm''s refrain: because El is with us, no counsel against us shall stand.'),
+    ('canon','psalms',46,11,'canon','matthew',1,23,'free',
+      E'*Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23). *Yahuah Tseva''ot (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge* (Psalm 46:11): Matthew names the fulfillment of the refrain — Emmanuel, Elohim with us — the Formed Son, the expressed Word taking flesh to be in the midst of His people, the God of Jacob with us as our refuge.'),
+
+    -- THREAD 4 (★): He maketh wars to cease — be still, and know — exalted among the heathen
+    ('canon','psalms',46,9,'canon','isaiah',2,4,'free',
+      E'*And he shall judge among the nations, and shall rebuke many people: and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up sword against nation, neither shall they learn war any more* (Isaiah 2:4). *He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder* (Psalm 46:9): the wars He makes to cease are the wars Isaiah sees ending — swords beaten into plowshares, war unlearned — when out of Zion goes forth the law and He judges among the nations.'),
+    ('canon','psalms',46,9,'canon','micah',4,3,'free',
+      E'*And he shall judge among many people, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more* (Micah 4:3). *He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder; he burneth the chariot in the fire* (Psalm 46:9): Micah sings the same end of war from mount Zion — the bow broken, the spear cut, the chariot burned, because Yahuah breaks the weapons and makes the wars to cease.'),
+    ('canon','psalms',46,10,'canon','psalms',47,8,'free',
+      E'*Elohim (God) reigneth over the heathen: Elohim (God) sitteth upon the throne of his holiness* (Psalm 47:8). *Be still, and know that I am Elohim (God): I will be exalted among the heathen, I will be exalted in the earth* (Psalm 46:10): the neighbouring Korahite psalm answers — Elohim reigns over the heathen and sits upon His throne. To be exalted among the heathen is to be known as the Elohim who reigns over all the nations, the King of all the earth.'),
+    ('canon','psalms',46,10,'canon','romans',11,25,'free',
+      E'*For I would not, brethren, that ye should be ignorant of this mystery... that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25). *I will be exalted among the heathen, I will be exalted in the earth* (Psalm 46:10): the exalting among the heathen is the fulness of the nations coming in TO the Elohim of Jacob — Paul guards it: *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The heathen are gathered in, never Israel cast out.'),
+    ('canon','psalms',46,10,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). *Be still, and know that I am Elohim (God): I will be exalted among the heathen* (Psalm 46:10): the end of His exaltation among the nations is the salvation of all Yashar''el and the Deliverer out of Zion — the same Zion whose city the river makes glad. He is exalted among the heathen so that all His people, gathered, may know He is Elohim.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-46-elohim-our-refuge-the-things-that-cannot-be-shaken',
+       E'Elohim is our refuge — the things that cannot be shaken',
+       E'The psalm opens upon a refuge that holds while the world is undone: *Elohim (God) is our refuge and strength, a very present help in trouble. Therefore will not we fear, though the earth be removed, and though the mountains be carried into the midst of the sea; Though the waters thereof roar and be troubled, though the mountains shake with the swelling thereof* (Psalm 46:1-3). Hebrews names this very shaking and the thing that outlasts it: *Whose voice then shook the earth: but now he hath promised, saying, Yet once more I shake not the earth only, but also heaven. And this word, Yet once more, signifieth the removing of those things that are shaken, as of things that are made, that those things which cannot be shaken may remain. Wherefore we receiving a kingdom which cannot be moved, let us have grace* (Hebrews 12:26-28). The earth removed, the mountains carried into the sea — these are the things that are shaken; the refuge, the city, the kingdom of Elohim is the thing that cannot be moved. And the roaring sea is no terror to the One who is our refuge, for He *stilleth the noise of the seas, the noise of their waves, and the tumult of the people* (Psalm 65:7). The rage of the waters and the nations cannot move the one whose strength is Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 23125
+  FROM _s302_ps046_lookup sv, _s302_ps046_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=46 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-46-there-is-a-river-the-city-of-elohim',
+       E'There is a river — the city of Elohim',
+       E'At the heart of the psalm flows a river: *There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High). Elohim (God) is in the midst of her; she shall not be moved: Elohim (God) shall help her, and that right early* (Psalm 46:4-5). This river is the waters Ezekiel saw issuing from the sanctuary — *waters issued out from under the threshold of the house* (Ezekiel 47:1) — waters of life, for *every thing shall live whither the river cometh* (47:9), bearing trees of healing on its banks, *the fruit thereof shall be for meat, and the leaf thereof for medicine* (47:12). It is the living waters Zechariah saw: *living waters shall go out from Jerusalem... in summer and in winter shall it be* (Zechariah 14:8). And John sees the same river and city at their consummation: *a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1), with *the tree of life... and the leaves of the tree were for the healing of the nations* (22:2); *the holy city, new Jerusalem, coming down from Elohim (God) out of heaven* (Revelation 21:2), where *the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (21:3). One river, one city of Elohim, the holy place of the tabernacles of the Most High — Zion that shall not be moved, because Elohim is in the midst of her.',
+       sv.verse_id, ev.verse_id, 'free', 23128
+  FROM _s302_ps046_lookup sv, _s302_ps046_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=46 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-46-yahuah-of-hosts-is-with-us-immanuel',
+       E'Yahuah of hosts is with us — Immanuel, the Elohim of Jacob',
+       E'Twice the psalm sounds its refrain: *Yahuah Tseva''ot (LORD of hosts) is with us; the Elohim (God) of Jacob is our refuge. Selah* (Psalm 46:7,11). This is the heart of the Immanuel sign — El-with-us. Isaiah gave the name: *Behold, a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14); and he made it the people''s defiance against every confederacy of the nations: *Take counsel together, and it shall come to nought; speak the word, and it shall not stand: for Elohim (God) is with us* (Isaiah 8:10). Matthew names the fulfillment in the flesh: *they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23). Read through the Formed and the Formless, the One who is Elohim-with-us in the midst of the city is the Formed Son, the expressed Word who took on flesh — Yahuah of hosts come to dwell among His people. And *the Elohim (God) of Jacob* is the covenant God of the patriarchs — the God of Abraham, Isaac, and Jacob — our refuge by election, never by replacement. Because He is with us, no counsel against the city shall stand.',
+       sv.verse_id, ev.verse_id, 'free', 23131
+  FROM _s302_ps046_lookup sv, _s302_ps046_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=46 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-46-he-maketh-wars-to-cease-be-still-and-know',
+       E'He maketh wars to cease — Be still, and know that I am Elohim',
+       E'The psalm calls to behold the works of Yahuah and to be still: *Come, behold the works of Yahuah (LORD), what desolations he hath made in the earth. He maketh wars to cease unto the end of the earth; he breaketh the bow, and cutteth the spear in sunder; he burneth the chariot in the fire. Be still, and know that I am Elohim (God): I will be exalted among the heathen, I will be exalted in the earth* (Psalm 46:8-10). The wars He makes to cease are the wars the prophets see ending from Zion: *they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up sword against nation, neither shall they learn war any more* (Isaiah 2:4; the same oracle in Micah 4:3, where the bow and spear give way and war is unlearned). To be exalted among the heathen is the ingathering of the nations TO the Elohim of Jacob — *Elohim (God) reigneth over the heathen: Elohim (God) sitteth upon the throne of his holiness* (Psalm 47:8). And Paul guards this from every cast-off reading: the heathen come in, but Israel is not put out — *blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in. And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer* (Romans 11:25-26), for *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). He is exalted among the heathen by gathering them in to the God of Jacob, so that all His people, made still, may know that He is Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 23134
+  FROM _s302_ps046_lookup sv, _s302_ps046_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=46 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *a kingdom which cannot be moved* (Hebrews 12:28) — the refuge and strength of 46:1 is the kingdom that cannot be moved; what we receive of Elohim cannot be shaken.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=1
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-elohim-our-refuge-the-things-that-cannot-be-shaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26) — the earth removed (46:2) is the shaking promised; yet they that trust Elohim will not fear.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=2
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-elohim-our-refuge-the-things-that-cannot-be-shaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the removing of those things that are shaken... that those things which cannot be shaken may remain* (Hebrews 12:27) — earth and mountains removed (46:2) so the city of Elohim may remain.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=2
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-elohim-our-refuge-the-things-that-cannot-be-shaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Which stilleth the noise of the seas... and the tumult of the people* (Psalm 65:7) — the roaring waters of 46:3 are the seas He stills; the rage cannot move the city.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=65 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-elohim-our-refuge-the-things-that-cannot-be-shaken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *waters issued out from under the threshold of the house* (Ezekiel 47:1) — the river of the city (46:4) flows out of the sanctuary itself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *every thing shall live whither the river cometh* (Ezekiel 47:9) — the streams make the city glad (46:4) because the river of Elohim gives life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *all trees for meat... the leaf thereof for medicine* (Ezekiel 47:12) — the river of the holy place (46:4) bears the trees of healing on its banks.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=47 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *living waters shall go out from Jerusalem... in summer and in winter* (Zechariah 14:8) — the river of the city (46:4) is the perennial living waters from Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *a pure river of water of life... proceeding out of the throne of Elohim and of the Lamb* (Revelation 22:1) — the same river of 46:4 at its consummation, in the midst of the city.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the tree of life... the leaves of the tree were for the healing of the nations* (Revelation 22:2) — the river of the city (46:4) bears the tree of life, the gladness made full.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=4
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *the holy city, new Jerusalem, coming down from Elohim out of heaven* (Revelation 21:2) — the city in whose midst Elohim dwells (46:5), that cannot be moved.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=5
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *the tabernacle of Elohim is with men, and he will dwell with them* (Revelation 21:3) — Elohim in the midst of her (46:5) consummated: He dwells among His people, she shall not be moved.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=5
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-there-is-a-river-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *a virgin shall conceive, and bear a son, and shall call his name Immanuel* (Isaiah 7:14) — the refrain *Yahuah of hosts is with us* (46:7) is the Immanuel sign: El-with-us.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=7
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-yahuah-of-hosts-is-with-us-immanuel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *speak the word, and it shall not stand: for Elohim is with us* (Isaiah 8:10) — the refrain (46:7) become defiance: because El is with us, no counsel against us stands.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=7
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-yahuah-of-hosts-is-with-us-immanuel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they shall call his name Emmanuel, which being interpreted is, Elohim with us* (Matthew 1:23) — the refrain (46:11) fulfilled in the flesh: the Formed Son, El-with-us in the midst.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=11
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-yahuah-of-hosts-is-with-us-immanuel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *they shall beat their swords into plowshares... neither shall they learn war any more* (Isaiah 2:4) — the wars He makes to cease (46:9) are the wars Isaiah sees ending from Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=9
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-he-maketh-wars-to-cease-be-still-and-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *nation shall not lift up a sword against nation, neither shall they learn war any more* (Micah 4:3) — the same wars-cease oracle: the bow broken, the spear cut (46:9).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=9
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-he-maketh-wars-to-cease-be-still-and-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim reigneth over the heathen: Elohim sitteth upon the throne of his holiness* (Psalm 47:8) — exalted among the heathen (46:10) = the Elohim who reigns over all the nations.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=47 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-he-maketh-wars-to-cease-be-still-and-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *blindness in part is happened to Yashar''el, until the fulness of the Gentiles be come in* (Romans 11:25) — exalted among the heathen (46:10) = the nations gathered in, Israel not cast away (Rom 11:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-he-maketh-wars-to-cease-be-still-and-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *And so all Yashar''el shall be saved... There shall come out of Sion the Deliverer* (Romans 11:26) — His exaltation among the heathen (46:10) ends in all His people saved, the Deliverer out of Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps046_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s302_ps046_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-46-he-maketh-wars-to-cease-be-still-and-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_47.sql (Psalm 47) -----
+-- Chapter: Psalm 47 — THE KORAHITE ENTHRONEMENT PSALM, *Elohim is gone up with a shout*. A song of
+-- the King's ascension and universal reign: *O clap your hands, all ye people; shout unto Elohim
+-- (God) with the voice of triumph* (v.1). It carries four load-bearing weaves: ★ the KEYSTONE
+-- *Elohim (God) is gone up with a shout, Yahuah (LORD) with the sound of a trumpet* (v.5) — the
+-- ascension/enthronement of the King, fulfilled when Yahusha *was taken up* (Acts 1:9-11), echoed
+-- in the descent *with a shout... and with the trump of Elohim* (1 Thess 4:16), the trumpet of the
+-- appointed time *a memorial of blowing of trumpets* (Lev 23:24) not abolished; ★★ the universal
+-- reign *a great King over all the earth... Elohim (God) reigneth over the heathen: Elohim (God)
+-- sitteth upon the throne of his holiness* (vv.2,7-8) = the Formed Son enthroned, *Yahuah (LORD)
+-- shall be king over all the earth* (Zech 14:9), *the kingdoms of this world are become the
+-- kingdoms of our Lord* (Rev 11:15); ★★ the Abrahamic ingathering *The princes of the people are
+-- gathered together, even the people of the Elohim (God) of Abraham* (v.9) — the families of the
+-- earth gathered to the God of Abraham (Gen 12:3 / Gal 3:8), the two-house regathering NOT
+-- replacement (Rom 11:1-2 guard); and the dominion given *He shall subdue the people under us*
+-- (v.3) bound to *Sit thou at my right hand, until I make thine enemies thy footstool* (Ps 110:1)
+-- and *he must reign, till he hath put all enemies under his feet* (1 Cor 15:25).
+-- Tag: ps047   Temp view: _s302_ps047_lookup
+-- Sort band: base 23150, step 3 -> threads at 23150, 23153, 23156, 23159 (4 threads)
+-- Source of EVERY row: 'canon','psalms',47,v
+--
+-- Psalm 47 coverage:
+--   v.1 (O clap your hands, all ye people; shout unto Elohim (God) with the voice of triumph)
+--        NT:     none warranted as separate (the all-peoples shout folds into the universal-reign
+--                weave THREAD 2 and the ascension-shout THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none warranted as separate (the call-to-praise is the chapter's frame, gathered
+--                under the reign threads)
+--   ★ v.2 (For Yahuah (LORD) most high is terrible; he is a great King over all the earth)
+--        NT:     ★★ Revelation 11:15 (the kingdoms of this world are become the kingdoms of our
+--                Lord... he shall reign for ever and ever) — THREAD 2
+--        Extras: none warranted (the universal-King reign is carried clean by Zechariah + Revelation)
+--        Tanakh: ★ Zechariah 14:9 (Yahuah (LORD) shall be king over all the earth: in that day shall
+--                there be one Yahuah... and his name one) — THREAD 2
+--   ★ v.3 (He shall subdue the people under us, and the nations under our feet)
+--        NT:     ★ 1 Corinthians 15:25 (he must reign, till he hath put all enemies under his feet) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 110:1 (Sit thou at my right hand, until I make thine enemies thy footstool) — THREAD 4
+--   v.4 (He shall choose our inheritance for us, the excellency of Jacob whom he loved. Selah)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted as separate (the chosen-inheritance/excellency-of-Jacob is the
+--                covenant-election undertone; folded as lead-in to the Abrahamic gathering THREAD 3)
+--   ★ v.5 (Elohim (God) is gone up with a shout, Yahuah (LORD) with the sound of a trumpet)
+--        NT:     ★ Acts 1:9 (he was taken up; and a cloud received him out of their sight), Acts 1:11
+--                (this same Yahusha... shall so come in like manner), ★ 1 Thessalonians 4:16 (Yahuah
+--                (Lord) himself shall descend from heaven with a shout... and with the trump of Elohim
+--                (God)) — THREAD 1
+--        Extras: none warranted (weighed; the ascension/trumpet is carried clean by Acts + 1 Thess +
+--                the Torah appointed-time)
+--        Tanakh: ★ Leviticus 23:24 (a memorial of blowing of trumpets, an holy convocation — the
+--                Feast of Trumpets, appointed time not abolished); ★ Psalm 68:18 (Thou hast ascended
+--                on high, thou hast led captivity captive — the ascent of Elohim, lateral) — THREAD 1
+--   v.6 (Sing praises to Elohim (God), sing praises: sing praises unto our King, sing praises)
+--        NT/Extras/Tanakh: none warranted as separate (the sing-praises-unto-the-King refrain folds
+--                into the universal-reign THREAD 2; v.6 is the doxology of v.7's King-of-all-the-earth)
+--   ★★ v.7 (For Elohim (God) is the King of all the earth: sing ye praises with understanding)
+--        NT:     ★★ Revelation 11:15 (gathered under THREAD 2 — King over all the earth) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Zechariah 14:9 (gathered under THREAD 2) — THREAD 2
+--   ★★ v.8 (Elohim (God) reigneth over the heathen: Elohim (God) sitteth upon the throne of his holiness)
+--        NT:     ★★ Revelation 11:15 (he shall reign for ever and ever — the throne assumed) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Zechariah 14:9 (one Yahuah, king over all the earth — reign over the nations) — THREAD 2
+--   ★★ v.9 (The princes of the people are gathered together, even the people of the Elohim (God) of
+--          Abraham: for the shields of the earth belong unto Elohim (God): he is greatly exalted)
+--        NT:     ★★ Galatians 3:8 (the scripture... preached before the gospel unto Abraham, saying,
+--                In thee shall all nations be blessed) — THREAD 3
+--        Extras: none warranted (the Abrahamic ingathering is carried clean by Genesis + Galatians)
+--        Tanakh: ★★ Genesis 12:3 (in thee shall all families of the earth be blessed — the Abrahamic
+--                promise the gathering fulfils) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet — NT (Acts 1, 1 Thessalonians 4)
+--      + Tanakh (Leviticus 23, Psalm 68) [free] (★ ascension/enthronement of the King; the trumpet of
+--      the appointed time; Feast of Trumpets not abolished)
+--   2. psalm-47-a-great-king-over-all-the-earth-reigneth-over-the-heathen — NT (Revelation 11) +
+--      Tanakh (Zechariah 14) [free] (★★ the universal reign: the Formed Son enthroned, King over all
+--      the earth, the kingdoms become the kingdoms of our Lord)
+--   3. psalm-47-the-people-of-the-elohim-of-abraham-gathered-together — NT (Galatians 3) + Tanakh
+--      (Genesis 12) [free] (★★ the Abrahamic ingathering of the families of the earth — two-house
+--      regathering, NOT replacement; the Rom 11:1-2 guard)
+--   4. psalm-47-he-shall-subdue-the-people-under-us — NT (1 Corinthians 15) + Tanakh (Psalm 110)
+--      [free] (★ dominion given to the enthroned King — all enemies under his feet)
+--
+-- Framing notes:
+--   ★ GONE UP WITH A SHOUT / THE TRUMPET (THREAD 1): *Elohim (God) is gone up with a shout, Yahuah
+--      (LORD) with the sound of a trumpet* (47:5). The ascent of Elohim to His throne is enacted when
+--      the Formed Son who took flesh is taken up: *while they beheld, he was taken up; and a cloud
+--      received him out of their sight* (Acts 1:9), with the promise that *this same Yahusha (Jesus),
+--      which is taken up from you into heaven, shall so come in like manner as ye have seen him go*
+--      (Acts 1:11). The same shout and trumpet sound at His return: *Yahuah (Lord) himself shall
+--      descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim
+--      (God)* (1 Thessalonians 4:16). The trumpet is no idle figure — it is the appointed time:
+--      *In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of
+--      blowing of trumpets, an holy convocation* (Leviticus 23:24), the Feast of Trumpets not
+--      abolished but pointing to the King's enthronement. The psalter sings the same ascent — *Thou
+--      hast ascended on high, thou hast led captivity captive* (Psalm 68:18).
+--   ★★ KING OVER ALL THE EARTH / REIGNETH OVER THE HEATHEN (THREAD 2): *For Yahuah (LORD) most high
+--      is terrible; he is a great King over all the earth* (47:2); *For Elohim (God) is the King of
+--      all the earth* (47:7); *Elohim (God) reigneth over the heathen: Elohim (God) sitteth upon the
+--      throne of his holiness* (47:8). This is the Formed Son enthroned over the nations. Zechariah
+--      seals the day — *And Yahuah (LORD) shall be king over all the earth: in that day shall there be
+--      one Yahuah (LORD), and his name one* (Zechariah 14:9) — and the Revelation hears the seventh
+--      trumpet announce it accomplished — *The kingdoms of this world are become the kingdoms of our
+--      Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15).
+--      The throne of holiness the psalm names is the everlasting reign over all the earth.
+--   ★★ THE PEOPLE OF THE ELOHIM OF ABRAHAM GATHERED (THREAD 3): *The princes of the people are
+--      gathered together, even the people of the Elohim (God) of Abraham: for the shields of the earth
+--      belong unto Elohim (God): he is greatly exalted* (47:9). The gathering is not to a new people
+--      but to the Elohim of ABRAHAM — the families of the earth drawn into the Abrahamic promise:
+--      *I will bless thee... and in thee shall all families of the earth be blessed* (Genesis 12:3).
+--      Paul reads that very promise as the gospel preached beforehand — *the scripture, foreseeing
+--      that Elohim (God) would justify the heathen through faith, preached before the gospel unto
+--      Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8). This is the two-house
+--      regathering and the ingathering of the nations into the one promised seed — the families of
+--      the earth blessed IN Abraham, never Israel cast off and replaced (Romans 11:1-2 stands guard).
+--   ★ HE SHALL SUBDUE THE PEOPLE UNDER US (THREAD 4): *He shall subdue the people under us, and the
+--      nations under our feet* (47:3). The dominion is given to the enthroned King — *Yahuah (LORD)
+--      said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool*
+--      (Psalm 110:1) — and worked out in the reign that ends all rebellion: *he must reign, till he
+--      hath put all enemies under his feet* (1 Corinthians 15:25). The subduing under the feet of His
+--      people is the subduing under the feet of the King they belong to.
+--   VERSES WITH NO SEPARATE ADD: vv.1,4,6 carry the call-to-praise, the chosen inheritance/excellency
+--      of Jacob, and the sing-praises-unto-the-King doxology; these are recorded as folded (v.1 and
+--      v.6 into the reign threads, v.4's covenant-election as lead-in to the Abrahamic gathering
+--      THREAD 3) — the chapter's framework weight sits on vv.2,3,5,7,8,9, woven there.
+
+CREATE TEMP VIEW _s302_ps047_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Elohim is gone up with a shout, with the sound of a trumpet — the ascension/enthronement
+    ('canon','psalms',47,5,'canon','acts',1,9,'free',
+      E'*And when he had spoken these things, while they beheld, he was taken up; and a cloud received him out of their sight* (Acts 1:9). *Elohim (God) is gone up with a shout, Yahuah (LORD) with the sound of a trumpet* (Psalm 47:5): the ascent of Elohim to His throne is enacted when the Formed Son who took flesh is taken up before their eyes, the cloud receiving Him — the going-up the psalm sang made visible at Olivet.'),
+    ('canon','psalms',47,5,'canon','acts',1,11,'free',
+      E'*Ye men of Galilee, why stand ye gazing up into heaven? this same Yahusha (Jesus), which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven* (Acts 1:11). *Elohim (God) is gone up with a shout* (Psalm 47:5): the One gone up with the shout shall so come again in like manner — the ascension the psalm celebrates carries the promise of the King''s return.'),
+    ('canon','psalms',47,5,'canon','1-thessalonians',4,16,'free',
+      E'*For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16). *Elohim (God) is gone up with a shout, Yahuah (LORD) with the sound of a trumpet* (Psalm 47:5): the same shout and trump of the enthronement sound at His coming — the King who went up with a shout descends with a shout and the trump of Elohim.'),
+    ('canon','psalms',47,5,'canon','leviticus',23,24,'free',
+      E'*Speak unto the children of Yashar''el (Israel), saying, In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). *Yahuah (LORD) with the sound of a trumpet* (Psalm 47:5): the trumpet is no idle figure but the appointed time — the Feast of Trumpets, a holy convocation and statute for ever, not abolished but pointing to the King''s enthronement announced with the trumpet sound.'),
+    ('canon','psalms',47,5,'canon','psalms',68,18,'free',
+      E'*Thou hast ascended on high, thou hast led captivity captive: thou hast received gifts for men* (Psalm 68:18). *Elohim (God) is gone up with a shout* (Psalm 47:5): the neighbouring psalm sings the same ascent of Elohim — the going-up on high, leading captivity captive — the enthronement of the King who rises to His holy place.'),
+
+    -- THREAD 2 (★★): a great King over all the earth — Elohim reigneth over the heathen
+    ('canon','psalms',47,2,'canon','zechariah',14,9,'free',
+      E'*And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one* (Zechariah 14:9). *For Yahuah (LORD) most high is terrible; he is a great King over all the earth* (Psalm 47:2): the great King over all the earth the psalm proclaims is the one Yahuah whose kingship Zechariah sees consummated — one Yahuah, one Name, king over all the earth.'),
+    ('canon','psalms',47,2,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). *he is a great King over all the earth* (Psalm 47:2): the seventh trumpet announces the very reign the psalm sings accomplished — the kingdoms of the world become the kingdom of our Lord and His Messiah, the great King over all the earth reigning for ever.'),
+    ('canon','psalms',47,7,'canon','zechariah',14,9,'free',
+      E'*And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one* (Zechariah 14:9). *For Elohim (God) is the King of all the earth: sing ye praises with understanding* (Psalm 47:7): the King of all the earth and the king over all the earth are one — the psalm''s praise with understanding is the day Zechariah names, one Yahuah and His Name one.'),
+    ('canon','psalms',47,8,'canon','revelation',11,15,'free',
+      E'*The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). *Elohim (God) reigneth over the heathen: Elohim (God) sitteth upon the throne of his holiness* (Psalm 47:8): the reign over the heathen and the throne of holiness the psalm declares is the everlasting reign the Revelation hears proclaimed — He shall reign for ever and ever.'),
+
+    -- THREAD 3 (★★): the people of the Elohim of Abraham gathered together — the Abrahamic ingathering
+    ('canon','psalms',47,9,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). *The princes of the people are gathered together, even the people of the Elohim (God) of Abraham* (Psalm 47:9): the gathering is to the Elohim of ABRAHAM — the families of the earth drawn into the Abrahamic promise, blessed in Abraham as Yahuah swore, not a new people but the nations gathered into the one covenant seed.'),
+    ('canon','psalms',47,9,'canon','galatians',3,8,'free',
+      E'*And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8). *even the people of the Elohim (God) of Abraham* (Psalm 47:9): Paul reads the Abrahamic promise as the gospel preached beforehand — the nations gathered to the Elohim of Abraham are the all-nations blessed in him; the ingathering the psalm sees is the families of the earth brought into Abraham''s blessing, the two-house regathering, never Israel replaced.'),
+
+    -- THREAD 4 (★): He shall subdue the people under us — dominion given to the enthroned King
+    ('canon','psalms',47,3,'canon','psalms',110,1,'free',
+      E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). *He shall subdue the people under us, and the nations under our feet* (Psalm 47:3): the subduing of the nations is the work of the enthroned King at Yahuah''s right hand — His enemies made His footstool; what is put under His people''s feet is put under the feet of the King they belong to.'),
+    ('canon','psalms',47,3,'canon','1-corinthians',15,25,'free',
+      E'*For he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25). *He shall subdue the people under us, and the nations under our feet* (Psalm 47:3): the dominion the psalm names is worked out in the reign that ends all rebellion — the King must reign till every enemy is put under His feet, the nations subdued under the enthroned Son.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet',
+       E'Elohim is gone up with a shout, Yahuah with the sound of a trumpet — the ascension of the King',
+       E'*O clap your hands, all ye people; shout unto Elohim (God) with the voice of triumph* (Psalm 47:1) — and at the heart of the triumph: *Elohim (God) is gone up with a shout, Yahuah (LORD) with the sound of a trumpet* (Psalm 47:5). The ascent of Elohim to His throne is enacted when the Formed Son who took on flesh is taken up: *And when he had spoken these things, while they beheld, he was taken up; and a cloud received him out of their sight* (Acts 1:9), with the promise *this same Yahusha (Jesus), which is taken up from you into heaven, shall so come in like manner as ye have seen him go into heaven* (Acts 1:11). The same shout and trumpet sound at His return: *For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16). The trumpet is no idle figure — it is the appointed time: *In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24), the Feast of Trumpets not abolished but pointing to the King''s enthronement. The psalter sings the same ascent — *Thou hast ascended on high, thou hast led captivity captive* (Psalm 68:18). The King is gone up with a shout, and the trumpet sounds His reign.',
+       sv.verse_id, ev.verse_id, 'free', 23150
+  FROM _s302_ps047_lookup sv, _s302_ps047_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=47 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-47-a-great-king-over-all-the-earth-reigneth-over-the-heathen',
+       E'A great King over all the earth — Elohim reigneth over the heathen upon the throne of his holiness',
+       E'The psalm crowns the King over all the earth: *For Yahuah (LORD) most high is terrible; he is a great King over all the earth* (Psalm 47:2); *For Elohim (God) is the King of all the earth: sing ye praises with understanding* (Psalm 47:7); *Elohim (God) reigneth over the heathen: Elohim (God) sitteth upon the throne of his holiness* (Psalm 47:8). Read through the Formed and the Formless, this is the Son enthroned over the nations. Zechariah seals the day the psalm anticipates — *And Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah (LORD), and his name one* (Zechariah 14:9) — and the Revelation hears the seventh trumpet announce it accomplished — *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The throne of His holiness the psalm names is the everlasting reign over all the earth: one Yahuah, one Name, the kingdoms become His kingdom for ever.',
+       sv.verse_id, ev.verse_id, 'free', 23153
+  FROM _s302_ps047_lookup sv, _s302_ps047_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=47 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-47-the-people-of-the-elohim-of-abraham-gathered-together',
+       E'The people of the Elohim of Abraham gathered together — the Abrahamic ingathering of the families of the earth',
+       E'The psalm ends in a gathering: *The princes of the people are gathered together, even the people of the Elohim (God) of Abraham: for the shields of the earth belong unto Elohim (God): he is greatly exalted* (Psalm 47:9). The gathering is not to a new people but to the Elohim of ABRAHAM — the families of the earth drawn into the Abrahamic promise sworn at the first: *I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). Paul reads that very promise as the gospel preached beforehand: *And the scripture, foreseeing that Elohim (God) would justify the heathen through faith, preached before the gospel unto Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8). The princes of the people gathered to the Elohim of Abraham are the all-nations blessed IN him — the ingathering of the families of the earth into the one covenant seed, the two-house regathering of Yahuah''s people made one, never Israel cast off and replaced.',
+       sv.verse_id, ev.verse_id, 'free', 23156
+  FROM _s302_ps047_lookup sv, _s302_ps047_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=47 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-47-he-shall-subdue-the-people-under-us',
+       E'He shall subdue the people under us — dominion given to the enthroned King',
+       E'*He shall subdue the people under us, and the nations under our feet* (Psalm 47:3). The subduing of the nations is the work of the King enthroned at Yahuah''s right hand: *Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). And the reign runs until every rebellion is ended: *For he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25). What is put under His people''s feet is put under the feet of the King to whom they belong — the dominion the psalm names is the dominion of the Formed Son enthroned, the nations subdued under His reign.',
+       sv.verse_id, ev.verse_id, 'free', 23159
+  FROM _s302_ps047_lookup sv, _s302_ps047_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=47 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *while they beheld, he was taken up; and a cloud received him out of their sight* (Acts 1:9) — the going-up of 47:5 enacted at Olivet: the Formed Son taken up before their eyes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=5
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *this same Yahusha (Jesus), which is taken up... shall so come in like manner* (Acts 1:11) — the One gone up with the shout (47:5) shall so return: ascension carrying the promise of His coming.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=5
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah (Lord) himself shall descend... with a shout... and with the trump of Elohim (God)* (1 Thessalonians 4:16) — the same shout and trump of 47:5 sound at His coming: gone up with a shout, descends with a shout.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=5
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24) — the trumpet of 47:5 is the appointed time: the Feast of Trumpets, not abolished, pointing to the King''s enthronement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=5
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Thou hast ascended on high, thou hast led captivity captive* (Psalm 68:18) — the neighbouring psalm sings the same ascent of Elohim as 47:5: the going-up on high of the enthroned King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=5
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-elohim-is-gone-up-with-a-shout-the-sound-of-a-trumpet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah (LORD) shall be king over all the earth: in that day shall there be one Yahuah... and his name one* (Zechariah 14:9) — the great King over all the earth (47:2) is the one Yahuah whose kingship Zechariah sees consummated.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=2
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-a-great-king-over-all-the-earth-reigneth-over-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *The kingdoms of this world are become the kingdoms of our Lord... and he shall reign for ever and ever* (Revelation 11:15) — the seventh trumpet announces the reign of 47:2 accomplished: the great King over all the earth reigning for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=2
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-a-great-king-over-all-the-earth-reigneth-over-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah (LORD) shall be king over all the earth... and his name one* (Zechariah 14:9) — the King of all the earth of 47:7 is the one Yahuah of Zechariah''s day: one Yahuah, His Name one.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-a-great-king-over-all-the-earth-reigneth-over-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *he shall reign for ever and ever* (Revelation 11:15) — the reign over the heathen and the throne of holiness (47:8) is the everlasting reign the Revelation hears proclaimed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-a-great-king-over-all-the-earth-reigneth-over-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *in thee shall all families of the earth be blessed* (Genesis 12:3) — the people gathered to the Elohim of Abraham (47:9) are the families of the earth blessed in him: the Abrahamic ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-the-people-of-the-elohim-of-abraham-gathered-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *preached before the gospel unto Abraham, saying, In thee shall all nations be blessed* (Galatians 3:8) — Paul reads 47:9''s gathering as the all-nations promise: the families of the earth brought into Abraham''s blessing, never Israel replaced.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=9
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-the-people-of-the-elohim-of-abraham-gathered-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1) — the subduing of the nations (47:3) is the work of the King enthroned at Yahuah''s right hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=3
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-he-shall-subdue-the-people-under-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he must reign, till he hath put all enemies under his feet* (1 Corinthians 15:25) — the dominion of 47:3 worked out: the King reigns till every enemy is under His feet, the nations subdued.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps047_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=47 AND sv.verse_number=3
+  JOIN _s302_ps047_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-47-he-shall-subdue-the-people-under-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_48.sql (Psalm 48) -----
+-- Chapter: Psalm 48 — THE KORAHITE SONG OF ZION, *the city of the great King*. A psalm of the
+-- sons of Korah celebrating Yahuah enthroned in His holy mountain: ★★ *Great is Yahuah (LORD)...
+-- in the mountain of his holiness. Beautiful for situation, the joy of the whole earth, is mount
+-- Zion... the city of the great King* (vv.1-2); the kings assembled against her scattered in
+-- dismay (vv.4-7); the seen confirmation of the heard promise (vv.8-9); and the charge to walk
+-- about Zion and tell her towers *to the generation following* (vv.12-14), sealed by the
+-- everlasting covenant guide *he will be our guide even unto death* (v.14). Four weaves: the
+-- city-of-the-great-King → heavenly Jerusalem (Matt 5:35 / Gal 4:26 / Heb 12:22 / Rev 21 +
+-- Tobit 13); the kings assembled and scattered (Ps 2 / Ps 46 / Zech 12); the heard-and-seen
+-- promise (Ps 44:1); and Zion told to the generation following (Ps 78:4,6).
+-- Tag: ps048   Temp view: _s302_ps048_lookup
+-- Sort band: base 23175, step 3 -> threads at 23175, 23178, 23181, 23184 (4 threads)
+-- Source of EVERY row: 'canon','psalms',48,v
+--
+-- Psalm 48 coverage:
+--   ★★ vv.1-3 (Great is Yahuah (LORD)... in the city of our Elohim, in the mountain of his holiness.
+--          Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the
+--          north, the city of the great King. Elohim is known in her palaces for a refuge)
+--        NT:     ★ Matthew 5:35 (neither by Jerusalem; for it is the city of the great King —
+--                Yahusha quotes the very phrase), ★ Galatians 4:26 (Jerusalem which is above is free,
+--                which is the mother of us all), ★ Hebrews 12:22 (ye are come unto mount Sion... the
+--                heavenly Jerusalem), Revelation 21:2 (the holy city, new Jerusalem), Revelation 21:10
+--                (that great city, the holy Jerusalem, descending out of heaven) — THREAD 1
+--        Extras: ★ Tobit 13:10 (praise the everlasting King, that his tabernacle may be builded in
+--                you again with joy), ★ Tobit 13:11 (Many nations shall come from far to the name of
+--                Yahuah (God)... all generations shall praise you) — THREAD 1 (clean rebuilding/ingathering witness)
+--        Tanakh: none warranted as a separate thread (Zion-laterals Ps 46:4 / 87 / 132 exist but the
+--                great-King weight lands FORWARD; the assembled-kings laterals are THREAD 2)
+--   vv.4-7 (For, lo, the kings were assembled, they passed by together. They saw it, and so they
+--          marvelled; they were troubled, and hasted away. Fear took hold upon them there... Thou
+--          breakest the ships of Tarshish with an east wind)
+--        NT:     none warranted (the eschatological gathering-of-nations is carried by the Tanakh
+--                witnesses; no clean lean NT add forced here)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 2:1-2 (Why do the heathen rage... The kings of the earth set themselves...
+--                against Yahuah, and against his anointed), Psalm 46:6 (The heathen raged, the kingdoms
+--                were moved: he uttered his voice, the earth melted), ★ Zechariah 12:3 (I will make
+--                Jerusalem a burdensome stone for all people... though all the people of the earth be
+--                gathered together against it) — THREAD 2
+--   vv.8-9 (As we have heard, so have we seen in the city of Yahuah Tseva'ot (LORD of hosts)...
+--          Elohim will establish it for ever... We have thought of thy lovingkindness, O Elohim, in
+--          the midst of thy temple)
+--        NT:     none warranted
+--        Extras: none warranted (weighed; the heard/seen confirmation is carried cleaner by Ps 44:1)
+--        Tanakh: ★ Psalm 44:1 (We have heard with our ears, O Elohim, our fathers have told us, what
+--                work thou didst in their days, in the times of old) — THREAD 3 (the heard/told motif)
+--   v.10-11 (According to thy name, O Elohim, so is thy praise unto the ends of the earth... Let
+--          mount Zion rejoice, let the daughters of Yahudah (Judah) be glad, because of thy judgments)
+--        NT/Extras/Tanakh: none warranted as separate (the name-praise-to-the-ends and the daughters
+--          of Yahudah rejoicing fold into THREAD 1's two-house Zion and THREAD 3's establishment)
+--   vv.12-14 (Walk about Zion, and go round about her: tell the towers thereof. Mark ye well her
+--          bulwarks... that ye may tell it to the generation following. For this Elohim is our Elohim
+--          for ever and ever: he will be our guide even unto death)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 78:4 (We will not hide them from their children, shewing to the generation
+--                to come the praises of Yahuah), ★ Psalm 78:6 (That the generation to come might know
+--                them, even the children which should be born) — THREAD 4 (told to the generation following)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-48-the-city-of-the-great-king-mount-zion — NT (Matthew 5, Galatians 4, Hebrews 12,
+--      Revelation 21) + Extras (Tobit 13) [extras]
+--      (★★ keystone: the city of the great King = mount Zion = the heavenly Jerusalem; two-house Zion)
+--   2. psalm-48-the-kings-were-assembled-and-were-scattered — Tanakh (Psalm 2, Psalm 46, Zechariah 12)
+--      [free] (the kings gathered against Zion marvel and flee; the nations gathered against Jerusalem dismayed)
+--   3. psalm-48-as-we-have-heard-so-have-we-seen — Tanakh (Psalm 44) [free]
+--      (the seen confirmation of the heard promise; Elohim establishes the city for ever)
+--   4. psalm-48-tell-it-to-the-generation-following — Tanakh (Psalm 78) [free]
+--      (Zion's towers told to the generation following; the everlasting covenant guide unto death)
+--
+-- Framing notes:
+--   ★★ THE CITY OF THE GREAT KING (THREAD 1): *Beautiful for situation, the joy of the whole earth,
+--      is mount Zion, on the sides of the north, the city of the great King* (48:2). Yahusha takes the
+--      very phrase upon His lips, forbidding the oath *by Jerusalem; for it is the city of the great
+--      King* (Matthew 5:35) — the King whose city it is, is Yahuah. The mount Zion of the psalm is the
+--      Jerusalem above: *But Jerusalem which is above is free, which is the mother of us all*
+--      (Galatians 4:26); *ye are come unto mount Sion... the heavenly Jerusalem* (Hebrews 12:22); the
+--      *holy city, new Jerusalem, coming down from Elohim (God) out of heaven* (Revelation 21:2),
+--      shewn from *a great and high mountain* (Revelation 21:10). The restored wisdom of Tobit sings
+--      the rebuilding and the ingathering: *praise the everlasting King, that his tabernacle may be
+--      builded in you again with joy* (Tobit 13:10); *Many nations shall come from far to the name of
+--      Yahuah (God)... all generations shall praise you with great joy* (Tobit 13:11). The joy of the
+--      whole earth is the city of the great King, restored and gathering the nations to His Name.
+--   THE KINGS ASSEMBLED AND SCATTERED (THREAD 2): *For, lo, the kings were assembled, they passed by
+--      together. They saw it, and so they marvelled; they were troubled, and hasted away* (48:4-5).
+--      It is the gathering of Psalm 2 — *Why do the heathen rage... The kings of the earth set
+--      themselves... against Yahuah, and against his anointed* (Psalm 2:1-2) — and the kindred song
+--      of Korah: *The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted*
+--      (Psalm 46:6). The prophets gather it to the last siege: *I will make Jerusalem a burdensome
+--      stone for all people... though all the people of the earth be gathered together against it*
+--      (Zechariah 12:3). The kings come up against Zion and break upon her like the ships of Tarshish
+--      upon an east wind.
+--   AS WE HAVE HEARD, SO HAVE WE SEEN (THREAD 3): *As we have heard, so have we seen in the city of
+--      Yahuah Tseva'ot (LORD of hosts), in the city of our Elohim (God): Elohim (God) will establish
+--      it for ever* (48:8). The promise heard from the fathers is now seen with the eyes — the kindred
+--      psalm names the hearing: *We have heard with our ears, O Elohim (God), our fathers have told
+--      us, what work thou didst in their days, in the times of old* (Psalm 44:1). What was told is now
+--      beheld; the city Yahuah establishes for ever is the seen confirmation of the word handed down.
+--   TELL IT TO THE GENERATION FOLLOWING (THREAD 4): *Walk about Zion... tell the towers thereof.
+--      Mark ye well her bulwarks, consider her palaces; that ye may tell it to the generation
+--      following* (48:12-13). The charge is the charge of Asaph: *We will not hide them from their
+--      children, shewing to the generation to come the praises of Yahuah (LORD)* (Psalm 78:4); *That
+--      the generation to come might know them, even the children which should be born* (Psalm 78:6).
+--      And the telling rests on the everlasting covenant: *For this Elohim (God) is our Elohim (God)
+--      for ever and ever: he will be our guide even unto death* (48:14) — the God of Zion handed from
+--      generation to generation, the guide unto death and beyond.
+--   VERSES WITH NO SEPARATE ADD: v.3 (refuge in her palaces) folds into THREAD 1; vv.10-11
+--      (name-praise to the ends, daughters of Yahudah glad) fold into THREAD 1's two-house Zion and
+--      THREAD 3's establishment — the chapter's framework weight sits on vv.1-2, 4-7, 8, 12-14.
+
+CREATE TEMP VIEW _s302_ps048_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the city of the great King — mount Zion = the heavenly Jerusalem
+    ('canon','psalms',48,2,'canon','matthew',5,35,'free',
+      E'*Nor by the earth; for it is his footstool: neither by Jerusalem; for it is the city of the great King* (Matthew 5:35). *Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King* (Psalm 48:2): Yahusha (Jesus) takes the psalm''s own phrase upon His lips — Jerusalem is *the city of the great King*, and the great King is Yahuah, whose holy mountain it is. One may not swear by it, for it belongs to Him.'),
+    ('canon','psalms',48,2,'canon','galatians',4,26,'free',
+      E'*But Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26). *the joy of the whole earth, is mount Zion... the city of the great King* (Psalm 48:2): the Zion the psalm sings is the Jerusalem above, free, the mother of the covenant people. The earthly mount is the figure of the city that comes down from Yahuah.'),
+    ('canon','psalms',48,1,'canon','hebrews',12,22,'free',
+      E'*But ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem, and to an innumerable company of angels* (Hebrews 12:22). *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness* (Psalm 48:1): the mountain of His holiness is mount Sion, the city of the living Elohim, the heavenly Jerusalem to which the covenant people are come. The holy mountain of the psalm is the dwelling Yahuah has prepared.'),
+    ('canon','psalms',48,2,'canon','revelation',21,2,'extras',
+      E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). *the joy of the whole earth, is mount Zion... the city of the great King* (Psalm 48:2): the joy of the whole earth is the new Jerusalem descending, the holy city adorned. The city of the great King is the bride-city Yahuah brings down from heaven.'),
+    ('canon','psalms',48,2,'canon','revelation',21,10,'extras',
+      E'*And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10). *is mount Zion, on the sides of the north, the city of the great King* (Psalm 48:2): from a great and high mountain John is shewn the holy Jerusalem descending — the mount Zion of the psalm consummated, the city of the great King come down from Elohim.'),
+    ('canon','psalms',48,2,'apocrypha','tobit',13,10,'extras',
+      E'*Give praise to Yahuah (God), for he is good: and praise the everlasting King, that his tabernacle may be builded in you again with joy, and let him make joyful there in you those that are captives* (Tobit 13:10). *the city of the great King* (Psalm 48:2): the restored wisdom of Tobit names the same King — *the everlasting King* whose tabernacle is builded again in Jerusalem with joy, gathering home the captives. The great King of the psalm rebuilds and rejoices over His city.'),
+    ('canon','psalms',48,2,'apocrypha','tobit',13,11,'extras',
+      E'*Many nations shall come from far to the name of Yahuah (God) with gifts in their hands, even gifts to the King of heaven; all generations shall praise you with great joy* (Tobit 13:11). *the joy of the whole earth, is mount Zion... the city of the great King* (Psalm 48:2): the joy of the whole earth is the nations streaming from far to the Name, the ingathering to the city of the great King. Zion becomes the joy of the whole earth as the nations come up to praise.')
+,
+    -- THREAD 2: the kings were assembled — and were scattered in dismay
+    ('canon','psalms',48,4,'canon','psalms',2,1,'free',
+      E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1). *For, lo, the kings were assembled, they passed by together* (Psalm 48:4): the gathering of the kings against Zion is the raging of Psalm 2 — the heathen imagining a vain thing, assembling against the holy mountain. Their assembly is vain, for Yahuah holds His city.'),
+    ('canon','psalms',48,4,'canon','psalms',2,2,'free',
+      E'*The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed, saying* (Psalm 2:2). *For, lo, the kings were assembled, they passed by together* (Psalm 48:4): the kings who assemble against Zion set themselves against Yahuah and His anointed. The war on the city of the great King is the war on the King Himself and His Messiah.'),
+    ('canon','psalms',48,5,'canon','psalms',46,6,'free',
+      E'*The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted* (Psalm 46:6). *They saw it, and so they marvelled; they were troubled, and hasted away* (Psalm 48:5): the kindred song of Korah names the same rout — the heathen rage and the kingdoms move, but at the voice of Yahuah the earth melts. The kings marvel and flee because Elohim is in the midst of her.'),
+    ('canon','psalms',48,4,'canon','zechariah',12,3,'free',
+      E'*And in that day will I make Jerusalem a burdensome stone for all people: all that burden themselves with it shall be cut in pieces, though all the people of the earth be gathered together against it* (Zechariah 12:3). *For, lo, the kings were assembled, they passed by together* (Psalm 48:4): the prophet carries the assembled kings to the last siege — though all the people of the earth gather against Jerusalem, the burdensome stone cuts them in pieces. The kings who came against the city of the great King are scattered.')
+,
+    -- THREAD 3: as we have heard, so have we seen
+    ('canon','psalms',48,8,'canon','psalms',44,1,'free',
+      E'*We have heard with our ears, O Elohim (God), our fathers have told us, what work thou didst in their days, in the times of old* (Psalm 44:1). *As we have heard, so have we seen in the city of Yahuah Tseva''ot (LORD of hosts), in the city of our Elohim (God): Elohim (God) will establish it for ever* (Psalm 48:8): the kindred psalm names the hearing — what the fathers told of the works of old; and Psalm 48 names the seeing — the promise heard is now beheld with the eyes. The city Yahuah establishes for ever is the seen confirmation of the word handed down.')
+,
+    -- THREAD 4: tell it to the generation following
+    ('canon','psalms',48,13,'canon','psalms',78,4,'free',
+      E'*We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4). *that ye may tell it to the generation following* (Psalm 48:13): the charge to walk about Zion and tell her towers is the charge of Asaph — not to hide the praises of Yahuah from the children, but to shew the generation to come His wonderful works. The bulwarks of Zion are told that the next generation may know.'),
+    ('canon','psalms',48,13,'canon','psalms',78,6,'free',
+      E'*That the generation to come might know them, even the children which should be born; who should arise and declare them to their children* (Psalm 78:6). *that ye may tell it to the generation following* (Psalm 48:13): the telling reaches beyond the children to the children yet unborn — the generation to come who shall arise and declare them again. The towers of Zion are marked and told that the covenant memory may never fail.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-48-the-city-of-the-great-king-mount-zion',
+       E'The city of the great King — mount Zion, the joy of the whole earth, the heavenly Jerusalem',
+       E'The Korahite song opens upon the holy mountain: *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness. Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King* (Psalm 48:1-2). Yahusha (Jesus) takes the very phrase upon His lips, forbidding the oath *by Jerusalem; for it is the city of the great King* (Matthew 5:35) — the King whose city it is, is Yahuah. And the mount Zion of the psalm is no mere hill of stone but the Jerusalem above: *But Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26); *ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem* (Hebrews 12:22); the *holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2), shewn from *a great and high mountain* (Revelation 21:10). The restored wisdom of Tobit sings the rebuilding and the ingathering of that city: *praise the everlasting King, that his tabernacle may be builded in you again with joy* (Tobit 13:10); *Many nations shall come from far to the name of Yahuah (God) with gifts in their hands... all generations shall praise you with great joy* (Tobit 13:11). The joy of the whole earth is the city of the great King — Zion restored, the nations gathered home to His Name, *Let mount Zion rejoice, let the daughters of Yahudah (Judah) be glad* (Psalm 48:11).',
+       sv.verse_id, ev.verse_id, 'extras', 23175
+  FROM _s302_ps048_lookup sv, _s302_ps048_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=48 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-48-the-kings-were-assembled-and-were-scattered',
+       E'For, lo, the kings were assembled — and marvelled and fled before the city of Elohim',
+       E'*For, lo, the kings were assembled, they passed by together. They saw it, and so they marvelled; they were troubled, and hasted away. Fear took hold upon them there, and pain, as of a woman in travail. Thou breakest the ships of Tarshish with an east wind* (Psalm 48:4-7). The gathering of the kings against Zion is the raging of the second psalm: *Why do the heathen rage, and the people imagine a vain thing? The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed* (Psalm 2:1-2) — the war on the city of the great King is the war on the King Himself and His Messiah. The kindred song of Korah names the same rout: *The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted* (Psalm 46:6). And the prophet carries the assembled kings to the last siege: *I will make Jerusalem a burdensome stone for all people: all that burden themselves with it shall be cut in pieces, though all the people of the earth be gathered together against it* (Zechariah 12:3). They assemble, they look, and they flee — the kings break upon Zion like the ships of Tarshish upon an east wind, for Elohim is known in her palaces for a refuge.',
+       sv.verse_id, ev.verse_id, 'free', 23178
+  FROM _s302_ps048_lookup sv, _s302_ps048_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=48 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-48-as-we-have-heard-so-have-we-seen',
+       E'As we have heard, so have we seen — the seen confirmation of the heard promise',
+       E'*As we have heard, so have we seen in the city of Yahuah Tseva''ot (LORD of hosts), in the city of our Elohim (God): Elohim (God) will establish it for ever. Selah. We have thought of thy lovingkindness, O Elohim (God), in the midst of thy temple* (Psalm 48:8-9). What the fathers handed down is now beheld with the eyes. The kindred psalm names the hearing: *We have heard with our ears, O Elohim (God), our fathers have told us, what work thou didst in their days, in the times of old* (Psalm 44:1). What was told of the works of old is now seen in the city of Yahuah Tseva''ot — the promise heard is the promise beheld. The city Elohim establishes for ever is the seen confirmation of the word handed from the fathers, and the people stand in the midst of His temple and remember His lovingkindness.',
+       sv.verse_id, ev.verse_id, 'free', 23181
+  FROM _s302_ps048_lookup sv, _s302_ps048_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=48 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-48-tell-it-to-the-generation-following',
+       E'Walk about Zion and tell her towers — that ye may tell it to the generation following',
+       E'*Walk about Zion, and go round about her: tell the towers thereof. Mark ye well her bulwarks, consider her palaces; that ye may tell it to the generation following* (Psalm 48:12-13). The charge is the charge of Asaph — that the covenant memory never fail: *We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4); *That the generation to come might know them, even the children which should be born; who should arise and declare them to their children* (Psalm 78:6). The towers and bulwarks of Zion are marked and told so the children yet unborn may know. And the telling rests upon the everlasting covenant: *For this Elohim (God) is our Elohim (God) for ever and ever: he will be our guide even unto death* (Psalm 48:14) — the God of Zion handed from generation to generation, the guide of His people unto death and beyond.',
+       sv.verse_id, ev.verse_id, 'free', 23184
+  FROM _s302_ps048_lookup sv, _s302_ps048_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=48 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *neither by Jerusalem; for it is the city of the great King* (Matthew 5:35) — Yahusha quotes 48:2''s own phrase: the great King whose city it is, is Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=2
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26) — the mount Zion of 48:2 is the Jerusalem above, the mother of the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=2
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *ye are come unto mount Sion... the heavenly Jerusalem* (Hebrews 12:22) — the mountain of His holiness (48:1) is the city of the living Elohim, the heavenly Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=1
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the holy city, new Jerusalem, coming down from Elohim (God) out of heaven* (Revelation 21:2) — the joy of the whole earth (48:2) is the bride-city descending.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=2
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10) — shewn from a great and high mountain: mount Zion (48:2) consummated.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=2
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *praise the everlasting King, that his tabernacle may be builded in you again with joy* (Tobit 13:10) — the great King (48:2) named everlasting; His city rebuilt with joy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=2
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Many nations shall come from far to the name of Yahuah (God)... all generations shall praise you with great joy* (Tobit 13:11) — the joy of the whole earth (48:2): the nations gathered to His Name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=2
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-city-of-the-great-king-mount-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1) — the kings assembled (48:4) are the raging heathen imagining a vain thing against Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=4
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-kings-were-assembled-and-were-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The kings of the earth set themselves... against Yahuah (LORD), and against his anointed* (Psalm 2:2) — the assembled kings (48:4) war on the King and His Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=4
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-kings-were-assembled-and-were-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The heathen raged, the kingdoms were moved: he uttered his voice, the earth melted* (Psalm 46:6) — the kings marvel and flee (48:5); at His voice the earth melts.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=5
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-kings-were-assembled-and-were-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will make Jerusalem a burdensome stone for all people... though all the people of the earth be gathered together against it* (Zechariah 12:3) — the assembled kings (48:4) at the last siege, cut in pieces.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=4
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-the-kings-were-assembled-and-were-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *We have heard with our ears, O Elohim (God), our fathers have told us, what work thou didst... in the times of old* (Psalm 44:1) — the heard of 48:8 made the seen: what was told is now beheld.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=8
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=44 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-as-we-have-heard-so-have-we-seen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD)* (Psalm 78:4) — the towers of Zion told (48:13) that the next generation may know.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=13
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-tell-it-to-the-generation-following'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*That the generation to come might know them, even the children which should be born* (Psalm 78:6) — the telling of 48:13 reaches the children yet unborn, that the covenant memory never fail.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps048_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=48 AND sv.verse_number=13
+  JOIN _s302_ps048_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-48-tell-it-to-the-generation-following'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_49.sql (Psalm 49) -----
+-- Chapter: Psalm 49 — THE GREAT WISDOM PSALM, *none can redeem his brother*. The sons of Korah call
+-- *all ye people... both low and high, rich and poor* (vv.1-2) to a parable on the limit of wealth and
+-- the levelling of death. Its load-bearing weaves: ★★ vv.7-9 *None of them can by any means redeem his
+-- brother, nor give to Elohim (God) a ransom for him... That he should still live for ever, and not see
+-- corruption* — NO MAN can ransom another; only Elohim redeems (v.15), and the ransom that man cannot
+-- give is the one Messiah alone gives (Matthew 20:28 / Mark 10:45, 1 Timothy 2:6, 1 Peter 1:18-19); the
+-- *not see corruption* laterals to Psalm 16:10 (quoted Acts 2:27,31). ★★ v.15 *But Elohim (God) will
+-- redeem my soul from the power of the grave: for he shall receive me* — the resurrection hope, redemption
+-- from Sheol (Hosea 13:14, Psalm 30:3, 1 Corinthians 15:54-55). vv.10-14,20 the refrain *man being in
+-- honour abideth not: he is like the beasts that perish* — mortality levels wise and fool alike (Ecclesiastes
+-- 2:16, the rich fool Luke 12:20-21, James 1:10-11; restored wisdom Sirach 14, Wisdom of Solomon 5:8-9).
+-- vv.16-19 *when he dieth he shall carry nothing away* — riches left behind (1 Timothy 6:7, Job 27:19,
+-- Sirach 11:18-19). The psalm is the anti-mammon foundation: riches cannot buy the soul's redemption.
+-- Tag: ps049   Temp view: _s302_ps049_lookup
+-- Sort band: base 23200, step 3 -> threads at 23200, 23203, 23206, 23209 (4 threads)
+-- Source of EVERY row: 'canon','psalms',49,v
+--
+-- Psalm 49 coverage:
+--   v.1-6 (Hear this, all ye people... Both low and high, rich and poor... They that trust in their wealth,
+--          and boast themselves in the multitude of their riches)
+--        NT:     none warranted as separate (the universal-summons + boast-in-wealth is the lead-in to the
+--                ransom parable; folded into THREAD 1's intro)
+--        Extras: none warranted
+--        Tanakh: none warranted as separate
+--   ★★ v.7-9 (None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him:
+--          (For the redemption of their soul is precious, and it ceaseth for ever:) That he should still
+--          live for ever, and not see corruption)
+--        NT:     ★★ Matthew 20:28 / Mark 10:45 (to give his life a ransom for many), 1 Timothy 2:6 (Who gave
+--                himself a ransom for all), 1 Peter 1:18-19 (ye were not redeemed with corruptible things,
+--                as silver and gold... but with the precious blood of Messiah) — THREAD 1 (load-bearing:
+--                the ransom man CANNOT give is the one Messiah alone gives)
+--        Extras: none warranted (the ransom-only-from-Elohim is carried cleaner by the canon NT + Psalm 16)
+--        Tanakh: ★ Psalm 16:10 (neither wilt thou suffer thine Holy One to see corruption — quoted Acts
+--                2:27,31; the *not see corruption* of 49:9 fulfilled in the One Elohim raised) — THREAD 1
+--   v.10-13 (he seeth that wise men die, likewise the fool and the brutish person perish... their houses
+--          shall continue for ever... they call their lands after their own names. This their way is their folly)
+--        NT:     ★ Luke 12:20-21 (Thou fool, this night thy soul shall be required of thee — the rich fool) — THREAD 3
+--        Extras: ★ Sirach 11:18-19 (he says, I have found rest... and yet he knoweth not what time shall come
+--                upon him, and that he must leave those things to others, and die) — THREAD 4 (the houses-shall-
+--                continue conceit answered); ★ Sirach 14:15-19 (Shall you not leave your travails to another?...
+--                one comes to an end, and another is born) — THREAD 3
+--        Tanakh: ★ Ecclesiastes 2:16 (how dieth the wise man? as the fool — wise and fool die alike) — THREAD 3
+--   v.14 (Like sheep they are laid in the grave; death shall feed on them... the upright shall have dominion
+--          over them in the morning)
+--        NT/Extras/Tanakh: folded into THREAD 3 (the levelling of death) as the dark image; the *upright shall
+--                have dominion... in the morning* hope is gathered into the redemption of THREAD 2
+--   ★★ v.15 (But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me)
+--        NT:     ★★ 1 Corinthians 15:54-55 (Death is swallowed up in victory. O death, where is thy sting?
+--                O grave, where is thy victory?) — THREAD 2 (load-bearing resurrection)
+--        Extras: none warranted (the ransom-from-the-grave is carried cleaner by Hosea 13 + the canon witnesses)
+--        Tanakh: ★★ Hosea 13:14 (I will ransom them from the power of the grave; I will redeem them from death:
+--                O death, I will be thy plagues; O grave, I will be thy destruction), ★ Psalm 30:3 (O Yahuah
+--                (LORD), thou hast brought up my soul from the grave) — THREAD 2
+--   v.16-19 (Be not thou afraid when one is made rich... For when he dieth he shall carry nothing away: his
+--          glory shall not descend after him... He shall go to the generation of his fathers; they shall
+--          never see light)
+--        NT:     ★ 1 Timothy 6:7 (we brought nothing into this world, and it is certain we can carry nothing out) — THREAD 4
+--        Extras: ★ Sirach 11:18-19 (he must leave those things to others, and die) — THREAD 4
+--        Tanakh: ★ Job 27:19 (The rich man shall lie down, but he shall not be gathered: he openeth his eyes,
+--                and he is not) — THREAD 4
+--   v.20 (Man that is in honour, and understandeth not, is like the beasts that perish)
+--        NT/Extras/Tanakh: the closing refrain (echoes v.12); folded into THREAD 3 as the seal of the parable
+--
+-- Threads (slug — target libraries):
+--   1. psalm-49-none-can-redeem-his-brother-only-elohim-ransoms — NT (Matthew 20, Mark 10, 1 Timothy 2,
+--      1 Peter 1) + Tanakh (Psalm 16) [free] (★★ the ransom man cannot give = the one Messiah alone gives;
+--      not-see-corruption laterals Psalm 16:10/Acts 2)
+--   2. psalm-49-elohim-will-redeem-my-soul-from-the-grave — NT (1 Corinthians 15) + Tanakh (Hosea 13,
+--      Psalm 30) [free] (★★ resurrection hope; redemption from Sheol — Elohim shall receive me)
+--   3. psalm-49-like-the-beasts-that-perish-the-folly-of-riches — NT (Luke 12, James 1) + Tanakh
+--      (Ecclesiastes 2) + Extras (Sirach 14, Wisdom of Solomon 5) [extras] (mortality levels wise and fool;
+--      riches cannot deliver; the rich fool)
+--   4. psalm-49-he-shall-carry-nothing-away — NT (1 Timothy 6) + Tanakh (Job 27) + Extras (Sirach 11)
+--      [extras] (when he dieth he carries nothing away; his glory descends not after him)
+--
+-- Framing notes:
+--   ★★ NONE CAN REDEEM HIS BROTHER (THREAD 1): *They that trust in their wealth, and boast themselves in the
+--      multitude of their riches; None of them can by any means redeem his brother, nor give to Elohim (God) a
+--      ransom for him: (For the redemption of their soul is precious, and it ceaseth for ever:) That he should
+--      still live for ever, and not see corruption* (49:6-9). Riches buy nothing here: no man can ransom a
+--      brother's soul. The ransom man cannot give is the one Messiah alone gives — *the Son of Adam came not to
+--      be ministered unto, but to minister, and to give his life a ransom for many* (Matthew 20:28; Mark 10:45);
+--      *Who gave himself a ransom for all* (1 Timothy 2:6). And it is paid not in the perishable wealth the psalm
+--      names — *ye were not redeemed with corruptible things, as silver and gold... But with the precious blood
+--      of Messiah (Christ)* (1 Peter 1:18-19). The *not see corruption* of 49:9, denied to the rich man, is
+--      granted to the Holy One: *neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10).
+--   ★★ ELOHIM WILL REDEEM MY SOUL FROM THE GRAVE (THREAD 2): against the rich man's helpless wealth stands the
+--      psalmist's hope — *But Elohim (God) will redeem my soul from the power of the grave: for he shall receive
+--      me* (49:15). What no brother's silver can do, Elohim does. Hosea sings the same ransom — *I will ransom
+--      them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave,
+--      I will be thy destruction* (Hosea 13:14) — which Paul takes up at the resurrection — *Death is swallowed
+--      up in victory. O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:54-55) —
+--      and David has tasted it already — *O Yahuah (LORD), thou hast brought up my soul from the grave* (Psalm 30:3).
+--   THE FOLLY OF RICHES — LIKE THE BEASTS THAT PERISH (THREAD 3): the parable's verdict is that death levels all —
+--      *he seeth that wise men die, likewise the fool and the brutish person perish, and leave their wealth to
+--      others... Nevertheless man being in honour abideth not: he is like the beasts that perish* (49:10-12),
+--      sealed by the refrain *Man that is in honour, and understandeth not, is like the beasts that perish*
+--      (49:20). Solomon saw it — *how dieth the wise man? as the fool* (Ecclesiastes 2:16). Yahusha tells it as a
+--      parable: the rich man who built greater barns hears, *Thou fool, this night thy soul shall be required of
+--      thee... So is he that layeth up treasure for himself, and is not rich toward Elohim (God)* (Luke 12:20-21);
+--      and James — *as the flower of the grass he shall pass away... so also shall the rich man fade away in his
+--      ways* (James 1:10-11). The restored wisdom presses it: *Shall you not leave your travails to another?...
+--      one comes to an end, and another is born* (Sirach 14:15-19); and the ungodly themselves confess too late,
+--      *What has pride profited us? or what good has riches with our vaunting brought us? All those things are
+--      passed away like a shadow* (Wisdom of Solomon 5:8-9).
+--   HE SHALL CARRY NOTHING AWAY (THREAD 4): the comfort against envy is mortality itself — *Be not thou afraid
+--      when one is made rich, when the glory of his house is increased; For when he dieth he shall carry nothing
+--      away: his glory shall not descend after him* (49:16-17). Paul says it plainly — *we brought nothing into
+--      this world, and it is certain we can carry nothing out* (1 Timothy 6:7). Job paints the end — *The rich
+--      man shall lie down, but he shall not be gathered: he openeth his eyes, and he is not* (Job 27:19). And the
+--      restored wisdom names the conceit of the houses-shall-continue thought — *he says, I have found rest, and
+--      now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he
+--      must leave those things to others, and die* (Sirach 11:18-19).
+--   VERSES WITH NO SEPARATE ADD: vv.1-6 (the universal summons + boast-in-wealth) are the lead-in to THREAD 1;
+--      v.4's *parable... dark saying upon the harp* frames the whole; v.14 (laid in the grave like sheep) and
+--      v.20 (the closing refrain) fold into THREAD 3; v.13,18 (the folly approved / blessing his own soul) carry
+--      the parable's irony and are gathered under THREADS 3-4. The chapter's framework weight sits on the
+--      ransom (vv.7-9), the redemption from the grave (v.15), and the levelling of death (vv.10-20).
+
+CREATE TEMP VIEW _s302_ps049_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): None can redeem his brother — only Elohim ransoms; the ransom Messiah alone gives
+    ('canon','psalms',49,7,'canon','matthew',20,28,'free',
+      E'*Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many* (Matthew 20:28). *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7): no man can ransom a brother''s soul — but the Son of Adam comes to give the very ransom man cannot. What the rich man''s wealth could never buy, the Formed Son gives with his own life.'),
+    ('canon','psalms',49,7,'canon','mark',10,45,'free',
+      E'*For even the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many* (Mark 10:45). *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7): set against the rich who *trust in riches* (Mark 10:24), the ransom no brother''s silver can pay is paid by the Son of Adam''s own life, the one redemption-price that avails.'),
+    ('canon','psalms',49,7,'canon','1-timothy',2,6,'free',
+      E'*Who gave himself a ransom for all, to be testified in due time* (1 Timothy 2:6). *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7): there is *one mediator between Elohim (God) and men, the man HaMashiach Yahusha* (1 Timothy 2:5), and he gives himself the ransom — the redemption the psalm says is *precious* (49:8), too dear for any man to pay, paid by the Mediator alone.'),
+    ('canon','psalms',49,8,'canon','1-peter',1,18,'free',
+      E'*Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers* (1 Peter 1:18). *For the redemption of their soul is precious, and it ceaseth for ever* (Psalm 49:8): the redemption is not bought with the perishable wealth the rich trust in — *silver and gold* purchase nothing here. The soul''s ransom is too precious for corruptible coin.'),
+    ('canon','psalms',49,8,'canon','1-peter',1,19,'free',
+      E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). *For the redemption of their soul is precious* (Psalm 49:8): the precious price the psalm says man cannot give is named — the *precious blood of Messiah*, the spotless Lamb. What riches could never ransom, the blood of the Formed Son redeems.'),
+    ('canon','psalms',49,9,'canon','psalms',16,10,'free',
+      E'*For thou wilt not leave my soul in hell; neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10). *That he should still live for ever, and not see corruption* (Psalm 49:9): the deathless life and the *not see corruption* the rich man cannot purchase is granted to the Holy One — the body Elohim would not suffer to see corruption, raised from the grave (Acts 2:27,31). What wealth cannot buy, resurrection gives.'),
+
+    -- THREAD 2 (★★): But Elohim will redeem my soul from the power of the grave
+    ('canon','psalms',49,15,'canon','hosea',13,14,'free',
+      E'*I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14). *But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15): what no brother''s silver can do (49:7), Elohim does — He ransoms from the grave and redeems from death. The same word, ransom and redeem from the power of the grave, is His own promise.'),
+    ('canon','psalms',49,15,'canon','1-corinthians',15,54,'free',
+      E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). *But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15): the redemption from the grave the psalmist hoped becomes the resurrection — death swallowed up, the corruptible clothed in incorruption. Elohim receives His own out of the power of the grave.'),
+    ('canon','psalms',49,15,'canon','1-corinthians',15,55,'free',
+      E'*O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55). *But Elohim (God) will redeem my soul from the power of the grave* (Psalm 49:15): Paul taunts the grave that has no final claim — the power of the grave broken, the redeemed soul received. The hope the psalm sets against the rich man''s helpless end is the empty grave.'),
+    ('canon','psalms',49,15,'canon','psalms',30,3,'free',
+      E'*O Yahuah (LORD), thou hast brought up my soul from the grave: thou hast kept me alive, that I should not go down to the pit* (Psalm 30:3). *But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15): the same deliverance — Yahuah bringing the soul up from the grave. The psalter knows by experience the redemption Psalm 49 trusts: Elohim is the One who reaches into the pit and lifts out.'),
+
+    -- THREAD 3: Like the beasts that perish — the folly of riches; death levels wise and fool
+    ('canon','psalms',49,10,'canon','ecclesiastes',2,16,'free',
+      E'*For there is no remembrance of the wise more than of the fool for ever... And how dieth the wise man? as the fool* (Ecclesiastes 2:16). *For he seeth that wise men die, likewise the fool and the brutish person perish, and leave their wealth to others* (Psalm 49:10): the preacher and the psalmist see the same levelling — the wise man dies as the fool, and the wealth is left behind. Death erases the difference riches and wisdom seemed to make.'),
+    ('canon','psalms',49,12,'canon','luke',12,20,'free',
+      E'*But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). *Nevertheless man being in honour abideth not: he is like the beasts that perish* (Psalm 49:12): Yahusha tells the psalm as a parable — the rich man who said his soul had goods laid up for many years hears his soul required that night. The man in honour does not abide; his provided things pass to another.'),
+    ('canon','psalms',49,12,'canon','luke',12,21,'free',
+      E'*So is he that layeth up treasure for himself, and is not rich toward Elohim (God)* (Luke 12:21). *Nevertheless man being in honour abideth not: he is like the beasts that perish* (Psalm 49:12): the verdict of the parable is the verdict of the psalm — to hoard treasure for self and not toward Elohim is to abide not, to perish like the beasts. Riches toward self cannot redeem the soul.'),
+    ('canon','psalms',49,12,'canon','james',1,11,'free',
+      E'*For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his ways* (James 1:11). *Nevertheless man being in honour abideth not: he is like the beasts that perish* (Psalm 49:12): James fixes the same fading — the rich man wilts like the flower of the grass. The honour does not abide; the beauty consumes in the grave (49:14).'),
+    ('canon','psalms',49,10,'apocrypha','ecclesiasticus',14,16,'extras',
+      E'*Give, and take, and sanctify your soul; for there is no seeking of dainties in the grave* (Sirach 14:16). *Wise men die, likewise the fool and the brutish person perish, and leave their wealth to others* (Psalm 49:10): the restored wisdom presses the same — there is no enjoying of goods in the grave, and *Shall you not leave your travails to another?* (Sirach 14:15). The hoarded wealth is left; the grave seeks no dainties.'),
+    ('canon','psalms',49,12,'apocrypha','the-wisdom-of-solomon',5,8,'extras',
+      E'*What has pride profited us? or what good has riches with our vaunting brought us? All those things are passed away like a shadow* (Wisdom of Solomon 5:8-9). *Man being in honour abideth not: he is like the beasts that perish* (Psalm 49:12): the ungodly confess too late what the psalm taught — pride and riches profit nothing, all passed away like a shadow. The honour and the wealth abide not; only the verdict of the grave remains.'),
+
+    -- THREAD 4: He shall carry nothing away — riches left behind
+    ('canon','psalms',49,17,'canon','1-timothy',6,7,'free',
+      E'*For we brought nothing into this world, and it is certain we can carry nothing out* (1 Timothy 6:7). *For when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:17): Paul states the psalm''s law plainly — nothing brought in, nothing carried out. The glory of the rich man''s house does not follow him down; the wealth stays above the grave.'),
+    ('canon','psalms',49,17,'canon','job',27,19,'free',
+      E'*The rich man shall lie down, but he shall not be gathered: he openeth his eyes, and he is not* (Job 27:19). *For when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:17): Job draws the same picture — the rich man lies down with his wealth and wakes to find himself gone, the riches not gathered after him. He carries nothing away.'),
+    ('canon','psalms',49,17,'apocrypha','ecclesiasticus',11,19,'extras',
+      E'*Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Sirach 11:19). *For when he dieth he shall carry nothing away* (Psalm 49:17), against the conceit that *their houses shall continue for ever* (49:11): the restored wisdom names the very thought — the man at rest among his goods who knows not he must leave them to others and die. He carries nothing away.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-49-none-can-redeem-his-brother-only-elohim-ransoms',
+       E'None of them can redeem his brother — only Elohim ransoms; the ransom Messiah alone gives',
+       E'The great wisdom psalm strips the rich of their last boast: *They that trust in their wealth, and boast themselves in the multitude of their riches; None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him: (For the redemption of their soul is precious, and it ceaseth for ever:) That he should still live for ever, and not see corruption* (Psalm 49:6-9). No man can ransom a brother''s soul; the price is too precious for any wealth. But the ransom man cannot give is the one the Formed Son comes to give: *Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many* (Matthew 20:28; Mark 10:45); *Who gave himself a ransom for all* (1 Timothy 2:6), the *one mediator between Elohim (God) and men, the man HaMashiach Yahusha* (1 Timothy 2:5). And it is not bought with the perishable wealth the rich trust in: *ye were not redeemed with corruptible things, as silver and gold... But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:18-19). The deathless life and the *not see corruption* of 49:9, denied to the rich man, is granted to the Holy One: *neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10) — fulfilled when Elohim raised him and his flesh did not see corruption. What no man''s riches can purchase, the blood of the Formed Son redeems.',
+       sv.verse_id, ev.verse_id, 'free', 23200
+  FROM _s302_ps049_lookup sv, _s302_ps049_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=49 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-49-elohim-will-redeem-my-soul-from-the-grave',
+       E'But Elohim will redeem my soul from the power of the grave',
+       E'Against the rich man''s helpless wealth — which can ransom no one (49:7) — stands the psalmist''s hope: *But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15). What no brother''s silver can buy, Elohim does. Hosea sings the same ransom in the same words: *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14). Paul takes the promise up at the resurrection: *So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory. O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:54-55). And David has already tasted it: *O Yahuah (LORD), thou hast brought up my soul from the grave: thou hast kept me alive, that I should not go down to the pit* (Psalm 30:3). The redemption riches cannot purchase is the redemption Elohim gives — He reaches into the power of the grave and receives His own.',
+       sv.verse_id, ev.verse_id, 'free', 23203
+  FROM _s302_ps049_lookup sv, _s302_ps049_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=49 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-49-like-the-beasts-that-perish-the-folly-of-riches',
+       E'Man being in honour abideth not — he is like the beasts that perish',
+       E'The parable''s verdict is that death levels all and riches deliver none: *For he seeth that wise men die, likewise the fool and the brutish person perish, and leave their wealth to others. Their inward thought is, that their houses shall continue for ever... Nevertheless man being in honour abideth not: he is like the beasts that perish* (Psalm 49:10-12), sealed by the closing refrain — *Man that is in honour, and understandeth not, is like the beasts that perish* (49:20). Solomon saw the same: *how dieth the wise man? as the fool* (Ecclesiastes 2:16). Yahusha tells it as a parable of the rich man who built greater barns: *Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?... So is he that layeth up treasure for himself, and is not rich toward Elohim (God)* (Luke 12:20-21); and James fixes the fading — *so also shall the rich man fade away in his ways* (James 1:11), like the flower of the grass that withers. The restored wisdom presses it too: *Give, and take, and sanctify your soul; for there is no seeking of dainties in the grave* (Sirach 14:16), for *Shall you not leave your travails to another?* (Sirach 14:15); and the ungodly confess too late, *What has pride profited us? or what good has riches with our vaunting brought us? All those things are passed away like a shadow* (Wisdom of Solomon 5:8-9). The man in honour does not abide; only the soul redeemed by Elohim (49:15) escapes the levelling.',
+       sv.verse_id, ev.verse_id, 'extras', 23206
+  FROM _s302_ps049_lookup sv, _s302_ps049_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=49 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-49-he-shall-carry-nothing-away',
+       E'When he dieth he shall carry nothing away — his glory shall not descend after him',
+       E'The psalm''s comfort against envy is mortality itself: *Be not thou afraid when one is made rich, when the glory of his house is increased; For when he dieth he shall carry nothing away: his glory shall not descend after him* (Psalm 49:16-17). Paul states the law plainly: *For we brought nothing into this world, and it is certain we can carry nothing out* (1 Timothy 6:7). Job draws the picture of the end: *The rich man shall lie down, but he shall not be gathered: he openeth his eyes, and he is not* (Job 27:19). And the restored wisdom names the very conceit the psalm rebukes — the thought that *their houses shall continue for ever* (49:11) — *Whereas he says, I have found rest, and now will eat continually of my goods; and yet he knoweth not what time shall come upon him, and that he must leave those things to others, and die* (Sirach 11:19). The glory of the house does not descend after the man; he carries nothing away, and his lands he called by his own name pass to others.',
+       sv.verse_id, ev.verse_id, 'extras', 23209
+  FROM _s302_ps049_lookup sv, _s302_ps049_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=49 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the Son of Adam came... to give his life a ransom for many* (Matthew 20:28) — the ransom no man can give for his brother (49:7) is the one the Formed Son gives with his own life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=20 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-none-can-redeem-his-brother-only-elohim-ransoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *to give his life a ransom for many* (Mark 10:45) — set against them that *trust in riches* (Mark 10:24): the ransom no silver can pay, paid by the Son of Adam''s life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=10 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-none-can-redeem-his-brother-only-elohim-ransoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Who gave himself a ransom for all* (1 Timothy 2:6) — the precious redemption (49:8) too dear for any man is paid by the one Mediator (1 Tim 2:5).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=7
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-none-can-redeem-his-brother-only-elohim-ransoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *ye were not redeemed with corruptible things, as silver and gold* (1 Peter 1:18) — the soul''s ransom (49:8) is not bought with the perishable wealth the rich trust in.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=8
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-none-can-redeem-his-brother-only-elohim-ransoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *with the precious blood of Messiah (Christ), as of a lamb without blemish* (1 Peter 1:19) — the precious price (49:8) is the spotless Lamb''s blood; what riches cannot ransom, his blood redeems.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=8
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-none-can-redeem-his-brother-only-elohim-ransoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *neither wilt thou suffer thine Holy One to see corruption* (Psalm 16:10) — the *not see corruption* (49:9) denied the rich man is granted the Holy One, raised from the grave (Acts 2:27,31).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=9
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-none-can-redeem-his-brother-only-elohim-ransoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will ransom them from the power of the grave; I will redeem them from death* (Hosea 13:14) — the same ransom-and-redeem from the grave as 49:15: Elohim''s own promise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=15
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-elohim-will-redeem-my-soul-from-the-grave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Death is swallowed up in victory* (1 Corinthians 15:54) — the redemption from the grave (49:15) become the resurrection: corruptible clothed in incorruption.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=15
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-elohim-will-redeem-my-soul-from-the-grave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55) — the power of the grave (49:15) broken; the redeemed soul received.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=15
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-elohim-will-redeem-my-soul-from-the-grave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *thou hast brought up my soul from the grave* (Psalm 30:3) — the psalter''s tasted experience of 49:15: Yahuah lifts the soul out of the pit.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=15
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-elohim-will-redeem-my-soul-from-the-grave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*how dieth the wise man? as the fool* (Ecclesiastes 2:16) — the same levelling as 49:10: wise and fool die alike and leave their wealth to others.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-like-the-beasts-that-perish-the-folly-of-riches'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Thou fool, this night thy soul shall be required of thee* (Luke 12:20) — Yahusha tells 49:12 as a parable: the man in honour abides not; his goods pass to another.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-like-the-beasts-that-perish-the-folly-of-riches'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*is not rich toward Elohim (God)* (Luke 12:21) — to hoard for self is to perish like the beasts (49:12); riches toward self cannot redeem the soul.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-like-the-beasts-that-perish-the-folly-of-riches'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*so also shall the rich man fade away in his ways* (James 1:11) — the rich man wilts like the flower of the grass; the honour abides not (49:12), the beauty consumes in the grave (49:14).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-like-the-beasts-that-perish-the-folly-of-riches'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*there is no seeking of dainties in the grave* (Sirach 14:16) — *Shall you not leave your travails to another?* (14:15): the hoarded wealth (49:10) is left; the grave seeks no dainties.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=10
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-like-the-beasts-that-perish-the-folly-of-riches'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*what good has riches with our vaunting brought us? All those things are passed away like a shadow* (Wisdom of Solomon 5:8-9) — the ungodly confess too late what 49:12 taught: honour and wealth abide not.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=12
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-like-the-beasts-that-perish-the-folly-of-riches'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *we brought nothing into this world, and it is certain we can carry nothing out* (1 Timothy 6:7) — the law of 49:17 stated plainly: nothing carried out, the glory descends not after him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=17
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-he-shall-carry-nothing-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The rich man shall lie down, but he shall not be gathered: he openeth his eyes, and he is not* (Job 27:19) — the same picture as 49:17: the rich man wakes to find himself gone, the wealth ungathered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=17
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=27 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-he-shall-carry-nothing-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he must leave those things to others, and die* (Sirach 11:19) — the houses-shall-continue conceit (49:11) named: the man at rest among his goods who carries nothing away (49:17).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps049_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=49 AND sv.verse_number=17
+  JOIN _s302_ps049_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-49-he-shall-carry-nothing-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_50.sql (Psalm 50) -----
+-- Chapter: Psalm 50 — THE FIRST ASAPH PSALM, the COVENANT-LAWSUIT / theophany of the Judge.
+-- *El Gibbor (The mighty God), even Yahuah (LORD), hath spoken... Our Elohim (God) shall come, and
+-- shall not keep silence: a fire shall devour before him* (vv.1-3): Elohim comes — out of Zion, in
+-- fire — to JUDGE HIS OWN PEOPLE (covenant-lawsuit, not a verdict on the heathen). He summons the
+-- covenant people — *Gather my saints together unto me; those that have made a covenant with me by
+-- sacrifice* (v.5) — then prosecutes two charges. First (vv.7-15): NOT the abolition of sacrifice but
+-- the exposure of HEARTLESS ritual — *I will take no bullock out of thy house... for every beast of
+-- the forest is mine... Offer unto Elohim (God) thanksgiving; and pay thy vows* — Yahuah owns the
+-- cattle already and desires thanksgiving/obedience above the carcass. Second (vv.16-21): the wicked
+-- with Torah on the lips but broken in life — *What hast thou to do to declare my statutes... Seeing
+-- thou hatest instruction... thou hast been partaker with adulterers* — the anti-hypocrisy / anti-
+-- antinomian double edge: the statutes are BINDING; the wicked's offence is BREAKING them, not that
+-- they exist. It closes (vv.22-23) in the ordered walk shown salvation.
+-- Tag: ps050   Temp view: _s302_ps050_lookup
+-- Sort band: base 23225, step 3 -> threads at 23225, 23228, 23231, 23234, 23237 (5 threads)
+-- Source of EVERY row: 'canon','psalms',50,v
+--
+-- Psalm 50 coverage:
+--   ★★ vv.1-6 (El Gibbor... even Yahuah hath spoken... Our Elohim shall come, and shall not keep
+--          silence: a fire shall devour before him... He shall call to the heavens... that he may
+--          judge his people... Elohim is judge himself)
+--        NT:     ★★ 2 Thessalonians 1:7 (the Lord Yahusha shall be revealed from heaven with his
+--                mighty angels), 1:8 (In flaming fire taking vengeance) — the Formed Son who comes in
+--                fire to judge; Hebrews 12:29 (our Elohim is a consuming fire) — THREAD 1
+--        Extras: none warranted (the fire-theophany Judge is carried by the canon Daniel 7 + NT
+--                witnesses; no clean extra-canon add forced)
+--        Tanakh: ★★ Daniel 7:9 (the Ancient of days did sit... his throne was like the fiery flame),
+--                7:10 (a fiery stream issued... the judgment was set, and the books were opened) — the
+--                fiery throne-judgment — THREAD 1
+--   ★★ v.5 (Gather my saints together unto me; those that have made a covenant with me by sacrifice)
+--        NT:     ★★ Matthew 24:31 (he shall send his angels... and they shall gather together his
+--                elect from the four winds) — the ingathering at the trumpet — THREAD 2
+--        Extras: none warranted (the two-house regathering is carried cleanest by Deuteronomy/Ezekiel)
+--        Tanakh: ★★ Deuteronomy 30:3 (will return and gather thee from all the nations), 30:4 (from
+--                thence will Yahuah gather thee), Ezekiel 37:21 (I will take the children of Yashar'el
+--                from among the heathen... and gather them), 37:22 (I will make them one nation... no
+--                more two nations) — the two-house ingathering — THREAD 2
+--   ★★ vv.7-15 (I will not reprove thee for thy sacrifices... I will take no bullock out of thy
+--          house... for every beast of the forest is mine... Will I eat the flesh of bulls... Offer
+--          unto Elohim (God) thanksgiving; and pay thy vows... call upon me in the day of trouble)
+--        NT:     none warranted as a separate add (the praise-sacrifice forward weave is set on the
+--                close, v.23 — Hebrews 13:15 — to keep the "ordered walk" thread coherent)
+--        Extras: ★★ Sirach 35:1 (He that keepeth the law brings offerings enough), 35:2-3 (he that
+--                gives alms sacrificeth praise... To depart from wickedness is a thing pleasing),
+--                ★ Sirach 34:18 (He that sacrificeth of a thing wrongfully gotten, his offering is
+--                ridiculous), 34:19 (The most High is not pleased with the offerings of the wicked) —
+--                law-keeping IS the true offering — THREAD 3
+--        Tanakh: ★★ 1 Samuel 15:22 (to obey is better than sacrifice), Hosea 6:6 (I desired mercy,
+--                and not sacrifice), Micah 6:6-8 (wherewith shall I come before Yahuah... but to do
+--                justly, and to love mercy), Psalm 51:16-17 (thou desirest not sacrifice... a broken
+--                and a contrite heart) — heart-obedience above the carcass — THREAD 3
+--   ★★ vv.16-21 (But unto the wicked Elohim saith, What hast thou to do to declare my statutes, or
+--          that thou shouldest take my covenant in thy mouth? Seeing thou hatest instruction... when
+--          thou sawest a thief, then thou consentedst with him, and hast been partaker with
+--          adulterers... thou thoughtest that I was altogether such an one as thyself)
+--        NT:     ★★ Romans 2:21 (thou that preachest a man should not steal, dost thou steal?), 2:22
+--                (thou that sayest a man should not commit adultery, dost thou commit adultery?), 2:23
+--                (thou that makest thy boast of the law, through breaking the law dishonourest thou
+--                Elohim?), ★★ 1 John 2:4 (He that saith, I know him, and keepeth not his commandments,
+--                is a liar) — Torah on the lips, broken in life — THREAD 4
+--        Extras: none warranted (the hypocrite-with-Torah-on-the-lips weave is carried by Romans/
+--                Isaiah/1 John; Sirach's wicked-offering material was set on THREAD 3)
+--        Tanakh: ★ Isaiah 29:13 (this people draw near me with their mouth... but have removed their
+--                heart far from me) — the lips that honour while the heart is removed — THREAD 4
+--   v.22 (Now consider this, ye that forget Elohim, lest I tear you in pieces, and there be none to
+--          deliver)
+--        NT/Extras/Tanakh: none warranted as separate (the warning is the hinge into the close;
+--                folded as lead-in to THREAD 5)
+--   v.23 (Whoso offereth praise glorifieth me: and to him that ordereth his conversation aright will
+--          I shew the salvation of Elohim)
+--        NT:     ★ Hebrews 13:15 (By him therefore let us offer the sacrifice of praise to Elohim
+--                continually, that is, the fruit of our lips) — the sacrifice of praise — THREAD 5
+--        Extras: none warranted (Sirach 35:2's "sacrificeth praise" was set on THREAD 3)
+--        Tanakh: ★ Micah 6:8 (what doth Yahuah require of thee, but to do justly... and to walk humbly
+--                with thy Elohim) — the ordered walk required — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire — NT (2 Thessalonians 1,
+--      Hebrews 12) + Tanakh (Daniel 7) [free] (★★ theophany of the coming Judge — the Formed Son in
+--      flaming fire; Elohim judges HIS PEOPLE, covenant-lawsuit)
+--   2. psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice — NT (Matthew 24) +
+--      Tanakh (Deuteronomy 30, Ezekiel 37) [free] (★★ the gathering of the covenant people — the
+--      two-house ingathering at the trumpet, Israel gathered not cast off)
+--   3. psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving — Extras (Sirach 35, Sirach 34)
+--      + Tanakh (1 Samuel 15, Hosea 6, Micah 6, Psalm 51) [extras] (★★ NOT abolition of sacrifice but
+--      exposure of heartless ritual — to obey is better than sacrifice; law-keeping IS the offering)
+--   4. psalm-50-what-hast-thou-to-do-to-declare-my-statutes — NT (Romans 2, 1 John 2) + Tanakh
+--      (Isaiah 29) [free] (★★ Torah on the lips, broken in life — the anti-hypocrisy / anti-antinomian
+--      double edge: the statutes are binding, the offence is BREAKING them)
+--   5. psalm-50-whoso-offereth-praise-glorifieth-me — NT (Hebrews 13) + Tanakh (Micah 6) [free]
+--      (the ordered walk shown salvation — the sacrifice of praise, doing justly and walking humbly)
+--
+-- Framing notes:
+--   ★★ THE JUDGE COMES IN FIRE (THREAD 1): *El Gibbor (The mighty God), even Yahuah (LORD), hath
+--      spoken... Our Elohim (God) shall come, and shall not keep silence: a fire shall devour before
+--      him... He shall call to the heavens from above, and to the earth, that he may judge his people*
+--      (50:1-4). This is the theophany of the coming Judge — read through the Formed and the Formless,
+--      the One who comes is the Formed Son revealed *from heaven with his mighty angels, In flaming
+--      fire taking vengeance* (2 Thessalonians 1:7-8), for *our Elohim (God) is a consuming fire*
+--      (Hebrews 12:29). Daniel saw the fiery throne — *his throne was like the fiery flame... A fiery
+--      stream issued and came forth from before him... the judgment was set, and the books were
+--      opened* (Daniel 7:9-10). Note the lens: He comes *that he may judge his people* (50:4) — this
+--      is the covenant-lawsuit against His own, not a verdict on the heathen.
+--   ★★ GATHER MY SAINTS (THREAD 2): *Gather my saints together unto me; those that have made a
+--      covenant with me by sacrifice* (50:5). The summons of the Judge is the ingathering of the
+--      covenant people — *he shall send his angels with a great sound of a trumpet, and they shall
+--      gather together his elect from the four winds* (Matthew 24:31). This is the two-house
+--      regathering promised from Moses: *will return and gather thee from all the nations* (Deuteronomy
+--      30:3); *from thence will Yahuah (LORD) gather thee* (30:4); and sealed by Ezekiel — *I will take
+--      the children of Yashar'el (Israel) from among the heathen... and gather them* (Ezekiel 37:21),
+--      *I will make them one nation... and they shall be no more two nations* (37:22). Yashar'el is
+--      gathered, not cast off.
+--   ★★ I WILL TAKE NO BULLOCK / OFFER THANKSGIVING (THREAD 3): *I will not reprove thee for thy
+--      sacrifices... I will take no bullock out of thy house, nor he goats out of thy folds. For every
+--      beast of the forest is mine, and the cattle upon a thousand hills... Will I eat the flesh of
+--      bulls, or drink the blood of goats? Offer unto Elohim (God) thanksgiving; and pay thy vows unto
+--      the El Elyon (most High)* (50:8-14). This is NOT the abolition of sacrifice but the exposure of
+--      HEARTLESS ritual — Yahuah owns the cattle already and desires obedience above the carcass. The
+--      whole Tanakh sounds the same note: *to obey is better than sacrifice, and to hearken than the
+--      fat of rams* (1 Samuel 15:22); *I desired mercy, and not sacrifice; and the knowledge of Elohim
+--      (God) more than burnt offerings* (Hosea 6:6); *what doth Yahuah (LORD) require of thee, but to
+--      do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8); *thou
+--      desirest not sacrifice... The sacrifices of Elohim (God) are a broken spirit* (Psalm 51:16-17).
+--      The restored wisdom of Sirach makes law-keeping itself the true offering — *He that keepeth the
+--      law brings offerings enough... he that gives alms sacrificeth praise. To depart from wickedness
+--      is a thing pleasing to Yahuah (God)* (Sirach 35:1-3) — and rejects the wicked man's carcass —
+--      *He that sacrificeth of a thing wrongfully gotten, his offering is ridiculous* (Sirach 34:18);
+--      *The most High is not pleased with the offerings of the wicked* (34:19). The altar is affirmed
+--      in its true intent: heart-obedience, not the carcass without it.
+--   ★★ WHAT HAST THOU TO DO TO DECLARE MY STATUTES (THREAD 4): *But unto the wicked Elohim (God) saith,
+--      What hast thou to do to declare my statutes, or that thou shouldest take my covenant in thy
+--      mouth? Seeing thou hatest instruction, and castest my words behind thee. When thou sawest a
+--      thief, then thou consentedst with him, and hast been partaker with adulterers* (50:16-18). Torah
+--      on the lips, broken in life. Paul drives the very edge at Rome — *thou that preachest a man
+--      should not steal, dost thou steal? Thou that sayest a man should not commit adultery, dost thou
+--      commit adultery?... thou that makest thy boast of the law, through breaking the law dishonourest
+--      thou Elohim (God)?* (Romans 2:21-23); Isaiah names the removed heart — *this people draw near me
+--      with their mouth, and with their lips do honour me, but have removed their heart far from me*
+--      (Isaiah 29:13); and John sets the master filter — *He that saith, I know him, and keepeth not
+--      his commandments, is a liar, and the truth is not in him* (1 John 2:4). The double edge: the
+--      statutes are BINDING (the wicked's offence is that he BREAKS them, not that they exist) AND the
+--      profession is empty without the doing. To recite the covenant while breaking it is the lie.
+--   THE ORDERED WALK SHOWN SALVATION (THREAD 5): *Whoso offereth praise glorifieth me: and to him that
+--      ordereth his conversation aright will I shew the salvation of Elohim (God)* (50:23). The
+--      thanksgiving the Judge sought becomes the *sacrifice of praise to Elohim (God) continually, that
+--      is, the fruit of our lips* (Hebrews 13:15), and the ordered walk is the very thing Yahuah
+--      requires — *to do justly, and to love mercy, and to walk humbly with thy Elohim (God)* (Micah
+--      6:8). Praise that glorifies and a life ordered aright — to that one the salvation of Elohim is
+--      shewn.
+--   VERSES WITH NO SEPARATE ADD: vv.9-13 carry the every-beast-is-mine ground of THREAD 3 (the world
+--      is His already) and are woven there; v.19-20 (the mouth given to evil, the brother slandered)
+--      extend the THREAD 4 indictment and are folded in its prose; v.21 (I kept silence... I will
+--      reprove thee) and v.22 (consider this, ye that forget Elohim) are the hinge of the lawsuit,
+--      folded as the turn from THREAD 4 into THREAD 5. The chapter's framework weight sits on vv.1-6,
+--      5, 7-15, 16-21, 23, woven there.
+
+CREATE TEMP VIEW _s302_ps050_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The mighty Elohim hath spoken — the Judge comes in fire
+    ('canon','psalms',50,3,'canon','2-thessalonians',1,7,'free',
+      E'*And to you who are troubled rest with us, when the Lord Yahusha (Lord Jesus) shall be revealed from heaven with his mighty angels* (2 Thessalonians 1:7). *Our Elohim (God) shall come, and shall not keep silence* (Psalm 50:3): the silence-breaking coming of the psalm is the revealing of the Formed Son from heaven with his mighty angels — the One who comes is the expressed Word, Yahuah''s own appearing to judge.'),
+    ('canon','psalms',50,3,'canon','2-thessalonians',1,8,'free',
+      E'*In flaming fire taking vengeance on them that know not Elohim (God), and that obey not the gospel of our Lord Yahusha HaMashiach (Lord Jesus Christ)* (2 Thessalonians 1:8). *a fire shall devour before him, and it shall be very tempestuous round about him* (Psalm 50:3): the devouring fire before the coming Elohim is the flaming fire of the revealed Yahusha — the same theophany, the Judge attended by fire taking vengeance.'),
+    ('canon','psalms',50,3,'canon','hebrews',12,29,'free',
+      E'*For our Elohim (God) is a consuming fire* (Hebrews 12:29). *a fire shall devour before him* (Psalm 50:3): the writer names the very nature the psalm displays — our Elohim is a consuming fire. The fire that devours before the coming Judge is no figure added; it is what He is.'),
+    ('canon','psalms',50,4,'canon','daniel',7,9,'free',
+      E'*I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). *He shall call to the heavens from above, and to the earth, that he may judge his people* (Psalm 50:4): Daniel sees the seat of the judgment the psalm announces — the fiery throne set, the Judge enthroned in flame to render the verdict.'),
+    ('canon','psalms',50,4,'canon','daniel',7,10,'free',
+      E'*A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* (Daniel 7:10). *He shall call to the heavens from above, and to the earth, that he may judge his people* (Psalm 50:4): the judgment the psalm summons is the judgment Daniel saw set — the fiery stream, the opened books, the heavens and earth called as the court of Yahuah convenes.'),
+
+    -- THREAD 2 (★★): Gather my saints — those that have made a covenant by sacrifice
+    ('canon','psalms',50,5,'canon','matthew',24,31,'free',
+      E'*And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other* (Matthew 24:31). *Gather my saints together unto me; those that have made a covenant with me by sacrifice* (Psalm 50:5): the summons of the Judge is the ingathering at the trumpet — the elect gathered from the four winds are the covenant people the psalm calls to be gathered unto Him.'),
+    ('canon','psalms',50,5,'canon','deuteronomy',30,3,'free',
+      E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). *Gather my saints together unto me* (Psalm 50:5): the gathering the psalm calls for is the regathering promised from Moses — Yahuah returning to gather His own from all the nations where they were scattered.'),
+    ('canon','psalms',50,5,'canon','deuteronomy',30,4,'free',
+      E'*If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee* (Deuteronomy 30:4). *Gather my saints together unto me; those that have made a covenant with me by sacrifice* (Psalm 50:5): even to the outmost parts of heaven the covenant people are fetched home — the gathering of the saints reaches the farthest-driven of Yashar''el (Israel).'),
+    ('canon','psalms',50,5,'canon','ezekiel',37,21,'free',
+      E'*Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). *Gather my saints together unto me* (Psalm 50:5): the gathering is the two-house regathering — the children of Yashar''el taken from among the heathen and brought home, the very saints the psalm summons.'),
+    ('canon','psalms',50,5,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). *Gather my saints together unto me; those that have made a covenant with me by sacrifice* (Psalm 50:5): the gathered covenant people are made ONE nation — the two houses, Yahudah (Judah) and Yashar''el (Israel), no longer divided. The ingathering of the saints is the reunion of the two sticks.'),
+
+    -- THREAD 3 (★★): I will take no bullock — offer unto Elohim thanksgiving (heart-obedience over the carcass)
+    ('canon','psalms',50,8,'canon','1-samuel',15,22,'free',
+      E'*And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22). *I will not reprove thee for thy sacrifices or thy burnt offerings* (Psalm 50:8): the psalm and the prophet say one thing — the carcass without obedience is nothing; to obey is better than sacrifice. The altar is not abolished but weighed: the heart that hearkens is what Yahuah delights in.'),
+    ('canon','psalms',50,14,'canon','hosea',6,6,'free',
+      E'*For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6). *Offer unto Elohim (God) thanksgiving; and pay thy vows unto the El Elyon (most High)* (Psalm 50:14): Yahuah desires mercy and the knowledge of Him above the burnt offering — the thanksgiving and the kept vow the psalm asks for, not the bullock offered with a far heart.'),
+    ('canon','psalms',50,14,'canon','micah',6,8,'free',
+      E'*He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). *Offer unto Elohim (God) thanksgiving; and pay thy vows* (Psalm 50:14): against thousands of rams and rivers of oil Micah sets the true requirement — justice, mercy, the humble walk. The offering Yahuah seeks in the psalm is the obedient and thankful heart, not the multiplied carcass.'),
+    ('canon','psalms',50,8,'canon','psalms',51,16,'free',
+      E'*For thou desirest not sacrifice; else would I give it: thou delightest not in burnt offering. The sacrifices of Elohim (God) are a broken spirit* (Psalm 51:16-17). *I will not reprove thee for thy sacrifices or thy burnt offerings* (Psalm 50:8): David in the neighbouring psalm names what Asaph proclaims — Yahuah delights not in the burnt offering as such but in the broken spirit. The same lens: the heart, not the carcass, is the offering received.'),
+    ('canon','psalms',50,9,'apocrypha','ecclesiasticus',35,1,'extras',
+      E'*He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1). *I will take no bullock out of thy house, nor he goats out of thy folds* (Psalm 50:9): the restored wisdom binds the offering to the obedience — to keep the law IS to bring offerings enough. Yahuah needs no bullock from a hand that has not first kept His commandment.'),
+    ('canon','psalms',50,14,'apocrypha','ecclesiasticus',35,2,'extras',
+      E'*He that requiteth a goodturn offers fine flour; and he that gives alms sacrificeth praise. To depart from wickedness is a thing pleasing to Yahuah (God); and to forsake unrighteousness is a propitiation* (Sirach 35:2-3). *Offer unto Elohim (God) thanksgiving* (Psalm 50:14): the thanksgiving the psalm seeks is the alms that sacrifice praise and the wickedness departed from — Sirach makes the right walk itself the acceptable offering.'),
+    ('canon','psalms',50,13,'apocrypha','ecclesiasticus',34,18,'extras',
+      E'*He that sacrificeth of a thing wrongfully gotten, his offering is ridiculous; and the gifts of unjust men are not accepted* (Sirach 34:18). *Will I eat the flesh of bulls, or drink the blood of goats?* (Psalm 50:13): the psalm scorns the carcass offered from a corrupt life, and Sirach names it ridiculous — the offering of the wrongfully-gotten is no offering at all.'),
+    ('canon','psalms',50,13,'apocrypha','ecclesiasticus',34,19,'extras',
+      E'*The most High is not pleased with the offerings of the wicked; neither is he pacified for sin by the multitude of sacrifices* (Sirach 34:19). *Will I eat the flesh of bulls, or drink the blood of goats?* (Psalm 50:13): no multitude of sacrifices buys off the wicked — the El Elyon (most High) is not pleased with their offerings. The carcass cannot stand in for the heart the psalm demands.'),
+
+    -- THREAD 4 (★★): What hast thou to do to declare my statutes — Torah on the lips, broken in life
+    ('canon','psalms',50,18,'canon','romans',2,21,'free',
+      E'*Thou therefore which teachest another, teachest thou not thyself? thou that preachest a man should not steal, dost thou steal?* (Romans 2:21). *When thou sawest a thief, then thou consentedst with him* (Psalm 50:18): Paul drives the psalm''s charge straight — the one who preaches against stealing yet steals is the very hypocrite the psalm exposes, the covenant in the mouth while the deed denies it.'),
+    ('canon','psalms',50,18,'canon','romans',2,22,'free',
+      E'*Thou that sayest a man should not commit adultery, dost thou commit adultery? thou that abhorrest idols, dost thou commit sacrilege?* (Romans 2:22). *and hast been partaker with adulterers* (Psalm 50:18): the psalm names the partaker with adulterers; Paul names the one who forbids adultery yet commits it. Torah on the lips, broken in the life — one indictment across both Testaments.'),
+    ('canon','psalms',50,16,'canon','romans',2,23,'free',
+      E'*Thou that makest thy boast of the law, through breaking the law dishonourest thou Elohim (God)?* (Romans 2:23). *What hast thou to do to declare my statutes, or that thou shouldest take my covenant in thy mouth?* (Psalm 50:16): the boast of the law that breaks the law is the covenant taken in the mouth by the wicked. The offence is not that the statutes exist but that the boaster BREAKS them — the law dishonoured by the law-breaker, not abolished.'),
+    ('canon','psalms',50,16,'canon','1-john',2,4,'free',
+      E'*He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:4). *What hast thou to do to declare my statutes, or that thou shouldest take my covenant in thy mouth?* (Psalm 50:16): John sets the master filter the psalm enforces — to claim Him while breaking His commandments is the lie. To take the covenant in the mouth while hating instruction is to be the liar in whom the truth is not.'),
+    ('canon','psalms',50,17,'canon','isaiah',29,13,'free',
+      E'*Wherefore Yahuah (Lord) said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men* (Isaiah 29:13). *Seeing thou hatest instruction, and castest my words behind thee* (Psalm 50:17): the lips that honour while the heart is removed are the words cast behind the back — the same hypocrisy, the mouth near and the heart far, the instruction hated even while the covenant is recited.'),
+
+    -- THREAD 5: Whoso offereth praise glorifieth me — the ordered walk shown salvation
+    ('canon','psalms',50,23,'canon','hebrews',13,15,'free',
+      E'*By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). *Whoso offereth praise glorifieth me* (Psalm 50:23): the praise that glorifies the Judge is the sacrifice of praise — the fruit of the lips giving thanks. The thanksgiving the psalm sought is offered continually, the true offering that needs no bullock.'),
+    ('canon','psalms',50,23,'canon','micah',6,8,'free',
+      E'*He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). *to him that ordereth his conversation aright will I shew the salvation of Elohim (God)* (Psalm 50:23): the conversation ordered aright is the walk Micah names — justice, mercy, the humble walk. To the one who walks it the salvation of Elohim is shewn.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire',
+       E'The mighty Elohim hath spoken — the Judge comes in fire',
+       E'The first Asaph psalm opens with a theophany: *El Gibbor (The mighty God), even Yahuah (LORD), hath spoken, and called the earth from the rising of the sun unto the going down thereof. Out of Zion, the perfection of beauty, Elohim (God) hath shined. Our Elohim (God) shall come, and shall not keep silence: a fire shall devour before him, and it shall be very tempestuous round about him. He shall call to the heavens from above, and to the earth, that he may judge his people* (Psalm 50:1-4). Read through the Formed and the Formless, the One who comes is the expressed Word — the Formed Son, *revealed from heaven with his mighty angels, In flaming fire taking vengeance on them that know not Elohim (God)* (2 Thessalonians 1:7-8) — for *our Elohim (God) is a consuming fire* (Hebrews 12:29). Daniel saw the very throne of this judgment: *the Ancient of days did sit... his throne was like the fiery flame, and his wheels as burning fire. A fiery stream issued and came forth from before him... the judgment was set, and the books were opened* (Daniel 7:9-10). Mark the lens of the psalm: He comes *that he may judge his people* (50:4) — this is the covenant-lawsuit against His own household, not a verdict pronounced on the heathen. The fire goes before the Judge of Yashar''el (Israel).',
+       sv.verse_id, ev.verse_id, 'free', 23225
+  FROM _s302_ps050_lookup sv, _s302_ps050_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=50 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice',
+       E'Gather my saints together unto me — those that have made a covenant by sacrifice',
+       E'The Judge''s first word is a summons of His own: *Gather my saints together unto me; those that have made a covenant with me by sacrifice* (Psalm 50:5). This is the ingathering of the covenant people — the very gathering the Son names at the end: *he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other* (Matthew 24:31). It is the two-house regathering promised from Moses onward — *Yahuah Elohayka (the LORD thy God)... will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3); *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee* (30:4) — and sealed by Ezekiel''s two sticks: *Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21); *I will make them one nation in the land... and they shall be no more two nations* (37:22). The saints summoned are Yahuah''s scattered covenant people — Yahudah (Judah) and Yashar''el (Israel) — gathered home and made one, not cast off.',
+       sv.verse_id, ev.verse_id, 'free', 23228
+  FROM _s302_ps050_lookup sv, _s302_ps050_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=50 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving',
+       E'I will take no bullock — offer unto Elohim thanksgiving',
+       E'The first charge of the lawsuit is not against the altar but against the heartless use of it: *I will not reprove thee for thy sacrifices or thy burnt offerings, to have been continually before me. I will take no bullock out of thy house, nor he goats out of thy folds. For every beast of the forest is mine, and the cattle upon a thousand hills... If I were hungry, I would not tell thee: for the world is mine, and the fulness thereof. Will I eat the flesh of bulls, or drink the blood of goats? Offer unto Elohim (God) thanksgiving; and pay thy vows unto the El Elyon (most High)* (Psalm 50:8-14). Yahuah owns the cattle already; He desires obedience and thanksgiving above the carcass — NOT the abolition of sacrifice but the exposure of empty ritual. The whole Tanakh sounds it: *to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22); *I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6); *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8); *thou desirest not sacrifice; else would I give it... The sacrifices of Elohim (God) are a broken spirit* (Psalm 51:16-17). The restored wisdom of Sirach makes obedience itself the offering: *He that keepeth the law brings offerings enough... he that gives alms sacrificeth praise. To depart from wickedness is a thing pleasing to Yahuah (God)* (Sirach 35:1-3); and the wicked man''s carcass it casts out — *He that sacrificeth of a thing wrongfully gotten, his offering is ridiculous* (Sirach 34:18); *The most High is not pleased with the offerings of the wicked* (34:19). The altar stands in its true intent: the heart that obeys, never the carcass without it.',
+       sv.verse_id, ev.verse_id, 'extras', 23231
+  FROM _s302_ps050_lookup sv, _s302_ps050_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=50 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-50-what-hast-thou-to-do-to-declare-my-statutes',
+       E'What hast thou to do to declare my statutes — Torah on the lips, broken in life',
+       E'The second charge is against the hypocrite who recites the covenant while breaking it: *But unto the wicked Elohim (God) saith, What hast thou to do to declare my statutes, or that thou shouldest take my covenant in thy mouth? Seeing thou hatest instruction, and castest my words behind thee. When thou sawest a thief, then thou consentedst with him, and hast been partaker with adulterers... thou thoughtest that I was altogether such an one as thyself* (Psalm 50:16-21). Paul drives the very edge at Rome: *thou that preachest a man should not steal, dost thou steal? Thou that sayest a man should not commit adultery, dost thou commit adultery?... Thou that makest thy boast of the law, through breaking the law dishonourest thou Elohim (God)?* (Romans 2:21-23). Isaiah names the removed heart: *this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me* (Isaiah 29:13). And John sets the master filter: *He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:4). The double edge is sharp: the statutes are BINDING — the wicked''s offence is that he BREAKS them, not that they exist — AND the profession is empty without the doing. To take the covenant in the mouth while hating the instruction is the lie. This is the anti-antinomian and anti-hypocrisy charge together: not Torah abolished, but Torah dishonoured by the one who recites and breaks it.',
+       sv.verse_id, ev.verse_id, 'free', 23234
+  FROM _s302_ps050_lookup sv, _s302_ps050_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=50 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-50-whoso-offereth-praise-glorifieth-me',
+       E'Whoso offereth praise glorifieth me — the ordered walk shown salvation',
+       E'The lawsuit closes with the verdict turned to invitation: *Now consider this, ye that forget Elohim (God), lest I tear you in pieces, and there be none to deliver. Whoso offereth praise glorifieth me: and to him that ordereth his conversation aright will I shew the salvation of Elohim (God)* (Psalm 50:22-23). The thanksgiving the Judge demanded becomes the *sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15) — the true offering that needs no bullock. And the conversation ordered aright is the very thing Yahuah requires: *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). Praise that glorifies Him and a life ordered in His way — to that one the salvation of Elohim is shewn.',
+       sv.verse_id, ev.verse_id, 'free', 23237
+  FROM _s302_ps050_lookup sv, _s302_ps050_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=50 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the Lord Yahusha (Lord Jesus) shall be revealed from heaven with his mighty angels* (2 Thessalonians 1:7) — *our Elohim shall come, and shall not keep silence* (50:3): the silence broken is the Formed Son revealed from heaven.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=3
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *In flaming fire taking vengeance* (2 Thessalonians 1:8) — *a fire shall devour before him* (50:3): the devouring fire of the coming Judge is the flaming fire of the revealed Yahusha.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=3
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *our Elohim (God) is a consuming fire* (Hebrews 12:29) — the fire that devours before Him (50:3) is what He is, no figure added.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=3
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the Ancient of days did sit... his throne was like the fiery flame* (Daniel 7:9) — the seat of the judgment 50:4 announces: the Judge enthroned in flame.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=4
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *A fiery stream issued... the judgment was set, and the books were opened* (Daniel 7:10) — the judgment 50:4 summons, with heaven and earth called as the court.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=4
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-the-mighty-elohim-hath-spoken-the-judge-comes-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they shall gather together his elect from the four winds* (Matthew 24:31) — the summons of 50:5 is the ingathering at the trumpet: the covenant people gathered unto Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *will return and gather thee from all the nations* (Deuteronomy 30:3) — the gathering of 50:5 is the regathering promised from Moses, Yahuah gathering His scattered own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*from thence will Yahuah Elohayka gather thee* (Deuteronomy 30:4) — even to the outmost parts of heaven the saints of 50:5 are fetched home.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I will take the children of Yashar''el from among the heathen... and gather them* (Ezekiel 37:21) — the two-house regathering: the very saints 50:5 summons brought home.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will make them one nation... and they shall be no more two nations* (Ezekiel 37:22) — the gathered saints of 50:5 made ONE: the two sticks, Yahudah and Yashar''el, reunited.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-gather-my-saints-those-that-have-made-a-covenant-by-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22) — *I will not reprove thee for thy sacrifices* (50:8): the carcass without obedience is weighed and found wanting.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=8
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I desired mercy, and not sacrifice; and the knowledge of Elohim more than burnt offerings* (Hosea 6:6) — *Offer unto Elohim thanksgiving* (50:14): mercy and knowledge above the carcass.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=14
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *what doth Yahuah require of thee, but to do justly, and to love mercy, and to walk humbly* (Micah 6:8) — the offering 50:14 seeks is the obedient walk, not the multiplied ram.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=14
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *thou desirest not sacrifice... The sacrifices of Elohim are a broken spirit* (Psalm 51:16-17) — the neighbouring psalm names what Asaph proclaims (50:8): the heart, not the carcass, received.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=8
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *He that keepeth the law brings offerings enough* (Sirach 35:1) — *I will take no bullock out of thy house* (50:9): to keep the commandment IS to bring offering enough.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=9
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *he that gives alms sacrificeth praise. To depart from wickedness is a thing pleasing* (Sirach 35:2-3) — the thanksgiving of 50:14 is the right walk made the acceptable offering.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=14
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *He that sacrificeth of a thing wrongfully gotten, his offering is ridiculous* (Sirach 34:18) — *Will I eat the flesh of bulls?* (50:13): the carcass from a corrupt life is no offering at all.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=13
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=34 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *The most High is not pleased with the offerings of the wicked* (Sirach 34:19) — *drink the blood of goats?* (50:13): no multitude of sacrifices buys off the wicked heart.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=13
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=34 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-i-will-take-no-bullock-offer-unto-elohim-thanksgiving'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou that preachest a man should not steal, dost thou steal?* (Romans 2:21) — *When thou sawest a thief, then thou consentedst with him* (50:18): the covenant in the mouth, the deed denying it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=18
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-what-hast-thou-to-do-to-declare-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thou that sayest a man should not commit adultery, dost thou commit adultery?* (Romans 2:22) — *partaker with adulterers* (50:18): the forbidder who commits, the very hypocrite the psalm exposes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=18
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-what-hast-thou-to-do-to-declare-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *thou that makest thy boast of the law, through breaking the law dishonourest thou Elohim?* (Romans 2:23) — *take my covenant in thy mouth* (50:16): the law dishonoured by the law-breaker, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=16
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-what-hast-thou-to-do-to-declare-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *He that saith, I know him, and keepeth not his commandments, is a liar* (1 John 2:4) — the master filter 50:16 enforces: to take the covenant in the mouth while hating instruction is the lie.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=16
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-what-hast-thou-to-do-to-declare-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *this people draw near me with their mouth... but have removed their heart far from me* (Isaiah 29:13) — *thou hatest instruction, and castest my words behind thee* (50:17): the mouth near, the heart far.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=17
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-what-hast-thou-to-do-to-declare-my-statutes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *let us offer the sacrifice of praise to Elohim continually, that is, the fruit of our lips* (Hebrews 13:15) — *Whoso offereth praise glorifieth me* (50:23): the thanksgiving sought is the true offering that needs no bullock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=23
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-whoso-offereth-praise-glorifieth-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *to do justly, and to love mercy, and to walk humbly with thy Elohim* (Micah 6:8) — *to him that ordereth his conversation aright* (50:23): the ordered walk is the very thing Yahuah requires, and to it salvation is shewn.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps050_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=50 AND sv.verse_number=23
+  JOIN _s302_ps050_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-50-whoso-offereth-praise-glorifieth-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
