@@ -5116,6 +5116,1356 @@ SELECT t.id, cr.id, 2, E'*for David''s sake did Yahuah Elohav (the LORD his God)
  WHERE t.slug='psalm-132-i-have-ordained-a-lamp-for-mine-anointed'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_80.sql (Psalm 80) -----
+-- Chapter: Psalm 80 — THE SHEPHERD-OF-JOSEPH / TWO-HOUSE RESTORATION PSALM. *Give ear, O Shepherd of Yashar'el (Israel), thou that leadest Joseph like a flock* (v.1) — the Shepherd over Joseph/Ephraim, the scattered NORTHERN house; *Before Ephraim and Benjamin and Manasseh stir up thy strength, and come and save us* (v.2); the thrice-repeated refrain *Turn us again, O Elohim (God)... and we shall be saved* (v.3,7,19); *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (v.8) — the vine = Israel, fulfilled in *I am the true vine* (John 15:1); and *Let thy hand be upon the man of thy right hand, upon the son of Adam whom thou madest strong for thyself* (v.17) — the Son of Adam at the right hand, the Formed Son who restores the scattered house.
+-- Tag: ps080   Temp view: _s302_ps080_lookup
+-- Sort band: base 23975, step 3 -> threads at 23975, 23978, 23981, 23984, 23987 (5 threads)
+-- Source of EVERY row: 'canon','psalms',80,v
+--
+-- Psalm 80 coverage:
+--   ★★ v.1-2 (Give ear, O Shepherd of Yashar'el, thou that leadest Joseph like a flock... Before Ephraim and Benjamin and Manasseh stir up thy strength, and come and save us)
+--        NT:     none warranted distinct (the Shepherd-fulfillment forward-weave is carried by Psalm 23 / John 10 in their own pack; the load-bearing weight here is the SHEPHERD-OF-JOSEPH/two-house identity, which is Tanakh prophets — held to THREAD 1 + THREAD 5)
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 34:11-12,23 (I, even I, will both search my sheep... one shepherd... my servant David), Psalm 23:1 (Yahuah Ra'ah / The LORD is my shepherd), Ezekiel 37:16 (the stick of Joseph in the hand of Ephraim) — THREAD 1 (the Shepherd who seeks the scattered flock = the Shepherd of Joseph)
+--   ★ v.3,7,19 (Turn us again, O Elohim... and cause thy face to shine; and we shall be saved — the thrice-cried refrain)
+--        NT:     none warranted distinct (the turning/restoration is the Tanakh's own covenant-return cry; the new-covenant turning-of-the-heart sits in Jer 31 own pack)
+--        Extras: none warranted
+--        Tanakh: ★ Lamentations 5:21 (Turn thou us unto thee, O Yahuah, and we shall be turned), Jeremiah 31:18 (turn thou me, and I shall be turned; for thou art Yahuah Elohai) — THREAD 2 (the turning is Yahuah's own work; the cry answered by Ephraim's repentance)
+--   ★★ v.8-11,14-15 (Thou hast brought a vine out of Egypt... thou hast cast out the heathen, and planted it... visit this vine, and the vineyard which thy right hand hath planted)
+--        NT:     ★★ John 15:1 (I am the true vine, and my Father is the husbandman), John 15:5 (I am the vine, ye are the branches); Matthew 21:33 (planted a vineyard, and hedged it round about) — THREAD 3 (the vine = Israel, fulfilled in the true Vine; the husbandman who planted)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 5:7 (the vineyard of Yahuah Tseva'ot is the house of Yashar'el), Jeremiah 2:21 (I had planted thee a noble vine, wholly a right seed) — THREAD 3 (the vine planted is the house of Yashar'el)
+--   ★★★ v.17 (Let thy hand be upon the man of thy right hand, upon the son of Adam whom thou madest strong for thyself)
+--        NT:     none warranted distinct (Daniel 7:13's son-of-Adam cloud-rider carries the Tanakh weight; the NT Son-of-Adam-at-the-right-hand sits in Psalm 110 own pack)
+--        Extras: ★★ 1 Enoch 48:2-3 (that Son of Adam was named In the presence of Yahuah of Spirits... before the sun and the signs were created, His name was named) — THREAD 4 (the Son of Adam preserved, named before creation, the right-hand One made strong)
+--        Tanakh: ★★ Daniel 7:13 (one like the Son of Adam came with the clouds of heaven... and they brought him near before him) — THREAD 4 (the Son of Adam brought near, given everlasting dominion; the right-hand man made strong)
+--   ★★ v.1-2 + v.17 (Joseph / Ephraim / Benjamin / Manasseh — the scattered northern house to be regathered)
+--        NT:     none warranted distinct (the two-house ingathering is rooted in the Tanakh prophets; the one-flock NT weave sits in Psalm 23 / John 10 own pack)
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 37:16-17,19 (the stick of Joseph... and the stick of Yahudah... make them one stick), Jeremiah 31:9-10 (Ephraim is my firstborn... He that scattered Yashar'el will gather him), Hosea 1:11 (the children of Yahudah and the children of Yashar'el be gathered together) — THREAD 5 (the Shepherd of Joseph cries for the regathering of the two houses)
+--   v.4-6,12-13,16,18 (the bread of tears, the strife unto neighbours, the broken hedges, the boar out of the wood, burned with fire — the desolation/exile lament)
+--        NT/Extras/Tanakh: none warranted distinct — the desolation imagery (broken hedges v.12, vine wasted v.13, burned with fire v.16) is the SAME vine-judgment carried in THREAD 3's Isaiah 5:5-6 (I will take away the hedge thereof... lay it waste); kept within the vine thread rather than split into a separate lament thread. v.18 (so will not we go back from thee; quicken us) folds into the turning-refrain of THREAD 2.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-80-the-shepherd-of-yasharel-thou-that-leadest-joseph-like-a-flock — Tanakh (Ezekiel 34, Psalm 23, Ezekiel 37) [free] (★★ the Shepherd over Joseph/Ephraim = the Shepherd who seeks the scattered northern flock)
+--   2. psalm-80-turn-us-again-o-elohim-and-we-shall-be-saved — Tanakh (Lamentations 5, Jeremiah 31) [free] (★ the thrice-cried refrain; the turning is Yahuah's own work)
+--   3. psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine — NT (John 15, Matthew 21) + Tanakh (Isaiah 5, Jeremiah 2) [free] (★★ the vine out of Egypt = the house of Yashar'el, fulfilled in the true Vine)
+--   4. psalm-80-the-son-of-adam-the-man-of-thy-right-hand — Extras (1 Enoch 48) + Tanakh (Daniel 7) [extras] (★★★ the son of Adam at the right hand = the Formed Son, named before creation, made strong to restore)
+--   5. psalm-80-joseph-and-ephraim-the-two-house-regathering — Tanakh (Ezekiel 37, Jeremiah 31, Hosea 1) [free] (★★ Joseph/Ephraim = the scattered northern house gathered with Yahudah into one)
+--
+-- Framing notes:
+--   ★★ THE SHEPHERD OF JOSEPH (THREAD 1): *Give ear, O Shepherd of Yashar'el (Israel), thou that leadest Joseph like a flock* (80:1). The psalm names Yahuah as Shepherd specifically of JOSEPH — Ephraim, the northern house — and pleads with the three northern tribes *Ephraim and Benjamin and Manasseh* (80:2). This is the same Shepherd of Ezekiel 34 who comes Himself to the SCATTERED flock: *I, even I, will both search my sheep, and seek them out* (34:11), and sets *one shepherd over them... even my servant David* (34:23); the same Shepherd of *Yahuah Ra'ah (The LORD is my shepherd)* (Psalm 23:1). The flock He leads is Joseph — the scattered ten tribes — which is why the very next breath is the two-house plea.
+--   ★ THE TURNING-REFRAIN (THREAD 2): *Turn us again, O Elohim (God)... and we shall be saved* (80:3,7,19), thrice. The salvation is in the TURNING, and the turning is Yahuah's own act — *Turn thou us unto thee, O Yahuah (LORD), and we shall be turned* (Lamentations 5:21), *turn thou me, and I shall be turned* (Jeremiah 31:18, Ephraim's own cry). The restoration the psalm begs is exactly the new-covenant turning of the scattered house back to the covenant.
+--   ★★ THE VINE OUT OF EGYPT (THREAD 3): *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (80:8). The vine IS Israel — *the vineyard of Yahuah Tseva'ot (LORD of hosts) is the house of Yashar'el (Israel)* (Isaiah 5:7), *I had planted thee a noble vine, wholly a right seed* (Jeremiah 2:21). Yahusha (Jesus) gathers the whole figure into Himself: *I am the true vine, and my Father is the husbandman* (John 15:1) — the Formed Son IS the true Vine the planted vine of Israel always pointed toward, the Father the husbandman who *preparedst room before it* (80:9). The broken hedges and wasting boar of 80:12-13 are the same judgment as Isaiah 5:5 — *I will take away the hedge thereof... and break down the wall thereof* — kept inside the vine thread.
+--   ★★★ THE SON OF ADAM AT THE RIGHT HAND (THREAD 4): *Let thy hand be upon the man of thy right hand, upon the son of Adam whom thou madest strong for thyself* (80:17). Read through the Formed and the Formless: the man at Yahuah's right hand, the *son of Adam* of Adam's seed-line, *made strong for thyself* — the Formed Son who restores the scattered house. Daniel sees Him: *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13) — the kaph-comparative "like" preserved, the Formed cloud-rider brought near and given everlasting dominion. The restored witness names Him preserved before creation: *that Son of Adam was named In the presence of Yahuah (God) of Spirits... before the sun and the signs were created, His name was named* (1 Enoch 48:2-3). The right-hand man the psalm prays for is the Son of Adam Yahuah made strong — the One who restores Joseph.
+--   ★★ THE TWO-HOUSE REGATHERING (THREAD 5): the Shepherd-of-Joseph cry is the two-house plea. Ezekiel makes it the central sign-act: *take... For Joseph, the stick of Ephraim... and join them one to another into one stick* with *the stick of Yahudah (Judah)* (Ezekiel 37:16-17,19). Jeremiah: *Ephraim is my firstborn... He that scattered Yashar'el (Israel) will gather him* (Jeremiah 31:9-10). Hosea: *the children of Yahudah (Judah) and the children of Yashar'el (Israel) be gathered together, and appoint themselves one head* (Hosea 1:11). The Lo-ammi northern house — Joseph — gathered back to the one flock. NOT replacement, NOT a new people; the scattered olive branch grown wild in the nations brought home.
+--   EXTRAS: 1 Enoch 48:2-3 carries the pre-existent Son of Adam named before creation, woven into THREAD 4 (edition 'enoch', book '1-enoch'; clean parse). No other extra-canonical witness adds cleanly to the shepherd/vine/two-house weave here — recorded deliberately, not forced.
+--   VERSES WITH NO STANDALONE THREAD: v.4-6 (bread of tears / strife unto neighbours — exile lament, no distinct cross-library add beyond the turning-refrain), v.12-13,16 (broken hedges / boar / burned with fire — folded into THREAD 3's vine-judgment, Isaiah 5:5-6), v.18 (so will not we go back; quicken us — folds into THREAD 2's turning). All weighed; none warranted a separate thread.
+
+CREATE TEMP VIEW _s302_ps080_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The Shepherd of Yashar'el, thou that leadest Joseph like a flock
+    ('canon','psalms',80,1,'canon','ezekiel',34,11,'free',
+      E'*For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11). The cry *Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock* (Psalm 80:1) is answered by the Shepherd who comes Himself for the SCATTERED flock — *I, even I, will both search my sheep, and seek them out*. The Shepherd of Joseph is the Shepherd who does not leave the lost sheep to the beasts but seeks out the scattered northern house in person.'),
+    ('canon','psalms',80,1,'canon','ezekiel',34,12,'free',
+      E'*As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day* (Ezekiel 34:12). The Shepherd who *leadest Joseph like a flock* (Psalm 80:1) is the Shepherd who seeks the flock *scattered in the cloudy and dark day* — Joseph, the ten tribes carried off into Assyria, sought out and delivered out of all the places of their scattering.'),
+    ('canon','psalms',80,1,'canon','ezekiel',34,23,'free',
+      E'*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The Shepherd of *thou that leadest Joseph like a flock* (Psalm 80:1) sets ONE shepherd over the regathered flock — *one shepherd over them... even my servant David*. The scattered Joseph and the house of Yahudah (Judah) are gathered under one David-shepherd, the One the psalm begs to *stir up thy strength, and come and save us* (Psalm 80:2).'),
+    ('canon','psalms',80,1,'canon','psalms',23,1,'free',
+      E'*Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1). The same Shepherd is confessed in both songs — *Give ear, O Shepherd of Yashar''el (Israel)* (Psalm 80:1) and *Yahuah Ra''ah (The LORD is my shepherd)* — but here the flock is named: Joseph, the scattered house. The Shepherd who is wanted-for-nothing by the trusting sheep of Psalm 23 is the Shepherd cried to for the gathering of the lost northern flock in Psalm 80.'),
+
+    -- THREAD 2 (★): Turn us again, O Elohim, and we shall be saved (the thrice-cried refrain)
+    ('canon','psalms',80,3,'canon','lamentations',5,21,'free',
+      E'*Turn thou us unto thee, O Yahuah (LORD), and we shall be turned; renew our days as of old* (Lamentations 5:21). The refrain *Turn us again, O Elohim (God), and cause thy face to shine; and we shall be saved* (Psalm 80:3) is the same prayer Jerusalem wails in her ruin — *Turn thou us unto thee, O Yahuah (LORD), and we shall be turned*. The turning is Yahuah''s own act, not the people''s self-reform; the salvation is in being TURNED by Him.'),
+    ('canon','psalms',80,7,'canon','jeremiah',31,18,'free',
+      E'*I have surely heard Ephraim bemoaning himself thus; Thou hast chastised me, and I was chastised, as a bullock unaccustomed to the yoke: turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God)* (Jeremiah 31:18). The second cry of the refrain — *Turn us again, O Elohim (God) of hosts, and cause thy face to shine; and we shall be saved* (Psalm 80:7) — is EPHRAIM''S very own prayer in Jeremiah: *turn thou me, and I shall be turned*. The scattered northern house begs the turning Yahuah alone can give; the Shepherd-of-Joseph psalm and Ephraim''s confession are one cry.'),
+    ('canon','psalms',80,19,'canon','jeremiah',31,18,'free',
+      E'*I have surely heard Ephraim bemoaning himself thus... turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God)* (Jeremiah 31:18). The psalm''s final cry — *Turn us again, O Yahuah Elohim (LORD God) of hosts, cause thy face to shine; and we shall be saved* (Psalm 80:19) — closes on the same word it opened the refrain with, and it is Ephraim''s word: *turn thou me, and I shall be turned*. Three times the psalm pleads the turning; Jeremiah shows Yahuah has already HEARD Ephraim bemoaning himself, and answers the very prayer the psalm prays.'),
+
+    -- THREAD 3 (★★): Thou hast brought a vine out of Egypt — the true Vine
+    ('canon','psalms',80,8,'canon','john',15,1,'free',
+      E'*I am the true vine, and my Father is the husbandman* (John 15:1). The vine of *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8) is gathered up by Yahusha (Jesus) into Himself — *I am the true vine, and my Father is the husbandman*. The planted vine of Israel always pointed toward the true Vine; the Father who brought the vine out of Egypt and planted it is the husbandman who tends it, and the Formed Son is the Vine the branches must abide in.'),
+    ('canon','psalms',80,15,'canon','john',15,5,'free',
+      E'*I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing* (John 15:5). The psalm begs Yahuah to *visit this vine; And the vineyard which thy right hand hath planted, and the branch that thou madest strong for thyself* (Psalm 80:14-15) — and the true Vine names the branches who must abide: *I am the vine, ye are the branches*. The branch made strong for Yahuah is the branch that abides in the Vine and bears fruit; severed from Him, it withers.'),
+    ('canon','psalms',80,8,'canon','isaiah',5,7,'free',
+      E'*For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant: and he looked for judgment, but behold oppression* (Isaiah 5:7). Isaiah names plainly what the psalm''s vine IS: *Thou hast brought a vine out of Egypt... and planted it* (Psalm 80:8) — and *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)*. The vine carried out of Egypt is the covenant people themselves, planted by Yahuah''s own hand.'),
+    ('canon','psalms',80,12,'canon','isaiah',5,5,'free',
+      E'*And now go to; I will tell you what I will do to my vineyard: I will take away the hedge thereof, and it shall be eaten up; and break down the wall thereof, and it shall be trodden down* (Isaiah 5:5). The broken-hedge lament — *Why hast thou then broken down her hedges, so that all they which pass by the way do pluck her?* (Psalm 80:12) — is the very judgment Isaiah pronounces on the same vine: *I will take away the hedge thereof... and break down the wall thereof*. The wasted vine of the psalm is the vineyard whose hedge Yahuah Himself removed for covenant-breaking — the Deuteronomy-28 exile, never a defect in the vine''s planting.'),
+    ('canon','psalms',80,8,'canon','jeremiah',2,21,'free',
+      E'*Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* (Jeremiah 2:21). Yahuah''s planting of *a vine out of Egypt* (Psalm 80:8) is the *noble vine, wholly a right seed* of Jeremiah — *a right seed*, the paternal covenant line, planted choice. The lament of the psalm and the grief of Jeremiah are over the same vine: planted noble, turned wild, yet never cast off by the Husbandman who planted it.'),
+    ('canon','psalms',80,8,'canon','matthew',21,33,'free',
+      E'*Hear another parable: There was a certain householder, which planted a vineyard, and hedged it round about, and digged a winepress in it, and built a tower, and let it out to husbandmen, and went into a far country* (Matthew 21:33). Yahusha''s (Jesus'') vineyard parable opens with the exact figure of *Thou hast brought a vine out of Egypt... thou preparedst room before it* (Psalm 80:8-9) and Isaiah 5 together — *planted a vineyard, and hedged it round about*. The householder who planted and hedged is the Father; the vine is the house of Yashar''el (Israel); the reckoning is with the keepers who would not render the fruit, not the planting itself.'),
+
+    -- THREAD 4 (★★★): The son of Adam, the man of thy right hand
+    ('canon','psalms',80,17,'canon','daniel',7,13,'free',
+      E'*I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13). The prayer *Let thy hand be upon the man of thy right hand, upon the son of Adam whom thou madest strong for thyself* (Psalm 80:17) reaches its vision in Daniel: the *son of Adam* of Adam''s seed-line *brought... near before* the Ancient of days. The "like" is preserved — the Formed cloud-rider who took flesh — and to Him is given *dominion, and glory, and a kingdom* (Daniel 7:14); the right-hand man the psalm begs Yahuah to strengthen is this Son of Adam.'),
+    ('canon','psalms',80,17,'enoch','1-enoch',48,2,'extras',
+      E'*And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2). The *son of Adam whom thou madest strong for thyself* (Psalm 80:17) is named in the restored witness in the very presence of Yahuah (God) of Spirits — the Son of Adam set apart and made strong, the One at the right hand whom the Most High has appointed to restore His people.'),
+    ('canon','psalms',80,17,'enoch','1-enoch',48,3,'extras',
+      E'*Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3). The right-hand One *whom thou madest strong for thyself* (Psalm 80:17) is the Son of Adam whose name was named *before the sun and the signs were created* — the Formed Son drawn from the Formless before the world, made strong by the Father for the saving of the scattered house. Not a creature among creatures but the One named before creation, the man of Yahuah''s right hand.'),
+
+    -- THREAD 5 (★★): Joseph and Ephraim — the two-house regathering
+    ('canon','psalms',80,2,'canon','ezekiel',37,16,'free',
+      E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah)... then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The psalm leads with the northern tribes — *Before Ephraim and Benjamin and Manasseh stir up thy strength* (Psalm 80:2) — the very *Joseph, the stick of Ephraim* of Ezekiel''s sign-act. The Shepherd-of-Joseph cry is the cry for the stick of Ephraim to be taken up and joined again.'),
+    ('canon','psalms',80,2,'canon','ezekiel',37,19,'free',
+      E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The *Ephraim and Benjamin and Manasseh* of the psalm''s plea (Psalm 80:2) are the *stick of Joseph, which is in the hand of Ephraim* — and Yahuah''s answer is to make them ONE stick with Yahudah (Judah). The two houses divided after Solomon are gathered into one in His hand; the psalm''s cry for Joseph is the cry for that reunion.'),
+    ('canon','psalms',80,1,'canon','jeremiah',31,9,'free',
+      E'*They shall come with weeping, and with supplications will I lead them... for I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9). The Shepherd who *leadest Joseph like a flock* (Psalm 80:1) is the Father who leads weeping Ephraim home — *Ephraim is my firstborn*. The scattered northern house is no cast-off; he is the firstborn the Father gathers back, the Joseph the Shepherd will not abandon.'),
+    ('canon','psalms',80,1,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The Shepherd of *thou that leadest Joseph like a flock* (Psalm 80:1) is named outright in Jeremiah: *He that scattered Yashar''el (Israel) will gather him... as a shepherd doth his flock*. The One who scattered the northern house in judgment is the very Shepherd who gathers him — the psalm begs the gathering Jeremiah promises.'),
+    ('canon','psalms',80,2,'canon','hosea',1,11,'free',
+      E'*Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel* (Hosea 1:11). The two-house plea of *Before Ephraim and Benjamin and Manasseh... come and save us* (Psalm 80:2) is Hosea''s promise of the *Lo-ammi* ("not my people") northern house regathered: *the children of Yahudah (Judah) and the children of Yashar''el (Israel)... gathered together, and appoint themselves one head*. The divided houses come up as one under one head — the regathering the Shepherd-of-Joseph psalm cries for.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-80-the-shepherd-of-yasharel-thou-that-leadest-joseph-like-a-flock',
+       E'The Shepherd of Yashar''el, thou that leadest Joseph like a flock — the Shepherd who seeks the scattered',
+       E'*Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock; thou that dwellest between the cherubims, shine forth* (Psalm 80:1). The psalm names Yahuah Shepherd specifically of JOSEPH — Ephraim, the northern house — and presses the three northern tribes: *Before Ephraim and Benjamin and Manasseh stir up thy strength, and come and save us* (Psalm 80:2). This is the Shepherd of Ezekiel 34, who refuses to leave the flock to the hirelings and the beasts and comes Himself: *Behold, I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11), seeking the flock *scattered in the cloudy and dark day* (Ezekiel 34:12) — Joseph, the ten tribes carried off into Assyria. And He sets one shepherd over the regathered flock: *I will set up one shepherd over them... even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The same Shepherd is confessed in the shepherd-psalm — *Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1) — but here the flock is named and the flock is lost. The Shepherd of Joseph is the Shepherd who seeks the scattered northern house and gathers it under one David-shepherd; the psalm begs Him to *stir up thy strength, and come and save us*.',
+       sv.verse_id, ev.verse_id, 'free', 23975
+  FROM _s302_ps080_lookup sv, _s302_ps080_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=80 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-80-turn-us-again-o-elohim-and-we-shall-be-saved',
+       E'Turn us again, O Elohim, and we shall be saved — the thrice-cried refrain answered in Ephraim''s turning',
+       E'*Turn us again, O Elohim (God), and cause thy face to shine; and we shall be saved* (Psalm 80:3). Three times the psalm cries it — *Turn us again, O Elohim (God) of hosts* (Psalm 80:7), *Turn us again, O Yahuah Elohim (LORD God) of hosts, cause thy face to shine; and we shall be saved* (Psalm 80:19) — and each time the salvation is in the TURNING, and the turning is Yahuah''s own act, not the people''s self-reform. Jerusalem in her ruin wails the same prayer: *Turn thou us unto thee, O Yahuah (LORD), and we shall be turned; renew our days as of old* (Lamentations 5:21). And the scattered northern house — Ephraim, the very Joseph this psalm shepherds — makes it his own confession: *I have surely heard Ephraim bemoaning himself thus... turn thou me, and I shall be turned; for thou art Yahuah Elohai (the LORD my God)* (Jeremiah 31:18). The Shepherd-of-Joseph psalm and Ephraim''s repentance are one cry — and Jeremiah shows Yahuah has already HEARD Ephraim bemoaning himself, and answers the very turning the psalm prays. This is the new-covenant turning of the scattered house back to the covenant: not Torah abolished, but the heart turned home by Yahuah''s own hand.',
+       sv.verse_id, ev.verse_id, 'free', 23978
+  FROM _s302_ps080_lookup sv, _s302_ps080_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=80 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine',
+       E'Thou hast brought a vine out of Egypt — the vine is the house of Yashar''el, fulfilled in the true Vine',
+       E'*Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it. Thou preparedst room before it, and didst cause it to take deep root, and it filled the land* (Psalm 80:8-9). The vine carried out of Egypt and planted by Yahuah''s own hand IS the covenant people: *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant* (Isaiah 5:7), *I had planted thee a noble vine, wholly a right seed* (Jeremiah 2:21) — *a right seed*, the paternal covenant line, planted choice. And Yahusha (Jesus) gathers the whole figure into Himself: *I am the true vine, and my Father is the husbandman* (John 15:1), *I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit* (John 15:5). The planted vine of Israel always pointed toward the true Vine; the Father who *preparedst room before it* is the husbandman, and the branch the psalm begs Yahuah to visit — *the vineyard which thy right hand hath planted, and the branch that thou madest strong for thyself* (Psalm 80:14-15) — is the branch that must abide in the Vine to bear fruit. The wasting of the vine — *Why hast thou then broken down her hedges... The boar out of the wood doth waste it* (Psalm 80:12-13) — is the same judgment Isaiah pronounces: *I will take away the hedge thereof... and break down the wall thereof* (Isaiah 5:5), the Deuteronomy-28 exile for covenant-breaking, never a defect in the planting. Yahusha''s own vineyard parable opens with the very figure: *planted a vineyard, and hedged it round about* (Matthew 21:33) — the reckoning falls on the keepers who would not render the fruit, not on the vine the Father planted.',
+       sv.verse_id, ev.verse_id, 'free', 23981
+  FROM _s302_ps080_lookup sv, _s302_ps080_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=80 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-80-the-son-of-adam-the-man-of-thy-right-hand',
+       E'The man of thy right hand, the son of Adam whom thou madest strong — the Formed Son who restores',
+       E'*Let thy hand be upon the man of thy right hand, upon the son of Adam whom thou madest strong for thyself* (Psalm 80:17). At the climax of the Shepherd-of-Joseph cry the psalm prays for a particular man — the *man of thy right hand*, the *son of Adam* of Adam''s seed-line, *made strong for thyself* by Yahuah. Read through the Formed and the Formless: this is the Formed Son, drawn from the Formless, whom the Father strengthens to save and restore the scattered house. Daniel sees Him in vision: *one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him* (Daniel 7:13) — the kaph-comparative "like" preserved, the Formed cloud-rider who would take flesh, *brought near before* the Most High and given *dominion, and glory, and a kingdom... an everlasting dominion, which shall not pass away* (Daniel 7:14). The restored witness names Him preserved before the world: *that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2), *before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3) — not a creature among creatures but the One named before creation, made strong by the Father. The right-hand man the psalm begs Yahuah to lay His hand upon is this Son of Adam — the One who restores Joseph and gathers the two houses home.',
+       sv.verse_id, ev.verse_id, 'extras', 23984
+  FROM _s302_ps080_lookup sv, _s302_ps080_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=80 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-80-joseph-and-ephraim-the-two-house-regathering',
+       E'Joseph and Ephraim — the scattered northern house gathered with Yahudah into one',
+       E'*Give ear, O Shepherd of Yashar''el (Israel), thou that leadest Joseph like a flock... Before Ephraim and Benjamin and Manasseh stir up thy strength, and come and save us* (Psalm 80:1-2). The psalm leads with the NORTHERN tribes — Ephraim, Manasseh (the sons of Joseph), and Benjamin — the house of Israel divided from Yahudah (Judah) after Solomon and scattered through Assyria. The cry is the two-house cry, and Ezekiel makes it the central sign-act: *take... For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16), *Behold, I will take the stick of Joseph, which is in the hand of Ephraim... and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The scattered Joseph is no cast-off: *Ephraim is my firstborn* (Jeremiah 31:9), and *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the Shepherd who scattered in judgment is the Shepherd who gathers. Hosea sings the same regathering of the *Lo-ammi* ("not my people") house: *the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel* (Hosea 1:11). NOT replacement, NOT a new people grafted in by confession — the natural olive branch grown wild in the nations brought home. The Shepherd-of-Joseph psalm is the prayer for the two sticks to become one in Yahuah''s hand.',
+       sv.verse_id, ev.verse_id, 'free', 23987
+  FROM _s302_ps080_lookup sv, _s302_ps080_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=80 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11) — the Shepherd of Joseph (80:1) comes Himself for the scattered flock.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-shepherd-of-yasharel-thou-that-leadest-joseph-like-a-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*so will I seek out my sheep... scattered in the cloudy and dark day* (Ezekiel 34:12) — Joseph, the ten tribes scattered into Assyria, sought out (80:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-shepherd-of-yasharel-thou-that-leadest-joseph-like-a-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will set up one shepherd over them... even my servant David* (Ezekiel 34:23) — the scattered Joseph (80:2) gathered under one David-shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-shepherd-of-yasharel-thou-that-leadest-joseph-like-a-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1) — the same Shepherd, here cried to for the lost northern flock (80:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-shepherd-of-yasharel-thou-that-leadest-joseph-like-a-flock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Turn thou us unto thee, O Yahuah (LORD), and we shall be turned* (Lamentations 5:21) — the same prayer as the refrain (80:3); the turning is Yahuah''s own act.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=3
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-turn-us-again-o-elohim-and-we-shall-be-saved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *turn thou me, and I shall be turned; for thou art Yahuah Elohai* (Jeremiah 31:18) — the refrain (80:7) is EPHRAIM''S own cry; the scattered house begs the turning.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=7
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-turn-us-again-o-elohim-and-we-shall-be-saved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*turn thou me, and I shall be turned* (Jeremiah 31:18) — the psalm''s final cry (80:19) closes on Ephraim''s word; Yahuah has already heard him bemoaning himself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=19
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-turn-us-again-o-elohim-and-we-shall-be-saved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I am the true vine, and my Father is the husbandman* (John 15:1) — the vine out of Egypt (80:8) fulfilled in the true Vine; the Father the husbandman who planted.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=8
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I am the vine, ye are the branches... the same bringeth forth much fruit* (John 15:5) — the branch made strong for Yahuah (80:15) abides in the Vine to bear fruit.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=15
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isaiah 5:7) — Isaiah names plainly what the vine of 80:8 IS: the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=8
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will take away the hedge thereof... and break down the wall thereof* (Isaiah 5:5) — the broken hedges of 80:12 = the same vine-judgment, the exile for covenant-breaking.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=12
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I had planted thee a noble vine, wholly a right seed* (Jeremiah 2:21) — the vine of 80:8 is the right seed, the paternal covenant line, planted choice.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=8
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*planted a vineyard, and hedged it round about* (Matthew 21:33) — Yahusha''s parable opens with the figure of 80:8-9; the reckoning falls on the keepers, not the planting.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=8
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-thou-hast-brought-a-vine-out-of-egypt-the-true-vine'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *one like the Son of Adam came with the clouds of heaven... and they brought him near before him* (Daniel 7:13) — the son of Adam of 80:17 brought near, given everlasting dominion; the "like" preserved.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=17
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-son-of-adam-the-man-of-thy-right-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that Son of Adam was named In the presence of Yahuah (God) of Spirits* (1 Enoch 48:2) — the son of Adam made strong (80:17) named in Yahuah''s presence, set apart to restore.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=17
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-son-of-adam-the-man-of-thy-right-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*before the sun and the signs were created... His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3) — the right-hand One of 80:17 named before creation, the Formed Son made strong by the Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=17
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-the-son-of-adam-the-man-of-thy-right-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *take another stick, and write upon it, For Joseph, the stick of Ephraim* (Ezekiel 37:16) — the Ephraim/Manasseh of 80:2 is the stick of Joseph to be taken up.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=2
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-joseph-and-ephraim-the-two-house-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will take the stick of Joseph... and make them one stick* (Ezekiel 37:19) — the two houses divided after Solomon made ONE in Yahuah''s hand; the cry of 80:2 answered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=2
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-joseph-and-ephraim-the-two-house-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am a father to Yashar''el (Israel), and Ephraim is my firstborn* (Jeremiah 31:9) — the scattered Joseph of 80:1 is no cast-off but the firstborn the Father gathers home.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-joseph-and-ephraim-the-two-house-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He that scattered Yashar''el (Israel) will gather him... as a shepherd doth his flock* (Jeremiah 31:10) — the Shepherd who scattered (80:1) is the Shepherd who gathers the northern house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=1
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-joseph-and-ephraim-the-two-house-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head* (Hosea 1:11) — the Lo-ammi house regathered as one (80:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps080_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=80 AND sv.verse_number=2
+  JOIN _s302_ps080_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-80-joseph-and-ephraim-the-two-house-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_14.sql (Psalm 14) -----
+-- Chapter: Psalm 14 — THE FOOL / NONE-RIGHTEOUS PSALM. *The fool hath said in his heart, There is no Elohim (God)* (14:1); *They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one* (14:3) — the verses Paul takes up almost verbatim to open his great none-righteous indictment in Romans 3:10-12, the universal-sin diagnosis that proves *they are all under sin*. Psalm 14 has a near-identical TWIN, Psalm 53, cross-referenced laterally throughout. The psalm closes not in despair but in restoration hope: *Oh that the salvation of Yashar'el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar'el (Israel) shall be glad* (14:7) — the two-house ingathering.
+-- Tag: ps014   Temp view: _s302_ps014_lookup
+-- Sort band: base 22325, step 3 -> threads at 22325, 22328, 22331, 22334 (4 threads)
+-- Source of EVERY row: 'canon','psalms',14,v
+--
+-- ⚠ FRAMEWORK GUARD (Red Line #6): Romans 3 quotes THIS psalm AS the verdict of the Tanakh — *what things soever the law saith* (Rom 3:19). The none-righteous diagnosis is the universal-sin condition the new-covenant Torah-on-the-heart ANSWERS (Jer 31:33; Ezek 36:27), NOT a proof that the Torah is abolished. Paul's own chapter ends *Do we then make void the law through faith? Elohim forbid: yea, we establish the law* (Rom 3:31). Thread 3 carries this guard explicitly so the default antinomian reading cannot surface.
+--
+-- Psalm 14 coverage:
+--   ★★ v.1 (The fool hath said in his heart, There is no Elohim... there is none that doeth good)
+--        NT:     Romans 3:10 (There is none righteous, no, not one); Romans 3:11 (none that understandeth, none that seeketh after Elohim) — THREAD 1 (load-bearing: Paul opens the none-righteous chain quoting this psalm)
+--        Extras: none warranted (the fool/none-righteous diagnosis has no clean restored-witness parallel quoting the psalm)
+--        Tanakh: ★ Psalm 53:1 (the twin: The fool hath said in his heart...); Ecclesiastes 7:20 (there is not a just man upon earth, that doeth good, and sinneth not) — THREAD 1
+--   v.2 (Yahuah looked down from heaven... to see if there were any that did understand, and seek Elohim)
+--        NT:     none warranted distinct (the looking-down is carried to the verdict in Rom 3, THREAD 1)
+--        Extras: none warranted
+--        Tanakh: Genesis 6:5,12 (GOD saw that the wickedness of man was great; Elohim looked upon the earth, behold it was corrupt); Psalm 53:2 (twin) — THREAD 2
+--   ★★ v.3 (They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one)
+--        NT:     Romans 3:12 (They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one) — THREAD 1 (load-bearing: quoted almost letter-for-letter)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 53:3 (twin: Every one of them is gone back... none that doeth good, no, not one) — THREAD 1
+--   ★★ THE FRAME (v.1/v.3 as the verdict the Torah pronounces — the diagnosis ANSWERED, not the Torah abolished)
+--        NT:     Romans 3:19 (what things soever the law saith... every mouth may be stopped); Romans 3:20 (by the law is the knowledge of sin); Romans 3:31 (we establish the law) — THREAD 3 (load-bearing anti-antinomian guard)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 31:33 (I will put my law in their inward parts, and write it in their hearts); ★★ Ezekiel 36:27 (I will put my spirit within you, and cause you to walk in my statutes) — THREAD 3 (the new covenant = Torah on the heart, the answer to the diagnosis)
+--   v.4 (workers of iniquity... who eat up my people as they eat bread, and call not upon Yahuah)
+--        NT:     none warranted distinct   Extras: none warranted
+--        Tanakh: Psalm 53:4 (twin) — woven in THREAD 1/2 prose, not separately threaded
+--   v.5-6 (great fear; Elohim in the generation of the righteous; the counsel of the poor; Yahuah his refuge)
+--        NT:     none warranted distinct   Extras: none warranted
+--        Tanakh: Psalm 53:5 (twin, divergent text: scattered the bones) — noted, not separately threaded
+--   ★ v.7 (Oh that the salvation of Yashar'el were come out of Zion! when Yahuah bringeth back the captivity of his people, Jacob shall rejoice, and Yashar'el shall be glad)
+--        NT:     ★ Romans 11:26 (There shall come out of Sion the Deliverer... and so all Yashar'el shall be saved) — THREAD 4 (load-bearing: the salvation out of Zion, the two-house ingathering)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 53:6 (twin: same restoration-hope close) — THREAD 4
+--
+-- EXTRAS NOTE: none warranted across the whole psalm. The fool/none-righteous indictment and its restoration-hope close are a Davidic psalm whose targets are the NT verdict (Romans) and the Tanakh twin (Psalm 53) plus Genesis/Ecclesiastes laterals and the Jeremiah/Ezekiel new-covenant answer. The restored extra-canonical library carries no clean verse that quotes or parallels this psalm; weighed and deliberately declined. Every thread is canon-only, so EVERY thread tier_required = 'free'.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-14-the-fool-hath-said-there-is-no-elohim — NT (Romans 3:10-12) + Tanakh (Psalm 53:1,3; Ecclesiastes 7:20) [free] (★★ Paul opens the none-righteous chain quoting this psalm; the twin)
+--   2. psalm-14-yahuah-looked-down-from-heaven — Tanakh (Genesis 6:5,12; Psalm 53:2) [free] (the divine survey of corrupt mankind)
+--   3. psalm-14-the-diagnosis-answered-torah-on-the-heart — NT (Romans 3:19,20,31) + Tanakh (Jeremiah 31:33; Ezekiel 36:27) [free] (★★ anti-antinomian guard: the law pronounces the verdict and is established, NOT abolished; the new covenant writes it on the heart)
+--   4. psalm-14-the-salvation-of-yashar-el-out-of-zion — NT (Romans 11:26) + Tanakh (Psalm 53:6) [free] (★ the salvation out of Zion; the two-house captivity brought back)
+--
+-- Framing notes:
+--   ★★ THE NONE-RIGHTEOUS DIAGNOSIS (THREAD 1): *there is none that doeth good* (14:1) and *they are all gone aside... there is none that doeth good, no, not one* (14:3) are the opening links of Paul's chain — *There is none righteous, no, not one... There is none that understandeth... they are all gone out of the way... there is none that doeth good, no, not one* (Romans 3:10-12). Paul reaches BACK to this Tanakh psalm to establish that all are under sin. The twin Psalm 53 sings the same diagnosis with a divine-name swap (Yahuah->Elohim) and a divergent v.5.
+--   ★★ THE GUARD (THREAD 3) — Red Line #6: the default Christian reading hears Romans 3 as "the law is finished." The framework reads Paul exactly: the none-righteous verdict is *what things soever the law saith* (Rom 3:19) — the Torah itself pronouncing the diagnosis so *every mouth may be stopped*; *by the law is the knowledge of sin* (Rom 3:20). The chapter does NOT abolish the law — it ENDS *we establish the law* (Rom 3:31). And the cure for the none-righteous condition is the new covenant of Jeremiah and Ezekiel: not Torah replaced but Torah *written in their hearts* (Jer 31:33), the Spirit causing the people to *walk in my statutes* (Ezek 36:27). The diagnosis is answered, the Torah re-interiorized.
+--   ★ THE RESTORATION (THREAD 4) — Red Line #2: the psalm of total corruption ends in two-house hope — *Oh that the salvation of Yashar'el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people* (14:7). Paul carries the same word: *There shall come out of Sion the Deliverer... And so all Yashar'el (Israel) shall be saved* (Romans 11:26). Covenant-gathering of the scattered people, NEVER replacement.
+--   VERSES WITH NO ADD: v.4 (carried in THREAD 1/2 prose, twin Psalm 53:4), v.5-6 (the great fear, the generation of the righteous, the counsel of the poor — the body of the psalm the threads anchor; twin Psalm 53:5 divergent). EXTRAS: none warranted anywhere (weighed and declined).
+
+CREATE TEMP VIEW _s302_ps014_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The fool hath said... there is none that doeth good (Paul's none-righteous chain; the twin Psalm 53)
+    ('canon','psalms',14,1,'canon','romans',3,10,'free',
+      E'*As it is written, There is none righteous, no, not one* (Romans 3:10). Paul opens his great indictment that all are under sin by reaching back to this very psalm: *The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good* (Psalm 14:1). The Tanakh itself pronounces the verdict — *there is none that doeth good* becomes *there is none righteous, no, not one* — David''s diagnosis quoted as the Scripture''s own witness to the universal condition of fallen man.'),
+    ('canon','psalms',14,1,'canon','romans',3,11,'free',
+      E'*There is none that understandeth, there is none that seeketh after Elohim (God)* (Romans 3:11). The psalm''s next line is taken up almost word for word: *Yahuah (LORD) looked down from heaven upon the children of men, to see if there were any that did understand, and seek Elohim (God)* (Psalm 14:2) — the heaven-wide search that finds none who understand, none who seek. Paul lays the psalm beside his verdict: the looking-down of Yahuah and the none-who-seeks of Romans are one testimony.'),
+    ('canon','psalms',14,3,'canon','romans',3,12,'free',
+      E'*They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:12). This is Psalm 14:3 carried over almost letter for letter — *They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one* (Psalm 14:3). The closing words match exactly — *no, not one* — the Tanakh''s own indictment becoming the keystone of Paul''s proof that *they are all under sin*.'),
+    ('canon','psalms',14,1,'canon','psalms',53,1,'free',
+      E'*The fool hath said in his heart, There is no Elohim (God). Corrupt are they, and have done abominable iniquity: there is none that doeth good* (Psalm 53:1). Psalm 14 has a near-identical twin: Psalm 53 sings the same fool''s heart and the same *there is none that doeth good*, with the covenant name Yahuah exchanged for the title Elohim through the psalm. Two settings of one diagnosis, doubling the witness that the fool''s no-Elohim leaves no doer of good.'),
+    ('canon','psalms',14,3,'canon','psalms',53,3,'free',
+      E'*Every one of them is gone back: they are altogether become filthy; there is none that doeth good, no, not one* (Psalm 53:3). The twin psalm closes its indictment with the very words of Psalm 14:3 — *there is none that doeth good, no, not one*. The same *no, not one* that Paul would seal his chain with stands twice in the psalter, the universal verdict pronounced in two voices.'),
+    ('canon','psalms',14,1,'canon','ecclesiastes',7,20,'free',
+      E'*For there is not a just man upon earth, that doeth good, and sinneth not* (Ecclesiastes 7:20). The Preacher states plainly what the psalm sings of the fool: *there is none that doeth good* (Psalm 14:1). Across the Tanakh the same verdict recurs — no just man upon earth who does good and never sins — the universal-sin condition the new covenant alone will answer.'),
+
+    -- THREAD 2: Yahuah looked down from heaven (the divine survey of corrupt mankind; the twin)
+    ('canon','psalms',14,2,'canon','genesis',6,5,'free',
+      E'*And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually* (Genesis 6:5). The psalm''s heaven-down survey — *Yahuah (LORD) looked down from heaven upon the children of men, to see if there were any that did understand, and seek Elohim (God)* (Psalm 14:2) — echoes the looking of the days of Noah: Elohim sees the wickedness of man great in the earth. The divine gaze upon the children of men finds the same corruption David sings.'),
+    ('canon','psalms',14,2,'canon','genesis',6,12,'free',
+      E'*And Elohim (God) looked upon the earth, and, behold, it was corrupt; for all flesh had corrupted his way upon the earth* (Genesis 6:12). The very motion of *Yahuah (LORD) looked down from heaven* (Psalm 14:2) is the looking of the flood generation — Elohim looks upon the earth and *behold, it was corrupt*. What the psalm finds (*they are corrupt*, 14:1) is what Elohim found before the flood: all flesh having corrupted its way.'),
+    ('canon','psalms',14,2,'canon','psalms',53,2,'free',
+      E'*Elohim (God) looked down from heaven upon the children of men, to see if there were any that did understand, that did seek Elohim (God)* (Psalm 53:2). The twin psalm keeps the heaven-down survey of Psalm 14:2 word for word, exchanging only the divine name — the same looking-down upon the children of men, the same search for any who understand and seek.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★★): The diagnosis answered — the law pronounces it, the new covenant writes it on the heart (anti-antinomian guard)
+    ('canon','psalms',14,3,'canon','romans',3,19,'free',
+      E'*Now we know that what things soever the law saith, it saith to them who are under the law: that every mouth may be stopped, and all the world may become guilty before Elohim (God)* (Romans 3:19). The none-righteous verdict of *there is none that doeth good, no, not one* (Psalm 14:3) is, by Paul''s own account, *what things soever the law saith* — the Torah itself pronouncing the diagnosis so that every mouth is stopped. The psalm is not the law''s funeral but the law''s indictment: the whole world shown guilty by the very word it broke.'),
+    ('canon','psalms',14,3,'canon','romans',3,20,'free',
+      E'*Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law is the knowledge of sin* (Romans 3:20). The reason no flesh is justified is the reason David sings *there is none that doeth good* (Psalm 14:3): *by the law is the knowledge of sin*. The Torah is the very instrument that exposes the none-righteous condition — it diagnoses, it does not abolish; it gives the knowledge of sin that drives the heart to the cure.'),
+    ('canon','psalms',14,3,'canon','romans',3,31,'free',
+      E'*Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* (Romans 3:31). The chapter that quoted Psalm 14''s none-righteous verdict does not end by discarding the Torah — it ends *we establish the law*. The diagnosis of *there is none that doeth good* (Psalm 14:3) is answered by faith that upholds, not voids, the commandment; the law that pronounced the guilt stands established.'),
+    ('canon','psalms',14,3,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The cure for the none-righteous condition of *there is none that doeth good* (Psalm 14:3) is not the law removed but the law re-interiorized: *I will put my law in their inward parts, and write it in their hearts*. Where the fool said *There is no Elohim* (14:1), the new covenant writes the Torah within so the heart itself does good.'),
+    ('canon','psalms',14,3,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The answer to *there is none that doeth good, no, not one* (Psalm 14:3) is the Spirit given that the people may at last DO good: *I will put my spirit within you, and cause you to walk in my statutes*. The same Torah the none-righteous broke is the Torah the Spirit enables — keeping and doing the judgments, the diagnosis turned to obedience from the heart.'),
+
+    -- THREAD 4 (★): The salvation of Yashar'el out of Zion (the two-house ingathering; the twin)
+    ('canon','psalms',14,7,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The psalm of total corruption ends in restoration hope — *Oh that the salvation of Yashar''el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people* (Psalm 14:7) — and Paul carries the same word: the Deliverer coming *out of Sion* and *all Yashar''el* saved. The salvation out of Zion the psalmist longed for is the gathering of the scattered house: covenant-restoration, Jacob brought back, never replacement.'),
+    ('canon','psalms',14,7,'canon','psalms',53,6,'free',
+      E'*Oh that the salvation of Yashar''el (Israel) were come out of Zion! When Elohim (God) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 53:6). The twin psalm closes with the identical restoration-hope of Psalm 14:7 — the salvation out of Zion, the captivity brought back, Jacob rejoicing. Two settings of one cry: the diagnosis of corruption answered by the longing for the ingathering of the people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-14-the-fool-hath-said-there-is-no-elohim',
+       E'The fool hath said there is no Elohim — none that doeth good, no, not one',
+       E'Psalm 14 is the great none-righteous psalm. *The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good* (Psalm 14:1); *They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one* (Psalm 14:3). This is the diagnosis of the whole human condition under sin — the no-Elohim heart that leaves no doer of good. The psalm has a near-identical TWIN, Psalm 53, which sings the same verdict word for word, exchanging the covenant name Yahuah for the title Elohim: *The fool hath said in his heart, There is no Elohim... there is none that doeth good* (Psalm 53:1), *there is none that doeth good, no, not one* (Psalm 53:3). And the Preacher states it plainly: *there is not a just man upon earth, that doeth good, and sinneth not* (Ecclesiastes 7:20). When Paul builds his proof that all are under sin, he reaches BACK to this psalm and quotes it almost letter for letter: *There is none righteous, no, not one: There is none that understandeth, there is none that seeketh after Elohim (God). They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:10-12). The closing words match exactly — *no, not one*. This is the Tanakh''s own witness becoming the keystone of the apostle''s argument: the universal-sin condition is not Paul''s invention but David''s diagnosis, the Scripture pronouncing the verdict on the whole world.',
+       sv.verse_id, ev.verse_id, 'free', 22325
+  FROM _s302_ps014_lookup sv, _s302_ps014_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=14 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-14-yahuah-looked-down-from-heaven',
+       E'Yahuah looked down from heaven — the divine survey of the children of men',
+       E'Between the fool''s no-Elohim heart and the verdict of none-that-doeth-good stands the divine survey: *Yahuah (LORD) looked down from heaven upon the children of men, to see if there were any that did understand, and seek Elohim (God)* (Psalm 14:2). Heaven itself searches the earth for one who understands and seeks — and the psalm''s answer is the corruption it has already named. This is the looking of the days of Noah: *And GOD saw that the wickedness of man was great in the earth, and that every imagination of the thoughts of his heart was only evil continually* (Genesis 6:5), and *Elohim (God) looked upon the earth, and, behold, it was corrupt; for all flesh had corrupted his way upon the earth* (Genesis 6:12). What Yahuah finds when He looks down in the psalm is what He found before the flood — the same corruption, the same gaze upon the children of men. The twin psalm keeps the survey intact: *Elohim (God) looked down from heaven upon the children of men, to see if there were any that did understand, that did seek Elohim (God)* (Psalm 53:2). The verdict is not pronounced from ignorance but from the searching look of heaven that finds none seeking.',
+       sv.verse_id, ev.verse_id, 'free', 22328
+  FROM _s302_ps014_lookup sv, _s302_ps014_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=14 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-14-the-diagnosis-answered-torah-on-the-heart',
+       E'The diagnosis answered — the law pronounces it, the new covenant writes it on the heart',
+       E'The default reading hears Paul''s use of this psalm as the law''s funeral: all have sinned, therefore the Torah is finished. But Paul says the opposite. The none-righteous verdict of *there is none that doeth good, no, not one* (Psalm 14:3) is, by his own account, *what things soever the law saith, it saith to them who are under the law: that every mouth may be stopped, and all the world may become guilty before Elohim (God)* (Romans 3:19) — the Torah itself pronouncing the diagnosis. *By the law is the knowledge of sin* (Romans 3:20): the law is the instrument that EXPOSES the none-righteous condition, not the thing abolished by it. And the very chapter that quotes Psalm 14 ends not with the law discarded but established: *Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* (Romans 3:31). So the diagnosis demands a cure — and the cure the prophets foretold is not the Torah removed but the Torah re-interiorized. *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33); *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). Where the fool said *There is no Elohim* (Psalm 14:1) and none did good, the new covenant writes the law within and the Spirit causes the people to walk in the statutes and DO them. The diagnosis of Psalm 14 is answered — not by abolishing the standard, but by putting it inside the heart that broke it.',
+       sv.verse_id, ev.verse_id, 'free', 22331
+  FROM _s302_ps014_lookup sv, _s302_ps014_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=14 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-14-the-salvation-of-yashar-el-out-of-zion',
+       E'Oh that the salvation of Yashar''el were come out of Zion — the captivity brought back',
+       E'The psalm of total corruption does not end in despair. Its last word is restoration hope: *Oh that the salvation of Yashar''el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 14:7). After the none-righteous verdict comes the longing for the salvation that comes OUT OF ZION — the gathering of the scattered people, the captivity brought back, Jacob made glad. The twin psalm closes with the identical cry: *Oh that the salvation of Yashar''el (Israel) were come out of Zion! When Elohim (God) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 53:6). And Paul carries the very same word into his great chapter on the people of the covenant: *And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The salvation out of Zion the psalmist longed for is the Deliverer who comes out of Sion to turn away ungodliness from Jacob — the regathering of the house, the bringing-back of the captivity. This is covenant-restoration of the scattered people of Yahuah, never replacement: the same Jacob who fell under the none-righteous verdict is the Jacob brought back and made glad.',
+       sv.verse_id, ev.verse_id, 'free', 22334
+  FROM _s302_ps014_lookup sv, _s302_ps014_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=14 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There is none righteous, no, not one* (Romans 3:10) — Paul opens the none-righteous chain quoting *there is none that doeth good* (14:1); the Tanakh''s own verdict on all under sin.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-fool-hath-said-there-is-no-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*There is none that understandeth, there is none that seeketh after Elohim (God)* (Romans 3:11) — the heaven-down search of *seek Elohim* (14:2) finds none; Paul lays the psalm beside his verdict.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-fool-hath-said-there-is-no-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:12) — Psalm 14:3 carried over almost letter for letter; the closing *no, not one* matches exactly.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-fool-hath-said-there-is-no-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The fool hath said in his heart, There is no Elohim... there is none that doeth good* (Psalm 53:1) — the near-identical TWIN of 14:1, divine name Yahuah->Elohim; one diagnosis in two voices.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=53 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-fool-hath-said-there-is-no-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Every one of them is gone back... there is none that doeth good, no, not one* (Psalm 53:3) — the twin closes its indictment with the very words of 14:3; the same *no, not one*.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=53 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-fool-hath-said-there-is-no-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*there is not a just man upon earth, that doeth good, and sinneth not* (Ecclesiastes 7:20) — the Preacher states plainly what the psalm sings: *there is none that doeth good* (14:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=7 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-fool-hath-said-there-is-no-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*GOD saw that the wickedness of man was great in the earth* (Genesis 6:5) — the looking-down of *Yahuah looked down from heaven* (14:2) is the gaze of the days of Noah; the same corruption found.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-yahuah-looked-down-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim looked upon the earth, and, behold, it was corrupt* (Genesis 6:12) — the very motion of *looked down from heaven* (14:2); what He finds is the corruption the psalm names (14:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-yahuah-looked-down-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim looked down from heaven upon the children of men* (Psalm 53:2) — the twin keeps the heaven-down survey of 14:2 word for word, divine name swapped.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=53 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-yahuah-looked-down-from-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*what things soever the law saith... every mouth may be stopped* (Romans 3:19) — the none-righteous verdict of 14:3 is what the LAW says; the Torah pronounces the diagnosis, it does not abolish.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-diagnosis-answered-torah-on-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*by the law is the knowledge of sin* (Romans 3:20) — the Torah is the instrument that EXPOSES the none-righteous condition of 14:3, not the thing discarded.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-diagnosis-answered-torah-on-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Do we then make void the law through faith? Elohim forbid: yea, we establish the law* (Romans 3:31) — the chapter that quoted 14:3 ENDS by upholding the Torah, not abolishing it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-diagnosis-answered-torah-on-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the cure for *none that doeth good* (14:3): not the law removed but re-interiorized; the new covenant.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-diagnosis-answered-torah-on-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the Spirit given that the people may at last DO good; the answer to *none that doeth good* (14:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-diagnosis-answered-torah-on-the-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *There shall come out of Sion the Deliverer... And so all Yashar''el shall be saved* (Romans 11:26) — the salvation out of Zion of 14:7; the two-house captivity brought back, never replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-salvation-of-yashar-el-out-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Oh that the salvation of Yashar''el were come out of Zion!... Jacob shall rejoice* (Psalm 53:6) — the twin closes with the identical restoration-hope of 14:7; the captivity brought back.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps014_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s302_ps014_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=53 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-14-the-salvation-of-yashar-el-out-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_53.sql (Psalm 53) -----
+-- Chapter: Psalm 53 — THE FOOL / NONE-RIGHTEOUS PSALM (the Elohim-edition twin of Psalm 14). *The fool hath said in his heart, There is no Elohim (God)* (53:1); the universal diagnosis — *Every one of them is gone back: they are altogether become filthy; there is none that doeth good, no, not one* (53:3) — the verdict Paul quotes verbatim in Romans 3:10-12 to stop every mouth and prove all under sin. The psalm carries the unique variant at v.5 (*There were they in great fear, where no fear was: for Elohim (God) hath scattered the bones of him that encampeth against thee*), absent from the twin Psalm 14. And it closes in restoration hope — *Oh that the salvation of Yashar'el (Israel) were come out of Zion! When Elohim (God) bringeth back the captivity of his people, Jacob shall rejoice* (53:6) — the two-house ingathering, answered by the new covenant that writes the Torah on the heart (Jeremiah 31:33), the cure for the none-righteous verdict (NOT Torah abolished). Cross-reference the twin Psalm 14 laterally throughout.
+-- Tag: ps053   Temp view: _s302_ps053_lookup
+-- Sort band: base 23300, step 3 -> threads at 23300, 23303, 23306 (3 threads)
+-- Source of EVERY row: 'canon','psalms',53,v
+--
+-- Psalm 53 coverage:
+--   ★★ v.1 (The fool hath said in his heart, There is no Elohim; corrupt are they... there is none that doeth good)
+--        NT:     Romans 3:10-12 (There is none righteous, no, not one... none that seeketh after Elohim... none that doeth good, no, not one) — THREAD 1 (load-bearing: Paul quotes the psalm as the universal-sin verdict)
+--        Extras: none warranted (the none-righteous diagnosis has no clean restored-witness verse parallel; the Wisdom/Enoch material on the wicked is thematic, not a quotation)
+--        Tanakh: ★ Psalm 14:1 (the twin, near-identical Yahuah-edition) — THREAD 1 (the lateral twin witness)
+--   ★★ v.3 (Every one of them is gone back: they are altogether become filthy; there is none that doeth good, no, not one)
+--        NT:     Romans 3:12 (They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one) — THREAD 1 (load-bearing: the verse quoted almost word for word)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 14:3 (the twin) — THREAD 1
+--   v.2 (Elohim looked down from heaven... to see if there were any that did understand)
+--        NT:     Romans 3:11 (There is none that understandeth, there is none that seeketh after Elohim) — woven into THREAD 1 (Romans 3:11 carries v.2's "did understand / seek Elohim")
+--        Extras: none warranted   Tanakh: Psalm 14:2 (twin) — woven THREAD 1 prose
+--   v.4 (the workers of iniquity... who eat up my people as they eat bread: they have not called upon Elohim)
+--        NT:     none warranted distinct (carried by the THREAD 1 verdict frame)   Extras: none warranted   Tanakh: Psalm 14:4 (twin) — woven THREAD 1 prose
+--   ★ v.5 (There were they in great fear, where no fear was: for Elohim hath scattered the bones of him that encampeth against thee... Elohim hath despised them) — THE UNIQUE VARIANT (Psalm 14:5 reads instead "for Elohim is in the generation of the righteous")
+--        NT:     none warranted distinct   Extras: none warranted
+--        Tanakh: ★ Psalm 14:5 (the divergent twin reading — the distinct contribution of Psalm 53) — THREAD 2
+--   ★ v.6 (Oh that the salvation of Yashar'el were come out of Zion! When Elohim bringeth back the captivity of his people, Jacob shall rejoice, and Yashar'el shall be glad)
+--        NT:     Romans 11:26 (There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob) — THREAD 3 (load-bearing: the salvation out of Zion, the deliverance of all Yashar'el)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 31:33 (I will put my law in their inward parts, and write it in their hearts — the new-covenant cure for the none-righteous verdict, Torah on the heart NOT abolished); ★ Psalm 126:1 (When Yahuah turned again the captivity of Zion); Psalm 14:7 (twin) — THREAD 3
+--
+-- EXTRAS NOTE: none warranted across the whole psalm. Psalm 53 is the none-righteous / restoration psalm; the restored extra-canonical library carries no clean verse that quotes or doubles the *there is none that doeth good, no, not one* verdict or the *bringeth back the captivity* line. Weighed and deliberately declined — NOT forced. Every thread here is canon-only (NT + Tanakh laterals), so EVERY thread tier_required = 'free'.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous — NT (Romans 3:10,11,12) + Tanakh (Psalm 14:1, 14:3) [free] (★★ Paul quotes the psalm as the universal-sin verdict; the twin witness)
+--   2. psalm-53-there-were-they-in-great-fear-the-scattered-bones — Tanakh (Psalm 14:5) [free] (★ the unique variant of the twin — Psalm 53's distinct contribution)
+--   3. psalm-53-the-salvation-of-yasharel-out-of-zion-bring-back-the-captivity — NT (Romans 11:26) + Tanakh (Jeremiah 31:33, Psalm 126:1, Psalm 14:7) [free] (★ two-house restoration; the new covenant writes Torah on the heart, the cure for the verdict)
+--
+-- Framing notes:
+--   ★★ THE NONE-RIGHTEOUS VERDICT (THREAD 1) — *there is none that doeth good, no, not one* (53:3) is the Tanakh's own diagnosis that Paul lifts whole into Romans 3:10-12 to prove *both Yahudim (Jews) and Gentiles, that they are all under sin* (Romans 3:9). Framed strictly per the lens: this is the universal-sin diagnosis the Torah-on-the-heart new covenant ANSWERS, NOT a proof the Torah is abolished. Paul ends the same chapter *Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* (Romans 3:31) — the verdict stops every mouth so the heart-circumcision can begin, never to retire the commandment (1 John 2:3-4 filter). The Tanakh quotes the Tanakh AS the verdict; the New Testament reaches BACK here for the indictment.
+--   ★ THE UNIQUE VARIANT (THREAD 2) — Psalm 53:5 diverges from its twin: where Psalm 14:5 reads *There were they in great fear: for Elohim (God) is in the generation of the righteous*, Psalm 53:5 reads *There were they in great fear, where no fear was: for Elohim (God) hath scattered the bones of him that encampeth against thee; thou hast put them to shame, because Elohim (God) hath despised them*. The Elohim-edition twin sharpens the wicked's groundless terror and Elohim's scattering of the besieger — the distinct contribution of Psalm 53 over Psalm 14, threaded laterally as the twin-witness variant. Victims-not-enemies: the scattered "him that encampeth against thee" is the besieging foe of the covenant people, conduct-within-the-covenant judgment, never ethnic hatred.
+--   ★ THE RESTORATION CLOSE (THREAD 3) — *Oh that the salvation of Yashar'el (Israel) were come out of Zion! When Elohim (God) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar'el (Israel) shall be glad* (53:6). The none-righteous psalm does not end in despair but in the two-house ingathering — the salvation OUT OF ZION, the captivity brought back, Jacob/Yashar'el made glad. Paul reads it forward: *There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26), *and so all Yashar'el (Israel) shall be saved*. And the cure for the *none that doeth good* verdict is named in the new covenant: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the Torah moved INTO the heart, not abolished; the very answer to the corruption the psalm diagnosed. Psalm 126:1 sings the turned-back captivity laterally. Covenant-gathering, never false-inclusion (Red Line #2): the captivity of HIS PEOPLE brought back, the two houses regathered.
+--   VERSES WITH NO STANDALONE THREAD: v.2 and v.4 — carried in THREAD 1 prose (v.2 = Romans 3:11 "none that understandeth / seeketh"; v.4 the workers of iniquity who eat up my people, the body of the verdict). EXTRAS: none warranted anywhere in the psalm (weighed and declined).
+
+CREATE TEMP VIEW _s302_ps053_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The fool hath said... there is none that doeth good — the universal-sin verdict Paul quotes
+    ('canon','psalms',53,1,'canon','romans',3,10,'free',
+      E'*As it is written, There is none righteous, no, not one* (Romans 3:10). The psalm''s opening verdict — *The fool hath said in his heart, There is no Elohim (God). Corrupt are they, and have done abominable iniquity: there is none that doeth good* (Psalm 53:1) — is the very indictment Paul opens his catena with to prove *both Yahudim (Jews) and Gentiles, that they are all under sin* (Romans 3:9). The Tanakh supplies its own verdict; the apostle does not invent the charge but quotes it. And this universal diagnosis is the disease the new covenant answers by writing the Torah on the heart — never a proof the Torah is set aside, for Paul ends the same chapter *we establish the law* (Romans 3:31).'),
+    ('canon','psalms',53,1,'canon','romans',3,11,'free',
+      E'*There is none that understandeth, there is none that seeketh after Elohim (God)* (Romans 3:11). The psalm''s second verse — *Elohim (God) looked down from heaven upon the children of men, to see if there were any that did understand, that did seek Elohim (God)* (Psalm 53:2) — is the search Paul reports came up empty: *none that understandeth... none that seeketh after Elohim*. The heaven-down look of the psalm and the apostle''s verdict are one line; the corruption is universal, the cure must come from outside man.'),
+    ('canon','psalms',53,3,'canon','romans',3,12,'free',
+      E'*They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:12). Paul quotes Psalm 53:3 almost word for word — *Every one of them is gone back: they are altogether become filthy; there is none that doeth good, no, not one* (Psalm 53:3). The closing phrase is identical: *there is none that doeth good, no, not one*. The Tanakh''s own none-righteous verdict, lifted whole, stops every mouth and makes all the world guilty (Romans 3:19) — the indictment that drives to grace and to the Torah written on the heart, not away from it.'),
+    ('canon','psalms',53,1,'canon','psalms',14,1,'free',
+      E'*The fool hath said in his heart, There is no Elohim (God). They are corrupt, they have done abominable works, there is none that doeth good* (Psalm 14:1). Psalm 53 is the near-identical twin of Psalm 14, sung in the Elohim-edition: the same opening, *The fool hath said in his heart, There is no Elohim (God)* (Psalm 53:1). Two witnesses to one verdict — the corruption of man stated twice in the Psalter, that the none-righteous diagnosis stand established in the mouth of two psalms.'),
+    ('canon','psalms',53,3,'canon','psalms',14,3,'free',
+      E'*They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one* (Psalm 14:3). The twin psalm carries the same verdict David sings in Psalm 53:3 — *there is none that doeth good, no, not one*. The lateral witness doubles it: the corruption is total, every one gone aside, and it is THIS doubled Tanakh verdict that Paul gathers up into Romans 3 to prove all under sin.'),
+
+    -- THREAD 2 (★): There were they in great fear, where no fear was — the scattered bones (the unique variant)
+    ('canon','psalms',53,5,'canon','psalms',14,5,'free',
+      E'*There were they in great fear: for Elohim (God) is in the generation of the righteous* (Psalm 14:5). Here the twin psalms diverge, and Psalm 53 makes its distinct contribution: where Psalm 14:5 sets Elohim *in the generation of the righteous*, Psalm 53:5 reads *There were they in great fear, where no fear was: for Elohim (God) hath scattered the bones of him that encampeth against thee; thou hast put them to shame, because Elohim (God) hath despised them*. The Elohim-edition sharpens the picture — the wicked seized with groundless terror, the besieger''s bones scattered, the foe that encamps against the covenant people shamed and despised by Elohim. The two readings stand side by side, the variant the unique witness of the fifty-third psalm.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 3 (★): The salvation of Yashar'el out of Zion — bring back the captivity (separate INSERT to keep arity clean per band)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','psalms',53,6,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The psalm''s closing cry — *Oh that the salvation of Yashar''el (Israel) were come out of Zion! When Elohim (God) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 53:6) — is the very hope Paul declares fulfilled: the Deliverer comes *out of Sion*, turns ungodliness from Jacob, and *all Yashar''el shall be saved*. The none-righteous psalm does not end in the verdict but in the two-house ingathering — the salvation out of Zion, the captivity of HIS people brought back, covenant-gathering and never false-inclusion.'),
+    ('canon','psalms',53,6,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The psalm diagnosed *there is none that doeth good* (Psalm 53:3) and longed for *the salvation of Yashar''el (Israel)... out of Zion* (Psalm 53:6); the new covenant names the cure — the Torah moved INTO the inward parts, written on the heart of the same house of Yashar''el. The answer to the universal corruption is not the Torah abolished but the Torah indwelt; the captivity brought back is a people with the law in their hearts, *they shall be my people*.'),
+    ('canon','psalms',53,6,'canon','psalms',126,1,'free',
+      E'*When Yahuah (LORD) turned again the captivity of Zion, we were like them that dream* (Psalm 126:1). The Songs of Ascents sing laterally the very turn Psalm 53 longs for — *When Elohim (God) bringeth back the captivity of his people* (Psalm 53:6). The captivity turned again of Zion, the mouth filled with laughter, is the gladness of Jacob the fifty-third psalm reaches toward: the regathering of the covenant people out of their scattering.'),
+    ('canon','psalms',53,6,'canon','psalms',14,7,'free',
+      E'*Oh that the salvation of Yashar''el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 14:7). The twin psalm closes with the same restoration hope as Psalm 53:6, the Yahuah-edition wording beside the Elohim-edition. Two psalms that open with the none-righteous verdict both end in the salvation out of Zion and the captivity brought back — the diagnosis answered, in both witnesses, by the ingathering of the two-house people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous',
+       E'The fool hath said there is no Elohim — there is none that doeth good, no, not one',
+       E'Psalm 53 is the great none-righteous psalm, the Elohim-edition twin of Psalm 14: *The fool hath said in his heart, There is no Elohim (God). Corrupt are they, and have done abominable iniquity: there is none that doeth good* (Psalm 53:1). Elohim looks down to search for one who understands and seeks Him — *Elohim (God) looked down from heaven upon the children of men, to see if there were any that did understand, that did seek Elohim (God)* (Psalm 53:2) — and the search comes up empty: *Every one of them is gone back: they are altogether become filthy; there is none that doeth good, no, not one* (Psalm 53:3). This is the Tanakh''s own verdict on the children of men, and it is the verdict Paul lifts whole into Romans 3 to prove *both Yahudim (Jews) and Gentiles, that they are all under sin* (Romans 3:9): *As it is written, There is none righteous, no, not one: There is none that understandeth, there is none that seeketh after Elohim (God). They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:10-12). The closing phrase is identical to the psalm — *there is none that doeth good, no, not one*. And the doubling is built into the Psalter itself: the twin Psalm 14 sings the same charge — *The fool hath said in his heart, There is no Elohim (God)... there is none that doeth good* (Psalm 14:1), *there is none that doeth good, no, not one* (Psalm 14:3) — two witnesses to one verdict. The framework reads this exactly as Paul does: the universal-sin diagnosis stops every mouth (Romans 3:19) and drives man to the One who writes the Torah on the heart — NOT a proof the Torah is abolished. Paul himself closes the chapter, *Do we then make void the law through faith? Elohim (God) forbid: yea, we establish the law* (Romans 3:31). The verdict is the door to the cure, never the retirement of the commandment.',
+       sv.verse_id, ev.verse_id, 'free', 23300
+  FROM _s302_ps053_lookup sv, _s302_ps053_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=53 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-53-there-were-they-in-great-fear-the-scattered-bones',
+       E'There were they in great fear, where no fear was — the scattered bones (the variant of the twin)',
+       E'At verse 5 the twin psalms part, and Psalm 53 makes its single distinct contribution to the pair. Where Psalm 14:5 reads *There were they in great fear: for Elohim (God) is in the generation of the righteous* (Psalm 14:5), Psalm 53:5 reads instead *There were they in great fear, where no fear was: for Elohim (God) hath scattered the bones of him that encampeth against thee; thou hast put them to shame, because Elohim (God) hath despised them* (Psalm 53:5). The Elohim-edition sharpens the scene — the wicked seized with a terror *where no fear was*, a groundless dread that falls on the corrupt; and the besieger''s very bones scattered, *him that encampeth against thee* put to shame and despised by Elohim. Read as victims-not-enemies: the scattered foe is the one who *encampeth against* the covenant people, the conduct-within-the-covenant judgment on the besieger, never ethnic hatred — the same Elohim who finds none righteous also breaks the bones of the one who comes up against His own. This verse is why Psalm 53 stands alongside Psalm 14 and is not merely its copy: the two readings preserved side by side, the fifty-third psalm''s variant the unique witness, the divine scattering of the groundless-fearing foe.',
+       sv.verse_id, ev.verse_id, 'free', 23303
+  FROM _s302_ps053_lookup sv, _s302_ps053_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=53 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-53-the-salvation-of-yasharel-out-of-zion-bring-back-the-captivity',
+       E'Oh that the salvation of Yashar''el were come out of Zion — when Elohim bringeth back the captivity',
+       E'The none-righteous psalm does not end in the verdict but in restoration hope: *Oh that the salvation of Yashar''el (Israel) were come out of Zion! When Elohim (God) bringeth back the captivity of his people, Jacob shall rejoice, and Yashar''el (Israel) shall be glad* (Psalm 53:6). After the diagnosis that *there is none that doeth good* comes the longing for the salvation OUT OF ZION and the captivity of His people brought back — the two-house ingathering, Jacob made glad. Paul declares the hope fulfilled in the very terms of the psalm: *And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26) — the Deliverer *out of Sion*, ungodliness turned from Jacob, all Yashar''el saved. And the cure for the corruption the psalm named is spelled out in the new covenant: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The answer to *none that doeth good* is not the Torah abolished but the Torah indwelt — moved into the heart of the same house of Yashar''el, the very people whose captivity is brought back. The Songs of Ascents sing the turn laterally: *When Yahuah (LORD) turned again the captivity of Zion, we were like them that dream* (Psalm 126:1). And the twin closes the same way — *Oh that the salvation of Yashar''el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people* (Psalm 14:7) — both none-righteous psalms ending in the salvation out of Zion. Covenant-gathering, never false-inclusion: the captivity of HIS people brought back, the two houses regathered with the law written on their hearts.',
+       sv.verse_id, ev.verse_id, 'free', 23306
+  FROM _s302_ps053_lookup sv, _s302_ps053_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=53 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There is none righteous, no, not one* (Romans 3:10) — Paul opens his catena with the verdict of *there is none that doeth good* (53:1); the Tanakh''s own indictment to prove all under sin.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=1
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*There is none that understandeth, there is none that seeketh after Elohim (God)* (Romans 3:11) — the empty search of *to see if there were any that did understand, that did seek Elohim* (53:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=1
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there is none that doeth good, no, not one* (Romans 3:12) — Psalm 53:3 quoted almost word for word; the closing phrase identical, the verdict that stops every mouth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=3
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The fool hath said in his heart, There is no Elohim (God)... there is none that doeth good* (Psalm 14:1) — the twin psalm, the same opening verdict in the Yahuah-edition; two witnesses to one charge.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=1
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *there is none that doeth good, no, not one* (Psalm 14:3) — the twin doubles the verdict of 53:3; the doubled Tanakh charge Paul gathers into Romans 3.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=3
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-fool-hath-said-there-is-no-elohim-none-righteous'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *There were they in great fear: for Elohim (God) is in the generation of the righteous* (Psalm 14:5) — the twin''s divergent reading; Psalm 53:5 instead has the groundless terror and the scattered bones of the besieger, its unique variant.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=5
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-there-were-they-in-great-fear-the-scattered-bones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26) — the salvation out of Zion of 53:6 fulfilled; the Deliverer comes, all Yashar''el saved.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=6
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-salvation-of-yasharel-out-of-zion-bring-back-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the new-covenant cure for the *none that doeth good* verdict; the Torah indwelt, not abolished, in the same house of Yashar''el whose captivity is brought back.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=6
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-salvation-of-yasharel-out-of-zion-bring-back-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*When Yahuah (LORD) turned again the captivity of Zion, we were like them that dream* (Psalm 126:1) — the Songs of Ascents sing laterally the captivity brought back of 53:6.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=6
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=126 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-salvation-of-yasharel-out-of-zion-bring-back-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Oh that the salvation of Yashar''el (Israel) were come out of Zion! when Yahuah (LORD) bringeth back the captivity of his people* (Psalm 14:7) — the twin closes with the same restoration hope as 53:6; both none-righteous psalms end in the salvation out of Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps053_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=53 AND sv.verse_number=6
+  JOIN _s302_ps053_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-53-the-salvation-of-yasharel-out-of-zion-bring-back-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_87.sql (Psalm 87) -----
+-- Chapter: Psalm 87 — THE BORN-IN-ZION PSALM: "His foundation is in the holy mountains. Yahuah
+-- loveth the gates of Zion more than all the dwellings of Jacob"; "Glorious things are spoken of
+-- thee, O city of Elohim"; ★★ the nations named and registered as born in Zion — "I will make
+-- mention of Rahab and Babylon... behold Philistia, and Tyre, with Ethiopia; this man was born
+-- there"; "And of Zion it shall be said, This and that man was born in her: and the highest
+-- himself shall establish her"; "Yahuah shall count, when he writeth up the people, that this man
+-- was born there"; "all my springs are in thee." The roll of those born in Zion = the regathered
+-- two-house people + the gathering of the nations INTO covenant Zion (NOT replacement — those
+-- grafted are Yashar'el grown wild in the nations, returning) → the heavenly Jerusalem, the
+-- register of the citizens.
+-- Tag: ps087   Temp view: _s302_ps087_lookup
+-- Sort band: base 24150, step 3 -> threads at 24150, 24153, 24156, 24159, 24162 (5 threads)
+-- Source of EVERY row: 'canon','psalms',87,v
+--
+-- Psalm 87 coverage:
+--   v.1-3 (His foundation is in the holy mountains. Yahuah loveth the gates of Zion more than all
+--          the dwellings of Jacob. Glorious things are spoken of thee, O city of Elohim)
+--        NT:     none warranted distinct (the city-of-Elohim glory is carried FORWARD by the
+--                heavenly-Jerusalem weave in THREAD 2; held there, not duplicated)
+--        Extras: none warranted (no clean restored-witness on the foundation/city-of-Elohim
+--                bearing this without forcing; the Zion-laterals carry it)
+--        Tanakh: ★ Psalm 48:1-2,8 (Great is Yahuah in the city of our Elohim... mount Zion... the
+--                city of the great King; Elohim will establish it for ever); Psalm 46:4-5 (a river
+--                makes glad the city of Elohim... she shall not be moved) — THREAD 1
+--   ★★ v.4-6 (I will make mention of Rahab and Babylon to them that know me: behold Philistia,
+--          and Tyre, with Ethiopia; this man was born there. And of Zion it shall be said, This
+--          and that man was born in her... Yahuah shall count, when he writeth up the people,
+--          that this man was born there)
+--        NT:     ★★ Galatians 4:26 (Jerusalem which is above is free, which is the mother of us
+--                all); ★★ Hebrews 12:22-23 (the city of the living Elohim, the heavenly
+--                Jerusalem... the general assembly and church of the firstborn, which are written
+--                in heaven); Philippians 3:20 (our conversation is in heaven); Revelation 21:27
+--                (they which are written in the Lamb's book of life); Revelation 21:24 (the
+--                nations of them which are saved shall walk in the light of it) — THREAD 2
+--                (load-bearing: the register of those born in Zion = the citizens of the heavenly
+--                Jerusalem written in heaven)
+--        Extras: none warranted (no clean restored-witness on the born-in-Zion register without
+--                forcing; held in the NT + Tanakh ingathering weaves)
+--        Tanakh: ★ Isaiah 56:6-8 (the sons of the stranger that join themselves to Yahuah...
+--                will I gather... beside those that are gathered); ★ Zechariah 8:22-23 (many
+--                people and strong nations shall come... ten men shall take hold of the skirt of
+--                him that is a Yahudi); Psalm 86:9 (all nations whom thou hast made shall come and
+--                worship before thee) — THREAD 3 (the nations gathered INTO covenant Zion, the
+--                two-house ingathering, NOT replacement)
+--   v.5b (and the highest himself shall establish her)
+--        NT:     none warranted distinct (the establishment is the Most High's own work; the NT
+--                forward-weave is the heavenly city of THREAD 2)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 2:2-3 (the mountain of the LORD'S house shall be established in the top
+--                of the mountains... all nations shall flow unto it... out of Zion shall go forth
+--                the law) — THREAD 4 (the established mountain to which the nations flow)
+--   v.7 (As well the singers as the players on instruments shall be there: all my springs are in
+--          thee)
+--        NT:     ★ Revelation 22:1-2 (a pure river of water of life... the leaves of the tree
+--                were for the healing of the nations) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 46:4 (a river, the streams whereof shall make glad the city of Elohim);
+--                ★ Isaiah 12:3 (with joy shall ye draw water out of the wells of salvation) —
+--                THREAD 5 (all the springs are IN Zion — the city's living water)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim — Tanakh (Psalm 48, Psalm
+--      46) [free] (the foundation of Zion, the city of Elohim glorious above all dwellings)
+--   2. psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem — NT (Galatians, Hebrews,
+--      Philippians, Revelation) [free] (★★ those born in Zion = citizens of the heavenly Jerusalem
+--      written in heaven)
+--   3. psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion — Tanakh (Isaiah 56,
+--      Zechariah 8, Psalm 86) [free] (★ the nations gathered INTO covenant Zion, the two-house
+--      ingathering, never replacement)
+--   4. psalm-87-the-highest-himself-shall-establish-her — Tanakh (Isaiah 2) [free] (the established
+--      mountain of the LORD'S house to which all nations flow)
+--   5. psalm-87-all-my-springs-are-in-thee — NT (Revelation 22) + Tanakh (Psalm 46, Isaiah 12)
+--      [free] (the living springs of Zion; the river of the water of life, leaves for the nations)
+--
+-- Framing notes:
+--   ★ THE FOUNDATION / CITY OF ELOHIM (THREAD 1): *His foundation is in the holy mountains. Yahuah
+--      (LORD) loveth the gates of Zion more than all the dwellings of Jacob. Glorious things are
+--      spoken of thee, O city of Elohim (God)* (87:1-3). Bound to the close Zion-psalms: *Great is
+--      Yahuah (LORD)... in the city of our Elohim (God)... mount Zion... the city of the great King*
+--      (Psalm 48:1-2), *Elohim (God) will establish it for ever* (Psalm 48:8); and *a river, the
+--      streams whereof shall make glad the city of Elohim (God)... she shall not be moved* (Psalm
+--      46:4-5). The city is Yahuah's own founding, loved above all the dwellings of Jacob — the
+--      whole psalter sings the one city. Canon-only Tanakh laterals; no co-equal grammar, the
+--      founding is the Most High's.
+--   ★★ BORN IN ZION — THE HEAVENLY REGISTER (THREAD 2): the heart of the psalm — *Yahuah (LORD)
+--      shall count, when he writeth up the people, that this man was born there* (87:6); *of Zion it
+--      shall be said, This and that man was born in her* (87:5). This is the register of the citizens
+--      of Zion, and the NT lifts it to the heavenly Jerusalem: *Jerusalem which is above is free,
+--      which is the mother of us all* (Galatians 4:26) — the mother-city of the born-in-Zion people;
+--      *ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly
+--      Jerusalem... the general assembly and church of the firstborn, which are written in heaven*
+--      (Hebrews 12:22-23) — the names Yahuah writes up are written in heaven; *our conversation
+--      [citizenship] is in heaven* (Philippians 3:20); and the register''s end, *they which are
+--      written in the Lamb''s book of life* (Revelation 21:27), the city into which *the nations of
+--      them which are saved shall walk* (Revelation 21:24). The two-house lens WITHOUT replacement:
+--      the man "born there" though named from Rahab, Babylon, Philistia, Tyre, Ethiopia is Yashar''el
+--      (Israel) grown wild in the nations, gathered home and registered a citizen of Zion — not a new
+--      people supplanting the old, but the scattered house and the grafted-in counted together as
+--      born in the one mother-city.
+--   ★ THE NATIONS GATHERED INTO ZION (THREAD 3): *I will make mention of Rahab and Babylon... behold
+--      Philistia, and Tyre, with Ethiopia; this man was born there* (87:4). Read through the
+--      ingathering, never replacement: *the sons of the stranger, that join themselves to Yahuah
+--      (LORD)... will I bring to my holy mountain... mine house shall be called an house of prayer
+--      for all people* — *Yet will I gather others to him, beside those that are gathered* (Isaiah
+--      56:6-8); *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts)
+--      in Jerusalem... ten men shall take hold of the skirt of him that is a Yahudi (Jew)* (Zechariah
+--      8:22-23); *All nations whom thou hast made shall come and worship before thee* (Psalm 86:9).
+--      The nations named in the psalm are not Zion''s replacement but Zion''s gathered children — the
+--      outcasts of Yashar''el and the strangers joined to the covenant, born in the one city.
+--   THE HIGHEST ESTABLISH HER (THREAD 4): *and the highest himself shall establish her* (87:5b),
+--      woven to *the mountain of the LORD''S house shall be established in the top of the mountains...
+--      and all nations shall flow unto it... out of Zion shall go forth the law* (Isaiah 2:2-3). The
+--      establishing is the El Elyon''s (Most High''s) own act; the established mountain is the one to
+--      which the nations flow and from which the Torah goes forth — the same city the born-in-Zion
+--      register fills.
+--   ★ ALL MY SPRINGS ARE IN THEE (THREAD 5): *all my springs are in thee* (87:7). The living water
+--      is in Zion: *a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm
+--      46:4), *with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3); and carried
+--      FORWARD to the New Jerusalem, *a pure river of water of life, clear as crystal, proceeding out
+--      of the throne... the leaves of the tree were for the healing of the nations* (Revelation
+--      22:1-2) — the springs of Zion become the river of the water of life, the healing reaching the
+--      very nations registered as born there.
+--   EXTRAS: recorded as NONE WARRANTED across the chapter — deliberately weighed and declined, not
+--      silently skipped. No restored witness (1 Enoch, Jubilees, Jasher, the Apocrypha, the
+--      Pseudepigrapha, Adam-Eve, etc.) bears the foundation/city-of-Elohim, the born-in-Zion
+--      register, the nations-gathered, the establishment, or the springs without forcing; the
+--      load-bearing weaves are NT (the heavenly Jerusalem, the river of life) and Tanakh laterals
+--      (Psalm 48, Psalm 46, Isaiah 56, Zechariah 8, Psalm 86, Isaiah 2, Isaiah 12). All 5 threads
+--      are therefore [free] (every member canon).
+--   VERSES WITH NO ADD as a distinct gap: none — every verse-block (v.1-3, v.4-6, v.5b, v.7) is
+--      carried by a thread. The Selah marks and v.5a/v.6 are folded into THREADS 2/3.
+
+CREATE TEMP VIEW _s302_ps087_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: His foundation in the holy mountains — the city of Elohim
+    ('canon','psalms',87,1,'canon','psalms',48,1,'free',
+      E'*Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness* (Psalm 48:1). The foundation of the psalm — *His foundation is in the holy mountains* (Psalm 87:1) — is sung again in Psalm 48: the city of our Elohim set in the mountain of His holiness. The same holy mountains, the same one city of Yahuah.'),
+    ('canon','psalms',87,2,'canon','psalms',48,2,'free',
+      E'*Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King* (Psalm 48:2). *Yahuah (LORD) loveth the gates of Zion more than all the dwellings of Jacob* (Psalm 87:2) — and Zion is *the city of the great King*, the joy of the whole earth. The gates Yahuah loves are the gates of the great King''s own city.'),
+    ('canon','psalms',87,3,'canon','psalms',48,8,'free',
+      E'*As we have heard, so have we seen in the city of Yahuah Tseva''ot (LORD of hosts), in the city of our Elohim (God): Elohim (God) will establish it for ever* (Psalm 48:8). The *glorious things... spoken of thee, O city of Elohim (God)* (Psalm 87:3) are the glory Psalm 48 has seen: the city of Yahuah of hosts that *Elohim will establish for ever*. The glory spoken of Zion is the glory of the everlasting city.'),
+    ('canon','psalms',87,1,'canon','psalms',46,4,'free',
+      E'*There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4). *His foundation is in the holy mountains* (Psalm 87:1) — the city of Elohim, the holy place of the Most High''s tabernacles, gladdened by the river. The same city of Elohim, founded by Yahuah in His holy mountains.'),
+    ('canon','psalms',87,1,'canon','psalms',46,5,'free',
+      E'*Elohim (God) is in the midst of her; she shall not be moved: Elohim (God) shall help her, and that right early* (Psalm 46:5). Because *His foundation is in the holy mountains* (Psalm 87:1), the city *shall not be moved* — Elohim Himself is in the midst of her. The unshakeable founding of Zion is that the Most High dwells within her.'),
+
+    -- THREAD 2 (★★): Born in Zion — the register of the heavenly Jerusalem
+    ('canon','psalms',87,6,'canon','galatians',4,26,'free',
+      E'*But Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26). The psalm registers the people born in Zion — *Yahuah (LORD) shall count, when he writeth up the people, that this man was born there* (Psalm 87:6); Sha''ul (Paul) names the mother-city in which they are born: *Jerusalem which is above... the mother of us all*. The roll of those born in Zion is the roll of the free city''s children.'),
+    ('canon','psalms',87,5,'canon','hebrews',12,22,'free',
+      E'*But ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem, and to an innumerable company of angels* (Hebrews 12:22). *Of Zion it shall be said, This and that man was born in her* (Psalm 87:5) — and the writer to the Hebrews names where the born-in-Zion come: *mount Sion... the city of the living Elohim, the heavenly Jerusalem*. The Zion of the psalm is the heavenly Jerusalem to which the people are gathered.'),
+    ('canon','psalms',87,6,'canon','hebrews',12,23,'free',
+      E'*To the general assembly and church of the firstborn, which are written in heaven, and to Elohim (God) the Judge of all, and to the spirits of just men made perfect* (Hebrews 12:23). The register Yahuah keeps — *Yahuah (LORD) shall count, when he writeth up the people, that this man was born there* (Psalm 87:6) — is the *church of the firstborn, which are written in heaven*. The names Yahuah writes up of those born in Zion are the names written in heaven.'),
+    ('canon','psalms',87,6,'canon','philippians',3,20,'free',
+      E'*For our conversation is in heaven; from whence also we look for the Saviour, the Lord Yahusha HaMashiach (Lord Jesus Christ)* (Philippians 3:20). To be counted *born there* (Psalm 87:6) in Zion is to hold citizenship in heaven — *our conversation [citizenship] is in heaven*. The man written up as born in Zion is the citizen whose home-city is above.'),
+    ('canon','psalms',87,6,'canon','revelation',21,27,'free',
+      E'*And there shall in no wise enter into it any thing that defileth... but they which are written in the Lamb''s book of life* (Revelation 21:27). The people Yahuah *writeth up* as *born there* (Psalm 87:6) are *they which are written in the Lamb''s book of life* — the same register, the citizens of the holy city who alone enter in. The roll of the born-in-Zion is the book of life of the new Jerusalem.'),
+    ('canon','psalms',87,4,'canon','revelation',21,24,'free',
+      E'*And the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it* (Revelation 21:24). The nations the psalm names as born in Zion — *Rahab and Babylon... Philistia, and Tyre, with Ethiopia; this man was born there* (Psalm 87:4) — are *the nations of them which are saved* that walk in the light of the holy city. The peoples mentioned are gathered into the city, not shut out of it.'),
+
+    -- THREAD 3 (★): The nations mentioned and born there — gathered INTO Zion
+    ('canon','psalms',87,4,'canon','isaiah',56,6,'free',
+      E'*Also the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD), to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). The psalm names Rahab, Babylon, Philistia, Tyre, Ethiopia as *born there* (Psalm 87:4) — the *sons of the stranger that join themselves to Yahuah*, keeping the sabbath and taking hold of the covenant. The nations gathered in are covenant-joined, never replacing but joining.'),
+    ('canon','psalms',87,4,'canon','isaiah',56,7,'free',
+      E'*Even them will I bring to my holy mountain, and make them joyful in my house of prayer... for mine house shall be called an house of prayer for all people* (Isaiah 56:7). *This man was born there* (Psalm 87:4) — the stranger brought *to my holy mountain*, Yahuah''s house a house of prayer *for all people*. The nations are born in Zion because Yahuah brings them to His holy mountain and makes them His.'),
+    ('canon','psalms',87,5,'canon','isaiah',56,8,'free',
+      E'*Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8). *Of Zion it shall be said, This and that man was born in her* (Psalm 87:5) — Yahuah who gathers *the outcasts of Yashar''el (Israel)* gathers *others to him, beside those* already gathered. The two-house ingathering and the nations joined are one gathering into Zion, never a substitute people.'),
+    ('canon','psalms',87,4,'canon','zechariah',8,22,'free',
+      E'*Yea, many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD)* (Zechariah 8:22). The psalm''s muster of the nations born in Zion — *Rahab and Babylon... Philistia, and Tyre, with Ethiopia* (Psalm 87:4) — is the coming of *many people and strong nations* to seek Yahuah in Jerusalem. The nations flow to the city, not against it.'),
+    ('canon','psalms',87,4,'canon','zechariah',8,23,'free',
+      E'*In those days... ten men shall take hold out of all languages of the nations, even shall take hold of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have heard that Elohim (God) is with you* (Zechariah 8:23). The nations *born there* (Psalm 87:4) are the *ten men... out of all languages* who take hold of the skirt of Yahudah (Judah) to go with the covenant people — grafted in to Yashar''el (Israel), gathered into the one city, never replacing her.'),
+    ('canon','psalms',87,5,'canon','psalms',86,9,'free',
+      E'*All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord); and shall glorify thy name* (Psalm 86:9). *Of Zion it shall be said, This and that man was born in her* (Psalm 87:5) — for *all nations whom thou hast made shall come and worship* before Yahuah. The made nations come to the city to be counted among the born-in-Zion who glorify His name.'),
+
+    -- THREAD 4: The highest himself shall establish her
+    ('canon','psalms',87,5,'canon','isaiah',2,2,'free',
+      E'*And it shall come to pass in the last days, that the mountain of the LORD''S house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it* (Isaiah 2:2). *The highest himself shall establish her* (Psalm 87:5) — the *mountain of the LORD''S house shall be established in the top of the mountains*, the El Elyon''s (Most High''s) own act, and *all nations shall flow unto it*. The established city is the mountain to which the gathered nations flow.'),
+    ('canon','psalms',87,5,'canon','isaiah',2,3,'free',
+      E'*Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob... for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). The city *the highest himself shall establish* (Psalm 87:5) is the mountain the nations go up to — and *out of Zion shall go forth the law*. The established Zion is the source of Yahuah''s Torah to the nations gathered in, the Torah never abolished but going forth.'),
+
+    -- THREAD 5 (★): All my springs are in thee
+    ('canon','psalms',87,7,'canon','psalms',46,4,'free',
+      E'*There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4). *All my springs are in thee* (Psalm 87:7) — the springs of Zion are the *river... whereof shall make glad the city of Elohim*. All the living water is found in the one city; the springs and the gladdening river are Zion''s own.'),
+    ('canon','psalms',87,7,'canon','isaiah',12,3,'free',
+      E'*Therefore with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3). *All my springs are in thee* (Psalm 87:7) — and the inhabitant of Zion *with joy shall... draw water out of the wells of salvation*. The springs of the psalm are the wells of salvation drawn in the city where the Holy One of Yashar''el (Israel) dwells.'),
+    ('canon','psalms',87,7,'canon','revelation',22,1,'free',
+      E'*And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). *All my springs are in thee* (Psalm 87:7) is carried forward to the new Jerusalem: *a pure river of water of life... proceeding out of the throne*. The springs of Zion become the river of the water of life flowing from the throne in the holy city.'),
+    ('canon','psalms',87,7,'canon','revelation',22,2,'free',
+      E'*In the midst of the street of it... was there the tree of life... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). *All my springs are in thee* (Psalm 87:7) — and the river of the city feeds the tree whose *leaves... were for the healing of the nations*. The springs of Zion reach the very nations named as born there (Psalm 87:4); the living water of the city heals the gathered peoples.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim',
+       E'His foundation is in the holy mountains — the city of Elohim',
+       E'The psalm opens on the founding of Zion: *His foundation is in the holy mountains. Yahuah (LORD) loveth the gates of Zion more than all the dwellings of Jacob. Glorious things are spoken of thee, O city of Elohim (God)* (Psalm 87:1-3). Yahuah Himself founded the city and loves her gates above every other dwelling — and the close Zion-psalms sing the same one city. *Great is Yahuah (LORD), and greatly to be praised in the city of our Elohim (God), in the mountain of his holiness* (Psalm 48:1) — *Beautiful for situation, the joy of the whole earth, is mount Zion, on the sides of the north, the city of the great King* (Psalm 48:2) — and *Elohim (God) will establish it for ever* (Psalm 48:8). The glorious things spoken of Zion are the glory Psalm 48 has seen in the everlasting city. And the living water is hers: *There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4), *Elohim (God) is in the midst of her; she shall not be moved* (Psalm 46:5). Because the Most High dwells within her and founded her in His holy mountains, the city cannot be moved — the one city of Yahuah, loved above all the dwellings of Jacob.',
+       sv.verse_id, ev.verse_id, 'free', 24150
+  FROM _s302_ps087_lookup sv, _s302_ps087_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=87 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem',
+       E'Born in Zion — the register of the heavenly Jerusalem',
+       E'The heart of the psalm is a census kept by Yahuah Himself: *And of Zion it shall be said, This and that man was born in her: and the highest himself shall establish her* (Psalm 87:5), *Yahuah (LORD) shall count, when he writeth up the people, that this man was born there* (Psalm 87:6). Zion is the mother-city, and the names of those born in her are written up by Yahuah. The New Testament lifts this register to the heavenly Jerusalem. *But Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26) — the mother-city of the born-in-Zion people. *But ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem, and to an innumerable company of angels* (Hebrews 12:22), *to the general assembly and church of the firstborn, which are written in heaven* (Hebrews 12:23): the people Yahuah writes up of those born in Zion are the firstborn whose names are written in heaven. *For our conversation [citizenship] is in heaven* (Philippians 3:20) — to be born in Zion is to hold citizenship above. And the register''s end is the Lamb''s book of life: *they which are written in the Lamb''s book of life* (Revelation 21:27) alone enter the holy city, into which *the nations of them which are saved shall walk in the light of it* (Revelation 21:24). Read through the two houses without replacement: the man "born there" though named from Rahab, Babylon, Philistia, Tyre, and Ethiopia (Psalm 87:4) is Yashar''el (Israel) grown wild in the nations, gathered home and counted a citizen of Zion — the scattered house and the grafted-in registered together as born in the one mother-city, never a new people supplanting the old.',
+       sv.verse_id, ev.verse_id, 'free', 24153
+  FROM _s302_ps087_lookup sv, _s302_ps087_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=87 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion',
+       E'Rahab and Babylon, Philistia and Tyre — the nations gathered into Zion',
+       E'The psalm calls a strange roll: *I will make mention of Rahab and Babylon to them that know me: behold Philistia, and Tyre, with Ethiopia; this man was born there* (Psalm 87:4). The old enemies are named — and named as *born there*, in Zion. Read through the ingathering, never replacement: the prophets foretell exactly this gathering of the nations INTO the covenant city. *Also the sons of the stranger, that join themselves to Yahuah (LORD)... to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6) — *Even them will I bring to my holy mountain... for mine house shall be called an house of prayer for all people* (Isaiah 56:7); and the One who does it is *Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel)... Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8) — the two-house ingathering of the outcasts and the nations joined are one gathering. So too Zechariah: *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zechariah 8:22), *ten men shall take hold out of all languages of the nations, even shall take hold of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have heard that Elohim (God) is with you* (Zechariah 8:23). And the psalter agrees: *All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord); and shall glorify thy name* (Psalm 86:9). The nations named in the psalm are not Zion''s replacement but Zion''s gathered children — the covenant-joined strangers and the scattered house of Yashar''el grown wild, born in the one city.',
+       sv.verse_id, ev.verse_id, 'free', 24156
+  FROM _s302_ps087_lookup sv, _s302_ps087_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=87 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-87-the-highest-himself-shall-establish-her',
+       E'The highest himself shall establish her — the mountain the nations flow to',
+       E'*And of Zion it shall be said, This and that man was born in her: and the highest himself shall establish her* (Psalm 87:5). The founding of the city is not man''s work but the El Elyon''s (Most High''s) own act — *the highest himself shall establish her* — and Isaiah sings the established mountain to which the nations come: *And it shall come to pass in the last days, that the mountain of the LORD''S house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it* (Isaiah 2:2). The same nations the psalm names as born in Zion (Psalm 87:4) are the *all nations* that flow unto the established mountain. And the city the Most High establishes is the source of His instruction: *Come ye, and let us go up to the mountain of Yahuah (LORD)... for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). The established Zion sends forth the Torah — never abolished but going out to the gathered nations — the city the Most High Himself founds and fills.',
+       sv.verse_id, ev.verse_id, 'free', 24159
+  FROM _s302_ps087_lookup sv, _s302_ps087_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=87 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-87-all-my-springs-are-in-thee',
+       E'All my springs are in thee — the living water of Zion',
+       E'The psalm ends at the city''s living water: *As well the singers as the players on instruments shall be there: all my springs are in thee* (Psalm 87:7). Every spring of life is found in Zion. The psalter sings it: *There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4); and the prophet: *Therefore with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3), the wells drawn by the inhabitant of Zion where the Holy One of Yashar''el (Israel) dwells. And the springs are carried forward to the new Jerusalem: *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) — *and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The springs of Zion become the river of the water of life flowing from the throne, and the living water reaches the very nations named as born there (Psalm 87:4) — the city''s springs healing the gathered peoples.',
+       sv.verse_id, ev.verse_id, 'free', 24162
+  FROM _s302_ps087_lookup sv, _s302_ps087_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=87 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Great is Yahuah (LORD)... in the city of our Elohim (God), in the mountain of his holiness* (Psalm 48:1) — the foundation in the holy mountains (87:1) is the city of our Elohim set in the mountain of holiness.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=1
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=48 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*mount Zion, on the sides of the north, the city of the great King* (Psalm 48:2) — the gates Yahuah loves (87:2) are the gates of the great King''s city, the joy of the whole earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=2
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=48 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in the city of our Elohim (God): Elohim (God) will establish it for ever* (Psalm 48:8) — the glorious things spoken of the city of Elohim (87:3) are the glory of the everlasting city Yahuah establishes.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=3
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=48 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4) — the foundation in the holy mountains (87:1) is the city of Elohim gladdened by the river of the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=1
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Elohim (God) is in the midst of her; she shall not be moved* (Psalm 46:5) — because the foundation is in the holy mountains (87:1) and the Most High dwells within, the city cannot be moved.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=1
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-his-foundation-in-the-holy-mountains-the-city-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26) — the people written up as born in Zion (87:6) are the children of the free mother-city, Jerusalem above.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=6
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *ye are come unto mount Sion... the city of the living Elohim (God), the heavenly Jerusalem* (Hebrews 12:22) — the Zion where men are said to be born (87:5) is the heavenly Jerusalem to which the people are gathered.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=5
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the church of the firstborn, which are written in heaven* (Hebrews 12:23) — the register Yahuah writes up of those born in Zion (87:6) is the firstborn written in heaven.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=6
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*our conversation [citizenship] is in heaven* (Philippians 3:20) — to be counted born in Zion (87:6) is to hold citizenship in the city above.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=6
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they which are written in the Lamb''s book of life* (Revelation 21:27) — the people Yahuah writeth up as born there (87:6) are written in the Lamb''s book of life, who alone enter the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=6
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the nations of them which are saved shall walk in the light of it* (Revelation 21:24) — the nations named as born there (87:4) walk in the light of the holy city, gathered in, not shut out.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-born-in-zion-the-register-of-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the sons of the stranger, that join themselves to Yahuah (LORD)... every one that keepeth the sabbath... and taketh hold of my covenant* (Isaiah 56:6) — the nations born there (87:4) are the strangers covenant-joined, sabbath-keeping, never replacing but joining.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Even them will I bring to my holy mountain... mine house shall be called an house of prayer for all people* (Isaiah 56:7) — this man born there (87:4) is the stranger Yahuah brings to His holy mountain, His house a house of prayer for all people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *which gathereth the outcasts of Yashar''el (Israel)... Yet will I gather others to him, beside those that are gathered* (Isaiah 56:8) — of Zion it is said men are born in her (87:5); the two-house ingathering and the nations joined are one gathering, never a substitute people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=5
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zechariah 8:22) — the nations of 87:4 come to seek Yahuah in the city, flowing to her, not against her.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*ten men shall take hold... of the skirt of him that is a Yahudi (Jew), saying, We will go with you* (Zechariah 8:23) — the nations born there (87:4) are grafted in to Yashar''el, taking hold of Yahudah''s skirt, gathered into the one city.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=4
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*All nations whom thou hast made shall come and worship before thee, O Yahuah (Lord)* (Psalm 86:9) — of Zion it is said men are born in her (87:5); the made nations come to the city to worship and be counted among the born-in-Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=5
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-nations-mentioned-and-born-there-gathered-into-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the mountain of the LORD''S house shall be established in the top of the mountains... and all nations shall flow unto it* (Isaiah 2:2) — the highest establishes her (87:5); the established mountain is the one to which all the gathered nations flow.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=5
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-highest-himself-shall-establish-her'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3) — the city the highest establishes (87:5) sends forth the Torah to the gathered nations, the law never abolished but going out.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=5
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-the-highest-himself-shall-establish-her'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4) — all the springs are in Zion (87:7); the city''s living water is the river that gladdens the city of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=7
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-all-my-springs-are-in-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*with joy shall ye draw water out of the wells of salvation* (Isaiah 12:3) — the springs of Zion (87:7) are the wells of salvation drawn with joy in the city of the Holy One of Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=7
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-all-my-springs-are-in-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) — the springs of Zion (87:7) become the river of the water of life flowing from the throne in the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=7
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-all-my-springs-are-in-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the leaves of the tree were for the healing of the nations* (Revelation 22:2) — the springs of Zion (87:7) reach the very nations named as born there (87:4); the city''s living water heals the gathered peoples.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps087_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=87 AND sv.verse_number=7
+  JOIN _s302_ps087_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-87-all-my-springs-are-in-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
