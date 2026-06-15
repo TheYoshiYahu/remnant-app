@@ -31454,6 +31454,2157 @@ SELECT t.id, cr.id, 6, E'*a broken and a contrite heart, O Elohim (God), thou wi
  WHERE t.slug='psalm-66-if-i-regard-iniquity-in-my-heart-yahuah-will-not-hear'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_67.sql (Psalm 67) -----
+-- Chapter: Psalm 67 — THE MISSIONARY / AARONIC-BLESSING PSALM. Israel prays the priestly
+-- benediction over herself and turns it outward: the blessing on the covenant people becomes the
+-- saving health of all the nations — the nations brought IN with Israel, never replacing her.
+-- ★ v.1 *Elohim (God) be merciful unto us, and bless us; and cause his face to shine upon us* is
+-- the Aaronic blessing prayed corporately (Numbers 6:24-26, the Torah liturgy affirmed, the Name
+-- put upon the children of Yashar'el). ★★ KEYSTONE vv.2-4 *That thy way may be known upon earth,
+-- thy saving health among all nations... Let the people praise thee... O let the nations be glad
+-- and sing for joy* is the all-nations-blessed-through-the-seed weave — the Abrahamic promise
+-- (Genesis 12:3 / 22:18), the light-to-the-Gentiles servant (Isaiah 49:6 / Acts 13:47), and Paul's
+-- catena of the nations praising WITH his people (Romans 15:9-11), sealed by the restored Tobit
+-- (13:11 nations come from far to the Name). Two-house, Romans 11:1-2 guard, NOT replacement.
+-- ★ v.6 *Then shall the earth yield her increase; and Elohim (God)... shall bless us* is the
+-- harvest blessing of the land (Leviticus 26:4 / Psalm 85:12). v.7 *all the ends of the earth shall
+-- fear him* is the ingathering of the ends-of-earth (Psalm 22:27 / Isaiah 45:22 / Tobit 13:5).
+-- Tag: ps067   Temp view: _s302_ps067_lookup
+-- Sort band: base 23650, step 3 -> threads at 23650, 23653, 23656, 23659 (4 threads)
+-- Source of EVERY row: 'canon','psalms',67,v
+--
+-- Psalm 67 coverage:
+--   ★ v.1 (Elohim (God) be merciful unto us, and bless us; and cause his face to shine upon us)
+--        NT:     none warranted (the Aaronic-blessing root is carried clean by the Torah witness)
+--        Extras: none warranted (weighed; Numbers 6 is the direct liturgy quoted)
+--        Tanakh: ★ Numbers 6:24-26 (Yahuah (LORD) bless thee, and keep thee... make his face shine
+--                upon thee... lift up his countenance upon thee) + Numbers 6:27 (they shall put my
+--                name upon the children of Yashar'el; and I will bless them) — THREAD 1
+--   ★★ vv.2-5 (That thy way may be known upon earth, thy saving health among all nations... Let
+--        the people praise thee... O let the nations be glad and sing for joy: for thou shalt judge
+--        the people righteously, and govern the nations upon earth)
+--        NT:     ★★ Acts 13:47 (I have set thee to be a light of the Gentiles... salvation unto the
+--                ends of the earth), ★★ Romans 15:9 (the Gentiles might glorify Elohim for his mercy),
+--                ★★ Romans 15:10 (Rejoice, ye Gentiles, with his people), ★★ Romans 15:11 (Praise
+--                Yahuah (Lord), all ye Gentiles; and laud him, all ye people) — Paul's catena, the
+--                nations praising WITH his people — THREAD 2 (load-bearing keystone)
+--        Extras: ★ Tobit 13:11 (Many nations shall come from far to the name of Yahuah (God) with
+--                gifts... all generations shall praise you) — THREAD 2
+--        Tanakh: ★ Genesis 12:3 (in thee shall all families of the earth be blessed), ★ Genesis
+--                22:18 (in thy seed shall all the nations of the earth be blessed), ★ Isaiah 49:6
+--                (I will also give thee for a light to the Gentiles... my salvation unto the end of
+--                the earth) — THREAD 2
+--   ★ v.6 (Then shall the earth yield her increase; and Elohim (God), even our own Elohim (God),
+--        shall bless us)
+--        NT:     none warranted (the land-increase covenant blessing is a Torah/psalter weave)
+--        Extras: none warranted (weighed; Leviticus 26 + Psalm 85 carry it clean)
+--        Tanakh: ★ Leviticus 26:4 (the land shall yield her increase, and the trees of the field
+--                shall yield their fruit — the obedience-blessing), Psalm 85:12 (Yahuah (LORD) shall
+--                give that which is good; and our land shall yield her increase) — THREAD 3
+--   ★ v.7 (Elohim (God) shall bless us; and all the ends of the earth shall fear him)
+--        NT:     none warranted as a separate add (the ends-of-earth-turning forward weave is
+--                gathered under THREAD 2's catena; v.7 is the ingathering close)
+--        Extras: ★ Tobit 13:5 (will gather us out of all nations, among whom he has scattered us —
+--                the two-house ingathering) — THREAD 4
+--        Tanakh: ★ Psalm 22:27 (All the ends of the world shall remember and turn unto Yahuah
+--                (LORD)... all the kindreds of the nations shall worship before thee), ★ Isaiah 45:22
+--                (Look unto me, and be ye saved, all the ends of the earth) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. psalm-67-cause-his-face-to-shine-upon-us-the-aaronic-blessing — Tanakh (Numbers 6) [free]
+--      (★ v.1 is the priestly benediction prayed corporately; the Name put upon Yashar'el)
+--   2. psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed — NT (Acts 13, Romans 15)
+--      + Extras (Tobit 13) + Tanakh (Genesis 12, Genesis 22, Isaiah 49) [extras]
+--      (★★ KEYSTONE: all-nations-blessed-through-the-seed; the nations praise WITH his people, NOT replacement)
+--   3. psalm-67-then-shall-the-earth-yield-her-increase — Tanakh (Leviticus 26, Psalm 85) [free]
+--      (★ v.6 the harvest/blessing-of-the-land covenant promise)
+--   4. psalm-67-all-the-ends-of-the-earth-shall-fear-him — Extras (Tobit 13) + Tanakh (Psalm 22, Isaiah 45)
+--      [extras] (★ v.7 the ingathering of the ends-of-earth; the scattered gathered out of all nations)
+--
+-- Framing notes:
+--   ★ THE AARONIC BLESSING (THREAD 1): *Elohim (God) be merciful unto us, and bless us; and cause
+--      his face to shine upon us* (67:1) is the priestly benediction turned into the people's own
+--      prayer — *Yahuah (LORD) bless thee, and keep thee: Yahuah (LORD) make his face shine upon
+--      thee, and be gracious unto thee: Yahuah (LORD) lift up his countenance upon thee, and give
+--      thee peace* (Numbers 6:24-26) — and the Torah seals it as Yahuah's own act: *they shall put
+--      my name upon the children of Yashar'el (Israel); and I will bless them* (Numbers 6:27). The
+--      Torah liturgy is alive, not abolished; the blessing the congregation prays is the blessing
+--      the priests are commanded to speak, the Name laid upon the covenant people.
+--   ★★ SAVING HEALTH AMONG ALL NATIONS (THREAD 2): the keystone weave — *That thy way may be known
+--      upon earth, thy saving health among all nations. Let the people praise thee, O Elohim (God);
+--      let all the people praise thee. O let the nations be glad and sing for joy* (67:2-4). This is
+--      the Abrahamic promise unfolding: *in thee shall all families of the earth be blessed*
+--      (Genesis 12:3), *in thy seed shall all the nations of the earth be blessed* (Genesis 22:18) —
+--      the blessing reaches the nations THROUGH the seed, never around Israel. Isaiah names the
+--      servant who carries it: *I will also give thee for a light to the Gentiles, that thou mayest
+--      be my salvation unto the end of the earth* (Isaiah 49:6), the very word Paul takes up
+--      (Acts 13:47). And Paul's Romans catena makes the two-house frame explicit — the nations do
+--      not replace the people, they praise WITH them: *Rejoice, ye Gentiles, with his people*
+--      (Romans 15:10), *Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people*
+--      (Romans 15:11). The restored Tobit sings the same ingathering: *Many nations shall come from
+--      far to the name of Yahuah (God) with gifts in their hands* (Tobit 13:11). (Romans 11:1-2
+--      guard: Yahuah has not cast away his people — the nations are brought in, the root is not torn up.)
+--   ★ THE EARTH YIELDS HER INCREASE (THREAD 3): *Then shall the earth yield her increase; and
+--      Elohim (God), even our own Elohim (God), shall bless us* (67:6). This is the covenant
+--      land-blessing of the Torah — *If ye walk in my statutes, and keep my commandments, and do
+--      them... the land shall yield her increase, and the trees of the field shall yield their
+--      fruit* (Leviticus 26:3-4) — the same promise the psalter renews: *Yahuah (LORD) shall give
+--      that which is good; and our land shall yield her increase* (Psalm 85:12). The harvest follows
+--      the walk in His statutes; the blessing on the land is the seal of the covenant kept.
+--   ★ ALL THE ENDS OF THE EARTH SHALL FEAR HIM (THREAD 4): *Elohim (God) shall bless us; and all
+--      the ends of the earth shall fear him* (67:7). The ingathering reaches the farthest peoples —
+--      *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds
+--      of the nations shall worship before thee* (Psalm 22:27); *Look unto me, and be ye saved, all
+--      the ends of the earth* (Isaiah 45:22). And the restored Tobit names the scattered gathered
+--      home: *he will scourge us for our iniquities, and will have mercy again, and will gather us
+--      out of all nations, among whom he has scattered us* (Tobit 13:5) — the two-house ingathering,
+--      the dispersed brought back as the nations themselves come to fear Him.
+--   VERSES WITH NO SEPARATE ADD: v.5 (Let the people praise thee, O Elohim; let all the people
+--      praise thee) is the refrain repeating v.3 — folded into THREAD 2; the Selah markers carry no
+--      separate weave. The chapter's framework weight sits on vv.1, 2-4, 6, 7, all woven above.
+
+CREATE TEMP VIEW _s302_ps067_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Cause his face to shine upon us — the Aaronic blessing
+    ('canon','psalms',67,1,'canon','numbers',6,24,'free',
+      E'*Yahuah (LORD) bless thee, and keep thee* (Numbers 6:24). *Elohim (God) be merciful unto us, and bless us; and cause his face to shine upon us* (Psalm 67:1): the psalm prays the priestly benediction over the congregation — the blessing and the keeping the priests are commanded to speak become the people''s own cry. The Torah liturgy is alive, not abolished.'),
+    ('canon','psalms',67,1,'canon','numbers',6,25,'free',
+      E'*Yahuah (LORD) make his face shine upon thee, and be gracious unto thee* (Numbers 6:25). *Cause his face to shine upon us* (Psalm 67:1): the psalm quotes the heart of the Aaronic blessing word for word — the shining face of Yahuah, His grace upon His people. What the priests pronounce, the congregation prays back.'),
+    ('canon','psalms',67,1,'canon','numbers',6,26,'free',
+      E'*Yahuah (LORD) lift up his countenance upon thee, and give thee peace* (Numbers 6:26). *Elohim (God) be merciful unto us, and bless us; and cause his face to shine upon us* (Psalm 67:1): the lifted countenance and the peace complete the benediction the psalm takes up — mercy, blessing, the shining face, the peace of Yahuah upon Yashar''el (Israel).'),
+    ('canon','psalms',67,1,'canon','numbers',6,27,'free',
+      E'*And they shall put my name upon the children of Yashar''el (Israel); and I will bless them* (Numbers 6:27). *Elohim (God)... bless us; and cause his face to shine upon us* (Psalm 67:1): the Torah seals the blessing as Yahuah''s own act — the Name laid upon the covenant people, and He Himself the One who blesses. The benediction the psalm prays is the blessing Yahuah commanded and performs.'),
+
+    -- THREAD 2 (★★): Thy saving health among all nations — blessed through the seed
+    ('canon','psalms',67,2,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). *That thy way may be known upon earth, thy saving health among all nations* (Psalm 67:2): the saving health reaching all nations is the Abrahamic promise unfolding — all the families of the earth blessed in Abraham, the blessing flowing THROUGH the covenant seed, never around it.'),
+    ('canon','psalms',67,2,'canon','genesis',22,18,'free',
+      E'*And in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18). *Thy saving health among all nations* (Psalm 67:2): the oath sworn at Moriah names the channel — *in thy seed* shall all the nations be blessed. The psalm prays the very promise: the nations reached, but through the seed of Abraham, the covenant line.'),
+    ('canon','psalms',67,2,'canon','isaiah',49,6,'free',
+      E'*It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). *That thy way may be known upon earth, thy saving health among all nations* (Psalm 67:2): the servant first raises the tribes of Jacob and restores Yashar''el, THEN is given as a light to the nations — the restoration of the two houses and the saving health to the nations are one work, not a replacement of the one by the other.'),
+    ('canon','psalms',67,2,'canon','acts',13,47,'free',
+      E'*For so hath Yahuah (Lord) commanded us, saying, I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47). *Thy saving health among all nations* (Psalm 67:2): Paul takes up Isaiah''s servant-word as the commission — the saving health of the psalm carried to the ends of the earth, the way of Yahuah made known among the nations.'),
+    ('canon','psalms',67,3,'canon','romans',15,9,'free',
+      E'*And that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9). *Let the people praise thee, O Elohim (God); let all the people praise thee* (Psalm 67:3): Paul opens his catena of the nations praising Yahuah — the all-people-praise of the psalm is the Gentiles glorifying Elohim for His mercy, singing unto His Name.'),
+    ('canon','psalms',67,4,'canon','romans',15,10,'free',
+      E'*And again he saith, Rejoice, ye Gentiles, with his people* (Romans 15:10). *O let the nations be glad and sing for joy* (Psalm 67:4): Paul names the frame exactly — the nations rejoice WITH his people, not instead of them. The gladness of the nations in the psalm is the Gentiles brought in alongside Yashar''el (Israel), the two made glad together (Romans 11:1-2: He has not cast away his people).'),
+    ('canon','psalms',67,4,'canon','romans',15,11,'free',
+      E'*And again, Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11). *O let the nations be glad and sing for joy* (Psalm 67:4): Paul stacks the testimonies — all the nations and all the peoples praising Yahuah together. The nations glad and singing in the psalm are the Gentiles gathered to laud Him with His people, never displacing them.'),
+    ('canon','psalms',67,4,'apocrypha','tobit',13,11,'extras',
+      E'*Many nations shall come from far to the name of Yahuah (God) with gifts in their hands, even gifts to the King of heaven; all generations shall praise you with great joy* (Tobit 13:11). *O let the nations be glad and sing for joy* (Psalm 67:4): the restored Tobit sings the same ingathering — many nations coming from far to the Name of Yahuah, all generations praising with joy. The nations are drawn TO the Name, to Jerusalem restored, with His people.'),
+
+    -- THREAD 3 (★): Then shall the earth yield her increase — the blessing of the land
+    ('canon','psalms',67,6,'canon','leviticus',26,4,'free',
+      E'*Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4). *Then shall the earth yield her increase; and Elohim (God), even our own Elohim (God), shall bless us* (Psalm 67:6): the psalm prays the Torah land-blessing — set under *If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3), the yielding earth is the seal of the covenant kept. The harvest follows the walk in His statutes.'),
+    ('canon','psalms',67,6,'canon','psalms',85,12,'free',
+      E'*Yea, Yahuah (LORD) shall give that which is good; and our land shall yield her increase* (Psalm 85:12). *Then shall the earth yield her increase; and Elohim (God)... shall bless us* (Psalm 67:6): the neighbouring psalm renews the same promise word for word — Yahuah gives what is good, and the land yields her increase. The blessing on the land is the blessing of Yahuah upon His people.'),
+
+    -- THREAD 4 (★): All the ends of the earth shall fear him — the ingathering
+    ('canon','psalms',67,7,'canon','psalms',22,27,'free',
+      E'*All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* (Psalm 22:27). *Elohim (God) shall bless us; and all the ends of the earth shall fear him* (Psalm 67:7): the psalm of the cross reaches the same end — all the ends of the world remembering and turning to Yahuah, all the kindreds of the nations worshipping. The fear of Yahuah spreads to the farthest peoples.'),
+    ('canon','psalms',67,7,'canon','isaiah',45,22,'free',
+      E'*Look unto me, and be ye saved, all the ends of the earth: for I am Elohim (God), and there is none else* (Isaiah 45:22). *all the ends of the earth shall fear him* (Psalm 67:7): Isaiah issues the call the psalm foresees answered — the ends of the earth bidden to look and be saved, for Yahuah alone is Elohim. The fear of the ends-of-earth is the nations turning to the one Elohim.'),
+    ('canon','psalms',67,7,'apocrypha','tobit',13,5,'extras',
+      E'*And he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (Tobit 13:5). *all the ends of the earth shall fear him* (Psalm 67:7): the restored Tobit names the two-house ingathering — Yahuah gathering His scattered people out of all the nations, His mercy after the chastening. As the dispersed are gathered home, the ends of the earth come to fear Him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-67-cause-his-face-to-shine-upon-us-the-aaronic-blessing',
+       E'Cause his face to shine upon us — the Aaronic blessing prayed by the people',
+       E'The psalm opens by praying the priestly benediction over the whole congregation: *Elohim (God) be merciful unto us, and bless us; and cause his face to shine upon us; Selah* (Psalm 67:1). These are the words Yahuah put in the mouth of Aaron and his sons: *On this wise ye shall bless the children of Yashar''el (Israel)... Yahuah (LORD) bless thee, and keep thee: Yahuah (LORD) make his face shine upon thee, and be gracious unto thee: Yahuah (LORD) lift up his countenance upon thee, and give thee peace* (Numbers 6:23-26). And the Torah seals it as Yahuah''s own act, not a mere ritual formula: *And they shall put my name upon the children of Yashar''el (Israel); and I will bless them* (Numbers 6:27). The Name is laid upon the covenant people, and He Himself is the One who blesses. The blessing the congregation prays back is the very blessing the priests are commanded to speak — the Torah liturgy alive in the psalter, not abolished.',
+       sv.verse_id, ev.verse_id, 'free', 23650
+  FROM _s302_ps067_lookup sv, _s302_ps067_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=67 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed',
+       E'Thy saving health among all nations — the seed-promise: the nations praise WITH his people',
+       E'The blessing on Yashar''el (Israel) turns outward into the saving of the nations — the missionary heart of the psalm: *That thy way may be known upon earth, thy saving health among all nations. Let the people praise thee, O Elohim (God); let all the people praise thee. O let the nations be glad and sing for joy: for thou shalt judge the people righteously, and govern the nations upon earth* (Psalm 67:2-4). This is the Abrahamic promise unfolding. The blessing reaches the nations THROUGH the seed, never around it: *in thee shall all families of the earth be blessed* (Genesis 12:3); *in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18). Isaiah names the servant who carries it — and notice the order: *to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6) — the restoration of the houses and the light to the nations are ONE work. Paul takes the servant-word as his commission (*I have set thee to be a light of the Gentiles... unto the ends of the earth*, Acts 13:47) and then stacks a catena that names the frame exactly: *that the Gentiles might glorify Elohim (God) for his mercy* (Romans 15:9); *Rejoice, ye Gentiles, with his people* (Romans 15:10); *Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11). The nations praise WITH his people, not instead of them — for Yahuah has not cast away his people (Romans 11:1-2). The restored Tobit sings the same ingathering: *Many nations shall come from far to the name of Yahuah (God) with gifts in their hands... all generations shall praise you with great joy* (Tobit 13:11). The nations are gathered TO the Name, alongside Yashar''el, never displacing her.',
+       sv.verse_id, ev.verse_id, 'extras', 23653
+  FROM _s302_ps067_lookup sv, _s302_ps067_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=67 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-67-then-shall-the-earth-yield-her-increase',
+       E'Then shall the earth yield her increase — the blessing of the land',
+       E'*Then shall the earth yield her increase; and Elohim (God), even our own Elohim (God), shall bless us* (Psalm 67:6). The psalm prays the Torah land-blessing — the harvest that follows the walk in Yahuah''s statutes: *If ye walk in my statutes, and keep my commandments, and do them; Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:3-4). The yielding earth is the seal of the covenant kept, not an accident of weather. The neighbouring psalm renews the very promise: *Yahuah (LORD) shall give that which is good; and our land shall yield her increase* (Psalm 85:12). The blessing on the land is the blessing of Yahuah upon His obedient people — and in this psalm it becomes the sign read by all the ends of the earth.',
+       sv.verse_id, ev.verse_id, 'free', 23656
+  FROM _s302_ps067_lookup sv, _s302_ps067_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=67 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-67-all-the-ends-of-the-earth-shall-fear-him',
+       E'All the ends of the earth shall fear him — the ingathering of the scattered',
+       E'The psalm closes with the farthest reach of the blessing: *Elohim (God) shall bless us; and all the ends of the earth shall fear him* (Psalm 67:7). The psalter elsewhere sees the same end — *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* (Psalm 22:27) — and Isaiah issues the very call the psalm foresees answered: *Look unto me, and be ye saved, all the ends of the earth: for I am Elohim (God), and there is none else* (Isaiah 45:22). The restored Tobit binds this ends-of-earth fear to the two-house ingathering: *he will scourge us for our iniquities, and will have mercy again, and will gather us out of all nations, among whom he has scattered us* (Tobit 13:5). As Yahuah gathers His scattered people home out of all the nations, the ends of the earth themselves come to fear Him — the dispersion regathered and the nations turning, one harvest.',
+       sv.verse_id, ev.verse_id, 'extras', 23659
+  FROM _s302_ps067_lookup sv, _s302_ps067_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=67 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah (LORD) bless thee, and keep thee* (Numbers 6:24) — the priestly benediction prayed corporately in 67:1: bless us, and keep us.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=1
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-cause-his-face-to-shine-upon-us-the-aaronic-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) make his face shine upon thee, and be gracious unto thee* (Numbers 6:25) — quoted word for word in 67:1: cause his face to shine upon us.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=1
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-cause-his-face-to-shine-upon-us-the-aaronic-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) lift up his countenance upon thee, and give thee peace* (Numbers 6:26) — the lifted countenance and peace completing the benediction the psalm prays (67:1).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=1
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-cause-his-face-to-shine-upon-us-the-aaronic-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they shall put my name upon the children of Yashar''el (Israel); and I will bless them* (Numbers 6:27) — the Torah seals 67:1 as Yahuah''s own act: the Name laid on His people, and He the One who blesses.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=1
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-cause-his-face-to-shine-upon-us-the-aaronic-blessing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *in thee shall all families of the earth be blessed* (Genesis 12:3) — the saving health among all nations (67:2) is the Abrahamic promise: blessing through the seed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=2
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *in thy seed shall all the nations of the earth be blessed* (Genesis 22:18) — the oath at Moriah names the channel of 67:2: the nations blessed THROUGH the seed of Abraham.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=2
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles... my salvation unto the end of the earth* (Isaiah 49:6) — the servant restores the houses AND lights the nations (67:2): one work, not replacement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=2
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I have set thee to be a light of the Gentiles... salvation unto the ends of the earth* (Acts 13:47) — Paul takes the servant-word as the commission: the saving health of 67:2 carried to the ends of the earth.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=2
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *the Gentiles might glorify Elohim (God) for his mercy... I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9) — Paul opens his catena: the all-people-praise of 67:3 is the nations glorifying Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=3
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Rejoice, ye Gentiles, with his people* (Romans 15:10) — Paul names the frame exactly: the nations glad (67:4) rejoice WITH his people, not instead of them (Romans 11:1-2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=4
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *Praise Yahuah (Lord), all ye Gentiles; and laud him, all ye people* (Romans 15:11) — the nations and the peoples praising together (67:4): the Gentiles gathered to laud Him WITH his people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=4
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *Many nations shall come from far to the name of Yahuah (God) with gifts in their hands... all generations shall praise you* (Tobit 13:11) — the restored Tobit sings the ingathering of 67:4: nations drawn TO the Name with His people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=4
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-thy-saving-health-among-all-nations-blessed-through-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4) — the Torah land-blessing of 67:6, the harvest that follows the walk in His statutes (Leviticus 26:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=6
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-then-shall-the-earth-yield-her-increase'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) shall give that which is good; and our land shall yield her increase* (Psalm 85:12) — the neighbouring psalm renews 67:6 word for word: the yielding land as Yahuah''s blessing.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=6
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=85 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-then-shall-the-earth-yield-her-increase'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *All the ends of the world shall remember and turn unto Yahuah (LORD): and all the kindreds of the nations shall worship before thee* (Psalm 22:27) — the same end as 67:7: the farthest peoples turning to fear Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=7
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-all-the-ends-of-the-earth-shall-fear-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Look unto me, and be ye saved, all the ends of the earth: for I am Elohim (God), and there is none else* (Isaiah 45:22) — Isaiah''s call answered in 67:7: the ends of the earth bidden to look and fear the one Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=7
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-all-the-ends-of-the-earth-shall-fear-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *will have mercy again, and will gather us out of all nations, among whom he has scattered us* (Tobit 13:5) — the two-house ingathering bound to 67:7: as the scattered are gathered home, the ends of the earth fear Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps067_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=67 AND sv.verse_number=7
+  JOIN _s302_ps067_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-67-all-the-ends-of-the-earth-shall-fear-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_68.sql (Psalm 68) -----
+-- Chapter: Psalm 68 — THE GREAT PROCESSIONAL / SINAI-TO-ZION THEOPHANY. David's triumphal march-psalm,
+-- opening with the ark-setting-out cry — *Let Elohim (God) arise, let his enemies be scattered* (v.1) —
+-- and climbing through the Sinai theophany (vv.7-8,17) to the keystone ascension (v.18) that Paul plants
+-- in Ephesians. It carries seven framework-bearing weaves across the whole library: ★ the ark-cry (v.1 =
+-- Numbers 10:35); the cloud-rider theophany (vv.4,33, the Formed Son who rides the heavens, who later
+-- comes on the clouds — He is Yahuah and HAS a Father); ★ Yahuah's care for the helpless (vv.5-6, Torah-
+-- mercy fulfilled in pure religion); the Sinai theophany remembered with the myriads of holy ones (vv.7-8,
+-- 17, the fiery law, the ten thousands — clean 1 Enoch 1 witness); ★★★ the KEYSTONE *Thou hast ascended on
+-- high, thou hast led captivity captive: thou hast received gifts for men* (v.18) which Paul quotes in
+-- Ephesians 4:8 (the legitimate NT keystone for Ps 68 — the ascended Formed Son receives gifts of the
+-- Father and distributes them to the gathered people); ★ deliverance from death (v.20, the issues from
+-- death); ★ the ingathering of the nations (vv.31-32, Egypt and Ethiopia, two-house Rom 11 guard, NOT
+-- replacement).
+-- Tag: ps068   Temp view: _s302_ps068_lookup
+-- Sort band: base 23675, step 3 -> threads at 23675, 23678, 23681, 23684, 23687, 23690, 23693 (7 threads)
+-- Source of EVERY row: 'canon','psalms',68,v
+--
+-- Psalm 68 coverage:
+--   ★ v.1 (Let Elohim (God) arise, let his enemies be scattered: let them also that hate him flee before him)
+--        NT:     none warranted (the ark-cry is carried cleanest by the Torah witness; no forced NT add)
+--        Extras: none warranted as separate (the scatter-the-wicked theophany folds into the Sinai thread)
+--        Tanakh: ★ Numbers 10:35 (Rise up, Yahuah (LORD), and let thine enemies be scattered; and let them
+--                that hate thee flee before thee — the ark-setting-out cry, near-verbatim) — THREAD 1
+--   v.2 (As wax melteth before the fire, so let the wicked perish at the presence of Elohim)
+--        NT/Extras/Tanakh: folded — the melt-like-wax image is gathered under the Sinai theophany (1 Enoch
+--                1:6, the mountains melt like wax), THREAD 4
+--   v.3 (let the righteous be glad; let them rejoice before Elohim)
+--        none warranted (refrain; no separate add)
+--   ★ vv.4,33 (extol him that rideth upon the heavens by his name JAH / To him that rideth upon the heavens
+--          of heavens, which were of old)
+--        NT:     none warranted as separate (the cloud-rider FORWARD-fill — coming on the clouds — is set
+--                under the keystone v.18 ascension and the death-deliverance Rev 1; the Tanakh witnesses
+--                carry the rideth-on-heavens theophany cleaner here)
+--        Extras: none warranted (1 Enoch's heaven-of-heavens appearing is gathered under THREAD 4 Sinai)
+--        Tanakh: ★ Deuteronomy 33:26 (who rideth upon the heaven in thy help, and in his excellency on the
+--                sky), Psalm 18:10 (he rode upon a cherub, and did fly... upon the wings of the wind),
+--                Psalm 104:3 (who maketh the clouds his chariot: who walketh upon the wings of the wind),
+--                Isaiah 19:1 (Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt) — THREAD 2
+--   ★ vv.5-6 (A father of the fatherless, and a judge of the widows, is Elohim in his holy habitation.
+--          Elohim setteth the solitary in families)
+--        NT:     ★ James 1:27 (Pure religion... is this, To visit the fatherless and widows in their
+--                affliction) — THREAD 3
+--        Extras: none warranted (the helpless-care motif is fully carried by Torah + the psalter + James)
+--        Tanakh: ★ Deuteronomy 10:18 (He doth execute the judgment of the fatherless and widow, and loveth
+--                the stranger — Torah-mercy), Psalm 146:9 (he relieveth the fatherless and widow) — THREAD 3
+--   ★ vv.7-8,17 (when thou wentest forth before thy people... The earth shook, the heavens also dropped...
+--          even Sinai itself was moved / The chariots of Elohim are twenty thousand, even thousands of
+--          angels: Yahuah is among them, as in Sinai)
+--        NT:     ★ Hebrews 12:18 (ye are not come unto the mount that might be touched, and that burned with
+--                fire), Hebrews 12:21 (Moses said, I exceedingly fear and quake) — THREAD 4
+--        Extras: ★★ 1 Enoch 1:4 (the eternal Elohim will tread upon the earth, (even) on Mount Sinai... from
+--                the heaven of heavens), 1 Enoch 1:6 (the high mountains shall be shaken... And shall melt
+--                like wax before the flame), 1 Enoch 1:9 (He cometh with ten thousands of His set-apart ones)
+--                — THREAD 4 (the myriads of holy ones, the Sinai-treading theophany)
+--        Tanakh: ★ Exodus 19:18 (mount Sinai was altogether on a smoke... and the whole mount quaked
+--                greatly), Judges 5:4-5 (the earth trembled... the mountains melted from before Yahuah, even
+--                that Sinai — near-verbatim parallel), Deuteronomy 33:2 (he came with ten thousands of
+--                saints: from his right hand went a fiery law) — THREAD 4
+--   vv.9-16 (plentiful rain / the company that published / kings of armies flee / the hill Elohim desireth)
+--        none warranted as separate (the conquest/processional middle; no framework-load-bearing add)
+--   ★★★ v.18 (Thou hast ascended on high, thou hast led captivity captive: thou hast received gifts for men;
+--          yea, for the rebellious also, that Yahuah Elohim might dwell among them) — THE KEYSTONE
+--        NT:     ★★★ Ephesians 4:8 (When he ascended up on high, he led captivity captive, and gave gifts
+--                unto men — Paul quotes the psalm directly), Ephesians 4:10 (He that descended is the same
+--                also that ascended up far above all heavens), Ephesians 4:11 (he gave some, apostles... for
+--                the perfecting of the saints — the gifts distributed), Acts 2:33 (being by the right hand
+--                of Elohim exalted, and having received of the Father the promise of the Ruach HaKodesh, he
+--                hath shed forth this — received-to-give, the Formed Son to the Father) — THREAD 5
+--        Extras: none warranted (the ascension keystone is carried by the Eph/Acts NT fill)
+--        Tanakh: none warranted as separate (the psalm IS the Tanakh anchor Paul reaches back to)
+--   v.19 (Blessed be Yahuah, who daily loadeth us with benefits) — none warranted (doxology refrain)
+--   ★ v.20 (He that is our Elohim is the Elohim of salvation; and unto GOD Yahuah (Lord) belong the issues
+--          from death)
+--        NT:     ★ Revelation 1:18 (I am he that liveth, and was dead... and have the keys of hell and of
+--                death) — THREAD 6
+--        Extras: none warranted (the death-deliverance is carried by Hosea + Psalm 49 + Revelation)
+--        Tanakh: ★ Hosea 13:14 (I will ransom them from the power of the grave; I will redeem them from
+--                death), Psalm 49:15 (Elohim will redeem my soul from the power of the grave) — THREAD 6
+--   vv.21-30 (wound the head of enemies / bring again from Bashan / the processional in the sanctuary /
+--          kings bring presents) — none warranted as separate (the victory-march body; folds toward v.31)
+--   ★ vv.31-32 (Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto Elohim.
+--          Sing unto Elohim, ye kingdoms of the earth)
+--        NT:     ★ Acts 8:27 (a man of Ethiopia, an eunuch of great authority under Candace queen of the
+--                Ethiopians... had come to Jerusalem for to worship — the Ethiopian stretching his hands) —
+--                THREAD 7
+--        Extras: none warranted (the nations-ingathering is carried by Isaiah + Zephaniah + the psalter + Acts)
+--        Tanakh: ★ Isaiah 19:25 (Blessed be Egypt my people, and Assyria the work of my hands, and Yashar'el
+--                mine inheritance), Zephaniah 3:10 (From beyond the rivers of Ethiopia... the daughter of my
+--                dispersed, shall bring mine offering), Psalm 87:4 (behold Philistia, and Tyre, with
+--                Ethiopia; this man was born there) — THREAD 7 (two-house Rom 11 guard: Israel REMAINS the
+--                inheritance — Egypt and Assyria are joined IN, not a replacement)
+--   vv.34-35 (Ascribe ye strength unto Elohim... the Elohim of Yashar'el giveth strength) — none warranted
+--          (closing doxology; the cloud-rider half of v.33 sits in THREAD 2)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-68-let-elohim-arise-let-his-enemies-be-scattered — Tanakh (Numbers 10) [free]
+--      (★ the ark-setting-out cry, near-verbatim; the Formed Son leading the host)
+--   2. psalm-68-that-rideth-upon-the-heavens — Tanakh (Deuteronomy 33, Psalm 18, Psalm 104, Isaiah 19) [free]
+--      (★ the cloud-rider theophany; the Formed Son who rides the heavens, who later comes on the clouds)
+--   3. psalm-68-a-father-of-the-fatherless-a-judge-of-the-widows — NT (James 1) + Tanakh (Deuteronomy 10,
+--      Psalm 146) [free] (★ Yahuah's care for the helpless; Torah-mercy fulfilled in pure religion)
+--   4. psalm-68-the-earth-shook-even-sinai-itself — NT (Hebrews 12) + Extras (1 Enoch 1) + Tanakh (Exodus 19,
+--      Judges 5, Deuteronomy 33) [extras] (★ the Sinai theophany + the myriads of holy ones, the fiery law)
+--   5. psalm-68-thou-hast-ascended-on-high-led-captivity-captive — NT (Ephesians 4, Acts 2) [free]
+--      (★★★ THE KEYSTONE: Paul quotes it in Ephesians 4:8; the ascended Formed Son receives gifts to give)
+--   6. psalm-68-unto-yahuah-belong-the-issues-from-death — NT (Revelation 1) + Tanakh (Hosea 13, Psalm 49)
+--      [free] (★ deliverance from death; the keys of hell and of death, the ransom from the grave)
+--   7. psalm-68-princes-shall-come-out-of-egypt-ethiopia-stretch-her-hands — NT (Acts 8) + Tanakh (Isaiah 19,
+--      Zephaniah 3, Psalm 87) [free] (★ the ingathering of the nations; two-house Rom 11 guard, NOT replacement)
+--
+-- Framing notes:
+--   ★★★ THE KEYSTONE (THREAD 5): *Thou hast ascended on high, thou hast led captivity captive: thou hast
+--      received gifts for men; yea, for the rebellious also, that Yahuah Elohim (the LORD God) might dwell
+--      among them* (68:18). Paul plants this psalm in Ephesians: *Wherefore he saith, When he ascended up
+--      on high, he led captivity captive, and gave gifts unto men* (Ephesians 4:8). Read through the Formed
+--      and the Formless: the One who ascends FAR above all heavens is the same who descended — *He that
+--      descended is the same also that ascended up far above all heavens, that he might fill all things*
+--      (Ephesians 4:10) — and the gifts received are then distributed to equip the gathered people — *he
+--      gave some, apostles; and some, prophets... For the perfecting of the saints* (Ephesians 4:11-12).
+--      Peter names the same received-to-give at the ascension: *Therefore being by the right hand of Elohim
+--      (God) exalted, and having received of the Father the promise of the Ruach HaKodesh (Holy Spirit), he
+--      hath shed forth this* (Acts 2:33). The psalm's *thou hast received gifts for men* IS the ascended
+--      Son receiving of the Father and pouring out upon his people — He is Yahuah and HAS a Father.
+--   ★★ THE SINAI THEOPHANY + THE MYRIADS (THREAD 4): the clean 1 Enoch 1 witness is the load-bearing extra
+--      here — 1 Enoch 1:4 names the Sinai-treading (*the eternal Elohim will tread upon the earth, (even) on
+--      Mount Sinai... from the heaven of heavens* — matching 68:33 *heavens of heavens*), 1:6 the melt-like-
+--      wax (matching 68:2), and 1:9 *He cometh with ten thousands of His set-apart ones* (matching 68:17's
+--      *twenty thousand, even thousands of angels* and Deut 33:2's *ten thousands of saints... a fiery law*).
+--   ⚠ TWO-HOUSE / ROM 11 GUARD (THREAD 7): the nations-ingathering of Egypt and Ethiopia (68:31) is NOT a
+--      replacement of Yashar'el. Isaiah seals it: *Blessed be Egypt my people, and Assyria the work of my
+--      hands, and Yashar'el (Israel) mine inheritance* (Isaiah 19:25) — Israel REMAINS the inheritance;
+--      Egypt and Assyria are joined IN. The Ethiopian eunuch (Acts 8:27) is the firstfruit, not the displacer.
+--   VERSES WITH NO SEPARATE ADD: vv.3,9-16,19,21-30,34-35 carry the refrains, the conquest/processional
+--      middle, and the closing doxology; v.2 (melt-like-wax) folds into THREAD 4 (1 Enoch 1:6). The chapter's
+--      framework weight sits on vv.1,4/33,5-6,7-8/17,18,20,31-32, woven there.
+
+CREATE TEMP VIEW _s302_ps068_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Let Elohim arise — the ark-setting-out cry
+    ('canon','psalms',68,1,'canon','numbers',10,35,'free',
+      E'*And it came to pass, when the ark set forward, that Moses said, Rise up, Yahuah (LORD), and let thine enemies be scattered; and let them that hate thee flee before thee* (Numbers 10:35). *Let Elohim (God) arise, let his enemies be scattered: let them also that hate him flee before him* (Psalm 68:1): the psalm opens with the very cry Moses raised when the ark set forward in the wilderness — the processional begins with the ark-setting-out, the Formed Son who goes before the host, and at His rising the enemies are scattered.'),
+
+    -- THREAD 2 (★): That rideth upon the heavens — the cloud-rider theophany
+    ('canon','psalms',68,4,'canon','deuteronomy',33,26,'free',
+      E'*There is none like unto the Elohim (God) of Jeshurun, who rideth upon the heaven in thy help, and in his excellency on the sky* (Deuteronomy 33:26). *Extol him that rideth upon the heavens by his name JAH* (Psalm 68:4): Moses'' closing blessing names the same Rider — the One who rides the heaven to the help of His people. The cloud-rider of the psalm is the Elohim of Jeshurun, peerless, riding in His excellency.'),
+    ('canon','psalms',68,4,'canon','psalms',18,10,'free',
+      E'*And he rode upon a cherub, and did fly: yea, he did fly upon the wings of the wind* (Psalm 18:10). *Extol him that rideth upon the heavens* (Psalm 68:4): David''s deliverance-psalm shows the same theophany — Yahuah riding the cherub, flying upon the wings of the wind. The Rider upon the heavens is the Formed Son who comes down to deliver.'),
+    ('canon','psalms',68,33,'canon','psalms',104,3,'free',
+      E'*Who layeth the beams of his chambers in the waters: who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm 104:3). *To him that rideth upon the heavens of heavens, which were of old* (Psalm 68:33): the creation-psalm makes the clouds His chariot — the same Rider upon the heavens of heavens, ancient and enthroned above, who walks upon the wings of the wind.'),
+    ('canon','psalms',68,33,'canon','isaiah',19,1,'free',
+      E'*Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt: and the idols of Egypt shall be moved at his presence* (Isaiah 19:1). *To him that rideth upon the heavens of heavens* (Psalm 68:33): Isaiah carries the cloud-rider forward into judgment — the One who rides the swift cloud comes to Egypt, and at His presence the idols fall. The Formed Son who rides the heavens is the One who later comes on the clouds.'),
+
+    -- THREAD 3 (★): A father of the fatherless, a judge of the widows
+    ('canon','psalms',68,5,'canon','deuteronomy',10,18,'free',
+      E'*He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment* (Deuteronomy 10:18). *A father of the fatherless, and a judge of the widows, is Elohim (God) in his holy habitation* (Psalm 68:5): the Torah names the very heart the psalm sings — Yahuah executes the judgment of the fatherless and widow. The care of the helpless is covenant-instruction, not afterthought; the God of Sinai is the Father of the fatherless.'),
+    ('canon','psalms',68,5,'canon','psalms',146,9,'free',
+      E'*Yahuah (LORD) preserveth the strangers; he relieveth the fatherless and widow: but the way of the wicked he turneth upside down* (Psalm 146:9). *A father of the fatherless, and a judge of the widows, is Elohim (God)* (Psalm 68:5): the psalter doubles the witness — Yahuah relieves the fatherless and widow, preserves the stranger. He who rides the heavens stoops to the helpless.'),
+    ('canon','psalms',68,6,'canon','james',1,27,'free',
+      E'*Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world* (James 1:27). *Elohim (God) setteth the solitary in families* (Psalm 68:6), He being *a father of the fatherless, and a judge of the widows* (68:5): James makes the mercy of Yahuah the measure of true worship — to visit the fatherless and the widow. The people who serve the Father of the fatherless do as their Father does.'),
+
+    -- THREAD 4 (★): The earth shook, even Sinai itself — the theophany and the myriads
+    ('canon','psalms',68,8,'canon','exodus',19,18,'free',
+      E'*And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly* (Exodus 19:18). *The earth shook, the heavens also dropped at the presence of Elohim (God): even Sinai itself was moved at the presence of Elohim (God)* (Psalm 68:8): the psalm remembers the day of fire — Sinai on smoke, the whole mount quaking as Yahuah descended. The march through the wilderness was a theophany; the earth shook at His presence.'),
+    ('canon','psalms',68,8,'canon','judges',5,5,'free',
+      E'*The mountains melted from before Yahuah (LORD), even that Sinai from before Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Judges 5:5), with *the earth trembled, and the heavens dropped, the clouds also dropped water* (Judges 5:4). *The earth shook, the heavens also dropped at the presence of Elohim (God): even Sinai itself was moved* (Psalm 68:8): Deborah''s song sings the same theophany almost word for word — the earth trembling, the heavens dropping, even that Sinai melting before Yahuah. Two songs of the one going-forth.'),
+    ('canon','psalms',68,17,'canon','deuteronomy',33,2,'free',
+      E'*Yahuah (LORD) came from Sinai, and rose up from Seir unto them; he shined forth from mount Paran, and he came with ten thousands of saints: from his right hand went a fiery law for them* (Deuteronomy 33:2). *The chariots of Elohim (God) are twenty thousand, even thousands of angels: Yahuah (Lord) is among them, as in Sinai, in the holy place* (Psalm 68:17): the myriads of the psalm are the ten thousands of saints who came from Sinai with the fiery law — the holy host that attends the Rider, the Torah given in the midst of the heavenly thousands.'),
+    ('canon','psalms',68,17,'canon','hebrews',12,18,'free',
+      E'*For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest* (Hebrews 12:18). *Yahuah (Lord) is among them, as in Sinai, in the holy place* (Psalm 68:17): the writer to the Hebrews names the very mount the psalm remembers — the mount that burned with fire, that could not be touched. The Sinai of the chariots and the thousands is the unapproachable holy place.'),
+    ('canon','psalms',68,8,'canon','hebrews',12,21,'free',
+      E'*And so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21). *even Sinai itself was moved at the presence of Elohim (God)* (Psalm 68:8): the terror of the theophany is preserved — even Moses, who stood nearest, said he exceedingly feared and quaked. The mount that was moved is the mount before which the mediator himself trembled.'),
+    ('canon','psalms',68,17,'enoch','1-enoch',1,9,'extras',
+      E'*And behold! He cometh with ten thousands of His set-apart ones To execute judgement upon all, And to destroy all the ungodly* (1 Enoch 1:9). *The chariots of Elohim (God) are twenty thousand, even thousands of angels: Yahuah (Lord) is among them, as in Sinai* (Psalm 68:17): the restored Enoch sees the same myriads — He comes with ten thousands of His set-apart ones. The thousands of angels in the psalm are the holy host of the coming One, the heavenly chariotry of judgment.'),
+    ('canon','psalms',68,8,'enoch','1-enoch',1,4,'extras',
+      E'*And the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai, [And appear from His camp] And appear in the strength of His might from the heaven of heavens* (1 Enoch 1:4). *even Sinai itself was moved at the presence of Elohim (God)* (Psalm 68:8), to *him that rideth upon the heavens of heavens* (68:33): Enoch names the same Sinai-treading from the heaven of heavens — the eternal Elohim coming down upon the mount in the strength of His might. The theophany of the psalm is the appearing Enoch foresaw.'),
+    ('canon','psalms',68,2,'enoch','1-enoch',1,6,'extras',
+      E'*And the high mountains shall be shaken, And the high hills shall be made low, And shall melt like wax before the flame* (1 Enoch 1:6). *As wax melteth before the fire, so let the wicked perish at the presence of Elohim (God)* (Psalm 68:2): the same melting-wax image marks the day of His coming — the mountains and the wicked alike melt like wax before the flame of His presence. What the psalm prays, Enoch sees fulfilled at the theophany.'),
+
+    -- THREAD 5 (★★★): Thou hast ascended on high, thou hast led captivity captive — THE KEYSTONE
+    ('canon','psalms',68,18,'canon','ephesians',4,8,'free',
+      E'*Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men* (Ephesians 4:8). *Thou hast ascended on high, thou hast led captivity captive: thou hast received gifts for men* (Psalm 68:18): Paul quotes the psalm directly and binds it to the ascended Messiah — the One who ascended on high led captivity captive and gave the gifts. The keystone of the processional is the ascension itself; what David sang, Paul plants in the ascended Son.'),
+    ('canon','psalms',68,18,'canon','ephesians',4,10,'free',
+      E'*He that descended is the same also that ascended up far above all heavens, that he might fill all things* (Ephesians 4:10). *Thou hast ascended on high* (Psalm 68:18): read through the Formed and the Formless, the One who ascended far above all heavens is the One who first descended — the Formed Son who went down and then rose, that He might fill all things. He ascends to the Father, and so the ascension of the psalm is His.'),
+    ('canon','psalms',68,18,'canon','ephesians',4,11,'free',
+      E'*And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers* (Ephesians 4:11). *thou hast received gifts for men; yea, for the rebellious also* (Psalm 68:18): the gifts received are the gifts distributed — Paul names what the ascended One gave to His people, the apostles and prophets and teachers, to equip them. The received-to-give of the psalm is worked out in the gifts that build the body.'),
+    ('canon','psalms',68,18,'canon','acts',2,33,'free',
+      E'*Therefore being by the right hand of Elohim (God) exalted, and having received of the Father the promise of the Ruach HaKodesh (Holy Spirit), he hath shed forth this, which ye now see and hear* (Acts 2:33). *thou hast received gifts for men... that Yahuah Elohim (the LORD God) might dwell among them* (Psalm 68:18): Peter names the same received-to-give at the ascension — exalted by the right hand of Elohim, the Son receives of the Father and pours out the Spirit. He is Yahuah and HAS a Father; the gifts received He sheds forth that Yahuah might dwell among His people.'),
+
+    -- THREAD 6 (★): Unto Yahuah belong the issues from death
+    ('canon','psalms',68,20,'canon','hosea',13,14,'free',
+      E'*I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14). *He that is our Elohim (God) is the Elohim (God) of salvation; and unto GOD Yahuah (Lord) belong the issues from death* (Psalm 68:20): the issues from death belong to Yahuah because He alone ransoms from the grave — Hosea names the promise the psalm trusts, the redemption from death that is His to give.'),
+    ('canon','psalms',68,20,'canon','psalms',49,15,'free',
+      E'*But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me. Selah* (Psalm 49:15). *unto GOD Yahuah (Lord) belong the issues from death* (Psalm 68:20): the psalter answers its own confession — the issues from death belong to Yahuah, and so the soul is redeemed from the power of the grave. He who holds the issues of death will receive His own.'),
+    ('canon','psalms',68,20,'canon','revelation',1,18,'free',
+      E'*I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death* (Revelation 1:18). *unto GOD Yahuah (Lord) belong the issues from death* (Psalm 68:20): the risen Son holds the very keys the psalm names — the issues from death are His, the keys of hell and of death in His hand. The God of salvation is the One who died and is alive for evermore.'),
+
+    -- THREAD 7 (★): Princes shall come out of Egypt; Ethiopia shall stretch out her hands
+    ('canon','psalms',68,31,'canon','isaiah',19,25,'free',
+      E'*Whom Yahuah Tseva''ot (LORD of hosts) shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25). *Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto Elohim (God)* (Psalm 68:31): Isaiah names the ingathering the psalm foresees — Egypt called His people, Assyria the work of His hands. Yet Yashar''el remains *mine inheritance*: the nations are joined IN, never a replacement of the covenant people.'),
+    ('canon','psalms',68,31,'canon','zephaniah',3,10,'free',
+      E'*From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering* (Zephaniah 3:10). *Ethiopia shall soon stretch out her hands unto Elohim (God)* (Psalm 68:31): Zephaniah carries the stretched-out hands of Ethiopia forward — from beyond the rivers of Ethiopia His suppliants bring the offering, the dispersed gathered home. The hands stretched out unto Elohim are the worship of the ingathered.'),
+    ('canon','psalms',68,31,'canon','psalms',87,4,'free',
+      E'*I will make mention of Rahab and Babylon to them that know me: behold Philistia, and Tyre, with Ethiopia; this man was born there* (Psalm 87:4). *Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto Elohim (God)* (Psalm 68:31): the companion psalm reckons Egypt (Rahab) and Ethiopia among the citizens of Zion — *this man was born there*. The nations stretching out their hands are counted as born in the city of Elohim.'),
+    ('canon','psalms',68,31,'canon','acts',8,27,'free',
+      E'*And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship* (Acts 8:27). *Ethiopia shall soon stretch out her hands unto Elohim (God)* (Psalm 68:31): the firstfruit of the promise walks the desert road — a man of Ethiopia come to Jerusalem to worship, and going on his way rejoicing. The hands of Ethiopia stretched out unto Elohim are stretched out in him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-let-elohim-arise-let-his-enemies-be-scattered',
+       E'Let Elohim arise, let his enemies be scattered — the ark-setting-out cry',
+       E'The great processional opens with the cry of the ark: *Let Elohim (God) arise, let his enemies be scattered: let them also that hate him flee before him* (Psalm 68:1). These are the very words Moses raised in the wilderness whenever the ark set forward — *And it came to pass, when the ark set forward, that Moses said, Rise up, Yahuah (LORD), and let thine enemies be scattered; and let them that hate thee flee before thee* (Numbers 10:35). The psalm takes up the march-cry of the wilderness and makes it the overture of the whole song: the Formed Son who went before the host, who is among His people as in Sinai, rises — and at His rising the enemies are scattered like smoke driven away.',
+       sv.verse_id, ev.verse_id, 'free', 23675
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-that-rideth-upon-the-heavens',
+       E'Extol him that rideth upon the heavens — the cloud-rider theophany',
+       E'Twice the psalm names the Rider: *Sing unto Elohim (God), sing praises to his name: extol him that rideth upon the heavens by his name JAH* (Psalm 68:4), and *To him that rideth upon the heavens of heavens, which were of old; lo, he doth send out his voice, and that a mighty voice* (68:33). Read through the Formed and the Formless, this Rider is the One who appears, the Formed Son who comes down upon the heavens. Moses'' blessing knows Him: *who rideth upon the heaven in thy help, and in his excellency on the sky* (Deuteronomy 33:26). David''s deliverance-psalm sees Him fly: *he rode upon a cherub, and did fly: yea, he did fly upon the wings of the wind* (Psalm 18:10). The creation-psalm makes the clouds His chariot: *who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm 104:3). And Isaiah carries the cloud-rider into judgment: *Behold, Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt* (Isaiah 19:1). The Rider upon the heavens is Yahuah who has a Father — the One who later comes on the clouds.',
+       sv.verse_id, ev.verse_id, 'free', 23678
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-a-father-of-the-fatherless-a-judge-of-the-widows',
+       E'A father of the fatherless, and a judge of the widows — Yahuah''s care for the helpless',
+       E'The Rider upon the heavens stoops to the helpless: *A father of the fatherless, and a judge of the widows, is Elohim (God) in his holy habitation. Elohim (God) setteth the solitary in families: he bringeth out those which are bound with chains* (Psalm 68:5-6). This is no afterthought — it is covenant-instruction from Sinai itself: *He doth execute the judgment of the fatherless and widow, and loveth the stranger, in giving him food and raiment* (Deuteronomy 10:18). The psalter doubles the witness: *Yahuah (LORD) preserveth the strangers; he relieveth the fatherless and widow* (Psalm 146:9). And James makes the mercy of Yahuah the very measure of true worship: *Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction* (James 1:27). The people who serve the Father of the fatherless do as their Father does — Torah-mercy carried whole into the apostolic word.',
+       sv.verse_id, ev.verse_id, 'free', 23681
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-the-earth-shook-even-sinai-itself',
+       E'The earth shook, even Sinai itself — the theophany and the myriads of holy ones',
+       E'The psalm remembers the day of fire: *O Elohim (God), when thou wentest forth before thy people, when thou didst march through the wilderness; Selah: The earth shook, the heavens also dropped at the presence of Elohim (God): even Sinai itself was moved at the presence of Elohim (God), the Elohim (God) of Yashar''el (Israel)* (Psalm 68:7-8), and names the host that attends Him: *The chariots of Elohim (God) are twenty thousand, even thousands of angels: Yahuah (Lord) is among them, as in Sinai, in the holy place* (68:17). Exodus shows the mount on fire: *mount Sinai was altogether on a smoke... and the whole mount quaked greatly* (Exodus 19:18). Deborah sings it almost word for word: *The mountains melted from before Yahuah (LORD), even that Sinai* (Judges 5:5). Moses names the myriads and the fiery law: *he came with ten thousands of saints: from his right hand went a fiery law for them* (Deuteronomy 33:2). The writer to the Hebrews names the unapproachable mount: *the mount that might be touched, and that burned with fire* (Hebrews 12:18), before which even *Moses said, I exceedingly fear and quake* (12:21). And the restored Enoch sees the same coming: *the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai... from the heaven of heavens* (1 Enoch 1:4); *the high mountains shall be shaken... And shall melt like wax before the flame* (1:6, cf. 68:2); *He cometh with ten thousands of His set-apart ones* (1:9). The thousands of angels of the psalm are the holy host of the coming One, the heavenly chariotry, the myriads who attended the giving of the fiery law.',
+       sv.verse_id, ev.verse_id, 'extras', 23684
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-thou-hast-ascended-on-high-led-captivity-captive',
+       E'Thou hast ascended on high, thou hast led captivity captive — the ascended Son receives gifts to give',
+       E'The keystone of the processional is the ascension itself: *Thou hast ascended on high, thou hast led captivity captive: thou hast received gifts for men; yea, for the rebellious also, that Yahuah Elohim (the LORD God) might dwell among them* (Psalm 68:18). Paul plants this psalm in the ascended Messiah: *Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men* (Ephesians 4:8). Read through the Formed and the Formless, the One who ascended far above all heavens is the One who first descended: *He that descended is the same also that ascended up far above all heavens, that he might fill all things* (Ephesians 4:10). And the gifts received are the gifts distributed to equip the gathered people: *he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers* (Ephesians 4:11). Peter names the same received-to-give at the ascension: *Therefore being by the right hand of Elohim (God) exalted, and having received of the Father the promise of the Ruach HaKodesh (Holy Spirit), he hath shed forth this, which ye now see and hear* (Acts 2:33). The psalm''s *thou hast received gifts for men* is the ascended Son receiving of the Father and pouring out upon His people — He is Yahuah and HAS a Father, ascended that Yahuah Elohim might dwell among them.',
+       sv.verse_id, ev.verse_id, 'free', 23687
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-unto-yahuah-belong-the-issues-from-death',
+       E'Unto Yahuah belong the issues from death — the keys of the grave',
+       E'The psalm confesses where the power over death lies: *He that is our Elohim (God) is the Elohim (God) of salvation; and unto GOD Yahuah (Lord) belong the issues from death* (Psalm 68:20). The issues from death belong to Yahuah because He alone ransoms from the grave: *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14). The psalter answers its own confession: *But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me. Selah* (Psalm 49:15). And the risen Son holds the very keys the psalm names: *I am he that liveth, and was dead; and, behold, I am alive for evermore, Amen; and have the keys of hell and of death* (Revelation 1:18). The God of salvation is the One who died and is alive for evermore; the issues from death are His to open.',
+       sv.verse_id, ev.verse_id, 'free', 23690
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-68-princes-shall-come-out-of-egypt-ethiopia-stretch-her-hands',
+       E'Princes shall come out of Egypt; Ethiopia shall stretch out her hands — the ingathering of the nations',
+       E'The processional reaches the nations: *Princes shall come out of Egypt; Ethiopia shall soon stretch out her hands unto Elohim (God). Sing unto Elohim (God), ye kingdoms of the earth; O sing praises unto Yahuah (Lord)* (Psalm 68:31-32). Isaiah names the ingathering — and guards it: *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25). Egypt is called His people and Assyria the work of His hands, yet Yashar''el remains *mine inheritance*: the nations are joined IN, never a replacement of the covenant people. Zephaniah carries the stretched-out hands of Ethiopia forward: *From beyond the rivers of Ethiopia my suppliants, even the daughter of my dispersed, shall bring mine offering* (Zephaniah 3:10). The companion psalm reckons Egypt and Ethiopia among Zion''s citizens: *behold Philistia, and Tyre, with Ethiopia; this man was born there* (Psalm 87:4). And the firstfruit walks the desert road: *behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians... had come to Jerusalem for to worship* (Acts 8:27) — Ethiopia''s hands stretched out unto Elohim in him, going on his way rejoicing.',
+       sv.verse_id, ev.verse_id, 'free', 23693
+  FROM _s302_ps068_lookup sv, _s302_ps068_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=68 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Rise up, Yahuah (LORD), and let thine enemies be scattered; and let them that hate thee flee before thee* (Numbers 10:35) — the ark-setting-out cry of the wilderness, taken up near-verbatim as 68:1''s overture.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=1
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=10 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-let-elohim-arise-let-his-enemies-be-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *who rideth upon the heaven in thy help, and in his excellency on the sky* (Deuteronomy 33:26) — Moses'' blessing names the same Rider of 68:4: the peerless Elohim of Jeshurun riding to His people''s help.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=4
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-that-rideth-upon-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he rode upon a cherub, and did fly... upon the wings of the wind* (Psalm 18:10) — David''s deliverance-psalm sees the same theophany as 68:4: Yahuah riding the cherub to deliver.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=4
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-that-rideth-upon-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*who maketh the clouds his chariot: who walketh upon the wings of the wind* (Psalm 104:3) — the creation-psalm''s cloud-chariot is the heavens-of-heavens Rider of 68:33, ancient and enthroned.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=33
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=104 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-that-rideth-upon-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (LORD) rideth upon a swift cloud, and shall come into Egypt* (Isaiah 19:1) — the cloud-rider of 68:33 carried forward into judgment: the One who rides the heavens later comes on the clouds.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=33
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=19 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-that-rideth-upon-the-heavens'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He doth execute the judgment of the fatherless and widow, and loveth the stranger* (Deuteronomy 10:18) — the Torah-mercy 68:5 sings: care of the helpless is covenant-instruction from Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=5
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-a-father-of-the-fatherless-a-judge-of-the-widows'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he relieveth the fatherless and widow* (Psalm 146:9) — the psalter doubles 68:5: Yahuah relieves the fatherless and widow, preserves the stranger.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=5
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-a-father-of-the-fatherless-a-judge-of-the-widows'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Pure religion... is this, To visit the fatherless and widows in their affliction* (James 1:27) — the mercy of the Father of the fatherless (68:5-6) become the measure of true worship.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=6
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-a-father-of-the-fatherless-a-judge-of-the-widows'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *mount Sinai was altogether on a smoke... and the whole mount quaked greatly* (Exodus 19:18) — the day of fire 68:8 remembers: Sinai on smoke, the mount quaking as Yahuah descended.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=8
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The mountains melted from before Yahuah (LORD), even that Sinai* (Judges 5:5) — Deborah''s song sings 68:8 almost word for word: earth trembling, heavens dropping, Sinai melting.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=8
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he came with ten thousands of saints: from his right hand went a fiery law for them* (Deuteronomy 33:2) — the myriads of 68:17 are the ten thousands of saints who came from Sinai with the fiery law.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=17
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the mount that might be touched, and that burned with fire* (Hebrews 12:18) — the Sinai of the chariots and thousands (68:17) is the unapproachable holy place.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=17
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Moses said, I exceedingly fear and quake* (Hebrews 12:21) — the terror of the moved mount (68:8): even the mediator trembled before the theophany.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=8
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *He cometh with ten thousands of His set-apart ones* (1 Enoch 1:9) — the restored Enoch sees the same myriads as 68:17''s thousands of angels: the holy host of the coming One.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=17
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai... from the heaven of heavens* (1 Enoch 1:4) — Enoch names the Sinai-treading of 68:8 from the heaven of heavens (68:33).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=8
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*the high mountains shall be shaken... And shall melt like wax before the flame* (1 Enoch 1:6) — the melt-like-wax of 68:2 at the day of His coming: mountains and wicked melt before His presence.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=2
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-the-earth-shook-even-sinai-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *When he ascended up on high, he led captivity captive, and gave gifts unto men* (Ephesians 4:8) — Paul quotes 68:18 directly: the ascended Messiah led captivity captive and gave the gifts.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=18
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-thou-hast-ascended-on-high-led-captivity-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *He that descended is the same also that ascended up far above all heavens* (Ephesians 4:10) — the One who ascended (68:18) first descended: the Formed Son who went down and rose, who ascends to the Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=18
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-thou-hast-ascended-on-high-led-captivity-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he gave some, apostles; and some, prophets... and some, pastors and teachers* (Ephesians 4:11) — the *gifts received for men* (68:18) distributed to equip the gathered people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=18
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-thou-hast-ascended-on-high-led-captivity-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *having received of the Father the promise of the Ruach HaKodesh (Holy Spirit), he hath shed forth this* (Acts 2:33) — the received-to-give of 68:18: the exalted Son receives of the Father and pours out. He is Yahuah and HAS a Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=18
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-thou-hast-ascended-on-high-led-captivity-captive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will ransom them from the power of the grave; I will redeem them from death* (Hosea 13:14) — the issues from death belong to Yahuah (68:20) because He alone ransoms from the grave.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=20
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-unto-yahuah-belong-the-issues-from-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15) — the psalter answers 68:20: the soul redeemed from the grave because the issues of death are His.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=20
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-unto-yahuah-belong-the-issues-from-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I am alive for evermore... and have the keys of hell and of death* (Revelation 1:18) — the risen Son holds the very issues from death of 68:20: the keys of hell and of death in His hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=20
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-unto-yahuah-belong-the-issues-from-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Blessed be Egypt my people, and Assyria the work of my hands, and Yashar''el (Israel) mine inheritance* (Isaiah 19:25) — the ingathering of 68:31 with the two-house guard: Israel REMAINS the inheritance, the nations joined IN.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=31
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=19 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-princes-shall-come-out-of-egypt-ethiopia-stretch-her-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*From beyond the rivers of Ethiopia my suppliants... shall bring mine offering* (Zephaniah 3:10) — the stretched-out hands of Ethiopia (68:31) carried forward: the dispersed gathered home with worship.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=31
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-princes-shall-come-out-of-egypt-ethiopia-stretch-her-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*behold Philistia, and Tyre, with Ethiopia; this man was born there* (Psalm 87:4) — the companion psalm reckons Egypt and Ethiopia (68:31) among Zion''s citizens, born in the city of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=31
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=87 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-princes-shall-come-out-of-egypt-ethiopia-stretch-her-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *a man of Ethiopia, an eunuch of great authority... had come to Jerusalem for to worship* (Acts 8:27) — the firstfruit of 68:31: Ethiopia''s hands stretched out unto Elohim in him, going on his way rejoicing.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps068_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=68 AND sv.verse_number=31
+  JOIN _s302_ps068_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-68-princes-shall-come-out-of-egypt-ethiopia-stretch-her-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_70.sql (Psalm 70) -----
+-- Chapter: Psalm 70 — THE URGENT CRY FOR DELIVERANCE, *Make haste, O Elohim, to deliver me*. A short
+-- five-verse prayer that is the almost-verbatim TWIN of the closing strophe of Psalm 40 (vv.13-17),
+-- the closing strophe detached and repurposed as a standalone urgent prayer: *Make haste, O Elohim
+-- (God), to deliver me; make haste to help me, O Yahuah (LORD)* (v.1); *Let them be ashamed and
+-- confounded that seek after my soul... that say, Aha, aha* (vv.2-3); ★ *Let all those that seek thee
+-- rejoice and be glad in thee: and let such as love thy salvation say continually, Let Elohim (God)
+-- be magnified* (v.4); *But I am poor and needy: make haste unto me, O Elohim (God): thou art my help
+-- and my deliverer; O Yahuah (LORD), make no tarrying* (v.5). Psalm 40 IS ALREADY BUILT (its three
+-- own-threads cover the pit/new-song, the preached-righteousness, and the *Lo, I come / body prepared*
+-- Heb 10 keystone in vv.1-12) — so Psalm 70 is authored on its OWN terms as the urgent prayer and
+-- cross-LATERALS to Psalm 40:13-17 (the parent strophe) to show it is the detached closing cry. It
+-- does NOT duplicate Ps 40's distinct NT keystones; it stays lean and focused on the haste, the
+-- shame-of-the-persecutors, and the seekers' joy / poor-and-needy close.
+-- Tag: ps070   Temp view: _s302_ps070_lookup
+-- Sort band: base 23725, step 3 -> threads at 23725, 23728, 23731 (3 threads)
+-- Source of EVERY row: 'canon','psalms',70,v
+--
+-- Psalm 70 coverage:
+--   v.1 + v.5 (Make haste, O Elohim, to deliver me; make haste to help me... make haste unto me...
+--          make no tarrying)
+--        NT:     none warranted (the urgent-haste cry is carried cleaner by the psalter laterals;
+--                no forced NT add)
+--        Extras: none warranted (weighed; the haste/help motif is a psalter idiom, no clean extras add)
+--        Tanakh: ★ Psalm 40:13 (the PARENT strophe twin — make haste to help me), Psalm 22:19 (haste
+--                thee to help me), Psalm 38:22 (make haste to help me, O Yahuah my salvation),
+--                Psalm 71:12 (make haste for my help), Psalm 86:1 (I am poor and needy — the same
+--                cry) — THREAD 1
+--   vv.2-3 (Let them be ashamed and confounded that seek after my soul: let them be turned backward...
+--          Let them be turned back for a reward of their shame that say, Aha, aha)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 40:14-15 (the PARENT strophe twin — ashamed and confounded... that say, Aha,
+--                aha), Psalm 35:4 (confounded and put to shame that seek after my soul), Psalm 35:21
+--                (they said, Aha, aha), Psalm 35:26 (ashamed and brought to confusion that rejoice at
+--                mine hurt) — THREAD 2
+--   ★ v.4 + v.5 (Let all those that seek thee rejoice and be glad in thee: and let such as love thy
+--          salvation say continually, Let Elohim be magnified... But I am poor and needy)
+--        NT:     none warranted (the seekers'' joy / love-thy-salvation remnant is carried by the
+--                parent strophe and the poor-and-needy psalter laterals)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 40:16 (the PARENT strophe twin — let such as love thy salvation say
+--                continually, Yahuah be magnified), Psalm 40:17 (the PARENT strophe twin — But I am
+--                poor and needy; yet Yahuah thinketh upon me), Psalm 86:1 (Bow down thine ear... for
+--                I am poor and needy) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. psalm-70-make-haste-o-elohim-to-deliver-me — Tanakh (Psalm 40:13, 22:19, 38:22, 71:12, 86:1)
+--      [free] (the urgent-haste cry; anchored to the parent Ps 40 strophe + the make-haste psalter cluster)
+--   2. psalm-70-let-them-be-ashamed-that-seek-my-soul — Tanakh (Psalm 40:14-15, 35:4, 35:21, 35:26)
+--      [free] (the persecutors put to shame; the *Aha, aha* mockers turned back; anchored to Ps 40 twin)
+--   3. psalm-70-let-such-as-love-thy-salvation-rejoice — Tanakh (Psalm 40:16-17, 86:1) [free]
+--      (★ the seekers'' joy / the love-thy-salvation remnant + the poor-and-needy close; anchored to Ps 40 twin)
+--
+-- Framing notes:
+--   THE PARENT TWIN: Psalm 70 is the closing strophe of Psalm 40 (40:13-17) detached and set as a
+--      standalone urgent prayer. Every thread here laterals FIRST to its parent verse in Psalm 40 to
+--      let the reader see the same words sung twice — once at the end of the deliverance-song (Ps 40),
+--      once alone as the bare cry for haste (Ps 70). Psalm 40's own distinctive keystones (the new song
+--      out of the pit, the preached righteousness, and the *Lo, I come... a body hast thou prepared me*
+--      Heb 10:5-7 weave on 40:6-8) are NOT repeated here — they belong to the body of Psalm 40, not to
+--      this detached closing cry.
+--   THREAD 1 (make haste): *Make haste, O Elohim (God), to deliver me; make haste to help me, O Yahuah
+--      (LORD)* (70:1), repeated at the close — *make haste unto me, O Elohim (God)... O Yahuah (LORD),
+--      make no tarrying* (70:5). The parent strophe cries the same — *O Yahuah (LORD), make haste to
+--      help me* (Psalm 40:13) — and the cry runs through the whole psalter: *haste thee to help me*
+--      (Psalm 22:19); *Make haste to help me, O Yahuah (Lord) my salvation* (Psalm 38:22); *make haste
+--      for my help* (Psalm 71:12).
+--   THREAD 2 (ashamed / Aha, aha): *Let them be ashamed and confounded that seek after my soul... Let
+--      them be turned back for a reward of their shame that say, Aha, aha* (70:2-3) — the parent twin
+--      *Let them be ashamed and confounded together that seek after my soul to destroy it... that say
+--      unto me, Aha, aha* (Psalm 40:14-15), and the same mockers in Psalm 35 — *Let them be confounded
+--      and put to shame that seek after my soul* (35:4); *they opened their mouth wide against me, and
+--      said, Aha, aha* (35:21); *Let them be ashamed and brought to confusion together that rejoice at
+--      mine hurt* (35:26). The persecutors of the righteous are turned back upon their own shame.
+--   ★ THREAD 3 (the seekers'' joy / poor and needy): the prayer turns from the enemies to the remnant —
+--      *Let all those that seek thee rejoice and be glad in thee: and let such as love thy salvation say
+--      continually, Let Elohim (God) be magnified* (70:4); the parent twin *let such as love thy
+--      salvation say continually, Yahuah (LORD) be magnified* (Psalm 40:16). And the one who prays is
+--      the poor and needy one — *But I am poor and needy: make haste unto me, O Elohim (God): thou art
+--      my help and my deliverer* (70:5), the parent twin *But I am poor and needy; yet Yahuah (Lord)
+--      thinketh upon me* (Psalm 40:17), the same cry as *Bow down thine ear, O Yahuah (LORD), hear me:
+--      for I am poor and needy* (Psalm 86:1). The lowly who love His salvation are the ones He hastes to.
+--   VERSES WITH NO SEPARATE ADD: every verse is woven (v.1/v.5 in THREAD 1, vv.2-3 in THREAD 2,
+--      v.4/v.5 in THREAD 3); v.5 carries both the renewed haste-cry (THREAD 1) and the poor-and-needy
+--      close (THREAD 3). No verse is silently skipped.
+
+CREATE TEMP VIEW _s302_ps070_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Make haste, O Elohim, to deliver me — the urgent cry (parent twin + psalter cluster)
+    ('canon','psalms',70,1,'canon','psalms',40,13,'free',
+      E'*Be pleased, O Yahuah (LORD), to deliver me: O Yahuah (LORD), make haste to help me* (Psalm 40:13). *Make haste, O Elohim (God), to deliver me; make haste to help me, O Yahuah (LORD)* (Psalm 70:1): this is the very strophe that closes Psalm 40, detached and set alone as the bare urgent prayer. The same words are sung twice — at the end of the deliverance-song, and here standing alone as the cry for haste.'),
+    ('canon','psalms',70,1,'canon','psalms',22,19,'free',
+      E'*But be not thou far from me, O Yahuah (LORD): O my strength, haste thee to help me* (Psalm 22:19). *Make haste to help me, O Yahuah (LORD)* (Psalm 70:1): the suffering psalm of the pierced One cries the same urgency — *haste thee to help me* — the prayer of the afflicted that Yahuah be not far, but quick to deliver.'),
+    ('canon','psalms',70,1,'canon','psalms',38,22,'free',
+      E'*Make haste to help me, O Yahuah (Lord) my salvation* (Psalm 38:22). *Make haste, O Elohim (God), to deliver me; make haste to help me, O Yahuah (LORD)* (Psalm 70:1): word for word the same plea — *make haste to help me* — Yahuah named the salvation of the one who cannot wait, the One whose help must come quickly.'),
+    ('canon','psalms',70,1,'canon','psalms',71,12,'free',
+      E'*O Elohim (God), be not far from me: O my Elohim (God), make haste for my help* (Psalm 71:12). *Make haste, O Elohim (God), to deliver me; make haste to help me* (Psalm 70:1): the psalm that follows takes up the same cry — *make haste for my help* — the urgency carried straight on, Yahuah implored not to be far but to come quickly to the help of His own.'),
+    ('canon','psalms',70,5,'canon','psalms',86,1,'free',
+      E'*Bow down thine ear, O Yahuah (LORD), hear me: for I am poor and needy* (Psalm 86:1). *But I am poor and needy: make haste unto me, O Elohim (God)... O Yahuah (LORD), make no tarrying* (Psalm 70:5): the renewed haste-cry rises from the same lowliness — *for I am poor and needy*. It is the poor and needy who beg Yahuah to bow His ear and make no tarrying.'),
+
+    -- THREAD 2: Let them be ashamed that seek my soul — Aha, aha (parent twin + Ps 35 mockers)
+    ('canon','psalms',70,2,'canon','psalms',40,14,'free',
+      E'*Let them be ashamed and confounded together that seek after my soul to destroy it; let them be driven backward and put to shame that wish me evil* (Psalm 40:14). *Let them be ashamed and confounded that seek after my soul: let them be turned backward, and put to confusion, that desire my hurt* (Psalm 70:2): the parent strophe of Psalm 40 cries the same shame upon the persecutors — those who seek the soul of the righteous are themselves turned back and put to shame.'),
+    ('canon','psalms',70,3,'canon','psalms',40,15,'free',
+      E'*Let them be desolate for a reward of their shame that say unto me, Aha, aha* (Psalm 40:15). *Let them be turned back for a reward of their shame that say, Aha, aha* (Psalm 70:3): the twin verse from the parent strophe — the very mockers'' cry *Aha, aha* is named in both, the reward of their shame falling back upon the ones who jeered at the afflicted.'),
+    ('canon','psalms',70,2,'canon','psalms',35,4,'free',
+      E'*Let them be confounded and put to shame that seek after my soul: let them be turned back and brought to confusion that devise my hurt* (Psalm 35:4). *Let them be ashamed and confounded that seek after my soul: let them be turned backward, and put to confusion, that desire my hurt* (Psalm 70:2): the same imprecation against the soul-seekers — confounded, put to shame, turned back — the persecutors of the righteous overthrown by their own devising.'),
+    ('canon','psalms',70,3,'canon','psalms',35,21,'free',
+      E'*Yea, they opened their mouth wide against me, and said, Aha, aha, our eye hath seen it* (Psalm 35:21). *Let them be turned back for a reward of their shame that say, Aha, aha* (Psalm 70:3): the mockers'' very word — *Aha, aha* — the wide-opened mouth of the scorner that the prayer asks to be turned back upon its own shame.'),
+    ('canon','psalms',70,2,'canon','psalms',35,26,'free',
+      E'*Let them be ashamed and brought to confusion together that rejoice at mine hurt: let them be clothed with shame and dishonour that magnify themselves against me* (Psalm 35:26). *Let them be ashamed and confounded that seek after my soul* (Psalm 70:2): the same ruin asked upon those who rejoice at the hurt of the righteous — clothed with shame, brought to confusion, the self-magnifying enemy abased.'),
+
+    -- THREAD 3 (★): Let such as love thy salvation rejoice — the seekers' joy + poor and needy close
+    ('canon','psalms',70,4,'canon','psalms',40,16,'free',
+      E'*Let all those that seek thee rejoice and be glad in thee: let such as love thy salvation say continually, Yahuah (LORD) be magnified* (Psalm 40:16). *Let all those that seek thee rejoice and be glad in thee: and let such as love thy salvation say continually, Let Elohim (God) be magnified* (Psalm 70:4): the parent strophe twin — the prayer turns from the enemies to the remnant, the seekers who love His salvation and continually magnify Him.'),
+    ('canon','psalms',70,5,'canon','psalms',40,17,'free',
+      E'*But I am poor and needy; yet Yahuah (Lord) thinketh upon me: thou art my help and my deliverer; make no tarrying, O my Elohim (God)* (Psalm 40:17). *But I am poor and needy: make haste unto me, O Elohim (God): thou art my help and my deliverer; O Yahuah (LORD), make no tarrying* (Psalm 70:5): the closing verse of the parent strophe, the twin — the poor and needy one whom Yahuah thinks upon, the help and the deliverer implored to make no tarrying.'),
+    ('canon','psalms',70,5,'canon','psalms',86,1,'free',
+      E'*Bow down thine ear, O Yahuah (LORD), hear me: for I am poor and needy* (Psalm 86:1). *But I am poor and needy: make haste unto me, O Elohim (God): thou art my help and my deliverer* (Psalm 70:5): the same self-naming — *for I am poor and needy* — the lowly cry that opens Psalm 86 is the lowly cry that closes Psalm 70; it is the poor and needy whom Yahuah hastes to help.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-70-make-haste-o-elohim-to-deliver-me',
+       E'Make haste, O Elohim, to deliver me — the urgent cry, the detached strophe of Psalm 40',
+       E'Psalm 70 opens and closes on a single urgent plea: *Make haste, O Elohim (God), to deliver me; make haste to help me, O Yahuah (LORD)* (Psalm 70:1), and again at the end *make haste unto me, O Elohim (God)... O Yahuah (LORD), make no tarrying* (Psalm 70:5). This is the very strophe that closes Psalm 40, detached and set alone as the bare cry for haste — the parent twin reads *Be pleased, O Yahuah (LORD), to deliver me: O Yahuah (LORD), make haste to help me* (Psalm 40:13). The cry runs through the whole psalter of the afflicted: the suffering psalm of the pierced One pleads *be not thou far from me, O Yahuah (LORD): O my strength, haste thee to help me* (Psalm 22:19); the penitent cries *Make haste to help me, O Yahuah (Lord) my salvation* (Psalm 38:22); and the psalm that follows takes the cry straight on — *O Elohim (God), be not far from me: O my Elohim (God), make haste for my help* (Psalm 71:12). The one who prays is the poor and needy one, begging Yahuah to bow His ear and make no tarrying — *Bow down thine ear, O Yahuah (LORD), hear me: for I am poor and needy* (Psalm 86:1).',
+       sv.verse_id, ev.verse_id, 'free', 23725
+  FROM _s302_ps070_lookup sv, _s302_ps070_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=70 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-70-let-them-be-ashamed-that-seek-my-soul',
+       E'Let them be ashamed that seek after my soul — the mockers'' Aha, aha turned back',
+       E'The prayer asks that the persecutors be put to shame: *Let them be ashamed and confounded that seek after my soul: let them be turned backward, and put to confusion, that desire my hurt. Let them be turned back for a reward of their shame that say, Aha, aha* (Psalm 70:2-3). The parent strophe of Psalm 40 cries the same — *Let them be ashamed and confounded together that seek after my soul to destroy it; let them be driven backward and put to shame that wish me evil. Let them be desolate for a reward of their shame that say unto me, Aha, aha* (Psalm 40:14-15). And the same soul-seekers and the same scorner''s cry run through Psalm 35 — *Let them be confounded and put to shame that seek after my soul: let them be turned back and brought to confusion that devise my hurt* (Psalm 35:4); *they opened their mouth wide against me, and said, Aha, aha, our eye hath seen it* (Psalm 35:21); *Let them be ashamed and brought to confusion together that rejoice at mine hurt: let them be clothed with shame and dishonour that magnify themselves against me* (Psalm 35:26). The persecutors of the righteous are turned back upon their own shame; the mocking *Aha, aha* recoils on the one who jeered.',
+       sv.verse_id, ev.verse_id, 'free', 23728
+  FROM _s302_ps070_lookup sv, _s302_ps070_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=70 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-70-let-such-as-love-thy-salvation-rejoice',
+       E'Let such as love thy salvation rejoice — the seekers'' joy and the poor and needy',
+       E'The prayer turns from the enemies to the remnant: *Let all those that seek thee rejoice and be glad in thee: and let such as love thy salvation say continually, Let Elohim (God) be magnified* (Psalm 70:4). The parent strophe twin sings it the same — *Let all those that seek thee rejoice and be glad in thee: let such as love thy salvation say continually, Yahuah (LORD) be magnified* (Psalm 40:16): the seekers who love His salvation are the ones whose continual word is that Elohim be magnified. And the one who prays names himself among the lowly — *But I am poor and needy: make haste unto me, O Elohim (God): thou art my help and my deliverer; O Yahuah (LORD), make no tarrying* (Psalm 70:5) — the closing verse of the parent strophe, the twin: *But I am poor and needy; yet Yahuah (Lord) thinketh upon me: thou art my help and my deliverer; make no tarrying, O my Elohim (God)* (Psalm 40:17). It is the very self-naming that opens Psalm 86 — *Bow down thine ear, O Yahuah (LORD), hear me: for I am poor and needy* (Psalm 86:1). The lowly who love His salvation are the ones Yahuah hastes to, and upon whom He thinks.',
+       sv.verse_id, ev.verse_id, 'free', 23731
+  FROM _s302_ps070_lookup sv, _s302_ps070_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=70 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *O Yahuah (LORD), make haste to help me* (Psalm 40:13) — the PARENT strophe twin: 70:1 is the closing cry of Psalm 40 detached and set alone.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=1
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-make-haste-o-elohim-to-deliver-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*O my strength, haste thee to help me* (Psalm 22:19) — the pierced One''s psalm cries the same urgency as 70:1: haste thee to help.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=1
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-make-haste-o-elohim-to-deliver-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Make haste to help me, O Yahuah (Lord) my salvation* (Psalm 38:22) — word for word the plea of 70:1: make haste to help me.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=1
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=38 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-make-haste-o-elohim-to-deliver-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*make haste for my help* (Psalm 71:12) — the following psalm carries the cry of 70:1 straight on: Yahuah quick to His own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=1
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=71 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-make-haste-o-elohim-to-deliver-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*for I am poor and needy* (Psalm 86:1) — the renewed haste-cry of 70:5 rises from the same lowliness: the poor begging the ear of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=5
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-make-haste-o-elohim-to-deliver-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Let them be ashamed and confounded together that seek after my soul to destroy it* (Psalm 40:14) — the PARENT strophe twin of 70:2.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=2
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-them-be-ashamed-that-seek-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Let them be desolate for a reward of their shame that say unto me, Aha, aha* (Psalm 40:15) — the PARENT strophe twin of 70:3; the same mockers'' cry.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=3
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-them-be-ashamed-that-seek-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Let them be confounded and put to shame that seek after my soul* (Psalm 35:4) — the same imprecation as 70:2 upon the soul-seekers.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=2
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=35 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-them-be-ashamed-that-seek-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they opened their mouth wide against me, and said, Aha, aha* (Psalm 35:21) — the scorner''s very word of 70:3, asked to be turned back.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=3
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=35 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-them-be-ashamed-that-seek-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Let them be ashamed and brought to confusion together that rejoice at mine hurt* (Psalm 35:26) — the same ruin as 70:2 upon those who rejoice at the righteous'' hurt.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=2
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=35 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-them-be-ashamed-that-seek-my-soul'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *let such as love thy salvation say continually, Yahuah (LORD) be magnified* (Psalm 40:16) — the PARENT strophe twin of 70:4: the seekers'' joy.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=4
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-such-as-love-thy-salvation-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *But I am poor and needy; yet Yahuah (Lord) thinketh upon me* (Psalm 40:17) — the PARENT strophe twin of 70:5: the poor and needy whom Yahuah thinks upon.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=5
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-such-as-love-thy-salvation-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*for I am poor and needy* (Psalm 86:1) — the same self-naming as 70:5; the lowly cry Yahuah hastes to.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps070_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=70 AND sv.verse_number=5
+  JOIN _s302_ps070_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-70-let-such-as-love-thy-salvation-rejoice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_71.sql (Psalm 71) -----
+-- Chapter: Psalm 71 — THE PRAYER OF THE AGED SERVANT, trust held from youth to old age. The
+-- psalm opens as a near-twin of Psalm 31: *In thee, O Yahuah (LORD), do I put my trust: let me
+-- never be put to confusion... thou art my rock and my fortress* (vv.1,3) — the never-ashamed
+-- trust on the Rock. It looks back to the womb — *thou art my trust from my youth. By thee have
+-- I been holden up from the womb* (vv.5-6) — and forward to the grave — *forsake me not when my
+-- strength faileth* (v.9), *now also when I am old and grayheaded... forsake me not; until I
+-- have shewed thy strength unto this generation* (v.18). Its boast is the righteousness of
+-- Yahuah alone — *I will make mention of thy righteousness, even of thine only* (v.16) — and its
+-- hope is resurrection — *shalt quicken me again, and shalt bring me up again from the depths of
+-- the earth* (v.20). Five framework-bearing threads.
+-- Tag: ps071   Temp view: _s302_ps071_lookup
+-- Sort band: base 23750, step 3 -> threads at 23750, 23753, 23756, 23759, 23762 (5 threads)
+-- Source of EVERY row: 'canon','psalms',71,v
+--
+-- Psalm 71 coverage:
+--   ★ vv.1-3 (In thee, O Yahuah, do I put my trust: let me never be put to confusion... thou art
+--          my rock and my fortress)
+--        NT:     ★ Romans 9:33 (whosoever believeth on him shall not be ashamed), Romans 10:11
+--                (whosoever believeth on him shall not be ashamed), 1 Peter 2:6 (he that believeth
+--                on him shall not be confounded — the stone laid in Zion), 1 Corinthians 10:4
+--                (that Rock was Messiah — the Rock = the Formed Son) — THREAD 1
+--        Extras: ★ Sirach 2:10 (did ever any trust in Yahuah, and was confounded?) — THREAD 1
+--        Tanakh: ★ Psalm 31:1-3 (the twin opening — in thee do I put my trust; let me never be
+--                ashamed... thou art my rock and my fortress), Isaiah 28:16 (a stone in Zion... he
+--                that believeth shall not make haste), Deuteronomy 32:4 (He is the Rock) — THREAD 1
+--   ★ vv.5-6 (thou art my trust from my youth. By thee have I been holden up from the womb)
+--        NT:     none warranted as a separate add (Galatians 1:15 separated-from-the-womb weighed;
+--                Paul''s call is a different register — the womb-to-old-age carry lands cleaner in
+--                the Tanakh witnesses; folded note only, not a forced member)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 22:9-10 (thou art he that took me out of the womb), ★★ Isaiah 46:3-4
+--                (borne by me from the belly... even to your old age I am he... I will carry you —
+--                the twin: womb to old age, addressed to the house of Jacob/Yashar''el), Jeremiah
+--                1:5 (before I formed thee in the belly I knew thee) — THREAD 2
+--   v.9 / v.18 (Cast me not off in the time of old age... now also when I am old and grayheaded...
+--          forsake me not; until I have shewed thy strength unto this generation)
+--        NT:     ★ Hebrews 13:5 (I will never leave thee, nor forsake thee — the never-forsake
+--                promise) — THREAD 3
+--        Extras: ★ Sirach 25:6 (the fear of Yahuah is the glory of old men — the grayheaded
+--                servant''s crown) — THREAD 3
+--        Tanakh: ★ Psalm 78:4 (shewing to the generation to come the praises of Yahuah... his
+--                strength), Deuteronomy 6:7 (thou shalt teach them diligently unto thy children —
+--                Torah transmission to the generations) — THREAD 3
+--   ★ vv.15-16 (My mouth shall shew forth thy righteousness and thy salvation all the day... I
+--          will make mention of thy righteousness, even of thine only)
+--        NT:     ★ Romans 1:17 (therein is the righteousness of Elohim revealed), ★ Romans 3:21-22
+--                (the righteousness of Elohim... witnessed by the law and the prophets) — THREAD 4
+--        Extras: none warranted (the righteousness-of-Yahuah-alone is carried by Psalter + Romans)
+--        Tanakh: ★ Psalm 40:10 (I have not hid thy righteousness within my heart; I have declared
+--                thy faithfulness and thy salvation) — THREAD 4
+--   ★ v.20 (Thou... shalt quicken me again, and shalt bring me up again from the depths of the
+--          earth)
+--        NT:     ★ Romans 8:11 (he that raised up Messiah... shall also quicken your mortal
+--                bodies), ★ 1 Corinthians 15:54 (this mortal shall have put on immortality...
+--                Death is swallowed up in victory) — THREAD 5
+--        Extras: none warranted (the revival hope is carried by Psalter + Hosea + the NT)
+--        Tanakh: ★ Psalm 30:3 (thou hast brought up my soul from the grave), ★ Hosea 6:2 (in the
+--                third day he will raise us up, and we shall live in his sight) — THREAD 5
+--   vv.4,7-8,10-14,17,19,21-24 (deliverance from the wicked, the wonder unto many, the mouth
+--          filled with praise, the adversaries confounded, the psaltery/harp praise, the redeemed
+--          soul''s continual song)
+--        NT/Extras/Tanakh: none warranted as separate threads — the praise/lament refrains and the
+--          confounding of the adversaries (v.13/v.24 echo the never-confounded trust of v.1) are
+--          folded into the surrounding weaves; the chapter''s framework weight sits on vv.1-3,5-6,
+--          9/18,15-16,20, woven there.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded — NT (Romans 9, Romans 10,
+--      1 Peter 2, 1 Corinthians 10) + Extras (Sirach 2) + Tanakh (Psalm 31, Isaiah 28,
+--      Deuteronomy 32) [extras] (★ never-ashamed trust on the Rock = the Formed Son, the stone in Zion)
+--   2. psalm-71-thou-art-my-trust-from-my-youth-holden-up-from-the-womb — Tanakh (Psalm 22,
+--      Isaiah 46, Jeremiah 1) [free] (★ kept from the womb to old age; Isaiah 46 the twin)
+--   3. psalm-71-forsake-me-not-in-old-age-shew-thy-strength-to-this-generation — NT (Hebrews 13) +
+--      Extras (Sirach 25) + Tanakh (Psalm 78, Deuteronomy 6) [extras] (the aged servant declaring
+--      to the next generation; never-forsake; Torah transmission)
+--   4. psalm-71-i-will-make-mention-of-thy-righteousness-even-of-thine-only — NT (Romans 1,
+--      Romans 3) + Tanakh (Psalm 40) [free] (★ the righteousness of Yahuah ALONE — His covenant
+--      faithfulness, witnessed BY the law and the prophets, NOT flesh-merit, NOT Torah-abolished)
+--   5. psalm-71-thou-shalt-quicken-me-again-and-bring-me-up-from-the-depths — NT (Romans 8,
+--      1 Corinthians 15) + Tanakh (Psalm 30, Hosea 6) [free] (★ the resurrection/revival hope —
+--      raised up from Sheol, the dead quickened)
+--
+-- Framing notes:
+--   ★ NEVER CONFOUNDED ON THE ROCK (THREAD 1): the psalm opens with the same words as Psalm 31 —
+--      *In thee, O Yahuah (LORD), do I put my trust: let me never be put to confusion* (71:1),
+--      *thou art my rock and my fortress* (71:3). The Rock is the Formed Son — *that spiritual
+--      Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4); *He is
+--      the Rock, his work is perfect* (Deuteronomy 32:4). The never-confounded trust is the stone
+--      laid in Zion — *Behold, I lay in Zion for a foundation a stone... he that believeth shall
+--      not make haste* (Isaiah 28:16) — quoted by Paul and Peter — *whosoever believeth on him
+--      shall not be ashamed* (Romans 9:33; Romans 10:11); *he that believeth on him shall not be
+--      confounded* (1 Peter 2:6). And the restored wisdom tests it against all the ages — *did
+--      ever any trust in Yahuah (God), and was confounded?* (Sirach 2:10). To trust the Rock is
+--      never to be put to shame.
+--   ★★ FROM THE WOMB TO OLD AGE (THREAD 2): *thou art my trust from my youth. By thee have I been
+--      holden up from the womb* (71:5-6). The twin is Isaiah''s word to the house of Jacob —
+--      *borne by me from the belly, which are carried from the womb: and even to your old age I am
+--      he; and even to hoar hairs will I carry you* (Isaiah 46:3-4) — the same lifelong carry, and
+--      addressed to Yashar''el. David sang it first — *thou art he that took me out of the womb*
+--      (Psalm 22:9) — and Jeremiah heard it of his call — *before I formed thee in the belly I
+--      knew thee* (Jeremiah 1:5).
+--   THE GRAYHEADED SERVANT TO THE GENERATION (THREAD 3): *Cast me not off in the time of old age*
+--      (71:9); *now also when I am old and grayheaded, O Elohim (God), forsake me not; until I
+--      have shewed thy strength unto this generation* (71:18). The never-forsake promise stands —
+--      *I will never leave thee, nor forsake thee* (Hebrews 13:5) — and the charge is Torah
+--      transmission — *shewing to the generation to come the praises of Yahuah (LORD), and his
+--      strength* (Psalm 78:4); *thou shalt teach them diligently unto thy children* (Deuteronomy
+--      6:7). The restored wisdom crowns the aged — *the fear of Yahuah (God) is their glory*
+--      (Sirach 25:6).
+--   ★ THE RIGHTEOUSNESS OF YAHUAH ALONE (THREAD 4): *I will make mention of thy righteousness,
+--      even of thine only* (71:16). This is not self-righteousness but the righteousness OF Yahuah
+--      — His covenant faithfulness — *I have not hid thy righteousness within my heart; I have
+--      declared thy faithfulness and thy salvation* (Psalm 40:10). Paul names the same — *therein
+--      is the righteousness of Elohim (God) revealed* (Romans 1:17); *the righteousness of Elohim
+--      (God) without the law is manifested, being witnessed by the law and the prophets* (Romans
+--      3:21) — the righteousness apart from flesh-merit, yet WITNESSED BY the Torah and the
+--      prophets, never abolishing them. His righteousness only.
+--   ★ QUICKENED FROM THE DEPTHS (THREAD 5): *Thou... shalt quicken me again, and shalt bring me up
+--      again from the depths of the earth* (71:20). The revival hope — *O Yahuah (LORD), thou hast
+--      brought up my soul from the grave* (Psalm 30:3); *in the third day he will raise us up, and
+--      we shall live in his sight* (Hosea 6:2) — fulfilled in the resurrection — *he that raised
+--      up Messiah (Christ) from the dead shall also quicken your mortal bodies* (Romans 8:11);
+--      *this mortal shall have put on immortality... Death is swallowed up in victory*
+--      (1 Corinthians 15:54). Brought up from the depths of Sheol, the servant is quickened again.
+--   VERSES WITH NO SEPARATE ADD: vv.4,7-8,10-14,17,19,21-24 carry the deliverance-from-the-wicked
+--      lament, the wonder unto many, the mouth filled with praise, and the psaltery/harp song of
+--      the redeemed soul; the confounding of the adversaries (vv.13,24) is the dark twin of the
+--      never-confounded trust (v.1) and is recorded as folded into THREAD 1 rather than threaded
+--      separately. The chapter''s framework weight sits on vv.1-3,5-6,9/18,15-16,20.
+
+CREATE TEMP VIEW _s302_ps071_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): In thee do I put my trust, let me never be confounded — the Rock, the stone in Zion
+    ('canon','psalms',71,3,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). *Thou art my rock and my fortress* (Psalm 71:3): the Rock the aged servant trusts is the Formed Son, the spiritual Rock that followed Yashar''el (Israel) in the wilderness — that Rock was Messiah. To make Yahuah the rock is to take refuge in the One drawn from the Formless.'),
+    ('canon','psalms',71,3,'canon','deuteronomy',32,4,'free',
+      E'*He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). *Thou art my rock and my fortress* (Psalm 71:3): the Song of Moses names Him the Rock whose work is perfect — the same Rock the psalmist makes his fortress, the Elohim of truth without iniquity.'),
+    ('canon','psalms',71,1,'canon','psalms',31,1,'free',
+      E'*In thee, O Yahuah (LORD), do I put my trust; let me never be ashamed: deliver me in thy righteousness* (Psalm 31:1). *In thee, O Yahuah (LORD), do I put my trust: let me never be put to confusion. Deliver me in thy righteousness* (Psalm 71:1-2): the aged servant opens with the very words of the earlier psalm — the never-ashamed trust delivered by Yahuah''s own righteousness. One prayer, taken up again at the close of a life.'),
+    ('canon','psalms',71,1,'canon','isaiah',28,16,'free',
+      E'*Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). *Let me never be put to confusion* (Psalm 71:1): the trust that is never confounded rests on the stone laid in Zion — *he that believeth shall not make haste*, shall not be ashamed. The sure foundation is the ground of the never-confounded prayer.'),
+    ('canon','psalms',71,1,'canon','romans',9,33,'free',
+      E'*As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33). *Let me never be put to confusion* (Psalm 71:1): Paul gathers Isaiah''s stone in Zion and seals the promise — *whosoever believeth on him shall not be ashamed*. The Rock of the psalm is the stone laid in Sion; to trust Him is never to be put to shame.'),
+    ('canon','psalms',71,1,'canon','romans',10,11,'free',
+      E'*For the scripture saith, Whosoever believeth on him shall not be ashamed* (Romans 10:11). *In thee, O Yahuah (LORD), do I put my trust: let me never be put to confusion* (Psalm 71:1): Paul makes the never-ashamed trust universal — whosoever believes shall not be ashamed. The aged servant''s plea is the scripture''s standing promise.'),
+    ('canon','psalms',71,1,'canon','1-peter',2,6,'free',
+      E'*Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6). *Let me never be put to confusion* (Psalm 71:1): Peter quotes the very word — *he that believeth on him shall not be confounded* — and names the chief corner stone laid in Sion. The never-confounded trust of the psalm is the believer''s standing on the elect, precious stone.'),
+    ('canon','psalms',71,1,'apocrypha','ecclesiasticus',2,10,'extras',
+      E'*Look at the generations of old, and see; did ever any trust in Yahuah (God), and was confounded? or did any abide in his fear, and was forsaken? or whom did he ever despise, that called upon him?* (Sirach 2:10). *Let me never be put to confusion* (Psalm 71:1): the restored wisdom tests the plea against all the ages and finds none who trusted Yahuah were ever confounded — the aged servant''s prayer is answered before it is prayed.'),
+
+    -- THREAD 2 (★★): Thou art my trust from my youth — holden up from the womb
+    ('canon','psalms',71,6,'canon','isaiah',46,3,'free',
+      E'*Hearken unto me, O house of Jacob, and all the remnant of the house of Yashar''el (Israel), which are borne by me from the belly, which are carried from the womb* (Isaiah 46:3). *By thee have I been holden up from the womb* (Psalm 71:6): the same carry — Yahuah bearing His own from the belly — but spoken to the house of Jacob and the remnant of Yashar''el, the two-house people He has carried from the womb of the nation.'),
+    ('canon','psalms',71,9,'canon','isaiah',46,4,'free',
+      E'*And even to your old age I am he; and even to hoar hairs will I carry you: I have made, and I will bear; even I will carry, and will deliver you* (Isaiah 46:4). *Cast me not off in the time of old age; forsake me not when my strength faileth* (Psalm 71:9): the prayer is answered in Isaiah''s twin — *even to your old age I am he... even to hoar hairs will I carry you*. The One who held him from the womb carries him to the gray hairs and does not cast him off.'),
+    ('canon','psalms',71,6,'canon','psalms',22,9,'free',
+      E'*But thou art he that took me out of the womb: thou didst make me hope when I was upon my mother''s breasts* (Psalm 22:9). *Thou art he that took me out of my mother''s bowels* (Psalm 71:6): David sang the same in the psalm of the cross — Yahuah the One who took him out of the womb and taught him hope at the breast. The trust from youth is a trust set from the first breath.'),
+    ('canon','psalms',71,5,'canon','jeremiah',1,5,'free',
+      E'*Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee, and I ordained thee a prophet unto the nations* (Jeremiah 1:5). *Thou art my trust from my youth* (Psalm 71:5): the trust reaches back before the womb — Yahuah knowing and setting apart His servant before he was formed, as He knew Jeremiah and ordained him before he came forth.'),
+
+    -- THREAD 3: Forsake me not in old age — shew thy strength to this generation
+    ('canon','psalms',71,18,'canon','hebrews',13,5,'free',
+      E'*Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). *Now also when I am old and grayheaded, O Elohim (God), forsake me not* (Psalm 71:18): the plea rests on the standing covenant word — *I will never leave thee, nor forsake thee* — the promise that does not fail in old age any more than in youth.'),
+    ('canon','psalms',71,18,'canon','psalms',78,4,'free',
+      E'*We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4). *Until I have shewed thy strength unto this generation, and thy power to every one that is to come* (Psalm 71:18): the aged servant takes up the very charge of the psalter — shewing to the generation to come the strength of Yahuah, that the children may know.'),
+    ('canon','psalms',71,18,'canon','deuteronomy',6,7,'free',
+      E'*And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up* (Deuteronomy 6:7). *Until I have shewed thy strength unto this generation* (Psalm 71:18): the declaring to the next generation is the Torah charge — teach them diligently unto thy children — the covenant handed down, the grayheaded servant doing the commanded work of transmission.'),
+    ('canon','psalms',71,18,'apocrypha','ecclesiasticus',25,6,'extras',
+      E'*Much experience is the crown of old men, and the fear of Yahuah (God) is their glory* (Sirach 25:6). *Now also when I am old and grayheaded, O Elohim (God), forsake me not; until I have shewed thy strength unto this generation* (Psalm 71:18): the restored wisdom crowns the very man the psalm pictures — the grayhead whose glory is the fear of Yahuah, whose long experience is given to teach the generation to come.'),
+
+    -- THREAD 4 (★): I will make mention of thy righteousness, even of thine only
+    ('canon','psalms',71,16,'canon','romans',1,17,'free',
+      E'*For therein is the righteousness of Elohim (God) revealed from faith to faith: as it is written, The just shall live by faith* (Romans 1:17). *I will make mention of thy righteousness, even of thine only* (Psalm 71:16): the boast is not the servant''s own righteousness but Yahuah''s — the righteousness OF Elohim, His covenant faithfulness revealed, which the just live by. Of thine only.'),
+    ('canon','psalms',71,16,'canon','romans',3,21,'free',
+      E'*But now the righteousness of Elohim (God) without the law is manifested, being witnessed by the law and the prophets* (Romans 3:21). *I will make mention of thy righteousness, even of thine only* (Psalm 71:16): the righteousness Paul preaches is the righteousness OF Elohim, apart from flesh-merit — yet *witnessed by the law and the prophets*, not abolishing them. The psalmist boasts of that same righteousness alone, the one the Torah and the prophets testify.'),
+    ('canon','psalms',71,15,'canon','psalms',40,10,'free',
+      E'*I have not hid thy righteousness within my heart; I have declared thy faithfulness and thy salvation: I have not concealed thy lovingkindness and thy truth from the great congregation* (Psalm 40:10). *My mouth shall shew forth thy righteousness and thy salvation all the day* (Psalm 71:15): the same open mouth — the righteousness and salvation of Yahuah not hidden in the heart but declared, His faithfulness shewn forth all the day long.'),
+
+    -- THREAD 5 (★): Thou shalt quicken me again, and bring me up from the depths
+    ('canon','psalms',71,20,'canon','psalms',30,3,'free',
+      E'*O Yahuah (LORD), thou hast brought up my soul from the grave: thou hast kept me alive, that I should not go down to the pit* (Psalm 30:3). *Thou... shalt quicken me again, and shalt bring me up again from the depths of the earth* (Psalm 71:20): the same raising — the soul brought up from the grave, kept from the pit. What Psalm 30 testifies as done, Psalm 71 prays as hope: brought up again from the depths.'),
+    ('canon','psalms',71,20,'canon','hosea',6,2,'free',
+      E'*After two days will he revive us: in the third day he will raise us up, and we shall live in his sight* (Hosea 6:2). *Shalt quicken me again, and shalt bring me up again from the depths of the earth* (Psalm 71:20): the prophet sings the revival corporately — raised up in the third day to live in His sight — the same quickening from the depths the aged servant pleads, the resurrection hope of the people.'),
+    ('canon','psalms',71,20,'canon','romans',8,11,'free',
+      E'*But if the Spirit of him that raised up Yahusha (Jesus) from the dead dwell in you, he that raised up Messiah (Christ) from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you* (Romans 8:11). *Thou... shalt quicken me again* (Psalm 71:20): the quickening is fulfilled — the Spirit of the One who raised Messiah quickening the mortal bodies of His own. The aged servant''s hope of being raised again is the resurrection by the indwelling Spirit.'),
+    ('canon','psalms',71,20,'canon','1-corinthians',15,54,'free',
+      E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). *Shalt bring me up again from the depths of the earth* (Psalm 71:20): the bringing-up from the depths is the mortal putting on immortality — death swallowed up in victory. The servant brought up from Sheol is raised incorruptible.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded',
+       E'In thee do I put my trust; let me never be confounded — the Rock, the stone in Zion',
+       E'The prayer of the aged servant opens with the very words of an earlier psalm: *In thee, O Yahuah (LORD), do I put my trust: let me never be put to confusion. Deliver me in thy righteousness* (Psalm 71:1-2); *Be thou my strong habitation... thou art my rock and my fortress* (71:3). It is the twin of *In thee, O Yahuah (LORD), do I put my trust; let me never be ashamed: deliver me in thy righteousness* (Psalm 31:1) — one prayer taken up again at the close of a life. The Rock he makes his fortress is the Formed Son — *that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4); *He is the Rock, his work is perfect* (Deuteronomy 32:4). And the never-confounded trust is the stone laid in Zion: *Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16) — quoted by Paul and Peter as the standing promise — *whosoever believeth on him shall not be ashamed* (Romans 9:33; Romans 10:11); *he that believeth on him shall not be confounded* (1 Peter 2:6). The restored wisdom tests the plea against all the ages — *did ever any trust in Yahuah (God), and was confounded?* (Sirach 2:10). To trust the Rock is never to be put to shame.',
+       sv.verse_id, ev.verse_id, 'extras', 23750
+  FROM _s302_ps071_lookup sv, _s302_ps071_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=71 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-71-thou-art-my-trust-from-my-youth-holden-up-from-the-womb',
+       E'Thou art my trust from my youth — holden up from the womb to old age',
+       E'*For thou art my hope, O Yahuah (Lord) GOD: thou art my trust from my youth. By thee have I been holden up from the womb: thou art he that took me out of my mother''s bowels* (Psalm 71:5-6). The trust is a lifelong carry, and Isaiah sets the twin word — spoken to the two-house people: *Hearken unto me, O house of Jacob, and all the remnant of the house of Yashar''el (Israel), which are borne by me from the belly, which are carried from the womb: and even to your old age I am he; and even to hoar hairs will I carry you: I have made, and I will bear; even I will carry, and will deliver you* (Isaiah 46:3-4). The very prayer of the psalm — *Cast me not off in the time of old age* (71:9) — is answered there: He who held him from the womb carries him to the gray hairs. David sang it first in the psalm of the cross — *thou art he that took me out of the womb: thou didst make me hope when I was upon my mother''s breasts* (Psalm 22:9) — and the trust reaches back even before the womb — *Before I formed thee in the belly I knew thee; and before thou camest forth out of the womb I sanctified thee* (Jeremiah 1:5). From the first breath to the last, the same hand bears him.',
+       sv.verse_id, ev.verse_id, 'free', 23753
+  FROM _s302_ps071_lookup sv, _s302_ps071_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=71 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-71-forsake-me-not-in-old-age-shew-thy-strength-to-this-generation',
+       E'Forsake me not in old age — until I have shewed thy strength unto this generation',
+       E'*Cast me not off in the time of old age; forsake me not when my strength faileth* (Psalm 71:9); *Now also when I am old and grayheaded, O Elohim (God), forsake me not; until I have shewed thy strength unto this generation, and thy power to every one that is to come* (71:18). The plea rests on the standing covenant word — *he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). And the grayheaded servant''s task is the commanded work of transmission: *We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4); *thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way* (Deuteronomy 6:7) — the Torah handed down. The restored wisdom crowns the very man the psalm pictures: *Much experience is the crown of old men, and the fear of Yahuah (God) is their glory* (Sirach 25:6). The aged are not cast off; their long experience is given to declare His strength to the generation to come.',
+       sv.verse_id, ev.verse_id, 'extras', 23756
+  FROM _s302_ps071_lookup sv, _s302_ps071_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=71 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-71-i-will-make-mention-of-thy-righteousness-even-of-thine-only',
+       E'I will make mention of thy righteousness, even of thine only',
+       E'*My mouth shall shew forth thy righteousness and thy salvation all the day; for I know not the numbers thereof. I will go in the strength of Adonai Yahuah (the Lord GOD): I will make mention of thy righteousness, even of thine only* (Psalm 71:15-16). The boast is not the servant''s own righteousness but Yahuah''s — His covenant faithfulness, declared and not hidden: *I have not hid thy righteousness within my heart; I have declared thy faithfulness and thy salvation... from the great congregation* (Psalm 40:10). Paul names the same righteousness OF Elohim: *therein is the righteousness of Elohim (God) revealed from faith to faith: as it is written, The just shall live by faith* (Romans 1:17); *the righteousness of Elohim (God) without the law is manifested, being witnessed by the law and the prophets* (Romans 3:21). It is righteousness apart from flesh-merit — yet *witnessed by the law and the prophets*, never abolishing them; the Torah and the prophets testify the very righteousness the psalmist boasts. Of thine only — His righteousness alone, not the servant''s, and not set against the covenant He gave.',
+       sv.verse_id, ev.verse_id, 'free', 23759
+  FROM _s302_ps071_lookup sv, _s302_ps071_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=71 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-71-thou-shalt-quicken-me-again-and-bring-me-up-from-the-depths',
+       E'Thou shalt quicken me again, and bring me up again from the depths of the earth',
+       E'*Thou, which hast shewed me great and sore troubles, shalt quicken me again, and shalt bring me up again from the depths of the earth* (Psalm 71:20). It is the resurrection hope spoken at the edge of the grave — the same raising the psalter testifies as done: *O Yahuah (LORD), thou hast brought up my soul from the grave: thou hast kept me alive, that I should not go down to the pit* (Psalm 30:3). The prophet sings it of the whole people: *After two days will he revive us: in the third day he will raise us up, and we shall live in his sight* (Hosea 6:2). And it is fulfilled in the resurrection by the Spirit — *he that raised up Messiah (Christ) from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you* (Romans 8:11); *this corruptible shall have put on incorruption, and this mortal shall have put on immortality... Death is swallowed up in victory* (1 Corinthians 15:54). Brought up again from the depths of Sheol, the aged servant is quickened and raised incorruptible.',
+       sv.verse_id, ev.verse_id, 'free', 23762
+  FROM _s302_ps071_lookup sv, _s302_ps071_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=71 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*In thee, O Yahuah (LORD), do I put my trust; let me never be ashamed* (Psalm 31:1) — the twin opening: 71:1-2 takes up the earlier prayer word for word at the close of a life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=31 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *that Rock was Messiah (Christ)* (1 Corinthians 10:4) — *thou art my rock and my fortress* (71:3): the Rock the servant trusts is the Formed Son who followed Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=3
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He is the Rock, his work is perfect* (Deuteronomy 32:4) — the Song of Moses names the same Rock the psalmist makes his fortress (71:3).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=3
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he that believeth shall not make haste* (Isaiah 28:16) — the never-confounded trust (71:1) rests on the sure stone laid in Zion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *whosoever believeth on him shall not be ashamed* (Romans 9:33) — Paul seals 71:1: the Rock = the stone laid in Sion, and the one who trusts is never put to shame.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Whosoever believeth on him shall not be ashamed* (Romans 10:11) — the never-ashamed trust of 71:1 made the scripture''s universal promise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *he that believeth on him shall not be confounded* (1 Peter 2:6) — Peter quotes the very word of 71:1: the chief corner stone laid in Sion, never confounded.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *did ever any trust in Yahuah (God), and was confounded?* (Sirach 2:10) — the plea of 71:1 tested against all the ages: none who trusted were ever put to shame.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=1
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-in-thee-do-i-put-my-trust-let-me-never-be-confounded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *borne by me from the belly, which are carried from the womb* (Isaiah 46:3) — holden up from the womb (71:6), spoken to the house of Jacob and the remnant of Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=6
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=46 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-art-my-trust-from-my-youth-holden-up-from-the-womb'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *even to your old age I am he; and even to hoar hairs will I carry you* (Isaiah 46:4) — the answer to 71:9: the One who held him from the womb carries him to the gray hairs.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=9
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=46 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-art-my-trust-from-my-youth-holden-up-from-the-womb'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou art he that took me out of the womb* (Psalm 22:9) — David sang the same trust from youth (71:6) in the psalm of the cross.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=6
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-art-my-trust-from-my-youth-holden-up-from-the-womb'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Before I formed thee in the belly I knew thee* (Jeremiah 1:5) — the trust from youth (71:5) reaches back before the womb: known and set apart before formed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=5
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-art-my-trust-from-my-youth-holden-up-from-the-womb'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will never leave thee, nor forsake thee* (Hebrews 13:5) — the plea of 71:18 rests on the standing covenant word that does not fail in old age.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=18
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-forsake-me-not-in-old-age-shew-thy-strength-to-this-generation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*shewing to the generation to come the praises of Yahuah (LORD), and his strength* (Psalm 78:4) — the very charge 71:18 takes up: declaring His strength to the generation to come.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=18
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-forsake-me-not-in-old-age-shew-thy-strength-to-this-generation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt teach them diligently unto thy children* (Deuteronomy 6:7) — the declaring of 71:18 is the Torah charge of transmission, the covenant handed down.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=18
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-forsake-me-not-in-old-age-shew-thy-strength-to-this-generation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the fear of Yahuah (God) is their glory* (Sirach 25:6) — the restored wisdom crowns the grayhead of 71:18: long experience given to teach the generation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=18
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=25 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-forsake-me-not-in-old-age-shew-thy-strength-to-this-generation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have not hid thy righteousness within my heart; I have declared thy faithfulness and thy salvation* (Psalm 40:10) — the same open mouth as 71:15: His righteousness shewn forth, not hidden.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=15
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-i-will-make-mention-of-thy-righteousness-even-of-thine-only'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *therein is the righteousness of Elohim (God) revealed* (Romans 1:17) — *of thine only* (71:16): the boast is His righteousness, His covenant faithfulness, not the servant''s own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=16
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-i-will-make-mention-of-thy-righteousness-even-of-thine-only'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the righteousness of Elohim (God) without the law... witnessed by the law and the prophets* (Romans 3:21) — His righteousness (71:16) apart from flesh-merit yet testified BY the Torah, not abolishing it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=16
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-i-will-make-mention-of-thy-righteousness-even-of-thine-only'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou hast brought up my soul from the grave* (Psalm 30:3) — what 71:20 prays as hope, the psalter testifies as done: the soul brought up, kept from the pit.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=20
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-shalt-quicken-me-again-and-bring-me-up-from-the-depths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *in the third day he will raise us up, and we shall live in his sight* (Hosea 6:2) — the prophet sings the revival of 71:20 for the whole people: raised to live before Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=20
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-shalt-quicken-me-again-and-bring-me-up-from-the-depths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *shall also quicken your mortal bodies by his Spirit* (Romans 8:11) — the quickening of 71:20 fulfilled: the Spirit of the One who raised Messiah quickening His own.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=20
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-shalt-quicken-me-again-and-bring-me-up-from-the-depths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *this mortal shall have put on immortality... Death is swallowed up in victory* (1 Corinthians 15:54) — the bringing-up from the depths (71:20) is the mortal raised incorruptible.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps071_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=71 AND sv.verse_number=20
+  JOIN _s302_ps071_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-71-thou-shalt-quicken-me-again-and-bring-me-up-from-the-depths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_73.sql (Psalm 73) -----
+-- Chapter: Psalm 73 — THE GREAT THEODICY (Asaph), opening Book III. The prosperity of the wicked
+-- threatens to overturn the faith of the upright — *as for me, my feet were almost gone; my steps
+-- had well nigh slipped* (v.2) — until the riddle is broken in the sanctuary: ★★ *Until I went into
+-- the sanctuary of Elohim (God); then understood I their end* (v.17). The psalm resolves into the
+-- deepest hope of the Tanakh — ★★ *thou hast holden me by my right hand. Thou shalt guide me with
+-- thy counsel, and afterward receive me to glory* (vv.23-24); *Elohim (God) is the strength of my
+-- heart, and my portion for ever* (v.26) — and closes in nearness: ★ *it is good for me to draw near
+-- to Elohim* (v.28).
+-- Tag: ps073   Temp view: _s302_ps073_lookup
+-- Sort band: base 23800, step 3 -> threads at 23800, 23803, 23806, 23809, 23812, 23815, 23818 (7 threads)
+-- Source of EVERY row: 'canon','psalms',73,v
+--
+-- Psalm 73 coverage:
+--   v.1 (Truly Elohim (God) is good to Yashar'el (Israel), even to such as are of a clean heart)
+--        NT:     ★ Matthew 5:8 (Blessed are the pure in heart: for they shall see Elohim (God)) — THREAD 1
+--        Extras: none warranted (the clean-heart thesis is carried by the canon witnesses)
+--        Tanakh: ★ Psalm 24:3-4 (Who shall ascend... He that hath clean hands, and a pure heart) — THREAD 1
+--   ★ vv.2-3,12-14 (my feet were almost gone... I was envious at the foolish, when I saw the prosperity
+--          of the wicked... these are the ungodly, who prosper in the world; they increase in riches...
+--          Verily I have cleansed my heart in vain)
+--        NT:     none warranted (the perennial question is carried by Job/Jeremiah/Proverbs)
+--        Extras: none warranted here (the envy-at-the-wicked material weighed; ⚠ Wisdom 2:1-5 is the
+--                UNGODLY's despair-reasoning, NOT used; the end-of-the-righteous answer lands in THREADS 3-4)
+--        Tanakh: ★ Job 21:7 (Wherefore do the wicked live, become old, yea, are mighty in power?),
+--                Jeremiah 12:1 (Wherefore doth the way of the wicked prosper?), Proverbs 23:17 (Let not
+--                thine heart envy sinners), Proverbs 24:1 (Be not thou envious against evil men) — THREAD 2
+--   ★★ vv.16-17 KEYSTONE (When I thought to know this, it was too painful for me; Until I went into the
+--          sanctuary of Elohim (God); then understood I their end)
+--        NT:     none warranted as separate (the end-discerned weave is carried by the Tanakh/Wisdom here;
+--                the sudden-fall NT add sits in THREAD 4)
+--        Extras: ★ Wisdom 3:1-9 (the souls of the righteous are in the hand of Yahuah (God)... in the time
+--                of their visitation they shall shine) and 3:10 (the ungodly shall be punished) — the end
+--                of righteous vs ungodly seen — THREAD 3
+--        Tanakh: ★ Psalm 37:37-38 (the end of that man is peace... the end of the wicked shall be cut off),
+--                Proverbs 14:12 (a way which seemeth right unto a man, but the end thereof are the ways of
+--                death), Malachi 3:18 (discern between the righteous and the wicked) — THREAD 3
+--   vv.18-20 (Surely thou didst set them in slippery places... How are they brought into desolation, as
+--          in a moment! ... As a dream when one awaketh)
+--        NT:     ★ Luke 12:20 (Thou fool, this night thy soul shall be required of thee) — THREAD 4
+--        Extras: ★ Wisdom 5:14 (the hope of the ungodly is like dust that is blown away with the wind),
+--                Wisdom 5:8-9 (What has pride profited us?... passed away like a shadow) — THREAD 4
+--        Tanakh: ★ Psalm 37:35-36 (I have seen the wicked in great power... Yet he passed away, and, lo,
+--                he was not) — THREAD 4
+--   v.21-22 (Thus my heart was grieved... So foolish was I, and ignorant: I was as a beast before thee)
+--        NT/Extras/Tanakh: none warranted as separate (the confession of folly is the hinge into THREAD 5;
+--                folded into its summary as the turn from the beast-mind to being held)
+--   ★★ vv.23-24 KEYSTONE (Nevertheless I am continually with thee: thou hast holden me by my right hand.
+--          Thou shalt guide me with thy counsel, and afterward receive me to glory)
+--        NT:     ★ Romans 8:30 (whom he justified, them he also glorified — received to glory), John 14:3
+--                (I will come again, and receive you unto myself) — THREAD 5
+--        Extras: none warranted (the resurrection-glory hope is carried by the canon Psalter + NT)
+--        Tanakh: ★ Psalm 16:9-11 (my flesh also shall rest in hope... thou wilt not leave my soul in
+--                hell... in thy presence is fulness of joy), Psalm 49:15 (Elohim (God) will redeem my soul
+--                from the power of the grave: for he shall receive me) — THREAD 5
+--   ★★ vv.25-26 KEYSTONE (Whom have I in heaven but thee?... Elohim (God) is the strength of my heart, and
+--          my portion for ever)
+--        NT:     none warranted as separate (the portion-for-ever weave is the Tanakh's own; folded with v.26)
+--        Extras: none warranted
+--        Tanakh: ★ Lamentations 3:24 (Yahuah (LORD) is my portion, saith my soul), Psalm 16:5 (Yahuah
+--                (LORD) is the portion of mine inheritance and of my cup), Numbers 18:20 (I am thy part and
+--                thine inheritance — the Levite's portion) — THREAD 6
+--   v.27 (they that are far from thee shall perish: thou hast destroyed all them that go a whoring from thee)
+--        NT/Extras/Tanakh: none warranted as separate (the far-perish counterpoint is carried within
+--                THREAD 4's fall-of-the-wicked and THREAD 6's near-vs-far frame; folded)
+--   ★ v.28 (But it is good for me to draw near to Elohim (God): I have put my trust in Adonai Yahuah (the
+--          Lord GOD), that I may declare all thy works)
+--        NT:     ★ Hebrews 10:22 (Let us draw near with a true heart in full assurance of faith), James 4:8
+--                (Draw nigh to Elohim (God), and he will draw nigh to you) — THREAD 7
+--        Extras: none warranted
+--        Tanakh: none warranted as separate (the drawing-near is carried forward to Hebrews/James)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-73-truly-elohim-is-good-to-the-clean-of-heart — NT (Matthew 5) + Tanakh (Psalm 24) [free]
+--   2. psalm-73-i-was-envious-at-the-prosperity-of-the-wicked — Tanakh (Job 21, Jeremiah 12, Proverbs 23, Proverbs 24) [free]
+--   3. psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end — Extras (Wisdom 3) + Tanakh
+--      (Psalm 37, Proverbs 14, Malachi 3) [extras] (★★ KEYSTONE: the riddle broken in the sanctuary)
+--   4. psalm-73-thou-didst-set-them-in-slippery-places-the-sudden-fall — NT (Luke 12) + Extras (Wisdom 5) +
+--      Tanakh (Psalm 37) [extras]
+--   5. psalm-73-thou-hast-holden-me-by-my-right-hand-received-to-glory — NT (Romans 8, John 14) + Tanakh
+--      (Psalm 16, Psalm 49) [free] (★★ KEYSTONE: the resurrection / glorification hope)
+--   6. psalm-73-elohim-is-my-portion-for-ever — Tanakh (Lamentations 3, Psalm 16, Numbers 18) [free]
+--   7. psalm-73-it-is-good-for-me-to-draw-near-to-elohim — NT (Hebrews 10, James 4) [free]
+--
+-- Framing notes:
+--   ★★ THE SANCTUARY (THREAD 3, KEYSTONE): the whole psalm hangs on a turn — the prosperity of the wicked
+--      is *too painful* to know *Until I went into the sanctuary of Elohim (God); then understood I their
+--      end* (73:16-17). The end is the answer: *Mark the perfect man... for the end of that man is peace.
+--      But the transgressors shall be destroyed together: the end of the wicked shall be cut off* (Psalm
+--      37:37-38); *There is a way which seemeth right unto a man, but the end thereof are the ways of death*
+--      (Proverbs 14:12); and the day comes to *discern between the righteous and the wicked* (Malachi 3:18).
+--      The restored wisdom sets the same two ends side by side — *the souls of the righteous are in the
+--      hand of Yahuah (God)... in the time of their visitation they shall shine* (Wisdom 3:1,7), *But the
+--      ungodly shall be punished according to their own imaginations* (Wisdom 3:10). ⚠ Wisdom 2:1-5 (the
+--      ungodly's own despair-reasoning) is deliberately NOT used.
+--   ★★ RECEIVED TO GLORY (THREAD 5, KEYSTONE): the confession of folly (*I was as a beast before thee*,
+--      v.22) turns to the surest hope of the Psalter — *Nevertheless I am continually with thee: thou hast
+--      holden me by my right hand. Thou shalt guide me with thy counsel, and afterward receive me to glory*
+--      (73:23-24). The same psalmist sang *my flesh also shall rest in hope... thou wilt not leave my soul
+--      in hell* (Psalm 16:9-10) and *Elohim (God) will redeem my soul from the power of the grave: for he
+--      shall receive me* (Psalm 49:15) — the receiving past death. Paul names it the chain that ends in
+--      glory — *whom he justified, them he also glorified* (Romans 8:30) — and the Formed Son makes it His
+--      own promise — *I will come again, and receive you unto myself; that where I am, there ye may be also*
+--      (John 14:3). The being-held-now is the being-received-then.
+--   VERSES WITH NO SEPARATE ADD: vv.4-11 (the catalogue of the wicked's ease and blasphemy) and v.15,21-22,
+--      27 fold into the surrounding weaves (the envy/prosperity of THREAD 2, the fall of THREAD 4, the
+--      hinge into THREAD 5, the near-vs-far of THREAD 6) — the framework weight sits on vv.1,2-3/12-14,
+--      16-17,18-20,23-24,25-26,28, woven there.
+
+CREATE TEMP VIEW _s302_ps073_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Truly Elohim is good to the clean of heart
+    ('canon','psalms',73,1,'canon','matthew',5,8,'free',
+      E'*Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). *Truly Elohim (God) is good to Yashar''el (Israel), even to such as are of a clean heart* (Psalm 73:1): the psalm''s thesis is the beatitude before it was spoken — the good of Elohim is for the clean of heart, and the pure in heart are the ones who shall see Him. The whole theodicy is opened by this narrowing: not to all Yashar''el broadly, but to such as are of a clean heart.'),
+    ('canon','psalms',73,1,'canon','psalms',24,4,'free',
+      E'*He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully* (Psalm 24:4), the answer to *Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place?* (24:3). *Truly Elohim (God) is good... even to such as are of a clean heart* (Psalm 73:1): the clean heart of Asaph''s thesis is the clean heart and pure hands that may ascend the hill and stand in the holy place — the very place where, four verses on, the riddle of the wicked is broken (73:17).'),
+
+    -- THREAD 2 (★): I was envious at the prosperity of the wicked
+    ('canon','psalms',73,3,'canon','job',21,7,'free',
+      E'*Wherefore do the wicked live, become old, yea, are mighty in power?* (Job 21:7). *I was envious at the foolish, when I saw the prosperity of the wicked* (Psalm 73:3): Job names the same scandal — the wicked not cut off but living long and growing mighty. *There are no bands in their death: but their strength is firm* (73:4); *Their houses are safe from fear* (Job 21:9): one question across two books, the ease of the ungodly that tries the faith of the upright.'),
+    ('canon','psalms',73,3,'canon','jeremiah',12,1,'free',
+      E'*Righteous art thou, O Yahuah (LORD), when I plead with thee... Wherefore doth the way of the wicked prosper? wherefore are all they happy that deal very treacherously?* (Jeremiah 12:1). *I was envious at the foolish, when I saw the prosperity of the wicked* (Psalm 73:3): the prophet pleads the very complaint — the way of the wicked prospering, the treacherous at ease. It is the perennial question of the covenant, taken up by psalmist and prophet alike, and answered only at the end (73:17; Jeremiah 12:3).'),
+    ('canon','psalms',73,3,'canon','proverbs',23,17,'free',
+      E'*Let not thine heart envy sinners: but be thou in the fear of Yahuah (LORD) all the day long* (Proverbs 23:17). *I was envious at the foolish, when I saw the prosperity of the wicked* (Psalm 73:3): the proverb names the very snare Asaph nearly fell into — the envy of sinners — and sets the remedy, the fear of Yahuah all the day long. *For surely there is an end; and thine expectation shall not be cut off* (Proverbs 23:18): the cure for the envy is to see the end.'),
+    ('canon','psalms',73,12,'canon','proverbs',24,1,'free',
+      E'*Be not thou envious against evil men, neither desire to be with them* (Proverbs 24:1). *Behold, these are the ungodly, who prosper in the world; they increase in riches* (Psalm 73:12): the proverb forbids the very gaze the psalm describes — looking on the prospering wicked with envy. *For there shall be no reward to the evil man; the candle of the wicked shall be put out* (Proverbs 24:20): the increase of riches is no reward, for the candle is put out.'),
+
+    -- THREAD 3 (★★ KEYSTONE): Until I went into the sanctuary, then understood I their end
+    ('canon','psalms',73,17,'canon','psalms',37,37,'free',
+      E'*Mark the perfect man, and behold the upright: for the end of that man is peace. But the transgressors shall be destroyed together: the end of the wicked shall be cut off* (Psalm 37:37-38). *Until I went into the sanctuary of Elohim (God); then understood I their end* (Psalm 73:17): the end that Asaph saw in the sanctuary is the end this neighbouring psalm declares — peace for the perfect, cutting-off for the wicked. The riddle of the prospering ungodly is broken the moment the latter-end is seen.'),
+    ('canon','psalms',73,17,'canon','proverbs',14,12,'free',
+      E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). *Until I went into the sanctuary of Elohim (God); then understood I their end* (Psalm 73:17): the way of the wicked seems right — it prospers, it increases — but the proverb names what the sanctuary showed Asaph: the end thereof is death. The seeming is undone by the end.'),
+    ('canon','psalms',73,17,'canon','malachi',3,18,'free',
+      E'*Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). *Until I went into the sanctuary of Elohim (God); then understood I their end* (Psalm 73:17): Malachi answers the same despair — those who said *It is vain to serve Elohim (God)... we call the proud happy* (3:14-15) — with the coming day of discerning. What Asaph saw in the sanctuary, the day of Yahuah will make plain to all: the line drawn between the one who serves and the one who serves not.'),
+    ('canon','psalms',73,17,'apocrypha','the-wisdom-of-solomon',3,1,'extras',
+      E'*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom 3:1). *Until I went into the sanctuary of Elohim (God); then understood I their end* (Psalm 73:17): the restored wisdom shows the very end Asaph beheld — the righteous, who *seemed to die* (3:2) in the sight of the unwise, are in fact held safe in the hand of Yahuah, *and in the time of their visitation they shall shine* (3:7). The end the sanctuary reveals is not the prosperity of the wicked but the immortal hope of the righteous.'),
+    ('canon','psalms',73,17,'apocrypha','the-wisdom-of-solomon',3,10,'extras',
+      E'*But the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God)* (Wisdom 3:10). *Until I went into the sanctuary of Elohim (God); then understood I their end* (Psalm 73:17): set against the souls of the righteous held safe (3:1), the wisdom names the other end — the ungodly punished according to their own imaginations. The two ends seen together in the sanctuary: the righteous shining, the ungodly undone.'),
+
+    -- THREAD 4 (★): Thou didst set them in slippery places — the sudden fall
+    ('canon','psalms',73,19,'canon','luke',12,20,'free',
+      E'*But Elohim (God) said unto him, Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). *How are they brought into desolation, as in a moment! they are utterly consumed with terrors* (Psalm 73:19): the Formed Son tells the parable of the very fall the psalm names — the rich man who *increase[d] in riches* (73:12), heaping goods for many years, undone *as in a moment*, his soul required in a night. The slippery place gives way without warning.'),
+    ('canon','psalms',73,18,'canon','psalms',37,35,'free',
+      E'*I have seen the wicked in great power, and spreading himself like a green bay tree. Yet he passed away, and, lo, he was not: yea, I sought him, but he could not be found* (Psalm 37:35-36). *Surely thou didst set them in slippery places: thou castedst them down into destruction* (Psalm 73:18): the neighbouring psalm has watched the same thing happen — the wicked in great power, spreading and flourishing, and then simply not there. The slippery place of 73:18 is the green bay tree of 37:35, here in power, gone and unfindable.'),
+    ('canon','psalms',73,20,'apocrypha','the-wisdom-of-solomon',5,14,'extras',
+      E'*For the hope of the ungodly is like dust that is blown away with the wind; like a thin froth that is driven away with the storm... and passeth away as the remembrance of a guest that tarrieth but a day* (Wisdom 5:14). *As a dream when one awaketh; so, O Yahuah (Lord), when thou awakest, thou shalt despise their image* (Psalm 73:20): the wisdom names the ungodly''s end in the same vanishing terms — dust on the wind, froth in the storm, the dream that dissolves on waking. The image of the prospering wicked is a thing that does not survive the dawn.'),
+    ('canon','psalms',73,18,'apocrypha','the-wisdom-of-solomon',5,8,'extras',
+      E'*What has pride profited us? or what good has riches with our vaunting brought us? All those things are passed away like a shadow, and as a post that hasted by* (Wisdom 5:8-9). *Surely thou didst set them in slippery places: thou castedst them down into destruction* (Psalm 73:18): the restored wisdom puts the confession in the mouth of the fallen — pride profited nothing, riches passed like a shadow. *Pride compasseth them about as a chain* (73:6) until the slippery place gives way, and then it is all a shadow hasting by.'),
+
+    -- THREAD 5 (★★ KEYSTONE): Thou hast holden me by my right hand — received to glory
+    ('canon','psalms',73,23,'canon','psalms',16,11,'free',
+      E'*Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore* (Psalm 16:11), set with *my flesh also shall rest in hope... thou wilt not leave my soul in hell* (16:9-10). *Nevertheless I am continually with thee: thou hast holden me by my right hand* (Psalm 73:23): the same Psalter hope — the right hand that holds, the presence that is fulness of joy, the path of life that runs past the grave. To be held by His right hand now is to be shown the path of life forever.'),
+    ('canon','psalms',73,24,'canon','psalms',49,15,'free',
+      E'*But Elohim (God) will redeem my soul from the power of the grave: for he shall receive me. Selah* (Psalm 49:15). *Thou shalt guide me with thy counsel, and afterward receive me to glory* (Psalm 73:24): the twin theodicy psalm answers the rich man''s death with the same word — *he shall receive me*. Where the wicked *carr[y] nothing away* (49:17), the soul of the upright is redeemed from the grave and received; the receiving-to-glory of 73:24 is the receiving of 49:15, the hope beyond death.'),
+    ('canon','psalms',73,24,'canon','romans',8,30,'free',
+      E'*Moreover whom he did predestinate, them he also called: and whom he called, them he also justified: and whom he justified, them he also glorified* (Romans 8:30). *Thou shalt guide me with thy counsel, and afterward receive me to glory* (Psalm 73:24): Paul names the end of the chain that Asaph reached in faith — they whom Yahuah justifies, He also glorifies. The afterward-received-to-glory of the psalm is the also-glorified of the gospel, the certain end of those held by His right hand.'),
+    ('canon','psalms',73,24,'canon','john',14,3,'free',
+      E'*And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also* (John 14:3). *Thou shalt guide me with thy counsel, and afterward receive me to glory* (Psalm 73:24): the Formed Son makes the psalm''s hope His own promise — *I will come again, and receive you unto myself*. The receiving-to-glory Asaph trusted is the receiving-unto-himself the Son pledged; the being-held-now ends in being-where-He-is.'),
+
+    -- THREAD 6: Elohim is my portion for ever
+    ('canon','psalms',73,26,'canon','lamentations',3,24,'free',
+      E'*Yahuah (LORD) is my portion, saith my soul; therefore will I hope in him* (Lamentations 3:24). *My flesh and my heart faileth: but Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26): out of the depths of the lament rises the same confession — Yahuah Himself is the portion, and that portion is the ground of hope. When flesh and heart fail, the portion does not fail; He is portion for ever.'),
+    ('canon','psalms',73,26,'canon','psalms',16,5,'free',
+      E'*Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot* (Psalm 16:5). *Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26): the same Psalter knows no inheritance but Yahuah Himself — *Whom have I in heaven but thee? and there is none upon earth that I desire beside thee* (73:25). The portion is not the prosperity the wicked clutch but the living Elohim, the lot that He Himself maintains.'),
+    ('canon','psalms',73,26,'canon','numbers',18,20,'free',
+      E'*And Yahuah (LORD) spake unto Aaron, Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). *Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26): the priest''s portion was Yahuah Himself, no field, no land — and Asaph, a son of the sanctuary singers, makes the Levite''s lot his own. The one who has Elohim for his portion needs none of the riches the ungodly increase (73:12).'),
+
+    -- THREAD 7 (★): It is good for me to draw near to Elohim
+    ('canon','psalms',73,28,'canon','hebrews',10,22,'free',
+      E'*Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). *But it is good for me to draw near to Elohim (God)* (Psalm 73:28): the psalm that began with *such as are of a clean heart* (73:1) and found its answer in the sanctuary (73:17) ends in the drawing-near — and Hebrews opens the new and living way into the holiest, the same drawing-near now with a true heart and full assurance. The good of Asaph is the boldness of Hebrews: to come near.'),
+    ('canon','psalms',73,28,'canon','james',4,8,'free',
+      E'*Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8). *But it is good for me to draw near to Elohim (God): I have put my trust in Adonai Yahuah (the Lord GOD)* (Psalm 73:28): James gives the promise that meets the psalm''s resolve — draw nigh, and He draws nigh; and he names the same clean-heart condition the psalm opened with (73:1), *purify your hearts*. The drawing-near is mutual, and it is the way of the clean heart.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-truly-elohim-is-good-to-the-clean-of-heart',
+       E'Truly Elohim is good to Yashar''el — even to such as are of a clean heart',
+       E'The great theodicy opens not with a question but with a thesis, and a narrowing: *Truly Elohim (God) is good to Yashar''el (Israel), even to such as are of a clean heart* (Psalm 73:1). The good of Elohim is real, but it is for the clean of heart — and the whole psalm will test that thesis against the prosperity of the wicked before returning to it. The Formed Son spoke the same beatitude on the mount: *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8). And the Psalter had already set the clean heart at the door of the sanctuary itself: *Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place? He that hath clean hands, and a pure heart* (Psalm 24:3-4) — the very sanctuary where, four verses on, Asaph will go in and understand the end of the wicked (73:17). The good is for the clean heart, and the clean heart is the one that may stand in the holy place and see Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 23800
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-i-was-envious-at-the-prosperity-of-the-wicked',
+       E'My feet were almost gone — I was envious at the prosperity of the wicked',
+       E'Here is the stumbling that nearly cost Asaph his faith: *But as for me, my feet were almost gone; my steps had well nigh slipped. For I was envious at the foolish, when I saw the prosperity of the wicked* (Psalm 73:2-3). He catalogues their ease — *there are no bands in their death: but their strength is firm* (73:4) — and confesses the bitter conclusion he nearly drew: *Verily I have cleansed my heart in vain, and washed my hands in innocency* (73:13). It is the perennial question of the covenant. Job pressed it: *Wherefore do the wicked live, become old, yea, are mighty in power?* (Job 21:7). Jeremiah pleaded it to Yahuah''s face: *Wherefore doth the way of the wicked prosper? wherefore are all they happy that deal very treacherously?* (Jeremiah 12:1). And the wisdom of Proverbs names both the snare and its cure: *Let not thine heart envy sinners: but be thou in the fear of Yahuah (LORD) all the day long. For surely there is an end* (Proverbs 23:17-18); *Be not thou envious against evil men... For there shall be no reward to the evil man; the candle of the wicked shall be put out* (Proverbs 24:1,20). The envy is answered only by the end — which the next thread will show is seen in the sanctuary.',
+       sv.verse_id, ev.verse_id, 'free', 23803
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end',
+       E'Until I went into the sanctuary of Elohim — then understood I their end',
+       E'This is the hinge of the whole psalm, the turning of the theodicy: *When I thought to know this, it was too painful for me; Until I went into the sanctuary of Elohim (God); then understood I their end* (Psalm 73:16-17). The riddle of the prospering wicked cannot be solved by staring at the prosperity; it is broken in the appointed place of worship, where the latter-end is seen. The neighbouring psalm declares that end: *Mark the perfect man, and behold the upright: for the end of that man is peace. But the transgressors shall be destroyed together: the end of the wicked shall be cut off* (Psalm 37:37-38). The proverb names it: *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). And Malachi promises the day when all will see it — answering the very despair (*It is vain to serve Elohim (God)... we call the proud happy*, 3:14-15) — *Then shall ye return, and discern between the righteous and the wicked, between him that serveth Elohim (God) and him that serveth him not* (Malachi 3:18). The restored wisdom of Solomon sets the two ends side by side: *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom 3:1) — they only *seemed to die* (3:2), and *in the time of their visitation they shall shine* (3:7) — while *the ungodly shall be punished according to their own imaginations, which have neglected the righteous, and forsaken Yahuah (God)* (Wisdom 3:10). The end is the answer the sanctuary gives.',
+       sv.verse_id, ev.verse_id, 'extras', 23806
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-thou-didst-set-them-in-slippery-places-the-sudden-fall',
+       E'Thou didst set them in slippery places — the sudden fall of the wicked',
+       E'The end seen in the sanctuary is a fall, and a sudden one: *Surely thou didst set them in slippery places: thou castedst them down into destruction. How are they brought into desolation, as in a moment! they are utterly consumed with terrors. As a dream when one awaketh; so, O Yahuah (Lord), when thou awakest, thou shalt despise their image* (Psalm 73:18-20). The very firmness Asaph envied (73:4) is revealed as footing on ice. The Formed Son told the parable of it — the man who *increase[d] in riches* (73:12) heaping goods for many years: *Thou fool, this night thy soul shall be required of thee: then whose shall those things be, which thou hast provided?* (Luke 12:20). The neighbouring psalm watched it happen in real time: *I have seen the wicked in great power, and spreading himself like a green bay tree. Yet he passed away, and, lo, he was not: yea, I sought him, but he could not be found* (Psalm 37:35-36). And the restored wisdom names the vanishing in the same terms — *the hope of the ungodly is like dust that is blown away with the wind... and passeth away as the remembrance of a guest that tarrieth but a day* (Wisdom 5:14) — and puts the confession in the mouths of the fallen: *What has pride profited us? or what good has riches with our vaunting brought us? All those things are passed away like a shadow, and as a post that hasted by* (Wisdom 5:8-9). The image of the prospering wicked does not survive the dawn.',
+       sv.verse_id, ev.verse_id, 'extras', 23809
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-thou-hast-holden-me-by-my-right-hand-received-to-glory',
+       E'Thou hast holden me by my right hand — and afterward receive me to glory',
+       E'The confession of his own folly — *So foolish was I, and ignorant: I was as a beast before thee* (Psalm 73:22) — turns at once into the surest hope of the whole Psalter: *Nevertheless I am continually with thee: thou hast holden me by my right hand. Thou shalt guide me with thy counsel, and afterward receive me to glory* (Psalm 73:23-24). This is the answer that swallows the envy of the wicked: not better prosperity, but to be held by His right hand now and received to glory afterward — the hope that runs past death. The same Psalter sang it: *my flesh also shall rest in hope... thou wilt not leave my soul in hell... Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore* (Psalm 16:9-11); and *Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15) — the twin theodicy psalm, where the rich man *carr[ies] nothing away* (49:17) but the upright soul is received. Paul names the end of that chain: *whom he justified, them he also glorified* (Romans 8:30). And the Formed Son made the receiving His own pledge: *I will come again, and receive you unto myself; that where I am, there ye may be also* (John 14:3). The being-held-now is the being-received-then; the right hand that holds is the hand that brings to glory.',
+       sv.verse_id, ev.verse_id, 'free', 23812
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-elohim-is-my-portion-for-ever',
+       E'Whom have I in heaven but thee? — Elohim is my portion for ever',
+       E'The hope resolves into a single desire that empties out everything the wicked clutched at: *Whom have I in heaven but thee? and there is none upon earth that I desire beside thee. My flesh and my heart faileth: but Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:25-26). The portion is not the riches the ungodly increase (73:12) but Yahuah Himself. Out of the deepest lament the same confession rises: *Yahuah (LORD) is my portion, saith my soul; therefore will I hope in him* (Lamentations 3:24). The Psalter knew no other inheritance: *Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot* (Psalm 16:5). And the root of it is the priest''s own lot — for Asaph was of the sanctuary singers — *Thou shalt have no inheritance in their land... I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). The Levite was given no field, because he was given Yahuah; and the man whose portion is Elohim needs none of the prosperity that fails when flesh and heart fail.',
+       sv.verse_id, ev.verse_id, 'free', 23815
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-73-it-is-good-for-me-to-draw-near-to-elohim',
+       E'It is good for me to draw near to Elohim',
+       E'The psalm that began with the clean heart (73:1) and was solved in the sanctuary (73:17) ends where a clean heart belongs — drawn near: *But it is good for me to draw near to Elohim (God): I have put my trust in Adonai Yahuah (the Lord GOD), that I may declare all thy works* (Psalm 73:28). Against the wicked who are *far from thee* and *perish* (73:27), the upright draws near. Hebrews opens the new and living way into that very nearness: *Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). And James gives the promise that meets the resolve and names the same clean-heart condition the psalm opened with: *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8). The good Asaph found is the drawing-near; the drawing-near is mutual; and it is, from first verse to last, the way of the clean heart.',
+       sv.verse_id, ev.verse_id, 'free', 23818
+  FROM _s302_ps073_lookup sv, _s302_ps073_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=73 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Blessed are the pure in heart: for they shall see Elohim (God)* (Matthew 5:8) — the thesis of 73:1 spoken as beatitude: the good of Elohim is for the clean heart, who shall see Him.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=1
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-truly-elohim-is-good-to-the-clean-of-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *He that hath clean hands, and a pure heart* (Psalm 24:4) — the clean heart of 73:1 is the one that may ascend the hill and stand in the holy place, the very sanctuary of 73:17.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=1
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=24 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-truly-elohim-is-good-to-the-clean-of-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Wherefore do the wicked live, become old, yea, are mighty in power?* (Job 21:7) — the same scandal as 73:3-4: the wicked not cut off but living long, their strength firm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=3
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=21 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-i-was-envious-at-the-prosperity-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Wherefore doth the way of the wicked prosper?* (Jeremiah 12:1) — the prophet pleads the very complaint of 73:3: the way of the wicked prospering, the treacherous at ease.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=3
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-i-was-envious-at-the-prosperity-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Let not thine heart envy sinners: but be thou in the fear of Yahuah (LORD) all the day long* (Proverbs 23:17) — the snare of 73:3 named, with its cure and the promise *surely there is an end* (23:18).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=3
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=23 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-i-was-envious-at-the-prosperity-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Be not thou envious against evil men* (Proverbs 24:1) — the gaze of 73:12 (the ungodly who increase in riches) forbidden; *the candle of the wicked shall be put out* (24:20).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=12
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=24 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-i-was-envious-at-the-prosperity-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the end of that man is peace... the end of the wicked shall be cut off* (Psalm 37:37-38) — the end Asaph saw in the sanctuary (73:17): peace for the perfect, cutting-off for the wicked.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=17
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12) — the prospering way of the wicked seems right, but the end (73:17) is death.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=17
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *discern between the righteous and the wicked* (Malachi 3:18) — the coming day makes plain to all what the sanctuary showed Asaph (73:17), answering *it is vain to serve Elohim* (3:14).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=17
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the souls of the righteous are in the hand of Yahuah (God)... in the time of their visitation they shall shine* (Wisdom 3:1,7) — the end seen in the sanctuary (73:17): the righteous held safe, only seeming to die.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=17
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the ungodly shall be punished according to their own imaginations* (Wisdom 3:10) — the other end set beside the righteous (73:17): the ungodly undone by their own devices.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=17
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-until-i-went-into-the-sanctuary-then-understood-i-their-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Thou fool, this night thy soul shall be required of thee* (Luke 12:20) — the Formed Son''s parable of the fall of 73:19: the rich man heaping goods, undone as in a moment.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=19
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-didst-set-them-in-slippery-places-the-sudden-fall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the wicked in great power... Yet he passed away, and, lo, he was not* (Psalm 37:35-36) — the slippery place of 73:18: the wicked flourishing like a green bay tree, then gone and unfindable.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=18
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-didst-set-them-in-slippery-places-the-sudden-fall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the hope of the ungodly is like dust that is blown away with the wind* (Wisdom 5:14) — the vanishing image of 73:20: the dream that dissolves on waking, the guest who tarries but a day.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=20
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-didst-set-them-in-slippery-places-the-sudden-fall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *What has pride profited us?... passed away like a shadow* (Wisdom 5:8-9) — the confession of the fallen, set against 73:18: pride (73:6) profited nothing when the slippery place gave way.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=18
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-didst-set-them-in-slippery-places-the-sudden-fall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *thou wilt not leave my soul in hell... at thy right hand there are pleasures for evermore* (Psalm 16:9-11) — the same Psalter hope as 73:23: the right hand that holds, the path of life past the grave.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=23
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-hast-holden-me-by-my-right-hand-received-to-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Elohim (God) will redeem my soul from the power of the grave: for he shall receive me* (Psalm 49:15) — the twin theodicy psalm''s *he shall receive me* is the *receive me to glory* of 73:24, the hope beyond death.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=24
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=49 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-hast-holden-me-by-my-right-hand-received-to-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *whom he justified, them he also glorified* (Romans 8:30) — Paul names the end of the chain Asaph reached in faith: the *received to glory* of 73:24 is the also-glorified of the gospel.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=24
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-hast-holden-me-by-my-right-hand-received-to-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will come again, and receive you unto myself; that where I am, there ye may be also* (John 14:3) — the Formed Son makes 73:24 His own pledge: received to glory = received unto Himself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=24
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-thou-hast-holden-me-by-my-right-hand-received-to-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) is my portion, saith my soul; therefore will I hope in him* (Lamentations 3:24) — out of the lament the same confession as 73:26: Yahuah Himself the portion, the ground of hope.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=26
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-elohim-is-my-portion-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) is the portion of mine inheritance and of my cup* (Psalm 16:5) — the same Psalter desire as 73:25-26: no inheritance but Yahuah, the lot He Himself maintains.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=26
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-elohim-is-my-portion-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20) — the priest''s lot: Asaph, of the sanctuary singers, makes the Levite''s portion (73:26) his own — Yahuah, not the riches the wicked clutch.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=26
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-elohim-is-my-portion-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Let us draw near with a true heart in full assurance of faith* (Hebrews 10:22) — the drawing-near of 73:28: the new and living way into the holiest, the same nearness the clean heart was made for.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=28
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-it-is-good-for-me-to-draw-near-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Draw nigh to Elohim (God), and he will draw nigh to you... purify your hearts* (James 4:8) — the promise that meets 73:28 and names the clean-heart condition of 73:1: the drawing-near is mutual.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps073_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=73 AND sv.verse_number=28
+  JOIN _s302_ps073_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-73-it-is-good-for-me-to-draw-near-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
