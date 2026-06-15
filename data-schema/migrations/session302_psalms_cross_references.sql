@@ -21574,6 +21574,1353 @@ SELECT t.id, cr.id, 4, E'*the land is mine; for ye are strangers and sojourners 
  WHERE t.slug='psalm-39-i-am-a-stranger-with-thee-and-a-sojourner-as-all-my-fathers'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_41.sql (Psalm 41) -----
+-- Chapter: Psalm 41 — THE CLOSE OF BOOK I OF THE PSALTER. David's psalm of the considerate man
+-- betrayed in his sickness, ending in the great doxology that seals the first book of the five.
+-- Four load-bearing weaves: ★ the opening beatitude *Blessed is he that considereth the poor*
+-- (v.1) = the Torah-ethic of mercy to the poor (Deuteronomy 15:7-11, Proverbs 19:17), mercy
+-- returned by measure (vv.1-3; Matthew 5:7, Acts 20:35); v.4 *heal my soul; for I have sinned
+-- against thee* = the confession-and-healing lateral (Psalm 32, Psalm 51); ★★★ the KEYSTONE v.9
+-- *mine own familiar friend... which did eat of my bread, hath lifted up his heel against me*
+-- named BY the Formed Son as scripture-being-fulfilled in the betrayal of Judas (John 13:18); and
+-- ★ the closing doxology v.13 *Blessed be Yahuah Elohim of Israel from everlasting, and to
+-- everlasting. Amen, and Amen* = the seal of Book I, lateral to the matching doxologies that close
+-- Books II–IV (Psalm 72:18-19, 89:52, 106:48).
+-- Tag: ps041   Temp view: _s302_ps041_lookup
+-- Sort band: base 23000, step 3 -> threads at 23000, 23003, 23006, 23009 (4 threads)
+-- Source of EVERY row: 'canon','psalms',41,v
+--
+-- Psalm 41 coverage:
+--   ★ vv.1-3 (Blessed is he that considereth the poor: Yahuah will deliver him in time of trouble...
+--          Yahuah will preserve him, and keep him alive... Yahuah will strengthen him upon the bed
+--          of languishing)
+--        NT:     ★ Matthew 5:7 (Blessed are the merciful: for they shall obtain mercy — mercy
+--                returned by measure), Acts 20:35 (It is more blessed to give than to receive) — THREAD 1
+--        Extras: none warranted (Psalms run lean on extras; the poor-ethic is carried cleaner by the
+--                Torah + Proverbs + the Beatitude — Sirach almsgiving weighed but not forced)
+--        Tanakh: ★ Deuteronomy 15:7-11 (thou shalt not harden thine heart, nor shut thine hand from
+--                thy poor brother... thou shalt open thine hand wide — the Torah-command of mercy to
+--                the poor), ★ Proverbs 19:17 (He that hath pity upon the poor lendeth unto Yahuah;
+--                and that which he hath given will he pay him again — mercy returned by Yahuah) — THREAD 1
+--   v.4 (I said, Yahuah, be merciful unto me: heal my soul; for I have sinned against thee)
+--        NT:     none warranted (the confession-and-healing weave is fully carried by the psalter)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 32:1-5 (Blessed is he whose transgression is forgiven... I acknowledged my
+--                sin unto thee — confession met with forgiveness), Psalm 51:1-4 (Have mercy upon me...
+--                For I acknowledge my transgressions... Against thee, thee only, have I sinned) — THREAD 2
+--   vv.5-8 (Mine enemies speak evil of me... All that hate me whisper together against me... An evil
+--          disease, say they, cleaveth fast unto him)
+--        NT/Extras/Tanakh: none warranted as separate (the whispering-enemies material is the setting
+--          for the betrayal of v.9; folded as lead-in to THREAD 3)
+--   ★★★ v.9 (Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted
+--          up his heel against me)
+--        NT:     ★★★ John 13:18 (that the scripture may be fulfilled, He that eateth bread with me
+--                hath lifted up his heel against me — the Formed Son quotes the verse BY the betrayal
+--                of Judas), John 13:21 (one of you shall betray me — the betrayal foretold) — THREAD 3
+--                (load-bearing messianic: the psalm named as scripture being fulfilled)
+--        Extras: none warranted (SKIP 1 Enoch 62:5 per brief; the betrayal-type is carried by John)
+--        Tanakh: none warranted (the betrayer-type lands forward in John; no clean Tanakh add forced)
+--   vv.10-12 (raise me up, that I may requite them... thou upholdest me in mine integrity, and settest
+--          me before thy face for ever)
+--        NT/Extras/Tanakh: none warranted as separate (the vindication-and-upholding close folds into
+--          THREAD 3's resolution — the betrayed One raised up and set before Yahuah's face)
+--   ★ v.13 (Blessed be Yahuah Elohim of Israel from everlasting, and to everlasting. Amen, and Amen)
+--        NT:     none warranted (the doxology seals the Hebrew book-structure; no NT add)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 72:18-19 (Blessed be Yahuah Elohim, the Elohim of Yashar'el... and let the
+--                whole earth be filled with his glory; Amen, and Amen — the close of Book II),
+--                ★ Psalm 89:52 (Blessed be Yahuah for evermore. Amen, and Amen — the close of Book III),
+--                ★ Psalm 106:48 (Blessed be Yahuah Elohim of Yashar'el from everlasting to everlasting...
+--                Amen — the close of Book IV) — THREAD 4 (the five-book doxologies)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-41-blessed-is-he-that-considereth-the-poor — NT (Matthew 5, Acts 20) + Tanakh
+--      (Deuteronomy 15, Proverbs 19) [free] (★ the Torah-ethic of mercy to the poor, returned by measure)
+--   2. psalm-41-heal-my-soul-for-i-have-sinned-against-thee — Tanakh (Psalm 32, Psalm 51) [free]
+--      (the confession-and-healing weave — sin acknowledged, mercy sought)
+--   3. psalm-41-mine-own-familiar-friend-hath-lifted-up-his-heel — NT (John 13) [free]
+--      (★★★ KEYSTONE: the Formed Son quotes the verse BY the betrayal of Judas — scripture fulfilled)
+--   4. psalm-41-blessed-be-yahuah-from-everlasting-the-doxology-of-book-one — Tanakh (Psalm 72, 89, 106)
+--      [free] (★ the doxology sealing Book I — the five-book structure of the Psalter)
+--
+-- Framing notes:
+--   ★ CONSIDERETH THE POOR (THREAD 1): *Blessed is he that considereth the poor: Yahuah (LORD) will
+--      deliver him in time of trouble* (41:1). This opening beatitude is the Torah-ethic of mercy made
+--      a blessing: the considerate man is delivered, preserved, kept alive, strengthened on his bed of
+--      sickness (vv.1-3) — mercy returned to him by the measure he showed. It is the Deuteronomy command
+--      embodied (*thou shalt not harden thine heart, nor shut thine hand from thy poor brother... thou
+--      shalt open thine hand wide*, Deut 15:7-8), the proverb's promise (*He that hath pity upon the
+--      poor lendeth unto Yahuah*, Prov 19:17), and the Beatitude forward (*Blessed are the merciful: for
+--      they shall obtain mercy*, Matt 5:7). The blessing is not earned-merit but the covenant-measure:
+--      the merciful obtain mercy.
+--   THE CONFESSION (THREAD 2): *I said, Yahuah (LORD), be merciful unto me: heal my soul; for I have
+--      sinned against thee* (41:4). The healing sought is bound to confession — David names his sin
+--      against Yahuah and asks mercy and healing together, the same movement as Psalm 32 (*I acknowledged
+--      my sin unto thee... and thou forgavest the iniquity of my sin*) and Psalm 51 (*Against thee, thee
+--      only, have I sinned*). The broken man is healed where the sin is owned.
+--   ★★★ MINE OWN FAMILIAR FRIEND (THREAD 3): *Yea, mine own familiar friend, in whom I trusted, which
+--      did eat of my bread, hath lifted up his heel against me* (41:9). The Formed Son — Yahusha
+--      (Jesus) — takes this verse on His own lips at the last supper and names it scripture being
+--      fulfilled in the betrayal of Judas: *I speak not of you all: I know whom I have chosen: but that
+--      the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me*
+--      (John 13:18), troubled in spirit He testified *that one of you shall betray me* (John 13:21). The
+--      One who walked Yashar'el in the Tanakh names the Tanakh as His own testimony; the betrayed-by-a-
+--      table-friend type runs from David to the Son. The psalm's resolution — *raise me up* (v.10),
+--      *thou upholdest me in mine integrity, and settest me before thy face for ever* (v.12) — is the
+--      vindication of the betrayed, raised up and set before the Father's face.
+--   ★ THE DOXOLOGY OF BOOK I (THREAD 4): *Blessed be Yahuah Elohim (the LORD God) of Yashar'el (Israel)
+--      from everlasting, and to everlasting. Amen, and Amen* (41:13). This is not merely the psalm's
+--      close but the seal of the FIRST of the Psalter's five books. Matching doxologies seal each book:
+--      Book II ends *Blessed be Yahuah Elohim... let the whole earth be filled with his glory; Amen, and
+--      Amen* (Ps 72:18-19); Book III, *Blessed be Yahuah for evermore. Amen, and Amen* (Ps 89:52); Book
+--      IV, *Blessed be Yahuah Elohim of Yashar'el from everlasting to everlasting... Amen* (Ps 106:48).
+--      The God blessed from everlasting to everlasting is the Elohim of Yashar'el — His covenant people,
+--      the two-house inheritance — and the whole five-book Psalter is bound up in His praise.
+--   VERSES WITH NO SEPARATE ADD: vv.5-8 (the whispering enemies, the evil-disease taunt) and vv.10-12
+--      (the plea to be raised up, the upholding in integrity) are recorded as folded — the enemy-setting
+--      as lead-in to the betrayal of THREAD 3, the vindication-close as the resolution of THREAD 3.
+
+CREATE TEMP VIEW _s302_ps041_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Blessed is he that considereth the poor — the Torah-ethic of mercy returned by measure
+    ('canon','psalms',41,1,'canon','deuteronomy',15,7,'free',
+      E'*If there be among you a poor man of one of thy brethren within any of thy gates in thy land which Yahuah Elohayka (the LORD thy God) giveth thee, thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7). *Blessed is he that considereth the poor* (Psalm 41:1): the considerate man of the psalm is the man who keeps the Torah-command — the open hand, the unhardened heart toward the poor brother. The blessing rests on the doing of the commandment.'),
+    ('canon','psalms',41,1,'canon','deuteronomy',15,11,'free',
+      E'*For the poor shall never cease out of the land: therefore I command thee, saying, Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy, in thy land* (Deuteronomy 15:11). *Blessed is he that considereth the poor* (Psalm 41:1): the Torah makes care for the poor a standing command, never abolished — the wide-open hand. The psalm sings the blessing upon the one who obeys it.'),
+    ('canon','psalms',41,1,'canon','proverbs',19,17,'free',
+      E'*He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Proverbs 19:17). *Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble* (Psalm 41:1): the proverb names how the blessing comes — pity to the poor is a loan to Yahuah Himself, and He repays. The deliverance of the psalm is Yahuah paying back the mercy that was shown.'),
+    ('canon','psalms',41,1,'canon','matthew',5,7,'free',
+      E'*Blessed are the merciful: for they shall obtain mercy* (Matthew 5:7). *Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble* (Psalm 41:1): the Formed Son sets the same covenant-measure in the Beatitude — the merciful obtain mercy. The one who considers the poor is delivered because mercy is returned to him by the measure he gave.'),
+    ('canon','psalms',41,2,'canon','acts',20,35,'free',
+      E'*I have shewed you all things, how that so labouring ye ought to support the weak, and to remember the words of the Lord Yahusha (Lord Jesus), how he said, It is more blessed to give than to receive* (Acts 20:35). *Blessed is he that considereth the poor... Yahuah (LORD) will preserve him, and keep him alive; and he shall be blessed upon the earth* (Psalm 41:1-2): the blessing of the giver is the saying of the Lord Yahusha — more blessed to give than to receive. The considerate man who supports the weak is the man preserved and kept and blessed.'),
+
+    -- THREAD 2: Heal my soul, for I have sinned against thee — the confession met with mercy
+    ('canon','psalms',41,4,'canon','psalms',32,1,'free',
+      E'*Blessed is he whose transgression is forgiven, whose sin is covered* (Psalm 32:1). *I said, Yahuah (LORD), be merciful unto me: heal my soul; for I have sinned against thee* (Psalm 41:4): the healing David seeks is the forgiveness Psalm 32 blesses — the covered sin, the forgiven transgression. To be healed of soul is to have the sin owned and covered.'),
+    ('canon','psalms',41,4,'canon','psalms',32,5,'free',
+      E'*I acknowledged my sin unto thee, and mine iniquity have I not hid. I said, I will confess my transgressions unto Yahuah (LORD); and thou forgavest the iniquity of my sin* (Psalm 32:5). *Heal my soul; for I have sinned against thee* (Psalm 41:4): the same movement of confession — the sin acknowledged, not hidden, and met with forgiveness. The owning of the sin is the doorway to the healing.'),
+    ('canon','psalms',41,4,'canon','psalms',51,1,'free',
+      E'*Have mercy upon me, O Elohim (God), according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions* (Psalm 51:1). *I said, Yahuah (LORD), be merciful unto me: heal my soul; for I have sinned against thee* (Psalm 41:4): the plea for mercy is the plea of the great penitential psalm — the multitude of tender mercies sought to blot out transgression. David asks healing where he confesses sin.'),
+    ('canon','psalms',41,4,'canon','psalms',51,4,'free',
+      E'*Against thee, thee only, have I sinned, and done this evil in thy sight: that thou mightest be justified when thou speakest, and be clear when thou judgest* (Psalm 51:4). *Heal my soul; for I have sinned against thee* (Psalm 41:4): the confession is identical — the sin is against Yahuah Himself. The wound of the soul is sin against God, and that is exactly what David names before he asks to be healed.'),
+
+    -- THREAD 3 (★★★): Mine own familiar friend hath lifted up his heel — the betrayal the Formed Son names fulfilled
+    ('canon','psalms',41,9,'canon','john',13,18,'free',
+      E'*I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18). *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9): the Formed Son — Yahusha (Jesus) — quotes this very verse at the last supper and names it scripture being fulfilled in the betrayal of Judas. The One who walked Yashar''el (Israel) in the Tanakh names the Tanakh as His own testimony; the table-friend who eats the bread and lifts the heel is the betrayer-type running from David to the Son.'),
+    ('canon','psalms',41,9,'canon','john',13,21,'free',
+      E'*When Yahusha (Jesus) had thus said, he was troubled in spirit, and testified, and said, Verily, verily, I say unto you, that one of you shall betray me* (John 13:21). *Mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9): troubled in spirit at the very table, the Son foretells the betrayal the psalm describes — the trusted friend at the meal turned enemy. The grief of the betrayed in the psalm becomes the grief of the Formed Son in the upper room.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 doxology cross_references (Tanakh-only, separate INSERT block for clarity)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','psalms',41,13,'canon','psalms',72,18,'free',
+      E'*Blessed be Yahuah Elohim (the LORD God), the Elohim (God) of Yashar''el (Israel), who only doeth wondrous things* (Psalm 72:18). *Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting, and to everlasting. Amen, and Amen* (Psalm 41:13): the matching doxology seals Book II of the Psalter as 41:13 seals Book I — the same blessing upon the Elohim of Yashar''el, His covenant people. The five-book structure is bound together by these closing benedictions.'),
+    ('canon','psalms',41,13,'canon','psalms',72,19,'free',
+      E'*And blessed be his glorious name for ever: and let the whole earth be filled with his glory; Amen, and Amen* (Psalm 72:19). *Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting, and to everlasting. Amen, and Amen* (Psalm 41:13): the doubled *Amen, and Amen* that closes Book I is echoed exactly at the close of Book II — the name blessed for ever, the earth filled with His glory. The seals of the books speak with one voice.'),
+    ('canon','psalms',41,13,'canon','psalms',89,52,'free',
+      E'*Blessed be Yahuah (LORD) for evermore. Amen, and Amen* (Psalm 89:52). *Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting, and to everlasting. Amen, and Amen* (Psalm 41:13): the close of Book III carries the same doubled *Amen, and Amen* and the same everlasting blessing — Yahuah blessed for evermore. The doxology that seals Book I is the pattern repeated to seal Book III.'),
+    ('canon','psalms',41,13,'canon','psalms',106,48,'free',
+      E'*Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting to everlasting: and let all the people say, Amen. Praise ye Yahuah (LORD)* (Psalm 106:48). *Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting, and to everlasting. Amen, and Amen* (Psalm 41:13): the close of Book IV repeats the exact words of the close of Book I — *Yahuah Elohim of Yashar''el from everlasting to everlasting* — with all the people called to say Amen. The Psalter''s books are sealed by this one recurring blessing upon the God of His two-house people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-41-blessed-is-he-that-considereth-the-poor',
+       E'Blessed is he that considereth the poor — the Torah-ethic of mercy returned by measure',
+       E'The psalm opens with a beatitude that is the Torah-ethic made a blessing: *Blessed is he that considereth the poor: Yahuah (LORD) will deliver him in time of trouble. Yahuah (LORD) will preserve him, and keep him alive; and he shall be blessed upon the earth... Yahuah (LORD) will strengthen him upon the bed of languishing* (Psalm 41:1-3). The considerate man is delivered, preserved, kept alive, strengthened in his own sickness — mercy returned to him by the very measure he showed. This is the Deuteronomy command embodied: *thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deut 15:7), *Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy* (Deut 15:11) — the care of the poor a standing command, never abolished. The proverb names how the blessing comes: *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Prov 19:17) — pity is a loan to Yahuah, and He repays. The Formed Son sets the same measure in the Beatitude: *Blessed are the merciful: for they shall obtain mercy* (Matt 5:7); and Paul recalls His word, *It is more blessed to give than to receive* (Acts 20:35). The blessing is not earned-merit but the covenant-measure: the merciful obtain mercy.',
+       sv.verse_id, ev.verse_id, 'free', 23000
+  FROM _s302_ps041_lookup sv, _s302_ps041_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=41 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-41-heal-my-soul-for-i-have-sinned-against-thee',
+       E'Heal my soul, for I have sinned against thee — the confession met with mercy',
+       E'*I said, Yahuah (LORD), be merciful unto me: heal my soul; for I have sinned against thee* (Psalm 41:4). The healing David seeks is bound to confession — he names his sin against Yahuah and asks mercy and healing together. It is the very movement of Psalm 32: *Blessed is he whose transgression is forgiven, whose sin is covered* (Ps 32:1); *I acknowledged my sin unto thee, and mine iniquity have I not hid... and thou forgavest the iniquity of my sin* (Ps 32:5). And it is the confession of the great penitential psalm: *Have mercy upon me, O Elohim (God), according to thy lovingkindness... blot out my transgressions* (Ps 51:1); *Against thee, thee only, have I sinned, and done this evil in thy sight* (Ps 51:4). The wound of the soul is sin against Yahuah, and the broken man is healed where the sin is owned — not hidden, but confessed, and met with mercy.',
+       sv.verse_id, ev.verse_id, 'free', 23003
+  FROM _s302_ps041_lookup sv, _s302_ps041_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=41 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-41-mine-own-familiar-friend-hath-lifted-up-his-heel',
+       E'Mine own familiar friend hath lifted up his heel against me — the betrayal the Formed Son names fulfilled',
+       E'Out of the whispering of enemies — *All that hate me whisper together against me* (41:7) — rises the deepest wound: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9). The Formed Son — Yahusha (Jesus) — takes this very verse upon His own lips at the last supper and names it scripture being fulfilled in the betrayal of Judas: *I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18); and, troubled in spirit, He testified, *one of you shall betray me* (John 13:21). The One who walked Yashar''el (Israel) in the Tanakh names the Tanakh as His own testimony — the trusted table-friend who eats the bread and lifts the heel is the betrayer-type running from David to the Son. And the psalm''s resolution is the vindication of the betrayed: *But thou, O Yahuah (LORD), be merciful unto me, and raise me up* (v.10), *thou upholdest me in mine integrity, and settest me before thy face for ever* (v.12) — the betrayed One raised up and set before the Father''s face.',
+       sv.verse_id, ev.verse_id, 'free', 23006
+  FROM _s302_ps041_lookup sv, _s302_ps041_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=41 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-41-blessed-be-yahuah-from-everlasting-the-doxology-of-book-one',
+       E'Blessed be Yahuah from everlasting — the doxology sealing Book I of the Psalter',
+       E'*Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting, and to everlasting. Amen, and Amen* (Psalm 41:13). This is not merely the psalm''s close but the seal of the FIRST of the Psalter''s five books. Matching doxologies, each with the doubled *Amen*, close the books that follow: Book II — *Blessed be Yahuah Elohim (the LORD God), the Elohim (God) of Yashar''el (Israel), who only doeth wondrous things... and let the whole earth be filled with his glory; Amen, and Amen* (Ps 72:18-19); Book III — *Blessed be Yahuah (LORD) for evermore. Amen, and Amen* (Ps 89:52); Book IV — *Blessed be Yahuah Elohim (the LORD God) of Yashar''el (Israel) from everlasting to everlasting: and let all the people say, Amen* (Ps 106:48), echoing 41:13 almost word for word. The God blessed from everlasting to everlasting is the Elohim of Yashar''el — His covenant people, the two-house inheritance — and the whole five-book Psalter is bound together in His praise.',
+       sv.verse_id, ev.verse_id, 'free', 23009
+  FROM _s302_ps041_lookup sv, _s302_ps041_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=41 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7) — the considerate man of 41:1 keeps the Torah-command: the open hand to the poor.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=1
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=15 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-is-he-that-considereth-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy* (Deuteronomy 15:11) — the care of the poor a standing command (41:1), never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=1
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=15 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-is-he-that-considereth-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Proverbs 19:17) — pity to the poor (41:1) is a loan to Yahuah, and He repays.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=1
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-is-he-that-considereth-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Blessed are the merciful: for they shall obtain mercy* (Matthew 5:7) — the Formed Son sets the same covenant-measure: the one who considers the poor (41:1) is shown mercy by measure.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=1
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-is-he-that-considereth-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*It is more blessed to give than to receive* (Acts 20:35) — Paul recalls the saying of the Lord Yahusha; the giver who is preserved and kept (41:1-2) is the blessed one.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=2
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=20 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-is-he-that-considereth-the-poor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Blessed is he whose transgression is forgiven, whose sin is covered* (Psalm 32:1) — the healing of 41:4 is the forgiveness Psalm 32 blesses: the covered sin.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=4
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=32 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-heal-my-soul-for-i-have-sinned-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I acknowledged my sin unto thee... and thou forgavest the iniquity of my sin* (Psalm 32:5) — the same movement as 41:4: the sin owned, not hidden, met with forgiveness.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=4
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=32 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-heal-my-soul-for-i-have-sinned-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Have mercy upon me, O Elohim (God)... blot out my transgressions* (Psalm 51:1) — the plea for mercy of 41:4 is the plea of the great penitential psalm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=4
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-heal-my-soul-for-i-have-sinned-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Against thee, thee only, have I sinned* (Psalm 51:4) — the confession is identical to 41:4: the wound of the soul is sin against Yahuah Himself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=4
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-heal-my-soul-for-i-have-sinned-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18) — the Formed Son quotes 41:9 BY the betrayal of Judas; the psalm named as His own testimony fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=9
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=13 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-mine-own-familiar-friend-hath-lifted-up-his-heel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*one of you shall betray me* (John 13:21) — troubled in spirit at the table, the Son foretells the betrayal the trusted bread-friend of 41:9 enacts.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=9
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-mine-own-familiar-friend-hath-lifted-up-his-heel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Blessed be Yahuah Elohim... the Elohim of Yashar''el (Israel), who only doeth wondrous things* (Psalm 72:18) — the doxology sealing Book II, matching 41:13''s seal of Book I.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=13
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-be-yahuah-from-everlasting-the-doxology-of-book-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *let the whole earth be filled with his glory; Amen, and Amen* (Psalm 72:19) — the doubled *Amen, and Amen* of 41:13 echoed exactly at the close of Book II.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=13
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-be-yahuah-from-everlasting-the-doxology-of-book-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Blessed be Yahuah (LORD) for evermore. Amen, and Amen* (Psalm 89:52) — the close of Book III, the same everlasting blessing and doubled Amen as 41:13.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=13
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-be-yahuah-from-everlasting-the-doxology-of-book-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Blessed be Yahuah Elohim of Yashar''el (Israel) from everlasting to everlasting: and let all the people say, Amen* (Psalm 106:48) — the close of Book IV repeats 41:13 almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps041_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=41 AND sv.verse_number=13
+  JOIN _s302_ps041_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-41-blessed-be-yahuah-from-everlasting-the-doxology-of-book-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_42.sql (Psalm 42) -----
+-- Chapter: Psalm 42 — BOOK II OPENS, the KORAHITE LONGING PSALM. The exiled singer, cut off from the
+-- house of Elohim, thirsts for the living Elohim as the hart pants for water brooks (v.1-2), weeps
+-- under the scoffers' taunt *Where is thy Elohim?* (v.3,10), is overwhelmed by the deep (v.7), and
+-- preaches to his own soul the great refrain *Why art thou cast down, O my soul?... hope thou in
+-- Elohim* (v.5,11). Psalm 42 + 43 are ONE psalm split in two (no superscription on 43; shared refrain
+-- at 42:5, 42:11, 43:5) — the refrain thread is anchored HERE and laterals to 43:5; a separate minion
+-- builds the rest of Ps 43.
+-- Tag: ps042   Temp view: _s302_ps042_lookup   Source of EVERY row: 'canon','psalms',42,v
+-- Sort band: base 23025, step 3 -> threads at 23025, 23028, 23031, 23034 (4 threads)
+--
+-- Psalm 42 coverage:
+--   ★ v.1-2 (As the hart panteth after the water brooks, so panteth my soul after thee, O Elohim. My
+--           soul thirsteth for Elohim, for the living Elohim: when shall I come and appear before Elohim?)
+--        NT:     ★ John 4:14 (the water that I shall give... a well of water springing up into
+--                everlasting life — never thirst), ★ John 7:37 (If any man thirst, let him come unto me,
+--                and drink), Revelation 21:6 (I will give unto him that is athirst of the fountain of the
+--                water of life freely), Revelation 22:17 (let him that is athirst come... the water of
+--                life freely) — THREAD 1 (the thirst for the living Elohim fulfilled in the Formed Son's living water)
+--        Extras: none warranted (the living-water fulfilment is carried clean by the NT + Isaiah)
+--        Tanakh: ★ Isaiah 55:1 (Ho, every one that thirsteth, come ye to the waters), Psalm 63:1 (my
+--                soul thirsteth for thee... in a dry and thirsty land), Psalm 84:2 (my heart and my
+--                flesh crieth out for the living Elohim — the same Korahite longing) — THREAD 1
+--   v.3,10 (My tears have been my meat day and night, while they continually say unto me, Where is thy
+--           Elohim?... mine enemies reproach me; while they say daily unto me, Where is thy Elohim?)
+--        NT:     ★ Matthew 27:43 (He trusted in Elohim; let him deliver him now... for he said, I am the
+--                Son of Elohim — the same scoffers' taunt fall on the Messiah) — THREAD 2 (lateral)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 79:10 (Wherefore should the heathen say, Where is their Elohim?), Psalm 115:2
+--                (Wherefore should the heathen say, Where is now their Elohim?), Joel 2:17 (wherefore
+--                should they say among the people, Where is their Elohim? — the priests' plea) — THREAD 2
+--   v.4 (I went with them to the house of Elohim... with a multitude that kept holyday)
+--        NT/Extras/Tanakh: none warranted as separate (the longing-for-the-house motif folds into the
+--                thirst of THREAD 1 — appearing before Elohim, v.2 — and the Korahite Ps 84 lateral there)
+--   ★★ v.5,11 (Why art thou cast down, O my soul? and why art thou disquieted in me? hope thou in
+--           Elohim: for I shall yet praise him)
+--        NT:     none warranted (the soul-speaking-to-itself refrain is carried within the psalter's own
+--                triple repetition; the Gethsemane echo *my soul is exceeding sorrowful* is not forced)
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 43:5 (the THIRD occurrence of the identical refrain — Ps 42+43 are one psalm),
+--                Psalm 42:11 (the SECOND occurrence, bracketing the psalm) — THREAD 3 (the refrain thread,
+--                anchored in 42, lateral to 43:5)
+--   v.6 (O my Elohim, my soul is cast down within me: therefore will I remember thee from the land of
+--           Jordan... from the hill Mizar)
+--        NT/Extras/Tanakh: none warranted as separate (the cast-down confession is the lead-in to the
+--                refrain at v.5/11; folded into THREAD 3)
+--   ★ v.7 (Deep calleth unto deep at the noise of thy waterspouts: all thy waves and thy billows are
+--           gone over me)
+--        NT:     none warranted (the floods-of-affliction figure is carried clean by Jonah + the psalter)
+--        Extras: none warranted (weighed; the Jonah-canon near-verbatim is the cleaner hit, brief's call)
+--        Tanakh: ★★ Jonah 2:3 (all thy billows and thy waves passed over me — near-verbatim), Psalm 69:1-2
+--                (the waters are come in unto my soul... I am come into deep waters, where the floods
+--                overflow me) — THREAD 4
+--   v.8 (Yet Yahuah will command his lovingkindness in the daytime, and in the night his song shall be
+--           with me)
+--        NT/Extras/Tanakh: none warranted as separate (the turn of trust between the billows of v.7 and
+--                the refrain of v.11; folded as the hinge into THREAD 4's close)
+--   v.9 (I will say unto Elohim my rock, Why hast thou forgotten me?)
+--        NT/Extras/Tanakh: none warranted as separate (the why-forgotten cry parallels 43:2 and feeds the
+--                refrain; folded into THREAD 3)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim — NT (John 4, John 7,
+--      Revelation 21, Revelation 22) + Tanakh (Isaiah 55, Psalm 63, Psalm 84) [free]
+--      (★ the thirst for the living Elohim fulfilled in the Formed Son's living water — never thirst again)
+--   2. psalm-42-where-is-thy-elohim-the-reproach-of-the-scoffers — Tanakh (Psalm 79, Psalm 115, Joel 2)
+--      + NT (Matthew 27) [free] (the taunt of the heathen/the cross-reproach)
+--   3. psalm-42-why-art-thou-cast-down-o-my-soul-hope-thou-in-elohim — Tanakh (Psalm 42:11, Psalm 43:5)
+--      [free] (★★ the refrain binding the one split psalm — soul preaching hope to itself in exile)
+--   4. psalm-42-deep-calleth-unto-deep-all-thy-waves-are-gone-over-me — Tanakh (Jonah 2, Psalm 69) [free]
+--      (the floods of affliction — near-verbatim with Jonah's prayer from the deep)
+--
+-- Framing notes:
+--   ★ THIRST FOR THE LIVING ELOHIM (THREAD 1): *As the hart panteth after the water brooks, so panteth
+--      my soul after thee, O Elohim. My soul thirsteth for Elohim, for the living Elohim* (42:1-2). The
+--      Formed Son meets the thirst with living water that ends thirst: *whosoever drinketh of the water
+--      that I shall give him shall never thirst* (John 4:14); *If any man thirst, let him come unto me,
+--      and drink* (John 7:37). It is sealed at the end — *I will give unto him that is athirst of the
+--      fountain of the water of life freely* (Rev 21:6); *let him that is athirst come* (Rev 22:17). The
+--      prophet's open call is the same — *Ho, every one that thirsteth, come ye to the waters* (Isa 55:1)
+--      — and the psalter sings the same Korahite longing — *my soul thirsteth for thee* (Ps 63:1); *my
+--      heart and my flesh crieth out for the living Elohim* (Ps 84:2).
+--   WHERE IS THY ELOHIM (THREAD 2): the scoffers' daily taunt — *they continually say unto me, Where is
+--      thy Elohim?* (42:3,10) — is the standing reproach of the heathen against the scattered people:
+--      *Wherefore should the heathen say, Where is their Elohim?* (Ps 79:10; Ps 115:2); the priests'
+--      plea answers it — *wherefore should they say among the people, Where is their Elohim?* (Joel 2:17).
+--      The same taunt falls upon the Messiah at the tree — *He trusted in Elohim; let him deliver him
+--      now... for he said, I am the Son of Elohim* (Matt 27:43). (No curse-on-the-people reading: the
+--      reproach is the enemy's mockery, the singer is the faithful remnant, per Rom 11:1-2.)
+--   ★★ WHY ART THOU CAST DOWN (THREAD 3): the refrain sounds three times across the one psalm — *Why art
+--      thou cast down, O my soul? and why art thou disquieted in me? hope thou in Elohim* (42:5); again
+--      *Why art thou cast down, O my soul?... hope thou in Elohim* (42:11); and a third time in the psalm
+--      it opens into — *Why art thou cast down, O my soul?... hope in Elohim* (43:5). Psalm 42 and 43 are
+--      one psalm split in two (43 has no superscription); the refrain is the seam that binds them. The
+--      soul preaches hope to itself in the land of exile: cast down, yet commanded to wait for the praise
+--      that will yet come.
+--   DEEP CALLETH UNTO DEEP (THREAD 4): *Deep calleth unto deep at the noise of thy waterspouts: all thy
+--      waves and thy billows are gone over me* (42:7). Jonah's prayer from the fish's belly is nearly the
+--      same words — *the floods compassed me about: all thy billows and thy waves passed over me*
+--      (Jonah 2:3) — and the great affliction-psalm — *the waters are come in unto my soul... I am come
+--      into deep waters, where the floods overflow me* (Ps 69:1-2). The waves of trouble go over the head
+--      of the righteous, yet *Yet Yahuah will command his lovingkindness in the daytime* (42:8): the deep
+--      does not have the last word.
+--   VERSES WITH NO SEPARATE ADD: v.4 (the house-of-Elohim longing, folded into THREAD 1's appear-before-Elohim),
+--      v.6 (cast-down confession, lead-in to the refrain THREAD 3), v.8 (the hinge of trust, folded into
+--      THREAD 4's close), v.9 (why-hast-thou-forgotten cry, folded into THREAD 3) — the framework weight
+--      sits on vv.1-2, 3/10, 5/11, 7, woven there.
+
+CREATE TEMP VIEW _s302_ps042_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): As the hart panteth — the thirst for the living Elohim fulfilled in living water
+    ('canon','psalms',42,2,'canon','john',4,14,'free',
+      E'*But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14). *My soul thirsteth for Elohim (God), for the living Elohim (God)* (Psalm 42:2): the thirst of the panting soul is met by the Formed Son at the well — the living water He gives ends thirst forever, a well springing up into everlasting life. The hart''s longing for the brooks is the soul''s longing for Him.'),
+    ('canon','psalms',42,2,'canon','john',7,37,'free',
+      E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink* (John 7:37). *My soul thirsteth for Elohim (God), for the living Elohim (God): when shall I come and appear before Elohim (God)?* (Psalm 42:2): the cry *when shall I come* is answered by the Formed Son''s open call — *if any man thirst, let him come unto me, and drink*. The One the psalmist thirsts for is the One who bids the thirsty come.'),
+    ('canon','psalms',42,2,'canon','revelation',21,6,'free',
+      E'*I am Alpha and Omega, the beginning and the end. I will give unto him that is athirst of the fountain of the water of life freely* (Revelation 21:6). *My soul thirsteth for Elohim (God), for the living Elohim (God)* (Psalm 42:2): the longing of the panting soul is satisfied at the last — the fountain of the water of life given freely to him that is athirst. The thirst that runs the whole psalm finds its fountain.'),
+    ('canon','psalms',42,2,'canon','revelation',22,17,'free',
+      E'*And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely* (Revelation 22:17). *My soul thirsteth for Elohim (God), for the living Elohim (God)* (Psalm 42:2): the canon closes with the same invitation the psalm opens — *let him that is athirst come*. The hart''s thirst is the bride''s thirst, and the water of life is offered without price.'),
+    ('canon','psalms',42,2,'canon','isaiah',55,1,'free',
+      E'*Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price* (Isaiah 55:1). *My soul thirsteth for Elohim (God), for the living Elohim (God)* (Psalm 42:2): the prophet flings open the same call — every one that thirsts is bidden to the waters, freely. The soul that pants for the living Elohim is the soul Isaiah summons to drink.'),
+    ('canon','psalms',42,1,'canon','psalms',63,1,'free',
+      E'*O Elohim (God), thou art my Elohim (God); early will I seek thee: my soul thirsteth for thee, my flesh longeth for thee in a dry and thirsty land, where no water is* (Psalm 63:1). *As the hart panteth after the water brooks, so panteth my soul after thee, O Elohim (God)* (Psalm 42:1): the same thirst sings twice — the soul panting in a dry land, flesh and soul longing for Elohim where no water is. The hart of Psalm 42 is the thirsty land of Psalm 63.'),
+    ('canon','psalms',42,2,'canon','psalms',84,2,'free',
+      E'*My soul longeth, yea, even fainteth for the courts of Yahuah (LORD): my heart and my flesh crieth out for the living Elohim (God)* (Psalm 84:2). *My soul thirsteth for Elohim (God), for the living Elohim (God): when shall I come and appear before Elohim (God)?* (Psalm 42:2): the Korahite longing is one song — the soul fainting for the courts, heart and flesh crying out for the living Elohim, aching to appear before Him. The same singers, the same thirst for the house of Elohim.'),
+
+    -- THREAD 2: Where is thy Elohim — the reproach of the scoffers
+    ('canon','psalms',42,3,'canon','psalms',79,10,'free',
+      E'*Wherefore should the heathen say, Where is their Elohim (God)? let him be known among the heathen in our sight by the revenging of the blood of thy servants which is shed* (Psalm 79:10). *My tears have been my meat day and night, while they continually say unto me, Where is thy Elohim (God)?* (Psalm 42:3): the same taunt — *Where is thy Elohim?* — is the standing mockery of the heathen against the people; what the scoffers fling at the lone singer they fling at the whole scattered house.'),
+    ('canon','psalms',42,3,'canon','psalms',115,2,'free',
+      E'*Wherefore should the heathen say, Where is now their Elohim (God)?* (Psalm 115:2). *They continually say unto me, Where is thy Elohim (God)?* (Psalm 42:3): the reproach is word for word — the heathen demanding *where is now their Elohim?* The answer the psalter gives is that He is in the heavens and has done whatsoever He pleased; the taunt does not undo the trust.'),
+    ('canon','psalms',42,10,'canon','joel',2,17,'free',
+      E'*Let the priests, the ministers of Yahuah (LORD), weep between the porch and the altar, and let them say, Spare thy people, O Yahuah (LORD), and give not thine heritage to reproach... wherefore should they say among the people, Where is their Elohim (God)?* (Joel 2:17). *Mine enemies reproach me; while they say daily unto me, Where is thy Elohim (God)?* (Psalm 42:10): the priests'' plea names the very reproach the singer endures — the heathen''s taunt *Where is their Elohim?* — and answers it with intercession, that the heritage not be given to scorn.'),
+    ('canon','psalms',42,10,'canon','matthew',27,43,'free',
+      E'*He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God)* (Matthew 27:43). *Mine enemies reproach me; while they say daily unto me, Where is thy Elohim (God)?* (Psalm 42:10): the same reproach falls on the Formed Son at the tree — the mockers daring Elohim to deliver Him, the taunt *where is thy Elohim* turned into *let him deliver him now*. The reproach of the righteous singer is filled up in the Messiah''s reproach.'),
+
+    -- THREAD 3 (★★): Why art thou cast down, O my soul — the refrain (Ps 42+43 one psalm)
+    ('canon','psalms',42,5,'canon','psalms',42,11,'free',
+      E'*Why art thou cast down, O my soul? and why art thou disquieted within me? hope thou in Elohim (God): for I shall yet praise him, who is the health of my countenance, and my Elohim (God)* (Psalm 42:11). *Why art thou cast down, O my soul? and why art thou disquieted in me? hope thou in Elohim (God): for I shall yet praise him for the help of his countenance* (Psalm 42:5): the refrain sounds twice within the chapter, bracketing the lament — the soul preaching hope to itself, commanded to wait for the praise that shall yet come.'),
+    ('canon','psalms',42,5,'canon','psalms',43,5,'free',
+      E'*Why art thou cast down, O my soul? and why art thou disquieted within me? hope in Elohim (God): for I shall yet praise him, who is the health of my countenance, and my Elohim (God)* (Psalm 43:5). *Why art thou cast down, O my soul?... hope thou in Elohim (God)* (Psalm 42:5): the third sounding of the same refrain — for Psalm 42 and 43 are one psalm split in two (43 carries no superscription). The refrain is the seam binding the two halves; the exiled soul, cast down across both, is held by the one charge: hope in Elohim.'),
+
+    -- THREAD 4: Deep calleth unto deep — all thy waves are gone over me
+    ('canon','psalms',42,7,'canon','jonah',2,3,'free',
+      E'*For thou hadst cast me into the deep, in the midst of the seas; and the floods compassed me about: all thy billows and thy waves passed over me* (Jonah 2:3). *Deep calleth unto deep at the noise of thy waterspouts: all thy waves and thy billows are gone over me* (Psalm 42:7): Jonah''s prayer from the fish''s belly is nearly the same words — *all thy billows and thy waves* gone over the drowning man. The figure of the overwhelming deep is one figure: the righteous engulfed, yet crying up out of the floods.'),
+    ('canon','psalms',42,7,'canon','psalms',69,1,'free',
+      E'*Save me, O Elohim (God); for the waters are come in unto my soul. I sink in deep mire, where there is no standing: I am come into deep waters, where the floods overflow me* (Psalm 69:1-2). *Deep calleth unto deep... all thy waves and thy billows are gone over me* (Psalm 42:7): the great affliction-psalm sings the same deep — waters come in unto the soul, floods overflowing. The billows of Psalm 42 are the deep waters of Psalm 69, the trouble that goes over the head of the righteous.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim',
+       E'As the hart panteth, so panteth my soul for the living Elohim — the thirst met in living water',
+       E'Book II opens with a thirst: *As the hart panteth after the water brooks, so panteth my soul after thee, O Elohim (God). My soul thirsteth for Elohim (God), for the living Elohim (God): when shall I come and appear before Elohim (God)?* (Psalm 42:1-2). The Formed Son meets that thirst with living water that ends thirst forever — *whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14) — and stands at the feast and cries the open call: *If any man thirst, let him come unto me, and drink* (John 7:37). The whole canon closes on the same invitation: *I will give unto him that is athirst of the fountain of the water of life freely* (Revelation 21:6); *let him that is athirst come... let him take the water of life freely* (Revelation 22:17). The prophet flung the door open long before — *Ho, every one that thirsteth, come ye to the waters... without money and without price* (Isaiah 55:1) — and the psalter sings the same Korahite longing: *my soul thirsteth for thee... in a dry and thirsty land, where no water is* (Psalm 63:1); *my heart and my flesh crieth out for the living Elohim (God)* (Psalm 84:2). The hart''s panting is the soul''s ache to appear before Him; the living Elohim is the living water.',
+       sv.verse_id, ev.verse_id, 'free', 23025
+  FROM _s302_ps042_lookup sv, _s302_ps042_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=42 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-42-where-is-thy-elohim-the-reproach-of-the-scoffers',
+       E'Where is thy Elohim? — the reproach of the scoffers',
+       E'The singer''s tears are his meat because of a daily taunt: *My tears have been my meat day and night, while they continually say unto me, Where is thy Elohim (God)?* (Psalm 42:3); *mine enemies reproach me; while they say daily unto me, Where is thy Elohim (God)?* (42:10). It is the standing mockery of the heathen against the scattered people: *Wherefore should the heathen say, Where is their Elohim (God)?* (Psalm 79:10); *Wherefore should the heathen say, Where is now their Elohim (God)?* (Psalm 115:2). The priests weep between the porch and the altar to answer it: *give not thine heritage to reproach... wherefore should they say among the people, Where is their Elohim (God)?* (Joel 2:17). And the same reproach falls upon the Formed Son at the tree — *He trusted in Elohim (God); let him deliver him now, if he will have him: for he said, I am the Son of Elohim (God)* (Matthew 27:43) — the taunt *where is thy Elohim* turned into *let him deliver him now*. The reproach is the enemy''s mockery, not Yahuah''s verdict; the singer is the faithful remnant, and the answer to the scoffer is that He is in the heavens and will yet be praised.',
+       sv.verse_id, ev.verse_id, 'free', 23028
+  FROM _s302_ps042_lookup sv, _s302_ps042_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=42 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-42-why-art-thou-cast-down-o-my-soul-hope-thou-in-elohim',
+       E'Why art thou cast down, O my soul? hope thou in Elohim — the refrain that binds the one psalm',
+       E'Three times the same words sound across the psalm — the soul preaching hope to itself: *Why art thou cast down, O my soul? and why art thou disquieted in me? hope thou in Elohim (God): for I shall yet praise him for the help of his countenance* (Psalm 42:5); again at the chapter''s close — *Why art thou cast down, O my soul? and why art thou disquieted within me? hope thou in Elohim (God): for I shall yet praise him, who is the health of my countenance, and my Elohim (God)* (42:11); and a third time in the psalm it opens into — *Why art thou cast down, O my soul?... hope in Elohim (God)* (Psalm 43:5). Psalm 42 and 43 are one psalm split in two — 43 carries no superscription, and this thrice-repeated refrain is the seam that binds the halves. The exiled soul, cast down and disquieted across both, is held by one charge given to itself: hope in Elohim, for the praise will yet come, and He is the health of the countenance.',
+       sv.verse_id, ev.verse_id, 'free', 23031
+  FROM _s302_ps042_lookup sv, _s302_ps042_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=42 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-42-deep-calleth-unto-deep-all-thy-waves-are-gone-over-me',
+       E'Deep calleth unto deep — all thy waves and thy billows are gone over me',
+       E'*Deep calleth unto deep at the noise of thy waterspouts: all thy waves and thy billows are gone over me* (Psalm 42:7). Jonah''s prayer from the fish''s belly is nearly the same words — *thou hadst cast me into the deep, in the midst of the seas; and the floods compassed me about: all thy billows and thy waves passed over me* (Jonah 2:3) — and the great affliction-psalm sings the same engulfing deep — *Save me, O Elohim (God); for the waters are come in unto my soul... I am come into deep waters, where the floods overflow me* (Psalm 69:1-2). The billows of trouble go over the head of the righteous; yet the deep does not have the last word — *Yet Yahuah (LORD) will command his lovingkindness in the daytime, and in the night his song shall be with me* (42:8). The same singer who is drowned in the deep is the one who hopes in Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 23034
+  FROM _s302_ps042_lookup sv, _s302_ps042_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=42 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the water that I shall give him... a well of water springing up into everlasting life* (John 4:14) — the thirst of 42:2 met by the Formed Son: living water that ends thirst.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *If any man thirst, let him come unto me, and drink* (John 7:37) — the cry *when shall I come* (42:2) answered: the One thirsted for bids the thirsty come.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the fountain of the water of life freely* (Revelation 21:6) — the longing of 42:2 satisfied at the last: the fountain given to him that is athirst.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*let him that is athirst come... let him take the water of life freely* (Revelation 22:17) — the canon closes on the same invitation 42 opens: the thirsty bidden to drink.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Ho, every one that thirsteth, come ye to the waters* (Isaiah 55:1) — the prophet flings open the same call as the thirst of 42:2: come and drink without price.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*my soul thirsteth for thee... in a dry and thirsty land, where no water is* (Psalm 63:1) — the same thirst as 42:1: the soul panting in a dry land for Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=1
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=63 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*my heart and my flesh crieth out for the living Elohim (God)* (Psalm 84:2) — the Korahite longing of 42:2: the soul aching to appear before the living Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=2
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=84 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-as-the-hart-panteth-so-panteth-my-soul-for-the-living-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Wherefore should the heathen say, Where is their Elohim (God)?* (Psalm 79:10) — the taunt of 42:3 is the heathen''s standing mockery of the whole scattered people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=3
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-where-is-thy-elohim-the-reproach-of-the-scoffers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Wherefore should the heathen say, Where is now their Elohim (God)?* (Psalm 115:2) — word for word the reproach of 42:3, answered: He is in the heavens, doing as He pleases.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=3
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=115 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-where-is-thy-elohim-the-reproach-of-the-scoffers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*wherefore should they say among the people, Where is their Elohim (God)?* (Joel 2:17) — the priests'' plea names the very reproach of 42:10, met with intercession for the heritage.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-where-is-thy-elohim-the-reproach-of-the-scoffers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He trusted in Elohim (God); let him deliver him now... for he said, I am the Son of Elohim (God)* (Matthew 27:43) — the reproach of 42:10 filled up at the tree: the same taunt flung at the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-where-is-thy-elohim-the-reproach-of-the-scoffers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Why art thou cast down, O my soul?... hope thou in Elohim (God): for I shall yet praise him* (Psalm 42:11) — the second sounding of the refrain, bracketing the lament of the chapter.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=5
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=42 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-why-art-thou-cast-down-o-my-soul-hope-thou-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Why art thou cast down, O my soul?... hope in Elohim (God)* (Psalm 43:5) — the third sounding: Ps 42+43 are one psalm split in two, and this refrain is the seam binding them.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=5
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=43 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-why-art-thou-cast-down-o-my-soul-hope-thou-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the floods compassed me about: all thy billows and thy waves passed over me* (Jonah 2:3) — nearly the same words as 42:7: the deep engulfing, yet the cry rising out of it.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=7
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-deep-calleth-unto-deep-all-thy-waves-are-gone-over-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the waters are come in unto my soul... I am come into deep waters, where the floods overflow me* (Psalm 69:1-2) — the same engulfing deep as 42:7: the trouble over the head of the righteous.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps042_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=42 AND sv.verse_number=7
+  JOIN _s302_ps042_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-42-deep-calleth-unto-deep-all-thy-waves-are-gone-over-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_43.sql (Psalm 43) -----
+-- Chapter: Psalm 43 — THE SECOND HALF of the one psalm that is Ps 42+43 (no superscription; the shared
+-- refrain *Why art thou cast down, O my soul... hope in Elohim* repeats at 42:5, 42:11, and 43:5). The
+-- Ps 42 minion OWNS the shared-refrain thread (anchored in 42); this fragment authors Ps 43's OWN
+-- distinct threads and laterals to 42 only in prose. The exile's prayer turns from lament to a forward
+-- reach: ★ the appeal to the divine Judge — *Judge me, O Elohim (God), and plead my cause against an
+-- ungodly nation* (v.1); ★★ the cry for guidance home — *O send out thy light and thy truth: let them
+-- lead me; let them bring me unto thy holy hill, and to thy tabernacles* (v.3); and worship restored at
+-- the altar — *Then will I go unto the altar of Elohim (God), unto Elohim (God) my exceeding joy* (v.4).
+-- Tag: ps043   Temp view: _s302_ps043_lookup
+-- Sort band: base 23050, step 3 -> threads at 23050, 23053, 23056 (3 threads)
+-- Source of EVERY row: 'canon','psalms',43,v
+--
+-- Psalm 43 coverage:
+--   ★ v.1 (Judge me, O Elohim (God), and plead my cause against an ungodly nation: O deliver me from the
+--          deceitful and unjust man)
+--        NT:     ★ 1 Peter 2:23 (committed himself to him that judgeth righteously — the Formed Son's
+--                pattern: the righteous sufferer commits his cause to the righteous Judge) — THREAD 1
+--        Extras: none warranted (the appeal-to-the-Judge is carried clean by the psalter + 1 Peter)
+--        Tanakh: ★ Psalm 35:1 (Plead my cause, O Yahuah (LORD), with them that strive with me), Psalm
+--                35:24 (Judge me, O Yahuah (LORD) my Elohim (God), according to thy righteousness) — the
+--                same plead-my-cause / judge-me appeal of the righteous sufferer — THREAD 1
+--   v.2 (For thou art the Elohim (God) of my strength: why dost thou cast me off? why go I mourning
+--          because of the oppression of the enemy?)
+--        NT/Extras/Tanakh: none warranted as separate (the *why go I mourning because of the oppression
+--                of the enemy* line is the verbatim echo of 42:9, owned by the Ps 42 refrain/lament
+--                thread; folded as the lead-in to THREAD 1, not re-threaded here)
+--   ★★ v.3 (O send out thy light and thy truth: let them lead me; let them bring me unto thy holy hill,
+--          and to thy tabernacles)
+--        NT:     ★★ John 1:9 (That was the true Light, which lighteth every man that cometh into the
+--                world), John 8:12 (I am the light of the world), John 14:6 (I am the way, the truth, and
+--                the life), John 1:14 (the Word was made flesh... full of grace and truth) — the Formed
+--                Son IS the light and the truth sent out to lead — THREAD 2 (load-bearing)
+--        Extras: none warranted (weighed; the light-and-truth-as-guide is carried cleaner by John + Micah)
+--        Tanakh: ★ Micah 7:8 (when I sit in darkness, Yahuah (LORD) shall be a light unto me) — the light
+--                that leads the fallen one up out of the dark — THREAD 2
+--   v.4 (Then will I go unto the altar of Elohim (God), unto Elohim (God) my exceeding joy: yea, upon the
+--          harp will I praise thee, O Elohim (God) my Elohim (God))
+--        NT:     ★ Hebrews 13:15 (let us offer the sacrifice of praise to Elohim (God) continually, that
+--                is, the fruit of our lips giving thanks to his name) — the harp-praise at the altar
+--                become the continual sacrifice of praise — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 26:6 (so will I compass thine altar, O Yahuah (LORD)), Psalm 116:17 (I will
+--                offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah
+--                (LORD)) — worship restored at the altar, the sacrifice of thanksgiving — THREAD 3
+--   v.5 (Why art thou cast down, O my soul? and why art thou disquieted within me? hope in Elohim (God):
+--          for I shall yet praise him, who is the health of my countenance, and my Elohim (God))
+--        NT/Extras/Tanakh: ⚠ THE SHARED REFRAIN (42:5, 42:11, 43:5) — OWNED by the Ps 42 minion, anchored
+--                in 42; NOT re-threaded here per coordination. Lateraled to 42 in the THREAD 3 prose.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-43-judge-me-and-plead-my-cause — NT (1 Peter 2) + Tanakh (Psalm 35) [free]
+--      (★ the righteous sufferer's appeal to the divine Judge; the Formed Son commits to Him that judgeth righteously)
+--   2. psalm-43-send-out-thy-light-and-thy-truth — NT (John 1, John 8, John 14) + Tanakh (Micah 7) [free]
+--      (★★ load-bearing: the Formed Son IS the light and the truth sent out to lead unto the holy hill)
+--   3. psalm-43-then-will-i-go-unto-the-altar-of-elohim — NT (Hebrews 13) + Tanakh (Psalm 26, Psalm 116) [free]
+--      (worship restored at the altar; the harp-praise become the sacrifice of thanksgiving and praise)
+--
+-- Framing notes:
+--   ★ JUDGE ME / PLEAD MY CAUSE (THREAD 1): *Judge me, O Elohim (God), and plead my cause against an
+--      ungodly nation: O deliver me from the deceitful and unjust man* (43:1). The righteous sufferer does
+--      not avenge himself; he hands his cause to the divine Judge. It is David's own posture twice in the
+--      neighbouring psalm — *Plead my cause, O Yahuah (LORD), with them that strive with me* (Psalm 35:1)
+--      and *Judge me, O Yahuah (LORD) my Elohim (God), according to thy righteousness* (Psalm 35:24). And
+--      it is the very pattern the Formed Son walked out in the flesh: *when he was reviled, reviled not
+--      again; when he suffered, he threatened not; but committed himself to him that judgeth righteously*
+--      (1 Peter 2:23). To plead one's cause to Yahuah is to commit it to the One who judges righteously.
+--   ★★ SEND OUT THY LIGHT AND THY TRUTH (THREAD 2): *O send out thy light and thy truth: let them lead
+--      me; let them bring me unto thy holy hill, and to thy tabernacles* (43:3). The exile asks Yahuah to
+--      SEND OUT two things — light and truth — as living guides to bring him home to Zion. Read through
+--      the Formed and the Formless, the light and the truth sent out is the expressed Word, the Formed
+--      Son: *That was the true Light, which lighteth every man that cometh into the world* (John 1:9); he
+--      says it of himself — *I am the light of the world: he that followeth me shall not walk in darkness*
+--      (John 8:12) — and *I am the way, the truth, and the life: no man cometh unto the Father, but by me*
+--      (John 14:6); and when he took flesh he was beheld *full of grace and truth* (John 1:14). Micah sings
+--      the same hope of the light that leads the fallen one up out of the dark — *when I sit in darkness,
+--      Yahuah (LORD) shall be a light unto me* (Micah 7:8). The One sent out is the One who leads home to
+--      the holy hill.
+--   THE ALTAR OF ELOHIM (THREAD 3): the guidance has a destination — *Then will I go unto the altar of
+--      Elohim (God), unto Elohim (God) my exceeding joy: yea, upon the harp will I praise thee* (43:4),
+--      and the song ends in the refrain shared with Psalm 42, *hope in Elohim (God): for I shall yet
+--      praise him* (43:5, the refrain owned and anchored at 42:5,11). The restored worship is the
+--      compassing of the altar — *I will wash mine hands in innocency: so will I compass thine altar, O
+--      Yahuah (LORD)* (Psalm 26:6) — and the thank-offering — *I will offer to thee the sacrifice of
+--      thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17). The harp-praise at the
+--      altar is taken up as the continual offering of the assembly — *By him therefore let us offer the
+--      sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to
+--      his name* (Hebrews 13:15). The altar is exceeding joy; the praise never ceases.
+--   VERSES WITH NO SEPARATE ADD: v.2 (the *why go I mourning because of the oppression of the enemy* echo
+--      of 42:9 is folded as lead-in to THREAD 1); v.5 is the SHARED REFRAIN owned by the Ps 42 minion
+--      (anchored in 42) and is NOT re-threaded here, only lateraled in the THREAD 3 prose.
+
+CREATE TEMP VIEW _s302_ps043_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Judge me, and plead my cause — the appeal to the divine Judge
+    ('canon','psalms',43,1,'canon','1-peter',2,23,'free',
+      E'*Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). *Judge me, O Elohim (God), and plead my cause against an ungodly nation* (Psalm 43:1): the righteous sufferer does not avenge himself but hands his cause to the divine Judge — the very pattern the Formed Son walked out in the flesh, committing himself to Him that judgeth righteously rather than threatening in return.'),
+    ('canon','psalms',43,1,'canon','psalms',35,1,'free',
+      E'*Plead my cause, O Yahuah (LORD), with them that strive with me: fight against them that fight against me* (Psalm 35:1). *Judge me, O Elohim (God), and plead my cause against an ungodly nation* (Psalm 43:1): the same plea of the wronged servant — *plead my cause* — laid before Yahuah the advocate and judge, who fights for the one who will not fight for himself.'),
+    ('canon','psalms',43,1,'canon','psalms',35,24,'free',
+      E'*Judge me, O Yahuah (LORD) my Elohim (God), according to thy righteousness; and let them not rejoice over me* (Psalm 35:24). *Judge me, O Elohim (God), and plead my cause* (Psalm 43:1): word for word the same appeal — *judge me* — asking the righteous Judge to vindicate according to His righteousness, not the sufferer''s own hand.'),
+
+    -- THREAD 2 (★★): O send out thy light and thy truth — the Formed Son who leads home
+    ('canon','psalms',43,3,'canon','john',1,9,'free',
+      E'*That was the true Light, which lighteth every man that cometh into the world* (John 1:9). *O send out thy light and thy truth: let them lead me; let them bring me unto thy holy hill* (Psalm 43:3): the light the exile asks Yahuah to SEND OUT to lead him home is the true Light, the expressed Word — the Formed Son sent into the world to light every man and lead him to the holy hill.'),
+    ('canon','psalms',43,3,'canon','john',8,12,'free',
+      E'*Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). *O send out thy light and thy truth: let them lead me* (Psalm 43:3): the light that is sent out to lead is the Formed Son himself, who says *I am the light of the world* — to follow him is to be led out of darkness, the very leading the psalm prays for.'),
+    ('canon','psalms',43,3,'canon','john',14,6,'free',
+      E'*Yahusha (Jesus) saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6). *O send out thy light and thy truth: let them lead me; let them bring me unto thy holy hill, and to thy tabernacles* (Psalm 43:3): the truth sent out to bring the exile to the tabernacles is the Formed Son — *I am the truth* — the way by which a man is brought home to the Father.'),
+    ('canon','psalms',43,3,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). *O send out thy light and thy truth* (Psalm 43:3): the light and the truth Yahuah sends out is the Word made flesh, who tabernacled among us *full of grace and truth* — the sending-out of the psalm answered in the One who came to dwell.'),
+    ('canon','psalms',43,3,'canon','micah',7,8,'free',
+      E'*Rejoice not against me, O mine enemy: when I fall, I shall arise; when I sit in darkness, Yahuah (LORD) shall be a light unto me* (Micah 7:8). *O send out thy light and thy truth: let them lead me* (Psalm 43:3): the prophet sings the same hope — the fallen one sitting in darkness waits for Yahuah Himself to be his light, the light sent out to lead him up and home.'),
+
+    -- THREAD 3: Then will I go unto the altar — worship restored, the sacrifice of praise
+    ('canon','psalms',43,4,'canon','psalms',26,6,'free',
+      E'*I will wash mine hands in innocency: so will I compass thine altar, O Yahuah (LORD)* (Psalm 26:6). *Then will I go unto the altar of Elohim (God), unto Elohim (God) my exceeding joy* (Psalm 43:4): the restored worship is the compassing of the altar — the cleansed hands going round about it — the exile''s longing answered in the return to Yahuah''s altar.'),
+    ('canon','psalms',43,4,'canon','psalms',116,17,'free',
+      E'*I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17). *Then will I go unto the altar of Elohim (God)... yea, upon the harp will I praise thee* (Psalm 43:4): the altar-worship is the thank-offering joined to the calling on the Name — the sacrifice of thanksgiving the freed servant brings, the harp-praise of the psalm given voice.'),
+    ('canon','psalms',43,4,'canon','hebrews',13,15,'free',
+      E'*By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). *Then will I go unto the altar of Elohim (God), unto Elohim (God) my exceeding joy: yea, upon the harp will I praise thee* (Psalm 43:4): the harp-praise at the altar is taken up as the continual offering — the sacrifice of praise, the fruit of the lips giving thanks to His Name, never ceasing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-43-judge-me-and-plead-my-cause',
+       E'Judge me, O Elohim, and plead my cause — the appeal to the divine Judge',
+       E'The exile''s prayer opens with an appeal, not a counterattack: *Judge me, O Elohim (God), and plead my cause against an ungodly nation: O deliver me from the deceitful and unjust man* (Psalm 43:1). The righteous sufferer hands his cause to the divine Judge rather than avenging himself — and *why go I mourning because of the oppression of the enemy?* (43:2) is the very groan he raised at 42:9, now turned into a plea for vindication. It is David''s own posture twice in the neighbouring psalm: *Plead my cause, O Yahuah (LORD), with them that strive with me: fight against them that fight against me* (Psalm 35:1), and *Judge me, O Yahuah (LORD) my Elohim (God), according to thy righteousness; and let them not rejoice over me* (Psalm 35:24). And it is the pattern the Formed Son walked out in the flesh: *when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). To plead one''s cause to Yahuah is to commit it to the One who judges righteously, and to leave the deceitful and unjust man in His hands.',
+       sv.verse_id, ev.verse_id, 'free', 23050
+  FROM _s302_ps043_lookup sv, _s302_ps043_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=43 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-43-send-out-thy-light-and-thy-truth',
+       E'O send out thy light and thy truth — the Formed Son who leads home to the holy hill',
+       E'*O send out thy light and thy truth: let them lead me; let them bring me unto thy holy hill, and to thy tabernacles* (Psalm 43:3). The exile, far from Zion, asks Yahuah to SEND OUT two things — light and truth — as living guides to bring him home. Read through the Formed and the Formless, the light and the truth that Yahuah sends out is the expressed Word, the Formed Son. He is the true Light: *That was the true Light, which lighteth every man that cometh into the world* (John 1:9). He says it of himself: *I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12); and *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6) — the very light AND truth the psalm prays will lead him to the tabernacles. When he was sent out into flesh he was beheld *full of grace and truth* (John 1:14). The prophet sings the same hope of the light that lifts the fallen one out of the dark: *when I sit in darkness, Yahuah (LORD) shall be a light unto me* (Micah 7:8). The One sent out is the One who leads home, and the holy hill the exile longs for is the gathering-place of Yahuah''s people.',
+       sv.verse_id, ev.verse_id, 'free', 23053
+  FROM _s302_ps043_lookup sv, _s302_ps043_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=43 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-43-then-will-i-go-unto-the-altar-of-elohim',
+       E'Then will I go unto the altar of Elohim — worship restored, the sacrifice of praise',
+       E'The guidance has a destination, and it is worship: *Then will I go unto the altar of Elohim (God), unto Elohim (God) my exceeding joy: yea, upon the harp will I praise thee, O Elohim (God) my Elohim (God)* (Psalm 43:4). The song then ends in the refrain it shares with Psalm 42, *Why art thou cast down, O my soul?... hope in Elohim (God): for I shall yet praise him* (43:5) — the soul talked back into hope. The restored worship is the compassing of the altar with clean hands: *I will wash mine hands in innocency: so will I compass thine altar, O Yahuah (LORD)* (Psalm 26:6); and the thank-offering joined to the Name: *I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17). That harp-praise at the altar is taken up by the assembly as a continual offering: *By him therefore let us offer the sacrifice of praise to Elohim (God) continually, that is, the fruit of our lips giving thanks to his name* (Hebrews 13:15). The altar is *exceeding joy*; the sacrifice of praise never ceases, and the cast-down soul finds its rest in returning to it.',
+       sv.verse_id, ev.verse_id, 'free', 23056
+  FROM _s302_ps043_lookup sv, _s302_ps043_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=43 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *committed himself to him that judgeth righteously* (1 Peter 2:23) — the appeal of 43:1 is the Formed Son''s pattern: reviled, he reviled not, but handed his cause to the righteous Judge.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=1
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-judge-me-and-plead-my-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Plead my cause, O Yahuah (LORD), with them that strive with me* (Psalm 35:1) — the same plea as 43:1: the wronged servant laying his cause before Yahuah the advocate.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=1
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=35 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-judge-me-and-plead-my-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Judge me, O Yahuah (LORD) my Elohim (God), according to thy righteousness* (Psalm 35:24) — word for word the *judge me* of 43:1: vindication by the righteous Judge, not the sufferer''s own hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=1
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=35 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-judge-me-and-plead-my-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *That was the true Light, which lighteth every man that cometh into the world* (John 1:9) — the light sent out to lead (43:3) is the true Light, the Formed Son sent into the world.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=3
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-send-out-thy-light-and-thy-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I am the light of the world: he that followeth me shall not walk in darkness* (John 8:12) — the light of 43:3 is the Formed Son himself; to follow him is to be led out of the dark.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=3
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-send-out-thy-light-and-thy-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6) — the truth sent out to bring him to the tabernacles (43:3) is the Formed Son, the way home to the Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=3
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-send-out-thy-light-and-thy-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the Word was made flesh, and dwelt among us... full of grace and truth* (John 1:14) — the light and truth Yahuah sends out (43:3) is the Word made flesh, who tabernacled among us.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=3
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-send-out-thy-light-and-thy-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*when I sit in darkness, Yahuah (LORD) shall be a light unto me* (Micah 7:8) — the prophet''s twin of 43:3: the fallen one in the dark waits for Yahuah Himself to be his light and lead him up.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=3
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-send-out-thy-light-and-thy-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*so will I compass thine altar, O Yahuah (LORD)* (Psalm 26:6) — the altar-worship of 43:4: clean hands compassing the altar, the restored return to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=4
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=26 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-then-will-i-go-unto-the-altar-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will offer to thee the sacrifice of thanksgiving, and will call upon the name of Yahuah (LORD)* (Psalm 116:17) — the harp-praise of 43:4 is the thank-offering joined to the Name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=4
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-then-will-i-go-unto-the-altar-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*let us offer the sacrifice of praise to Elohim (God) continually... the fruit of our lips giving thanks to his name* (Hebrews 13:15) — the harp-praise at the altar (43:4) become the assembly''s continual sacrifice of praise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps043_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=43 AND sv.verse_number=4
+  JOIN _s302_ps043_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-43-then-will-i-go-unto-the-altar-of-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_44.sql (Psalm 44) -----
+-- Chapter: Psalm 44 — THE KORAHITE NATIONAL LAMENT, the righteous-yet-suffering covenant people.
+-- A Maskil of the sons of Korah that opens in remembered salvation — *We have heard with our ears,
+-- O Elohim (God), our fathers have told us, what work thou didst in their days* (v.1) — and the
+-- confession that the land was never won by flesh — *they got not the land in possession by their own
+-- sword, neither did their own arm save them: but thy right hand, and thine arm* (v.3). It turns to
+-- present affliction — *thou hast cast off... Thou hast given us like sheep appointed for meat* (vv.9-11)
+-- — yet protests covenant integrity — *All this is come upon us; yet have we not forgotten thee*
+-- (v.17). Its ★★ KEYSTONE is v.22 — *Yea, for thy sake are we killed all the day long; we are counted
+-- as sheep for the slaughter* — quoted VERBATIM by Paul (Romans 8:36) in the very breath of *more than
+-- conquerors* (Romans 8:37): the covenant people's suffering FOR Yahuah's sake is NOT abandonment, and
+-- Israel is NOT cast away (Romans 11:1-2 guard). It closes in the cry for mercy-rooted redemption —
+-- *Arise for our help, and redeem us for thy mercies' sake* (v.26).
+-- Tag: ps044   Temp view: _s302_ps044_lookup
+-- Sort band: base 23075, step 3 -> threads at 23075, 23078, 23081, 23084, 23087 (5 threads)
+-- Source of EVERY row: 'canon','psalms',44,v
+--
+-- Psalm 44 coverage:
+--   v.1-3 (We have heard with our ears... our fathers have told us... they got not the land in
+--          possession by their own sword, neither did their own arm save them: but thy right hand,
+--          and thine arm, and the light of thy countenance)
+--        NT:     none warranted (salvation-by-His-arm carried cleaner by the Tanakh witnesses;
+--                no forced NT add)
+--        Extras: none warranted (weighed; the conquest-by-Yahuah's-arm is Torah/prophet material)
+--        Tanakh: ★ Deuteronomy 8:17 (My power and the might of mine hand hath gotten me this wealth —
+--                the flesh-boast rebuked), ★ Joshua 24:12 (I sent the hornet before you... but not with
+--                thy sword, nor with thy bow — the land not won by their weapon), Psalm 78:3-4 (our
+--                fathers have told us... shewing to the generation to come — the telling of the deeds),
+--                ★ Isaiah 52:10 / 53:1 (Yahuah hath made bare his holy arm... to whom is the arm of
+--                Yahuah revealed — the bared/revealed arm of salvation) — THREAD 1
+--   v.4-8 (Through thee will we push down our enemies: through thy name will we tread them under...
+--          For I will not trust in my bow, neither shall my sword save me)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 20:7 (Some trust in chariots, and some in horses: but we will remember the
+--                name of Yahuah Eloheinu — not in bow/sword but in the Name), ★ Zechariah 4:6 (Not by
+--                might, nor by power, but by my spirit — the same not-by-flesh) — THREAD 2
+--   vv.9-16 (thou hast cast off... Thou makest us to turn back from the enemy... given us like sheep
+--          appointed for meat... scattered us among the heathen... a byword among the heathen)
+--        NT/Extras/Tanakh: folded — the scattering/byword is the lament-frame that sets up the keystone
+--                v.22; the "sheep appointed for meat / scattered among the heathen" is gathered under
+--                the keystone sheep-for-the-slaughter weave (THREAD 4) and the integrity-protest
+--                (THREAD 3); no separate add (the two-house scattering note carried in THREAD 4's guard)
+--   vv.17-21 (All this is come upon us; yet have we not forgotten thee, neither have we dealt falsely
+--          in thy covenant... If we have forgotten the name of our Elohim... Shall not Elohim search
+--          this out? for he knoweth the secrets of the heart)
+--        NT:     none warranted (the innocent-sufferer protest carried by Tanakh + extras here)
+--        Extras: ★ Wisdom 3:1-9 (the souls of the righteous are in the hand of Yahuah... having been a
+--                little chastised, they shall be greatly rewarded: for Yahuah proved them... As gold in
+--                the furnace has he tried them — the righteous chastised, not abandoned) — THREAD 3
+--        Tanakh: ★ Job lateral folded — the integrity-under-affliction motif is named in THREAD 3 prose;
+--                covenant-kept-yet-afflicted = NOT Deuteronomy 28 curse-for-sin (they protest integrity)
+--   ★★ v.22 (Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter)
+--        NT:     ★★ Romans 8:36 (As it is written, For thy sake we are killed all the day long; we are
+--                accounted as sheep for the slaughter — Paul quotes the verse verbatim), Romans 8:37
+--                (Nay, in all these things we are more than conquerors — the very next breath),
+--                Romans 11:1-2 (Hath Elohim cast away his people? Elohim forbid... Elohim hath not cast
+--                away his people which he foreknew — the two-house guard) — THREAD 4 (load-bearing keystone)
+--        Extras: ★ 2 Maccabees 7:9 (the King of the world shall raise us up, who have died for his laws,
+--                to everlasting life — innocent suffering FOR the covenant) — THREAD 4
+--        Tanakh: Revelation 6:9-10 weighed for the martyrs' cry — folded as a lateral NOTE in THREAD 4
+--                prose (souls slain for the word, crying How long), not a separate member
+--   vv.23-26 (Awake, why sleepest thou, O Yahuah?... arise, cast us not off for ever... Arise for our
+--          help, and redeem us for thy mercies' sake)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 79:9 (Help us, O Elohim of our salvation, for the glory of thy name... for thy
+--                name's sake — redemption rooted in the Name/mercy, not their merit) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm — Tanakh (Deut 8, Joshua 24,
+--      Psalm 78, Isaiah 52, Isaiah 53) [free] (★ the land won by His arm not their sword; the bared arm)
+--   2. psalm-44-i-will-not-trust-in-my-bow-through-thy-name — Tanakh (Psalm 20, Zechariah 4) [free]
+--      (★ not in bow/sword but in the Name — not by might nor by power)
+--   3. psalm-44-we-have-not-forgotten-thee-the-righteous-sufferer — Extras (Wisdom 3) [extras]
+--      (★ covenant kept under affliction — the righteous chastised and tried as gold, not abandoned)
+--   4. psalm-44-killed-all-the-day-long-sheep-for-the-slaughter — NT (Romans 8, Romans 11) +
+--      Extras (2 Maccabees 7) [extras] (★★ KEYSTONE: Paul quotes v.22 verbatim — more than conquerors,
+--      Israel not cast away)
+--   5. psalm-44-awake-arise-redeem-us-for-thy-mercies-sake — Tanakh (Psalm 79) [free]
+--      (★ the cry for redemption rooted in His mercy and Name, not their merit)
+--
+-- Framing notes:
+--   ★ HIS ARM, NOT THEIR SWORD (THREAD 1): the psalm grounds salvation in Yahuah's own arm — *they got
+--      not the land in possession by their own sword, neither did their own arm save them: but thy right
+--      hand, and thine arm, and the light of thy countenance* (44:3). It is the rebuke of the flesh-boast
+--      Moses warned against — *thou say in thine heart, My power and the might of mine hand hath gotten me
+--      this wealth* (Deuteronomy 8:17) — and Joshua's witness that even the conquest was His — *I sent the
+--      hornet before you... but not with thy sword, nor with thy bow* (Joshua 24:12). The fathers' telling
+--      is the duty of Psalm 78 — *our fathers have told us... shewing to the generation to come the praises
+--      of Yahuah* (Psalm 78:3-4) — and the arm that saves is the bared arm of the Servant: *Yahuah (LORD)
+--      hath made bare his holy arm in the eyes of all the nations* (Isaiah 52:10); *to whom is the arm of
+--      Yahuah (LORD) revealed?* (Isaiah 53:1). Salvation is by His arm, never by flesh.
+--   ★ NOT IN MY BOW BUT IN THE NAME (THREAD 2): *Through thee will we push down our enemies: through thy
+--      name will we tread them under... For I will not trust in my bow, neither shall my sword save me*
+--      (44:5-6). The neighbouring psalm sets the same antithesis — *Some trust in chariots, and some in
+--      horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7) — and the
+--      prophet seals it — *Not by might, nor by power, but by my spirit, saith Yahuah Tseva'ot* (Zechariah
+--      4:6). The victory is in the Name and the Spirit, not the weapon.
+--   ★ THE RIGHTEOUS SUFFERER (THREAD 3): the lament protests integrity, not guilt — *All this is come upon
+--      us; yet have we not forgotten thee, neither have we dealt falsely in thy covenant... If we have
+--      forgotten the name of our Elohim (God)... Shall not Elohim (God) search this out? for he knoweth the
+--      secrets of the heart* (44:17-21). This is NOT the Deuteronomy 28 curse-for-sin; it is the innocent
+--      sufferer who keeps covenant under affliction (the Job posture). The restored wisdom holds the same:
+--      *the souls of the righteous are in the hand of Yahuah (God)... having been a little chastised, they
+--      shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself. As gold
+--      in the furnace has he tried them* (Wisdom 3:1-6). The chastening is a trying, not a casting-off.
+--   ★★ KILLED ALL THE DAY LONG — SHEEP FOR THE SLAUGHTER (THREAD 4): the keystone — *Yea, for thy sake are
+--      we killed all the day long; we are counted as sheep for the slaughter* (44:22). Paul lifts the verse
+--      verbatim into the heart of the no-separation song — *As it is written, For thy sake we are killed all
+--      the day long; we are accounted as sheep for the slaughter* (Romans 8:36) — and the very next breath
+--      overturns it: *Nay, in all these things we are more than conquerors through him that loved us* (Romans
+--      8:37). The suffering is FOR Yahuah's sake, never abandonment; and lest any read it as Israel cast off,
+--      Paul guards it three chapters on — *Hath Elohim (God) cast away his people? Elohim (God) forbid...
+--      Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2). The restored Maccabean
+--      witness sings the same innocent suffering FOR the covenant — *the King of the world shall raise us
+--      up, who have died for his laws, to everlasting life* (2 Maccabees 7:9). Slain all the day long, yet
+--      more than conquerors; the two-house people is not cast away.
+--   ★ REDEEM US FOR THY MERCIES' SAKE (THREAD 5): the close cries for grace-rooted rescue — *Awake, why
+--      sleepest thou, O Yahuah (Lord)?... arise, cast us not off for ever... Arise for our help, and redeem
+--      us for thy mercies' sake* (44:23-26). The plea is not their merit but His Name and mercy, as the
+--      sister-psalm prays — *Help us, O Elohim (God) of our salvation, for the glory of thy name: and
+--      deliver us, and purge away our sins, for thy name's sake* (Psalm 79:9). Redemption is for His
+--      mercies' sake, His Name's sake — covenant rescue rooted in grace.
+--   VERSES WITH NO SEPARATE ADD: vv.9-16 (the cast-off / sheep-appointed-for-meat / byword-among-the-heathen
+--      lament) are recorded as folded — the scattering and reproach set up the keystone v.22 and are gathered
+--      under THREAD 4 (sheep) and THREAD 3 (integrity); Revelation 6:9-10 (the martyrs' How-long cry) was
+--      weighed and folded as a lateral note in THREAD 4 prose rather than a separate member.
+
+CREATE TEMP VIEW _s302_ps044_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): His arm, not their sword — our fathers have told us
+    ('canon','psalms',44,3,'canon','deuteronomy',8,17,'free',
+      E'*And thou say in thine heart, My power and the might of mine hand hath gotten me this wealth* (Deuteronomy 8:17). *They got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm* (Psalm 44:3): the psalm confesses what Moses warned the people never to forget — the wealth and the land were never gotten by *the might of mine hand* but by Yahuah''s arm alone.'),
+    ('canon','psalms',44,3,'canon','joshua',24,12,'free',
+      E'*And I sent the hornet before you, which drave them out from before you, even the two kings of the Amorites; but not with thy sword, nor with thy bow* (Joshua 24:12). *They got not the land in possession by their own sword, neither did their own arm save them* (Psalm 44:3): Joshua names the very thing — the heathen were driven out *not with thy sword, nor with thy bow*, but by Yahuah''s sending. The conquest the psalm remembers was His work, not their weapon.'),
+    ('canon','psalms',44,1,'canon','psalms',78,3,'free',
+      E'*Which we have heard and known, and our fathers have told us* (Psalm 78:3), set under *shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4). *We have heard with our ears, O Elohim (God), our fathers have told us, what work thou didst in their days* (Psalm 44:1): the two psalms share the one duty — the fathers tell the children the works of Yahuah, that the generation following may know His strength.'),
+    ('canon','psalms',44,3,'canon','isaiah',52,10,'free',
+      E'*Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our Elohim (God)* (Isaiah 52:10). *But thy right hand, and thine arm, and the light of thy countenance* (Psalm 44:3): the arm that took the land is the same bared arm Isaiah sees uncovered before the nations — the salvation of Yahuah worked by His own arm, that all the earth may see.'),
+    ('canon','psalms',44,3,'canon','isaiah',53,1,'free',
+      E'*Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1). *But thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them* (Psalm 44:3): the arm that saved Yashar''el (Israel) is the revealed arm of the Servant — read through the Formed and the Formless, the saving arm of Yahuah is His own expressed strength, the One through whom the salvation comes.'),
+
+    -- THREAD 2 (★): Not in my bow but in the Name
+    ('canon','psalms',44,6,'canon','psalms',20,7,'free',
+      E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7). *For I will not trust in my bow, neither shall my sword save me* (Psalm 44:6): the same antithesis — not the chariot, not the horse, not the bow nor the sword, but the Name of Yahuah remembered. The trust that conquers is set on the Name, not the weapon.'),
+    ('canon','psalms',44,5,'canon','zechariah',4,6,'free',
+      E'*This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us* (Psalm 44:5): the prophet seals the psalm''s confession — the victory is *not by might, nor by power, but by my spirit*; the enemies are pushed down through Him and through His Name, by the Spirit, never by flesh.'),
+
+    -- THREAD 3 (★): The righteous sufferer — covenant kept under affliction
+    ('canon','psalms',44,17,'apocrypha','the-wisdom-of-solomon',3,1,'extras',
+      E'*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1). *All this is come upon us; yet have we not forgotten thee, neither have we dealt falsely in thy covenant* (Psalm 44:17): the affliction is no proof of abandonment — the souls of the covenant-keeping righteous are held in Yahuah''s hand, beyond the reach of the torment that seems to undo them.'),
+    ('canon','psalms',44,19,'apocrypha','the-wisdom-of-solomon',3,5,'extras',
+      E'*And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself* (Wisdom of Solomon 3:5). *Though thou hast sore broken us in the place of dragons, and covered us with the shadow of death* (Psalm 44:19): the breaking is a proving, not a casting-off — a little chastening that ends in great reward; Yahuah proves the righteous and finds them worthy of Himself.'),
+    ('canon','psalms',44,19,'apocrypha','the-wisdom-of-solomon',3,6,'extras',
+      E'*As gold in the furnace has he tried them, and received them as a burnt offering* (Wisdom of Solomon 3:6). *Though thou hast sore broken us in the place of dragons, and covered us with the shadow of death* (Psalm 44:19): the sore breaking is the furnace — the righteous tried as gold and received as an offering, the affliction itself the refining of the faithful, not the curse of the false.'),
+
+    -- THREAD 4 (★★ KEYSTONE): Killed all the day long — sheep for the slaughter
+    ('canon','psalms',44,22,'canon','romans',8,36,'free',
+      E'*As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter* (Romans 8:36). *Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter* (Psalm 44:22): Paul quotes the verse word for word, set in the song of no-separation — the suffering is *for thy sake*, FOR Yahuah''s sake, and Paul names it the very mark of those whom nothing shall separate from the love of Messiah (Christ).'),
+    ('canon','psalms',44,22,'canon','romans',8,37,'free',
+      E'*Nay, in all these things we are more than conquerors through him that loved us* (Romans 8:37). *Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter* (Psalm 44:22): the very next breath after Paul quotes the psalm overturns the appearance of defeat — those killed all the day long are *more than conquerors*. The slaughtered sheep are the victors; the suffering is not abandonment.'),
+    ('canon','psalms',44,22,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1), with *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). *Yea, for thy sake are we killed all the day long* (Psalm 44:22): lest the slaughter be read as Yashar''el (Israel) cast off, Paul guards it — Yahuah has NOT cast away His people whom He foreknew; the suffering people remains the covenant people.'),
+    ('canon','psalms',44,22,'apocrypha','2-maccabees',7,9,'extras',
+      E'*You like a fury takest us out of this present life, but the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9). *Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter* (Psalm 44:22): the Maccabean martyr dies *for his laws* — innocent suffering FOR the covenant, not for sin — and looks past the slaughter to the King who raises the faithful to everlasting life. The sheep slain for His sake are the ones He raises.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 5 cross_reference (separate INSERT to keep the keystone block clean)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','psalms',44,26,'canon','psalms',79,9,'free',
+      E'*Help us, O Elohim (God) of our salvation, for the glory of thy name: and deliver us, and purge away our sins, for thy name''s sake* (Psalm 79:9). *Arise for our help, and redeem us for thy mercies'' sake* (Psalm 44:26): the sister-psalm prays the same plea — deliverance not for their merit but *for thy name''s sake*, redemption rooted in His mercy and His Name. The covenant rescue is grace-grounded.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm',
+       E'Our fathers have told us — thy right hand, and thine arm, not their sword',
+       E'The psalm opens in remembered salvation, the fathers'' testimony handed down: *We have heard with our ears, O Elohim (God), our fathers have told us, what work thou didst in their days, in the times of old* (Psalm 44:1). And it confesses at once that the land was never won by flesh: *For they got not the land in possession by their own sword, neither did their own arm save them: but thy right hand, and thine arm, and the light of thy countenance, because thou hadst a favour unto them* (Psalm 44:3). This is the very thing Moses warned the people never to claim: *thou say in thine heart, My power and the might of mine hand hath gotten me this wealth* (Deuteronomy 8:17) — and Joshua''s own witness, that the heathen were driven out *not with thy sword, nor with thy bow* (Joshua 24:12) but by Yahuah''s sending. The duty of telling is the duty of the neighbouring psalm: *Which we have heard and known, and our fathers have told us* (Psalm 78:3). And the arm that took the land is the bared, revealed arm of salvation: *Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations* (Isaiah 52:10); *to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1). Read through the Formed and the Formless, the saving arm of Yahuah is His own expressed strength — salvation worked by His arm, never by flesh.',
+       sv.verse_id, ev.verse_id, 'free', 23075
+  FROM _s302_ps044_lookup sv, _s302_ps044_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=44 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-44-i-will-not-trust-in-my-bow-through-thy-name',
+       E'I will not trust in my bow — through thy name will we tread them under',
+       E'The remembered salvation becomes a present confession of trust: *Through thee will we push down our enemies: through thy name will we tread them under that rise up against us. For I will not trust in my bow, neither shall my sword save me* (Psalm 44:5-6). It is the antithesis the whole psalter holds: *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7). And the prophet seals it for all the generations: *This is the word of Yahuah (LORD) unto Zerubbabel, saying, Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The enemy is trodden down through Him, through His Name, by His Spirit — never by the bow, never by the sword, never by flesh.',
+       sv.verse_id, ev.verse_id, 'free', 23078
+  FROM _s302_ps044_lookup sv, _s302_ps044_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=44 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-44-we-have-not-forgotten-thee-the-righteous-sufferer',
+       E'We have not forgotten thee — the righteous sufferer, tried as gold',
+       E'The lament does the thing the covenant-curse reading cannot account for: under crushing affliction the people protest their integrity, not their guilt. *All this is come upon us; yet have we not forgotten thee, neither have we dealt falsely in thy covenant. Our heart is not turned back, neither have our steps declined from thy way... If we have forgotten the name of our Elohim (God), or stretched out our hands to a strange god; Shall not Elohim (God) search this out? for he knoweth the secrets of the heart* (Psalm 44:17-21). This is not the Deuteronomy 28 judgment for covenant-breaking — they have kept the covenant; this is the innocent sufferer who holds fast in the dark, the posture of Job. The restored wisdom names the same mystery: *But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1); *having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself* (Wisdom of Solomon 3:5); *As gold in the furnace has he tried them, and received them as a burnt offering* (Wisdom of Solomon 3:6). The sore breaking *in the place of dragons* (44:19) is the furnace, not the curse — the proving of the faithful, who are tried as gold and held in Yahuah''s hand.',
+       sv.verse_id, ev.verse_id, 'extras', 23081
+  FROM _s302_ps044_lookup sv, _s302_ps044_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=44 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-44-killed-all-the-day-long-sheep-for-the-slaughter',
+       E'For thy sake are we killed all the day long — sheep for the slaughter, yet more than conquerors',
+       E'The keystone of the psalm is the cry that Paul would lift whole into the New Testament: *Yea, for thy sake are we killed all the day long; we are counted as sheep for the slaughter* (Psalm 44:22). Paul sets it word for word in the song of no-separation: *As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter* (Romans 8:36) — and the very next breath overturns the appearance of defeat: *Nay, in all these things we are more than conquerors through him that loved us* (Romans 8:37). The suffering is *for thy sake*, FOR Yahuah''s sake, never the mark of abandonment; the slaughtered sheep are the victors, the very ones whom nothing shall separate from the love of Messiah (Christ). And lest any read the slaughter as Yashar''el (Israel) cast off, Paul guards it three chapters on: *Hath Elohim (God) cast away his people? Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2). The restored Maccabean witness sings the same innocent suffering FOR the covenant: the martyr dies *for his laws*, looking past the sword — *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9). Killed all the day long, counted as sheep for the slaughter — yet held FOR His sake, raised to everlasting life, more than conquerors; the two-house people is not cast away.',
+       sv.verse_id, ev.verse_id, 'extras', 23084
+  FROM _s302_ps044_lookup sv, _s302_ps044_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=44 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-44-awake-arise-redeem-us-for-thy-mercies-sake',
+       E'Arise, redeem us for thy mercies'' sake',
+       E'The psalm closes in the cry for grace-rooted rescue: *Awake, why sleepest thou, O Yahuah (Lord)? arise, cast us not off for ever. Wherefore hidest thou thy face, and forgettest our affliction and our oppression?... Arise for our help, and redeem us for thy mercies'' sake* (Psalm 44:23-26). The plea is not their own merit but His mercy and His Name — the same ground the sister-psalm prays upon: *Help us, O Elohim (God) of our salvation, for the glory of thy name: and deliver us, and purge away our sins, for thy name''s sake* (Psalm 79:9). Redemption is sought *for thy mercies'' sake*, *for thy name''s sake* — covenant rescue rooted in grace, the people throwing themselves not on their record but on the mercy of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 23087
+  FROM _s302_ps044_lookup sv, _s302_ps044_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=44 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *My power and the might of mine hand hath gotten me this wealth* (Deuteronomy 8:17) — the flesh-boast Moses warned against; 44:3 confesses the land was NOT won by their own arm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=3
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I sent the hornet before you... but not with thy sword, nor with thy bow* (Joshua 24:12) — the conquest of 44:3 was His sending, not their weapon.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=3
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Which we have heard and known, and our fathers have told us* (Psalm 78:3) — the same handed-down testimony as 44:1: the fathers tell the children the works of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=1
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations* (Isaiah 52:10) — the arm of 44:3 uncovered before the nations: the salvation worked by His own arm.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=3
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1) — the saving arm of 44:3 is the revealed arm of the Servant: the Formed Son, His own expressed strength.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=3
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-our-fathers-have-told-us-thy-right-hand-and-thine-arm'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu* (Psalm 20:7) — the same antithesis as 44:6: not the bow, but the Name.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=6
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-i-will-not-trust-in-my-bow-through-thy-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Not by might, nor by power, but by my spirit* (Zechariah 4:6) — the prophet seals 44:5: the enemy trodden down through His Name, by His Spirit, never by flesh.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=5
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-i-will-not-trust-in-my-bow-through-thy-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom 3:1) — the covenant-keeping of 44:17 is no proof of abandonment: held in His hand.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=17
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-we-have-not-forgotten-thee-the-righteous-sufferer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them* (Wisdom 3:5) — the sore breaking of 44:19 is a proving, not a casting-off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=19
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-we-have-not-forgotten-thee-the-righteous-sufferer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *As gold in the furnace has he tried them, and received them as a burnt offering* (Wisdom 3:6) — the *place of dragons* (44:19) is the furnace: the faithful refined, not cursed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=19
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-we-have-not-forgotten-thee-the-righteous-sufferer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter* (Romans 8:36) — Paul quotes 44:22 verbatim, set in the song of no-separation.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=22
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-killed-all-the-day-long-sheep-for-the-slaughter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Nay, in all these things we are more than conquerors through him that loved us* (Romans 8:37) — the next breath after 44:22: the slaughtered sheep are the victors, not the abandoned.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=22
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-killed-all-the-day-long-sheep-for-the-slaughter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2) — the two-house guard on 44:22: the suffering people remains the covenant people, NOT cast off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=22
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-killed-all-the-day-long-sheep-for-the-slaughter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the King of the world shall raise us up, who have died for his laws, to everlasting life* (2 Maccabees 7:9) — the martyr of 44:22 dies FOR the covenant, raised to everlasting life.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=22
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='2-maccabees' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-killed-all-the-day-long-sheep-for-the-slaughter'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Help us, O Elohim (God) of our salvation, for the glory of thy name... for thy name''s sake* (Psalm 79:9) — the same plea as 44:26: redemption for His mercy and His Name, not their merit.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps044_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=44 AND sv.verse_number=26
+  JOIN _s302_ps044_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-44-awake-arise-redeem-us-for-thy-mercies-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
