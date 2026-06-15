@@ -6147,6 +6147,1766 @@ SELECT t.id, cr.id, 5, E'*all our fathers were under the cloud, and all passed t
  WHERE t.slug='exodus-40-the-cloud-by-day-and-fire-by-night-throughout-all-their-journeys'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_1.sql (Exodus 1) -----
+-- Chapter: Exodus 1 — the bondage in Egypt; the midwives who feared Elohim; Pharaoh's drown-decree
+-- Tag: ex01   Session prefix: s305   Sort band base: 29000 (step 3)
+-- Greenfield: 0 existing exodus-1-* slugs in EXISTING_SLUGS.txt
+--
+-- Per-verse coverage checklist:
+--   v.1-6  names/seventy souls/Joseph died:
+--          NT: none warranted   Extras: Jubilees 46:1-4 (woven via the seed thread)   Tanakh: Genesis 46 (the descent, woven)
+--   v.7  fruitful, increased, multiplied, waxed mighty, land filled:
+--          NT: Acts 7:17 (people grew and multiplied)   Extras: Jubilees 46:1 (multiplied, became a great nation)
+--          Tanakh: Genesis 15:13-14 (400 years foretold), Genesis 46:3 (a great nation), Deuteronomy 26:5 (a few became a nation)
+--   v.8  new king knew not Joseph:
+--          NT: Acts 7:18 (quotes it verbatim), Acts 7:19 (dealt subtilly)   Extras: Jubilees 46:13 (deal wisely with them)   Tanakh: (woven w/ v.7 turn)
+--   v.9-10 deal wisely / lest they multiply:
+--          NT: Acts 7:19   Extras: Jubilees 46:13   Tanakh: none warranted (woven w/ v.8)
+--   v.11-14 taskmasters / bitter service with rigour / morter and brick:
+--          NT: none warranted   Extras: Jubilees 46:14-15 (taskmasters, rigour)
+--          Tanakh: Genesis 15:13 (thy seed shall serve and be afflicted), Deuteronomy 4:20 (iron furnace), Deuteronomy 26:6 (hard bondage)
+--   v.15-21 ★ midwives Shiphrah & Puah feared Elohim, disobeyed the murder-decree, Elohim made them houses:
+--          NT: Acts 5:29 (obey Elohim rather than men)   Extras: none warranted (clean witness scarce; not forced)
+--          Tanakh: Proverbs 1:7 + Proverbs 8:13 (the fear of Yahuah)
+--   v.22 ★ cast every son into the river — the dragon devouring the seed:
+--          NT: Revelation 12:4 (dragon to devour the child), Matthew 2:16 (Herod slays the infants)
+--          Extras: Jubilees 47:2 (cast all male children into the river)   Tanakh: Genesis 3:15 (enmity, seed-war)
+--
+-- Threads (slug — target libraries):
+--   exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham   — Tanakh(Gen,Deut)+NT(Acts)+Extras(Jubilees)  [extras]
+--   exodus-1-a-new-king-who-knew-not-joseph                     — NT(Acts)+Extras(Jubilees)                    [extras]
+--   exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace    — Tanakh(Gen,Deut)+Extras(Jubilees)            [extras]
+--   exodus-1-the-midwives-feared-elohim-rather-than-the-king    — NT(Acts)+Tanakh(Proverbs)                    [free]
+--   exodus-1-the-decree-to-drown-the-sons-the-dragon-and-the-seed — NT(Rev,Matt)+Tanakh(Gen)+Extras(Jubilees) [extras]
+--
+-- Framework-load-bearing framings:
+--   v.7  — the seed-promise flourishing EXACTLY as sworn to Abraham (Gen 15); the covenant seed, not mere demographics.
+--   v.15-21 — civil disobedience to an unjust murder-decree out of the fear of Elohim; Elohim BUILDS the righteous (made them houses).
+--   v.22 — the standing TYPE of the serpent's-seed war (Gen 3:15) against the firstborn-son people: dragon (Rev 12), Herod (Matt 2).
+
+CREATE TEMP VIEW _s305_ex01_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the seed multiplied as sworn (v.7)
+    ('canon','exodus',1,7,'canon','genesis',15,13,'free',
+     E'*And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13). The increase in *Exodus 1:7* — *the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* — is the covenant seed flourishing inside the very sojourn Yahuah (LORD) foretold to Abram. The multiplying and the affliction are one sworn word unfolding.'),
+    ('canon','exodus',1,7,'canon','genesis',15,14,'free',
+     E'*And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance.* (Genesis 15:14). The seed that *waxed exceeding mighty* in Egypt (Exodus 1:7) is the seed whose oppressor Yahuah (LORD) pledged to judge and bring out — the bondage of Exodus 1 is the front half of this oath.'),
+    ('canon','exodus',1,7,'canon','genesis',46,3,'free',
+     E'*And he said, I am Elohim (God), the Elohim (God) of thy father: fear not to go down into Egypt; for I will there make of thee a great nation:* (Genesis 46:3). Yahuah swore to Jacob that the descent into Egypt was the womb of a nation; *Exodus 1:7* reports the promise kept — *the land was filled with them*.'),
+    ('canon','exodus',1,7,'canon','deuteronomy',26,5,'free',
+     E'*And thou shalt speak and say before Yahuah Elohayka (the LORD thy God), A Syrian ready to perish was my father, and he went down into Egypt, and sojourned there with a few, and became there a nation, great, mighty, and populous:* (Deuteronomy 26:5). Yashar''el''s firstfruits confession reaches back to this very growth — *a few* who *became there a nation, great, mighty, and populous*, the exact arc of *Exodus 1:7*.'),
+    ('canon','exodus',1,7,'canon','acts',7,17,'free',
+     E'*But when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt,* (Acts 7:17). Stephen reads the increase of *Exodus 1:7* as the clock of *the promise* sworn to Abraham striking — the people *grew and multiplied* precisely because the deliverance hour drew near.'),
+    ('canon','exodus',1,7,'jubilees','jubilees',46,1,'extras',
+     E'*And it came to pass that after Jacob died the children of Yashar’el (Israel) multiplied in the land of Egypt, and they became a great nation, and they were of one accord in heart, so that brother loved brother and every man helped his brother, and they increased abundantly and multiplied exceedingly, ten weeks of years, all the days of the life of Joseph.* (Jubilees 46:1). The restored witness echoes *Exodus 1:7* word for word — they *increased abundantly and multiplied exceedingly* and *became a great nation*, the seed-promise visibly kept.'),
+
+    -- THREAD 2: a new king who knew not Joseph (v.8)
+    ('canon','exodus',1,8,'canon','acts',7,18,'free',
+     E'*Till another king arose, which knew not Joseph.* (Acts 7:18). Stephen quotes *Exodus 1:8* almost verbatim — *there arose up a new king over Egypt, which knew not Joseph* — marking the turn from a Yoseph (Joseph) who had saved Egypt to a throne that forgot him and turned on his people.'),
+    ('canon','exodus',1,8,'canon','acts',7,19,'free',
+     E'*The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live.* (Acts 7:19). The new king of *Exodus 1:8* is the one who, in Stephen''s telling, *dealt subtilly* — the same *deal wisely with them* of Exodus 1:10 — and drove the murder of the children that Exodus 1 unfolds.'),
+    ('canon','exodus',1,8,'jubilees','jubilees',46,13,'extras',
+     E'*"Behold the people of the children of Yashar’el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them before they become too many, and let us afflict them with slavery before war come upon us and before they too fight against us; else they will join themselves to our enemies and get them up out of our land, for their hearts and faces are towards the land of Canaan."* (Jubilees 46:13). The restored account puts the very policy of *Exodus 1:8-10* in the new king''s mouth — *let us deal wisely with them* lest they multiply and *join also unto our enemies*.'),
+
+    -- THREAD 3: the bitter bondage with rigour, the iron furnace (v.11-14)
+    ('canon','exodus',1,11,'canon','genesis',15,13,'free',
+     E'*And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years;* (Genesis 15:13). The taskmasters of *Exodus 1:11* — set *over them... to afflict them with their burdens* — are the affliction Yahuah (LORD) named centuries before to Abram: *thy seed... shall serve them; and they shall afflict them*.'),
+    ('canon','exodus',1,14,'canon','deuteronomy',4,20,'free',
+     E'*But Yahuah (LORD) hath taken you, and brought you forth out of the iron furnace, even out of Egypt, to be unto him a people of inheritance, as ye are this day.* (Deuteronomy 4:20). The *hard bondage, in morter, and in brick* of *Exodus 1:14* is what Moses later names *the iron furnace* — the smelting-fire out of which Yahuah drew a people for his own inheritance.'),
+    ('canon','exodus',1,14,'canon','deuteronomy',26,6,'free',
+     E'*And the Egyptians evil entreated us, and afflicted us, and laid upon us hard bondage:* (Deuteronomy 26:6). Yashar''el''s confession remembers the exact *hard bondage* of *Exodus 1:14* — the bitter service *with rigour* — every harvest, lest the rescue be forgotten.'),
+    ('canon','exodus',1,14,'jubilees','jubilees',46,14,'extras',
+     E'*And he set over them taskmasters to afflict them with slavery; and they built strong cities for Pharaoh, Pithom and Raamses, and they built all the walls and all the fortifications which had fallen in the cities of Egypt.* (Jubilees 46:14). The restored witness names the same *taskmasters*, the same *Pithom and Raamses* of *Exodus 1:11-14*, the bondage laid on the seed.'),
+    ('canon','exodus',1,12,'jubilees','jubilees',46,15,'extras',
+     E'*And they made them serve with rigour, and the more they dealt evilly with them, the more they increased and multiplied.* (Jubilees 46:15). The paradox of *Exodus 1:12* — *the more they afflicted them, the more they multiplied and grew* — stands in the restored account too: the harder the *rigour*, the more the covenant seed flourished.'),
+
+    -- THREAD 4: the midwives feared Elohim rather than the king (v.15-21)
+    ('canon','exodus',1,17,'canon','acts',5,29,'free',
+     E'*Then Peter and the other apostles answered and said, We ought to obey Elohim (God) rather than men.* (Acts 5:29). Shiphrah and Puah live this verse long before it is spoken — *the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive* (Exodus 1:17). When the throne commands murder, the fear of Elohim outranks the fear of the king.'),
+    ('canon','exodus',1,17,'canon','proverbs',1,7,'free',
+     E'*The fear of Yahuah (LORD) is the beginning of knowledge: but fools despise wisdom and instruction.* (Proverbs 1:7). The midwives'' refusal in *Exodus 1:17* is wisdom''s first principle in action — *the midwives feared Elohim (God)* and so knew, where the king did not, that the sons must live.'),
+    ('canon','exodus',1,21,'canon','proverbs',8,13,'free',
+     E'*The fear of Yahuah (LORD) is to hate evil: pride, and arrogancy, and the evil way, and the froward mouth, do I hate.* (Proverbs 8:13). Because the midwives *feared Elohim (God)... he made them houses* (Exodus 1:21) — the fear of Yahuah that *hate[s] evil* and refuses the murder-decree is the fear Elohim rewards by building the household.'),
+
+    -- THREAD 5: the decree to drown the sons — the dragon and the seed (v.22)
+    ('canon','exodus',1,22,'canon','genesis',3,15,'free',
+     E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel.* (Genesis 3:15). Pharaoh''s decree — *Every son that is born ye shall cast into the river* (Exodus 1:22) — is the serpent''s-seed war on the woman''s seed: drown the sons, and the deliverer never comes. The enmity sworn in Eden takes the shape of a river.'),
+    ('canon','exodus',1,22,'canon','revelation',12,4,'free',
+     E'*And his tail drew the third part of the stars of heaven, and did cast them to the earth: and the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born.* (Revelation 12:4). The river-decree of *Exodus 1:22* is one face of the standing type John sees — *the dragon stood before the woman... for to devour her child as soon as it was born* — the ancient war to swallow the seed at birth.'),
+    ('canon','exodus',1,22,'canon','matthew',2,16,'free',
+     E'*Then Herod, when he saw that he was mocked of the wise men, was exceeding wroth, and sent forth, and slew all the children that were in Bethlehem, and in all the coasts thereof, from two years old and under, according to the time which he had diligently enquired of the wise men.* (Matthew 2:16). Herod re-runs Pharaoh''s script of *Exodus 1:22* — slay the male infants to kill the deliverer in the cradle. The same serpent, the same firstborn-son war.'),
+    ('canon','exodus',1,22,'jubilees','jubilees',47,2,'extras',
+     E'*And Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river.* (Jubilees 47:2). The restored witness names the decree of *Exodus 1:22* plainly — *cast all their male children... into the river* — the throne''s war on the Hebrew sons just as Moses is about to be born.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham',
+       E'The seed multiplied in Egypt, exactly as sworn to Abraham',
+       E'*And the children of Yashar''el (Israel) were fruitful, and increased abundantly, and multiplied, and waxed exceeding mighty; and the land was filled with them* (Exodus 1:7). This is no accident of demography — it is the covenant seed flourishing inside the very sojourn Yahuah (LORD) foretold. To Abram: *thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years* (Genesis 15:13), and *afterward shall they come out with great substance* (Genesis 15:14). To Jacob at the descent: *fear not to go down into Egypt; for I will there make of thee a great nation* (Genesis 46:3). Yashar''el''s own firstfruits confession sings it: *he went down into Egypt, and sojourned there with a few, and became there a nation, great, mighty, and populous* (Deuteronomy 26:5). Stephen reads the increase as the promise-clock striking: *when the time of the promise drew nigh, which Elohim (God) had sworn to Abraham, the people grew and multiplied in Egypt* (Acts 7:17). And the restored witness echoes it word for word: *they increased abundantly and multiplied exceedingly... and they became a great nation* (Jubilees 46:1). The multiplying and the coming bondage are one sworn word unfolding.',
+       sv.verse_id, ev.verse_id, 'extras', 29000
+  FROM _s305_ex01_lookup sv, _s305_ex01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=1 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-1-a-new-king-who-knew-not-joseph',
+       E'A new king who knew not Joseph',
+       E'*Now there arose up a new king over Egypt, which knew not Joseph* (Exodus 1:8). The throne that Yoseph (Joseph) had saved from famine forgets him and turns on his people. Stephen quotes the verse almost verbatim — *Till another king arose, which knew not Joseph* (Acts 7:18) — and names the policy that followed: *The same dealt subtilly with our kindred, and evil entreated our fathers, so that they cast out their young children, to the end they might not live* (Acts 7:19), the very *deal wisely with them* of Exodus 1:10. The restored account puts the whole scheme in the king''s mouth: *Behold the people of the children of Yashar''el (Israel) have increased and multiplied more than we. Come and let us deal wisely with them... else they will join themselves to our enemies and get them up out of our land* (Jubilees 46:13). The favor of one generation becomes the bondage of the next.',
+       sv.verse_id, ev.verse_id, 'extras', 29003
+  FROM _s305_ex01_lookup sv, _s305_ex01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=1 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace',
+       E'The bitter bondage with rigour — the iron furnace',
+       E'*And they made their lives bitter with hard bondage, in morter, and in brick, and in all manner of service in the field... was with rigour* (Exodus 1:14). The taskmasters set *over them... to afflict them with their burdens* (Exodus 1:11) are the affliction Yahuah (LORD) named to Abram centuries before: *thy seed... shall serve them; and they shall afflict them four hundred years* (Genesis 15:13). Moses later gives the bondage its name — *the iron furnace* — the smelting-fire out of which a people was drawn: *Yahuah (LORD) hath taken you, and brought you forth out of the iron furnace, even out of Egypt, to be unto him a people of inheritance* (Deuteronomy 4:20). Yashar''el''s confession remembers the *hard bondage* (Deuteronomy 26:6). And the restored account names the same *taskmasters*, the same *Pithom and Raamses* (Jubilees 46:14), with the same paradox the text marks at Exodus 1:12 — *the more they dealt evilly with them, the more they increased and multiplied* (Jubilees 46:15). The harder the rigour, the more the covenant seed flourished.',
+       sv.verse_id, ev.verse_id, 'extras', 29006
+  FROM _s305_ex01_lookup sv, _s305_ex01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=1 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-1-the-midwives-feared-elohim-rather-than-the-king',
+       E'The midwives feared Elohim rather than the king',
+       E'*But the midwives feared Elohim (God), and did not as the king of Egypt commanded them, but saved the men children alive* (Exodus 1:17). Shiphrah and Puah are handed a murder-decree by the most powerful throne on earth, and they quietly refuse it — civil disobedience to an unjust command, out of the fear of Elohim. They live, long before it is spoken, the rule Peter would state: *We ought to obey Elohim (God) rather than men* (Acts 5:29). Their refusal is wisdom''s first principle in motion — *The fear of Yahuah (LORD) is the beginning of knowledge* (Proverbs 1:7) — and wisdom''s hatred of evil — *The fear of Yahuah (LORD) is to hate evil... and the evil way... do I hate* (Proverbs 8:13). And Elohim answers: *because the midwives feared Elohim (God), that he made them houses* (Exodus 1:21). The throne builds treasure-cities on Hebrew backs; Elohim builds households for the women who would not kill.',
+       sv.verse_id, ev.verse_id, 'free', 29009
+  FROM _s305_ex01_lookup sv, _s305_ex01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=1 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-1-the-decree-to-drown-the-sons-the-dragon-and-the-seed',
+       E'The decree to drown the sons — the dragon and the seed',
+       E'*And Pharaoh charged all his people, saying, Every son that is born ye shall cast into the river* (Exodus 1:22). This is the oldest war wearing a new face. The enmity sworn in Eden — *I will put enmity between thee and the woman, and between thy seed and her seed* (Genesis 3:15) — takes the shape of a river: drown the sons, and the deliverer never comes. John sees the standing type from above: *the dragon stood before the woman which was ready to be delivered, for to devour her child as soon as it was born* (Revelation 12:4). And Herod re-runs Pharaoh''s exact script at the birth of the Formed Son — *slew all the children that were in Bethlehem... from two years old and under* (Matthew 2:16). The restored witness names the decree plainly: *Pharaoh, king of Egypt, issued a command regarding them that they should cast all their male children which were born into the river* (Jubilees 47:2). One serpent, one firstborn-son people, one unbroken war on the seed — and a deliverer drawn out of the very river meant to drown him.',
+       sv.verse_id, ev.verse_id, 'extras', 29012
+  FROM _s305_ex01_lookup sv, _s305_ex01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=1 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thy seed... shall serve them; and they shall afflict them four hundred years* (Genesis 15:13) — the multiplying happens inside the sworn sojourn.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*afterward shall they come out with great substance* (Genesis 15:14) — the same oath pledges judgment on the oppressor.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will there make of thee a great nation* (Genesis 46:3) — sworn to Jacob at the descent into Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a few... became there a nation, great, mighty, and populous* (Deuteronomy 26:5) — Yashar''el''s firstfruits confession of this exact growth.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*when the time of the promise drew nigh... the people grew and multiplied in Egypt* (Acts 7:17) — Stephen reads the increase as the promise-clock striking.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*they increased abundantly and multiplied exceedingly... and they became a great nation* (Jubilees 46:1) — the restored witness echoes Exodus 1:7 word for word.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=7
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-seed-multiplied-in-egypt-as-sworn-to-abraham'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Till another king arose, which knew not Joseph* (Acts 7:18) — Stephen quotes Exodus 1:8 almost verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=8
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-a-new-king-who-knew-not-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The same dealt subtilly with our kindred... so that they cast out their young children* (Acts 7:19) — the policy the new king set in motion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=8
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-a-new-king-who-knew-not-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*let us deal wisely with them... else they will join themselves to our enemies* (Jubilees 46:13) — the very policy of Exodus 1:8-10 in the king''s mouth.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=8
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-a-new-king-who-knew-not-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thy seed... shall serve them; and they shall afflict them* (Genesis 15:13) — the taskmasters are the foretold affliction.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=11
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the iron furnace, even out of Egypt* (Deuteronomy 4:20) — Moses names the bondage of Exodus 1:14 the smelting-fire.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=14
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*afflicted us, and laid upon us hard bondage* (Deuteronomy 26:6) — Yashar''el''s confession remembers the same bondage.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=14
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*he set over them taskmasters... Pithom and Raamses* (Jubilees 46:14) — the restored witness names the same taskmasters and cities.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=14
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the more they dealt evilly with them, the more they increased and multiplied* (Jubilees 46:15) — the paradox of Exodus 1:12 in the restored account.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=12
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=46 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-bitter-bondage-with-rigour-the-iron-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*We ought to obey Elohim (God) rather than men* (Acts 5:29) — the rule the midwives lived before it was spoken.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=17
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-midwives-feared-elohim-rather-than-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The fear of Yahuah (LORD) is the beginning of knowledge* (Proverbs 1:7) — the midwives'' refusal is wisdom''s first principle in action.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=17
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-midwives-feared-elohim-rather-than-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The fear of Yahuah (LORD) is to hate evil* (Proverbs 8:13) — the fear that hates the murder-decree is the fear Elohim rewards by building the household.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=21
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=8 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-midwives-feared-elohim-rather-than-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will put enmity between thee and the woman, and between thy seed and her seed* (Genesis 3:15) — the river-decree is the serpent''s-seed war on the woman''s seed.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=22
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-decree-to-drown-the-sons-the-dragon-and-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the dragon stood before the woman... for to devour her child as soon as it was born* (Revelation 12:4) — the standing type the river-decree wears.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=22
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-decree-to-drown-the-sons-the-dragon-and-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*slew all the children that were in Bethlehem... from two years old and under* (Matthew 2:16) — Herod re-runs Pharaoh''s script at the deliverer''s birth.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=22
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-decree-to-drown-the-sons-the-dragon-and-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*cast all their male children which were born into the river* (Jubilees 47:2) — the restored witness names the decree plainly.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=1 AND sv.verse_number=22
+  JOIN _s305_ex01_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=47 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-1-the-decree-to-drown-the-sons-the-dragon-and-the-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_2.sql (Exodus 2) -----
+-- Chapter: Exodus 2 — Moses' birth and the ark of bulrushes; Moses flees to Midian;
+--   Elohim hears the groaning and remembers the covenant with Abraham, Isaac, and Jacob.
+-- Session prefix: s305   Tag: ex02   Sort band base: 29025 (step 3)
+--
+-- Exodus 2 coverage:
+--   v.1-2 (man of the house of Levi; goodly child hid three months)
+--        NT:     Hebrews 11:23 (hid three months by faith); Acts 7:20 (Moses exceeding fair)  [THREAD 1]
+--        Extras: Jubilees 47:3; Jasher 68:5 (hid three months)                                [THREAD 1]
+--        Tanakh: none warranted (covered by thread frame)
+--   v.3 (ark of bulrushes, slime and pitch, by the river's brink)
+--        NT:     Hebrews 11:23 (the faith that hid him); Acts 7:21 (cast out, taken up)        [THREAD 1]
+--        Extras: Jubilees 47:4 (ark covered with pitch in the flags); Jasher 68:13 (ark of bulrushes daubed) [THREAD 1]
+--        Tanakh: none warranted (tebah / Noah's-ark word framed in prose)
+--   v.4-10 (sister watches; Pharaoh's daughter draws him out; named Moses)
+--        NT:     Acts 7:21 (Pharaoh's daughter took him up, nourished him as her own son)      [THREAD 1]
+--        Extras: Jubilees 47:5-6 (Tharmuth bathes, compassion, drawn out)                      [THREAD 1]
+--        Tanakh: none warranted
+--   v.11-12 (Moses grown, goes out to his brethren, looks on burdens, slays the Egyptian)
+--        NT:     Hebrews 11:24-26 (refused Pharaoh's daughter, chose affliction, reproach of Messiah); Acts 7:23-25 (visited brethren, they understood not) [THREAD 2]
+--        Extras: Jubilees 47:10 (saw the Egyptian smiting, slew him)                           [THREAD 2]
+--        Tanakh: John 1:11 (came unto his own, his own received him not) — first-rejection type [THREAD 2]
+--   v.13-14 (the second day; "Who made thee a prince and a judge?"; the thing is known)
+--        NT:     Acts 7:26-28 (next day, set them at one, thrust away); Hebrews 11:27 (forsook Egypt) [THREAD 2]
+--        Extras: Jubilees 47:11 ("Who made you a prince and a judge over us?")                  [THREAD 2]
+--        Tanakh: covered by thread frame
+--   v.15 (Pharaoh seeks to slay; Moses flees to Midian; sits by a well)
+--        NT:     Acts 7:29 (fled, a stranger in Madian)                                        [THREAD 2 / 3]
+--        Extras: Jubilees 47:11 (did fear and flee)                                            [THREAD 2]
+--        Tanakh: none warranted
+--   v.16-22 (Midian, Reuel's daughters, Zipporah, Gershom "a stranger in a strange land")
+--        NT:     Hebrews 11:13 (strangers and pilgrims on the earth)                           [THREAD 3]
+--        Extras: none warranted (Jasher/Jubilees Midian material is sprawling; kept restrained)
+--        Tanakh: Psalm 39:12 (I am a stranger with thee, a sojourner, as all my fathers were)  [THREAD 3]
+--   v.23 (king of Egypt died; Yashar'el sighed, cried, their cry came up unto Elohim)
+--        NT:     Luke 1:72-73 (to remember his holy covenant, the oath sworn to Abraham)       [THREAD 4]
+--        Extras: none warranted
+--        Tanakh: Exodus 6:5 (I have heard their groaning, remembered my covenant)             [THREAD 4]
+--   v.24 (Elohim heard their groaning, remembered his covenant with Abraham, Isaac, Jacob)
+--        NT:     Luke 1:72-73 (remember his holy covenant)                                     [THREAD 4]
+--        Extras: none warranted
+--        Tanakh: Genesis 15:13-14 (the four-hundred-year affliction foretold, then judged);
+--                Exodus 6:5; Psalm 105:8-10,42 (he hath remembered his covenant for ever)     [THREAD 4]
+--   v.25 (Elohim looked upon the children of Yashar'el and had respect unto them)
+--        NT:     Luke 1:72-73                                                                  [THREAD 4]
+--        Extras: none warranted
+--        Tanakh: Psalm 105:42 (he remembered his holy promise, and Abraham his servant)       [THREAD 4]
+--
+-- Threads (slug — target libraries):
+--   1. exodus-2-an-ark-of-bulrushes-drawn-out-of-the-water        — NT (Hebrews, Acts) + Extras (Jubilees, Jasher)   tier=extras
+--   2. exodus-2-the-deliverer-rejected-by-his-brethren-at-the-first — NT (Hebrews, Acts) + Tanakh (John) + Extras (Jubilees) tier=extras
+--   3. exodus-2-a-stranger-in-a-strange-land                      — NT (Hebrews) + Tanakh (Psalm)                    tier=free
+--   4. exodus-2-elohim-remembered-his-covenant-with-abraham       — Tanakh (Genesis, Exodus, Psalm) + NT (Luke)       tier=free
+--
+-- Framework-load-bearing framing:
+--   THREAD 1: the deliverer preserved THROUGH the water by faith — tebah (ark), the same word as
+--     Noah's ark, bearing the seed-of-promise through the death-decree: preservation-through-judgment.
+--   THREAD 2: the deliverer comes to his own brethren and is REFUSED at the first — the two-visits /
+--     first-rejection type (Joseph before him, Messiah after, John 1:11). The reproach of Messiah is
+--     already upon Moses (Heb 11:26).
+--   THREAD 4 (★★ the heart of the chapter): the covenant REMEMBERED — Yahuah's covenant-faithfulness
+--     to Abraham, Yitschaq (Isaac), and Yaaqob (Jacob) is what drives the whole Exodus; not Israel's
+--     merit but the oath sworn to the fathers (Gen 15, Ps 105, Luke 1).
+
+CREATE TEMP VIEW _s305_ex02_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: an ark of bulrushes, drawn out of the water (vv.2-3, 10)
+    ('canon','exodus',2,2,'canon','hebrews',11,23,'free',
+     E'*By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment* (Hebrews 11:23). The hiding of *a goodly child* who *she hid... three months* (Exodus 2:2) is read as an act of faith — the parents defying *the king''s commandment* to drown the sons, trusting Yahuah to preserve the seed.'),
+    ('canon','exodus',2,2,'canon','acts',7,20,'free',
+     E'*In which time Moses was born, and was exceeding fair, and nourished up in his father''s house three months* (Acts 7:20). Stephen reads the same *goodly child* whom *she hid... three months* (Exodus 2:2) — the deliverer cherished and hidden in the father''s house under the death-decree.'),
+    ('canon','exodus',2,3,'canon','acts',7,21,'free',
+     E'*And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son* (Acts 7:21). The child set adrift in *an ark of bulrushes, and daubed it with slime and with pitch* (Exodus 2:3) is the one *cast out* yet drawn up — preserved through the very water the decree meant to drown him in.'),
+    ('canon','exodus',2,3,'jubilees','jubilees',47,4,'extras',
+     E'*And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river, and she placed you in it seven days, and your mother came by night and suckled you, and by day Miriam, your sister, guarded you from the birds* (Jubilees 47:4). Jubilees retells the same *ark of bulrushes... daubed... with slime and with pitch* in *the flags by the river''s brink* (Exodus 2:3), adding the seven days and the mother''s nightly nursing.'),
+    ('canon','exodus',2,3,'jasher','jasher',68,13,'extras',
+     E'*And the woman hastened to take away her son before the officers came, and she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink* (Jasher 68:13). Jasher echoes *an ark of bulrushes... in the flags by the river''s brink* (Exodus 2:3) almost word for word — a second witness to the ark (tebah, Noah''s very word) bearing the seed through the waters of judgment.'),
+    ('canon','exodus',2,10,'jubilees','jubilees',47,6,'extras',
+     E'*And she took you out of the ark, and she had compassion on you* (Jubilees 47:6). The naming *Because I drew him out of the water* (Exodus 2:10) is mirrored where Pharaoh''s daughter *took you out of the ark* and *had compassion* — the drawn-out one preserved through the water.'),
+
+    -- THREAD 2: the deliverer rejected by his brethren at the first (vv.11-15)
+    ('canon','exodus',2,11,'canon','hebrews',11,24,'free',
+     E'*By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter; choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season* (Hebrews 11:24-25). When Moses *was grown... went out unto his brethren, and looked on their burdens* (Exodus 2:11), he was refusing Egypt and choosing his afflicted people — the deliverer casting his lot with the bondsmen.'),
+    ('canon','exodus',2,11,'canon','hebrews',11,26,'free',
+     E'*Esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt: for he had respect unto the recompence of the reward* (Hebrews 11:26). Already on Moses, going out *unto his brethren* (Exodus 2:11), rests *the reproach of Messiah* — the type of the Anointed Deliverer who comes to his own in their affliction.'),
+    ('canon','exodus',2,11,'canon','acts',7,23,'free',
+     E'*And when he was full forty years old, it came into his heart to visit his brethren the children of Yashar''el (Israel)* (Acts 7:23). Stephen frames *he went out unto his brethren, and looked on their burdens* (Exodus 2:11) as the deliverer''s first visit to his own people.'),
+    ('canon','exodus',2,12,'jubilees','jubilees',47,10,'extras',
+     E'*And you were three weeks of years at court until the time when you did go forth from the royal court and did see an Egyptian smiting your friend who was of the children of Yashar''el (Israel), and you did slay him and hide him in the sand* (Jubilees 47:10). Jubilees retells *he slew the Egyptian, and hid him in the sand* (Exodus 2:12) — the deliverer''s first stroke against the oppressor of his brethren.'),
+    ('canon','exodus',2,14,'canon','acts',7,25,'free',
+     E'*For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not* (Acts 7:25). The taunt *Who made thee a prince and a judge over us?* (Exodus 2:14) is the rejection Stephen names — the deliverer refused by the very brethren he came to save: *but they understood not.*'),
+    ('canon','exodus',2,14,'canon','acts',7,27,'free',
+     E'*But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* (Acts 7:27). Stephen quotes the very words of Exodus 2:14 — *Who made thee a prince and a judge over us?* — as the pattern of Israel''s repeated thrusting-away of the one sent to deliver them.'),
+    ('canon','exodus',2,14,'canon','john',1,11,'free',
+     E'*He came unto his own, and his own received him not* (John 1:11). The rejection *Who made thee a prince and a judge over us?* (Exodus 2:14) is the first-coming type that John names of Messiah — the deliverer who comes to his own brethren and is refused at the first, as Joseph was before him.'),
+    ('canon','exodus',2,14,'jubilees','jubilees',47,11,'extras',
+     E'*And on the second day you did find two of the children of Yashar''el (Israel) striving together, and you did say to him who was doing the wrong: "Why do you smite your brother?" And he was angry and indignant, and said "Who made you a prince and a judge over us? Thinkest you to kill me as you killedst the Egyptian yesterday?" And you did fear and flee on account of these words* (Jubilees 47:11). Jubilees carries *Who made thee a prince and a judge over us?* and the flight of Exodus 2:14-15 — the rejected deliverer driven out.'),
+    ('canon','exodus',2,15,'canon','acts',7,29,'free',
+     E'*Then fled Moses at this saying, and was a stranger in the land of Madian, where he begat two sons* (Acts 7:29). *Moses fled from the face of Pharaoh, and dwelt in the land of Midian* (Exodus 2:15) — the refused deliverer goes into exile among strangers before he is sent back to redeem.'),
+
+    -- THREAD 3: a stranger in a strange land (vv.16-22)
+    ('canon','exodus',2,22,'canon','hebrews',11,13,'free',
+     E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Moses naming his son Gershom — *I have been a stranger in a strange land* (Exodus 2:22) — joins the fathers'' confession that they were *strangers and pilgrims*, sojourners awaiting the covenant land.'),
+    ('canon','exodus',2,22,'canon','psalms',39,12,'free',
+     E'*Hear my prayer, O Yahuah (LORD), and give ear unto my cry; hold not thy peace at my tears: for I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12). The cry *I have been a stranger in a strange land* (Exodus 2:22) is the same sojourner''s confession the psalmist makes — *a stranger... and a sojourner, as all my fathers were.*'),
+
+    -- THREAD 4: Elohim remembered his covenant with Abraham (vv.23-25)
+    ('canon','exodus',2,23,'canon','exodus',6,5,'free',
+     E'*And I have also heard the groaning of the children of Yashar''el (Israel), whom the Egyptians keep in bondage; and I have remembered my covenant* (Exodus 6:5). When *their cry came up unto Elohim by reason of the bondage* (Exodus 2:23), Yahuah answers in his own voice in the next chapter of the deliverance — *I have heard... and I have remembered my covenant.*'),
+    ('canon','exodus',2,23,'canon','luke',1,72,'free',
+     E'*To perform the mercy promised to our fathers, and to remember his holy covenant; the oath which he sware to our father Abraham* (Luke 1:72-73). The cry that *came up unto Elohim* (Exodus 2:23) is heard as the covenant-mercy is — Zacharias sings the same remembering: *to remember his holy covenant; the oath which he sware to our father Abraham.*'),
+    ('canon','exodus',2,24,'canon','genesis',15,13,'free',
+     E'*And he said unto Abram, Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years; and also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:13-14). When *Elohim remembered his covenant with Abraham, with Isaac, and with Jacob* (Exodus 2:24), he is keeping the very word cut with Abraham — the bondage foretold, the nation to be judged, the coming-out assured.'),
+    ('canon','exodus',2,24,'canon','genesis',15,14,'free',
+     E'*And also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14). The covenant *remembered... with Abraham, with Isaac, and with Jacob* (Exodus 2:24) carries this promise of judgment-on-Egypt and exodus-with-substance — the Exodus is the keeping of Genesis 15.'),
+    ('canon','exodus',2,24,'canon','psalms',105,8,'free',
+     E'*He hath remembered his covenant for ever, the word which he commanded to a thousand generations. Which covenant he made with Abraham, and his oath unto Isaac; and confirmed the same unto Jacob for a law, and to Yashar''el (Israel) for an everlasting covenant* (Psalm 105:8-10). The psalm sings exactly what Exodus 2:24 records — that *Elohim remembered his covenant with Abraham, with Isaac, and with Jacob*, an *everlasting covenant* to the seed.'),
+    ('canon','exodus',2,25,'canon','psalms',105,42,'free',
+     E'*For he remembered his holy promise, and Abraham his servant* (Psalm 105:42). That *Elohim looked upon the children of Yashar''el, and Elohim had respect unto them* (Exodus 2:25) is the psalm''s refrain of the Exodus — the deliverance flowed not from Israel''s merit but because *he remembered his holy promise, and Abraham his servant.*')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex02_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex02_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-2-an-ark-of-bulrushes-drawn-out-of-the-water',
+       E'An Ark of Bulrushes, Drawn Out of the Water',
+       E'Pharaoh''s decree drowns the Hebrew sons in the river, and into that very water the deliverer is committed — but committed in an *ark*. *And when she could not longer hide him, she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child therein; and she laid it in the flags by the river''s brink* (Exodus 2:3). The word here is **tebah** — the same word as Noah''s ark: a vessel of pitch-sealed wood bearing the seed of promise safely through the waters of judgment. The hiding is read as faith: *By faith Moses, when he was born, was hid three months of his parents, because they saw he was a proper child; and they were not afraid of the king''s commandment* (Hebrews 11:23). Stephen tells it the same: *In which time Moses was born, and was exceeding fair, and nourished up in his father''s house three months: and when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son* (Acts 7:20-21). The restored witnesses retell it in full — *And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river* (Jubilees 47:4), and Jasher echoes Exodus almost word for word: *she took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink* (Jasher 68:13). The chapter names the whole pattern when Pharaoh''s daughter draws him up: *And she called his name Moses: and she said, Because I drew him out of the water* (Exodus 2:10). This is the type of preservation-through-judgment — the deliverer carried alive through the very flood meant to destroy him.',
+       sv.verse_id, ev.verse_id, 'extras', 29025
+  FROM _s305_ex02_lookup sv, _s305_ex02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=2 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=2 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-2-the-deliverer-rejected-by-his-brethren-at-the-first',
+       E'The Deliverer Rejected by His Brethren at the First',
+       E'When Moses is grown he goes down to the bondsmen and casts his lot with them: *And it came to pass in those days, when Moses was grown, that he went out unto his brethren, and looked on their burdens: and he spied an Egyptian smiting an Hebrew, one of his brethren* (Exodus 2:11). Hebrews reads this as the great refusal — *By faith Moses, when he was come to years, refused to be called the son of Pharaoh''s daughter; choosing rather to suffer affliction with the people of Elohim (God), than to enjoy the pleasures of sin for a season; esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt* (Hebrews 11:24-26). The reproach of the Anointed already rests on him. Yet his own do not know him. Stephen names the wound: *For he supposed his brethren would have understood how that Elohim (God) by his hand would deliver them: but they understood not* (Acts 7:25), and they thrust him away with the very words Exodus records — *But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* (Acts 7:27; Exodus 2:14). This is the first-rejection type that runs through the whole canon: as Joseph was sold by his brothers before he saved them, so the deliverer comes to his own and is refused at the first — *He came unto his own, and his own received him not* (John 1:11). The restored witness carries it too: *Who made you a prince and a judge over us?... And you did fear and flee on account of these words* (Jubilees 47:11). So *Moses fled from the face of Pharaoh, and dwelt in the land of Midian* (Exodus 2:15) — the rejected deliverer goes into exile, to be sent back in Yahuah''s time to redeem the very people who refused him.',
+       sv.verse_id, ev.verse_id, 'extras', 29028
+  FROM _s305_ex02_lookup sv, _s305_ex02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=2 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=2 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-2-a-stranger-in-a-strange-land',
+       E'A Stranger in a Strange Land',
+       E'In Midian Moses marries Zipporah and names his firstborn out of his own exile: *And she bare him a son, and he called his name Gershom: for he said, I have been a stranger in a strange land* (Exodus 2:22). The name is the confession of every covenant sojourner — that this present land is not yet the inheritance. The psalmist prays it in the same words: *Hear my prayer, O Yahuah (LORD), and give ear unto my cry; hold not thy peace at my tears: for I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12). And Hebrews gathers the whole line of the fathers into it: *These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Moses the exile in Midian stands in that company — a stranger in a strange land, holding to the covenant promise from afar.',
+       sv.verse_id, ev.verse_id, 'free', 29031
+  FROM _s305_ex02_lookup sv, _s305_ex02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=2 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=2 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-2-elohim-remembered-his-covenant-with-abraham',
+       E'Elohim Remembered His Covenant with Abraham',
+       E'The chapter ends not with Moses but with Yahuah — and the engine of the whole Exodus is named in three verses: *And it came to pass in process of time, that the king of Egypt died: and the children of Yashar''el (Israel) sighed by reason of the bondage, and they cried, and their cry came up unto Elohim (God) by reason of the bondage. And Elohim (God) heard their groaning, and Elohim (God) remembered his covenant with Abraham, with Isaac, and with Jacob. And Elohim (God) looked upon the children of Yashar''el (Israel), and Elohim (God) had respect unto them* (Exodus 2:23-25). The deliverance is not earned by Israel''s righteousness; it is driven by Yahuah''s covenant-faithfulness to the fathers. It is the keeping of the word cut with Abraham long before: *Know of a surety that thy seed shall be a stranger in a land that is not theirs, and shall serve them; and they shall afflict them four hundred years; and also that nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:13-14). Yahuah says it again in his own voice in the next chapter of the redemption: *I have also heard the groaning of the children of Yashar''el (Israel), whom the Egyptians keep in bondage; and I have remembered my covenant* (Exodus 6:5). The Psalter sings it as the ground of the whole history: *He hath remembered his covenant for ever, the word which he commanded to a thousand generations. Which covenant he made with Abraham, and his oath unto Isaac; and confirmed the same unto Jacob for a law, and to Yashar''el (Israel) for an everlasting covenant* (Psalm 105:8-10), *for he remembered his holy promise, and Abraham his servant* (Psalm 105:42). And the song of Zacharias at the dawn of the greater redemption is the very same remembering: *To perform the mercy promised to our fathers, and to remember his holy covenant; the oath which he sware to our father Abraham* (Luke 1:72-73). The covenant remembered is the spine of the canon — Yahuah keeps his oath to the seed.',
+       sv.verse_id, ev.verse_id, 'free', 29034
+  FROM _s305_ex02_lookup sv, _s305_ex02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=2 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=2 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',2,2,'canon','hebrews',11,23,1,E'*By faith Moses, when he was born, was hid three months of his parents... and they were not afraid of the king''s commandment* (Hebrews 11:23) — the hiding of the *goodly child* (Exodus 2:2) is faith defying the death-decree.'),
+    ('exodus',2,2,'canon','acts',7,20,2,E'*Moses was born, and was exceeding fair, and nourished up in his father''s house three months* (Acts 7:20) — Stephen on the *goodly child* whom *she hid... three months* (Exodus 2:2).'),
+    ('exodus',2,3,'canon','acts',7,21,3,E'*And when he was cast out, Pharaoh''s daughter took him up, and nourished him for her own son* (Acts 7:21) — the child set in the *ark of bulrushes* (Exodus 2:3), cast out yet drawn up.'),
+    ('exodus',2,3,'jubilees','jubilees',47,4,4,E'*And she made an ark for you, and covered it with pitch and asphalt, and placed it in the flags on the bank of the river* (Jubilees 47:4) — the same *ark... daubed... with slime and with pitch* in *the flags* (Exodus 2:3).'),
+    ('exodus',2,3,'jasher','jasher',68,13,5,E'*She took for him an ark of bulrushes, and daubed it with slime and with pitch, and put the child in it, and she laid it in the flags by the river''s brink* (Jasher 68:13) — a near word-for-word second witness to Exodus 2:3 (the tebah, Noah''s very word).'),
+    ('exodus',2,10,'jubilees','jubilees',47,6,6,E'*And she took you out of the ark, and she had compassion on you* (Jubilees 47:6) — mirrors *Because I drew him out of the water* (Exodus 2:10).')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-2-an-ark-of-bulrushes-drawn-out-of-the-water'
+  JOIN _s305_ex02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex02_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',2,11,'canon','hebrews',11,24,1,E'*By faith Moses... refused to be called the son of Pharaoh''s daughter; choosing rather to suffer affliction with the people of Elohim* (Hebrews 11:24-25) — going out *unto his brethren* (Exodus 2:11) was the refusal of Egypt.'),
+    ('exodus',2,11,'canon','hebrews',11,26,2,E'*Esteeming the reproach of Messiah (Christ) greater riches than the treasures in Egypt* (Hebrews 11:26) — the reproach of the Anointed already on Moses among *his brethren* (Exodus 2:11).'),
+    ('exodus',2,11,'canon','acts',7,23,3,E'*It came into his heart to visit his brethren the children of Yashar''el* (Acts 7:23) — the deliverer''s first visit to his own (Exodus 2:11).'),
+    ('exodus',2,12,'jubilees','jubilees',47,10,4,E'*You did see an Egyptian smiting your friend... and you did slay him and hide him in the sand* (Jubilees 47:10) — retelling *he slew the Egyptian, and hid him in the sand* (Exodus 2:12).'),
+    ('exodus',2,14,'canon','acts',7,25,5,E'*He supposed his brethren would have understood how that Elohim by his hand would deliver them: but they understood not* (Acts 7:25) — the rejection behind *Who made thee a prince and a judge?* (Exodus 2:14).'),
+    ('exodus',2,14,'canon','acts',7,27,6,E'*But he that did his neighbour wrong thrust him away, saying, Who made thee a ruler and a judge over us?* (Acts 7:27) — Stephen quotes Exodus 2:14 as the pattern of thrusting-away.'),
+    ('exodus',2,14,'canon','john',1,11,7,E'*He came unto his own, and his own received him not* (John 1:11) — the first-rejection type of *Who made thee a prince and a judge over us?* (Exodus 2:14).'),
+    ('exodus',2,14,'jubilees','jubilees',47,11,8,E'*Who made you a prince and a judge over us?... And you did fear and flee on account of these words* (Jubilees 47:11) — the rejected deliverer driven out (Exodus 2:14-15).'),
+    ('exodus',2,15,'canon','acts',7,29,9,E'*Then fled Moses at this saying, and was a stranger in the land of Madian* (Acts 7:29) — the refused deliverer goes into exile (Exodus 2:15).')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-2-the-deliverer-rejected-by-his-brethren-at-the-first'
+  JOIN _s305_ex02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex02_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',2,22,'canon','hebrews',11,13,1,E'*Strangers and pilgrims on the earth* (Hebrews 11:13) — the fathers'' confession that Gershom''s name echoes: *I have been a stranger in a strange land* (Exodus 2:22).'),
+    ('exodus',2,22,'canon','psalms',39,12,2,E'*For I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12) — the same sojourner''s confession as *a stranger in a strange land* (Exodus 2:22).')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-2-a-stranger-in-a-strange-land'
+  JOIN _s305_ex02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex02_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',2,23,'canon','exodus',6,5,1,E'*I have also heard the groaning of the children of Yashar''el... and I have remembered my covenant* (Exodus 6:5) — Yahuah''s answer to the cry that *came up unto Elohim* (Exodus 2:23).'),
+    ('exodus',2,23,'canon','luke',1,72,2,E'*To remember his holy covenant; the oath which he sware to our father Abraham* (Luke 1:72-73) — the same covenant-remembering the cry of Exodus 2:23 sets in motion.'),
+    ('exodus',2,24,'canon','genesis',15,13,3,E'*Thy seed shall be a stranger in a land that is not theirs... and afterward shall they come out with great substance* (Genesis 15:13-14) — the word cut with Abraham that Exodus 2:24''s remembered covenant keeps.'),
+    ('exodus',2,24,'canon','genesis',15,14,4,E'*That nation, whom they shall serve, will I judge: and afterward shall they come out with great substance* (Genesis 15:14) — the judgment-and-exodus promised, carried in the covenant *remembered* (Exodus 2:24).'),
+    ('exodus',2,24,'canon','psalms',105,8,5,E'*He hath remembered his covenant for ever... which covenant he made with Abraham, and his oath unto Isaac; and confirmed the same unto Jacob* (Psalm 105:8-10) — the psalm singing Exodus 2:24''s covenant with Abraham, Isaac, and Jacob.'),
+    ('exodus',2,25,'canon','psalms',105,42,6,E'*For he remembered his holy promise, and Abraham his servant* (Psalm 105:42) — the ground of *Elohim had respect unto them* (Exodus 2:25): not merit but the oath to the fathers.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-2-elohim-remembered-his-covenant-with-abraham'
+  JOIN _s305_ex02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex02_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_4.sql (Exodus 4) -----
+-- Chapter: Exodus 4  |  Tag: ex04  |  Session prefix: s305  |  Sort band base: 29075 (step 3)
+-- The rod and the three signs; "Yashar'el is my son, even my firstborn"; the hardening of
+-- Pharaoh begun; the bridegroom of blood (Zipporah circumcises Gershom).
+--
+-- Exodus 4 coverage checklist:
+--   v.1-9   three signs (rod->serpent, leprous hand, water->blood) — the authenticating signs
+--           NT:     none warranted as members here (the rod-swallowing belongs to ch7)
+--           Extras: Jubilees 48:4 names the signs/wonders performed (woven in bridegroom thread)
+--           Tanakh: Exodus 7:10-12 (the rod swallows the magicians' rods) — THREAD 2
+--   v.10-12 "I am not eloquent... slow of speech... I will be with thy mouth, and teach thee"
+--           NT:     Matthew 10:19-20; Luke 12:12 (it shall be given you what ye speak) — THREAD 3
+--           Extras: none warranted
+--           Tanakh: Jeremiah 1:6-9 (same objection; the touched mouth) — THREAD 3
+--   v.13-20 send by another's hand; Aaron given; return to Egypt; rod of Elohim in hand
+--           NT/Extras/Tanakh: none warranted (rod-of-Elohim folded into signs/bridegroom context)
+--   v.21    "I will harden his heart, that he shall not let the people go"
+--           NT:     Romans 9:17-18 (raised thee up... whom he will he hardeneth) — THREAD 4
+--           Extras: none warranted
+--           Tanakh: (Pharaoh's own self-hardening developed across ch7-14; kept restrained here)
+--   v.22-23 ★★ "Yashar'el is my son, even my firstborn... Let my son go... I will slay thy son"
+--           NT:     Matthew 2:15 (Out of Egypt have I called my son) — THREAD 1 (keystone)
+--           Extras: none warranted
+--           Tanakh: Hosea 11:1; Jeremiah 31:9 (Ephraim is my firstborn) — THREAD 1
+--   v.24-26 the bridegroom of blood; Zipporah circumcises her son with a sharp stone
+--           NT:     none warranted
+--           Extras: Jubilees 48:2-4 (Mastema at the lodging-place sought to slay him) — THREAD 5
+--           Tanakh: Genesis 17:10-14 (circumcision the everlasting covenant token) — THREAD 5
+--   v.27-31 Aaron meets Moses; signs done before the elders; the people believed and worshipped
+--           NT/Extras/Tanakh: none warranted (believing-the-signs resolves the ch3-4 doubt arc)
+--
+-- THREADS (slug -> target libraries):
+--   exodus-4-yasharel-is-my-son-even-my-firstborn-out-of-egypt-have-i-called-my-son-hosea-11-matthew-2   [canon/NT — free]
+--   exodus-4-the-three-signs-the-rod-that-swallows-the-magicians-rods-exodus-7                            [canon — free]
+--   exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10                [canon/NT — free]
+--   exodus-4-i-will-harden-his-heart-the-oppressor-judged-for-yahuahs-name-romans-9                       [canon/NT — free]
+--   exodus-4-a-bloody-husband-the-covenant-sign-on-the-deliverer-genesis-17-jubilees-48                   [extras — Jubilees member]
+--
+-- Framework-load-bearing / contested framing:
+--   v.22-23 KEYSTONE — Yashar'el is Yahuah's firstborn SON. Hosea 11:1 + Matthew 2:15 frame the
+--     Formed Son recapitulating the firstborn-son nation; Jeremiah 31:9 (Ephraim is my firstborn)
+--     binds it to the two-house people, not a replacement church.
+--   v.21 hardening — framed per the lens as covenant-judgment displayed for Yahuah's name in all
+--     the earth on a self-hardening oppressor (Romans 9:17 "that my name might be declared
+--     throughout all the earth"), NOT arbitrary reprobation of a people.
+--   v.24-26 — circumcision the everlasting covenant sign (Genesis 17:13), not abolished; the
+--     mediator himself must bear the sign on his house. Jubilees 48 names the assailant Mastema.
+
+CREATE TEMP VIEW _s305_ex04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: firstborn-son keystone (4:22-23)
+    ('canon','exodus',4,22,'canon','hosea',11,1,'free',
+     E'*When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1). Hosea reaches back to this very word — *Thus saith Yahuah (LORD), Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22) — and reads the whole exodus as a Father calling his son home. The nation is Yahuah''s firstborn son, loved out of bondage.'),
+    ('canon','exodus',4,22,'canon','jeremiah',31,9,'free',
+     E'*for I am a father to Yashar''el (Israel), and Ephraim is my firstborn.* (Jeremiah 31:9). The firstborn-son sonship Yahuah declares here — *Yashar''el (Israel) is my son, even my firstborn* (Exodus 4:22) — is carried by Jeremiah onto the scattered northern house: Ephraim too is the firstborn, gathered in the great ingathering, the two-house people made one.'),
+    ('canon','exodus',4,22,'canon','matthew',2,15,'free',
+     E'*that it might be fulfilled which was spoken of Yahuah (Lord) by the prophet, saying, Out of Egypt have I called my son.* (Matthew 2:15). The firstborn son *Yashar''el (Israel)* (Exodus 4:22) is fulfilled in the Formed Son: Messiah comes up out of Egypt, recapitulating the firstborn nation, the true Son embodying the whole people Yahuah loves.'),
+    ('canon','exodus',4,23,'canon','matthew',2,15,'free',
+     E'*Out of Egypt have I called my son.* (Matthew 2:15). Yahuah''s demand — *Let my son go, that he may serve me* (Exodus 4:23) — is answered in the Formed Son drawn up out of Egypt to do the Father''s will; the firstborn-son claim runs from the nation to the Son who embodies it.'),
+
+    -- THREAD 2: the three signs / the rod (4:1-9, esp. 4:2-4,17)
+    ('canon','exodus',4,3,'canon','exodus',7,10,'free',
+     E'*and Aaron cast down his rod before Pharaoh, and before his servants, and it became a serpent.* (Exodus 7:10). The first authenticating sign given Moses — *he cast it on the ground, and it became a serpent* (Exodus 4:3) — is the same rod loosed before Pharaoh, the sign carried from the wilderness into the throne-room of Egypt.'),
+    ('canon','exodus',4,4,'canon','exodus',7,12,'free',
+     E'*For they cast down every man his rod, and they became serpents: but Aaron''s rod swallowed up their rods.* (Exodus 7:12). The rod Moses takes again by the tail — *and it became a rod in his hand* (Exodus 4:4) — is the rod of Elohim that swallows the magicians'' counterfeits: the true sign devours the imitation, Yahuah''s power over Egypt''s wisdom.'),
+    ('canon','exodus',4,17,'canon','exodus',7,12,'free',
+     E'*but Aaron''s rod swallowed up their rods.* (Exodus 7:12). *And thou shalt take this rod in thine hand, wherewith thou shalt do signs* (Exodus 4:17): the rod commissioned here is the rod that proves Yahuah greater than every enchantment of Egypt.'),
+
+    -- THREAD 3: I will be with thy mouth (4:10-12)
+    ('canon','exodus',4,10,'canon','jeremiah',1,6,'free',
+     E'*Then said I, Ah, Yahuah (Lord) GOD! behold, I cannot speak: for I am a child.* (Jeremiah 1:6). Moses'' objection — *I am not eloquent... I am slow of speech, and of a slow tongue* (Exodus 4:10) — is the prophet''s recurring plea; Jeremiah raises the same reluctance and is met with the same Yahuah-with-the-mouth answer.'),
+    ('canon','exodus',4,11,'canon','jeremiah',1,9,'free',
+     E'*Then Yahuah (LORD) put forth his hand, and touched my mouth. And Yahuah (LORD) said unto me, Behold, I have put my words in thy mouth.* (Jeremiah 1:9). *Who hath made man''s mouth?... have not I Yahuah (LORD)?* (Exodus 4:11): the One who formed the mouth is the One who fills it; Jeremiah''s touched mouth is the same equipping promised to Moses.'),
+    ('canon','exodus',4,12,'canon','jeremiah',1,9,'free',
+     E'*Behold, I have put my words in thy mouth.* (Jeremiah 1:9). The promise *I will be with thy mouth, and teach thee what thou shalt say* (Exodus 4:12) is repeated word for word to Jeremiah: the reluctant prophet is not chosen for eloquence but equipped by the Word himself.'),
+    ('canon','exodus',4,12,'canon','matthew',10,19,'free',
+     E'*But when they deliver you up, take no thought how or what ye shall speak: for it shall be given you in that same hour what ye shall speak.* (Matthew 10:19). The Master makes the Mosaic promise the standing inheritance of his sent ones — *I will be with thy mouth, and teach thee what thou shalt say* (Exodus 4:12) — the words given in the hour of need.'),
+    ('canon','exodus',4,12,'canon','matthew',10,20,'free',
+     E'*For it is not ye that speak, but the Spirit of your Father which speaketh in you.* (Matthew 10:20). *I will be with thy mouth, and teach thee what thou shalt say* (Exodus 4:12): the teaching of the mouth is the Spirit of the Father speaking — the same Presence that equipped Moses now speaks in the sent.'),
+    ('canon','exodus',4,12,'canon','luke',12,12,'free',
+     E'*For the Ruach HaKodesh (Holy Spirit) shall teach you in the same hour what ye ought to say.* (Luke 12:12). The promise to Moses — *I will be with thy mouth, and teach thee what thou shalt say* (Exodus 4:12) — is the work of the Ruach HaKodesh, who teaches in the very hour what ought to be said.'),
+
+    -- THREAD 4: I will harden his heart (4:21)
+    ('canon','exodus',4,21,'canon','romans',9,17,'free',
+     E'*For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth.* (Romans 9:17). *I will harden his heart, that he shall not let the people go* (Exodus 4:21): the hardening is no arbitrary doom but covenant-judgment displayed upon a self-hardening oppressor, so Yahuah''s name is published in all the earth.'),
+    ('canon','exodus',4,21,'canon','romans',9,18,'free',
+     E'*Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth.* (Romans 9:18). The word spoken to Moses — *but I will harden his heart* (Exodus 4:21) — is read by Paul as Yahuah''s sovereign freedom over a tyrant: mercy and hardening are his, the oppressor''s own obstinacy ripened for judgment and for the showing of the Name.'),
+
+    -- THREAD 5: a bloody husband / the covenant sign (4:24-26)
+    ('canon','exodus',4,25,'canon','genesis',17,10,'extras',
+     E'*This is my covenant, which ye shall keep, between me and you and thy seed after thee; Every man child among you shall be circumcised.* (Genesis 17:10). Zipporah''s sharp stone answers this everlasting command — *Then Zipporah took a sharp stone, and cut off the foreskin of her son* (Exodus 4:25): the deliverer''s own house must bear the covenant sign before he can deliver Yahuah''s firstborn.'),
+    ('canon','exodus',4,26,'canon','genesis',17,13,'extras',
+     E'*and my covenant shall be in your flesh for an everlasting covenant.* (Genesis 17:13). *A bloody husband thou art, because of the circumcision* (Exodus 4:26): the blood of the covenant-token in the flesh is what turns away the death that met Moses in the way — the everlasting sign, not abolished but enforced upon the mediator himself.'),
+    ('canon','exodus',4,24,'jubilees','jubilees',48,2,'extras',
+     E'*And you yourself know what He spake to you on Mount Sinai, and what prince Mastêmâ desired to do with you when you were returning into Egypt on the way when you did meet him at the lodging-place.* (Jubilees 48:2). The restored witness names the assailant at the inn — *Yahuah (LORD) met him, and sought to kill him* (Exodus 4:24) — as prince Mastema confronting the deliverer at the lodging-place on the road back to Egypt.'),
+    ('canon','exodus',4,24,'jubilees','jubilees',48,3,'extras',
+     E'*Did he not with all his power seek to slay you and deliver the Egyptians out of your hand when he saw that you were sent to execute judgment and vengeance on the Egyptians?* (Jubilees 48:3). The deadly encounter in the way — *and sought to kill him* (Exodus 4:24) — is read in Jubilees as Mastema''s assault on the very man sent to execute judgment on Egypt; the covenant blood (Exodus 4:25-26) repels him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-4-yasharel-is-my-son-even-my-firstborn-out-of-egypt-have-i-called-my-son-hosea-11-matthew-2',
+       E'Yashar''el is My Son, Even My Firstborn — Out of Egypt Have I Called My Son',
+       E'At the heart of the commission Yahuah (LORD) gives Moses the word that will define the whole exodus: *And thou shalt say unto Pharaoh, Thus saith Yahuah (LORD), Yashar''el (Israel) is my son, even my firstborn: And I say unto thee, Let my son go, that he may serve me: and if thou refuse to let him go, behold, I will slay thy son, even thy firstborn.* (Exodus 4:22-23). The nation is not Pharaoh''s property nor merely a people of slaves — it is Yahuah''s firstborn son, and the firstborn of Egypt will answer for the firstborn of Yahuah held in bondage.\n\nHosea reaches back to this exact sonship and reads the redemption as a Father''s love: *When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1). And Jeremiah carries the firstborn-son name onto the scattered northern house, so it covers the whole two-house people gathered home: *for I am a father to Yashar''el (Israel), and Ephraim is my firstborn.* (Jeremiah 31:9).\n\nThe type is fulfilled in the Formed Son. When the child is carried into Egypt and called back, Matthew reads Hosea''s word of the nation as the word of the One who embodies it: *that it might be fulfilled which was spoken of Yahuah (Lord) by the prophet, saying, Out of Egypt have I called my son.* (Matthew 2:15). The firstborn son Yashar''el, loved out of bondage, finds its head and fulness in the true Son drawn up out of Egypt — the same call, the same Father, the same firstborn claim running from the nation to the Messiah who is its life.',
+       sv.verse_id, ev.verse_id, 'free', 29075
+  FROM _s305_ex04_lookup sv, _s305_ex04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=4 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-4-the-three-signs-the-rod-that-swallows-the-magicians-rods-exodus-7',
+       E'The Three Signs — The Rod That Swallows the Magicians'' Rods',
+       E'Yahuah (LORD) equips Moses with authenticating signs so the people will know he is sent. The first is the rod: *And he said, Cast it on the ground. And he cast it on the ground, and it became a serpent; and Moses fled from before it.* (Exodus 4:3); then *he put forth his hand, and caught it, and it became a rod in his hand* (Exodus 4:4). The commission is sealed: *And thou shalt take this rod in thine hand, wherewith thou shalt do signs.* (Exodus 4:17).\n\nThat same rod is carried from the wilderness into the throne-room of Egypt, where the sign confronts the counterfeit head-on: *and Aaron cast down his rod before Pharaoh, and before his servants, and it became a serpent.* (Exodus 7:10). The magicians answer in kind, *but* the true sign devours the imitation: *For they cast down every man his rod, and they became serpents: but Aaron''s rod swallowed up their rods.* (Exodus 7:12). The rod of Elohim swallows the wisdom of Egypt — the authenticating sign is no stage-trick to be matched, but the power of Yahuah over every enchantment, the first stroke of the deliverance to come.',
+       sv.verse_id, ev.verse_id, 'free', 29078
+  FROM _s305_ex04_lookup sv, _s305_ex04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=4 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10',
+       E'I Will Be With Thy Mouth — The Reluctant Prophet Equipped',
+       E'Moses pleads inadequacy: *O my Lord, I am not eloquent, neither heretofore, nor since thou hast spoken unto thy servant: but I am slow of speech, and of a slow tongue.* (Exodus 4:10). Yahuah (LORD) does not deny the weakness; he overrides it by pointing to himself as the Maker of the very mouth: *Who hath made man''s mouth? or who maketh the dumb, or deaf, or the seeing, or the blind? have not I Yahuah (LORD)?* (Exodus 4:11). Then the promise: *Now therefore go, and I will be with thy mouth, and teach thee what thou shalt say.* (Exodus 4:12).\n\nThis is the pattern of the reluctant prophet equipped. Jeremiah raises the identical objection and receives the identical answer: *Then said I, Ah, Yahuah (Lord) GOD! behold, I cannot speak: for I am a child.* (Jeremiah 1:6) — and *Then Yahuah (LORD) put forth his hand, and touched my mouth. And Yahuah (LORD) said unto me, Behold, I have put my words in thy mouth.* (Jeremiah 1:9). The One who formed the mouth is the One who fills it.\n\nThe Master makes this Mosaic promise the standing inheritance of his sent ones: *take no thought how or what ye shall speak: for it shall be given you in that same hour what ye shall speak. For it is not ye that speak, but the Spirit of your Father which speaketh in you.* (Matthew 10:19-20); *For the Ruach HaKodesh (Holy Spirit) shall teach you in the same hour what ye ought to say.* (Luke 12:12). The teaching of the mouth promised to Moses is the Spirit of the Father, who gives the words in the very hour they are needed.',
+       sv.verse_id, ev.verse_id, 'free', 29081
+  FROM _s305_ex04_lookup sv, _s305_ex04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=4 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-4-i-will-harden-his-heart-the-oppressor-judged-for-yahuahs-name-romans-9',
+       E'I Will Harden His Heart — The Oppressor Judged for Yahuah''s Name',
+       E'Before Moses ever returns, Yahuah (LORD) announces how the contest will go: *When thou goest to return into Egypt, see that thou do all those wonders before Pharaoh, which I have put in thine hand: but I will harden his heart, that he shall not let the people go.* (Exodus 4:21). This is not arbitrary reprobation of a people; it is covenant-judgment on a self-hardening tyrant who has enslaved Yahuah''s firstborn son. The hardening ripens an oppressor already set in his cruelty, so that the full weight of the deliverance — and the Name behind it — may be displayed.\n\nPaul reads it exactly so, fixing the purpose on the publishing of the Name in all the earth: *For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth.* (Romans 9:17), *Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth.* (Romans 9:18). The sovereign freedom is real, but its end is named: the deliverance of the firstborn son and the declaring of Yahuah''s name where Egypt thought no power stood above its throne.',
+       sv.verse_id, ev.verse_id, 'free', 29084
+  FROM _s305_ex04_lookup sv, _s305_ex04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=4 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-4-a-bloody-husband-the-covenant-sign-on-the-deliverer-genesis-17-jubilees-48',
+       E'A Bloody Husband — The Covenant Sign on the Deliverer',
+       E'On the road back to Egypt the narrative turns suddenly deadly: *And it came to pass by the way in the inn, that Yahuah (LORD) met him, and sought to kill him.* (Exodus 4:24). The danger is turned aside not by argument but by blood — the covenant sign applied to the deliverer''s own house: *Then Zipporah took a sharp stone, and cut off the foreskin of her son, and cast it at his feet, and said, Surely a bloody husband art thou to me.* (Exodus 4:25); *So he let him go: then she said, A bloody husband thou art, because of the circumcision.* (Exodus 4:26).\n\nThe sign goes back to Abraham as an everlasting covenant, never abolished: *This is my covenant, which ye shall keep, between me and you and thy seed after thee; Every man child among you shall be circumcised.* (Genesis 17:10); *and my covenant shall be in your flesh for an everlasting covenant.* (Genesis 17:13). The man sent to bring Yahuah''s firstborn son out of Egypt cannot leave the covenant token unkept in his own household; the mediator himself must bear the sign before he can deliver.\n\nThe restored witness of Jubilees names the assailant at the lodging-place — not an unexplained wrath of Yahuah, but prince Mastema set against the deliverer: *what prince Mastêmâ desired to do with you when you were returning into Egypt on the way when you did meet him at the lodging-place.* (Jubilees 48:2); *Did he not with all his power seek to slay you and deliver the Egyptians out of your hand when he saw that you were sent to execute judgment and vengeance on the Egyptians?* (Jubilees 48:3). The covenant blood repels the destroyer — a foreshadow of the Passover blood that will turn away the same death from Yahuah''s firstborn.',
+       sv.verse_id, ev.verse_id, 'extras', 29087
+  FROM _s305_ex04_lookup sv, _s305_ex04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=4 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*When Yashar''el (Israel) was a child, then I loved him, and called my son out of Egypt.* (Hosea 11:1) — Hosea reads the exodus as a Father calling home his firstborn son.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=22
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-yasharel-is-my-son-even-my-firstborn-out-of-egypt-have-i-called-my-son-hosea-11-matthew-2'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*for I am a father to Yashar''el (Israel), and Ephraim is my firstborn.* (Jeremiah 31:9) — the firstborn-son name covers the scattered northern house, the two-house people gathered home.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=22
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-yasharel-is-my-son-even-my-firstborn-out-of-egypt-have-i-called-my-son-hosea-11-matthew-2'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Out of Egypt have I called my son.* (Matthew 2:15) — the firstborn son Yashar''el fulfilled in the Formed Son drawn up out of Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=22
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-yasharel-is-my-son-even-my-firstborn-out-of-egypt-have-i-called-my-son-hosea-11-matthew-2'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Out of Egypt have I called my son.* (Matthew 2:15) — *Let my son go, that he may serve me* (Exodus 4:23) answered in the Son who does the Father''s will.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=23
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-yasharel-is-my-son-even-my-firstborn-out-of-egypt-have-i-called-my-son-hosea-11-matthew-2'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*and Aaron cast down his rod before Pharaoh... and it became a serpent.* (Exodus 7:10) — the wilderness sign carried into Pharaoh''s throne-room.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-the-three-signs-the-rod-that-swallows-the-magicians-rods-exodus-7'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*but Aaron''s rod swallowed up their rods.* (Exodus 7:12) — the true sign devours the counterfeit; Yahuah''s power over Egypt''s wisdom.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-the-three-signs-the-rod-that-swallows-the-magicians-rods-exodus-7'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*but Aaron''s rod swallowed up their rods.* (Exodus 7:12) — *this rod... wherewith thou shalt do signs* (Exodus 4:17) proves Yahuah greater than every enchantment.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=17
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-the-three-signs-the-rod-that-swallows-the-magicians-rods-exodus-7'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Ah, Yahuah (Lord) GOD! behold, I cannot speak: for I am a child.* (Jeremiah 1:6) — the prophet''s same plea of inadequacy.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*touched my mouth... I have put my words in thy mouth.* (Jeremiah 1:9) — the One who made the mouth (Exodus 4:11) is the One who fills it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=11
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Behold, I have put my words in thy mouth.* (Jeremiah 1:9) — the promise of Exodus 4:12 repeated word for word.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=12
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*it shall be given you in that same hour what ye shall speak.* (Matthew 10:19) — the Mosaic promise made the inheritance of the sent ones.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=12
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*it is not ye that speak, but the Spirit of your Father which speaketh in you.* (Matthew 10:20) — the teaching of the mouth is the Spirit of the Father.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=12
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the Ruach HaKodesh (Holy Spirit) shall teach you in the same hour what ye ought to say.* (Luke 12:12) — the Spirit who equipped Moses teaches in the hour.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=12
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-be-with-thy-mouth-the-reluctant-prophet-equipped-jeremiah-1-matthew-10'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Even for this same purpose have I raised thee up... that my name might be declared throughout all the earth.* (Romans 9:17) — the hardening serves the publishing of the Name.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=21
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-harden-his-heart-the-oppressor-judged-for-yahuahs-name-romans-9'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*whom he will he hardeneth.* (Romans 9:18) — Yahuah''s sovereign freedom over a self-hardening tyrant, not reprobation of a people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=21
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-i-will-harden-his-heart-the-oppressor-judged-for-yahuahs-name-romans-9'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Every man child among you shall be circumcised.* (Genesis 17:10) — Zipporah''s stone answers the everlasting covenant command.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=25
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-a-bloody-husband-the-covenant-sign-on-the-deliverer-genesis-17-jubilees-48'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*my covenant shall be in your flesh for an everlasting covenant.* (Genesis 17:13) — the sign in the flesh, not abolished but enforced on the mediator''s house.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=26
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-a-bloody-husband-the-covenant-sign-on-the-deliverer-genesis-17-jubilees-48'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*what prince Mastêmâ desired to do with you... at the lodging-place.* (Jubilees 48:2) — the restored witness names the assailant at the inn.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=24
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-a-bloody-husband-the-covenant-sign-on-the-deliverer-genesis-17-jubilees-48'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Did he not with all his power seek to slay you...* (Jubilees 48:3) — Mastema''s assault on the man sent to judge Egypt; the covenant blood repels him.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=4 AND sv.verse_number=24
+  JOIN _s305_ex04_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-4-a-bloody-husband-the-covenant-sign-on-the-deliverer-genesis-17-jubilees-48'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_6.sql (Exodus 6) -----
+-- Chapter: Exodus 6 — the covenant Name I AM / Yahuah self-disclosed in redemptive power;
+--   the seven "I will" of redemption and the betrothal formula ("I will take you to me for a
+--   people"); the knowing-Yahuah refrain; the priestly bloodline (Reuben, Simeon, Levi → Aaron).
+-- Session: s305   Tag: ex06   Sort band base 29125 (step 3: 29125, 29128, 29131, 29134)
+--
+-- Exodus 6 coverage checklist:
+--   v.1   NT: none warranted   Extras: Jasher 81:4 (strong-hand deliverance — held for thread 2)
+--         Tanakh: 6:6 echo (strong hand)  → folded into thread 2
+--   v.2-3 NT: John 8:58 (Formed Son speaks the Name)   Extras: none warranted
+--         Tanakh: Exodus 3:14, 3:15 (I AM THAT I AM / the Name forever), Genesis 17:1 (El Shaddai)
+--         → THREAD 1 (i-am-yahuah-the-name-newly-disclosed)
+--   v.4-5 NT: none warranted   Extras: Jubilees 48:7 (covenant with Abraham remembered) → thread 2
+--         Tanakh: covenant-remembered → folded into thread 2
+--   v.6-8 NT: 2 Corinthians 6:16, Revelation 21:3 (the betrothal/dwelling formula consummated)
+--         Extras: Jubilees 48:7 (covenant kept), Jasher 81:4 (brought out with a strong hand)
+--         Tanakh: Ezekiel 37:23, 37:27; Hosea 2:19, 2:23; Jeremiah 31:33 → THREAD 2
+--   v.7   NT: none warranted   Extras: none warranted
+--         Tanakh: Ezekiel 6:7 (the knowing-Yahuah refrain) → THREAD 3
+--   v.9-13 NT: none warranted   Extras: none warranted   Tanakh: none warranted (narrative bridge)
+--   v.14-15 NT: none warranted   Extras: none warranted   Tanakh: tribal heads (Reuben, Simeon)
+--         → opening of THREAD 4
+--   v.16-25 NT: none warranted   Extras: none warranted
+--         Tanakh: Genesis 46:11 (sons of Levi, verbatim), Numbers 3:6, 3:10 (Levi → Aaron the
+--         priesthood) → THREAD 4 (the-house-of-levi-the-priestly-bloodline)
+--   v.26-30 NT: none warranted   Extras: none warranted   Tanakh: none warranted (recap/narrative)
+--
+-- Threads:
+--   1. exodus-6-i-am-yahuah-the-name-newly-disclosed        (free)   Tanakh + NT
+--      v.2-3 → Exodus 3:14, 3:15, Genesis 17:1, John 8:58
+--   2. exodus-6-the-seven-i-will-redemption-and-the-betrothal (extras) Tanakh + NT + Jubilees + Jasher
+--      v.6-8 → Ezek 37:23, 37:27; Hosea 2:19, 2:23; Jer 31:33; 2 Cor 6:16; Rev 21:3; Jub 48:7; Jasher 81:4
+--   3. exodus-6-ye-shall-know-that-i-am-yahuah               (free)   Tanakh
+--      v.7 → Ezekiel 6:7
+--   4. exodus-6-the-house-of-levi-the-priestly-bloodline     (free)   Tanakh
+--      v.16-25 → Genesis 46:11, Numbers 3:6, Numbers 3:10
+--
+-- Framework-load-bearing framing:
+--   * 6:2-3 the Name newly DISCLOSED (not newly invented) — the Father's self-disclosure carried
+--     by the Formed Son who is the I AM (John 8:58), the El Shaddai who appeared to Abram.
+--   * 6:6-8 redemption is UNTO covenant belonging — the betrothal of the SAME Yashar'el, the
+--     two-house regathering and marriage; never replacement, never a new people by confession.
+
+CREATE TEMP VIEW _s305_ex06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (
+  VALUES
+  -- THREAD 1 — the Name newly disclosed (v.2-3)
+  ('canon','exodus',6,3,'canon','exodus',3,14,'free',
+   E'*And Elohim (God) said unto Moses, Ehyeh asher Ehyeh (I AM THAT I AM): and he said, Thus shalt thou say unto the children of Yashar''el (Israel), I AM hath sent me unto you* (Exodus 3:14). At the bush the Name is uttered as sheer self-existent being; here at *I am Yahuah (LORD)... but by my name JEHOVAH was I not known to them* (Exodus 6:3) that same Name steps into redemptive power. The fathers knew Him as El Shaddai who provides; now Yashar''el will know Him as the I AM who delivers.'),
+  ('canon','exodus',6,3,'canon','exodus',3,15,'free',
+   E'*Thus shalt thou say unto the children of Yashar''el (Israel), Yahuah Elohim (The LORD God) of your fathers... hath sent me unto you: this is my name for ever, and this is my memorial unto all generations* (Exodus 3:15). The Name *was I not known to them* (Exodus 6:3) by its redemptive weight is the very Name declared *for ever* — not a new deity, but the covenant Name now unsheathed to bring the people out.'),
+  ('canon','exodus',6,3,'canon','genesis',17,1,'free',
+   E'*And when Abram was ninety years old and nine, Yahuah (LORD) appeared to Abram, and said unto him, I am the El Shaddai (Almighty God); walk before me, and be thou perfect* (Genesis 17:1). This is the very title 6:3 names: *I appeared unto Abraham, unto Isaac, and unto Jacob, by the name of El Shaddai (God Almighty)*. The patriarchs met the Almighty who promised; their sons meet the Yahuah who keeps it.'),
+  ('canon','exodus',6,3,'canon','john',8,58,'free',
+   E'*Yahusha (Jesus) said unto them, Verily, verily, I say unto you, Before Abraham was, I am* (John 8:58). The One who tells Moses *I am Yahuah (LORD)* (Exodus 6:2) and unveils the I AM Name is the Formed Son — the same who appeared to Abraham, drawn from the Formless Father, speaking the Name He has carried from of old. *Before Abraham was, I am* claims the bush and this disclosure as His own voice.'),
+
+  -- THREAD 2 — the seven "I will" of redemption + the betrothal (v.6-8)
+  ('canon','exodus',6,7,'canon','ezekiel',37,23,'free',
+   E'*so shall they be my people, and I will be their Elohim (God)* (Ezekiel 37:23). The betrothal formula of 6:7 — *I will take you to me for a people, and I will be to you a Elohim (God)* — is the marriage-bond Ezekiel sees consummated in the gathering of the two sticks: the SAME Yashar''el cleansed and made one, *my people* again, never a people replaced.'),
+  ('canon','exodus',6,7,'canon','ezekiel',37,27,'free',
+   E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). What begins as *I will take you to me for a people* (Exodus 6:7) at the Exodus is the everlasting end Ezekiel names — Yahuah dwelling in the midst of His regathered people, the two houses made one under His tabernacle.'),
+  ('canon','exodus',6,7,'canon','hosea',2,19,'free',
+   E'*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19). Hosea makes plain that *I will take you to me for a people* (Exodus 6:7) is covenant-marriage language. Yahuah does not merely free Yashar''el; He betroths her — the redemption of chapter 6 is unto belonging, the wife taken to Himself for ever.'),
+  ('canon','exodus',6,7,'canon','hosea',2,23,'free',
+   E'*and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). The scattered northern house, *Lo-Ammi*, is restored to the very formula spoken in Egypt — *I will take you to me for a people, and I will be to you a Elohim (God)* (Exodus 6:7). The divorced bride is betrothed again; the not-my-people become my people, the SAME Yashar''el regathered.'),
+  ('canon','exodus',6,7,'canon','jeremiah',31,33,'free',
+   E'*I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The new covenant carries the identical betrothal of 6:7 — *I will be to you a Elohim (God)* — now with the Torah written within. Not a covenant that abolishes the Law but one that engraves it on the heart of the same redeemed people.'),
+  ('canon','exodus',6,7,'canon','2-corinthians',6,16,'free',
+   E'*I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). Sha''ul (Paul) quotes the Exodus-and-prophets formula straight: the betrothal Yahuah swore in Egypt — *I will be to you a Elohim (God)* (Exodus 6:7) — is the dwelling of Yahuah among His own, the same promise reaching forward to those grafted into Yashar''el.'),
+  ('canon','exodus',6,8,'canon','revelation',21,3,'free',
+   E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The chain that begins *I will bring you out... I will bring you in unto the land* (Exodus 6:6,8) ends here, in the New Yerushalayim: the betrothal formula of 6:7 spoken over the consummated dwelling of Yahuah with His people for ever.'),
+  ('canon','exodus',6,6,'jubilees','jubilees',48,7,'extras',
+   E'*ten great and terrible judgments came on the land of Egypt that you might execute vengeance on it for Yashar’el (Israel). And Yahuah (God) did everything for Yashar’el’s (Israel’s) sake, and according to His covenant, which He had ordained with Abraham that He would take vengeance on them as they had brought them by force into bondage* (Jubilees 48:7). Jubilees grounds *I will redeem you with a stretched out arm, and with great judgments* (Exodus 6:6) in the covenant with Abraham — the deliverance is Yahuah keeping the oath He swore, *I have remembered my covenant* (Exodus 6:5).'),
+  ('canon','exodus',6,6,'jasher','jasher',81,4,'extras',
+   E'*And at the end of two hundred and ten years, Yahuah (the Lord) brought forth the children of Israel from Egypt with a strong hand* (Jasher 81:4). Jasher echoes the very promise of chapter 6 — *I will bring you out from under the burdens of the Egyptians... I will redeem you with a stretched out arm* (Exodus 6:6) — and the *strong hand* of 6:1. The seven "I will" become recorded history: the bringing-out accomplished.'),
+
+  -- THREAD 3 — ye shall know that I am Yahuah (v.7)
+  ('canon','exodus',6,7,'canon','ezekiel',6,7,'free',
+   E'*And the slain shall fall in the midst of you, and ye shall know that I am Yahuah (LORD)* (Ezekiel 6:7). The refrain born in the Exodus — *ye shall know that I am Yahuah Elohaychem (the LORD your God), which bringeth you out from under the burdens of the Egyptians* (Exodus 6:7) — runs the whole prophetic word. By redemption Yashar''el comes to know the Name; by judgment the nations and the wayward come to know it too. To know Yahuah is the covenant''s aim.'),
+
+  -- THREAD 4 — the house of Levi, the priestly bloodline (v.16-25)
+  ('canon','exodus',6,16,'canon','genesis',46,11,'free',
+   E'*And the sons of Levi; Gershon, Kohath, and Merari* (Genesis 46:11). The genealogy of 6:16 — *the names of the sons of Levi according to their generations; Gershon, and Kohath, and Merari* — repeats verbatim the line recorded when Yashar''el went down into Egypt. The covenant is carried by paternal bloodline: the same three houses of Levi from which Aaron and Moses will rise.'),
+  ('canon','exodus',6,20,'canon','numbers',3,6,'free',
+   E'*Bring the tribe of Levi near, and present them before Aaron the priest, that they may minister unto him* (Numbers 3:6). The bloodline traced in 6:20 — *she bare him Aaron and Moses* — is precisely the line set apart for service. Levi descends to Amram, Amram to Aaron; the genealogy is not mere record but the establishing of the priesthood that will minister before Yahuah.'),
+  ('canon','exodus',6,25,'canon','numbers',3,10,'free',
+   E'*And thou shalt appoint Aaron and his sons, and they shall wait on their priest’s office: and the stranger that cometh nigh shall be put to death* (Numbers 3:10). The line that ends in 6:25 with *Eleazar Aaron’s son... bare him Phinehas: these are the heads of the fathers of the Levites* is the very household appointed to the priest''s office. The covenant is carried by bloodline AND charge together — Aaron''s sons, and no stranger.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-6-i-am-yahuah-the-name-newly-disclosed',
+       E'I am Yahuah: the covenant Name newly disclosed',
+       E'*And Elohim (God) spake unto Moses, and said unto him, I am Yahuah (LORD): And I appeared unto Abraham, unto Isaac, and unto Jacob, by the name of El Shaddai (God Almighty), but by my name JEHOVAH was I not known to them* (Exodus 6:2-3). The Name is not newly invented — it is newly DISCLOSED in redemptive power. The fathers walked with *I am the El Shaddai (Almighty God)* (Genesis 17:1), the Almighty who promises and provides; now their enslaved sons will know Him as the Yahuah who delivers. At the bush this same Name was spoken as sheer being — *Ehyeh asher Ehyeh (I AM THAT I AM)* (Exodus 3:14) — *this is my name for ever, and this is my memorial unto all generations* (Exodus 3:15). And the voice that speaks it is the Formed Son, drawn from the Formless Father: *Yahusha (Jesus) said unto them, Verily, verily, I say unto you, Before Abraham was, I am* (John 8:58). He who appeared to Abraham and to Moses claims the I AM as His own — Yahuah, and yet having a Father.',
+       sv.verse_id, ev.verse_id, 'free', 29125
+  FROM _s305_ex06_lookup sv, _s305_ex06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=6 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-6-the-seven-i-will-redemption-and-the-betrothal',
+       E'The seven "I will" of redemption and the betrothal',
+       E'*I will bring you out from under the burdens of the Egyptians, and I will rid you out of their bondage, and I will redeem you with a stretched out arm, and with great judgments: And I will take you to me for a people, and I will be to you a Elohim (God)... And I will bring you in unto the land* (Exodus 6:6-8). Seven times Yahuah says *I will* — and at the heart of them stands a betrothal: *I will take you to me for a people, and I will be to you a Elohim (God)*. Redemption is UNTO belonging. This is marriage-language: *I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19), and the scattered house *which were not my people* is told *Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). The prophets carry the same formula to the regathering of the two houses — *so shall they be my people, and I will be their Elohim (God)* (Ezekiel 37:23); *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — and into the new covenant: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). Sha''ul (Paul) quotes it whole — *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) — and John hears it spoken over the consummated dwelling: *the tabernacle of Elohim (God) is with men... and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The restored library remembers that the deliverance kept an oath: *Yahuah (God) did everything for Yashar’el’s (Israel’s) sake, and according to His covenant, which He had ordained with Abraham* (Jubilees 48:7), and *Yahuah (the Lord) brought forth the children of Israel from Egypt with a strong hand* (Jasher 81:4). One betrothal, one people taken to Himself — never replaced, the same Yashar''el gathered and made His.',
+       sv.verse_id, ev.verse_id, 'extras', 29128
+  FROM _s305_ex06_lookup sv, _s305_ex06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=6 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-6-ye-shall-know-that-i-am-yahuah',
+       E'Ye shall know that I am Yahuah',
+       E'*And I will be to you a Elohim (God): and ye shall know that I am Yahuah Elohaychem (the LORD your God), which bringeth you out from under the burdens of the Egyptians* (Exodus 6:7). The aim of redemption is knowledge of the Name. This refrain, born in the Exodus, runs the length of the prophets — *And the slain shall fall in the midst of you, and ye shall know that I am Yahuah (LORD)* (Ezekiel 6:7). By deliverance the covenant people come to know Yahuah; by judgment the wayward and the nations come to know Him too. To know Yahuah — not as a fact but as the One who acts — is the covenant''s very purpose, here sealed to the bringing-out of Yashar''el.',
+       sv.verse_id, ev.verse_id, 'free', 29131
+  FROM _s305_ex06_lookup sv, _s305_ex06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=6 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-6-the-house-of-levi-the-priestly-bloodline',
+       E'The house of Levi: the priestly bloodline established',
+       E'*And these are the names of the sons of Levi according to their generations; Gershon, and Kohath, and Merari* (Exodus 6:16). In the midst of the redemption narrative the chapter pauses to trace a bloodline — and the line it follows is the priestly one. The three houses of Levi repeat verbatim the record from when Yashar''el went down into Egypt: *And the sons of Levi; Gershon, Kohath, and Merari* (Genesis 46:11). Through Kohath to Amram the genealogy descends: *she bare him Aaron and Moses* (Exodus 6:20), and on to *Eleazar Aaron’s son... bare him Phinehas: these are the heads of the fathers of the Levites* (Exodus 6:25). This is no idle list. It is the establishing of the priesthood: *Bring the tribe of Levi near, and present them before Aaron the priest, that they may minister unto him* (Numbers 3:6); *And thou shalt appoint Aaron and his sons, and they shall wait on their priest’s office: and the stranger that cometh nigh shall be put to death* (Numbers 3:10). The covenant is carried by paternal bloodline AND charge together — the same Yashar''el, the same Levi, the appointed house through which Yahuah will be approached.',
+       sv.verse_id, ev.verse_id, 'free', 29134
+  FROM _s305_ex06_lookup sv, _s305_ex06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=6 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Ehyeh asher Ehyeh (I AM THAT I AM)* (Exodus 3:14) — the Name uttered as sheer being at the bush, now unsheathed in redemptive power.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-i-am-yahuah-the-name-newly-disclosed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*this is my name for ever, and this is my memorial unto all generations* (Exodus 3:15) — the Name not new, but now disclosed by its delivering weight.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-i-am-yahuah-the-name-newly-disclosed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I am the El Shaddai (Almighty God)* (Genesis 17:1) — the very title 6:3 names: the Almighty who appeared to the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=17 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-i-am-yahuah-the-name-newly-disclosed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Before Abraham was, I am* (John 8:58) — the Formed Son claims the I AM Name as His own voice, Yahuah and yet having a Father.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=58
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-i-am-yahuah-the-name-newly-disclosed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*so shall they be my people, and I will be their Elohim (God)* (Ezekiel 37:23) — the betrothal of 6:7 consummated in the gathering of the two sticks.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — Yahuah dwelling in the midst of His regathered, two houses made one.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will betroth thee unto me for ever* (Hosea 2:19) — naming plainly that "I will take you to me for a people" is marriage-language.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23) — the divorced northern house, Lo-Ammi, betrothed again into the same formula.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*will be their Elohim (God), and they shall be my people* (Jeremiah 31:33) — the new covenant carries the same betrothal, now with Torah written on the heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) — Sha''ul quotes the Exodus-and-prophets formula straight as the dwelling of Yahuah among His own.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3) — the "I will bring you in" chain ended in the New Yerushalayim.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*according to His covenant, which He had ordained with Abraham* (Jubilees 48:7) — the deliverance keeping the oath, "I have remembered my covenant" (Exodus 6:5).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Yahuah (the Lord) brought forth the children of Israel from Egypt with a strong hand* (Jasher 81:4) — the seven "I will" become recorded history, the bringing-out accomplished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=81 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-seven-i-will-redemption-and-the-betrothal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye shall know that I am Yahuah (LORD)* (Ezekiel 6:7) — the Exodus refrain running the length of the prophets, the covenant''s aim to know the Name.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And the sons of Levi; Gershon, Kohath, and Merari* (Genesis 46:11) — the three houses of Levi, verbatim from the going-down into Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=46 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-house-of-levi-the-priestly-bloodline'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Bring the tribe of Levi near, and present them before Aaron the priest* (Numbers 3:6) — the bloodline of 6:20 (Aaron and Moses) set apart for service.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-house-of-levi-the-priestly-bloodline'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt appoint Aaron and his sons, and they shall wait on their priest’s office* (Numbers 3:10) — the household ending 6:25 (Eleazar, Phinehas) appointed to the priesthood.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=6 AND sv.verse_number=25
+  JOIN _s305_ex06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-6-the-house-of-levi-the-priestly-bloodline'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_15.sql (Exodus 15) -----
+-- Chapter: Exodus 15 — the Song of the Sea
+-- Tag: ex15   Session: s305   Sort band base: 29350 (step 3)
+-- Bind AROUND pre-existing live thread id 441 at 15:6 (right-hand-glorious-in-power / Formed-as-agency-of-Formless) — NOT duplicated, no new thread anchored at 15:6.
+--
+-- Exodus 15 coverage:
+--   v.1   NT:     Revelation 15:3 (song of Moses + song of the Lamb), Rev 15:4
+--         Extras: Jasher 81:43-44 (Then sang Moses... the same hymn-line), Jubilees 48 (Red-Sea retelling)
+--         Tanakh: — (the hymn itself is the source)
+--   v.2   NT:     none warranted (sung forward laterally in Tanakh)
+--         Extras: none warranted
+--         Tanakh: Isaiah 12:2, Isaiah 12:5, Psalm 118:14 (the same strength-song-salvation line re-sung)
+--   v.3   NT:     bound into the song-of-Moses thread (Rev 15:3 "thy works... thou King of saints")
+--         Extras: none warranted
+--         Tanakh: — (Yahuah is his name; held in thread 1)
+--   v.4-5,10  NT: none warranted
+--         Extras: Wisdom 19:7-8 (dry land / way without impediment), Jubilees 48:14 (cast into the depths of the abyss)
+--         Tanakh: — (held with the crossing thread)
+--   v.11  NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Micah 7:18, Micah 7:19 (Who is a Elohim like unto thee / cast sins into the depths of the sea)
+--   v.13  NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Psalm 78:52, Psalm 78:54 (guided his people / brought to the border of his sanctuary)
+--   v.16-17 NT:   Revelation 11:15 (he shall reign for ever and ever)
+--         Extras: none warranted
+--         Tanakh: Isaiah 11:11, Isaiah 11:12 (second-time ingathering, two-house), Psalm 78:54, Psalm 78:68 (mount Zion sanctuary)
+--   v.18  NT:     Revelation 11:15 (the everlasting reign)
+--         Extras: none warranted
+--         Tanakh: held with the reign/plant thread
+--   v.19  NT:     none warranted
+--         Extras: Wisdom 10:18, Wisdom 10:19, Wisdom 19:7; Jubilees 48:12, Jubilees 48:14; Jasher 81:43
+--         Tanakh: — (the crossing recapped; held with extras thread)
+--   v.20-21 NT:   bound into song thread (Miriam's refrain = the song re-sung)
+--         Extras: Jasher 81:44 (all Israel sang in concert, I will sing to Yahuah)
+--         Tanakh: —
+--   v.22-27 NT:   none warranted (Marah/Elim narrative; statute-and-ordinance / Yahuah-Rapha — left for a future Marah thread, not this Song-anchored set)
+--         Extras: Jasher 81:45 (statutes and judgments at Marah) — recorded, not threaded here
+--         Tanakh: none warranted in this Song-of-the-Sea band
+--
+-- Threads (6):
+--   1. exodus-15-i-will-sing-unto-yahuah-the-song-of-moses-and-the-lamb   [NT + Extras]  29350
+--        v.1,3,21 -> Rev 15:3, Rev 15:4, Jasher 81:43, Jasher 81:44
+--   2. exodus-15-yahuah-is-my-strength-and-song-and-my-salvation          [Tanakh/canon] 29353
+--        v.2 -> Isaiah 12:2, Isaiah 12:5, Psalm 118:14
+--   3. exodus-15-who-is-like-unto-thee-glorious-in-holiness               [Tanakh/canon] 29356
+--        v.11 -> Micah 7:18, Micah 7:19
+--   4. exodus-15-thou-hast-redeemed-and-guided-them-unto-thy-holy-habitation [Tanakh/canon] 29359
+--        v.13 -> Psalm 78:52, Psalm 78:54
+--   5. exodus-15-plant-them-in-the-mountain-yahuah-shall-reign-for-ever   [NT + Tanakh]  29362
+--        v.17,18 -> Rev 11:15, Isaiah 11:11, Isaiah 11:12, Psalm 78:68
+--   6. exodus-15-the-red-sea-crossing-wisdom-led-them-through            [Extras]       29365
+--        v.19,4,10 -> Wisdom 10:18, Wisdom 10:19, Wisdom 19:7, Jubilees 48:14
+--
+-- Framework notes: song-of-the-Sea = the FIRST song of the redeemed, re-sung at the consummation
+-- by the victors over the beast (Rev 15) in the OLD-exodus words = the new exodus. Yahuah a man of
+-- war / glorious in holiness = the Formed Son who led Yashar'el (Israel) and bears the Name. Plant-them-
+-- in-the-mountain = the two-house ingathering (Isa 11 second-time recovery) to the sanctuary not made
+-- with hands; Yahuah shall reign for ever = Rev 11:15. Extras (Wisdom/Jubilees/Jasher) retell the crossing.
+
+CREATE TEMP VIEW _s305_ex15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the song of Moses and the song of the Lamb
+    ('canon','exodus',15,1,'canon','revelation',15,3,'free',
+     E'*And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints.* (Revelation 15:3) The victors who overcame the beast sing the SAME song Moses sang at the sea — *I will sing unto Yahuah (LORD), for he hath triumphed gloriously* (Exodus 15:1). The new exodus is sung in the old-exodus words: one deliverance, one Deliverer, the Formed Son who drowned the horse and his rider now bringing his redeemed up out of the last Egypt.'),
+    ('canon','exodus',15,1,'canon','revelation',15,4,'free',
+     E'*Who shall not fear thee, O Yahuah (Lord), and glorify thy name? for thou only art holy: for all nations shall come and worship before thee; for thy judgments are made manifest.* (Revelation 15:4) The sea-song answered at the end of the age — *the horse and his rider hath he thrown into the sea* (Exodus 15:1) becomes the judgment made manifest before which all nations bow. The triumph hymn was always a prophecy.'),
+    ('canon','exodus',15,1,'jasher','jasher',81,43,'extras',
+     E'*Then sang Moses and the children of Israel this song to Yahuah (the Lord), on the day when Yahuah (the Lord) caused the Egyptians to fall before them.* (Jasher 81:43) The restored chronicle records the same moment as *Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD)* (Exodus 15:1) — the redeemed broke into song the very hour the sea closed over Pharaoh''s host.'),
+    ('canon','exodus',15,21,'jasher','jasher',81,44,'extras',
+     E'*And all Israel sang in concert, saying, I will sing to Yahuah (the Lord) for He is greatly exalted, the horse and his rider has he cast into the sea; behold it is written in the book of the law of Elohim.* (Jasher 81:44) Miriam''s refrain — *Sing ye to Yahuah (LORD), for he hath triumphed gloriously; the horse and his rider hath he thrown into the sea* (Exodus 15:21) — is the whole congregation singing as one, the women answering the men antiphonally; Jasher names it as already written in the Torah.'),
+    -- Thread 2: Yahuah is my strength and song and my salvation
+    ('canon','exodus',15,2,'canon','isaiah',12,2,'free',
+     E'*Behold, Elohim (God) is my salvation; I will trust, and not be afraid: for Yahuah (LORD) JEHOVAH is my strength and my song; he also is become my salvation.* (Isaiah 12:2) Isaiah sets the redeemed of the LATTER ingathering singing the very line Moses sang at the sea — *Yahuah (LORD) is my strength and song, and he is become my salvation* (Exodus 15:2). The second exodus opens its mouth in the words of the first.'),
+    ('canon','exodus',15,2,'canon','isaiah',12,5,'free',
+     E'*Sing unto Yahuah (LORD); for he hath done excellent things: this is known in all the earth.* (Isaiah 12:5) The command to sing in that day echoes Moses'' opening — *I will sing unto Yahuah (LORD), for he hath triumphed gloriously* (Exodus 15:1-2) — binding the wells-of-salvation song to the sea-song as one continuous praise of the redeemed.'),
+    ('canon','exodus',15,2,'canon','psalms',118,14,'free',
+     E'*Yahuah (LORD) is my strength and song, and is become my salvation.* (Psalm 118:14) The Hallel takes Moses'' line up word-for-word — *Yahuah (LORD) is my strength and song, and he is become my salvation* (Exodus 15:2) — the festival psalm of the temple making the sea-triumph the perpetual confession of Yashar''el (Israel).'),
+    -- Thread 3: Who is like unto thee, glorious in holiness
+    ('canon','exodus',15,11,'canon','micah',7,18,'free',
+     E'*Who is a Elohim (God) like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy.* (Micah 7:18) Micah answers the sea-song''s question — *Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness* (Exodus 15:11) — turning the incomparable Warrior into the incomparable Pardoner of his scattered remnant.'),
+    ('canon','exodus',15,11,'canon','micah',7,19,'free',
+     E'*He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea.* (Micah 7:19) The same hand that *didst blow with thy wind, the sea covered them* and they *sank as lead in the mighty waters* (Exodus 15:10-11) drowns Yashar''el''s (Israel''s) sins in that same depth — the Red-Sea judgment becomes the figure of forgiveness.'),
+    -- Thread 4: redeemed and guided unto thy holy habitation
+    ('canon','exodus',15,13,'canon','psalms',78,52,'free',
+     E'*But made his own people to go forth like sheep, and guided them in the wilderness like a flock.* (Psalm 78:52) Asaph retells the sea-song line — *Thou in thy mercy hast led forth the people which thou hast redeemed: thou hast guided them in thy strength* (Exodus 15:13) — the Formed Son as the Shepherd leading the redeemed flock out of Egypt.'),
+    ('canon','exodus',15,13,'canon','psalms',78,54,'free',
+     E'*And he brought them to the border of his sanctuary, even to this mountain, which his right hand had purchased.* (Psalm 78:54) The destination of the leading is named — *unto thy holy habitation* (Exodus 15:13) — the right hand that dashed the enemy now PURCHASES a people and plants them at the mountain-sanctuary.'),
+    -- Thread 5: plant them in the mountain / Yahuah shall reign for ever
+    ('canon','exodus',15,18,'canon','revelation',11,15,'free',
+     E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever.* (Revelation 11:15) The sea-song''s closing acclamation — *Yahuah (LORD) shall reign for ever and ever* (Exodus 15:18) — is the seventh-trumpet shout: the reign declared at the Red Sea is the reign consummated at the end.'),
+    ('canon','exodus',15,17,'canon','isaiah',11,11,'free',
+     E'*And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt...* (Isaiah 11:11) The planting *in the mountain of thine inheritance* (Exodus 15:17) is enacted a SECOND time — the first exodus from Egypt prefiguring the latter-day recovery of the scattered remnant of both houses.'),
+    ('canon','exodus',15,17,'canon','isaiah',11,12,'free',
+     E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth.* (Isaiah 11:12) *Thou shalt bring them in, and plant them in the mountain of thine inheritance* (Exodus 15:17) is the two-house ingathering — the outcasts of Yashar''el (Israel) and the dispersed of Yahudah (Judah) planted together in the one sanctuary.'),
+    ('canon','exodus',15,17,'canon','psalms',78,68,'free',
+     E'*But chose the tribe of Yahudah (Judah), the mount Zion which he loved.* (Psalm 78:68) The mountain Moses sang of — *the Sanctuary, O Yahuah (Lord), which thy hands have established* (Exodus 15:17) — is identified as mount Zion which Yahuah chose and built his sanctuary like high palaces, the hands-established dwelling.'),
+    -- Thread 6: the Red Sea crossing, Wisdom led them through (extras)
+    ('canon','exodus',15,19,'apocrypha','the-wisdom-of-solomon',10,18,'extras',
+     E'*Brought them through the Red sea, and led them through much water:* (Wisdom of Solomon 10:18) Wisdom retells the crossing Moses sang of — *the children of Yashar''el (Israel) went on dry land in the midst of the sea* (Exodus 15:19) — naming the same Wisdom (the Formed Son, the first-formed agency of the Father) as the One who led them through.'),
+    ('canon','exodus',15,19,'apocrypha','the-wisdom-of-solomon',10,19,'extras',
+     E'*But she drowned their enemies, and cast them up out of the bottom of the deep.* (Wisdom of Solomon 10:19) The sea-song''s judgment — *Yahuah (LORD) brought again the waters of the sea upon them* (Exodus 15:19) and *they sank into the bottom as a stone* (Exodus 15:5) — is recounted: the enemies drowned and cast up out of the deep.'),
+    ('canon','exodus',15,19,'apocrypha','the-wisdom-of-solomon',19,7,'extras',
+     E'*As namely, a cloud shadowing the camp; and where water stood before, dry land appeared; and out of the Red sea a way without impediment; and out of the violent stream a green field:* (Wisdom of Solomon 19:7) The marvel Moses sang — *the children of Yashar''el (Israel) went on dry land in the midst of the sea* (Exodus 15:19) — described as the very elements re-fashioned: dry land where water stood, a way without impediment out of the Red sea.'),
+    ('canon','exodus',15,4,'jubilees','jubilees',48,14,'extras',
+     E'*And all the peoples whom he brought to pursue after Yashar''el (Israel), Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss beneath the children of Yashar''el (Israel)...* (Jubilees 48:14) Jubilees retells *Pharaoh''s chariots and his host hath he cast into the sea: his chosen captains also are drowned in the Red sea* (Exodus 15:4) — the pursuers cast into the depths of the abyss in just recompense for drowning Yashar''el''s (Israel''s) children in the river.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-15-i-will-sing-unto-yahuah-the-song-of-moses-and-the-lamb',
+       E'I Will Sing unto Yahuah — the Song of Moses and the Song of the Lamb',
+       E'*Then sang Moses and the children of Yashar''el (Israel) this song unto Yahuah (LORD)... I will sing unto Yahuah (LORD), for he hath triumphed gloriously: the horse and his rider hath he thrown into the sea... Yahuah (LORD) is a man of war: Yahuah (LORD) is his name* (Exodus 15:1-3). This is the FIRST song of the redeemed — sung the hour the sea closed over Pharaoh, *the horse and his rider hath he thrown into the sea* (15:1), and answered antiphonally by the women: *And Miriam answered them, Sing ye to Yahuah (LORD), for he hath triumphed gloriously* (15:21).\n\nIt is sung again at the end of the age. *And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints* (Revelation 15:3) — the victors over the beast, standing on the sea of glass, singing the OLD-exodus words for the NEW exodus. *Who shall not fear thee, O Yahuah (Lord), and glorify thy name? ... for all nations shall come and worship before thee; for thy judgments are made manifest* (Revelation 15:4). The man of war who bears the Name (15:3) is the Formed Son who led Yashar''el (Israel) through the sea and will lead his redeemed up out of the last Egypt.\n\nThe restored chronicle records the same hour: *Then sang Moses and the children of Israel this song to Yahuah (the Lord), on the day when Yahuah (the Lord) caused the Egyptians to fall before them* (Jasher 81:43), and *all Israel sang in concert, saying, I will sing to Yahuah (the Lord) for He is greatly exalted, the horse and his rider has he cast into the sea; behold it is written in the book of the law of Elohim* (Jasher 81:44).',
+       sv.verse_id, ev.verse_id, 'extras', 29350
+  FROM _s305_ex15_lookup sv, _s305_ex15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=15 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-15-yahuah-is-my-strength-and-song-and-my-salvation',
+       E'Yahuah Is My Strength and Song, and He Is Become My Salvation',
+       E'*Yahuah (LORD) is my strength and song, and he is become my salvation: he is my Elohim (God), and I will prepare him an habitation; my father''s Elohim (God), and I will exalt him* (Exodus 15:2). This single line of the sea-song became the perpetual confession of the redeemed, taken up verbatim by prophet and psalmist.\n\nIsaiah sets the latter-day ingathering singing it: *Behold, Elohim (God) is my salvation; I will trust, and not be afraid: for Yahuah (LORD) JEHOVAH is my strength and my song; he also is become my salvation* (Isaiah 12:2), and commands, *Sing unto Yahuah (LORD); for he hath done excellent things: this is known in all the earth* (Isaiah 12:5). The Hallel of the temple takes it up word-for-word: *Yahuah (LORD) is my strength and song, and is become my salvation* (Psalm 118:14). The first exodus and the last are sung in one breath — the same strength, the same song, the same salvation.',
+       sv.verse_id, ev.verse_id, 'free', 29353
+  FROM _s305_ex15_lookup sv, _s305_ex15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=15 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-15-who-is-like-unto-thee-glorious-in-holiness',
+       E'Who Is Like unto Thee, O Yahuah — Glorious in Holiness',
+       E'*Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?* (Exodus 15:11). The sea-song asks the question the whole Tanakh answers: Yahuah is incomparable — among the gods of Egypt who were judged, there is none like him.\n\nMicah hears the same question and turns it from the Warrior to the Pardoner of his scattered remnant: *Who is a Elohim (God) like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy* (Micah 7:18). And the hand that drowned Pharaoh''s host — *they sank as lead in the mighty waters* (Exodus 15:10) — drowns Yashar''el''s (Israel''s) own sins in that same depth: *He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). The Red-Sea judgment becomes the very figure of forgiveness for the two-house remnant.',
+       sv.verse_id, ev.verse_id, 'free', 29356
+  FROM _s305_ex15_lookup sv, _s305_ex15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=15 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-15-thou-hast-redeemed-and-guided-them-unto-thy-holy-habitation',
+       E'Thou Hast Redeemed and Guided Them unto Thy Holy Habitation',
+       E'*Thou in thy mercy hast led forth the people which thou hast redeemed: thou hast guided them in thy strength unto thy holy habitation* (Exodus 15:13). The Formed Son who threw the horse and his rider into the sea now leads the redeemed flock — not abandoning them at the water''s edge, but guiding them toward the sanctuary.\n\nAsaph retells it: *But made his own people to go forth like sheep, and guided them in the wilderness like a flock* (Psalm 78:52) — the Shepherd leading the redeemed out of Egypt. And the destination is named: *And he brought them to the border of his sanctuary, even to this mountain, which his right hand had purchased* (Psalm 78:54). The right hand that *dashed in pieces the enemy* (Exodus 15:6) is the same right hand that PURCHASES a people and plants them at the mountain-sanctuary — redemption and inheritance in one motion.',
+       sv.verse_id, ev.verse_id, 'free', 29359
+  FROM _s305_ex15_lookup sv, _s305_ex15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=15 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-15-plant-them-in-the-mountain-yahuah-shall-reign-for-ever',
+       E'Plant Them in the Mountain — Yahuah Shall Reign for Ever and Ever',
+       E'*Thou shalt bring them in, and plant them in the mountain of thine inheritance, in the place, O Yahuah (LORD), which thou hast made for thee to dwell in, in the Sanctuary, O Yahuah (Lord), which thy hands have established. Yahuah (LORD) shall reign for ever and ever* (Exodus 15:17-18). The sea-song ends looking past the wilderness to the sanctuary and the everlasting reign.\n\nThe planting is the two-house ingathering, enacted a SECOND time: *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt* (Isaiah 11:11), to *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The mountain is identified: *But chose the tribe of Yahudah (Judah), the mount Zion which he loved* (Psalm 78:68) — the hands-established sanctuary.\n\nAnd the closing acclamation — *Yahuah (LORD) shall reign for ever and ever* (15:18) — is the seventh-trumpet shout: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The reign declared at the Red Sea is the reign consummated at the end of the age.',
+       sv.verse_id, ev.verse_id, 'free', 29362
+  FROM _s305_ex15_lookup sv, _s305_ex15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=15 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-15-the-red-sea-crossing-wisdom-led-them-through',
+       E'The Red Sea Crossing — Wisdom Led Them Through on Dry Land',
+       E'*For the horse of Pharaoh went in with his chariots and with his horsemen into the sea, and Yahuah (LORD) brought again the waters of the sea upon them; but the children of Yashar''el (Israel) went on dry land in the midst of the sea* (Exodus 15:19). The restored library retells the crossing the sea-song celebrates, naming the agency behind it.\n\nThe Wisdom of Solomon attributes it to Wisdom herself — the first-formed expression of the Father, the Formed Son: *Brought them through the Red sea, and led them through much water: But she drowned their enemies, and cast them up out of the bottom of the deep* (Wisdom of Solomon 10:18-19). The very elements were re-fashioned for the passage: *where water stood before, dry land appeared; and out of the Red sea a way without impediment; and out of the violent stream a green field* (Wisdom of Solomon 19:7). And Jubilees recounts the just recompense — *Pharaoh''s chariots and his host hath he cast into the sea* (Exodus 15:4) — *Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss beneath the children of Yashar''el (Israel)* (Jubilees 48:14), measure for measure against those who had drowned Yashar''el''s (Israel''s) children in the river.',
+       sv.verse_id, ev.verse_id, 'extras', 29365
+  FROM _s305_ex15_lookup sv, _s305_ex15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=15 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- Members: Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.n, m.member_note
+  FROM (VALUES
+    (15,1,'canon','revelation',15,3,1,E'Revelation 15:3 — the victors over the beast sing *the song of Moses... and the song of the Lamb*; the old-exodus words for the new exodus.'),
+    (15,1,'canon','revelation',15,4,2,E'Revelation 15:4 — *all nations shall come and worship... for thy judgments are made manifest*; the sea-triumph answered as end-time judgment.'),
+    (15,1,'jasher','jasher',81,43,3,E'Jasher 81:43 — *Then sang Moses and the children of Israel this song to Yahuah*, the same hour the Egyptians fell.'),
+    (15,21,'jasher','jasher',81,44,4,E'Jasher 81:44 — *all Israel sang in concert... I will sing to Yahuah*; Miriam''s refrain as the whole congregation answering.')
+  ) AS m(src_v_x,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,n,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-15-i-will-sing-unto-yahuah-the-song-of-moses-and-the-lamb'
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=m.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.n, m.member_note
+  FROM (VALUES
+    (15,2,'canon','isaiah',12,2,1,E'Isaiah 12:2 — *Yahuah JEHOVAH is my strength and my song; he also is become my salvation*; the latter ingathering re-singing the sea-line.'),
+    (15,2,'canon','isaiah',12,5,2,E'Isaiah 12:5 — *Sing unto Yahuah; for he hath done excellent things*; the command to sing echoing Moses'' opening.'),
+    (15,2,'canon','psalms',118,14,3,E'Psalm 118:14 — *Yahuah is my strength and song, and is become my salvation*; the Hallel taking the line up word-for-word.')
+  ) AS m(src_v_x,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,n,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-15-yahuah-is-my-strength-and-song-and-my-salvation'
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=m.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.n, m.member_note
+  FROM (VALUES
+    (15,11,'canon','micah',7,18,1,E'Micah 7:18 — *Who is a Elohim like unto thee, that pardoneth iniquity*; the incomparable Warrior as the incomparable Pardoner.'),
+    (15,11,'canon','micah',7,19,2,E'Micah 7:19 — *thou wilt cast all their sins into the depths of the sea*; the Red-Sea judgment as the figure of forgiveness.')
+  ) AS m(src_v_x,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,n,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-15-who-is-like-unto-thee-glorious-in-holiness'
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=m.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.n, m.member_note
+  FROM (VALUES
+    (15,13,'canon','psalms',78,52,1,E'Psalm 78:52 — *guided them in the wilderness like a flock*; the Formed Son as Shepherd of the redeemed.'),
+    (15,13,'canon','psalms',78,54,2,E'Psalm 78:54 — *brought them to the border of his sanctuary... which his right hand had purchased*; redemption ending in inheritance.')
+  ) AS m(src_v_x,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,n,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-15-thou-hast-redeemed-and-guided-them-unto-thy-holy-habitation'
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=m.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.n, m.member_note
+  FROM (VALUES
+    (15,18,'canon','revelation',11,15,1,E'Revelation 11:15 — *he shall reign for ever and ever*; the seventh-trumpet shout consummating the sea-song''s reign.'),
+    (15,17,'canon','isaiah',11,11,2,E'Isaiah 11:11 — *the second time to recover the remnant of his people*; the planting enacted again in the latter day.'),
+    (15,17,'canon','isaiah',11,12,3,E'Isaiah 11:12 — *the outcasts of Yashar''el... the dispersed of Yahudah*; the two-house ingathering planted in one sanctuary.'),
+    (15,17,'canon','psalms',78,68,4,E'Psalm 78:68 — *the mount Zion which he loved*; the hands-established sanctuary identified as Zion.')
+  ) AS m(src_v_x,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,n,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-15-plant-them-in-the-mountain-yahuah-shall-reign-for-ever'
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=m.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.n, m.member_note
+  FROM (VALUES
+    (15,19,'apocrypha','the-wisdom-of-solomon',10,18,1,E'Wisdom of Solomon 10:18 — *Brought them through the Red sea, and led them through much water*; Wisdom (the Formed Son) as the One who led them.'),
+    (15,19,'apocrypha','the-wisdom-of-solomon',10,19,2,E'Wisdom of Solomon 10:19 — *she drowned their enemies, and cast them up out of the bottom of the deep*; the enemies sunk as a stone.'),
+    (15,19,'apocrypha','the-wisdom-of-solomon',19,7,3,E'Wisdom of Solomon 19:7 — *out of the Red sea a way without impediment*; the elements re-fashioned for the dry-land passage.'),
+    (15,4,'jubilees','jubilees',48,14,4,E'Jubilees 48:14 — *cast them into the midst of the sea, into the depths of the abyss*; measure-for-measure recompense for drowning Israel''s children.')
+  ) AS m(src_v_x,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,n,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-15-the-red-sea-crossing-wisdom-led-them-through'
+  JOIN _s305_ex15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=15 AND sv.verse_number=m.src_v
+  JOIN _s305_ex15_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_23.sql (Exodus 23) -----
+-- Chapter: Exodus 23 (close of the Mishpatim — righteous-judgment Torah, the Sabbath/land-rest,
+--          the three pilgrimage feasts, and the Angel bearing the Name)
+-- Tag: ex23   Session: s305   Sort band base: 29550 (step 3)
+--
+-- Exodus 23 coverage:
+--   v.1-9 (civil/ethical Torah: false report, no bribe, love the stranger):
+--        NT:     Matthew 5:7 (merciful), James 2:8 (royal law love-neighbour) — thread righteous-judgment
+--        Extras: none warranted (covered by canon Torah/NT)
+--        Tanakh: Leviticus 19:18/33/34 (love neighbour + stranger), Deuteronomy 16:18-19 (just judgment, gift blinds — near-verbatim of 23:8)
+--   v.10-11 (sabbatical seventh-year land rest):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Leviticus 25:2/4 (the land-Sabbath) — thread Sabbath-and-land-rest
+--   v.12 (seventh-day Sabbath reaffirmed):
+--        NT:     none warranted (creation-rooted Torah)
+--        Extras: Jubilees 2:1 (angel of presence: six days, kept Sabbath on the seventh, hallowed for all ages)
+--        Tanakh: Genesis 2:2-3 (creation rest), Exodus 20:11 (Sabbath grounded in creation) — thread Sabbath-and-land-rest
+--   v.13 (make no mention of the name of other gods):
+--        NT/Extras/Tanakh: none warranted (folded into chapter ethic; no standalone thread)
+--   v.14-17 (THREE pilgrimage feasts: unleavened bread, harvest/firstfruits, ingathering):
+--        NT:     1 Corinthians 5:7/8 (Messiah our passover, keep the feast), Acts 2:1 (Pentecost/Shavuot=harvest), John 7:2/37 (Tabernacles/ingathering) — thread the-appointed-times
+--        Extras: none warranted (Jubilees feast-law fits but NT fill carries the thread; kept clean)
+--        Tanakh: Leviticus 23 (the feasts of Yahuah), Deuteronomy 16:16 (three times in a year) — thread the-appointed-times
+--   v.18-19 (sacrifice not with leaven; firstfruits; kid in mother's milk):
+--        Tanakh: tied to feast thread via firstfruits; no standalone thread (none warranted)
+--   v.20-23 (THE Angel before thee; my name is in him; he will not pardon transgressions):
+--        NT:     John 8:58 (Before Abraham was, I am), 1 Corinthians 10:4 (Rock=Messiah), 1 Corinthians 10:9 (tempted Messiah) — thread the-angel-bearing-the-name
+--        Extras: Jubilees 1:29 (angel of presence who went before the camp), Jubilees 2:1 (angel of presence spake to Moses)
+--        Tanakh: Exodus 3:2 (angel of Yahuah in the bush), Exodus 33:14 (my presence shall go), Isaiah 63:9 (angel of his presence saved them) — thread the-angel-bearing-the-name
+--   v.24-26, 27-33 (drive out nations; serve Yahuah, he shall bless thy bread/water, take sickness away):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 7:15 (take away all sickness) — thread serve-yahuah-he-shall-bless
+--
+-- THREADS (5):
+--   exodus-23-three-times-keep-a-feast-the-appointed-times       [Tanakh + NT]        free
+--   exodus-23-the-angel-bearing-the-name-the-formed-son          [Tanakh + NT + extras] extras
+--   exodus-23-the-sabbath-and-the-land-sabbath-rest              [Tanakh + extras]    extras
+--   exodus-23-righteous-judgment-and-the-stranger-torah-forward  [Tanakh + NT]        free
+--   exodus-23-serve-yahuah-and-he-shall-bless-thy-bread          [Tanakh]             free
+--
+-- Contested/load-bearing framing:
+--   * 23:14-17 the three feasts are the architecture the NT FILLS (Messiah our passover, Shavuot poured,
+--     Tabernacles consummated) — the moedim KEPT, never abolished.
+--   * 23:20-21 "my name is in him" = the Formed Son, the Angel of Yahuah who IS Yahuah and has a Father;
+--     1 Cor 10:4/9 makes the Rock that led them the Messiah they tempted. NOT a created angel; NOT a co-equal person.
+
+CREATE TEMP VIEW _s305_ex23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- ---- THREAD 1: the appointed times (three pilgrimage feasts) ----
+    ('canon','exodus',23,14,'canon','leviticus',23,2,'free',
+      E'*Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2). Exodus 23''s *Three times thou shalt keep a feast unto me in the year* (23:14) is the seed Leviticus 23 unfolds into the full calendar — Passover, Unleavened Bread, Firstfruits, Weeks, Trumpets, Atonement, Tabernacles. They are *my feasts*, Yahuah''s appointed times, not Israel''s invention and not abolished.'),
+    ('canon','exodus',23,15,'canon','deuteronomy',16,16,'free',
+      E'*Three times in a year shall all thy males appear before Yahuah Elohayka (the LORD thy God) in the place which he shall choose; in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles: and they shall not appear before Yahuah (LORD) empty* (Deuteronomy 16:16). Deuteronomy names the three pilgrimage feasts Exodus 23:14-17 commanded — unleavened bread, harvest/weeks, ingathering/tabernacles — and repeats Exodus''s charge *none shall appear before me empty* (23:15). One calendar, twice given.'),
+    ('canon','exodus',23,15,'canon','1-corinthians',5,7,'free',
+      E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The feast of unleavened bread of Exodus 23:15 is not retired but FILLED: the Passover lamb is the Messiah, and the unleavened bread is the people purged of malice. The moed is the architecture; Messiah is what it always pointed to.'),
+    ('canon','exodus',23,15,'canon','1-corinthians',5,8,'free',
+      E'*Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Paul''s plain imperative — *let us keep the feast* — is the unleavened-bread command of Exodus 23:15 still in force, kept now in the body of Messiah. The appointed time is observed, not abolished.'),
+    ('canon','exodus',23,16,'canon','acts',2,1,'free',
+      E'*And when the day of Pentecost was fully come, they were all with one accord in one place* (Acts 2:1). *The feast of harvest, the firstfruits of thy labours* (Exodus 23:16) is the feast of Weeks/Shavuot — Pentecost — when the Ruach HaKodesh (Holy Spirit) was poured out. The harvest feast of Exodus is the day the firstfruits of the regathered people were reaped.'),
+    ('canon','exodus',23,16,'canon','john',7,2,'free',
+      E'*Now the Yahudim''s (Jews’) feast of tabernacles was at hand* (John 7:2). *The feast of ingathering, which is in the end of the year, when thou hast gathered in thy labours out of the field* (Exodus 23:16) is the feast of Tabernacles — the great ingathering feast Yahusha (Jesus) kept and filled, crying *If any man thirst, let him come unto me, and drink* (John 7:37) on its last great day.'),
+    ('canon','exodus',23,16,'canon','john',7,37,'free',
+      E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink* (John 7:37). On the last great day of the feast of ingathering/Tabernacles — the very feast of *ingathering... when thou hast gathered in thy labours out of the field* (Exodus 23:16) — the Messiah declares himself its consummation, the living water of the final ingathering.'),
+    -- ---- THREAD 2: the Angel bearing the Name (the Formed Son) ----
+    ('canon','exodus',23,20,'canon','exodus',3,2,'free',
+      E'*And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed* (Exodus 3:2). The Angel Yahuah sends in *Behold, I send an Angel before thee... for my name is in him* (Exodus 23:20-21) is the same Angel of Yahuah who spoke from the bush as Elohim Himself (3:6) — the Formed Son who bears the Name and IS Yahuah, yet is sent.'),
+    ('canon','exodus',23,21,'canon','exodus',33,14,'free',
+      E'*And he said, My presence shall go with thee, and I will give thee rest* (Exodus 33:14). The Angel in whom *my name is in him* (Exodus 23:21) is Yahuah''s own Presence going before the camp — not a deputed creature but the visible Glory of Yahuah Himself leading Yashar''el (Israel), the Formed Son who is the Father''s face.'),
+    ('canon','exodus',23,21,'canon','isaiah',63,9,'free',
+      E'*In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old* (Isaiah 63:9). Isaiah names exactly the Angel of Exodus 23:21 — *the angel of his presence* — as the One who saved, redeemed, and carried Yashar''el (Israel) through the wilderness. The Angel who bears the Name is the Redeemer.'),
+    ('canon','exodus',23,21,'canon','john',8,58,'free',
+      E'*Yahusha (Jesus) said unto them, Verily, verily, I say unto you, Before Abraham was, I am* (John 8:58). The Angel in whom Yahuah''s Name dwells (Exodus 23:21) is the Formed Son who later took flesh and claimed the Name of the bush — *I am* — declaring himself the One who led the fathers before Abraham was.'),
+    ('canon','exodus',23,21,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). Paul identifies the One who led Yashar''el (Israel) through the wilderness — the Angel bearing the Name of Exodus 23:20-21 — as the Messiah: the Rock that followed them WAS Messiah, the Formed Son present in the Exodus.'),
+    ('canon','exodus',23,21,'canon','1-corinthians',10,9,'free',
+      E'*Neither let us tempt Messiah (Christ), as some of them also tempted, and were destroyed of serpents* (1 Corinthians 10:9). Exodus warns *provoke him not; for he will not pardon your transgressions* (23:21); Paul says the One they provoked in the wilderness was the Messiah. To provoke the Angel who bears the Name is to tempt the Formed Son.'),
+    ('canon','exodus',23,20,'jubilees','jubilees',1,29,'extras',
+      E'*And the angel of the presence who went before the camp of Yashar’el (Israel) took the tables of the divisions of the years –from the time of the creation–of the law and of the testimony of the weeks, of the jubilees* (Jubilees 1:29). Jubilees calls the One who *went before the camp of Yashar’el* the angel of the presence — the same Angel Yahuah sends *before thee* in Exodus 23:20 — the Formed Son who carries the Name and the testimony.'),
+    ('canon','exodus',23,21,'jubilees','jubilees',2,1,'extras',
+      E'*And the angel of the presence spake to Moses according to the word of Yahuah (God), saying: Write the complete history of the creation* (Jubilees 2:1). The angel of the presence who dictates the Torah to Moses in Jubilees is the same Angel in whom *my name is in him* (Exodus 23:21): the Formed Son speaking *according to the word of Yahuah*, bearing the Name yet sent by the Father.'),
+    -- ---- THREAD 3: the Sabbath and the land-Sabbath rest ----
+    ('canon','exodus',23,12,'canon','genesis',2,2,'free',
+      E'*And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made* (Genesis 2:2). The seventh-day rest of Exodus 23:12 — *on the seventh day thou shalt rest* — is rooted in creation itself, woven into the order of the world before any nation existed. The Sabbath is creation-anchored, not a temporary statute.'),
+    ('canon','exodus',23,12,'canon','exodus',20,11,'free',
+      E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The Sabbath command repeated in Exodus 23:12 carries the reason given at Sinai: Yahuah Himself rested and hallowed the seventh day. The rest that even reaches *thine ox... and the stranger* (23:12) is the creation Sabbath.'),
+    ('canon','exodus',23,11,'canon','leviticus',25,4,'free',
+      E'*But in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD): thou shalt neither sow thy field, nor prune thy vineyard* (Leviticus 25:4). Exodus 23:10-11''s *the seventh year thou shalt let it rest and lie still* is the land-Sabbath Leviticus 25 unfolds in full — the land itself keeps a sabbath unto Yahuah, the weekly rest written into the very soil.'),
+    ('canon','exodus',23,12,'jubilees','jubilees',2,1,'extras',
+      E'*how in six days Yahuah Elohim (the LORD God) finished all His works and all that He created, and kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1). Jubilees grounds the seventh-day rest of Exodus 23:12 where the Torah does — in creation — and declares it hallowed *for all ages*: the Sabbath is a perpetual sign, never abolished.'),
+    -- ---- THREAD 4: righteous judgment and the stranger (Torah carried forward) ----
+    ('canon','exodus',23,8,'canon','deuteronomy',16,19,'free',
+      E'*Thou shalt not wrest judgment; thou shalt not respect persons, neither take a gift: for a gift doth blind the eyes of the wise, and pervert the words of the righteous* (Deuteronomy 16:19). Deuteronomy restates Exodus 23:8 almost word for word — *thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous* — the righteous-judgment Torah that binds judges to incorruptible justice.'),
+    ('canon','exodus',23,9,'canon','leviticus',19,34,'free',
+      E'*But the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt: I am Yahuah Elohaychem (the LORD your God)* (Leviticus 19:34). The command not to oppress the stranger *for ye know the heart of a stranger, seeing ye were strangers in the land of Egypt* (Exodus 23:9) is the same love-the-stranger Torah Leviticus 19 grounds in the same memory of Egypt.'),
+    ('canon','exodus',23,4,'canon','leviticus',19,18,'free',
+      E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). Exodus 23:4-5 commands returning *thine enemy''s ox* and helping *the ass of him that hateth thee* — the love-of-neighbour Torah enacted toward the one who hates you, the very royal-law principle Leviticus 19:18 names.'),
+    ('canon','exodus',23,4,'canon','matthew',5,7,'free',
+      E'*Blessed are the merciful: for they shall obtain mercy* (Matthew 5:7). The mercy Exodus 23:4-5 commands toward an enemy''s straying ox is the Torah Yahusha (Jesus) carries forward in the Sermon on the Mount — not a new ethic but the deepening of the same righteous-judgment Torah, mercy that obtains mercy.'),
+    ('canon','exodus',23,9,'canon','james',2,8,'free',
+      E'*If ye fulfil the royal law according to the scripture, Thou shalt love thy neighbour as thyself, ye do well* (James 2:8). The stranger-love and neighbour-justice of Exodus 23:1-9 is what James calls *the royal law* — Torah upheld as the standing rule of the assembly, fulfilled, not abolished.'),
+    -- ---- THREAD 5: serve Yahuah and he shall bless thy bread ----
+    ('canon','exodus',23,25,'canon','deuteronomy',7,15,'free',
+      E'*And Yahuah (LORD) will take away from thee all sickness, and will put none of the evil diseases of Egypt, which thou knowest, upon thee; but will lay them upon all them that hate thee* (Deuteronomy 7:15). The covenant blessing of Exodus 23:25 — *he shall bless thy bread, and thy water; and I will take sickness away from the midst of thee* — is the same promise Deuteronomy renews: covenant service answered with health and provision.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-23-three-times-keep-a-feast-the-appointed-times',
+       E'Three times thou shalt keep a feast — the appointed times the NT fills',
+       E'*Three times thou shalt keep a feast unto me in the year* (Exodus 23:14): the feast of unleavened bread, the feast of harvest (firstfruits), and the feast of ingathering (23:15-16). These are not Israel''s invention but Yahuah''s own calendar — *Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2) — and Deuteronomy names the same three: *in the feast of unleavened bread, and in the feast of weeks, and in the feast of tabernacles* (Deuteronomy 16:16). The New Testament does not retire these appointed times; it FILLS them. Unleavened Bread: *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7), and the plain command stands — *let us keep the feast, not with old leaven... but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Harvest/Weeks: *when the day of Pentecost was fully come* (Acts 2:1) the Ruach HaKodesh (Holy Spirit) was poured as the firstfruits of the regathered people. Ingathering/Tabernacles: *the Yahudim''s (Jews’) feast of tabernacles was at hand* (John 7:2), and on its last great day Yahusha (Jesus) cried *If any man thirst, let him come unto me, and drink* (John 7:37). The moedim are the architecture; the Messiah is what they always pointed to.',
+       sv.verse_id, ev.verse_id, 'free', 29550
+  FROM _s305_ex23_lookup sv, _s305_ex23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=23 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=23 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-23-the-angel-bearing-the-name-the-formed-son',
+       E'Behold, I send an Angel — my name is in him — the Formed Son',
+       E'*Behold, I send an Angel before thee, to keep thee in the way... Beware of him, and obey his voice, provoke him not; for he will not pardon your transgressions: for my name is in him* (Exodus 23:20-21). This is no created messenger: the Name of Yahuah dwells in him, and to disobey him is unpardonable. He is the Angel of Yahuah who spoke from the bush as Elohim Himself — *the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush* (Exodus 3:2) — and the Presence that leads the camp: *My presence shall go with thee, and I will give thee rest* (Exodus 33:14). Isaiah names him exactly: *the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old* (Isaiah 63:9). He is the Formed Son, who is Yahuah and yet has a Father — the One who later took flesh and claimed the Name of the bush: *Before Abraham was, I am* (John 8:58). Paul makes it explicit: the One who led Yashar''el (Israel) through the wilderness was the Messiah — *that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — and to provoke him is to *tempt Messiah (Christ), as some of them also tempted* (1 Corinthians 10:9), the very warning of *provoke him not* (23:21). The restored witnesses agree: *the angel of the presence who went before the camp of Yashar’el (Israel)* (Jubilees 1:29) and who *spake to Moses according to the word of Yahuah (God)* (Jubilees 2:1) — the Formed Son bearing the Name, sent by the Most High.',
+       sv.verse_id, ev.verse_id, 'extras', 29553
+  FROM _s305_ex23_lookup sv, _s305_ex23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=23 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=23 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-23-the-sabbath-and-the-land-sabbath-rest',
+       E'On the seventh day thou shalt rest — the Sabbath and the land-Sabbath',
+       E'Exodus 23 reaffirms two Sabbaths. The weekly: *Six days thou shalt do thy work, and on the seventh day thou shalt rest: that thine ox and thine ass may rest, and the son of thy handmaid, and the stranger, may be refreshed* (23:12) — a rest so wide it reaches the beast and the sojourner. And the land''s: *six years thou shalt sow thy land... But the seventh year thou shalt let it rest and lie still* (23:10-11). The weekly Sabbath is rooted in creation itself — *on the seventh day Elohim (God)... rested... from all his work which he had made* (Genesis 2:2) — and Sinai gives the reason plainly: *in six days Yahuah (LORD) made heaven and earth... and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The seventh-year rest is the land-Sabbath Leviticus unfolds: *in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD)* (Leviticus 25:4). The restored witness binds the same to creation: Yahuah *kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1) — a perpetual sign written into the week and into the very soil.',
+       sv.verse_id, ev.verse_id, 'extras', 29556
+  FROM _s305_ex23_lookup sv, _s305_ex23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=23 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=23 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-23-righteous-judgment-and-the-stranger-torah-forward',
+       E'Take no gift, love the stranger — the righteous-judgment Torah carried forward',
+       E'The close of the Mishpatim opens with the Torah of righteous judgment: *Thou shalt not raise a false report... Thou shalt not wrest the judgment of thy poor in his cause... thou shalt take no gift: for the gift blindeth the wise, and perverteth the words of the righteous... thou shalt not oppress a stranger: for ye know the heart of a stranger, seeing ye were strangers in the land of Egypt* (Exodus 23:1-9). Even an enemy''s straying ox must be returned and his fallen ass helped (23:4-5). Deuteronomy restates the bribe law nearly verbatim — *neither take a gift: for a gift doth blind the eyes of the wise, and pervert the words of the righteous* (Deuteronomy 16:19) — and Leviticus grounds the stranger-love in the same memory: *the stranger that dwelleth with you shall be unto you as one born among you, and thou shalt love him as thyself; for ye were strangers in the land of Egypt* (Leviticus 19:34), the neighbour-love of *thou shalt love thy neighbour as thyself* (Leviticus 19:18). This is the Torah Yahusha (Jesus) carries forward, not abolishes — *Blessed are the merciful: for they shall obtain mercy* (Matthew 5:7) — and which James calls *the royal law according to the scripture, Thou shalt love thy neighbour as thyself* (James 2:8). Righteous judgment is Torah, and Torah stands.',
+       sv.verse_id, ev.verse_id, 'free', 29559
+  FROM _s305_ex23_lookup sv, _s305_ex23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=23 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-23-serve-yahuah-and-he-shall-bless-thy-bread',
+       E'Serve Yahuah, and he shall bless thy bread — the covenant blessing',
+       E'*And ye shall serve Yahuah Elohaychem (the LORD your God), and he shall bless thy bread, and thy water; and I will take sickness away from the midst of thee* (Exodus 23:25). Covenant service is answered with provision and health — the same promise Deuteronomy renews: *Yahuah (LORD) will take away from thee all sickness, and will put none of the evil diseases of Egypt, which thou knowest, upon thee* (Deuteronomy 7:15). The blessing is not a wage earned but the fruit of walking with Yahuah in the covenant He gave.',
+       sv.verse_id, ev.verse_id, 'free', 29562
+  FROM _s305_ex23_lookup sv, _s305_ex23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=23 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=23 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1: appointed times
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (23,14,'canon','leviticus',23,2,1,E'*even these are my feasts* (Leviticus 23:2) — Exodus''s three feasts unfold into Yahuah''s full appointed-times calendar.'),
+    (23,15,'canon','deuteronomy',16,16,2,E'*the feast of unleavened bread, and... weeks, and... tabernacles* (Deuteronomy 16:16) — the same three pilgrimage feasts, *none shall appear... empty*.'),
+    (23,15,'canon','1-corinthians',5,7,3,E'*Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7) — Unleavened Bread filled in the Messiah.'),
+    (23,15,'canon','1-corinthians',5,8,4,E'*let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8) — the feast still kept.'),
+    (23,16,'canon','acts',2,1,5,E'*when the day of Pentecost was fully come* (Acts 2:1) — the harvest/Weeks feast, the Spirit poured as firstfruits.'),
+    (23,16,'canon','john',7,2,6,E'*the feast of tabernacles was at hand* (John 7:2) — the feast of ingathering Yahusha kept.'),
+    (23,16,'canon','john',7,37,7,E'*If any man thirst, let him come unto me, and drink* (John 7:37) — Tabernacles/ingathering consummated.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-23-three-times-keep-a-feast-the-appointed-times'
+  JOIN _s305_ex23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex23_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the Angel bearing the Name
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (23,20,'canon','exodus',3,2,1,E'*the angel of Yahuah (LORD) appeared... out of the midst of a bush* (Exodus 3:2) — the same Angel who spoke as Elohim.'),
+    (23,21,'canon','exodus',33,14,2,E'*My presence shall go with thee* (Exodus 33:14) — the Name-bearing Angel is Yahuah''s own Presence.'),
+    (23,21,'canon','isaiah',63,9,3,E'*the angel of his presence saved them... he bare them, and carried them* (Isaiah 63:9) — named exactly, the Redeemer.'),
+    (23,21,'canon','john',8,58,4,E'*Before Abraham was, I am* (John 8:58) — the Formed Son claims the Name of the bush.'),
+    (23,21,'canon','1-corinthians',10,4,5,E'*that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the One who led Yashar''el in the wilderness.'),
+    (23,21,'canon','1-corinthians',10,9,6,E'*Neither let us tempt Messiah (Christ), as some of them also tempted* (1 Corinthians 10:9) — to provoke him is to tempt Messiah.'),
+    (23,20,'jubilees','jubilees',1,29,7,E'*the angel of the presence who went before the camp of Yashar’el* (Jubilees 1:29) — the restored witness names the Name-bearer.'),
+    (23,21,'jubilees','jubilees',2,1,8,E'*the angel of the presence spake to Moses according to the word of Yahuah* (Jubilees 2:1) — bearing the Name, sent by the Father.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-23-the-angel-bearing-the-name-the-formed-son'
+  JOIN _s305_ex23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex23_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: Sabbath and land-Sabbath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (23,12,'canon','genesis',2,2,1,E'*he rested on the seventh day from all his work* (Genesis 2:2) — the Sabbath rooted in creation.'),
+    (23,12,'canon','exodus',20,11,2,E'*Yahuah (LORD)... rested the seventh day: wherefore... blessed the sabbath day, and hallowed it* (Exodus 20:11) — Sinai''s creation reason.'),
+    (23,11,'canon','leviticus',25,4,3,E'*in the seventh year shall be a sabbath of rest unto the land* (Leviticus 25:4) — the land-Sabbath of 23:10-11.'),
+    (23,12,'jubilees','jubilees',2,1,4,E'*kept Sabbath on the seventh day and hallowed it for all ages* (Jubilees 2:1) — a perpetual sign.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-23-the-sabbath-and-the-land-sabbath-rest'
+  JOIN _s305_ex23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex23_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: righteous judgment and the stranger
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (23,8,'canon','deuteronomy',16,19,1,E'*a gift doth blind the eyes of the wise* (Deuteronomy 16:19) — Exodus 23:8 restated almost verbatim.'),
+    (23,9,'canon','leviticus',19,34,2,E'*the stranger... shall be unto you as one born among you... for ye were strangers in the land of Egypt* (Leviticus 19:34) — same stranger-love, same memory.'),
+    (23,4,'canon','leviticus',19,18,3,E'*thou shalt love thy neighbour as thyself* (Leviticus 19:18) — the principle behind returning even an enemy''s ox.'),
+    (23,4,'canon','matthew',5,7,4,E'*Blessed are the merciful: for they shall obtain mercy* (Matthew 5:7) — Torah mercy carried forward.'),
+    (23,9,'canon','james',2,8,5,E'*the royal law... Thou shalt love thy neighbour as thyself* (James 2:8) — Torah upheld as the standing rule.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-23-righteous-judgment-and-the-stranger-torah-forward'
+  JOIN _s305_ex23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex23_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: serve Yahuah and be blessed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (23,25,'canon','deuteronomy',7,15,1,E'*Yahuah (LORD) will take away from thee all sickness* (Deuteronomy 7:15) — the covenant blessing renewed.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-23-serve-yahuah-and-he-shall-bless-thy-bread'
+  JOIN _s305_ex23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex23_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
