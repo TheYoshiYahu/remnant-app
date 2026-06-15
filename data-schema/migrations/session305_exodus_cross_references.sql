@@ -11347,6 +11347,1015 @@ SELECT t.id, cr.id, m.sort_order, m.member_note
   JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_26.sql (Exodus 26) -----
+-- Chapter: Exodus 26 (the tabernacle itself — the ten curtains, the boards, the veil)
+-- Tag: ex26   Session prefix: s305   Sort band: 29625 step +3
+-- Temp view: _s305_ex26_lookup
+--
+-- THREADS (5):
+--   exodus-26-the-vail-that-is-to-say-his-flesh          [free]  canon NT (Heb 10:19-20, Heb 9:3, Heb 9:8, Matt 27:51, Mark 15:38)
+--   exodus-26-couple-the-tent-that-it-may-be-one-pattern [free]  canon (Exod 25:9, Exod 25:40, Heb 8:5, Heb 9:23, Heb 9:24)
+--   exodus-26-cherubims-of-cunning-work-keep-the-way     [free]  canon (Gen 3:24, Ezek 1:5, Ezek 10:1, 1 Kings 6:29, Heb 9:5, Rev 4:8)
+--   exodus-26-that-i-may-dwell-among-them-the-shakan     [extras] canon + extras (Exod 25:8, John 1:14, Rev 21:3, Wisdom 9:8)
+--   exodus-26-the-sockets-of-silver-the-ransom-of-souls  [free]  canon (Exod 30:12, Exod 30:16, Exod 38:27)
+--
+-- Exodus 26 coverage:
+--   v.1 (ten curtains, cherubims of cunning work)
+--        NT:     Heb 9:5 cherubims of glory (cherubim thread); Rev 21:3 tabernacle of Elohim with men (shakan thread)
+--        Extras: Wisdom 9:8 resemblance of the holy tabernacle (shakan thread)
+--        Tanakh: Gen 3:24 cherubims keep the way; Ezek 1:5/10:1; 1 Kings 6:29; Exod 25:8 (dwell among them)
+--   v.6 (couple the curtains... it shall be one tabernacle)
+--        NT:     Heb 8:5 / Heb 9:23-24 the pattern, the figures of the true (pattern thread)
+--        Extras: none warranted (pattern handled at ch25)
+--        Tanakh: Exod 25:9, Exod 25:40 the pattern shewed in the mount (pattern thread)
+--   v.11 (couple the tent together, that it may be one) — folded into pattern/shakan (the dwelling made ONE)
+--   v.15-29 (boards of shittim, sockets of silver, bars overlaid with gold)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exod 30:12,16 ransom/atonement money; Exod 38:27 sockets cast of the silver (silver-sockets thread)
+--   v.30 (rear up the tabernacle according to the fashion shewed thee in the mount) — folded into pattern thread
+--   v.31-33 ★★ (a vail of blue/purple/scarlet, with cherubims; the vail shall divide between holy and most holy)
+--        NT:     Heb 10:19-20 boldness to enter by the veil = his flesh; Heb 9:3 the second veil / Holiest; Heb 9:8 way not yet manifest; Matt 27:51 + Mark 15:38 the veil rent in twain (veil thread). Cherubim-on-the-veil → cherubim thread (Heb 9:5)
+--        Extras: none warranted
+--        Tanakh: cherubim thread laterals (Gen 3:24 etc.)
+--   v.34 (mercy seat upon the ark in the most holy) — context for veil/cherubim threads, no separate add (ark/mercyseat = ch25's thread)
+--   v.36-37 (hanging for the door, five pillars) — none warranted (subsidiary to the curtain/veil weave)
+
+CREATE TEMP VIEW _s305_ex26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- THREAD 1: the vail, that is to say, his flesh (26:31-33)
+  ('canon','exodus',26,31,'canon','hebrews',10,20,'free',
+    E'*By a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh* (Hebrews 10:20). The veil woven *of blue, and purple, and scarlet... with cherubims* (Exodus 26:31) is read forward as the flesh of the Formed Son: the Father drew the Formless into a body, and that body became the curtain through which the way into the Presence is opened.'),
+  ('canon','exodus',26,33,'canon','hebrews',10,19,'free',
+    E'*Having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19). Where the vail *divide unto you between the holy place and the most holy* (Exodus 26:33), the barrier kept Yashar''el (Israel) out of the most holy; the blood of the Formed Son gives bold entrance into the very place the vail once closed.'),
+  ('canon','exodus',26,33,'canon','hebrews',9,3,'free',
+    E'*And after the second veil, the tabernacle which is called the Holiest of all* (Hebrews 9:3). This names exactly the partition of Exodus 26:33 — *the vail shall divide unto you between the holy place and the most holy* — the second curtain guarding the Holiest, the very veil later torn open.'),
+  ('canon','exodus',26,33,'canon','hebrews',9,8,'free',
+    E'*The Ruach HaKodesh (Holy Spirit) this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing* (Hebrews 9:8). The dividing vail of Exodus 26:33 was itself the sign that *the way* was not yet open — a closed door declaring a coming opening.'),
+  ('canon','exodus',26,33,'canon','matthew',27,51,'free',
+    E'*And, behold, the veil of the temple was rent in twain from the top to the bottom; and the earth did quake, and the rocks rent* (Matthew 27:51). At the death of the Formed Son the very vail that *divide... between the holy place and the most holy* (Exodus 26:33) was torn from the top down — by Yahuah''s hand, not man''s — the barrier abolished, the Presence opened.'),
+  ('canon','exodus',26,33,'canon','mark',15,38,'free',
+    E'*And the veil of the temple was rent in twain from the top to the bottom* (Mark 15:38). The second witness to the tearing of the curtain of Exodus 26:33: the partition between *the holy place and the most holy* is split open at the moment the flesh of the Messiah is given.'),
+
+  -- THREAD 2: couple the tent that it may be one — the pattern in the mount (26:6,11,30)
+  ('canon','exodus',26,6,'canon','exodus',25,9,'free',
+    E'*According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9). The curtains coupled with taches of gold *and it shall be one tabernacle* (Exodus 26:6) are no human design — every coupling answers a heavenly pattern Moses was shown.'),
+  ('canon','exodus',26,30,'canon','exodus',25,40,'free',
+    E'*And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The charge to *rear up the tabernacle according to the fashion thereof which was shewed thee in the mount* (Exodus 26:30) echoes the same command — the earthly dwelling is a copy of what already stands above.'),
+  ('canon','exodus',26,30,'canon','hebrews',8,5,'free',
+    E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). Hebrews quotes the mount-pattern charge of Exodus 26:30 directly: the tabernacle is the *shadow* of the true sanctuary in the heavens.'),
+  ('canon','exodus',26,30,'canon','hebrews',9,23,'free',
+    E'*It was therefore necessary that the patterns of things in the heavens should be purified with these; but the heavenly things themselves with better sacrifices than these* (Hebrews 9:23). The tabernacle built *according to the fashion... shewed thee in the mount* (Exodus 26:30) is named here a *pattern of things in the heavens* — the copy points to a greater original.'),
+  ('canon','exodus',26,30,'canon','hebrews',9,24,'free',
+    E'*For Messiah (Christ) is not entered into the holy places made with hands, which are the figures of the true; but into heaven itself, now to appear in the presence of Elohim (God) for us* (Hebrews 9:24). The mount-pattern tabernacle of Exodus 26:30 is the *figure of the true*; the Formed Son passes into the heavenly sanctuary the earthly one was copied from.'),
+
+  -- THREAD 3: cherubims of cunning work — guarding the way to the Presence (26:1,31)
+  ('canon','exodus',26,1,'canon','genesis',3,24,'free',
+    E'*So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). The cherubim woven into the curtains *of cunning work* (Exodus 26:1) carry the Eden image forward: the same guardians who kept the way to the tree of life now stand woven across the dwelling, marking the holy ground a sinner cannot freely tread.'),
+  ('canon','exodus',26,31,'canon','genesis',3,24,'free',
+    E'*And he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). The vail *with cherubims shall it be made* (Exodus 26:31) sets the same Eden guardians upon the curtain before the most holy — the way to the Presence is once again guarded, until the flesh of the Messiah opens it.'),
+  ('canon','exodus',26,31,'canon','ezekiel',1,5,'free',
+    E'*Also out of the midst thereof came the likeness of four living creatures. And this was their appearance; they had the likeness of a man* (Ezekiel 1:5). The cherubim figured into the vail *with cherubims shall it be made* (Exodus 26:31) are no mere ornament — Ezekiel sees the living cherubim themselves bearing the throne-chariot of the Glory.'),
+  ('canon','exodus',26,31,'canon','ezekiel',10,1,'free',
+    E'*Then I looked, and, behold, in the firmament that was above the head of the cherubims there appeared over them as it were a sapphire stone, as the appearance of the likeness of a throne* (Ezekiel 10:1). The woven cherubim of Exodus 26:31 picture the real cherubim over whom the throne of Yahuah rests — the dwelling''s embroidery mirrors the heavenly attendants of the Presence.'),
+  ('canon','exodus',26,1,'canon','1-kings',6,29,'free',
+    E'*And he carved all the walls of the house round about with carved figures of cherubims and palm trees and open flowers, within and without* (1 Kings 6:29). When the tabernacle gave way to the temple, the cherubim *of cunning work* (Exodus 26:1) were carved into the very walls — the same guardian-pattern carried from the curtains into the house of cedar.'),
+  ('canon','exodus',26,31,'canon','hebrews',9,5,'free',
+    E'*And over it the cherubims of glory shadowing the mercyseat; of which we can not now speak particularly* (Hebrews 9:5). The cherubim woven into the vail *with cherubims shall it be made* (Exodus 26:31) are named *the cherubims of glory* overshadowing the place of atonement — guarding the throne-seat of mercy.'),
+  ('canon','exodus',26,31,'canon','revelation',4,8,'free',
+    E'*And the four beasts had each of them six wings about him; and they were full of eyes within: and they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty, which was, and is, and is to come* (Revelation 4:8). The cherubim figured in the vail (Exodus 26:31) appear at last living before the throne itself — what was embroidery in the dwelling is the unending praise of the heavenly sanctuary.'),
+
+  -- THREAD 4: that I may dwell among them — the shakan, Yahuah tabernacling with his people (26:1,6)
+  ('canon','exodus',26,1,'canon','exodus',25,8,'free',
+    E'*And let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). The whole work of the ten curtains *of fine twined linen* (Exodus 26:1) serves one purpose declared at the outset — that Yahuah might dwell in the midst of his people; the tabernacle is the place of the indwelling.'),
+  ('canon','exodus',26,6,'canon','john',1,14,'free',
+    E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). The curtains coupled *that it may be one tabernacle* (Exodus 26:6) foreshadow the Formed Son tabernacling in flesh — the Word pitched his tent among Yashar''el (Israel), the true dwelling the curtains pictured.'),
+  ('canon','exodus',26,6,'canon','revelation',21,3,'free',
+    E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The one tabernacle of Exodus 26:6 reaches its end here — no longer a tent of curtains but the eternal dwelling of Yahuah with his restored people.'),
+  ('canon','exodus',26,1,'apocrypha','the-wisdom-of-solomon',9,8,'extras',
+    E'*You have commanded me to build a temple upon your holy mount, and an altar in the city in which you dwellest, a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8). Solomon confesses what Exodus 26:1 begins — the sanctuary is *a resemblance of the holy tabernacle* prepared from the beginning, the earthly curtains copying a dwelling that stood before the world.'),
+
+  -- THREAD 5: the sockets of silver — the dwelling rests on the ransom of souls (26:19,21,25)
+  ('canon','exodus',26,19,'canon','exodus',30,12,'free',
+    E'*When thou takest the sum of the children of Yashar''el (Israel) after their number, then shall they give every man a ransom for his soul unto Yahuah (LORD)... that there be no plague among them* (Exodus 30:12). The *forty sockets of silver* (Exodus 26:19) on which the boards stand were not raw bullion but the ransom-money of every soul — the dwelling rests upon redemption paid.'),
+  ('canon','exodus',26,19,'canon','exodus',30,16,'free',
+    E'*And thou shalt take the atonement money of the children of Yashar''el (Israel), and shalt appoint it for the service of the tabernacle of the congregation; that it may be a memorial unto the children of Yashar''el (Israel) before Yahuah (LORD), to make an atonement for your souls* (Exodus 30:16). The silver beneath the boards (Exodus 26:19) is named *atonement money* — the very foundation of the sanctuary is a standing memorial of atonement.'),
+  ('canon','exodus',26,25,'canon','exodus',38,27,'free',
+    E'*And of the hundred talents of silver were cast the sockets of the sanctuary, and the sockets of the vail; an hundred sockets of the hundred talents, a talent for a socket* (Exodus 38:27). The *sixteen sockets* of silver (Exodus 26:25) are accounted here: every socket of the sanctuary and of the vail was cast from the ransom-silver — the whole structure footed upon the price of redeemed souls.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- threads
+-- ============================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-26-the-vail-that-is-to-say-his-flesh',
+  E'The vail, that is to say, his flesh',
+  E'*And thou shalt make a vail of blue, and purple, and scarlet, and fine twined linen of cunning work: with cherubims shall it be made* (Exodus 26:31) — *and the vail shall divide unto you between the holy place and the most holy* (Exodus 26:33). The curtain stood as the barrier no man could cross into the Presence; the high priest passed it once a year, with blood. Hebrews reads the partition as a sign waiting to be undone: *The Ruach HaKodesh (Holy Spirit) this signifying, that the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing* (Hebrews 9:8), the curtain itself named *the second veil, the tabernacle which is called the Holiest of all* (Hebrews 9:3). Then the body of the Formed Son is given, and the way opens: *Having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus), by a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh* (Hebrews 10:19-20). The flesh of the Messiah is the curtain — and at his death *the veil of the temple was rent in twain from the top to the bottom* (Matthew 27:51; Mark 15:38), torn by Yahuah''s own hand from above, the barrier of Exodus 26:33 abolished and the most holy thrown open.',
+  sv.verse_id, ev.verse_id, 'free', 29625
+  FROM _s305_ex26_lookup sv, _s305_ex26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=26 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-26-couple-the-tent-that-it-may-be-one-pattern',
+  E'Couple the tent that it may be one — the pattern in the mount',
+  E'The ten curtains are joined with loops and *fifty taches of gold... and it shall be one tabernacle* (Exodus 26:6); the goats'' hair covering is coupled *that it may be one* (Exodus 26:11); and the whole is reared *according to the fashion thereof which was shewed thee in the mount* (Exodus 26:30). The dwelling is made ONE because it copies one heavenly original: *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9) — *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). Hebrews quotes the charge directly: *as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The tent is *the example and shadow of heavenly things*, the *patterns of things in the heavens* (Hebrews 9:23), *the figures of the true* into which the Formed Son entered — *not into the holy places made with hands... but into heaven itself* (Hebrews 9:24). Every coupling on earth answers a sanctuary that already stands above.',
+  sv.verse_id, ev.verse_id, 'free', 29628
+  FROM _s305_ex26_lookup sv, _s305_ex26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=26 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-26-cherubims-of-cunning-work-keep-the-way',
+  E'Cherubims of cunning work — guarding the way to the Presence',
+  E'The curtains are woven *with cherubims of cunning work* (Exodus 26:1), and upon the vail before the most holy *with cherubims shall it be made* (Exodus 26:31). These are no mere ornament — they are the Eden guardians carried forward. When the man was driven out, Yahuah Elohim *placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24); now the same guardians are figured across the dwelling and across the curtain that closes the Presence, declaring that the way to Yahuah is guarded. Ezekiel sees the living cherubim themselves — *the likeness of four living creatures* (Ezekiel 1:5), with the throne *above the head of the cherubims* (Ezekiel 10:1); Solomon carved them *round about... within and without* the temple walls (1 Kings 6:29); Hebrews names them *the cherubims of glory shadowing the mercyseat* (Hebrews 9:5). At the last they stand living before the throne: *they rest not day and night, saying, Holy, holy, holy, Yahuah Elohim (Lord God) Almighty* (Revelation 4:8). What was embroidery in the tent is the unceasing worship of the heavenly sanctuary.',
+  sv.verse_id, ev.verse_id, 'free', 29631
+  FROM _s305_ex26_lookup sv, _s305_ex26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=26 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-26-that-i-may-dwell-among-them-the-shakan',
+  E'That I may dwell among them — the dwelling of Yahuah with his people',
+  E'All the labour of the *ten curtains of fine twined linen* (Exodus 26:1), coupled *that it may be one tabernacle* (Exodus 26:6), serves a single purpose spoken at the start of the work: *And let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). The tabernacle is the place of the indwelling — Yahuah pitching his dwelling in the midst of Yashar''el (Israel). It foreshadows the Formed Son who tabernacled in flesh: *And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14) — the Word pitched his tent among the people, the true dwelling the curtains pictured. Solomon confesses the sanctuary is *a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8), a copy of a dwelling older than the world. And it reaches its end where the curtains give way to the eternal Presence: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them* (Revelation 21:3).',
+  sv.verse_id, ev.verse_id, 'extras', 29634
+  FROM _s305_ex26_lookup sv, _s305_ex26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=26 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-26-the-sockets-of-silver-the-ransom-of-souls',
+  E'The sockets of silver — the dwelling rests on the ransom of souls',
+  E'The boards of shittim wood stand not on bare earth but on silver: *forty sockets of silver under the twenty boards* (Exodus 26:19), and again *eight boards, and their sockets of silver, sixteen sockets* (Exodus 26:25). That silver was no ordinary metal. When the people were numbered, every man gave *a ransom for his soul unto Yahuah (LORD)... that there be no plague among them* (Exodus 30:12); it is named *the atonement money of the children of Yashar''el (Israel)... a memorial... before Yahuah (LORD), to make an atonement for your souls* (Exodus 30:16). And the book of the work accounts it plainly: *of the hundred talents of silver were cast the sockets of the sanctuary, and the sockets of the vail; an hundred sockets of the hundred talents, a talent for a socket* (Exodus 38:27). The whole tabernacle is footed upon the price of redeemed souls — the dwelling of Yahuah rests, board by board, upon atonement paid.',
+  sv.verse_id, ev.verse_id, 'free', 29637
+  FROM _s305_ex26_lookup sv, _s305_ex26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=26 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- thread_members
+-- ============================================================
+-- THREAD 1: the vail, that is to say, his flesh
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*through the veil, that is to say, his flesh* (Hebrews 10:20) — the curtain of Exodus 26:31 read as the flesh of the Formed Son, the way opened.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-vail-that-is-to-say-his-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19) — the vail that divided (Exodus 26:33) now passed by blood.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-vail-that-is-to-say-his-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the second veil, the tabernacle which is called the Holiest of all* (Hebrews 9:3) — names the very partition of Exodus 26:33.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-vail-that-is-to-say-his-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the way into the holiest of all was not yet made manifest, while as the first tabernacle was yet standing* (Hebrews 9:8) — the dividing vail (Exodus 26:33) was the sign of a closed way.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-vail-that-is-to-say-his-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the veil of the temple was rent in twain from the top to the bottom* (Matthew 27:51) — the barrier of Exodus 26:33 torn open at the Messiah''s death.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-vail-that-is-to-say-his-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the veil of the temple was rent in twain from the top to the bottom* (Mark 15:38) — second witness to the tearing of the curtain of Exodus 26:33.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=15 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-vail-that-is-to-say-his-flesh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: couple the tent that it may be one — the pattern
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*after the pattern of the tabernacle... even so shall ye make it* (Exodus 25:9) — the one tabernacle of Exodus 26:6 copies a heavenly design.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-couple-the-tent-that-it-may-be-one-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*make them after their pattern, which was shewed thee in the mount* (Exodus 25:40) — echoes the mount-charge of Exodus 26:30.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=30
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-couple-the-tent-that-it-may-be-one-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — quotes Exodus 26:30; the tabernacle a shadow of heavenly things.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=30
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-couple-the-tent-that-it-may-be-one-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the patterns of things in the heavens* (Hebrews 9:23) — the mount-pattern tent of Exodus 26:30 is a copy of the heavenly.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=30
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-couple-the-tent-that-it-may-be-one-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the holy places made with hands, which are the figures of the true* (Hebrews 9:24) — the Formed Son enters the heaven the tent (Exodus 26:30) figured.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=30
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-couple-the-tent-that-it-may-be-one-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: cherubims of cunning work
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Cherubims, and a flaming sword... to keep the way of the tree of life* (Genesis 3:24) — the Eden guardians woven into the curtains of Exodus 26:1.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Cherubims... to keep the way of the tree of life* (Genesis 3:24) — the same guardians set upon the vail of Exodus 26:31 before the most holy.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the likeness of four living creatures* (Ezekiel 1:5) — the living cherubim the vail of Exodus 26:31 only figured.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*above the head of the cherubims... the likeness of a throne* (Ezekiel 10:1) — the throne rests over the cherubim the vail (Exodus 26:31) pictures.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*carved figures of cherubims... within and without* (1 Kings 6:29) — the curtain-cherubim of Exodus 26:1 carved into the temple walls.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=6 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the cherubims of glory shadowing the mercyseat* (Hebrews 9:5) — the woven cherubim of Exodus 26:31 named, overshadowing the seat of atonement.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*they rest not day and night, saying, Holy, holy, holy* (Revelation 4:8) — the cherubim of Exodus 26:31 living at last before the throne.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=31
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-cherubims-of-cunning-work-keep-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: that I may dwell among them — the shakan
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*let them make me a sanctuary; that I may dwell among them* (Exodus 25:8) — the purpose of the curtains of Exodus 26:1: Yahuah dwelling among his people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-that-i-may-dwell-among-them-the-shakan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Word was made flesh, and dwelt among us* (John 1:14) — the one tabernacle of Exodus 26:6 fulfilled in the Formed Son tabernacling in flesh.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-that-i-may-dwell-among-them-the-shakan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the one tabernacle of Exodus 26:6 made the eternal dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=6
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-that-i-may-dwell-among-them-the-shakan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8) — the curtains of Exodus 26:1 copy a dwelling older than the world.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-that-i-may-dwell-among-them-the-shakan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: the sockets of silver — the ransom of souls
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*every man a ransom for his soul unto Yahuah (LORD)* (Exodus 30:12) — the silver beneath the boards of Exodus 26:19 is the ransom of souls.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-sockets-of-silver-the-ransom-of-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the atonement money... to make an atonement for your souls* (Exodus 30:16) — the sockets of Exodus 26:19 footed on atonement money.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-sockets-of-silver-the-ransom-of-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*of the hundred talents of silver were cast the sockets of the sanctuary, and the sockets of the vail* (Exodus 38:27) — the sockets of Exodus 26:25 cast from the ransom-silver.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=26 AND sv.verse_number=25
+  JOIN _s305_ex26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=38 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-26-the-sockets-of-silver-the-ransom-of-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_27.sql (Exodus 27) -----
+-- Chapter: Exodus 27 — the brazen altar of burnt offering, the court, the oil for the lamp
+-- Session prefix: s305   Tag: ex27   Temp view: _s305_ex27_lookup
+-- Sort band: 29650 step +3   (29650, 29653, 29656, 29659)
+-- Slugs all prefixed exodus-27- ; checked against EXISTING_SLUGS.txt (none present)
+--
+-- Exodus 27 coverage checklist:
+--   v.1-8 (brazen altar, horns, brass, hollow with boards, pattern in the mount):
+--        NT:     Hebrews 13:10 (we have an altar)  [thread 1]
+--        Extras: Ecclesiasticus/Sirach 45:14 (consumed continually), 50:15 (blood poured at the foot of the altar)  [thread 1]
+--        Tanakh: Leviticus 6:13 (fire never out), Numbers 21:9 (serpent of brass), Psalm 118:27 (horns of the altar),
+--                1 Kings 1:50 + 2:28 (caught hold on the horns)  [thread 1]; Exodus 25:40 (pattern in the mount)  [thread 2]
+--   v.9-19 (the court, fine twined linen, the ONE gate of the court 27:16):
+--        NT:     John 10:9 (I am the door), John 14:6 (the way... no man cometh but by me), Revelation 19:8 (fine linen = righteousness)  [thread 3]
+--        Extras: none warranted (no clean court/gate witness)
+--        Tanakh: none warranted laterally beyond the NT door-fulfillment (court geometry is descriptive)
+--   v.20-21 (pure beaten oil, the lamp to burn always, from evening to morning, a statute for ever):
+--        NT:     John 8:12 (light of the world), Revelation 1:20 (seven lampstands), Matthew 25:1+4 (wise virgins with oil)  [thread 4]
+--        Extras: none warranted (Sirach 45 is priesthood/sacrifice, not the lamp; quoted in thread 1)
+--        Tanakh: Leviticus 24:2-4 (restated lamp statute), Zechariah 4:2+4:6 (lampstand fed by the Spirit), Psalm 119:105 (word a lamp)  [thread 4]
+--
+-- Threads (slug — target libraries):
+--   exodus-27-the-brazen-altar-and-the-horns-of-atonement   — canon (Tanakh+NT) + apocrypha (Sirach)  => tier extras
+--   exodus-27-after-the-pattern-shewed-thee-in-the-mount     — canon (Tanakh)  => tier free
+--   exodus-27-the-one-gate-of-the-court-i-am-the-door        — canon (Tanakh+NT)  => tier free
+--   exodus-27-the-lamp-to-burn-always-the-light-never-out    — canon (Tanakh+NT)  => tier free
+--
+-- Contested/load-bearing framing:
+--   * 27:20-21 "a statute for ever unto their generations" — the perpetual light is Torah-permanent;
+--     the NT (light of the world / seven lampstands / oil of the wise) FILLS it, never abolishes it.
+--   * The brass throughout (altar, grate, sockets) read as judgment borne — bound to the serpent of brass
+--     lifted up (Num 21:9), the Formed Son's once-for-all altar (Heb 13:10), NOT a defunct shadow.
+
+CREATE TEMP VIEW _s305_ex27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the brazen altar and the horns of atonement (27:1-8)
+    ('canon','exodus',27,2,'canon','numbers',21,9,'free',
+      E'*And Moses made a serpent of brass, and put it upon a pole, and it came to pass, that if a serpent had bitten any man, when he beheld the serpent of brass, he lived* (Numbers 21:9). The altar of burnt offering is *overlay[ed]... with brass* (Exodus 27:2) — the same metal of borne judgment lifted up; the place where sin is consumed and the smitten one who looks is healed.'),
+    ('canon','exodus',27,2,'canon','psalms',118,27,'free',
+      E'*Elohim (God) is Yahuah (LORD), which hath shewed us light: bind the sacrifice with cords, even unto the horns of the altar* (Psalm 118:27). *The horns of it upon the four corners thereof* (Exodus 27:2) are the very horns to which the festal sacrifice is bound — the appointed offering brought up to the place of atonement.'),
+    ('canon','exodus',27,2,'canon','1-kings',1,50,'free',
+      E'*And Adonijah feared because of Solomon, and arose, and went, and caught hold on the horns of the altar* (1 Kings 1:50). *The horns of it* (Exodus 27:2) become the place of refuge: the man under sentence flees to the horns of the altar to lay hold of mercy.'),
+    ('canon','exodus',27,2,'canon','1-kings',2,28,'free',
+      E'*And Joab fled unto the tabernacle of Yahuah (LORD), and caught hold on the horns of the altar* (1 Kings 2:28). Again *the horns* of Exodus 27:2 are gripped as sanctuary — the altar of atonement is where the guilty run to grasp at life.'),
+    ('canon','exodus',27,1,'canon','leviticus',6,13,'free',
+      E'*The fire shall ever be burning upon the altar; it shall never go out* (Leviticus 6:13). The altar of *shittim wood... overlay[ed]... with brass* (Exodus 27:1-2) carries a continual fire — the offering that never ceases, the perpetual approach of the covenant people.'),
+    ('canon','exodus',27,1,'canon','hebrews',13,10,'free',
+      E'*We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10). The brazen *altar of shittim wood* (Exodus 27:1) is fulfilled in the Formed Son''s once-for-all altar — the same place of sacrifice, now the body offered without the gate.'),
+    ('canon','exodus',27,1,'apocrypha','ecclesiasticus',45,14,'extras',
+      E'*Their sacrifices shall be wholly consumed every day twice continually* (Ecclesiasticus 45:14). The Second-Temple memory holds the continual burnt offering of the *altar* (Exodus 27:1) as the priesthood''s unbroken daily service — atonement that never lapses.'),
+    ('canon','exodus',27,1,'apocrypha','ecclesiasticus',50,15,'extras',
+      E'*He stretched out his hand to the cup, and poured of the blood of the grape, he poured out at the foot of the altar a sweetsmelling savour to the most high King of all* (Ecclesiasticus 50:15). The high priest pouring at *the foot of the altar* remembers the brazen *altar of burnt offering* (Exodus 27:1) as the living centre of atoning worship.'),
+    -- Thread 2: after the pattern shewed thee in the mount (27:8)
+    ('canon','exodus',27,8,'canon','exodus',25,40,'free',
+      E'*And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). *As it was shewed thee in the mount, so shall they make it* (Exodus 27:8) — the earthly altar and court copy a heavenly pattern; nothing in the dwelling is invented, all is given from above.'),
+    -- Thread 3: the one gate of the court — I am the door (27:9-19)
+    ('canon','exodus',27,16,'canon','john',10,9,'free',
+      E'*I am the door: by me if any man enter in, he shall be saved, and shall go in and out, and find pasture* (John 10:9). The court has but one *hanging for the gate... of blue, and purple, and scarlet* (Exodus 27:16) — a single appointed way of approach, filled in the Formed Son who is the door into the dwelling of Yahuah (LORD).'),
+    ('canon','exodus',27,16,'canon','john',14,6,'free',
+      E'*Yahusha (Jesus) saith unto him, I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6). The lone *gate of the court* (Exodus 27:16) declares one road in; there is no entrance to the Father except through the one whom the gate foreshadows.'),
+    ('canon','exodus',27,9,'canon','revelation',19,8,'free',
+      E'*And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8). The court walled with *hangings... of fine twined linen* (Exodus 27:9) pictures the set-apart righteousness that encloses the dwelling — the bride at last arrayed in the same fine linen.'),
+    -- Thread 4: the lamp to burn always — the light never out (27:20-21)
+    ('canon','exodus',27,20,'canon','leviticus',24,2,'free',
+      E'*Command the children of Yashar''el (Israel), that they bring unto thee pure oil olive beaten for the light, to cause the lamps to burn continually* (Leviticus 24:2). The very charge of Exodus 27:20 — *pure oil olive beaten for the light, to cause the lamp to burn always* — is restated as a standing statute of the dwelling.'),
+    ('canon','exodus',27,20,'canon','zechariah',4,2,'free',
+      E'*I have looked, and behold a candlestick all of gold, with a bowl upon the top of it, and his seven lamps thereon* (Zechariah 4:2). The lamp kept burning by *pure oil olive beaten* (Exodus 27:20) reappears in the prophet''s vision — the golden lampstand fed by an unfailing supply of oil.'),
+    ('canon','exodus',27,20,'canon','zechariah',4,6,'free',
+      E'*Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The oil that makes *the lamp to burn always* (Exodus 27:20) is read as the Ruach HaKodesh (Holy Spirit) — the witness kept alight not by human strength but by the Spirit of Yahuah (LORD).'),
+    ('canon','exodus',27,20,'canon','psalms',119,105,'free',
+      E'*Thy word is a lamp unto my feet, and a light unto my path* (Psalm 119:105). The perpetual *light* of Exodus 27:20 is the word of Yahuah (LORD) itself — the Torah-lamp that never goes dark for the one who walks by it.'),
+    ('canon','exodus',27,20,'canon','john',8,12,'free',
+      E'*I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). The lamp that must *burn always* (Exodus 27:20) is filled in the Formed Son — the light of the dwelling now declared the light of the world.'),
+    ('canon','exodus',27,21,'canon','revelation',1,20,'free',
+      E'*The seven candlesticks which thou sawest are the seven churches* (Revelation 1:20). The lamp ordered *from evening to morning before Yahuah (LORD)... a statute for ever* (Exodus 27:21) opens out to the seven golden lampstands — the witness of the set-apart people kept burning to the end.'),
+    ('canon','exodus',27,21,'canon','matthew',25,4,'free',
+      E'*But the wise took oil in their vessels with their lamps* (Matthew 25:4). The charge to keep *the lamp to burn always* with *pure oil olive beaten* (Exodus 27:20-21) is the parable''s test: the wise are those who hold the oil so the light is not found extinguished when the bridegroom comes.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-27-the-brazen-altar-and-the-horns-of-atonement',
+       E'The Brazen Altar and the Horns of Atonement',
+       E'*And thou shalt make an altar of shittim wood... and thou shalt overlay it with brass* (Exodus 27:1-2). The first thing in the court is the place of blood — the altar of burnt offering, foursquare, horned at the four corners. The brass is the metal of borne judgment: *Moses made a serpent of brass, and put it upon a pole... when he beheld the serpent of brass, he lived* (Numbers 21:9). The fire on it never lapses — *The fire shall ever be burning upon the altar; it shall never go out* (Leviticus 6:13) — the continual approach of the covenant people, which the Second-Temple memory keeps: *Their sacrifices shall be wholly consumed every day twice continually* (Ecclesiasticus 45:14), and the high priest *poured out at the foot of the altar a sweetsmelling savour* (Ecclesiasticus 50:15). The *horns of it upon the four corners* (Exodus 27:2) are the place of refuge and of the bound offering: *bind the sacrifice with cords, even unto the horns of the altar* (Psalm 118:27); the man under sentence *caught hold on the horns of the altar* (1 Kings 1:50; 2:28) to lay hold of mercy. And the whole is filled in the Formed Son''s once-for-all altar: *We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10). The Torah''s altar is not abolished — it is the very pattern of the atonement it foreshadowed.',
+       sv.verse_id, ev.verse_id, 'extras', 29650
+  FROM _s305_ex27_lookup sv, _s305_ex27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=27 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=27 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-27-after-the-pattern-shewed-thee-in-the-mount',
+       E'After the Pattern Shewed Thee in the Mount',
+       E'*Hollow with boards shalt thou make it: as it was shewed thee in the mount, so shall they make it* (Exodus 27:8). The altar and the court are not Moses'' design but a copy of a pattern given from above — the same charge that governs the whole dwelling: *And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). Nothing in the tabernacle is invented; every cubit answers to a heavenly original, and the earthly worship of Yahuah (LORD) is the shadow of a true and unseen sanctuary.',
+       sv.verse_id, ev.verse_id, 'free', 29653
+  FROM _s305_ex27_lookup sv, _s305_ex27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=27 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=27 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-27-the-one-gate-of-the-court-i-am-the-door',
+       E'The One Gate of the Court — I Am the Door',
+       E'The whole camp is ordered around the dwelling, walled with *hangings... of fine twined linen* (Exodus 27:9), and the court has but a single entrance: *for the gate of the court shall be an hanging of twenty cubits, of blue, and purple, and scarlet, and fine twined linen* (Exodus 27:16). One gate, one way of approach. The Formed Son declares himself that gate: *I am the door: by me if any man enter in, he shall be saved* (John 10:9); *I am the way, the truth, and the life: no man cometh unto the Father, but by me* (John 14:6). And the fine linen that walls the court is the set-apart righteousness that at last clothes the bride: *the fine linen is the righteousness of saints* (Revelation 19:8). The architecture preaches the gospel: there is one appointed door into the presence of Yahuah (LORD).',
+       sv.verse_id, ev.verse_id, 'free', 29656
+  FROM _s305_ex27_lookup sv, _s305_ex27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=27 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=27 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-27-the-lamp-to-burn-always-the-light-never-out',
+       E'The Lamp to Burn Always — the Light Never Out',
+       E'*And thou shalt command the children of Yashar''el (Israel), that they bring thee pure oil olive beaten for the light, to cause the lamp to burn always... from evening to morning before Yahuah (LORD): it shall be a statute for ever unto their generations* (Exodus 27:20-21). The light must never go dark — a perpetual statute, restated word for word: *pure oil olive beaten for the light, to cause the lamps to burn continually* (Leviticus 24:2). The prophet sees the lampstand and learns what keeps it lit: *behold a candlestick all of gold... and his seven lamps thereon* (Zechariah 4:2), fed *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). The oil is the word and the Spirit together: *Thy word is a lamp unto my feet, and a light unto my path* (Psalm 119:105). The Formed Son fills the lamp: *I am the light of the world: he that followeth me... shall have the light of life* (John 8:12); the lampstands become the witnessing people — *the seven candlesticks... are the seven churches* (Revelation 1:20); and the wise are those who keep the oil ready — *the wise took oil in their vessels with their lamps* (Matthew 25:4). The light Yahuah (LORD) commanded to burn always has never been put out.',
+       sv.verse_id, ev.verse_id, 'free', 29659
+  FROM _s305_ex27_lookup sv, _s305_ex27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=27 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=27 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: the brazen altar and the horns of atonement
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',27,1,'canon','leviticus',6,13,1,E'*The fire shall ever be burning upon the altar; it shall never go out* (Leviticus 6:13) — the continual fire of the brazen altar.'),
+    ('exodus',27,2,'canon','numbers',21,9,2,E'*Moses made a serpent of brass, and put it upon a pole... he lived* (Numbers 21:9) — the brass of borne judgment lifted up.'),
+    ('exodus',27,2,'canon','psalms',118,27,3,E'*bind the sacrifice with cords, even unto the horns of the altar* (Psalm 118:27) — the offering bound to the horns.'),
+    ('exodus',27,2,'canon','1-kings',1,50,4,E'*caught hold on the horns of the altar* (1 Kings 1:50) — the horns as the place of refuge.'),
+    ('exodus',27,2,'canon','1-kings',2,28,5,E'*Joab fled unto the tabernacle... and caught hold on the horns of the altar* (1 Kings 2:28) — the guilty grasping at sanctuary.'),
+    ('exodus',27,1,'canon','hebrews',13,10,6,E'*We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10) — the Formed Son''s once-for-all altar.'),
+    ('exodus',27,1,'apocrypha','ecclesiasticus',45,14,7,E'*Their sacrifices shall be wholly consumed every day twice continually* (Ecclesiasticus 45:14) — the unbroken daily offering.'),
+    ('exodus',27,1,'apocrypha','ecclesiasticus',50,15,8,E'*he poured out at the foot of the altar a sweetsmelling savour* (Ecclesiasticus 50:15) — the high priest at the altar of atonement.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-27-the-brazen-altar-and-the-horns-of-atonement'
+  JOIN _s305_ex27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=27 AND sv.verse_number=m.src_v
+  JOIN _s305_ex27_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: after the pattern shewed thee in the mount
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',27,8,'canon','exodus',25,40,1,E'*make them after their pattern, which was shewed thee in the mount* (Exodus 25:40) — the same heavenly-pattern charge governing the whole dwelling.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-27-after-the-pattern-shewed-thee-in-the-mount'
+  JOIN _s305_ex27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=27 AND sv.verse_number=m.src_v
+  JOIN _s305_ex27_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the one gate of the court — I am the door
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',27,16,'canon','john',10,9,1,E'*I am the door: by me if any man enter in, he shall be saved* (John 10:9) — the one gate of the court filled.'),
+    ('exodus',27,16,'canon','john',14,6,2,E'*no man cometh unto the Father, but by me* (John 14:6) — one appointed way of approach.'),
+    ('exodus',27,9,'canon','revelation',19,8,3,E'*the fine linen is the righteousness of saints* (Revelation 19:8) — the fine twined linen of the court become the bride''s array.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-27-the-one-gate-of-the-court-i-am-the-door'
+  JOIN _s305_ex27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=27 AND sv.verse_number=m.src_v
+  JOIN _s305_ex27_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the lamp to burn always — the light never out
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',27,20,'canon','leviticus',24,2,1,E'*pure oil olive beaten for the light, to cause the lamps to burn continually* (Leviticus 24:2) — the lamp statute restated.'),
+    ('exodus',27,20,'canon','zechariah',4,2,2,E'*behold a candlestick all of gold... and his seven lamps thereon* (Zechariah 4:2) — the prophet''s lampstand fed with oil.'),
+    ('exodus',27,20,'canon','zechariah',4,6,3,E'*Not by might, nor by power, but by my spirit* (Zechariah 4:6) — the oil read as the Ruach HaKodesh (Holy Spirit).'),
+    ('exodus',27,20,'canon','psalms',119,105,4,E'*Thy word is a lamp unto my feet, and a light unto my path* (Psalm 119:105) — the perpetual light as the word of Yahuah (LORD).'),
+    ('exodus',27,20,'canon','john',8,12,5,E'*I am the light of the world... shall have the light of life* (John 8:12) — the lamp filled in the Formed Son.'),
+    ('exodus',27,21,'canon','revelation',1,20,6,E'*the seven candlesticks... are the seven churches* (Revelation 1:20) — the witnessing people kept burning.'),
+    ('exodus',27,21,'canon','matthew',25,4,7,E'*the wise took oil in their vessels with their lamps* (Matthew 25:4) — the wise keep the oil so the light is not found out.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-27-the-lamp-to-burn-always-the-light-never-out'
+  JOIN _s305_ex27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=27 AND sv.verse_number=m.src_v
+  JOIN _s305_ex27_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_35.sql (Exodus 35) -----
+-- Chapter: Exodus 35 — the build BEGINS: Sabbath reaffirmed FIRST, the willing-hearted
+--   offering, the Spirit-filled craftsmen.
+-- Tag: ex35   Session prefix: s305   Temp view: _s305_ex35_lookup
+-- Sort band: 29850 step +3  (29850, 29853, 29856, 29859)
+--
+-- Exodus 35 coverage checklist (35 verses):
+--   v.1-3  (Sabbath reaffirmed before the holy work; kindle no fire)
+--          NT:     Hebrews 4:9-10 (he that is entered into his rest hath ceased from his own works)
+--          Extras: none warranted (Sabbath chain is canon Torah/Prophets/NT)
+--          Tanakh: Exodus 20:8-11; Exodus 31:13-17; Genesis 2:2-3; Isaiah 58:13-14
+--   v.4-9  (take an offering, whosoever is of a willing heart)
+--          NT:     2 Corinthians 9:7; 2 Corinthians 8:12 (the cheerful/willing giver)
+--          Extras: Ecclesiasticus/Sirach 35:8-10 (give with a cheerful eye)
+--          Tanakh: Exodus 25:2 (the original willing-heart command); 1 Chronicles 29:9,14; Psalm 110:3
+--   v.10-19 (inventory of the tabernacle furniture to be made)
+--          NT/Extras/Tanakh: none warranted standalone — gathered under v.4-9 willing-offering & v.30-35 craftsmen
+--   v.20-24 (every one whose heart stirred him up brought the offering)
+--          NT:     (under willing-offering thread) 2 Corinthians 9:7
+--          Extras: (under willing-offering thread) Sirach 35:9-10
+--          Tanakh: 1 Chronicles 29:9 (offered willingly with perfect heart)
+--   v.25-26 (all the wise-hearted women spun with their hands)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Psalm 110:3 (thy people shall be willing); 1 Chronicles 29:5 (who is willing to consecrate his service)
+--   v.27-29 (rulers brought the stones; Yashar'el brought a willing offering)
+--          NT:     (willing-offering thread) 2 Corinthians 8:12
+--          Extras: (willing-offering thread) Sirach 35:8
+--          Tanakh: 1 Chronicles 29:14 (all things come of thee, and of thine own have we given thee)
+--   v.30-35 (Bezaleel & Aholiab filled with the spirit of Elohim, to work and to teach)
+--          NT:     1 Corinthians 12:4-7 (diversities of gifts, the same Spirit); Ephesians 4:11-12 (gifts for the building up)
+--          Extras: none warranted
+--          Tanakh: Exodus 31:1-6 (the original calling); 1 Kings 7:14 (Hiram filled with wisdom to work in brass)
+--
+-- Threads (4):
+--   exodus-35-the-sabbath-rest-comes-before-the-holy-work
+--       [canon: Exodus, Hebrews, Genesis, Isaiah] tier free — even the tabernacle work
+--       does not override the seventh-day rest; Torah-never-abolished, rest BEFORE works.
+--   exodus-35-the-willing-hearted-offering-the-cheerful-giver
+--       [canon: Exodus, 1 Chronicles, Psalms, 2 Corinthians + extras: Ecclesiasticus] tier extras —
+--       the free, willing, cheerful gift, woven forward to the cheerful giver.
+--   exodus-35-the-wise-hearted-women-who-spun
+--       [canon: Psalms, 1 Chronicles] tier free — the willing hands of the women, thy
+--       people willing in the day of thy power.
+--   exodus-35-the-spirit-filled-craftsmen-gifted-to-build-and-to-teach
+--       [canon: Exodus, 1 Kings, 1 Corinthians, Ephesians] tier free — the Spirit given for
+--       the work AND to teach; one Spirit, diversities of gifts, for the building up.
+
+CREATE TEMP VIEW _s305_ex35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Sabbath rest comes before the holy work (35:1-3)
+    ('canon','exodus',35,2,'canon','exodus',20,8,'free',
+     E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The build of the tabernacle opens not with a hammer but with the seventh day: *on the seventh day there shall be to you an holy day, a sabbath of rest to Yahuah* (Exodus 35:2). Even the holy work cannot override the rest already commanded at Sinai — the fourth word stands first.'),
+    ('canon','exodus',35,2,'canon','exodus',20,11,'free',
+     E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The *six days shall work be done, but on the seventh day there shall be to you... a sabbath of rest* of Exodus 35:2 is rooted in creation itself — the Sabbath is older than the tabernacle and is not abolished by it.'),
+    ('canon','exodus',35,2,'canon','exodus',31,13,'free',
+     E'*Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13). The very chapter that first named Bezaleel (Exodus 31) ended on the Sabbath sign; Exodus 35 repeats the order — Sabbath FIRST, then the craftsmen — so the sign that sanctifies is never traded for the work of our hands.'),
+    ('canon','exodus',35,2,'canon','genesis',2,3,'free',
+     E'*And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made* (Genesis 2:3). The *holy day, a sabbath of rest to Yahuah* of Exodus 35:2 is the seventh day Elohim Himself hallowed at the foundation of the world — the pattern the builders are bound to keep.'),
+    ('canon','exodus',35,2,'canon','isaiah',58,13,'free',
+     E'*If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13). The prophet reaches back to the *holy day, a sabbath of rest* of Exodus 35:2 — the Sabbath is no burden but a delight, kept in the days of the prophets exactly as in the days of the building.'),
+    ('canon','exodus',35,2,'canon','hebrews',4,10,'free',
+     E'*For he that is entered into his rest, he also hath ceased from his own works, as Elohim (God) did from his* (Hebrews 4:10). The *sabbath of rest to Yahuah* of Exodus 35:2 — set before all the labour of the tabernacle — is the very figure the NT fills: there remaineth a rest for the people of Elohim, and entering it means ceasing from our own works, not abolishing the day.'),
+
+    -- THREAD 2: the willing-hearted offering, the cheerful giver (35:4-9, 20-29)
+    ('canon','exodus',35,5,'canon','exodus',25,2,'free',
+     E'*Speak unto the children of Yashar''el (Israel), that they bring me an offering: of every man that giveth it willingly with his heart ye shall take my offering* (Exodus 25:2). Exodus 35:5 carries out the very command first given on the mount — *whosoever is of a willing heart, let him bring it, an offering of Yahuah* — the gift Yahuah will receive is the free gift of the willing heart, never the extorted one.'),
+    ('canon','exodus',35,29,'canon','1-chronicles',29,9,'free',
+     E'*Then the people rejoiced, for that they offered willingly, because with perfect heart they offered willingly to Yahuah (LORD): and David the king also rejoiced with great joy* (1 Chronicles 29:9). When the second house was prepared, the same willing-heart of Exodus 35:29 — *every man and woman, whose heart made them willing* — flowed again: the offering Yahuah loves is poured out with a perfect heart and great gladness.'),
+    ('canon','exodus',35,29,'canon','1-chronicles',29,14,'free',
+     E'*But who am I, and what is my people, that we should be able to offer so willingly after this sort? for all things come of thee, and of thine own have we given thee* (1 Chronicles 29:14). David names the secret of the *willing offering* of Exodus 35:29 — even the gold the willing heart brings was first Yahuah''s; the giver returns only what was already given him.'),
+    ('canon','exodus',35,5,'canon','psalms',110,3,'free',
+     E'*Thy people shall be willing in the day of thy power, in the beauties of holiness from the womb of the morning* (Psalm 110:3). The *willing heart* of Exodus 35:5 prophesies the willing people of the Messiah''s reign — the gift Yahuah seeks has always been the freely-willing heart, the same heart that will answer the Formed Son in the day of his power.'),
+    ('canon','exodus',35,5,'canon','2-corinthians',9,7,'free',
+     E'*Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7). Paul does not invent a new principle; he quotes the law of the tabernacle offering — *whosoever is of a willing heart, let him bring it* (Exodus 35:5). The cheerful giver of the assembly is the willing-hearted Yashar''el of the wilderness.'),
+    ('canon','exodus',35,5,'canon','2-corinthians',8,12,'free',
+     E'*For if there be first a willing mind, it is accepted according to that a man hath, and not according to that he hath not* (2 Corinthians 8:12). The acceptance turns on the *willing heart* of Exodus 35:5 — Yahuah measures the offering by the willingness, not the amount; the widow''s mite and the ruler''s onyx stones are weighed on the same scale of the heart.'),
+    ('canon','exodus',35,5,'apocrypha','ecclesiasticus',35,10,'extras',
+     E'*Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Ecclesiasticus 35:10). The wisdom of the fathers guards the same Torah principle as Exodus 35:5 — *whosoever is of a willing heart, let him bring it* — the gift is to be given freely, with a cheerful eye, out of what the Most High Himself has provided.'),
+
+    -- THREAD 3: the wise-hearted women who spun (35:25-26)
+    ('canon','exodus',35,25,'canon','psalms',110,3,'free',
+     E'*Thy people shall be willing in the day of thy power, in the beauties of holiness from the womb of the morning* (Psalm 110:3). The *women that were wise hearted did spin with their hands* (Exodus 35:25) are this willing people — their freely-offered labour, the work of willing hands, is the beauty of holiness the psalm foresees.'),
+    ('canon','exodus',35,26,'canon','1-chronicles',29,5,'free',
+     E'*The gold for things of gold... and for all manner of work to be made by the hands of artificers. And who then is willing to consecrate his service this day unto Yahuah (LORD)?* (1 Chronicles 29:5). The women *whose heart stirred them up in wisdom* (Exodus 35:26) answer David''s question before he asks it — to consecrate one''s skilled service is the willing offering of the hands, treasured by Yahuah in every generation.'),
+
+    -- THREAD 4: the Spirit-filled craftsmen, gifted to build and to teach (35:30-35)
+    ('canon','exodus',35,31,'canon','exodus',31,3,'free',
+     E'*And I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge, and in all manner of workmanship* (Exodus 31:3). Exodus 35:31 declares the calling already given on the mount fulfilled — *he hath filled him with the spirit of Elohim (God), in wisdom, in understanding, and in knowledge* — the Spirit equips the hands of the builder before a single board is cut.'),
+    ('canon','exodus',35,31,'canon','1-kings',7,14,'free',
+     E'*He was a widow''s son of the tribe of Naphtali... a worker in brass: and he was filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14). When the temple rose, Hiram bore the very gift of Bezaleel — *filled with the spirit of Elohim (God), in wisdom, in understanding, and in knowledge, and in all manner of workmanship* (Exodus 35:31) — the Spirit-given skill of the craftsman is no small thing but the means by which the dwelling of Yahuah is built.'),
+    ('canon','exodus',35,34,'canon','1-corinthians',12,7,'free',
+     E'*But the manifestation of the Spirit is given to every man to profit withal* (1 Corinthians 12:7). Bezaleel was filled with the Spirit not only to work but that *he may teach* (Exodus 35:34); so the diversities of gifts of the same Spirit are given to profit the whole body — the gift is never private, but for the building up of all.'),
+    ('canon','exodus',35,34,'canon','ephesians',4,11,'free',
+     E'*And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers* (Ephesians 4:11). The Spirit *put in his heart that he may teach* (Exodus 35:34) — the same pattern the NT names: gifts given *for the perfecting of the saints, for the work of the ministry, for the edifying of the body* (Ephesians 4:12). The Spirit-filled craftsman who teaches is the elder pattern of the gifted teacher.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-35-the-sabbath-rest-comes-before-the-holy-work',
+       E'The Sabbath Rest Comes Before the Holy Work',
+       E'Before a single board of the tabernacle is cut, Moses gathers the whole congregation and says: *Six days shall work be done, but on the seventh day there shall be to you an holy day, a sabbath of rest to Yahuah (LORD)* (Exodus 35:2). Even the most holy labour — the building of the dwelling-place of Yahuah — does not override the seventh-day rest. The rest comes FIRST.\n\nThis is the fourth word of Sinai standing unmoved: *Remember the sabbath day, to keep it holy* (Exodus 20:8), *for in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The Sabbath is older than the tabernacle — it reaches back to the foundation: *And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made* (Genesis 2:3).\n\nThe same chapter that first named the craftsmen sealed itself with the sign: *Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13). And the prophet calls it no burden but a delight: *call the sabbath a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13). Far from being abolished, the day is fulfilled as the very figure of the rest that remains: *For he that is entered into his rest, he also hath ceased from his own works, as Elohim (God) did from his* (Hebrews 4:10). The order never changes — rest, then work; the day stands.',
+       sv.verse_id, ev.verse_id, 'free', 29850
+  FROM _s305_ex35_lookup sv, _s305_ex35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=35 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=35 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-35-the-willing-hearted-offering-the-cheerful-giver',
+       E'The Willing-Hearted Offering: The Cheerful Giver',
+       E'The materials for the dwelling of Yahuah are not taxed or seized — they are freely brought: *Take ye from among you an offering unto Yahuah (LORD): whosoever is of a willing heart, let him bring it, an offering of Yahuah (LORD)* (Exodus 35:5). Three times the willing heart is named: *they came, both men and women, as many as were willing hearted* (35:22); *The children of Yashar''el (Israel) brought a willing offering unto Yahuah (LORD), every man and woman, whose heart made them willing* (35:29). This carries out the command first given on the mount: *of every man that giveth it willingly with his heart ye shall take my offering* (Exodus 25:2).\n\nWhen the second house was prepared, the same willing heart poured out again: *the people rejoiced, for that they offered willingly, because with perfect heart they offered willingly to Yahuah (LORD)* (1 Chronicles 29:9). And David named the secret of it — the giver returns only what was already given him: *for all things come of thee, and of thine own have we given thee* (1 Chronicles 29:14). It is the willing people the Messiah''s reign foresees: *Thy people shall be willing in the day of thy power* (Psalm 110:3).\n\nThis is exactly the principle the assembly inherits — Paul does not invent it, he quotes the Torah of the tabernacle: *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7); *for if there be first a willing mind, it is accepted according to that a man hath* (2 Corinthians 8:12). The wisdom of the fathers guards the same law: *Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Ecclesiasticus 35:10). The gift Yahuah receives, in every age, is the free gift of the willing heart.',
+       sv.verse_id, ev.verse_id, 'extras', 29853
+  FROM _s305_ex35_lookup sv, _s305_ex35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=35 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=35 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-35-the-wise-hearted-women-who-spun',
+       E'The Wise-Hearted Women Who Spun',
+       E'The willing offering was not only gold and stones from the rulers — it was skilled labour from the women: *And all the women that were wise hearted did spin with their hands, and brought that which they had spun, both of blue, and of purple, and of scarlet, and of fine linen* (Exodus 35:25); *And all the women whose heart stirred them up in wisdom spun goats'' hair* (Exodus 35:26). The same willing heart that gave the materials gave the work of the hands.\n\nThese willing hands are the people the psalm foresees: *Thy people shall be willing in the day of thy power, in the beauties of holiness from the womb of the morning* (Psalm 110:3) — the freely-offered labour is itself a beauty of holiness. And they answer David''s question before he asks it: *for all manner of work to be made by the hands of artificers. And who then is willing to consecrate his service this day unto Yahuah (LORD)?* (1 Chronicles 29:5). To consecrate one''s skilled service is the willing offering of the hands — treasured by Yahuah in every generation, woven into the very curtains of His dwelling.',
+       sv.verse_id, ev.verse_id, 'free', 29856
+  FROM _s305_ex35_lookup sv, _s305_ex35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=35 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=35 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-35-the-spirit-filled-craftsmen-gifted-to-build-and-to-teach',
+       E'The Spirit-Filled Craftsmen, Gifted to Build and to Teach',
+       E'The work of the tabernacle is not natural skill alone — it is the Spirit of Elohim resting on the workers: *Yahuah (LORD) hath called by name Bezaleel the son of Uri, the son of Hur, of the tribe of Yahudah (Judah); and he hath filled him with the spirit of Elohim (God), in wisdom, in understanding, and in knowledge, and in all manner of workmanship* (Exodus 35:30-31). This fulfils the calling first spoken on the mount: *And I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge, and in all manner of workmanship* (Exodus 31:3). The same Spirit-given skill raised the temple: Hiram too *was filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14).\n\nBut the gift is not for the worker alone — *he hath put in his heart that he may teach, both he, and Aholiab* (Exodus 35:34). The Spirit equips the craftsman to pass on the work. This is the elder pattern of the assembly''s gifts: *Now there are diversities of gifts, but the same Spirit... the manifestation of the Spirit is given to every man to profit withal* (1 Corinthians 12:4,7); *and he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; for the perfecting of the saints, for the work of the ministry, for the edifying of the body of Messiah (Christ)* (Ephesians 4:11-12). One Spirit, many gifts — given to build the dwelling and to teach the next hands to build it too.',
+       sv.verse_id, ev.verse_id, 'free', 29859
+  FROM _s305_ex35_lookup sv, _s305_ex35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=35 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=35 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','exodus',35,2,'canon','exodus',20,8,1,E'*Remember the sabbath day, to keep it holy* (Exodus 20:8) — the fourth word stands first; the holy work begins with the holy day.'),
+    ('canon','exodus',35,2,'canon','exodus',20,11,2,E'*Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11) — the Sabbath is creation-rooted, older than the tabernacle.'),
+    ('canon','exodus',35,2,'canon','exodus',31,13,3,E'*My sabbaths ye shall keep: for it is a sign between me and you* (Exodus 31:13) — the sign that sanctifies, never traded for the work of hands.'),
+    ('canon','exodus',35,2,'canon','genesis',2,3,4,E'*Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:3) — the rest hallowed at the foundation of the world.'),
+    ('canon','exodus',35,2,'canon','isaiah',58,13,5,E'*Call the sabbath a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13) — the prophet keeps the day a delight, not a burden.'),
+    ('canon','exodus',35,2,'canon','hebrews',4,10,6,E'*He that is entered into his rest... hath ceased from his own works* (Hebrews 4:10) — the rest fulfilled, the day not abolished.')
+  ) AS m(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-35-the-sabbath-rest-comes-before-the-holy-work'
+  JOIN _s305_ex35_lookup sv ON sv.edition_slug=m.src_edition AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex35_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','exodus',35,5,'canon','exodus',25,2,1,E'*That they bring me an offering: of every man that giveth it willingly with his heart* (Exodus 25:2) — the original willing-heart command, now carried out.'),
+    ('canon','exodus',35,29,'canon','1-chronicles',29,9,2,E'*They offered willingly, because with perfect heart they offered willingly to Yahuah (LORD)* (1 Chronicles 29:9) — the same willing heart for the second house.'),
+    ('canon','exodus',35,29,'canon','1-chronicles',29,14,3,E'*For all things come of thee, and of thine own have we given thee* (1 Chronicles 29:14) — the giver returns only what was already given him.'),
+    ('canon','exodus',35,5,'canon','psalms',110,3,4,E'*Thy people shall be willing in the day of thy power* (Psalm 110:3) — the willing heart prophesies the willing people of the Messiah''s reign.'),
+    ('canon','exodus',35,5,'canon','2-corinthians',9,7,5,E'*Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7) — Paul quotes the Torah of the offering; the cheerful giver is the willing-hearted Yashar''el.'),
+    ('canon','exodus',35,5,'canon','2-corinthians',8,12,6,E'*If there be first a willing mind, it is accepted* (2 Corinthians 8:12) — measured by willingness, not amount.'),
+    ('canon','exodus',35,5,'apocrypha','ecclesiasticus',35,10,7,E'*As you have gotten, give with a cheerful eye* (Ecclesiasticus 35:10) — the fathers'' wisdom guards the same willing, cheerful gift.')
+  ) AS m(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-35-the-willing-hearted-offering-the-cheerful-giver'
+  JOIN _s305_ex35_lookup sv ON sv.edition_slug=m.src_edition AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex35_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','exodus',35,25,'canon','psalms',110,3,1,E'*Thy people shall be willing in the day of thy power, in the beauties of holiness* (Psalm 110:3) — the women''s willing hands are this beauty of holiness.'),
+    ('canon','exodus',35,26,'canon','1-chronicles',29,5,2,E'*Who then is willing to consecrate his service this day unto Yahuah (LORD)?* (1 Chronicles 29:5) — the wise-hearted women answer the call to consecrated, skilled service.')
+  ) AS m(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-35-the-wise-hearted-women-who-spun'
+  JOIN _s305_ex35_lookup sv ON sv.edition_slug=m.src_edition AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex35_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('canon','exodus',35,31,'canon','exodus',31,3,1,E'*I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge* (Exodus 31:3) — the calling first given on the mount, now fulfilled.'),
+    ('canon','exodus',35,31,'canon','1-kings',7,14,2,E'*Filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14) — Hiram bears Bezaleel''s gift to build the temple.'),
+    ('canon','exodus',35,34,'canon','1-corinthians',12,7,3,E'*The manifestation of the Spirit is given to every man to profit withal* (1 Corinthians 12:7) — the gift is never private; it profits the whole body.'),
+    ('canon','exodus',35,34,'canon','ephesians',4,11,4,E'*He gave some... pastors and teachers; for the perfecting of the saints* (Ephesians 4:11-12) — the Spirit-filled teacher pattern, for the building up.')
+  ) AS m(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-35-the-spirit-filled-craftsmen-gifted-to-build-and-to-teach'
+  JOIN _s305_ex35_lookup sv ON sv.edition_slug=m.src_edition AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex35_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_36.sql (Exodus 36) -----
+-- Exodus 36 — the wise-hearted build it / the people bring TOO MUCH / curtains & boards executed exactly as commanded
+-- TAG: ex36   SESSION PREFIX: s305   SORT BAND: 29875 step +3   temp view: _s305_ex36_lookup
+-- Canon book_slug: exodus  (Exodus 36 = 38 verses, all confirmed present)
+--
+-- Exodus 36 coverage:
+--   v.1-2  THE WISE-HEARTED, IN WHOM YAHUAH PUT WISDOM
+--          NT:     1 Cor 12:4-7 (gifts to profit withal) / Phil 2:13 (Elohim worketh in you to will and do)  [USED]
+--          Extras: none warranted (Sirach 38:27-34 weighed — craftsman-praise, but bound better to nothing here; the Spirit-gift framing is NT)
+--          Tanakh: Exod 31:3-6 / 35:30-35 (Bezaleel filled with the spirit of Elohim, wisdom put in the wise-hearted)  [USED]
+--   v.3-7  THE PEOPLE BROUGHT MORE THAN ENOUGH — RESTRAINED FROM BRINGING
+--          NT:     2 Cor 8:2-3 / 2 Cor 9:7-8 (cheerful giver, all grace abound) / Phil 4:18-19 (a sacrifice acceptable, my Elohim shall supply)  [USED]
+--          Extras: Sirach (Ecclesiasticus) 35:8-10 (give cheerfully, give to the Most High as he hath enriched you)  [USED]
+--          Tanakh: Exod 35:21,29 (whose heart stirred / willing offering) / 1 Chron 29:9,14 (offered willingly, of thine own have we given)  [USED]
+--   v.8-38 THE BUILD EXECUTED EXACTLY AS COMMANDED — made AFTER THE PATTERN
+--          NT:     Heb 8:5 (according to the pattern shewed to thee in the mount)  [USED]
+--          Extras: Wisdom of Solomon 9:8 (a resemblance of the holy tabernacle prepared from the beginning)  [USED]
+--          Tanakh: Exod 25:40 (make them after their pattern shewed in the mount)  [USED]
+--   v.13,18 IT BECAME ONE TABERNACLE — the many curtains coupled into one
+--          NT:     John 17:21-22 (that they all may be one, even as we are one)  [USED]
+--          Extras: none warranted (two-house oneness is Ezek/John; no clean extras add)
+--          Tanakh: Ezek 37:17 (the two sticks joined become one in thine hand)  [USED]
+--   v.19-38 (covering/boards/bars/sockets/veil detail) — folded into the pattern thread (the whole build = obedience reproducing the blueprint); no separate add warranted
+--
+-- THREADS (4):
+--   exodus-36-the-wise-hearted-in-whom-yahuah-put-wisdom        [canon Tanakh + NT]        free
+--   exodus-36-the-people-brought-more-than-enough-restrained    [canon Tanakh + NT + extras Sirach]  extras
+--   exodus-36-made-according-to-the-pattern-shewed-in-the-mount [canon Tanakh + NT + extras Wisdom]  extras
+--   exodus-36-it-became-one-tabernacle                          [canon Tanakh + NT]        free
+
+CREATE TEMP VIEW _s305_ex36_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the wise-hearted in whom Yahuah put wisdom (36:1-2)
+    ('canon','exodus',36,1,'canon','exodus',31,3,'free',
+     E'*And I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge, and in all manner of workmanship* (Exodus 31:3). The skill that wrought the sanctuary in chapter 36 — *every wise hearted man, in whom Yahuah (LORD) put wisdom and understanding to know how to work all manner of work* — is not native talent but the Ruach poured out; the build begins where the Spirit fills.'),
+    ('canon','exodus',36,2,'canon','exodus',31,6,'free',
+     E'*And in the hearts of all that are wise hearted I have put wisdom, that they may make all that I have commanded thee* (Exodus 31:6). Exodus 36:2 cashes the command: *every wise hearted man, in whose heart Yahuah (LORD) had put wisdom, even every one whose heart stirred him up to come unto the work to do it.* The wisdom is given; the willing heart is the worker''s own — both meet at the work.'),
+    ('canon','exodus',36,2,'canon','exodus',35,35,'free',
+     E'*Them hath he filled with wisdom of heart, to work all manner of work* (Exodus 35:35). The same hands named in chapter 35 now lift the tools in 36:2 — *every wise hearted man... even every one whose heart stirred him up to come unto the work to do it* — the Spirit-filled craft moving from charge to execution.'),
+    ('canon','exodus',36,1,'canon','1-corinthians',12,4,'free',
+     E'*Now there are diversities of gifts, but the same Spirit* (1 Corinthians 12:4). The wise-hearted of 36:1, each *to know how to work all manner of work for the service of the sanctuary,* are the first picture of the one Spirit dealing many gifts for one house — the tabernacle built by varied hands is the body built by varied gifts.'),
+    ('canon','exodus',36,1,'canon','1-corinthians',12,7,'free',
+     E'*But the manifestation of the Spirit is given to every man to profit withal* (1 Corinthians 12:7). The Spirit that fills Bezaleel and *every wise hearted man* in 36:1 is given not for display but for the common work — every gift bends to the service of the sanctuary, the profit of the whole.'),
+    ('canon','exodus',36,2,'canon','philippians',2,13,'free',
+     E'*For it is Elohim (God) which worketh in you both to will and to do of his good pleasure* (Philippians 2:13). The two halves of 36:2 — Yahuah who *had put wisdom* and the heart that *stirred him up to come unto the work* — are the same twofold grace Paul names: the willing and the doing both wrought in the worker by Elohim.'),
+
+    -- THREAD 2: the people brought more than enough — restrained from bringing (36:3-7)
+    ('canon','exodus',36,3,'canon','exodus',35,29,'free',
+     E'*The children of Yashar''el (Israel) brought a willing offering unto Yahuah (LORD), every man and woman, whose heart made them willing to bring* (Exodus 35:29). The free offerings of 36:3 — *they brought yet unto him free offerings every morning* — are that same willingness overflowing day by day, the covenant heart that cannot stop giving.'),
+    ('canon','exodus',36,5,'canon','1-chronicles',29,9,'free',
+     E'*Then the people rejoiced, for that they offered willingly, because with perfect heart they offered willingly to Yahuah (LORD)* (1 Chronicles 29:9). When the people in 36:5 *bring much more than enough for the service of the work,* it is David''s temple-joy in advance — the perfect heart that pours out for the house of Yahuah, twice in the canon overflowing past need.'),
+    ('canon','exodus',36,7,'canon','1-chronicles',29,14,'free',
+     E'*But who am I, and what is my people, that we should be able to offer so willingly after this sort? for all things come of thee, and of thine own have we given thee* (1 Chronicles 29:14). The *sufficient... and too much* of 36:7 is answered by David''s confession: the abundance the people return was always Yahuah''s own — overflow is only His gift handed back.'),
+    ('canon','exodus',36,6,'canon','2-corinthians',8,2,'extras',
+     E'*How that in a great trial of affliction the abundance of their joy and their deep poverty abounded unto the riches of their liberality* (2 Corinthians 8:2). Israel restrained from bringing in 36:6 — *Let neither man nor woman make any more work for the offering* — and the Macedonians abounding *beyond their power* (8:3) are one heart: the willing offering that overflows measure, the restored covenant generosity.'),
+    ('canon','exodus',36,5,'canon','2-corinthians',9,7,'extras',
+     E'*Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7). The people who *bring much more than enough* in 36:5 give from the heart, not constraint — the cheerful giver Yahuah loves, the offering that must be told to STOP.'),
+    ('canon','exodus',36,7,'canon','2-corinthians',9,8,'extras',
+     E'*And Elohim (God) is able to make all grace abound toward you; that ye, always having all sufficiency in all things, may abound to every good work* (2 Corinthians 9:8). The *sufficient for all the work... and too much* of 36:7 is the very word Paul reaches for — *all sufficiency* that overflows *to every good work*; the giving heart never runs the house short.'),
+    ('canon','exodus',36,3,'canon','philippians',4,18,'extras',
+     E'*I am full, having received... an odour of a sweet smell, a sacrifice acceptable, wellpleasing to Elohim (God)* (Philippians 4:18). The *free offerings every morning* of 36:3 are the same sweet-savour gift — the people''s overflow rises to Yahuah as the Philippians'' gift rose, an acceptable sacrifice.'),
+    ('canon','exodus',36,7,'canon','philippians',4,19,'extras',
+     E'*But my Elohim (God) shall supply all your need according to his riches in glory by HaMashiach Yahusha (Christ Jesus)* (Philippians 4:19). The givers of 36:7 found *the stuff they had was sufficient for all the work... and too much* — the promise running both ways: those who pour out for the house never lack, Elohim supplies all their need.'),
+    ('canon','exodus',36,5,'apocrypha','ecclesiasticus',35,9,'extras',
+     E'*In all your gifts shew a cheerful countenance, and dedicate your tithes with gladness. Give to the Most High according as he has enriched you; and as you have gotten, give with a cheerful eye* (Sirach 35:9-10). Israel''s gladness in 36:5, bringing *much more than enough,* is the wisdom of the fathers: give to the Most High out of His enriching, with a cheerful eye — the giving that overflows because the heart is glad.'),
+
+    -- THREAD 3: made according to the pattern shewed in the mount (36:8-38)
+    ('canon','exodus',36,8,'canon','exodus',25,40,'free',
+     E'*And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). Every curtain, board, bar and veil wrought from 36:8 onward obeys this one charge — the wise-hearted reproduce on earth the heavenly blueprint Moses saw in the mount, the build is the command made visible.'),
+    ('canon','exodus',36,35,'canon','hebrews',8,5,'extras',
+     E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). The *vail of blue, and purple, and scarlet... with cherubims* of 36:35 is shadow of the heavenly — every detail executed exactly as shown is the earthly copy of a real and higher tabernacle.'),
+    ('canon','exodus',36,8,'apocrypha','the-wisdom-of-solomon',9,8,'extras',
+     E'*You have commanded me to build a temple upon your holy mount, and an altar in the city in which you dwellest, a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8). The tabernacle wrought *as Yahuah commanded* from 36:8 is *a resemblance of the holy tabernacle... prepared from the beginning* — the build is a copy of a pattern older than the mount.'),
+
+    -- THREAD 4: it became one tabernacle (36:13,18)
+    ('canon','exodus',36,13,'canon','ezekiel',37,17,'free',
+     E'*And join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17). The fifty taches of gold that *coupled the curtains one unto another: so it became one tabernacle* (36:13) foreshadow the two sticks of Yahudah and Yosef made one — the many pieces joined into a single dwelling for Yahuah, the two houses made one people.'),
+    ('canon','exodus',36,18,'canon','john',17,21,'free',
+     E'*That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me* (John 17:21). The taches of brass coupled the tent *that it might be one* (36:18) — the same oneness the Formed Son prays for, the gathered people coupled into one dwelling.'),
+    ('canon','exodus',36,18,'canon','john',17,22,'free',
+     E'*And the glory which thou gavest me I have given them; that they may be one, even as we are one* (John 17:22). The eleven goats''-hair curtains *coupled... that it might be one* in 36:18 are the figure fulfilled — the glory shared making the many one, as the curtains coupled become one tent.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-36-the-wise-hearted-in-whom-yahuah-put-wisdom',
+       E'The Wise-Hearted, In Whom Yahuah Put Wisdom',
+       E'The build of the tabernacle opens not with tools but with the Ruach. *Then wrought Bezaleel and Aholiab, and every wise hearted man, in whom Yahuah (LORD) put wisdom and understanding to know how to work all manner of work for the service of the sanctuary* (Exodus 36:1). The skill is given, not native — *I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge, and in all manner of workmanship* (Exodus 31:3); *in the hearts of all that are wise hearted I have put wisdom, that they may make all that I have commanded thee* (Exodus 31:6); *Them hath he filled with wisdom of heart, to work all manner of work* (Exodus 35:35). Yet the worker is no puppet: *every one whose heart stirred him up to come unto the work to do it* (Exodus 36:2). The Spirit fills; the willing heart steps forward — both meet at the work. Weave FORWARD: this is the first portrait of the one Spirit dealing many gifts for one house — *Now there are diversities of gifts, but the same Spirit* (1 Corinthians 12:4), each *manifestation of the Spirit... given to every man to profit withal* (1 Corinthians 12:7); and the two halves hold together in *it is Elohim (God) which worketh in you both to will and to do of his good pleasure* (Philippians 2:13). The Spirit-filled craft that raised the sanctuary is the same Spirit building the body.',
+       sv.verse_id, ev.verse_id, 'free', 29875
+  FROM _s305_ex36_lookup sv, _s305_ex36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=36 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=36 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-36-the-people-brought-more-than-enough-restrained',
+       E'The People Brought More Than Enough — Restrained From Bringing',
+       E'Here is the one place in all Scripture where Yahuah''s people must be told to STOP giving. *And they brought yet unto him free offerings every morning* (Exodus 36:3); *The people bring much more than enough for the service of the work, which Yahuah (LORD) commanded to make* (Exodus 36:5); *So the people were restrained from bringing. For the stuff they had was sufficient for all the work to make it, and too much* (Exodus 36:6-7). This is the willingness of chapter 35 overflowing — *The children of Yashar''el (Israel) brought a willing offering unto Yahuah (LORD), every man and woman, whose heart made them willing to bring* (Exodus 35:29) — the covenant heart that cannot be held back. It rises again at David''s temple: *the people rejoiced, for that they offered willingly, because with perfect heart they offered willingly to Yahuah (LORD)* (1 Chronicles 29:9), confessing *of thine own have we given thee* (1 Chronicles 29:14) — overflow is only His gift handed back. Weave FORWARD: this is the Macedonian grace, *the abundance of their joy and their deep poverty abounded unto the riches of their liberality* (2 Corinthians 8:2), giving *beyond their power* (8:3); the cheerful giver Elohim loves (2 Corinthians 9:7); the *all sufficiency... abound to every good work* (2 Corinthians 9:8) — the giving heart never runs the house short. The free offerings rise as *an odour of a sweet smell, a sacrifice acceptable, wellpleasing to Elohim (God)* (Philippians 4:18), and the promise runs back: *my Elohim (God) shall supply all your need* (Philippians 4:19). The fathers'' wisdom names it: *In all your gifts shew a cheerful countenance... Give to the Most High according as he has enriched you* (Sirach 35:9-10). The restored heart gives beyond measure, and is told to stop.',
+       sv.verse_id, ev.verse_id, 'extras', 29878
+  FROM _s305_ex36_lookup sv, _s305_ex36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=36 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=36 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-36-made-according-to-the-pattern-shewed-in-the-mount',
+       E'Made According To The Pattern Shewed In The Mount',
+       E'From verse 8 to the end, the chapter is the command of chapter 26 executed word for word — the curtains, the loops and taches, the boards and bars and sockets, *a vail of blue, and purple, and scarlet, and fine twined linen: with cherubims made he it of cunning work* (Exodus 36:35). Nothing is invented; everything obeys the one charge given on the mount: *And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The build is the heavenly blueprint reproduced on earth by Spirit-filled hands. Weave FORWARD: the earthly tabernacle is shadow of a real and higher one — the priests *serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God)... See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). And the pattern is older than the mount itself: *a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8). Obedience here is not mere compliance — it is the heavenly made visible, the divine pattern carried down and built exactly as shown.',
+       sv.verse_id, ev.verse_id, 'extras', 29881
+  FROM _s305_ex36_lookup sv, _s305_ex36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=36 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=36 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-36-it-became-one-tabernacle',
+       E'It Became One Tabernacle',
+       E'The many separate pieces are coupled into a single dwelling. *And he made fifty taches of gold, and coupled the curtains one unto another with the taches: so it became one tabernacle* (Exodus 36:13); and the goats''-hair tent likewise, *he made fifty taches of brass to couple the tent together, that it might be one* (Exodus 36:18). The ten curtains, the eleven curtains — many, yet joined into one house for Yahuah. This oneness is the prophetic figure of the two houses regathered: *And join them one to another into one stick; and they shall become one in thine hand* (Ezekiel 37:17) — the stick of Yahudah and the stick of Yosef made one, the divided people coupled into a single dwelling. Weave FORWARD to the Formed Son''s prayer: *That they all may be one; as thou, Father, art in me, and I in thee, that they also may be one in us* (John 17:21); *And the glory which thou gavest me I have given them; that they may be one, even as we are one* (John 17:22). The curtains coupled into one tabernacle, the two sticks made one stick, the gathered people made one in the Father and the Son — one dwelling, one people, one glory.',
+       sv.verse_id, ev.verse_id, 'free', 29884
+  FROM _s305_ex36_lookup sv, _s305_ex36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=36 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=36 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',36,1,'canon','exodus',31,3, 1, E'*I have filled him with the spirit of Elohim (God), in wisdom* (Exodus 31:3) — the sanctuary-skill of 36:1 is the Ruach poured out, not native talent.'),
+    ('exodus',36,2,'canon','exodus',31,6, 2, E'*In the hearts of all that are wise hearted I have put wisdom* (Exodus 31:6) — the wisdom given meets the heart that *stirred him up to come unto the work* (36:2).'),
+    ('exodus',36,2,'canon','exodus',35,35, 3, E'*Them hath he filled with wisdom of heart, to work all manner of work* (Exodus 35:35) — the same Spirit-filled hands of ch.35 lift the tools in 36:2.'),
+    ('exodus',36,1,'canon','1-corinthians',12,4, 4, E'*Diversities of gifts, but the same Spirit* (1 Corinthians 12:4) — varied wise-hearted hands building one house = one Spirit, many gifts.'),
+    ('exodus',36,1,'canon','1-corinthians',12,7, 5, E'*The manifestation of the Spirit is given to every man to profit withal* (1 Corinthians 12:7) — every gift bends to the service of the sanctuary.'),
+    ('exodus',36,2,'canon','philippians',2,13, 6, E'*It is Elohim (God) which worketh in you both to will and to do* (Philippians 2:13) — the willing and the doing of 36:2 both wrought by Elohim.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-36-the-wise-hearted-in-whom-yahuah-put-wisdom'
+  JOIN _s305_ex36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=36 AND sv.verse_number=m.src_v
+  JOIN _s305_ex36_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',36,3,'canon','exodus',35,29, 1, E'*Brought a willing offering... whose heart made them willing to bring* (Exodus 35:29) — the willingness of ch.35 overflowing into the *free offerings every morning* of 36:3.'),
+    ('exodus',36,5,'canon','1-chronicles',29,9, 2, E'*With perfect heart they offered willingly to Yahuah (LORD)* (1 Chronicles 29:9) — the temple-joy that 36:5''s *much more than enough* foreshadows.'),
+    ('exodus',36,7,'canon','1-chronicles',29,14, 3, E'*Of thine own have we given thee* (1 Chronicles 29:14) — the *too much* of 36:7 is Yahuah''s own gift handed back.'),
+    ('exodus',36,6,'canon','2-corinthians',8,2, 4, E'*The abundance of their joy... abounded unto the riches of their liberality* (2 Corinthians 8:2) — Israel restrained from bringing = the Macedonians abounding beyond their power.'),
+    ('exodus',36,5,'canon','2-corinthians',9,7, 5, E'*Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7) — those who *bring much more than enough* (36:5) give from the heart, not constraint.'),
+    ('exodus',36,7,'canon','2-corinthians',9,8, 6, E'*All sufficiency in all things, may abound to every good work* (2 Corinthians 9:8) — the very word for 36:7''s *sufficient... and too much*.'),
+    ('exodus',36,3,'canon','philippians',4,18, 7, E'*An odour of a sweet smell, a sacrifice acceptable* (Philippians 4:18) — the *free offerings every morning* (36:3) rise as sweet-savour gift.'),
+    ('exodus',36,7,'canon','philippians',4,19, 8, E'*My Elohim (God) shall supply all your need* (Philippians 4:19) — the givers of 36:7 never lacked; Elohim supplies the pouring-out heart.'),
+    ('exodus',36,5,'apocrypha','ecclesiasticus',35,9, 9, E'*Give to the Most High according as he has enriched you... with a cheerful eye* (Sirach 35:9-10) — the fathers'' wisdom names the glad overflow of 36:5.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-36-the-people-brought-more-than-enough-restrained'
+  JOIN _s305_ex36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=36 AND sv.verse_number=m.src_v
+  JOIN _s305_ex36_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',36,8,'canon','exodus',25,40, 1, E'*Make them after their pattern, which was shewed thee in the mount* (Exodus 25:40) — the build from 36:8 obeys the one charge: reproduce the heavenly blueprint.'),
+    ('exodus',36,35,'canon','hebrews',8,5, 2, E'*The example and shadow of heavenly things... according to the pattern shewed to thee in the mount* (Hebrews 8:5) — the cherubim-veil of 36:35 is shadow of the heavenly.'),
+    ('exodus',36,8,'apocrypha','the-wisdom-of-solomon',9,8, 3, E'*A resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8) — the pattern is older than the mount.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-36-made-according-to-the-pattern-shewed-in-the-mount'
+  JOIN _s305_ex36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=36 AND sv.verse_number=m.src_v
+  JOIN _s305_ex36_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',36,13,'canon','ezekiel',37,17, 1, E'*They shall become one in thine hand* (Ezekiel 37:17) — the curtains coupled *so it became one tabernacle* (36:13) = the two sticks of Yahudah and Yosef made one.'),
+    ('exodus',36,18,'canon','john',17,21, 2, E'*That they all may be one; as thou, Father, art in me* (John 17:21) — the tent coupled *that it might be one* (36:18) = the Formed Son''s prayer for the gathered people.'),
+    ('exodus',36,18,'canon','john',17,22, 3, E'*That they may be one, even as we are one* (John 17:22) — the curtains coupled into one tent = the glory shared making the many one.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-36-it-became-one-tabernacle'
+  JOIN _s305_ex36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=36 AND sv.verse_number=m.src_v
+  JOIN _s305_ex36_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
