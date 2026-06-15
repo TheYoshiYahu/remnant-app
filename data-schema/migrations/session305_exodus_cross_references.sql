@@ -9995,6 +9995,1358 @@ SELECT t.id, cr.id, 3, E'*every soul that eateth that which died of itself, or t
  WHERE t.slug='exodus-22-the-firstborn-given-and-a-set-apart-people'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_28.sql (Exodus 28) -----
+-- Chapter: Exodus 28 — AARON'S HOLY GARMENTS, the high priest's vesture. The Torah-instituted
+-- priesthood, fulfilled-not-abolished in the Messiah our High Priest, NEVER replaced. The heart of
+-- the chapter: the high priest BEARS the whole twelve-tribe two-house people on his shoulders and
+-- over his heart before Yahuah (LORD) continually — *And Aaron shall bear the names of the children
+-- of Yashar'el (Israel) in the breastplate of judgment upon his heart, when he goeth in unto the
+-- holy place, for a memorial before Yahuah (LORD) continually* (28:29). The breastplate of twelve
+-- engraved stones (28:9-21) weaves FORWARD to the New Jerusalem with twelve gates / twelve tribes /
+-- twelve foundations garnished with the same precious stones (Revelation 21:12-21), and to the great
+-- High Priest who ever lives to make intercession, bearing his people before the Father (Hebrews
+-- 7:25, 4:14-16). The Urim and Thummim (28:30) is the seeking of Yahuah's judgment (Numbers 27:21;
+-- Deuteronomy 33:8). The golden plate HOLINESS TO YAHUAH on the forehead (28:36-38), the priest
+-- bearing iniquity, is the call to holiness restored in the day Zechariah saw — HOLINESS UNTO YAHUAH
+-- on the very bells of the horses (Zechariah 14:20); be ye holy (Leviticus 19:2; 1 Peter 1:16). The
+-- garments for glory and for beauty, made by the wise-hearted filled with the spirit of wisdom
+-- (28:2-3,40), and the whole nation made a royal priesthood (1 Peter 2:9; Zechariah 3 the high
+-- priest re-clothed). Christology: the Formed Son is our High Priest, who is Yahuah and HAS a
+-- Father (Hebrews 7:25 — he ever liveth to make intercession; NOT co-equal trinitarian persons).
+-- Tag: ex28   Temp view: _s305_ex28_lookup
+-- Sort band: base 29675, step 3 -> threads at 29675, 29678, 29681, 29684, 29687, 29690 (6 threads)
+-- Source of EVERY row: 'canon','exodus',28,v
+--
+-- Exodus 28 coverage:
+--   ★★ v.9-12,15-21,29 (the onyx stones and the breastplate of judgment, twelve stones engraved with
+--          the names of the twelve tribes, Aaron bearing their names upon his heart for a memorial
+--          before Yahuah continually)
+--        NT:     ★★ Revelation 21:12 (twelve gates... names of the twelve tribes), 21:14 (twelve
+--                foundations... twelve apostles), 21:19 (foundations garnished with all manner of
+--                precious stones) — THREAD 1; ★★ Hebrews 7:25 (he ever liveth to make intercession),
+--                Hebrews 4:14 + 4:16 (a great high priest... come boldly unto the throne) — THREAD 2
+--        Extras: ★ Wisdom 18:24 (in the four rows of the stones was the glory of the fathers graven) —
+--                woven in THREAD 5 (garments) where the long-garment-whole-world clean witness sits;
+--                breastplate stones also named there
+--        Tanakh: ★ Leviticus 8:8 (he put the breastplate upon him... the Urim and the Thummim) — the
+--                consecration enacting ch28, woven THREAD 3
+--   ★ v.30 (the Urim and the Thummim... Aaron shall bear the judgment of the children of Yashar'el
+--          upon his heart before Yahuah continually)
+--        NT:     none warranted distinct (the bearing-of-judgment forward-weave carried by THREAD 2's
+--                high-priest intercession; no single NT verse forced)
+--        Extras: ★ Sirach 45:10 (a breastplate of judgment, and with Urim and Thummim) — woven THREAD 5
+--        Tanakh: ★ Numbers 27:21 (ask counsel for him after the judgment of Urim before Yahuah),
+--                ★ Deuteronomy 33:8 (Let thy Thummim and thy Urim be with thy holy one) — THREAD 3
+--   ★ v.36-38 (the plate of pure gold, HOLINESS TO YAHUAH on the forehead, that Aaron may bear the
+--          iniquity of the holy things)
+--        NT:     ★ 1 Peter 1:16 (Be ye holy; for I am holy) — THREAD 4
+--        Extras: ★ Sirach 45:12 (a crown of gold upon the mitre, in which was engraved Holiness) —
+--                woven THREAD 5
+--        Tanakh: ★★ Zechariah 14:20 (upon the bells of the horses, HOLINESS UNTO YAHUAH),
+--                ★ Leviticus 19:2 (Ye shall be holy: for I Yahuah Elohaychem am holy) — THREAD 4
+--   v.2-3,40 (holy garments for glory and for beauty, made by the wise hearted filled with the
+--          spirit of wisdom)
+--        NT:     ★ Revelation 1:13 (one like unto the Son of Adam... clothed with a garment down to
+--                the foot, and girt about the paps with a golden girdle) — THREAD 5
+--        Extras: ★★ Sirach 45:7-12 (the glory of Aaron's garments — robe of glory, ephod,
+--                pomegranates and golden bells, breastplate of judgment, Urim and Thummim, the crown
+--                engraved Holiness), ★ Wisdom 18:24 (in the long garment was the whole world) — THREAD 5
+--        Tanakh: ★ Psalm 132:9 (Let thy priests be clothed with righteousness) — THREAD 5
+--   v.1,3,41,43 (Aaron and his sons set apart to minister, anointed, consecrated, sanctified; the
+--          spirit of wisdom; a statute for ever)
+--        NT:     ★★ 1 Peter 2:9 (a chosen generation, a royal priesthood, an holy nation, a peculiar
+--                people) — THREAD 6
+--        Extras: none warranted distinct (Sirach 45 everlasting-covenant priesthood woven THREAD 5)
+--        Tanakh: ★ Zechariah 3:4-5 (take away the filthy garments... I will clothe thee with change
+--                of raiment... a fair mitre upon his head) — THREAD 6
+--   v.33-35 (pomegranates and golden bells; his sound shall be heard... that he die not)
+--        NT:     none warranted distinct (held in prose; the bells/pomegranates carried by Sirach
+--                45:9 in THREAD 5)
+--        Extras: ★ Sirach 45:9 (golden bells round about, that as he went there might be a sound) —
+--                THREAD 5
+--        Tanakh: held in prose (the garment-detail is the body of THREAD 5)
+--   v.4-8,13-14,22-28,31-32,39,42 (the list/construction details — ephod, robe, broidered coat,
+--          mitre, girdle, ouches, chains, rings, lace, woven work, linen breeches)
+--        NT:     none warranted   Extras: none warranted   Tanakh: none warranted (construction
+--                mechanics; woven into the garment thread's prose, no separate add)
+--
+-- Threads (slug — target libraries):
+--   1. exodus-28-twelve-tribes-graven-on-the-breastplate-of-judgment — NT (Revelation 21) [free]
+--      (★★ the twelve-tribe two-house people engraved on the stones → the twelve gates, tribes,
+--       foundations and precious stones of the New Jerusalem)
+--   2. exodus-28-aaron-bears-their-names-upon-his-heart-before-yahuah — NT (Hebrews 7, Hebrews 4) [free]
+--      (★★ the high priest bearing his people on his heart continually → the Messiah our High Priest
+--       who ever lives to make intercession, the Formed Son before the Father)
+--   3. exodus-28-the-urim-and-the-thummim-the-judgment-upon-his-heart — Tanakh (Numbers 27, Deut 33,
+--       Leviticus 8) [free] (★ seeking Yahuah's judgment; Levi's blessing; the consecration enacted)
+--   4. exodus-28-holiness-to-yahuah-engraven-upon-the-plate — Tanakh (Zechariah 14, Leviticus 19) +
+--       NT (1 Peter 1) [free] (★★ the golden plate on the forehead → HOLINESS UNTO YAHUAH in the day
+--       of restoration; be ye holy)
+--   5. exodus-28-garments-for-glory-and-for-beauty — Extras (Sirach 45, Wisdom 18) + NT (Revelation 1)
+--       + Tanakh (Psalm 132) [extras] (★★ the glory of Aaron's garments; the priests clothed; the
+--       Son of Adam girded; in the long garment the whole world)
+--   6. exodus-28-a-chosen-generation-a-royal-priesthood — NT (1 Peter 2) + Tanakh (Zechariah 3) [free]
+--      (★★ the Torah-instituted priesthood, set apart and re-clothed → the whole nation a royal
+--       priesthood, the high priest stripped of filthy garments and clothed anew)
+--
+-- Framing notes:
+--   ★★ THE TWELVE STONES (THREAD 1): *And the stones shall be with the names of the children of
+--      Yashar'el (Israel), twelve, according to their names, like the engravings of a signet; every
+--      one with his name shall they be according to the twelve tribes* (28:21). The whole twelve-tribe
+--      nation — both houses — is engraved and borne before Yahuah. John sees the same twelve names
+--      carried into the consummation: *twelve gates... names of the twelve tribes of the children of
+--      Yashar'el (Israel)* (Revelation 21:12), *twelve foundations... twelve apostles* (21:14),
+--      foundations *garnished with all manner of precious stones* (21:19) — the breastplate jewels
+--      become the city's footings. The two-house people on the priest's heart is the people of the
+--      New Jerusalem.
+--   ★★ AARON BEARS THEM (THREAD 2): *And Aaron shall bear the names of the children of Yashar'el
+--      (Israel) in the breastplate of judgment upon his heart... for a memorial before Yahuah (LORD)
+--      continually* (28:29). This is the great High Priest who *ever liveth to make intercession*
+--      (Hebrews 7:25), *passed into the heavens, Yahusha (Jesus) the Son of Elohim (God)* (Hebrews
+--      4:14), bidding us *come boldly unto the throne of grace* (4:16). The Formed Son bears his
+--      people on his heart before the Father — he is Yahuah and HAS a Father; not co-equal persons.
+--      Torah priesthood fulfilled in him, not abolished.
+--   ★ URIM AND THUMMIM (THREAD 3): *the Urim and the Thummim... Aaron shall bear the judgment of the
+--      children of Yashar'el (Israel) upon his heart before Yahuah (LORD) continually* (28:30) — the
+--      seeking of Yahuah's word: *he shall ask counsel for him after the judgment of Urim before
+--      Yahuah (LORD)* (Numbers 27:21); Levi's blessing *Let thy Thummim and thy Urim be with thy holy
+--      one* (Deuteronomy 33:8); and the consecration enacting it all *he put in the breastplate the
+--      Urim and the Thummim* (Leviticus 8:8).
+--   ★★ HOLINESS TO YAHUAH (THREAD 4): the plate *HOLINESS TO THE Yahuah (LORD)* on the forehead, *that
+--      Aaron may bear the iniquity of the holy things* (28:36-38). Zechariah sees the day the holiness
+--      of the high priest's plate covers everything: *upon the bells of the horses, HOLINESS UNTO THE
+--      Yahuah (LORD)* (Zechariah 14:20). The call stands: *Ye shall be holy: for I Yahuah Elohaychem
+--      (the LORD your God) am holy* (Leviticus 19:2); *Be ye holy; for I am holy* (1 Peter 1:16) —
+--      Torah holiness restored, not retired.
+--   ★★ GARMENTS FOR GLORY AND BEAUTY (THREAD 5): *holy garments for Aaron... for glory and for beauty*
+--      (28:2), made by the wise-hearted *filled with the spirit of wisdom* (28:3). Sirach sings the
+--      whole vesture — *clothed him with a robe of glory... golden bells round about, that as he went
+--      there might be a sound... a breastplate of judgment, and with Urim and Thummim... a crown of
+--      gold upon the mitre, in which was engraved Holiness* (Sirach 45:7-12) — and Wisdom reads the
+--      cosmic weight: *in the long garment was the whole world, and in the four rows of the stones was
+--      the glory of the fathers graven* (Wisdom 18:24). The priests *clothed with righteousness*
+--      (Psalm 132:9). And the Son of Adam stands so clothed: *one like unto the Son of Adam, clothed
+--      with a garment down to the foot, and girt about the paps with a golden girdle* (Revelation
+--      1:13). [extras — Sirach 45 + Wisdom 18 are clean parses, verified.]
+--   ★★ ROYAL PRIESTHOOD (THREAD 6): Aaron and his sons set apart *that he may minister unto me in the
+--      priest's office* (28:1), *anoint them, and consecrate them, and sanctify them* (28:41), *a
+--      statute for ever* (28:43). Zechariah sees the priest re-clothed by grace: *Take away the filthy
+--      garments from him... I will clothe thee with change of raiment... a fair mitre upon his head*
+--      (Zechariah 3:4-5). And Peter extends the priesthood to the whole gathered people: *ye are a
+--      chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9) — the
+--      two-house nation, not a replacement people.
+--   EXTRAS: Sirach 45 (the glory of Aaron's garments) and Wisdom 18:24 (the long garment / the four
+--      rows of stones) woven on THREAD 5; clean witnesses, parses verified. No extras forced elsewhere.
+--   VERSES WITH NO SEPARATE ADD: v.4-8 (the garment list / ephod construction — woven into THREAD 5),
+--      v.13-14,22-28 (ouches, chains, rings, lace — breastplate mounting mechanics, prose),
+--      v.31-35 (robe, bells and pomegranates — bells carried by Sirach 45:9 in THREAD 5),
+--      v.39,42 (broidered coat, linen breeches — garment mechanics, prose). All recorded, none
+--      silently skipped.
+
+CREATE TEMP VIEW _s305_ex28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The twelve tribes graven on the breastplate -> the New Jerusalem
+    ('canon','exodus',28,21,'canon','revelation',21,12,'free',
+      E'*And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12). The twelve stones *with the names of the children of Yashar''el (Israel), twelve, according to their names... according to the twelve tribes* (Exodus 28:21) are carried into the consummation: the very names engraved on the high priest''s breastplate are written on the gates of the holy city. The whole twelve-tribe people — both houses — is borne from the tabernacle to the New Jerusalem.'),
+    ('canon','exodus',28,12,'canon','revelation',21,14,'free',
+      E'*And the wall of the city had twelve foundations, and in them the names of the twelve apostles of the Lamb* (Revelation 21:14). As Aaron bore *the two stones upon the shoulders of the ephod for stones of memorial unto the children of Yashar''el (Israel)* (Exodus 28:12), so the city''s twelve foundations bear twelve names — the tribes on the gates, the apostles on the footings: the one covenant people, carried on the shoulders of the priesthood and built into the eternal city.'),
+    ('canon','exodus',28,17,'canon','revelation',21,19,'free',
+      E'*And the foundations of the wall of the city were garnished with all manner of precious stones. The first foundation was jasper; the second, sapphire; the third, a chalcedony; the fourth, an emerald* (Revelation 21:19). The breastplate''s *four rows of stones* — *a sardius, a topaz, and a carbuncle... an emerald, a sapphire, and a diamond* (Exodus 28:17-18) — reappear as the footings of the holy city. The jewels that bore the tribes'' names on the priest''s heart become the foundations the New Jerusalem rests upon.'),
+
+    -- THREAD 2 (★★): Aaron bears their names upon his heart -> the High Priest who ever lives
+    ('canon','exodus',28,29,'canon','hebrews',7,25,'free',
+      E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). Aaron *shall bear the names of the children of Yashar''el (Israel) in the breastplate of judgment upon his heart... for a memorial before Yahuah (LORD) continually* (Exodus 28:29) — and the great High Priest does this without end: he *ever liveth to make intercession*, bearing his people on his heart before the Father continually. The Torah priesthood is fulfilled in him, not abolished.'),
+    ('canon','exodus',28,29,'canon','hebrews',4,14,'free',
+      E'*Seeing then that we have a great high priest, that is passed into the heavens, Yahusha (Jesus) the Son of Elohim (God), let us hold fast our profession* (Hebrews 4:14). The priest who *goeth in unto the holy place, for a memorial before Yahuah (LORD) continually* (Exodus 28:29) is the shadow of the *great high priest, that is passed into the heavens* — the Formed Son, who is Yahuah and HAS a Father (*the Son of Elohim (God)*), bearing his people into the true holy place.'),
+    ('canon','exodus',28,29,'canon','hebrews',4,16,'free',
+      E'*Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need* (Hebrews 4:16). Because our High Priest bears our names *upon his heart... before Yahuah (LORD) continually* (Exodus 28:29), the way is open: *come boldly unto the throne of grace*. The breastplate of judgment over the heart becomes the throne of grace we approach in him.'),
+
+    -- THREAD 3 (★): The Urim and the Thummim -> seeking Yahuah's judgment; Levi's blessing; consecration
+    ('canon','exodus',28,30,'canon','numbers',27,21,'free',
+      E'*And he shall stand before Eleazar the priest, who shall ask counsel for him after the judgment of Urim before Yahuah (LORD): at his word shall they go out, and at his word they shall come in* (Numbers 27:21). The *Urim and the Thummim* by which *Aaron shall bear the judgment of the children of Yashar''el (Israel) upon his heart before Yahuah (LORD) continually* (Exodus 28:30) is the means of seeking Yahuah''s own verdict — the congregation goes out and comes in *at his word*. The judgment on the priest''s heart is Yahuah''s judgment, not man''s.'),
+    ('canon','exodus',28,30,'canon','deuteronomy',33,8,'free',
+      E'*And of Levi he said, Let thy Thummim and thy Urim be with thy holy one, whom thou didst prove at Massah* (Deuteronomy 33:8). Moses'' blessing on Levi names the very oracle of Exodus 28:30 — *the Urim and the Thummim* — as Levi''s priestly charge, the holy one who would *teach Jacob thy judgments, and Yashar''el (Israel) thy law* (33:10). The judgment borne on the heart and the Torah taught from the mouth are one priestly office.'),
+    ('canon','exodus',28,30,'canon','leviticus',8,8,'free',
+      E'*And he put the breastplate upon him: also he put in the breastplate the Urim and the Thummim* (Leviticus 8:8). What Yahuah commands in Exodus 28:30 — *thou shalt put in the breastplate of judgment the Urim and the Thummim* — Moses enacts at the consecration: the breastplate is set upon Aaron and the oracle placed within. The command of the chapter becomes the living vesture of the high priest.'),
+
+    -- THREAD 4 (★★): HOLINESS TO YAHUAH on the plate -> the day of restoration; be ye holy
+    ('canon','exodus',28,36,'canon','zechariah',14,20,'free',
+      E'*In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20). The plate engraved *HOLINESS TO THE Yahuah (LORD)* on the high priest''s forehead (Exodus 28:36) overflows in the day of restoration: the words once reserved for the priest''s mitre are written *upon the bells of the horses*, and every pot is holy. The holiness borne on one forehead fills the whole earth.'),
+    ('canon','exodus',28,36,'canon','leviticus',19,2,'free',
+      E'*Speak unto all the congregation of the children of Yashar''el (Israel)... Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2). The plate *HOLINESS TO THE Yahuah (LORD)* (Exodus 28:36) on the priest''s head declares the calling of the whole people: *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy*. The priest wears on his forehead what all Yashar''el is summoned to be.'),
+    ('canon','exodus',28,38,'canon','1-peter',1,16,'free',
+      E'*Because it is written, Be ye holy; for I am holy* (1 Peter 1:16). The plate that lets Aaron *bear the iniquity of the holy things... that they may be accepted before Yahuah (LORD)* (Exodus 28:38) carries the standard the apostle quotes straight from the Torah: *Be ye holy; for I am holy*. The holiness graven on the priest''s plate is the unchanged call on the redeemed people — Torah holiness affirmed, not abolished.'),
+
+    -- THREAD 5 (★★ extras): Garments for glory and for beauty -> the glory of Aaron's garments
+    ('canon','exodus',28,2,'apocrypha','ecclesiasticus',45,7,'extras',
+      E'*An everlasting covenant he made with him and gave him the priesthood among the people; he beautified him with comely ornaments, and clothed him with a robe of glory* (Sirach 45:7). The *holy garments for Aaron... for glory and for beauty* (Exodus 28:2) are sung in the restored witness as the priesthood of *an everlasting covenant*, Aaron *clothed... with a robe of glory*. The vesture is not mere finery but the glory of an everlasting priestly office.'),
+    ('canon','exodus',28,33,'apocrypha','ecclesiasticus',45,9,'extras',
+      E'*And he compassed him with pomegranates, and with many golden bells round about, that as he went there might be a sound, and a noise made that might be heard in the temple, for a memorial to the children of his people* (Sirach 45:9). The *pomegranates... and bells of gold* on the hem (Exodus 28:33), whose *sound shall be heard when he goeth in unto the holy place* (28:35), are remembered in Sirach as the *golden bells round about* sounding *for a memorial to the children of his people* — the priest''s every step heard before Yahuah on the people''s behalf.'),
+    ('canon','exodus',28,30,'apocrypha','ecclesiasticus',45,10,'extras',
+      E'*With an holy garment, with gold, and blue silk, and purple, the work of the embroiderer, with a breastplate of judgment, and with Urim and Thummim* (Sirach 45:10). The *breastplate of judgment* bearing *the Urim and the Thummim* (Exodus 28:30) is named verbatim in the restored witness''s catalogue of Aaron''s glory — *a breastplate of judgment, and with Urim and Thummim* — the oracle of judgment set within the holy garment of gold, blue, and purple.'),
+    ('canon','exodus',28,36,'apocrypha','ecclesiasticus',45,12,'extras',
+      E'*He set a crown of gold upon the mitre, in which was engraved Holiness, an ornament of honour, a costly work, the desires of the eyes, goodly and beautiful* (Sirach 45:12). The *plate of pure gold* engraved *HOLINESS TO THE Yahuah (LORD)* upon the mitre (Exodus 28:36) is the *crown of gold upon the mitre, in which was engraved Holiness* — the chief glory of the vesture, the holiness of Yahuah crowning the priest''s head.'),
+    ('canon','exodus',28,17,'apocrypha','the-wisdom-of-solomon',18,24,'extras',
+      E'*For in the long garment was the whole world, and in the four rows of the stones was the glory of the fathers graven, and your Majesty upon the diadem of his head* (Wisdom 18:24). The breastplate''s *four rows of stones* (Exodus 28:17) carry, in the restored witness, the very *glory of the fathers graven* — the twelve patriarchs on the priest''s heart — while *the long garment* bears *the whole world* and Yahuah''s Majesty crowns the diadem. The high priest, vested, stands as the cosmos and the covenant fathers gathered in one man.'),
+    ('canon','exodus',28,2,'canon','psalms',132,9,'free',
+      E'*Let thy priests be clothed with righteousness; and let thy saints shout for joy* (Psalm 132:9). The garments *for glory and for beauty* (Exodus 28:2) are the visible sign of an inward clothing the psalm prays for: *Let thy priests be clothed with righteousness*. The vesture is righteousness worn — *I will also clothe her priests with salvation* (132:16) — glory and beauty that is holiness made visible.'),
+    ('canon','exodus',28,4,'canon','revelation',1,13,'free',
+      E'*And in the midst of the seven candlesticks one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle* (Revelation 1:13). The high-priestly garments — *a breastplate, and an ephod, and a robe... a mitre, and a girdle* (Exodus 28:4) — are worn at last by the risen One: *one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle*. The Formed Son stands among the lampstands in the vesture of the great High Priest.'),
+
+    -- THREAD 6 (★★): Set apart to minister -> a royal priesthood; the priest re-clothed
+    ('canon','exodus',28,41,'canon','1-peter',2,9,'free',
+      E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9). Aaron and his sons are anointed, consecrated, sanctified *that they may minister unto me in the priest''s office* (Exodus 28:41) — and the priestly calling is extended to the whole gathered people: *a royal priesthood, an holy nation, a peculiar people*. Not a replacement people but the two-house nation made priests; the Aaronic office opening onto the priesthood of all the redeemed.'),
+    ('canon','exodus',28,2,'canon','zechariah',3,4,'free',
+      E'*Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment* (Zechariah 3:4). The *holy garments... for glory and for beauty* (Exodus 28:2) are restored by grace in Zechariah''s vision: the high priest stripped of *filthy garments*, his iniquity passed away, *clothed... with change of raiment* and *a fair mitre upon his head* (3:5). The priestly vesture is the gift of a cleansed standing before Yahuah, the office re-instituted in mercy.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-28-twelve-tribes-graven-on-the-breastplate-of-judgment',
+       E'Twelve tribes graven on the breastplate — borne to the New Jerusalem',
+       E'The high priest carries the whole twelve-tribe nation on his body. On the shoulders: *thou shalt take two onyx stones, and grave on them the names of the children of Yashar''el (Israel)... and Aaron shall bear their names before Yahuah (LORD) upon his two shoulders for a memorial* (Exodus 28:9,12). And on the heart, in the breastplate of judgment: *four rows of stones... And the stones shall be with the names of the children of Yashar''el (Israel), twelve, according to their names, like the engravings of a signet; every one with his name shall they be according to the twelve tribes* (28:17,21). Both houses, all twelve tribes, engraved and borne before Yahuah. John sees those same twelve names carried into the consummation: *twelve gates... names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12); *twelve foundations, and in them the names of the twelve apostles of the Lamb* (21:14); and the footings are the breastplate''s own jewels — *the foundations of the wall of the city were garnished with all manner of precious stones. The first foundation was jasper; the second, sapphire; the third, a chalcedony; the fourth, an emerald* (21:19), echoing *the second row... an emerald, a sapphire, and a diamond* (Exodus 28:18). The people borne on the priest''s heart are the people of the eternal city — the two-house nation gathered, named, and built into the New Jerusalem.',
+       sv.verse_id, ev.verse_id, 'free', 29675
+  FROM _s305_ex28_lookup sv, _s305_ex28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=28 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-28-aaron-bears-their-names-upon-his-heart-before-yahuah',
+       E'Aaron bears their names upon his heart — the High Priest who ever lives to intercede',
+       E'The breastplate is not ornament; it is intercession worn over the heart: *And Aaron shall bear the names of the children of Yashar''el (Israel) in the breastplate of judgment upon his heart, when he goeth in unto the holy place, for a memorial before Yahuah (LORD) continually* (Exodus 28:29). The high priest carries his people into the presence of Yahuah and keeps them there *continually*. This is the shadow the letter to the Hebrews fills with the Messiah: *Seeing then that we have a great high priest, that is passed into the heavens, Yahusha (Jesus) the Son of Elohim (God), let us hold fast our profession* (Hebrews 4:14) — and he does the breastplate''s work without end: *he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). Here is the Formed and the Formless: the One *passed into the heavens* is *the Son of Elohim (God)* — Yahuah, who HAS a Father — bearing his people on his heart before the Most High; not co-equal trinitarian persons, but the Son who ever lives to intercede. And because he bears us there, the way is open: *Let us therefore come boldly unto the throne of grace, that we may obtain mercy, and find grace to help in time of need* (Hebrews 4:16). The Torah priesthood is not abolished but fulfilled — the names still borne, now on the heart of the High Priest who never dies.',
+       sv.verse_id, ev.verse_id, 'free', 29678
+  FROM _s305_ex28_lookup sv, _s305_ex28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=28 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-28-the-urim-and-the-thummim-the-judgment-upon-his-heart',
+       E'The Urim and the Thummim — the judgment of Yashar''el upon his heart',
+       E'Set within the breastplate is the oracle of Yahuah''s own verdict: *And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron''s heart, when he goeth in before Yahuah (LORD): and Aaron shall bear the judgment of the children of Yashar''el (Israel) upon his heart before Yahuah (LORD) continually* (Exodus 28:30). The judgment the priest bears is not his own but Yahuah''s, sought through the Urim: *he shall stand before Eleazar the priest, who shall ask counsel for him after the judgment of Urim before Yahuah (LORD): at his word shall they go out, and at his word they shall come in* (Numbers 27:21). Moses'' blessing on Levi makes the oracle Levi''s priestly charge: *And of Levi he said, Let thy Thummim and thy Urim be with thy holy one, whom thou didst prove at Massah* (Deuteronomy 33:8) — the same holy one who would *teach Jacob thy judgments, and Yashar''el (Israel) thy law* (33:10), so that the judgment on the heart and the Torah taught from the mouth are one office. And what Yahuah commands here Moses enacts at the consecration: *he put the breastplate upon him: also he put in the breastplate the Urim and the Thummim* (Leviticus 8:8). The priest goes in to seek and bear Yahuah''s righteous judgment for the whole people, continually.',
+       sv.verse_id, ev.verse_id, 'free', 29681
+  FROM _s305_ex28_lookup sv, _s305_ex28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=28 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-28-holiness-to-yahuah-engraven-upon-the-plate',
+       E'HOLINESS TO YAHUAH engraven on the plate — the call that fills the earth',
+       E'On the forefront of the mitre, over the priest''s forehead, shines the chapter''s deepest word: *And thou shalt make a plate of pure gold, and grave upon it, like the engravings of a signet, HOLINESS TO THE Yahuah (LORD)* (Exodus 28:36); *it shall be upon Aaron''s forehead, that Aaron may bear the iniquity of the holy things, which the children of Yashar''el (Israel) shall hallow in all their holy gifts; and it shall be always upon his forehead, that they may be accepted before Yahuah (LORD)* (28:38). The holiness graven on one forehead is the calling of the whole people: *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2) — quoted unchanged to the redeemed: *Because it is written, Be ye holy; for I am holy* (1 Peter 1:16). Torah holiness affirmed, never abolished. And Zechariah sees the day the priest''s plate overflows onto everything: *In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20). What was reserved to the high priest''s mitre is written across the whole creation — the holiness borne on one head fills the earth in the day of restoration.',
+       sv.verse_id, ev.verse_id, 'free', 29684
+  FROM _s305_ex28_lookup sv, _s305_ex28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=28 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★ extras)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-28-garments-for-glory-and-for-beauty',
+       E'Garments for glory and for beauty — the robe of glory, the cosmos worn',
+       E'The vesture is commanded for a weight of meaning: *And thou shalt make holy garments for Aaron thy brother for glory and for beauty* (Exodus 28:2), woven by the wise-hearted *whom I have filled with the spirit of wisdom* (28:3) — the breastplate, ephod, robe, broidered coat, mitre, and girdle (28:4), the robe''s hem hung with *pomegranates... and bells of gold* whose *sound shall be heard when he goeth in unto the holy place... that he die not* (28:33,35). The restored witness sings the whole glory: *he beautified him with comely ornaments, and clothed him with a robe of glory* (Sirach 45:7); *he compassed him with pomegranates, and with many golden bells round about, that as he went there might be a sound... for a memorial to the children of his people* (45:9); *with a breastplate of judgment, and with Urim and Thummim* (45:10); *a crown of gold upon the mitre, in which was engraved Holiness* (45:12). And Wisdom reads the cosmic freight of the vesture: *in the long garment was the whole world, and in the four rows of the stones was the glory of the fathers graven, and your Majesty upon the diadem of his head* (Wisdom 18:24) — the four-row breastplate (Exodus 28:17) bearing the patriarchs, the long robe bearing the world. The psalm prays the inward meaning: *Let thy priests be clothed with righteousness* (Psalm 132:9). And the risen One stands so vested: *one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle* (Revelation 1:13) — the Formed Son among the lampstands in the garments of the great High Priest, glory and beauty made flesh.',
+       sv.verse_id, ev.verse_id, 'extras', 29687
+  FROM _s305_ex28_lookup sv, _s305_ex28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=28 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-28-a-chosen-generation-a-royal-priesthood',
+       E'Set apart to minister — the priest re-clothed, the nation made a royal priesthood',
+       E'Aaron and his sons are taken *from among the children of Yashar''el (Israel), that he may minister unto me in the priest''s office* (Exodus 28:1), and set apart by anointing: *thou shalt put them upon Aaron thy brother, and his sons with him; and shalt anoint them, and consecrate them, and sanctify them, that they may minister unto me in the priest''s office* (28:41) — *a statute for ever unto him and his seed after him* (28:43). The Torah-instituted priesthood is restored by grace in Zechariah''s vision, where the high priest is stripped of defilement and clothed anew: *Take away the filthy garments from him. And unto him he said, Behold, I have caused thine iniquity to pass from thee, and I will clothe thee with change of raiment* (Zechariah 3:4); *So they set a fair mitre upon his head, and clothed him with garments* (3:5) — the very vesture of Exodus 28 given back as the gift of a cleansed standing. And Peter extends the priestly calling to the whole gathered people: *But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9). Not a replacement people — the two-house nation made priests, the Aaronic office opening onto the priesthood of all the redeemed.',
+       sv.verse_id, ev.verse_id, 'free', 29690
+  FROM _s305_ex28_lookup sv, _s305_ex28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=28 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *twelve gates... names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12) — the names on the breastplate (Exodus 28:21) written on the gates of the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=21
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-twelve-tribes-graven-on-the-breastplate-of-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *twelve foundations, and in them the names of the twelve apostles of the Lamb* (Revelation 21:14) — as Aaron bore the tribes on his shoulders (Exodus 28:12), the city''s footings bear twelve names.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=12
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-twelve-tribes-graven-on-the-breastplate-of-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the foundations... garnished with all manner of precious stones. The first foundation was jasper; the second, sapphire* (Revelation 21:19) — the breastplate''s four rows of stones (Exodus 28:17-18) become the city''s foundations.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-twelve-tribes-graven-on-the-breastplate-of-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he ever liveth to make intercession for them* (Hebrews 7:25) — the High Priest bearing his people on his heart *continually* (Exodus 28:29), without end.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=29
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-aaron-bears-their-names-upon-his-heart-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *a great high priest, that is passed into the heavens, Yahusha (Jesus) the Son of Elohim (God)* (Hebrews 4:14) — the Formed Son, Yahuah who HAS a Father, fulfilling the priest who goes into the holy place (Exodus 28:29).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=29
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-aaron-bears-their-names-upon-his-heart-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*come boldly unto the throne of grace* (Hebrews 4:16) — because our names are borne on his heart (Exodus 28:29), the breastplate of judgment becomes the throne of grace we approach.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=29
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-aaron-bears-their-names-upon-his-heart-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *ask counsel for him after the judgment of Urim before Yahuah (LORD): at his word shall they go out* (Numbers 27:21) — the Urim of Exodus 28:30 seeks Yahuah''s own verdict for the congregation.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=30
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-the-urim-and-the-thummim-the-judgment-upon-his-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Let thy Thummim and thy Urim be with thy holy one* (Deuteronomy 33:8) — Moses'' blessing names the oracle of Exodus 28:30 as Levi''s priestly charge.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=30
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-the-urim-and-the-thummim-the-judgment-upon-his-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he put in the breastplate the Urim and the Thummim* (Leviticus 8:8) — the command of Exodus 28:30 enacted at the consecration of Aaron.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=30
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-the-urim-and-the-thummim-the-judgment-upon-his-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD)* (Zechariah 14:20) — the plate''s engraving (Exodus 28:36) overflows onto all creation in the day of restoration.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=36
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-holiness-to-yahuah-engraven-upon-the-plate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Ye shall be holy: for I Yahuah Elohaychem (the LORD your God) am holy* (Leviticus 19:2) — the holiness on the priest''s plate (Exodus 28:36) is the calling of the whole people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=36
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-holiness-to-yahuah-engraven-upon-the-plate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Be ye holy; for I am holy* (1 Peter 1:16) — the standard graven on Aaron''s plate (Exodus 28:38) quoted unchanged to the redeemed; Torah holiness affirmed, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=38
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-holiness-to-yahuah-engraven-upon-the-plate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★ extras)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he beautified him with comely ornaments, and clothed him with a robe of glory* (Sirach 45:7) — the garments *for glory and for beauty* (Exodus 28:2) as the everlasting priestly office.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *many golden bells round about, that as he went there might be a sound... for a memorial to the children of his people* (Sirach 45:9) — the bells and pomegranates of Exodus 28:33-35, heard before Yahuah on the people''s behalf.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=33
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *a breastplate of judgment, and with Urim and Thummim* (Sirach 45:10) — Exodus 28:30 named verbatim in the catalogue of Aaron''s glory.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=30
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *a crown of gold upon the mitre, in which was engraved Holiness* (Sirach 45:12) — the plate HOLINESS TO YAHUAH on the mitre (Exodus 28:36) as the chief glory of the vesture.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=36
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *in the long garment was the whole world, and in the four rows of the stones was the glory of the fathers graven* (Wisdom 18:24) — the four-row breastplate (Exodus 28:17) bearing the patriarchs; the priest vested as cosmos and covenant fathers in one.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=18 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Let thy priests be clothed with righteousness* (Psalm 132:9) — the garments *for glory and for beauty* (Exodus 28:2) are righteousness worn, holiness made visible.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle* (Revelation 1:13) — the Formed Son among the lampstands in the high-priestly vesture of Exodus 28:4.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=4
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-garments-for-glory-and-for-beauty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9) — the priesthood Aaron is consecrated to (Exodus 28:41) extended to the whole gathered two-house people, not a replacement.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=41
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-a-chosen-generation-a-royal-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Take away the filthy garments from him... I will clothe thee with change of raiment* (Zechariah 3:4) — the holy garments of Exodus 28:2 restored by grace, the priest re-clothed as the gift of a cleansed standing.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s305_ex28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-28-a-chosen-generation-a-royal-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_29.sql (Exodus 29) -----
+-- Chapter: Exodus 29 — the CONSECRATION of the priests + the continual daily offering
+-- Tag: ex29   Session prefix: s305   Temp view: _s305_ex29_lookup
+-- Sort band: 29700 (+3 per thread)
+-- Source book_slug: exodus  (edition 'canon')
+--
+-- Exodus 29 coverage:
+--   v.1-9  THE CONSECRATION RITE (washed, clothed, anointed, "fill the hand")
+--          NT:     Hebrews 7:23-28 / 9:11-14 / 10:1,14 (the better, once-for-all priesthood) — USED (thread 4)
+--          Extras: Ecclesiasticus 45:7 (everlasting covenant of the priesthood of Aaron) — USED (thread 4)
+--          Tanakh: Leviticus 8 (the rite carried out) — woven in summary
+--   v.7    THE ANOINTING (pour the oil on his head, anoint him → the Anointed)
+--          NT:     none direct (Isa 61:1 carries the messianic anointing forward) — see thread 1
+--          Extras: Ecclesiasticus 45:15 (Moses anointed him with holy oil, everlasting covenant) — USED (thread 1)
+--          Tanakh: Psalm 133:2 (precious oil on Aaron's head) + Isaiah 61:1 (the Spirit upon the Anointed) — USED (thread 1)
+--   v.10-14 THE SIN OFFERING / body burnt WITHOUT THE CAMP
+--          NT:     Hebrews 13:11-13 (bodies burned without the camp; Yahusha suffered without the gate) — USED (thread 3)
+--          Extras: none warranted
+--          Tanakh: Leviticus 8:17 (the bullock burnt without the camp) — USED (thread 3)
+--   v.20   THE BLOOD ON EAR, THUMB, TOE (the whole man set apart by blood)
+--          NT:     none warranted direct
+--          Extras: none warranted
+--          Tanakh: Leviticus 8:23-24 (the rite performed on Aaron and his sons) — USED (thread 2)
+--   v.22-28 THE RAM OF CONSECRATION + the WAVE OFFERING — folded into the shadow/priesthood thread (4)
+--   v.37   "whatsoever toucheth the altar shall be holy" — none warranted (Matt 23:19 holds, not strong enough to thread)
+--   v.38-42 THE CONTINUAL DAILY LAMB (the tamid, morning and evening)
+--          NT:     John 1:29 (Behold the Lamb of Elohim) — USED (thread 5)
+--          Extras: Ecclesiasticus 45:14 (their sacrifices wholly consumed every day twice continually) — USED (thread 5)
+--          Tanakh: Numbers 28:3-4 (the tamid restated) — USED (thread 5)
+--   v.43-46 THE INDWELLING PROMISE ("I will dwell among the children of Yashar'el")
+--          NT:     John 1:14 (the Word made flesh, dwelt among us) / Revelation 21:3 (the tabernacle with men) / 2 Corinthians 6:16 — USED (thread 6)
+--          Extras: none warranted
+--          Tanakh: Leviticus 26:11-12 / Ezekiel 37:27 (the covenant-dwelling formula) — USED (thread 6)
+--
+-- THREADS (slug — target libraries):
+--   1 exodus-29-the-anointing-oil-poured-on-the-head-the-anointed   [Tanakh canon + Apocrypha/Ecclesiasticus]  tier extras
+--   2 exodus-29-the-blood-on-ear-thumb-and-toe-the-whole-man-set-apart  [Tanakh canon]  tier free
+--   3 exodus-29-the-sin-offering-burnt-without-the-camp   [Tanakh canon + NT/Hebrews]  tier free
+--   4 exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood  [NT/Hebrews + Apocrypha/Ecclesiasticus]  tier extras
+--   5 exodus-29-the-continual-daily-lamb-morning-and-evening   [Tanakh canon + NT/John + Apocrypha/Ecclesiasticus]  tier extras
+--   6 exodus-29-i-will-dwell-among-the-children-of-israel   [Tanakh canon + NT/John,Revelation,2-Corinthians]  tier free
+--
+-- Contested framing notes:
+--   * Hebrews "change of the law" / "disannulling" (7:12,18) framed as the PRIESTHOOD changing
+--     (Levi→Melek Tsadiq) and the shadow finding its body — fulfilled-not-abolished — NOT the Torah
+--     repealed. The tamid, the feasts, clean/unclean STAND; the once-for-all offering is what they
+--     pointed to (Heb 10:1 "a shadow of good things to come... the very image" is the Messiah).
+--   * The priesthood "for a perpetual statute" (29:9) is honoured: Ecclesiasticus 45:7,15 keeps the
+--     everlasting covenant of Aaron intact; the better priesthood is after the order of Melek Tsadiq,
+--     it does not erase Aaron's, it fulfils the pattern Aaron's served.
+
+CREATE TEMP VIEW _s305_ex29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. cross_references
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the anointing oil poured on the head — the Anointed (29:7)
+    ('canon','exodus',29,7,'canon','psalms',133,2,'free',
+      E'*It is like the precious ointment upon the head, that ran down upon the beard, even Aaron''s beard: that went down to the skirts of his garments* (Psalm 133:2). Exodus 29:7 commands *take the anointing oil, and pour it upon his head, and anoint him* — and the psalm of brethren dwelling together in unity sings that very oil running down on Aaron''s head as the picture of the blessing, *life for evermore* (Psalm 133:3). The consecrating oil is the sign of the gathered people made one.'),
+    ('canon','exodus',29,7,'canon','isaiah',61,1,'free',
+      E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives* (Isaiah 61:1). The oil *poured upon his head* in Exodus 29:7 is the shadow; the substance is the Anointed One on whom the Spirit Himself rests — the Messiah, the true and final consecrated One.'),
+    ('canon','exodus',29,7,'apocrypha','ecclesiasticus',45,15,'extras',
+      E'*Moses consecrated him, and anointed him with holy oil: this was appointed to him by an everlasting covenant, and to his seed, so long as the heavens should remain, that they should minister to him, and execute the office of the priesthood, and bless the people in his name* (Ecclesiasticus 45:15). The wisdom of Ben Sira reads Exodus 29:7''s *anoint him* exactly as an EVERLASTING covenant of priesthood — not a temporary fixture but a standing ordinance, fulfilled and crowned in the Anointed.'),
+
+    -- THREAD 2: blood on ear, thumb, toe — the whole man set apart (29:20)
+    ('canon','exodus',29,20,'canon','leviticus',8,23,'free',
+      E'*And he slew it; and Moses took of the blood of it, and put it upon the tip of Aaron''s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot* (Leviticus 8:23). What Exodus 29:20 commands, Leviticus 8 carries out to the letter: the blood of the ram of consecration on *the tip of the right ear... the thumb of their right hand... the great toe of their right foot* — the whole man, hearing and doing and walking, sealed by blood.'),
+    ('canon','exodus',29,20,'canon','leviticus',8,24,'free',
+      E'*And he brought Aaron''s sons, and Moses put of the blood upon the tip of their right ear, and upon the thumbs of their right hands, and upon the great toes of their right feet: and Moses sprinkled the blood upon the altar round about* (Leviticus 8:24). The sons receive the same blood-mark Exodus 29:20 ordains — ear, thumb, toe — the same consecration extended down the line of the priesthood.'),
+
+    -- THREAD 3: the sin offering burnt without the camp (29:14)
+    ('canon','exodus',29,14,'canon','leviticus',8,17,'free',
+      E'*But the bullock, and his hide, his flesh, and his dung, he burnt with fire without the camp; as Yahuah (LORD) commanded Moses* (Leviticus 8:17). Leviticus 8 performs the very command of Exodus 29:14 — *the flesh of the bullock, and his skin, and his dung, shalt thou burn with fire without the camp: it is a sin offering* — the sin offering carried outside the place of dwelling, the pattern the Messiah would fill.'),
+    ('canon','exodus',29,14,'canon','hebrews',13,11,'free',
+      E'*For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11). Hebrews reaches straight back to Exodus 29:14''s *burn with fire without the camp: it is a sin offering* and reads it as the type — the sin offering whose body is consumed outside the gate.'),
+    ('canon','exodus',29,14,'canon','hebrews',13,12,'free',
+      E'*Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The sin-offering bullock *burnt with fire without the camp* (Exodus 29:14) finds its body: the Messiah, sanctifying the people with His own blood, suffered *without the gate* — the shadow fulfilled, not abolished.'),
+    ('canon','exodus',29,14,'canon','hebrews',13,13,'free',
+      E'*Let us go forth therefore unto him without the camp, bearing his reproach* (Hebrews 13:13). Because the sin offering of Exodus 29:14 was *burn[t] with fire without the camp*, the people are now called out to Him in that same place — the consecration of the priests becomes the call of the whole assembly.'),
+
+    -- THREAD 4: the shadow whose body is the Messiah — the better priesthood (29:1-9 / key 29:9)
+    ('canon','exodus',29,9,'canon','hebrews',7,23,'free',
+      E'*And they truly were many priests, because they were not suffered to continue by reason of death: But this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:23-24). Exodus 29:9 makes *the priest''s office... theirs for a perpetual statute* — yet Aaron and his sons died and were replaced; Hebrews shows the pattern reaching its body in the One who *ever liveth to make intercession* (Hebrews 7:25). The Aaronic line is the shadow; the everliving Priest is the substance.'),
+    ('canon','exodus',29,9,'canon','hebrews',7,27,'free',
+      E'*Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people''s: for this he did once, when he offered up himself* (Hebrews 7:27). The consecration of Aaron in Exodus 29 had to be repeated, the offerings renewed — *for this he did once*: the better Priest offers Himself a single time, the body of what the rite foreshadowed.'),
+    ('canon','exodus',29,9,'canon','hebrews',9,11,'free',
+      E'*But Messiah (Christ) being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building* (Hebrews 9:11). The hand-filling of Aaron in Exodus 29:9 sets up a priesthood in a tabernacle of cloth and skins; Hebrews shows it pointing to *a greater and more perfect tabernacle, not made with hands* — fulfilment, not erasure.'),
+    ('canon','exodus',29,9,'canon','hebrews',10,1,'free',
+      E'*For the law having a shadow of good things to come, and not the very image of the things, can never with those sacrifices which they offered year by year continually make the comers thereunto perfect* (Hebrews 10:1). The consecration of Exodus 29 is named exactly: *a shadow of good things to come*. The shadow is real and Yahuah-given; its body — *the very image* — is the Messiah it was always casting forward to.'),
+    ('canon','exodus',29,9,'canon','hebrews',10,14,'free',
+      E'*For by one offering he hath perfected for ever them that are sanctified* (Hebrews 10:14). Where Exodus 29 sanctifies the priests by repeated blood and seven days of consecration, the substance is *one offering* that *perfected for ever* — the priesthood the whole rite was building toward.'),
+    ('canon','exodus',29,9,'apocrypha','ecclesiasticus',45,7,'extras',
+      E'*An everlasting covenant he made with him and gave him the priesthood among the people; he beautified him with comely ornaments, and clothed him with a robe of glory* (Ecclesiasticus 45:7). Ben Sira honours the very office Exodus 29:9 establishes — *the priest''s office shall be theirs for a perpetual statute* — as an EVERLASTING covenant of Aaron. The better priesthood after Melek Tsadiq does not cancel this covenant; it fulfils the pattern Aaron''s robe of glory was made to serve.'),
+
+    -- THREAD 5: the continual daily lamb — morning and evening (29:38-42)
+    ('canon','exodus',29,38,'canon','numbers',28,3,'free',
+      E'*And thou shalt say unto them, This is the offering made by fire which ye shall offer unto Yahuah (LORD); two lambs of the first year without spot day by day, for a continual burnt offering* (Numbers 28:3). Numbers restates the tamid of Exodus 29:38 word for word — *two lambs of the first year day by day continually* — the perpetual daily offering at the heart of the worship of Yahuah.'),
+    ('canon','exodus',29,39,'canon','numbers',28,4,'free',
+      E'*The one lamb shalt thou offer in the morning, and the other lamb shalt thou offer at even* (Numbers 28:4). The morning-and-evening rhythm of Exodus 29:39 — *the one lamb thou shalt offer in the morning; and the other lamb thou shalt offer at even* — is the appointed cadence of the continual offering, the hours that became the hours of prayer.'),
+    ('canon','exodus',29,38,'canon','john',1,29,'free',
+      E'*The next day John seeth Yahusha (Jesus) coming unto him, and saith, Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29). The *two lambs of the first year day by day continually* of Exodus 29:38 — the unceasing daily lamb — find their substance when John points and says *Behold the Lamb of Elohim*: the Lamb the tamid was rehearsing every morning and every evening.'),
+    ('canon','exodus',29,38,'apocrypha','ecclesiasticus',45,14,'extras',
+      E'*Their sacrifices shall be wholly consumed every day twice continually* (Ecclesiasticus 45:14). Ben Sira describes the priesthood of Aaron in the very terms of Exodus 29:38 — the offering *wholly consumed every day twice continually*, the morning and evening tamid — confirming the daily, perpetual character of the lamb at the door of the tabernacle.'),
+
+    -- THREAD 6: I will dwell among the children of Yashar'el (29:43-46)
+    ('canon','exodus',29,45,'canon','leviticus',26,11,'free',
+      E'*And I will set my tabernacle among you: and my soul shall not abhor you* (Leviticus 26:11). The purpose of the whole priesthood is stated in Exodus 29:45 — *I will dwell among the children of Yashar''el (Israel), and will be their Elohim* — and Leviticus 26:11 sings the same covenant-dwelling: Yahuah pitching His tabernacle in the midst of His people.'),
+    ('canon','exodus',29,45,'canon','leviticus',26,12,'free',
+      E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). Exodus 29:45''s *I will dwell among... and will be their Elohim* is the covenant formula; Leviticus 26:12 completes it — *I will walk among you... and ye shall be my people* — the two halves of the one promise the tabernacle was built to keep.'),
+    ('canon','exodus',29,45,'canon','ezekiel',37,27,'free',
+      E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The dwelling promise of Exodus 29:45 is carried forward to the great two-house regathering — the stick of Yahudah and the stick of Yosef made one (Ezekiel 37:19) — and sealed with the same words: *I will be their Elohim, and they shall be my people*.'),
+    ('canon','exodus',29,45,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). Exodus 29:45 promises *I will dwell among the children of Yashar''el (Israel)* — and the Formed Word, drawn from the Formless Father, *dwelt* (tabernacled) among them in flesh; the glory that filled the tent now beheld face to face.'),
+    ('canon','exodus',29,46,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The promise of Exodus 29:46 — *that I may dwell among them: I am Yahuah their Elohim* — reaches its consummation in the new Jerusalem, the same covenant-dwelling formula spoken over the whole restored people forever.'),
+    ('canon','exodus',29,45,'canon','2-corinthians',6,16,'free',
+      E'*for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). Paul quotes the very dwelling-and-walking formula of Exodus 29:45 (with Leviticus 26:11-12) over the gathered people — *I will dwell in them, and walk in them* — the priesthood''s purpose now fulfilled in a living temple.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. cross_reference_threads
+-- ============================================================================
+-- THREAD 1 (29:7) — anointing oil / the Anointed — tier extras (Ecclesiasticus member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-29-the-anointing-oil-poured-on-the-head-the-anointed',
+       E'The Anointing Oil Poured on the Head — the Anointed',
+       E'*Then shalt thou take the anointing oil, and pour it upon his head, and anoint him* (Exodus 29:7). The priest is made by oil poured on the head — and the picture runs the whole canon. The psalmist sees it: *It is like the precious ointment upon the head, that ran down upon the beard, even Aaron''s beard* (Psalm 133:2), the sign of brethren dwelling together in unity, of *life for evermore* (Psalm 133:3). Ben Sira reads it as an unbreakable covenant: *Moses consecrated him, and anointed him with holy oil: this was appointed to him by an everlasting covenant* (Ecclesiasticus 45:15). And the shadow finds its body in the One on whom the Spirit Himself rests: *Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted* (Isaiah 61:1) — the Messiah, the Anointed, the true and final consecrated One the oil on Aaron''s head was always reaching toward.',
+       sv.verse_id, ev.verse_id, 'extras', 29700
+  FROM _s305_ex29_lookup sv, _s305_ex29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=29 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (29:20) — blood on ear, thumb, toe — tier free
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-29-the-blood-on-ear-thumb-and-toe-the-whole-man-set-apart',
+       E'The Blood on Ear, Thumb, and Toe — the Whole Man Set Apart',
+       E'*Then shalt thou kill the ram, and take of his blood, and put it upon the tip of the right ear of Aaron, and upon the tip of the right ear of his sons, and upon the thumb of their right hand, and upon the great toe of their right foot* (Exodus 29:20). The blood of the ram of consecration touches three places — the ear that hears the word, the hand that does it, the foot that walks in it — the whole man set apart to Yahuah by blood. Leviticus shows the command carried out to the letter: *Moses took of the blood of it, and put it upon the tip of Aaron''s right ear, and upon the thumb of his right hand, and upon the great toe of his right foot* (Leviticus 8:23), and the same mark passed to his sons — *upon the tip of their right ear, and upon the thumbs of their right hands, and upon the great toes of their right feet* (Leviticus 8:24). Consecration is never partial; the blood claims hearing, doing, and walking together.',
+       sv.verse_id, ev.verse_id, 'free', 29703
+  FROM _s305_ex29_lookup sv, _s305_ex29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=29 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (29:14) — sin offering burnt without the camp — tier free
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-29-the-sin-offering-burnt-without-the-camp',
+       E'The Sin Offering Burnt Without the Camp',
+       E'*But the flesh of the bullock, and his skin, and his dung, shalt thou burn with fire without the camp: it is a sin offering* (Exodus 29:14). The sin-offering body is carried outside the place of dwelling and consumed — and Leviticus performs it: *the bullock, and his hide, his flesh, and his dung, he burnt with fire without the camp; as Yahuah (LORD) commanded Moses* (Leviticus 8:17). Hebrews lifts the eyes to the body of this shadow: *For the bodies of those beasts, whose blood is brought into the sanctuary by the high priest for sin, are burned without the camp* (Hebrews 13:11) — *Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The Torah''s sin offering is not abolished but fulfilled; and the call follows: *Let us go forth therefore unto him without the camp, bearing his reproach* (Hebrews 13:13). What set the priests apart now gathers the whole people to Him.',
+       sv.verse_id, ev.verse_id, 'free', 29706
+  FROM _s305_ex29_lookup sv, _s305_ex29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=29 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (29:9) — the shadow whose body is the Messiah — tier extras (Ecclesiasticus member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood',
+       E'The Shadow Whose Body Is the Messiah — the Better Priesthood',
+       E'*The priest''s office shall be theirs for a perpetual statute: and thou shalt consecrate Aaron and his sons* (Exodus 29:9). The whole rite of Exodus 29 — washed, clothed, anointed, the hand filled, the ram of consecration, the seven days renewed — is a shadow whose body is the Messiah. Hebrews names it plainly: *the law having a shadow of good things to come, and not the very image of the things* (Hebrews 10:1). Aaron and his sons were *many priests, because they were not suffered to continue by reason of death* (Hebrews 7:23) — but the better Priest *continueth ever* and *did once, when he offered up himself* (Hebrews 7:27), *by a greater and more perfect tabernacle, not made with hands* (Hebrews 9:11), so that *by one offering he hath perfected for ever them that are sanctified* (Hebrews 10:14). This is fulfilment, not erasure: Ben Sira keeps the *everlasting covenant... the priesthood among the people* (Ecclesiasticus 45:7) of Aaron whole and honoured — the better priesthood after the order of Melek Tsadiq (Melchizedek) crowns the very pattern the robe of glory was made to serve.',
+       sv.verse_id, ev.verse_id, 'extras', 29709
+  FROM _s305_ex29_lookup sv, _s305_ex29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=29 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (29:38-42) — the continual daily lamb — tier extras (Ecclesiasticus member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-29-the-continual-daily-lamb-morning-and-evening',
+       E'The Continual Daily Lamb — Morning and Evening',
+       E'*Now this is that which thou shalt offer upon the altar; two lambs of the first year day by day continually. The one lamb thou shalt offer in the morning; and the other lamb thou shalt offer at even* (Exodus 29:38-39). The tamid — the perpetual daily lamb at the door of the tabernacle — is restated word for word in the wilderness: *two lambs of the first year without spot day by day, for a continual burnt offering* (Numbers 28:3), *the one lamb shalt thou offer in the morning, and the other lamb shalt thou offer at even* (Numbers 28:4). Ben Sira describes the priesthood by the same continual rhythm: *their sacrifices shall be wholly consumed every day twice continually* (Ecclesiasticus 45:14). And the unceasing daily lamb finds its substance when John points to Him: *Behold the Lamb of Elohim (God), which taketh away the sin of the world* (John 1:29) — the Lamb the morning and evening offering had been rehearsing all along.',
+       sv.verse_id, ev.verse_id, 'extras', 29712
+  FROM _s305_ex29_lookup sv, _s305_ex29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=29 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (29:43-46) — I will dwell among the children of Yashar'el — tier free
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-29-i-will-dwell-among-the-children-of-israel',
+       E'I Will Dwell Among the Children of Yashar''el',
+       E'*And I will dwell among the children of Yashar''el (Israel), and will be their Elohim (God). And they shall know that I am Yahuah (LORD) their Elohim, that brought them forth out of the land of Egypt, that I may dwell among them* (Exodus 29:45-46). Here is the purpose of the whole priesthood: not ritual for its own sake, but that Yahuah should DWELL with His people. The covenant-dwelling formula echoes through the Torah — *I will set my tabernacle among you* (Leviticus 26:11), *I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12) — and is sealed over the two-house regathering: *My tabernacle also shall be with them: yea, I will be their Elohim, and they shall be my people* (Ezekiel 37:27). The Formed Word made it visible: *the Word was made flesh, and dwelt among us* (John 1:14). Paul speaks it over the living temple: *I will dwell in them, and walk in them; and I will be their Elohim, and they shall be my people* (2 Corinthians 6:16). And it reaches its consummation: *Behold, the tabernacle of Elohim is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3). The dwelling promised at the door of the tent is the dwelling that fills the new Jerusalem forever.',
+       sv.verse_id, ev.verse_id, 'free', 29715
+  FROM _s305_ex29_lookup sv, _s305_ex29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=43
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=29 AND ev.verse_number=46
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. cross_reference_thread_members
+-- ============================================================================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 133:2 — *the precious ointment upon the head... even Aaron''s beard*: the consecrating oil of Exodus 29:7 sung as the sign of the gathered people made one, *life for evermore*.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=133 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-anointing-oil-poured-on-the-head-the-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 61:1 — *Yahuah hath anointed me to preach good tidings*: the oil poured on the priest''s head is the shadow; the Spirit resting on the Anointed is the substance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-anointing-oil-poured-on-the-head-the-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ecclesiasticus 45:15 — *anointed him with holy oil... an everlasting covenant*: Ben Sira reads the anointing of Exodus 29:7 as a standing, everlasting ordinance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-anointing-oil-poured-on-the-head-the-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 8:23 — the rite of Exodus 29:20 carried out on Aaron: blood on the right ear, thumb, and great toe.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=20
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-blood-on-ear-thumb-and-toe-the-whole-man-set-apart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 8:24 — the same blood-mark of Exodus 29:20 passed to Aaron''s sons: ear, thumb, toe down the priestly line.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=20
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-blood-on-ear-thumb-and-toe-the-whole-man-set-apart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 8:17 — Exodus 29:14''s sin-offering bullock burnt without the camp, performed as commanded.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-sin-offering-burnt-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 13:11 — *the bodies of those beasts... are burned without the camp*: the type read from Exodus 29:14.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-sin-offering-burnt-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 13:12 — *Yahusha also... suffered without the gate*: the sin offering of Exodus 29:14 finds its body.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-sin-offering-burnt-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 13:13 — *Let us go forth therefore unto him without the camp*: the priestly consecration becomes the call of the whole people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-sin-offering-burnt-without-the-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hebrews 7:23-24 — *many priests, because... death... but this man... an unchangeable priesthood*: Aaron the shadow, the everliving Priest the substance of Exodus 29:9''s perpetual office.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 7:27 — *this he did once, when he offered up himself*: the repeated consecration of Exodus 29 answered by a single offering.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 9:11 — *a greater and more perfect tabernacle, not made with hands*: the body of the tent-and-priesthood pattern of Exodus 29.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 10:1 — *a shadow of good things to come, and not the very image*: Exodus 29 named as the Yahuah-given shadow whose body is the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 10:14 — *by one offering he hath perfected for ever them that are sanctified*: the consecration of Exodus 29 brought to its end.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Ecclesiasticus 45:7 — *an everlasting covenant... the priesthood among the people*: the office of Exodus 29:9 honoured as Aaron''s everlasting covenant, fulfilled not cancelled by the better priesthood.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=9
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-shadow-whose-body-is-the-messiah-the-better-priesthood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 28:3 — *two lambs of the first year... day by day, for a continual burnt offering*: the tamid of Exodus 29:38 restated.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=38
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-continual-daily-lamb-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 28:4 — *the one lamb... in the morning, and the other lamb... at even*: the morning-and-evening cadence of Exodus 29:39.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=39
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-continual-daily-lamb-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'John 1:29 — *Behold the Lamb of Elohim, which taketh away the sin of the world*: the substance of the continual daily lamb of Exodus 29:38.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=38
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-continual-daily-lamb-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ecclesiasticus 45:14 — *their sacrifices shall be wholly consumed every day twice continually*: Ben Sira confirms the twice-daily tamid of Exodus 29:38.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=38
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=45 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-the-continual-daily-lamb-morning-and-evening'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 26:11 — *I will set my tabernacle among you*: the dwelling purpose of Exodus 29:45.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=45
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-i-will-dwell-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 26:12 — *I will walk among you... and ye shall be my people*: the second half of the covenant formula of Exodus 29:45.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=45
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-i-will-dwell-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ezekiel 37:27 — *My tabernacle also shall be with them*: the dwelling promise of Exodus 29:45 sealed over the two-house regathering.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=45
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-i-will-dwell-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'John 1:14 — *the Word was made flesh, and dwelt among us*: the Formed Word makes Exodus 29:45''s dwelling visible.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=45
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-i-will-dwell-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Corinthians 6:16 — *I will dwell in them, and walk in them... they shall be my people*: Paul speaks the dwelling-and-walking formula of Exodus 29:45 over the living temple.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=45
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-i-will-dwell-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Revelation 21:3 — *the tabernacle of Elohim is with men, and he will dwell with them*: the consummation of Exodus 29:46''s *that I may dwell among them*.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=29 AND sv.verse_number=46
+  JOIN _s305_ex29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-29-i-will-dwell-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_30.sql (Exodus 30) -----
+-- Exodus 30 — the altar of incense, the half-shekel ransom, the brazen laver,
+--   the holy anointing oil & the holy incense.
+-- Tag: ex30   Session prefix: s305   Temp view: _s305_ex30_lookup
+-- Sort band: 29725, step +3 per thread.
+--
+-- Exodus 30 coverage:
+--   v.1-10 (altar of incense / perpetual incense / atonement on horns):
+--        NT:     Rev 5:8 (golden vials full of odours = prayers of saints), Rev 8:3-4 (incense
+--                with the prayers of all saints ascends), Luke 1:10 (people praying at the hour
+--                of incense) — ALL TAKEN.
+--        Extras: Sirach (Ecclesiasticus) 45:16 (Aaron chose to offer incense, a memorial) — TAKEN
+--                in anointing-oil thread; 50:9 incense in censer = ornamental, none warranted here.
+--        Tanakh: Ps 141:2 (prayer set forth as incense), Lev 16:13 (cloud of incense covers
+--                mercy seat on Yom Kippur), Num 16:46-48 (incense stays the plague), 2 Chron
+--                26:16-19 (Uzziah's unlawful incense / leprosy) — ALL TAKEN.
+--   v.11-16 (half-shekel ransom for the soul / no plague / rich-poor equal / atonement money):
+--        NT:     1 Pet 1:18-19 (not redeemed with silver/gold but the blood of Messiah),
+--                Matt 17:24-27 (temple-tax / tribute money), Mark 10:45 + Matt 20:28 (Son of
+--                Adam gives his life a ransom for many) — ALL TAKEN.
+--        Extras: none warranted (no clean ransom-money witness).
+--        Tanakh: Ps 49:7-8 (no man can redeem his brother; redemption of the soul is precious) — TAKEN.
+--   v.17-21 (brazen laver / wash hands and feet that they die not):
+--        NT:     Titus 3:5 (washing of regeneration), John 13:10 (he that is washed is clean),
+--                Eph 5:26 (washing of water by the word), Heb 10:22 (bodies washed with pure water) — ALL TAKEN.
+--        Extras: none warranted.
+--        Tanakh: laver-specific lateral none warranted (priestly cleansing dispersed; NT weave carries it).
+--   v.22-33 (holy anointing oil / not on man's flesh / cut off if counterfeited):
+--        NT:     1 John 2:20,27 (unction / anointing from the Holy One abiding), Isa 61:1
+--                (Yahuah hath anointed me) [Tanakh-forward] — TAKEN.
+--        Extras: Sirach (Ecclesiasticus) 45:15-16 (Moses anointed Aaron with holy oil, an
+--                everlasting covenant; incense a memorial) — TAKEN.
+--        Tanakh: Ps 133:2 (the precious ointment upon Aaron's beard), Isa 61:1 — TAKEN.
+--   v.34-38 (holy incense / ye shall not make to yourselves / cut off):
+--        NT:     folded into incense thread; the "strange incense" warning weaves with the
+--                set-apart-worship-not-counterfeited theme already carried.
+--        Extras: none warranted (Sirach 50 ornamental only).
+--        Tanakh: 2 Chron 26:16-19 (Uzziah's strange/unlawful incense) — carried in incense thread;
+--                echoes Lev 10 Nadab/Abihu strange fire (named in prose, no clean discrete add beyond above).
+--
+-- THREADS (5):
+--   exodus-30-the-incense-is-the-prayers-of-the-set-apart           [free]  canon (Tanakh+NT)
+--   exodus-30-the-half-shekel-ransom-for-the-soul                   [free]  canon (Tanakh+NT)
+--   exodus-30-the-laver-the-washing-that-they-die-not               [free]  canon (NT)
+--   exodus-30-the-holy-anointing-oil-the-anointed-one               [extras] canon (Tanakh+NT) + apocrypha (Sirach)
+--   (incense-counterfeit folded into thread 1)
+-- Christology: the Anointed One (Messiah = the Anointed) is the Formed Son drawn from the
+--   Formless Father (Isa 61:1 the Spirit upon him, Yahuah anointed me); incense = the prayers
+--   rising before the throne; the true ransom is his blood, never silver or gold.
+
+CREATE TEMP VIEW _s305_ex30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ========================= cross_references =========================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- THREAD 1: incense = the prayers of the set-apart
+  ('canon','exodus',30,8,'canon','psalms',141,2,'free',
+   E'*Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2). The *perpetual incense before Yahuah (LORD)* burnt by Aaron *every morning* and *at even* (Exodus 30:7-8) is the figure David sings: the rising smoke is the rising prayer, the evening incense the evening cry.'),
+  ('canon','exodus',30,7,'canon','revelation',5,8,'free',
+   E'*And when he had taken the book, the four beasts and four and twenty elders fell down before the Lamb, having every one of them harps, and golden vials full of odours, which are the prayers of saints* (Revelation 5:8). The Spirit names the meaning of the *sweet incense* of Exodus 30:7 outright — the *odours* in the golden vials *are the prayers of saints* rising before the throne.'),
+  ('canon','exodus',30,8,'canon','revelation',8,3,'free',
+   E'*And another angel came and stood at the altar, having a golden censer; and there was given unto him much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne* (Revelation 8:3). The earthly *golden* altar of incense (Exodus 30:3) has its heavenly pattern; the *much incense* offered *with the prayers of all saints* is the *perpetual incense before Yahuah* fulfilled.'),
+  ('canon','exodus',30,8,'canon','revelation',8,4,'free',
+   E'*And the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God) out of the angel''s hand* (Revelation 8:4). The *perpetual incense before Yahuah (LORD) throughout your generations* (Exodus 30:8) ascends still — the smoke and the prayers are one thing rising before the throne.'),
+  ('canon','exodus',30,7,'canon','luke',1,10,'free',
+   E'*And the whole multitude of the people were praying without at the time of incense* (Luke 1:10). When Aaron *burned thereon sweet incense* (Exodus 30:7), the people prayed; centuries later Zacharias burns the incense and *the whole multitude* prays — the rite was always the prayer made visible.'),
+  ('canon','exodus',30,10,'canon','leviticus',16,13,'free',
+   E'*And he shall put the incense upon the fire before Yahuah (LORD), that the cloud of the incense may cover the mercy seat that is upon the testimony, that he die not* (Leviticus 16:13). The *atonement upon the horns* of the incense altar *once in a year* (Exodus 30:10) is Yom Kippur: the cloud of incense shields the priest before the mercy seat.'),
+  ('canon','exodus',30,7,'canon','numbers',16,46,'free',
+   E'*And Moses said unto Aaron, Take a censer, and put fire therein from off the altar, and put on incense, and go quickly unto the congregation, and make an atonement for them: for there is wrath gone out from Yahuah (LORD); the plague is begun* (Numbers 16:46). The incense Aaron *burned* (Exodus 30:7) is no empty ceremony — here it stays the wrath; Aaron *stood between the dead and the living; and the plague was stayed* (16:48).'),
+  ('canon','exodus',30,9,'canon','2-chronicles',26,19,'free',
+   E'*Then Uzziah was wroth, and had a censer in his hand to burn incense: and while he was wroth with the priests, the leprosy even rose up in his forehead* (2 Chronicles 26:19). Exodus 30:9 forbids *strange incense*; the set-apart altar is for the consecrated priests alone — Uzziah, a king who seized the censer, is struck with leprosy on the spot.'),
+  -- THREAD 2: the half-shekel ransom for the soul
+  ('canon','exodus',30,12,'canon','1-peter',1,18,'free',
+   E'*Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers* (1 Peter 1:18). The half-shekel was *a ransom for his soul* (Exodus 30:12), but it was only ever a memorial — the soul is *not redeemed with corruptible things, as silver and gold*.'),
+  ('canon','exodus',30,15,'canon','1-peter',1,19,'free',
+   E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:19). *The rich shall not give more, and the poor shall not give less... to make an atonement for your souls* (Exodus 30:15) — the equal price for every soul points past the silver to the one ransom of equal worth for all: *the precious blood of Messiah*.'),
+  ('canon','exodus',30,13,'canon','matthew',17,24,'free',
+   E'*And when they were come to Capernaum, they that received tribute money came to Peter, and said, Doth not your master pay tribute?* (Matthew 17:24). The *half a shekel after the shekel of the sanctuary... an half shekel shall be the offering of Yahuah (LORD)* (Exodus 30:13) is the very temple-tax Messiah is asked to pay.'),
+  ('canon','exodus',30,16,'canon','matthew',17,27,'free',
+   E'*...thou shalt find a piece of money: that take, and give unto them for me and thee* (Matthew 17:27). The *atonement money of the children of Yashar''el (Israel)* (Exodus 30:16) — Messiah, the King''s own Son, is free, yet provides the coin for himself and Peter, fulfilling the memorial offering even as he is its substance.'),
+  ('canon','exodus',30,12,'canon','mark',10,45,'free',
+   E'*For even the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many* (Mark 10:45). The half-shekel *ransom for his soul* (Exodus 30:12) finds its truth here: the Son of Adam gives *his life a ransom* — not silver, but himself, *for many*.'),
+  ('canon','exodus',30,12,'canon','matthew',20,28,'free',
+   E'*Even as the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many* (Matthew 20:28). The continual *ransom for his soul* (Exodus 30:12) is answered once for all in the Son of Adam who gives *his life a ransom for many*.'),
+  ('canon','exodus',30,15,'canon','psalms',49,7,'free',
+   E'*None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him* (Psalm 49:7). The half-shekel could not itself buy a soul — *for the redemption of their soul is precious, and it ceaseth for ever* (49:8). The equal offering of Exodus 30:15 confesses that only Yahuah redeems.'),
+  -- THREAD 3: the laver — the washing that they die not
+  ('canon','exodus',30,18,'canon','titus',3,5,'free',
+   E'*Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Ruach HaKodesh (Holy Spirit)* (Titus 3:5). The *laver of brass... to wash withal* (Exodus 30:18) is the figure of *the washing of regeneration* — cleansing for those who draw near to minister.'),
+  ('canon','exodus',30,19,'canon','john',13,10,'free',
+   E'*Yahusha (Jesus) saith to him, He that is washed needeth not save to wash his feet, but is clean every whit: and ye are clean, but not all* (John 13:10). *Aaron and his sons shall wash their hands and their feet* (Exodus 30:19); Messiah washes the disciples'' feet and names the truth the laver taught — the washed are *clean every whit*.'),
+  ('canon','exodus',30,20,'canon','ephesians',5,26,'free',
+   E'*That he might sanctify and cleanse it with the washing of water by the word* (Ephesians 5:26). The priests washed *that they die not* (Exodus 30:20); the bride is cleansed *with the washing of water by the word* — the same set-apart washing before drawing near.'),
+  ('canon','exodus',30,20,'canon','hebrews',10,22,'free',
+   E'*Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). To *come near to the altar to minister* (Exodus 30:20) required the laver; to draw near now requires *our bodies washed with pure water* — the laver fulfilled.'),
+  -- THREAD 4: the holy anointing oil — the Anointed One
+  ('canon','exodus',30,25,'canon','psalms',133,2,'free',
+   E'*It is like the precious ointment upon the head, that ran down upon the beard, even Aaron''s beard: that went down to the skirts of his garments* (Psalm 133:2). The *holy anointing oil* (Exodus 30:25) poured upon Aaron is the very picture David sings — the consecrating oil running down in abundance.'),
+  ('canon','exodus',30,30,'canon','isaiah',61,1,'free',
+   E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek...* (Isaiah 61:1). The oil that *anoint[ed] Aaron and his sons* (Exodus 30:30) foreshadows the true Anointing — Messiah (the Anointed) on whom the Spirit rests; the Formed Son sent by the Father.'),
+  ('canon','exodus',30,30,'canon','1-john',2,20,'free',
+   E'*But ye have an unction from the Holy One, and ye know all things* (1 John 2:20). The exclusive *holy anointing oil* set apart Aaron (Exodus 30:30); the set-apart now have *an unction from the Holy One* — *the anointing which ye have received of him abideth in you* (2:27).'),
+  ('canon','exodus',30,25,'apocrypha','ecclesiasticus',45,15,'extras',
+   E'*Moses consecrated him, and anointed him with holy oil: this was appointed to him by an everlasting covenant, and to his seed, so long as the heavens should remain, that they should minister to him, and execute the office of the priesthood* (Sirach 45:15). The library remembers the *holy anointing oil* (Exodus 30:25) as *an everlasting covenant* — Moses anointing Aaron, the priesthood appointed to his seed.'),
+  ('canon','exodus',30,25,'apocrypha','ecclesiasticus',45,16,'extras',
+   E'*He chose him out of all men living to offer sacrifices to Yahuah (God), incense, and a sweet savour, for a memorial, to make reconciliation for his people* (Sirach 45:16). Aaron, anointed with the *holy anointing oil* (Exodus 30:25), is the chosen one to offer *incense... for a memorial* — the very incense of Exodus 30:7-8, named here as reconciliation.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ========================= threads =========================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-30-the-incense-is-the-prayers-of-the-set-apart',
+       E'The incense is the prayers of the set-apart',
+       E'Aaron is to *burn thereon sweet incense every morning... and when Aaron lighteth the lamps at even, he shall burn incense upon it, a perpetual incense before Yahuah (LORD) throughout your generations* (Exodus 30:7-8). The rite is the prayer made visible. David sings it: *Let my prayer be set forth before thee as incense; and the lifting up of my hands as the evening sacrifice* (Psalm 141:2). And the Spirit names the meaning outright in the throne-room — the *golden vials full of odours, which are the prayers of saints* (Revelation 5:8), and *much incense, that he should offer it with the prayers of all saints upon the golden altar which was before the throne... and the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim (God)* (Revelation 8:3-4). At the appointed hour *the whole multitude of the people were praying without at the time of incense* (Luke 1:10). This incense is set-apart and deadly serious: it shields the priest before the mercy seat on the Day of Atonement — *that the cloud of the incense may cover the mercy seat... that he die not* (Leviticus 16:13) — and it stays the plague when Aaron *put on incense, and made an atonement for the people* (Numbers 16:46-48). So *ye shall offer no strange incense thereon* (Exodus 30:9); when King Uzziah seized the censer, *the leprosy even rose up in his forehead* (2 Chronicles 26:19). The prayers of the set-apart rise before the throne, and the worship is never to be counterfeited.',
+       sv.verse_id, ev.verse_id, 'free', 29725
+  FROM _s305_ex30_lookup sv, _s305_ex30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=30 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=30 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-30-the-half-shekel-ransom-for-the-soul',
+       E'The half-shekel ransom for the soul',
+       E'*When thou takest the sum of the children of Yashar''el (Israel)... then shall they give every man a ransom for his soul unto Yahuah (LORD)... that there be no plague among them* (Exodus 30:12). The price is fixed and equal: *the rich shall not give more, and the poor shall not give less than half a shekel... to make an atonement for your souls* (30:15). One soul, one price — the silver a *memorial unto the children of Yashar''el* (30:16). Yet the silver was never the redemption; the Psalmist confesses it plainly: *None of them can by any means redeem his brother, nor give to Elohim (God) a ransom for him: (for the redemption of their soul is precious, and it ceaseth for ever)* (Psalm 49:7-8). The half-shekel points past itself. Messiah is asked for the very temple-tax — *Doth not your master pay tribute?* (Matthew 17:24) — and though the King''s Son is free, he provides the coin (17:27). But the true ransom is not money: *ye were not redeemed with corruptible things, as silver and gold... but with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:18-19); *the Son of Adam came not to be ministered unto, but to minister, and to give his life a ransom for many* (Mark 10:45; Matthew 20:28). The equal half-shekel was the standing witness that every soul is ransomed at one price — and that the price would be blood, not silver.',
+       sv.verse_id, ev.verse_id, 'free', 29728
+  FROM _s305_ex30_lookup sv, _s305_ex30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=30 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=30 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-30-the-laver-the-washing-that-they-die-not',
+       E'The laver — the washing that they die not',
+       E'*Thou shalt also make a laver of brass... to wash withal... For Aaron and his sons shall wash their hands and their feet thereat: when they go into the tabernacle of the congregation, they shall wash with water, that they die not* (Exodus 30:18-20). No one draws near to minister unwashed. The washing was never abolished but fulfilled: *not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Ruach HaKodesh (Holy Spirit)* (Titus 3:5). Messiah washes the disciples'' feet and names the truth the laver taught — *He that is washed needeth not save to wash his feet, but is clean every whit* (John 13:10). The bride is cleansed *with the washing of water by the word* (Ephesians 5:26), and the worshipper draws near *having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). The brazen laver still stands between the altar and the holy place: cleansing precedes service, *that they die not*.',
+       sv.verse_id, ev.verse_id, 'free', 29731
+  FROM _s305_ex30_lookup sv, _s305_ex30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=30 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=30 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-30-the-holy-anointing-oil-the-anointed-one',
+       E'The holy anointing oil — the Anointed One',
+       E'*And thou shalt make it an oil of holy ointment... it shall be an holy anointing oil* (Exodus 30:25), and with it *thou shalt anoint Aaron and his sons, and consecrate them* (30:30). It is exclusive and set-apart: *upon man''s flesh shall it not be poured, neither shall ye make any other like it... whosoever compoundeth any like it... shall even be cut off from his people* (30:32-33). The restored library remembers this as covenant: *Moses consecrated him, and anointed him with holy oil: this was appointed to him by an everlasting covenant, and to his seed... He chose him out of all men living to offer sacrifices to Yahuah (God), incense, and a sweet savour, for a memorial* (Sirach 45:15-16). David sings the abundance — *the precious ointment upon the head, that ran down upon the beard, even Aaron''s beard* (Psalm 133:2). And the oil foreshadows the true Anointing. Messiah is *the Anointed*: *the Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek* (Isaiah 61:1) — the Formed Son on whom the Spirit rests, sent by the Father. From him the set-apart receive the same: *ye have an unction from the Holy One* (1 John 2:20), *the anointing which ye have received of him abideth in you* (2:27). The oil that could be poured on no common flesh is poured out now in the Spirit upon his own.',
+       sv.verse_id, ev.verse_id, 'extras', 29734
+  FROM _s305_ex30_lookup sv, _s305_ex30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=30 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=30 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ========================= thread_members =========================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('exodus',30,8,'canon','psalms',141,2,1,E'*Let my prayer be set forth before thee as incense* (Psalm 141:2) — the rising smoke is the rising prayer.'),
+   ('exodus',30,7,'canon','revelation',5,8,2,E'*golden vials full of odours, which are the prayers of saints* (Revelation 5:8) — the Spirit names the incense outright.'),
+   ('exodus',30,8,'canon','revelation',8,3,3,E'*much incense, that he should offer it with the prayers of all saints upon the golden altar* (Revelation 8:3) — the heavenly pattern of the golden altar.'),
+   ('exodus',30,8,'canon','revelation',8,4,4,E'*the smoke of the incense, which came with the prayers of the saints, ascended up before Elohim* (Revelation 8:4) — the perpetual incense ascending still.'),
+   ('exodus',30,7,'canon','luke',1,10,5,E'*the whole multitude of the people were praying without at the time of incense* (Luke 1:10) — the rite was always the prayer made visible.'),
+   ('exodus',30,10,'canon','leviticus',16,13,6,E'*the cloud of the incense may cover the mercy seat... that he die not* (Leviticus 16:13) — the once-a-year atonement at the mercy seat.'),
+   ('exodus',30,7,'canon','numbers',16,46,7,E'*put on incense, and go quickly unto the congregation, and make an atonement for them* (Numbers 16:46) — the incense stays the plague.'),
+   ('exodus',30,9,'canon','2-chronicles',26,19,8,E'*the leprosy even rose up in his forehead* (2 Chronicles 26:19) — Uzziah''s strange incense; no strange incense thereon.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-30-the-incense-is-the-prayers-of-the-set-apart'
+  JOIN _s305_ex30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex30_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('exodus',30,12,'canon','1-peter',1,18,1,E'*ye were not redeemed with corruptible things, as silver and gold* (1 Peter 1:18) — the silver was only ever a memorial.'),
+   ('exodus',30,15,'canon','1-peter',1,19,2,E'*but with the precious blood of Messiah, as of a lamb without blemish and without spot* (1 Peter 1:19) — the one price of equal worth for all.'),
+   ('exodus',30,13,'canon','matthew',17,24,3,E'*Doth not your master pay tribute?* (Matthew 17:24) — the very half-shekel temple-tax.'),
+   ('exodus',30,16,'canon','matthew',17,27,4,E'*give unto them for me and thee* (Matthew 17:27) — the King''s Son provides the atonement money.'),
+   ('exodus',30,12,'canon','mark',10,45,5,E'*the Son of Adam... to give his life a ransom for many* (Mark 10:45) — the true ransom for the soul.'),
+   ('exodus',30,12,'canon','matthew',20,28,6,E'*to give his life a ransom for many* (Matthew 20:28) — not silver, but himself.'),
+   ('exodus',30,15,'canon','psalms',49,7,7,E'*None... can by any means redeem his brother, nor give to Elohim a ransom for him* (Psalm 49:7) — only Yahuah redeems the precious soul.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-30-the-half-shekel-ransom-for-the-soul'
+  JOIN _s305_ex30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex30_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('exodus',30,18,'canon','titus',3,5,1,E'*the washing of regeneration, and renewing of the Ruach HaKodesh* (Titus 3:5) — the laver fulfilled.'),
+   ('exodus',30,19,'canon','john',13,10,2,E'*He that is washed... is clean every whit* (John 13:10) — Messiah names the truth the laver taught.'),
+   ('exodus',30,20,'canon','ephesians',5,26,3,E'*the washing of water by the word* (Ephesians 5:26) — the same set-apart washing before drawing near.'),
+   ('exodus',30,20,'canon','hebrews',10,22,4,E'*our bodies washed with pure water* (Hebrews 10:22) — cleansing precedes drawing near.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-30-the-laver-the-washing-that-they-die-not'
+  JOIN _s305_ex30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex30_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+   ('exodus',30,25,'canon','psalms',133,2,1,E'*the precious ointment upon the head, that ran down... even Aaron''s beard* (Psalm 133:2) — the consecrating oil in abundance.'),
+   ('exodus',30,30,'canon','isaiah',61,1,2,E'*Yahuah hath anointed me to preach good tidings unto the meek* (Isaiah 61:1) — the true Anointing, the Formed Son on whom the Spirit rests.'),
+   ('exodus',30,30,'canon','1-john',2,20,3,E'*ye have an unction from the Holy One* (1 John 2:20) — the anointing now abiding in the set-apart.'),
+   ('exodus',30,25,'apocrypha','ecclesiasticus',45,15,4,E'*anointed him with holy oil: this was appointed... by an everlasting covenant* (Sirach 45:15) — the library remembers the oil as covenant.'),
+   ('exodus',30,25,'apocrypha','ecclesiasticus',45,16,5,E'*to offer... incense, and a sweet savour, for a memorial, to make reconciliation* (Sirach 45:16) — Aaron chosen to offer the incense of Exodus 30:7-8.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-30-the-holy-anointing-oil-the-anointed-one'
+  JOIN _s305_ex30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s305_ex30_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_31.sql (Exodus 31) -----
+-- Chapter: Exodus 31 — Bezalel filled with the Spirit; the Sabbath the everlasting sign; the two tables given
+-- Tag: ex31   Session prefix: s305   Sort band: 29750 (+3/thread)
+-- Temp view: _s305_ex31_lookup
+--
+-- Exodus 31 coverage:
+--   v.1-11  (Bezalel & Aholiab filled with the Ruach for the dwelling)
+--           NT:     1 Cor 3:10,16 (wise masterbuilder / ye are the temple), Eph 2:21-22 (built for habitation thru Spirit)
+--           Extras: none warranted (Jubilees reserves its weight for the Sabbath block; no clean builder witness)
+--           Tanakh: 1 Kings 7:14 (Hiram filled with wisdom for the temple), Exod 28:3 (wise-hearted filled with the spirit of wisdom)
+--           -> thread exodus-31-the-spirit-of-elohim-fills-the-builder-of-the-dwelling (free)
+--   v.12-17 (the Sabbath: a SIGN, holy, a perpetual covenant, creation-rooted, for ever)
+--           NT:     Heb 4:9 (there remaineth a sabbath-rest), Mark 2:27-28 (made for man / Son of Adam Lord of it), Matt 5:17-18 (not destroy but fulfil)  -> separate forward thread
+--           Extras: Jubilees 2:1 (Sabbath a sign for all His works), Jubilees 2:19 (a people separated who keep the Sabbath, My people)  -> in the sign thread
+--           Tanakh: Gen 2:3, Exod 20:8-11, Ezek 20:12, Ezek 20:20, Isa 56:2, Isa 56:6, Isa 58:13, Isa 66:23  -> in the sign thread
+--           -> thread exodus-31-the-sabbath-the-everlasting-sign-between-me-and-yashar-el (extras; Jubilees members)
+--           -> thread exodus-31-there-remaineth-a-sabbath-rest-and-its-lord (free; NT forward weave)
+--   v.18    (two tables of testimony written with the finger of Elohim)
+--           NT:     Luke 11:20 (the finger of Elohim), 2 Cor 3:3 (written with the Spirit, in fleshy tables of the heart)
+--           Extras: none warranted (clean witness not found in parse)
+--           Tanakh: Exod 32:16 (the writing of Elohim graven), Exod 8:19 (the finger of Elohim), Jer 31:33 (law in inward parts), Ezek 36:26-27 (new heart, my spirit within)
+--           -> thread exodus-31-written-with-the-finger-of-elohim-from-stone-to-heart (free)
+
+CREATE TEMP VIEW _s305_ex31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =====================================================================
+-- cross_references
+-- =====================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- THREAD 1: Spirit fills the builder of the dwelling (Exod 31:1-11)
+    ('canon','exodus',31,3,'canon','1-kings',7,14,'free',
+      E'*He was a widow''s son of the tribe of Naphtali, and his father was a man of Tyre, a worker in brass: and he was filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14). The same divine filling that raised the wilderness tabernacle raises Solomon''s temple — when Yahuah (LORD) says *I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge, and in all manner of workmanship*, the gift of the Spirit is given for the building of the dwelling-place.'),
+    ('canon','exodus',31,3,'canon','exodus',28,3,'free',
+      E'*And thou shalt speak unto all that are wise hearted, whom I have filled with the spirit of wisdom, that they may make Aaron''s garments to consecrate him* (Exodus 28:3). The wise-hearted are *filled with the spirit of wisdom* for the holy garments just as Bezaleel is *filled... with the spirit of Elohim (God), in wisdom* for the whole sanctuary — one Ruach, given for the work of the holy place.'),
+    ('canon','exodus',31,3,'canon','1-corinthians',3,10,'free',
+      E'*According to the grace of Elohim (God) which is given unto me, as a wise masterbuilder, I have laid the foundation, and another buildeth thereon* (1 Corinthians 3:10). Bezaleel the first man *filled... with the spirit of Elohim (God), in wisdom* to build the dwelling is the pattern of the wise masterbuilder; the Spirit-given skill to raise the sanctuary carries forward.'),
+    ('canon','exodus',31,3,'canon','1-corinthians',3,16,'free',
+      E'*Know ye not that ye are the temple of Elohim (God), and that the Spirit of Elohim (God) dwelleth in you?* (1 Corinthians 3:16). Bezaleel is *filled... with the spirit of Elohim (God)* to build the place where Yahuah (LORD) dwells — and the people themselves become that temple, the Spirit indwelling the dwelling He builds.'),
+    ('canon','exodus',31,3,'canon','ephesians',2,22,'free',
+      E'*In whom ye also are builded together for an habitation of Elohim (God) through the Spirit* (Ephesians 2:22). The Spirit who fills Bezaleel *in wisdom, and in understanding, and in knowledge, and in all manner of workmanship* to build the tabernacle is the same Spirit through whom the two-house people are built together into the habitation of Elohim (God).'),
+
+  -- THREAD 2: The Sabbath the everlasting sign (Exod 31:12-17)
+    ('canon','exodus',31,13,'canon','ezekiel',20,12,'free',
+      E'*Moreover also I gave them my sabbaths, to be a sign between me and them, that they might know that I am Yahuah (LORD) that sanctify them* (Ezekiel 20:12). Ezekiel restates the keystone nearly verbatim: the Sabbath is the *sign between me and you... that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13) — the standing mark of who sanctifies His people.'),
+    ('canon','exodus',31,13,'canon','ezekiel',20,20,'free',
+      E'*And hallow my sabbaths; and they shall be a sign between me and you, that ye may know that I am Yahuah Elohaychem (the LORD your God)* (Ezekiel 20:20). The Sabbath remains the covenant *sign between me and you* generations after Sinai — never abolished, the abiding token of the covenant Yahuah (LORD) commands in *Verily my sabbaths ye shall keep.*'),
+    ('canon','exodus',31,14,'canon','isaiah',56,2,'free',
+      E'*Blessed is the man that doeth this, and the son of Adam that layeth hold on it; that keepeth the sabbath from polluting it, and keepeth his hand from doing any evil* (Isaiah 56:2). The Sabbath that is *holy unto you* in Exodus 31:14 is the blessing the prophet holds out — the one who keeps it *from polluting it* is the man who is blessed.'),
+    ('canon','exodus',31,16,'canon','isaiah',56,6,'free',
+      E'*Also the sons of the stranger, that join themselves to Yahuah (LORD)... every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). The *perpetual covenant* of Exodus 31:16 is held by the gathered, even the stranger who joins himself to Yahuah (LORD) and keeps the Sabbath — the regathering of the scattered into the one Sabbath-keeping people.'),
+    ('canon','exodus',31,16,'canon','isaiah',58,13,'free',
+      E'*If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13). The Sabbath kept *throughout their generations, for a perpetual covenant* (Exodus 31:16) is to be called *a delight* — not a burden laid down but the holy day honoured, with promise to follow.'),
+    ('canon','exodus',31,17,'canon','genesis',2,3,'free',
+      E'*And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made* (Genesis 2:3). Exodus 31:17 roots the sign in creation itself — *for in six days Yahuah (LORD) made heaven and earth, and on the seventh day he rested, and was refreshed* — the Sabbath is older than Sinai, woven into the fabric of the made world.'),
+    ('canon','exodus',31,17,'canon','exodus',20,11,'free',
+      E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The fourth word and the everlasting sign give the same creation-ground: Exodus 31:17 echoes the Ten Words — the Sabbath is the hallowed seventh day, *a sign between me and the children of Yashar''el (Israel) for ever.*'),
+    ('canon','exodus',31,16,'canon','isaiah',66,23,'free',
+      E'*And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). The *sign... for ever* of Exodus 31:23 reaches into the new heavens and new earth: the Sabbath is not retired but kept by all flesh in the world to come.'),
+    ('canon','exodus',31,16,'jubilees','jubilees',2,1,'extras',
+      E'*Write the complete history of the creation, how in six days Yahuah Elohim (the LORD God) finished all His works and all that He created, and kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1). The restored witness frames the Sabbath exactly as Exodus 31 does — *a sign... hallowed for all ages*, the same *perpetual covenant.*'),
+    ('canon','exodus',31,13,'jubilees','jubilees',2,19,'extras',
+      E'*Behold, I will separate to Myself a people from among all the peoples, and these will keep the Sabbath day, and I will sanctify them to Myself as My people... and they will be My people and I shall be their Elohim (God)* (Jubilees 2:19). The Sabbath is the sign *that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13) — the mark of the separated, sanctified people, never abolished, the token of who His people are.'),
+
+  -- THREAD 3: There remaineth a sabbath-rest, and its Lord (Exod 31:13-17, forward weave)
+    ('canon','exodus',31,15,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The *sabbath of rest, holy to Yahuah (LORD)* of Exodus 31:15 is not cancelled but carried forward — a sabbath-keeping *remaineth* for the people of Elohim (God), the rest entered by faith without abolishing the day.'),
+    ('canon','exodus',31,15,'canon','mark',2,27,'free',
+      E'*And he said unto them, The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28). The Messiah does not abolish the Sabbath of Exodus 31:15 — He declares Himself its Lord, the Formed Son owning the day He gave at Sinai, restoring its gift to man.'),
+    ('canon','exodus',31,16,'canon','matthew',5,17,'free',
+      E'*Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil* (Matthew 5:17). The Sabbath kept *for a perpetual covenant* (Exodus 31:16) stands under the Messiah''s own word — *Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law* (Matthew 5:18); the everlasting sign is fulfilled, not voided.'),
+
+  -- THREAD 4: Written with the finger of Elohim, from stone to heart (Exod 31:18)
+    ('canon','exodus',31,18,'canon','exodus',32,16,'free',
+      E'*And the tables were the work of Elohim (God), and the writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16). The *two tables of testimony, tables of stone, written with the finger of Elohim (God)* (Exodus 31:18) are the very Torah carved by His hand — the testimony Moses bore down the mountain.'),
+    ('canon','exodus',31,18,'canon','exodus',8,19,'free',
+      E'*Then the magicians said unto Pharaoh, This is the finger of Elohim (God): and Pharaoh''s heart was hardened* (Exodus 8:19). The same *finger of Elohim (God)* that struck Egypt with a sign now writes the covenant on stone — the power that judged the oppressor is the power that engraves the Torah for His people.'),
+    ('canon','exodus',31,18,'canon','luke',11,20,'free',
+      E'*But if I with the finger of Elohim (God) cast out devils, no doubt the kingdom of Elohim (God) is come upon you* (Luke 11:20). The *finger of Elohim (God)* that wrote the two tables (Exodus 31:18) is the same divine power at work in the Messiah — the One who gave the Torah is the One who casts out the enemy.'),
+    ('canon','exodus',31,18,'canon','2-corinthians',3,3,'free',
+      E'*Forasmuch as ye are manifestly declared to be the epistle of Messiah (Christ) ministered by us, written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). The Torah *written with the finger of Elohim (God)* on *tables of stone* (Exodus 31:18) is the same Torah now written by the Spirit on the heart — the law moving from stone to flesh, not a different law.'),
+    ('canon','exodus',31,18,'canon','jeremiah',31,33,'free',
+      E'*I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The covenant *written with the finger of Elohim (God)* on stone (Exodus 31:18) becomes the new-covenant law written within — the same Torah, now in the inward parts.'),
+    ('canon','exodus',31,18,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The Torah graven *with the finger of Elohim (God)* on stone (Exodus 31:18) is the very Torah the Spirit writes on the heart of flesh — *A new heart also will I give you* (Ezekiel 36:26) — that His people may keep His statutes.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =====================================================================
+-- threads
+-- =====================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-31-the-spirit-of-elohim-fills-the-builder-of-the-dwelling',
+       E'The Spirit of Elohim fills the builder of the dwelling',
+       E'The first man Scripture names as filled with the Ruach is named for the work of the sanctuary. *See, I have called by name Bezaleel the son of Uri... And I have filled him with the spirit of Elohim (God), in wisdom, and in understanding, and in knowledge, and in all manner of workmanship* (Exodus 31:2-3). The Spirit is given to build the dwelling-place of Yahuah (LORD).\n\nThe pattern runs through the canon. The wise-hearted are *filled with the spirit of wisdom, that they may make Aaron''s garments to consecrate him* (Exodus 28:3). When Solomon raises the temple, Hiram comes *filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14) — the same divine gifting for the same holy work.\n\nThe weave reaches forward to the living temple. *According to the grace of Elohim (God) which is given unto me, as a wise masterbuilder, I have laid the foundation* (1 Corinthians 3:10) — and the people themselves are the house: *Know ye not that ye are the temple of Elohim (God), and that the Spirit of Elohim (God) dwelleth in you?* (1 Corinthians 3:16). The two-house people are *builded together for an habitation of Elohim (God) through the Spirit* (Ephesians 2:22). The Spirit who filled Bezaleel to raise the tabernacle is the Spirit who builds the dwelling still.',
+       sv.verse_id, ev.verse_id, 'free', 29750
+  FROM _s305_ex31_lookup sv, _s305_ex31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=31 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-31-the-sabbath-the-everlasting-sign-between-me-and-yashar-el',
+       E'The Sabbath — the everlasting sign between me and Yashar''el',
+       E'Here is the anti-antinomian keystone. *Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13). It is *a perpetual covenant* (31:16), *a sign between me and the children of Yashar''el (Israel) for ever* (31:17) — and the ground is creation itself: *for in six days Yahuah (LORD) made heaven and earth, and on the seventh day he rested, and was refreshed.* The Sabbath is older than Sinai: *And Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:3); the fourth word repeats the creation-ground word for word (Exodus 20:11).\n\nEzekiel restates the keystone nearly verbatim, twice: *I gave them my sabbaths, to be a sign between me and them, that they might know that I am Yahuah (LORD) that sanctify them* (Ezekiel 20:12); *they shall be a sign between me and you, that ye may know that I am Yahuah Elohaychem (the LORD your God)* (Ezekiel 20:20). It is the standing mark of who sanctifies His people — never abolished.\n\nIsaiah holds it out as blessing and gathering: *Blessed is the man... that keepeth the sabbath from polluting it* (Isaiah 56:2); even *the sons of the stranger* who join themselves to Yahuah (LORD) and keep the Sabbath are gathered in (56:6); *call the sabbath a delight, the holy of Yahuah (LORD), honourable* (58:13). And it reaches the world to come: *from one sabbath to another, shall all flesh come to worship before me* (Isaiah 66:23).\n\nThe restored witness frames it identically. Yahuah *kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1); *I will separate to Myself a people... and these will keep the Sabbath day, and I will sanctify them to Myself as My people... and they will be My people and I shall be their Elohim (God)* (Jubilees 2:19). The seventh-day Sabbath is the everlasting sign of the covenant people — the token of who sanctifies them, standing for ever.',
+       sv.verse_id, ev.verse_id, 'extras', 29753
+  FROM _s305_ex31_lookup sv, _s305_ex31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=31 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=31 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-31-there-remaineth-a-sabbath-rest-and-its-lord',
+       E'There remaineth a sabbath-rest, and its Lord',
+       E'The seventh day is *the sabbath of rest, holy to Yahuah (LORD)* (Exodus 31:15), kept *for a perpetual covenant* (31:16). The New Testament does not retire it — it confirms it.\n\n*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9): a sabbath-keeping still remains. The Messiah Himself owns the day: *The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28) — the Formed Son who gave the Sabbath at Sinai declares Himself its Lord, restoring its gift, not abolishing it.\n\nAnd His own word seals the everlasting sign: *Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil... Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law* (Matthew 5:17-18). The perpetual covenant of Exodus 31 stands — fulfilled in its Lord, never voided.',
+       sv.verse_id, ev.verse_id, 'free', 29756
+  FROM _s305_ex31_lookup sv, _s305_ex31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=31 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=31 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-31-written-with-the-finger-of-elohim-from-stone-to-heart',
+       E'Written with the finger of Elohim — from stone to heart',
+       E'*And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of Elohim (God)* (Exodus 31:18). The Torah is carved by His own hand: *the writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16).\n\nThat *finger of Elohim (God)* is a thread of divine power. It struck Egypt — *This is the finger of Elohim (God)* (Exodus 8:19) — and it works in the Messiah: *if I with the finger of Elohim (God) cast out devils, no doubt the kingdom of Elohim (God) is come upon you* (Luke 11:20). The One who gave the Torah is the One who casts out the enemy.\n\nThe same Torah moves from stone to heart — never a different law. *Ye are... the epistle of Messiah (Christ)... written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). This is the promised new covenant: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33); *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27). The finger that graved the stone is the Spirit that writes the heart.',
+       sv.verse_id, ev.verse_id, 'free', 29759
+  FROM _s305_ex31_lookup sv, _s305_ex31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=31 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=31 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- =====================================================================
+-- thread_members
+-- =====================================================================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',31,3,'canon','1-kings',7,14,1,E'*He... was filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14) — the same Spirit-gifting raises Solomon''s temple.'),
+    ('exodus',31,3,'canon','exodus',28,3,2,E'*Whom I have filled with the spirit of wisdom, that they may make Aaron''s garments* (Exodus 28:3) — one Ruach for the holy garments and the whole sanctuary.'),
+    ('exodus',31,3,'canon','1-corinthians',3,10,3,E'*As a wise masterbuilder, I have laid the foundation* (1 Corinthians 3:10) — Bezaleel the pattern of the Spirit-filled builder.'),
+    ('exodus',31,3,'canon','1-corinthians',3,16,4,E'*Ye are the temple of Elohim (God), and... the Spirit of Elohim (God) dwelleth in you* (1 Corinthians 3:16) — the dwelling becomes the people.'),
+    ('exodus',31,3,'canon','ephesians',2,22,5,E'*Builded together for an habitation of Elohim (God) through the Spirit* (Ephesians 2:22) — the same Spirit builds the two-house habitation.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-31-the-spirit-of-elohim-fills-the-builder-of-the-dwelling'
+  JOIN _s305_ex31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=31 AND sv.verse_number=m.src_v
+  JOIN _s305_ex31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',31,17,'canon','genesis',2,3,1,E'*Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:3) — the Sabbath rooted in creation, older than Sinai.'),
+    ('exodus',31,17,'canon','exodus',20,11,2,E'*Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11) — the fourth word gives the same creation-ground.'),
+    ('exodus',31,13,'canon','ezekiel',20,12,3,E'*My sabbaths, to be a sign between me and them, that they might know that I am Yahuah (LORD) that sanctify them* (Ezekiel 20:12) — the keystone restated nearly verbatim.'),
+    ('exodus',31,13,'canon','ezekiel',20,20,4,E'*They shall be a sign between me and you, that ye may know that I am Yahuah Elohaychem* (Ezekiel 20:20) — the abiding covenant mark, generations on.'),
+    ('exodus',31,14,'canon','isaiah',56,2,5,E'*Blessed is the man... that keepeth the sabbath from polluting it* (Isaiah 56:2) — the holy day is the blessing.'),
+    ('exodus',31,16,'canon','isaiah',56,6,6,E'*The sons of the stranger... every one that keepeth the sabbath* (Isaiah 56:6) — the gathered, even the joined-in stranger, keep the perpetual covenant.'),
+    ('exodus',31,16,'canon','isaiah',58,13,7,E'*Call the sabbath a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13) — the everlasting sign kept as joy, not burden.'),
+    ('exodus',31,16,'canon','isaiah',66,23,8,E'*From one sabbath to another, shall all flesh come to worship before me* (Isaiah 66:23) — the sign reaches the new heavens and new earth.'),
+    ('exodus',31,16,'jubilees','jubilees',2,1,9,E'*Kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1) — the restored witness frames the perpetual covenant.'),
+    ('exodus',31,13,'jubilees','jubilees',2,19,10,E'*These will keep the Sabbath day, and I will sanctify them to Myself as My people* (Jubilees 2:19) — the Sabbath the mark of the separated, sanctified people.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-31-the-sabbath-the-everlasting-sign-between-me-and-yashar-el'
+  JOIN _s305_ex31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=31 AND sv.verse_number=m.src_v
+  JOIN _s305_ex31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',31,15,'canon','hebrews',4,9,1,E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — a sabbath-keeping remains, not cancelled.'),
+    ('exodus',31,15,'canon','mark',2,27,2,E'*The sabbath was made for man... the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28) — the Messiah owns the day, restores its gift.'),
+    ('exodus',31,16,'canon','matthew',5,17,3,E'*I am not come to destroy, but to fulfil* (Matthew 5:17) — the perpetual covenant fulfilled, not voided.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-31-there-remaineth-a-sabbath-rest-and-its-lord'
+  JOIN _s305_ex31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=31 AND sv.verse_number=m.src_v
+  JOIN _s305_ex31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('exodus',31,18,'canon','exodus',32,16,1,E'*The writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16) — the Torah carved by His own hand.'),
+    ('exodus',31,18,'canon','exodus',8,19,2,E'*This is the finger of Elohim (God)* (Exodus 8:19) — the power that judged Egypt now writes the covenant.'),
+    ('exodus',31,18,'canon','luke',11,20,3,E'*If I with the finger of Elohim (God) cast out devils* (Luke 11:20) — the same divine finger at work in the Messiah.'),
+    ('exodus',31,18,'canon','2-corinthians',3,3,4,E'*Not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3) — the same Torah, from stone to heart.'),
+    ('exodus',31,18,'canon','jeremiah',31,33,5,E'*I will... write it in their hearts* (Jeremiah 31:33) — the new-covenant law written within.'),
+    ('exodus',31,18,'canon','ezekiel',36,27,6,E'*I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27) — the Spirit writes the very Torah graven on stone.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='exodus-31-written-with-the-finger-of-elohim-from-stone-to-heart'
+  JOIN _s305_ex31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=31 AND sv.verse_number=m.src_v
+  JOIN _s305_ex31_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
