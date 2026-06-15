@@ -12291,6 +12291,1823 @@ SELECT t.id, cr.id, 1, E'★ *Our Father which art in heaven, Hallowed be thy na
  WHERE t.slug='isaiah-63-thou-o-yahuah-art-our-father-our-redeemer'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_1.sql (Isaiah 1) -----
+-- Chapter: Isaiah 1 — THE GREAT COVENANT-LAWSUIT OPENING. *Hear, O heavens, and give ear, O earth: for
+-- Yahuah (LORD) hath spoken, I have nourished and brought up children, and they have rebelled against me*
+-- (1:2). Heaven and earth are summoned as witnesses (the Song of Moses pattern, Deuteronomy 32:1); the
+-- indictment is covenant rebellion, conduct not ethnic — *the ox knoweth his owner... but Yashar'el doth
+-- not know, my people doth not consider* (1:3). The faithful Owner still calls them *my people*. The
+-- chapter's keystone is the offer of pardon: *though your sins be as scarlet, they shall be as white as
+-- snow* (1:18) — and pardon is UNTO obedience, never a charter for sin (*If ye be willing and obedient,
+-- ye shall eat the good of the land: But if ye refuse and rebel, ye shall be devoured*, 1:19-20). The
+-- rejection of empty sacrifice, new moon, and feast (1:11-15) is NOT the abolition of Yahuah's appointed
+-- times — the same prophet commands them kept forever (Isaiah 66:23); it is the rejection of ritual from
+-- bloody, unrepentant hands. A remnant is preserved (1:9, quoted by Paul at Romans 9:29) and the
+-- harlot-city is judged AND redeemed (1:21-27) — never a cast-off people (Romans 11).
+-- Tag: isa01   Temp view: _s303_isa01_lookup
+-- Sort band: base 26000, step 3 -> threads at 26000, 26003, 26006, 26009, 26012 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',1,v
+--
+-- Isaiah 1 coverage:
+--   ★ v.2-4 (Hear, O heavens... I have nourished and brought up children, and they have rebelled against
+--          me. The ox knoweth his owner... but Yashar'el doth not know, my people doth not consider)
+--        NT:     ★ John 1:11 (He came unto his own, and his own received him not) — THREAD 1 (the Owner
+--                whose own do not know him; the same not-knowing at the first coming)
+--        Extras: none warranted (the lawsuit pattern is canon-internal)
+--        Tanakh: ★ Deuteronomy 32:1 + 32:6 (Give ear, O ye heavens... is not he thy father that hath
+--                bought thee? hath he not made thee) — THREAD 1 (the Song of Moses heaven-and-earth lawsuit)
+--   ★★★ v.18 (Come now, and let us reason together... though your sins be as scarlet, they shall be as
+--          white as snow) — THE scarlet-to-white keystone
+--        NT:     ★★★ 1 John 1:7 (the blood of Yahusha HaMashiach... cleanseth us from all sin), 1 John 1:9
+--                (he is faithful and just to forgive us our sins), Revelation 7:14 (washed their robes,
+--                and made them white in the blood of the Lamb) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 51:7 (wash me, and I shall be whiter than snow) — THREAD 2
+--        ⚑ v.19-20 GUARD: pardon is UNTO obedience (If ye be willing and obedient... But if ye refuse and
+--          rebel, ye shall be devoured) — Torah-affirming, woven into THREAD 2 prose
+--   ★★ v.11-15 (To what purpose is the multitude of your sacrifices?... your new moons and your appointed
+--          feasts my soul hateth... your hands are full of blood) — rejection of EMPTY ritual, NOT abolition
+--        NT:     ★★ Matthew 9:13 (I will have mercy, and not sacrifice) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Hosea 6:6 (I desired mercy, and not sacrifice), Amos 5:21 + 5:24 (I hate your feast
+--                days... let judgment run down as waters), 1 Samuel 15:22 (to obey is better than
+--                sacrifice), Micah 6:8 (to do justly, and to love mercy, and to walk humbly), and the
+--                GUARD Isaiah 66:23 (from one new moon to another... shall all flesh come to worship) — THREAD 3
+--   ★ v.9-10 (Except Yahuah Tseva'ot had left unto us a very small remnant, we should have been as
+--          Sodom... Hear the word of Yahuah, ye rulers of Sodom)
+--        NT:     ★ Romans 9:29 (Except Yahuah of Sabaoth had left us a seed, we had been as Sodoma) —
+--                Paul quotes 1:9 verbatim; Luke 17:28-29 (the days of Lot... fire and brimstone),
+--                Revelation 11:8 (the great city, which spiritually is called Sodom) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: woven; Romans 11:5 remnant-guard placed in THREAD 5
+--   ★ v.21-27 (How is the faithful city become an harlot!... Zion shall be redeemed with judgment)
+--        NT:     ★ Revelation 21:2 (the holy city, new Jerusalem... prepared as a bride) — THREAD 5
+--                (the harlot-city made bride), Romans 11:5 (a remnant according to the election of grace)
+--        Extras: none warranted
+--        Tanakh: woven (the restoration of judges, the redemption of Zion) in prose
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-1-the-ox-knoweth-his-owner-but-israel-doth-not-know — NT (John 1) + Tanakh (Deuteronomy 32) [free]
+--      (★ the covenant-lawsuit; heaven and earth as witnesses; the Owner whose own do not know him)
+--   2. isaiah-1-though-your-sins-be-as-scarlet-they-shall-be-as-white-as-snow — NT (1 John 1, Revelation 7) + Tanakh (Psalm 51) [free]
+--      (★★★ the scarlet-to-white keystone; the cleansing blood; pardon UNTO obedience)
+--   3. isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices — NT (Matthew 9) + Tanakh (Hosea 6, Amos 5, 1 Samuel 15, Micah 6, Isaiah 66) [free]
+--      (★★ rejection of EMPTY ritual, NOT abolition of feast/new-moon/sacrifice; anti-hypocrisy, Torah-affirming)
+--   4. isaiah-1-except-yahuah-had-left-us-a-remnant-we-had-been-as-sodom — NT (Romans 9, Luke 17, Revelation 11) [free]
+--      (★ the remnant preserved + Sodom the type; Paul quotes 1:9 verbatim)
+--   5. isaiah-1-the-faithful-city-become-an-harlot-zion-redeemed-with-judgment — NT (Revelation 21, Romans 11) [free]
+--      (★ the harlot-city judged and redeemed; the bride-city; never a cast-off people)
+--
+-- Framing notes:
+--   ★ THE COVENANT-LAWSUIT (THREAD 1): *Hear, O heavens, and give ear, O earth: for Yahuah (LORD) hath
+--      spoken, I have nourished and brought up children, and they have rebelled against me* (1:2). This is
+--      the Song-of-Moses courtroom: *Give ear, O ye heavens, and I will speak; and hear, O earth, the words
+--      of my mouth* (Deuteronomy 32:1) — heaven and earth summoned as witnesses against a covenant people
+--      who *rebelled*. The indictment is conduct, not ethnicity: *the ox knoweth his owner, and the ass his
+--      master's crib: but Yashar'el (Israel) doth not know, my people doth not consider* (1:3). The Owner
+--      is the Father who bought them: *is not he thy father that hath bought thee? hath he not made thee*
+--      (Deuteronomy 32:6). And the same not-knowing met the Formed Son at his first coming: *He came unto
+--      his own, and his own received him not* (John 1:11) — yet still *my people*, never cast off.
+--   ★★★ SCARLET TO WHITE (THREAD 2): *Come now, and let us reason together, saith Yahuah (LORD): though
+--      your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall
+--      be as wool* (1:18). The keystone of the whole lawsuit is the offer of pardon. The blood that does the
+--      whitening is named in the rest of the library: *the blood of Yahusha HaMashiach (Jesus Christ) his
+--      Son cleanseth us from all sin* (1 John 1:7); *he is faithful and just to forgive us our sins*
+--      (1 John 1:9); *washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14).
+--      David sang the same plea: *wash me, and I shall be whiter than snow* (Psalm 51:7). ⚑ CRITICAL: the
+--      pardon is UNTO obedience, never a charter for sin — *If ye be willing and obedient, ye shall eat the
+--      good of the land: But if ye refuse and rebel, ye shall be devoured with the sword* (1:19-20). Grace
+--      is the means of return to his ways, not freedom from them; Torah stands.
+--   ★★ EMPTY RITUAL REJECTED, NOT ABOLISHED (THREAD 3): *To what purpose is the multitude of your
+--      sacrifices unto me?... your new moons and your appointed feasts my soul hateth... when ye spread
+--      forth your hands, I will hide mine eyes from you... your hands are full of blood* (1:11-15). This is
+--      NOT the abolition of sacrifice, new moon, or feast — it is Yahuah's rejection of them when offered
+--      by bloody, unrepentant hands. The SAME prophet commands the appointed times kept forever: *from one
+--      new moon to another, and from one sabbath to another, shall all flesh come to worship before me*
+--      (Isaiah 66:23). The prophets speak with one voice: *I desired mercy, and not sacrifice* (Hosea 6:6);
+--      *I will have mercy, and not sacrifice* (Matthew 9:13); *I hate, I despise your feast days... But let
+--      judgment run down as waters* (Amos 5:21,24); *to obey is better than sacrifice* (1 Samuel 15:22); *to
+--      do justly, and to love mercy, and to walk humbly with thy Elohim (God)* (Micah 6:8). What Yahuah
+--      hates is hypocritical worship divorced from justice — *cease to do evil; learn to do well; seek
+--      judgment, relieve the oppressed* (1:16-17). Mercy and obedience ABOVE heartless ritual, never INSTEAD
+--      of obedience.
+--   ★ THE REMNANT AND SODOM (THREAD 4): *Except Yahuah Tseva'ot (LORD of hosts) had left unto us a very
+--      small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (1:9). Paul
+--      quotes this verbatim: *Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma*
+--      (Romans 9:29). Sodom is the type of the judgment narrowly escaped — *the same day that Lot went out
+--      of Sodom it rained fire and brimstone from heaven* (Luke 17:29); *the great city, which spiritually
+--      is called Sodom and Egypt, where also our Lord was crucified* (Revelation 11:8). The remnant
+--      preserved is grace, never a cast-off people — *a remnant according to the election of grace*
+--      (Romans 11:5).
+--   ★ THE HARLOT-CITY REDEEMED (THREAD 5): *How is the faithful city become an harlot!... I will restore
+--      thy judges as at the first... Zion shall be redeemed with judgment, and her converts with
+--      righteousness* (1:21,26-27). The faithful city turned harlot is judged and then REDEEMED — *afterward
+--      thou shalt be called, The city of righteousness, the faithful city* (1:26). The end of the canon
+--      shows the harlot-city made bride: *I John saw the holy city, new Jerusalem, coming down from Elohim
+--      (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). Judgment is the
+--      furnace that purges the dross (1:25), never a casting-off — *a remnant according to the election of
+--      grace* (Romans 11:5).
+--   VERSES WITH NO SEPARATE ADD: v.5-8 (the sick body, the desolate land, the daughter of Zion as a
+--      besieged cottage — the lawsuit's depiction of judgment, woven into THREAD 1/THREAD 4 prose), v.16-17
+--      (wash you, cease to do evil, learn to do well — the repentance the pardon calls for, woven into
+--      THREAD 2 and THREAD 3), v.22-25 (the dross, the rebellious princes, the purging hand — woven into
+--      THREAD 5), v.28-31 (the consuming of transgressors, the oaks and gardens — the lawsuit's verdict,
+--      woven into THREAD 5). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa01_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The ox knoweth his owner — the covenant-lawsuit; heaven and earth as witnesses
+    ('canon','isaiah',1,2,'canon','deuteronomy',32,1,'free',
+      E'*Give ear, O ye heavens, and I will speak; and hear, O earth, the words of my mouth* (Deuteronomy 32:1). Isaiah opens the covenant-lawsuit with the very summons of the Song of Moses: *Hear, O heavens, and give ear, O earth: for Yahuah (LORD) hath spoken, I have nourished and brought up children, and they have rebelled against me* (Isaiah 1:2). Heaven and earth are called as standing witnesses against a covenant people who broke faith — the indictment is rebellion, conduct within the covenant, never ethnic.'),
+    ('canon','isaiah',1,2,'canon','deuteronomy',32,6,'free',
+      E'*Do ye thus requite Yahuah (LORD), O foolish people and unwise? is not he thy father that hath bought thee? hath he not made thee, and established thee?* (Deuteronomy 32:6). The children who *rebelled against me* (Isaiah 1:2) have spurned the Father who *bought* and *made* them. The lawsuit''s grief is a Father''s grief — *I have nourished and brought up children* — and even in the indictment they are still his, never disowned.'),
+    ('canon','isaiah',1,3,'canon','john',1,11,'free',
+      E'*He came unto his own, and his own received him not* (John 1:11). The dumb ox *knoweth his owner* but *Yashar''el (Israel) doth not know, my people doth not consider* (Isaiah 1:3) — and the same not-knowing met the Formed Son when he came to his own in the flesh. Yet *my people* he still calls them: the Owner is faithful even where the owned do not know him.'),
+
+    -- THREAD 2 (★★★): Though your sins be as scarlet — the scarlet-to-white keystone; the cleansing blood
+    ('canon','isaiah',1,18,'canon','1-john',1,7,'free',
+      E'*But if we walk in the light, as he is in the light, we have fellowship one with another, and the blood of Yahusha HaMashiach (Jesus Christ) his Son cleanseth us from all sin* (1 John 1:7). The offer *though your sins be as scarlet, they shall be as white as snow* (Isaiah 1:18) names the cleansing the library completes: the blood of the Formed Son *cleanseth us from all sin*. The scarlet washed white is the very work of the atoning blood.'),
+    ('canon','isaiah',1,18,'canon','1-john',1,9,'free',
+      E'*If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9). *Come now, and let us reason together, saith Yahuah (LORD): though your sins be as scarlet, they shall be as white as snow* (Isaiah 1:18) — the reasoning-together is the call to confess and be cleansed. He is *faithful and just to forgive*: the pardon of the lawsuit, held out to the willing.'),
+    ('canon','isaiah',1,18,'canon','revelation',7,14,'free',
+      E'*These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). The crimson made *as wool* (Isaiah 1:18) is the robe washed *white in the blood of the Lamb*. The scarlet-to-white promise of the lawsuit is consummated in the great multitude whose stained robes are made white by the Lamb''s own blood.'),
+    ('canon','isaiah',1,18,'canon','psalms',51,7,'free',
+      E'*Purge me with hyssop, and I shall be clean: wash me, and I shall be whiter than snow* (Psalm 51:7). David sings the very plea the lawsuit holds out — *though they be red like crimson, they shall be as wool* (Isaiah 1:18). The whiter-than-snow cleansing is the heart''s cry of the repentant, the pardon the covenant offers to the willing and obedient.'),
+
+    -- THREAD 3 (★★): To what purpose is the multitude of your sacrifices — empty ritual rejected, NOT abolished
+    ('canon','isaiah',1,11,'canon','matthew',9,13,'free',
+      E'*But go ye and learn what that meaneth, I will have mercy, and not sacrifice: for I am not come to call the righteous, but sinners to repentance* (Matthew 9:13). Yahuah''s *To what purpose is the multitude of your sacrifices unto me?* (Isaiah 1:11) is not the abolition of sacrifice but its subordination to mercy and a clean heart — *I will have mercy, and not sacrifice*. The offering of bloody, unrepentant hands is what is refused, never the appointed offering itself.'),
+    ('canon','isaiah',1,11,'canon','hosea',6,6,'free',
+      E'*For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6). The same word the King later quotes: Yahuah is *full of the burnt offerings of rams* (Isaiah 1:11) from hands that will not do justice. Mercy and the knowledge of Elohim are required ABOVE heartless ritual — never instead of obedience, but as its living root.'),
+    ('canon','isaiah',1,13,'canon','amos',5,21,'free',
+      E'*I hate, I despise your feast days, and I will not smell in your solemn assemblies* (Amos 5:21). Amos echoes Isaiah exactly — *your new moons and your appointed feasts my soul hateth... it is iniquity, even the solemn meeting* (Isaiah 1:13-14). What Yahuah hates is not his own appointed times but the hypocrisy of keeping them with unjust hands; the next breath demands justice, not the cancelling of the feast.'),
+    ('canon','isaiah',1,17,'canon','amos',5,24,'free',
+      E'*But let judgment run down as waters, and righteousness as a mighty stream* (Amos 5:24). This is the remedy Isaiah names in the same lawsuit: *cease to do evil; Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow* (Isaiah 1:16-17). The feast Yahuah rejects from bloody hands is restored by justice rolling down — the worship he hates is hypocrisy, and the cure is righteousness, not the abolition of his calendar.'),
+    ('canon','isaiah',1,11,'canon','1-samuel',15,22,'free',
+      E'*And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22). Yahuah delights not in *the blood of bullocks, or of lambs, or of he goats* (Isaiah 1:11) offered without obedience — *to obey is better than sacrifice*. The ranking is mercy and obedience over ritual, never the discarding of either.'),
+    ('canon','isaiah',1,17,'canon','micah',6,8,'free',
+      E'*He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). Isaiah''s *seek judgment, relieve the oppressed, judge the fatherless, plead for the widow* (Isaiah 1:17) is Micah''s *do justly... love mercy... walk humbly*. The prophets speak with one voice: justice and mercy are the worship Yahuah seeks behind the offering.'),
+    ('canon','isaiah',1,14,'canon','isaiah',66,23,'free',
+      E'*And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). The SAME prophet who records *your new moons and your appointed feasts my soul hateth* (Isaiah 1:14) ends his book with all flesh keeping the new moons and sabbaths forever. This is the proof the rejection is of HYPOCRISY, not of the appointed times — Yahuah''s calendar stands; what he hates is its keeping by hands *full of blood* (1:15).'),
+
+    -- THREAD 4 (★): Except Yahuah had left us a remnant we had been as Sodom — the remnant + Sodom the type
+    ('canon','isaiah',1,9,'canon','romans',9,29,'free',
+      E'*And as Esaias said before, Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma, and been made like unto Gomorrha* (Romans 9:29). Paul quotes Isaiah 1:9 word for word — *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* — to prove the remnant preserved by grace. The seed left is the proof of mercy in the midst of judgment: a people not cast off, a remnant kept.'),
+    ('canon','isaiah',1,9,'canon','luke',17,29,'free',
+      E'*But the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29). Sodom is the judgment Yashar''el narrowly escaped — *we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). The fire that fell on Lot''s city is the verdict the small remnant was spared; the days of Lot stand as the type of the day of reckoning.'),
+    ('canon','isaiah',1,10,'canon','revelation',11,8,'free',
+      E'*And their dead bodies shall lie in the street of the great city, which spiritually is called Sodom and Egypt, where also our Lord was crucified* (Revelation 11:8). Isaiah addresses the rulers as Sodom''s — *Hear the word of Yahuah (LORD), ye rulers of Sodom; give ear unto the law of our Elohim (God), ye people of Gomorrah* (Isaiah 1:10) — naming covenant rebellion by its type. The faithful city become Sodom is the lawsuit''s charge: not the destruction of a people, but the naming of their sin so they might turn.'),
+
+    -- THREAD 5 (★): The faithful city become an harlot — judged and redeemed; the bride-city
+    ('canon','isaiah',1,21,'canon','revelation',21,2,'free',
+      E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). The lawsuit''s grief — *How is the faithful city become an harlot!* (Isaiah 1:21) — is answered at the end of the canon: the harlot-city is purged and made bride. *Zion shall be redeemed with judgment* (1:27); the city of dross becomes *the holy city, new Jerusalem... prepared as a bride*.'),
+    ('canon','isaiah',1,26,'canon','romans',11,5,'free',
+      E'*Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The promise *I will restore thy judges as at the first... afterward thou shalt be called, The city of righteousness, the faithful city* (Isaiah 1:26) is the restoration, not the casting-off, of the covenant people. The purging hand (1:25) keeps a remnant — *a remnant according to the election of grace* — never a people abandoned; the dross is burned that the city may be faithful again.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-1-the-ox-knoweth-his-owner-but-israel-doth-not-know',
+       E'The ox knoweth his owner — the covenant-lawsuit, heaven and earth as witnesses',
+       E'Isaiah opens with a courtroom. The Father summons the standing witnesses of creation and lays the charge: *Hear, O heavens, and give ear, O earth: for Yahuah (LORD) hath spoken, I have nourished and brought up children, and they have rebelled against me* (Isaiah 1:2). This is the very summons of the Song of Moses — *Give ear, O ye heavens, and I will speak; and hear, O earth, the words of my mouth* (Deuteronomy 32:1) — the covenant-lawsuit pattern, heaven and earth called to testify against a people who broke faith. The indictment is conduct, not ethnicity, and its sting is the grief of a Father: *is not he thy father that hath bought thee? hath he not made thee, and established thee?* (Deuteronomy 32:6). Then the image that cuts deepest: *The ox knoweth his owner, and the ass his master''s crib: but Yashar''el (Israel) doth not know, my people doth not consider* (Isaiah 1:3). The dumb beast knows whose stall it eats from; the covenant people do not know their Owner. And the same not-knowing met the Formed Son when he came in the flesh: *He came unto his own, and his own received him not* (John 1:11). Yet through the whole lawsuit they are still *my people* — the Owner is faithful even where the owned do not know him; this is covenant rebellion, never a casting-off.',
+       sv.verse_id, ev.verse_id, 'free', 26000
+  FROM _s303_isa01_lookup sv, _s303_isa01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=1 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-1-though-your-sins-be-as-scarlet-they-shall-be-as-white-as-snow',
+       E'Though your sins be as scarlet — the cleansing made white, pardon unto obedience',
+       E'At the heart of the lawsuit, the Judge holds out pardon: *Come now, and let us reason together, saith Yahuah (LORD): though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool* (Isaiah 1:18). The whole indictment bends toward this offer — the covenant call to repent and be cleansed. The blood that does the whitening is named across the library: *the blood of Yahusha HaMashiach (Jesus Christ) his Son cleanseth us from all sin* (1 John 1:7); *he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9); *they... have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). David sang the same plea long before: *Purge me with hyssop, and I shall be clean: wash me, and I shall be whiter than snow* (Psalm 51:7). But the pardon is never a charter for sin. The very next breath binds it to obedience: *If ye be willing and obedient, ye shall eat the good of the land: But if ye refuse and rebel, ye shall be devoured with the sword: for the mouth of Yahuah (LORD) hath spoken it* (Isaiah 1:19-20). Grace is the means of return to his ways, not freedom from them. The scarlet washed white is the door home — and the home is a walk in his Torah, the willing and obedient eating the good of the land.',
+       sv.verse_id, ev.verse_id, 'free', 26003
+  FROM _s303_isa01_lookup sv, _s303_isa01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=1 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices',
+       E'To what purpose is the multitude of your sacrifices — empty ritual rejected, not abolished',
+       E'Yahuah turns from the rebels'' offerings in revulsion: *To what purpose is the multitude of your sacrifices unto me? saith Yahuah (LORD): I am full of the burnt offerings of rams... your new moons and your appointed feasts my soul hateth... And when ye spread forth your hands, I will hide mine eyes from you: yea, when ye make many prayers, I will not hear: your hands are full of blood* (Isaiah 1:11-15). Read carelessly, this looks like the abolition of sacrifice, new moon, and feast. It is not. It is Yahuah''s rejection of his own appointed worship when it is brought by bloody, unrepentant hands. The proof is the SAME prophet''s closing word: *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23) — the new moons and sabbaths kept forever, by all flesh, in the restoration. The prophets speak with one voice on what Yahuah seeks behind the offering: *I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6), which the King himself quotes — *I will have mercy, and not sacrifice* (Matthew 9:13); *I hate, I despise your feast days... But let judgment run down as waters, and righteousness as a mighty stream* (Amos 5:21,24); *to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22); *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). And Isaiah names the cure in the same breath: *cease to do evil; Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow* (Isaiah 1:16-17). Mercy and obedience ABOVE heartless ritual — never instead of obedience, but as its living root. The appointed times are good and kept; what Yahuah hates is worship divorced from justice and clean hands.',
+       sv.verse_id, ev.verse_id, 'free', 26006
+  FROM _s303_isa01_lookup sv, _s303_isa01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=1 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-1-except-yahuah-had-left-us-a-remnant-we-had-been-as-sodom',
+       E'Except Yahuah had left us a remnant — the seed preserved, Sodom the type',
+       E'Mercy stands in the midst of judgment: *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). Paul reaches back and quotes this verse word for word to prove the remnant kept by grace: *And as Esaias said before, Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma, and been made like unto Gomorrha* (Romans 9:29). Sodom is the type of the judgment narrowly escaped — *the same day that Lot went out of Sodom it rained fire and brimstone from heaven, and destroyed them all* (Luke 17:29) — and Isaiah names the rebellious rulers by that very type: *Hear the word of Yahuah (LORD), ye rulers of Sodom; give ear unto the law of our Elohim (God), ye people of Gomorrah* (Isaiah 1:10). The same name carries to the end of the canon, the great city *which spiritually is called Sodom and Egypt, where also our Lord was crucified* (Revelation 11:8). The point of the lawsuit is not the destruction of a people but the naming of their sin so they might turn — and the seed left is the proof of a people not cast off, a remnant according to the election of grace.',
+       sv.verse_id, ev.verse_id, 'free', 26009
+  FROM _s303_isa01_lookup sv, _s303_isa01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=1 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-1-the-faithful-city-become-an-harlot-zion-redeemed-with-judgment',
+       E'The faithful city become an harlot — judged and redeemed, the bride at the last',
+       E'The lawsuit grieves over what the city has become: *How is the faithful city become an harlot! it was full of judgment; righteousness lodged in it; but now murderers* (Isaiah 1:21). But the verdict is not extinction — it is the furnace that purges: *I will turn my hand upon thee, and purely purge away thy dross, and take away all thy tin: And I will restore thy judges as at the first... afterward thou shalt be called, The city of righteousness, the faithful city* (Isaiah 1:25-26). The harlot is judged in order to be made faithful again: *Zion shall be redeemed with judgment, and her converts with righteousness* (1:27). The end of the canon shows where this road runs: the harlot-city purged becomes the bride-city — *And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). The purging hand keeps a remnant, never abandoning a people: *Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). Judgment is the love that burns the dross so the faithful city can rise — Zion redeemed, the harlot made bride.',
+       sv.verse_id, ev.verse_id, 'free', 26012
+  FROM _s303_isa01_lookup sv, _s303_isa01_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=1 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Give ear, O ye heavens, and I will speak; and hear, O earth, the words of my mouth* (Deuteronomy 32:1) — the Song of Moses summons of heaven and earth as covenant witnesses, the lawsuit pattern Isaiah 1:2 opens with.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=2
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-the-ox-knoweth-his-owner-but-israel-doth-not-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*is not he thy father that hath bought thee? hath he not made thee* (Deuteronomy 32:6) — the rebellious children of Isaiah 1:2 have spurned the Father who bought and made them; the lawsuit''s grief is a Father''s grief.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=2
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-the-ox-knoweth-his-owner-but-israel-doth-not-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *He came unto his own, and his own received him not* (John 1:11) — the ox knows its owner but *my people doth not consider* (Isaiah 1:3); the same not-knowing met the Formed Son at his coming, yet still *my people*.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=3
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-the-ox-knoweth-his-owner-but-israel-doth-not-know'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the blood of Yahusha HaMashiach (Jesus Christ) his Son cleanseth us from all sin* (1 John 1:7) — the scarlet washed *white as snow* (Isaiah 1:18) is the work of the Formed Son''s atoning blood.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=18
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-though-your-sins-be-as-scarlet-they-shall-be-as-white-as-snow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9) — the *reason together* of Isaiah 1:18 is the call to confess and be cleansed.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=18
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-though-your-sins-be-as-scarlet-they-shall-be-as-white-as-snow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14) — the crimson made *as wool* (Isaiah 1:18) consummated; stained robes made white by the Lamb''s blood.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=18
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-though-your-sins-be-as-scarlet-they-shall-be-as-white-as-snow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *wash me, and I shall be whiter than snow* (Psalm 51:7) — David sings the very plea of the lawsuit''s pardon: *though they be red like crimson, they shall be as wool* (Isaiah 1:18).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=18
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-though-your-sins-be-as-scarlet-they-shall-be-as-white-as-snow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will have mercy, and not sacrifice* (Matthew 9:13) — the King quotes the prophets'' ranking; the *multitude of your sacrifices* (Isaiah 1:11) from unrepentant hands is what is refused, never the offering itself.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=11
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6) — mercy and the knowledge of Elohim ABOVE heartless ritual, the root the offering grows from.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=11
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I hate, I despise your feast days, and I will not smell in your solemn assemblies* (Amos 5:21) — Amos echoes Isaiah 1:13-14; what Yahuah hates is the feast kept by unjust hands, not his own appointed time.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=13
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*let judgment run down as waters, and righteousness as a mighty stream* (Amos 5:24) — the cure Isaiah names in the same breath: *seek judgment, relieve the oppressed* (Isaiah 1:17); justice rolling down restores the worship hypocrisy spoiled.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=17
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22) — Yahuah delights not in *the blood of bullocks* (Isaiah 1:11) without obedience; obedience over ritual, never the discarding of either.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=11
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*to do justly, and to love mercy, and to walk humbly with thy Elohim (God)* (Micah 6:8) — Isaiah''s *seek judgment... plead for the widow* (Isaiah 1:17) is Micah''s requirement; the worship behind the offering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=17
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'⚑ GUARD *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me* (Isaiah 66:23) — the SAME prophet keeps the new moons and sabbaths forever; Isaiah 1:14''s rejection is of HYPOCRISY, not the appointed times.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=14
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-to-what-purpose-is-the-multitude-of-your-sacrifices'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma* (Romans 9:29) — Paul quotes Isaiah 1:9 verbatim to prove the remnant kept by grace; the seed left is mercy in the midst of judgment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=9
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-except-yahuah-had-left-us-a-remnant-we-had-been-as-sodom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the same day that Lot went out of Sodom it rained fire and brimstone from heaven* (Luke 17:29) — the judgment Yashar''el narrowly escaped, *as Sodom... like unto Gomorrah* (Isaiah 1:9); the days of Lot the type of reckoning.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=9
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=17 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-except-yahuah-had-left-us-a-remnant-we-had-been-as-sodom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the great city, which spiritually is called Sodom and Egypt, where also our Lord was crucified* (Revelation 11:8) — Isaiah names the rulers *ye rulers of Sodom* (Isaiah 1:10); covenant rebellion named by its type so they might turn.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=10
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-except-yahuah-had-left-us-a-remnant-we-had-been-as-sodom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the holy city, new Jerusalem... prepared as a bride adorned for her husband* (Revelation 21:2) — the harlot-city of Isaiah 1:21, purged and *redeemed with judgment* (1:27), becomes the bride at the last.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=21
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-the-faithful-city-become-an-harlot-zion-redeemed-with-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *there is a remnant according to the election of grace* (Romans 11:5) — the purging hand of Isaiah 1:25-26 keeps a remnant, never abandoning a people; the dross burned that the faithful city may rise.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa01_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=1 AND sv.verse_number=26
+  JOIN _s303_isa01_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-1-the-faithful-city-become-an-harlot-zion-redeemed-with-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_29.sql (Isaiah 29) -----
+-- Chapter: Isaiah 29 — THE LIPS-FAR-FROM-HEART KEYSTONE and the SEALED BOOK. Ariel besieged
+-- (29:1-8), then the heart of the chapter: Yahuah pours out *the spirit of deep sleep* and
+-- the vision becomes *the words of a book that is sealed* (29:10-12); *this people draw near me
+-- with their mouth, and with their lips do honour me, but have removed their heart far from me,
+-- and their fear toward me is taught by the precept of men* (29:13) — THE verse Yahusha quotes
+-- verbatim against the Pharisees (Matthew 15, Mark 7), aimed at the tradition/precepts of men
+-- that NULLIFY the commandment of Elohim, NOT at the Torah; *the wisdom of their wise men shall
+-- perish* (29:14), which Paul quotes verbatim (1 Corinthians 1:19); the potter and the clay
+-- (29:16); and the reversal *in that day shall the deaf hear the words of the book* (29:18-19).
+-- Tag: isa29   Temp view: _s303_isa29_lookup
+-- Sort band: base 26700, step 3 -> threads at 26700, 26703, 26706, 26709, 26712 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',29,v
+--
+-- Isaiah 29 coverage:
+--   ★★★ v.13 (this people draw near me with their mouth, and with their lips do honour me, but
+--          have removed their heart far from me, and their fear toward me is taught by the precept of men)
+--        NT:     ★★★ Matthew 15:8-9 (This people draweth nigh unto me with their mouth... teaching
+--                for doctrines the commandments of men) + Matthew 15:3,6 (the commandment of Elohim
+--                of none effect by your tradition), ★★★ Mark 7:6-7 (the twin quotation) + Mark 7:8-9,13
+--                (laying aside the commandment of Elohim... Making the word of Elohim of none effect
+--                through your tradition) — THREAD 1
+--        Extras: none warranted (the NT quotation is the load-bearing weave)
+--        Tanakh: woven in prose (the precept-of-men / heart-removed lawsuit); no separate add forced
+--   ★★ v.14 (I will proceed to do a marvellous work... for the wisdom of their wise men shall
+--          perish, and the understanding of their prudent men shall be hid)
+--        NT:     ★★ 1 Corinthians 1:19 (I will destroy the wisdom of the wise, and will bring to
+--                nothing the understanding of the prudent — Paul quotes it verbatim), 1 Corinthians
+--                1:20 (hath not Elohim made foolish the wisdom of this world?), 1 Corinthians 1:25
+--                (the foolishness of Elohim is wiser than men) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: none separate (the wisdom-abased weave is Paul's own quotation)
+--   ★ v.10-12 (Yahuah hath poured out upon you the spirit of deep sleep, and hath closed your
+--          eyes... the vision of all is become unto you as the words of a book that is sealed)
+--        NT:     ★ Romans 11:8 (Elohim hath given them the spirit of slumber, eyes that they should
+--                not see) + Romans 11:5 GUARD (a remnant according to the election of grace),
+--                ★ 2 Corinthians 3:14-15 LATERAL (their minds were blinded... the vail upon their
+--                heart in the reading), ★ Revelation 5:1-5 LATERAL (the book sealed with seven seals
+--                none could open; the Lamb alone prevailed to open it) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: Romans-11 remnant guard woven (the slumber is PARTIAL, a remnant stands)
+--   ★ v.18-19 (in that day shall the deaf hear the words of the book, and the eyes of the blind
+--          shall see out of obscurity... the meek shall increase their joy in Yahuah)
+--        NT:     ★ Matthew 11:5 LATERAL (the deaf hear, the blind receive their sight — Yahusha's
+--                proof to John) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 35:5 LATERAL (the eyes of the blind shall be opened, and the ears of the
+--                deaf shall be unstopped) — THREAD 4 (the sealed book opened, the slumber lifted for the humble)
+--   ★ v.16 (Surely your turning of things upside down shall be esteemed as the potter's clay: for
+--          shall the work say of him that made it, He made me not?)
+--        NT:     none warranted (Romans 9:20-21 held — used elsewhere; the lateral Isaiah twin carries it)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 45:9 LATERAL (Woe unto him that striveth with his Maker... Shall the clay
+--                say to him that fashioneth it, What makest thou?) — THREAD 5
+--        v.22-24 (Yahuah, who redeemed Abraham, concerning the house of Jacob... Jacob shall not
+--                now be ashamed... they shall sanctify my name): the two-house restoration close;
+--                woven in THREAD 4's prose (the meek of the redeemed Jacob who come to understanding),
+--                no separate add forced.
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-29-this-people-draw-near-me-with-their-mouth — NT (Matthew 15, Mark 7) [free]
+--      (★★★ lips-far-from-heart; precepts-of-men NULLIFY the commandment, NOT the Torah — Mark 7:8-13 distinction held)
+--   2. isaiah-29-the-wisdom-of-their-wise-men-shall-perish — NT (1 Corinthians 1) [free]
+--      (★★ the wisdom of the wise destroyed; human wisdom abased before Yahuah's marvellous work)
+--   3. isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book — NT (Romans 11, 2 Corinthians 3, Revelation 5) [free]
+--      (★ judicial slumber + the sealed book; PARTIAL, a remnant stands; the book sealed UNTIL the Lamb opens it)
+--   4. isaiah-29-in-that-day-shall-the-deaf-hear-the-words-of-the-book — NT (Matthew 11) + Tanakh (Isaiah 35) [free]
+--      (★ the reversal in that day; the sealed book opened, the slumber lifted for the humble)
+--   5. isaiah-29-shall-the-work-say-of-him-that-made-it — Tanakh (Isaiah 45) [free]
+--      (★ the potter and the clay; the creature cannot arraign its Maker)
+--
+-- Framing notes:
+--   ★★★ THE LIPS FAR FROM THE HEART (THREAD 1): *this people draw near me with their mouth, and
+--      with their lips do honour me, but have removed their heart far from me, and their fear toward
+--      me is taught by the precept of men* (Isaiah 29:13). Yahusha quotes it verbatim against the
+--      Pharisees: *This people draweth nigh unto me with their mouth, and honoureth me with their
+--      lips; but their heart is far from me. But in vain they do worship me, teaching for doctrines
+--      the commandments of men* (Matthew 15:8-9); the twin in *This people honoureth me with their
+--      lips, but their heart is far from me. Howbeit in vain do they worship me, teaching for
+--      doctrines the commandments of men* (Mark 7:6-7). CRITICAL FRAMING: the charge is aimed at
+--      the PRECEPTS OF MEN — *the tradition of men* — that NULLIFY the commandment of Elohim, NOT
+--      at the Torah. Yahusha names exactly this: *Why do ye also transgress the commandment of
+--      Elohim (God) by your tradition?... Thus have ye made the commandment of Elohim (God) of none
+--      effect by your tradition* (Matthew 15:3,6); *For laying aside the commandment of Elohim
+--      (God), ye hold the tradition of men... Making the word of Elohim (God) of none effect through
+--      your tradition* (Mark 7:8,13). The fault is the removed heart and the doctrines of men — never
+--      the commandments of Yahuah. The Torah is upheld; the man-made tradition that displaces it and
+--      the heart-empty lip-worship are condemned. 1 John 2:3-4 holds.
+--   ★★ THE WISDOM OF THE WISE PERISHES (THREAD 2): *the wisdom of their wise men shall perish, and
+--      the understanding of their prudent men shall be hid* (Isaiah 29:14). Paul quotes it verbatim:
+--      *For it is written, I will destroy the wisdom of the wise, and will bring to nothing the
+--      understanding of the prudent* (1 Corinthians 1:19); *Where is the wise?... hath not Elohim
+--      (God) made foolish the wisdom of this world?* (1:20); *Because the foolishness of Elohim (God)
+--      is wiser than men* (1:25). The marvellous work Yahuah proceeds to do abases human wisdom — the
+--      cross is the marvellous work and the wonder before which the prudent are confounded.
+--   ★ THE SPIRIT OF DEEP SLEEP AND THE SEALED BOOK (THREAD 3): *For Yahuah (LORD) hath poured out
+--      upon you the spirit of deep sleep, and hath closed your eyes* (29:10); *the vision of all is
+--      become unto you as the words of a book that is sealed... Read this, I pray thee: and he saith,
+--      I cannot; for it is sealed* (29:11). Paul quotes the slumber: *Elohim (God) hath given them
+--      the spirit of slumber, eyes that they should not see, and ears that they should not hear*
+--      (Romans 11:8). It is JUDICIAL and PARTIAL — covenant-lawsuit, never a casting-off: *Hath
+--      Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1), *there is a remnant
+--      according to the election of grace* (11:5). The veil-on-the-reading is the same: *their minds
+--      were blinded... when Moses is read, the vail is upon their heart* (2 Corinthians 3:14-15) —
+--      and *the vail shall be taken away* when the heart turns (3:16). And the sealed book finds its
+--      answer in Revelation: *a book... sealed with seven seals... no man... was able to open the
+--      book* (Revelation 5:1-3) until *the Lion of the tribe of Juda, the Root of David, hath
+--      prevailed to open the book* (5:5). The book is sealed UNTIL the Lamb — the Messiah — opens it.
+--   ★ IN THAT DAY THE DEAF HEAR (THREAD 4): *And in that day shall the deaf hear the words of the
+--      book, and the eyes of the blind shall see out of obscurity, and out of darkness... The meek
+--      also shall increase their joy in Yahuah (LORD)* (29:18-19). The sealed book is opened, the
+--      slumber lifted for the humble. Yahusha gives this very reversal as his proof to John: *The
+--      blind receive their sight... and the deaf hear* (Matthew 11:5). Isaiah's own twin: *Then the
+--      eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5).
+--      The redeemed of Jacob — *they also that erred in spirit shall come to understanding* (29:24) —
+--      are the two-house remnant whose joy increases in Yahuah.
+--   ★ THE POTTER AND THE CLAY (THREAD 5): *Surely your turning of things upside down shall be
+--      esteemed as the potter's clay: for shall the work say of him that made it, He made me not?*
+--      (29:16). Isaiah's own twin holds the creature to its place: *Woe unto him that striveth with
+--      his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9).
+--      The creature cannot arraign its Maker; the Formed One who shaped Yashar'el is not answerable
+--      to the clay.
+--   VERSES WITH NO SEPARATE ADD: v.1-8 (Ariel besieged; the lawsuit-judgment setting — woven as
+--      the chapter frame), v.9 (drunken but not with wine — the same stupor as the deep sleep of
+--      THREAD 3), v.15 (woe to them who hide their counsel — preface to the potter of THREAD 5),
+--      v.17 (Lebanon a fruitful field — the reversal preface to THREAD 4), v.20-21 (the terrible
+--      one brought to nought — the judgment that clears the way for the meek of THREAD 4), v.22-24
+--      (the redeemed of Abraham/Jacob, the two-house restoration close — woven into THREAD 4 prose).
+--      All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): this people draw near me with their mouth — lips far from heart; precepts of men
+    ('canon','isaiah',29,13,'canon','matthew',15,8,'free',
+      E'*This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me* (Matthew 15:8). Yahusha quotes Isaiah 29:13 verbatim against the Pharisees — *this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me* (Isaiah 29:13). The same indictment: the mouth draws near, the lips honour, but the heart is removed far away. Lip-worship with the heart elsewhere is the charge in both.'),
+    ('canon','isaiah',29,13,'canon','matthew',15,9,'free',
+      E'*But in vain they do worship me, teaching for doctrines the commandments of men* (Matthew 15:9). Isaiah said their fear was *taught by the precept of men* (Isaiah 29:13); Yahusha names the same thing — *teaching for doctrines the commandments of men*. The aim is the PRECEPTS OF MEN, the tradition that displaces the commandment, not the Torah: just before, Yahusha rebukes *Why do ye also transgress the commandment of Elohim (God) by your tradition?... Thus have ye made the commandment of Elohim (God) of none effect by your tradition* (Matthew 15:3,6). The fault is man-made tradition voiding the commandment of Yahuah — never the commandment itself.'),
+    ('canon','isaiah',29,13,'canon','mark',7,6,'free',
+      E'*He answered and said unto them, Well hath Esaias prophesied of you hypocrites, as it is written, This people honoureth me with their lips, but their heart is far from me* (Mark 7:6). The twin quotation of Isaiah 29:13 — *with their lips do honour me, but have removed their heart far from me*. Mark names the prophet by name: *Well hath Esaias prophesied of you* — the lips draw near while the heart is far off.'),
+    ('canon','isaiah',29,13,'canon','mark',7,7,'free',
+      E'*Howbeit in vain do they worship me, teaching for doctrines the commandments of men* (Mark 7:7). Isaiah''s *their fear toward me is taught by the precept of men* (Isaiah 29:13) is the doctrine-of-men worship. Mark then makes the target unmistakable: *For laying aside the commandment of Elohim (God), ye hold the tradition of men* (7:8), *Making the word of Elohim (God) of none effect through your tradition* (7:13). The precepts of men NULLIFY the commandment of Elohim — that is the sin, not the keeping of the commandment.'),
+    ('canon','isaiah',29,13,'canon','mark',7,13,'free',
+      E'*Making the word of Elohim (God) of none effect through your tradition, which ye have delivered: and many such like things do ye* (Mark 7:13). This is the heart of the rebuke that quotes Isaiah 29:13: the *precept of men* (Isaiah 29:13) is condemned precisely because it makes *the word of Elohim of none effect*. Yahusha defends the commandment — *Honour thy father and thy mother* (7:10) — against the Corban-tradition that voids it. The lips-far-from-heart charge falls on man-made tradition that displaces the Torah, never on the Torah of Yahuah.'),
+
+    -- THREAD 2 (★★): the wisdom of their wise men shall perish — Paul quotes it verbatim
+    ('canon','isaiah',29,14,'canon','1-corinthians',1,19,'free',
+      E'*For it is written, I will destroy the wisdom of the wise, and will bring to nothing the understanding of the prudent* (1 Corinthians 1:19). Paul quotes Isaiah 29:14 word for word — *the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid*. The marvellous work Yahuah proceeds to do is the very thing that destroys the wisdom of the wise; Paul reads the cross as that marvellous work and wonder.'),
+    ('canon','isaiah',29,14,'canon','1-corinthians',1,20,'free',
+      E'*Where is the wise? where is the scribe? where is the disputer of this world? hath not Elohim (God) made foolish the wisdom of this world?* (1 Corinthians 1:20). Isaiah said *the wisdom of their wise men shall perish* (Isaiah 29:14); Paul presses it — the wise, the scribe, the disputer are confounded, their wisdom made foolish. The marvellous work abases the prudent men whose understanding *shall be hid*.'),
+    ('canon','isaiah',29,14,'canon','1-corinthians',1,25,'free',
+      E'*Because the foolishness of Elohim (God) is wiser than men; and the weakness of Elohim (God) is stronger than men* (1 Corinthians 1:25). The *marvellous work and a wonder* that makes *the wisdom of their wise men... perish* (Isaiah 29:14) is the foolishness of preaching that overthrows human wisdom — *the foolishness of Elohim (God) is wiser than men*. Yahuah''s marvellous work is wiser than all the prudence it brings to nothing.'),
+
+    -- THREAD 3 (★): the spirit of deep sleep and the sealed book
+    ('canon','isaiah',29,10,'canon','romans',11,8,'free',
+      E'*(According as it is written, Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear;) unto this day* (Romans 11:8). Paul quotes the deep sleep of Isaiah 29:10 — *Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes*. The poured-out slumber, the closed eyes, are the judicial dulling. But Paul frames it as PARTIAL, never a casting-off: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — *there is a remnant according to the election of grace* (11:5). The slumber falls, yet the remnant stands.'),
+    ('canon','isaiah',29,11,'canon','2-corinthians',3,14,'free',
+      E'*But their minds were blinded: for until this day remaineth the same vail untaken away in the reading of the old testament; which vail is done away in Messiah (Christ)* (2 Corinthians 3:14). The vision become *as the words of a book that is sealed* (Isaiah 29:11) is the same blinded reading — a vail upon the text *in the reading*, the eyes that cannot make out what is written. Paul says the vail *is done away in Messiah* — the sealing is not forever.'),
+    ('canon','isaiah',29,11,'canon','2-corinthians',3,15,'free',
+      E'*But even unto this day, when Moses is read, the vail is upon their heart* (2 Corinthians 3:15). Isaiah''s sealed book — *Read this, I pray thee: and he saith, I cannot; for it is sealed* (Isaiah 29:11) — is the vail on the heart in the reading. And the lifting is named: *when it shall turn to Yahuah (Lord), the vail shall be taken away* (3:16). The book is sealed until the heart turns; the slumber is judicial, not final.'),
+    ('canon','isaiah',29,11,'canon','revelation',5,1,'free',
+      E'*And I saw in the right hand of him that sat on the throne a book written within and on the backside, sealed with seven seals* (Revelation 5:1). The vision become *as the words of a book that is sealed* (Isaiah 29:11) finds its heavenly counterpart — the sealed book in the right hand of the Enthroned, written within and without, shut with seven seals. The sealed scroll of Isaiah is the sealed scroll of the throne.'),
+    ('canon','isaiah',29,11,'canon','revelation',5,3,'free',
+      E'*And no man in heaven, nor in earth, neither under the earth, was able to open the book, neither to look thereon* (Revelation 5:3). Isaiah''s sealed book passed from the learned to the unlearned and none could read it — *I cannot; for it is sealed... I am not learned* (Isaiah 29:11-12); in Revelation no man at all could open it. The sealing waits for One worthy.'),
+    ('canon','isaiah',29,11,'canon','revelation',5,5,'free',
+      E'*And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5). The book *that is sealed* which no man could read (Isaiah 29:11) is opened at last — not by the learned, but by the Lion of Yahudah, the Root of David, the Messiah. The book is sealed UNTIL the Lamb opens it; the slumber lifts when He prevails.'),
+
+    -- THREAD 4 (★): in that day the deaf hear the words of the book — the reversal
+    ('canon','isaiah',29,18,'canon','matthew',11,5,'free',
+      E'*The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them* (Matthew 11:5). Isaiah promised *in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity* (Isaiah 29:18); Yahusha gives this very list as his proof to John — *the deaf hear... the blind receive their sight*. The day Isaiah named has come; the sealed book is opened, the eyes unstopped.'),
+    ('canon','isaiah',29,18,'canon','isaiah',35,5,'free',
+      E'*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5). Isaiah''s own twin to *in that day shall the deaf hear the words of the book, and the eyes of the blind shall see* (Isaiah 29:18) — the same reversal of the deep sleep and the sealed book, the blind seeing and the deaf hearing when *your Elohim (God) will come and save you* (35:4). The slumber poured out (29:10) is undone in the day of salvation.'),
+
+    -- THREAD 5 (★): shall the work say of him that made it — the potter and the clay
+    ('canon','isaiah',29,16,'canon','isaiah',45,9,'free',
+      E'*Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* (Isaiah 45:9). Isaiah''s twin to *shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16). The creature cannot arraign its Maker; the turning of things upside down — clay esteeming itself above the potter — is rebuked in both. The Formed One who fashioned Yashar''el is not answerable to the clay.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-29-this-people-draw-near-me-with-their-mouth',
+       E'This people draw near me with their mouth — the precept of men, not the commandment of Yahuah',
+       E'At the center of Isaiah 29 stands the verse Yahusha would quote against the Pharisees: *Wherefore Yahuah (Lord) said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men* (Isaiah 29:13). The mouth draws near; the heart is removed far off; the fear of Yahuah has been replaced by *the precept of men*. Yahusha takes it up word for word: *This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me. But in vain they do worship me, teaching for doctrines the commandments of men* (Matthew 15:8-9); and the twin, *This people honoureth me with their lips, but their heart is far from me. Howbeit in vain do they worship me, teaching for doctrines the commandments of men* (Mark 7:6-7). Hear carefully where the charge lands. It is NOT a charge against the Torah. It is a charge against the TRADITIONS and PRECEPTS OF MEN that NULLIFY the commandment of Elohim. Yahusha names it exactly: *Why do ye also transgress the commandment of Elohim (God) by your tradition?... Thus have ye made the commandment of Elohim (God) of none effect by your tradition* (Matthew 15:3,6); *For laying aside the commandment of Elohim (God), ye hold the tradition of men... Making the word of Elohim (God) of none effect through your tradition* (Mark 7:8,13). He even defends a specific commandment — *Honour thy father and thy mother* (Mark 7:10) — against the Corban-tradition that voided it. The fault is the removed heart and the doctrines of men; never the commandments of Yahuah. The Torah is upheld in the very breath that condemns the man-made tradition displacing it, and condemns the empty lip-worship that honours with the mouth while the heart is far away. *He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:4) — the lips-far-from-heart worship is the lie this verse exposes.',
+       sv.verse_id, ev.verse_id, 'free', 26700
+  FROM _s303_isa29_lookup sv, _s303_isa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=29 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-29-the-wisdom-of-their-wise-men-shall-perish',
+       E'The wisdom of their wise men shall perish — Paul quotes the marvellous work',
+       E'*Therefore, behold, I will proceed to do a marvellous work among this people, even a marvellous work and a wonder: for the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid* (Isaiah 29:14). Yahuah answers the lip-worship and the precept-of-men religion of v.13 with a marvellous work that abases human wisdom. Paul quotes the verse word for word and reads the cross as that marvellous work: *For it is written, I will destroy the wisdom of the wise, and will bring to nothing the understanding of the prudent* (1 Corinthians 1:19). He presses it: *Where is the wise? where is the scribe? where is the disputer of this world? hath not Elohim (God) made foolish the wisdom of this world?* (1:20). And he names why — *Because the foolishness of Elohim (God) is wiser than men; and the weakness of Elohim (God) is stronger than men* (1:25). The marvellous work and wonder Isaiah foretold is the foolishness of preaching that confounds the wise; the prudent men whose understanding *shall be hid* are abased before the wisdom of Yahuah, which is wiser than all the wisdom it brings to nothing.',
+       sv.verse_id, ev.verse_id, 'free', 26703
+  FROM _s303_isa29_lookup sv, _s303_isa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=29 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book',
+       E'The spirit of deep sleep and the book that is sealed — until the Lamb opens it',
+       E'Before the lip-worship is named, Isaiah names the judicial stupor it sits under: *For Yahuah (LORD) hath poured out upon you the spirit of deep sleep, and hath closed your eyes: the prophets and your rulers, the seers hath he covered* (Isaiah 29:10). And the vision itself is shut: *And the vision of all is become unto you as the words of a book that is sealed, which men deliver to one that is learned, saying, Read this, I pray thee: and he saith, I cannot; for it is sealed* (29:11), *And the book is delivered to him that is not learned, saying, Read this, I pray thee: and he saith, I am not learned* (29:12). Paul quotes the deep sleep: *Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear; unto this day* (Romans 11:8). But the slumber is PARTIAL and judicial, never a casting-off — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *there is a remnant according to the election of grace* (11:5). The same vail lies on the reading: *their minds were blinded: for until this day remaineth the same vail untaken away in the reading of the old testament* (2 Corinthians 3:14), *when Moses is read, the vail is upon their heart* (3:15) — and it lifts: *when it shall turn to Yahuah (Lord), the vail shall be taken away* (3:16). The sealed book waits for One worthy. *And I saw in the right hand of him that sat on the throne a book... sealed with seven seals* (Revelation 5:1), and *no man in heaven, nor in earth, neither under the earth, was able to open the book* (5:3) — until *behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (5:5). The book is sealed UNTIL the Lamb, the Messiah, opens it; the deep sleep is lifted, and the remnant stands.',
+       sv.verse_id, ev.verse_id, 'free', 26706
+  FROM _s303_isa29_lookup sv, _s303_isa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=29 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-29-in-that-day-shall-the-deaf-hear-the-words-of-the-book',
+       E'In that day shall the deaf hear the words of the book — the reversal for the meek',
+       E'The sealed book and the deep sleep are not the last word. Isaiah turns to the day of reversal: *And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness. The meek also shall increase their joy in Yahuah (LORD), and the poor among men shall rejoice in the Holy One of Yashar''el (Israel)* (Isaiah 29:18-19). The very faculties shut up in the slumber — the deaf ears, the blind eyes, the sealed book — are opened for the humble. Yahusha gives this list as his proof to John that the day has come: *The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them* (Matthew 11:5). Isaiah''s own twin sings it: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5), for *your Elohim (God) will come and save you* (35:4). And the chapter closes on the two-house restoration the reversal serves: *Yahuah (LORD), who redeemed Abraham, concerning the house of Jacob, Jacob shall not now be ashamed* (29:22); *they shall sanctify my name, and sanctify the Holy One of Jacob, and shall fear the Elohim (God) of Yashar''el (Israel)* (29:23); *They also that erred in spirit shall come to understanding, and they that murmured shall learn doctrine* (29:24). The meek of redeemed Jacob hear the words of the book at last; the sealed scroll is opened, the slumber lifted, and the humble rejoice in the Holy One of Yashar''el.',
+       sv.verse_id, ev.verse_id, 'free', 26709
+  FROM _s303_isa29_lookup sv, _s303_isa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=29 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-29-shall-the-work-say-of-him-that-made-it',
+       E'Shall the work say of him that made it, He made me not? — the potter and the clay',
+       E'To the men who hide their counsel from Yahuah and say *Who seeth us? and who knoweth us?* (Isaiah 29:15), Isaiah answers with the potter and the clay: *Surely your turning of things upside down shall be esteemed as the potter''s clay: for shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?* (29:16). To esteem oneself above the Maker — to imagine the clay can deny or judge the hand that shaped it — is the turning of things upside down. Isaiah''s own twin presses the same: *Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* (Isaiah 45:9). The creature cannot arraign its Maker. The Formed One who fashioned Yashar''el is not answerable to the clay; the prudent who hide their counsel will be esteemed as the potter''s clay, and the wisdom that thought itself hidden from Him shall perish.',
+       sv.verse_id, ev.verse_id, 'free', 26712
+  FROM _s303_isa29_lookup sv, _s303_isa29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=29 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me* (Matthew 15:8) — Yahusha quotes Isaiah 29:13 verbatim; the lips honour, the heart is removed far away.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-this-people-draw-near-me-with-their-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *in vain they do worship me, teaching for doctrines the commandments of men* (Matthew 15:9) — the *precept of men* (Isaiah 29:13); the charge is the tradition that voids the commandment (Matthew 15:3,6), NOT the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-this-people-draw-near-me-with-their-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *Well hath Esaias prophesied of you hypocrites... This people honoureth me with their lips, but their heart is far from me* (Mark 7:6) — the twin quotation of Isaiah 29:13, the prophet named.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-this-people-draw-near-me-with-their-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *in vain do they worship me, teaching for doctrines the commandments of men* (Mark 7:7) — the *precept of men* (Isaiah 29:13) again; the doctrine-of-men worship that displaces the commandment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-this-people-draw-near-me-with-their-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★★ *Making the word of Elohim (God) of none effect through your tradition* (Mark 7:13) — the load-bearing distinction: the *precept of men* (Isaiah 29:13) is condemned because it NULLIFIES the commandment; the Torah stands.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-this-people-draw-near-me-with-their-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will destroy the wisdom of the wise, and will bring to nothing the understanding of the prudent* (1 Corinthians 1:19) — Paul quotes Isaiah 29:14 verbatim; the marvellous work read as the cross.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-wisdom-of-their-wise-men-shall-perish'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Where is the wise?... hath not Elohim (God) made foolish the wisdom of this world?* (1 Corinthians 1:20) — *the wisdom of their wise men shall perish* (Isaiah 29:14); the wise and the scribe confounded.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-wisdom-of-their-wise-men-shall-perish'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the foolishness of Elohim (God) is wiser than men; and the weakness of Elohim (God) is stronger than men* (1 Corinthians 1:25) — the *marvellous work and a wonder* (Isaiah 29:14) is the foolishness of preaching that overthrows human wisdom.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=14
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-wisdom-of-their-wise-men-shall-perish'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Elohim (God) hath given them the spirit of slumber, eyes that they should not see* (Romans 11:8) — Paul quotes the deep sleep of Isaiah 29:10; PARTIAL and judicial, never a casting-off (Romans 11:1,5).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=10
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *their minds were blinded... the same vail untaken away in the reading* (2 Corinthians 3:14) — the *book that is sealed* (Isaiah 29:11) is the vail on the reading, *done away in Messiah*.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when Moses is read, the vail is upon their heart* (2 Corinthians 3:15) — *I cannot; for it is sealed* (Isaiah 29:11); the vail lifts *when it shall turn to Yahuah* (3:16).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a book... sealed with seven seals* (Revelation 5:1) — the heavenly counterpart of the *book that is sealed* (Isaiah 29:11), in the right hand of the Enthroned.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*no man... was able to open the book, neither to look thereon* (Revelation 5:3) — the sealed book none could read — *I cannot; for it is sealed... I am not learned* (Isaiah 29:11-12).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book* (Revelation 5:5) — the *book that is sealed* (Isaiah 29:11) is opened UNTIL the Lamb, the Messiah, by whom the slumber lifts.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-the-spirit-of-deep-sleep-and-the-sealed-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The blind receive their sight... and the deaf hear* (Matthew 11:5) — Yahusha''s proof to John that the day of *the deaf hear the words of the book* (Isaiah 29:18) has come.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-in-that-day-shall-the-deaf-hear-the-words-of-the-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5) — Isaiah''s own twin to *the deaf hear the words of the book... the eyes of the blind shall see* (Isaiah 29:18); the slumber undone in the day of salvation.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=18
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-in-that-day-shall-the-deaf-hear-the-words-of-the-book'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9) — Isaiah''s twin to *shall the work say of him that made it, He made me not?* (Isaiah 29:16); the creature cannot arraign its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=29 AND sv.verse_number=16
+  JOIN _s303_isa29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-29-shall-the-work-say-of-him-that-made-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_48.sql (Isaiah 48) -----
+-- Chapter: Isaiah 48 — Yahuah's lawsuit against obstinate Jacob/Yashar'el, the refining furnace,
+-- the First-and-the-Last self-naming, the Creator's hand, the Sent One sent by Yahuah and his
+-- Spirit, the call out of Babylon, and the lament over abandoned commandments. *Hear ye this, O
+-- house of Jacob, which are called by the name of Yashar'el (Israel)... but not in truth, nor in
+-- righteousness* (48:1). The chapter is a covenant-lawsuit that ends in mercy and second-exodus:
+-- the obstinate people refined NOT cast off (48:10), the eternal Yahuah who is First and Last
+-- (48:12), Creator of heaven and earth (48:13), who teaches the way that profits and laments the
+-- peace that would have flowed had they hearkened (48:17-18), calling them forth from Babylon
+-- (48:20) — *There is no peace, saith Yahuah (LORD), unto the wicked* (48:22).
+-- Tag: isa48   Temp view: _s303_isa48_lookup
+-- Sort band: base 27175, step 3 -> threads at 27175, 27178, 27181, 27184, 27187, 27190 (6 threads)
+-- Source of EVERY row: 'canon','isaiah',48,v
+--
+-- Isaiah 48 coverage:
+--   ★★ v.10 (Behold, I have refined thee, but not with silver; I have chosen thee in the furnace
+--          of affliction)
+--        NT:     ★★ 1 Peter 1:6-7 (the trial of your faith, much more precious than of gold that
+--                perisheth, though it be tried with fire) — THREAD 1
+--        Extras: ★ Wisdom of Solomon 3:5-6 (having been a little chastised, they shall be greatly
+--                rewarded... As gold in the furnace has he tried them) + Sirach 2:5 (for gold is
+--                tried in the fire, and acceptable men in the furnace of adversity) — THREAD 1
+--                (both verses confirmed via dump: WisSol 3:5,6 and Sirach 2:5 clean)
+--        Tanakh: ★ Malachi 3:3 (he shall sit as a refiner and purifier of silver) + Zechariah
+--                13:9 (I will bring the third part through the fire, and will refine them as silver
+--                is refined) — THREAD 1
+--   ★★ v.12 (Hearken unto me, O Jacob and Yashar'el (Israel), my called; I am he; I am the first,
+--          I also am the last)
+--        NT:     ★★★ Revelation 1:17 (Fear not; I am the first and the last) + Revelation 1:8 (I
+--                am Alpha and Omega... saith Yahuah (Lord)) + Revelation 2:8 (the first and the
+--                last, which was dead, and is alive) + Revelation 22:13 (I am Alpha and Omega...
+--                the first and the last) — THREAD 2 (Formed/Formless keystone)
+--        Extras: none warranted (the NT self-application carries the weight)
+--        Tanakh: ★ Isaiah 44:6 (I am the first, and I am the last; and beside me there is no
+--                Elohim (God)) + Isaiah 41:4 (I Yahuah (LORD), the first, and with the last; I am
+--                he) — THREAD 2 LATERAL
+--   ★ v.13 (Mine hand also hath laid the foundation of the earth, and my right hand hath spanned
+--          the heavens)
+--        NT:     held in prose within THREAD 2 (the Creator-title belongs to the same First-and-
+--                Last; the Formed Son the agent of creation — John 1:3 / Col 1:16 named in prose,
+--                no separate row forced)
+--        Extras: none warranted
+--        Tanakh: woven with v.12 in THREAD 2 (Isaiah 44:24 / 51:13 register held in prose)
+--   ★ v.16 (Come ye near unto me... I have not spoken in secret from the beginning... and now
+--          Adonai Yahuah (the Lord GOD), and his Spirit, hath sent me)
+--        NT:     ★ John 8:42 (I proceeded forth and came from Elohim (God)... but he sent me) —
+--                THREAD 3 (the Sent One; Formed sent by the Father)
+--        Extras: none warranted
+--        Tanakh: held in prose (the Speaker sent by Yahuah and his Spirit)
+--   ★ v.17-18 (I am Yahuah Elohayka (the LORD thy God) which teacheth thee to profit... O that
+--          thou hadst hearkened to my commandments! then had thy peace been as a river)
+--        NT:     ★ 1 John 2:3 (hereby we do know that we know him, if we keep his commandments) —
+--                THREAD 4 (Torah-keeping the river of peace)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 57:19,21 (Peace, peace to him that is far off... There is no peace,
+--                saith my Elohim (God), to the wicked) — THREAD 4 / bridges to THREAD 6
+--   ★ v.20-22 (Go ye forth of Babylon, flee ye from the Chaldeans... There is no peace, saith
+--          Yahuah (LORD), unto the wicked)
+--        NT:     ★ Revelation 18:4 (Come out of her, my people, that ye be not partakers of her
+--                sins) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 51:6 (Flee out of the midst of Babylon, and deliver every man his
+--                soul) + Jeremiah 51:45 (My people, go ye out of the midst of her) — THREAD 5
+--                LATERAL; ★ 2 Corinthians 6:17 (come out from among them, and be ye separate) —
+--                THREAD 5 (the separation pattern carried forward)
+--   v.1-9, 11, 14-15, 19 (the lawsuit preface, the former/new things declared, Yahuah's loved
+--          servant against Babylon, the seed-as-sand promise) — woven into the thread prose; no
+--          separate forced add. v.19 (Thy seed also had been as the sand) sits inside THREAD 4's
+--          lament (the lost blessing of disobedience). NONE silently skipped.
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-48-the-furnace-of-affliction-i-have-refined-thee — NT (1 Peter 1) + Extras (Wisdom
+--      of Solomon 3, Sirach 2) + Tanakh (Malachi 3, Zechariah 13) [extras]
+--      (★★ affliction the refining of the chosen, not rejection)
+--   2. isaiah-48-i-am-the-first-i-also-am-the-last — NT (Revelation 1, 2, 22) + Tanakh (Isaiah
+--      44, 41) [free]
+--      (★★★ the title Yahuah claims = the risen Messiah's own; the Formed Son bearing the Father's
+--      titles — NOT co-equal-persons, NOT modalist, NOT Arian)
+--   3. isaiah-48-and-now-the-lord-and-his-spirit-hath-sent-me — NT (John 8) [free]
+--      (★ the Sent One sent by Yahuah and his Spirit; the Formed sent by the Father)
+--   4. isaiah-48-o-that-thou-hadst-hearkened-to-my-commandments — NT (1 John 2) + Tanakh (Isaiah
+--      57) [free]
+--      (★ peace and righteousness flow FROM hearkening to the commandments; Torah the river of
+--      peace, NOT abolished — the anti-antinomian lament)
+--   5. isaiah-48-go-ye-forth-of-babylon — NT (Revelation 18, 2 Corinthians 6) + Tanakh (Jeremiah
+--      51) [free]
+--      (★ come out of Babylon, the second-exodus pattern; the call to separation)
+--   6. isaiah-48-there-is-no-peace-unto-the-wicked — Tanakh (Isaiah 57) [free]
+--      (★ the no-peace-to-the-wicked refrain; the lawsuit's closing word, twinned with Isaiah 57:21)
+--
+-- Framing notes:
+--   ★★ THE FURNACE OF AFFLICTION (THREAD 1): *Behold, I have refined thee, but not with silver; I
+--      have chosen thee in the furnace of affliction* (Isaiah 48:10). The affliction is not the
+--      casting-off of a rejected people — it is the refining of the CHOSEN, the fire that proves
+--      and purifies. Peter says the same of the scattered strangers: *That the trial of your
+--      faith, being much more precious than of gold that perisheth, though it be tried with fire,
+--      might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach
+--      (Jesus Christ)* (1 Peter 1:7). Malachi names the Refiner himself — *he shall sit as a
+--      refiner and purifier of silver... that they may offer unto Yahuah (LORD) an offering in
+--      righteousness* (Malachi 3:3) — and Zechariah names the remnant brought through: *I will
+--      bring the third part through the fire, and will refine them as silver is refined... they
+--      shall call on my name, and I will hear them: I will say, It is my people* (Zechariah 13:9).
+--      The restored wisdom-witnesses say it twice over: *having been a little chastised, they shall
+--      be greatly rewarded... As gold in the furnace has he tried them* (Wisdom of Solomon 3:5-6);
+--      *for gold is tried in the fire, and acceptable men in the furnace of adversity* (Sirach
+--      2:5). The furnace is the love of the One who chose, not the wrath of the One who discards.
+--   ★★★ I AM THE FIRST AND THE LAST (THREAD 2): *Hearken unto me, O Jacob and Yashar'el (Israel),
+--      my called; I am he; I am the first, I also am the last* (Isaiah 48:12). This is the title
+--      Yahuah claims for himself across Isaiah — *I am the first, and I am the last; and beside me
+--      there is no Elohim (God)* (Isaiah 44:6); *I Yahuah (LORD), the first, and with the last; I
+--      am he* (Isaiah 41:4). And the risen Messiah claims the very same title in his own mouth:
+--      *Fear not; I am the first and the last* (Revelation 1:17); *I am Alpha and Omega... the
+--      first and the last* (Revelation 22:13). This is the Formed and the Formless keystone — the
+--      Son who appeared and spoke as Yahuah in the Tanakh, who took flesh, who *was dead, and is
+--      alive* (Revelation 2:8), bears the Father's own titles and Name because he is Yahuah and HAS
+--      a Father. Never co-equal trinitarian persons; never a modalist collapse of Father into Son;
+--      never an Arian creature. The same hand that *laid the foundation of the earth* (48:13) is
+--      the Word by whom all things were made.
+--   ★ THE SENT ONE AND THE SPIRIT (THREAD 3): *Come ye near unto me, hear ye this; I have not
+--      spoken in secret from the beginning; from the time that it was, there am I: and now Adonai
+--      Yahuah (the Lord GOD), and his Spirit, hath sent me* (Isaiah 48:16). A Speaker who has been
+--      from the beginning is SENT by Yahuah and his Spirit — the Formed Son sent by the Father.
+--      Yahusha says it plainly: *I proceeded forth and came from Elohim (God); neither came I of
+--      myself, but he sent me* (John 8:42). The Spirit is Yahuah's own breath and power in the
+--      sending, not a third co-equal person beside the Father and the Son. The One sent is the One
+--      who was there from the beginning.
+--   ★ O THAT THOU HADST HEARKENED (THREAD 4): *I am Yahuah Elohayka (the LORD thy God) which
+--      teacheth thee to profit, which leadeth thee by the way that thou shouldest go. O that thou
+--      hadst hearkened to my commandments! then had thy peace been as a river, and thy
+--      righteousness as the waves of the sea* (Isaiah 48:17-18). Peace and righteousness flow FROM
+--      hearkening to the commandments — Torah-keeping is the way that profits, the path of
+--      blessing, and its neglect is the loss of peace. This is the anti-antinomian lament: the
+--      commandments were never the curse; the curse was forsaking them. John holds the same filter:
+--      *hereby we do know that we know him, if we keep his commandments* (1 John 2:3). Isaiah will
+--      name the wage of the two roads a few chapters on — *Peace, peace to him that is far off, and
+--      to him that is near... and I will heal him* (Isaiah 57:19) against *There is no peace, saith
+--      my Elohim (God), to the wicked* (Isaiah 57:21).
+--   ★ GO YE FORTH OF BABYLON (THREAD 5): *Go ye forth of Babylon, flee ye from the Chaldeans, with
+--      a voice of singing declare ye... say ye, Yahuah (LORD) hath redeemed his servant Jacob*
+--      (Isaiah 48:20). The call out of Babylon is the second-exodus pattern — the redeemed led
+--      through the deserts, the waters from the rock (48:21). Jeremiah sounds the same alarm over
+--      the same city: *Flee out of the midst of Babylon, and deliver every man his soul* (Jeremiah
+--      51:6); *My people, go ye out of the midst of her* (Jeremiah 51:45). And the call is still
+--      sounding at the end of the canon: *Come out of her, my people, that ye be not partakers of
+--      her sins* (Revelation 18:4) — the final Babylon, the same exodus-summons. Paul carries the
+--      separation-pattern forward: *come out from among them, and be ye separate, saith Yahuah
+--      (Lord)... and I will receive you* (2 Corinthians 6:17) — the gathering home is a coming-out.
+--   ★ NO PEACE UNTO THE WICKED (THREAD 6): *There is no peace, saith Yahuah (LORD), unto the
+--      wicked* (Isaiah 48:22). The lawsuit's closing word — the same refrain Isaiah seals chapter
+--      57 with: *There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:21). Peace is
+--      the river that flows from hearkening (48:18); for those who refuse the way, there is no
+--      peace. The two verses bracket the great middle section of Isaiah with the same verdict.
+--   EXTRAS: Wisdom of Solomon 3:5-6 and Sirach 2:5 on the furnace (THREAD 1) — both clean witnesses,
+--      verses confirmed present and well-formed via dump. No extras forced on the other threads.
+--   VERSES WITH NO SEPARATE ADD: v.1-9 (the lawsuit preface — the former things declared, the
+--      obstinate neck, the name's-sake defer of anger — woven into THREAD 1's "chosen not cast
+--      off"), v.11 (for mine own sake... I will not give my glory unto another — THREAD 2's
+--      jealousy-for-the-Name), v.14-15 (Yahuah's loved servant against Babylon — preface to THREAD
+--      5), v.19 (Thy seed also had been as the sand — the lost blessing inside THREAD 4's lament).
+--      All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The furnace of affliction — I have refined thee
+    ('canon','isaiah',48,10,'canon','1-peter',1,7,'free',
+      E'*That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). The *furnace of affliction* in which Yahuah *chose* his people (Isaiah 48:10) is the trial by fire Peter names: *being much more precious than of gold that perisheth, though it be tried with fire*. The affliction is the refining of the chosen — it proves the faith, it does not discard the people.'),
+    ('canon','isaiah',48,10,'canon','1-peter',1,6,'free',
+      E'*Wherein ye greatly rejoice, though now for a season, if need be, ye are in heaviness through manifold temptations* (1 Peter 1:6). *I have refined thee, but not with silver; I have chosen thee in the furnace of affliction* (Isaiah 48:10) — the *heaviness* of the *manifold temptations* is *for a season*, the furnace-work of the One who chose, not the rejection of the cast-off.'),
+    ('canon','isaiah',48,10,'canon','malachi',3,3,'free',
+      E'*And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The *furnace of affliction* of Isaiah 48:10 has a Refiner who *sits* at the work — *as a refiner and purifier of silver* — until the metal is pure enough to *offer unto Yahuah (LORD) an offering in righteousness*. The fire is purgative, aimed at restoration, not destruction.'),
+    ('canon','isaiah',48,10,'canon','zechariah',13,9,'free',
+      E'*And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people; and they shall say, Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9). The *furnace of affliction* (Isaiah 48:10) brings the remnant *through the fire* — *refine them as silver is refined* — and out the far side stands the restored covenant bond: *It is my people... Yahuah (LORD) is my Elohim (God)*. The refining ends in the two-house people owned again.'),
+    ('canon','isaiah',48,10,'apocrypha','the-wisdom-of-solomon',3,5,'extras',
+      E'*And having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself* (Wisdom of Solomon 3:5). *I have chosen thee in the furnace of affliction* (Isaiah 48:10) is the chastening that proves — *having been a little chastised, they shall be greatly rewarded* — the affliction by which Yahuah *proved them, and found them worthy for himself*. The restored witness names the furnace the assaying of the worthy.'),
+    ('canon','isaiah',48,10,'apocrypha','the-wisdom-of-solomon',3,6,'extras',
+      E'*As gold in the furnace has he tried them, and received them as a burnt offering* (Wisdom of Solomon 3:6). The *furnace of affliction* (Isaiah 48:10) is the very figure — *As gold in the furnace has he tried them* — and the tried ones are *received... as a burnt offering*, given back to Yahuah purified. The fire is acceptance, not rejection.'),
+    ('canon','isaiah',48,10,'apocrypha','ecclesiasticus',2,5,'extras',
+      E'*For gold is tried in the fire, and acceptable men in the furnace of adversity* (Sirach 2:5). The wisdom-witness restates Isaiah 48:10 as a proverb: *I have chosen thee in the furnace of affliction* becomes *acceptable men in the furnace of adversity* — as *gold is tried in the fire*, so the chosen are proved by affliction and found acceptable. The furnace makes the man fit, it does not unmake him.'),
+
+    -- THREAD 2 (★★★): I am the first, I also am the last — the title the risen Messiah claims
+    ('canon','isaiah',48,12,'canon','revelation',1,17,'free',
+      E'*And when I saw him, I fell at his feet as dead. And he laid his right hand upon me, saying unto me, Fear not; I am the first and the last* (Revelation 1:17). The title Yahuah claims in Isaiah 48:12 — *I am he; I am the first, I also am the last* — falls from the risen Messiah''s own mouth: *Fear not; I am the first and the last*. The One enthroned in the Revelation is the Formed Son who bears the Father''s very titles; he is Yahuah and has a Father, not a co-equal second person, not a modalist mask.'),
+    ('canon','isaiah',48,12,'canon','revelation',1,8,'free',
+      E'*I am Alpha and Omega, the beginning and the ending, saith Yahuah (Lord), which is, and which was, and which is to come, the Almighty* (Revelation 1:8). *I am the first, I also am the last* (Isaiah 48:12) is sealed at the canon''s end as *Alpha and Omega... which is, and which was, and which is to come* — the eternal self-naming of the One who has always been, the Formed Word who spoke it to Jacob and now speaks it in his own Name.'),
+    ('canon','isaiah',48,12,'canon','revelation',2,8,'free',
+      E'*And unto the angel of the church in Smyrna write; These things saith the first and the last, which was dead, and is alive* (Revelation 2:8). The *first and the last* of Isaiah 48:12 here adds the incarnation seal — *which was dead, and is alive*. The Formed Son who named himself the First and the Last to Jacob is the same One who took flesh, died, and rose; the eternal title and the empty tomb belong to one Person.'),
+    ('canon','isaiah',48,12,'canon','revelation',22,13,'free',
+      E'*I am Alpha and Omega, the beginning and the end, the first and the last* (Revelation 22:13). The Messiah''s closing self-naming gathers up Isaiah 48:12 entire — *the first and the last* — joined to *Alpha and Omega, the beginning and the end*. The title Yahuah gave Jacob to *hearken* to is the title the risen Yahusha (Jesus) seals the whole library with.'),
+    ('canon','isaiah',48,12,'canon','isaiah',44,6,'free',
+      E'*Thus saith Yahuah (LORD) the King of Yashar''el (Israel), and his redeemer Yahuah Tseva''ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6). Isaiah''s own earlier word fixes the title to Yahuah alone: *I am the first, and I am the last; and beside me there is no Elohim (God)*. So when Isaiah 48:12 repeats *I am the first, I also am the last*, and the risen Messiah claims it in Revelation, the claim is a claim to be the One beside whom there is no other.'),
+    ('canon','isaiah',48,12,'canon','isaiah',41,4,'free',
+      E'*Who hath wrought and done it, calling the generations from the beginning? I Yahuah (LORD), the first, and with the last; I am he* (Isaiah 41:4). The same self-naming runs through Isaiah: *I Yahuah (LORD), the first, and with the last; I am he* — the very *I am he* of 48:12. The One who calls the generations from the beginning is the First and the Last, eternal at both ends of all that is.'),
+
+    -- THREAD 3 (★): And now the Lord GOD, and his Spirit, hath sent me — the Sent One
+    ('canon','isaiah',48,16,'canon','john',8,42,'free',
+      E'*I proceeded forth and came from Elohim (God); neither came I of myself, but he sent me* (John 8:42). The Speaker of Isaiah 48:16 has been *from the beginning* yet is sent — *and now Adonai Yahuah (the Lord GOD), and his Spirit, hath sent me*. Yahusha says it as his own testimony: *I proceeded forth and came from Elohim (God)... but he sent me*. The Formed Son who was there from the beginning is sent by Yahuah and his Spirit; the Spirit is the Father''s own breath in the sending, not a third co-equal person.'),
+
+    -- THREAD 4 (★): O that thou hadst hearkened to my commandments — Torah the river of peace
+    ('canon','isaiah',48,18,'canon','1-john',2,3,'free',
+      E'*And hereby we do know that we know him, if we keep his commandments* (1 John 2:3). The lament *O that thou hadst hearkened to my commandments! then had thy peace been as a river* (Isaiah 48:18) and John''s filter are one teaching: peace and the knowledge of him flow FROM keeping the commandments — *if we keep his commandments*. The Torah was never the curse; the loss of peace was the forsaking of it.'),
+    ('canon','isaiah',48,18,'canon','isaiah',57,19,'free',
+      E'*I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him* (Isaiah 57:19). The *peace... as a river* that hearkening would have brought (Isaiah 48:18) is the *Peace, peace to him that is far off, and to him that is near* of 57:19 — the healing Yahuah creates for the one who turns. The two houses, far and near, are gathered into the one peace that flows from his way.'),
+
+    -- THREAD 5 (★): Go ye forth of Babylon — the second-exodus call to come out
+    ('canon','isaiah',48,20,'canon','revelation',18,4,'free',
+      E'*And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). The summons *Go ye forth of Babylon, flee ye from the Chaldeans* (Isaiah 48:20) sounds again at the canon''s end over the final Babylon: *Come out of her, my people*. The same exodus-call to the same people — come out, be redeemed, be not partakers of her sins.'),
+    ('canon','isaiah',48,20,'canon','jeremiah',51,6,'free',
+      E'*Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity; for this is the time of the LORD''S vengeance* (Jeremiah 51:6). Jeremiah cries the same alarm over the same city as Isaiah 48:20 — *Go ye forth of Babylon, flee ye from the Chaldeans* answered by *Flee out of the midst of Babylon, and deliver every man his soul*. The coming-out is the deliverance; to stay is to be cut off in her iniquity.'),
+    ('canon','isaiah',48,20,'canon','jeremiah',51,45,'free',
+      E'*My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* (Jeremiah 51:45). *Go ye forth of Babylon* (Isaiah 48:20) is *My people, go ye out of the midst of her* — the people Yahuah owns called to come out before the judgment falls. The redeemed servant Jacob is led out of Babylon as Yashar''el was once led out of Egypt; the second exodus.'),
+    ('canon','isaiah',48,20,'canon','2-corinthians',6,17,'free',
+      E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). Paul carries the come-out-of-Babylon pattern forward: *Go ye forth of Babylon* (Isaiah 48:20) becomes *come out from among them, and be ye separate... and I will receive you*. The gathering home is itself a coming-out; the separation is the receiving.'),
+
+    -- THREAD 6 (★): There is no peace unto the wicked — the lawsuit's closing refrain
+    ('canon','isaiah',48,22,'canon','isaiah',57,21,'free',
+      E'*There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:21). Isaiah seals two great sections with the same verdict: *There is no peace, saith Yahuah (LORD), unto the wicked* (Isaiah 48:22) and *There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:21). Peace is the river that flows from hearkening (48:18); for the one who refuses the way, the refrain stands — no peace.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-48-the-furnace-of-affliction-i-have-refined-thee',
+       E'The furnace of affliction — I have refined thee, not cast thee off',
+       E'Yahuah''s lawsuit against an obstinate people does not end in their rejection but in their refining: *Behold, I have refined thee, but not with silver; I have chosen thee in the furnace of affliction* (Isaiah 48:10). The affliction is the assaying of the CHOSEN — the fire that proves and purifies, not the wrath that discards. Peter says it of the scattered strangers: *though now for a season, if need be, ye are in heaviness through manifold temptations* (1 Peter 1:6), *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). Malachi names the Refiner at his work: *he shall sit as a refiner and purifier of silver... that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). And Zechariah names the far side of the fire — the restored two-house bond: *I will bring the third part through the fire, and will refine them as silver is refined... they shall call on my name, and I will hear them: I will say, It is my people; and they shall say, Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9). The restored wisdom-witnesses say it twice over: *having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself. As gold in the furnace has he tried them, and received them as a burnt offering* (Wisdom of Solomon 3:5-6); *For gold is tried in the fire, and acceptable men in the furnace of adversity* (Sirach 2:5). The furnace is the love of the One who chose, refining a people he will not give up.',
+       sv.verse_id, ev.verse_id, 'extras', 27175
+  FROM _s303_isa48_lookup sv, _s303_isa48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=48 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-48-i-am-the-first-i-also-am-the-last',
+       E'I am the first, I also am the last — the title the risen Messiah claims',
+       E'Yahuah calls Jacob to hearken to a self-naming: *Hearken unto me, O Jacob and Yashar''el (Israel), my called; I am he; I am the first, I also am the last* (Isaiah 48:12) — and the same hand *laid the foundation of the earth, and my right hand hath spanned the heavens* (48:13). Isaiah fixes this title to Yahuah alone: *I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6); *I Yahuah (LORD), the first, and with the last; I am he* (Isaiah 41:4). Then at the canon''s end the title falls from the risen Messiah''s own mouth: *Fear not; I am the first and the last* (Revelation 1:17); *These things saith the first and the last, which was dead, and is alive* (Revelation 2:8); *I am Alpha and Omega, the beginning and the end, the first and the last* (Revelation 22:13); *I am Alpha and Omega... saith Yahuah (Lord), which is, and which was, and which is to come, the Almighty* (Revelation 1:8). This is the Formed and the Formless. The Son who appeared and spoke as Yahuah in the Tanakh, who *was dead, and is alive*, bears the Father''s own titles and Name because he IS Yahuah and HAS a Father — never co-equal trinitarian persons, never a modalist collapse of Father into Son, never an Arian creature. The First and the Last who chose Jacob in the furnace is the same One who took flesh, died, and rose; the eternal title and the empty tomb belong to one Person. And the hand that founded the earth (48:13) is the Word by whom all things were made.',
+       sv.verse_id, ev.verse_id, 'free', 27178
+  FROM _s303_isa48_lookup sv, _s303_isa48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=48 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-48-and-now-the-lord-and-his-spirit-hath-sent-me',
+       E'And now the Lord GOD, and his Spirit, hath sent me — the Sent One',
+       E'In the midst of Yahuah''s declaration a Speaker steps forward who has been from the beginning and yet is sent: *Come ye near unto me, hear ye this; I have not spoken in secret from the beginning; from the time that it was, there am I: and now Adonai Yahuah (the Lord GOD), and his Spirit, hath sent me* (Isaiah 48:16). The One who was *there* from the beginning is sent by Yahuah and his Spirit — the Formed Son sent by the Father. Yahusha says it as his own testimony: *I proceeded forth and came from Elohim (God); neither came I of myself, but he sent me* (John 8:42). The Speaker who has always been is the One sent into the world; and the Spirit in the sending is Yahuah''s own breath and power, not a third co-equal person beside the Father and the Son. The eternal One is the sent One.',
+       sv.verse_id, ev.verse_id, 'free', 27181
+  FROM _s303_isa48_lookup sv, _s303_isa48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=48 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-48-o-that-thou-hadst-hearkened-to-my-commandments',
+       E'O that thou hadst hearkened to my commandments — the river of peace',
+       E'Yahuah names himself the teacher of the way that profits, then breaks into lament: *I am Yahuah Elohayka (the LORD thy God) which teacheth thee to profit, which leadeth thee by the way that thou shouldest go. O that thou hadst hearkened to my commandments! then had thy peace been as a river, and thy righteousness as the waves of the sea* (Isaiah 48:17-18) — *Thy seed also had been as the sand* (48:19). Read it plainly: peace and righteousness flow FROM hearkening to the commandments. Torah-keeping is the way that profits, the path of blessing; the loss of peace is the cost of forsaking it. This is the anti-antinomian lament — the commandments were never the curse, the curse was the abandoning of them. John holds the same filter unbroken: *hereby we do know that we know him, if we keep his commandments* (1 John 2:3). And Isaiah names the wage of the road a few chapters on: *I create the fruit of the lips; Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him* (Isaiah 57:19) — the peace that flows like a river to the two houses, far and near, when they turn and walk in his way.',
+       sv.verse_id, ev.verse_id, 'free', 27184
+  FROM _s303_isa48_lookup sv, _s303_isa48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=48 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-48-go-ye-forth-of-babylon',
+       E'Go ye forth of Babylon — the second-exodus call to come out',
+       E'The lawsuit turns to deliverance with a summons and a song: *Go ye forth of Babylon, flee ye from the Chaldeans, with a voice of singing declare ye, tell this, utter it even to the end of the earth; say ye, Yahuah (LORD) hath redeemed his servant Jacob* (Isaiah 48:20) — and the redeemed are led as in the first exodus: *they thirsted not when he led them through the deserts: he caused the waters to flow out of the rock for them* (48:21). The call to come out of Babylon runs the length of the canon. Jeremiah sounds the same alarm over the same city: *Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity* (Jeremiah 51:6); *My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* (Jeremiah 51:45). And it is still sounding at the end over the final Babylon: *Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). Paul carries the same separation-pattern forward as the receiving of the gathered: *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). The gathering home is itself a coming-out; the second exodus leads the redeemed servant Jacob out of Babylon with a voice of singing.',
+       sv.verse_id, ev.verse_id, 'free', 27187
+  FROM _s303_isa48_lookup sv, _s303_isa48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=48 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-48-there-is-no-peace-unto-the-wicked',
+       E'There is no peace, saith Yahuah, unto the wicked — the closing refrain',
+       E'The chapter seals with a verdict: *There is no peace, saith Yahuah (LORD), unto the wicked* (Isaiah 48:22). It is no throwaway line — Isaiah brackets the great middle of his book with the very same refrain, sealing chapter 57 the same way: *There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:21). The two verdicts answer the lament of 48:18: peace is *as a river* to the one who hearkens to the commandments, and there is *no peace* to the one who refuses the way. The same Yahuah who teaches the way that profits names the end of the road that turns from it. Mercy is held out — the furnace refines, Babylon is left behind, the river of peace runs for the one who turns — but for the wicked who will not turn, the refrain stands.',
+       sv.verse_id, ev.verse_id, 'free', 27190
+  FROM _s303_isa48_lookup sv, _s303_isa48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=48 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire* (1 Peter 1:7) — the *furnace of affliction* (Isaiah 48:10) is the trial that proves the chosen, not the fire that discards.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*ye are in heaviness through manifold temptations* (1 Peter 1:6) — the *heaviness* is *for a season*, the furnace-work of the One who *chose* (Isaiah 48:10).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he shall sit as a refiner and purifier of silver... that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3) — the Refiner at the *furnace of affliction* (Isaiah 48:10), the fire aimed at restoration.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will bring the third part through the fire, and will refine them as silver is refined... It is my people; and they shall say, Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9) — the *furnace* (Isaiah 48:10) brings the remnant out to the restored two-house bond.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*having been a little chastised, they shall be greatly rewarded: for Yahuah (God) proved them, and found them worthy for himself* (Wisdom of Solomon 3:5) — the *furnace of affliction* (Isaiah 48:10) the assaying of the worthy.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*As gold in the furnace has he tried them, and received them as a burnt offering* (Wisdom of Solomon 3:6) — the *furnace of affliction* (Isaiah 48:10) the very figure; the tried ones received, not rejected.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*For gold is tried in the fire, and acceptable men in the furnace of adversity* (Sirach 2:5) — the *furnace of affliction* (Isaiah 48:10) as proverb; affliction makes the man fit, it does not unmake him.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=10
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-the-furnace-of-affliction-i-have-refined-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Fear not; I am the first and the last* (Revelation 1:17) — the title of Isaiah 48:12 in the risen Messiah''s own mouth; the Formed Son bearing the Father''s titles, Yahuah who HAS a Father.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-i-am-the-first-i-also-am-the-last'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I am Alpha and Omega... saith Yahuah (Lord), which is, and which was, and which is to come, the Almighty* (Revelation 1:8) — *the first... the last* (Isaiah 48:12) sealed as the eternal self-naming.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-i-am-the-first-i-also-am-the-last'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *These things saith the first and the last, which was dead, and is alive* (Revelation 2:8) — *the first... the last* (Isaiah 48:12) joined to the incarnation seal; eternal title and empty tomb, one Person.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-i-am-the-first-i-also-am-the-last'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I am Alpha and Omega, the beginning and the end, the first and the last* (Revelation 22:13) — the Messiah''s closing self-naming gathers up Isaiah 48:12 entire.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-i-am-the-first-i-also-am-the-last'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6) — Isaiah fixes the title of 48:12 to Yahuah alone; the Messiah''s claim is a claim to be the One beside whom there is no other.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-i-am-the-first-i-also-am-the-last'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I Yahuah (LORD), the first, and with the last; I am he* (Isaiah 41:4) — the same *I am he* of 48:12; the One who calls the generations from the beginning is First and Last.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=12
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=41 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-i-am-the-first-i-also-am-the-last'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I proceeded forth and came from Elohim (God); neither came I of myself, but he sent me* (John 8:42) — the Speaker who was *there* from the beginning yet is *sent* (Isaiah 48:16); the Formed Son sent by the Father and his Spirit.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=16
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-and-now-the-lord-and-his-spirit-hath-sent-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *hereby we do know that we know him, if we keep his commandments* (1 John 2:3) — the lament *O that thou hadst hearkened to my commandments! then had thy peace been as a river* (Isaiah 48:18); peace flows FROM keeping, Torah never the curse.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=18
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-o-that-thou-hadst-hearkened-to-my-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Peace, peace to him that is far off, and to him that is near, saith Yahuah (LORD); and I will heal him* (Isaiah 57:19) — the *peace... as a river* (Isaiah 48:18) for the two houses, far and near, who turn to his way.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=18
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-o-that-thou-hadst-hearkened-to-my-commandments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Come out of her, my people, that ye be not partakers of her sins* (Revelation 18:4) — *Go ye forth of Babylon* (Isaiah 48:20) sounding again over the final Babylon; the same exodus-call to the same people.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=20
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-go-ye-forth-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity* (Jeremiah 51:6) — the same alarm over the same city as Isaiah 48:20; the coming-out is the deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=20
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-go-ye-forth-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* (Jeremiah 51:45) — *Go ye forth of Babylon* (Isaiah 48:20); the people Yahuah owns called out before the judgment.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=20
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=51 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-go-ye-forth-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *come out from among them, and be ye separate, saith Yahuah (Lord)... and I will receive you* (2 Corinthians 6:17) — the come-out-of-Babylon pattern (Isaiah 48:20) carried forward; the gathering home is a coming-out.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=20
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-go-ye-forth-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *There is no peace, saith my Elohim (God), to the wicked* (Isaiah 57:21) — the twin refrain that seals Isaiah 57 as 48:22 seals here; the answer to the river of peace (48:18) for the one who refuses the way.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=48 AND sv.verse_number=22
+  JOIN _s303_isa48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=57 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-48-there-is-no-peace-unto-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_51.sql (Isaiah 51) -----
+-- Chapter: Isaiah 51 — THE ARM OF YAHUAH AWAKENED, the second-exodus ingathering, the law that
+-- proceeds forth, the Torah on the heart, the everlasting salvation that outlasts the old creation,
+-- and the cup of trembling taken from Zion's hand and given to her oppressors. The Christological
+-- keystone is 51:9-11: *Awake, awake, put on strength, O arm of Yahuah (LORD)... Art thou not it
+-- that hath cut Rahab, and wounded the dragon?* — the Arm of Yahuah is the Redeemer, the Formed Son
+-- (Isaiah's own *to whom is the arm of Yahuah (LORD) revealed?* 53:1; *Yahuah (LORD) hath made bare
+-- his holy arm* 52:10). The same Arm that smote the dragon at the Red Sea (Exodus 14-15) brings the
+-- redeemed home with singing to Zion — the second exodus, the two-house ingathering (51:11 ≈ Isa
+-- 35:10 verbatim), ending in Rev 21:4 (*no more sorrow*). Torah-affirming throughout: *a law shall
+-- proceed from me* (51:4, cf. Isa 2:3), *my righteousness shall not be abolished* (51:6), *the people
+-- in whose heart is my law* (51:7, the new-covenant heart of Jer 31:33 / Ezek 36:26-27). Two-house,
+-- Rom 11 guard; Formed/Formless Christology (the Arm = the Redeemer/Formed Son; the unchanging
+-- Creator of Heb 1:11-12 = the Son); son-of-Adam preserved at 51:12.
+-- Tag: isa51   Temp view: _s303_isa51_lookup
+-- Sort band: base 27250, step 3 -> threads at 27250, 27253, 27256, 27259, 27262 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',51,v
+--
+-- Isaiah 51 coverage:
+--   ★ v.1-2 (Hearken to me, ye that follow after righteousness... look unto the rock whence ye are
+--          hewn... Look unto Abraham your father, and unto Sarah that bare you: for I called him
+--          alone, and blessed him, and increased him)
+--        NT:     ★ Romans 4:16-18 (the father of us all... I have made thee a father of many
+--                nations... So shall thy seed be), ★ Galatians 3:7-9 (they which are of faith... are
+--                blessed with faithful Abraham) — THREAD 2
+--        Extras: none warranted (the Abraham-the-rock weave is carried canon→NT)
+--        Tanakh: ★ Hebrews 11:8,11-12 LATERAL-as-NT (Abraham obeyed... Sara received strength... so
+--                many as the stars) — THREAD 2
+--   v.3 (Yahuah (LORD) shall comfort Zion... make her wilderness like Eden)
+--        NT/Extras/Tanakh: woven in prose under THREAD 2 (Eden-restored) and THREAD 5 (comfort);
+--                Ezekiel 36:35 (*this land that was desolate is become like the garden of Eden*)
+--                noted but folded, not a separate add
+--   ★ v.4-6 (a law shall proceed from me... my salvation shall be for ever, and my righteousness
+--          shall not be abolished... the heavens shall vanish away like smoke, and the earth shall
+--          wax old like a garment)
+--        NT:     ★ Hebrews 1:11-12 (They shall perish; but thou remainest; and they all shall wax
+--                old as doth a garment... thou art the same), ★ Matthew 24:35 (Heaven and earth
+--                shall pass away, but my words shall not pass away), ★ 2 Peter 3:10 (the heavens
+--                shall pass away... the earth also and the works that are therein shall be burned
+--                up), Revelation 21:1 (a new heaven and a new earth) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 2:3 LATERAL (out of Zion shall go forth the law, and the word of Yahuah
+--                (LORD) from Jerusalem) — THREAD 3 (the law that proceeds forth, NOT abolished)
+--   ★ v.7 (Hearken unto me, ye that know righteousness, the people in whose heart is my law)
+--        NT:     ★ Romans 2:15 (the work of the law written in their hearts), ★ 2 Corinthians 3:3
+--                (written... in fleshy tables of the heart) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 31:33 (I will put my law in their inward parts, and write it in their
+--                hearts), ★★ Ezekiel 36:26-27 (a new heart... and cause you to walk in my statutes),
+--                ★ Psalm 37:31 (The law of his Elohim (God) is in his heart) — THREAD 4 (Torah-on-
+--                the-heart keystone)
+--   v.8 (the moth shall eat them up... but my righteousness shall be for ever) — folded into THREAD 3
+--   ★★ v.9-11 (Awake, awake, put on strength, O arm of Yahuah (LORD)... Art thou not it that hath
+--          cut Rahab, and wounded the dragon?... the redeemed of Yahuah (LORD) shall return, and
+--          come with singing unto Zion... sorrow and mourning shall flee away)
+--        NT:     ★ Revelation 21:4 (Elohim (God) shall wipe away all tears... no more death, neither
+--                sorrow) — THREAD 1
+--        Extras: ★ Jubilees 48:14 (Yahuah our Elohim cast them into the midst of the sea, into the
+--                depths of the abyss), ★ 1 Enoch 48:2 (that Son of Adam was named In the presence
+--                of Yahuah (God) of Spirits) — THREAD 1
+--        Tanakh: ★★★ Isaiah 53:1 (to whom is the arm of Yahuah (LORD) revealed?), ★★ Isaiah 52:10
+--                (Yahuah (LORD) hath made bare his holy arm), ★ Exodus 14:30 (Yahuah saved
+--                Yashar'el... saw the Egyptians dead upon the sea shore), ★ Exodus 15:11 (Who is
+--                like unto thee... glorious in holiness... doing wonders), ★ Isaiah 35:10 (the
+--                ransomed of Yahuah (LORD) shall return... sorrow and sighing shall flee away) —
+--                THREAD 1
+--   v.12-16 (I, even I, am he that comforteth you... I have put my words in thy mouth, and I have
+--          covered thee in the shadow of mine hand) — comfort + words-in-the-mouth held in THREAD 5
+--          prose; *son of Adam which shall be made as grass* (51:12) preserved as parsed
+--        NT:     none forced (John 14:16-18 Comforter held in prose, carefully framed)
+--        Extras: none warranted
+--        Tanakh: woven (THREAD 5)
+--   ★ v.17,22-23 (Awake, awake, stand up, O Jerusalem, which hast drunk... the cup of trembling...
+--          Behold, I have taken out of thine hand the cup of trembling... I will put it into the
+--          hand of them that afflict thee)
+--        NT:     ★ Revelation 14:10 (the same shall drink of the wine of the wrath of Elohim (God)...
+--                into the cup of his indignation), ★ Revelation 16:19 (great Babylon... the cup of
+--                the wine of the fierceness of his wrath) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: woven (the cup passes FROM Zion TO her oppressors)
+--   v.18-21 (none to guide her among all the sons... thou afflicted, and drunken, but not with wine)
+--        NT/Extras/Tanakh: none warranted; the desolation-lament is the setup THREAD 5's reversal
+--                answers (recorded, not silently skipped)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-51-awake-awake-o-arm-of-yahuah — Tanakh (Isaiah 53, 52, 35; Exodus 14, 15) + NT
+--      (Revelation 21) + Extras (Jubilees 48, 1 Enoch 48) [extras]
+--      (★★ the Arm of Yahuah = the Redeemer/Formed Son; the dragon cut at the sea; the second-exodus
+--       ingathering home to Zion with singing)
+--   2. isaiah-51-look-unto-abraham-your-father — NT (Romans 4; Hebrews 11; Galatians 3) [free]
+--      (★ look to Abraham the rock ye were hewn from — the father of the faithful, called alone and
+--       multiplied; two-house + grafted-in seed, NOT replacement)
+--   3. isaiah-51-a-law-shall-proceed-from-me — Tanakh (Isaiah 2) + NT (Hebrews 1; Matthew 24;
+--      2 Peter 3; Revelation 21) [free]
+--      (★ the law that proceeds forth + the righteousness NOT abolished + the everlasting salvation
+--       outlasting the old creation; the unchanging Creator of Heb 1 = the Son)
+--   4. isaiah-51-the-people-in-whose-heart-is-my-law — Tanakh (Jeremiah 31; Ezekiel 36; Psalm 37) +
+--      NT (Romans 2; 2 Corinthians 3) [free]
+--      (★★ Torah-on-the-heart keystone — the new covenant is the SAME law internalized, not abolished)
+--   5. isaiah-51-i-have-taken-out-the-cup-of-trembling — NT (Revelation 14; Revelation 16) [free]
+--      (★ the cup of trembling/fury taken from Zion's hand and put into the hand of her oppressors)
+--
+-- Framing notes:
+--   ★★ THE ARM OF YAHUAH (THREAD 1): *Awake, awake, put on strength, O arm of Yahuah (LORD)... Art
+--      thou not it that hath cut Rahab, and wounded the dragon?* (51:9). The Arm of Yahuah is not an
+--      abstraction — Isaiah names him as a Person to be revealed: *Who hath believed our report? and
+--      to whom is the arm of Yahuah (LORD) revealed?* (53:1), *Yahuah (LORD) hath made bare his holy
+--      arm in the eyes of all the nations* (52:10). The Arm is the Redeemer, the Formed Son drawn
+--      from the Formless Father — the same Arm that smote the dragon at the Red Sea (*Yahuah (LORD)
+--      saved Yashar'el (Israel) that day out of the hand of the Egyptians* Exod 14:30; *Who is like
+--      unto thee, O Yahuah (LORD)... glorious in holiness... doing wonders* Exod 15:11). The first
+--      exodus is the figure; the second exodus is the substance — *the redeemed of Yahuah (LORD)
+--      shall return, and come with singing unto Zion... sorrow and mourning shall flee away* (51:11),
+--      WORD FOR WORD the ingathering of *the ransomed of Yahuah (LORD) shall return, and come to
+--      Zion... sorrow and sighing shall flee away* (35:10) — the two-house remnant gathered home (Rom
+--      11 guard: never a cast-off people, never replacement). And the end of all sorrow is Rev 21:4.
+--      Extras: Jubilees 48:14 witnesses the dragon-overthrow at the sea; 1 Enoch 48:2 names the
+--      Son of Adam before the Head of Days — the Arm named before creation.
+--   ★ LOOK UNTO ABRAHAM (THREAD 2): *Look unto Abraham your father, and unto Sarah that bare you: for
+--      I called him alone, and blessed him, and increased him* (51:2). Paul builds the faithful on
+--      this very rock: Abraham *the father of us all... I have made thee a father of many nations...
+--      So shall thy seed be* (Rom 4:16-18); *they which are of faith are blessed with faithful
+--      Abraham* (Gal 3:9); and Hebrews 11 sets him at the head of the witnesses — *by faith Abraham,
+--      when he was called... obeyed* (11:8), *through faith also Sara herself received strength...
+--      so many as the stars of the sky in multitude* (11:11-12). The one called alone and multiplied
+--      is the rock the seed of promise is hewn from — two-house and grafted-in seed, NOT a new
+--      people by confession.
+--   ★ A LAW SHALL PROCEED (THREAD 3): *for a law shall proceed from me... my salvation shall be for
+--      ever, and my righteousness shall not be abolished* (51:4,6). The Torah is not abolished — it
+--      goes FORTH: *out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem*
+--      (Isa 2:3). And the everlasting salvation outlasts the old creation: *the heavens shall vanish
+--      away like smoke, and the earth shall wax old like a garment* (51:6) is the very word the Son
+--      hears applied to himself — *They shall perish; but thou remainest; and they all shall wax old
+--      as doth a garment... but thou art the same* (Heb 1:11-12, the unchanging Creator = the Formed
+--      Son); *Heaven and earth shall pass away, but my words shall not pass away* (Matt 24:35); *the
+--      heavens shall pass away... the earth also and the works that are therein shall be burned up*
+--      (2 Pet 3:10); *a new heaven and a new earth* (Rev 21:1). The law and the righteousness stand
+--      when the garment-heavens are folded up.
+--   ★★ THE LAW ON THE HEART (THREAD 4): *Hearken unto me, ye that know righteousness, the people in
+--      whose heart is my law* (51:7). This IS the new covenant — not Torah replaced, Torah
+--      internalized: *I will put my law in their inward parts, and write it in their hearts* (Jer
+--      31:33); *A new heart also will I give you... and cause you to walk in my statutes, and ye
+--      shall keep my judgments, and do them* (Ezek 36:26-27); *The law of his Elohim (God) is in his
+--      heart; none of his steps shall slide* (Ps 37:31). Paul names the same heart-written law (*the
+--      work of the law written in their hearts* Rom 2:15; *written... in fleshy tables of the heart*
+--      2 Cor 3:3). The Spirit and the Torah are inseparable; the heart that keeps the commandments
+--      is the new-covenant heart (1 John 2:3-4 filter holds).
+--   ★ THE CUP TAKEN AWAY (THREAD 5): *Behold, I have taken out of thine hand the cup of trembling,
+--      even the dregs of the cup of my fury; thou shalt no more drink it again: But I will put it
+--      into the hand of them that afflict thee* (51:22-23). The wrath-cup passes FROM Zion TO her
+--      oppressors — the same cup poured out on Babylon and the beast-worshippers: *the same shall
+--      drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the
+--      cup of his indignation* (Rev 14:10); *great Babylon came in remembrance... to give unto her
+--      the cup of the wine of the fierceness of his wrath* (Rev 16:19). Comfort answers desolation;
+--      the afflicted daughter (51:17-20) is the comforted city (51:12).
+--   EXTRAS: Jubilees 48:14 (the Red Sea dragon-overthrow) and 1 Enoch 48:2 (the Son of Adam named
+--      before the Head of Days) — both clean witnesses, parses verified, on THREAD 1 only.
+--   VERSES WITH NO SEPARATE ADD: v.3 (comfort Zion / Eden — folded into THREADS 2 & 5), v.8 (the
+--      moth / righteousness for ever — folded into THREAD 3), v.12-16 (comfort + words-in-the-mouth
+--      — THREAD 5 prose; John 14 Comforter held, not forced), v.18-21 (the desolation-lament — the
+--      setup THREAD 5's reversal answers). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa51_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Awake, awake, O arm of Yahuah — the Redeemer/Formed Son, the dragon cut at the sea, the return to Zion
+    ('canon','isaiah',51,9,'canon','isaiah',53,1,'free',
+      E'*Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1). When Isaiah cries *Awake, awake, put on strength, O arm of Yahuah (LORD)... Art thou not it that hath cut Rahab, and wounded the dragon?* (51:9), the Arm is not an abstraction — it is a Person to be revealed. *To whom is the arm of Yahuah (LORD) revealed?* the suffering-servant song asks: the Arm is the Redeemer, the Formed Son drawn from the Formless Father, who is Yahuah and has a Father.'),
+    ('canon','isaiah',51,9,'canon','isaiah',52,10,'free',
+      E'*Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations; and all the ends of the earth shall see the salvation of our Elohim (God)* (Isaiah 52:10). The Arm called to *Awake, awake, put on strength* (51:9) is *his holy arm* bared before all the nations — the visible saving Arm, the Formed Son who *hath cut Rahab, and wounded the dragon* and now brings the salvation of Elohim to the ends of the earth.'),
+    ('canon','isaiah',51,9,'canon','exodus',14,30,'free',
+      E'*Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians; and Yashar''el (Israel) saw the Egyptians dead upon the sea shore* (Exodus 14:30). *Art thou not it that hath cut Rahab, and wounded the dragon? Art thou not it which hath dried the sea... that hath made the depths of the sea a way for the ransomed to pass over?* (51:9-10) — the Arm''s ancient work was the Red Sea: Yahuah saved Yashar''el out of Pharaoh''s hand, the dragon-oppressor drowned. The first exodus is the figure the second fulfils.'),
+    ('canon','isaiah',51,10,'canon','exodus',15,11,'free',
+      E'*Who is like unto thee, O Yahuah (LORD), among the gods? who is like thee, glorious in holiness, fearful in praises, doing wonders?* (Exodus 15:11). The dried sea, *the depths of the sea a way for the ransomed to pass over* (51:10), is the very triumph Moses sang at the shore — *glorious in holiness... doing wonders*. The Arm that opened the deep then is the Arm Isaiah calls to awake again for the second exodus.'),
+    ('canon','isaiah',51,11,'canon','isaiah',35,10,'free',
+      E'*And the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away* (Isaiah 35:10). This is 51:11 word for word — *the redeemed of Yahuah (LORD) shall return, and come with singing unto Zion; and everlasting joy shall be upon their head... sorrow and mourning shall flee away*. The same Spirit gives the same promise twice: the two-house remnant gathered home to Zion, all sorrow ended. The hardening was partial; the ingathering is sure (Rom 11).'),
+    ('canon','isaiah',51,11,'canon','revelation',21,4,'free',
+      E'*And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). *Sorrow and mourning shall flee away* (51:11) reaches its end in the new Jerusalem: every tear wiped away, no more sorrow, the former things passed. The singing return of the ransomed lands in the city where mourning is forever gone.'),
+    ('canon','isaiah',51,10,'jubilees','jubilees',48,14,'extras',
+      E'*And all the peoples whom he brought to pursue after Yashar''el (Israel), Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss beneath the children of Yashar''el (Israel)* (Jubilees 48:14). The restored witness records the dragon-overthrow Isaiah invokes — *that hath dried the sea, the waters of the great deep* (51:10): the pursuing host cast into the depths of the abyss. The Arm that wounded the dragon hurled Pharaoh''s power into the sea.'),
+    ('canon','isaiah',51,9,'enoch','1-enoch',48,2,'extras',
+      E'*And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2). The Arm called to *awake, as in the ancient days, in the generations of old* (51:9) was named before the generations were — *before the sun and the signs were created... His name was named* (48:3). The Redeemer-Arm, the Formed Son, was named before the Head of Days, drawn from the Formless and standing forth to save.'),
+
+    -- THREAD 2 (★): Look unto Abraham your father — the rock ye were hewn from, the father of the faithful
+    ('canon','isaiah',51,2,'canon','romans',4,16,'free',
+      E'*Therefore it is of faith, that it might be by grace; to the end the promise might be sure to all the seed... who is the father of us all* (Romans 4:16). *Look unto Abraham your father... for I called him alone, and blessed him, and increased him* (51:2) — Paul builds the whole seed of promise on this one called and blessed: *the father of us all*, in whom the promise is made sure to all the seed. The rock ye were hewn from (51:1) is the father of the faithful.'),
+    ('canon','isaiah',51,2,'canon','romans',4,18,'free',
+      E'*Who against hope believed in hope, that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18). *I called him alone, and blessed him, and increased him* (51:2) is the very increase Paul names — *the father of many nations... So shall thy seed be*. The one called alone became the many; the seed hewn from that rock is the multiplied promise, two-house and grafted-in, never replaced.'),
+    ('canon','isaiah',51,2,'canon','hebrews',11,11,'free',
+      E'*Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised. Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude* (Hebrews 11:11-12). *Abraham your father, and... Sarah that bare you* (51:2) are set side by side here: from the one and the barren came the stars-and-sand multitude. The rock and the pit ye were digged from (51:1) is this faith-begotten seed.'),
+    ('canon','isaiah',51,2,'canon','galatians',3,9,'free',
+      E'*So then they which be of faith are blessed with faithful Abraham* (Galatians 3:9). *Look unto Abraham your father... I called him alone, and blessed him* (51:2) — the blessing on the called-and-blessed father rests on the seed of faith: *they which be of faith are blessed with faithful Abraham*. The seed of promise is carried by the paternal bloodline AND the covenant-word together, never by flesh-credential alone nor confession alone.'),
+
+    -- THREAD 3 (★): A law shall proceed from me — the everlasting salvation that outlasts the old creation
+    ('canon','isaiah',51,4,'canon','isaiah',2,3,'free',
+      E'*Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob... for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). *A law shall proceed from me, and I will make my judgment to rest for a light of the people* (51:4) is the same going-forth: the Torah is not abolished but proceeds OUT — *out of Zion shall go forth the law*. The law goes to the nations as light, not away into the past.'),
+    ('canon','isaiah',51,6,'canon','hebrews',1,11,'free',
+      E'*They shall perish; but thou remainest; and they all shall wax old as doth a garment; And as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail* (Hebrews 1:11-12). *The heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever* (51:6) is applied directly to the Son: the garment-heavens are folded up, but HE remains the same — the unchanging Creator is the Formed Son, who *laid the foundation of the earth* (Heb 1:10) and outlasts what he made.'),
+    ('canon','isaiah',51,6,'canon','matthew',24,35,'free',
+      E'*Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35). *The heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever, and my righteousness shall not be abolished* (51:6) — the Son says the very thing: the creation passes, but his word, his salvation, his righteousness do not. What is everlasting is the salvation and the unabolished righteousness, not the garment-heavens.'),
+    ('canon','isaiah',51,6,'canon','2-peter',3,10,'free',
+      E'*But the day of Yahuah (Lord) will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also and the works that are therein shall be burned up* (2 Peter 3:10). *The heavens shall vanish away like smoke, and the earth shall wax old like a garment, and they that dwell therein shall die in like manner* (51:6) — Peter names the same dissolution, and like Isaiah looks past it: *we... look for new heavens and a new earth, wherein dwelleth righteousness* (3:13). The everlasting salvation outlasts the burning of the old.'),
+    ('canon','isaiah',51,6,'canon','revelation',21,1,'free',
+      E'*And I saw a new heaven and a new earth: for the first heaven and the first earth were passed away; and there was no more sea* (Revelation 21:1). *The heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever* (51:6) — the old creation waxes old and passes; the everlasting salvation stands and is consummated in the new heaven and new earth. What Isaiah calls *for ever* John sees made new.'),
+
+    -- THREAD 4 (★★): The people in whose heart is my law — the Torah-on-the-heart new covenant
+    ('canon','isaiah',51,7,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). *The people in whose heart is my law* (51:7) ARE this new-covenant people: the law put in the inward parts, written on the heart. The new covenant is not Torah replaced — it is Torah internalized, made with BOTH houses (31:31).'),
+    ('canon','isaiah',51,7,'canon','ezekiel',36,26,'free',
+      E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh. And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:26-27). *The people in whose heart is my law* (51:7) is the heart of flesh Ezekiel promises — the Spirit put within CAUSING the keeping of the statutes. The Spirit and the Torah are inseparable; the new heart walks in the commandments.'),
+    ('canon','isaiah',51,7,'canon','psalms',37,31,'free',
+      E'*The law of his Elohim (God) is in his heart; none of his steps shall slide* (Psalm 37:31). *The people in whose heart is my law; fear ye not the reproach of men* (51:7) — the righteous man of the psalm is the same: *the law of his Elohim (God) is in his heart*, and so his steps do not slide. The Torah on the heart is the steadiness that fears no reviling.'),
+    ('canon','isaiah',51,7,'canon','romans',2,15,'free',
+      E'*Which shew the work of the law written in their hearts, their conscience also bearing witness* (Romans 2:15). *The people in whose heart is my law* (51:7) is the very thing Paul describes — *the work of the law written in their hearts*. The doers of the law are justified (2:13); the heart-written law is no abolition of Torah but its inward establishment.'),
+    ('canon','isaiah',51,7,'canon','2-corinthians',3,3,'free',
+      E'*Forasmuch as ye are manifestly declared to be the epistle of Messiah (Christ) ministered by us, written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). *The people in whose heart is my law* (51:7) is Paul''s living epistle — the same law, now written by the Spirit *in fleshy tables of the heart*. The stone and the heart bear the SAME law; the Spirit writes it within, fulfilling Jeremiah 31:33 and Ezekiel 36:26.'),
+
+    -- THREAD 5 (★): I have taken out the cup of trembling — the wrath-cup passed from Zion to her oppressors
+    ('canon','isaiah',51,22,'canon','revelation',14,10,'free',
+      E'*The same shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation; and he shall be tormented with fire and brimstone* (Revelation 14:10). *Behold, I have taken out of thine hand the cup of trembling, even the dregs of the cup of my fury; thou shalt no more drink it again* (51:22) — the cup does not vanish; it passes. Zion''s fury-cup becomes the beast-worshipper''s cup of indignation. What is taken from the afflicted is put into the hand of the afflicter (51:23).'),
+    ('canon','isaiah',51,23,'canon','revelation',16,19,'free',
+      E'*And the great city was divided into three parts, and the cities of the nations fell: and great Babylon came in remembrance before Elohim (God), to give unto her the cup of the wine of the fierceness of his wrath* (Revelation 16:19). *But I will put it into the hand of them that afflict thee; which have said to thy soul, Bow down, that we may go over* (51:23) — the cup of trembling is handed to Zion''s oppressors, and Babylon drinks the dregs. The fierceness of the wrath that bowed Jerusalem down is poured out on the city that made her bow.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-51-awake-awake-o-arm-of-yahuah',
+       E'Awake, awake, O arm of Yahuah — the Redeemer who cut the dragon and brings the redeemed home',
+       E'The prophet calls the Arm of Yahuah to awaken: *Awake, awake, put on strength, O arm of Yahuah (LORD); awake, as in the ancient days, in the generations of old. Art thou not it that hath cut Rahab, and wounded the dragon? Art thou not it which hath dried the sea, the waters of the great deep; that hath made the depths of the sea a way for the ransomed to pass over?* (Isaiah 51:9-10). The Arm is not an abstraction — Isaiah names him as a Person to be revealed: *Who hath believed our report? and to whom is the arm of Yahuah (LORD) revealed?* (53:1); *Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations* (52:10). The Arm of Yahuah is the Redeemer, the Formed Son drawn from the Formless Father — the One who is Yahuah and has a Father. His ancient work was the Red Sea: *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians* (Exodus 14:30); *Who is like unto thee, O Yahuah (LORD)... glorious in holiness... doing wonders* (Exodus 15:11) — the dragon-oppressor cast into the depths, as the restored witness records: *Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss* (Jubilees 48:14). That Arm was named before the world: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2). The first exodus is the figure; the second is the substance: *Therefore the redeemed of Yahuah (LORD) shall return, and come with singing unto Zion; and everlasting joy shall be upon their head... sorrow and mourning shall flee away* (51:11) — word for word the ingathering of *the ransomed of Yahuah (LORD) shall return, and come to Zion with songs and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away* (Isaiah 35:10). This is the two-house remnant gathered home, never a cast-off people, never replacement (Romans 11). And all sorrow ends in the city John saw: *Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying* (Revelation 21:4).',
+       sv.verse_id, ev.verse_id, 'extras', 27250
+  FROM _s303_isa51_lookup sv, _s303_isa51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=51 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-51-look-unto-abraham-your-father',
+       E'Look unto Abraham your father — the rock ye were hewn from, the father of the faithful',
+       E'To the seed that follows after righteousness the call is to look back to the source: *Hearken to me, ye that follow after righteousness, ye that seek Yahuah (LORD): look unto the rock whence ye are hewn, and to the hole of the pit whence ye are digged. Look unto Abraham your father, and unto Sarah that bare you: for I called him alone, and blessed him, and increased him* (Isaiah 51:1-2). The one called alone and multiplied is the father of the faithful. Paul builds the whole seed of promise on him: *to the end the promise might be sure to all the seed... who is the father of us all* (Romans 4:16); *Who against hope believed in hope, that he might become the father of many nations; according to that which was spoken, So shall thy seed be* (Romans 4:18). Hebrews sets Abraham and Sarah side by side as 51:2 does: *Through faith also Sara herself received strength to conceive seed... Therefore sprang there even of one, and him as good as dead, so many as the stars of the sky in multitude, and as the sand which is by the sea shore innumerable* (Hebrews 11:11-12). And the blessing on the called father rests on the seed of faith: *So then they which be of faith are blessed with faithful Abraham* (Galatians 3:9). The rock ye were hewn from is Abraham; the seed of promise is carried by the paternal bloodline AND the covenant-word together — two-house and the grafted-in seed grown wild in the nations, never a new people by mere confession, never replacement.',
+       sv.verse_id, ev.verse_id, 'free', 27253
+  FROM _s303_isa51_lookup sv, _s303_isa51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=51 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-51-a-law-shall-proceed-from-me',
+       E'A law shall proceed from me — the unabolished righteousness that outlasts the old creation',
+       E'The covenant word is not abolished — it goes forth: *Hearken unto me, my people... for a law shall proceed from me, and I will make my judgment to rest for a light of the people* (Isaiah 51:4). This is the same going-forth Isaiah saw earlier: *out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). And the salvation that goes with the law is everlasting, outlasting the very heavens: *Lift up your eyes to the heavens, and look upon the earth beneath: for the heavens shall vanish away like smoke, and the earth shall wax old like a garment... but my salvation shall be for ever, and my righteousness shall not be abolished* (51:6). That garment-heavens word is spoken directly OF the Son: *They shall perish; but thou remainest; and they all shall wax old as doth a garment; And as a vesture shalt thou fold them up, and they shall be changed: but thou art the same, and thy years shall not fail* (Hebrews 1:11-12) — the unchanging Creator who *laid the foundation of the earth* (Heb 1:10) is the Formed Son. He says the same in his own mouth: *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35). Peter names the same dissolution and looks past it: *the heavens shall pass away with a great noise, and the elements shall melt with fervent heat... Nevertheless we, according to his promise, look for new heavens and a new earth, wherein dwelleth righteousness* (2 Peter 3:10,13); and John sees it: *I saw a new heaven and a new earth: for the first heaven and the first earth were passed away* (Revelation 21:1). The law proceeds, the righteousness is not abolished, and the salvation is for ever — when the garment-heavens are folded up, these stand.',
+       sv.verse_id, ev.verse_id, 'free', 27256
+  FROM _s303_isa51_lookup sv, _s303_isa51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=51 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-51-the-people-in-whose-heart-is-my-law',
+       E'The people in whose heart is my law — the Torah written within, the new covenant',
+       E'Isaiah names a people by the Torah carried inside them: *Hearken unto me, ye that know righteousness, the people in whose heart is my law; fear ye not the reproach of men, neither be ye afraid of their revilings* (Isaiah 51:7). This is the new covenant itself — not Torah replaced, but Torah internalized: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33), the covenant made with BOTH the house of Yashar''el (Israel) and the house of Yahudah (Judah) (31:31). Ezekiel names the heart and the Spirit that keeps it: *A new heart also will I give you, and a new spirit will I put within you... And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:26-27) — the Spirit and the Torah are inseparable; the new heart walks in the commandments. The psalmist already knew this steadiness: *The law of his Elohim (God) is in his heart; none of his steps shall slide* (Psalm 37:31). And Paul names the same heart-written law: *Which shew the work of the law written in their hearts* (Romans 2:15), *written not with ink, but with the Spirit of the living Elohim (God); not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3). The stone tablets and the fleshy heart bear the SAME law; the Spirit writes it within. The people in whose heart is the law are the people who keep the commandments — the filter holds: *hereby we do know that we know him, if we keep his commandments* (1 John 2:3).',
+       sv.verse_id, ev.verse_id, 'free', 27259
+  FROM _s303_isa51_lookup sv, _s303_isa51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=51 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-51-i-have-taken-out-the-cup-of-trembling',
+       E'I have taken out of thine hand the cup of trembling — the wrath-cup passed to her oppressors',
+       E'The afflicted city has drained the wrath to its dregs: *Awake, awake, stand up, O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling, and wrung them out* (Isaiah 51:17). But the cup is now taken away — and handed on: *Thus saith thy Yahuah (Lord) Yahuah (LORD), and thy Elohim (God) that pleadeth the cause of his people, Behold, I have taken out of thine hand the cup of trembling, even the dregs of the cup of my fury; thou shalt no more drink it again: But I will put it into the hand of them that afflict thee; which have said to thy soul, Bow down, that we may go over* (51:22-23). The cup does not vanish — it passes from Zion''s hand to the hand of her oppressors. John sees the same cup poured out: *The same shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation; and he shall be tormented with fire and brimstone* (Revelation 14:10); *great Babylon came in remembrance before Elohim (God), to give unto her the cup of the wine of the fierceness of his wrath* (Revelation 16:19). The fierceness that once bowed Jerusalem down is poured out on the city that made her bow. The afflicted daughter is comforted; the comfort is sure because the One who *comforteth you* (51:12) pleads her cause.',
+       sv.verse_id, ev.verse_id, 'free', 27262
+  FROM _s303_isa51_lookup sv, _s303_isa51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=51 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *to whom is the arm of Yahuah (LORD) revealed?* (Isaiah 53:1) — the Arm called to *Awake, awake, put on strength* (51:9) is a Person to be revealed: the Redeemer, the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=9
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahuah (LORD) hath made bare his holy arm in the eyes of all the nations* (Isaiah 52:10) — the Arm of 51:9 is *his holy arm* bared to save before all the nations.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=9
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Thus Yahuah (LORD) saved Yashar''el (Israel) that day out of the hand of the Egyptians* (Exodus 14:30) — the Arm''s ancient work: *Art thou not it that hath cut Rahab, and wounded the dragon?* (51:9). The dragon drowned at the Red Sea.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=9
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Who is like unto thee, O Yahuah (LORD)... glorious in holiness... doing wonders* (Exodus 15:11) — the dried sea *a way for the ransomed to pass over* (51:10) is the triumph Moses sang at the shore.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=10
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=15 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the ransomed of Yahuah (LORD) shall return, and come to Zion with songs... sorrow and sighing shall flee away* (Isaiah 35:10) — word for word the singing return of 51:11; the two-house remnant gathered home.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=11
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Elohim (God) shall wipe away all tears... there shall be no more death, neither sorrow, nor crying* (Revelation 21:4) — *sorrow and mourning shall flee away* (51:11) reaches its end in the new Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=11
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Yahuah our Elohim (the LORD our God) cast them into the midst of the sea, into the depths of the abyss* (Jubilees 48:14) — the dragon-overthrow Isaiah invokes: *that hath dried the sea, the waters of the great deep* (51:10).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=10
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=48 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2) — the Arm called to wake *as in the ancient days* (51:9) was named before creation; the Formed Son drawn from the Formless.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=9
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-awake-awake-o-arm-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the promise might be sure to all the seed... who is the father of us all* (Romans 4:16) — *I called him alone, and blessed him* (51:2): the one called alone is the father of the faithful seed.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=2
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-look-unto-abraham-your-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he might become the father of many nations... So shall thy seed be* (Romans 4:18) — *I called him alone, and blessed him, and increased him* (51:2): the one became the many.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=2
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-look-unto-abraham-your-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Sara herself received strength to conceive seed... so many as the stars of the sky* (Hebrews 11:11-12) — *Abraham your father, and... Sarah that bare you* (51:2) set side by side; from the one came the multitude.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=2
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-look-unto-abraham-your-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they which be of faith are blessed with faithful Abraham* (Galatians 3:9) — the blessing on the called father (51:2) rests on the seed of faith; bloodline AND covenant-word together.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=2
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-look-unto-abraham-your-father'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3) — *a law shall proceed from me* (51:4): the Torah goes FORTH, not away; not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=4
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-a-law-shall-proceed-from-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they all shall wax old as doth a garment... but thou art the same* (Hebrews 1:11-12) — the garment-heavens of 51:6 applied to the Son: the unchanging Creator is the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=6
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-a-law-shall-proceed-from-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35) — the creation passes; *my salvation shall be for ever, and my righteousness shall not be abolished* (51:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=6
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-a-law-shall-proceed-from-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the heavens shall pass away... the earth also and the works that are therein shall be burned up* (2 Peter 3:10) — Peter''s same dissolution, looking past it to new heavens and a new earth (3:13); 51:6.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=6
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-a-law-shall-proceed-from-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a new heaven and a new earth: for the first heaven and the first earth were passed away* (Revelation 21:1) — the everlasting salvation of 51:6 consummated when the old creation passes.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=6
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-a-law-shall-proceed-from-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — *the people in whose heart is my law* (51:7) ARE the new-covenant people; Torah internalized, not replaced; both houses (31:31).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-the-people-in-whose-heart-is-my-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *A new heart also will I give you... and cause you to walk in my statutes, and ye shall keep my judgments* (Ezekiel 36:26-27) — the heart of flesh of 51:7; the Spirit and the Torah inseparable.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-the-people-in-whose-heart-is-my-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The law of his Elohim (God) is in his heart; none of his steps shall slide* (Psalm 37:31) — the Torah on the heart of 51:7 is the steadiness that fears no reviling.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-the-people-in-whose-heart-is-my-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the work of the law written in their hearts* (Romans 2:15) — Paul names the very thing of 51:7; the doers of the law are justified (2:13).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-the-people-in-whose-heart-is-my-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *written not with ink... not in tables of stone, but in fleshy tables of the heart* (2 Corinthians 3:3) — the stone and the heart bear the SAME law; the Spirit writes it within (51:7).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-the-people-in-whose-heart-is-my-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The same shall drink of the wine of the wrath of Elohim (God)... into the cup of his indignation* (Revelation 14:10) — the cup taken from Zion (51:22) does not vanish; it passes to the beast-worshippers.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=22
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-i-have-taken-out-the-cup-of-trembling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *great Babylon came in remembrance... the cup of the wine of the fierceness of his wrath* (Revelation 16:19) — *I will put it into the hand of them that afflict thee* (51:23): the cup handed to Zion''s oppressors.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=51 AND sv.verse_number=23
+  JOIN _s303_isa51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=16 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-51-i-have-taken-out-the-cup-of-trembling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
