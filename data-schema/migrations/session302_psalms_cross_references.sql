@@ -3749,6 +3749,1373 @@ SELECT t.id, cr.id, 2, E'*In the fourteenth day of the first month at even is Ya
  WHERE t.slug='psalm-118-bind-the-sacrifice-with-cords-unto-the-horns-of-the-altar'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_69.sql (Psalm 69) -----
+-- Chapter: Psalm 69 — THE ZEAL PSALM, the second-most NT-quoted suffering psalm after Psalm 22.
+-- The afflicted one sinks in the deep waters, hated without a cause, become a stranger to his own
+-- brethren — *For the zeal of thine house hath eaten me up; and the reproaches of them that
+-- reproached thee are fallen upon me* (v.9); *They gave me also gall for my meat; and in my thirst
+-- they gave me vinegar to drink* (v.21); the imprecation *Let their table become a snare* (v.22-23)
+-- and *Let their habitation be desolate* (v.25 + the office let another take). The NT names this
+-- psalm again and again: John 2:17 (the cleansing of the temple), Romans 15:3 (the reproaches),
+-- Matthew 27:34,48 / John 19:28-29 (gall and vinegar at the cross), Romans 11:9-10 (the table-snare),
+-- Acts 1:20 (Judas' habitation + bishoprick let another take). The psalm closes in two-house hope:
+-- *Elohim (God) will save Zion, and will build the cities of Yahudah (Judah)... The seed also of his
+-- servants shall inherit it* (v.35-36).
+-- Tag: ps069   Temp view: _s302_ps069_lookup
+-- Sort band: base 23700, step 3 -> threads at 23700, 23703, 23706, 23709, 23712, 23715 (6 threads)
+-- Source of EVERY row: 'canon','psalms',69,v
+--
+-- Psalm 69 coverage:
+--   v.1-3 (Save me... the waters are come in unto my soul; the deep mire; my throat is dried)
+--        NT:     none warranted distinct (the drowning-lament frame is the body the threads anchor; the dried throat folds to the thirst of THREAD 3)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★ v.4 (They that hate me without a cause are more than the hairs of mine head)
+--        NT:     John 15:25 (They hated me without a cause) — THREAD 6 (load-bearing: quoted by name as fulfilled in their law)
+--        Extras: none warranted   Tanakh: none warranted distinct (the without-a-cause hatred carried forward to its NT naming)
+--   v.5 (O Elohim, thou knowest my foolishness; my sins are not hid from thee)
+--        NT:     none warranted (the sinless Son does not own sin; this is the lament-voice of the psalmist, NOT a member quoted of Messiah — declined deliberately, see framing note)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   v.6-7 (Let not them that wait on thee be ashamed for my sake... for thy sake I have borne reproach)
+--        NT:     none warranted distinct (the borne-reproach folds to THREAD 2, Romans 15:3)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★ v.8 (I am become a stranger unto my brethren, and an alien unto my mother's children)
+--        NT:     John 7:5 (For neither did his brethren believe in him) — THREAD 6 (the Son a stranger to his own; paired with the without-a-cause hatred)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★★ v.9 (For the zeal of thine house hath eaten me up; and the reproaches of them that reproached thee are fallen upon me)
+--        NT:     John 2:17 (The zeal of thine house hath eaten me up) — THREAD 1 (load-bearing: temple cleansing); Romans 15:3 (The reproaches of them that reproached thee fell on me) — THREAD 2 (load-bearing: borne for the Father's sake)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   v.10-12, v.13-20 (the fasting reproach, the sackcloth, the song of drunkards; the prayer for deliverance; reproach hath broken my heart, none to pity)
+--        NT:     none warranted distinct (the lament body; *I looked for some to take pity, but there was none* v.20 folds to the abandonment the threads carry)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★★ v.21 (They gave me also gall for my meat; and in my thirst they gave me vinegar to drink)
+--        NT:     Matthew 27:34 (They gave him vinegar to drink mingled with gall); Matthew 27:48 (filled it with vinegar... gave him to drink); John 19:28-29 (I thirst... vinegar... put it to his mouth) — THREAD 3 (load-bearing: gall and vinegar at the cross, the scripture fulfilled)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★★ v.22-23 (Let their table become a snare... Let their eyes be darkened, that they see not)
+--        NT:     Romans 11:9-10 (Let their table be made a snare... Let their eyes be darkened) — THREAD 4 (load-bearing: the blinding-in-part of the unbelieving, quoted by David's name)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   v.24 (Pour out thine indignation upon them)
+--        NT:     none warranted distinct (folds to the imprecation THREADS 4/5)   Extras/Tanakh: none warranted distinct
+--   ★★ v.25 (Let their habitation be desolate; and let none dwell in their tents)
+--        NT:     Acts 1:20 (Let his habitation be desolate, and let no man dwell therein: and his bishoprick let another take) — THREAD 5 (load-bearing: Judas' field + the office let another take, Matthias chosen)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   v.26-28 (they persecute him whom thou hast smitten... blotted out of the book of the living)
+--        NT:     none warranted distinct (Rev 3:5 / Phil 4:3 book-of-life weighed, but the imprecatory frame here is the Judas/blinding judgment of THREADS 4/5; declined to keep the thread tight)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   v.29-34 (But I am poor and sorrowful... I will praise the name of Elohim with a song; for Yahuah heareth the poor)
+--        NT:     none warranted distinct (the praise-turn after suffering; the great vindication-arc carried in THREAD 6 prose)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--   ★ v.35-36 (For Elohim will save Zion, and will build the cities of Yahudah; the seed also of his servants shall inherit it)
+--        NT:     none warranted distinct (no clean single-verse NT fulfillment; the building-of-the-cities is the regathering carried in THREAD 6 prose alongside the seed-inheritance)
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 37:19 (the stick of Joseph... and the stick of Yahudah, and make them one); Jeremiah 31:10 (He that scattered Yashar'el will gather him) — THREAD 6 (the two-house regathering the psalm closes on)
+--
+-- EXTRAS NOTE: none warranted across the whole psalm. Psalm 69 is a Davidic suffering/imprecation
+-- psalm whose weight is in its dense NT fulfillment (the most-quoted suffering psalm after Ps 22);
+-- the restored extra-canonical library carries no clean verse that parallels the zeal-of-the-house,
+-- the gall and vinegar, the table-snare, or the desolate habitation. Weighed and deliberately
+-- declined — NOT forced. THREAD 6 carries the only Tanakh laterals (Ezek 37:19, Jer 31:10), so it is
+-- still canon-only; EVERY thread tier_required = 'free'.
+--
+-- Threads (slug — target libraries):
+--   1. psalm-69-the-zeal-of-thine-house-hath-eaten-me-up — NT (John) [free] (★★ the temple cleansing; the Formed Son's jealousy for the Father's house)
+--   2. psalm-69-the-reproaches-of-them-that-reproached-thee-fell-on-me — NT (Romans) [free] (★★ the reproach borne for the Father's sake, pleased not himself)
+--   3. psalm-69-gall-for-my-meat-and-vinegar-in-my-thirst — NT (Matthew, John) [free] (★★ gall and vinegar at the cross, that the scripture might be fulfilled)
+--   4. psalm-69-let-their-table-become-a-snare — NT (Romans) [free] (★★ the blinding-in-part, David's imprecation quoted by name; remnant-not-replacement)
+--   5. psalm-69-let-their-habitation-be-desolate-his-office-let-another-take — NT (Acts) [free] (★★ Judas' field + the bishoprick let another take, Matthias chosen)
+--   6. psalm-69-a-stranger-unto-my-brethren-hated-without-a-cause — NT (John) + Tanakh (Ezekiel, Jeremiah) [free] (★ the despised One a stranger to his own, hated without cause; closing two-house regathering)
+--
+-- Framing notes:
+--   ★★ THE ZEAL (THREAD 1): *For the zeal of thine house hath eaten me up* (69:9) is remembered by the
+--      disciples at the temple cleansing — *his disciples remembered that it was written, The zeal of
+--      thine house hath eaten me up* (John 2:17). Formed-and-Formless lens (Red Line #4): the FORMED
+--      Son drives out the merchants in jealousy for *my Father's house* (John 2:16) — He is Yahuah and
+--      HAS a Father; the zeal for the Father's house consumes Him. Torah-affirmed: the house is the
+--      house of Yahuah's appointed worship, not abolished but cleansed.
+--   ★★ THE GALL AND VINEGAR (THREAD 3): *They gave me also gall for my meat; and in my thirst they gave
+--      me vinegar to drink* (69:21) is split and fulfilled at the cross — the gall offered first and
+--      refused (Matthew 27:34), the vinegar given in the thirst (Matthew 27:48; John 19:28-29, *that the
+--      scripture might be fulfilled, saith, I thirst*). The dried throat of 69:3 is the thirst answered
+--      with vinegar.
+--   ★★ THE TABLE-SNARE / BLINDING (THREAD 4): *Let their table become a snare... Let their eyes be
+--      darkened, that they see not* (69:22-23) is quoted by David's name in Romans 11:9-10 of the part
+--      of Yashar'el blinded in unbelief. Read STRICTLY remnant-not-replacement (Red Line #2): Romans 11
+--      is the chapter that insists *Elohim hath not cast away his people* (Rom 11:1-2) and that the
+--      blinding is *in part* until the fulness — NEVER Israel cast off, NEVER a new people grafted in by
+--      confession; both olive branches are Yashar'el. Victims-not-enemies (Red Line #7): the hardening
+--      is covenant-conduct under judgment, not an ethnic curse.
+--   ★★ THE DESOLATE HABITATION (THREAD 5): *Let their habitation be desolate; and let none dwell in
+--      their tents* (69:25) is applied by Kepha (Peter) to Judas — *Let his habitation be desolate, and
+--      let no man dwell therein: and his bishoprick let another take* (Acts 1:20), the field of blood
+--      and the office filled by Matthias. The plural imprecation of the psalm is read of the one
+--      betrayer whose place fell empty.
+--   ★ THE STRANGER / HATED WITHOUT A CAUSE (THREAD 6): *I am become a stranger unto my brethren* (69:8)
+--      — *neither did his brethren believe in him* (John 7:5); *They that hate me without a cause* (69:4)
+--      — *They hated me without a cause* (John 15:25), quoted as written *in their law*. The psalm closes
+--      in two-house hope: *Elohim will save Zion, and will build the cities of Yahudah... The seed also
+--      of his servants shall inherit it* (69:35-36) — the regathering of *the stick of Joseph... and the
+--      stick of Yahudah, and make them one* (Ezekiel 37:19) and *He that scattered Yashar'el will gather
+--      him* (Jeremiah 31:10). The despised One rejected by his own is vindicated, and his servants' seed
+--      inherits the rebuilt cities — covenant-gathering, never false-inclusion.
+--   VERSES WITH NO ADD: v.1-3, v.5-7, v.10-20, v.24, v.26-34 — the body of the drowning-lament, the
+--      sackcloth and reproach, the prayer for deliverance, the broken heart with none to pity, the
+--      imprecation's overflow, and the praise-turn. v.5 (*thou knowest my foolishness*) deliberately
+--      NOT threaded of Messiah: the sinless Son does not own sin; this is the psalmist's lament-voice,
+--      and the framework will not force a member that would compromise the Formed Son's sinlessness.
+--      EXTRAS: none warranted anywhere in the psalm (weighed and declined).
+
+CREATE TEMP VIEW _s302_ps069_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): The zeal of thine house hath eaten me up (the temple cleansing)
+    ('canon','psalms',69,9,'canon','john',2,17,'free',
+      E'*And his disciples remembered that it was written, The zeal of thine house hath eaten me up* (John 2:17). When the Formed Son made a scourge and drove the merchants from the temple, saying *make not my Father''s house an house of merchandise* (John 2:16), the disciples remembered the very word of the psalm — *For the zeal of thine house hath eaten me up* (Psalm 69:9). Read through the Formed-and-the-Formless: the One who cleanses the house is Yahuah and HAS a Father, consumed with jealousy for the Father''s house — not abolishing the appointed worship but purging it.'),
+
+    -- THREAD 2 (★★): The reproaches of them that reproached thee fell on me
+    ('canon','psalms',69,9,'canon','romans',15,3,'free',
+      E'*For even Messiah (Christ) pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me* (Romans 15:3). The second half of the same verse — *and the reproaches of them that reproached thee are fallen upon me* (Psalm 69:9) — is quoted of Messiah, who *pleased not himself* but bore for the Father''s sake the very scorn aimed at the Father. The reproach the psalmist carried *for thy sake* (Psalm 69:7) is the reproach the Son took up.'),
+
+    -- THREAD 3 (★★): Gall for my meat, vinegar in my thirst (the cross)
+    ('canon','psalms',69,21,'canon','matthew',27,34,'free',
+      E'*They gave him vinegar to drink mingled with gall: and when he had tasted thereof, he would not drink* (Matthew 27:34). The first half of the psalm''s word — *They gave me also gall for my meat* (Psalm 69:21) — is fulfilled at Golgotha: the gall-mingled drink offered and, tasted, refused. The cruelty David sang in figure is done to the Son on the tree.'),
+    ('canon','psalms',69,21,'canon','matthew',27,48,'free',
+      E'*And straightway one of them ran, and took a spunge, and filled it with vinegar, and put it on a reed, and gave him to drink* (Matthew 27:48). The psalm''s second half — *and in my thirst they gave me vinegar to drink* (Psalm 69:21) — is fulfilled as the sponge of vinegar is lifted to the suffering One in his thirst. The dried throat of *my throat is dried* (Psalm 69:3) is answered with vinegar.'),
+    ('canon','psalms',69,21,'canon','john',19,28,'free',
+      E'*After this, Yahusha (Jesus) knowing that all things were now accomplished, that the scripture might be fulfilled, saith, I thirst* (John 19:28). The thirst of *in my thirst they gave me vinegar to drink* (Psalm 69:21) is named at the cross — *I thirst* — spoken expressly *that the scripture might be fulfilled*; the gospel reads the psalm and the deed as one.'),
+    ('canon','psalms',69,21,'canon','john',19,29,'free',
+      E'*Now there was set a vessel full of vinegar: and they filled a spunge with vinegar, and put it upon hyssop, and put it to his mouth* (John 19:29). The vinegar of *in my thirst they gave me vinegar to drink* (Psalm 69:21) is given — a sponge of vinegar on hyssop lifted to his mouth. The detail the psalm foretold is done at the foot of the cross, the very drink named.'),
+
+    -- THREAD 4 (★★): Let their table become a snare; let their eyes be darkened
+    ('canon','psalms',69,22,'canon','romans',11,9,'free',
+      E'*And David saith, Let their table be made a snare, and a trap, and a stumblingblock, and a recompence unto them* (Romans 11:9). The psalm''s imprecation — *Let their table become a snare before them: and that which should have been for their welfare, let it become a trap* (Psalm 69:22) — is quoted by David''s name in the chapter that insists *Elohim (God) hath not cast away his people* (Romans 11:2). The hardening is *in part* of the unbelieving, never Israel cast off — both olive branches are Yashar''el (Israel).'),
+    ('canon','psalms',69,23,'canon','romans',11,10,'free',
+      E'*Let their eyes be darkened, that they may not see, and bow down their back alway* (Romans 11:10). The next line of the psalm — *Let their eyes be darkened, that they see not; and make their loins continually to shake* (Psalm 69:23) — is read of the blinding-in-part: *Israel hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded* (Romans 11:7). Covenant-conduct under judgment, not an ethnic curse; the blinding lasts only *until the fulness*.'),
+
+    -- THREAD 5 (★★): Let their habitation be desolate; his office let another take
+    ('canon','psalms',69,25,'canon','acts',1,20,'free',
+      E'*For it is written in the book of Psalms, Let his habitation be desolate, and let no man dwell therein: and his bishoprick let another take* (Acts 1:20). Kepha (Peter) reads the psalm''s imprecation — *Let their habitation be desolate; and let none dwell in their tents* (Psalm 69:25) — of Judas, whose field of blood lay empty and whose office (*his bishoprick let another take*) was filled by Matthias. The plural curse of the psalm is applied to the one betrayer whose place fell desolate.'),
+
+    -- THREAD 6 (★): A stranger unto my brethren / hated without a cause / two-house close
+    ('canon','psalms',69,8,'canon','john',7,5,'free',
+      E'*For neither did his brethren believe in him* (John 7:5). The psalm''s estrangement — *I am become a stranger unto my brethren, and an alien unto my mother''s children* (Psalm 69:8) — is fulfilled in the Son rejected by his own: even at the feast of tabernacles *neither did his brethren believe in him*. The despised One is a stranger among those nearest to him.'),
+    ('canon','psalms',69,4,'canon','john',15,25,'free',
+      E'*But this cometh to pass, that the word might be fulfilled that is written in their law, They hated me without a cause* (John 15:25). The psalm''s cry — *They that hate me without a cause are more than the hairs of mine head* (Psalm 69:4) — is quoted by the Son as the word *written in their law* now fulfilled: *They hated me without a cause*. The hatred has no ground but the enmity against the Father (John 15:23-24).'),
+    ('canon','psalms',69,35,'canon','ezekiel',37,19,'free',
+      E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The psalm closes in regathering hope — *For Elohim (God) will save Zion, and will build the cities of Yahudah (Judah)* (Psalm 69:35) — the rebuilding of Yahudah''s cities is the two-house joining the prophet sees: the stick of Joseph and the stick of Yahudah made one in Yahuah''s hand.'),
+    ('canon','psalms',69,36,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The psalm''s last word — *The seed also of his servants shall inherit it: and they that love his name shall dwell therein* (Psalm 69:36) — is the inheritance of the gathered: *He that scattered Yashar''el will gather him*. The despised One''s servants'' seed inherits the rebuilt land — covenant-gathering, the scattered house brought home, never false-inclusion.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-69-the-zeal-of-thine-house-hath-eaten-me-up',
+       E'The zeal of thine house hath eaten me up — the cleansing of the Father''s house',
+       E'The suffering one of Psalm 69 is consumed by jealousy for Yahuah''s house: *For the zeal of thine house hath eaten me up; and the reproaches of them that reproached thee are fallen upon me* (Psalm 69:9). He bears reproach *for thy sake* (Psalm 69:7), become *a stranger unto my brethren* (Psalm 69:8), eaten up by zeal for the place of Yahuah''s name. When the Formed Son went up to Jerusalem and *found in the temple those that sold oxen and sheep and doves, and the changers of money sitting* (John 2:14), He made a scourge and drove them out, saying *make not my Father''s house an house of merchandise* (John 2:16) — and *his disciples remembered that it was written, The zeal of thine house hath eaten me up* (John 2:17). Read through the Formed-and-the-Formless: the One who cleanses the house is Yahuah and HAS a Father; the zeal for the Father''s house consumes Him as the psalm foretold. And the house is not abolished — it is purged of merchandise, the appointed worship of Yahuah honoured by the very jealousy that drives the traders out. The psalm''s zeal-eaten one is the Son, and the reproach aimed at the Father falls on Him.',
+       sv.verse_id, ev.verse_id, 'free', 23700
+  FROM _s302_ps069_lookup sv, _s302_ps069_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=69 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-69-the-reproaches-of-them-that-reproached-thee-fell-on-me',
+       E'The reproaches of them that reproached thee fell on me — borne for the Father''s sake',
+       E'The same verse that names the zeal names the reproach: *and the reproaches of them that reproached thee are fallen upon me* (Psalm 69:9). The afflicted one is not merely reviled for himself — the scorn aimed at Yahuah falls on him, *Because for thy sake I have borne reproach; shame hath covered my face* (Psalm 69:7). Paul takes the verse whole and lays it on Messiah as the pattern of self-forgetting love: *For even Messiah (Christ) pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me* (Romans 15:3). The One who *pleased not himself* bore for the Father''s sake the very insult men hurled at the Father; the reproach the psalmist carried for Yahuah''s sake is the reproach the Son took up. And Paul draws the lesson straight out: *We then that are strong ought to bear the infirmities of the weak, and not to please ourselves* (Romans 15:1) — the reproach-bearing One is the ground of the strong bearing the weak.',
+       sv.verse_id, ev.verse_id, 'free', 23703
+  FROM _s302_ps069_lookup sv, _s302_ps069_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=69 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-69-gall-for-my-meat-and-vinegar-in-my-thirst',
+       E'They gave me gall for my meat, and vinegar in my thirst — fulfilled at the cross',
+       E'In the depth of the lament the psalm names the cruelty of the tormentors with terrible precision: *They gave me also gall for my meat; and in my thirst they gave me vinegar to drink* (Psalm 69:21). Gall offered as food, vinegar pressed on a parched mouth — both fulfilled at Golgotha. The gall comes first and is refused: *They gave him vinegar to drink mingled with gall: and when he had tasted thereof, he would not drink* (Matthew 27:34). Then the vinegar in the thirst: *And straightway one of them ran, and took a spunge, and filled it with vinegar, and put it on a reed, and gave him to drink* (Matthew 27:48). John names the thirst itself as scripture-fulfilling: *After this, Yahusha (Jesus) knowing that all things were now accomplished, that the scripture might be fulfilled, saith, I thirst* (John 19:28), and *Now there was set a vessel full of vinegar: and they filled a spunge with vinegar, and put it upon hyssop, and put it to his mouth* (John 19:29). The dried throat of the psalm''s opening — *I am weary of my crying: my throat is dried* (Psalm 69:3) — is the thirst answered with vinegar on the cross. What David sang in figure of the tormented one is done, drink for drink, to the Son.',
+       sv.verse_id, ev.verse_id, 'free', 23706
+  FROM _s302_ps069_lookup sv, _s302_ps069_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=69 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-69-let-their-table-become-a-snare',
+       E'Let their table become a snare — the blinding in part, the people not cast away',
+       E'The psalm turns to imprecation against the persecutors: *Let their table become a snare before them: and that which should have been for their welfare, let it become a trap. Let their eyes be darkened, that they see not; and make their loins continually to shake* (Psalm 69:22-23). Paul quotes both verses by David''s name — *And David saith, Let their table be made a snare, and a trap, and a stumblingblock, and a recompence unto them: Let their eyes be darkened, that they may not see, and bow down their back alway* (Romans 11:9-10) — of the part of Yashar''el (Israel) hardened in unbelief: *Israel hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded* (Romans 11:7). But this must be read STRICTLY as the framework holds it: Romans 11 is the very chapter that opens *I say then, Hath Elohim (God) cast away his people? God forbid... Elohim hath not cast away his people which he foreknew* (Romans 11:1-2). The blinding is *in part... until the fulness of the Gentiles be come in* (Romans 11:25), and then *all Yashar''el shall be saved* (Romans 11:26). Never Israel cast off; never a new people grafted in by mere confession — both olive branches are Yashar''el, the natural and the same descendants grown wild in the nations. The darkened eyes are covenant-conduct under judgment, a hardening for a season, not an ethnic curse and not the end of the people Yahuah foreknew.',
+       sv.verse_id, ev.verse_id, 'free', 23709
+  FROM _s302_ps069_lookup sv, _s302_ps069_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=69 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-69-let-their-habitation-be-desolate-his-office-let-another-take',
+       E'Let their habitation be desolate — the betrayer''s place, the office let another take',
+       E'The imprecation reaches its sharpest point: *Let their habitation be desolate; and let none dwell in their tents* (Psalm 69:25). In the days after the ascension Kepha (Peter) stood up among the hundred and twenty and read this very word of Judas — *Men and brethren, this scripture must needs have been fulfilled, which the Ruach HaKodesh (Holy Spirit) by the mouth of David spake before concerning Judas, which was guide to them that took Yahusha (Jesus)* (Acts 1:16) — for *Now this man purchased a field with the reward of iniquity; and falling headlong, he burst asunder in the midst, and all his bowels gushed out* (Acts 1:18), the field of blood, Aceldama. *For it is written in the book of Psalms, Let his habitation be desolate, and let no man dwell therein: and his bishoprick let another take* (Acts 1:20). The plural curse of the psalm — the desolate habitation, the empty tents — is read of the one betrayer whose place fell vacant; and the second clause (drawn with Psalm 109:8) carried the apostles to fill the office: *his bishoprick let another take*, and the lot fell on Matthias (Acts 1:26). The psalm''s word *spoken before by the mouth of David* by the Ruach HaKodesh found its mark in the one who guided the captors to the Son.',
+       sv.verse_id, ev.verse_id, 'free', 23712
+  FROM _s302_ps069_lookup sv, _s302_ps069_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=69 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-69-a-stranger-unto-my-brethren-hated-without-a-cause',
+       E'A stranger unto my brethren, hated without a cause — rejected by his own, the two houses gathered',
+       E'The suffering one is despised by the very people nearest him: *They that hate me without a cause are more than the hairs of mine head* (Psalm 69:4), and *I am become a stranger unto my brethren, and an alien unto my mother''s children* (Psalm 69:8). Both are fulfilled in the Son rejected by his own. At the feast of tabernacles even his kin would not trust him: *For neither did his brethren believe in him* (John 7:5) — the stranger among his brethren. And the groundless hatred He names as the word of scripture fulfilled: *But this cometh to pass, that the word might be fulfilled that is written in their law, They hated me without a cause* (John 15:25), a hatred with no ground but the enmity against the Father — *He that hateth me hateth my Father also* (John 15:23). Yet the psalm does not end in rejection. It turns to praise — *I will praise the name of Elohim (God) with a song* (Psalm 69:30) — and closes in regathering: *For Elohim (God) will save Zion, and will build the cities of Yahudah (Judah): that they may dwell there, and have it in possession. The seed also of his servants shall inherit it: and they that love his name shall dwell therein* (Psalm 69:35-36). The rebuilding of Yahudah''s cities is the two-house joining the prophets sing: *Behold, I will take the stick of Joseph, which is in the hand of Ephraim... even with the stick of Yahudah (Judah), and make them one stick* (Ezekiel 37:19); *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The despised One, a stranger to his own, is vindicated — and his servants'' seed inherits the rebuilt land. Covenant-gathering: the scattered house brought home and made one, never false-inclusion, never the covenant dissolved into the nations.',
+       sv.verse_id, ev.verse_id, 'free', 23715
+  FROM _s302_ps069_lookup sv, _s302_ps069_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=69 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*his disciples remembered that it was written, The zeal of thine house hath eaten me up* (John 2:17) — the Formed Son cleanses the Father''s house; the zeal of 69:9 consumes Him, the worship purged not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=9
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-the-zeal-of-thine-house-hath-eaten-me-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Messiah (Christ) pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me* (Romans 15:3) — the second half of 69:9 laid on Messiah; the scorn aimed at the Father borne by the Son who pleased not himself.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=9
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-the-reproaches-of-them-that-reproached-thee-fell-on-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*They gave him vinegar to drink mingled with gall: and when he had tasted thereof, he would not drink* (Matthew 27:34) — the gall of *gall for my meat* (69:21) offered and refused at the cross.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=21
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-gall-for-my-meat-and-vinegar-in-my-thirst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*filled it with vinegar, and put it on a reed, and gave him to drink* (Matthew 27:48) — the vinegar of *in my thirst they gave me vinegar to drink* (69:21) given on the tree.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=21
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-gall-for-my-meat-and-vinegar-in-my-thirst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that the scripture might be fulfilled, saith, I thirst* (John 19:28) — the thirst of 69:21 named as scripture-fulfilling at the cross.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=21
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-gall-for-my-meat-and-vinegar-in-my-thirst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they filled a spunge with vinegar, and put it upon hyssop, and put it to his mouth* (John 19:29) — the vinegar of 69:21 lifted on hyssop to the suffering One.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=21
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-gall-for-my-meat-and-vinegar-in-my-thirst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And David saith, Let their table be made a snare, and a trap, and a stumblingblock* (Romans 11:9) — 69:22 quoted by David''s name of the blinding-in-part; the chapter that insists *Elohim hath not cast away his people* (Rom 11:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=22
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-let-their-table-become-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Let their eyes be darkened, that they may not see, and bow down their back alway* (Romans 11:10) — 69:23 read of the hardening *in part... until the fulness*; covenant-conduct, never Israel cast off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=23
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-let-their-table-become-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Let his habitation be desolate, and let no man dwell therein: and his bishoprick let another take* (Acts 1:20) — 69:25 read by Kepha (Peter) of Judas; the field of blood empty and the office filled by Matthias.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=25
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-let-their-habitation-be-desolate-his-office-let-another-take'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*For neither did his brethren believe in him* (John 7:5) — the Son a *stranger unto my brethren* (69:8), unbelieved by his own kin at the feast of tabernacles.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=8
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-a-stranger-unto-my-brethren-hated-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the word might be fulfilled that is written in their law, They hated me without a cause* (John 15:25) — 69:4 named by the Son as scripture fulfilled; a hatred with no ground but enmity against the Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=4
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-a-stranger-unto-my-brethren-hated-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will take the stick of Joseph... even with the stick of Yahudah (Judah), and make them one stick* (Ezekiel 37:19) — the two-house joining behind *Elohim will save Zion, and will build the cities of Yahudah* (69:35).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=35
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-a-stranger-unto-my-brethren-hated-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the regathering behind *The seed also of his servants shall inherit it* (69:36); covenant-gathering, never false-inclusion.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps069_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=69 AND sv.verse_number=36
+  JOIN _s302_ps069_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-69-a-stranger-unto-my-brethren-hated-without-a-cause'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_72.sql (Psalm 72) -----
+-- Chapter: Psalm 72 — THE ROYAL PSALM OF SOLOMON, the righteous King's universal reign: "He shall judge thy people with righteousness, and thy poor with judgment" (v.2); "In his days shall the righteous flourish" (v.7); "He shall have dominion also from sea to sea, and from the river unto the ends of the earth" (v.8); "the kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts" (v.10); "Yea, all kings shall fall down before him: all nations shall serve him" (v.11); "His name shall endure for ever... men shall be blessed in him: all nations shall call him blessed" (v.17). The King's dominion and the gathering of the nations under the Abrahamic seed.
+-- Tag: ps072   Temp view: _s302_ps072_lookup
+-- Sort band: base 23775, step 3 -> threads at 23775, 23778, 23781, 23784 (4 threads)
+-- Source of EVERY row: 'canon','psalms',72,v
+--
+-- Psalm 72 coverage:
+--   ★ v.1-4 (Give the king thy judgments... He shall judge thy people with righteousness, and thy poor with judgment... He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor)
+--        NT:     none warranted distinct (the righteous-judgment movement is carried laterally by Isaiah 11's Branch; the NT enthronement weight sits at THREADS 2-3)
+--        Extras: none warranted distinct (the judgment-of-the-righteous-King is canon-carried by Isaiah 11)
+--        Tanakh: ★ Isaiah 11:1 (a rod out of the stem of Jesse, and a Branch shall grow out of his roots); Isaiah 11:3-4 (he shall not judge after the sight of his eyes... with righteousness shall he judge the poor, and reprove with equity for the meek of the earth) — THREAD 1 (the righteous Branch who judges the poor with righteousness; same King, same judgment)
+--   ★ v.5-7 (They shall fear thee as long as the sun and moon endure... In his days shall the righteous flourish; and abundance of peace so long as the moon endureth)
+--        NT:     none warranted distinct (the enduring reign is carried into THREAD 4's *his name shall endure for ever* and THREAD 2's everlasting dominion)
+--        Extras: none warranted distinct
+--        Tanakh: none warranted distinct (held within THREAD 4's enduring-name weight; v.6 the rain-on-mown-grass image kept with the flourishing reign, no separate thread forced)
+--   ★★ v.8 (He shall have dominion also from sea to sea, and from the river unto the ends of the earth) + v.11 (Yea, all kings shall fall down before him: all nations shall serve him)
+--        NT:     Revelation 11:15 (The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah; and he shall reign for ever and ever) — THREAD 2 (the universal dominion fulfilled)
+--        Extras: 1 Enoch 62:6 (Yahuah of Spirits seated the Elect One on the throne of His glory); 1 Enoch 62:9 (this Son of Adam... Shall raise up the kings and the mighty from their seats); 1 Enoch 62:10 (he shall put down the kings from their thrones and kingdoms) — THREAD 2 (the Chosen One enthroned, the kings made to bow). AVOIDED 62:5 (carries a "(Note:...)" Charles-apparatus parenthetical).
+--        Tanakh: ★ Daniel 7:14 (there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion) — THREAD 2 (the everlasting dominion of the Son of Adam; all nations serve the King, sea to sea)
+--   ★★ v.9-10 (They that dwell in the wilderness shall bow before him; and his enemies shall lick the dust. The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts) + v.15 (to him shall be given of the gold of Sheba)
+--        NT:     Matthew 2:11 (they presented unto him gifts; gold, and frankincense, and myrrh) — THREAD 3 (★★ the magi, the first kings of the nations to bring gifts to the King)
+--        Extras: none warranted distinct here (the kings put down sit at THREAD 2; the magi/Sheba homage is canon-carried)
+--        Tanakh: ★ Isaiah 60:3 (the Gentiles shall come to thy light, and kings to the brightness of thy rising); Isaiah 60:6 (all they from Sheba shall come: they shall bring gold and incense) — THREAD 3 (the kings and the gold of Sheba streaming to the light of the King — the gathering of the nations)
+--   ★★ v.17 (His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed)
+--        NT:     none warranted distinct (the all-families-blessed seed is the Tanakh Abrahamic root quoted laterally; the NT all-nations weight sits at THREADS 2-3)
+--        Extras: none warranted distinct
+--        Tanakh: ★★ Genesis 12:3 (in thee shall all families of the earth be blessed); Genesis 22:18 (in thy seed shall all the nations of the earth be blessed) — THREAD 4 (the Abrahamic all-families/all-nations-blessed seed; the enduring name of the King is the seed of promise)
+--   v.12-14 (For he shall deliver the needy... He shall redeem their soul from deceit and violence) — the King's care for the poor, held within THREAD 1's righteous-judgment prose, no separate thread forced
+--   v.16 (an handful of corn in the earth upon the top of the mountains... they of the city shall flourish like grass of the earth) — the flourishing-of-the-reign image, held within the enduring-reign weight, none warranted distinct
+--   v.18-20 (Blessed be Yahuah Elohim... The prayers of David the son of Jesse are ended) — the doxology and the colophon closing Book II of the Psalter; none warranted distinct
+--
+-- Threads (slug — target libraries):
+--   1. psalm-72-he-shall-judge-thy-people-with-righteousness-and-thy-poor-with-judgment — Tanakh (Isaiah 11) [free] (★ the righteous Branch who judges the poor with righteousness)
+--   2. psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him — NT (Revelation) + Tanakh (Daniel 7) + Extras (1 Enoch 62) [extras] (★★ the universal dominion; the Son of Adam enthroned, the kings made to bow)
+--   3. psalm-72-the-kings-of-sheba-and-seba-shall-offer-gifts — NT (Matthew 2) + Tanakh (Isaiah 60) [free] (★★ the kings of the nations bringing gold to the King; the magi, the gathering)
+--   4. psalm-72-his-name-shall-endure-for-ever-all-nations-shall-call-him-blessed — Tanakh (Genesis 12, Genesis 22) [free] (★★ the Abrahamic all-families/all-nations-blessed seed)
+--
+-- Framing notes:
+--   ★ THE RIGHTEOUS BRANCH (THREAD 1): *He shall judge thy people with righteousness, and thy poor with judgment* (72:2); *He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor* (72:4). This is the same righteous-judgment of the shoot of Jesse: *with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4). The royal son of Psalm 72 and the Branch of Isaiah 11 are one King — the Messiah who judges not after the sight of the eyes but in righteousness, who lifts the needy and breaks the oppressor. Torah-righteousness is the very substance of His reign, never its abolition.
+--   ★★ THE UNIVERSAL DOMINION (THREAD 2): *He shall have dominion also from sea to sea, and from the river unto the ends of the earth* (72:8); *all kings shall fall down before him: all nations shall serve him* (72:11). Daniel sees the same handing-over to the Son of Adam: *there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion* (Daniel 7:14). The end is the kingdoms made His own: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah; and he shall reign for ever and ever* (Revelation 11:15). The restored witness shows the Chosen One enthroned and the proud kings put down before Him: *Yahuah (God) of Spirits seated the Elect One on the throne of His glory* (1 Enoch 62:6); *this Son of Adam... Shall raise up the kings and the mighty from their seats* (1 Enoch 62:9); *he shall put down the kings from their thrones and kingdoms* (1 Enoch 62:10). The kings who do not bow are abased; the nations serve the enthroned Son of Adam. (62:5 carries a Charles "(Note:...)" parenthetical and is deliberately NOT used.)
+--   ★★ THE KINGS' GIFTS (THREAD 3): *The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* (72:10), and *to him shall be given of the gold of Sheba* (72:15). The first kings of the nations to bring their gifts to the newborn King are the magi: *they presented unto him gifts; gold, and frankincense, and myrrh* (Matthew 2:11). Isaiah sings the same gathering: *the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3), *all they from Sheba shall come: they shall bring gold and incense* (Isaiah 60:6). The gold of Sheba flows to the King; the nations stream to His light — the homage of the kings, never the conquest of a people.
+--   ★★ THE ABRAHAMIC SEED (THREAD 4): *His name shall endure for ever... men shall be blessed in him: all nations shall call him blessed* (72:17). This is the very language of the promise to Abraham: *in thee shall all families of the earth be blessed* (Genesis 12:3), *in thy seed shall all the nations of the earth be blessed* (Genesis 22:18). The enduring-named King in whom all nations are blessed IS the seed of promise — the paternal-bloodline-and-covenant-word seed carried from Abraham to the royal son, the One in whom every family of the earth finds blessing. The all-nations-blessed of Psalm 72 is the all-families-blessed of Genesis fulfilled in the King.
+--   VERSES WITH NO ADD: v.1 (the prayer that opens the psalm, within THREAD 1); v.5-7 (the enduring, flourishing reign, held with THREAD 4's enduring name and THREAD 2's everlasting dominion); v.12-14 (the King's deliverance of the needy, within THREAD 1); v.16 (the flourishing image); v.18-20 (the doxology + the colophon closing Book II of the Psalter). No verse left unweighed; the psalm's care-for-the-poor verses are gathered into the righteous-judgment thread rather than split into thin separate threads.
+
+CREATE TEMP VIEW _s302_ps072_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: He shall judge thy people with righteousness (the righteous Branch)
+    ('canon','psalms',72,2,'canon','isaiah',11,4,'free',
+      E'*But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). The royal son who *shall judge thy people with righteousness, and thy poor with judgment* (Psalm 72:2) is the Branch of Jesse who judges *with righteousness... the poor, and... the meek of the earth*. The same King, the same righteous judgment lifting the lowly and striking the wicked — the Messiah whose reign is built on Torah-righteousness, not its setting aside.'),
+    ('canon','psalms',72,4,'canon','isaiah',11,1,'free',
+      E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). The King who *shall save the children of the needy, and shall break in pieces the oppressor* (Psalm 72:4) is the Branch that grows from Jesse''s root — the Davidic seed in whom the royal psalm''s justice for the needy is fulfilled. The shoot out of the felled stem is the King of the everlasting righteous reign.'),
+    ('canon','psalms',72,4,'canon','isaiah',11,3,'free',
+      E'*And shall make him of quick understanding in the fear of Yahuah (LORD): and he shall not judge after the sight of his eyes, neither reprove after the hearing of his ears* (Isaiah 11:3). The judgment of *He shall judge the poor of the people, he shall save the children of the needy* (Psalm 72:4) is the judgment of the Branch who *shall not judge after the sight of his eyes* — never swayed by appearance or report, but judging in the fear of Yahuah. The righteous King of Psalm 72 sees the needy truly, and saves them.'),
+
+    -- THREAD 2 (★★): He shall have dominion from sea to sea — all nations shall serve him
+    ('canon','psalms',72,8,'canon','daniel',7,14,'free',
+      E'*And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). The reign of *He shall have dominion also from sea to sea, and from the river unto the ends of the earth* (Psalm 72:8) is the dominion given to the One like the Son of Adam — *that all people, nations, and languages, should serve him*. The universal kingdom of the royal psalm is the everlasting dominion of Daniel''s vision; the same King, the same nations, the same reign that does not pass away.'),
+    ('canon','psalms',72,11,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The homage of *Yea, all kings shall fall down before him: all nations shall serve him* (Psalm 72:11) reaches its end when *the kingdoms of this world are become the kingdoms of our Lord, and of his Messiah; and he shall reign for ever and ever*. All nations serving the King in the psalm is the kingdoms made the Messiah''s in the consummation — the everlasting reign foretold.'),
+    ('canon','psalms',72,11,'enoch','1-enoch',62,6,'extras',
+      E'*And Yahuah (God) of Spirits seated the Elect One on the throne of His glory, And he shall judge all the secret things, And no one shall be able to utter a lying word in his presence; For he is the Chosen One before Yahuah (God) of Spirits according to His good pleasure* (1 Enoch 62:6). The King before whom *all kings shall fall down... all nations shall serve him* (Psalm 72:11) is the Elect One enthroned: *Yahuah (God) of Spirits seated the Elect One on the throne of His glory*. The Chosen One seated on the throne of glory to judge is the same universal King to whom the nations bow.'),
+    ('canon','psalms',72,11,'enoch','1-enoch',62,9,'extras',
+      E'*And this Son of Adam whom thou hast seen Shall raise up the kings and the mighty from their seats, [And the strong from their thrones] And shall loosen the reins of the strong, And break the teeth of the sinners* (1 Enoch 62:9). The falling-down of *all kings shall fall down before him* (Psalm 72:11) carries the abasing of the proud: the Son of Adam *Shall raise up the kings and the mighty from their seats*. The kings who do not bow are pulled from their thrones before the enthroned Son of Adam — the universal dominion is no negotiation but the rule of the Chosen One.'),
+    ('canon','psalms',72,11,'enoch','1-enoch',62,10,'extras',
+      E'*And he shall put down the kings from their thrones and kingdoms Because they do not extol and praise Him, Nor humbly acknowledge whence the kingdom was bestowed upon them* (1 Enoch 62:10). The service of *all nations shall serve him* (Psalm 72:11) is refused by the proud kings, and so *he shall put down the kings from their thrones and kingdoms*. Those who will not fall down before the King and acknowledge His reign are cast from their seats; the nations that serve are blessed, the kings that withhold are abased.'),
+
+    -- THREAD 3 (★★): The kings of Sheba and Seba shall offer gifts (the magi, the gathering of the nations)
+    ('canon','psalms',72,10,'canon','matthew',2,11,'free',
+      E'*And when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh* (Matthew 2:11). The word *the kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* (Psalm 72:10) is first answered at the cradle: the wise men from the east *fell down, and worshipped him*, and *presented unto him gifts; gold, and frankincense, and myrrh*. The first of the nations'' kings come bearing the gold and incense of the psalm to the newborn King — the gathering of the Gentiles to the One born King.'),
+    ('canon','psalms',72,10,'canon','isaiah',60,3,'free',
+      E'*And the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3). The kings who *shall bring presents... shall offer gifts* (Psalm 72:10) stream to the light of the King: *the Gentiles shall come to thy light, and kings to the brightness of thy rising*. The royal psalm''s tribute from the kings is the prophet''s vision of the nations drawn to the rising glory — the King''s dominion is the gathering of the Gentiles, not the crushing of peoples.'),
+    ('canon','psalms',72,10,'canon','isaiah',60,6,'free',
+      E'*The multitude of camels shall cover thee, the dromedaries of Midian and Ephah; all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6). The very Sheba of *the kings of Sheba and Seba shall offer gifts* (Psalm 72:10) is named: *all they from Sheba shall come: they shall bring gold and incense*. The gold and the incense of the magi, the gifts of the royal psalm, the camels of Sheba — one stream of the nations bringing their treasures to the King and showing forth the praises of Yahuah.'),
+
+    -- THREAD 4 (★★): His name shall endure for ever — all nations shall call him blessed (the Abrahamic seed)
+    ('canon','psalms',72,17,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). The King in whom *men shall be blessed in him: all nations shall call him blessed* (Psalm 72:17) carries the very promise spoken to Abraham: *in thee shall all families of the earth be blessed*. The all-nations-blessed of the royal psalm is the all-families-blessed of the Abrahamic covenant — the King is the seed of promise in whom every family of the earth finds blessing.'),
+    ('canon','psalms',72,17,'canon','genesis',22,18,'free',
+      E'*And in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18). The word *all nations shall call him blessed* (Psalm 72:17) is the oath sworn to Abraham at the binding: *in thy seed shall all the nations of the earth be blessed*. The enduring-named King is THE seed — the paternal-bloodline-and-covenant-word seed of promise carried from Abraham to the royal son, the One through whom all the nations of the earth are blessed, and whose name endures for ever as long as the sun.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-72-he-shall-judge-thy-people-with-righteousness-and-thy-poor-with-judgment',
+       E'He shall judge thy people with righteousness, and thy poor with judgment — the righteous Branch',
+       E'The psalm opens as a prayer for the king and his son, and at once the reign is defined by righteousness: *Give the king thy judgments, O Elohim (God), and thy righteousness unto the king''s son. He shall judge thy people with righteousness, and thy poor with judgment* (Psalm 72:1-2). This is no ordinary monarch but the righteous King whose justice lifts the lowly: *He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor* (Psalm 72:4), *For he shall deliver the needy when he crieth; the poor also, and him that hath no helper* (Psalm 72:12). The same King rises in Isaiah''s vision of the shoot of Jesse: *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1), and His judgment is the very judgment of Psalm 72 — *he shall not judge after the sight of his eyes, neither reprove after the hearing of his ears: but with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:3-4). The royal son of the psalm and the Branch of Isaiah are one Messiah: the King who judges in righteousness, who sees the needy truly and saves them, who breaks the oppressor. His reign is the fullness of Torah-righteousness — never its abolition, but its perfect doing in the One who fears Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 23775
+  FROM _s302_ps072_lookup sv, _s302_ps072_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=72 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him',
+       E'He shall have dominion from sea to sea — all nations shall serve him',
+       E'The righteous King''s reign is not bounded by one land: *He shall have dominion also from sea to sea, and from the river unto the ends of the earth* (Psalm 72:8); *Yea, all kings shall fall down before him: all nations shall serve him* (Psalm 72:11). This is the universal Messianic kingdom — the same dominion Daniel sees handed to the One like the Son of Adam: *there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away* (Daniel 7:14). And the end of it is the kingdoms themselves made His: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The restored witness shows the Chosen One on the throne to whom the nations come, and the proud kings put down before Him: *Yahuah (God) of Spirits seated the Elect One on the throne of His glory* (1 Enoch 62:6); *this Son of Adam whom thou hast seen Shall raise up the kings and the mighty from their seats... And break the teeth of the sinners* (1 Enoch 62:9); *he shall put down the kings from their thrones and kingdoms Because they do not extol and praise Him* (1 Enoch 62:10). The kings who fall down and the nations who serve are blessed; the proud who withhold their homage are abased. The dominion from sea to sea is the everlasting reign of the enthroned Son of Adam — all nations gathered under one King.',
+       sv.verse_id, ev.verse_id, 'extras', 23778
+  FROM _s302_ps072_lookup sv, _s302_ps072_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=72 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-72-the-kings-of-sheba-and-seba-shall-offer-gifts',
+       E'The kings of Sheba and Seba shall offer gifts — the nations bring their gold to the King',
+       E'The dominion over the nations comes with their willing tribute: *The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* (Psalm 72:10), and *to him shall be given of the gold of Sheba* (Psalm 72:15). The first kings of the nations to bring their gifts to this King come to a cradle in Bethlehem: *when they were come into the house, they saw the young child with Mary his mother, and fell down, and worshipped him: and when they had opened their treasures, they presented unto him gifts; gold, and frankincense, and myrrh* (Matthew 2:11) — the wise men from the east, the first-fruits of the Gentile kings bearing the gold and incense of the psalm to the One born King of the Yahudim (Jews). Isaiah sings the same gathering, and names the same Sheba: *the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3); *the multitude of camels shall cover thee... all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6). The gold of Sheba, the gifts of the magi, the camels and incense of the nations — one stream of the Gentiles drawn to the light of the King, laying their treasures at His feet. This is the King''s dominion: not the crushing of peoples but the gathering of the nations to worship.',
+       sv.verse_id, ev.verse_id, 'free', 23781
+  FROM _s302_ps072_lookup sv, _s302_ps072_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=72 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-72-his-name-shall-endure-for-ever-all-nations-shall-call-him-blessed',
+       E'His name shall endure for ever — all nations shall call him blessed (the Abrahamic seed)',
+       E'The psalm crowns the King''s reign with a name that outlasts the sun and a blessing that reaches every people: *His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed* (Psalm 72:17). This is the very language of the promise spoken to Abraham at the first: *I will bless thee, and make thy name great; and thou shalt be a blessing... and in thee shall all families of the earth be blessed* (Genesis 12:2-3); and sworn again by oath at the binding of Isaac: *in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18). The enduring-named King in whom *all nations shall call him blessed* IS the seed of promise — carried by paternal bloodline and covenant word together from Abraham to the royal son. The all-nations-blessed of Psalm 72 is the all-families-blessed of Genesis come to its King: the One through whom every family of the earth finds blessing, whose name is continued as long as the sun endures. So the psalm closes in doxology — *Blessed be Yahuah Elohim (the LORD God), the Elohim (God) of Yashar''el (Israel), who only doeth wondrous things... let the whole earth be filled with his glory; Amen, and Amen* (Psalm 72:18-19) — the King''s reign and the Abrahamic blessing ending in the glory of Yahuah filling the whole earth.',
+       sv.verse_id, ev.verse_id, 'free', 23784
+  FROM _s302_ps072_lookup sv, _s302_ps072_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=72 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*with righteousness shall he judge the poor, and reprove with equity for the meek of the earth* (Isaiah 11:4) — the Branch judges the poor with righteousness, the same justice as *He shall judge thy people with righteousness* (72:2).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=2
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-judge-thy-people-with-righteousness-and-thy-poor-with-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1) — the King who saves the needy (72:4) is the Davidic Branch of Jesse, the royal seed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=4
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-judge-thy-people-with-righteousness-and-thy-poor-with-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he shall not judge after the sight of his eyes, neither reprove after the hearing of his ears* (Isaiah 11:3) — the King of 72:4 sees the needy truly, judging in the fear of Yahuah, not by appearance.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=4
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-judge-thy-people-with-righteousness-and-thy-poor-with-judgment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion* (Daniel 7:14) — the dominion *from sea to sea* (72:8) given to the One like the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=8
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — *all nations shall serve him* (72:11) reaches its end in the kingdoms made the Messiah''s.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=11
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (God) of Spirits seated the Elect One on the throne of His glory... he is the Chosen One before Yahuah (God) of Spirits* (1 Enoch 62:6) — the King to whom *all nations shall serve* (72:11) is the Elect One enthroned to judge.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=11
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*this Son of Adam whom thou hast seen Shall raise up the kings and the mighty from their seats... And break the teeth of the sinners* (1 Enoch 62:9) — the *all kings shall fall down* (72:11) carries the abasing of the proud before the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=11
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he shall put down the kings from their thrones and kingdoms Because they do not extol and praise Him* (1 Enoch 62:10) — those who will not *fall down before him... serve him* (72:11) are cast from their seats; the nations that serve are blessed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=11
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=62 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-he-shall-have-dominion-from-sea-to-sea-all-nations-shall-serve-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they presented unto him gifts; gold, and frankincense, and myrrh* (Matthew 2:11) — the magi, the first kings of the nations to bring the gold and incense of *the kings of Sheba and Seba shall offer gifts* (72:10) to the newborn King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=10
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-the-kings-of-sheba-and-seba-shall-offer-gifts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3) — the kings who bring presents (72:10) stream to the light of the King; the gathering of the nations, not the crushing of peoples.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=10
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-the-kings-of-sheba-and-seba-shall-offer-gifts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6) — the very Sheba of 72:10 named; the gold and incense of the nations brought to the King.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=10
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-the-kings-of-sheba-and-seba-shall-offer-gifts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*in thee shall all families of the earth be blessed* (Genesis 12:3) — the *all nations shall call him blessed* (72:17) is the Abrahamic all-families-blessed; the King is the seed of promise.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=17
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-his-name-shall-endure-for-ever-all-nations-shall-call-him-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*in thy seed shall all the nations of the earth be blessed; because thou hast obeyed my voice* (Genesis 22:18) — the enduring-named King in whom *all nations shall call him blessed* (72:17) is THE seed of the Abrahamic oath.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps072_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=72 AND sv.verse_number=17
+  JOIN _s302_ps072_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-72-his-name-shall-endure-for-ever-all-nations-shall-call-him-blessed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_89.sql (Psalm 89) -----
+-- Chapter: Psalm 89 — THE DAVIDIC COVENANT PSALM (the sworn seed-throne and the firstborn King): *I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations* (v.3-4); the unmatched Yahuah of hosts who rules the raging sea and broke Rahab (v.6-13); *the Holy One of Yashar'el (Israel) is our king* (v.18); the vision-oath over David — *I have found David my servant; with my holy oil have I anointed him* (v.19-20); ★★ *He shall cry unto me, Thou art my father, my Elohim (God), and the rock of my salvation. Also I will make him my firstborn, higher than the kings of the earth* (v.26-27) — the firstborn King who HAS a Father; *His seed also will I make to endure for ever, and his throne as the days of heaven* (v.29); the chastening-not-annulment clause — *If his children forsake my law... Then will I visit their transgression with the rod... Nevertheless my lovingkindness will I not utterly take from him* (v.30-33); ★★ *My covenant will I not break, nor alter the thing that is gone out of my lips. Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever, and his throne as the sun before me* (v.34-37); and the covenant-lawsuit lament — *But thou hast cast off and abhorred, thou hast been wroth with thine anointed* (v.38ff), the exile that profanes the crown yet never annuls the sworn oath.
+-- Tag: ps089   Temp view: _s302_ps089_lookup
+-- Sort band: base 24200, step 3 -> threads at 24200, 24203, 24206, 24209, 24212, 24215 (6 threads)
+-- Source of EVERY row: 'canon','psalms',89,v
+--
+-- Psalm 89 coverage:
+--   v.3-4 (I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations)
+--        NT:     ★ Luke 1:32-33 (the Lord God shall give unto him the throne of his father David... of his kingdom there shall be no end); Acts 13:23 (of this man's seed hath Elohim raised unto Yashar'el a Saviour, Yahusha) — THREAD 1 (the sworn Davidic seed-throne given to Yahusha)
+--        Extras: none warranted distinct (the Davidic-oath weave is the NT throne-of-David fulfilment + the 2 Samuel 7 charter; the firstborn-chosen-before-creation extras witness sits at THREAD 2)
+--        Tanakh: ★★ 2 Samuel 7:12-13,16 (I will set up thy seed after thee... I will stablish the throne of his kingdom for ever... thy throne shall be established for ever) — THREAD 1 (the Nathan-charter the psalm sings)
+--   v.6-13 (who in the heaven can be compared unto Yahuah... Thou rulest the raging of the sea... Thou hast broken Rahab in pieces... Thou hast a mighty arm)
+--        NT:     none warranted (the incomparable-Yahuah hymn is held in the chapter prose; no distinct assigned NT target closer than the firstborn/throne weave)
+--        Extras: none warranted (not forced; no clean restored-library lateral closer than the framework threads)
+--        Tanakh: none warranted distinct (the unmatched Yahuah of hosts grounds the whole psalm; no single lateral given its own member)
+--   v.18 (For Yahuah is our defence; and the Holy One of Yashar'el is our king) + v.17,24 (in thy favour our horn shall be exalted; in my name shall his horn be exalted)
+--        NT:     ★ Luke 1:69 (raised up an horn of salvation for us in the house of his servant David) — THREAD 4 (the exalted horn = the saving King in David's house)
+--        Extras: none warranted
+--        Tanakh: Psalm 132:17 (There will I make the horn of David to bud: I have ordained a lamp for mine anointed) — THREAD 4 (the budding horn of David)
+--   v.19-20 (I have exalted one chosen out of the people. I have found David my servant; with my holy oil have I anointed him)
+--        NT:     Acts 13:22 (I have found David the son of Jesse, a man after mine own heart) — carried in THREAD 1 prose (the found, anointed servant); the anointed/chosen weave bridges to THREAD 2
+--        Extras: 1 Enoch 48:6 (for this reason hath he been chosen and hidden before Him, Before the creation of the world) — THREAD 2 (the chosen One, the Elect)
+--        Tanakh: held within THREAD 1 (the anointed servant David) and THREAD 2 (the chosen firstborn)
+--   ★★ v.26-27 (He shall cry unto me, Thou art my father, my Elohim, and the rock of my salvation. Also I will make him my firstborn, higher than the kings of the earth)
+--        NT:     ★★ Hebrews 1:5 (Thou art my Son... I will be to him a Father, and he shall be to me a Son) + Hebrews 1:6 (when he bringeth in the firstbegotten into the world... let all the angels of Elohim worship him); ★★ Colossians 1:15 (the image of the invisible Elohim, the firstborn of every creature) + Colossians 1:18 (the firstborn from the dead; that in all things he might have the preeminence); ★ Revelation 1:5 (the first begotten of the dead, and the prince of the kings of the earth) — THREAD 2 (load-bearing FORMED firstborn King who HAS a Father)
+--        Extras: ★ 1 Enoch 48:2-3 (that Son of Adam was named In the presence of Yahuah of Spirits... Before the stars of the heaven were made, His name was named) + 1 Enoch 48:5 (All who dwell on earth shall fall down and worship before him) — THREAD 2 (the named Son of Adam, chosen before creation, worshipped — the firstborn higher than the kings)
+--        Tanakh: 2 Samuel 7:14 (I will be his father, and he shall be my son) — THREAD 2 (the father-son covenant grammar)
+--   v.28-29 (My mercy will I keep for him for evermore... His seed also will I make to endure for ever, and his throne as the days of heaven)
+--        NT:     Luke 1:33 (of his kingdom there shall be no end) — carried in THREAD 3 (the enduring seed-throne)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 3 (the everlasting throne) + THREAD 1 (the seed established)
+--   v.30-34 (If his children forsake my law, and walk not in my judgments; If they break my statutes, and keep not my commandments; Then will I visit their transgression with the rod... Nevertheless my lovingkindness will I not utterly take from him, nor suffer my faithfulness to fail. My covenant will I not break)
+--        NT:     none warranted distinct (the chastening-not-abolition is the Torah-affirming covenant grammar; the NT throne fulfilment is THREAD 2/3)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Samuel 7:14-15 (If he commit iniquity, I will chasten him with the rod of men... But my mercy shall not depart away from him) — THREAD 5 (the rod for sin, the mercy that never departs — Torah binding, covenant unbroken)
+--   ★★ v.34-37 (My covenant will I not break, nor alter the thing that is gone out of my lips. Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever, and his throne as the sun before me. It shall be established for ever as the moon, and as a faithful witness in heaven)
+--        NT:     ★ Luke 1:32-33 (the throne of his father David... of his kingdom there shall be no end) — THREAD 3 (the unbreakable oath kept in the everlasting throne given Yahusha)
+--        Extras: none warranted (the unbreakable-oath fulfilment is the NT throne + Psalm 132 sworn-oath lateral)
+--        Tanakh: ★ Psalm 132:11 (Yahuah hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne) — THREAD 3 (the same sworn, irrevocable oath)
+--   v.38-39,49-51 (But thou hast cast off and abhorred, thou hast been wroth with thine anointed. Thou hast made void the covenant of thy servant... where are thy former lovingkindnesses, which thou swarest unto David... they have reproached the footsteps of thine anointed)
+--        NT:     none warranted distinct (the lament's resolution is the THREAD 3 unbreakable oath; the reproached anointed is the rejected King held in THREAD 6 prose)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 2:1-2 (the kings of the earth set themselves... against Yahuah, and against his anointed) — THREAD 6 (the anointed reproached/raged against — the lawsuit-exile, NOT the oath annulled)
+--   v.46-48 (How long, Yahuah? wilt thou hide thyself for ever?... What man is he that liveth, and shall not see death?)
+--        NT:     none warranted (the brevity-of-life lament is held in THREAD 6 prose; no distinct target warranted)
+--        Extras: none warranted
+--        Tanakh: none warranted distinct
+--   v.52 (Blessed be Yahuah for evermore. Amen, and Amen)
+--        NT/Extras/Tanakh: none warranted (the Book-III doxology closing the psalm; no add)
+--
+-- Threads (slug — target libraries):
+--   1. psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever — Tanakh (2 Samuel 7) + NT (Luke 1, Acts 13) [free] (the sworn Davidic seed-throne charter, given to Yahusha)
+--   2. psalm-89-thou-art-my-father-i-will-make-him-my-firstborn — NT (Hebrews 1, Colossians 1, Revelation 1) + Extras (1 Enoch 48) + Tanakh (2 Samuel 7) [extras] (★★ FORMED firstborn King: the firstborn who cries 'Thou art my father' — Elohim with a Father, no co-equal collapse)
+--   3. psalm-89-my-covenant-will-i-not-break-his-throne-as-the-sun — Tanakh (Psalm 132) + NT (Luke 1) [free] (★★ the unbreakable sworn oath — his throne as the sun, the kingdom with no end)
+--   4. psalm-89-the-holy-one-of-yasharel-is-our-king — Tanakh (Psalm 132) + NT (Luke 1) [free] (the exalted horn = the saving King in David's house, the Holy One of Yashar'el)
+--   5. psalm-89-if-his-children-forsake-my-law-the-rod-but-the-covenant-stands — Tanakh (2 Samuel 7) [free] (chastening for sin, mercy that never departs — Torah binding, covenant unbroken)
+--   6. psalm-89-thou-hast-cast-off-the-covenant-lawsuit-not-annulled — Tanakh (Psalm 2) [free] (the reproached anointed, the exile-lawsuit — the oath stands beneath the lament)
+--
+-- Framing notes:
+--   ★★ THE FORMED FIRSTBORN KING (THREAD 2): *He shall cry unto me, Thou art my father, my Elohim (God), and the rock of my salvation. Also I will make him my firstborn, higher than the kings of the earth* (89:26-27). This is the Formed-and-Formless grammar of Red Line #4 written into the covenant itself: the firstborn King CRIES to Another — *Thou art my father, my Elohim* — the Son who bears the Name and the throne yet HAS a Father, an Elohim above him, *the rock of my salvation*. Hebrews 1:5 quotes the father-son covenant of this very promise (*I will be to him a Father, and he shall be to me a Son*), and Hebrews 1:6 brings *the firstbegotten into the world* before whom *all the angels of Elohim worship* — the very firstborn *higher than the kings of the earth*. Colossians 1:15,18 names him *the image of the invisible Elohim, the firstborn of every creature... the firstborn from the dead; that in all things he might have the preeminence* — firstborn = the Heir with preeminence, NOT a first creature (Col 1:16 makes him the agent of creation) NOR a co-equal person (he is the IMAGE of the invisible One, and cries to a Father). Revelation 1:5 seals it: *the first begotten of the dead, and the prince of the kings of the earth* — the firstborn raised, higher than every earthly king, exactly Psalm 89:27. And 1 Enoch 48 supplies the restored witness: this Son of Adam was *named before Yahuah of Spirits... before the stars of the heaven were made* and *chosen and hidden before Him, Before the creation of the world* — the firstborn chosen before time, before whom *all who dwell on earth shall fall down and worship*. The firstborn is the Formed Son: Elohim, with a Father he calls upon.
+--   ★★ THE UNBREAKABLE OATH (THREAD 3): *My covenant will I not break, nor alter the thing that is gone out of my lips. Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever, and his throne as the sun before me* (89:34-36). The covenant-lawsuit lament that follows (*thou hast cast off and abhorred*, v.38) is the EXILE-judgment, never the annulment of the sworn oath — the oath stands above the lament. Luke 1:32-33 declares it kept: *the Lord God shall give unto him the throne of his father David... of his kingdom there shall be no end*; Psalm 132:11 echoes the same irrevocable swearing (*Yahuah hath sworn in truth unto David; he will not turn from it*). The throne *as the sun before me... established for ever as the moon, and as a faithful witness in heaven* is the kingdom that has no end.
+--   ★ TORAH BINDING, COVENANT UNBROKEN (THREAD 5): *If his children forsake my law, and walk not in my judgments; If they break my statutes, and keep not my commandments; Then will I visit their transgression with the rod... Nevertheless my lovingkindness will I not utterly take from him* (89:30-33). The chastening is FOR forsaking the law — the Torah is binding within the covenant, its breach met with the rod (Red Line #6: the curse is the judgment for covenant-breaking, never the Torah itself). 2 Samuel 7:14-15 is the charter clause: *If he commit iniquity, I will chasten him with the rod of men... But my mercy shall not depart away from him*. Sin is disciplined; the covenant is never voided.
+--   ★ THE REPROACHED ANOINTED, NOT THE OATH ANNULLED (THREAD 6): *But thou hast cast off and abhorred, thou hast been wroth with thine anointed... they have reproached the footsteps of thine anointed* (89:38,51). The lament voices the exile — the crown profaned, the throne cast down — but read with THREAD 3 it is the covenant-lawsuit, not the covenant's end. Psalm 2:1-2 gives the lateral: *the kings of the earth set themselves... against Yahuah, and against his anointed*. The anointed is raged against and reproached, yet the sworn seed-throne endures beneath the lament; the rejection is the suffering of the King, not the failure of the oath.
+--   VERSES WITH NO ADD: v.6-13 (the incomparable Yahuah of hosts, ruler of the sea, breaker of Rahab) — the creation-hymn grounding the covenant, held in chapter prose, no distinct framework target warranted; v.46-48 (the brevity-of-life lament, How long?) — held in THREAD 6 prose; v.52 (Blessed be Yahuah for evermore. Amen, and Amen) — the Book-III doxology, no add.
+--   EXTRAS: ONE warranted — 1 Enoch 48:2-3,5 at THREAD 2 (the Son of Adam named/chosen before creation, worshipped) — the cleanest restored witness to the firstborn higher than the kings of the earth chosen before time; not forced. Elsewhere the decisive witnesses are the NT (Hebrews 1, Colossians 1, Revelation 1, Luke 1) and the Tanakh charters (2 Samuel 7, Psalm 132, Psalm 2). Recorded deliberately per the coverage checklist.
+
+CREATE TEMP VIEW _s302_ps089_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: I have sworn unto David — thy seed and thy throne for ever (the Davidic charter)
+    ('canon','psalms',89,3,'canon','2-samuel',7,12,'free',
+      E'*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). The oath of the psalm — *I have made a covenant with my chosen, I have sworn unto David my servant* (Psalm 89:3) — is the very word Nathan brought to David: Yahuah (LORD) Himself will raise up the seed and establish the kingdom. The covenant the psalm sings is the charter sworn in the king''s house: a seed set up by Yahuah, a kingdom He establishes.'),
+    ('canon','psalms',89,4,'canon','2-samuel',7,13,'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). *Thy seed will I establish for ever, and build up thy throne to all generations* (Psalm 89:4) is the same promise word for word — the throne *stablished... for ever*. The seed-throne the psalm vows to all generations is the throne of David''s kingdom established for ever by Yahuah''s own oath.'),
+    ('canon','psalms',89,4,'canon','2-samuel',7,16,'free',
+      E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). The double *for ever* of the charter answers the psalm''s *build up thy throne to all generations* (Psalm 89:4). House, kingdom, throne — all *established for ever*; the everlasting seed-throne is not a poetic hope but the sworn terms of the Davidic covenant.'),
+    ('canon','psalms',89,4,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The throne built up *to all generations* (Psalm 89:4) is given by Gabriel''s word to the Son of the Highest — *the throne of his father David*. The sworn seed-throne of the Davidic covenant is handed to Yahusha (Jesus); the oath finds its King.'),
+    ('canon','psalms',89,3,'canon','acts',13,23,'free',
+      E'*Of this man''s seed hath Elohim (God) according to his promise raised unto Yashar''el (Israel) a Saviour, Yahusha (Jesus)* (Acts 13:23). The covenant sworn *unto David my servant* (Psalm 89:3) is fulfilled *according to his promise* — from David''s seed, a Saviour for Yashar''el (Israel). Sha''ul (Paul) names the promised seed of the oath: Yahusha (Jesus), raised from David''s line as the covenant vowed.'),
+
+    -- THREAD 2 (★★): Thou art my father — I will make him my firstborn (the Formed firstborn King)
+    ('canon','psalms',89,26,'canon','2-samuel',7,14,'free',
+      E'*I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men* (2 Samuel 7:14). The cry of the King — *Thou art my father, my Elohim (God), and the rock of my salvation* (Psalm 89:26) — answers the covenant grammar of the charter: *I will be his father, and he shall be my son*. The firstborn King calls upon a Father; the father-son bond of the Davidic covenant is the relation the psalm puts on the King''s own lips.'),
+    ('canon','psalms',89,26,'canon','hebrews',1,5,'free',
+      E'*For unto which of the angels said he at any time, Thou art my Son, this day have I begotten thee? And again, I will be to him a Father, and he shall be to me a Son?* (Hebrews 1:5). The King who cries *Thou art my father, my Elohim (God)* (Psalm 89:26) is the Son of the Davidic oath — *I will be to him a Father, and he shall be to me a Son*. The letter sets him above every angel by this very sonship: the Formed Son who HAS a Father, addressed as Son by the Most High, no created spirit but the begotten Heir.'),
+    ('canon','psalms',89,27,'canon','hebrews',1,6,'free',
+      E'*And again, when he bringeth in the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship him* (Hebrews 1:6). *Also I will make him my firstborn, higher than the kings of the earth* (Psalm 89:27) — the firstborn whom Yahuah exalts above all kings is the firstbegotten brought into the world, before whom the angels themselves bow. The firstborn King of the psalm is the Son worshipped by the heavenly host, higher than every earthly throne.'),
+    ('canon','psalms',89,27,'canon','colossians',1,15,'extras',
+      E'*Who is the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15). *Also I will make him my firstborn* (Psalm 89:27) is filled in the Son who is *the image of the invisible Elohim... the firstborn of every creature* — firstborn meaning the Heir with preeminence over all, the visible image of the Formless Father. Not a first creature (the next verse makes him the agent by whom all things were made) but the firstborn Son, the expressed image of the invisible One.'),
+    ('canon','psalms',89,27,'canon','colossians',1,18,'free',
+      E'*And he is the head of the body, the church: who is the beginning, the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18). The firstborn made *higher than the kings of the earth* (Psalm 89:27) is the *firstborn from the dead; that in all things he might have the preeminence*. The firstborn title of the Davidic King is the preeminence of the risen Son — first over the dead, head over all, exalted above every rule.'),
+    ('canon','psalms',89,27,'canon','revelation',1,5,'free',
+      E'*And from Yahusha HaMashiach (Jesus Christ), who is the faithful witness, and the first begotten of the dead, and the prince of the kings of the earth* (Revelation 1:5). Psalm 89:27 is answered almost word for word: *I will make him my firstborn, higher than the kings of the earth* becomes *the first begotten of the dead, and the prince of the kings of the earth*. The firstborn higher than earthly kings is Yahusha (Jesus), the firstbegotten raised and ruling as prince over all the kings of the earth.'),
+    ('canon','psalms',89,27,'enoch','1-enoch',48,2,'extras',
+      E'*And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2). The firstborn *higher than the kings of the earth* (Psalm 89:27) is named in Enoch''s vision before the Head of Days — the Son of Adam whose name was named before Yahuah (God) of Spirits, the chosen firstborn appointed over all. The restored witness sees the firstborn King named in the heavenly court.'),
+    ('canon','psalms',89,27,'enoch','1-enoch',48,5,'extras',
+      E'*All who dwell on earth shall fall down and worship before him, And will praise and bless and celebrate with song Yahuah (God) of Spirits* (1 Enoch 48:5). The firstborn made *higher than the kings of the earth* (Psalm 89:27) is the One before whom *all who dwell on earth shall fall down and worship* — the same firstborn the angels worship in Hebrews 1:6. Enoch sees the whole earth bowing to the firstborn King, who in turn glorifies Yahuah (God) of Spirits, his Father.'),
+
+    -- THREAD 3 (★★): My covenant will I not break — his throne as the sun (the unbreakable oath)
+    ('canon','psalms',89,35,'canon','psalms',132,11,'free',
+      E'*Yahuah (LORD) hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne* (Psalm 132:11). *Once have I sworn by my holiness that I will not lie unto David* (Psalm 89:35) is the same irrevocable oath — Yahuah *hath sworn in truth unto David; he will not turn from it*. The sworn covenant the psalm declares unbreakable is the oath of the fruit of David''s body set upon the throne; what Yahuah swears, He will not turn from.'),
+    ('canon','psalms',89,36,'canon','luke',1,33,'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). *His seed shall endure for ever, and his throne as the sun before me* (Psalm 89:36) is the kingdom of which *there shall be no end* — the seed enduring for ever, the throne reigning over the house of Jacob without end. The unbreakable oath is kept: the everlasting throne is given to the King whose reign never ceases.'),
+    ('canon','psalms',89,34,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). *My covenant will I not break, nor alter the thing that is gone out of my lips* (Psalm 89:34) — the word that went out of Yahuah''s lips is kept when *the throne of his father David* is given to the Son of the Highest. The unalterable covenant stands; the throne sworn to David is handed down unbroken.'),
+
+    -- THREAD 4: The Holy One of Yashar'el is our king (the exalted horn in David's house)
+    ('canon','psalms',89,17,'canon','luke',1,69,'free',
+      E'*And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). *In thy favour our horn shall be exalted* (Psalm 89:17), and *in my name shall his horn be exalted* (89:24) — the exalted horn is *an horn of salvation... in the house of his servant David*. The horn the psalm lifts up in Yahuah''s favour is the saving King raised up in David''s house, the strength of the people made their salvation.'),
+    ('canon','psalms',89,18,'canon','psalms',132,17,'free',
+      E'*There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). *Yahuah (LORD) is our defence; and the Holy One of Yashar''el (Israel) is our king* (Psalm 89:18) — the King who is the Holy One of Yashar''el (Israel) is the budding *horn of David*, the *lamp* ordained for the anointed. The defence and King of the people is the horn Yahuah makes to bud in Zion, the lamp that never goes out for the anointed line.'),
+
+    -- THREAD 5 (★): If his children forsake my law — the rod, but the covenant stands (Torah binding)
+    ('canon','psalms',89,32,'canon','2-samuel',7,14,'free',
+      E'*I will be his father, and he shall be my son. If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men* (2 Samuel 7:14). *Then will I visit their transgression with the rod, and their iniquity with stripes* (Psalm 89:32) is the charter clause itself — *if he commit iniquity, I will chasten him with the rod*. The chastening for breaking the law is the discipline written into the covenant: the rod for sin, not the casting-off of the son.'),
+    ('canon','psalms',89,33,'canon','2-samuel',7,15,'free',
+      E'*But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15). *Nevertheless my lovingkindness will I not utterly take from him, nor suffer my faithfulness to fail* (Psalm 89:33) is the very assurance of the charter: *my mercy shall not depart away from him*. Unlike Saul, who was put away, the Davidic line is chastened but never abandoned; the law''s breach brings the rod, yet the covenant mercy holds.'),
+
+    -- THREAD 6 (★): Thou hast cast off — the covenant lawsuit, not the oath annulled
+    ('canon','psalms',89,38,'canon','psalms',2,2,'free',
+      E'*The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed, saying* (Psalm 2:2). *But thou hast cast off and abhorred, thou hast been wroth with thine anointed* (Psalm 89:38) — the anointed reproached and rejected is the anointed against whom *the kings of the earth set themselves*. The lament over the cast-down crown is the raging of the nations against Yahuah''s anointed; the suffering of the King, not the failure of the oath sworn over him.'),
+    ('canon','psalms',89,51,'canon','psalms',2,1,'free',
+      E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1). *Wherewith thine enemies have reproached, O Yahuah (LORD); wherewith they have reproached the footsteps of thine anointed* (Psalm 89:51) — the enemies who reproach the anointed''s footsteps are the heathen who *rage* and *imagine a vain thing*. Their reproach is the vain raging of Psalm 2; the anointed is opposed, but the King set on Zion''s holy hill (Psalm 2:6) is not undone — the lawsuit-exile runs its course while the sworn throne abides.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever',
+       E'I have sworn unto David — thy seed and thy throne to all generations',
+       E'At the head of the psalm stands the sworn covenant: *I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations* (Psalm 89:3-4). This is no new word — it is Yahuah''s (LORD''s) own oath brought to David by Nathan: *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12), *He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13), *thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). The seed and the throne the psalm vows *to all generations* are the very terms of the Davidic charter — established for ever by Yahuah''s sworn word. And the New Testament shows the seed-throne handed to its King: Gabriel tells Miriam (Mary), *He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32), and Sha''ul (Paul) preaches it fulfilled: *Of this man''s seed hath Elohim (God) according to his promise raised unto Yashar''el (Israel) a Saviour, Yahusha (Jesus)* (Acts 13:23). The covenant sworn to David carries one paternal bloodline AND one covenant-word together to its appointed end — the promised seed, Yahusha (Jesus), raised to the throne built up for all generations.',
+       sv.verse_id, ev.verse_id, 'free', 24200
+  FROM _s302_ps089_lookup sv, _s302_ps089_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=89 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-89-thou-art-my-father-i-will-make-him-my-firstborn',
+       E'Thou art my father — I will make him my firstborn, higher than the kings of the earth',
+       E'The covenant puts a cry on the King''s own lips and a title on his head: *He shall cry unto me, Thou art my father, my Elohim (God), and the rock of my salvation. Also I will make him my firstborn, higher than the kings of the earth* (Psalm 89:26-27). Read it with both eyes open — this is the Formed-and-the-Formless written into the Davidic oath. The firstborn King does not stand alone; he CRIES to Another: *Thou art my father, my Elohim (God), and the rock of my salvation*. The Son who bears the throne HAS a Father, an Elohim above him in whom he is saved. The charter gave the grammar: *I will be his father, and he shall be my son* (2 Samuel 7:14), and the letter to the Hebrews takes that sonship to set him above every angel: *unto which of the angels said he at any time... I will be to him a Father, and he shall be to me a Son?* (Hebrews 1:5). Then the firstborn is brought in and worshipped: *when he bringeth in the firstbegotten into the world, he saith, And let all the angels of Elohim (God) worship him* (Hebrews 1:6) — the firstborn *higher than the kings of the earth*, before whom even the angels bow. Sha''ul (Paul) names him *the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15) — firstborn as the Heir with preeminence, the visible image of the Formless Father, not a first creature (the next verse makes him the agent by whom all things were made), and *the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18). Yahuchanan (John) seals it almost word for word: *the first begotten of the dead, and the prince of the kings of the earth* (Revelation 1:5) — Psalm 89:27 made flesh. And the restored witness of Enoch sees the same firstborn named before time: *that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2), the chosen One before whom *all who dwell on earth shall fall down and worship before him, And will praise and bless and celebrate with song Yahuah (God) of Spirits* (1 Enoch 48:5). The firstborn King is the Formed Son: Elohim, higher than every earthly throne, worshipped by all the earth — and yet he cries *Thou art my father*, the expressed Word who has the Most High as his God. No co-equal collapse, no created angel: the begotten firstborn with a Father.',
+       sv.verse_id, ev.verse_id, 'extras', 24203
+  FROM _s302_ps089_lookup sv, _s302_ps089_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=89 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-89-my-covenant-will-i-not-break-his-throne-as-the-sun',
+       E'My covenant will I not break — his throne as the sun, the kingdom with no end',
+       E'Against every appearance of failure, Yahuah (LORD) swears the covenant unbreakable: *My covenant will I not break, nor alter the thing that is gone out of my lips. Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever, and his throne as the sun before me. It shall be established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:34-37). What has gone out of Yahuah''s lips He will not alter; what He has sworn by His own holiness He will not break. The sister-psalm declares the same irrevocable oath: *Yahuah (LORD) hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne* (Psalm 132:11). And the oath is kept in the King who comes: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32), *and he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The throne *as the sun before me*, *established for ever as the moon, and as a faithful witness in heaven*, is the kingdom that has no end. This matters for everything that follows in the psalm: when the lament cries *thou hast cast off and abhorred* (89:38), it voices the exile-judgment, not the annulment of the oath — for the covenant that *will I not break* stands above the lament. The sworn seed-throne endures as long as the sun and moon endure; the King reigns for ever.',
+       sv.verse_id, ev.verse_id, 'free', 24206
+  FROM _s302_ps089_lookup sv, _s302_ps089_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=89 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-89-the-holy-one-of-yasharel-is-our-king',
+       E'The Holy One of Yashar''el is our king — the horn of David exalted',
+       E'The psalm confesses where the people''s strength and kingship truly lie: *For thou art the glory of their strength: and in thy favour our horn shall be exalted. For Yahuah (LORD) is our defence; and the Holy One of Yashar''el (Israel) is our king* (Psalm 89:17-18). The horn — the symbol of royal strength — is exalted not by the people''s might but *in thy favour*, and again of the King, *in my name shall his horn be exalted* (89:24). This exalted horn is named in the New Testament: Zacharias prophesies that Yahuah (LORD) *hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). The horn lifted up in Yahuah''s favour is the saving King raised in David''s house — the strength of the people become their salvation. The Songs of Ascents fill in the same picture: *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). The Holy One of Yashar''el (Israel) who is *our king* is the budding horn of David and the lamp ordained for the anointed line — a light Yahuah keeps burning in Zion. The people''s true king is no foreign power but the Holy One of Yashar''el (Israel), whose horn of salvation buds in David''s house.',
+       sv.verse_id, ev.verse_id, 'free', 24209
+  FROM _s302_ps089_lookup sv, _s302_ps089_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=89 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-89-if-his-children-forsake-my-law-the-rod-but-the-covenant-stands',
+       E'If his children forsake my law — the rod for sin, but the covenant never void',
+       E'The covenant carries a clause of discipline, and it is precisely a Torah clause: *If his children forsake my law, and walk not in my judgments; If they break my statutes, and keep not my commandments; Then will I visit their transgression with the rod, and their iniquity with stripes* (Psalm 89:30-32). The chastening comes FOR forsaking the law — the Torah is binding within the covenant, its breach met with the rod. This is the covenant''s own architecture, not a curse upon the Torah itself: sin is disciplined so the son may be restored. The charter wrote the clause first: *If he commit iniquity, I will chasten him with the rod of men, and with the stripes of the children of men* (2 Samuel 7:14). And it bounds the discipline with mercy that never departs: *But my mercy shall not depart away from him, as I took it from Saul, whom I put away before thee* (2 Samuel 7:15) — answered in the psalm by *Nevertheless my lovingkindness will I not utterly take from him, nor suffer my faithfulness to fail. My covenant will I not break* (Psalm 89:33-34). Unlike Saul, who was put away, the Davidic line is chastened but never abandoned. Read this clause and the whole framework comes clear: the rod falls on the breaking of the law, never on the law for being law; the covenant disciplines, it does not dissolve. The lovingkindness holds; the covenant is never void.',
+       sv.verse_id, ev.verse_id, 'free', 24212
+  FROM _s302_ps089_lookup sv, _s302_ps089_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=89 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-89-thou-hast-cast-off-the-covenant-lawsuit-not-annulled',
+       E'Thou hast cast off thine anointed — the covenant-lawsuit, not the oath annulled',
+       E'The psalm turns from the sworn covenant to a bitter lament over the exile: *But thou hast cast off and abhorred, thou hast been wroth with thine anointed. Thou hast made void the covenant of thy servant: thou hast profaned his crown by casting it to the ground* (Psalm 89:38-39), and at the close, *Remember, Yahuah (Lord), the reproach of thy servants... wherewith they have reproached the footsteps of thine anointed* (Psalm 89:50-51). The crown is cast down, the strongholds ruined, the anointed reproached. Yet this is the covenant-lawsuit — the Deuteronomy-judgment of exile for covenant-breaking — not the annulment of the oath that *will I not break* (89:34); the lament cries *thou hast made void* in grief, but the sworn word stands above the grief. The companion-psalm gives the frame: *Why do the heathen rage, and the people imagine a vain thing? The kings of the earth set themselves, and the rulers take counsel together, against Yahuah (LORD), and against his anointed* (Psalm 2:1-2). The reproach heaped on the anointed''s footsteps is the vain raging of the nations against Yahuah''s anointed — opposition that does not undo the King set on the holy hill (Psalm 2:6). The anointed suffers, the crown is dishonoured, the people bear reproach — but the oath sworn by Yahuah''s holiness is not broken. The lawsuit-exile runs its course while the everlasting throne abides; the lament ends not in despair but in *Blessed be Yahuah (LORD) for evermore. Amen, and Amen* (89:52).',
+       sv.verse_id, ev.verse_id, 'free', 24215
+  FROM _s302_ps089_lookup sv, _s302_ps089_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=89 AND ev.verse_number=51
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12) — the oath *sworn unto David my servant* (89:3) is the word Nathan brought; Yahuah Himself raises the seed and establishes the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=3
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — *build up thy throne to all generations* (89:4) is the charter''s throne *stablished... for ever*; the same everlasting seat.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=4
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thy throne shall be established for ever* (2 Samuel 7:16) — the double *for ever* of the charter answers *to all generations* (89:4); house, kingdom, and throne all established for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=4
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah Elohim shall give unto him the throne of his father David* (Luke 1:32) — the throne built up *to all generations* (89:4) is given to the Son of the Highest; the sworn seat handed to Yahusha.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=4
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Of this man''s seed hath Elohim... raised unto Yashar''el a Saviour, Yahusha* (Acts 13:23) — the covenant *sworn unto David my servant* (89:3) brings forth the promised seed; Sha''ul names him, Yahusha.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=3
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-i-have-sworn-unto-david-thy-seed-and-thy-throne-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will be his father, and he shall be my son* (2 Samuel 7:14) — the King''s cry *Thou art my father, my Elohim* (89:26) answers the charter''s father-son grammar; the firstborn calls upon a Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=26
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will be to him a Father, and he shall be to me a Son* (Hebrews 1:5) — the King who cries *Thou art my father* (89:26) is the Son set above every angel; the Formed Son who HAS a Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=26
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when he bringeth in the firstbegotten into the world... let all the angels of Elohim worship him* (Hebrews 1:6) — *I will make him my firstborn, higher than the kings of the earth* (89:27); the firstborn before whom even angels bow.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=27
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the image of the invisible Elohim, the firstborn of every creature* (Colossians 1:15) — *I will make him my firstborn* (89:27) is the Heir with preeminence, the visible image of the Formless Father, not a first creature.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=27
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18) — the firstborn made *higher than the kings of the earth* (89:27) is the risen Son with preeminence over all.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=27
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the first begotten of the dead, and the prince of the kings of the earth* (Revelation 1:5) — Psalm 89:27 word for word: the firstborn higher than earthly kings is Yahusha, prince over them all.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=27
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*that Son of Adam was named In the presence of Yahuah of Spirits, And his name before the Head of Days* (1 Enoch 48:2) — the firstborn *higher than the kings of the earth* (89:27) is the Son of Adam named in the heavenly court, chosen firstborn over all.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=27
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*All who dwell on earth shall fall down and worship before him* (1 Enoch 48:5) — the firstborn made *higher than the kings of the earth* (89:27) is worshipped by all the earth, even as he glorifies Yahuah of Spirits, his Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=27
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-art-my-father-i-will-make-him-my-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah hath sworn in truth unto David; he will not turn from it* (Psalm 132:11) — *once have I sworn by my holiness that I will not lie unto David* (89:35); the same irrevocable oath, the fruit of David''s body set on the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=35
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-my-covenant-will-i-not-break-his-throne-as-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*of his kingdom there shall be no end* (Luke 1:33) — *his throne as the sun before me* (89:36) is the kingdom without end; the unbreakable oath kept in the King who reigns for ever.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=36
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-my-covenant-will-i-not-break-his-throne-as-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah Elohim shall give unto him the throne of his father David* (Luke 1:32) — *my covenant will I not break, nor alter the thing that is gone out of my lips* (89:34); the unalterable word kept as the throne is given down unbroken.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=34
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-my-covenant-will-i-not-break-his-throne-as-the-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*raised up an horn of salvation for us in the house of his servant David* (Luke 1:69) — *in thy favour our horn shall be exalted* (89:17); the exalted horn is the saving King raised in David''s house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=17
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-the-holy-one-of-yasharel-is-our-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17) — the *Holy One of Yashar''el... our king* (89:18) is the budding horn of David, the lamp ordained for the anointed line.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=18
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-the-holy-one-of-yasharel-is-our-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*If he commit iniquity, I will chasten him with the rod of men* (2 Samuel 7:14) — *then will I visit their transgression with the rod* (89:32); the charter''s own discipline-clause, the rod for sin, not the casting off of the son.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=32
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-if-his-children-forsake-my-law-the-rod-but-the-covenant-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*But my mercy shall not depart away from him, as I took it from Saul* (2 Samuel 7:15) — *nevertheless my lovingkindness will I not utterly take from him* (89:33); chastened like a son, never abandoned like Saul; the covenant disciplines, it does not dissolve.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=33
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-if-his-children-forsake-my-law-the-rod-but-the-covenant-stands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The kings of the earth set themselves... against Yahuah, and against his anointed* (Psalm 2:2) — *thou hast been wroth with thine anointed* (89:38); the cast-down crown is the raging of the nations against the anointed, not the failure of the oath.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=38
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-hast-cast-off-the-covenant-lawsuit-not-annulled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Why do the heathen rage, and the people imagine a vain thing?* (Psalm 2:1) — *they have reproached the footsteps of thine anointed* (89:51); the reproach is the vain raging of the nations, the King on Zion''s holy hill not undone.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps089_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=89 AND sv.verse_number=51
+  JOIN _s302_ps089_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-89-thou-hast-cast-off-the-covenant-lawsuit-not-annulled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_132.sql (Psalm 132) -----
+-- Chapter: Psalm 132 — THE DAVID'S-SEED / THE HORN PSALM. David's oath to find a place for Yahuah's dwelling ("Surely I will not come into the tabernacle of my house... Until I find out a place for Yahuah, an habitation for El Gibbor of Jacob" v.3-5); the ark borne to its rest ("Arise, O Yahuah, into thy rest; thou, and the ark of thy strength" v.8); Yahuah's sworn oath to David ("Yahuah hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne" v.11 — quoted by Kepha at Pentecost of the resurrection-enthronement of Messiah, Acts 2:30); Zion chosen as Yahuah's everlasting habitation ("here will I dwell; for I have desired it" v.13-14); and the budding horn and ordained lamp ("There will I make the horn of David to bud: I have ordained a lamp for mine anointed" v.17 — taken up in Luke 1:69, "an horn of salvation... in the house of his servant David"). The sworn fruit-of-David's-body enthroned + the budding horn of salvation.
+-- Tag: ps132   Temp view: _s302_ps132_lookup
+-- Sort band: base 25275, step 3 -> threads at 25275, 25278, 25281, 25284, 25287 (5 threads)
+-- Source of EVERY row: 'canon','psalms',132,v
+--
+-- Psalm 132 coverage:
+--   v.1-5 (David's oath: I will not come into the tabernacle of my house... Until I find out a place for Yahuah, an habitation for El Gibbor of Jacob)
+--        NT:     none warranted distinct (David's vow to find the dwelling is carried by THREAD 1's ark/habitation weave, anchored from v.6)
+--        Extras: none warranted (no clean restored-witness parallel to David's tabernacle-vow; Jasher/Jubilees carry no clean verse)
+--        Tanakh: ★ 2 Samuel 7:2 (I dwell in an house of cedar, but the ark of Elohim dwelleth within curtains) — woven into THREAD 1 (the same David burdened that Yahuah has no settled house)
+--   ★ v.6-8 (We will go into his tabernacles: we will worship at his footstool. Arise, O Yahuah, into thy rest; thou, and the ark of thy strength)
+--        NT:     ★ Revelation 11:19 (the temple of Elohim was opened in heaven, and there was seen in his temple the ark of his testament) — THREAD 1 (the ark of Yahuah's strength brought to its rest = the ark seen at last in the heavenly temple)
+--        Extras: none warranted (weighed Jubilees/Jasher tabernacle material; no clean ark-rest parallel — declined, not forced)
+--        Tanakh: ★ 2 Samuel 7:2 (the ark of Elohim dwelleth within curtains); ★ 1 Kings 8:11 (the glory of Yahuah had filled the house of Yahuah) — THREAD 1 (the ark borne into its rest, the glory filling the dwelling)
+--   ★★★ v.11-12 (Yahuah hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne. If thy children will keep my covenant...)
+--        NT:     ★★ Acts 2:30 (Elohim had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah to sit on his throne); ★ Acts 2:31 (the resurrection of Messiah, that his soul was not left in hell); Luke 1:32 + Luke 1:33 (the throne of his father David... he shall reign over the house of Jacob for ever) — THREAD 2 (load-bearing: the sworn fruit-of-David's-body enthroned = the resurrection-enthronement of the Formed Son; Kepha at Pentecost)
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Samuel 7:12 + 2 Samuel 7:13 (I will set up thy seed after thee... and I will stablish the throne of his kingdom for ever); ★ Psalm 89:3-4 (I have sworn unto David my servant, Thy seed will I establish for ever); Psalm 89:35-36 (Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever) — THREAD 2 (the Davidic oath the psalm sings)
+--   ★★ v.13-14 (For Yahuah hath chosen Zion; he hath desired it for his habitation. This is my rest for ever: here will I dwell; for I have desired it)
+--        NT:     none warranted distinct (the chosen-Zion dwelling is carried laterally; the NT habitation weight is the heavenly ark of THREAD 1)
+--        Extras: none warranted
+--        Tanakh: ★ 1 Kings 8:13 (I have surely built thee an house to dwell in, a settled place for thee to abide in for ever); ★★ Ezekiel 37:26 + Ezekiel 37:27 (I will set my sanctuary in the midst of them for evermore. My tabernacle also shall be with them) — THREAD 3 (Yahuah's chosen dwelling = the sanctuary set in the midst of the regathered two houses)
+--   ★★ v.17 (There will I make the horn of David to bud: I have ordained a lamp for mine anointed)
+--        NT:     ★★ Luke 1:69 (And hath raised up an horn of salvation for us in the house of his servant David) — THREAD 4 (load-bearing: the budding horn of David = the horn of salvation in David's house, Zacharias' prophecy)
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 29:21 (In that day will I cause the horn of the house of Yashar'el to bud forth); ★ Jeremiah 23:5 (I will raise unto David a righteous Branch, and a King shall reign); ★ Jeremiah 33:15 (will I cause the Branch of righteousness to grow up unto David) — THREAD 4 (the horn that buds = the Branch raised to David); ★ 1 Kings 11:36 (that David my servant may have a light alway before me in Jerusalem); ★ 1 Kings 15:4 (for David's sake did Yahuah give him a lamp in Jerusalem) — THREAD 5 (the ordained lamp for the anointed = the unquenched Davidic light)
+--   v.9-10, v.15-16, v.18 (the priests clothed with righteousness/salvation, the saints' shout; the provision blessed and the poor satisfied; the enemies clothed with shame, the crown flourishing)
+--        NT:     none warranted distinct (the priestly clothing and the flourishing crown are the body the five threads anchor)
+--        Extras: none warranted   Tanakh: none warranted distinct
+--
+-- Threads (slug — target libraries):
+--   1. psalm-132-arise-o-yahuah-into-thy-rest-thou-and-the-ark-of-thy-strength — NT (Revelation 11:19) + Tanakh (2 Samuel 7, 1 Kings 8) [free] (★ the ark borne to its rest; the ark of his testament seen in the heavenly temple)
+--   2. psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne — NT (Acts 2, Luke 1) + Tanakh (2 Samuel 7, Psalm 89) [free] (★★★ the sworn fruit-of-David's-body enthroned = the resurrection-enthronement of the Formed Son; Kepha at Pentecost)
+--   3. psalm-132-yahuah-hath-chosen-zion-here-will-i-dwell — Tanakh (1 Kings 8, Ezekiel 37) [free] (★★ the chosen Zion-dwelling = the sanctuary set in the midst of the regathered two houses)
+--   4. psalm-132-there-will-i-make-the-horn-of-david-to-bud — NT (Luke 1:69) + Tanakh (Ezekiel 29, Jeremiah 23, Jeremiah 33) [free] (★★ the budding horn of David = the horn of salvation in David's house; the Branch raised to David)
+--   5. psalm-132-i-have-ordained-a-lamp-for-mine-anointed — Tanakh (1 Kings 11, 1 Kings 15) [free] (★ the ordained lamp = the unquenched Davidic light Yahuah keeps for David's sake)
+--
+-- Framing notes:
+--   ★★★ THE SWORN FRUIT-OF-DAVID'S-BODY ENTHRONED — v.11 (THREAD 2): *Yahuah (LORD) hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne* (132:11). Kepha (Peter) at Pentecost reads this oath as the resurrection-enthronement of the Formed Son: *being a prophet, and knowing that Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne; He seeing this before spake of the resurrection of Messiah* (Acts 2:30-31). Framed strictly through Red Line #4: the Formed Son is *of the fruit of David's body... according to the flesh* — born of David's paternal line — yet raised and seated on the throne by the Father; David's son after the flesh AND the One the Father enthrones. The conditional of v.12 (*If thy children will keep my covenant and my testimony that I shall teach them*) holds the throne to covenant-keeping (Red Line #6): the Davidic line is carried by paternal blood AND covenant-word together, never lineage alone. The oath rests on 2 Samuel 7:12-13 and is sung in Psalm 89:3-4, 35-36.
+--   ★★ THE ARK BROUGHT TO ITS REST — v.6-8 (THREAD 1): *Arise, O Yahuah (LORD), into thy rest; thou, and the ark of thy strength* (132:8). The ark David found a place for — the visible seat of Yahuah's tabernacling presence — comes to rest in Zion; the same burden that drove David in 2 Samuel 7:2 (*the ark of Elohim dwelleth within curtains*), the glory that filled the house in 1 Kings 8:11. The Tanakh's earthly ark is answered at the last in the heavenly temple: *the temple of Elohim (God) was opened in heaven, and there was seen in his temple the ark of his testament* (Revelation 11:19) — the ark of his strength at rest in the dwelling that no house could contain. Weighing the appointed-times architecture: Yahuah's dwelling among His people is the whole arc from tabernacle to Zion to the heavenly temple, NOT abolished but consummated.
+--   ★★ YAHUAH HATH CHOSEN ZION — v.13-14 (THREAD 3): *For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation. This is my rest for ever: here will I dwell; for I have desired it* (132:13-14). The chosen dwelling of Yahuah reaches forward to the everlasting sanctuary set in the midst of the regathered people (Red Line #2): *I will set my sanctuary in the midst of them for evermore. My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:26-27) — the very chapter of the two sticks made one. Zion as Yahuah's eternal rest is the dwelling-in-the-midst of the two houses gathered as one.
+--   ★★ THE HORN TO BUD + THE ORDAINED LAMP — v.17 (THREADS 4-5): *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (132:17). The budding horn is the horn of salvation Zacharias names of the Formed Son: *And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69) — the same Davidic horn the prophet sees bud forth (*In that day will I cause the horn of the house of Yashar'el (Israel) to bud forth* — Ezekiel 29:21), the Branch raised to David (*I will raise unto David a righteous Branch* — Jeremiah 23:5; *the Branch of righteousness to grow up unto David* — Jeremiah 33:15). The ordained lamp is the unquenched Davidic light Yahuah keeps for David's sake (*that David my servant may have a light alway before me in Jerusalem* — 1 Kings 11:36; *for David's sake did Yahuah... give him a lamp in Jerusalem* — 1 Kings 15:4). EXTRAS weighed across the whole psalm and declined: no clean restored-witness parallel to the ark-rest, the Davidic oath, the chosen Zion, or the budding horn — recorded "none warranted", not forced, per the brief.
+--   VERSES WITH NO ADD: v.9-10 (the priests clothed with righteousness, the saints' shout, the face of the anointed), v.15-16 (the provision blessed, the poor satisfied with bread, the priests clothed with salvation), v.18 (the enemies clothed with shame, the crown flourishing) — the body of the psalm the five threads anchor; no distinct framework-bearing target warranted.
+
+CREATE TEMP VIEW _s302_ps132_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Arise, O Yahuah, into thy rest; thou, and the ark of thy strength
+    ('canon','psalms',132,8,'canon','2-samuel',7,2,'free',
+      E'*That the king said unto Nathan the prophet, See now, I dwell in an house of cedar, but the ark of Elohim (God) dwelleth within curtains* (2 Samuel 7:2). The vow of *Surely I will not come into the tabernacle of my house... Until I find out a place for Yahuah (LORD)* (Psalm 132:3-5) springs from this very burden: David, settled in his house of cedar, cannot bear that *the ark of Elohim dwelleth within curtains*. The *ark of thy strength* he longs to bring into Yahuah''s rest (Psalm 132:8) is the ark that had no settled house — the visible seat of Yahuah tabernacling among His people.'),
+    ('canon','psalms',132,8,'canon','1-kings',8,11,'free',
+      E'*So that the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house of Yahuah (LORD)* (1 Kings 8:11). When the ark of the covenant was at last borne to its rest in the house Solomon built, the prayer of *Arise, O Yahuah (LORD), into thy rest; thou, and the ark of thy strength* (Psalm 132:8) was answered: the glory came down and *filled the house of Yahuah*. The ark of Yahuah''s strength brought to its rest draws the very Presence; where the ark rests, the glory dwells.'),
+    ('canon','psalms',132,8,'canon','revelation',11,19,'free',
+      E'*And the temple of Elohim (God) was opened in heaven, and there was seen in his temple the ark of his testament: and there were lightnings, and voices, and thunderings, and an earthquake, and great hail* (Revelation 11:19). The ark David sought a resting place for — *thou, and the ark of thy strength* (Psalm 132:8) — is seen at the last in the heavenly temple: *the ark of his testament* opened in heaven. The earthly ark borne to Zion was the shadow; the dwelling of Yahuah no house could contain is consummated when His temple is opened above and the ark of the covenant beheld in glory.'),
+
+    -- THREAD 2 (★★★): Of the fruit of thy body will I set upon thy throne (the sworn fruit-of-David's-body enthroned)
+    ('canon','psalms',132,11,'canon','acts',2,30,'free',
+      E'*Therefore being a prophet, and knowing that Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). Kepha (Peter) at Pentecost reads the oath of *Yahuah (LORD) hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne* (Psalm 132:11) as the resurrection-enthronement of the Messiah: *of the fruit of his loins, according to the flesh*, the Formed Son is raised up to sit on David''s throne. David''s son after the flesh, and the One the Father enthrones — the sworn word fulfilled in the risen Messiah.'),
+    ('canon','psalms',132,11,'canon','acts',2,31,'free',
+      E'*He seeing this before spake of the resurrection of Messiah (Christ), that his soul was not left in hell, neither his flesh did see corruption* (Acts 2:31). The fruit of David''s body set upon the throne (Psalm 132:11) is, Kepha (Peter) says, the One whom death could not hold: *the resurrection of Messiah, that his soul was not left in hell*. The throne promised to David''s seed is taken not by a son who *fell on sleep, and was laid unto his fathers, and saw corruption* (Acts 2:34 context), but by the One raised incorruptible — the sworn enthronement is a resurrection-enthronement.'),
+    ('canon','psalms',132,11,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The throne sworn to *the fruit of thy body* (Psalm 132:11) is the throne Gabriel names to Miryam (Mary): *Yahuah Elohim shall give unto him the throne of his father David*. The Formed Son is *the Son of the Highest* and yet receives *the throne of his father David* — born of David''s line, set upon David''s throne by the oath Yahuah sware and will not turn from.'),
+    ('canon','psalms',132,12,'canon','luke',1,33,'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The everlasting throne of *their children shall also sit upon thy throne for evermore* (Psalm 132:12) is the unending reign Gabriel proclaims: *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end*. The throne the psalm holds to covenant-keeping is established for ever in the Formed Son, who reigns over *the house of Jacob* — the covenant people — without end.'),
+    ('canon','psalms',132,11,'canon','2-samuel',7,12,'free',
+      E'*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). The oath of *Of the fruit of thy body will I set upon thy throne* (Psalm 132:11) is the very word Yahuah spake to David through Nathan: *I will set up thy seed after thee, which shall proceed out of thy bowels*. The psalm sings as sworn covenant what 2 Samuel records as promise — the seed of David''s own body raised up to the established throne.'),
+    ('canon','psalms',132,12,'canon','2-samuel',7,13,'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The throne held *for evermore* in *their children shall also sit upon thy throne for evermore* (Psalm 132:12) is the throne Yahuah promised to stablish *for ever* in David''s seed. The everlasting Davidic throne of the psalm rests on this foundation word: the kingdom of David''s seed established without end.'),
+    ('canon','psalms',132,11,'canon','psalms',89,3,'free',
+      E'*I have made a covenant with my chosen, I have sworn unto David my servant* (Psalm 89:3). The sworn oath of *Yahuah (LORD) hath sworn in truth unto David* (Psalm 132:11) is sung in its sister psalm: *I have sworn unto David my servant*. The two psalms hold one oath — the covenant Yahuah cut with David, the sworn word He will not turn from, the throne pledged to David''s seed.'),
+    ('canon','psalms',132,11,'canon','psalms',89,35,'free',
+      E'*Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever, and his throne as the sun before me* (Psalm 89:35-36). The unbreakable oath of *he will not turn from it* (Psalm 132:11) is sworn here *by my holiness*: *I will not lie unto David. His seed shall endure for ever*. The sworn fruit of David''s body set upon the throne (Psalm 132:11) is the seed that endures for ever and the throne fixed as the sun — the oath Yahuah swore once and will never revoke.'),
+
+    -- THREAD 3 (★★): Yahuah hath chosen Zion — here will I dwell
+    ('canon','psalms',132,13,'canon','1-kings',8,13,'free',
+      E'*I have surely built thee an house to dwell in, a settled place for thee to abide in for ever* (1 Kings 8:13). The chosen dwelling of *For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation* (Psalm 132:13) is the house Solomon declares built: *a settled place for thee to abide in for ever*. What the psalm sings as Yahuah''s desire — Zion for His habitation — Solomon names as accomplished: the settled place where Yahuah would dwell.'),
+    ('canon','psalms',132,14,'canon','ezekiel',37,26,'free',
+      E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26). The everlasting rest of *This is my rest for ever: here will I dwell; for I have desired it* (Psalm 132:14) reaches forward to the sanctuary set in the midst of the regathered people: *I will set my sanctuary in the midst of them for evermore*. This is the chapter of the two sticks made one — Zion as Yahuah''s eternal dwelling is the sanctuary placed among the two houses gathered into one.'),
+    ('canon','psalms',132,14,'canon','ezekiel',37,27,'free',
+      E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The dwelling-forever of *here will I dwell; for I have desired it* (Psalm 132:14) is the covenant-dwelling among the regathered people: *My tabernacle also shall be with them... they shall be my people*. Yahuah''s chosen rest in Zion is His tabernacling in the midst of His own — the dwelling that makes them His people and Him their Elohim.'),
+
+    -- THREAD 4 (★★): There will I make the horn of David to bud (the budding horn of salvation)
+    ('canon','psalms',132,17,'canon','luke',1,69,'free',
+      E'*And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). The budding horn of *There will I make the horn of David to bud* (Psalm 132:17) is the horn of salvation Zacharias names at the birth of the forerunner: *an horn of salvation for us in the house of his servant David*. The horn Yahuah promised to make bud in Zion is raised up at last in David''s house — the strength of salvation sprung from the Davidic line.'),
+    ('canon','psalms',132,17,'canon','ezekiel',29,21,'free',
+      E'*In that day will I cause the horn of the house of Yashar''el (Israel) to bud forth, and I will give thee the opening of the mouth in the midst of them; and they shall know that I am Yahuah (LORD)* (Ezekiel 29:21). The same budding the psalm sings — *There will I make the horn of David to bud* (Psalm 132:17) — the prophet sees for the house of Yashar''el: *I will cause the horn of the house of Yashar''el to bud forth*. The horn of David and the horn of the house of Yashar''el bud as one — the strength Yahuah raises up for His covenant people.'),
+    ('canon','psalms',132,17,'canon','jeremiah',23,5,'free',
+      E'*Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5). The horn made to bud unto David (Psalm 132:17) is the righteous Branch raised unto David: *I will raise unto David a righteous Branch, and a King shall reign*. The budding horn and the growing Branch are one figure — the Davidic King sprung from the line, raised by Yahuah to reign in judgment and justice.'),
+    ('canon','psalms',132,17,'canon','jeremiah',33,15,'free',
+      E'*In those days, and at that time, will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land* (Jeremiah 33:15). The horn caused to bud (Psalm 132:17) is the Branch caused to grow up unto David: *will I cause the Branch of righteousness to grow up unto David*. The same chapter swears that *David shall never want a man to sit upon the throne of the house of Yashar''el (Israel)* (Jeremiah 33:17) — the budding horn, the growing Branch, and the never-failing throne are one sworn promise to David.'),
+
+    -- THREAD 5 (★): I have ordained a lamp for mine anointed (the ordained Davidic lamp)
+    ('canon','psalms',132,17,'canon','1-kings',11,36,'free',
+      E'*And unto his son will I give one tribe, that David my servant may have a light alway before me in Jerusalem, the city which I have chosen me to put my name there* (1 Kings 11:36). The lamp ordained in *I have ordained a lamp for mine anointed* (Psalm 132:17) is the light Yahuah keeps for David''s line: *that David my servant may have a light alway before me in Jerusalem*. Even when the kingdom is torn, one tribe is kept so the Davidic lamp never goes out in the city Yahuah chose — the ordained lamp for the anointed kept burning.'),
+    ('canon','psalms',132,17,'canon','1-kings',15,4,'free',
+      E'*Nevertheless for David''s sake did Yahuah Elohav (the LORD his God) give him a lamp in Jerusalem, to set up his son after him, and to establish Jerusalem* (1 Kings 15:4). The ordained lamp of *I have ordained a lamp for mine anointed* (Psalm 132:17) is given *for David''s sake*: *did Yahuah Elohav give him a lamp in Jerusalem, to set up his son after him*. Though the kings failed, the lamp Yahuah ordained for the anointed was not quenched — kept for David''s sake, the Davidic light preserved to set up his son and establish the chosen city.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-132-arise-o-yahuah-into-thy-rest-thou-and-the-ark-of-thy-strength',
+       E'Arise, O Yahuah, into thy rest — thou, and the ark of thy strength',
+       E'The psalm remembers David''s consuming vow to find a dwelling for Yahuah: *Surely I will not come into the tabernacle of my house, nor go up into my bed; I will not give sleep to mine eyes, or slumber to mine eyelids, Until I find out a place for Yahuah (LORD), an habitation for El Gibbor (the mighty God) of Jacob* (Psalm 132:3-5). The burden was that Yahuah''s ark had no settled house — the very grief David spoke to Nathan: *See now, I dwell in an house of cedar, but the ark of Elohim (God) dwelleth within curtains* (2 Samuel 7:2). So the congregation goes up to bear the ark to its place: *We will go into his tabernacles: we will worship at his footstool. Arise, O Yahuah (LORD), into thy rest; thou, and the ark of thy strength* (Psalm 132:7-8). The *ark of thy strength* is the visible seat of Yahuah''s tabernacling presence, and when it was at last borne to its rest in the house Solomon built, the glory came down: *the cloud filled the house of Yahuah (LORD)... for the glory of Yahuah (LORD) had filled the house of Yahuah* (1 Kings 8:10-11). Where the ark rests, the Presence dwells. And the whole arc — tabernacle to Zion to the house of cedar — finds its consummation in the heavenly temple, where the ark is seen at last in glory: *And the temple of Elohim (God) was opened in heaven, and there was seen in his temple the ark of his testament* (Revelation 11:19). The earthly ark David sought a resting place for was the shadow; the dwelling of Yahuah no house could contain is opened above, and the ark of the covenant beheld in the temple of heaven.',
+       sv.verse_id, ev.verse_id, 'free', 25275
+  FROM _s302_ps132_lookup sv, _s302_ps132_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=132 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne',
+       E'Of the fruit of thy body will I set upon thy throne — the sworn seed enthroned',
+       E'At the heart of the psalm stands the oath Yahuah swore to David and will never revoke: *Yahuah (LORD) hath sworn in truth unto David; he will not turn from it; Of the fruit of thy body will I set upon thy throne. If thy children will keep my covenant and my testimony that I shall teach them, their children shall also sit upon thy throne for evermore* (Psalm 132:11-12). This is the sworn word of 2 Samuel 7, set to song: *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom... and I will stablish the throne of his kingdom for ever* (2 Samuel 7:12-13). The sister psalm sings the same oath: *I have sworn unto David my servant, Thy seed will I establish for ever* (Psalm 89:3-4), *Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever, and his throne as the sun before me* (Psalm 89:35-36). And Kepha (Peter) at Pentecost reads *the fruit of thy body* set upon the throne as the resurrection-enthronement of the Messiah: *being a prophet, and knowing that Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne; He seeing this before spake of the resurrection of Messiah, that his soul was not left in hell* (Acts 2:30-31). The Formed Son is *of the fruit of David''s body... according to the flesh* — born of the paternal line — yet raised incorruptible and seated on David''s throne by the Father: David''s son after the flesh AND the One the Father enthrones. Gabriel names the throne to Miryam (Mary): *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David; And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). Note the conditional the psalm keeps — *if thy children will keep my covenant and my testimony* — the Davidic throne carried by paternal blood AND covenant-word together, never lineage alone; the seed that is also the keeper of the covenant inherits the throne that has no end.',
+       sv.verse_id, ev.verse_id, 'free', 25278
+  FROM _s302_ps132_lookup sv, _s302_ps132_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=132 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-132-yahuah-hath-chosen-zion-here-will-i-dwell',
+       E'Yahuah hath chosen Zion — here will I dwell for ever',
+       E'The oath to David is answered by Yahuah''s own choosing of a dwelling: *For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation. This is my rest for ever: here will I dwell; for I have desired it* (Psalm 132:13-14). The rest the congregation prayed Yahuah to arise into (132:8) He now claims as His own desire — *here will I dwell*. Solomon declares the chosen dwelling built: *I have surely built thee an house to dwell in, a settled place for thee to abide in for ever* (1 Kings 8:13). But the rest *for ever* reaches past the stone house to the everlasting sanctuary set in the midst of the regathered people — and the chapter that promises it is the chapter of the two sticks made one: *I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore. My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:26-27). Zion chosen as Yahuah''s habitation is His tabernacling in the midst of His own — the dwelling-forever among the two houses, Yahudah (Judah) and Yashar''el (Israel), gathered into one people; the place He desired, where He will dwell, where they shall be His people and He their Elohim.',
+       sv.verse_id, ev.verse_id, 'free', 25281
+  FROM _s302_ps132_lookup sv, _s302_ps132_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=132 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-132-there-will-i-make-the-horn-of-david-to-bud',
+       E'There will I make the horn of David to bud — the horn of salvation',
+       E'The psalm closes in Zion with a promise of springing strength: *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). The horn — the figure of strength and royal power — is made to *bud*, to sprout like a living shoot from the Davidic line. Zacharias names that budding horn at the dawn of the gospel: *Blessed be Yahuah Elohim (the Lord God) of Yashar''el (Israel); for he hath visited and redeemed his people, And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:68-69). The horn Yahuah promised to make bud in Zion is raised up at last *in the house of his servant David* — the strength of salvation sprung from the line. The prophet sees the same budding for the covenant people: *In that day will I cause the horn of the house of Yashar''el (Israel) to bud forth* (Ezekiel 29:21). And the budding horn is the growing Branch: *I will raise unto David a righteous Branch, and a King shall reign and prosper* (Jeremiah 23:5); *I will cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land* (Jeremiah 33:15) — the same chapter swearing that *David shall never want a man to sit upon the throne of the house of Yashar''el* (Jeremiah 33:17). The horn that buds, the Branch that grows, the King raised unto David — one sprung strength out of the Davidic root, the horn of salvation made to flourish in the city Yahuah chose.',
+       sv.verse_id, ev.verse_id, 'free', 25284
+  FROM _s302_ps132_lookup sv, _s302_ps132_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=132 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-132-i-have-ordained-a-lamp-for-mine-anointed',
+       E'I have ordained a lamp for mine anointed — the unquenched Davidic lamp',
+       E'Beside the budding horn the psalm sets an ordained light: *There will I make the horn of David to bud: I have ordained a lamp for mine anointed* (Psalm 132:17). The lamp is the enduring Davidic line Yahuah keeps burning for His anointed, the light He pledged never to let go out. When the kingdom was torn from Solomon''s son, Yahuah kept one tribe expressly to preserve that lamp: *And unto his son will I give one tribe, that David my servant may have a light alway before me in Jerusalem, the city which I have chosen me to put my name there* (1 Kings 11:36). And though king after king failed, the lamp was not quenched, kept *for David''s sake*: *Nevertheless for David''s sake did Yahuah Elohav (the LORD his God) give him a lamp in Jerusalem, to set up his son after him, and to establish Jerusalem* (1 Kings 15:4). The lamp Yahuah ordained for His anointed in Zion is the unbroken Davidic light — preserved through the worst of the kings, kept for the sake of the oath to David, never to go dark in the chosen city, until the horn of salvation should bud and the everlasting Anointed reign.',
+       sv.verse_id, ev.verse_id, 'free', 25287
+  FROM _s302_ps132_lookup sv, _s302_ps132_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=132 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I dwell in an house of cedar, but the ark of Elohim (God) dwelleth within curtains* (2 Samuel 7:2) — David''s burden behind the vow of 132:3-5; the ark of Yahuah''s strength had no settled house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=8
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-arise-o-yahuah-into-thy-rest-thou-and-the-ark-of-thy-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the glory of Yahuah (LORD) had filled the house of Yahuah (LORD)* (1 Kings 8:11) — the ark borne to its rest (132:8); where the ark rests, the glory comes down and dwells.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=8
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-arise-o-yahuah-into-thy-rest-thou-and-the-ark-of-thy-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *there was seen in his temple the ark of his testament* (Revelation 11:19) — the ark of thy strength (132:8) seen at last in the heavenly temple; the earthly ark was the shadow of the dwelling no house could contain.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=8
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-arise-o-yahuah-into-thy-rest-thou-and-the-ark-of-thy-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30) — Kepha reads 132:11 as the resurrection-enthronement; David''s seed after the flesh raised to the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the resurrection of Messiah (Christ), that his soul was not left in hell* (Acts 2:31) — the fruit of David''s body set upon the throne (132:11) is the One death could not hold; the enthronement is a resurrection-enthronement.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12) — the oath of 132:11 as Yahuah first spake it through Nathan; the seed of David''s body raised to the established throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — the throne held *for evermore* (132:12); the everlasting Davidic kingdom established without end.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=12
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I have sworn unto David my servant, Thy seed will I establish for ever* (Psalm 89:3-4) — the sister psalm sings the same oath of 132:11; the covenant Yahuah cut with David, the throne pledged to his seed.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Once have I sworn by my holiness that I will not lie unto David. His seed shall endure for ever* (Psalm 89:35-36) — the unbreakable *he will not turn from it* (132:11); the oath Yahuah swore once and will never revoke.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — the throne sworn to the fruit of David''s body (132:11) given to the Formed Son, the Son of the Highest, born of David''s line.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=11
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the throne *for evermore* (132:12) established in the Formed Son, who reigns over the covenant people without end.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=12
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-of-the-fruit-of-thy-body-will-i-set-upon-thy-throne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have surely built thee an house to dwell in, a settled place for thee to abide in for ever* (1 Kings 8:13) — the chosen Zion-dwelling of 132:13 declared built; the settled place where Yahuah would dwell.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=13
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-yahuah-hath-chosen-zion-here-will-i-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26) — the everlasting rest of 132:14 reaching to the sanctuary set among the regathered two houses (the chapter of the two sticks made one).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=14
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-yahuah-hath-chosen-zion-here-will-i-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — *here will I dwell* (132:14) as Yahuah''s tabernacling in the midst of His own; the dwelling that makes them His people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=14
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-yahuah-hath-chosen-zion-here-will-i-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69) — the budding horn of 132:17 named by Zacharias; the horn of salvation raised in David''s house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-there-will-i-make-the-horn-of-david-to-bud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *In that day will I cause the horn of the house of Yashar''el (Israel) to bud forth* (Ezekiel 29:21) — the same budding as 132:17; the horn of David and the horn of the house of Yashar''el bud as one.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=29 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-there-will-i-make-the-horn-of-david-to-bud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will raise unto David a righteous Branch, and a King shall reign and prosper* (Jeremiah 23:5) — the horn that buds (132:17) is the Branch raised unto David; one figure, the Davidic King sprung from the line.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-there-will-i-make-the-horn-of-david-to-bud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land* (Jeremiah 33:15) — the horn caused to bud (132:17) is the Branch caused to grow up unto David, the same chapter swearing David shall never want a man on the throne.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-there-will-i-make-the-horn-of-david-to-bud'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that David my servant may have a light alway before me in Jerusalem* (1 Kings 11:36) — the lamp ordained for the anointed (132:17); one tribe kept so the Davidic light never goes out in the chosen city.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-i-have-ordained-a-lamp-for-mine-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*for David''s sake did Yahuah Elohav (the LORD his God) give him a lamp in Jerusalem, to set up his son after him* (1 Kings 15:4) — the ordained lamp (132:17) kept for David''s sake; though the kings failed, the Davidic light was not quenched.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps132_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=132 AND sv.verse_number=17
+  JOIN _s302_ps132_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-132-i-have-ordained-a-lamp-for-mine-anointed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
