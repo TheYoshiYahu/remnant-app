@@ -9256,6 +9256,1636 @@ SELECT t.id, cr.id, 3, E'*the Spirit of truth... for he dwelleth with you, and s
  WHERE t.slug='isaiah-59-my-spirit-and-my-words-shall-not-depart-for-ever'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_isaiah_2.sql (Isaiah 2) -----
+-- Chapter: Isaiah 2 — THE MOUNTAIN OF YAHUAH'S HOUSE, a two-house/ingathering keystone, framed by
+-- THE DAY OF YAHUAH that humbles all human pride. *And it shall come to pass in the last days, that
+-- the mountain of the LORD'S house shall be established in the top of the mountains... and all nations
+-- shall flow unto it* (2:2); the nations come to LEARN — *he will teach us of his ways, and we will
+-- walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from
+-- Jerusalem* (2:3) — the Torah going FORTH to the nations as the standard of the age to come, never
+-- abolished. *They shall beat their swords into plowshares... neither shall they learn war any more*
+-- (2:4) is the universal peace of Messiah's reign. The chapter's other half is the Day of Yahuah:
+-- *the lofty looks of man shall be humbled... and Yahuah (LORD) alone shall be exalted in that day*
+-- (2:11,17); *the idols he shall utterly abolish* (2:18); *they shall go into the holes of the rocks,
+-- and into the caves of the earth, for fear of Yahuah (LORD)* (2:19) — quoted almost verbatim at the
+-- sixth seal (Revelation 6:15-17). Human pride abased; Yahuah/the Formed Son alone exalted.
+-- Tag: isa02   Temp view: _s303_isa02_lookup
+-- Sort band: base 26025, step 3 -> threads at 26025, 26028, 26031, 26034, 26037 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',2,v
+--
+-- Isaiah 2 coverage:
+--   ★★ v.2-3 (the mountain of the LORD'S house shall be established... all nations shall flow unto it;
+--          he will teach us of his ways... out of Zion shall go forth the law)
+--        NT:     Romans 15:9-12 (that the Gentiles might glorify Elohim for his mercy... in him shall
+--                the Gentiles trust) — THREAD 3 (the nations brought to learn his ways)
+--        Extras: ★ Tobit 13:11 (Many nations shall come from far to the name of Yahuah (God) with
+--                gifts in their hands... all generations shall praise you) — THREAD 1
+--        Tanakh: ★★ Micah 4:1-2 (the VERBATIM twin oracle), Zechariah 8:22 (many people and strong
+--                nations shall come to seek Yahuah Tseva'ot in Jerusalem) — THREAD 1
+--   ★★ v.4 (he shall judge among the nations... they shall beat their swords into plowshares... neither
+--          shall they learn war any more)
+--        NT:     ★ Revelation 21:4 (no more death, neither sorrow... for the former things are passed
+--                away), Revelation 21:24-26 (the nations... shall walk in the light of it) — THREAD 2
+--        Extras: none warranted distinct (the universal-peace witness carried by Micah + Revelation)
+--        Tanakh: ★★ Micah 4:3 (the verbatim twin), Micah 4:4 (they shall sit every man under his vine
+--                and under his fig tree; none shall make them afraid) — THREAD 2
+--   ★ v.3 (out of Zion shall go forth the law, and the word of Yahuah from Jerusalem)
+--        NT:     ★ Romans 15:9-12 (Esaias saith, There shall be a root of Jesse... in him shall the
+--                Gentiles trust) — THREAD 3
+--        Extras: none warranted distinct
+--        Tanakh: ★ Zechariah 8:23 (ten men shall take hold of the skirt of him that is a Yahudi...
+--                We will go with you: for we have heard that Elohim is with you) — THREAD 3
+--   v.5 (O house of Jacob, come ye, and let us walk in the light of Yahuah) + v.8 (their land also is
+--          full of idols; they worship the work of their own hands)
+--        NT:     none warranted distinct (the covenant-walk call held in prose)
+--        Extras: none warranted
+--        Tanakh: the light-walk covenant call woven with the idol-rebuke; bound to the Day-of-Yahuah
+--                abasement of idols (v.18) — held with THREAD 4's covenant-walk frame
+--   ★ v.10-22 (Enter into the rock... the lofty looks of man shall be humbled... Yahuah alone shall be
+--          exalted in that day... the idols he shall utterly abolish... they shall go into the holes of
+--          the rocks... for fear of Yahuah)
+--        NT:     ★★ Revelation 6:15-17 (hid themselves in the dens and in the rocks... Fall on us, and
+--                hide us from the face of him that sitteth on the throne... who shall be able to stand?),
+--                ★ Philippians 2:10-11 (at the name of Yahusha every knee should bow... every tongue
+--                should confess that Yahusha HaMashiach is Lord) — THREAD 4/5
+--        Extras: none warranted
+--        Tanakh: ★ Hosea 10:8 (they shall say to the mountains, Cover us; and to the hills, Fall on us)
+--                + Luke 23:30 (the same cry on the Messiah's lips) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-2-the-mountain-of-yahuahs-house-all-nations-shall-flow — Tanakh (Micah 4, Zechariah 8)
+--      + Extras (Tobit 13) [extras]  (★★ the two-house ingathering; the nations brought to learn)
+--   2. isaiah-2-swords-into-plowshares-neither-shall-they-learn-war — Tanakh (Micah 4) + NT (Revelation 21) [free]
+--      (★★ the universal peace of Messiah's reign; the twin oracle's close)
+--   3. isaiah-2-out-of-zion-shall-go-forth-the-law — NT (Romans 15) + Tanakh (Zechariah 8) [free]
+--      (★ Torah-from-Zion as the nations' instruction; the law goes FORTH, never abolished)
+--   4. isaiah-2-let-us-walk-in-the-light-of-yahuah — Tanakh (Micah 4) [free]
+--      (the covenant call to the house of Jacob; walk in his name vs. the idols of v.8)
+--   5. isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted — NT (Revelation 6, Philippians 2)
+--      + Tanakh (Hosea 10, Luke 23) [free]  (★ human pride abased; Yahuah/the Formed Son alone exalted)
+--
+-- Framing notes:
+--   ★★ THE MOUNTAIN AND THE FLOWING NATIONS (THREAD 1): *the mountain of the LORD'S house shall be
+--      established in the top of the mountains... and all nations shall flow unto it* (2:2). Micah
+--      carries the same oracle nearly word for word — *the mountain of the house of Yahuah (LORD) shall
+--      be established in the top of the mountains... and people shall flow unto it* (Micah 4:1) — two
+--      prophets, one ingathering. Zechariah names the gathering: *many people and strong nations shall
+--      come to seek Yahuah Tseva'ot (LORD of hosts) in Jerusalem* (Zechariah 8:22). Frame two-house: this
+--      is the regathering of the scattered, NOT replacement; the nations flow to the mountain to LEARN
+--      his ways, not to overrule the seed. Tobit's restored prayer sees it from captivity: *Many nations
+--      shall come from far to the name of Yahuah (God) with gifts in their hands... all generations shall
+--      praise you* (Tobit 13:11).
+--   ★★ SWORDS INTO PLOWSHARES (THREAD 2): *they shall beat their swords into plowshares, and their
+--      spears into pruninghooks: nation shall not lift up sword against nation, neither shall they learn
+--      war any more* (2:4). Micah closes the twin oracle the same way (Micah 4:3) and adds the picture of
+--      the peace: *they shall sit every man under his vine and under his fig tree; and none shall make
+--      them afraid* (Micah 4:4). Revelation shows the consummated city: *there shall be no more death,
+--      neither sorrow, nor crying, neither shall there be any more pain* (Revelation 21:4); *the nations
+--      of them which are saved shall walk in the light of it* (Revelation 21:24). The Torah going forth
+--      from Zion is the standard of that warless age.
+--   ★ OUT OF ZION SHALL GO FORTH THE LAW (THREAD 3): *out of Zion shall go forth the law, and the word
+--      of Yahuah (LORD) from Jerusalem* (2:3). The nations *go and say, Come ye, and let us go up to the
+--      mountain of Yahuah... he will teach us of his ways, and we will walk in his paths* — they come to
+--      LEARN the Torah, not to see it abolished. Paul names the nations brought in: *that the Gentiles
+--      might glorify Elohim (God) for his mercy... Esaias saith, There shall be a root of Jesse... in him
+--      shall the Gentiles trust* (Romans 15:9,12). Zechariah pictures them taking hold: *ten men shall
+--      take hold... of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have
+--      heard that Elohim (God) is with you* (Zechariah 8:23). The Torah is the inheritance carried to the
+--      nations, never the curse.
+--   THE LIGHT-WALK CALL (THREAD 4): *O house of Jacob, come ye, and let us walk in the light of Yahuah
+--      (LORD)* (2:5). The covenant call set against the land *full of idols* (2:8): walk in his light, or
+--      walk in the work of your own hands. Micah voices the same resolve: *we will walk in the name of
+--      Yahuah Eloheinu (the LORD our God) for ever and ever* (Micah 4:5). The walk in his light is the
+--      walk in his ways the nations come to learn in THREAD 1-3.
+--   ★ THE DAY OF YAHUAH (THREAD 5): *the lofty looks of man shall be humbled... and Yahuah (LORD) alone
+--      shall be exalted in that day* (2:11,17); *the idols he shall utterly abolish* (2:18); *they shall
+--      go into the holes of the rocks, and into the caves of the earth, for fear of Yahuah (LORD)*
+--      (2:19). The sixth seal echoes it almost verbatim: *the kings of the earth... hid themselves in the
+--      dens and in the rocks of the mountains; and said to the mountains and rocks, Fall on us, and hide
+--      us from the face of him that sitteth on the throne* (Revelation 6:15-16). Hosea sounds the same
+--      cry — *they shall say to the mountains, Cover us; and to the hills, Fall on us* (Hosea 10:8) — and
+--      the Messiah puts it on the lips of the daughters of Jerusalem (Luke 23:30). And the exalting of
+--      Yahuah alone touches the Son: *at the name of Yahusha (Jesus) every knee should bow... every
+--      tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God)
+--      the Father* (Philippians 2:10-11) — the Formed Son exalted, who is Yahuah and HAS a Father.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the superscription), v.6-7 (the soothsayers, the silver and gold —
+--      the indictment that the Day answers), v.9 (the mean man and great man bow — preface to v.11's
+--      humbling), v.12-16 (the cedars, oaks, towers, ships of Tarshish — the catalog of pride the Day
+--      brings low, woven into THREAD 5), v.20-21 (casting idols to the moles and bats — the idol-
+--      abolition of THREAD 5), v.22 (Cease ye from man — the closing charge). All recorded, none skipped.
+
+CREATE TEMP VIEW _s303_isa02_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the mountain of Yahuah's house — all nations shall flow unto it
+    ('canon','isaiah',2,2,'canon','micah',4,1,'free',
+      E'*But in the last days it shall come to pass, that the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains, and it shall be exalted above the hills; and people shall flow unto it* (Micah 4:1). Micah carries Isaiah''s own oracle nearly word for word: *the mountain of the LORD''S house shall be established in the top of the mountains... and all nations shall flow unto it* (Isaiah 2:2). Two prophets, one ingathering — the last-days regathering of the scattered to the mountain of his house.'),
+    ('canon','isaiah',2,3,'canon','micah',4,2,'free',
+      E'*And many nations shall come, and say, Come, and let us go up to the mountain of Yahuah (LORD), and to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths: for the law shall go forth of Zion, and the word of Yahuah (LORD) from Jerusalem* (Micah 4:2). This is Isaiah 2:3 verbatim — *Come ye, and let us go up to the mountain of Yahuah (LORD)... he will teach us of his ways, and we will walk in his paths*. The nations come to LEARN his ways; the law goes FORTH from Zion, never abolished.'),
+    ('canon','isaiah',2,2,'canon','zechariah',8,22,'free',
+      E'*Yea, many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD)* (Zechariah 8:22). The *all nations shall flow unto it* of Isaiah 2:2 is the same gathering Zechariah names: *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem*. The mountain established draws the nations home to the house of the Elohim (God) of Jacob.'),
+    ('canon','isaiah',2,2,'apocrypha','tobit',13,11,'extras',
+      E'*Many nations shall come from far to the name of Yahuah (God) with gifts in their hands, even gifts to the King of heaven; all generations shall praise you with great joy* (Tobit 13:11). Tobit''s prayer, sung from the captivity of the scattered, sees the very flowing of Isaiah 2:2 — *all nations shall flow unto it*: *Many nations shall come from far to the name of Yahuah (God) with gifts in their hands*. The restored witness sees the gathering to Jerusalem the prophet foretold.'),
+
+    -- THREAD 2 (★★): swords into plowshares — neither shall they learn war any more
+    ('canon','isaiah',2,4,'canon','micah',4,3,'free',
+      E'*And he shall judge among many people, and rebuke strong nations afar off; and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more* (Micah 4:3). Micah closes the twin oracle exactly as Isaiah does: *they shall beat their swords into plowshares, and their spears into pruninghooks... neither shall they learn war any more* (Isaiah 2:4). The Messiah judging among the nations brings the warless age the two prophets sing as one.'),
+    ('canon','isaiah',2,4,'canon','micah',4,4,'free',
+      E'*But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of Yahuah Tseva''ot (LORD of hosts) hath spoken it* (Micah 4:4). Micah paints the peace that follows the beating of *swords into plowshares* (Isaiah 2:4): *they shall sit every man under his vine and under his fig tree; and none shall make them afraid*. The end of learning war is the beginning of unafraid rest under the Messiah''s reign.'),
+    ('canon','isaiah',2,4,'canon','revelation',21,4,'free',
+      E'*And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). The age where they *learn war any more* no more (Isaiah 2:4) is consummated in the city where *there shall be no more death, neither sorrow, nor crying*. The plowshares of Isaiah point to the wiped-away tears of the new heaven and new earth.'),
+    ('canon','isaiah',2,4,'canon','revelation',21,24,'free',
+      E'*And the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it* (Revelation 21:24). The nations who *flow unto* the mountain (Isaiah 2:2) and *learn war any more* no more (Isaiah 2:4) are the nations who *walk in the light* of the holy city: *the nations of them which are saved shall walk in the light of it*. The flowing of Isaiah 2 ends in the light-walk of Revelation 21.'),
+
+    -- THREAD 3 (★): out of Zion shall go forth the law (Torah-from-Zion as the nations' instruction)
+    ('canon','isaiah',2,3,'canon','romans',15,9,'free',
+      E'*And that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9). The nations who *go up to the mountain... he will teach us of his ways* (Isaiah 2:3) are the nations Paul sees brought to *glorify Elohim (God) for his mercy*. The word that *go(es) forth... from Jerusalem* (Isaiah 2:3) draws the nations to confess his name.'),
+    ('canon','isaiah',2,3,'canon','romans',15,12,'free',
+      E'*And again, Esaias saith, There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust* (Romans 15:12). Paul cites Isaiah''s own root of Jesse: the King from Zion over whom *out of Zion shall go forth the law* (Isaiah 2:3) is the one in whom *the Gentiles trust*. The Torah from Zion and the King from Jesse are one hope drawing the nations home.'),
+    ('canon','isaiah',2,3,'canon','zechariah',8,23,'free',
+      E'*In those days it shall come to pass, that ten men shall take hold out of all languages of the nations, even shall take hold of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have heard that Elohim (God) is with you* (Zechariah 8:23). The nations who say *let us go up to the mountain of Yahuah (LORD)... and we will walk in his paths* (Isaiah 2:3) are pictured by Zechariah taking hold to go with the seed: *We will go with you: for we have heard that Elohim (God) is with you*. They come to learn his ways, not to overrule them.'),
+
+    -- THREAD 4: O house of Jacob, let us walk in the light of Yahuah (covenant call vs. the idols)
+    ('canon','isaiah',2,5,'canon','micah',4,5,'free',
+      E'*For all people will walk every one in the name of his god, and we will walk in the name of Yahuah Eloheinu (the LORD our God) for ever and ever* (Micah 4:5). Isaiah''s call — *O house of Jacob, come ye, and let us walk in the light of Yahuah (LORD)* (Isaiah 2:5) — is Micah''s resolve: *we will walk in the name of Yahuah Eloheinu (the LORD our God) for ever and ever*, while the land lies *full of idols* (Isaiah 2:8). Walk in his light, or walk in the work of your own hands.'),
+
+    -- THREAD 5 (★): the Day of Yahuah — Yahuah alone shall be exalted (human pride abased)
+    ('canon','isaiah',2,19,'canon','revelation',6,15,'free',
+      E'*And the kings of the earth, and the great men, and the rich men, and the chief captains, and the mighty men, and every bondman, and every free man, hid themselves in the dens and in the rocks of the mountains* (Revelation 6:15). The sixth seal echoes Isaiah''s Day almost word for word: *they shall go into the holes of the rocks, and into the caves of the earth, for fear of Yahuah (LORD)* (Isaiah 2:19). The proud who hid from the Day Isaiah foretold hide again at the opened seal.'),
+    ('canon','isaiah',2,19,'canon','revelation',6,16,'free',
+      E'*And said to the mountains and rocks, Fall on us, and hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb* (Revelation 6:16). The men who flee *for fear of Yahuah (LORD), and for the glory of his majesty, when he ariseth to shake terribly the earth* (Isaiah 2:19) cry to the rocks: *Fall on us, and hide us from the face of him that sitteth on the throne*. The terror of the Day of Yahuah is the terror of the throne and the Lamb.'),
+    ('canon','isaiah',2,19,'canon','revelation',6,17,'free',
+      E'*For the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17). Isaiah''s *day of Yahuah Tseva''ot (LORD of hosts)... upon every one that is proud and lofty* (Isaiah 2:12), when *Yahuah (LORD) alone shall be exalted* (2:17), is the great day John names: *the great day of his wrath is come; and who shall be able to stand?* Before that day the loftiness of man is bowed down and Yahuah alone stands exalted.'),
+    ('canon','isaiah',2,19,'canon','hosea',10,8,'free',
+      E'*The high places also of Aven, the sin of Yashar''el (Israel), shall be destroyed: the thorn and the thistle shall come up on their altars; and they shall say to the mountains, Cover us; and to the hills, Fall on us* (Hosea 10:8). Isaiah''s fleers who *go into the holes of the rocks... for fear of Yahuah (LORD)* (Isaiah 2:19) cry Hosea''s cry: *they shall say to the mountains, Cover us; and to the hills, Fall on us*. The Day that humbles every proud thing leaves the guilty pleading with the rocks.'),
+    ('canon','isaiah',2,19,'canon','luke',23,30,'free',
+      E'*Then shall they begin to say to the mountains, Fall on us; and to the hills, Cover us* (Luke 23:30). The Messiah himself puts the Day-of-Yahuah cry on the lips of the daughters of Jerusalem — the very words of Isaiah''s fleers who *go into the holes of the rocks... for fear of Yahuah (LORD)* (Isaiah 2:19). The terror Isaiah foretold of the proud is the warning Yahusha (Jesus) gives of the days coming.'),
+    ('canon','isaiah',2,17,'canon','philippians',2,10,'free',
+      E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). When *the loftiness of man shall be bowed down... and Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:17), every knee bows *at the name of Yahusha (Jesus)* — the Formed Son exalted. The exalting of Yahuah alone and the bowing of every knee to the Son are one Day of one glory.'),
+    ('canon','isaiah',2,17,'canon','philippians',2,11,'free',
+      E'*And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:11). *Yahuah (LORD) alone shall be exalted in that day* (Isaiah 2:17), and the confession of that day is *that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* — the Formed Son, who is Yahuah and HAS a Father, exalted to the Father''s glory. Not co-equal persons, not a collapse: the Son exalted, the Father glorified.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-2-the-mountain-of-yahuahs-house-all-nations-shall-flow',
+       E'The mountain of Yahuah''s house — all nations shall flow unto it',
+       E'Isaiah lifts his eyes to the last days and sees the gathering: *And it shall come to pass in the last days, that the mountain of the LORD''S house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it* (Isaiah 2:2). The nations come not to conquer but to learn: *And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths* (2:3). Micah carries the same oracle almost word for word — *the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains... and people shall flow unto it... and let us go up to the mountain of Yahuah (LORD)... he will teach us of his ways, and we will walk in his paths* (Micah 4:1-2) — two prophets, one ingathering. Zechariah names the gathering plainly: *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD)* (Zechariah 8:22). This is the two-house regathering of the scattered to the mountain of his house — not a new people grafted in by confession, but the nations drawn to the house of the Elohim (God) of Jacob to LEARN his ways. And the restored witness, sung from captivity, sees it: *Many nations shall come from far to the name of Yahuah (God) with gifts in their hands, even gifts to the King of heaven; all generations shall praise you with great joy* (Tobit 13:11). The mountain established is the magnet of the age to come.',
+       sv.verse_id, ev.verse_id, 'extras', 26025
+  FROM _s303_isa02_lookup sv, _s303_isa02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=2 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-2-swords-into-plowshares-neither-shall-they-learn-war',
+       E'Swords into plowshares — neither shall they learn war any more',
+       E'When the Messiah reigns from the established mountain, the weapons of the nations are remade into tools of the field: *And he shall judge among the nations, and shall rebuke many people: and they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up sword against nation, neither shall they learn war any more* (Isaiah 2:4). Micah closes the twin oracle the same way and paints the peace that follows: *they shall beat their swords into plowshares, and their spears into pruninghooks: nation shall not lift up a sword against nation, neither shall they learn war any more. But they shall sit every man under his vine and under his fig tree; and none shall make them afraid: for the mouth of Yahuah Tseva''ot (LORD of hosts) hath spoken it* (Micah 4:3-4). This warless age is the standard of the world the Torah-from-Zion governs (2:3) — never a Torah abolished, but a Torah gone forth as the law of nations at peace. Revelation shows it consummated: *there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4), and *the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it* (Revelation 21:24). The plowshares of Isaiah end in the wiped-away tears and the light-walk of the new heaven and the new earth.',
+       sv.verse_id, ev.verse_id, 'free', 26028
+  FROM _s303_isa02_lookup sv, _s303_isa02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=2 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-2-out-of-zion-shall-go-forth-the-law',
+       E'Out of Zion shall go forth the law — the nations come to learn his ways',
+       E'The center of the mountain oracle is the Torah going FORTH to the nations: *for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). The nations *go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths* (2:3) — they come to LEARN the instruction, to walk in the paths, not to see the standard struck down. The law is the inheritance carried out to the nations, never the curse. Paul sees the nations brought in by that going-forth word: *that the Gentiles might glorify Elohim (God) for his mercy* (Romans 15:9), and he cites Isaiah''s own root of Jesse: *Esaias saith, There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust* (Romans 15:12). The Torah from Zion and the King from Jesse are one hope drawing the nations home. Zechariah pictures them taking hold to go: *ten men shall take hold out of all languages of the nations, even shall take hold of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have heard that Elohim (God) is with you* (Zechariah 8:23). They come to walk in his ways, not to overrule them.',
+       sv.verse_id, ev.verse_id, 'free', 26031
+  FROM _s303_isa02_lookup sv, _s303_isa02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=2 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-2-let-us-walk-in-the-light-of-yahuah',
+       E'O house of Jacob, let us walk in the light of Yahuah',
+       E'Having seen the nations stream to learn his ways, the prophet turns the call homeward to the covenant people: *O house of Jacob, come ye, and let us walk in the light of Yahuah (LORD)* (Isaiah 2:5). The call stands against the indictment that follows — a people whose *land also is full of idols; they worship the work of their own hands, that which their own fingers have made* (2:8). Two walks are set before the house of Jacob: the light of Yahuah, or the work of their own hands. Micah voices the covenant resolve as the answer: *For all people will walk every one in the name of his god, and we will walk in the name of Yahuah Eloheinu (the LORD our God) for ever and ever* (Micah 4:5). The walk in his light is the same walk in his paths the nations come to learn at the mountain — the house of Jacob is called to walk first in the light the nations will flow to.',
+       sv.verse_id, ev.verse_id, 'free', 26034
+  FROM _s303_isa02_lookup sv, _s303_isa02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=2 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted',
+       E'The day of Yahuah — the loftiness of man bowed down, Yahuah alone exalted',
+       E'The other half of the chapter is the Day that answers the pride and the idols: *Enter into the rock, and hide thee in the dust, for fear of Yahuah (LORD), and for the glory of his majesty* (Isaiah 2:10). *The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down, and Yahuah (LORD) alone shall be exalted in that day* (2:11); *For the day of Yahuah Tseva''ot (LORD of hosts) shall be upon every one that is proud and lofty... and he shall be brought low* (2:12); *the idols he shall utterly abolish* (2:18). And the proud flee: *they shall go into the holes of the rocks, and into the caves of the earth, for fear of Yahuah (LORD), and for the glory of his majesty, when he ariseth to shake terribly the earth* (2:19). The sixth seal echoes it almost verbatim: *the kings of the earth, and the great men... hid themselves in the dens and in the rocks of the mountains; and said to the mountains and rocks, Fall on us, and hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb. For the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:15-17). Hosea sounds the same cry — *they shall say to the mountains, Cover us; and to the hills, Fall on us* (Hosea 10:8) — and the Messiah himself puts it on the lips of the daughters of Jerusalem: *Then shall they begin to say to the mountains, Fall on us; and to the hills, Cover us* (Luke 23:30). And the exalting of Yahuah alone touches the Son: *at the name of Yahusha (Jesus) every knee should bow... and that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:10-11). The Formed Son is exalted, who is Yahuah and HAS a Father — not co-equal persons, not a collapse, but the Son lifted to the Father''s glory in the Day when human pride is brought low and Yahuah alone is exalted.',
+       sv.verse_id, ev.verse_id, 'free', 26037
+  FROM _s303_isa02_lookup sv, _s303_isa02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=2 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the mountain of the house of Yahuah (LORD) shall be established in the top of the mountains... and people shall flow unto it* (Micah 4:1) — Isaiah''s mountain oracle (2:2) carried nearly word for word by a second prophet; one ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-mountain-of-yahuahs-house-all-nations-shall-flow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he will teach us of his ways, and we will walk in his paths: for the law shall go forth of Zion* (Micah 4:2) — Isaiah 2:3 verbatim; the nations come to LEARN his ways, the law going forth, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=3
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-mountain-of-yahuahs-house-all-nations-shall-flow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zechariah 8:22) — the *all nations shall flow unto it* of Isaiah 2:2 named as the gathering to Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-mountain-of-yahuahs-house-all-nations-shall-flow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Many nations shall come from far to the name of Yahuah (God) with gifts in their hands... all generations shall praise you* (Tobit 13:11) — the restored witness, sung from captivity, sees the flowing of Isaiah 2:2.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-mountain-of-yahuahs-house-all-nations-shall-flow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they shall beat their swords into plowshares, and their spears into pruninghooks... neither shall they learn war any more* (Micah 4:3) — Isaiah 2:4 verbatim; the warless age the two prophets sing as one.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=4
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-swords-into-plowshares-neither-shall-they-learn-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they shall sit every man under his vine and under his fig tree; and none shall make them afraid* (Micah 4:4) — the unafraid rest that follows the beating of swords into plowshares (Isaiah 2:4).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=4
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-swords-into-plowshares-neither-shall-they-learn-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*there shall be no more death, neither sorrow, nor crying... for the former things are passed away* (Revelation 21:4) — the warless age of Isaiah 2:4 consummated in the new heaven and new earth.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=4
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-swords-into-plowshares-neither-shall-they-learn-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the nations of them which are saved shall walk in the light of it* (Revelation 21:24) — the nations who flowed to the mountain (Isaiah 2:2) and learned war no more (2:4) walk in the light of the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=4
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-swords-into-plowshares-neither-shall-they-learn-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that the Gentiles might glorify Elohim (God) for his mercy* (Romans 15:9) — the nations who go up to learn his ways (Isaiah 2:3) brought to glorify him by the word gone forth from Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=3
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-out-of-zion-shall-go-forth-the-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Esaias saith, There shall be a root of Jesse... in him shall the Gentiles trust* (Romans 15:12) — Paul cites Isaiah''s own King from Zion; the Torah from Zion (2:3) and the root of Jesse are one hope drawing the nations.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=3
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-out-of-zion-shall-go-forth-the-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*ten men shall take hold... of the skirt of him that is a Yahudi (Jew), saying, We will go with you* (Zechariah 8:23) — the nations of Isaiah 2:3 pictured taking hold to go up and learn his ways.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=3
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-out-of-zion-shall-go-forth-the-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*we will walk in the name of Yahuah Eloheinu (the LORD our God) for ever and ever* (Micah 4:5) — the covenant resolve answering Isaiah''s call to walk in the light of Yahuah (2:5), against the land full of idols (2:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=5
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=4 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-let-us-walk-in-the-light-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the kings of the earth... hid themselves in the dens and in the rocks of the mountains* (Revelation 6:15) — the sixth seal echoes Isaiah''s fleers who go into the holes of the rocks for fear of Yahuah (2:19).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=19
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Fall on us, and hide us from the face of him that sitteth on the throne, and from the wrath of the Lamb* (Revelation 6:16) — the terror of Isaiah''s Day (2:19) is the terror of the throne and the Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=19
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the great day of his wrath is come; and who shall be able to stand?* (Revelation 6:17) — Isaiah''s day of Yahuah upon every proud and lofty thing (2:12), when Yahuah alone is exalted (2:17).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=19
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they shall say to the mountains, Cover us; and to the hills, Fall on us* (Hosea 10:8) — the same cry as Isaiah''s fleers for fear of Yahuah (2:19); the Day that humbles every proud thing.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=19
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Then shall they begin to say to the mountains, Fall on us; and to the hills, Cover us* (Luke 23:30) — the Messiah puts Isaiah''s Day-of-Yahuah cry (2:19) on the lips of the daughters of Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=19
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=23 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *at the name of Yahusha (Jesus) every knee should bow* (Philippians 2:10) — when the loftiness of man is bowed down and Yahuah alone exalted (2:17), every knee bows to the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=17
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:11) — Yahuah alone exalted (2:17): the Formed Son, who is Yahuah and HAS a Father, lifted to the Father''s glory.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=2 AND sv.verse_number=17
+  JOIN _s303_isa02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-2-the-day-of-yahuah-yahuah-alone-shall-be-exalted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_25.sql (Isaiah 25) -----
+-- Chapter: Isaiah 25 — THE RESURRECTION / NEW-CREATION BANQUET, a keystone of the canon's hope.
+-- On the mountain Yahuah Tseva'ot (LORD of hosts) spreads *a feast of fat things... unto all
+-- people* (25:6); he tears away *the vail that is spread over all nations* (25:7); and then the
+-- great word the whole library reaches for: *He will swallow up death in victory; and Adonai
+-- Yahuah (the Lord GOD) will wipe away tears from off all faces* (25:8). Paul quotes it by name
+-- at the last trump (*Death is swallowed up in victory*, 1 Cor 15:54); John sees it consummated
+-- in the new creation (*no more death... wipe away all tears*, Rev 21:4; Rev 7:17). Hosea sings
+-- the same defeat of the grave (*O death, I will be thy plagues*, Hos 13:14) and Isaiah's own next
+-- breath names the means — bodily resurrection (*Thy dead men shall live*, Isa 26:19). This is the
+-- ONE ingathering at the last day, the abolition of death — never a severed scheme. And the day of
+-- recognition: *Lo, this is our Elohim (God); we have waited for him, and he will save us* (25:9).
+-- Tag: isa25   Temp view: _s303_isa25_lookup
+-- Sort band: base 26600, step 3 -> threads at 26600, 26603, 26606, 26609 (4 threads)
+-- Source of EVERY row: 'canon','isaiah',25,v
+--
+-- Isaiah 25 coverage:
+--   v.1-5 (thou hast been a strength to the poor... a refuge from the storm, a shadow from the heat)
+--        NT:     none warranted distinct (the refuge-of-Yahuah note is woven in prose; no single NT
+--                add forced — the chapter's weight is the banquet and the death-swallowed keystone)
+--        Extras: none warranted
+--        Tanakh: none forced (Yahuah-the-refuge echoes Psalm refuge-language; held in prose, not a row)
+--   ★★ v.6 (in this mountain shall Yahuah Tseva'ot (LORD of hosts) make unto all people a feast of
+--          fat things... of wines on the lees well refined)
+--        NT:     ★★ Matthew 8:11 (many shall come from the east and west, and shall sit down with
+--                Abraham, and Isaac, and Jacob, in the kingdom of heaven), ★ Luke 14:15-16 (Blessed
+--                is he that shall eat bread in the kingdom of Elohim (God)... A certain man made a
+--                great supper), ★★ Revelation 19:9 (Blessed are they which are called unto the
+--                marriage supper of the Lamb) — THREAD 2
+--        Extras: none warranted (clean banquet weave is the canon's own)
+--        Tanakh: the mountain-feast is woven in prose; no separate Tanakh row forced
+--   v.7 (he will destroy in this mountain the face of the covering... the vail that is spread over
+--          all nations)
+--        NT:     ★ 2 Corinthians 3:14, 3:16 (the vail is done away in Messiah... when it shall turn
+--                to Yahuah (Lord), the vail shall be taken away) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: none separate (the veil-removed forward-weave is Paul's own)
+--   ★★★ v.8 (He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away
+--          tears from off all faces... for Yahuah (LORD) hath spoken it) — THE death-swallowed keystone
+--        NT:     ★★★ 1 Corinthians 15:54 (Death is swallowed up in victory), ★ 1 Cor 15:55 (O death,
+--                where is thy sting?), ★★ Revelation 21:4 (wipe away all tears... no more death),
+--                ★ Revelation 7:17 (Elohim (God) shall wipe away all tears from their eyes) — THREAD 1
+--        Extras: ★ Wisdom of Solomon 3:1-4 (the souls of the righteous are in the hand of Yahuah
+--                (God)... their hope full of immortality) — THREAD 1 (clean apocrypha parse verified)
+--        Tanakh: ★ Hosea 13:14 (O death, I will be thy plagues; O grave, I will be thy destruction)
+--                — LATERAL; ★ Isaiah 26:19 (Thy dead men shall live... Awake and sing, ye that dwell
+--                in dust) — LATERAL resurrection — THREAD 1
+--   ★ v.9 (Lo, this is our Elohim (God); we have waited for him, and he will save us... we will be
+--          glad and rejoice in his salvation) — the day of recognition
+--        NT:     ★ Revelation 19:7 (Let us be glad and rejoice... for the marriage of the Lamb is
+--                come) — THREAD 4 (the gladness of the waited-for salvation)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 26:8 (in the way of thy judgments, O Yahuah (LORD), have we waited for
+--                thee) — LATERAL (the waiting answered) — THREAD 4
+--   v.10-12 (Moab shall be trodden down... the fortress of the high fort of thy walls shall he bring
+--          down... even to the dust)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose (the lateral judgment-on-pride pairs with Isaiah 26:5 — the lofty
+--                city laid low to the dust; recorded, not forced to a row)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-25-he-will-swallow-up-death-in-victory — NT (1 Corinthians 15, Revelation 21, 7) +
+--      Tanakh (Hosea 13, Isaiah 26) + Extras (Wisdom of Solomon 3) [extras]
+--      (★★★ death swallowed up, tears wiped away — bodily resurrection at the last trump, the ONE
+--       ingathering; the abolition of death at the last day)
+--   2. isaiah-25-a-feast-of-fat-things-in-this-mountain — NT (Matthew 8, Luke 14, Revelation 19) [free]
+--      (★★ the messianic banquet on the mountain — the ingathered come from east and west to the
+--       marriage supper; two-house + nations, Rom 11 guard in prose)
+--   3. isaiah-25-the-vail-spread-over-all-nations-destroyed — NT (2 Corinthians 3) [free]
+--      (the covering torn away — the vail done away in Messiah)
+--   4. isaiah-25-lo-this-is-our-elohim-we-have-waited-for-him — NT (Revelation 19) + Tanakh
+--      (Isaiah 26) [free]
+--      (★ the day of recognition — the waited-for salvation revealed, gladness and rejoicing)
+--
+-- Framing notes:
+--   ★★★ HE WILL SWALLOW UP DEATH (THREAD 1): *He will swallow up death in victory; and Adonai Yahuah
+--      (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he
+--      take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). Paul takes
+--      this verse onto his lips at the climax of the resurrection chapter: *So when this corruptible
+--      shall have put on incorruption, and this mortal shall have put on immortality, then shall be
+--      brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians
+--      15:54) — *at the last trump: for the trumpet shall sound, and the dead shall be raised
+--      incorruptible* (15:52). This is BODILY resurrection at the last day, the ONE ingathering at
+--      the last trump — never a severed scheme. John sees the verdict consummated in the new
+--      creation: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no
+--      more death* (Revelation 21:4); *the Lamb... shall lead them unto living fountains of waters:
+--      and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). Hosea sang the
+--      same defeat of the grave: *I will ransom them from the power of the grave; I will redeem them
+--      from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14)
+--      — the verse Paul welds to Isaiah 25:8 at 1 Cor 15:55. And Isaiah's own next breath names the
+--      means — resurrection of the body: *Thy dead men shall live, together with my dead body shall
+--      they arise. Awake and sing, ye that dwell in dust* (Isaiah 26:19). The restored witness adds
+--      the hope of the righteous through death: *the souls of the righteous are in the hand of Yahuah
+--      (God), and there shall no torment touch them... their hope full of immortality* (Wisdom of
+--      Solomon 3:1-4). One hope across the whole library: death swallowed up, the dead raised, every
+--      tear wiped away.
+--   ★★ THE FEAST OF FAT THINGS (THREAD 2): *And in this mountain shall Yahuah Tseva'ot (LORD of
+--      hosts) make unto all people a feast of fat things, a feast of wines on the lees, of fat
+--      things full of marrow, of wines on the lees well refined* (Isaiah 25:6). The Messiah names
+--      who comes to that table: *many shall come from the east and west, and shall sit down with
+--      Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11) — the scattered
+--      gathered home to the patriarchs' table, with a remnant of the once-bidden cast out (8:12),
+--      a partial hardening, never a casting-off of the people (Romans 11:1). Luke's table-guest
+--      blesses it: *Blessed is he that shall eat bread in the kingdom of Elohim (God)* (Luke 14:15),
+--      and the great supper is filled from the highways and hedges (14:16-23). And the consummation
+--      is the wedding feast: *Blessed are they which are called unto the marriage supper of the
+--      Lamb* (Revelation 19:9). One mountain, one feast — the ingathered seed of both houses and
+--      those joined to them, seated at the King's table.
+--   THE VAIL TORN AWAY (THREAD 3): *And he will destroy in this mountain the face of the covering
+--      cast over all people, and the vail that is spread over all nations* (Isaiah 25:7). The
+--      covering that blinds is torn away in the Messiah: *their minds were blinded: for until this
+--      day remaineth the same vail untaken away in the reading of the old testament; which vail is
+--      done away in Messiah (Christ)* (2 Corinthians 3:14); *Nevertheless when it shall turn to
+--      Yahuah (Lord), the vail shall be taken away* (3:16). The same mountain that spreads the feast
+--      tears off the shroud — the covering of death and the covering over the eyes both removed.
+--   ★ THE DAY OF RECOGNITION (THREAD 4): *And it shall be said in that day, Lo, this is our Elohim
+--      (God); we have waited for him, and he will save us: this is Yahuah (LORD); we have waited for
+--      him, we will be glad and rejoice in his salvation* (Isaiah 25:9). The waiting Isaiah voices —
+--      *in the way of thy judgments, O Yahuah (LORD), have we waited for thee; the desire of our soul
+--      is to thy name* (Isaiah 26:8) — is answered with gladness when he is revealed. John gives the
+--      same shout at the wedding: *Let us be glad and rejoice, and give honour to him: for the
+--      marriage of the Lamb is come* (Revelation 19:7). The long-waited-for Elohim is seen, and the
+--      waiting turns to rejoicing in his salvation.
+--   VERSES WITH NO SEPARATE ADD: v.1-5 (Yahuah the refuge, strength to the poor — woven in prose,
+--      no row forced), v.10-12 (Moab trodden down, the high fort brought to the dust — the lateral
+--      judgment-on-pride pairs with Isaiah 26:5 in prose). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): He will swallow up death in victory — resurrection, the abolition of death
+    ('canon','isaiah',25,8,'canon','1-corinthians',15,54,'free',
+      E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). Paul takes Isaiah''s word onto his lips at the climax of the resurrection — *He will swallow up death in victory* (Isaiah 25:8) — and dates it: *at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible* (15:52). The death Isaiah saw swallowed is the bodily resurrection at the last day, the one ingathering at the last trump.'),
+    ('canon','isaiah',25,8,'canon','1-corinthians',15,55,'free',
+      E'*O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55). The *victory* in which death is swallowed (Isaiah 25:8) is the victory that taunts the grave — *O death, where is thy sting?* Paul welds Isaiah 25:8 to Hosea 13:14 in one breath: death and the grave are stripped of their power when the dead are raised.'),
+    ('canon','isaiah',25,8,'canon','revelation',21,4,'free',
+      E'*And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). John sees Isaiah''s promise consummated in the new creation — *Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces* (Isaiah 25:8) becomes *Elohim (God) shall wipe away all tears... there shall be no more death*. The very words of the prophet, fulfilled where death itself is no more.'),
+    ('canon','isaiah',25,8,'canon','revelation',7,17,'free',
+      E'*For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). The same wiping-away of every tear Isaiah promised — *wipe away tears from off all faces* (Isaiah 25:8) — is done by the Lamb for the gathered multitude before the throne. The feast on the mountain and the living fountains are one consolation.'),
+    ('canon','isaiah',25,8,'canon','hosea',13,14,'free',
+      E'*I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction: repentance shall be hid from mine eyes* (Hosea 13:14). Hosea sings the same defeat Isaiah declares — *He will swallow up death in victory* (Isaiah 25:8) — as Yahuah''s own war on the grave: *O death, I will be thy plagues; O grave, I will be thy destruction*. Paul binds this verse to Isaiah 25:8 at 1 Corinthians 15:55. The two prophets, one victory over death.'),
+    ('canon','isaiah',25,8,'canon','isaiah',26,19,'free',
+      E'*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead* (Isaiah 26:19). Isaiah''s own next breath names the means by which death is swallowed — *He will swallow up death in victory* (25:8) is accomplished when *thy dead men shall live... Awake and sing, ye that dwell in dust*. The abolition of death is the resurrection of the body.'),
+    ('canon','isaiah',25,8,'apocrypha','the-wisdom-of-solomon',3,1,'extras',
+      E'*But the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1). The restored witness holds the same hope as Isaiah''s swallowed death — *He will swallow up death in victory* (Isaiah 25:8): the righteous *are in the hand of Yahuah (God)*, untouched by torment, kept against the day the dead are raised.'),
+    ('canon','isaiah',25,8,'apocrypha','the-wisdom-of-solomon',3,4,'extras',
+      E'*For though they be punished in the sight of men, yet is their hope full of immortality* (Wisdom of Solomon 3:4). What Isaiah promised — death swallowed up, every tear wiped away (Isaiah 25:8) — the restored witness names as *hope full of immortality*. The death that looks like *utter destruction* to the unwise (3:2-3) is, to the righteous, the doorway to the resurrection Isaiah saw.'),
+
+    -- THREAD 2 (★★): A feast of fat things in this mountain — the messianic banquet
+    ('canon','isaiah',25,6,'canon','matthew',8,11,'free',
+      E'*And I say unto you, That many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11). The Messiah names the guests at Isaiah''s mountain-feast — *in this mountain shall Yahuah Tseva''ot (LORD of hosts) make unto all people a feast of fat things* (Isaiah 25:6): the scattered *come from the east and west* and *sit down with Abraham, and Isaac, and Jacob*, gathered home to the patriarchs'' table.'),
+    ('canon','isaiah',25,6,'canon','luke',14,15,'free',
+      E'*And when one of them that sat at meat with him heard these things, he said unto him, Blessed is he that shall eat bread in the kingdom of Elohim (God)* (Luke 14:15). The feast Isaiah set on the mountain — *a feast of fat things... of wines on the lees well refined* (Isaiah 25:6) — is the table the kingdom-guest blesses: *Blessed is he that shall eat bread in the kingdom of Elohim (God)*. The great supper that follows (14:16-23) is filled from the highways and hedges.'),
+    ('canon','isaiah',25,6,'canon','revelation',19,9,'free',
+      E'*And he saith unto me, Write, Blessed are they which are called unto the marriage supper of the Lamb. And he saith unto me, These are the true sayings of Elohim (God)* (Revelation 19:9). The mountain-feast of Isaiah 25:6 reaches its consummation as the wedding feast — *the marriage supper of the Lamb*. The feast of fat things *unto all people* is the table of the Lamb and his ready bride.'),
+
+    -- THREAD 3: The vail spread over all nations destroyed — the covering torn away in Messiah
+    ('canon','isaiah',25,7,'canon','2-corinthians',3,14,'free',
+      E'*But their minds were blinded: for until this day remaineth the same vail untaken away in the reading of the old testament; which vail is done away in Messiah (Christ)* (2 Corinthians 3:14). The covering Isaiah saw destroyed — *the vail that is spread over all nations* (Isaiah 25:7) — Paul names as the vail over the heart, *done away in Messiah (Christ)*. The same mountain that spreads the feast tears off the shroud that blinds.'),
+    ('canon','isaiah',25,7,'canon','2-corinthians',3,16,'free',
+      E'*Nevertheless when it shall turn to Yahuah (Lord), the vail shall be taken away* (2 Corinthians 3:16). Isaiah''s promise that Yahuah will *destroy... the vail that is spread over all nations* (Isaiah 25:7) is the turning Paul describes — *when it shall turn to Yahuah (Lord), the vail shall be taken away*. The covering over the nations is lifted as they turn to him.'),
+
+    -- THREAD 4 (★): Lo, this is our Elohim — the day of recognition, the waited-for salvation
+    ('canon','isaiah',25,9,'canon','isaiah',26,8,'free',
+      E'*Yea, in the way of thy judgments, O Yahuah (LORD), have we waited for thee; the desire of our soul is to thy name, and to the remembrance of thee* (Isaiah 26:8). The waiting answered in the day of recognition — *we have waited for him, and he will save us* (Isaiah 25:9) — is the very waiting Isaiah''s next song voices: *in the way of thy judgments, O Yahuah (LORD), have we waited for thee*. The long-waited-for Elohim is at last revealed and saves.'),
+    ('canon','isaiah',25,9,'canon','revelation',19,7,'free',
+      E'*Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). The gladness Isaiah promised when he is recognized — *we will be glad and rejoice in his salvation* (Isaiah 25:9) — is the wedding-shout of heaven: *Let us be glad and rejoice... for the marriage of the Lamb is come*. The waited-for salvation is the bridegroom revealed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-25-he-will-swallow-up-death-in-victory',
+       E'He will swallow up death in victory — the resurrection and the abolition of death',
+       E'On the mountain Isaiah declares the word the whole library reaches for: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). Paul takes the verse onto his lips at the climax of the resurrection chapter: *So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54), *O death, where is thy sting? O grave, where is thy victory?* (15:55) — and he dates it: *In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible* (15:52). This is the bodily resurrection at the last day, the ONE ingathering at the last trump — never a severed scheme. John sees it consummated in the new creation: *And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain* (Revelation 21:4); and the Lamb *shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). Hosea sang the same defeat of the grave: *I will ransom them from the power of the grave; I will redeem them from death: O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14) — the verse Paul welds to Isaiah 25:8. And Isaiah''s own next breath names the means: *Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust* (Isaiah 26:19). The restored witness holds the same hope through death: *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them... For though they be punished in the sight of men, yet is their hope full of immortality* (Wisdom of Solomon 3:1, 3:4). One hope across the whole library — death swallowed up, the dead raised, every tear wiped away.',
+       sv.verse_id, ev.verse_id, 'extras', 26600
+  FROM _s303_isa25_lookup sv, _s303_isa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=25 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-25-a-feast-of-fat-things-in-this-mountain',
+       E'A feast of fat things in this mountain — the messianic banquet of the ingathered',
+       E'*And in this mountain shall Yahuah Tseva''ot (LORD of hosts) make unto all people a feast of fat things, a feast of wines on the lees, of fat things full of marrow, of wines on the lees well refined* (Isaiah 25:6). The Messiah names who is seated at that table: *many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11) — the scattered seed gathered home to the patriarchs'' table, while *the children of the kingdom shall be cast out* (8:12), a partial hardening of those who would not come, never a casting-off of the people (*Hath Elohim (God) cast away his people? Elohim (God) forbid*, Romans 11:1). Luke''s table-guest blesses it: *Blessed is he that shall eat bread in the kingdom of Elohim (God)* (Luke 14:15), and the great supper is filled from the highways and hedges until the house is full (14:16-23). And the feast reaches its consummation as the wedding supper: *Blessed are they which are called unto the marriage supper of the Lamb* (Revelation 19:9). One mountain, one feast — the ingathered of both houses and those joined to them seated at the King''s table.',
+       sv.verse_id, ev.verse_id, 'free', 26603
+  FROM _s303_isa25_lookup sv, _s303_isa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=25 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-25-the-vail-spread-over-all-nations-destroyed',
+       E'The vail spread over all nations — the covering torn away in Messiah',
+       E'On the same mountain that spreads the feast, the shroud is torn off: *And he will destroy in this mountain the face of the covering cast over all people, and the vail that is spread over all nations* (Isaiah 25:7). Paul names the covering as the vail over the heart, lifted in the Messiah: *their minds were blinded: for until this day remaineth the same vail untaken away in the reading of the old testament; which vail is done away in Messiah (Christ)* (2 Corinthians 3:14); *Nevertheless when it shall turn to Yahuah (Lord), the vail shall be taken away* (3:16). The mountain that swallows death (25:8) and spreads the banquet (25:6) also strips away the covering that blinds — the shroud of death and the veil over the eyes both removed in one motion, as the nations turn to him.',
+       sv.verse_id, ev.verse_id, 'free', 26606
+  FROM _s303_isa25_lookup sv, _s303_isa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=25 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-25-lo-this-is-our-elohim-we-have-waited-for-him',
+       E'Lo, this is our Elohim — the day of recognition, the waited-for salvation',
+       E'When death is swallowed and the veil is torn, the long-waited-for One is recognized: *And it shall be said in that day, Lo, this is our Elohim (God); we have waited for him, and he will save us: this is Yahuah (LORD); we have waited for him, we will be glad and rejoice in his salvation* (Isaiah 25:9). The waiting is the posture Isaiah''s next song voices: *Yea, in the way of thy judgments, O Yahuah (LORD), have we waited for thee; the desire of our soul is to thy name, and to the remembrance of thee* (Isaiah 26:8). And the gladness is the wedding-shout of heaven: *Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). The long-waited-for Elohim — the Formed Son who appeared and saves, who is Yahuah and has a Father — is at last revealed, and the waiting turns to rejoicing in his salvation.',
+       sv.verse_id, ev.verse_id, 'free', 26609
+  FROM _s303_isa25_lookup sv, _s303_isa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=25 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54) — Paul quotes Isaiah 25:8 by name at the last trump; bodily resurrection at the last day.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55) — the *victory* of Isaiah 25:8 taunts the grave; Paul welds Isaiah 25:8 to Hosea 13:14.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death* (Revelation 21:4) — Isaiah 25:8''s *wipe away tears from off all faces* consummated where death is no more.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the Lamb... shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17) — the same wiping-away of every tear (Isaiah 25:8), done by the Lamb for the gathered multitude.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *O death, I will be thy plagues; O grave, I will be thy destruction* (Hosea 13:14) — Hosea sings the same defeat of the grave Isaiah declares; the verse Paul binds to Isaiah 25:8.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Thy dead men shall live... Awake and sing, ye that dwell in dust* (Isaiah 26:19) — Isaiah''s own next breath names the means death is swallowed (25:8): the resurrection of the body.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *the souls of the righteous are in the hand of Yahuah (God), and there shall no torment touch them* (Wisdom of Solomon 3:1) — the restored witness holds the same hope as Isaiah''s swallowed death (25:8).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *yet is their hope full of immortality* (Wisdom of Solomon 3:4) — what Isaiah promised (death swallowed, every tear wiped, 25:8), the restored witness names *hope full of immortality*.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=8
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-he-will-swallow-up-death-in-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *many shall come from the east and west, and shall sit down with Abraham, and Isaac, and Jacob, in the kingdom of heaven* (Matthew 8:11) — the scattered gathered to the patriarchs'' table at Isaiah''s mountain-feast (25:6).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-a-feast-of-fat-things-in-this-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Blessed is he that shall eat bread in the kingdom of Elohim (God)* (Luke 14:15) — the feast of fat things (Isaiah 25:6) is the table the kingdom-guest blesses; the great supper filled from the highways.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-a-feast-of-fat-things-in-this-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Blessed are they which are called unto the marriage supper of the Lamb* (Revelation 19:9) — the mountain-feast of Isaiah 25:6 consummated as the wedding supper of the Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-a-feast-of-fat-things-in-this-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the vail untaken away in the reading of the old testament; which vail is done away in Messiah (Christ)* (2 Corinthians 3:14) — the covering Isaiah saw destroyed (25:7) is done away in the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-the-vail-spread-over-all-nations-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when it shall turn to Yahuah (Lord), the vail shall be taken away* (2 Corinthians 3:16) — Isaiah''s promise that Yahuah will destroy *the vail spread over all nations* (25:7), as they turn to him.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-the-vail-spread-over-all-nations-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *in the way of thy judgments, O Yahuah (LORD), have we waited for thee* (Isaiah 26:8) — the waiting of *we have waited for him* (Isaiah 25:9) voiced in Isaiah''s next song.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-lo-this-is-our-elohim-we-have-waited-for-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Let us be glad and rejoice... for the marriage of the Lamb is come* (Revelation 19:7) — the gladness of *we will be glad and rejoice in his salvation* (Isaiah 25:9) is the wedding-shout of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s303_isa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-25-lo-this-is-our-elohim-we-have-waited-for-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_28.sql (Isaiah 28) -----
+-- Chapter: Isaiah 28 — THE CORNERSTONE keystone. Against the scornful rulers who *have made a
+-- covenant with death* (28:15), Adonai Yahuah lays a foundation: *Behold, I lay in Zion for a
+-- foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that
+-- believeth shall not make haste* (28:16). The whole New Testament reaches back here and names
+-- the Stone: Peter quotes it verbatim (1 Pet 2:6), Paul fuses it with 8:14 into the
+-- stumblingstone (Rom 9:33, Rom 10:11), and the temple of both houses is built on that
+-- foundation, Yahusha himself the chief corner stone (Eph 2:20) — the dividing wall broken,
+-- the two made one in him. Lateral within the canon: *The stone which the builders refused is
+-- become the head stone of the corner* (Psalm 118:22), the verse Yahusha turns on the builders
+-- (Matt 21:42) and Peter preaches to the rulers (Acts 4:11). Earlier in the chapter Paul finds
+-- the sign of tongues: *with stammering lips and another tongue will he speak to this people*
+-- (28:11), quoted at 1 Cor 14:21 — the rest offered and refused (28:12). The judicial hardening
+-- of the scoffers — *precept upon precept... that they might go, and fall backward, and be
+-- broken* (28:13) — is covenant-lawsuit, never ethnic. And the false refuge is swept away: *your
+-- covenant with death shall be disannulled* (28:18) — the death-covenant undone when the Stone
+-- is laid, the death-defeat Isaiah sings in 25:8 and Paul in 1 Cor 15:54-55. Yahuah rises to do
+-- his *strange work* of judgment (28:21).
+-- The Stone is the Formed Son, laid in Zion by Adonai Yahuah (the Lord GOD) — he who is Yahuah
+-- and HAS a Father; NOT trinitarian co-equal grammar, NOT modalist. Believing on him = not
+-- confounded; the foundation joins both houses (Eph 2:14-22), never a new people grafted by
+-- confession (Rom 11:1-2 guard). Torah never abolished.
+-- Tag: isa28   Temp view: _s303_isa28_lookup
+-- Sort band: base 26675, step 3 -> threads at 26675, 26678, 26681, 26684, 26687 (5 threads)
+-- Source of EVERY row: 'canon','isaiah',28,v
+--
+-- Isaiah 28 coverage:
+--   ★★★ v.16 (Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner
+--          stone, a sure foundation: he that believeth shall not make haste)
+--        NT:     ★★★ 1 Peter 2:6 (Behold, I lay in Sion a chief corner stone, elect, precious:
+--                and he that believeth on him shall not be confounded — verbatim), 1 Peter 2:7
+--                (the stone the builders disallowed, made the head of the corner), Romans 9:33
+--                (Paul fuses 28:16 + 8:14: I lay in Sion a stumblingstone... whosoever believeth
+--                on him shall not be ashamed), Romans 10:11 (the scripture saith, Whosoever
+--                believeth on him shall not be ashamed), ★★ Ephesians 2:20 (built upon the
+--                foundation of the apostles and prophets, Yahusha HaMashiach himself the chief
+--                corner stone) — THREAD 1
+--        Extras: none warranted (the Stone weave is the NT's own naming, dense and verbatim)
+--        Tanakh: ★ Psalm 118:22 (The stone which the builders refused is become the head stone
+--                of the corner) — THREAD 1 (lateral keystone)
+--   ★★★ v.16 read by the gospel + Acts (the rejected/head-of-corner stone)
+--        NT:     ★★ Matthew 21:42 (The stone which the builders rejected, the same is become the
+--                head of the corner), Acts 4:11 (This is the stone which was set at nought of you
+--                builders, which is become the head of the corner) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: Psalm 118:22 (above) is the verse Matt 21:42 / Acts 4:11 are quoting
+--   ★★ v.11-12 (with stammering lips and another tongue will he speak to this people... This is
+--          the rest wherewith ye may cause the weary to rest... yet they would not hear)
+--        NT:     ★★ 1 Corinthians 14:21 (In the law it is written, With men of other tongues and
+--                other lips will I speak unto this people; and yet for all that will they not hear
+--                me, saith Yahuah) — THREAD 2 (verbatim quotation; tongues a sign to unbelief)
+--        Extras: none warranted
+--        Tanakh: held in prose — the rest offered and refused (28:12)
+--   ★ v.13 (the word of Yahuah was unto them precept upon precept... that they might go, and fall
+--          backward, and be broken, and snared, and taken)
+--        NT:     ★ 1 Peter 2:8 (a stone of stumbling, and a rock of offence, even to them which
+--                stumble at the word, being disobedient) — THREAD 3 (the word that breaks the
+--                scoffers; judicial hardening, covenant-lawsuit)
+--        Extras: none warranted
+--        Tanakh: woven in prose with the scornful rulers of v.14
+--   ★★ v.15 + v.18 (We have made a covenant with death, and with hell are we at agreement...
+--          your covenant with death shall be disannulled)
+--        NT:     ★ 1 Corinthians 15:54 (Death is swallowed up in victory), 1 Corinthians 15:55
+--                (O death, where is thy sting? O grave, where is thy victory?) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 25:8 (He will swallow up death in victory... for Yahuah hath spoken
+--                it) — THREAD 4 (the death-defeat that disannuls the death-covenant)
+--   v.21 (Yahuah shall rise up... that he may do his work, his strange work)
+--        NT:     none warranted distinct (the strange-work-of-judgment is held in THREAD 4 prose
+--                and the chapter header; not forced to a single NT verse)
+--        Extras: none warranted
+--        Tanakh: held in prose
+--   v.23-29 (the plowman parable — the husbandman's measured threshing taught by Elohim)
+--        NT:     none warranted   Extras: none warranted   Tanakh: held in prose (the wisdom
+--                coda; Yahuah Tseva'ot wonderful in counsel — no separate add forced)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-28-the-tried-stone-the-sure-foundation-in-zion — NT (1 Peter 2, Romans 9, Romans
+--      10, Ephesians 2, Matthew 21, Acts 4) + Tanakh (Psalm 118) [free]
+--      (★★★ THE cornerstone keystone; the Stone laid in Zion IS the Formed Son; both houses one)
+--   2. isaiah-28-stammering-lips-and-another-tongue — NT (1 Corinthians 14) [free]
+--      (★★ tongues a sign to unbelief; the rest offered and refused)
+--   3. isaiah-28-precept-upon-precept-fall-backward-and-be-broken — NT (1 Peter 2) [free]
+--      (★ judicial hardening of the scoffers; the word that breaks; covenant-lawsuit)
+--   4. isaiah-28-your-covenant-with-death-shall-be-disannulled — NT (1 Corinthians 15) +
+--      Tanakh (Isaiah 25) [free]
+--      (★★ the false death-refuge swept away; death swallowed up in victory)
+--   5. isaiah-28-yahuah-rises-to-do-his-strange-work — Tanakh (Isaiah 25) [free]
+--      (the strange work of judgment that sweeps the refuge of lies; the line and the plummet)
+--
+-- Framing notes:
+--   ★★★ THE TRIED STONE (THREAD 1): Against the rulers who trust a covenant with death, Adonai
+--      Yahuah (the Lord GOD) answers with a foundation: *Behold, I lay in Zion for a foundation
+--      a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth
+--      shall not make haste* (Isaiah 28:16). Peter quotes it almost word for word and names the
+--      Stone the Messiah: *Wherefore also it is contained in the scripture, Behold, I lay in Sion
+--      a chief corner stone, elect, precious: and he that believeth on him shall not be
+--      confounded* (1 Peter 2:6) — the living stone, *disallowed indeed of men, but chosen of
+--      Elohim (God), and precious* (2:4), made *the head of the corner* (2:7). Paul fuses 28:16
+--      with Isaiah 8:14 into the stumblingstone: *Behold, I lay in Sion a stumblingstone and rock
+--      of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33), repeated
+--      *Whosoever believeth on him shall not be ashamed* (Romans 10:11) — the believing that is
+--      not confounded. And the temple rises on that foundation, both houses one in him: *built
+--      upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ)
+--      himself being the chief corner stone* (Ephesians 2:20) — the One who *hath made both one,
+--      and hath broken down the middle wall of partition* (2:14). The Stone is the Formed Son,
+--      laid in Zion by Adonai Yahuah — Yahuah, who HAS a Father; not co-equal persons, not a
+--      modalist collapse. Lateral within the canon, the builders' refused stone is the head of
+--      the corner: *The stone which the builders refused is become the head stone of the corner*
+--      (Psalm 118:22) — the verse Yahusha turns on the builders (*Did ye never read in the
+--      scriptures, The stone which the builders rejected, the same is become the head of the
+--      corner*, Matthew 21:42) and Peter preaches to the rulers of Yashar'el (*This is the stone
+--      which was set at nought of you builders, which is become the head of the corner*, Acts
+--      4:11). One Stone across the whole library; he that believeth shall not make haste.
+--   ★★ STAMMERING LIPS (THREAD 2): To a people who would not hear plain teaching — *Whom shall
+--      he teach knowledge?* (28:9), *precept upon precept; line upon line; here a little, and
+--      there a little* (28:10) — Yahuah says *with stammering lips and another tongue will he
+--      speak to this people* (28:11), having offered and been refused the rest: *This is the rest
+--      wherewith ye may cause the weary to rest... yet they would not hear* (28:12). Paul quotes
+--      it of tongues as a sign to unbelief: *In the law it is written, With men of other tongues
+--      and other lips will I speak unto this people; and yet for all that will they not hear me,
+--      saith Yahuah (Lord)* (1 Corinthians 14:21) — *tongues are for a sign, not to them that
+--      believe, but to them that believe not* (14:22). The foreign tongue is the sign to those
+--      who refused the rest plainly offered.
+--   ★ FALL BACKWARD AND BE BROKEN (THREAD 3): To the scornful rulers the word itself becomes the
+--      snare: *But the word of Yahuah (LORD) was unto them precept upon precept... that they might
+--      go, and fall backward, and be broken, and snared, and taken* (Isaiah 28:13). Peter names
+--      the same Stone as the rock that breaks the disobedient: *And a stone of stumbling, and a
+--      rock of offence, even to them which stumble at the word, being disobedient* (1 Peter 2:8).
+--      The hardening is judicial — covenant-lawsuit on those who will not hear, never ethnic; the
+--      same word that is a sure foundation to the believer is a stone of stumbling to the scoffer.
+--   ★★ THE COVENANT WITH DEATH DISANNULLED (THREAD 4): The rulers boast a false refuge: *Because
+--      ye have said, We have made a covenant with death, and with hell are we at agreement... for
+--      we have made lies our refuge* (Isaiah 28:15). When the tried Stone is laid, the line and
+--      plummet sweep it away: *your covenant with death shall be disannulled, and your agreement
+--      with hell shall not stand* (28:18). The death-covenant cannot survive the One who undoes
+--      death itself. Isaiah sings it on the mountain: *He will swallow up death in victory; and
+--      Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces... for Yahuah (LORD)
+--      hath spoken it* (Isaiah 25:8); and Paul seals it at the last trump: *Death is swallowed up
+--      in victory* (1 Corinthians 15:54), *O death, where is thy sting? O grave, where is thy
+--      victory?* (15:55). The false refuge of lies is disannulled because death is swallowed up;
+--      the only sure foundation is the Stone in Zion.
+--   THE STRANGE WORK (THREAD 5): Yahuah rises to judge: *Judgment also will I lay to the line,
+--      and righteousness to the plummet: and the hail shall sweep away the refuge of lies* (Isaiah
+--      28:17); *For Yahuah (LORD) shall rise up as in mount Perazim, he shall be wroth as in the
+--      valley of Gibeon, that he may do his work, his strange work; and bring to pass his act, his
+--      strange act* (28:21). Judgment is his *strange work* — alien to his mercy, but real. The
+--      same hand that swallows up death (Isaiah 25:8) sweeps the refuge of lies; the same mountain
+--      that holds the feast holds the judgment. Held tightly to the line-and-plummet of the
+--      chapter, the strange act that levels the false refuge.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (woe to the crown of pride, the drunkards of Ephraim — the
+--      northern house's covenant-breaking, woven in the chapter prose), v.5-6 (Yahuah a crown of
+--      glory to the residue — the remnant, held in prose), v.7-10 (the priest and prophet erred
+--      through wine — the preface to the stammering-lips sign, THREAD 2), v.19-20 (the vexation,
+--      the short bed — the inescapable judgment, THREAD 4/5 prose), v.22 (be ye not mockers — the
+--      warning, THREAD 3 prose), v.23-29 (the plowman parable — Yahuah Tseva'ot's measured wisdom
+--      in judgment, the coda; held in prose). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s303_isa28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): The tried stone, the sure foundation in Zion — the cornerstone keystone
+    ('canon','isaiah',28,16,'canon','1-peter',2,6,'free',
+      E'*Wherefore also it is contained in the scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6). Peter quotes Isaiah 28:16 almost word for word and names the Stone the Messiah: the *tried stone, a precious corner stone, a sure foundation* Adonai Yahuah lays in Zion — *he that believeth shall not make haste* (Isaiah 28:16) — is the living Stone, *chosen of Elohim (God), and precious* (2:4). He that believeth on him shall not be confounded.'),
+    ('canon','isaiah',28,16,'canon','1-peter',2,7,'free',
+      E'*Unto you therefore which believe he is precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner* (1 Peter 2:7). The *precious corner stone* of Isaiah 28:16 is precious to them that believe, but to the disobedient he is *the stone which the builders disallowed*, made *the head of the corner*. The same Stone is foundation to the believer and reproach to the scoffer.'),
+    ('canon','isaiah',28,16,'canon','romans',9,33,'free',
+      E'*As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33). Paul fuses Isaiah 28:16 with Isaiah 8:14: the Stone Yahuah lays in Zion — *a sure foundation: he that believeth shall not make haste* (Isaiah 28:16) — is both foundation and stumblingstone, and *whosoever believeth on him shall not be ashamed*. The believing that is not confounded is the believing that is not ashamed.'),
+    ('canon','isaiah',28,16,'canon','romans',10,11,'free',
+      E'*For the scripture saith, Whosoever believeth on him shall not be ashamed* (Romans 10:11). Paul repeats the promise of Isaiah 28:16 — *he that believeth shall not make haste* — as *Whosoever believeth on him shall not be ashamed*, opening it wide: *the same Yahuah (Lord) over all is rich unto all that call upon him* (10:12). The sure foundation holds every one that believes.'),
+    ('canon','isaiah',28,16,'canon','ephesians',2,20,'free',
+      E'*And are built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20). The *foundation... a precious corner stone* of Isaiah 28:16 is the foundation the household is built on, *Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* — the One who *hath made both one, and hath broken down the middle wall of partition* (2:14). The two houses are one temple on the Stone laid in Zion.'),
+    ('canon','isaiah',28,16,'canon','matthew',21,42,'free',
+      E'*Yahusha (Jesus) saith unto them, Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner: this is Yahuah''s (Lord''s) doing, and it is marvellous in our eyes?* (Matthew 21:42). The cornerstone Adonai Yahuah lays in Zion (Isaiah 28:16) is the Stone the builders reject and is *become the head of the corner* — Yahusha turns the word on the chief priests, *they perceived that he spake of them* (21:45). The Stone the builders refuse is the Stone laid for a sure foundation.'),
+    ('canon','isaiah',28,16,'canon','acts',4,11,'free',
+      E'*This is the stone which was set at nought of you builders, which is become the head of the corner* (Acts 4:11). Peter, before the rulers of Yashar''el (Israel), names the crucified and risen Yahusha as the Stone of Isaiah 28:16 *set at nought of you builders*, now *become the head of the corner* — *neither is there salvation in any other* (4:12). The Stone laid in Zion is the only sure foundation.'),
+    ('canon','isaiah',28,16,'canon','psalms',118,22,'free',
+      E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). The *tried stone, a precious corner stone, a sure foundation* of Isaiah 28:16 is the very Stone the builders refuse and Yahuah exalts: *become the head stone of the corner... this is the LORD''S doing; it is marvellous in our eyes* (118:22-23). The lateral keystone the whole gospel quotes — the refused Stone is the head of the corner.'),
+
+    -- THREAD 2 (★★): Stammering lips and another tongue — tongues a sign to unbelief
+    ('canon','isaiah',28,11,'canon','1-corinthians',14,21,'free',
+      E'*In the law it is written, With men of other tongues and other lips will I speak unto this people; and yet for all that will they not hear me, saith Yahuah (Lord)* (1 Corinthians 14:21). Paul quotes Isaiah 28:11 — *with stammering lips and another tongue will he speak to this people* — and reads it as the sign of tongues: *tongues are for a sign, not to them that believe, but to them that believe not* (14:22). The foreign tongue is Yahuah''s sign to a people who *would not hear* (Isaiah 28:12).'),
+    ('canon','isaiah',28,12,'canon','1-corinthians',14,21,'free',
+      E'*and yet for all that will they not hear me, saith Yahuah (Lord)* (1 Corinthians 14:21). The rest was offered and refused: *This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear* (Isaiah 28:12). Paul''s quotation carries the same refusal — *they will not hear me* — the stammering tongue is the sign given because the plain word of rest was spurned.'),
+
+    -- THREAD 3 (★): Precept upon precept — fall backward and be broken (judicial hardening)
+    ('canon','isaiah',28,13,'canon','1-peter',2,8,'free',
+      E'*And a stone of stumbling, and a rock of offence, even to them which stumble at the word, being disobedient: whereunto also they were appointed* (1 Peter 2:8). The word that became the scoffers'' snare — *the word of Yahuah (LORD) was unto them precept upon precept... that they might go, and fall backward, and be broken, and snared, and taken* (Isaiah 28:13) — is the Stone that breaks the disobedient: *a stone of stumbling... to them which stumble at the word*. The same word is sure foundation to the believer and a rock of offence to the scoffer; judicial hardening, never ethnic.'),
+
+    -- THREAD 4 (★★): Your covenant with death shall be disannulled — death swallowed up
+    ('canon','isaiah',28,18,'canon','isaiah',25,8,'free',
+      E'*He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). The rulers'' boast — *We have made a covenant with death* (28:15) — is undone: *your covenant with death shall be disannulled* (Isaiah 28:18), because Yahuah *will swallow up death in victory*. The death-covenant cannot stand before the One who swallows up death itself.'),
+    ('canon','isaiah',28,18,'canon','1-corinthians',15,54,'free',
+      E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). The disannulling of the covenant with death (Isaiah 28:18) is sealed at the last trump: *Death is swallowed up in victory*. The false refuge of lies is swept away because death itself is conquered in the risen Messiah.'),
+    ('canon','isaiah',28,18,'canon','1-corinthians',15,55,'free',
+      E'*O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55). The *covenant with death* that *shall be disannulled* (Isaiah 28:18) has no standing where death is mocked: *O death, where is thy sting?* The agreement with hell cannot survive the victory over the grave; the only refuge is the tried Stone, not the lie.'),
+
+    -- THREAD 5: Yahuah rises to do his strange work — the line and the plummet
+    ('canon','isaiah',28,21,'canon','isaiah',25,8,'free',
+      E'*He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces... for Yahuah (LORD) hath spoken it* (Isaiah 25:8). Yahuah *shall rise up... that he may do his work, his strange work* (Isaiah 28:21) — judgment alien to his mercy, the hail that *sweeps away the refuge of lies* (28:17). The same hand that rises in strange work to level the false refuge is the hand that *swallows up death in victory* and *wipes away tears from off all faces*; the judgment and the mercy are one motion of one love.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-28-the-tried-stone-the-sure-foundation-in-zion',
+       E'Behold, I lay in Zion a tried stone — the cornerstone the whole gospel names',
+       E'Against the scornful rulers of Jerusalem who trust a covenant with death, Adonai Yahuah (the Lord GOD) answers with a foundation: *Therefore thus saith Adonai Yahuah (the Lord GOD), Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner stone, a sure foundation: he that believeth shall not make haste* (Isaiah 28:16). The whole New Testament reaches back here and names the Stone. Peter quotes it almost word for word: *Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6) — the living Stone, *disallowed indeed of men, but chosen of Elohim (God), and precious* (2:4), made *the head of the corner* (2:7). Paul fuses it with Isaiah 8:14 into the stumblingstone: *Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33), repeated *Whosoever believeth on him shall not be ashamed* (Romans 10:11) — the believing that is not confounded. And the temple of both houses rises on that foundation: *built upon the foundation of the apostles and prophets, Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20) — the One who *hath made both one, and hath broken down the middle wall of partition* (2:14), the two houses one in him. Lateral within the canon, the builders'' refused stone is the head of the corner: *The stone which the builders refused is become the head stone of the corner* (Psalm 118:22) — the verse Yahusha turns on the builders, *Did ye never read in the scriptures, The stone which the builders rejected, the same is become the head of the corner* (Matthew 21:42), and Peter preaches to the rulers of Yashar''el (Israel), *This is the stone which was set at nought of you builders, which is become the head of the corner* (Acts 4:11). The Stone is the Formed Son, laid in Zion by Adonai Yahuah — he who is Yahuah and HAS a Father; not co-equal persons, not a modalist collapse. One Stone across the whole library; he that believeth shall not make haste.',
+       sv.verse_id, ev.verse_id, 'free', 26675
+  FROM _s303_isa28_lookup sv, _s303_isa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=28 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-28-stammering-lips-and-another-tongue',
+       E'With stammering lips and another tongue — tongues a sign to unbelief',
+       E'To a people who would not hear plain teaching — *Whom shall he teach knowledge? and whom shall he make to understand doctrine?* (Isaiah 28:9), reduced to *precept upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little* (28:10) — Yahuah declares: *For with stammering lips and another tongue will he speak to this people* (28:11). The rest had been offered and refused: *To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear* (28:12). Paul quotes this very word of tongues as a sign to unbelief: *In the law it is written, With men of other tongues and other lips will I speak unto this people; and yet for all that will they not hear me, saith Yahuah (Lord)* (1 Corinthians 14:21) — and draws the lesson, *Wherefore tongues are for a sign, not to them that believe, but to them that believe not* (14:22). The foreign tongue is Yahuah''s sign to those who spurned the rest plainly offered; the strange speech falls on ears that would not hear the clear word.',
+       sv.verse_id, ev.verse_id, 'free', 26678
+  FROM _s303_isa28_lookup sv, _s303_isa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=28 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-28-precept-upon-precept-fall-backward-and-be-broken',
+       E'Precept upon precept — the word that breaks the scoffers',
+       E'To the scornful rulers the very word of Yahuah becomes the snare: *But the word of Yahuah (LORD) was unto them precept upon precept, precept upon precept; line upon line, line upon line; here a little, and there a little; that they might go, and fall backward, and be broken, and snared, and taken* (Isaiah 28:13). The mocking sing-song the drunkards threw back at the prophet is turned into the verdict on them — the same word that is a sure foundation to the believer is the stone that breaks the disobedient. Peter names it as the Stone of stumbling: *And a stone of stumbling, and a rock of offence, even to them which stumble at the word, being disobedient: whereunto also they were appointed* (1 Peter 2:8). Read it as covenant-lawsuit, never ethnic: *Wherefore hear the word of Yahuah (LORD), ye scornful men, that rule this people which is in Jerusalem* (28:14). The hardening is judicial — the righteous verdict on those who will not hear; the word that lays the sure foundation in Zion is the same word over which the scoffer falls backward.',
+       sv.verse_id, ev.verse_id, 'free', 26681
+  FROM _s303_isa28_lookup sv, _s303_isa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=28 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-28-your-covenant-with-death-shall-be-disannulled',
+       E'Your covenant with death disannulled — death swallowed up in victory',
+       E'The scornful rulers boast a false refuge: *Because ye have said, We have made a covenant with death, and with hell are we at agreement; when the overflowing scourge shall pass through, it shall not come unto us: for we have made lies our refuge, and under falsehood have we hid ourselves* (Isaiah 28:15). When the tried Stone is laid in Zion (28:16), the line and the plummet sweep the lie away: *And your covenant with death shall be disannulled, and your agreement with hell shall not stand; when the overflowing scourge shall pass through, then ye shall be trodden down by it* (28:18). The death-covenant cannot survive the One who undoes death itself. Isaiah sings it on the mountain of the feast: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for Yahuah (LORD) hath spoken it* (Isaiah 25:8). And Paul seals it at the last trump: *then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54), *O death, where is thy sting? O grave, where is thy victory?* (15:55). The refuge of lies is disannulled because death is swallowed up; the only sure refuge is the Stone in Zion, not the agreement with hell.',
+       sv.verse_id, ev.verse_id, 'free', 26684
+  FROM _s303_isa28_lookup sv, _s303_isa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=28 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-28-yahuah-rises-to-do-his-strange-work',
+       E'His strange work — the line and the plummet that sweep the refuge of lies',
+       E'When the Stone is laid, judgment is set to the measure: *Judgment also will I lay to the line, and righteousness to the plummet: and the hail shall sweep away the refuge of lies, and the waters shall overflow the hiding place* (Isaiah 28:17). And Yahuah rises to do it: *For Yahuah (LORD) shall rise up as in mount Perazim, he shall be wroth as in the valley of Gibeon, that he may do his work, his strange work; and bring to pass his act, his strange act* (28:21). Judgment is his *strange work* — alien to his mercy, foreign to his heart, but real and exact; the hail that sweeps away every lie the scoffers hid behind. Yet the same hand that rises in strange act to level the false refuge is the hand that brings the mercy: *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces... for Yahuah (LORD) hath spoken it* (Isaiah 25:8). The mountain that holds the judgment holds the feast; the strange work that breaks the refuge of lies and the mercy that wipes away tears are one motion of one love.',
+       sv.verse_id, ev.verse_id, 'free', 26687
+  FROM _s303_isa28_lookup sv, _s303_isa28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=28 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded* (1 Peter 2:6) — Isaiah 28:16 quoted almost verbatim; the Stone is the Messiah, and he that believeth shall not be confounded.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the stone which the builders disallowed, the same is made the head of the corner* (1 Peter 2:7) — the *precious corner stone* (Isaiah 28:16) is precious to the believer, reproach to the disobedient.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed* (Romans 9:33) — Paul fuses Isaiah 28:16 with 8:14; the sure foundation is also the stumblingstone.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Whosoever believeth on him shall not be ashamed* (Romans 10:11) — *he that believeth shall not make haste* (Isaiah 28:16) opened wide to every one that believes.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Yahusha HaMashiach (Jesus Christ) himself being the chief corner stone* (Ephesians 2:20) — the *foundation... a precious corner stone* (Isaiah 28:16) on which both houses are built one temple, the middle wall broken down.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *The stone which the builders rejected, the same is become the head of the corner* (Matthew 21:42) — Yahusha turns the refused-Stone word on the builders; *they perceived that he spake of them* (21:45).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*This is the stone which was set at nought of you builders, which is become the head of the corner* (Acts 4:11) — Peter preaches the Stone of Isaiah 28:16 to the rulers of Yashar''el; *neither is there salvation in any other* (4:12).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *The stone which the builders refused is become the head stone of the corner* (Psalm 118:22) — the lateral keystone the whole gospel quotes; the refused Stone is the head of the corner, the tried Stone laid in Zion.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-the-tried-stone-the-sure-foundation-in-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *With men of other tongues and other lips will I speak unto this people; and yet for all that will they not hear me, saith Yahuah (Lord)* (1 Corinthians 14:21) — Isaiah 28:11 quoted; *tongues are for a sign... to them that believe not* (14:22).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=11
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=14 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-stammering-lips-and-another-tongue'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*and yet for all that will they not hear me, saith Yahuah (Lord)* (1 Corinthians 14:21) — the same refusal of the rest offered: *yet they would not hear* (Isaiah 28:12); the strange tongue is the sign to ears that spurned the plain word.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=12
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=14 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-stammering-lips-and-another-tongue'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *a stone of stumbling, and a rock of offence, even to them which stumble at the word, being disobedient* (1 Peter 2:8) — the word that makes the scoffers *fall backward, and be broken* (Isaiah 28:13) is the same Stone; judicial hardening, never ethnic.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=13
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-precept-upon-precept-fall-backward-and-be-broken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He will swallow up death in victory; and Adonai Yahuah (the Lord GOD) will wipe away tears from off all faces... for Yahuah (LORD) hath spoken it* (Isaiah 25:8) — the *covenant with death* (28:15) *disannulled* (28:18) because Yahuah swallows up death itself.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=18
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-your-covenant-with-death-shall-be-disannulled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Death is swallowed up in victory* (1 Corinthians 15:54) — the disannulling of the death-covenant (Isaiah 28:18) sealed at the last trump.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=18
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-your-covenant-with-death-shall-be-disannulled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55) — the *agreement with hell* (Isaiah 28:18) cannot stand where the grave is mocked; the only refuge is the tried Stone, not the lie.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=18
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-your-covenant-with-death-shall-be-disannulled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He will swallow up death in victory... will wipe away tears from off all faces... for Yahuah (LORD) hath spoken it* (Isaiah 25:8) — the hand that rises in *his strange work* (Isaiah 28:21) to sweep the refuge of lies is the same hand that swallows death and wipes away tears; judgment and mercy, one motion of one love.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=28 AND sv.verse_number=21
+  JOIN _s303_isa28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=25 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-28-yahuah-rises-to-do-his-strange-work'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_isaiah_45.sql (Isaiah 45) -----
+-- Chapter: Isaiah 45 — A CHRISTOLOGICAL KEYSTONE chapter. The great oneness-declaration of the
+-- prophet (*I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me*, 45:5)
+-- and the every-knee oath sworn by Yahuah to himself (*I have sworn by myself... That unto me every
+-- knee shall bow, every tongue shall swear*, 45:23). Read in the Formed/Formless lens this is the
+-- load-bearing chapter: the universal homage Yahuah swore to HIMSELF in 45:23 is rendered at the
+-- name of the Formed Son — *to the glory of Elohim (God) the Father* (Philippians 2:11). The Son
+-- bears the Father's Name and receives the worship the Father swore to himself; NOT two co-equal
+-- persons, NOT modalism — the Formed and the Formless, the one Yahuah and the one Mediator the Man
+-- (1 Corinthians 8:6; 1 Timothy 2:5). The chapter opens with Cyrus, a pagan king named *anointed*
+-- (45:1) — the type of the true Deliverer who frees the captives — and ends with the universal call
+-- *Look unto me, and be ye saved, all the ends of the earth* (45:22) and the seed of Yashar'el
+-- justified (45:25). Two-house + Romans 11 guard threaded; potter-and-clay (45:9) quoted verbatim
+-- by Paul (Romans 9:20-21).
+-- Tag: isa45   Temp view: _s303_isa45_lookup
+-- Sort band: base 27100, step 3 -> threads at 27100, 27103, 27106, 27109, 27112, 27115 (6 threads)
+-- Source of EVERY row: 'canon','isaiah',45,v
+--
+-- Isaiah 45 coverage:
+--   ★★ v.1 (Thus saith Yahuah (LORD) to his anointed, to Cyrus, whose right hand I have holden)
+--        NT:     ★ Luke 4:18 (he hath anointed me... to preach deliverance to the captives) — THREAD 2
+--                (the type Cyrus the anointed who frees captives -> the true Anointed)
+--        Extras: none warranted (no clean Cyrus-as-anointed extras witness)
+--        Tanakh: ★ Isaiah 44:28 (That saith of Cyrus, He is my shepherd... saying to Jerusalem,
+--                Thou shalt be built) — THREAD 2 (the named anointed shepherd, build the city,
+--                let go the captives 45:13)
+--   ★★ v.5-6 (I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me...
+--          that they may know from the rising of the sun, and from the west, that there is none beside me)
+--        NT:     ★★ 1 Corinthians 8:4,6 (there is none other Elohim (God) but one... to us there is
+--                but one Elohim (God), the Father... and one Lord Yahusha HaMashiach), ★ Ephesians 4:6
+--                (One Elohim (God) and Father of all), ★ 1 Timothy 2:5 (one Elohim (God), and one
+--                mediator... the man HaMashiach Yahusha) — THREAD 3 (the Shema in Formed/Formless)
+--        Extras: none warranted distinct (the oneness-declaration is the NT's own Shema-weave)
+--        Tanakh: ★ Isaiah 44:6 (I am the first, and I am the last; and beside me there is no Elohim
+--                (God)) — THREAD 3 (the same declaration, the chapter just before)
+--   ★ v.7 (I form the light, and create darkness: I make peace, and create evil: I Yahuah (LORD) do
+--          all these things)
+--        NT:     ★ Romans 11:36 (For of him, and through him, and to him, are all things) — THREAD 4
+--                (Yahuah sovereign over weal and woe; all things of him)
+--        Extras: none warranted
+--        Tanakh: ★ Amos 3:6 (shall there be evil in a city, and Yahuah (LORD) hath not done it?) —
+--                THREAD 4 (no dualism; he ordains weal and woe)
+--   ★★ v.21-22 (there is no Elohim (God) else beside me; a just Elohim (God) and a Saviour... Look unto
+--          me, and be ye saved, all the ends of the earth)
+--        NT:     ★ John 3:14-15 (as Moses lifted up the serpent... even so must the Son of Adam be
+--                lifted up: That whosoever believeth in him should not perish) — THREAD 5 (look and
+--                live), ★ Acts 13:47 (I have set thee to be a light of the Gentiles... for salvation
+--                unto the ends of the earth) — THREAD 5 (the ends-of-earth ingathering)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 49:6 (I will also give thee for a light to the Gentiles, that thou mayest be
+--                my salvation unto the end of the earth) — THREAD 5 (the servant the ends-of-earth light)
+--   ★★★ v.23 (I have sworn by myself... That unto me every knee shall bow, every tongue shall swear)
+--        NT:     ★★★ Romans 14:11 (As I live, saith Yahuah (Lord), every knee shall bow to me, and
+--                every tongue shall confess to Elohim (God)) — Paul quotes it verbatim — and
+--                ★★★ Philippians 2:10-11 (at the name of Yahusha (Jesus) every knee should bow...
+--                every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the
+--                glory of Elohim (God) the Father) — THREAD 1 (the every-knee keystone, Formed/Formless)
+--        Extras: none warranted distinct (the every-knee weave is the NT's own quotation)
+--        Tanakh: woven (v.24-25 in Yahuah have I righteousness... all the seed of Yashar'el justified)
+--   ★ v.9 (Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it,
+--          What makest thou?)
+--        NT:     ★ Romans 9:20-21 (Shall the thing formed say to him that formed it, Why hast thou made
+--                me thus? Hath not the potter power over the clay) — THREAD 6 (Paul quotes the
+--                potter/clay verbatim)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 49:... held in prose; the potter/clay laterals (Isaiah 64:8, Jeremiah 18)
+--                woven in the thread prose, the load-bearing weave is Paul's own quotation
+--   v.11-19 (the Holy One of Yashar'el his Maker; I have made the earth; created it not in vain;
+--          Yashar'el shall be saved with an everlasting salvation; I have not spoken in secret)
+--        NT:     none warranted distinct (the Maker-of-all and everlasting-salvation are woven into
+--                THREADS 3, 4, 5 prose; no single NT verse forced)
+--        Extras: none warranted
+--        Tanakh: woven (the everlasting salvation of 45:17 is the two-house salvation surfaced in
+--                THREAD 5; the creation-of-all of 45:12,18 in THREAD 4)
+--
+-- Threads (slug — target libraries):
+--   1. isaiah-45-unto-me-every-knee-shall-bow — NT (Romans 14, Philippians 2) [free]
+--      (★★★ the every-knee keystone; the oath Yahuah swore to himself rendered at the name of the
+--       Formed Son, to the glory of the Father — Formed/Formless, NOT co-equal, NOT modalist)
+--   2. isaiah-45-his-anointed-cyrus-the-shepherd-who-frees-the-captives — NT (Luke 4) + Tanakh (Isaiah 44) [free]
+--      (★★ Cyrus the anointed/shepherd, a TYPE — the pagan king named messiah to release captives,
+--       foreshadow of the true Anointed who frees the captives)
+--   3. isaiah-45-i-am-yahuah-and-there-is-none-else — NT (1 Corinthians 8, Ephesians 4, 1 Timothy 2)
+--      + Tanakh (Isaiah 44) [free]
+--      (★★ the great oneness-declaration; the Shema held in Formed/Formless — one Yahuah, one Mediator the Man)
+--   4. isaiah-45-i-form-the-light-and-create-darkness — NT (Romans 11) + Tanakh (Amos 3) [free]
+--      (★ Yahuah sovereign over weal and woe; no dualism — of him, through him, to him are all things)
+--   5. isaiah-45-look-unto-me-and-be-ye-saved-all-the-ends-of-the-earth — NT (John 3, Acts 13)
+--      + Tanakh (Isaiah 49) [free]
+--      (★★ the universal call of salvation; look and live; the ends-of-earth ingathering, two-house + Rom 11 guard)
+--   6. isaiah-45-shall-the-clay-say-to-him-that-fashioneth-it — NT (Romans 9) [free]
+--      (★ the potter and clay; Paul quotes the Maker/clay of 45:9 verbatim)
+--
+-- Framing notes:
+--   ★★★ EVERY KNEE (THREAD 1): *I have sworn by myself, the word is gone out of my mouth in
+--      righteousness, and shall not return, That unto me every knee shall bow, every tongue shall
+--      swear* (Isaiah 45:23). Yahuah swears BY HIMSELF — there is none greater to swear by — that the
+--      whole creation's homage is HIS. Paul quotes it verbatim: *As I live, saith Yahuah (Lord), every
+--      knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11). And he
+--      shows WHERE that universal oath is rendered: *That at the name of Yahusha (Jesus) every knee
+--      should bow... And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is
+--      Lord, to the glory of Elohim (God) the Father* (Philippians 2:10-11). The homage Yahuah swore to
+--      himself in Isaiah is given at the name of the Formed Son — and it lands *to the glory of the
+--      Father*. This is the Formed and the Formless: the Son bears the Father's Name (Exodus 23:21) and
+--      receives the worship the Father swore to himself, NOT as a second co-equal person, NOT as the
+--      Father re-masked, but as the expressed Word who is Yahuah and HAS a Father. The every-knee oath
+--      is one oath, rendered to the One enthroned, redounding to the Formless Source.
+--   ★★ CYRUS THE ANOINTED (THREAD 2): *Thus saith Yahuah (LORD) to his anointed, to Cyrus, whose right
+--      hand I have holden* (Isaiah 45:1). A pagan king is named *anointed* — messiah — to subdue
+--      nations, open the two-leaved gates, and *let go my captives, not for price nor reward* (45:13).
+--      Isaiah named him a chapter before: *That saith of Cyrus, He is my shepherd... saying to
+--      Jerusalem, Thou shalt be built; and to the temple, Thy foundation shall be laid* (Isaiah 44:28).
+--      Cyrus is a TYPE — the anointed shepherd who frees captives and rebuilds, the foreshadow of the
+--      true Anointed who reads Isaiah in the synagogue and says *he hath anointed me... to preach
+--      deliverance to the captives... to set at liberty them that are bruised* (Luke 4:18). The shadow
+--      is a foreign king; the substance is the Formed Son who frees the real captives, not for price
+--      nor reward.
+--   ★★ NONE ELSE (THREAD 3): *I am Yahuah (LORD), and there is none else, there is no Elohim (God)
+--      beside me... That they may know from the rising of the sun, and from the west, that there is none
+--      beside me* (Isaiah 45:5-6). The same word the chapter before: *I am the first, and I am the last;
+--      and beside me there is no Elohim (God)* (Isaiah 44:6). The apostolic Shema holds this oneness in
+--      the Formed/Formless: *there is none other Elohim (God) but one... But to us there is but one
+--      Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach
+--      (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:4,6) — *One Elohim
+--      (God) and Father of all* (Ephesians 4:6); *one Elohim (God), and one mediator between Elohim
+--      (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). Not a contradiction of
+--      the oneness but its Formed expression: the one Yahuah and the one Mediator the Man, the Father
+--      the Source and the Son the agent *by whom are all things* — there is none else beside Him.
+--   ★ FORM LIGHT, CREATE DARKNESS (THREAD 4): *I form the light, and create darkness: I make peace, and
+--      create evil: I Yahuah (LORD) do all these things* (Isaiah 45:7). No rival power; no dualism.
+--      Amos says the same: *shall there be evil in a city, and Yahuah (LORD) hath not done it?* (Amos
+--      3:6). And Paul seals it: *For of him, and through him, and to him, are all things: to whom be
+--      glory for ever* (Romans 11:36). Weal and woe alike are in His hand — the One who *created it not
+--      in vain* (45:18) ordains all things.
+--   ★★ LOOK UNTO ME (THREAD 5): *there is no Elohim (God) else beside me; a just Elohim (God) and a
+--      Saviour... Look unto me, and be ye saved, all the ends of the earth: for I am Elohim (God), and
+--      there is none else* (Isaiah 45:21-22). The universal call. The look-and-live the Son names to
+--      Nicodemus: *as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be
+--      lifted up: That whosoever believeth in him should not perish, but have eternal life* (John
+--      3:14-15) — look unto the One lifted up and be saved. And the ends-of-earth ingathering: *I have
+--      set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the
+--      earth* (Acts 13:47), quoting the servant-call *I will also give thee for a light to the Gentiles,
+--      that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). The call goes to all
+--      the ends of the earth — the gathering of the scattered seed, the two-house ingathering, and the
+--      good news proclaimed broadly; never a casting-off of Yashar'el (*Hath Elohim (God) cast away his
+--      people? Elohim (God) forbid*, Romans 11:1) — *In Yahuah (LORD) shall all the seed of Yashar'el
+--      (Israel) be justified* (45:25).
+--   ★ THE CLAY (THREAD 6): *Woe unto him that striveth with his Maker!... Shall the clay say to him that
+--      fashioneth it, What makest thou?* (Isaiah 45:9). Paul quotes the Maker-and-clay verbatim: *Nay
+--      but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him
+--      that formed it, Why hast thou made me thus? Hath not the potter power over the clay* (Romans
+--      9:20-21). The vessel does not arraign the Potter; the Maker of the earth and man upon it (45:12)
+--      answers to no clay.
+--   VERSES WITH NO SEPARATE ADD: v.2-4 (the gates of brass, the treasures of darkness, called by name
+--      for Jacob's sake — woven into THREAD 2's Cyrus type), v.8 (drop down ye heavens... let
+--      righteousness spring up — the salvation-and-righteousness of THREAD 5, held in prose), v.10
+--      (woe to him that saith to his father — the second clay-woe, woven into THREAD 6), v.13-19 (raised
+--      him in righteousness, let go my captives; the Saviour that hideth himself; Yashar'el saved with
+--      everlasting salvation; not spoken in secret — distributed across THREADS 2,3,5 prose), v.20
+--      (the escaped of the nations, the wood of the graven image — the idol-rebuke woven into THREAD 3's
+--      oneness), v.24-25 (in Yahuah have I righteousness... all the seed of Yashar'el justified — the
+--      every-knee answer of THREAD 1 and the two-house justification of THREAD 5). All recorded, none
+--      silently skipped.
+
+CREATE TEMP VIEW _s303_isa45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): unto me every knee shall bow — the every-knee keystone, Formed/Formless
+    ('canon','isaiah',45,23,'canon','romans',14,11,'free',
+      E'*For it is written, As I live, saith Yahuah (Lord), every knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11). Paul quotes the oath of *I have sworn by myself... That unto me every knee shall bow, every tongue shall swear* (Isaiah 45:23) word for word — the homage Yahuah swore to himself, that *every knee shall bow to me, and every tongue shall confess to Elohim (God)*. The whole creation''s worship is sworn to the One who swears by himself, for there is none greater to swear by.'),
+    ('canon','isaiah',45,23,'canon','philippians',2,10,'free',
+      E'*That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10). The every-knee oath of *unto me every knee shall bow* (Isaiah 45:23) is rendered *at the name of Yahusha (Jesus)* — the universal homage Yahuah swore to himself is given to the Formed Son who bears the Father''s Name. Things in heaven, in earth, and under the earth bow at the Name; the oath of Isaiah finds its knee at the name of the Son.'),
+    ('canon','isaiah',45,23,'canon','philippians',2,11,'free',
+      E'*And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:11). The *every tongue shall swear* of Isaiah 45:23 is the every tongue that *should confess that Yahusha HaMashiach (Jesus Christ) is Lord* — and the confession lands *to the glory of Elohim (God) the Father*. This is the Formed and the Formless: the Son receives the worship the Father swore to himself, and that worship redounds to the glory of the Formless Source. Not two co-equal persons, not the Father re-masked — the expressed Word who is Yahuah and HAS a Father, bearing the Name, gathering every knee back to the One who sent him.'),
+
+    -- THREAD 2 (★★): his anointed, Cyrus — the shepherd who frees the captives, a TYPE
+    ('canon','isaiah',45,1,'canon','isaiah',44,28,'free',
+      E'*That saith of Cyrus, He is my shepherd, and shall perform all my pleasure: even saying to Jerusalem, Thou shalt be built; and to the temple, Thy foundation shall be laid* (Isaiah 44:28). The *anointed... Cyrus* of Isaiah 45:1 was named a chapter before as *my shepherd* — the foreign king appointed to rebuild Jerusalem and lay the temple''s foundation. Yahuah holds his right hand (45:1) and he shall *let go my captives, not for price nor reward* (45:13). The anointed shepherd who frees and rebuilds is the shadow.'),
+    ('canon','isaiah',45,1,'canon','luke',4,18,'free',
+      E'*The Spirit of Yahuah (Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised* (Luke 4:18). Cyrus was *his anointed* (Isaiah 45:1) to *let go my captives* (45:13) — a pagan king named messiah to release the exiles. The true Anointed reads Isaiah in the synagogue and names himself the One *anointed... to preach deliverance to the captives*. The type is a foreign king freeing a nation; the antitype is the Formed Son freeing the real captives, not for price nor reward.'),
+
+    -- THREAD 3 (★★): I am Yahuah, and there is none else — the Shema in Formed/Formless
+    ('canon','isaiah',45,5,'canon','isaiah',44,6,'free',
+      E'*Thus saith Yahuah (LORD) the King of Yashar''el (Israel), and his redeemer Yahuah Tseva''ot (LORD of hosts); I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6). The declaration of *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5) is the same word the chapter before: *I am the first, and I am the last; and beside me there is no Elohim (God)*. The Holy One of Yashar''el alone is Elohim; there is none beside Him from the rising of the sun to the west.'),
+    ('canon','isaiah',45,6,'canon','1-corinthians',8,6,'free',
+      E'*But to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:6). The oneness of *there is none beside me. I am Yahuah (LORD), and there is none else* (Isaiah 45:6) is held in the apostolic Shema not as contradiction but as Formed/Formless: *one Elohim (God), the Father, of whom are all things... and one Lord Yahusha HaMashiach, by whom are all things*. The Father the Source, the Son the agent *by whom are all things* — one Yahuah, none beside.'),
+    ('canon','isaiah',45,5,'canon','ephesians',4,6,'free',
+      E'*One Elohim (God) and Father of all, who is above all, and through all, and in you all* (Ephesians 4:6). *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5) — the *One Elohim (God) and Father of all* who is *above all, and through all, and in you all*. The oneness Isaiah declares is the one Father above all; there is none beside Him.'),
+    ('canon','isaiah',45,5,'canon','1-timothy',2,5,'free',
+      E'*For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). The *none else... no Elohim (God) beside me* of Isaiah 45:5 is the *one Elohim (God)* — and the one Mediator is *the man HaMashiach Yahusha*. The Formless One beside whom there is none, and the Formed Mediator the Man who brings the many home to Him: one Elohim, one Mediator, none beside.'),
+
+    -- THREAD 4 (★): I form the light, and create darkness — Yahuah sovereign over weal and woe
+    ('canon','isaiah',45,7,'canon','amos',3,6,'free',
+      E'*Shall a trumpet be blown in the city, and the people not be afraid? shall there be evil in a city, and Yahuah (LORD) hath not done it?* (Amos 3:6). *I form the light, and create darkness: I make peace, and create evil: I Yahuah (LORD) do all these things* (Isaiah 45:7) is Amos''s same word — *shall there be evil in a city, and Yahuah (LORD) hath not done it?* No rival power, no dualism: weal and woe alike are in the hand of the One Yahuah, who ordains all these things.'),
+    ('canon','isaiah',45,7,'canon','romans',11,36,'free',
+      E'*For of him, and through him, and to him, are all things: to whom be glory for ever. Amen* (Romans 11:36). *I Yahuah (LORD) do all these things* (Isaiah 45:7) — the One who forms light and creates darkness, makes peace and creates evil — is the One of whom Paul says *of him, and through him, and to him, are all things*. There is no second power; all things are of the one Yahuah, to His glory for ever.'),
+
+    -- THREAD 5 (★★): Look unto me, and be ye saved — the universal call, ends of the earth
+    ('canon','isaiah',45,22,'canon','john',3,14,'free',
+      E'*And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up* (John 3:14). *Look unto me, and be ye saved, all the ends of the earth* (Isaiah 45:22) is the look-and-live the Son names to Nicodemus: as the wilderness serpent was lifted up to be looked upon, *even so must the Son of Adam be lifted up*. Look unto the One lifted up, and be saved.'),
+    ('canon','isaiah',45,22,'canon','john',3,15,'free',
+      E'*That whosoever believeth in him should not perish, but have eternal life* (John 3:15). The call *Look unto me, and be ye saved, all the ends of the earth* (Isaiah 45:22) is answered in the One lifted up — *that whosoever believeth in him should not perish, but have eternal life*. The universal look unto the Saviour is the universal life to all who behold him.'),
+    ('canon','isaiah',45,22,'canon','acts',13,47,'free',
+      E'*For so hath Yahuah (Lord) commanded us, saying, I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47). *Look unto me, and be ye saved, all the ends of the earth* (Isaiah 45:22) is the salvation carried to *the ends of the earth* — the ingathering of the scattered. *In Yahuah (LORD) shall all the seed of Yashar''el (Israel) be justified* (45:25); the call goes broad to the ends of the earth, gathering the lost sheep home, never a casting-off of His people (*Hath Elohim (God) cast away his people? Elohim (God) forbid*, Romans 11:1).'),
+    ('canon','isaiah',45,22,'canon','isaiah',49,6,'free',
+      E'*And he said, It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). *Look unto me, and be ye saved, all the ends of the earth* (Isaiah 45:22) is the servant''s commission a few chapters on: the Saviour given *for a light to the Gentiles... my salvation unto the end of the earth*, who FIRST raises up the tribes of Jacob and restores the preserved of Yashar''el — the two-house ingathering before the light reaches the ends of the earth.'),
+
+    -- THREAD 6 (★): Shall the clay say to him that fashioneth it — the potter and clay
+    ('canon','isaiah',45,9,'canon','romans',9,20,'free',
+      E'*Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). Paul echoes the woe of *Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9) — *Shall the thing formed say to him that formed it, Why hast thou made me thus?* The vessel does not arraign the One who fashioned it; woe to him that striveth with his Maker.'),
+    ('canon','isaiah',45,9,'canon','romans',9,21,'free',
+      E'*Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). The clay that cannot say to its fashioner *What makest thou?* (Isaiah 45:9) is the clay over which *the potter* has *power... of the same lump to make one vessel unto honour, and another unto dishonour*. The Maker of the earth and of man upon it (45:12) answers to no clay.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-45-unto-me-every-knee-shall-bow',
+       E'Unto me every knee shall bow — the oath Yahuah swore to himself, rendered at the name of the Son',
+       E'Yahuah swears by himself — there is none greater to swear by: *I have sworn by myself, the word is gone out of my mouth in righteousness, and shall not return, That unto me every knee shall bow, every tongue shall swear* (Isaiah 45:23). The whole creation''s homage is sworn to be HIS. Paul quotes the oath verbatim: *For it is written, As I live, saith Yahuah (Lord), every knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11). And he shows where that universal oath is rendered: *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth; And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:10-11). The homage Yahuah swore to himself in Isaiah is given *at the name of Yahusha (Jesus)* — and it lands *to the glory of Elohim (God) the Father*. This is the Formed and the Formless: the Son bears the Father''s Name and receives the worship the Father swore to himself, then gathers that worship back to the Formless Source. Not two co-equal persons; not the Father re-masked as the Son — the expressed Word who is Yahuah and HAS a Father, before whom every knee bows. The chapter''s own close answers the oath: *Surely, shall one say, in Yahuah (LORD) have I righteousness and strength... In Yahuah (LORD) shall all the seed of Yashar''el (Israel) be justified, and shall glory* (45:24-25).',
+       sv.verse_id, ev.verse_id, 'free', 27100
+  FROM _s303_isa45_lookup sv, _s303_isa45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=45 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-45-his-anointed-cyrus-the-shepherd-who-frees-the-captives',
+       E'His anointed, Cyrus — the shepherd who frees the captives, the type of the true Anointed',
+       E'The chapter opens with a startling word: a pagan king is named *anointed* — messiah: *Thus saith Yahuah (LORD) to his anointed, to Cyrus, whose right hand I have holden, to subdue nations before him; and I will loose the loins of kings, to open before him the two leaved gates; and the gates shall not be shut* (Isaiah 45:1). Yahuah holds his right hand, goes before him, and the purpose is release: *he shall build my city, and he shall let go my captives, not for price nor reward* (45:13). Isaiah named him a chapter before as Yahuah''s shepherd: *That saith of Cyrus, He is my shepherd, and shall perform all my pleasure: even saying to Jerusalem, Thou shalt be built; and to the temple, Thy foundation shall be laid* (Isaiah 44:28). Cyrus is a TYPE — a foreign king raised up, anointed, to free a captive people and rebuild the city. He is the shadow; the substance is the One who reads Isaiah in the synagogue and names himself the Anointed: *The Spirit of Yahuah (Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised* (Luke 4:18). A foreign king frees a nation from Babylon; the Formed Son frees the real captives, not for price nor reward.',
+       sv.verse_id, ev.verse_id, 'free', 27103
+  FROM _s303_isa45_lookup sv, _s303_isa45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=45 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-45-i-am-yahuah-and-there-is-none-else',
+       E'I am Yahuah, and there is none else — the oneness held in the Formed and the Formless',
+       E'The great oneness-declaration of the prophet rings four times in this chapter: *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me: I girded thee, though thou hast not known me: That they may know from the rising of the sun, and from the west, that there is none beside me. I am Yahuah (LORD), and there is none else* (Isaiah 45:5-6). It is the same word the chapter before: *I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6). The apostolic Shema does not break this oneness — it holds it in the Formed and the Formless: *there is none other Elohim (God) but one... But to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:4,6); *One Elohim (God) and Father of all, who is above all, and through all, and in you all* (Ephesians 4:6); *For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). The Father is the Source *of whom are all things*; the Son is the agent *by whom are all things*, the one Mediator the Man. Not two gods, not a co-equal triad, not a collapse of Father into Son — the one Yahuah beside whom there is none, expressed in the Formed Son who brings the many home to the Formless Source. There is none else.',
+       sv.verse_id, ev.verse_id, 'free', 27106
+  FROM _s303_isa45_lookup sv, _s303_isa45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=45 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-45-i-form-the-light-and-create-darkness',
+       E'I form the light, and create darkness — Yahuah sovereign over weal and woe, no rival power',
+       E'Against every dualism — every notion of an evil power equal to the good — the prophet sets one sovereign hand: *I form the light, and create darkness: I make peace, and create evil: I Yahuah (LORD) do all these things* (Isaiah 45:7). Weal and woe alike answer to the One Yahuah. Amos says it the same way: *Shall a trumpet be blown in the city, and the people not be afraid? shall there be evil in a city, and Yahuah (LORD) hath not done it?* (Amos 3:6). And Paul seals the whole vision of the One from whom and to whom all flows: *For of him, and through him, and to him, are all things: to whom be glory for ever. Amen* (Romans 11:36). The One who *created it not in vain* and *formed it to be inhabited* (Isaiah 45:18) ordains all these things; there is no second throne, no rival maker, no power beside Him.',
+       sv.verse_id, ev.verse_id, 'free', 27109
+  FROM _s303_isa45_lookup sv, _s303_isa45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=45 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-45-look-unto-me-and-be-ye-saved-all-the-ends-of-the-earth',
+       E'Look unto me, and be ye saved, all the ends of the earth — the universal call, look and live',
+       E'After the idols are shamed and the One true Saviour stands alone, the call goes out to all: *there is no Elohim (God) else beside me; a just Elohim (God) and a Saviour; there is none beside me. Look unto me, and be ye saved, all the ends of the earth: for I am Elohim (God), and there is none else* (Isaiah 45:21-22). It is a look-and-live — the same the Son names to Nicodemus: *And as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up: That whosoever believeth in him should not perish, but have eternal life* (John 3:14-15). As the bitten looked upon the lifted serpent and lived, so the ends of the earth look unto the One lifted up and are saved. The salvation reaches the ends of the earth — and Paul takes the servant''s commission as his charter: *I have set thee to be a light of the Gentiles, that thou shouldest be for salvation unto the ends of the earth* (Acts 13:47), quoting *I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth* (Isaiah 49:6). But mark the order in Isaiah 49:6 — the servant FIRST raises up *the tribes of Jacob* and restores *the preserved of Yashar''el (Israel)*, and THEN is given as a light to the end of the earth. The universal call is the gathering of the scattered seed, the two-house ingathering proclaimed broadly; never a casting-off of His people (*Hath Elohim (God) cast away his people? Elohim (God) forbid*, Romans 11:1), for *In Yahuah (LORD) shall all the seed of Yashar''el (Israel) be justified, and shall glory* (Isaiah 45:25).',
+       sv.verse_id, ev.verse_id, 'free', 27112
+  FROM _s303_isa45_lookup sv, _s303_isa45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=45 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'isaiah-45-shall-the-clay-say-to-him-that-fashioneth-it',
+       E'Shall the clay say to him that fashioneth it — the potter and the clay, quoted by Paul',
+       E'The prophet pronounces a woe on the creature that would arraign its Creator: *Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* (Isaiah 45:9) — and again, *Woe unto him that saith unto his father, What begettest thou?* (45:10). The Maker who *made the earth, and created man upon it* (45:12) answers to no clay. Paul takes up the very image, almost word for word: *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus? Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:20-21). The vessel does not strive with the hand that fashioned it; the potsherd does not instruct the Potter. The woe stands: woe to him that striveth with his Maker.',
+       sv.verse_id, ev.verse_id, 'free', 27115
+  FROM _s303_isa45_lookup sv, _s303_isa45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='isaiah' AND ev.chapter_number=45 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *As I live, saith Yahuah (Lord), every knee shall bow to me, and every tongue shall confess to Elohim (God)* (Romans 14:11) — Paul quotes the oath of *unto me every knee shall bow, every tongue shall swear* (Isaiah 45:23) verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=23
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-unto-me-every-knee-shall-bow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *That at the name of Yahusha (Jesus) every knee should bow, of things in heaven, and things in earth, and things under the earth* (Philippians 2:10) — the oath of Isaiah 45:23 rendered at the name of the Formed Son who bears the Father''s Name.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=23
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-unto-me-every-knee-shall-bow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *And that every tongue should confess that Yahusha HaMashiach (Jesus Christ) is Lord, to the glory of Elohim (God) the Father* (Philippians 2:11) — the worship Yahuah swore to himself (Isaiah 45:23) given to the Son and redounding to the Father; the Formed and the Formless, not co-equal persons.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=23
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-unto-me-every-knee-shall-bow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He is my shepherd... saying to Jerusalem, Thou shalt be built; and to the temple, Thy foundation shall be laid* (Isaiah 44:28) — the *anointed... Cyrus* of 45:1 named a chapter before as Yahuah''s shepherd to rebuild and free.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=1
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-his-anointed-cyrus-the-shepherd-who-frees-the-captives'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he hath anointed me... to preach deliverance to the captives... to set at liberty them that are bruised* (Luke 4:18) — Cyrus the anointed freed a nation (Isaiah 45:1,13); the true Anointed frees the real captives, not for price nor reward.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=1
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-his-anointed-cyrus-the-shepherd-who-frees-the-captives'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I am the first, and I am the last; and beside me there is no Elohim (God)* (Isaiah 44:6) — the same oneness-word as *I am Yahuah (LORD), and there is none else* (45:5), the chapter just before.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=44 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-i-am-yahuah-and-there-is-none-else'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *one Elohim (God), the Father, of whom are all things... and one Lord Yahusha HaMashiach, by whom are all things* (1 Corinthians 8:6) — the *none beside me* of 45:6 held in Formed/Formless: the Father the Source, the Son the agent, one Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=6
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-i-am-yahuah-and-there-is-none-else'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *One Elohim (God) and Father of all, who is above all, and through all, and in you all* (Ephesians 4:6) — the *none else... no Elohim (God) beside me* of Isaiah 45:5 is the one Father above all.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-i-am-yahuah-and-there-is-none-else'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5) — the one beside whom there is none (Isaiah 45:5), and the one Mediator the Man who brings the many home.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=5
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-i-am-yahuah-and-there-is-none-else'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *shall there be evil in a city, and Yahuah (LORD) hath not done it?* (Amos 3:6) — the same word as *I make peace, and create evil: I Yahuah (LORD) do all these things* (Isaiah 45:7); no rival power, no dualism.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=7
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-i-form-the-light-and-create-darkness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *For of him, and through him, and to him, are all things: to whom be glory for ever* (Romans 11:36) — *I Yahuah (LORD) do all these things* (Isaiah 45:7); all things of the one Yahuah, no second throne.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=7
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-i-form-the-light-and-create-darkness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *as Moses lifted up the serpent in the wilderness, even so must the Son of Adam be lifted up* (John 3:14) — *Look unto me, and be ye saved* (Isaiah 45:22) is the look-and-live: behold the One lifted up.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=22
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-look-unto-me-and-be-ye-saved-all-the-ends-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *That whosoever believeth in him should not perish, but have eternal life* (John 3:15) — the universal look unto the Saviour (Isaiah 45:22) is life to all who behold him.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=22
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-look-unto-me-and-be-ye-saved-all-the-ends-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I have set thee to be a light of the Gentiles... for salvation unto the ends of the earth* (Acts 13:47) — *all the ends of the earth* (Isaiah 45:22) reached; the scattered gathered, never a casting-off of His people (Romans 11:1).'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=22
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-look-unto-me-and-be-ye-saved-all-the-ends-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles... my salvation unto the end of the earth* (Isaiah 49:6) — the servant FIRST gathers the two houses, THEN is the ends-of-earth light; *Look unto me, and be ye saved* (45:22) is the two-house ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=22
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-look-unto-me-and-be-ye-saved-all-the-ends-of-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20) — Paul echoes *Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9); the vessel does not arraign its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=9
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-shall-the-clay-say-to-him-that-fashioneth-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21) — the clay of Isaiah 45:9 over which the Potter has power; the Maker of man (45:12) answers to no clay.'
+  FROM cross_reference_threads t
+  JOIN _s303_isa45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='isaiah' AND sv.chapter_number=45 AND sv.verse_number=9
+  JOIN _s303_isa45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='isaiah-45-shall-the-clay-say-to-him-that-fashioneth-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session303 — Isaiah cross-references complete.'
