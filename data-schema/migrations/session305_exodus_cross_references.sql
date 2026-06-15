@@ -2200,6 +2200,2414 @@ SELECT t.id, cr.id, 4, E'*when Yahuah your Elohim shall have given you rest from
  WHERE t.slug='exodus-17-yahuah-nissi-war-with-amalek-generation-to-generation'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_exodus_13.sql (Exodus 13) -----
+-- Chapter: Exodus 13 — SANCTIFY THE FIRSTBORN; the feast of Unleavened Bread (seven days, no leaven seen); the sign on the hand and frontlets between the eyes (that Yahuah's torah may be in thy mouth); the redemption of the firstborn (every firstling of an ass redeemed with a lamb, all the firstborn of man redeemed); Elohim leads them not by the way of the Philistines but about by the wilderness of the Red sea; Moses takes the bones of Joseph; Yahuah goes before them in a pillar of cloud by day and a pillar of fire by night.
+-- Tag: ex13   Temp view: _s305_ex13_lookup   Session prefix: s305
+-- Sort band: base 29300, step 3 -> threads at 29300, 29303, 29306, 29309, 29312 (5 threads)
+-- Source of EVERY row: 'canon','exodus',13,v
+--
+-- Exodus 13 coverage:
+--   ★★ v.2,11-15 (Sanctify unto me all the firstborn, whatsoever openeth the womb... it is mine; set apart all that openeth the matrix; every firstling of an ass redeem with a lamb; all the firstborn of man among thy children shalt thou redeem; for Yahuah slew all the firstborn of Egypt — therefore I sacrifice... but all the firstborn of my children I redeem)
+--        NT:     ★ Luke 2:22-23 (they brought him to Jerusalem, to present him to Yahuah... Every male that openeth the womb shall be called holy to Yahuah — quoted OF Yahusha's presentation) — THREAD 1 (the firstborn-redeemed type, Yahusha presented under THIS ordinance); Colossians 1:15 (the firstborn of every creature — lateral); Hebrews 12:23 (the church of the firstborn, which are written in heaven — lateral)
+--        Extras: none warranted distinct (Jubilees/Jasher carry the going-out and Passover-night, not a clean firstborn-redemption clause; framed in prose, not forced as members)
+--        Tanakh: ★ Numbers 3:12-13 (I have taken the Levites... instead of all the firstborn that openeth the matrix... for on the day that I smote all the firstborn in Egypt I hallowed unto me all the firstborn); Numbers 8:17 (all the firstborn of the children of Yashar'el are mine... I sanctified them for myself) — THREAD 1 (the Levites taken IN STEAD of the firstborn; the substitution/redemption order)
+--   ★ v.3-10 (Remember this day; no leavened bread eaten; this day came ye out in the month Abib; seven days thou shalt eat unleavened bread, in the seventh day a feast to Yahuah; no leaven seen in all thy quarters; keep this ordinance in his season from year to year)
+--        NT:     ★ 1 Corinthians 5:7-8 (Messiah our passover is sacrificed for us... let us keep the feast... with the unleavened bread of sincerity and truth — lateral, the feast KEPT not abolished) — THREAD 2
+--        Extras: ★ Jubilees 49:21 (the festival of unleavened bread, that they should eat unleavened bread seven days... that they should observe its festival); Jubilees 49:23 (you celebrated this festival with haste when you went forth from Egypt) — THREAD 2
+--        Tanakh: ★ Leviticus 23:6 (on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah: seven days ye must eat unleavened bread); Deuteronomy 16:3 (seven days shalt thou eat unleavened bread... even the bread of affliction; for thou camest forth out of Egypt in haste) — THREAD 2 (the appointed time on the moedim calendar, the teaching-ordinance kept in its season)
+--   ★★ v.8-9,16 (thou shalt shew thy son... it shall be for a sign upon thine hand, and for a memorial between thine eyes, that Yahuah's torah may be in thy mouth; a token upon thine hand and frontlets between thine eyes)
+--        NT:     none warranted distinct (the bind-the-word forward-weave is the Torah-on-the-heart of Jer 31/Ezek 36, belongs to its own pack; no clean NT member here, framed in prose)
+--        Extras: none warranted distinct (no clean parse of the sign/frontlets ordinance in the extras for this verse-block; framed in prose)
+--        Tanakh: ★★ Deuteronomy 6:6-8 (these words... shall be in thine heart... bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes); Deuteronomy 11:18 (lay up these my words in your heart... bind them for a sign upon your hand, that they may be as frontlets between your eyes); Psalm 78:4-5 (we will not hide them from their children... he established a testimony in Jacob, and appointed a law in Yashar'el... that they should make them known to their children) — THREAD 3 (Torah-affirmed: the word bound on hand and eyes, taught to the children, kept in the mouth)
+--   v.17-18 (Elohim led them not through the way of the Philistines, although near... but led them about, through the way of the wilderness of the Red sea; went up harnessed)
+--        NT:     none warranted (the leading is narrative here; the cloud-leading is THREAD 5)
+--        Extras: Jasher 81 narrative parallel of the going-out (not framework-load-bearing for the leading-route itself)
+--        Tanakh: none warranted distinct (the shepherd-leading is carried by THREAD 5's pillar)
+--   ★★ v.19 (Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar'el, saying, Elohim will surely visit you; and ye shall carry up my bones away hence with you)
+--        NT:     ★ Hebrews 11:22 (By faith Joseph, when he died, made mention of the departing of the children of Yashar'el; and gave commandment concerning his bones) — THREAD 4 (the oath kept by faith)
+--        Extras: ★ Jasher 80:62 (Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him) — THREAD 4
+--        Tanakh: ★ Genesis 50:25 (Joseph took an oath... Elohim will surely visit you, and ye shall carry up my bones from hence); Joshua 24:32 (the bones of Joseph... buried they in Shechem... it became the inheritance of the children of Joseph); ★★ Ezekiel 37:19 (I will take the stick of Joseph, which is in the hand of Ephraim... and make them one stick — the two-house hope) — THREAD 4
+--   ★★ v.21-22 (Yahuah went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; he took not away the pillar of the cloud by day, nor the pillar of fire by night)
+--        NT:     ★ 1 Corinthians 10:1-2 (all our fathers were under the cloud, and all passed through the sea; and were all baptized unto Moses in the cloud and in the sea) — THREAD 5 (the Presence = the Formed Son, Red Line #4)
+--        Extras: ★ Wisdom of Solomon 18:3 (you gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun) — THREAD 5
+--        Tanakh: ★ Nehemiah 9:12 (thou leddest them in the day by a cloudy pillar; and in the night by a pillar of fire); Nehemiah 9:19 (the pillar of the cloud departed not from them by day... neither the pillar of fire by night); Isaiah 4:5 (Yahuah will create upon mount Zion... a cloud and smoke by day, and the shining of a flaming fire by night — lateral) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn — NT (Luke, Colossians, Hebrews) + Tanakh (Numbers) [free] (★★ the firstborn-redeemed type; Yahusha presented under this ordinance; the Levites taken in stead)
+--   2. exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept — NT (1 Corinthians) + Tanakh (Leviticus, Deuteronomy) + Extras (Jubilees) [extras] (★ the appointed time KEPT, the teaching-ordinance not abolished)
+--   3. exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth — Tanakh (Deuteronomy, Psalm) [free] (★★ Torah-affirmed: the word bound on hand and eyes, taught to the children)
+--   4. exodus-13-the-bones-of-joseph-the-two-house-hope-of-return — NT (Hebrews) + Tanakh (Genesis, Joshua, Ezekiel) + Extras (Jasher) [extras] (★★ two-house: Joseph/Ephraim carried up, the promise of return, the two sticks made one)
+--   5. exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them — NT (1 Corinthians) + Tanakh (Nehemiah, Isaiah) + Extras (Wisdom of Solomon) [extras] (★★ the Presence leading = the Formed Son, the Glory of bush and Sinai)
+--
+-- Framing notes:
+--   ★★ THE REDEEMED FIRSTBORN (THREAD 1): *Sanctify unto me all the firstborn... it is mine* (13:2) and *all the firstborn of man among thy children shalt thou redeem* (13:13). This ties directly to the Passover-firstborn-spared of ch12: because Yahuah slew Egypt's firstborn and spared Yashar'el's under the blood, Yashar'el's firstborn are HIS, claimed and then redeemed. The NT names Yahusha presented under THIS very ordinance: *they brought him to Jerusalem, to present him to Yahuah... Every male that openeth the womb shall be called holy to Yahuah* (Luke 2:22-23) — the Firstborn brought to the temple under the firstborn-law. Numbers 3:12-13 / 8:17 give the substitution: the Levites taken IN STEAD of the firstborn. Colossians 1:15 / Hebrews 12:23 are lateral firstborn-language (the firstborn of every creature; the church of the firstborn) — framed as the firstborn-theme widening, NOT co-equal-persons grammar.
+--   ★ THE FEAST KEPT (THREAD 2): *Seven days thou shalt eat unleavened bread* (13:6), *keep this ordinance in his season from year to year* (13:10). The appointed time on Yahuah's calendar (Red Line #3): Leviticus 23:6 sets it on the moedim, Deuteronomy 16:3 names the bread of affliction, and 1 Corinthians 5:7-8 keeps it FULFILLED, not abolished — *let us keep the feast... with the unleavened bread of sincerity and truth*. A teaching-ordinance kept in its season, never retired. Jubilees 49:21,23 carry the seven-day festival and the haste.
+--   ★★ THE SIGN AND THE FRONTLETS (THREAD 3): *it shall be for a sign upon thine hand, and for a memorial between thine eyes, that Yahuah's torah may be in thy mouth* (13:9,16). Torah-affirmed (Red Lines #6; 1 John 2:3-4 filter): Deuteronomy 6:6-8 and 11:18 echo the binding for a sign on the hand and frontlets between the eyes, and Psalm 78:4-5 the testimony taught to the children. The torah is to be in the mouth, on the hand, before the eyes, taught to the son — the living covenant-word, not a defunct law. (The Torah-on-the-heart forward-weave Jer 31 / Ezek 36 belongs to its own pack; framed in prose only.)
+--   ★★ THE BONES OF JOSEPH / TWO-HOUSE HOPE (THREAD 4): *Moses took the bones of Joseph with him* (13:19), the oath of Genesis 50:25 kept — *Elohim will surely visit you, and ye shall carry up my bones from hence*. Hebrews 11:22 names it faith; Joshua 24:32 buries them in Shechem in the inheritance of the children of Joseph. The framework reads Joseph = the northern house / Ephraim (Red Lines #1,#2): the bones of Joseph carried up to the land are the pledge of the northern house's return, bound to Ezekiel 37:19 — *the stick of Joseph, which is in the hand of Ephraim... and make them one stick*. The promise of return for the scattered house. Jasher 80:62 keeps Moses bringing up the coffin.
+--   ★★ THE PILLAR OF CLOUD AND FIRE (THREAD 5): *Yahuah went before them by day in a pillar of a cloud... and by night in a pillar of fire* (13:21). The Presence that leads is the Formed Son (Red Line #4) — the same Glory of the bush and of Sinai, the One who bears the Name and goes before His people. 1 Corinthians 10:1-2 reads it: *all our fathers were under the cloud... and were all baptized unto Moses in the cloud and in the sea*. Nehemiah 9:12,19 sing the unceasing pillar; Isaiah 4:5 (lateral) sees the cloud-and-fire restored over Zion. Wisdom of Solomon 18:3 — *a burning pillar of fire... an harmless sun*.
+--   EXTRAS: Jubilees 49:21,23 (edition 'jubilees', book 'jubilees', DOUBLE-WRITTEN) carry the seven-day unleavened festival and the haste of the going-out, clean. Jasher 80:62 (edition 'jasher', book 'jasher', DOUBLE-WRITTEN) carries Moses bringing up the coffin of Joseph, clean; note the Jasher parse reads "Israel" (not "Yashar'el") and "Joseph" — quoted exactly as returned. Wisdom of Solomon 18:3 (edition 'apocrypha', book 'the-wisdom-of-solomon', NOT double-written) carries the burning pillar of fire, clean.
+--   VERSES WITH NO ADD: v.17-18 (Elohim led them not by the way of the Philistines but about by the wilderness of the Red sea; went up harnessed) — the leading-route is narrative and the shepherd-leading is carried by THREAD 5's pillar; v.20 (took their journey from Succoth, encamped in Etham) — an itinerary notice, no framework-bearing distinct target warranted in this pack.
+
+CREATE TEMP VIEW _s305_ex13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Sanctify unto me all the firstborn — the redeemed firstborn
+    ('canon','exodus',13,2,'canon','luke',2,23,'free',
+      E'*(As it is written in the law of Yahuah (Lord), Every male that openeth the womb shall be called holy to Yahuah (Lord);)* (Luke 2:23). The command *Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel)... it is mine* (Exodus 13:2) is the very ordinance under which Yahusha (Jesus) is brought to the temple — *Every male that openeth the womb shall be called holy to Yahuah*. The Firstborn Son is presented under the firstborn-law given at the going-out; the type given here is filled in the One *called holy to Yahuah*.'),
+    ('canon','exodus',13,2,'canon','luke',2,22,'free',
+      E'*And when the days of her purification according to the law of Moses were accomplished, they brought him to Jerusalem, to present him to Yahuah (Lord)* (Luke 2:22). The setting-apart of *all the firstborn, whatsoever openeth the womb... it is mine* (Exodus 13:2) is kept to the letter — *they brought him to Jerusalem, to present him to Yahuah* — the parents doing for the firstborn child *after the custom of the law*. The ordinance of Exodus 13 is not retired but obeyed in the presentation of the Firstborn.'),
+    ('canon','exodus',13,13,'canon','colossians',1,15,'free',
+      E'*Who is the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15). The redemption-law — *all the firstborn of man among thy children shalt thou redeem* (Exodus 13:13) — runs into the great firstborn-title: the Formed Son is *the image of the invisible Elohim, the firstborn of every creature*. The firstborn claimed and redeemed in Yashar''el (Israel) foreshadows the One who is Himself the Firstborn, the image of the Father drawn from the Formless — the heir, not a first creature.'),
+    ('canon','exodus',13,2,'canon','hebrews',12,23,'free',
+      E'*To the general assembly and church of the firstborn, which are written in heaven, and to Elohim (God) the Judge of all, and to the spirits of just men made perfect* (Hebrews 12:23). The firstborn *sanctified unto me... it is mine* (Exodus 13:2) widens to the whole gathered people named *the church of the firstborn, which are written in heaven*. The ones claimed as Yahuah''s own at the going-out are the figure of the assembly of the firstborn, set apart and written above.'),
+    ('canon','exodus',13,13,'canon','numbers',3,12,'free',
+      E'*And I, behold, I have taken the Levites from among the children of Yashar''el (Israel) instead of all the firstborn that openeth the matrix among the children of Yashar''el (Israel); therefore the Levites shall be mine* (Numbers 3:12). The redemption of *all the firstborn of man among thy children shalt thou redeem* (Exodus 13:13) is carried out by substitution: the Levites *taken... instead of all the firstborn that openeth the matrix*. The firstborn that is Yahuah''s is redeemed by another taken in his place — the pattern of one set apart in the stead of the claimed.'),
+    ('canon','exodus',13,15,'canon','numbers',3,13,'free',
+      E'*Because all the firstborn are mine; for on the day that I smote all the firstborn in the land of Egypt I hallowed unto me all the firstborn in Yashar''el (Israel), both man and beast: mine shall they be: I am Yahuah (LORD)* (Numbers 3:13). The reason given in *when Pharaoh would hardly let us go... Yahuah (LORD) slew all the firstborn in the land of Egypt... therefore I sacrifice to Yahuah all that openeth the matrix* (Exodus 13:15) is named again: the firstborn of Yashar''el are Yahuah''s *for on the day that I smote all the firstborn in Egypt I hallowed unto me all the firstborn*. The Passover-night sparing is the ground of the firstborn-claim.'),
+    ('canon','exodus',13,15,'canon','numbers',8,17,'free',
+      E'*For all the firstborn of the children of Yashar''el (Israel) are mine, both man and beast: on the day that I smote every firstborn in the land of Egypt I sanctified them for myself* (Numbers 8:17). The word *Yahuah (LORD) slew all the firstborn in the land of Egypt, both the firstborn of man, and the firstborn of beast: therefore I sacrifice to Yahuah all that openeth the matrix* (Exodus 13:15) is restated: *all the firstborn... are mine... on the day that I smote every firstborn in Egypt I sanctified them for myself*. The judgment that fell on Egypt sets apart Yashar''el''s firstborn as Yahuah''s portion forever.'),
+
+    -- THREAD 2 (★): The feast of unleavened bread, seven days — the appointed time kept
+    ('canon','exodus',13,6,'canon','leviticus',23,6,'free',
+      E'*And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6). The command *Seven days thou shalt eat unleavened bread, and in the seventh day shall be a feast to Yahuah (LORD)* (Exodus 13:6) is set on Yahuah''s calendar of appointed times: *the feast of unleavened bread unto Yahuah: seven days ye must eat unleavened bread*. The seven-day feast given at the going-out is one of the moedim, the seasons of Yahuah kept throughout the generations.'),
+    ('canon','exodus',13,3,'canon','deuteronomy',16,3,'free',
+      E'*Thou shalt eat no leavened bread with it; seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste: that thou mayest remember the day when thou camest forth out of the land of Egypt all the days of thy life* (Deuteronomy 16:3). The charge *Remember this day, in which ye came out from Egypt... there shall no leavened bread be eaten* (Exodus 13:3) is named again as *the bread of affliction... for thou camest forth out of Egypt in haste*. The unleavened bread is bound to the memory of the going-out, the feast kept *all the days of thy life*.'),
+    ('canon','exodus',13,6,'canon','1-corinthians',5,7,'free',
+      E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The seven-day removal of leaven — *Seven days thou shalt eat unleavened bread... there shall no leaven be seen with thee in all thy quarters* (Exodus 13:6-7) — is read forward by Sha''ul (Paul): *purge out therefore the old leaven... Messiah our passover is sacrificed for us*. The Lamb is slain, and the unleavened walk goes on; the feast is fulfilled and lived, not abolished.'),
+    ('canon','exodus',13,7,'canon','1-corinthians',5,8,'free',
+      E'*Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Against every reading that retires the appointed time, Sha''ul (Paul) says plainly *let us keep the feast* — answering *there shall no leavened bread be seen with thee, neither shall there be leaven seen with thee in all thy quarters* (Exodus 13:7). The leaven put out of every quarter is the leaven of malice put out of the heart; the feast of unleavened bread is kept in sincerity and truth.'),
+    ('canon','exodus',13,6,'jubilees','jubilees',49,21,'extras',
+      E'*And do you, Moses, command the children of Yashar''el (Israel) to observe the ordinances of the passover... and the festival of unleavened bread, that they should eat unleavened bread seven days, (and) that they should observe its festival, and that they bring an oblation every day during those seven days of joy before Yahuah (God)* (Jubilees 49:21). The restored witness keeps the command of *Seven days thou shalt eat unleavened bread, and in the seventh day shall be a feast to Yahuah (LORD)* (Exodus 13:6) — *the festival of unleavened bread... eat unleavened bread seven days... observe its festival*. The seven-day appointed time is a standing ordinance, kept with joy before Yahuah.'),
+    ('canon','exodus',13,3,'jubilees','jubilees',49,23,'extras',
+      E'*For you celebrated this festival with haste when you went forth from Egypt till you entered into the wilderness of Shur; for on the shore of the sea you completed it* (Jubilees 49:23). The charge *Remember this day, in which ye came out from Egypt, out of the house of bondage; for by strength of hand Yahuah (LORD) brought you out* (Exodus 13:3) is echoed in the restored witness — *you celebrated this festival with haste when you went forth from Egypt*. The hurried going-out is the very thing the feast remembers, kept as a memorial of the deliverance.'),
+
+    -- THREAD 3 (★★): A sign upon thine hand and frontlets — that Yahuah's torah may be in thy mouth
+    ('canon','exodus',13,9,'canon','deuteronomy',6,8,'free',
+      E'*And thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8). The word *it shall be for a sign unto thee upon thine hand, and for a memorial between thine eyes, that the LORD''S law may be in thy mouth* (Exodus 13:9) is taken up whole in the Shema: *bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes*. The torah of Yahuah is to be bound on the hand and set before the eyes — the living covenant-word carried on the body and kept in the heart, not a law laid aside.'),
+    ('canon','exodus',13,9,'canon','deuteronomy',6,6,'free',
+      E'*And these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:6). The aim of the sign on the hand — *that the LORD''S law may be in thy mouth* (Exodus 13:9) — is the same aim as *these words, which I command thee this day, shall be in thine heart*. What is bound on the hand and set before the eyes is first laid up in the heart and spoken in the mouth; the torah is to dwell in the inward man and be taught diligently to the children.'),
+    ('canon','exodus',13,16,'canon','deuteronomy',11,18,'free',
+      E'*Therefore shall ye lay up these my words in your heart and in your soul, and bind them for a sign upon your hand, that they may be as frontlets between your eyes* (Deuteronomy 11:18). The repeated charge *it shall be for a token upon thine hand, and for frontlets between thine eyes* (Exodus 13:16) is given again word for word: *bind them for a sign upon your hand, that they may be as frontlets between your eyes*. The token on the hand and the frontlets between the eyes are the words of Yahuah laid up in the soul, the covenant-instruction worn and remembered.'),
+    ('canon','exodus',13,8,'canon','psalms',78,4,'free',
+      E'*We will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4). The command *thou shalt shew thy son in that day, saying, This is done because of that which Yahuah (LORD) did unto me when I came forth out of Egypt* (Exodus 13:8) is the heart of the psalm''s charge — *we will not hide them from their children, shewing to the generation to come... his wonderful works*. The going-out is told to the son; the testimony is handed down.'),
+    ('canon','exodus',13,8,'canon','psalms',78,5,'free',
+      E'*For he established a testimony in Jacob, and appointed a law in Yashar''el (Israel), which he commanded our fathers, that they should make them known to their children* (Psalm 78:5). The duty *thou shalt shew thy son in that day* (Exodus 13:8) is named as the very purpose of the law: *he established a testimony in Jacob, and appointed a law in Yashar''el... that they should make them known to their children*. The torah and the testimony of the deliverance are taught from father to son, generation to generation.'),
+
+    -- THREAD 4 (★★): The bones of Joseph — the two-house hope of return
+    ('canon','exodus',13,19,'canon','genesis',50,25,'free',
+      E'*And Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). The act *Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el... Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19) keeps the dying oath of Joseph exactly — *Elohim will surely visit you, and ye shall carry up my bones from hence*. The visitation Joseph foresaw has come; the bones are carried up toward the land of the promise.'),
+    ('canon','exodus',13,19,'canon','hebrews',11,22,'free',
+      E'*By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22). The oath behind *he had straitly sworn the children of Yashar''el... ye shall carry up my bones away hence with you* (Exodus 13:19) is named as faith: Joseph *by faith... made mention of the departing of the children of Yashar''el; and gave commandment concerning his bones*. The dying Joseph trusted the going-out would come, and bound his sons to carry his bones to the land — faith in the visitation of Yahuah.'),
+    ('canon','exodus',13,19,'canon','joshua',24,32,'free',
+      E'*And the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem, in a parcel of ground which Jacob bought of the sons of Hamor... and it became the inheritance of the children of Joseph* (Joshua 24:32). What begins in *Moses took the bones of Joseph with him* (Exodus 13:19) is completed when *the bones of Joseph... buried they in Shechem... and it became the inheritance of the children of Joseph*. The bones carried out of Egypt come to rest in the inheritance of the house of Joseph — the northern house brought home to the land.'),
+    ('canon','exodus',13,19,'canon','ezekiel',37,19,'free',
+      E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The carrying-up of *the bones of Joseph* (Exodus 13:19) is the pledge of the northern house''s hope, which the prophet seals: *the stick of Joseph, which is in the hand of Ephraim... and the stick of Yahudah... make them one stick*. Joseph''s bones brought out of Egypt are a sign of Ephraim gathered and joined again to Yahudah — the two houses made one in Yahuah''s hand.'),
+    ('canon','exodus',13,19,'jasher','jasher',80,62,'extras',
+      E'*And Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him* (Jasher 80:62). The extended witness keeps the deed of *Moses took the bones of Joseph with him* (Exodus 13:19) — *Moses hastened... and brought up from there the coffin of Joseph and took it with him*. On the very night of the going-out Moses sees to the oath, carrying up the coffin of Joseph that the dying patriarch''s word might be kept.'),
+
+    -- THREAD 5 (★★): The pillar of cloud and fire — the Presence went before them
+    ('canon','exodus',13,21,'canon','1-corinthians',10,1,'free',
+      E'*Moreover, brethren, I would not that ye should be ignorant, how that all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1). The leading *Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way* (Exodus 13:21) is what Sha''ul (Paul) names: *all our fathers were under the cloud, and all passed through the sea*. The pillar that went before Yashar''el (Israel) is the cloud under which the whole people walked — the Presence leading them out.'),
+    ('canon','exodus',13,21,'canon','1-corinthians',10,2,'free',
+      E'*And were all baptized unto Moses in the cloud and in the sea* (1 Corinthians 10:2). The pillar that led by day and gave light by night — *a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light* (Exodus 13:21) — is read as a baptism: the fathers *all baptized unto Moses in the cloud and in the sea*. The cloud that is the Presence of Yahuah brings the people through; the Formed Son who bears the Name goes before them, the same Glory that filled the bush and would descend on Sinai.'),
+    ('canon','exodus',13,21,'canon','nehemiah',9,12,'free',
+      E'*Moreover thou leddest them in the day by a cloudy pillar; and in the night by a pillar of fire, to give them light in the way wherein they should go* (Nehemiah 9:12). The Levites'' confession remembers *Yahuah (LORD) went before them by day in a pillar of a cloud... and by night in a pillar of fire, to give them light* (Exodus 13:21) almost word for word — *thou leddest them in the day by a cloudy pillar; and in the night by a pillar of fire*. The leading-Presence of the going-out is sung as Yahuah''s own faithfulness to His people.'),
+    ('canon','exodus',13,22,'canon','nehemiah',9,19,'free',
+      E'*Yet thou in thy manifold mercies forsookest them not in the wilderness: the pillar of the cloud departed not from them by day, to lead them in the way; neither the pillar of fire by night* (Nehemiah 9:19). The word *He took not away the pillar of the cloud by day, nor the pillar of fire by night, from before the people* (Exodus 13:22) is confessed again: *the pillar of the cloud departed not from them by day... neither the pillar of fire by night*. The unceasing Presence is the mercy that did not forsake them in the wilderness.'),
+    ('canon','exodus',13,21,'canon','isaiah',4,5,'free',
+      E'*And Yahuah (LORD) will create upon every dwelling place of mount Zion, and upon her assemblies, a cloud and smoke by day, and the shining of a flaming fire by night: for upon all the glory shall be a defence* (Isaiah 4:5). The pillar *a cloud, to lead them the way; and by night... a pillar of fire* (Exodus 13:21) is taken up by the prophet as the restored canopy over Zion — *a cloud and smoke by day, and the shining of a flaming fire by night*. The leading-Presence of the wilderness becomes the abiding glory and defence over the gathered assemblies.'),
+    ('canon','exodus',13,21,'apocrypha','the-wisdom-of-solomon',18,3,'extras',
+      E'*Instead of which you gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun to entertain them honourably* (Wisdom of Solomon 18:3). The night-pillar *by night in a pillar of fire, to give them light* (Exodus 13:21) is sung as Yahuah''s gift — *a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun*. The fire that led Yashar''el (Israel) through the dark is the guiding Presence, a sun that did not scorch, lighting the unknown road.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn',
+       E'Sanctify unto me all the firstborn — the redeemed firstborn',
+       E'The night the firstborn of Egypt were smitten and the firstborn of Yashar''el (Israel) were spared under the blood, Yahuah lays His claim: *Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel), both of man and of beast: it is mine* (Exodus 13:2). Because they were spared, they are His — and so they must be redeemed: *every firstling of an ass thou shalt redeem with a lamb... and all the firstborn of man among thy children shalt thou redeem* (Exodus 13:13), *for... Yahuah (LORD) slew all the firstborn in the land of Egypt... therefore I sacrifice to Yahuah all that openeth the matrix, being males; but all the firstborn of my children I redeem* (Exodus 13:15). The Torah carries out the claim by substitution: *I have taken the Levites from among the children of Yashar''el (Israel) instead of all the firstborn that openeth the matrix... therefore the Levites shall be mine* (Numbers 3:12), *for all the firstborn of the children of Yashar''el are mine... on the day that I smote every firstborn in Egypt I sanctified them for myself* (Numbers 8:17) — one tribe taken in the stead of the claimed firstborn. And the great fulfillment: when the time came, the Firstborn Son was brought to the temple under this very ordinance — *they brought him to Jerusalem, to present him to Yahuah (Lord)... Every male that openeth the womb shall be called holy to Yahuah (Lord)* (Luke 2:22-23). The firstborn-theme widens to the One who is Himself *the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15) — the heir, the image of the Father drawn from the Formless, not a first creature — and to the whole gathered people, *the general assembly and church of the firstborn, which are written in heaven* (Hebrews 12:23). The firstborn spared at Passover, claimed and redeemed, is the figure of the Firstborn given and the firstborn-people set apart.',
+       sv.verse_id, ev.verse_id, 'free', 29300
+  FROM _s305_ex13_lookup sv, _s305_ex13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=13 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept',
+       E'The feast of unleavened bread, seven days — the appointed time kept',
+       E'The going-out is to be remembered by a feast, kept every year in its season: *Remember this day, in which ye came out from Egypt, out of the house of bondage; for by strength of hand Yahuah (LORD) brought you out from this place: there shall no leavened bread be eaten* (Exodus 13:3). *Seven days thou shalt eat unleavened bread, and in the seventh day shall be a feast to Yahuah (LORD)* (Exodus 13:6); *there shall no leaven be seen with thee in all thy quarters* (Exodus 13:7); *thou shalt therefore keep this ordinance in his season from year to year* (Exodus 13:10). This is one of the moedim, the appointed times of Yahuah: *on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6); *seven days shalt thou eat unleavened bread therewith, even the bread of affliction; for thou camest forth out of the land of Egypt in haste* (Deuteronomy 16:3). And the feast is not retired in the Besorah (Gospel) but fulfilled and kept: *purge out therefore the old leaven, that ye may be a new lump... for even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7); *therefore let us keep the feast, not with old leaven... but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). The leaven put out of every quarter is the leaven of malice put out of the heart. The restored witness keeps the seven-day festival as a standing ordinance — *the festival of unleavened bread, that they should eat unleavened bread seven days... that they should observe its festival* (Jubilees 49:21) — remembering the haste of the going-out: *you celebrated this festival with haste when you went forth from Egypt* (Jubilees 49:23). A teaching-ordinance kept in its season, never abolished.',
+       sv.verse_id, ev.verse_id, 'extras', 29303
+  FROM _s305_ex13_lookup sv, _s305_ex13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=13 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth',
+       E'A sign upon thine hand and frontlets between thine eyes — that Yahuah''s torah may be in thy mouth',
+       E'The deliverance is to be taught and worn and spoken: *thou shalt shew thy son in that day, saying, This is done because of that which Yahuah (LORD) did unto me when I came forth out of Egypt* (Exodus 13:8); *and it shall be for a sign unto thee upon thine hand, and for a memorial between thine eyes, that the LORD''S law may be in thy mouth* (Exodus 13:9); *it shall be for a token upon thine hand, and for frontlets between thine eyes* (Exodus 13:16). The torah of Yahuah is to be bound on the hand, set before the eyes, kept in the mouth, and taught to the son. The Shema takes up the same words: *and these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:6), *and thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8); and again, *lay up these my words in your heart and in your soul, and bind them for a sign upon your hand, that they may be as frontlets between your eyes* (Deuteronomy 11:18). The psalmist names the duty of telling the son: *we will not hide them from their children, shewing to the generation to come the praises of Yahuah (LORD), and his strength, and his wonderful works that he hath done* (Psalm 78:4); *for he established a testimony in Jacob, and appointed a law in Yashar''el (Israel)... that they should make them known to their children* (Psalm 78:5). The torah is the living covenant-word — laid up in the heart, worn on the body, declared in the mouth, handed down to the children — never a law set aside.',
+       sv.verse_id, ev.verse_id, 'free', 29306
+  FROM _s305_ex13_lookup sv, _s305_ex13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=13 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-13-the-bones-of-joseph-the-two-house-hope-of-return',
+       E'The bones of Joseph — the two-house hope of return',
+       E'In the very hour of the going-out, one act keeps a promise two centuries old: *And Moses took the bones of Joseph with him: for he had straitly sworn the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you; and ye shall carry up my bones away hence with you* (Exodus 13:19). Joseph had bound his brethren by oath as he died: *Joseph took an oath of the children of Yashar''el (Israel), saying, Elohim (God) will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25). The letter to the Hebrews names it faith: *By faith Joseph, when he died, made mention of the departing of the children of Yashar''el (Israel); and gave commandment concerning his bones* (Hebrews 11:22) — Joseph trusted the visitation would come. And it is completed in the land: *the bones of Joseph, which the children of Yashar''el (Israel) brought up out of Egypt, buried they in Shechem... and it became the inheritance of the children of Joseph* (Joshua 24:32). The extended witness keeps the deed: *Moses hastened and rose up and went to the river of Egypt, and brought up from there the coffin of Joseph and took it with him* (Jasher 80:62). The framework hears in this the hope of the northern house, for Joseph is Ephraim, the house scattered and to be gathered — and the prophet seals it: *I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The bones of Joseph carried out of Egypt and brought home to the land are the pledge of the two houses made one — Ephraim gathered, joined again to Yahudah, the promise of return kept by the One who surely visits His people.',
+       sv.verse_id, ev.verse_id, 'extras', 29309
+  FROM _s305_ex13_lookup sv, _s305_ex13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=13 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them',
+       E'The pillar of cloud and fire — the Presence went before them',
+       E'Yahuah does not send His people into the wilderness alone; He goes before them Himself: *And Yahuah (LORD) went before them by day in a pillar of a cloud, to lead them the way; and by night in a pillar of fire, to give them light; to go by day and night* (Exodus 13:21); *He took not away the pillar of the cloud by day, nor the pillar of fire by night, from before the people* (Exodus 13:22). This leading-Presence is the Formed Son — the same Glory that burned in the bush and would descend on Sinai, the One who bears the Name and walks before Yashar''el (Israel). Sha''ul (Paul) reads the cloud as the people''s very deliverance: *all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1), *and were all baptized unto Moses in the cloud and in the sea* (1 Corinthians 10:2). The Levites confess the unceasing pillar: *thou leddest them in the day by a cloudy pillar; and in the night by a pillar of fire, to give them light in the way wherein they should go* (Nehemiah 9:12); *the pillar of the cloud departed not from them by day... neither the pillar of fire by night* (Nehemiah 9:19). The prophet sees the canopy restored over the gathered assemblies: *Yahuah (LORD) will create upon every dwelling place of mount Zion... a cloud and smoke by day, and the shining of a flaming fire by night: for upon all the glory shall be a defence* (Isaiah 4:5). And the restored witness sings the fire as gift: *you gavest them a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun to entertain them honourably* (Wisdom of Solomon 18:3). The cloud by day, the fire by night — the abiding Presence of Yahuah leading His people through the dark, the Formed Son going before them all the way.',
+       sv.verse_id, ev.verse_id, 'extras', 29312
+  FROM _s305_ex13_lookup sv, _s305_ex13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=13 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Every male that openeth the womb shall be called holy to Yahuah (Lord)* (Luke 2:23) — the firstborn-law of 13:2 quoted of Yahusha presented at the temple; the Firstborn under the ordinance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they brought him to Jerusalem, to present him to Yahuah (Lord)* (Luke 2:22) — the setting-apart of *all the firstborn... it is mine* (13:2) obeyed in the presentation of the Firstborn Son.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I have taken the Levites... instead of all the firstborn that openeth the matrix... therefore the Levites shall be mine* (Numbers 3:12) — the redemption of 13:13 carried out by substitution: one tribe taken in the firstborn''s stead.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all the firstborn are mine; for on the day that I smote all the firstborn in Egypt I hallowed unto me all the firstborn in Yashar''el (Israel)* (Numbers 3:13) — the Passover-night sparing (13:15) is the ground of the firstborn-claim.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*all the firstborn of the children of Yashar''el (Israel) are mine... I sanctified them for myself* (Numbers 8:17) — the firstborn smiting of 13:15 sets apart Yashar''el''s firstborn as Yahuah''s portion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=8 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15) — the redeemed firstborn of 13:13 widens to the One who is Himself the Firstborn, the image of the Father, the heir (not a first creature).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the general assembly and church of the firstborn, which are written in heaven* (Hebrews 12:23) — the firstborn claimed as Yahuah''s own (13:2) is the figure of the whole firstborn-people, written above.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-sanctify-unto-me-all-the-firstborn-the-redeemed-firstborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6) — the seven-day feast of 13:6 set on Yahuah''s calendar of appointed times.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*seven days shalt thou eat unleavened bread... even the bread of affliction; for thou camest forth out of Egypt in haste* (Deuteronomy 16:3) — *Remember this day* (13:3): the unleavened bread bound to the memory of the going-out.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7) — the seven-day purge of leaven (13:6-7) fulfilled and lived in the Lamb slain; the feast not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*therefore let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8) — answering *no leaven seen with thee in all thy quarters* (13:7): the feast KEPT, the leaven of malice put out of the heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=7
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the festival of unleavened bread, that they should eat unleavened bread seven days... that they should observe its festival* (Jubilees 49:21) — the seven-day feast of 13:6 kept as a standing ordinance with joy before Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=49 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*you celebrated this festival with haste when you went forth from Egypt* (Jubilees 49:23) — echoing *Remember this day, in which ye came out from Egypt* (13:3): the feast remembers the hurried going-out.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=49 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-feast-of-unleavened-bread-seven-days-the-appointed-time-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8) — the sign and frontlets of 13:9 taken up whole in the Shema: the torah worn on hand and eyes.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=9
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:6) — the aim of *that Yahuah''s torah may be in thy mouth* (13:9): the word laid up in the heart and spoken.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=9
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*bind them for a sign upon your hand, that they may be as frontlets between your eyes* (Deuteronomy 11:18) — the token and frontlets of 13:16 given again word for word.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*we will not hide them from their children, shewing to the generation to come... his wonderful works* (Psalm 78:4) — *thou shalt shew thy son in that day* (13:8): the going-out told to the son.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=8
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he established a testimony in Jacob, and appointed a law in Yashar''el (Israel)... that they should make them known to their children* (Psalm 78:5) — the duty of *shew thy son* (13:8) named as the purpose of the law.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=8
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-a-sign-upon-thine-hand-and-frontlets-the-torah-in-thy-mouth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Joseph took an oath of the children of Yashar''el (Israel)... Elohim will surely visit you, and ye shall carry up my bones from hence* (Genesis 50:25) — the dying oath kept in *Moses took the bones of Joseph with him* (13:19).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=19
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-bones-of-joseph-the-two-house-hope-of-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*By faith Joseph, when he died... gave commandment concerning his bones* (Hebrews 11:22) — the oath behind 13:19 named as faith: Joseph trusted the visitation and the going-out would come.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=19
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-bones-of-joseph-the-two-house-hope-of-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the bones of Joseph... buried they in Shechem... it became the inheritance of the children of Joseph* (Joshua 24:32) — what begins in 13:19 is completed: the bones come to rest in the house of Joseph''s inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=19
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-bones-of-joseph-the-two-house-hope-of-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the stick of Joseph, which is in the hand of Ephraim... and make them one stick* (Ezekiel 37:19) — the bones of Joseph (13:19) are the two-house pledge: Ephraim gathered, joined again to Yahudah.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=19
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-bones-of-joseph-the-two-house-hope-of-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Moses... brought up from there the coffin of Joseph and took it with him* (Jasher 80:62) — the extended witness keeps the deed of 13:19: Moses sees to the oath on the night of the going-out.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=19
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=80 AND tv.verse_number=62
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-bones-of-joseph-the-two-house-hope-of-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*all our fathers were under the cloud, and all passed through the sea* (1 Corinthians 10:1) — the pillar that led (13:21) is the cloud under which the whole people walked.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*and were all baptized unto Moses in the cloud and in the sea* (1 Corinthians 10:2) — the leading pillar of 13:21 read as a baptism; the Presence (the Formed Son) brings the people through.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou leddest them in the day by a cloudy pillar; and in the night by a pillar of fire* (Nehemiah 9:12) — the leading-Presence of 13:21 sung almost word for word as Yahuah''s faithfulness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the pillar of the cloud departed not from them by day... neither the pillar of fire by night* (Nehemiah 9:19) — *He took not away the pillar* (13:22): the unceasing Presence, the mercy that did not forsake them.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*a cloud and smoke by day, and the shining of a flaming fire by night: for upon all the glory shall be a defence* (Isaiah 4:5) — the wilderness pillar of 13:21 taken up as the restored canopy over Zion.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=4 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*a burning pillar of fire, both to be a guide of the unknown journey, and an harmless sun* (Wisdom of Solomon 18:3) — the night-pillar of 13:21 sung as Yahuah''s guiding gift, a sun that did not scorch.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=13 AND sv.verse_number=21
+  JOIN _s305_ex13_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=18 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-13-the-pillar-of-cloud-and-fire-the-presence-went-before-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_19.sql (Exodus 19) -----
+-- Chapter: Exodus 19 — SINAI: the third month, the covenant proposal, the kingdom of priests, the theophany on the mount. "Ye have seen... how I bare you on eagles' wings, and brought you unto myself"; "if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me... a kingdom of priests, and an holy nation"; "All that Yahuah hath spoken we will do"; bounds set about the mount, whosoever toucheth shall die; thunders, lightnings, thick cloud, the trumpet exceeding loud, the mount on fire and smoking, the whole mount quaking; "Yahuah descended upon it in fire." The One on the mountain = the Formed Son, the Glory who came down. The conditioned covenant rests on obey-my-voice-and-keep-my-covenant (Torah-affirmed); the peculiar treasure is Yashar'el, NOT a new people replacing.
+-- Tag: ex19   Temp view: _s305_ex19_lookup
+-- Sort band: base 29450, step 3 -> threads at 29450, 29453, 29456, 29459, 29462, 29465 (6 threads)
+-- Source of EVERY row: 'canon','exodus',19,v
+--
+-- Exodus 19 coverage:
+--   ★ v.4 (how I bare you on eagles' wings, and brought you unto myself)
+--        NT:     Revelation 12:14 (to the woman were given two wings of a great eagle, that she might fly into the wilderness... where she is nourished) — THREAD 1 (lateral NT; the eagle-borne flight to the place of nourishing)
+--        Extras: none warranted (the eagle-bearing carried by Deut 32 + Rev 12)
+--        Tanakh: ★ Deuteronomy 32:11-12 (As an eagle stirreth up her nest... beareth them on her wings; so Yahuah alone did lead him) — THREAD 1 (load-bearing: the song of Moses names the eagle-bearing of the exodus)
+--   ★★ v.5-6 (if ye will obey my voice indeed, and keep my covenant... a peculiar treasure unto me... a kingdom of priests, and an holy nation) — THE KEYSTONE
+--        NT:     1 Peter 2:9 (ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people); Revelation 1:6 (hath made us kings and priests unto Elohim); Revelation 5:10 (hast made us unto our Elohim kings and priests); Titus 2:14 (purify unto himself a peculiar people, zealous of good works) — THREAD 2 (load-bearing: the two-house restored people, NOT replacement)
+--        Extras: none warranted (the keystone forward-weave is NT + Torah laterals)
+--        Tanakh: Deuteronomy 7:6 (chosen thee to be a special people unto himself); Deuteronomy 14:2 (a peculiar people unto himself, above all the nations); Deuteronomy 26:18 (his peculiar people... that thou shouldest keep all his commandments) — THREAD 2 (lateral: the peculiar-people refrain, conditioned on commandment-keeping)
+--   v.7-8 (Moses laid the words before the elders; All that Yahuah hath spoken we will do)
+--        NT:     none warranted (the covenant-vow forward-weave is the Torah-on-the-heart, held in prose; no clean direct member in set)
+--        Extras: none warranted distinct (the giving carried by THREAD 6 Jubilees/Jasher)
+--        Tanakh: ★ Exodus 24:3 (all the people answered with one voice... All the words which Yahuah hath said will we do); Exodus 24:7 (the book of the covenant... All that Yahuah hath said will we do, and be obedient) — THREAD 3 (the covenant vow, the Torah received willingly)
+--   ★ v.9-13 (a thick cloud; bounds set about the mount; whosoever toucheth the mount shall be surely put to death; sanctify them; when the trumpet soundeth long)
+--        NT:     ★★ Hebrews 12:18-21 (the mount that might be touched, and that burned with fire... if so much as a beast touch the mountain, it shall be stoned... so terrible was the sight, that Moses said, I exceedingly fear and quake) — THREAD 4 (load-bearing keystone: Sinai's holiness/separation)
+--        Extras: none warranted distinct here (Sinai-fire carried to THREADS 5/6)
+--        Tanakh: none warranted distinct (the bounds/touch carried by Hebrews 12)
+--   ★★ v.16-19 (thunders, lightnings, thick cloud, the voice of the trumpet exceeding loud; the mount on fire and smoking; the whole mount quaked; the voice of the trumpet waxed louder and louder)
+--        NT:     Hebrews 12:26 (Whose voice then shook the earth: but now he hath promised... Yet once more I shake not the earth only, but also heaven); Acts 2:1 (when the day of Pentecost was fully come) — THREAD 5 (Shavuot = the giving of Torah, the appointed-time backdrop)
+--        Extras: ★ 1 Enoch 1:4 (the eternal Elohim will tread upon the earth, even on Mount Sinai... appear in the strength of His might); Jubilees 1:2-3 (the glory of Yahuah abode on Mount Sinai, and a cloud overshadowed it... like a flaming fire on the top of the Mount); Jasher 82:8 (the glory of Yahuah rested upon Mount Sinai... Moses came in the midst of a cloud) — THREAD 5
+--        Tanakh: ★ Deuteronomy 4:11-12 (the mountain burned with fire... ye heard the voice of the words, but saw no similitude); Deuteronomy 5:22-24 (out of the midst of the fire, of the cloud, and of the thick darkness, with a great voice... Elohim doth talk with man, and he liveth) — THREAD 5
+--   ★★ v.18,20 (Yahuah descended upon it in fire... Yahuah came down upon mount Sinai, on the top of the mount) — THE FORMED who came down (Red Line #4)
+--        NT:     none warranted distinct (the descent's NT fulfillment is the Word made flesh, John 1:14, held in prose; the shaking is at THREAD 5 Hebrews 12:26)
+--        Extras: ★ Jubilees 1:1 (as Yahuah spake to Moses on Mount Sinai when he went up to receive the tables of the law); Jasher 82:6 (Yahuah gave to Israel the ten commandments on Mount Sinai) — THREAD 6
+--        Tanakh: ★ Nehemiah 9:13 (Thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them... true laws, good statutes and commandments) — THREAD 6 (load-bearing: the One who descended)
+--   v.14-15 (sanctified the people; washed clothes; be ready against the third day) — sanctification preparation; carried by THREAD 4's holiness frame, no distinct member warranted
+--   v.21-25 (charge the people lest they break through; the priests sanctify themselves; Moses and Aaron) — the renewed warning, holiness of approach; carried by THREAD 4, no distinct member warranted
+--
+-- Threads (slug — target libraries):
+--   1. exodus-19-eagles-wings-and-brought-you-unto-myself — Tanakh (Deuteronomy 32) + NT (Revelation 12) [free] (★ the eagle-borne gathering)
+--   2. exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation — NT (1 Peter, Revelation 1, Revelation 5, Titus) + Tanakh (Deuteronomy 7,14,26) [free] (★★ KEYSTONE: two-house restored people, conditioned on obey-my-voice)
+--   3. exodus-19-all-that-yahuah-hath-spoken-we-will-do — Tanakh (Exodus 24) [free] (the covenant vow, Torah received willingly)
+--   4. exodus-19-bounds-about-the-mount-the-mount-that-might-be-touched — NT (Hebrews 12) [free] (★★ Sinai's holiness/separation)
+--   5. exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire — NT (Hebrews 12, Acts 2) + Tanakh (Deuteronomy 4, Deuteronomy 5) + Extras (1 Enoch, Jubilees, Jasher) [extras] (★★ the Sinai theophany = the Formed presence; Shavuot backdrop)
+--   6. exodus-19-yahuah-descended-upon-it-in-fire — Tanakh (Nehemiah 9) + Extras (Jubilees, Jasher) [extras] (★ the One who came down = the Formed Son)
+--
+-- Framing notes:
+--   ★ THREAD 1 (eagles' wings): *how I bare you on eagles' wings, and brought you unto myself* (19:4) — the song of Moses sings the same bearing (*As an eagle... beareth them on her wings; so Yahuah (LORD) alone did lead him*, Deut 32:11-12), and Revelation 12:14 carries the figure forward as the woman given *two wings of a great eagle, that she might fly into the wilderness... where she is nourished* — the same eagle-borne flight to the wilderness place of keeping. Lateral NT, clean, not forced; framed as the gathering/bearing of Yashar'el.
+--   ★★ THREAD 2 (KEYSTONE — peculiar treasure / kingdom of priests): the most-quoted election text in the canon. *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me... a kingdom of priests, and an holy nation* (19:5-6). The covenant is CONDITIONED on *obey my voice... and keep my covenant* — Torah-affirmed, never a new people by confession. 1 Peter 2:9 quotes it almost verbatim *of the same people restored* (*a royal priesthood, an holy nation, a peculiar people*); Revelation 1:6 / 5:10 (*made us kings and priests*); Titus 2:14 (*a peculiar people, zealous of good works*). Framed strictly as Yashar'el RESTORED — the two-house people (cf. 1 Pet 1:1 strangers scattered, James 1:1 twelve tribes), the natural and the wild olive both Yashar'el — NOT a church replacing Israel. The Torah laterals seal the condition: Deut 7:6 / 14:2 (*a peculiar people... above all the nations*) and Deut 26:18 (*his peculiar people... that thou shouldest keep all his commandments*).
+--   THREAD 3 (the covenant vow): *All that Yahuah (LORD) hath spoken we will do* (19:8) — answered again at the covenant ratification, Exodus 24:3,7 (*All that Yahuah hath said will we do, and be obedient*). The Torah received willingly, the people's own vow; the lateral keeps the vow within Exodus itself.
+--   ★★ THREAD 4 (Sinai's holiness — the mount that might be touched): *whosoever toucheth the mount shall be surely put to death... whether it be beast or man, it shall not live* (19:12-13). Hebrews 12:18-21 names this very scene — *the mount that might be touched, and that burned with fire... if so much as a beast touch the mountain, it shall be stoned... so terrible was the sight, that Moses said, I exceedingly fear and quake* — the Sinai-vs-Zion contrast. The holiness of the mount, the bounds, the unapproachable fire: read NOT as Torah-abolished (Hebrews' point is the greater glory, not a lesser law) but as the awe of the Formed presence among His people.
+--   ★★ THREAD 5 (the theophany — the Formed presence; Shavuot backdrop): *thunders, and lightnings, and a thick cloud upon the mount, and the voice of the trumpet exceeding loud... mount Sinai was altogether on a smoke... and the whole mount quaked greatly* (19:16-18). The Sinai theophany = the Formed presence (Red Line #4). Hebrews 12:26 carries the voice that *then shook the earth*. Deuteronomy 4:11-12 / 5:22-24 retell it (*the voice... out of the midst of the fire... Elohim (God) doth talk with man, and he liveth*). The appointed-time backdrop: Sinai is the giving of Torah at the third month — the feast the NT names *Pentecost* (Acts 2:1, Shavuot), the same fire-and-voice now poured on the gathered. EXTRAS: 1 Enoch 1:4 (*the eternal Elohim (God) will tread upon the earth, even on Mount Sinai... appear in the strength of His might*) — clean, the Holy One on Sinai; Jubilees 1:2-3 (*the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it... like a flaming fire on the top of the Mount*); Jasher 82:8 (*the glory of Yahuah (the Lord) rested upon Mount Sinai... Moses came in the midst of a cloud*). Jubilees + Jasher DOUBLE-WRITTEN. 1 Enoch edition `enoch` + book `1-enoch`.
+--   ★ THREAD 6 (Yahuah descended in fire — the One who came down): *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire* (19:18); *Yahuah (LORD) came down upon mount Sinai, on the top of the mount* (19:20). The Formed Son is the One who descended (Red Line #4) — the visible Glory, who has a Father. Nehemiah 9:13 confesses it: *Thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them right judgments, and true laws*. EXTRAS: Jubilees 1:1 (*as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law*); Jasher 82:6 (*Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai*). Jubilees + Jasher DOUBLE-WRITTEN.
+--   VERSES WITH NO ADD: v.14-15 (sanctification preparation, washing of clothes) and v.21-25 (renewed warning, the priests sanctify themselves, Moses and Aaron) — the holiness frame of THREAD 4 carries them; no distinct framework-bearing target warranted.
+
+CREATE TEMP VIEW _s305_ex19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: eagles' wings, brought you unto myself
+    ('canon','exodus',19,4,'canon','deuteronomy',32,11,'free',
+      E'*As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings* (Deuteronomy 32:11). The song of Moses sings what Yahuah (LORD) said at Sinai — *how I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4): the exodus deliverance is the eagle bearing her young, Yahuah carrying Yashar''el (Israel) out of Egypt and up to the mount unto Himself.'),
+    ('canon','exodus',19,4,'canon','deuteronomy',32,12,'free',
+      E'*So Yahuah (LORD) alone did lead him, and there was no strange god with him* (Deuteronomy 32:12). The eagle-bearing of *I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4) is Yahuah leading His people ALONE — no strange god, no other deliverer; He bore them out and brought them to Himself at Sinai.'),
+    ('canon','exodus',19,4,'canon','revelation',12,14,'free',
+      E'*And to the woman were given two wings of a great eagle, that she might fly into the wilderness, into her place, where she is nourished for a time, and times, and half a time, from the face of the serpent* (Revelation 12:14). The figure of *I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4) returns at the end: the woman borne on *two wings of a great eagle* into the wilderness place of nourishing, the same eagle-flight to the keeping-place, Yashar''el carried from the face of the serpent.'),
+
+    -- THREAD 2 (★★ KEYSTONE): a peculiar treasure, a kingdom of priests, an holy nation
+    ('canon','exodus',19,6,'canon','1-peter',2,9,'free',
+      E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9). Kepha (Peter) quotes Sinai almost word for word — *a kingdom of priests, and an holy nation... a peculiar treasure unto me* (Exodus 19:5-6) — and lays it on the SAME people restored: *a royal priesthood, an holy nation, a peculiar people*. Not a new people replacing Yashar''el (Israel), but the two-house people gathered and called out of darkness, the election of the mount carried to its fullness.'),
+    ('canon','exodus',19,6,'canon','revelation',1,6,'free',
+      E'*And hath made us kings and priests unto Elohim (God) and his Father; to him be glory and dominion for ever and ever. Amen* (Revelation 1:6). The promise of *a kingdom of priests* (Exodus 19:6) is fulfilled — *made us kings and priests unto Elohim and his Father*. The royal-priestly nation proposed at Sinai is the people who reign and serve before Him; note the Formed Son who *hath made us... unto Elohim and his Father*, the One with a Father.'),
+    ('canon','exodus',19,6,'canon','revelation',5,10,'free',
+      E'*And hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:10). The new song answers Sinai''s word *ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:6): the redeemed *made... unto our Elohim kings and priests*, the royal-priestly nation that *shall reign on the earth* — the kingdom of priests come to its inheritance.'),
+    ('canon','exodus',19,5,'canon','titus',2,14,'free',
+      E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works* (Titus 2:14). The *peculiar treasure unto me* (Exodus 19:5) is the *peculiar people* purified *unto himself* — and they are *zealous of good works*, the very obey-my-voice-and-keep-my-covenant condition of the mount, never grace instead of obedience but grace unto a peculiar people who keep His ways.'),
+    ('canon','exodus',19,5,'canon','deuteronomy',7,6,'free',
+      E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God): Yahuah Elohayka (the LORD thy God) hath chosen thee to be a special people unto himself, above all people that are upon the face of the earth* (Deuteronomy 7:6). The Sinai word *ye shall be a peculiar treasure unto me above all people* (Exodus 19:5) is named again to the same nation — *a special people unto himself, above all people* — the chosen, treasured nation, Yashar''el (Israel) set apart unto Yahuah.'),
+    ('canon','exodus',19,5,'canon','deuteronomy',14,2,'free',
+      E'*For thou art an holy people unto Yahuah Elohayka (the LORD thy God), and Yahuah (LORD) hath chosen thee to be a peculiar people unto himself, above all the nations that are upon the earth* (Deuteronomy 14:2). The exact phrase of *a peculiar treasure unto me above all people* (Exodus 19:5) recurs — *a peculiar people unto himself, above all the nations* — and stands at the head of the dietary statutes: the peculiarity of the people is bound to keeping His ways, the holy nation marked out by His instruction.'),
+    ('canon','exodus',19,5,'canon','deuteronomy',26,18,'free',
+      E'*And Yahuah (LORD) hath avouched thee this day to be his peculiar people, as he hath promised thee, and that thou shouldest keep all his commandments* (Deuteronomy 26:18). The covenant proposal *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me* (Exodus 19:5) is sealed here — *his peculiar people... that thou shouldest keep all his commandments*. The treasure is conditioned on commandment-keeping; the peculiar people are the obedient people, the Torah affirmed as the very mark of the election.'),
+
+    -- THREAD 3: All that Yahuah hath spoken we will do (the covenant vow)
+    ('canon','exodus',19,8,'canon','exodus',24,3,'free',
+      E'*And Moses came and told the people all the words of Yahuah (LORD), and all the judgments: and all the people answered with one voice, and said, All the words which Yahuah (LORD) hath said will we do* (Exodus 24:3). The vow first spoken at the mount — *All that Yahuah (LORD) hath spoken we will do* (Exodus 19:8) — is answered again at the covenant ratification, *all the people answered with one voice... All the words which Yahuah hath said will we do*: the Torah received willingly, the people binding themselves to the covenant of their own accord.'),
+    ('canon','exodus',19,8,'canon','exodus',24,7,'free',
+      E'*And he took the book of the covenant, and read in the audience of the people: and they said, All that Yahuah (LORD) hath said will we do, and be obedient* (Exodus 24:7). The people''s word *All that Yahuah (LORD) hath spoken we will do* (Exodus 19:8) is repeated over the book of the covenant — *All that Yahuah hath said will we do, and be obedient* — the willing vow sealed in blood; the covenant is no burden imposed but a marriage-promise answered freely.'),
+
+    -- THREAD 4 (★★): bounds about the mount, the mount that might be touched
+    ('canon','exodus',19,12,'canon','hebrews',12,18,'free',
+      E'*For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest* (Hebrews 12:18). The bounds of Sinai — *Take heed to yourselves, that ye go not up into the mount, or touch the border of it: whosoever toucheth the mount shall be surely put to death* (Exodus 19:12) — are named as *the mount that might be touched, and that burned with fire*. The unapproachable holiness of the Formed presence on Sinai: the mount fenced, the touch forbidden on pain of death.'),
+    ('canon','exodus',19,13,'canon','hebrews',12,20,'free',
+      E'*(For they could not endure that which was commanded, And if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart* (Hebrews 12:20). The decree *whether it be beast or man, it shall not live* (Exodus 19:13) is quoted exactly — *if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart*. The holiness of the mount admits no approach; even a beast straying past the bound dies, so terrible is the nearness of Yahuah (LORD).'),
+    ('canon','exodus',19,12,'canon','hebrews',12,21,'free',
+      E'*And so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21). The fenced, fire-crowned mount of *whosoever toucheth the mount shall be surely put to death* (Exodus 19:12) was a sight so terrible that even Moses *exceedingly fear[ed] and quake[d]*. The bounds were no arbitrary cruelty but the guarding of a people from the consuming nearness of the Holy One who came down.'),
+
+    -- THREAD 5 (★★): thunders and the trumpet and the mount on fire (the theophany; Shavuot)
+    ('canon','exodus',19,18,'canon','hebrews',12,26,'free',
+      E'*Whose voice then shook the earth: but now he hath promised, saying, Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26). When at Sinai *the whole mount quaked greatly* (Exodus 19:18), it was the voice of Yahuah (LORD) that *then shook the earth* — and the promise reaches beyond Sinai to a final shaking of earth and heaven. The trembling mount is the Formed presence whose voice moves the creation.'),
+    ('canon','exodus',19,16,'canon','acts',2,1,'free',
+      E'*And when the day of Pentecost was fully come, they were all with one accord in one place* (Acts 2:1). Sinai''s theophany — *thunders, and lightnings, and a thick cloud upon the mount, and the voice of the trumpet exceeding loud* (Exodus 19:16) — fell in the third month, at the feast the NT names *Pentecost*, Shavuot, the appointed time of the giving of Torah. The same fire and voice that came down on the mount came down on the gathered when *the day of Pentecost was fully come*: the feast of the Torah given is the feast of the Ruach (Spirit) poured, the Torah now written on the heart.'),
+    ('canon','exodus',19,16,'canon','deuteronomy',4,11,'free',
+      E'*And ye came near and stood under the mountain; and the mountain burned with fire unto the midst of heaven, with darkness, clouds, and thick darkness* (Deuteronomy 4:11). Moses retells the scene of *a thick cloud upon the mount, and the voice of the trumpet exceeding loud* (Exodus 19:16): *the mountain burned with fire unto the midst of heaven, with darkness, clouds, and thick darkness* — the fire and the cloud of the Formed presence, the mount ablaze before all the people.'),
+    ('canon','exodus',19,19,'canon','deuteronomy',5,24,'free',
+      E'*And ye said, Behold, Yahuah Eloheinu (the LORD our God) hath shewed us his glory and his greatness, and we have heard his voice out of the midst of the fire: we have seen this day that Elohim (God) doth talk with man, and he liveth* (Deuteronomy 5:24). When *the voice of the trumpet sounded long, and waxed louder and louder, Moses spake, and Elohim (God) answered him by a voice* (Exodus 19:19), the people heard *his voice out of the midst of the fire* and marvelled that *Elohim doth talk with man, and he liveth* — the Formed Son speaking with His people from the fire, and they not consumed.'),
+    ('canon','exodus',19,18,'enoch','1-enoch',1,4,'extras',
+      E'*And the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai, [And appear from His camp] And appear in the strength of His might from the heaven of heavens* (1 Enoch 1:4). The watcher of old saw the same descent as *Yahuah (LORD) descended upon it in fire* (Exodus 19:18): *the eternal Elohim will tread upon the earth, even on Mount Sinai... appear in the strength of His might*. The Holy One coming down on Sinai is the great manifestation of His might, the Formed presence treading the mount.'),
+    ('canon','exodus',19,16,'jubilees','jubilees',1,2,'extras',
+      E'*And Moses went up into the mount of Elohim (God), and the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it six days* (Jubilees 1:2). The restored witness keeps the cloud and the glory of *a thick cloud upon the mount* (Exodus 19:16): *the glory of Yahuah abode on Mount Sinai, and a cloud overshadowed it* — the visible Glory settled on the mount, the Formed presence in the cloud.'),
+    ('canon','exodus',19,18,'jubilees','jubilees',1,3,'extras',
+      E'*And He called to Moses on the seventh day out of the midst of the cloud, and the appearance of the glory of Yahuah (God) was like a flaming fire on the top of the Mount* (Jubilees 1:3). The restored witness matches *Yahuah (LORD) descended upon it in fire* (Exodus 19:18): *the appearance of the glory of Yahuah was like a flaming fire on the top of the Mount* — the glory and the fire are one, the Formed presence blazing on the height.'),
+    ('canon','exodus',19,18,'jasher','jasher',82,8,'extras',
+      E'*And the glory of Yahuah (the Lord) rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud and ascended the mountain* (Jasher 82:8). The extended witness keeps the resting Glory of *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire* (Exodus 19:18): *the glory of Yahuah rested upon Mount Sinai... Moses came in the midst of a cloud* — Moses going up into the very cloud of the descended Glory.'),
+
+    -- THREAD 6 (★): Yahuah descended upon it in fire (the One who came down = the Formed Son)
+    ('canon','exodus',19,18,'canon','nehemiah',9,13,'free',
+      E'*Thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them right judgments, and true laws, good statutes and commandments* (Nehemiah 9:13). The confession of the returned remnant names the One of *Yahuah (LORD) descended upon it in fire... Yahuah (LORD) came down upon mount Sinai* (Exodus 19:18,20): *Thou camest down also upon mount Sinai, and spakest with them... and gavest them... true laws, good statutes and commandments*. The Formed Son who descended is the same who gave the Torah — the law called *good*, *true*, *right*, never the curse.'),
+    ('canon','exodus',19,20,'jubilees','jubilees',1,1,'extras',
+      E'*...as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law and of the commandment, according to the voice of Elohim (God) as He said to him, "Go up to the top of the Mount."* (Jubilees 1:1). The restored witness opens at the moment of *Yahuah (LORD) came down upon mount Sinai, on the top of the mount: and Yahuah (LORD) called Moses up to the top of the mount* (Exodus 19:20): *Go up to the top of the Mount* — the descended Yahuah calling Moses up to receive *the tables of the law*, the giving of the covenant instruction.'),
+    ('canon','exodus',19,20,'jasher','jasher',82,6,'extras',
+      E'*And in the third month from the children of Israel''s departure from Egypt, on the sixth day of it, Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai* (Jasher 82:6). The extended witness names the gift of the descent of *Yahuah (LORD) came down upon mount Sinai* (Exodus 19:20): *Yahuah gave to Israel the ten commandments on Mount Sinai* in the third month — the One who came down in fire is the One who gave the ten words, the covenant words of the holy nation.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-19-eagles-wings-and-brought-you-unto-myself',
+       E'Eagles'' wings — and brought you unto myself',
+       E'Before a single commandment is given, Yahuah (LORD) tells Yashar''el (Israel) what He has already done: *Ye have seen what I did unto the Egyptians, and how I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4). The exodus was an eagle bearing her young — not driven, but carried; and the carrying had a destination: *unto myself*. The song of Moses sings the same: *As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings: so Yahuah (LORD) alone did lead him, and there was no strange god with him* (Deuteronomy 32:11-12) — Yahuah alone bore them, no other deliverer. And the figure returns at the end of the canon: *to the woman were given two wings of a great eagle, that she might fly into the wilderness, into her place, where she is nourished for a time, and times, and half a time, from the face of the serpent* (Revelation 12:14) — the same eagle-flight to the wilderness place of keeping, Yashar''el carried out of the serpent''s reach. The covenant about to be proposed rests on this: He bore them, He brought them to Himself, and the gathering of His people is His own doing.',
+       sv.verse_id, ev.verse_id, 'free', 29450
+  FROM _s305_ex19_lookup sv, _s305_ex19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=19 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation',
+       E'A peculiar treasure — a kingdom of priests, and an holy nation',
+       E'This is the covenant proposal, and the most-quoted election text in all the Scriptures: *Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine: and ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:5-6). Mark the condition — *if ye will obey my voice indeed, and keep my covenant* — the treasured status is bound to obedience and covenant-keeping; this is Torah affirmed as the very mark of the people, never grace instead of obedience. Kepha (Peter) lays the words on the SAME people gathered and restored: *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light* (1 Peter 2:9) — a people called out of darkness, the two houses regathered (cf. *strangers scattered*, 1 Peter 1:1), NOT a new people replacing Yashar''el (Israel). The Revelation sings the kingdom of priests come to its inheritance: *hath made us kings and priests unto Elohim (God) and his Father* (Revelation 1:6), *hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:10). And Sha''ul (Paul) keeps the condition intact: *purify unto himself a peculiar people, zealous of good works* (Titus 2:14) — the peculiar people are the obedient people. The Torah itself repeats the refrain to the same nation: *a special people unto himself, above all people* (Deuteronomy 7:6); *a peculiar people unto himself, above all the nations* (Deuteronomy 14:2); *his peculiar people... that thou shouldest keep all his commandments* (Deuteronomy 26:18). The treasure and the commandment-keeping are one.',
+       sv.verse_id, ev.verse_id, 'free', 29453
+  FROM _s305_ex19_lookup sv, _s305_ex19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=19 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-19-all-that-yahuah-hath-spoken-we-will-do',
+       E'All that Yahuah hath spoken we will do — the covenant vow',
+       E'Moses lays the covenant proposal before the elders, and the people answer as one: *And all the people answered together, and said, All that Yahuah (LORD) hath spoken we will do. And Moses returned the words of the people unto Yahuah (LORD)* (Exodus 19:8). The covenant is not imposed; it is answered freely, a marriage-promise spoken back. This same vow is repeated at the ratification of the covenant: *all the people answered with one voice, and said, All the words which Yahuah (LORD) hath said will we do* (Exodus 24:3), and over the book of the covenant read aloud, *All that Yahuah (LORD) hath said will we do, and be obedient* (Exodus 24:7). The Torah is received willingly, the people binding themselves of their own accord — *we will do, and be obedient*. The covenant about to thunder from the mount is one the people have already said yes to; obedience is the answer of a people loved and borne.',
+       sv.verse_id, ev.verse_id, 'free', 29456
+  FROM _s305_ex19_lookup sv, _s305_ex19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=19 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-19-bounds-about-the-mount-the-mount-that-might-be-touched',
+       E'Bounds about the mount — the mount that might be touched',
+       E'Before the Glory descends, the mount is fenced: *thou shalt set bounds unto the people round about, saying, Take heed to yourselves, that ye go not up into the mount, or touch the border of it: whosoever toucheth the mount shall be surely put to death: there shall not an hand touch it, but he shall surely be stoned, or shot through; whether it be beast or man, it shall not live* (Exodus 19:12-13). The holiness of the Formed presence is so consuming that the touch of the mount is death — even to a straying beast. The letter to the Hebrews names this very scene: *ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest* (Hebrews 12:18), *And if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart* (Hebrews 12:20) — quoting the decree exactly — *and so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21). The bounds are no cruelty but mercy: a guarding of the people from the nearness that would consume them. Hebrews sets Sinai against Zion not to abolish the law but to magnify the glory; the awe of the mount is the awe due the Holy One who came down to His people.',
+       sv.verse_id, ev.verse_id, 'free', 29459
+  FROM _s305_ex19_lookup sv, _s305_ex19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=19 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire',
+       E'Thunders, and the trumpet, and the mount on fire — the Sinai theophany',
+       E'On the third day the mount erupts with the presence of Yahuah (LORD): *there were thunders and lightnings, and a thick cloud upon the mount, and the voice of the trumpet exceeding loud; so that all the people that was in the camp trembled* (Exodus 19:16), *and mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire... and the whole mount quaked greatly* (Exodus 19:18), *and when the voice of the trumpet sounded long, and waxed louder and louder, Moses spake, and Elohim (God) answered him by a voice* (Exodus 19:19). This is the Formed presence — the visible Glory in fire and cloud and trumpet-voice. Moses retells it: *the mountain burned with fire unto the midst of heaven, with darkness, clouds, and thick darkness* (Deuteronomy 4:11); the people heard *his voice out of the midst of the fire: we have seen this day that Elohim (God) doth talk with man, and he liveth* (Deuteronomy 5:24). The letter to the Hebrews carries the voice forward: *whose voice then shook the earth: but now he hath promised... Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26). And the appointed time matters: Sinai fell in the third month, the feast the NT names *Pentecost* — Shavuot, the giving of Torah — *and when the day of Pentecost was fully come, they were all with one accord in one place* (Acts 2:1): the same fire and voice poured on the gathered, the Torah now written on the heart. The restored witnesses keep the fire whole: *the eternal Elohim (God) will tread upon the earth, even on Mount Sinai... appear in the strength of His might* (1 Enoch 1:4); *the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it* (Jubilees 1:2), *the appearance of the glory of Yahuah was like a flaming fire on the top of the Mount* (Jubilees 1:3); *the glory of Yahuah (the Lord) rested upon Mount Sinai... Moses came in the midst of a cloud* (Jasher 82:8). The One who treads Sinai in fire is the Formed Son, the expressed might of the Most High.',
+       sv.verse_id, ev.verse_id, 'extras', 29462
+  FROM _s305_ex19_lookup sv, _s305_ex19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=19 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-19-yahuah-descended-upon-it-in-fire',
+       E'Yahuah descended upon it in fire — the One who came down',
+       E'Twice the text says it plainly: *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire* (Exodus 19:18), and *Yahuah (LORD) came down upon mount Sinai, on the top of the mount: and Yahuah (LORD) called Moses up to the top of the mount* (Exodus 19:20). The Most High is the formless Source; the One who DESCENDED, who came down upon the mount in fire and spoke and called Moses up, is the Formed Son — the visible Glory who has a Father. The returned remnant confesses Him by this very deed: *Thou camest down also upon mount Sinai, and spakest with them from heaven, and gavest them right judgments, and true laws, good statutes and commandments* (Nehemiah 9:13) — the One who came down is the One who gave the Torah, and the law He gave is named *good*, *true*, *right*, never a curse. The restored witnesses keep the descent and the gift together: *as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law... "Go up to the top of the Mount"* (Jubilees 1:1); *Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai* in the third month (Jasher 82:6). The fire on the mount is the presence of the Formed Son, and the words He spoke from it are the covenant words of the holy nation.',
+       sv.verse_id, ev.verse_id, 'extras', 29465
+  FROM _s305_ex19_lookup sv, _s305_ex19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=19 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*As an eagle... beareth them on her wings* (Deuteronomy 32:11) — the song of Moses sings the eagle-bearing of *I bare you on eagles'' wings* (19:4): the exodus deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-eagles-wings-and-brought-you-unto-myself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*So Yahuah (LORD) alone did lead him, and there was no strange god with him* (Deuteronomy 32:12) — He bore them ALONE to *brought you unto myself* (19:4); no other deliverer.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-eagles-wings-and-brought-you-unto-myself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*two wings of a great eagle, that she might fly into the wilderness... where she is nourished* (Revelation 12:14) — the eagle-flight of 19:4 returns: Yashar''el (Israel) borne to the wilderness place of keeping, from the serpent.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-eagles-wings-and-brought-you-unto-myself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9) — Sinai''s *a kingdom of priests, and an holy nation* (19:6) quoted of the SAME people restored, called out of darkness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*hath made us kings and priests unto Elohim (God) and his Father* (Revelation 1:6) — *a kingdom of priests* (19:6) fulfilled; note the Formed Son who made us unto Elohim AND his Father.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:10) — the kingdom of priests of 19:6 come to its inheritance, reigning on the earth.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=6
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*purify unto himself a peculiar people, zealous of good works* (Titus 2:14) — the *peculiar treasure* (19:5) kept; the condition intact, a peculiar people zealous of good works.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*chosen thee to be a special people unto himself, above all people* (Deuteronomy 7:6) — the *peculiar treasure... above all people* (19:5) refrain, named again to the same nation.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*a peculiar people unto himself, above all the nations* (Deuteronomy 14:2) — the exact phrase of 19:5, set at the head of the dietary statutes: peculiarity bound to His ways.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*his peculiar people... that thou shouldest keep all his commandments* (Deuteronomy 26:18) — seals the condition of 19:5: the treasure is the commandment-keeping people, Torah affirmed.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-a-peculiar-treasure-a-kingdom-of-priests-an-holy-nation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*All the words which Yahuah (LORD) hath said will we do* (Exodus 24:3) — the vow of *All that Yahuah hath spoken we will do* (19:8) answered again at the ratification.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=8
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-all-that-yahuah-hath-spoken-we-will-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*All that Yahuah (LORD) hath said will we do, and be obedient* (Exodus 24:7) — the willing vow of 19:8 sealed over the book of the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=8
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=24 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-all-that-yahuah-hath-spoken-we-will-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the mount that might be touched, and that burned with fire* (Hebrews 12:18) — names the fenced Sinai of *touch the border of it... shall be surely put to death* (19:12).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-bounds-about-the-mount-the-mount-that-might-be-touched'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*if so much as a beast touch the mountain, it shall be stoned, or thrust through with a dart* (Hebrews 12:20) — quotes *whether it be beast or man, it shall not live* (19:13) exactly.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=13
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-bounds-about-the-mount-the-mount-that-might-be-touched'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21) — the awe of the fenced mount of 19:12; even Moses trembled at the Formed presence.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-bounds-about-the-mount-the-mount-that-might-be-touched'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*whose voice then shook the earth... Yet once more I shake not the earth only, but also heaven* (Hebrews 12:26) — the voice that made *the whole mount quaked greatly* (19:18) reaches to a final shaking.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when the day of Pentecost was fully come* (Acts 2:1) — Sinai''s fire and trumpet (19:16) fell at Shavuot, the giving of Torah; the same fire poured at Pentecost, Torah on the heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=16
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the mountain burned with fire unto the midst of heaven, with darkness, clouds, and thick darkness* (Deuteronomy 4:11) — Moses retells *a thick cloud upon the mount* (19:16): the fire and cloud of the Formed presence.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=16
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*his voice out of the midst of the fire... Elohim (God) doth talk with man, and he liveth* (Deuteronomy 5:24) — the voice-answering of 19:19: the Formed Son speaks from the fire and the people are not consumed.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=19
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the eternal Elohim (God) will tread upon the earth, even on Mount Sinai... appear in the strength of His might* (1 Enoch 1:4) — the Holy One on Sinai, the same descent as *Yahuah descended upon it in fire* (19:18).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it* (Jubilees 1:2) — the cloud and glory of *a thick cloud upon the mount* (19:16) kept in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=16
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the appearance of the glory of Yahuah (God) was like a flaming fire on the top of the Mount* (Jubilees 1:3) — matches *Yahuah descended upon it in fire* (19:18): the glory and the fire are one.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*the glory of Yahuah (the Lord) rested upon Mount Sinai... Moses came in the midst of a cloud* (Jasher 82:8) — the resting Glory of *altogether on a smoke, because Yahuah descended upon it in fire* (19:18).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-thunders-and-the-trumpet-and-the-mount-on-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou camest down also upon mount Sinai... and gavest them... true laws, good statutes and commandments* (Nehemiah 9:13) — the One who descended in fire (19:18) is the One who gave the Torah, named good and true.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=18
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-yahuah-descended-upon-it-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*as Yahuah (God) spake to Moses on Mount Sinai... "Go up to the top of the Mount"* (Jubilees 1:1) — the descended Yahuah calling Moses up (19:20) to receive the tables of the law.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=20
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-yahuah-descended-upon-it-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (the Lord) gave to Israel the ten commandments on Mount Sinai* (Jasher 82:6) — the gift of the descent of *Yahuah came down upon mount Sinai* (19:20): the ten words of the holy nation.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=19 AND sv.verse_number=20
+  JOIN _s305_ex19_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-19-yahuah-descended-upon-it-in-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_20.sql (Exodus 20) -----
+-- Chapter: Exodus 20 — THE TEN WORDS, THE DECALOGUE: Yahuah speaks all these words from the mount — "I am Yahuah thy Elohim, which brought thee out of Egypt" (the preamble, grace before the commands); no other gods, no graven image, "I am a jealous Elohim"; not take the Name in vain; "Remember the sabbath day to keep it holy... for in six days Yahuah made heaven and earth" (creation-rooted, the fourth word); honour father and mother; thou shalt not kill / commit adultery / steal / bear false witness / covet (the second table); the people stood afar off and Moses drew near to the thick darkness; the altar of earth, unhewn stone. The everlasting covenant standard — GIVEN, never abolished (Matthew 5:17-19 the anti-antinomian centerpiece, 1 John 2:3-4 the filter).
+-- Tag: ex20   Temp view: _s305_ex20_lookup
+-- Sort band: base 29475, step 3 -> threads at 29475, 29478, 29481, 29484, 29487, 29490, 29493 (7 threads)
+-- Source of EVERY row: 'canon','exodus',20,v
+--
+-- Exodus 20 coverage:
+--   ★ v.1-2 (I am Yahuah thy Elohim, which brought thee out of Egypt, out of the house of bondage — the PREAMBLE, grace precedes the commands)
+--        NT:     none warranted distinct (the redeemed-first-then-given-Torah shape is carried by THREAD 1's Deut lateral + the peculiar-people Jubilees; NT "saved unto good works" Eph 2:10 belongs to its own pack)
+--        Extras: Jubilees 2:19 (I will separate to Myself a people... I will sanctify them to Myself as My people... they will be My people and I shall be their Elohim); Jubilees 2:20 (chosen the seed of Jacob... written him down as My firstborn son) — THREAD 1
+--        Tanakh: ★ Deuteronomy 5:6 (I am Yahuah Elohayka, which brought thee out of the land of Egypt, from the house of bondage) — the second giving, verse-for-verse — THREAD 1
+--   ★★ v.3-6 (no other gods before me; no graven image; bow not down; I Yahuah am a jealous Elohim; mercy to thousands of them that love me and keep my commandments — first/second words)
+--        NT:     Matthew 4:10 (Thou shalt worship Yahuah Elohayka, and him only shalt thou serve); Matthew 22:37-38 (Thou shalt love Yahuah Elohayka with all thy heart... the first and great commandment); 1 Corinthians 8:4-6 (an idol is nothing... none other Elohim but one... to us there is but one Elohim, the Father); 1 John 5:21 (keep yourselves from idols) — THREAD 2
+--        Extras: none warranted distinct as MEMBER (Wisdom 13-14 idol-folly clean but the seed-war-against-idolatry weave is fully carried by the NT + Deut lateral; not forced)
+--        Tanakh: ★ Deuteronomy 5:7-9 (none other gods... not make thee any graven image... a jealous Elohim) — second giving — THREAD 2
+--   ★ v.7 (not take the name of Yahuah in vain; Yahuah will not hold him guiltless — the third word)
+--        NT:     Matthew 5:33-37 (Swear not at all... let your communication be, Yea, yea; Nay, nay) — THREAD 3
+--        Extras: ★ Sirach 23:9-11 (Accustom not your mouth to swearing; neither use thyself to the naming of the Holy One... he that sweareth and nameth Yahuah continually shall not be faultless) — THREAD 3
+--        Tanakh: ★ Leviticus 19:12 (ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim: I am Yahuah); Deuteronomy 5:11 (second giving) — THREAD 3
+--   ★★★ v.8-11 (Remember the sabbath day to keep it holy... the seventh day is the sabbath of Yahuah... for in six days Yahuah made heaven and earth... and rested the seventh day: wherefore Yahuah blessed the sabbath day, and hallowed it — THE FOURTH WORD, creation-rooted)
+--        NT:     ★ Hebrews 4:9 (There remaineth therefore a rest to the people of Elohim); ★ Mark 2:27-28 (The sabbath was made for man... the Son of Adam is Yahuah also of the sabbath) — THREAD 4
+--        Extras: ★★ Jubilees 2:1 (kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works); Jubilees 2:19 (these will keep the Sabbath day... they will be My people); Jubilees 50:9 (rest... and keep Sabbath from all work... a holy day... for all Yashar'el for ever) — THREAD 4
+--        Tanakh: ★★ Genesis 2:2-3 (on the seventh day Elohim... rested... blessed the seventh day, and sanctified it — creation root); ★ Isaiah 58:13-14 (turn away thy foot from the sabbath... call the sabbath a delight); ★ Isaiah 66:23 (from one sabbath to another, shall all flesh come to worship); Deuteronomy 5:12-15 (Keep the sabbath day... as Yahuah commanded thee) — THREAD 4
+--   ★ v.12 (Honour thy father and thy mother: that thy days may be long upon the land — the fifth word)
+--        NT:     Matthew 15:4 (Honour thy father and mother... He that curseth father or mother, let him die the death); Matthew 19:19 (Honour thy father and thy mother... love thy neighbour as thyself); Ephesians 6:2-3 (Honour thy father and mother; which is the first commandment with promise) — THREAD 5
+--        Extras: none warranted distinct (Sirach 3 honour-of-parents clean but the NT triple-witness fully carries the fifth word; held)
+--        Tanakh: ★ Deuteronomy 5:16 (Honour thy father and thy mother... that thy days may be prolonged) — second giving — THREAD 5
+--   ★★ v.13-17 (Thou shalt not kill / commit adultery / steal / bear false witness / covet — the SECOND TABLE, love of neighbour)
+--        NT:     ★★★ Matthew 5:17-19 (Think not that I am come to destroy the law... I am not come to destroy, but to fulfil... whosoever shall do and teach them, the same shall be called great) THE ANTI-ANTINOMIAN CENTERPIECE; Matthew 5:21-22 (Thou shalt not kill... whosoever is angry with his brother); Matthew 5:27-28 (Thou shalt not commit adultery... whosoever looketh on a woman to lust); ★ Romans 13:9 (Thou shalt not commit adultery... briefly comprehended in this saying, Thou shalt love thy neighbour); Romans 7:7 (I had not known lust, except the law had said, Thou shalt not covet); James 2:11 (he that said, Do not commit adultery, said also, Do not kill) — THREAD 6
+--        Extras: none warranted distinct (the Decalogue-affirmed-and-deepened weave is fully NT + Lev 19:18 lateral; not forced)
+--        Tanakh: ★ Leviticus 19:18 (thou shalt love thy neighbour as thyself: I am Yahuah) — the second table summed; Deuteronomy 5:17-21 (second giving) — THREAD 6
+--   ★ v.18-21 (the people saw the thunderings... stood afar off; let not Elohim speak with us, lest we die; Moses drew near unto the thick darkness — Sinai terror and the mediator)
+--        NT:     ★ Hebrews 12:18-21 (ye are not come unto the mount that might be touched, and that burned with fire... so terrible was the sight, that Moses said, I exceedingly fear and quake); 1 Timothy 2:5 (one mediator between Elohim and men, the man HaMashiach Yahusha) — THREAD 7
+--        Extras: none warranted distinct
+--        Tanakh: ★ Deuteronomy 5:23-27 (when ye heard the voice... ye came near unto me... Go thou near, and hear... and we will hear it, and do it) — second giving — THREAD 7
+--   v.22-26 (gods of silver and gold; the altar of earth; in all places where I record my name I will bless thee; unhewn stone; no steps)
+--        NT:     none warranted   Extras: none warranted   Tanakh: the silver/gold idol echo is carried by THREAD 2; the altar/record-my-name instruction is the Tabernacle pack's concern — NO ADD (no clean framework-bearing weave forced here)
+--
+-- Threads (slug — target libraries):
+--   1. exodus-20-i-am-yahuah-which-brought-thee-out-of-egypt — Tanakh (Deuteronomy) + Extras (Jubilees) [extras] (★ the preamble; grace precedes the commands — redeemed FIRST, then given the Torah)
+--   2. exodus-20-thou-shalt-have-no-other-gods-no-graven-image — NT (Matthew, 1 Corinthians, 1 John) + Tanakh (Deuteronomy) [free] (★★ first/second words; worship Him only)
+--   3. exodus-20-not-take-the-name-of-yahuah-in-vain — NT (Matthew) + Tanakh (Leviticus, Deuteronomy) + Extras (Sirach) [extras] (★ the third word; reverence of the Name)
+--   4. exodus-20-remember-the-sabbath-day-to-keep-it-holy — NT (Hebrews, Mark) + Tanakh (Genesis, Isaiah, Deuteronomy) + Extras (Jubilees) [extras] (★★★ THE keystone Sabbath thread; creation-rooted, NOT abolished)
+--   5. exodus-20-honour-thy-father-and-thy-mother — NT (Matthew, Ephesians) + Tanakh (Deuteronomy) [free] (★ the fifth word, first commandment with promise)
+--   6. exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour — NT (Matthew, Romans, James) + Tanakh (Leviticus, Deuteronomy) [free] (★★ words six-ten; Messiah INTENSIFIES not abolishes; Matt 5:17-19 the centerpiece)
+--   7. exodus-20-the-people-stood-afar-off-moses-drew-near-the-mediator — NT (Hebrews, 1 Timothy) + Tanakh (Deuteronomy) [free] (★ Sinai terror; the mediator Moses → the better Mediator)
+--
+-- Framing notes:
+--   ★ PREAMBLE (THREAD 1): *I am Yahuah Elohayka (the LORD thy God), which have brought thee out of the land of Egypt, out of the house of bondage* (20:2) stands BEFORE every command. The framework reads the Decalogue's opening as grace-precedes-the-commands (Red Line #6): Yashar'el is redeemed FIRST, brought out by the mighty hand, and ONLY THEN given the Torah — never legalism, never earning the deliverance. Jubilees 2:19-20 names the peculiar-people election that the redemption seals (two-house: *the seed of Jacob... My firstborn son*).
+--   ★★ FIRST/SECOND WORDS (THREAD 2): *Thou shalt have no other gods before me* (20:3) and *I Yahuah Elohayka am a jealous Elohim* (20:5). Yahusha quotes it in the wilderness — *Thou shalt worship Yahuah Elohayka, and him only shalt thou serve* (Matthew 4:10) — and names it the first and great commandment (Matthew 22:37). The seed-war against idolatry: *an idol is nothing in the world, and... there is none other Elohim but one* (1 Corinthians 8:4), *but to us there is but one Elohim, the Father... and one Lord Yahusha HaMashiach* (1 Corinthians 8:6) — the Formed-and-the-Formless held clean: the Father the one Elohim, the Son the one Lord through whom all things, NOT two co-equal persons, NOT a second god. *Little children, keep yourselves from idols* (1 John 5:21) seals it.
+--   ★ THE NAME (THREAD 3): *Thou shalt not take the name of Yahuah Elohayka in vain* (20:7). Woven to Leviticus 19:12 (*ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim*) and to Yahusha's deepening — *Swear not at all... let your communication be, Yea, yea; Nay, nay* (Matthew 5:34,37) — and Sirach 23:9-11 (*neither use thyself to the naming of the Holy One*). Reverence of the Name, never lightly upon the lips.
+--   ★★★ THE SABBATH (THREAD 4, THE KEYSTONE — Red Line #3): *Remember the sabbath day, to keep it holy... for in six days Yahuah made heaven and earth... and rested the seventh day: wherefore Yahuah blessed the sabbath day, and hallowed it* (20:8-11). Creation-rooted — Genesis 2:2-3 — NOT a Jewish ceremony abolished at the cross. Hebrews 4:9: *There remaineth therefore a rest [sabbatismos] to the people of Elohim* — PRESENT TENSE, still remaining. Mark 2:27-28: *the sabbath was made for man... the Son of Adam is Yahuah also of the sabbath* — the Formed Son is its Lord, He upholds it, He does not abolish it. Isaiah 58:13-14 calls it *a delight*; Isaiah 66:23 carries it into the new heavens — *from one sabbath to another, shall all flesh come to worship*. Jubilees 2:1 names it *a sign for all His works*; Jubilees 50:9 *a holy day... for all Yashar'el for ever*. The 1 John 2:3-4 filter: any reading that makes the fourth word irrelevant is false.
+--   ★ FIFTH WORD (THREAD 5): *Honour thy father and thy mother* (20:12). Yahusha defends it against the corban-tradition (Matthew 15:4); Sha'ul names it *the first commandment with promise* (Ephesians 6:2-3). The Decalogue affirmed.
+--   ★★ SECOND TABLE (THREAD 6, the anti-antinomian heart): *Thou shalt not kill... commit adultery... steal... bear false witness... covet* (20:13-17). THE CENTERPIECE: *Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil... Whosoever therefore shall break one of these least commandments... but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:17,19). Yahusha INTENSIFIES the words to the heart — anger is murder (Matthew 5:21-22), lust is adultery (Matthew 5:27-28) — never abolishing. Sha'ul: the commandments are *briefly comprehended in this saying, Thou shalt love thy neighbour as thyself* (Romans 13:9; Leviticus 19:18), and *I had not known lust, except the law had said, Thou shalt not covet* (Romans 7:7). Ya'aqob: the Lawgiver who said one said all (James 2:11). The Decalogue affirmed and deepened by Messiah and the apostles, never set aside.
+--   ★ SINAI TERROR / THE MEDIATOR (THREAD 7): *the people... stood afar off... let not Elohim speak with us, lest we die... and Moses drew near unto the thick darkness where Elohim was* (20:18-21). Hebrews 12:18-21 names the terror of the touchable mount; the mediator Moses who stood between (Deuteronomy 5:5) foreshadows *one mediator between Elohim and men, the man HaMashiach Yahusha* (1 Timothy 2:5) — framed as the MAN who mediates (the Formed Son who took flesh), lateral and clean, NOT a co-equal-person grammar.
+--   EXTRAS: Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'. Jubilees 2 + 50 carry the Sabbath as the great sign and the everlasting ordinance of Yashar'el (clean parse). Sirach 23 (edition 'apocrypha', book 'ecclesiasticus') carries the reverence-of-the-Name (clean). No Jasher/Enoch member warranted in this chapter.
+--   VERSES WITH NO ADD: v.22-26 (gods of silver/gold echo carried by THREAD 2; the altar-of-earth / record-my-name / unhewn-stone instruction belongs to the Tabernacle-altar concern of later packs — no clean framework-bearing target forced here).
+
+CREATE TEMP VIEW _s305_ex20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: I am Yahuah which brought thee out of Egypt (the preamble — grace precedes the commands)
+    ('canon','exodus',20,2,'canon','deuteronomy',5,6,'free',
+      E'*I am Yahuah Elohayka (the LORD thy God), which brought thee out of the land of Egypt, from the house of bondage* (Deuteronomy 5:6). The second giving of the Ten Words opens with the very same preamble as *I am Yahuah Elohayka (the LORD thy God), which have brought thee out of the land of Egypt, out of the house of bondage* (Exodus 20:2). Before one command is spoken, the redemption is named: Yashar''el (Israel) is brought out FIRST, by the mighty hand, and only then given the Torah — the covenant standard rests on grace already received, never on a wage to be earned.'),
+    ('canon','exodus',20,2,'jubilees','jubilees',2,19,'extras',
+      E'*Behold, I will separate to Myself a people from among all the peoples... and I will sanctify them to Myself as My people, and will bless them... and they will be My people and I shall be their Elohim (God)* (Jubilees 2:19). The restored witness names the election the redemption seals: the One who *brought thee out of the land of Egypt* (Exodus 20:2) is the One who separates a people to Himself — *they will be My people and I shall be their Elohim*. The Ten Words are the covenant-life of a people already chosen and brought out, not the price of becoming His.'),
+    ('canon','exodus',20,2,'jubilees','jubilees',2,20,'extras',
+      E'*And I have chosen the seed of Jacob from amongst all that I have seen, and have written him down as My firstborn son, and have sanctified him to Myself for ever and ever* (Jubilees 2:20). The redeemed people of *brought thee out of the land of Egypt, out of the house of bondage* (Exodus 20:2) are *the seed of Jacob... My firstborn son* — the covenant lineage (the two-house people) sanctified for ever. The deliverance from Egypt is the redemption of a son already chosen; the commands that follow are the household law of the firstborn.'),
+
+    -- THREAD 2 (★★): Thou shalt have no other gods — no graven image — a jealous Elohim
+    ('canon','exodus',20,3,'canon','deuteronomy',5,7,'free',
+      E'*Thou shalt have none other gods before me* (Deuteronomy 5:7). The second giving keeps the first word entire, matching *Thou shalt have no other gods before me* (Exodus 20:3). One Yahuah, no rival — the foundation on which every other word stands.'),
+    ('canon','exodus',20,4,'canon','deuteronomy',5,8,'free',
+      E'*Thou shalt not make thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the waters beneath the earth* (Deuteronomy 5:8). The second giving carries the second word whole, matching *Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above* (Exodus 20:4). The invisible Yahuah is not to be reduced to a carved thing; worship is bound to the Word, never to an image.'),
+    ('canon','exodus',20,3,'canon','matthew',4,10,'free',
+      E'*Then saith Yahusha (Jesus) unto him, Get thee hence, Satan: for it is written, Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Matthew 4:10). In the wilderness the Formed Son wields the first word itself against the tempter''s offer of the kingdoms — *Thou shalt have no other gods before me* (Exodus 20:3) becomes *him only shalt thou serve*. The Ten Words are not abolished by Messiah; He lives by them and defeats the adversary with them.'),
+    ('canon','exodus',20,3,'canon','matthew',22,37,'free',
+      E'*Yahusha (Jesus) said unto him, Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart, and with all thy soul, and with all thy mind. This is the first and great commandment* (Matthew 22:37-38). The first word — *Thou shalt have no other gods before me* (Exodus 20:3) — is named by Yahusha *the first and great commandment*: undivided love for the one Yahuah, the heart of the whole first table.'),
+    ('canon','exodus',20,3,'canon','1-corinthians',8,4,'free',
+      E'*As concerning therefore the eating of those things that are offered in sacrifice unto idols, we know that an idol is nothing in the world, and that there is none other Elohim (God) but one* (1 Corinthians 8:4). Sha''ul (Paul) reasons straight from *Thou shalt have no other gods before me* (Exodus 20:3): *an idol is nothing... there is none other Elohim but one*. The so-called gods are emptiness; the first word stands.'),
+    ('canon','exodus',20,3,'canon','1-corinthians',8,6,'free',
+      E'*But to us there is but one Elohim (God), the Father, of whom are all things, and we in him; and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things, and we by him* (1 Corinthians 8:6). The one-Yahuah confession of *no other gods before me* (Exodus 20:3) is upheld in the Formed-and-the-Formless: *one Elohim, the Father, of whom are all things*, and *one Lord Yahusha HaMashiach, by whom are all things* — the Father the Source, the Son the One through whom all things came, never two co-equal gods, never a rival to the Father.'),
+    ('canon','exodus',20,4,'canon','1-john',5,21,'free',
+      E'*Little children, keep yourselves from idols. Amen* (1 John 5:21). The whole letter closes on the second word — *Thou shalt not make unto thee any graven image* (Exodus 20:4) — *keep yourselves from idols*. The seed-war against idolatry runs from Sinai to the last apostle: the people of the one Yahuah guard their worship from every carved and counterfeit thing.'),
+
+    -- THREAD 3 (★): Not take the name of Yahuah in vain (the third word)
+    ('canon','exodus',20,7,'canon','deuteronomy',5,11,'free',
+      E'*Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain: for Yahuah (LORD) will not hold him guiltless that taketh his name in vain* (Deuteronomy 5:11). The second giving keeps the third word verse-for-verse with *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain* (Exodus 20:7). The Name is holy; it is not to be emptied, sworn lightly, or worn as a cloak for falsehood.'),
+    ('canon','exodus',20,7,'canon','leviticus',19,12,'free',
+      E'*And ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 19:12). The third word — *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain* (Exodus 20:7) — is unfolded in the holiness law: to swear falsely by the Name is to *profane the name of thy Elohim*. Reverence of the Name and truth on the lips are one command.'),
+    ('canon','exodus',20,7,'canon','matthew',5,34,'free',
+      E'*But I say unto you, Swear not at all; neither by heaven; for it is Elohim''s (God''s) throne... But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:34,37). Yahusha drives the third word — *not take the name of Yahuah... in vain* (Exodus 20:7) — to its root: rather than guard the Name against false oaths, let speech be so true that no oath is needed. He deepens the word, never loosens it.'),
+    ('canon','exodus',20,7,'apocrypha','ecclesiasticus',23,9,'extras',
+      E'*Accustom not your mouth to swearing; neither use thyself to the naming of the Holy One* (Sirach 23:9). The wisdom of the fathers guards the third word — *not take the name of Yahuah Elohayka (the LORD thy God) in vain* (Exodus 20:7) — by warning against the careless, habitual naming of the Holy One; *he that sweareth and nameth Yahuah (God) continually shall not be faultless* (Sirach 23:10). The Name is not to grow common on the tongue.'),
+
+    -- THREAD 4 (★★★ KEYSTONE): Remember the sabbath day — for in six days Yahuah made heaven and earth
+    ('canon','exodus',20,11,'canon','genesis',2,2,'free',
+      E'*And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made* (Genesis 2:2). The fourth word grounds itself in creation: *For in six days Yahuah (LORD) made heaven and earth... and rested the seventh day* (Exodus 20:11). The Sabbath is not a later Jewish ceremony but a creation ordinance — Yahuah Himself rested on the seventh day before any nation existed; the seventh-day rest is woven into the world.'),
+    ('canon','exodus',20,11,'canon','genesis',2,3,'free',
+      E'*And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made* (Genesis 2:3). The closing word of the fourth command — *wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11) — is the very act of creation: *Elohim blessed the seventh day, and sanctified it*. What Yahuah blessed and hallowed at the foundation is what Yashar''el (Israel) is commanded to remember; the blessing was set on the day before it was ever commanded.'),
+    ('canon','exodus',20,8,'canon','deuteronomy',5,12,'free',
+      E'*Keep the sabbath day to sanctify it, as Yahuah Elohayka (the LORD thy God) hath commanded thee* (Deuteronomy 5:12). The second giving keeps the fourth word — *Remember the sabbath day, to keep it holy* (Exodus 20:8) — with *Keep the sabbath day to sanctify it, as Yahuah Elohayka hath commanded thee*. Exodus says remember (the creation root); Deuteronomy says keep (and adds the Egypt-deliverance ground, 5:15) — two facets of the one everlasting command.'),
+    ('canon','exodus',20,9,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The Sabbath of *six days shalt thou labour... but the seventh day is the sabbath of Yahuah Elohayka* (Exodus 20:9-10) is spoken of in the present tense, still standing: *there remaineth* — a sabbath-rest (sabbatismos) yet for the people of Elohim. The letter does not abolish the seventh-day rest; it presses its abiding reality, *for he that is entered into his rest, he also hath ceased from his own works, as Elohim did from his* (Hebrews 4:10).'),
+    ('canon','exodus',20,10,'canon','mark',2,27,'free',
+      E'*And he said unto them, The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28). The seventh-day rest of *the seventh day is the sabbath of Yahuah Elohayka* (Exodus 20:10) was *made for man* — a gift, not a burden. And the Formed Son is its Lord: *the Son of Adam is Yahuah also of the sabbath* — He who made it and rested at creation upholds and rightly keeps it; the Lord of the Sabbath does not abolish His own day.'),
+    ('canon','exodus',20,8,'canon','isaiah',58,13,'free',
+      E'*If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of Yahuah (LORD), honourable... Then shalt thou delight thyself in Yahuah* (Isaiah 58:13-14). The command to *keep it holy* (Exodus 20:8) is unfolded by the prophet as joy, not bondage — *call the sabbath a delight, the holy of Yahuah, honourable*. The day set apart at creation is the day of delight in Yahuah, with the heritage of Jacob promised to those who keep it.'),
+    ('canon','exodus',20,11,'canon','isaiah',66,23,'free',
+      E'*And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). The hallowed seventh day of *Yahuah blessed the sabbath day, and hallowed it* (Exodus 20:11) is carried into the new heavens and new earth: *from one sabbath to another, shall all flesh come to worship*. Far from being abolished, the Sabbath endures into the world to come, kept by all flesh before Yahuah.'),
+    ('canon','exodus',20,11,'jubilees','jubilees',2,1,'extras',
+      E'*...how in six days Yahuah Elohim (the LORD God) finished all His works and all that He created, and kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1). The restored witness names the very ground of *in six days Yahuah made heaven and earth... and rested the seventh day* (Exodus 20:11): Yahuah *kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works*. The seventh-day rest is a creation sign set for all ages, not a temporary ordinance.'),
+    ('canon','exodus',20,10,'jubilees','jubilees',2,19,'extras',
+      E'*Behold, I will separate to Myself a people from among all the peoples, and these will keep the Sabbath day, and I will sanctify them to Myself as My people... even so shall I bless them, and they will be My people and I shall be their Elohim (God)* (Jubilees 2:19). The keeping of *the sabbath of Yahuah Elohayka* (Exodus 20:10) is the very mark of the separated people — *these will keep the Sabbath day, and I will sanctify them to Myself as My people*. The Sabbath is the sign between Yahuah and His own; to keep it is to be marked as His.'),
+    ('canon','exodus',20,10,'jubilees','jubilees',50,9,'extras',
+      E'*You shall do no work whatever on the Sabbath day save that you have prepared for yourselves on the sixth day, so as to eat, and drink, and rest, and keep Sabbath from all work on that day, and to bless Yahuah your Elohim (the LORD your God)... a day of the holy kingdom for all Yashar''el (Israel) is this day among their days for ever* (Jubilees 50:9). The rest of *in it thou shalt not do any work* (Exodus 20:10) is named an everlasting ordinance — *a holy day... for all Yashar''el for ever*. The fourth word is no shadow that passes; it is the holy day of the kingdom, kept for ever.'),
+
+    -- THREAD 5 (★): Honour thy father and thy mother (the fifth word)
+    ('canon','exodus',20,12,'canon','deuteronomy',5,16,'free',
+      E'*Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged, and that it may go well with thee, in the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Deuteronomy 5:16). The second giving keeps the fifth word with its promise, matching *Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka giveth thee* (Exodus 20:12). The honour owed to parents is the hinge between the love of Yahuah and the love of neighbour, and it carries a promise of long life in the land.'),
+    ('canon','exodus',20,12,'canon','matthew',15,4,'free',
+      E'*For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death* (Matthew 15:4). Yahusha defends the fifth word — *Honour thy father and thy mother* (Exodus 20:12) — against the tradition that let men withhold from their parents under cover of a vow. He calls it what Yahuah commanded and binds men to it; the word is upheld against the commandments of men.'),
+    ('canon','exodus',20,12,'canon','matthew',19,19,'free',
+      E'*Honour thy father and thy mother: and, Thou shalt love thy neighbour as thyself* (Matthew 19:19). To the man who asked the way to life, Yahusha names the fifth word — *Honour thy father and thy mother* (Exodus 20:12) — among the very commandments to be kept. The way of life He points to is the keeping of these words, not their setting aside.'),
+    ('canon','exodus',20,12,'canon','ephesians',6,2,'free',
+      E'*Honour thy father and mother; (which is the first commandment with promise;) That it may be well with thee, and thou mayest live long on the earth* (Ephesians 6:2-3). Sha''ul (Paul) teaches the fifth word to the assemblies as binding — *Honour thy father and thy mother* (Exodus 20:12) — and names it *the first commandment with promise*. The Decalogue is the standard the apostle hands on, promise and all, not a code left behind.'),
+
+    -- THREAD 6 (★★): Thou shalt not kill / commit adultery / steal / bear false witness / covet (the second table)
+    ('canon','exodus',20,13,'canon','matthew',5,17,'free',
+      E'*Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil. For verily I say unto you, Till heaven and earth pass, one jot or one tittle shall in no wise pass from the law, till all be fulfilled* (Matthew 5:17-18). Before He touches a single command of the second table — *Thou shalt not kill* (Exodus 20:13) and the words that follow — Yahusha sets the frame plainly: He is *not come to destroy, but to fulfil*; not one jot or tittle of the law shall pass. The Ten Words stand; what follows is their deepening, never their abolition.'),
+    ('canon','exodus',20,13,'canon','matthew',5,19,'free',
+      E'*Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19). The second table — *Thou shalt not kill... commit adultery... steal... bear false witness... covet* (Exodus 20:13-17) — is exactly what Yahusha guards here: greatness in the kingdom is for those who *do and teach* the commandments, least for those who break and teach men to break them. This is the anti-antinomian word: the Torah is the covenant inheritance, kept and taught, never loosed.'),
+    ('canon','exodus',20,13,'canon','matthew',5,21,'free',
+      E'*Ye have heard that it was said by them of old time, Thou shalt not kill... But I say unto you, That whosoever is angry with his brother without a cause shall be in danger of the judgment* (Matthew 5:21-22). Yahusha takes the sixth word — *Thou shalt not kill* (Exodus 20:13) — and presses it inward to its root: the murder begins in the anger of the heart. He intensifies the command, reaching past the hand to the heart, never relaxing it.'),
+    ('canon','exodus',20,14,'canon','matthew',5,27,'free',
+      E'*Ye have heard that it was said by them of old time, Thou shalt not commit adultery: But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:27-28). The seventh word — *Thou shalt not commit adultery* (Exodus 20:14) — is driven to the heart: the lustful look is already the breach. Yahusha makes the command more searching, not less binding; the second table reaches the inward man.'),
+    ('canon','exodus',20,14,'canon','romans',13,9,'free',
+      E'*For this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet; and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself* (Romans 13:9). Sha''ul (Paul) gathers the whole second table — *commit adultery... kill... steal... bear false witness... covet* (Exodus 20:13-17) — and shows it summed in love: *Thou shalt love thy neighbour as thyself*. Love does not replace the commandments; it is their fulfilling, *for love is the fulfilling of the law* (Romans 13:10).'),
+    ('canon','exodus',20,17,'canon','romans',7,7,'free',
+      E'*Nay, I had not known sin, but by the law: for I had not known lust, except the law had said, Thou shalt not covet* (Romans 7:7). The tenth word — *Thou shalt not covet thy neighbour''s house... nor any thing that is thy neighbour''s* (Exodus 20:17) — is what taught Sha''ul to know sin for what it is. Far from being abolished, the command is honoured as holy and good: it is the very lamp that exposes the coveting heart.'),
+    ('canon','exodus',20,14,'canon','james',2,11,'free',
+      E'*For he that said, Do not commit adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law* (James 2:11). Ya''aqob (James) binds the words of the second table together by the one Lawgiver who spoke them — *Thou shalt not commit adultery* and *Thou shalt not kill* (Exodus 20:13-14). The Decalogue is one whole; to break one is to become a transgressor of the law, for it is Yahuah''s single living standard.'),
+    ('canon','exodus',20,16,'canon','leviticus',19,18,'free',
+      E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). The second table — against killing, adultery, theft, false witness, coveting (Exodus 20:13-17) — is summed in the holiness law: *thou shalt love thy neighbour as thyself*. Every neighbour-ward command flows from this; the false witness of *Thou shalt not bear false witness against thy neighbour* (Exodus 20:16) is the opposite of the love owed him.'),
+    ('canon','exodus',20,13,'canon','deuteronomy',5,17,'free',
+      E'*Thou shalt not kill* (Deuteronomy 5:17). The second giving repeats the second table word-for-word, beginning with *Thou shalt not kill* — the same command as *Thou shalt not kill* (Exodus 20:13). The Ten Words are confirmed unchanged a second time at the edge of the land, the standard the people carry in with them.'),
+
+    -- THREAD 7 (★): The people stood afar off — Moses drew near the thick darkness (the mediator)
+    ('canon','exodus',20,18,'canon','hebrews',12,18,'free',
+      E'*For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest, And the sound of a trumpet, and the voice of words* (Hebrews 12:18-19). The terror of *all the people saw the thunderings, and the lightnings, and the noise of the trumpet, and the mountain smoking* (Exodus 20:18) is named exactly: the touchable mount that burned, the trumpet, the voice of words from which the people drew back. The same Yahuah who spoke the Ten Words is the consuming fire; the awe of Sinai is not erased but remembered.'),
+    ('canon','exodus',20,19,'canon','hebrews',12,21,'free',
+      E'*And so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21). The people''s cry — *let not Elohim (God) speak with us, lest we die* (Exodus 20:19) — is matched by the dread of Moses himself: *I exceedingly fear and quake*. The holiness of the One who gives the Law is such that even the mediator trembles; the Ten Words come from a fire that none may treat lightly.'),
+    ('canon','exodus',20,21,'canon','1-timothy',2,5,'free',
+      E'*For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). When the people stood afar off and *Moses drew near unto the thick darkness where Elohim (God) was* (Exodus 20:21), he stood as mediator between Yahuah and the trembling people. Moses foreshadows the one to come — *one mediator between Elohim and men, the man HaMashiach Yahusha* — the Formed Son who took flesh and draws near for His people, the better Mediator the darkness of Sinai pointed toward.'),
+    ('canon','exodus',20,19,'canon','deuteronomy',5,27,'free',
+      E'*Go thou near, and hear all that Yahuah Eloheinu (the LORD our God) shall say: and speak thou unto us all that Yahuah Eloheinu (the LORD our God) shall speak unto thee; and we will hear it, and do it* (Deuteronomy 5:27). The second giving recounts the people''s plea of *Speak thou with us, and we will hear: but let not Elohim (God) speak with us, lest we die* (Exodus 20:19): they ask Moses to go near and bring back the word, *and we will hear it, and do it*. The mediator carries the word from the fire to the people, who pledge to hear and do — the very posture the framework upholds: hear and obey.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-i-am-yahuah-which-brought-thee-out-of-egypt',
+       E'I am Yahuah which brought thee out of Egypt — grace precedes the commands',
+       E'*And Elohim (God) spake all these words, saying, I am Yahuah Elohayka (the LORD thy God), which have brought thee out of the land of Egypt, out of the house of bondage* (Exodus 20:1-2). Before a single command is spoken, the redemption is named. This is the whole posture of the covenant: Yashar''el (Israel) is brought out FIRST, by the mighty hand and the stretched-out arm, and ONLY THEN given the Ten Words. The Torah is never the price of deliverance — it is the household law of a people already redeemed, already chosen, already brought out. The second giving opens with the very same preamble: *I am Yahuah Elohayka (the LORD thy God), which brought thee out of the land of Egypt, from the house of bondage* (Deuteronomy 5:6). The restored witness names the election the deliverance seals: *I will separate to Myself a people from among all the peoples... and I will sanctify them to Myself as My people... and they will be My people and I shall be their Elohim (God)* (Jubilees 2:19), and *I have chosen the seed of Jacob from amongst all that I have seen, and have written him down as My firstborn son, and have sanctified him to Myself for ever and ever* (Jubilees 2:20). The people of the Ten Words are the redeemed firstborn son, the two-house covenant lineage — never earning His favour by the law, but living the covenant-life of those already brought out of bondage. Grace before the commands, always.',
+       sv.verse_id, ev.verse_id, 'extras', 29475
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-thou-shalt-have-no-other-gods-no-graven-image',
+       E'No other gods, no graven image — I Yahuah am a jealous Elohim',
+       E'*Thou shalt have no other gods before me. Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth* (Exodus 20:3-4) — and the ground of it: *for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God)... shewing mercy unto thousands of them that love me, and keep my commandments* (Exodus 20:5-6). The first and second words: one Yahuah, no rival, no carved likeness. The second giving keeps them whole (Deuteronomy 5:7-8). The Formed Son lives by the first word and wields it against the tempter: *Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Matthew 4:10), and names it *the first and great commandment... Thou shalt love Yahuah Elohayka with all thy heart* (Matthew 22:37-38). Sha''ul (Paul) reasons straight from it: *an idol is nothing in the world, and... there is none other Elohim but one* (1 Corinthians 8:4); *but to us there is but one Elohim, the Father, of whom are all things... and one Lord Yahusha HaMashiach, by whom are all things* (1 Corinthians 8:6) — the Father the formless Source, the Formed Son the One through whom all things came, never two co-equal gods, never a rival to the one Yahuah. And the last apostle seals the second word: *Little children, keep yourselves from idols* (1 John 5:21). The seed-war against idolatry runs from Sinai to the end: the people of the one Yahuah guard their worship from every counterfeit and carved thing, and His mercy rests on *them that love me, and keep my commandments* (Exodus 20:6) — love and commandment-keeping bound together, the 1 John 2:3-4 filter.',
+       sv.verse_id, ev.verse_id, 'free', 29478
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-not-take-the-name-of-yahuah-in-vain',
+       E'Thou shalt not take the name of Yahuah in vain — reverence of the Name',
+       E'*Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain* (Exodus 20:7). The third word guards the Name itself — it is not to be emptied, sworn falsely, or worn as a cloak for a lie. The second giving keeps it verse-for-verse (Deuteronomy 5:11). The holiness law unfolds it: *ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 19:12) — to swear falsely by the Name is to profane it. And Yahusha drives it to its root, past the false oath to the false heart: *Swear not at all; neither by heaven; for it is Elohim''s (God''s) throne... But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:34,37) — let speech be so true that no oath upon the Name is ever needed. The wisdom of the fathers warns the same: *Accustom not your mouth to swearing; neither use thyself to the naming of the Holy One* (Sirach 23:9), *for... he that sweareth and nameth Yahuah (God) continually shall not be faultless* (Sirach 23:10). The Name is holy; it is not to grow common or careless on the tongue. The third word is deepened by Messiah and the sages, never loosed.',
+       sv.verse_id, ev.verse_id, 'extras', 29481
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-remember-the-sabbath-day-to-keep-it-holy',
+       E'Remember the sabbath day to keep it holy — for in six days Yahuah made heaven and earth',
+       E'*Remember the sabbath day, to keep it holy. Six days shalt thou labour, and do all thy work: But the seventh day is the sabbath of Yahuah Elohayka (the LORD thy God)... For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:8-11). The fourth word grounds itself not in Sinai but in CREATION. The Sabbath is no later Jewish ceremony bolted onto the Law and abolished at the cross — it is woven into the world from the seventh day: *And on the seventh day Elohim (God) ended his work... and he rested... And Elohim blessed the seventh day, and sanctified it* (Genesis 2:2-3). Yahuah blessed and hallowed the day before any nation existed; the command only bids Yashar''el (Israel) remember what was already holy. The second giving keeps it — *Keep the sabbath day to sanctify it, as Yahuah Elohayka hath commanded thee* (Deuteronomy 5:12) — adding the Egypt-deliverance ground; remember and keep are the two facets of the one everlasting word. The Renewed Writings do not abolish it: *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — present tense, still standing, a sabbath-rest yet for His people. And the Formed Son is its Lord, not its destroyer: *The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28) — He made it, He rested on it at creation, He upholds it as a gift to man. The prophet calls it joy — *call the sabbath a delight, the holy of Yahuah (LORD), honourable... Then shalt thou delight thyself in Yahuah* (Isaiah 58:13-14) — and carries it into the world to come: *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me* (Isaiah 66:23). The restored witness names it the great sign: *kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1); the mark of His separated people — *these will keep the Sabbath day, and I will sanctify them to Myself as My people* (Jubilees 2:19); the everlasting ordinance — *a day of the holy kingdom for all Yashar''el (Israel) is this day among their days for ever* (Jubilees 50:9). Creation-rooted, prophet-affirmed, kept by Messiah, carried into the new heavens — the fourth word stands. The 1 John 2:3-4 filter: any reading that makes the Sabbath irrelevant is the false reading this work exists to overturn.',
+       sv.verse_id, ev.verse_id, 'extras', 29484
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-honour-thy-father-and-thy-mother',
+       E'Honour thy father and thy mother — the first commandment with promise',
+       E'*Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The fifth word is the hinge between the table of the love of Yahuah and the table of the love of neighbour, and it alone carries a promise — long life in the land. The second giving keeps it with its promise (Deuteronomy 5:16). Yahusha defends it against the corban-tradition that let men withhold from their parents under cover of a vow: *For Elohim (God) commanded, saying, Honour thy father and mother: and, He that curseth father or mother, let him die the death* (Matthew 15:4) — He upholds the word against the commandments of men. To the man who asked the way to life He names it among the commandments to be kept: *Honour thy father and thy mother: and, Thou shalt love thy neighbour as thyself* (Matthew 19:19). And Sha''ul (Paul) hands it to the assemblies as binding, promise and all: *Honour thy father and mother; (which is the first commandment with promise;) That it may be well with thee, and thou mayest live long on the earth* (Ephesians 6:2-3). The Decalogue is the standard taught from Sinai to the apostles — the fifth word affirmed, never abolished.',
+       sv.verse_id, ev.verse_id, 'free', 29487
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour',
+       E'Thou shalt not kill, commit adultery, steal, bear false witness, covet — the second table, deepened not abolished',
+       E'*Thou shalt not kill. Thou shalt not commit adultery. Thou shalt not steal. Thou shalt not bear false witness against thy neighbour. Thou shalt not covet... any thing that is thy neighbour''s* (Exodus 20:13-17). The second table — the love of neighbour in five commands. The second giving repeats them word-for-word (Deuteronomy 5:17-21). And here stands the anti-antinomian centerpiece of the whole Renewed Writings: before Yahusha touches a single one of these words He sets the frame — *Think not that I am come to destroy the law, or the prophets: I am not come to destroy, but to fulfil... one jot or one tittle shall in no wise pass from the law, till all be fulfilled* (Matthew 5:17-18) — and then, *Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19). He does not loose the Ten Words; He drives them to the heart. The sixth word reaches anger — *whosoever is angry with his brother... shall be in danger of the judgment* (Matthew 5:21-22); the seventh reaches the lustful look — *whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:27-28). The intensifying is not abolition; it is the command reaching the inward man. Sha''ul (Paul) gathers the table and shows it summed in love — *Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet... it is briefly comprehended in this saying, namely, Thou shalt love thy neighbour as thyself* (Romans 13:9) — for *love is the fulfilling of the law* (Romans 13:10), the very word of the holiness law: *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). The tenth word is what taught him to know sin: *I had not known lust, except the law had said, Thou shalt not covet* (Romans 7:7) — the command honoured as holy, the lamp that exposes the heart. And Ya''aqob (James) binds the words by the one Lawgiver who spoke them all: *he that said, Do not commit adultery, said also, Do not kill* (James 2:11) — the Decalogue is one living standard. The second table, affirmed and deepened by Messiah and the apostles, never set aside.',
+       sv.verse_id, ev.verse_id, 'free', 29490
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-20-the-people-stood-afar-off-moses-drew-near-the-mediator',
+       E'The people stood afar off — Moses drew near unto the thick darkness (the mediator)',
+       E'*And all the people saw the thunderings, and the lightnings, and the noise of the trumpet, and the mountain smoking: and when the people saw it, they removed, and stood afar off. And they said unto Moses, Speak thou with us, and we will hear: but let not Elohim (God) speak with us, lest we die... And the people stood afar off, and Moses drew near unto the thick darkness where Elohim (God) was* (Exodus 20:18-21). The Ten Words come from a fire so holy the people cannot bear the voice; they beg a mediator, and Moses goes near for them into the thick darkness. The Renewed Writings name the terror exactly: *ye are not come unto the mount that might be touched, and that burned with fire... and the sound of a trumpet, and the voice of words; which voice they that heard intreated that the word should not be spoken to them any more* (Hebrews 12:18-19), and even the mediator trembled — *so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21). The holiness of the One who gives the Law is not erased; it is remembered. And the mediator who stood between Yahuah and the people foreshadows the One to come: *there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5) — the Formed Son who took flesh and draws near for His people, the better Mediator the darkness of Sinai pointed toward. The second giving recounts the people''s plea and pledge: *Go thou near, and hear all that Yahuah Eloheinu (the LORD our God) shall say... and we will hear it, and do it* (Deuteronomy 5:27) — the mediator carries the word from the fire, and the people answer hear and obey, the very posture the covenant asks.',
+       sv.verse_id, ev.verse_id, 'free', 29493
+  FROM _s305_ex20_lookup sv, _s305_ex20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=20 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I am Yahuah Elohayka (the LORD thy God), which brought thee out of the land of Egypt, from the house of bondage* (Deuteronomy 5:6) — the second giving opens with the same preamble as 20:2; redeemed FIRST, then given the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-i-am-yahuah-which-brought-thee-out-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will separate to Myself a people from among all the peoples... they will be My people and I shall be their Elohim (God)* (Jubilees 2:19) — the election the deliverance of 20:2 seals; the commands are the law of a people already His.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-i-am-yahuah-which-brought-thee-out-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I have chosen the seed of Jacob... and have written him down as My firstborn son... for ever and ever* (Jubilees 2:20) — the redeemed of 20:2 are the firstborn son, the two-house covenant lineage.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-i-am-yahuah-which-brought-thee-out-of-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt have none other gods before me* (Deuteronomy 5:7) — the first word kept entire in the second giving (20:3).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou shalt not make thee any graven image, or any likeness of any thing that is in heaven above* (Deuteronomy 5:8) — the second word kept entire in the second giving (20:4).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=4
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt worship Yahuah Elohayka (the Lord thy God), and him only shalt thou serve* (Matthew 4:10) — the Formed Son wields the first word (20:3) against the tempter.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou shalt love Yahuah Elohayka (the Lord thy God) with all thy heart... This is the first and great commandment* (Matthew 22:37-38) — Yahusha names the first word (20:3) the great commandment.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*an idol is nothing in the world, and... there is none other Elohim (God) but one* (1 Corinthians 8:4) — Sha''ul reasons straight from the first word (20:3); the gods are emptiness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*to us there is but one Elohim (God), the Father... and one Lord Yahusha HaMashiach (Lord Jesus Christ), by whom are all things* (1 Corinthians 8:6) — the one-Yahuah confession of 20:3 in the Formed-and-the-Formless; Father the Source, Son the One through whom all things came.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=8 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Little children, keep yourselves from idols* (1 John 5:21) — the last apostle seals the second word (20:4); the seed-war against idolatry runs to the end.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=4
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-have-no-other-gods-no-graven-image'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain... will not hold him guiltless* (Deuteronomy 5:11) — the third word kept verse-for-verse in the second giving (20:7).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-not-take-the-name-of-yahuah-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*ye shall not swear by my name falsely, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 19:12) — the third word (20:7) unfolded: false oath = profaning the Name.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-not-take-the-name-of-yahuah-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Swear not at all... let your communication be, Yea, yea; Nay, nay* (Matthew 5:34,37) — Yahusha drives the third word (20:7) to its root: speech so true no oath on the Name is needed.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-not-take-the-name-of-yahuah-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Accustom not your mouth to swearing; neither use thyself to the naming of the Holy One* (Sirach 23:9) — the fathers'' wisdom guards the third word (20:7); the Name not to grow common on the tongue.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=7
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=23 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-not-take-the-name-of-yahuah-in-vain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*on the seventh day Elohim (God)... rested on the seventh day from all his work* (Genesis 2:2) — the creation root of the fourth word (20:11): Yahuah rested before any nation was.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:3) — the very act behind *Yahuah blessed the sabbath day, and hallowed it* (20:11); blessed before it was commanded.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Keep the sabbath day to sanctify it, as Yahuah Elohayka (the LORD thy God) hath commanded thee* (Deuteronomy 5:12) — the second giving of the fourth word (20:8): remember and keep, two facets of one command.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=8
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — the seventh-day rest of 20:9-10 still STANDS, present tense; a sabbatismos yet for His people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*The sabbath was made for man... the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28) — the Formed Son is Lord of the seventh day (20:10); He upholds it, never abolishes it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*call the sabbath a delight, the holy of Yahuah (LORD), honourable... Then shalt thou delight thyself in Yahuah* (Isaiah 58:13-14) — the prophet unfolds *keep it holy* (20:8) as joy, not bondage.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=8
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me* (Isaiah 66:23) — the hallowed day of 20:11 carried into the new heavens; never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1) — the restored witness grounds 20:11: a creation sign for all ages.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*these will keep the Sabbath day, and I will sanctify them to Myself as My people* (Jubilees 2:19) — keeping *the sabbath of Yahuah Elohayka* (20:10) is the mark of His separated people.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*keep Sabbath from all work on that day... a day of the holy kingdom for all Yashar''el (Israel) is this day among their days for ever* (Jubilees 50:9) — the rest of 20:10 named an everlasting ordinance.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=50 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-remember-the-sabbath-day-to-keep-it-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged* (Deuteronomy 5:16) — the fifth word with its promise kept in the second giving (20:12).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-honour-thy-father-and-thy-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Elohim (God) commanded, saying, Honour thy father and mother... He that curseth father or mother, let him die the death* (Matthew 15:4) — Yahusha upholds the fifth word (20:12) against the corban-tradition.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-honour-thy-father-and-thy-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Honour thy father and thy mother: and, Thou shalt love thy neighbour as thyself* (Matthew 19:19) — Yahusha names the fifth word (20:12) among the commandments that are the way of life.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-honour-thy-father-and-thy-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Honour thy father and mother; (which is the first commandment with promise;) That it may be well with thee* (Ephesians 6:2-3) — Sha''ul hands on the fifth word (20:12) as binding, promise and all.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-honour-thy-father-and-thy-mother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Think not that I am come to destroy the law... I am not come to destroy, but to fulfil... one jot or one tittle shall in no wise pass* (Matthew 5:17-18) — the frame over the whole second table (20:13-17): not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19) — the anti-antinomian word over 20:13-17: keep and teach the commandments.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt not kill... whosoever is angry with his brother... shall be in danger of the judgment* (Matthew 5:21-22) — Yahusha presses the sixth word (20:13) inward to the heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou shalt not commit adultery... whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:27-28) — the seventh word (20:14) driven to the heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal... briefly comprehended in this saying, Thou shalt love thy neighbour as thyself* (Romans 13:9) — Sha''ul sums the second table (20:13-17) in love; love fulfils the law, not abolishes it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I had not known lust, except the law had said, Thou shalt not covet* (Romans 7:7) — the tenth word (20:17) honoured as the holy lamp that exposes the coveting heart.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*he that said, Do not commit adultery, said also, Do not kill... thou art become a transgressor of the law* (James 2:11) — Ya''aqob binds the second table (20:13-14) by the one Lawgiver; the Decalogue is one whole.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18) — the second table (20:13-17, esp. the false witness of 20:16) summed in the love of neighbour.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=16
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Thou shalt not kill* (Deuteronomy 5:17) — the second table confirmed word-for-word a second time at the edge of the land (20:13).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-thou-shalt-not-kill-the-second-table-love-of-neighbour'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*ye are not come unto the mount that might be touched, and that burned with fire... and the voice of words* (Hebrews 12:18-19) — the terror of the smoking mount (20:18) named exactly.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-the-people-stood-afar-off-moses-drew-near-the-mediator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*so terrible was the sight, that Moses said, I exceedingly fear and quake* (Hebrews 12:21) — even the mediator trembles; matches the people''s *lest we die* (20:19).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=19
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-the-people-stood-afar-off-moses-drew-near-the-mediator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5) — Moses drawing near the thick darkness (20:21) foreshadows the Formed Son, the better Mediator.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=21
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-the-people-stood-afar-off-moses-drew-near-the-mediator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Go thou near, and hear all that Yahuah Eloheinu (the LORD our God) shall say... and we will hear it, and do it* (Deuteronomy 5:27) — the second giving of the people''s plea (20:19); hear and obey, the covenant posture.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=20 AND sv.verse_number=19
+  JOIN _s305_ex20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-20-the-people-stood-afar-off-moses-drew-near-the-mediator'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_24.sql (Exodus 24) -----
+-- Chapter: Exodus 24 — THE COVENANT RATIFIED IN BLOOD; the elders see the Elohim of Yashar'el; Moses into the cloud forty days. Moses tells the people all the words and judgments and they answer with one voice, *All the words which Yahuah hath said will we do*; he writes the words, builds an altar and twelve pillars, the young men offer burnt offerings and peace offerings; Moses sprinkles half the blood on the altar, reads the book of the covenant, and sprinkles the blood on the people: *Behold the blood of the covenant, which Yahuah hath made with you concerning all these words*. Then Moses, Aaron, Nadab, Abihu, and seventy elders go up and *saw the Elohim of Yashar'el*, and *did eat and drink* — the covenant meal in His presence. Yahuah calls Moses up for the tables of stone and the law He has written; the glory of Yahuah abides on Sinai, the cloud covers six days, the seventh day He calls; the sight of the glory is like devouring fire; Moses is in the mount forty days and forty nights.
+-- Tag: ex24   Temp view: _s305_ex24_lookup
+-- Sort band: base 29575, step 3 -> threads at 29575, 29578, 29581, 29584, 29587 (5 threads)
+-- Source of EVERY row: 'canon','exodus',24,v
+--
+-- Exodus 24 coverage:
+--   ★ v.3,7 (all the people answered with one voice... All the words which Yahuah hath said will we do; he took the book of the covenant, and read in the audience of the people: and they said, All that Yahuah hath said will we do, and be obedient)
+--        NT:     none warranted distinct (the covenant vow's forward-weave is the same Torah-on-the-heart of THREAD 2's Jeremiah; the willing "we will do" is a Tanakh lateral matter)
+--        Extras: none warranted distinct (Jasher 82:31 "We will do all that Yahuah has spoken to you" is the SANCTUARY-vow after the calf, a later moment; not forced onto the 24:3,7 ratification vow)
+--        Tanakh: ★ Exodus 19:8 (all the people answered together... All that Yahuah hath spoken we will do); Deuteronomy 5:27 (speak thou unto us all that Yahuah... shall speak unto thee; and we will hear it, and do it) — THREAD 1 (the willing covenant vow; Torah received gladly)
+--   ★★ v.6-8 (Moses took half of the blood... sprinkled on the altar... took the book of the covenant, and read in the audience of the people... took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah hath made with you concerning all these words) — THE KEYSTONE
+--        NT:     ★★ Hebrews 9:18-20 (neither the first testament was dedicated without blood... he took the blood of calves and of goats... and sprinkled both the book, and all the people, Saying, This is the blood of the testament which Elohim hath enjoined unto you) — Hebrews QUOTES this verse; ★ Matthew 26:28 / Mark 14:24 / Luke 22:20 (This is my blood of the new testament/covenant, which is shed for many) — Yahusha takes up the very words; Hebrews 10:29 (the blood of the covenant, wherewith he was sanctified); 1 Peter 1:2 (sprinkling of the blood of Yahusha HaMashiach) — THREAD 2
+--        Extras: none warranted distinct (Jasher 82 / Jubilees 1 carry the Sinai-ascent and tables but not the blood-sprinkling rite of 24:6-8; not forced)
+--        Tanakh: ★ Jeremiah 31:31-33 (I will make a new covenant... I will put my law in their inward parts, and write it in their hearts) — the renewed covenant in the same blood-pattern, the SAME Torah on the heart, NOT a different law — THREAD 2
+--   ★★ v.9-11 (Then went up Moses, and Aaron, Nadab, and Abihu, and seventy of the elders... And they saw the Elohim of Yashar'el... also they saw Elohim, and did eat and drink) — THE THEOPHANY
+--        NT:     ★★ John 1:18 (No man hath seen Elohim at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him); John 6:46 (Not that any man hath seen the Father, save he which is of Elohim, he hath seen the Father); 1 Timothy 6:16 (whom no man hath seen, nor can see) — what the elders SAW = the Formed Son, not the invisible Father (Red Line #4) — THREAD 3
+--        Extras: none warranted distinct (the theophany is carried by the NT Formed-and-Formless filter; no clean extras witness to the seventy-elders' vision in the assigned set)
+--        Tanakh: none warranted distinct (the seeing-and-living of Deut 5:24 belongs to the Decalogue scene; held in THREAD 3 prose, not forced as member)
+--   ★ v.12 (I will give thee tables of stone, and a law, and commandments which I have written; that thou mayest teach them)
+--        NT:     none warranted distinct (the Torah-as-gift forward-weave is the law written on the heart of THREAD 2's Jeremiah; not duplicated here)
+--        Extras: Jubilees 1:1 / Jasher 82:10-11 (the tables of the law... written with the finger of Elohim) — carried in THREAD 5's glory/cloud weave; not split out separately
+--        Tanakh: ★ Exodus 31:18 (two tables of testimony... written with the finger of Elohim); Exodus 32:16 (the tables were the work of Elohim, and the writing was the writing of Elohim); Deuteronomy 9:10 (two tables of stone written with the finger of Elohim) — the Torah written by Yahuah's own hand — THREAD 4
+--   ★ v.13-14 (Moses rose up, and his minister Joshua... Moses went up into the mount of Elohim; And he said unto the elders, Tarry ye here for us, until we come again unto you)
+--        NT:     none warranted   Extras: none warranted   Tanakh: none warranted (the transitional ascent notice; carried by THREAD 5's mount-ascent)
+--   ★ v.15-18 (Moses went up... a cloud covered the mount. And the glory of Yahuah abode upon mount Sinai, and the cloud covered it six days: and the seventh day he called unto Moses out of the midst of the cloud. And the sight of the glory of Yahuah was like devouring fire... Moses was in the mount forty days and forty nights)
+--        NT:     ★ Hebrews 12:29 (For our Elohim is a consuming fire) — the glory like devouring fire — THREAD 5; Matthew 4:2 (forty days/forty nights fast) weighed but NOT forced (a loose lateral, the brief says do not force) — none added
+--        Extras: ★ Jubilees 1:2-4 (the glory of Yahuah abode on Mount Sinai, and a cloud overshadowed it six days. And He called to Moses on the seventh day out of the midst of the cloud... like a flaming fire on the top of the Mount. And Moses was on the Mount forty days and forty nights) — verse-for-verse; ★ Jasher 82:8-9 (the glory of Yahuah rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud... forty days and forty nights) — THREAD 5
+--        Tanakh: Deuteronomy 9:9 (I abode in the mount forty days and forty nights) — the forty days; carried in THREAD 5 prose, the extras witnesses serving as members
+--
+-- Threads (slug — target libraries):
+--   1. exodus-24-all-the-words-which-yahuah-hath-said-will-we-do — Tanakh (Exodus 19:8, Deuteronomy 5:27) [free] (the willing covenant vow; Torah received gladly)
+--   2. exodus-24-behold-the-blood-of-the-covenant — NT (Hebrews 9, Matthew, Mark, Luke, Hebrews 10, 1 Peter) + Tanakh (Jeremiah 31) [free] (★★ THE KEYSTONE: the blood that ratifies; the renewed covenant in the same blood-pattern, the same Torah on the heart)
+--   3. exodus-24-they-saw-the-elohim-of-yashar-el — NT (John 1, John 6, 1 Timothy 6) [free] (★★ the theophany: what they SAW = the Formed Son, not the invisible Father — Red Line #4)
+--   4. exodus-24-tables-of-stone-and-a-law-which-i-have-written — Tanakh (Exodus 31, Exodus 32, Deuteronomy 9) [free] (the Torah written by Yahuah's own hand; the Torah as gift)
+--   5. exodus-24-the-glory-abode-the-cloud-six-days-forty-days — NT (Hebrews 12) + Extras (Jubilees 1, Jasher 82) [extras] (the glory/cloud = the Formed presence; six days, the seventh-day call, the devouring fire, the forty days)
+--
+-- Framing notes:
+--   ★ THE COVENANT VOW (THREAD 1): *All the words which Yahuah (LORD) hath said will we do* (24:3) and *All that Yahuah (LORD) hath said will we do, and be obedient* (24:7). The people RECEIVE the Torah willingly — the covenant is no curse imposed but a treasure embraced. Woven to the same vow at Exodus 19:8 (*All that Yahuah hath spoken we will do*) and to Deuteronomy 5:27 (*we will hear it, and do it*). Torah-affirmed throughout (Red Line #6, the covenant inheritance never the curse; 1 John 2:3-4 filter).
+--   ★★ THE KEYSTONE — THE BLOOD OF THE COVENANT (THREAD 2): *Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words* (24:8). Hebrews QUOTES this verse outright — *neither the first testament was dedicated without blood... and sprinkled both the book, and all the people, Saying, This is the blood of the testament which Elohim hath enjoined unto you* (Hebrews 9:18-20). And Yahusha takes up the VERY WORDS at the table: *This is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28; Mark 14:24; Luke 22:20). The renewed covenant is the SAME blood-pattern — Jeremiah 31:31-33 names it: *I will put my law in their inward parts, and write it in their hearts* — the Torah ON THE HEART, NOT a different law, NOT Torah abolished (Red Line #6). 1 Peter 1:2 (*sprinkling of the blood*) and Hebrews 10:29 (*the blood of the covenant, wherewith he was sanctified*) keep the same sprinkling-rite. The blood that ratifies Sinai is the blood that ratifies the renewal — one covenant-pattern, one Torah, deepened not displaced.
+--   ★★ THE THEOPHANY — WHAT THEY SAW (THREAD 3): *And they saw the Elohim (God) of Yashar'el (Israel)... also they saw Elohim (God), and did eat and drink* (24:10-11). Read strictly through the Formed-and-the-Formless (Red Line #4): the seventy elders did NOT behold the invisible Father — *No man hath seen Elohim (God) at any time* (John 1:18), *whom no man hath seen, nor can see* (1 Timothy 6:16), *Not that any man hath seen the Father* (John 6:46). What they saw was the Formed Son, the One who bears the Name, the visible Glory who appears and speaks in the Tanakh and later took on flesh — the *only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18). The covenant meal in His presence — *did eat and drink* — is the foreshadow of the marriage-supper to come. NOT co-equal-persons grammar, NOT modalist collapse: the Formed who has a Father is the One beheld on the mount.
+--   ★ THE TORAH WRITTEN BY YAHUAH'S OWN HAND (THREAD 4): *I will give thee tables of stone, and a law, and commandments which I have written; that thou mayest teach them* (24:12). The Torah is Yahuah's own gift, written by His own hand — *written with the finger of Elohim (God)* (Exodus 31:18; Deuteronomy 9:10), *the writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16). The law is no human invention but the very script of the Most High; to be taught and kept (Red Line #6).
+--   ★ THE GLORY, THE CLOUD, THE FORTY DAYS (THREAD 5): *the glory of Yahuah (LORD) abode upon mount Sinai, and the cloud covered it six days: and the seventh day he called unto Moses out of the midst of the cloud. And the sight of the glory of Yahuah (LORD) was like devouring fire* (24:16-17); *Moses was in the mount forty days and forty nights* (24:18). The glory and the cloud are the Formed presence; the devouring fire is named in the letter — *For our Elohim (God) is a consuming fire* (Hebrews 12:29). The restored witnesses carry the scene verse-for-verse: *the glory of Yahuah abode on Mount Sinai, and a cloud overshadowed it six days. And He called to Moses on the seventh day out of the midst of the cloud... like a flaming fire on the top of the Mount. And Moses was on the Mount forty days and forty nights* (Jubilees 1:2-4); *the glory of Yahuah rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud... forty days and forty nights* (Jasher 82:8-9). The six days of covering and the seventh-day call hold the Sabbath-rhythm even on the mount.
+--   EXTRAS: Jubilees 1 opens with the Sinai-ascent of Exodus 24 verse-for-verse (Jub 1:1-4: *Come up to Me on the Mount, and I will give you two tables of stone of the law and of the commandment, which I have written, that you may teach them*; the glory, the six-day cloud, the seventh-day call, the forty days) — clean parse, used as THREAD 5 members. Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'. Jasher 82 carries the same ascent (82:8-9), the tables written with the finger of Elohim (82:11), then the golden-calf episode and the SECOND ascent — the calf/second-tables material belongs to Exodus 32/34's own packs; only the clean 24-parallel verses (82:8-9) are members here. Jasher DOUBLE-WRITTEN 'jasher','jasher'. Jasher 82:31 (*We will do all that Yahuah has spoken to you*) echoes 24:3,7 but is spoken at the SANCTUARY-vow after the calf, a later moment — deliberately NOT forced onto THREAD 1.
+--   VERSES WITH NO ADD: v.1-2 (the summons to come up and worship afar off, Moses alone to come near) — the framing summons, carried into THREAD 3's ascent and THREAD 5's mount; v.4-5 (the altar, twelve pillars, the burnt and peace offerings) — the ratification preparation, no distinct framework-bearing target beyond THREAD 2's blood-rite; v.13-14 (Moses and Joshua go up; Tarry ye here until we come again) — the transitional ascent notice, no add.
+
+CREATE TEMP VIEW _s305_ex24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: All the words which Yahuah hath said will we do (the willing covenant vow)
+    ('canon','exodus',24,3,'canon','exodus',19,8,'free',
+      E'*And all the people answered together, and said, All that Yahuah (LORD) hath spoken we will do. And Moses returned the words of the people unto Yahuah (LORD)* (Exodus 19:8). Before the mountain ever burned, the people vowed the same word they now repeat at the ratification — *all the people answered with one voice, and said, All the words which Yahuah (LORD) hath said will we do* (Exodus 24:3). The covenant is no curse forced upon them but an inheritance embraced with one voice; twice over they say *we will do*, the Torah received gladly.'),
+    ('canon','exodus',24,7,'canon','deuteronomy',5,27,'free',
+      E'*Go thou near, and hear all that Yahuah Eloheinu (the LORD our God) shall say: and speak thou unto us all that Yahuah Eloheinu (the LORD our God) shall speak unto thee; and we will hear it, and do it* (Deuteronomy 5:27). When Moses *took the book of the covenant, and read in the audience of the people: and they said, All that Yahuah (LORD) hath said will we do, and be obedient* (Exodus 24:7), it is the same heart Moses recalls at Horeb — *we will hear it, and do it*. The hearing and the doing are one; the words of the covenant are taken up willingly, *and be obedient*, the Torah owned as the people''s own.'),
+
+    -- THREAD 2 (★★ KEYSTONE): Behold the blood of the covenant
+    ('canon','exodus',24,8,'canon','hebrews',9,20,'free',
+      E'*Saying, This is the blood of the testament which Elohim (God) hath enjoined unto you* (Hebrews 9:20). Hebrews quotes this very verse — *Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words* (Exodus 24:8) — naming the Sinai blood-rite as the pattern: the testament dedicated in blood, the words of the covenant sealed upon the people. What Moses spoke at the altar the letter carries forward unchanged: *the blood of the testament which Elohim hath enjoined unto you*.'),
+    ('canon','exodus',24,8,'canon','hebrews',9,18,'free',
+      E'*Whereupon neither the first testament was dedicated without blood* (Hebrews 9:18). The rite of *Moses took the blood, and sprinkled it on the people* (Exodus 24:8) is named the dedication of the covenant — *neither the first testament was dedicated without blood*. Hebrews 9:19 recounts it whole: *when Moses had spoken every precept to all the people according to the law, he took the blood... and sprinkled both the book, and all the people*. The covenant is ratified in blood; the sprinkled blood binds the people to *all these words*.'),
+    ('canon','exodus',24,8,'canon','matthew',26,28,'free',
+      E'*For this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28). At the table Yahusha (Jesus) takes up the very words of the mount — *Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words* (Exodus 24:8) — and speaks them over the cup: *my blood of the new testament*. The same blood-pattern that ratified Sinai ratifies the renewal; the covenant deepened, not displaced — one blood that binds the people to the words of Yahuah.'),
+    ('canon','exodus',24,8,'canon','mark',14,24,'free',
+      E'*And he said unto them, This is my blood of the new testament, which is shed for many* (Mark 14:24). The cup carries the words of the mount — *the blood of the covenant... concerning all these words* (Exodus 24:8) — now *my blood of the new testament, which is shed for many*. The renewal stands in the same blood-rite Moses performed; the Formed Son who made the covenant at Sinai seals its renewal in His own blood.'),
+    ('canon','exodus',24,8,'canon','luke',22,20,'free',
+      E'*Likewise also the cup after supper, saying, This cup is the new testament in my blood, which is shed for you* (Luke 22:20). What Moses declared — *Behold the blood of the covenant, which Yahuah (LORD) hath made with you* (Exodus 24:8) — Yahusha (Jesus) declares anew: *the new testament in my blood*. The covenant cup of the table answers the sprinkled blood of the altar; the same covenant, the same blood-pattern, the Torah-on-the-heart renewal Jeremiah foretold.'),
+    ('canon','exodus',24,8,'canon','hebrews',10,29,'free',
+      E'*Of how much sorer punishment, suppose ye, shall he be thought worthy, who hath trodden under foot the Son of Elohim (God), and hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing* (Hebrews 10:29). The phrase from the mount — *the blood of the covenant* (Exodus 24:8) — is held sacred still: to despise *the blood of the covenant, wherewith he was sanctified* is the gravest of sins. The blood that bound the people at Sinai binds them yet; it is no light thing to count it unholy.'),
+    ('canon','exodus',24,8,'canon','1-peter',1,2,'free',
+      E'*Elect according to the foreknowledge of Elohim (God) the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:2). The sprinkled blood of the mount — *Moses took the blood, and sprinkled it on the people* (Exodus 24:8) — is named as the figure the elect stand under: *unto obedience and sprinkling of the blood*. The sprinkling binds to obedience, exactly as the Sinai rite bound the people to *all these words*; the blood-pattern carries unbroken into the renewal.'),
+    ('canon','exodus',24,8,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The renewed covenant sealed at the table answers the blood of the mount — *the blood of the covenant... concerning all these words* (Exodus 24:8) — but it is the SAME Torah, now written within: *I will put my law in their inward parts, and write it in their hearts*. Jeremiah 31:31 calls it *a new covenant with the house of Yashar''el, and with the house of Yahudah (Judah)* — the two houses gathered under one renewed covenant, the Torah moved from tables of stone to tables of the heart, never abolished, never exchanged for a different law.'),
+
+    -- THREAD 3 (★★): They saw the Elohim of Yashar'el (the theophany — the Formed Son)
+    ('canon','exodus',24,10,'canon','john',1,18,'free',
+      E'*No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18). When the seventy elders *saw the Elohim (God) of Yashar''el (Israel)* (Exodus 24:10), they did not behold the invisible Father — *No man hath seen Elohim at any time*. What was seen on the mount was the Formed Son, the *only begotten Son, which is in the bosom of the Father, he hath declared him*: the One who bears the Name, the visible Glory who appears and speaks in the Tanakh, who later took on flesh. The Formed who has a Father was beheld; the Formless was not.'),
+    ('canon','exodus',24,11,'canon','john',6,46,'free',
+      E'*Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father* (John 6:46). The nobles *saw Elohim (God), and did eat and drink* (Exodus 24:11) — yet *not that any man hath seen the Father*. Only the One who *is of Elohim* has seen the Father; what the elders beheld was that very One, the Formed Son, in whose presence they ate and drank the covenant meal. The seeing on the mount is the seeing of the Son who declares the Father, not of the Father Himself.'),
+    ('canon','exodus',24,10,'canon','1-timothy',6,16,'free',
+      E'*Who only hath immortality, dwelling in the light which no man can approach unto; whom no man hath seen, nor can see: to whom be honour and power everlasting. Amen* (1 Timothy 6:16). The Father is the One *whom no man hath seen, nor can see* — so the elders'' vision, *they saw the Elohim (God) of Yashar''el (Israel)* (Exodus 24:10), is the seeing of the Formed Son, not the Formless Source. The invisible Father dwells in unapproachable light; the Son drawn from Him is the One who appeared on Sinai, beheld and yet leaving them alive.'),
+
+    -- THREAD 4: Tables of stone, and a law, which I have written (Torah by Yahuah's own hand)
+    ('canon','exodus',24,12,'canon','exodus',31,18,'free',
+      E'*And he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of Elohim (God)* (Exodus 31:18). The promise *I will give thee tables of stone, and a law, and commandments which I have written* (Exodus 24:12) is fulfilled in the giving — *tables of stone, written with the finger of Elohim*. The Torah is Yahuah''s own hand-written gift; the law Moses is to teach is the very script of the Most High, not a thing of men.'),
+    ('canon','exodus',24,12,'canon','exodus',32,16,'free',
+      E'*And the tables were the work of Elohim (God), and the writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16). The law promised — *commandments which I have written* (Exodus 24:12) — is named *the work of Elohim, and the writing was the writing of Elohim*. Twice the text presses it: the tables and the writing alike are Yahuah''s own. The Torah is the gift of His hand, given that Moses *mayest teach them* to the people.'),
+    ('canon','exodus',24,12,'canon','deuteronomy',9,10,'free',
+      E'*And Yahuah (LORD) delivered unto me two tables of stone written with the finger of Elohim (God); and on them was written according to all the words, which Yahuah (LORD) spake with you in the mount out of the midst of the fire in the day of the assembly* (Deuteronomy 9:10). Moses recalls the very gift of *tables of stone, and a law, and commandments which I have written* (Exodus 24:12) — *written with the finger of Elohim... according to all the words* Yahuah spoke from the fire. The covenant words sealed in blood are the same words graven on the stone by the finger of Elohim; word and writing are one Torah.'),
+
+    -- THREAD 5: The glory abode, the cloud six days, forty days (the Formed presence)
+    ('canon','exodus',24,17,'canon','hebrews',12,29,'free',
+      E'*For our Elohim (God) is a consuming fire* (Hebrews 12:29). The sight on the mount — *the sight of the glory of Yahuah (LORD) was like devouring fire on the top of the mount in the eyes of the children of Yashar''el (Israel)* (Exodus 24:17) — is named again in the letter: *our Elohim is a consuming fire*. Hebrews 12 sets that very Sinai-fire (*the mount that... burned with fire*) against Mount Sion, yet the Elohim who appeared as devouring fire is the same; the glory beheld on Sinai is the consuming fire still.'),
+    ('canon','exodus',24,16,'jubilees','jubilees',1,2,'extras',
+      E'*And Moses went up into the mount of Elohim (God), and the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it six days* (Jubilees 1:2). The restored witness keeps the scene verse-for-verse with *the glory of Yahuah (LORD) abode upon mount Sinai, and the cloud covered it six days* (Exodus 24:16) — the glory abiding, the cloud covering six days, the Formed presence settling on the mount.'),
+    ('canon','exodus',24,16,'jubilees','jubilees',1,3,'extras',
+      E'*And He called to Moses on the seventh day out of the midst of the cloud, and the appearance of the glory of Yahuah (God) was like a flaming fire on the top of the Mount* (Jubilees 1:3). The restored witness carries the seventh-day call and the fire whole — matching *the seventh day he called unto Moses out of the midst of the cloud* (Exodus 24:16) and *the sight of the glory of Yahuah was like devouring fire on the top of the mount* (Exodus 24:17). The Sabbath-rhythm holds even on the mount: six days of covering, the seventh-day call.'),
+    ('canon','exodus',24,18,'jubilees','jubilees',1,4,'extras',
+      E'*And Moses was on the Mount forty days and forty nights, and Elohim (God) taught him the earlier and the later history of the division of all the days of the law and of the testimony* (Jubilees 1:4). The restored witness keeps the forty days — *Moses was in the mount forty days and forty nights* (Exodus 24:18) — and names what passed there: Elohim taught him *the law and of the testimony*, the very tables and instruction the mount was for.'),
+    ('canon','exodus',24,16,'jasher','jasher',82,8,'extras',
+      E'*And the glory of Yahuah (the Lord) rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud and ascended the mountain* (Jasher 82:8). The extended witness carries the glory, the call, and the cloud together — matching *the glory of Yahuah (LORD) abode upon mount Sinai... he called unto Moses out of the midst of the cloud* (Exodus 24:16); Moses enters the cloud to ascend, into the Formed presence.'),
+    ('canon','exodus',24,18,'jasher','jasher',82,9,'extras',
+      E'*And Moses was upon the mount forty days and forty nights; he ate no bread and drank no water, and Yahuah (the Lord) instructed him in the statutes and judgments in order to teach the children of Israel* (Jasher 82:9). The extended witness keeps the forty days — *Moses was in the mount forty days and forty nights* (Exodus 24:18) — and names the purpose: Yahuah *instructed him in the statutes and judgments... to teach* Yashar''el, the Torah given to be taught (as Exodus 24:12, *that thou mayest teach them*).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-24-all-the-words-which-yahuah-hath-said-will-we-do',
+       E'All the words which Yahuah hath said will we do — the willing covenant vow',
+       E'Moses comes down from the mount and lays the covenant before the people: *And Moses came and told the people all the words of Yahuah (LORD), and all the judgments: and all the people answered with one voice, and said, All the words which Yahuah (LORD) hath said will we do* (Exodus 24:3). Then, after he writes the words and reads the book of the covenant aloud, they vow it again: *he took the book of the covenant, and read in the audience of the people: and they said, All that Yahuah (LORD) hath said will we do, and be obedient* (Exodus 24:7). Twice over the people take up the Torah willingly — with one voice, gladly, *and be obedient*. The covenant is no curse forced upon a captive people; it is an inheritance embraced. This is the same vow first spoken before the mountain ever burned: *And all the people answered together, and said, All that Yahuah (LORD) hath spoken we will do* (Exodus 19:8). And Moses recalls the people''s own desire at Horeb to hear and obey: *speak thou unto us all that Yahuah Eloheinu (the LORD our God) shall speak unto thee; and we will hear it, and do it* (Deuteronomy 5:27). The hearing and the doing are one road; the words of Yahuah are received as the people''s own treasure, the Torah owned and vowed.',
+       sv.verse_id, ev.verse_id, 'free', 29575
+  FROM _s305_ex24_lookup sv, _s305_ex24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=24 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★ KEYSTONE)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-24-behold-the-blood-of-the-covenant',
+       E'Behold the blood of the covenant — the blood that ratifies, the renewal in the same blood-pattern',
+       E'The covenant is sealed in blood. *Moses took half of the blood, and put it in basons; and half of the blood he sprinkled on the altar* (Exodus 24:6); then, the book of the covenant read aloud and the people''s vow given, *Moses took the blood, and sprinkled it on the people, and said, Behold the blood of the covenant, which Yahuah (LORD) hath made with you concerning all these words* (Exodus 24:8). Half on the altar, half on the people: the blood binds Yahuah and Yashar''el (Israel) to *all these words*. The letter to the Hebrews quotes this very verse as the pattern of all covenant-dedication: *Whereupon neither the first testament was dedicated without blood. For when Moses had spoken every precept to all the people according to the law, he took the blood of calves and of goats... and sprinkled both the book, and all the people, Saying, This is the blood of the testament which Elohim (God) hath enjoined unto you* (Hebrews 9:18-20). And at the table Yahusha (Jesus) takes up the WORDS THEMSELVES: *For this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28), *This is my blood of the new testament, which is shed for many* (Mark 14:24), *This cup is the new testament in my blood, which is shed for you* (Luke 22:20). The same blood-rite that ratified Sinai ratifies the renewal — the covenant deepened, never displaced. To despise it is the gravest sin: *hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing* (Hebrews 10:29); and the elect stand *unto obedience and sprinkling of the blood of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:2), the same sprinkling unto obedience. And the renewal is the SAME Torah, now written within — Jeremiah names it: *I will make a new covenant with the house of Yashar''el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31), *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The two houses gathered under one renewed covenant; the Torah moved from tables of stone to tables of the heart — not a different law, not Torah abolished, but the same words sealed in the same blood, carried from the altar of Sinai to the cup of the table.',
+       sv.verse_id, ev.verse_id, 'free', 29578
+  FROM _s305_ex24_lookup sv, _s305_ex24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=24 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-24-they-saw-the-elohim-of-yashar-el',
+       E'They saw the Elohim of Yashar''el — the theophany of the Formed Son',
+       E'*Then went up Moses, and Aaron, Nadab, and Abihu, and seventy of the elders of Yashar''el (Israel): And they saw the Elohim (God) of Yashar''el (Israel): and there was under his feet as it were a paved work of a sapphire stone, and as it were the body of heaven in his clearness* (Exodus 24:9-10). And again, that none might miss it: *upon the nobles of the children of Yashar''el (Israel) he laid not his hand: also they saw Elohim (God), and did eat and drink* (Exodus 24:11). The seventy elders BEHELD the Elohim of Yashar''el, sapphire under His feet, and lived — and ate and drank the covenant meal in His presence. Yet the Scripture is plain that the invisible Father has never been seen: *No man hath seen Elohim (God) at any time; the only begotten Son, which is in the bosom of the Father, he hath declared him* (John 1:18); *Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father* (John 6:46); the Father *only hath immortality, dwelling in the light which no man can approach unto; whom no man hath seen, nor can see* (1 Timothy 6:16). So what the elders saw was the Formed Son — the One drawn from the Formless, who bears the Name, the visible Glory who appeared and spoke through the whole Tanakh and later took on flesh: the *only begotten Son... he hath declared him*. The Formed who has a Father was beheld on the mount; the Formless Source was not. This is the lens, not a collapse of the two into one nor a setting of them as two co-equal persons: the Son who declares the Father is the Elohim of Yashar''el the elders saw and ate before — a foreshadow of the marriage-supper to come, when the covenant people will *eat and drink* in His presence again.',
+       sv.verse_id, ev.verse_id, 'free', 29581
+  FROM _s305_ex24_lookup sv, _s305_ex24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=24 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-24-tables-of-stone-and-a-law-which-i-have-written',
+       E'Tables of stone, and a law, which I have written — the Torah by Yahuah''s own hand',
+       E'*And Yahuah (LORD) said unto Moses, Come up to me into the mount, and be there: and I will give thee tables of stone, and a law, and commandments which I have written; that thou mayest teach them* (Exodus 24:12). The Torah is Yahuah''s own gift, written by His own hand and given to be taught. The giving is recorded plainly: *he gave unto Moses, when he had made an end of communing with him upon mount Sinai, two tables of testimony, tables of stone, written with the finger of Elohim (God)* (Exodus 31:18). And twice the text presses whose work it is: *the tables were the work of Elohim (God), and the writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16). Moses recalls it at Horeb: *Yahuah (LORD) delivered unto me two tables of stone written with the finger of Elohim (God); and on them was written according to all the words, which Yahuah (LORD) spake with you in the mount out of the midst of the fire in the day of the assembly* (Deuteronomy 9:10). The law is no human invention but the very script of the Most High — the same *all these words* sealed in the blood of the covenant, now graven in stone by the finger of Elohim. The Torah is the gift of His hand, given that Moses *mayest teach them* to the people, kept and taught, never set aside.',
+       sv.verse_id, ev.verse_id, 'free', 29584
+  FROM _s305_ex24_lookup sv, _s305_ex24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=24 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-24-the-glory-abode-the-cloud-six-days-forty-days',
+       E'The glory abode, the cloud six days, forty days — the Formed presence on the mount',
+       E'*And Moses went up into the mount, and a cloud covered the mount. And the glory of Yahuah (LORD) abode upon mount Sinai, and the cloud covered it six days: and the seventh day he called unto Moses out of the midst of the cloud* (Exodus 24:15-16). The glory and the cloud are the Formed presence settling on Sinai; and the seventh-day call holds the Sabbath-rhythm even on the mount — six days of covering, the seventh-day word. *And the sight of the glory of Yahuah (LORD) was like devouring fire on the top of the mount in the eyes of the children of Yashar''el (Israel)* (Exodus 24:17), and *Moses went into the midst of the cloud, and gat him up into the mount: and Moses was in the mount forty days and forty nights* (Exodus 24:18). The fire is named again in the letter to the Hebrews: *For our Elohim (God) is a consuming fire* (Hebrews 12:29) — the same glory that burned on Sinai. The restored witnesses keep the whole scene verse-for-verse. Jubilees opens here: *the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it six days* (Jubilees 1:2), *And He called to Moses on the seventh day out of the midst of the cloud, and the appearance of the glory of Yahuah (God) was like a flaming fire on the top of the Mount* (Jubilees 1:3), *And Moses was on the Mount forty days and forty nights, and Elohim (God) taught him the earlier and the later history of the division of all the days of the law and of the testimony* (Jubilees 1:4). And Jasher: *the glory of Yahuah (the Lord) rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud and ascended the mountain* (Jasher 82:8), *And Moses was upon the mount forty days and forty nights... and Yahuah (the Lord) instructed him in the statutes and judgments in order to teach the children of Israel* (Jasher 82:9). The cloud and the glory, the six days and the seventh-day call, the devouring fire and the forty days — the Formed presence on the mount, where the law and the testimony were given to be taught.',
+       sv.verse_id, ev.verse_id, 'extras', 29587
+  FROM _s305_ex24_lookup sv, _s305_ex24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=24 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*All that Yahuah (LORD) hath spoken we will do* (Exodus 19:8) — the same vow first given before the mountain burned; the willing covenant of 24:3.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-all-the-words-which-yahuah-hath-said-will-we-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*we will hear it, and do it* (Deuteronomy 5:27) — Moses recalls the people''s own desire to obey; the hearing and doing of 24:7, *and be obedient*.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-all-the-words-which-yahuah-hath-said-will-we-do'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★ KEYSTONE)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *This is the blood of the testament which Elohim (God) hath enjoined unto you* (Hebrews 9:20) — Hebrews QUOTES 24:8: the Sinai blood-rite named the pattern of all covenant-dedication.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*neither the first testament was dedicated without blood* (Hebrews 9:18) — the sprinkling of 24:8 named the dedication of the covenant; blood binds the people to all these words.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *this is my blood of the new testament, which is shed for many for the remission of sins* (Matthew 26:28) — Yahusha takes up the very words of 24:8 at the table; the same blood-pattern ratifies the renewal.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*This is my blood of the new testament, which is shed for many* (Mark 14:24) — the cup carries the words of the mount (24:8); the Formed Son seals the renewal in His own blood.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*This cup is the new testament in my blood, which is shed for you* (Luke 22:20) — the covenant cup answers the sprinkled blood of the altar (24:8); the same covenant, the same blood.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*hath counted the blood of the covenant, wherewith he was sanctified, an unholy thing* (Hebrews 10:29) — the phrase from the mount (24:8) held sacred still; to despise the blood of the covenant is the gravest sin.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*unto obedience and sprinkling of the blood of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:2) — the sprinkling binds unto obedience, as the Sinai rite (24:8) bound the people to all these words.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the renewal is the SAME Torah, now within; the two houses (Jer 31:31) under one renewed covenant, not Torah abolished (24:8).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-behold-the-blood-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *No man hath seen Elohim (God) at any time; the only begotten Son... he hath declared him* (John 1:18) — what the elders saw (24:10) was the Formed Son, not the invisible Father.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=10
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-they-saw-the-elohim-of-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father* (John 6:46) — the nobles saw and ate (24:11) before the One who is of Elohim, the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=11
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-they-saw-the-elohim-of-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*whom no man hath seen, nor can see* (1 Timothy 6:16) — the Father dwells in unapproachable light; the elders'' vision (24:10) is the seeing of the Son drawn from Him.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=10
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-they-saw-the-elohim-of-yashar-el'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*two tables of testimony, tables of stone, written with the finger of Elohim (God)* (Exodus 31:18) — the promise of 24:12 fulfilled; the Torah Yahuah''s own hand-written gift.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-tables-of-stone-and-a-law-which-i-have-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the tables were the work of Elohim (God), and the writing was the writing of Elohim (God)* (Exodus 32:16) — the law promised in 24:12 is the very work and writing of Elohim, not of men.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-tables-of-stone-and-a-law-which-i-have-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*two tables of stone written with the finger of Elohim (God)... according to all the words* (Deuteronomy 9:10) — Moses recalls the gift of 24:12; word and writing one Torah, sealed in blood and graven in stone.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=9 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-tables-of-stone-and-a-law-which-i-have-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*For our Elohim (God) is a consuming fire* (Hebrews 12:29) — the glory like devouring fire on the mount (24:17) named again; the same Elohim who appeared as fire on Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-the-glory-abode-the-cloud-six-days-forty-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the glory of Yahuah (God) abode on Mount Sinai, and a cloud overshadowed it six days* (Jubilees 1:2) — the glory and the six-day cloud of 24:16 kept verse-for-verse in the restored witness.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-the-glory-abode-the-cloud-six-days-forty-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He called to Moses on the seventh day out of the midst of the cloud... like a flaming fire on the top of the Mount* (Jubilees 1:3) — the seventh-day call and the fire of 24:16-17; the Sabbath-rhythm on the mount.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-the-glory-abode-the-cloud-six-days-forty-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Moses was on the Mount forty days and forty nights, and Elohim (God) taught him... the law and of the testimony* (Jubilees 1:4) — the forty days of 24:18, and what passed there: the law given to be taught.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=18
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-the-glory-abode-the-cloud-six-days-forty-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the glory of Yahuah (the Lord) rested upon Mount Sinai, and he called to Moses, and Moses came in the midst of a cloud* (Jasher 82:8) — the glory, the call, the cloud of 24:16; Moses enters the Formed presence.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-the-glory-abode-the-cloud-six-days-forty-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Moses was upon the mount forty days and forty nights... Yahuah (the Lord) instructed him in the statutes and judgments in order to teach the children of Israel* (Jasher 82:9) — the forty days of 24:18, the Torah given to teach (as 24:12).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=24 AND sv.verse_number=18
+  JOIN _s305_ex24_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-24-the-glory-abode-the-cloud-six-days-forty-days'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_exodus_34.sql (Exodus 34) -----
+-- Chapter: Exodus 34 — THE NAME PROCLAIMED, THE COVENANT RENEWED, THE SHINING FACE.
+--   After the golden calf (Exodus 32), Yahuah bids Moses hew two tables of stone LIKE UNTO THE FIRST;
+--   Yahuah descends in the cloud and PROCLAIMS THE NAME — *Yahuah, Yahuah Elohim, merciful and gracious,
+--   longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity...
+--   and that will by no means clear the guilty* (the most-quoted self-revelation in all the Tanakh);
+--   the covenant is RENEWED (no covenant with the inhabitants; worship no other god; whose name is Jealous);
+--   the feasts re-commanded (unleavened bread, sabbath, weeks, ingathering, thrice-in-the-year);
+--   the tables re-written (the ten words); and Moses' face SHONE so he put a veil on it.
+-- Tag: ex34   Temp view: _s305_ex34_lookup
+-- Sort band: base 29825, step 3 -> threads at 29825, 29828, 29831, 29834, 29837, 29840 (6 threads)
+-- Source of EVERY row: 'canon','exodus',34,v
+--
+-- Exodus 34 coverage:
+--   ★ v.1,4,27-28 (Hew thee two tables of stone like unto the first... he wrote upon the tables the words of the covenant, the ten commandments)
+--        NT:     none warranted distinct (the re-written Torah's forward-weave is the law written on the heart, held to THREAD 6 — Jer/Ezek/2 Cor 3)
+--        Extras: Jasher 82:24-25 (hew two stone tablets... Yahuah wrote the ten commandments upon the tablets); Jubilees 1:1 (the tables of the law and of the commandment... on Mount Sinai) — THREAD 1
+--        Tanakh: ★ Deuteronomy 10:1-4 (Hew thee two tables of stone like unto the first... I will write on the tables the words that were in the first tables which thou brakest); Exodus 32:15-16 (the first tables, the work of Elohim, broken) — THREAD 1
+--   ★★★ v.5-7 (Yahuah descended in the cloud, and proclaimed the name of Yahuah... merciful and gracious, longsuffering, and abundant in goodness and truth, keeping mercy for thousands, forgiving iniquity)
+--        NT:     ★ John 1:14 (the Word made flesh... full of grace and truth); John 1:17 (grace and truth came by Yahusha HaMashiach) — THREAD 2 (the proclaimed mercy-and-truth made flesh; the One who descended = the Formed Son)
+--        Extras: Jubilees 1:1-2 (the glory of Yahuah abode on Mount Sinai, and a cloud overshadowed it) — woven at THREAD 1's prose; the Name-proclamation itself has no clean distinct extra-canon parallel, held to canon chorus
+--        Tanakh: ★★★ THE CHORUS — Numbers 14:18; Nehemiah 9:17; Psalm 86:15; Psalm 103:8; Psalm 145:8; Joel 2:13; Jonah 4:2; Nahum 1:3 — THREAD 2 (the most-quoted self-revelation echoed across the whole Tanakh)
+--   ★ v.6-7 (keeping mercy... forgiving iniquity... and that will by no means clear the guilty; visiting the iniquity of the fathers)
+--        NT:     Romans 2:4-6 (the riches of his goodness... leadeth thee to repentance; who will render to every man according to his deeds) — THREAD 3 (the balance of mercy and justice)
+--        Extras: none warranted distinct (the mercy/justice balance carried by canon)
+--        Tanakh: ★ Exodus 20:5-6 (a jealous Elohim, visiting the iniquity of the fathers... and shewing mercy unto thousands of them that love me, and keep my commandments) — THREAD 3
+--   ★ v.11-17 (make no covenant with the inhabitants... lest it be a snare; destroy their altars; worship no other god, for Yahuah, whose name is Jealous)
+--        NT:     2 Corinthians 6:14-17 (be ye not unequally yoked... come out from among them, and be ye separate) — THREAD 4 (separation from idolatry; the SYSTEM, not the peoples)
+--        Extras: Jubilees 1:9-10 (they will walk after the nations... and will serve their gods, and these will prove to them an offence and... a snare) — THREAD 4
+--        Tanakh: ★ Exodus 20:3-5 (Thou shalt have no other gods before me... I... am a jealous Elohim) — THREAD 4
+--   ★ v.18-26 (the feasts renewed: unleavened bread, sabbath, weeks, ingathering; thrice in the year all your men appear before Yahuah)
+--        NT:     none warranted distinct (the moedim's NT filling — Messiah our Passover, Shavuot, Tabernacles — belongs to those feast-chapters; not forced here)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Leviticus 23:2-6,15-16,33-34 (the feasts of Yahuah... holy convocations); Exodus 20:8-11 (Remember the sabbath day... for in six days Yahuah made heaven and earth) — THREAD 5 (the appointed times NOT abolished, re-commanded in the covenant renewal)
+--   ★★ v.29-35 (the skin of Moses' face shone... he put a vail on his face)
+--        NT:     ★★ 2 Corinthians 3:7-18 (the ministration... was glorious... the children of Yashar'el could not stedfastly behold the face of Moses... when it shall turn to Yahuah, the vail shall be taken away); Matthew 17:2 (transfigured... his face did shine as the sun) — THREAD 6
+--        Extras: none warranted distinct
+--        Tanakh: ★★ Jeremiah 31:33 (I will put my law in their inward parts, and write it in their hearts); Ezekiel 36:27 (I will put my spirit within you, and cause you to walk in my statutes) — THREAD 6 (the SAME glory written on the heart = the greater glory; NOT Torah abolished)
+--   v.2-3,8-10 (the readiness; Moses worships; the covenant-marvels; stiffnecked people; pardon our iniquity)
+--        NT/Extras/Tanakh: none forced as distinct members — v.5-7 (the Name) carries the mercy of v.9-10's pardon (THREAD 2/3); v.2-3 is the staging of the ascent (held in THREAD 1 prose)
+--
+-- Threads (slug — target libraries):
+--   1. exodus-34-hew-two-tables-like-the-first-the-covenant-renewed — Tanakh (Deuteronomy, Exodus 32) + Extras (Jasher, Jubilees) [extras] (★ the same Torah re-written after the calf)
+--   2. exodus-34-the-name-proclaimed-merciful-and-gracious — NT (John) + Tanakh (Numbers, Nehemiah, Psalms x3, Joel, Jonah, Nahum) [free... see note: John makes it stay free] (★★★ THE keystone self-revelation + the Formed made flesh)
+--   3. exodus-34-by-no-means-clear-the-guilty-mercy-and-justice — NT (Romans) + Tanakh (Exodus 20) [free] (★ the balance of mercy and judgment)
+--   4. exodus-34-whose-name-is-jealous-no-covenant-with-the-inhabitants — NT (2 Corinthians) + Tanakh (Exodus 20) + Extras (Jubilees) [extras] (★ separation from idolatry — the system, victims-not-enemies)
+--   5. exodus-34-the-feasts-renewed-in-the-covenant — Tanakh (Leviticus, Exodus 20) [free] (★ the appointed times re-commanded, NOT abolished)
+--   6. exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory — NT (2 Corinthians, Matthew) + Tanakh (Jeremiah, Ezekiel) [free] (★★ the veil read through the lens — the Torah-glory not abolished but written on the heart)
+--
+-- Framing notes:
+--   ★ THE NAME (THREAD 2): *And Yahuah (LORD) descended in the cloud... and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth, Keeping mercy for thousands, forgiving iniquity* (34:5-7). Through the Formed-and-Formless lens (Red Line #4): the One who DESCENDED in the cloud and proclaimed the Name is the Formed Son — the visible Glory who appears and speaks in the Tanakh. The forward-weave is John 1:14,17 — *the Word was made flesh... full of grace and truth... grace and truth came by Yahusha HaMashiach (Jesus Christ)* — the proclaimed mercy-and-truth made flesh. NO co-equal-persons grammar; the Formed Son bears the Name and has a Father. The lateral chorus (Num/Neh/Ps/Joel/Jonah/Nah) is the whole Tanakh quoting this one self-revelation back to Yahuah.
+--   ★★ THE VAIL (THREAD 6): framed CAREFULLY. 2 Corinthians 3:7-18 is NOT read as "the law is now done away in the antinomian sense." The *letter that killeth* (3:6) is the covenant approached without the Spirit / the unturned heart; *the vail is upon their heart* (3:15) — it is over the HEART that *shall turn to Yahuah* (3:16), not over the Torah. The SAME glory shines GREATER in the Formed Son and is written on the heart by the Spirit (Jer 31:33; Ezek 36:27) — *that which remaineth is glorious* (3:11). The shining face = transfigured glory (Matt 17:2, the Formed Son's own face shone as the sun).
+--   ★ JEALOUS / SEPARATION (THREAD 4): *Take heed... lest thou make a covenant with the inhabitants... lest it be for a snare* (34:12); *Yahuah, whose name is Jealous, is a jealous Elohim* (34:14). Victims-not-enemies (Red Line #7): the war is against the SYSTEM of idolatry and the mingling that ensnares, never ethnic hatred. 2 Cor 6:17 (*come out from among them, and be ye separate*) is the gathered-people separation, not replacement.
+--   TIER NOTE: THREAD 2 includes John 1:14,17 (canon NT) and an all-canon Tanakh chorus — EVERY member canon -> tier 'free'. All six threads are all-canon EXCEPT THREADS 1 and 4 (Jasher/Jubilees members) -> 'extras'.
+--   EXTRAS: Jasher 82 carries the second-tables hewing verse-for-verse (82:24-25, clean parse) and Jubilees 1 the Sinai-tables/Name/covenant frame (1:1-2,9-10, clean). Jasher DOUBLE-WRITTEN 'jasher','jasher'; Jubilees DOUBLE-WRITTEN 'jubilees','jubilees'.
+--   VERSES WITH NO ADD: v.2-3 (the readiness/ascent staging) and v.8-10 (Moses worships; I make a covenant, I will do marvels; pardon our iniquity) — the pardon-mercy is carried by the Name proclaimed (THREADS 2-3); no further distinct framework-bearing target forced.
+
+CREATE TEMP VIEW _s305_ex34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Hew two tables like the first — the covenant renewed (the same Torah re-written)
+    ('canon','exodus',34,1,'canon','deuteronomy',10,1,'free',
+      E'*At that time Yahuah (LORD) said unto me, Hew thee two tables of stone like unto the first, and come up unto me into the mount, and make thee an ark of wood* (Deuteronomy 10:1). Moses, retelling the renewal, repeats the very command of *Hew thee two tables of stone like unto the first: and I will write upon these tables the words that were in the first tables, which thou brakest* (Exodus 34:1). The shattered covenant is not scrapped for another — the SAME words are written again on tables hewn like the first; the Torah is restored, not replaced.'),
+    ('canon','exodus',34,1,'canon','deuteronomy',10,2,'free',
+      E'*And I will write on the tables the words that were in the first tables which thou brakest, and thou shalt put them in the ark* (Deuteronomy 10:2). The promise of *I will write upon these tables the words that were in the first tables, which thou brakest* (Exodus 34:1) is named again: the identical words go back onto the stone. After the golden calf the covenant-word is re-given unchanged — the same ten words, the same Torah, the breach healed not by a new law but by the old law re-written.'),
+    ('canon','exodus',34,28,'canon','deuteronomy',10,4,'free',
+      E'*And he wrote on the tables, according to the first writing, the ten commandments, which Yahuah (LORD) spake unto you in the mount out of the midst of the fire in the day of the assembly* (Deuteronomy 10:4). This names what *he wrote upon the tables the words of the covenant, the ten commandments* (Exodus 34:28) accomplished — *according to the first writing*, the same ten words. The renewed covenant carries the identical Torah; the second tables are no abridgement, but the first words restored.'),
+    ('canon','exodus',34,1,'canon','exodus',32,16,'free',
+      E'*And the tables were the work of Elohim (God), and the writing was the writing of Elohim (God), graven upon the tables* (Exodus 32:16). These are the FIRST tables Moses *brakest* (Exodus 34:1) beneath the mount when he saw the calf. That the second tables carry *the words that were in the first tables* binds the renewal to what was broken — the same writing of Elohim, given again; mercy does not lower the covenant-word, it re-writes it.'),
+    ('canon','exodus',34,1,'jasher','jasher',82,24,'extras',
+      E'*Then spoke Yahuah (the Lord) to Moses to hew two stone tablets and to bring them up to Yahuah (the Lord), who would write upon them the ten commandments* (Jasher 82:24). The extended witness keeps the renewal verse-for-verse with *Hew thee two tables of stone like unto the first: and I will write upon these tables the words* (Exodus 34:1) — Yahuah Himself re-writes the ten words after the calf, the covenant re-given on freshly hewn stone.'),
+    ('canon','exodus',34,28,'jasher','jasher',82,25,'extras',
+      E'*Now Moses did so, and he came down and hewed the two tablets and went up to Mount Sinai to Yahuah (the Lord), and Yahuah (the Lord) wrote the ten commandments upon the tablets* (Jasher 82:25). The extended witness matches *he wrote upon the tables the words of the covenant, the ten commandments* (Exodus 34:28): the second tables bear the same ten words as the first, the Torah restored entire after Yashar''el''s breach.'),
+    ('canon','exodus',34,28,'jubilees','jubilees',1,1,'extras',
+      E'*...as Yahuah (God) spake to Moses on Mount Sinai when he went up to receive the tables of the law and of the commandment... "Come up to Me on the Mount, and I will give you two tables of stone of the law and of the commandment, which I have written, that you may teach them."* (Jubilees 1:1). The restored witness frames the very tables of *he wrote upon the tables the words of the covenant, the ten commandments* (Exodus 34:28) as *the tables of the law and of the commandment* given that Yashar''el might be taught — the covenant-instruction handed down, not handed off.'),
+
+    -- THREAD 2 (★★★): The Name proclaimed — merciful and gracious (the chorus + the Formed made flesh)
+    ('canon','exodus',34,6,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). The Name proclaimed on Sinai — Yahuah *merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6) — is the very character Yochanan (John) beholds made flesh: *full of grace and truth*. The mercy-and-truth that descended in the cloud and proclaimed itself is the same that *dwelt among us*; the One who appeared on the mount is the Formed Son who took flesh.'),
+    ('canon','exodus',34,6,'canon','john',1,17,'free',
+      E'*For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17). The pairing is not opposition but fulfillment: the *goodness and truth* of *merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6) — proclaimed to Moses on the mount of the renewed covenant — *came by Yahusha HaMashiach*. The grace-and-truth named at Sinai is the grace-and-truth embodied; the Formed Son who gave the Torah by Moses is the One in whom its mercy is made manifest.'),
+    ('canon','exodus',34,6,'canon','numbers',14,18,'free',
+      E'*Yahuah (LORD) is longsuffering, and of great mercy, forgiving iniquity and transgression, and by no means clearing the guilty, visiting the iniquity of the fathers upon the children unto the third and fourth generation* (Numbers 14:18). Moses pleads the Name back to Yahuah almost word-for-word from *Yahuah Elohim... merciful and gracious, longsuffering... forgiving iniquity and transgression and sin, and that will by no means clear the guilty; visiting the iniquity of the fathers* (Exodus 34:6-7). The self-revelation of Sinai becomes Yashar''el''s prayer-ground; mercy proclaimed is mercy claimed.'),
+    ('canon','exodus',34,6,'canon','nehemiah',9,17,'free',
+      E'*...but thou art a Elohim (God) ready to pardon, gracious and merciful, slow to anger, and of great kindness, and forsookest them not* (Nehemiah 9:17). The Levites'' great confession reaches all the way back to the Name proclaimed — *merciful and gracious, longsuffering* (Exodus 34:6) — even naming the golden calf in the same breath. The character Yahuah declared on the renewed-covenant mount is the very mercy that *forsookest them not* through every rebellion after.'),
+    ('canon','exodus',34,6,'canon','psalms',86,15,'free',
+      E'*But thou, O Yahuah (Lord), art a Elohim (God) full of compassion, and gracious, longsuffering, and plenteous in mercy and truth* (Psalm 86:15). David sings the Sinai self-revelation back as praise: *gracious, longsuffering, and plenteous in mercy and truth* echoes *merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6). The Name proclaimed in the cloud becomes the worshipper''s confidence.'),
+    ('canon','exodus',34,6,'canon','psalms',103,8,'free',
+      E'*Yahuah (LORD) is merciful and gracious, slow to anger, and plenteous in mercy* (Psalm 103:8). The psalm names the very words — *merciful and gracious* — and even recalls that Yahuah *made known his ways unto Moses* (Psalm 103:7). The Name proclaimed to Moses on the mount (Exodus 34:6) is sung as Yashar''el''s standing comfort: the mercy that removes transgressions as far as the east from the west.'),
+    ('canon','exodus',34,6,'canon','psalms',145,8,'free',
+      E'*Yahuah (LORD) is gracious, and full of compassion; slow to anger, and of great mercy* (Psalm 145:8). The crown of the Psalter''s praise quotes the Sinai Name — *gracious... slow to anger, and of great mercy* — straight from *merciful and gracious, longsuffering* (Exodus 34:6). The self-revelation of the renewed covenant is the refrain the whole congregation sings.'),
+    ('canon','exodus',34,6,'canon','joel',2,13,'free',
+      E'*And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil* (Joel 2:13). The prophet calls Yashar''el to return on the ground of the proclaimed Name — *gracious and merciful, slow to anger* (Exodus 34:6) — the mercy declared at Sinai is the very reason the heart may turn back and not be consumed.'),
+    ('canon','exodus',34,6,'canon','jonah',4,2,'free',
+      E'*...for I knew that thou art a gracious Elohim (God), and merciful, slow to anger, and of great kindness, and repentest thee of the evil* (Jonah 4:2). Even angry Jonah knows the Name by heart — *gracious... merciful, slow to anger* (Exodus 34:6) — and it is precisely this mercy he fears will spare Nineveh. The self-revelation of the mount reaches beyond Yashar''el to the relenting of judgment on a city that turns.'),
+    ('canon','exodus',34,7,'canon','nahum',1,3,'free',
+      E'*Yahuah (LORD) is slow to anger, and great in power, and will not at all acquit the wicked: Yahuah (LORD) hath his way in the whirlwind and in the storm* (Nahum 1:3). Nahum holds the other half of the Name — *slow to anger* yet *will not at all acquit the wicked*, exactly *that will by no means clear the guilty* (Exodus 34:7). The proclaimed character is mercy AND justice together; the longsuffering Yahuah does not leave the unrepentant unjudged.'),
+
+    -- THREAD 3 (★): By no means clear the guilty — the balance of mercy and justice
+    ('canon','exodus',34,7,'canon','exodus',20,5,'free',
+      E'*Thou shalt not bow down thyself to them, nor serve them: for I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me* (Exodus 20:5). The renewed proclamation carries the same word as the Ten given at the first — *visiting the iniquity of the fathers upon the children, and upon the children''s children, unto the third and to the fourth generation* (Exodus 34:7). The justice of the covenant is unchanged from first tables to second; mercy does not cancel the reckoning.'),
+    ('canon','exodus',34,7,'canon','exodus',20,6,'free',
+      E'*And shewing mercy unto thousands of them that love me, and keep my commandments* (Exodus 20:6). The other side of the balance: *Keeping mercy for thousands, forgiving iniquity and transgression and sin* (Exodus 34:7). The mercy proclaimed in the renewed covenant is the mercy of the first tables — mercy *unto thousands of them that love me, and keep my commandments*; love and commandment-keeping are the soil where the kept mercy abides.'),
+    ('canon','exodus',34,7,'canon','romans',2,4,'free',
+      E'*Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of Elohim (God) leadeth thee to repentance?* (Romans 2:4). Sha''ul names the *longsuffering, and abundant in goodness* of the proclaimed Name (Exodus 34:6-7) as a summons, not a license: the goodness *leadeth thee to repentance*. The mercy that keeps for thousands is meant to turn the heart, never to leave sin uncalled.'),
+    ('canon','exodus',34,7,'canon','romans',2,6,'free',
+      E'*Who will render to every man according to his deeds* (Romans 2:6). The justice-half of the Name — *that will by no means clear the guilty* (Exodus 34:7) — is carried into the letter: Yahuah *will render to every man according to his deeds*. The mercy proclaimed at Sinai is held together with the rendering of judgment; the longsuffering does not dissolve the reckoning, it gives room to turn before it.'),
+
+    -- THREAD 4 (★): Whose name is Jealous — no covenant with the inhabitants (separation from idolatry)
+    ('canon','exodus',34,14,'canon','exodus',20,3,'free',
+      E'*Thou shalt have no other gods before me* (Exodus 20:3). The renewed covenant re-presses the first word of the Ten: *For thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* (Exodus 34:14). The jealousy of Yahuah is the jealousy of the covenant-marriage — the one Husband of Yashar''el will not share His bride with the gods of the nations.'),
+    ('canon','exodus',34,12,'canon','2-corinthians',6,14,'free',
+      E'*Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?* (2 Corinthians 6:14). The warning of *Take heed to thyself, lest thou make a covenant with the inhabitants of the land... lest it be for a snare in the midst of thee* (Exodus 34:12) is the same separation Sha''ul presses — no yoking with the worship of darkness. The peril is the SNARE of mingled worship, the system that draws the heart away, never the peoples as enemies.'),
+    ('canon','exodus',34,15,'canon','2-corinthians',6,17,'free',
+      E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). Against *lest thou make a covenant with the inhabitants of the land, and they go a whoring after their gods... and thou eat of his sacrifice* (Exodus 34:15), the call is the gathered-people separation — *come out from among them, and be ye separate*. The whoring after other gods is the snare; the separation is unto Yahuah, who *will receive you* as His own.'),
+    ('canon','exodus',34,12,'jubilees','jubilees',1,9,'extras',
+      E'*For they will forget all My commandments... and they will walk after the nations, and after their uncleanness, and after their shame, and will serve their gods, and these will prove to them an offence and a tribulation and an affliction and a snare* (Jubilees 1:9). The restored witness names the very danger of *lest it be for a snare in the midst of thee* (Exodus 34:12): the gods of the nations become *a snare*. The covenant-warning of the mount is no arbitrary boundary — mingled worship is the trap that ensnares the heart.'),
+
+    -- THREAD 5 (★): The feasts renewed in the covenant (the appointed times NOT abolished)
+    ('canon','exodus',34,18,'canon','leviticus',23,6,'free',
+      E'*And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6). The renewed covenant re-commands the feast: *The feast of unleavened bread shalt thou keep. Seven days thou shalt eat unleavened bread... in the time of the month Abib* (Exodus 34:18). The appointed times stand within the renewed covenant exactly as in the feast-law of Leviticus 23 — the moedim are covenant architecture, not abolished but re-affirmed.'),
+    ('canon','exodus',34,22,'canon','leviticus',23,16,'free',
+      E'*Even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto Yahuah (LORD)* (Leviticus 23:16). The feast of weeks re-commanded in the renewal — *thou shalt observe the feast of weeks, of the firstfruits of wheat harvest, and the feast of ingathering at the year''s end* (Exodus 34:22) — is the same Shavuot of the count-of-fifty in Leviticus 23. The covenant renewed keeps Yahuah''s calendar intact, harvest by harvest.'),
+    ('canon','exodus',34,21,'canon','exodus',20,8,'free',
+      E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The renewed covenant sets the Sabbath even in the press of the harvest: *Six days thou shalt work, but on the seventh day thou shalt rest: in earing time and in harvest thou shalt rest* (Exodus 34:21). The seventh-day rest of the Ten is carried into the renewal unbroken — creation-rooted, *for in six days Yahuah (LORD) made heaven and earth... and rested the seventh day* (Exodus 20:11) — the Sabbath holds even when the fields are ready.'),
+
+    -- THREAD 6 (★★): The skin of his face shone — the vail and the greater glory
+    ('canon','exodus',34,29,'canon','2-corinthians',3,7,'free',
+      E'*But if the ministration of death, written and engraven in stones, was glorious, so that the children of Yashar''el (Israel) could not stedfastly behold the face of Moses for the glory of his countenance; which glory was to be done away* (2 Corinthians 3:7). Sha''ul reads *the skin of his face shone... and they were afraid to come nigh him* (Exodus 34:29-30): the glory on Moses'' face was real and from Yahuah. The argument is not that the covenant-glory was worthless but that a GREATER glory exceeds it — *if the ministration of death... was glorious, how shall not the ministration of the spirit be rather glorious?* The Torah written on stone shone; the Torah written on the heart by the Spirit shines more.'),
+    ('canon','exodus',34,33,'canon','2-corinthians',3,15,'free',
+      E'*But even unto this day, when Moses is read, the vail is upon their heart* (2 Corinthians 3:15). When *Moses had done speaking with them, he put a vail on his face* (Exodus 34:33), Sha''ul reads the veil as moving to the HEART — *the vail is upon their heart*. The veil is not over the Torah but over the unturned heart; *when it shall turn to Yahuah (Lord), the vail shall be taken away* (2 Corinthians 3:16). The same glory is seen with open face by the heart that turns.'),
+    ('canon','exodus',34,35,'canon','2-corinthians',3,18,'free',
+      E'*But we all, with open face beholding as in a glass the glory of Yahuah (Lord), are changed into the same image from glory to glory, even as by the Spirit of Yahuah (Lord)* (2 Corinthians 3:18). Where *the children of Yashar''el (Israel) saw the face of Moses, that the skin of Moses'' face shone* (Exodus 34:35) yet hid behind a veil, the turned heart now beholds *with open face* and is changed *from glory to glory*. The shining of Moses'' face was the first measure of a glory that, by the Spirit, transfigures the beholder.'),
+    ('canon','exodus',34,29,'canon','matthew',17,2,'free',
+      E'*And was transfigured before them: and his face did shine as the sun, and his raiment was white as the light* (Matthew 17:2). Moses'' face shone with a borrowed, fading glory after he *talked with him* (Exodus 34:29); on the mount of transfiguration the Formed Son''s own face *did shine as the sun* — glory not reflected but His own. The veiled glory of Sinai is unveiled in the One whose face is the very light, and Moses himself stands there with Him.'),
+    ('canon','exodus',34,29,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The tables of stone Moses carried down with his face shining (Exodus 34:29) point to a writing yet to come — the SAME law *in their inward parts... in their hearts*. The greater glory is not a different Torah but this Torah moved from stone to heart; the new covenant is the law written within, never the law abolished.'),
+    ('canon','exodus',34,29,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The glory that shone on Moses'' face from the stone tables (Exodus 34:29) becomes, by the Spirit, an inward power to keep the very statutes those tables held — *cause you to walk in my statutes... and do them*. This is the greater glory of the ministration of the Spirit: not freedom from the Torah but the Spirit-given heart that walks in it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-34-hew-two-tables-like-the-first-the-covenant-renewed',
+       E'Hew two tables like the first — the covenant renewed, the same Torah re-written',
+       E'After the golden calf shattered the first tables, the covenant is not scrapped for a new one — it is RENEWED with the same words: *And Yahuah (LORD) said unto Moses, Hew thee two tables of stone like unto the first: and I will write upon these tables the words that were in the first tables, which thou brakest* (Exodus 34:1). At the end of the forty days, *he wrote upon the tables the words of the covenant, the ten commandments* (Exodus 34:28) — the identical ten words. Moses retelling it presses the point: *Hew thee two tables of stone like unto the first... I will write on the tables the words that were in the first tables which thou brakest* (Deuteronomy 10:1-2), *according to the first writing, the ten commandments* (Deuteronomy 10:4). The first tables were *the work of Elohim (God), and the writing was the writing of Elohim (God)* (Exodus 32:16) before Moses broke them beneath the mount — and the second carry that same writing again. The Torah is not lowered to meet the people''s sin; the breach is healed by the old law re-written. The restored witnesses keep it whole: *Then spoke Yahuah (the Lord) to Moses to hew two stone tablets... who would write upon them the ten commandments... and Yahuah (the Lord) wrote the ten commandments upon the tablets* (Jasher 82:24-25), and Jubilees frames the gift as *the tables of the law and of the commandment... which I have written, that you may teach them* (Jubilees 1:1). Mercy after the calf means the covenant-word restored entire — the Torah given again, unchanged.',
+       sv.verse_id, ev.verse_id, 'extras', 29825
+  FROM _s305_ex34_lookup sv, _s305_ex34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=34 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-34-the-name-proclaimed-merciful-and-gracious',
+       E'The Name proclaimed — merciful and gracious (the chorus of the Tanakh, the mercy made flesh)',
+       E'This is the keystone of the chapter and one of the great keystones of the whole Tanakh — the self-revelation of Yahuah''s own character: *And Yahuah (LORD) descended in the cloud, and stood with him there, and proclaimed the name of Yahuah (LORD). And Yahuah (LORD) passed by before him, and proclaimed, Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth, Keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty* (Exodus 34:5-7). Read through the Formed-and-the-Formless: the One who *descended in the cloud* and proclaimed the Name is the Formed Son — the visible Glory who appears and speaks throughout the Tanakh, who bears the Name and has a Father. The forward-weave names Him made flesh: *the Word was made flesh, and dwelt among us... full of grace and truth* (John 1:14), *grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — the *goodness and truth* proclaimed on the mount embodied. This self-revelation becomes the chorus the whole Tanakh sings back: Moses pleads it for the people — *Yahuah (LORD) is longsuffering, and of great mercy, forgiving iniquity and transgression, and by no means clearing the guilty* (Numbers 14:18); the Levites confess it over the very calf — *thou art a Elohim (God) ready to pardon, gracious and merciful, slow to anger* (Nehemiah 9:17); David prays it — *full of compassion, and gracious, longsuffering, and plenteous in mercy and truth* (Psalm 86:15); the Psalter sings it — *Yahuah (LORD) is merciful and gracious, slow to anger* (Psalm 103:8), *gracious, and full of compassion; slow to anger, and of great mercy* (Psalm 145:8); the prophets call the heart home by it — *gracious and merciful, slow to anger... and repenteth him of the evil* (Joel 2:13), and even angry Jonah knows it by heart — *a gracious Elohim (God), and merciful, slow to anger* (Jonah 4:2). And Nahum holds the other side of the same Name — *slow to anger, and great in power, and will not at all acquit the wicked* (Nahum 1:3), the *by no means clear the guilty* of the proclamation. The Name proclaimed at the renewed covenant is the river the entire Tanakh drinks from, and the mercy-and-truth it names is the Formed Son who would dwell among us.',
+       sv.verse_id, ev.verse_id, 'free', 29828
+  FROM _s305_ex34_lookup sv, _s305_ex34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=34 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-34-by-no-means-clear-the-guilty-mercy-and-justice',
+       E'By no means clear the guilty — the balance of mercy and justice',
+       E'The proclaimed Name holds two things together that the antinomian heart wants to split: boundless mercy AND unwavering justice. *Keeping mercy for thousands, forgiving iniquity and transgression and sin, and that will by no means clear the guilty; visiting the iniquity of the fathers upon the children... unto the third and to the fourth generation* (Exodus 34:7). This is the very word of the Ten given at the first: *I Yahuah Elohayka (the LORD thy God) am a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me* (Exodus 20:5), *and shewing mercy unto thousands of them that love me, and keep my commandments* (Exodus 20:6). Mercy is *unto thousands of them that love me, and keep my commandments* — kept mercy abides where love and obedience are, never as a license to leave sin uncalled. Sha''ul carries both sides forward: the *longsuffering, and abundant in goodness* of the Name is a summons, not indulgence — *the goodness of Elohim (God) leadeth thee to repentance* (Romans 2:4) — and the *by no means clear the guilty* stands, for Yahuah *will render to every man according to his deeds* (Romans 2:6). The mercy proclaimed on the mount gives room to turn before the reckoning; it never dissolves it.',
+       sv.verse_id, ev.verse_id, 'free', 29831
+  FROM _s305_ex34_lookup sv, _s305_ex34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=34 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-34-whose-name-is-jealous-no-covenant-with-the-inhabitants',
+       E'Whose name is Jealous — make no covenant with the inhabitants (separation from idolatry)',
+       E'The renewed covenant guards the heart from the one thing that broke it — the worship of other gods: *Take heed to thyself, lest thou make a covenant with the inhabitants of the land whither thou goest, lest it be for a snare in the midst of thee* (Exodus 34:12); *thou shalt worship no other god: for Yahuah (LORD), whose name is Jealous, is a jealous Elohim (God)* (Exodus 34:14). This re-presses the first word of the Ten — *Thou shalt have no other gods before me* (Exodus 20:3) — and the jealousy is the jealousy of the covenant-marriage: the one Husband will not share His bride with the gods of the nations, lest *they go a whoring after their gods... and one call thee, and thou eat of his sacrifice* (Exodus 34:15). The danger is the SNARE of mingled worship — the system that draws the heart away — never the peoples as enemies; the restored witness names it plainly: *they will walk after the nations... and will serve their gods, and these will prove to them an offence and a tribulation and an affliction and a snare* (Jubilees 1:9). The same separation sounds in Sha''ul: *Be ye not unequally yoked together with unbelievers... what communion hath light with darkness?* (2 Corinthians 6:14), *Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). The separation is unto Yahuah, who receives His people as His own — the gathered, not the replaced.',
+       sv.verse_id, ev.verse_id, 'extras', 29834
+  FROM _s305_ex34_lookup sv, _s305_ex34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=34 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-34-the-feasts-renewed-in-the-covenant',
+       E'The feasts renewed in the covenant — the appointed times re-commanded',
+       E'When the covenant is renewed, Yahuah does not leave out His calendar — the appointed times are re-commanded in the same breath as the second tables: *The feast of unleavened bread shalt thou keep. Seven days thou shalt eat unleavened bread, as I commanded thee, in the time of the month Abib* (Exodus 34:18); *thou shalt observe the feast of weeks, of the firstfruits of wheat harvest, and the feast of ingathering at the year''s end* (Exodus 34:22); *Thrice in the year shall all your men children appear before Adonai Yahuah (the Lord GOD), the Elohim (God) of Yashar''el (Israel)* (Exodus 34:23). These are the very feasts of the great feast-law: *on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6), and the count-of-fifty unto Weeks — *shall ye number fifty days; and ye shall offer a new meat offering unto Yahuah (LORD)* (Leviticus 23:16). And in the press of the harvest the Sabbath holds: *Six days thou shalt work, but on the seventh day thou shalt rest: in earing time and in harvest thou shalt rest* (Exodus 34:21) — the seventh-day rest of the Ten, *Remember the sabbath day, to keep it holy* (Exodus 20:8), creation-rooted, *for in six days Yahuah (LORD) made heaven and earth... and rested the seventh day* (Exodus 20:11). The moedim are not abolished and not optional; they are the architecture of the covenant, carried whole into its renewal.',
+       sv.verse_id, ev.verse_id, 'free', 29837
+  FROM _s305_ex34_lookup sv, _s305_ex34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=34 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory',
+       E'The skin of his face shone — the vail, and the glory written on the heart',
+       E'Coming down from the mount with the second tables, *Moses wist not that the skin of his face shone while he talked with him* (Exodus 34:29); Yashar''el *were afraid to come nigh him* (Exodus 34:30), and so *he put a vail on his face* (Exodus 34:33), taking it off only when he went in before Yahuah. Sha''ul reads this scene — and the framework reads it carefully, against the antinomian misuse. The glory on Moses'' face was REAL and from Yahuah: *if the ministration of death, written and engraven in stones, was glorious, so that the children of Yashar''el (Israel) could not stedfastly behold the face of Moses for the glory of his countenance* (2 Corinthians 3:7). The argument is not that the covenant-glory was worthless but that a GREATER glory exceeds it — *that which remaineth is glorious* (3:11). And where is the veil now? *When Moses is read, the vail is upon their heart* (2 Corinthians 3:15) — over the HEART, not over the Torah; *when it shall turn to Yahuah (Lord), the vail shall be taken away* (3:16), and the turned heart beholds *with open face... and is changed into the same image from glory to glory* (2 Corinthians 3:18). That greater glory is not a different law but this same Torah moved from stone to heart: *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33); *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The fading shine on Moses'' face was the first measure of a glory unveiled in the Formed Son, whose own face *did shine as the sun* (Matthew 17:2) — with Moses himself standing beside Him. The letter that kills is the covenant approached without the Spirit and the unturned heart; the Torah written within by the Spirit is the glory that remains.',
+       sv.verse_id, ev.verse_id, 'free', 29840
+  FROM _s305_ex34_lookup sv, _s305_ex34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='exodus' AND ev.chapter_number=34 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Hew thee two tables of stone like unto the first... I will write on the tables the words that were in the first tables which thou brakest* (Deuteronomy 10:1) — Moses retells the renewal of 34:1: the same words re-written, the Torah restored not replaced.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=1
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will write on the tables the words that were in the first tables which thou brakest* (Deuteronomy 10:2) — the identical words go back on the stone; the breach healed by the old law re-given (34:1).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=1
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*according to the first writing, the ten commandments* (Deuteronomy 10:4) — names what *the words of the covenant, the ten commandments* (34:28) accomplished: the same ten words restored.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=28
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the tables were the work of Elohim (God), and the writing was the writing of Elohim (God)* (Exodus 32:16) — the FIRST tables Moses brakest (34:1); the second carry the same divine writing again.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=1
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*hew two stone tablets... and Yahuah wrote the ten commandments upon the tablets* (Jasher 82:24) — the restored witness keeps the renewal of 34:1 verse-for-verse.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=1
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Yahuah (the Lord) wrote the ten commandments upon the tablets* (Jasher 82:25) — matches *the words of the covenant, the ten commandments* (34:28); the same ten words on the second tables.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=28
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='jasher' AND tv.book_slug='jasher' AND tv.chapter_number=82 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*the tables of the law and of the commandment... which I have written, that you may teach them* (Jubilees 1:1) — frames the tables of 34:28 as covenant-instruction handed down to be taught.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=28
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-hew-two-tables-like-the-first-the-covenant-renewed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the Word was made flesh, and dwelt among us... full of grace and truth* (John 1:14) — the *goodness and truth* proclaimed on the mount (34:6) made flesh; the One who descended in the cloud = the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — the grace-and-truth of the Name (34:6) embodied; not opposition to the Torah given by Moses but its mercy made manifest.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) is longsuffering, and of great mercy, forgiving iniquity and transgression, and by no means clearing the guilty* (Numbers 14:18) — Moses pleads the Name of 34:6-7 back almost word-for-word.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*a Elohim (God) ready to pardon, gracious and merciful, slow to anger* (Nehemiah 9:17) — the Levites confess the Name over the very calf; the mercy that forsook them not.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*full of compassion, and gracious, longsuffering, and plenteous in mercy and truth* (Psalm 86:15) — David sings the Sinai self-revelation of 34:6 back as praise.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=86 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Yahuah (LORD) is merciful and gracious, slow to anger, and plenteous in mercy* (Psalm 103:8) — the psalm recalls Yahuah made known his ways unto Moses (34:5-6); the Name sung as standing comfort.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Yahuah (LORD) is gracious, and full of compassion; slow to anger, and of great mercy* (Psalm 145:8) — the Psalter''s crown of praise quotes the Sinai Name of 34:6 straight.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=145 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil* (Joel 2:13) — the prophet calls the heart home on the ground of the proclaimed Name (34:6).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*thou art a gracious Elohim (God), and merciful, slow to anger... and repentest thee of the evil* (Jonah 4:2) — even angry Jonah knows the Name of 34:6 by heart; mercy reaching a city that turns.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*Yahuah (LORD) is slow to anger, and great in power, and will not at all acquit the wicked* (Nahum 1:3) — the OTHER half of the Name: *that will by no means clear the guilty* (34:7); mercy and justice together.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=7
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nahum' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-name-proclaimed-merciful-and-gracious'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a jealous Elohim (God), visiting the iniquity of the fathers upon the children unto the third and fourth generation of them that hate me* (Exodus 20:5) — the justice-word of the Ten, unchanged in the renewed proclamation (34:7).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=7
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-by-no-means-clear-the-guilty-mercy-and-justice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*shewing mercy unto thousands of them that love me, and keep my commandments* (Exodus 20:6) — the mercy-half: kept mercy abides where love and obedience are (34:7''s *keeping mercy for thousands*).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=7
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-by-no-means-clear-the-guilty-mercy-and-justice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the goodness of Elohim (God) leadeth thee to repentance* (Romans 2:4) — the *longsuffering, and abundant in goodness* of 34:6 is a summons to turn, not a license.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=7
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-by-no-means-clear-the-guilty-mercy-and-justice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Who will render to every man according to his deeds* (Romans 2:6) — the *by no means clear the guilty* of 34:7 carried forward; mercy does not dissolve the reckoning.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=7
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-by-no-means-clear-the-guilty-mercy-and-justice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt have no other gods before me* (Exodus 20:3) — the first word of the Ten re-pressed in 34:14: *worship no other god... whose name is Jealous*.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=14
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-whose-name-is-jealous-no-covenant-with-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Be ye not unequally yoked together with unbelievers... what communion hath light with darkness?* (2 Corinthians 6:14) — the same separation as *lest it be for a snare* (34:12); the system, not the peoples.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=12
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-whose-name-is-jealous-no-covenant-with-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*come out from among them, and be ye separate, saith Yahuah (Lord)... and I will receive you* (2 Corinthians 6:17) — against the whoring-after-gods of 34:15; separation unto Yahuah, the gathered not the replaced.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=15
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-whose-name-is-jealous-no-covenant-with-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they will serve their gods, and these will prove to them an offence... and a snare* (Jubilees 1:9) — the restored witness names the very *snare* of 34:12; mingled worship is the trap.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=12
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-whose-name-is-jealous-no-covenant-with-the-inhabitants'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6) — the same feast re-commanded in the renewal (34:18); the moedim are covenant architecture.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-feasts-renewed-in-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*shall ye number fifty days; and ye shall offer a new meat offering unto Yahuah (LORD)* (Leviticus 23:16) — the feast of weeks of 34:22, the Shavuot count-of-fifty kept whole in the renewal.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=22
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-feasts-renewed-in-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Remember the sabbath day, to keep it holy* (Exodus 20:8) — the seventh-day rest of the Ten; in the renewal it holds even in harvest (34:21).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=21
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-feasts-renewed-in-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*if the ministration of death, written and engraven in stones, was glorious, so that the children of Yashar''el could not stedfastly behold the face of Moses* (2 Corinthians 3:7) — the shining face of 34:29 was real glory; a GREATER glory exceeds it, not abolishes it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=29
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when Moses is read, the vail is upon their heart* (2 Corinthians 3:15) — the veil Moses put on (34:33) is read as over the HEART, not the Torah; lifted *when it shall turn to Yahuah* (3:16).'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=33
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*we all, with open face... are changed into the same image from glory to glory... by the Spirit* (2 Corinthians 3:18) — where Yashar''el saw Moses'' face veiled (34:35), the turned heart beholds unveiled and is transfigured.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=35
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*was transfigured before them: and his face did shine as the sun* (Matthew 17:2) — Moses'' borrowed fading shine (34:29) unveiled in the Formed Son whose own face is the light, Moses beside Him.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=29
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=17 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the SAME law of the stone tables (34:29) moved to the heart; the greater glory is the Torah written within, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=29
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the ministration of the Spirit: not freedom from the Torah of 34:29 but the heart that walks in it.'
+  FROM cross_reference_threads t
+  JOIN _s305_ex34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='exodus' AND sv.chapter_number=34 AND sv.verse_number=29
+  JOIN _s305_ex34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='exodus-34-the-skin-of-his-face-shone-the-vail-and-the-greater-glory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session305 — Exodus cross-references complete.'
