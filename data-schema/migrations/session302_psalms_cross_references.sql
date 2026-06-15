@@ -47677,6 +47677,1161 @@ SELECT t.id, cr.id, 7, E'*the word of our Elohim (God) shall stand for ever* (Is
  WHERE t.slug='psalm-117-his-merciful-kindness-and-the-truth-of-yahuah-endureth-for-ever'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_psalms_120.sql (Psalm 120) -----
+-- Chapter: Psalm 120 — the FIRST Song of Ascents, the pilgrim's start
+-- Tag: ps120   Session prefix: s302   Sort band base: 24975 (step 3: 24975, 24978, 24981)
+-- Source rows: 'canon','psalms',120,v   Thread slug prefix: psalm-120-  (SINGULAR)
+--
+-- Per-chapter coverage checklist:
+--   v.1  (In my distress I cried unto Yahuah, and he heard me)
+--        NT:     none warranted (distress-answered woven in thread prose, not a standalone link)
+--        Extras: none warranted
+--        Tanakh: none warranted (frames the deceitful-tongue thread; the cry sets the band)
+--   v.2  (Deliver my soul... from lying lips, and from a deceitful tongue)
+--        NT:     James 3:6,8 (the tongue a fire / unruly evil) — thread A
+--        Extras: Ecclesiasticus 28:13-14 (curse the doubletongued / driven them from nation to nation) — thread A
+--        Tanakh: Psalm 12:2-3 (flattering lips / Yahuah cut off all flattering lips); Proverbs 12:19 (a lying tongue is but for a moment) — thread A
+--   v.3  (What shall be given... thou false tongue?)
+--        NT:     James 3:8 (full of deadly poison) — thread A
+--        Extras: Ecclesiasticus 28:18 (many have fallen... by the tongue) — thread A
+--        Tanakh: Psalm 12:3 — thread A
+--   v.4  (Sharp arrows of the mighty, with coals of juniper)
+--        NT:     none warranted (the recompense-on-the-tongue image carried by Tanakh witness)
+--        Extras: none warranted
+--        Tanakh: Proverbs 25:18 (a false witness is... a sharp arrow) — thread A
+--   v.5  (Woe is me, that I sojourn in Mesech, that I dwell in the tents of Kedar!)
+--        NT:     Hebrews 11:13 (strangers and pilgrims on the earth); 1 Peter 2:11 (strangers and pilgrims) — thread C
+--        Extras: none warranted (Sirach's "driven from nation to nation" already anchors the exile in thread A)
+--        Tanakh: Romans 11:1-2 GUARD (Elohim hath not cast away his people) — thread C (two-house dispersion, not replacement)
+--   v.6  (My soul hath long dwelt with him that hateth peace)
+--        NT:     Matthew 5:9 (peacemakers... children of Elohim) — thread B
+--        Extras: none warranted
+--        Tanakh: none warranted (joined to v.7 in thread B)
+--   v.7  (I am for peace: but when I speak, they are for war)
+--        NT:     Romans 12:18 (live peaceably with all men); Matthew 5:9 (blessed are the peacemakers); Matthew 5:44 (love your enemies) — thread B
+--        Extras: none warranted
+--        Tanakh: none warranted
+--
+-- Threads:
+--   A. psalm-120-deliver-my-soul-from-lying-lips-and-a-deceitful-tongue  (v.1-4)
+--        tier extras (has Sirach members) — targets: Tanakh (Psalm 12, Proverbs 12, Proverbs 25) + NT (James 3) + Extras (Ecclesiasticus/Sirach 28)
+--   B. psalm-120-i-am-for-peace-but-when-i-speak-they-are-for-war  (v.6-7)
+--        tier free — targets: NT (Romans 12, Matthew 5)
+--   C. psalm-120-i-sojourn-in-mesech-i-dwell-in-the-tents-of-kedar  (v.5)
+--        tier free — targets: NT (Hebrews 11, 1 Peter 2) + Tanakh (Romans 11 two-house guard)
+
+-- ============================================================
+-- A. Temp view
+-- ============================================================
+CREATE TEMP VIEW _s302_ps120_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread A: the deceitful tongue (v.2-4)
+    ('canon','psalms',120,2,'canon','psalms',12,2,'free',
+      E'*They speak vanity every one with his neighbour: with flattering lips and with a double heart do they speak.* (Psalm 12:2) The pilgrim''s plea *Deliver my soul, O Yahuah (LORD), from lying lips, and from a deceitful tongue* (Psalm 120:2) sings the same wound as its companion psalm — the *double heart* behind the *flattering lips* is the *deceitful tongue* that drives the righteous to cry out.'),
+    ('canon','psalms',120,2,'canon','psalms',12,3,'free',
+      E'*Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:3) is the answer to *Deliver my soul, O Yahuah (LORD), from lying lips, and from a deceitful tongue* (Psalm 120:2) — what the ascending pilgrim prays for, Yahuah (LORD) Himself vows to perform.'),
+    ('canon','psalms',120,3,'canon','psalms',12,3,'free',
+      E'*Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:3) answers the taunt *What shall be given unto thee? or what shall be done unto thee, thou false tongue?* (Psalm 120:3) — the recompense the false tongue earns is to be cut off by Yahuah (LORD).'),
+    ('canon','psalms',120,2,'canon','proverbs',12,19,'free',
+      E'*The lip of truth shall be established for ever: but a lying tongue is but for a moment* (Proverbs 12:19). The pilgrim begs deliverance *from lying lips, and from a deceitful tongue* (Psalm 120:2); Proverbs steadies him — the lying tongue that wounds him *is but for a moment*, while the truth he walks toward *shall be established for ever*.'),
+    ('canon','psalms',120,4,'canon','proverbs',25,18,'free',
+      E'*A man that beareth false witness against his neighbour is a maul, and a sword, and a sharp arrow* (Proverbs 25:18). The *sharp arrows of the mighty, with coals of juniper* (Psalm 120:4) are no mere figure — Proverbs names the weapon exactly: the false witness''s tongue is itself *a sharp arrow*, and Yahuah (LORD) turns that recompense back upon it.'),
+    ('canon','psalms',120,3,'canon','james',3,8,'free',
+      E'*But the tongue can no man tame; it is an unruly evil, full of deadly poison* (James 3:8). The Tanakh''s *thou false tongue* (Psalm 120:3) is the very member James names — the untameable *unruly evil*, *full of deadly poison*, that no son of Adam can govern apart from the deliverance the pilgrim cries for.'),
+    ('canon','psalms',120,2,'canon','james',3,6,'free',
+      E'*And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell* (James 3:6). James unfolds why the pilgrim must pray *Deliver my soul... from lying lips, and from a deceitful tongue* (Psalm 120:2) — the *deceitful tongue* is *a fire, a world of iniquity*, the small member that defiles the whole.'),
+    ('canon','psalms',120,2,'apocrypha','ecclesiasticus',28,13,'extras',
+      E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Ecclesiasticus 28:13). The restored wisdom of Ben Sira names the very enemy the pilgrim flees in praying *Deliver my soul... from lying lips, and from a deceitful tongue* (Psalm 120:2) — the *doubletongued* whisperer who unmakes the peace the psalmist later confesses he is *for* (Psalm 120:7).'),
+    ('canon','psalms',120,5,'apocrypha','ecclesiasticus',28,14,'extras',
+      E'*A backbiting tongue has disquieted many, and driven them from nation to nation: strong cities has it pulled down, and overthrown the houses of great men* (Ecclesiasticus 28:14). Here the deceitful tongue and the exile are bound as one: the *backbiting tongue* literally *driven them from nation to nation* — exactly the pilgrim''s lament that he must *sojourn in Mesech... dwell in the tents of Kedar* (Psalm 120:5).'),
+    ('canon','psalms',120,3,'apocrypha','ecclesiasticus',28,18,'extras',
+      E'*Many have fallen by the edge of the sword: but not so many as have fallen by the tongue* (Ecclesiasticus 28:18). Ben Sira measures the *false tongue* (Psalm 120:3) against the *sharp arrows of the mighty* (Psalm 120:4) and finds the tongue deadlier than the blade — which is why the pilgrim names it the first thing he must be delivered from.'),
+    -- Thread B: I am for peace (v.7)
+    ('canon','psalms',120,7,'canon','matthew',5,9,'free',
+      E'*Blessed are the peacemakers: for they shall be called the children of Elohim (God)* (Matthew 5:9). The pilgrim''s confession *I am for peace: but when I speak, they are for war* (Psalm 120:7) is the peacemaker''s very posture on the Mount — to be *for peace* among those who answer with war is the blessedness the Formed Son pronounces.'),
+    ('canon','psalms',120,6,'canon','matthew',5,9,'free',
+      E'*Blessed are the peacemakers: for they shall be called the children of Elohim (God)* (Matthew 5:9). The one whose *soul hath long dwelt with him that hateth peace* (Psalm 120:6) yet remains himself *for peace* is the peacemaker the Son names blessed — peace held among the peace-haters, not withdrawn from them.'),
+    ('canon','psalms',120,7,'canon','romans',12,18,'free',
+      E'*If it be possible, as much as lieth in you, live peaceably with all men* (Romans 12:18). Paul gives the pilgrim''s burden its measure: *I am for peace: but when I speak, they are for war* (Psalm 120:7) is the *as much as lieth in you* — the peace is held from the psalmist''s side even when the answer is war.'),
+    ('canon','psalms',120,7,'canon','matthew',5,44,'free',
+      E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you* (Matthew 5:44). The Formed Son carries *I am for peace: but when I speak, they are for war* (Psalm 120:7) to its end — the one who dwells among *him that hateth peace* (Psalm 120:6) is to bless and not curse, victims to be loved, not enemies to be answered in kind.'),
+    -- Thread C: I sojourn in Mesech (v.5)
+    ('canon','psalms',120,5,'canon','hebrews',11,13,'free',
+      E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). The pilgrim''s *Woe is me, that I sojourn in Mesech, that I dwell in the tents of Kedar!* (Psalm 120:5) is the faith-confession of the whole cloud of witnesses — *strangers and pilgrims on the earth*, dwelling among the nations while the promise waits afar off.'),
+    ('canon','psalms',120,5,'canon','1-peter',2,11,'free',
+      E'*Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11). Peter names the scattered of the two houses exactly what the psalmist is — *strangers and pilgrims* who *sojourn in Mesech* and *dwell in the tents of Kedar* (Psalm 120:5), aliens in the nations whose true home is the covenant gathering.'),
+    ('canon','psalms',120,5,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). The pilgrim scattered into *Mesech* and *the tents of Kedar* (Psalm 120:5) is not cast off — Paul forbids the very thought: the dispersion among the nations is exile, not rejection.'),
+    ('canon','psalms',120,5,'canon','romans',11,2,'free',
+      E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The dwelling *in Mesech... in the tents of Kedar* (Psalm 120:5) is the two-house scattering, never replacement — the people Yahuah (LORD) *foreknew* are gathered home, not exchanged for another. He that scattered Yashar''el (Israel) will gather him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps120_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps120_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. threads
+-- ============================================================
+-- Thread A (v.1-4): the deceitful tongue
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-120-deliver-my-soul-from-lying-lips-and-a-deceitful-tongue',
+       E'Deliver my soul from lying lips and a deceitful tongue',
+       E'The first Song of Ascents opens the pilgrim''s long climb in distress, and the very first thing he must be delivered from is the tongue: *In my distress I cried unto Yahuah (LORD), and he heard me. Deliver my soul, O Yahuah (LORD), from lying lips, and from a deceitful tongue* (Psalm 120:1-2). Its companion psalm sings the same wound — *They speak vanity every one with his neighbour: with flattering lips and with a double heart do they speak* — and promises the answer: *Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:2-3). The psalmist turns and taunts the weapon itself: *What shall be given unto thee? or what shall be done unto thee, thou false tongue? Sharp arrows of the mighty, with coals of juniper* (Psalm 120:3-4). Proverbs names that arrow exactly — *A man that beareth false witness against his neighbour is a maul, and a sword, and a sharp arrow* (Proverbs 25:18) — and steadies him against it: *The lip of truth shall be established for ever: but a lying tongue is but for a moment* (Proverbs 12:19). The apostolic wisdom of James carries the same fire forward: *And the tongue is a fire, a world of iniquity... it defileth the whole body, and setteth on fire the course of nature* (James 3:6); *But the tongue can no man tame; it is an unruly evil, full of deadly poison* (James 3:8) — which is why no son of Adam tames it himself, but cries to be delivered. The restored wisdom of Ben Sira binds the tongue to the exile that the psalm will name in the next breath: *Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Ecclesiasticus 28:13); *A backbiting tongue has disquieted many, and driven them from nation to nation* (Ecclesiasticus 28:14); and weighs it heavier than any blade — *Many have fallen by the edge of the sword: but not so many as have fallen by the tongue* (Ecclesiasticus 28:18). The whole library reads with one voice: the deceitful tongue is the pilgrim''s first enemy, and Yahuah (LORD) hears the cry against it.',
+       sv.verse_id, ev.verse_id, 'extras', 24975
+  FROM _s302_ps120_lookup sv, _s302_ps120_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=120 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=120 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread B (v.6-7): I am for peace
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-120-i-am-for-peace-but-when-i-speak-they-are-for-war',
+       E'I am for peace, but when I speak they are for war',
+       E'The pilgrim ends his first ascent with a confession that becomes the whole posture of the covenant walk among hostile nations: *My soul hath long dwelt with him that hateth peace. I am for peace: but when I speak, they are for war* (Psalm 120:6-7). He does not withdraw from the peace-haters; he holds peace from his own side though the answer comes back as war. On the Mount the Formed Son pronounces this very man blessed: *Blessed are the peacemakers: for they shall be called the children of Elohim (God)* (Matthew 5:9) — peace kept among those who hate it is what makes a peacemaker, not peace enjoyed among friends. Paul gives the burden its honest measure: *If it be possible, as much as lieth in you, live peaceably with all men* (Romans 12:18) — *as much as lieth in you* is exactly *I am for peace*, the peace held to the limit of one''s own part even when the other answers with war. And the Son carries it past mere restraint to active love: *Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you* (Matthew 5:44). The one who *long dwelt with him that hateth peace* is not to answer hatred with hatred — the peace-haters are victims of the deceit and the war-spirit, lost sheep to be blessed, never enemies to be cursed in kind. The pilgrim who is *for peace* is already walking the road the Son will name blessed.',
+       sv.verse_id, ev.verse_id, 'free', 24978
+  FROM _s302_ps120_lookup sv, _s302_ps120_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=120 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=120 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread C (v.5): I sojourn in Mesech, I dwell in the tents of Kedar
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-120-i-sojourn-in-mesech-i-dwell-in-the-tents-of-kedar',
+       E'I sojourn in Mesech, I dwell in the tents of Kedar',
+       E'At the heart of the first ascent the pilgrim names where he is starting from: *Woe is me, that I sojourn in Mesech, that I dwell in the tents of Kedar!* (Psalm 120:5) — Mesech far to the north, Kedar far to the south, a deliberate geography of exile that means *everywhere among the nations and nowhere home*. This is the two-house dispersion in one breath: Yashar''el (Israel) scattered into the lands, dwelling among peoples not its own, beginning the long climb back toward the gathering. Hebrews names this the faith-confession of the whole cloud of witnesses: *These all died in faith, not having received the promises, but having seen them afar off... and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). Peter writes it straight to the scattered of the houses: *Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11) — aliens in the nations whose true citizenship is the covenant home. But the scattering is never a casting-off. Paul forbids the thought outright: *Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The dwelling in Mesech and Kedar is exile, not rejection — He that scattered Yashar''el (Israel) will gather him, and the pilgrim on the road of ascents is walking that very gathering home.',
+       sv.verse_id, ev.verse_id, 'free', 24981
+  FROM _s302_ps120_lookup sv, _s302_ps120_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=120 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=120 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. thread_members
+-- ============================================================
+-- Thread A members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',120,2,'canon','psalms',12,2,1,
+      E'*They speak vanity every one with his neighbour: with flattering lips and with a double heart do they speak* (Psalm 12:2) — the companion psalm''s *double heart* is the *deceitful tongue* of Psalm 120:2.'),
+    ('psalms',120,2,'canon','psalms',12,3,2,
+      E'*Yahuah (LORD) shall cut off all flattering lips, and the tongue that speaketh proud things* (Psalm 12:3) — Yahuah''s vow to perform the deliverance the pilgrim prays.'),
+    ('psalms',120,3,'canon','psalms',12,3,3,
+      E'*Yahuah (LORD) shall cut off all flattering lips...* (Psalm 12:3) — the recompense earned by *thou false tongue* (Psalm 120:3).'),
+    ('psalms',120,2,'canon','proverbs',12,19,4,
+      E'*The lip of truth shall be established for ever: but a lying tongue is but for a moment* (Proverbs 12:19) — the lying tongue endures only a moment; truth, for ever.'),
+    ('psalms',120,4,'canon','proverbs',25,18,5,
+      E'*A man that beareth false witness against his neighbour is a maul, and a sword, and a sharp arrow* (Proverbs 25:18) — Proverbs names the *sharp arrows* of Psalm 120:4 as the false witness''s own tongue.'),
+    ('psalms',120,3,'canon','james',3,8,6,
+      E'*But the tongue can no man tame; it is an unruly evil, full of deadly poison* (James 3:8) — the untameable *false tongue* none can govern alone.'),
+    ('psalms',120,2,'canon','james',3,6,7,
+      E'*And the tongue is a fire, a world of iniquity... it defileth the whole body* (James 3:6) — why the *deceitful tongue* must be cried against.'),
+    ('psalms',120,2,'apocrypha','ecclesiasticus',28,13,8,
+      E'*Curse the whisperer and doubletongued: for such have destroyed many that were at peace* (Ecclesiasticus 28:13) — Ben Sira names the doubletongued who unmake peace.'),
+    ('psalms',120,5,'apocrypha','ecclesiasticus',28,14,9,
+      E'*A backbiting tongue has... driven them from nation to nation* (Ecclesiasticus 28:14) — the tongue and the exile bound as one, the very *Mesech... Kedar* scattering.'),
+    ('psalms',120,3,'apocrypha','ecclesiasticus',28,18,10,
+      E'*Many have fallen by the edge of the sword: but not so many as have fallen by the tongue* (Ecclesiasticus 28:18) — the tongue deadlier than the *sharp arrows* of Psalm 120:4.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-120-deliver-my-soul-from-lying-lips-and-a-deceitful-tongue'
+  JOIN _s302_ps120_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps120_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread B members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',120,6,'canon','matthew',5,9,1,
+      E'*Blessed are the peacemakers: for they shall be called the children of Elohim (God)* (Matthew 5:9) — peace held among the peace-haters of Psalm 120:6 is the peacemaker''s blessedness.'),
+    ('psalms',120,7,'canon','matthew',5,9,2,
+      E'*Blessed are the peacemakers...* (Matthew 5:9) — *I am for peace* (Psalm 120:7) is the very posture the Son names blessed.'),
+    ('psalms',120,7,'canon','romans',12,18,3,
+      E'*If it be possible, as much as lieth in you, live peaceably with all men* (Romans 12:18) — peace held from one''s own side even when the answer is war.'),
+    ('psalms',120,7,'canon','matthew',5,44,4,
+      E'*Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44) — the peace-haters loved as victims, not cursed as enemies.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-120-i-am-for-peace-but-when-i-speak-they-are-for-war'
+  JOIN _s302_ps120_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps120_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread C members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    ('psalms',120,5,'canon','hebrews',11,13,1,
+      E'*...confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13) — the faith-confession of the cloud of witnesses, the pilgrim sojourning among the nations.'),
+    ('psalms',120,5,'canon','1-peter',2,11,2,
+      E'*I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11) — the scattered of the houses named strangers and pilgrims.'),
+    ('psalms',120,5,'canon','romans',11,1,3,
+      E'*Hath Elohim (God) cast away his people? Elohim (God) forbid...* (Romans 11:1) — the dispersion is exile, not rejection (two-house guard).'),
+    ('psalms',120,5,'canon','romans',11,2,4,
+      E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2) — scattering, never replacement; the foreknown people gathered home.')
+  ) AS m(src_slug,src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-120-i-sojourn-in-mesech-i-dwell-in-the-tents-of-kedar'
+  JOIN _s302_ps120_lookup sv ON sv.edition_slug='canon' AND sv.book_slug=m.src_slug AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps120_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_121.sql (Psalm 121) -----
+-- Chapter: Psalm 121 (Song of Ascents — the Keeper of Yashar'el)
+-- Tag: ps121   Session prefix: s302   Sort band base: 25000 (25000, 25003, 25006, 25009)
+-- Temp view: _s302_ps121_lookup
+--
+-- Psalm 121 coverage:
+--   v.1-2 (help from the Maker of heaven and earth):
+--        NT:     John 1:3 (all things made by the Formed Word) — taken
+--        Extras: Jubilees 2:1 (Maker finished in six days + kept Sabbath) — taken
+--        Tanakh: Psalm 124:8 (our help in the name of Yahuah who made heaven and earth) + Genesis 1:1 (in the beginning Elohim created) — taken
+--   v.3-4 (he that keepeth Yashar'el shall neither slumber nor sleep):
+--        NT:     Romans 11:1-2 (Elohim hath NOT cast away his people) — taken (two-house guard)
+--        Extras: none warranted (the keeping-of-Israel weave is canon/two-house; extras add no clean witness here)
+--        Tanakh: Jeremiah 31:10 (he that scattered Yashar'el will gather him, and keep him) + Ezekiel 37:19 (two sticks made one) — taken
+--   v.5-6 (Yahuah thy keeper / thy shade / sun shall not smite thee by day, nor moon by night):
+--        NT:     Revelation 7:16 (neither shall the sun light on them, nor any heat) — taken
+--        Extras: 1 Enoch 41:5-7 (the sun and moon keep their oath-bound courses before Yahuah) — taken
+--        Tanakh: Isaiah 49:10 (neither shall the heat nor sun smite them) — taken
+--   v.7-8 (preserve thee from all evil / going out and coming in):
+--        NT:     John 17:15 (keep them from the evil) + 2 Thessalonians 3:3 (Yahuah is faithful, keep you from evil) — taken
+--        Extras: none warranted (the preserving + Torah-blessing weave is canon)
+--        Tanakh: Deuteronomy 28:6 (blessed comest in / goest out) + Deuteronomy 31:2 (I can no more go out and come in) — taken
+--
+-- Threads (4):
+--   1. psalm-121-my-help-from-the-maker-of-heaven-and-earth  [Tanakh + NT + Extras(Jubilees)] tier=extras  band 25000
+--   2. psalm-121-he-that-keepeth-yasharel-shall-not-slumber  [Tanakh + NT]                      tier=free    band 25003
+--   3. psalm-121-the-sun-shall-not-smite-thee-by-day         [Tanakh + NT + Extras(1 Enoch)]    tier=extras  band 25006
+--   4. psalm-121-preserve-thy-going-out-and-thy-coming-in    [Tanakh + NT]                       tier=free    band 25009
+--
+-- Framework-load-bearing notes:
+--   * v.2 "which made heaven and earth": framed Formed/Formless — the Maker made all things BY the Formed Word
+--     (John 1:3), never a co-equal second person; the Father is the formless Source, the Word the expressed Maker.
+--   * v.4 "he that keepeth Yashar'el": framed two-house — the Keeper guards the WHOLE house (Judah + scattered
+--     Ephraim), bound to Jer 31:10 / Ezek 37:19 and guarded by Rom 11:1-2 against replacement (NOT cast away).
+--   * v.6 sun/moon: extras witness 1 Enoch 41 reads the luminaries as oath-bound servants of the Maker, not powers
+--     to be feared — the Keeper rules the very lights that "shall not smite thee."
+
+CREATE TEMP VIEW _s302_ps121_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: my help from the Maker of heaven and earth (v.1-2)
+    ('canon','psalms',121,2,'canon','psalms',124,8,'free',
+     E'*Our help is in the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8). The companion Song of Ascents sings the same confession the lifted eyes of Psalm 121 reach for — *My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2). The help is never in the hills themselves; it is in the Name of the One who made the hills.'),
+    ('canon','psalms',121,2,'canon','john',1,3,'free',
+     E'*All things were made by him; and without him was not any thing made that was made* (John 1:3). The Maker of *heaven and earth* (Psalm 121:2) made them by the Formed Word — *In the beginning was the Word, and the Word was with Elohim (God), and the Word was Elohim (God)* (John 1:1). The formless Father is the Source; the Word is the expressed Maker through whom the help comes, never a rival second power.'),
+    ('canon','psalms',121,2,'canon','genesis',1,1,'free',
+     E'*In the beginning Elohim (God) created the heaven and the earth* (Genesis 1:1). The psalm grounds its hope in the first act of the canon — *Yahuah (LORD), which made heaven and earth* (Psalm 121:2). The One who began the world holds the one who lifts his eyes to its hills.'),
+    ('canon','psalms',121,2,'jubilees','jubilees',2,1,'extras',
+     E'*Write the complete history of the creation, how in six days Yahuah Elohim (the LORD God) finished all His works and all that He created, and kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1). The Maker of *heaven and earth* (Psalm 121:2) is the same who sealed the work with the Sabbath sign — the appointed rest set in creation, never abolished. To trust the Maker is to keep his sign.'),
+    -- Thread 2: he that keepeth Yashar'el shall neither slumber nor sleep (v.3-4)
+    ('canon','psalms',121,4,'canon','jeremiah',31,10,'free',
+     E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). The sleepless Keeper of Psalm 121 is the Shepherd who keeps the scattered flock — *he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4). The same hand that scattered the northern house will gather and KEEP it; the watch never lapses.'),
+    ('canon','psalms',121,4,'canon','ezekiel',37,19,'free',
+     E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The Keeper who *shall neither slumber nor sleep* (Psalm 121:4) keeps the WHOLE house — Judah and scattered Ephraim — to be made one again in his hand. He guards both sticks toward the one ingathering.'),
+    ('canon','psalms',121,4,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). The Keeper does not sleep AND does not forsake — *he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4). Paul forbids the replacement reading at the root: the people the Keeper watches are not cast off.'),
+    ('canon','psalms',121,4,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The sleepless watch of Psalm 121 is the standing proof — *he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4). Foreknown and kept, never abandoned: the Keeper''s vigilance over Yashar''el is unbroken across both covenants.'),
+    -- Thread 3: the sun shall not smite thee by day, nor the moon by night (v.5-6)
+    ('canon','psalms',121,6,'canon','isaiah',49,10,'free',
+     E'*They shall not hunger nor thirst; neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them* (Isaiah 49:10). The promise of Psalm 121 — *The sun shall not smite thee by day* (Psalm 121:6) — is the regathering promise: the One who is *thy shade upon thy right hand* (Psalm 121:5) shields the returning exiles and leads them home.'),
+    ('canon','psalms',121,6,'canon','revelation',7,16,'free',
+     E'*They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat* (Revelation 7:16). The keeping shade of Psalm 121 finds its consummation among the gathered tribes before the throne — *The sun shall not smite thee by day, nor the moon by night* (Psalm 121:6). The Keeper who shaded the pilgrim brings him at last where no heat can reach.'),
+    ('canon','psalms',121,6,'enoch','1-enoch',41,5,'extras',
+     E'*And I saw the chambers of the sun and moon, whence they proceed and whither they come again... and how they do not leave their orbit... and they keep faith one with another: and in accordance with an oath they set and they rise* (1 Enoch 41:5). The sun and moon that *shall not smite thee by day... nor... by night* (Psalm 121:6) are not powers to dread but oath-bound servants of the Maker, keeping the courses he set. The Keeper rules the very lights, so they cannot harm the one he keeps.'),
+    -- Thread 4: preserve thy going out and thy coming in (v.7-8)
+    ('canon','psalms',121,7,'canon','john',17,15,'free',
+     E'*I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil* (John 17:15). The Formed Son prays the very preservation Psalm 121 promises — *Yahuah (LORD) shall preserve thee from all evil* (Psalm 121:7). Not removal from the world, but keeping IN it; the Keeper''s shield, not escape.'),
+    ('canon','psalms',121,7,'canon','2-thessalonians',3,3,'free',
+     E'*But Yahuah (Lord) is faithful, who shall stablish you, and keep you from evil* (2 Thessalonians 3:3). The apostolic word echoes the psalm''s pledge — *Yahuah (LORD) shall preserve thee from all evil: he shall preserve thy soul* (Psalm 121:7). The faithfulness that keeps is the Keeper himself, unchanged from psalm to epistle.'),
+    ('canon','psalms',121,8,'canon','deuteronomy',28,6,'free',
+     E'*Blessed shalt thou be when thou comest in, and blessed shalt thou be when thou goest out* (Deuteronomy 28:6). The psalm sings back the Torah blessing — *Yahuah (LORD) shall preserve thy going out and thy coming in* (Psalm 121:8). The covenant obedience that opens the blessing is the same walk the Keeper guards; the preserving is the inheritance, never the curse.'),
+    ('canon','psalms',121,8,'canon','deuteronomy',31,2,'free',
+     E'*And he said unto them, I am an hundred and twenty years old this day; I can no more go out and come in: also Yahuah (LORD) hath said unto me, Thou shalt not go over this Jordan* (Deuteronomy 31:2). Moses lays down the going-out-and-coming-in at the border; the psalm answers that the LORD himself takes it up — *Yahuah (LORD) shall preserve thy going out and thy coming in from this time forth, and even for evermore* (Psalm 121:8). What the servant could no longer do, the Keeper does forever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps121_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps121_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-121-my-help-from-the-maker-of-heaven-and-earth',
+       E'My help cometh from Yahuah, which made heaven and earth',
+       E'The pilgrim lifts his eyes — *I will lift up mine eyes unto the hills, from whence cometh my help* (Psalm 121:1) — and finds the help is never in the hills but in the One who made them: *My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2). The companion ascent-song confesses the same — *Our help is in the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8) — and the canon opens with that very Maker: *In the beginning Elohim (God) created the heaven and the earth* (Genesis 1:1). He made it all by the Formed Word: *All things were made by him; and without him was not any thing made that was made* (John 1:3) — the formless Father the Source, the expressed Word the Maker, never a rival power. And the restored witness seals the work with the appointed rest: *in six days Yahuah Elohim (the LORD God) finished all His works... and kept Sabbath on the seventh day and hallowed it for all ages, and appointed it as a sign for all His works* (Jubilees 2:1). To lift the eyes to the Maker is to trust the One whose Sabbath sign still stands.',
+       sv.verse_id, ev.verse_id, 'extras', 25000
+  FROM _s302_ps121_lookup sv, _s302_ps121_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=121 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-121-he-that-keepeth-yasharel-shall-not-slumber',
+       E'He that keepeth Yashar''el shall neither slumber nor sleep',
+       E'*He will not suffer thy foot to be moved: he that keepeth thee will not slumber* (Psalm 121:3) — and the watch widens from the one pilgrim to the whole people: *Behold, he that keepeth Yashar''el (Israel) shall neither slumber nor sleep* (Psalm 121:4). This is the Keeper of both houses. He scattered the northern house and yet keeps it: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10), to be made one again with Judah — *I will take the stick of Joseph... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). And lest any read the Keeper as having let his people go, the apostle forbids it at the root: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The sleepless watch over Yashar''el is unbroken — never replaced, never abandoned.',
+       sv.verse_id, ev.verse_id, 'free', 25003
+  FROM _s302_ps121_lookup sv, _s302_ps121_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=121 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-121-the-sun-shall-not-smite-thee-by-day',
+       E'The sun shall not smite thee by day, nor the moon by night',
+       E'*Yahuah (LORD) is thy keeper: Yahuah (LORD) is thy shade upon thy right hand* (Psalm 121:5), and so *The sun shall not smite thee by day, nor the moon by night* (Psalm 121:6). The same shade shields the returning exiles: *neither shall the heat nor sun smite them: for he that hath mercy on them shall lead them, even by the springs of water shall he guide them* (Isaiah 49:10), and brings them at last where no heat can reach: *neither shall the sun light on them, nor any heat* (Revelation 7:16). The very lights are no terror but oath-bound servants of the Maker: *I saw the chambers of the sun and moon... how they do not leave their orbit... and they keep faith one with another: and in accordance with an oath they set and they rise* (1 Enoch 41:5). The Keeper rules the lights, so they cannot harm the one he keeps.',
+       sv.verse_id, ev.verse_id, 'extras', 25006
+  FROM _s302_ps121_lookup sv, _s302_ps121_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=121 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-121-preserve-thy-going-out-and-thy-coming-in',
+       E'Yahuah shall preserve thy going out and thy coming in',
+       E'*Yahuah (LORD) shall preserve thee from all evil: he shall preserve thy soul* (Psalm 121:7), *Yahuah (LORD) shall preserve thy going out and thy coming in from this time forth, and even for evermore* (Psalm 121:8). The Formed Son prays exactly this keeping: *I pray not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil* (John 17:15), and the apostle pledges it: *But Yahuah (Lord) is faithful, who shall stablish you, and keep you from evil* (2 Thessalonians 3:3). The going-out-and-coming-in is the Torah blessing itself — *Blessed shalt thou be when thou comest in, and blessed shalt thou be when thou goest out* (Deuteronomy 28:6) — the covenant inheritance, never the curse. What the servant Moses could no longer do — *I can no more go out and come in... Thou shalt not go over this Jordan* (Deuteronomy 31:2) — the Keeper takes up and does forever.',
+       sv.verse_id, ev.verse_id, 'free', 25009
+  FROM _s302_ps121_lookup sv, _s302_ps121_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=121 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (121,2,'canon','psalms',124,8, 1, E'Psalm 124:8 — the companion Song of Ascents: *Our help is in the name of Yahuah (LORD), who made heaven and earth* — the same confession.'),
+    (121,2,'canon','genesis',1,1, 2, E'Genesis 1:1 — *In the beginning Elohim (God) created the heaven and the earth* — the Maker''s first act, the ground of the hope.'),
+    (121,2,'canon','john',1,3, 3, E'John 1:3 — *All things were made by him* — the Father made all things by the Formed Word, never a rival power.'),
+    (121,2,'jubilees','jubilees',2,1, 4, E'Jubilees 2:1 — the Maker *kept Sabbath on the seventh day and hallowed it... and appointed it as a sign* — the appointed rest sealing the work.')
+  ) AS m(src_v_x,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-121-my-help-from-the-maker-of-heaven-and-earth'
+  JOIN _s302_ps121_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=m.src_v
+  JOIN _s302_ps121_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (121,4,'canon','jeremiah',31,10, 1, E'Jeremiah 31:10 — *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* — the Keeper of the scattered house.'),
+    (121,4,'canon','ezekiel',37,19, 2, E'Ezekiel 37:19 — the stick of Joseph and the stick of Yahudah *make them one stick... one in mine hand* — both houses kept toward the one ingathering.'),
+    (121,4,'canon','romans',11,1, 3, E'Romans 11:1 — *Hath Elohim (God) cast away his people? Elohim (God) forbid* — the replacement reading forbidden at the root.'),
+    (121,4,'canon','romans',11,2, 4, E'Romans 11:2 — *Elohim (God) hath not cast away his people which he foreknew* — foreknown and kept, the watch unbroken.')
+  ) AS m(src_v_x,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-121-he-that-keepeth-yasharel-shall-not-slumber'
+  JOIN _s302_ps121_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=m.src_v
+  JOIN _s302_ps121_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (121,6,'canon','isaiah',49,10, 1, E'Isaiah 49:10 — *neither shall the heat nor sun smite them* — the same shielding shade over the returning exiles.'),
+    (121,6,'canon','revelation',7,16, 2, E'Revelation 7:16 — *neither shall the sun light on them, nor any heat* — the keeping consummated among the gathered tribes.'),
+    (121,6,'enoch','1-enoch',41,5, 3, E'1 Enoch 41:5 — the sun and moon *do not leave their orbit... and in accordance with an oath they set and they rise* — oath-bound servants of the Maker, not powers to dread.')
+  ) AS m(src_v_x,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-121-the-sun-shall-not-smite-thee-by-day'
+  JOIN _s302_ps121_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=m.src_v
+  JOIN _s302_ps121_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (121,7,'canon','john',17,15, 1, E'John 17:15 — *keep them from the evil* — the Formed Son prays the very preservation of the psalm.'),
+    (121,7,'canon','2-thessalonians',3,3, 2, E'2 Thessalonians 3:3 — *Yahuah (Lord) is faithful, who shall stablish you, and keep you from evil* — the apostolic echo of the pledge.'),
+    (121,8,'canon','deuteronomy',28,6, 3, E'Deuteronomy 28:6 — *Blessed shalt thou be when thou comest in, and blessed shalt thou be when thou goest out* — the Torah blessing the psalm sings back, the inheritance not the curse.'),
+    (121,8,'canon','deuteronomy',31,2, 4, E'Deuteronomy 31:2 — Moses: *I can no more go out and come in* — what the servant lays down at the border, the Keeper takes up forever.')
+  ) AS m(src_v_x,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,so,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-121-preserve-thy-going-out-and-thy-coming-in'
+  JOIN _s302_ps121_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=121 AND sv.verse_number=m.src_v
+  JOIN _s302_ps121_lookup tv ON tv.edition_slug=m.tgt_edition AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_122.sql (Psalm 122) -----
+-- Chapter: Psalm 122 — A SONG OF DEGREES OF DAVID, a KEYSTONE of the Songs of Ascents: the pilgrim
+-- ARRIVES at Jerusalem. *I was glad when they said unto me, Let us go into the house of Yahuah* (v.1).
+-- The chapter binds four framework pillars at once: (1) the pilgrim-feast JOY of the three regalim
+-- (Exod 23:17); (2) JERUSALEM the compacted city → the heavenly Jerusalem whose builder is Elohim;
+-- (3) ★★ *Whither the tribes go up, the tribes of Yahuah, unto the testimony of Yashar'el* = the
+-- TWO-HOUSE ingathering of the twelve tribes (Ezek 37 the two sticks made one, Rom 11:1-2 guard —
+-- restoration NEVER replacement); (4) ★ *the thrones of the house of David* = the Davidic throne, the
+-- Son who reigns and has a Father (Luke 1:32-33). It closes with the prayer for the SHALOM of the city.
+-- Tag: ps122   Temp view: _s302_ps122_lookup
+-- Sort band: base 25025, step 3 -> threads at 25025, 25028, 25031, 25034, 25037 (5 threads)
+-- Source of EVERY row: 'canon','psalms',122,v
+-- ⚠ SLUG PREFIX IS SINGULAR: psalm-122-... (verified 0 hits in EXISTING_SLUGS.txt)
+--
+-- Psalm 122 coverage ("none warranted" recorded where chosen):
+--   vv.1-2 (I was glad when they said unto me, Let us go into the house of Yahuah / Our feet shall stand within thy gates, O Jerusalem)
+--        NT:     none warranted (the pilgrim-joy is carried by the Tanakh feast-law + temple-longing) — THREAD 1
+--        Extras: none warranted        Tanakh: ★★ Exodus 23:17 (three times in the year all thy males shall appear); ★ Isaiah 2:3 (Come, let us go up... to the house of the Elohim of Jacob); ★ Psalm 84:1-2 (My soul longeth... for the courts of Yahuah); ★ Psalm 84:10 (a day in thy courts is better than a thousand) — THREAD 1
+--   v.3 (Jerusalem is builded as a city that is compact together)
+--        NT:     ★★ Hebrews 12:22 (ye are come unto... the heavenly Jerusalem); ★★ Hebrews 11:10 (a city which hath foundations, whose builder and maker is Elohim); ★ Galatians 4:26 (Jerusalem which is above is free); ★★ Revelation 21:2 (the holy city, new Jerusalem); ★ Revelation 21:10 (that great city, the holy Jerusalem) — THREAD 2
+--        Extras: none warranted (Tobit's bejewelled Jerusalem held to THREAD 5)        Tanakh: none warranted (the city-built weave is the NT fulfillment) — THREAD 2
+--   v.4 (Whither the tribes go up, the tribes of Yahuah, unto the testimony of Yashar'el, to give thanks unto the name of Yahuah) ★★ KEYSTONE
+--        NT:     ★★ Revelation 7:4 (an hundred and forty and four thousand of all the tribes of Yashar'el); ★★ Romans 11:1 (Hath Elohim cast away his people? Elohim forbid) — GUARD — THREAD 3
+--        Extras: none warranted (Tobit's gathering held to THREAD 5)        Tanakh: ★★★ Ezekiel 37:19 (the stick of Joseph... with the stick of Yahudah... one stick); ★★ Ezekiel 37:22 (they shall be no more two nations); ★★ Isaiah 11:12 (assemble the outcasts of Yashar'el, and gather... the dispersed of Yahudah); ★ Jeremiah 31:10 (He that scattered Yashar'el will gather him) — THREAD 3
+--   v.5 (For there are set thrones of judgment, the thrones of the house of David) ★
+--        NT:     ★★ Luke 1:32-33 (the throne of his father David... he shall reign over the house of Jacob for ever); ★★ Matthew 19:28 (ye also shall sit upon twelve thrones, judging the twelve tribes) — THREAD 4
+--        Extras: none warranted        Tanakh: none warranted (the Davidic throne weave runs forward to its NT seating) — THREAD 4
+--   vv.6-9 (Pray for the peace of Jerusalem... Peace be within thy walls... Because of the house of Yahuah Eloheinu I will seek thy good)
+--        NT:     ★ Galatians 6:16 (peace... upon the Yashar'el of Elohim) — THREAD 5
+--        Extras: ★ Tobit 13:14 (blessed are they which love thee, for they shall rejoice in thy peace) — THREAD 5
+--        Tanakh: ★★ Isaiah 66:10-13 (Rejoice ye with Jerusalem... I will extend peace to her like a river); ★ Psalm 128:5-6 (thou shalt see the good of Jerusalem... peace upon Yashar'el) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. psalm-122-i-was-glad-let-us-go-into-the-house-of-yahuah — Tanakh (Exodus 23, Isaiah 2, Psalm 84) [free]
+--   2. psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem — NT (Hebrews 12, Hebrews 11, Galatians 4, Revelation 21) [free]
+--   3. psalm-122-whither-the-tribes-go-up-the-two-house-ingathering — NT (Revelation 7, Romans 11) + Tanakh (Ezekiel 37, Isaiah 11, Jeremiah 31) [free] ★★ KEYSTONE
+--   4. psalm-122-the-thrones-of-the-house-of-david — NT (Luke 1, Matthew 19) [free] ★
+--   5. psalm-122-pray-for-the-peace-of-jerusalem — NT (Galatians 6) + Extras (Tobit 13) + Tanakh (Isaiah 66, Psalm 128) [extras]
+--
+-- Framing notes:
+--   ★★★ THE TWO-HOUSE INGATHERING (THREAD 3, KEYSTONE): *Whither the tribes go up, the tribes of Yahuah,
+--      unto the testimony of Yashar'el, to give thanks unto the name of Yahuah* (v.4). The pilgrim sees the
+--      twelve tribes streaming up — and the testimony is the Torah deposited in Jerusalem. This is the very
+--      regathering Ezekiel sees as the two sticks made one (*the stick of Joseph... with the stick of Yahudah...
+--      and make them one stick* — Ezek 37:19; *they shall be no more two nations* — 37:22), that Isaiah sees
+--      as *the outcasts of Yashar'el* and *the dispersed of Yahudah* assembled (Isa 11:12), that Jeremiah
+--      sings as *He that scattered Yashar'el will gather him* (Jer 31:10), and that John seals tribe by tribe
+--      (Rev 7:4). Romans 11:1 stands GUARD over the whole thread: *Hath Elohim cast away his people? Elohim
+--      forbid* — the tribes that go up are restored, never replaced.
+--   ★★ THE HEAVENLY JERUSALEM (THREAD 2): *Jerusalem is builded as a city that is compact together* (v.3) —
+--      the compacted earthly city is the shadow of the city whose builder is Elohim (Heb 11:10), the heavenly
+--      Jerusalem the pilgrims of faith are come unto (Heb 12:22), Jerusalem above (Gal 4:26), the holy city
+--      coming down (Rev 21:2,10). Not Jerusalem discarded for a heavenly substitute — the same covenant city
+--      perfected and descended.
+--   ★ THE THRONES OF THE HOUSE OF DAVID (THREAD 4): *For there are set thrones of judgment, the thrones of
+--      the house of David* (v.5) — the Davidic throne the angel gives the Formed Son: *Yahuah Elohim shall give
+--      unto him the throne of his father David... he shall reign over the house of Jacob for ever* (Luke 1:32-33),
+--      the Son of Adam seated and the twelve seated with Him judging the twelve tribes (Matt 19:28). The Son
+--      who reigns HAS a Father who gives Him the throne — no co-equal grammar.
+--   THE PILGRIM-FEAST JOY (THREAD 1): *I was glad when they said unto me, Let us go into the house of Yahuah*
+--      (v.1) is the joy of the three appointed pilgrim-feasts (*Three times in the year all thy males shall
+--      appear* — Exod 23:17), the going-up Isaiah hears the nations echo (*Come ye, and let us go up... to the
+--      house of the Elohim of Jacob* — Isa 2:3), the temple-longing of Psalm 84. The feasts are not abolished;
+--      they are the architecture of the ascent.
+--   1 JOHN 2:3-4 / TORAH-NEVER-ABOLISHED: the "testimony" the tribes go up unto (v.4) and the appointed-feast
+--      ascent (v.1) both anchor the chapter in the living Torah — the going-up is obedience to the covenant
+--      calendar, the testimony is the covenant-word in Jerusalem.
+--   VERSES WITH NO SEPARATE ADD: vv.7-8 (Peace be within thy walls... For my brethren and companions' sakes)
+--      and v.9 (Because of the house of Yahuah Eloheinu I will seek thy good) are folded into THREAD 5 as the
+--      unfolding of the peace-prayer of v.6 rather than warranting independent threads.
+
+CREATE TEMP VIEW _s302_ps122_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: I was glad — let us go into the house of Yahuah (the pilgrim-feast joy)
+    ('canon','psalms',122,1,'canon','exodus',23,17,'free',
+      E'*Three times in the year all thy males shall appear before Adonai Yahuah (the Lord GOD)* (Exodus 23:17). *I was glad when they said unto me, Let us go into the house of Yahuah (LORD)* (Psalm 122:1): the gladness is the joy of the three pilgrim-feasts — Unleavened Bread, the firstfruits harvest, and ingathering — the appointed times that command Yashar''el up to the house three times a year; the song of ascents is the feast-law sung as joy, the calendar of Yahuah never set aside.'),
+    ('canon','psalms',122,1,'canon','isaiah',2,3,'free',
+      E'*And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). *I was glad when they said unto me, Let us go into the house of Yahuah (LORD)* (Psalm 122:1): the very summons the pilgrim is glad to hear is the summons Isaiah hears swell to the nations — Come, let us go up to the house of the Elohim of Jacob; and what goes forth from that house is the Torah, the law and the word of Yahuah from Jerusalem.'),
+    ('canon','psalms',122,1,'canon','psalms',84,2,'free',
+      E'*My soul longeth, yea, even fainteth for the courts of Yahuah (LORD): my heart and my flesh crieth out for the living Elohim (God)* (Psalm 84:2). *I was glad when they said unto me, Let us go into the house of Yahuah (LORD)* (Psalm 122:1): the gladness at the call to go up is the same longing Psalm 84 pours out — the soul that faints for the courts of Yahuah is made glad the moment the pilgrimage is announced.'),
+    ('canon','psalms',122,2,'canon','psalms',84,10,'free',
+      E'*For a day in thy courts is better than a thousand. I had rather be a doorkeeper in the house of my Elohim (God), than to dwell in the tents of wickedness* (Psalm 84:10). *Our feet shall stand within thy gates, O Jerusalem* (Psalm 122:2): the arrival within the gates is the prize Psalm 84 reckons above a thousand days elsewhere — to stand even at the threshold of the house of Yahuah is the pilgrim''s whole joy.'),
+
+    -- THREAD 2: Jerusalem is builded as a city compact together (the heavenly Jerusalem)
+    ('canon','psalms',122,3,'canon','hebrews',12,22,'free',
+      E'*But ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem, and to an innumerable company of angels* (Hebrews 12:22). *Jerusalem is builded as a city that is compact together* (Psalm 122:3): the compacted earthly city is the shadow whose substance is the heavenly Jerusalem the pilgrims of faith are come unto — mount Sion and the city of the living Elohim, the same covenant city lifted to its consummation.'),
+    ('canon','psalms',122,3,'canon','hebrews',11,10,'free',
+      E'*For he looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10). *Jerusalem is builded as a city that is compact together* (Psalm 122:3): the city the pilgrim sees built with walls and palaces is the city Abraham looked for by faith — the one whose builder and maker is Elohim, founded and compacted not by men alone but by the hand that frames the worlds.'),
+    ('canon','psalms',122,3,'canon','galatians',4,26,'free',
+      E'*But Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26). *Jerusalem is builded as a city that is compact together* (Psalm 122:3): the city compacted together is answered by Jerusalem above — the free city, the mother of the covenant children; the earthly compaction points up to the heavenly freedom, never to Jerusalem cast off.'),
+    ('canon','psalms',122,3,'canon','revelation',21,2,'free',
+      E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). *Jerusalem is builded as a city that is compact together* (Psalm 122:3): the city the pilgrim arrives at is the figure of the holy city John sees come down — new Jerusalem, the bride adorned, the compacted city perfected and descended from Elohim.'),
+    ('canon','psalms',122,3,'canon','revelation',21,10,'free',
+      E'*And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10). *Jerusalem is builded as a city that is compact together* (Psalm 122:3): what the pilgrim beholds compacted on Zion''s hill, John beholds carried up to the high mountain — that great city, the holy Jerusalem, descending out of heaven from Elohim.'),
+
+    -- THREAD 3: Whither the tribes go up (the two-house ingathering of the twelve tribes) ★★ KEYSTONE
+    ('canon','psalms',122,4,'canon','ezekiel',37,19,'free',
+      E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). *Whither the tribes go up, the tribes of Yahuah (LORD), unto the testimony of Yashar''el (Israel)* (Psalm 122:4): the tribes streaming up to Jerusalem are the two houses Ezekiel sees made one — the stick of Joseph and the stick of Yahudah joined into one stick in the hand of Yahuah; the ascent of the tribes IS the regathering.'),
+    ('canon','psalms',122,4,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). *Whither the tribes go up, the tribes of Yahuah (LORD)* (Psalm 122:4): the tribes that go up are no longer two scattered kingdoms but one nation under one King — the very end Ezekiel names, the northern house of Yashar''el and the southern house of Yahudah no more two nations.'),
+    ('canon','psalms',122,4,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). *Whither the tribes go up, the tribes of Yahuah (LORD), unto the testimony of Yashar''el (Israel)* (Psalm 122:4): the tribes going up are the outcasts of Yashar''el and the dispersed of Yahudah gathered from the four corners — both houses, the scattered and the exiled, brought back to the testimony in Jerusalem.'),
+    ('canon','psalms',122,4,'canon','jeremiah',31,10,'free',
+      E'*Hear the word of Yahuah (LORD), O ye nations, and declare it in the isles afar off, and say, He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). *Whither the tribes go up, the tribes of Yahuah (LORD)* (Psalm 122:4): the going-up of the tribes is the gathering Jeremiah proclaims to the isles afar off — He that scattered Yashar''el will gather him as a shepherd his flock; the dispersion is reversed and the tribes ascend.'),
+    ('canon','psalms',122,4,'canon','revelation',7,4,'free',
+      E'*And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). *Whither the tribes go up, the tribes of Yahuah (LORD)* (Psalm 122:4): the tribes of Yahuah are numbered and sealed to the end — John hears them counted tribe by tribe, the hundred and forty and four thousand of all the tribes of the children of Yashar''el; the ascent of the tribes is fulfilled in the sealed twelve.'),
+    ('canon','psalms',122,4,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). *Whither the tribes go up, the tribes of Yahuah (LORD)* (Psalm 122:4): the guard over the whole ingathering — the tribes that go up are not cast away and replaced by another people; Elohim forbid that He should cast off His people, for the apostle himself stands as a living tribesman of the covenant; the tribes are restored, never superseded.'),
+
+    -- THREAD 4: For there are set thrones of judgment, the thrones of the house of David ★
+    ('canon','psalms',122,5,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32). *For there are set thrones of judgment, the thrones of the house of David* (Psalm 122:5): the thrones of the house of David set in Jerusalem are the throne the angel promises the Formed Son — Yahuah Elohim gives unto Him the throne of His father David, and He reigns over the house of Jacob for ever; the Son who reigns has a Father who gives Him the throne.'),
+    ('canon','psalms',122,5,'canon','matthew',19,28,'free',
+      E'*And Yahusha (Jesus) said unto them, Verily I say unto you, That ye which have followed me, in the regeneration when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar''el (Israel)* (Matthew 19:28). *For there are set thrones of judgment, the thrones of the house of David* (Psalm 122:5): the set thrones of judgment in the Davidic city are the twelve thrones the Son of Adam appoints — He on the throne of His glory, the twelve seated to judge the twelve tribes that go up to that very city.'),
+
+    -- THREAD 5: Pray for the peace of Jerusalem (the shalom of the city)
+    ('canon','psalms',122,6,'canon','isaiah',66,12,'extras',
+      E'*For thus saith Yahuah (LORD), Behold, I will extend peace to her like a river, and the glory of the Gentiles like a flowing stream: then shall ye suck, ye shall be borne upon her sides, and be dandled upon her knees* (Isaiah 66:12). *Pray for the peace of Jerusalem: they shall prosper that love thee* (Psalm 122:6): the peace the pilgrim prays for is the peace Yahuah Himself promises to extend to her like a river — the shalom of Jerusalem is no empty wish but a covenant pledge, comfort poured out upon the city like a flowing stream.'),
+    ('canon','psalms',122,6,'canon','psalms',128,5,'extras',
+      E'*Yahuah (LORD) shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life* (Psalm 128:5). *Pray for the peace of Jerusalem: they shall prosper that love thee* (Psalm 122:6): the next song of degrees answers the prayer — to love and pray for Jerusalem is to be blessed out of Zion and to see the good of the city, and its close *peace upon Yashar''el (Israel)* (128:6) widens the shalom of the city to the whole people.'),
+    ('canon','psalms',122,6,'canon','galatians',6,16,'extras',
+      E'*And as many as walk according to this rule, peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16). *Pray for the peace of Jerusalem: they shall prosper that love thee* (Psalm 122:6): the prayed-for peace of the city rests upon the Yashar''el of Elohim — the covenant people, the two houses gathered; the shalom of Jerusalem is the shalom of Israel restored, never a peace transferred to a people that displaces her.'),
+    ('canon','psalms',122,6,'apocrypha','tobit',13,14,'extras',
+      E'*O blessed are they which love thee, for they shall rejoice in thy peace: blessed are they which have been sorrowful for all thy scourges; for they shall rejoice for thee, when they have seen all thy glory, and shall be glad for ever* (Tobit 13:14). *Pray for the peace of Jerusalem: they shall prosper that love thee* (Psalm 122:6): Tobit, praying from captivity, sings the same blessing — they that love Jerusalem rejoice in her peace; the prosperity promised to her lovers in the psalm is the everlasting gladness Tobit foresees when her glory is restored.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-122-i-was-glad-let-us-go-into-the-house-of-yahuah',
+       E'I was glad — let us go into the house of Yahuah (the pilgrim-feast joy)',
+       E'*I was glad when they said unto me, Let us go into the house of Yahuah (LORD)* (Psalm 122:1) — *Our feet shall stand within thy gates, O Jerusalem* (Psalm 122:2). The song of ascents opens with the gladness of the pilgrim summoned to the house. That summons is the feast-law itself: *Three times in the year all thy males shall appear before Adonai Yahuah (the Lord GOD)* (Exodus 23:17) — the appointed pilgrim-feasts of Unleavened Bread, firstfruits, and ingathering that draw Yashar''el up to Jerusalem; the calendar of Yahuah is the architecture of the joy, never set aside. Isaiah hears the same summons swell to the nations: *Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob; and he will teach us of his ways... for out of Zion shall go forth the law* (Isaiah 2:3). And the gladness at the call is the longing Psalm 84 pours out — *My soul longeth, yea, even fainteth for the courts of Yahuah (LORD)* (Psalm 84:2), for *a day in thy courts is better than a thousand* (Psalm 84:10). To stand within the gates is the pilgrim''s whole joy.',
+       sv.verse_id, ev.verse_id, 'free', 25025
+  FROM _s302_ps122_lookup sv, _s302_ps122_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=122 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem',
+       E'Jerusalem builded as a city compact together — the heavenly Jerusalem',
+       E'*Jerusalem is builded as a city that is compact together* (Psalm 122:3). The pilgrim beholds the earthly city walled and whole — and that compaction is the shadow of the city whose builder is Elohim. Abraham *looked for a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10), and the pilgrims of faith *are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem* (Hebrews 12:22). Paul names her *Jerusalem which is above... free, which is the mother of us all* (Galatians 4:26). And John sees her descend: *the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2), *that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10). Not the covenant city cast off for a heavenly substitute — the same Jerusalem, compacted now in figure, perfected and descended at the last.',
+       sv.verse_id, ev.verse_id, 'free', 25028
+  FROM _s302_ps122_lookup sv, _s302_ps122_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=122 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-122-whither-the-tribes-go-up-the-two-house-ingathering',
+       E'Whither the tribes go up — the two-house ingathering of the twelve tribes',
+       E'*Whither the tribes go up, the tribes of Yahuah (LORD), unto the testimony of Yashar''el (Israel), to give thanks unto the name of Yahuah (LORD)* (Psalm 122:4). The pilgrim sees the twelve tribes streaming up to Jerusalem, up to the testimony — the Torah deposited in the city. This ascent IS the regathering the prophets sing. Ezekiel sees it as the two sticks made one: *I will take the stick of Joseph... and the tribes of Yashar''el (Israel) his fellows... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19), *they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). Isaiah sees both houses gathered: *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). Jeremiah proclaims it to the isles: *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10). And John seals them tribe by tribe — *an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). Over the whole thread stands the guard: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1). The tribes that go up are restored, never replaced.',
+       sv.verse_id, ev.verse_id, 'free', 25031
+  FROM _s302_ps122_lookup sv, _s302_ps122_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=122 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-122-the-thrones-of-the-house-of-david',
+       E'The thrones of the house of David — the Son who reigns and has a Father',
+       E'*For there are set thrones of judgment, the thrones of the house of David* (Psalm 122:5). The pilgrim-city is also the seat of judgment — the Davidic throne planted in Jerusalem. That throne is the throne the angel promises the Formed Son: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32). The Son who reigns HAS a Father who gives Him the throne — no co-equal grammar, the Most High enthroning the One drawn from Him. And the thrones are not His alone: *when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar''el (Israel)* (Matthew 19:28) — the twelve seated to judge the twelve tribes that go up to that very city.',
+       sv.verse_id, ev.verse_id, 'free', 25034
+  FROM _s302_ps122_lookup sv, _s302_ps122_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=122 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-122-pray-for-the-peace-of-jerusalem',
+       E'Pray for the peace of Jerusalem — the shalom of the city',
+       E'*Pray for the peace of Jerusalem: they shall prosper that love thee* (Psalm 122:6) — *Peace be within thy walls, and prosperity within thy palaces* (122:7) — *Because of the house of Yahuah Eloheinu (the LORD our God) I will seek thy good* (122:9). The pilgrim closes not with petition for himself but with prayer for the shalom of the city. That peace is no empty wish: *Behold, I will extend peace to her like a river, and the glory of the Gentiles like a flowing stream* (Isaiah 66:12) — Yahuah Himself pledges it. The next song of degrees answers the prayer: *Yahuah (LORD) shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life* (Psalm 128:5), closing *peace upon Yashar''el (Israel)* (128:6). Paul names where that peace rests: *peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16) — the covenant people, the two houses gathered, never a people that displaces her. And Tobit, praying from captivity, sings the same blessing: *O blessed are they which love thee, for they shall rejoice in thy peace... when they have seen all thy glory, and shall be glad for ever* (Tobit 13:14).',
+       sv.verse_id, ev.verse_id, 'extras', 25037
+  FROM _s302_ps122_lookup sv, _s302_ps122_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=122 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Three times in the year all thy males shall appear before Adonai Yahuah (the Lord GOD)* (Exodus 23:17) — the gladness of 122:1 is the joy of the three pilgrim-feasts; the appointed calendar is the architecture of the ascent.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=1
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-i-was-glad-let-us-go-into-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Come ye, and let us go up to the mountain of Yahuah (LORD), to the house of the Elohim (God) of Jacob... for out of Zion shall go forth the law* (Isaiah 2:3) — the summons of 122:1 swells to the nations, and the Torah goes forth from the house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=1
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-i-was-glad-let-us-go-into-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *My soul longeth, yea, even fainteth for the courts of Yahuah (LORD)* (Psalm 84:2) — the gladness at the call (122:1) is Psalm 84''s longing for the courts of the house.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=1
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=84 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-i-was-glad-let-us-go-into-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *For a day in thy courts is better than a thousand... a doorkeeper in the house of my Elohim (God)* (Psalm 84:10) — to stand within the gates (122:2) is the prize Psalm 84 reckons above a thousand days elsewhere.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=2
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=84 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-i-was-glad-let-us-go-into-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *ye are come unto mount Sion, and unto the city of the living Elohim (God), the heavenly Jerusalem* (Hebrews 12:22) — the compacted city of 122:3 is the shadow of the heavenly Jerusalem the faithful come unto.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=3
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *a city which hath foundations, whose builder and maker is Elohim (God)* (Hebrews 11:10) — the city the pilgrim sees built (122:3) is the city Abraham looked for, framed by Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=3
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Jerusalem which is above is free, which is the mother of us all* (Galatians 4:26) — the city compacted together (122:3) points up to Jerusalem above, never to Jerusalem cast off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=3
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride* (Revelation 21:2) — the compacted city of 122:3 is the figure of new Jerusalem descended.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=3
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10) — what the pilgrim beholds on Zion (122:3), John beholds carried up to the high mountain.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=3
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-jerusalem-builded-as-a-city-the-heavenly-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members ★★ KEYSTONE
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will take the stick of Joseph... even with the stick of Yahudah (Judah), and make them one stick* (Ezekiel 37:19) — the tribes going up (122:4) are the two houses made one in the hand of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-whither-the-tribes-go-up-the-two-house-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they shall be no more two nations, neither shall they be divided into two kingdoms any more* (Ezekiel 37:22) — the tribes that go up (122:4) are one nation under one King, no more two scattered kingdoms.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-whither-the-tribes-go-up-the-two-house-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah)* (Isaiah 11:12) — both houses, the scattered and the exiled, are the tribes that go up (122:4).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-whither-the-tribes-go-up-the-two-house-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *He that scattered Yashar''el (Israel) will gather him, and keep him, as a shepherd doth his flock* (Jeremiah 31:10) — the going-up of the tribes (122:4) is the gathering proclaimed to the isles afar off.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-whither-the-tribes-go-up-the-two-house-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) — the tribes of Yahuah (122:4) numbered and sealed tribe by tribe to the end.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-whither-the-tribes-go-up-the-two-house-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — THE GUARD: the tribes that go up (122:4) are restored, never cast off and replaced by another people.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=4
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-whither-the-tribes-go-up-the-two-house-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members ★
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David... he shall reign over the house of Jacob for ever* (Luke 1:32) — the Davidic thrones of 122:5 are the throne the Father gives the Formed Son; the Son who reigns has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=5
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-the-thrones-of-the-house-of-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *when the Son of Adam shall sit in the throne of his glory, ye also shall sit upon twelve thrones, judging the twelve tribes of Yashar''el (Israel)* (Matthew 19:28) — the set thrones of judgment (122:5) are the twelve thrones judging the twelve tribes that go up.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=5
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-the-thrones-of-the-house-of-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Behold, I will extend peace to her like a river, and the glory of the Gentiles like a flowing stream* (Isaiah 66:12) — the peace prayed for in 122:6 is the peace Yahuah Himself pledges to extend to Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=6
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-pray-for-the-peace-of-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) shall bless thee out of Zion: and thou shalt see the good of Jerusalem all the days of thy life* (Psalm 128:5) — the next song of degrees answers the prayer of 122:6, closing *peace upon Yashar''el (Israel)* (128:6).'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=6
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=128 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-pray-for-the-peace-of-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *peace be on them, and mercy, and upon the Yashar''el (Israel) of Elohim (God)* (Galatians 6:16) — the shalom of Jerusalem (122:6) rests upon the Yashar''el of Elohim, the covenant people, never a people that displaces her.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=6
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-pray-for-the-peace-of-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *O blessed are they which love thee, for they shall rejoice in thy peace... and shall be glad for ever* (Tobit 13:14) — Tobit, praying from captivity, sings the same blessing on Jerusalem''s lovers that 122:6 pronounces.'
+  FROM cross_reference_threads t
+  JOIN _s302_ps122_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=122 AND sv.verse_number=6
+  JOIN _s302_ps122_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='psalm-122-pray-for-the-peace-of-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_123.sql (Psalm 123) -----
+-- Chapter: Psalm 123 — A Song of Ascents, the upward look of the servant (4 verses)
+-- Tag: ps123   Session prefix: s302   Sort band base: 25050 (25050, 25053, 25056)
+-- View: _s302_ps123_lookup
+-- All targets canon Tanakh + NT → every thread tier 'free'. No extras warranted (short ascent psalm).
+--
+-- Per-chapter coverage checklist:
+--   v.1  (Unto thee lift I up mine eyes, O thou that dwellest in the heavens)
+--        NT:     Colossians 3:1-2 (set affection above) — WARRANTED (thread 1)
+--        Extras: none warranted
+--        Tanakh: Psalm 121:1 (lift up mine eyes), Psalm 2:4 (he that sitteth in the heavens) — WARRANTED (thread 1)
+--   v.2  (As the eyes of servants look unto the hand of their masters... so our eyes wait upon Yahuah... until... mercy)
+--        NT:     Matthew 6:24 (no man can serve two masters) — WARRANTED (thread 2)
+--        Extras: none warranted
+--        Tanakh: Psalm 145:15 (the eyes of all wait upon thee) — WARRANTED (thread 2)
+--   v.3  (Have mercy upon us, O Yahuah... for we are exceedingly filled with contempt)
+--        NT:     Luke 18:13-14 (publican: be merciful to me a sinner / abased-exalted) — WARRANTED (thread 3)
+--        Extras: none warranted
+--        Tanakh: Psalm 44:13 (a reproach to our neighbours, a scorn and a derision) — WARRANTED (thread 3)
+--   v.4  (Our soul is exceedingly filled with the scorning of those that are at ease, and with the contempt of the proud)
+--        NT:     James 4:6 (Elohim resisteth the proud, giveth grace to the humble); Matthew 5:5 (the meek inherit) — WARRANTED (thread 3)
+--        Extras: none warranted
+--        Tanakh: Proverbs 3:34 (he scorneth the scorners, giveth grace to the lowly) — WARRANTED (thread 3)
+--
+-- Threads (3):
+--   1. psalm-123-unto-thee-lift-i-up-mine-eyes-o-thou-that-dwellest-in-the-heavens  [Tanakh + NT]
+--   2. psalm-123-as-the-eyes-of-servants-so-our-eyes-wait-upon-yahuah-for-mercy     [Tanakh + NT]
+--   3. psalm-123-filled-with-the-scorning-of-those-at-ease-and-the-contempt-of-the-proud  [Tanakh + NT]
+
+CREATE TEMP VIEW _s302_ps123_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. cross_references
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: v.1 — the upward look to the One who dwells in the heavens
+    ('canon','psalms',123,1,'canon','psalms',121,1,'free',
+      E'*I will lift up mine eyes unto the hills, from whence cometh my help* (Psalm 121:1). The sister ascent lifts the eyes laterally to the hills for help; Psalm 123 lifts them higher still — past the hills to the throne above them: *Unto thee lift I up mine eyes, O thou that dwellest in the heavens* (Psalm 123:1). The pilgrim''s gaze climbs from the help that comes from Yahuah (LORD) to Yahuah himself.'),
+    ('canon','psalms',123,1,'canon','psalms',2,4,'free',
+      E'*He that sitteth in the heavens shall laugh: Yahuah (LORD) shall have them in derision* (Psalm 2:4). The same enthroned One who *dwellest in the heavens* (Psalm 123:1) is the unmoved King over the raging nations. The servant who lifts up his eyes to him looks to the throne the proud cannot reach.'),
+    ('canon','psalms',123,1,'canon','colossians',3,1,'free',
+      E'*If ye then be risen with Messiah (Christ), seek those things which are above, where Messiah (Christ) sitteth on the right hand of Elohim (God)* (Colossians 3:1). The upward look of Psalm 123 — *Unto thee lift I up mine eyes, O thou that dwellest in the heavens* (Psalm 123:1) — is the same posture the apostle commands: the affection lifted off the earth and set on the One enthroned above, the Formed Son seated at the Father''s right hand.'),
+    ('canon','psalms',123,1,'canon','colossians',3,2,'free',
+      E'*Set your affection on things above, not on things on the earth* (Colossians 3:2). Psalm 123 enacts the command before it is spoken: the eyes lifted *unto thee... that dwellest in the heavens* (Psalm 123:1) are the affection fixed above, the heart of the servant raised from the dust of contempt to the throne of mercy.'),
+
+    -- THREAD 2: v.2 — the eyes of servants waiting on the master's hand
+    ('canon','psalms',123,2,'canon','psalms',145,15,'free',
+      E'*The eyes of all wait upon thee; and thou givest them their meat in due season* (Psalm 145:15). What Psalm 123 sees in the single waiting servant — *so our eyes wait upon Yahuah Eloheinu (the LORD our God), until that he have mercy upon us* (Psalm 123:2) — Psalm 145 sees in all creation: every dependent eye turned to the open hand that feeds in due season. The posture of patient dependence is the creature''s whole life.'),
+    ('canon','psalms',123,2,'canon','matthew',6,24,'free',
+      E'*No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). Psalm 123 fixes *the eyes of servants* upon *the hand of their masters* (Psalm 123:2) — one Master, one undivided gaze. The Formed Son names the test: the servant''s eye cannot wait on two hands at once.'),
+
+    -- THREAD 3: v.3-4 — the reproach of the remnant; grace to the humble, scorn to the proud
+    ('canon','psalms',123,3,'canon','psalms',44,13,'free',
+      E'*Thou makest us a reproach to our neighbours, a scorn and a derision to them that are round about us* (Psalm 44:13). The covenant people''s lament in Psalm 44 is the very burden of Psalm 123 — *we are exceedingly filled with contempt* (Psalm 123:3) — the faithful remnant of Yashar''el (Israel) bearing the scorn of the nations, crying not for vengeance but for mercy.'),
+    ('canon','psalms',123,3,'canon','luke',18,13,'free',
+      E'*And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13). The thrice-cried plea of Psalm 123 — *Have mercy upon us, O Yahuah (LORD), have mercy upon us* (Psalm 123:3) — is the publican''s whole prayer. The contrite who beg mercy stand where the proud cannot.'),
+    ('canon','psalms',123,3,'canon','luke',18,14,'free',
+      E'*I tell you, this man went down to his house justified rather than the other: for every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 18:14). Psalm 123 sets the humbled servant who waits for mercy over against *the scorning of those that are at ease, and... the contempt of the proud* (Psalm 123:4); the Formed Son names the outcome — the abased proud, the exalted lowly.'),
+    ('canon','psalms',123,4,'canon','proverbs',3,34,'free',
+      E'*Surely he scorneth the scorners: but he giveth grace unto the lowly* (Proverbs 3:34). Psalm 123 groans under *the scorning of those that are at ease, and... the contempt of the proud* (Psalm 123:4); Proverbs answers that the scorn is repaid in kind — Yahuah scorns the scorners — while the lowly who wait on his hand receive grace.'),
+    ('canon','psalms',123,4,'canon','james',4,6,'free',
+      E'*But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). The apostle quotes the very law Psalm 123 leans on: the *proud* whose *contempt* fills the servant''s soul (Psalm 123:4) are the ones Elohim resists, while the humble who lift their eyes for mercy are the ones he lifts up.'),
+    ('canon','psalms',123,4,'canon','matthew',5,5,'free',
+      E'*Blessed are the meek: for they shall inherit the earth* (Matthew 5:5). The servant of Psalm 123, filled with *the contempt of the proud* (Psalm 123:4) yet waiting in meekness for mercy, is heir to the very earth the proud-at-ease now hold; the Formed Son pronounces the reversal as blessing.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps123_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps123_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. cross_reference_threads
+-- ============================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-123-unto-thee-lift-i-up-mine-eyes-o-thou-that-dwellest-in-the-heavens',
+       E'Unto thee lift I up mine eyes, O thou that dwellest in the heavens',
+       E'The Song of Ascents opens with the pilgrim''s upward look: *Unto thee lift I up mine eyes, O thou that dwellest in the heavens* (Psalm 123:1). The companion ascent had lifted the eyes to the hills — *I will lift up mine eyes unto the hills, from whence cometh my help* (Psalm 121:1) — but Psalm 123 climbs past the hills to the throne above them, to the One enthroned in the heavens. That enthroned One is the same King the second psalm sees unmoved over the raging nations: *He that sitteth in the heavens shall laugh: Yahuah (LORD) shall have them in derision* (Psalm 2:4). To lift the eyes to him is to look past every earthly power to the throne the proud cannot reach. The apostle later makes this upward gaze a command: *If ye then be risen with Messiah (Christ), seek those things which are above, where Messiah (Christ) sitteth on the right hand of Elohim (God)* (Colossians 3:1); *Set your affection on things above, not on things on the earth* (Colossians 3:2). The Formed Son, drawn from the Formless and now seated at the Father''s right hand, is the One the lifted eyes seek; Psalm 123 enacts the command before it is spoken.',
+       sv.verse_id, ev.verse_id, 'free', 25050
+  FROM _s302_ps123_lookup sv, _s302_ps123_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=123 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=123 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-123-as-the-eyes-of-servants-so-our-eyes-wait-upon-yahuah-for-mercy',
+       E'As the eyes of servants — so our eyes wait upon Yahuah for mercy',
+       E'The heart of the psalm is the posture of the servant''s eye: *Behold, as the eyes of servants look unto the hand of their masters, and as the eyes of a maiden unto the hand of her mistress; so our eyes wait upon Yahuah Eloheinu (the LORD our God), until that he have mercy upon us* (Psalm 123:2). The servant watches one hand — for command, for provision, for the gesture of mercy — and so the covenant people watch Yahuah. This is patient dependence, the creature''s whole life turned toward the open hand. Psalm 145 widens the single watching servant to all creation: *The eyes of all wait upon thee; and thou givest them their meat in due season* (Psalm 145:15) — every dependent eye fixed on the hand that feeds. And the Formed Son names the test hidden in the image: the servant''s gaze cannot be divided — *No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). One Master, one hand, one undivided eye, waiting until mercy comes.',
+       sv.verse_id, ev.verse_id, 'free', 25053
+  FROM _s302_ps123_lookup sv, _s302_ps123_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=123 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=123 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-123-filled-with-the-scorning-of-those-at-ease-and-the-contempt-of-the-proud',
+       E'Filled with the scorning of those at ease and the contempt of the proud',
+       E'The psalm closes in the reproach of the faithful remnant: *Have mercy upon us, O Yahuah (LORD), have mercy upon us: for we are exceedingly filled with contempt. Our soul is exceedingly filled with the scorning of those that are at ease, and with the contempt of the proud* (Psalm 123:3-4). This is the burden of Yashar''el (Israel) under the mockery of the nations, the same lament Psalm 44 raises — *Thou makest us a reproach to our neighbours, a scorn and a derision to them that are round about us* (Psalm 44:13) — yet the cry is not for vengeance but, twice over, for mercy. The Formed Son draws the very posture into his parable of the abased and the exalted: *And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13); *for every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 18:14). The proud-at-ease who scorn are answered in their own coin: *Surely he scorneth the scorners: but he giveth grace unto the lowly* (Proverbs 3:34), the law the apostle quotes — *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). And to the meek who wait under contempt for mercy the Formed Son gives the proud-held earth itself: *Blessed are the meek: for they shall inherit the earth* (Matthew 5:5).',
+       sv.verse_id, ev.verse_id, 'free', 25056
+  FROM _s302_ps123_lookup sv, _s302_ps123_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=123 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=123 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. cross_reference_thread_members
+-- ============================================================================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (123,1,'psalms',121,1,1,E'*I will lift up mine eyes unto the hills, from whence cometh my help* (Psalm 121:1) — the sister ascent lifts the eyes to the hills; Psalm 123 climbs past them to the throne above.'),
+    (123,1,'psalms',2,4,2,E'*He that sitteth in the heavens shall laugh: Yahuah (LORD) shall have them in derision* (Psalm 2:4) — the One who *dwellest in the heavens* is the unmoved King over the raging nations.'),
+    (123,1,'colossians',3,1,3,E'*If ye then be risen with Messiah (Christ), seek those things which are above, where Messiah (Christ) sitteth on the right hand of Elohim (God)* (Colossians 3:1) — the upward look made command: seek the Formed Son enthroned above.'),
+    (123,1,'colossians',3,2,4,E'*Set your affection on things above, not on things on the earth* (Colossians 3:2) — Psalm 123 enacts the command before it is spoken, eyes lifted off the earth to the throne of mercy.')
+  ) AS m(src_v_ch,src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-123-unto-thee-lift-i-up-mine-eyes-o-thou-that-dwellest-in-the-heavens'
+  JOIN _s302_ps123_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_v_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps123_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (123,2,'psalms',145,15,1,E'*The eyes of all wait upon thee; and thou givest them their meat in due season* (Psalm 145:15) — the single waiting servant widened to all creation, every dependent eye on the open hand.'),
+    (123,2,'matthew',6,24,2,E'*No man can serve two masters... Ye cannot serve Elohim (God) and mammon* (Matthew 6:24) — the Formed Son names the test: the servant''s eye cannot wait on two hands at once.')
+  ) AS m(src_v_ch,src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-123-as-the-eyes-of-servants-so-our-eyes-wait-upon-yahuah-for-mercy'
+  JOIN _s302_ps123_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_v_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps123_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (123,3,'psalms',44,13,1,E'*Thou makest us a reproach to our neighbours, a scorn and a derision to them that are round about us* (Psalm 44:13) — the covenant people''s lament, the remnant filled with contempt yet crying for mercy.'),
+    (123,3,'luke',18,13,2,E'*The publican... smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13) — the thrice-cried *have mercy upon us* is the publican''s whole prayer.'),
+    (123,3,'luke',18,14,3,E'*Every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 18:14) — the Formed Son names the reversal: the proud abased, the lowly servant exalted.'),
+    (123,4,'proverbs',3,34,4,E'*Surely he scorneth the scorners: but he giveth grace unto the lowly* (Proverbs 3:34) — the scorn of the proud repaid in kind, grace to the lowly who wait.'),
+    (123,4,'james',4,6,5,E'*Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6) — the apostle quotes the very law the psalm leans on.'),
+    (123,4,'matthew',5,5,6,E'*Blessed are the meek: for they shall inherit the earth* (Matthew 5:5) — to the meek under contempt the Formed Son gives the proud-held earth itself.')
+  ) AS m(src_v_ch,src_v,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-123-filled-with-the-scorning-of-those-at-ease-and-the-contempt-of-the-proud'
+  JOIN _s302_ps123_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=m.src_v_ch AND sv.verse_number=m.src_v
+  JOIN _s302_ps123_lookup tv ON tv.edition_slug='canon' AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_psalms_124.sql (Psalm 124) -----
+-- Chapter: Psalm 124 — A Song of Ascents (of David): the deliverance confession.
+-- Tag: ps124   Session prefix: s302   Sort band base: 25075 (25075,25078,25081,25084)
+-- Source rows ALWAYS 'canon','psalms',124,v.  Thread slug prefix SINGULAR: psalm-124-...
+-- All targets canon (Tanakh + NT) -> every thread tier_required='free'.
+--
+-- Psalm 124 coverage:
+--   v.1-3  "If it had not been Yahuah who was on our side... swallowed us up quick"
+--          NT:     Romans 8:31 (If Elohim be for us, who can be against us) — THREAD 1
+--          Extras: none warranted (the covenant-preservation confession is fully witnessed in canon)
+--          Tanakh: Psalm 118:6 (Yahuah on my side); Romans 11:1-2 (people not cast away — two-house guard) — THREAD 1
+--   v.4-5  "Then the waters had overwhelmed us... the proud waters had gone over our soul"
+--          NT:     Revelation 12:15-16 (the serpent's flood after the woman; earth swallows it) — THREAD 2
+--          Extras: none warranted (flood-of-the-adversary imagery saturated in canon Psalter/Isaiah)
+--          Tanakh: Psalm 69:1-2,15 (waters come in unto my soul); Isaiah 43:2 (thou passest through the waters) — THREAD 2
+--   v.6    "Blessed be Yahuah, who hath not given us as a prey to their teeth"
+--          NT/Extras/Tanakh: folded into THREAD 3 (prey/snare-deliverance) — no standalone thread warranted
+--   v.7    "Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken"
+--          NT:     2 Timothy 2:26 (recover out of the snare of the devil) — THREAD 3
+--          Extras: none warranted
+--          Tanakh: Psalm 91:3 (the snare of the fowler); Proverbs 6:5 (as a bird from the hand of the fowler) — THREAD 3
+--   v.8    "Our help is in the name of Yahuah, who made heaven and earth"
+--          NT:     John 1:3 / Colossians 1:16 (all things made by the Formed Son); Acts 4:12 (the Name) — THREAD 4
+--          Extras: none warranted
+--          Tanakh: Psalm 121:2 (my help cometh from Yahuah, which made heaven and earth — lateral Ascent twin) — THREAD 4
+--
+-- Threads (4):
+--   psalm-124-if-it-had-not-been-yahuah-who-was-on-our-side          [Tanakh + NT]   free  band 25075
+--   psalm-124-the-waters-had-overwhelmed-us-the-stream-gone-over     [Tanakh + NT]   free  band 25078
+--   psalm-124-our-soul-is-escaped-as-a-bird-out-of-the-snare         [Tanakh + NT]   free  band 25081
+--   psalm-124-our-help-is-in-the-name-of-yahuah-who-made-heaven      [Tanakh + NT]   free  band 25084
+--
+-- Framework-load-bearing framing:
+--   v.1-3 — "now may Yashar'el say" the covenant-people FRAME the confession; bound to Rom 11:1-2
+--           (Elohim hath NOT cast away his people which he foreknew) so the deliverance reads as the
+--           TWO-HOUSE people Yahuah does not abandon, never replacement.
+--   v.8 — "who made heaven and earth": help in the NAME, the Maker BY the Formed Word (John 1:3 /
+--          Col 1:16 all things made BY HIM) — the Formless Father creating through the Formed Son,
+--          NOT co-equal-persons grammar; Acts 4:12 the Name that saves.
+
+CREATE TEMP VIEW _s302_ps124_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =========================================================================
+-- B. cross_references
+-- =========================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: If it had not been Yahuah who was on our side (v.1-3)
+    ('canon','psalms',124,1,'canon','romans',8,31,'free',
+     E'*What shall we then say to these things? If Elohim (God) be for us, who can be against us?* (Romans 8:31). Twice the Psalm names the only ground of survival — *If it had not been Yahuah (LORD) who was on our side, now may Yashar''el (Israel) say* (Psalm 124:1) — and Sha''ul (Paul) turns the confession into a question that answers itself: with the Maker on their side, no risen wrath can prevail.'),
+    ('canon','psalms',124,2,'canon','psalms',118,6,'free',
+     E'*Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* (Psalm 118:6). When the Ascent sings *If it had not been Yahuah (LORD) who was on our side, when men rose up against us* (Psalm 124:2), this companion Psalm answers the same threat of *men* with the same confidence — the covenant-people fear no human wrath because Yahuah Himself stands with them.'),
+    ('canon','psalms',124,1,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). *Now may Yashar''el (Israel) say* (Psalm 124:1) — the people themselves frame the deliverance, and Sha''ul guards the same people from being written off: Yahuah does not abandon the seed He preserved.'),
+    ('canon','psalms',124,1,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The Psalm''s *If it had not been Yahuah (LORD) who was on our side* (Psalm 124:1) confesses the very preservation Sha''ul defends — the two-house people foreknown and kept, never swallowed up, never cast away.'),
+
+    -- THREAD 2: Then the waters had overwhelmed us (v.4-5)
+    ('canon','psalms',124,4,'canon','psalms',69,1,'free',
+     E'*Save me, O Elohim (God); for the waters are come in unto my soul* (Psalm 69:1). The Ascent cries *Then the waters had overwhelmed us, the stream had gone over our soul* (Psalm 124:4); the suffering-Psalm sings the same drowning flood reaching *unto my soul* — the adversary''s waters that only Yahuah holds back.'),
+    ('canon','psalms',124,4,'canon','psalms',69,2,'free',
+     E'*I sink in deep mire, where there is no standing: I am come into deep waters, where the floods overflow me* (Psalm 69:2). *The stream had gone over our soul* (Psalm 124:4) — the same deep, overflowing waters of the enemy that swallow where there is no standing, but for the help that is in the Name.'),
+    ('canon','psalms',124,4,'canon','psalms',69,15,'free',
+     E'*Let not the waterflood overflow me, neither let the deep swallow me up, and let not the pit shut her mouth upon me* (Psalm 69:15). Psalm 124''s *the waters had overwhelmed us... the proud waters had gone over our soul* (Psalm 124:4-5) names the very flood Psalm 69 prays against — the deep that would *swallow up* the covenant-people whole.'),
+    ('canon','psalms',124,4,'canon','isaiah',43,2,'free',
+     E'*When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee* (Isaiah 43:2). The Psalm''s near-drowning — *Then the waters had overwhelmed us* (Psalm 124:4) — is exactly the flood Yahuah promises His people will pass THROUGH and not be overwhelmed, because He is with them.'),
+    ('canon','psalms',124,5,'canon','revelation',12,15,'free',
+     E'*And the serpent cast out of his mouth water as a flood after the woman, that he might cause her to be carried away of the flood* (Revelation 12:15). *Then the proud waters had gone over our soul* (Psalm 124:5) — the serpent''s flood is the seed-war''s weapon against the covenant-woman and her seed, the proud waters loosed to carry the people away.'),
+    ('canon','psalms',124,5,'canon','revelation',12,16,'free',
+     E'*And the earth helped the woman, and the earth opened her mouth, and swallowed up the flood which the dragon cast out of his mouth* (Revelation 12:16). The Psalm''s would-be drowning is reversed: the proud waters that should have *gone over our soul* (Psalm 124:5) are themselves swallowed — deliverance from the dragon''s flood, the help that is in the Name.'),
+
+    -- THREAD 3: Our soul is escaped as a bird out of the snare (v.6-7)
+    ('canon','psalms',124,7,'canon','psalms',91,3,'free',
+     E'*Surely he shall deliver thee from the snare of the fowler, and from the noisome pestilence* (Psalm 91:3). *Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped* (Psalm 124:7) is the answered promise of Psalm 91 — the very *snare of the fowler* broken, the soul set free.'),
+    ('canon','psalms',124,7,'canon','proverbs',6,5,'free',
+     E'*Deliver thyself as a roe from the hand of the hunter, and as a bird from the hand of the fowler* (Proverbs 6:5). The Ascent confesses the deliverance Proverbs urges: *Our soul is escaped as a bird out of the snare of the fowlers* (Psalm 124:7) — the trapped bird of the covenant-people loosed from the hunter''s hand.'),
+    ('canon','psalms',124,7,'canon','2-timothy',2,26,'free',
+     E'*And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will* (2 Timothy 2:26). *The snare is broken, and we are escaped* (Psalm 124:7) — Sha''ul names the Fowler behind the fowlers: the snare of the adversary, broken so the captive soul escapes, victims of the trap freed and not enemies destroyed.'),
+
+    -- THREAD 4: Our help is in the name of Yahuah who made heaven and earth (v.8)
+    ('canon','psalms',124,8,'canon','psalms',121,2,'free',
+     E'*My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2). Two Songs of Ascents rest the people''s whole hope on the same ground: *Our help is in the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8) — help that is the Maker''s own Name, the Creator who keeps His covenant-people.'),
+    ('canon','psalms',124,8,'canon','john',1,3,'free',
+     E'*All things were made by him; and without him was not any thing made that was made* (John 1:3). The Psalm names the help as the Name of the One *who made heaven and earth* (Psalm 124:8) — and the Maker creates BY the Formed Word, the Son through whom the Formless Father made all things.'),
+    ('canon','psalms',124,8,'canon','colossians',1,16,'free',
+     E'*For by him were all things created, that are in heaven, and that are in earth, visible and invisible, whether they be thrones, or dominions, or principalities, or powers: all things were created by him, and for him* (Colossians 1:16). *Who made heaven and earth* (Psalm 124:8) — the heaven and earth of the Psalm are made BY the Formed Son, the One drawn from the Formless Father as His creating Word, who has a Father and is not a co-equal second person.'),
+    ('canon','psalms',124,8,'canon','acts',4,12,'free',
+     E'*Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved* (Acts 4:12). The Psalm rests everything on *the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8); Kepha (Peter) confesses that one saving Name under heaven — the Maker''s Name, the only help.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s302_ps124_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s302_ps124_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =========================================================================
+-- C. cross_reference_threads
+-- =========================================================================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-124-if-it-had-not-been-yahuah-who-was-on-our-side',
+       E'If it had not been Yahuah who was on our side',
+       E'Twice the Ascent stakes the whole survival of the covenant-people on one ground: *If it had not been Yahuah (LORD) who was on our side, now may Yashar''el (Israel) say; If it had not been Yahuah (LORD) who was on our side, when men rose up against us: Then they had swallowed us up quick, when their wrath was kindled against us* (Psalm 124:1-3). Notice who speaks — *now may Yashar''el (Israel) say* — the people themselves frame the confession. Sha''ul (Paul) turns it into the question that answers itself: *What shall we then say to these things? If Elohim (God) be for us, who can be against us?* (Romans 8:31). A companion Psalm sings the same fearlessness against the same human threat: *Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* (Psalm 118:6). And lest the people who *say* this be ever read as cast off, Sha''ul guards them by name: *Hath Elohim (God) cast away his people? Elohim (God) forbid... Elohim (God) hath not cast away his people which he foreknew* (Romans 11:1-2). The deliverance is the two-house people Yahuah foreknew and would not let be swallowed up.',
+       sv.verse_id, ev.verse_id, 'free', 25075
+  FROM _s302_ps124_lookup sv, _s302_ps124_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=124 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-124-the-waters-had-overwhelmed-us-the-stream-gone-over',
+       E'Then the waters had overwhelmed us',
+       E'The danger turns to a flood: *Then the waters had overwhelmed us, the stream had gone over our soul: Then the proud waters had gone over our soul* (Psalm 124:4-5). This is the Psalter''s drowning-cry: *Save me, O Elohim (God); for the waters are come in unto my soul... I am come into deep waters, where the floods overflow me* (Psalm 69:1-2), and its prayer, *Let not the waterflood overflow me, neither let the deep swallow me up* (Psalm 69:15). Against it stands Yahuah''s promise to His people: *When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee* (Isaiah 43:2) — not spared the flood, but carried THROUGH it. And the apocalypse names the source of the proud waters: *the serpent cast out of his mouth water as a flood after the woman, that he might cause her to be carried away of the flood* (Revelation 12:15) — the seed-war''s weapon — yet *the earth helped the woman, and the earth opened her mouth, and swallowed up the flood which the dragon cast out of his mouth* (Revelation 12:16). The proud waters that should have gone over the people''s soul are themselves swallowed up.',
+       sv.verse_id, ev.verse_id, 'free', 25078
+  FROM _s302_ps124_lookup sv, _s302_ps124_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=124 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-124-our-soul-is-escaped-as-a-bird-out-of-the-snare',
+       E'Our soul is escaped as a bird out of the snare',
+       E'From the swallowing flood to the hunter''s trap: *Blessed be Yahuah (LORD), who hath not given us as a prey to their teeth. Our soul is escaped as a bird out of the snare of the fowlers: the snare is broken, and we are escaped* (Psalm 124:6-7). This is the answered promise of the shelter-Psalm: *Surely he shall deliver thee from the snare of the fowler, and from the noisome pestilence* (Psalm 91:3); and the counsel of the wise: *Deliver thyself as a roe from the hand of the hunter, and as a bird from the hand of the fowler* (Proverbs 6:5). Sha''ul (Paul) names the Fowler behind every fowler — the people are to *recover themselves out of the snare of the devil, who are taken captive by him at his will* (2 Timothy 2:26). The snare is the adversary''s; the bird is the covenant-soul; and when *the snare is broken*, the captive — a victim of the trap, not an enemy — escapes.',
+       sv.verse_id, ev.verse_id, 'free', 25081
+  FROM _s302_ps124_lookup sv, _s302_ps124_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=124 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'psalm-124-our-help-is-in-the-name-of-yahuah-who-made-heaven',
+       E'Our help is in the name of Yahuah, who made heaven and earth',
+       E'The whole confession lands on the Name: *Our help is in the name of Yahuah (LORD), who made heaven and earth* (Psalm 124:8). Its twin Ascent rests on the identical ground: *My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2). And the help is the Maker''s — the Creator who keeps His covenant-people — made by the Formed Word: *All things were made by him; and without him was not any thing made that was made* (John 1:3); *For by him were all things created, that are in heaven, and that are in earth, visible and invisible... all things were created by him, and for him* (Colossians 1:16). The heaven and earth of the Psalm are framed by the Formless Father THROUGH the Formed Son, His creating Word who has a Father — not a co-equal second person. And there is no other Name that saves: *Neither is there salvation in any other: for there is none other name under heaven given among men, whereby we must be saved* (Acts 4:12). Our help is in that Name.',
+       sv.verse_id, ev.verse_id, 'free', 25084
+  FROM _s302_ps124_lookup sv, _s302_ps124_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='psalms' AND ev.chapter_number=124 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- =========================================================================
+-- D. cross_reference_thread_members
+-- =========================================================================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (1,1,'canon','romans',8,31, E'*If Elohim (God) be for us, who can be against us?* (Romans 8:31) — the Psalm''s confession turned into the question that answers itself.'),
+    (2,2,'canon','psalms',118,6, E'*Yahuah (LORD) is on my side; I will not fear: what can man do unto me?* (Psalm 118:6) — the same fearlessness against *men* who rose up.'),
+    (3,1,'canon','romans',11,1, E'*Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — the people who *say* this are not cast off.'),
+    (4,1,'canon','romans',11,2, E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2) — the two-house people foreknown and kept.')
+  ) AS m(so,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-124-if-it-had-not-been-yahuah-who-was-on-our-side'
+  JOIN _s302_ps124_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=m.src_v
+  JOIN _s302_ps124_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (1,4,'canon','psalms',69,1, E'*Save me, O Elohim (God); for the waters are come in unto my soul* (Psalm 69:1) — the drowning flood reaching the soul.'),
+    (2,4,'canon','psalms',69,2, E'*I am come into deep waters, where the floods overflow me* (Psalm 69:2) — the deep with no standing.'),
+    (3,4,'canon','psalms',69,15, E'*Neither let the deep swallow me up* (Psalm 69:15) — the prayer against the very flood Psalm 124 escaped.'),
+    (4,4,'canon','isaiah',43,2, E'*When thou passest through the waters, I will be with thee... they shall not overflow thee* (Isaiah 43:2) — carried THROUGH the flood.'),
+    (5,5,'canon','revelation',12,15, E'*The serpent cast out of his mouth water as a flood after the woman* (Revelation 12:15) — the seed-war''s proud waters.'),
+    (6,5,'canon','revelation',12,16, E'*The earth... swallowed up the flood which the dragon cast out of his mouth* (Revelation 12:16) — the flood itself swallowed, deliverance reversed.')
+  ) AS m(so,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-124-the-waters-had-overwhelmed-us-the-stream-gone-over'
+  JOIN _s302_ps124_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=m.src_v
+  JOIN _s302_ps124_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (1,7,'canon','psalms',91,3, E'*Surely he shall deliver thee from the snare of the fowler* (Psalm 91:3) — the answered promise: the snare broken.'),
+    (2,7,'canon','proverbs',6,5, E'*As a bird from the hand of the fowler* (Proverbs 6:5) — the trapped bird loosed from the hunter''s hand.'),
+    (3,7,'canon','2-timothy',2,26, E'*Recover themselves out of the snare of the devil* (2 Timothy 2:26) — the Fowler behind the fowlers; the captive freed.')
+  ) AS m(so,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-124-our-soul-is-escaped-as-a-bird-out-of-the-snare'
+  JOIN _s302_ps124_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=m.src_v
+  JOIN _s302_ps124_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.so, m.member_note
+  FROM (VALUES
+    (1,8,'canon','psalms',121,2, E'*My help cometh from Yahuah (LORD), which made heaven and earth* (Psalm 121:2) — the twin Ascent on the identical ground.'),
+    (2,8,'canon','john',1,3, E'*All things were made by him; and without him was not any thing made that was made* (John 1:3) — made BY the Formed Word.'),
+    (3,8,'canon','colossians',1,16, E'*By him were all things created, that are in heaven, and that are in earth* (Colossians 1:16) — the Formed Son the Father''s creating Word.'),
+    (4,8,'canon','acts',4,12, E'*There is none other name under heaven given among men, whereby we must be saved* (Acts 4:12) — the one saving Name, our help.')
+  ) AS m(so,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,member_note)
+  JOIN cross_reference_threads t ON t.slug='psalm-124-our-help-is-in-the-name-of-yahuah-who-made-heaven'
+  JOIN _s302_ps124_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='psalms' AND sv.chapter_number=124 AND sv.verse_number=m.src_v
+  JOIN _s302_ps124_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session302 — Psalms cross-references complete.'
