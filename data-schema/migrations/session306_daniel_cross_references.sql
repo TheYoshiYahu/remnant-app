@@ -1639,6 +1639,1842 @@ SELECT t.id, cr.id, 3, E'*he that oppresseth the poor reproacheth his Maker: but
  WHERE t.slug='daniel-4-break-off-thy-sins-by-shewing-mercy-to-the-poor'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_daniel_5.sql (Daniel 5) -----
+-- Chapter: Daniel 5 — Belshazzar's feast; the golden vessels of the temple profaned; fingers of a man's
+-- hand write upon the plaister of the wall; the wise men cannot read it; Daniel alone interprets:
+-- MENE, MENE, TEKEL, UPHARSIN — *thou art weighed in the balances, and art found wanting*; the kingdom
+-- numbered, finished, divided to the Medes and Persians; in that night Belshazzar slain. The proud
+-- world-empire weighed out and judged in a night — Babylon the standing type, fallen.
+-- Tag: dan05   Session: s306   Temp view: _s306_dan05_lookup
+-- Sort band: base 30100, step 3 -> threads at 30100, 30103, 30106, 30109 (4 threads)
+-- Source of EVERY row: 'canon','daniel',5,v
+--
+-- Daniel 5 coverage:
+--   v.1-4 (Belshazzar made a great feast... commanded to bring the golden and silver vessels which his
+--          father Nebuchadnezzar had taken out of the temple... they drank, and praised the gods of gold,
+--          and of silver, of brass, of iron, of wood, and of stone)
+--        NT:     ★ 1 Corinthians 10:21 (cannot drink the cup of Yahuah and the cup of devils) — held to
+--                THREAD 2 (idolatry profaning the holy)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 27:22 (the vessels carried to Babylon, and the day Yahuah will restore them) —
+--                THREAD 2 (the holy vessels profaned, their promised return)
+--   ★ v.5-9 (fingers of a man's hand wrote over against the candlestick... the king's wise men could not
+--          read the writing, nor make known the interpretation)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 2:27-28 (the wise men cannot shew, but there is a Elohim in heaven that revealeth
+--                secrets), ★ Daniel 2:47 (a revealer of secrets) — THREAD 4 (wisdom-of-the-Most-High pattern)
+--   v.10-16 (the queen names Daniel... an excellent spirit, knowledge, interpreting of dreams... clothed
+--          with scarlet, a chain of gold, third ruler)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held to THREAD 4 (the man in whom is the spirit of the holy gods — the interpreter pattern)
+--   ★ v.18-21 (the El Elyon gave Nebuchadnezzar a kingdom... but when his heart was lifted up... he was
+--          deposed... till he knew that the El Elyon ruled in the kingdom of men)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 4:37 (those that walk in pride he is able to abase) — THREAD 3 (the lesson of ch4
+--                Belshazzar refused)
+--   ★★ v.22-23 (thou his son, O Belshazzar, hast not humbled thine heart, though thou knewest all this; but
+--          hast lifted up thyself against Yahuah of heaven... praised the gods of silver and gold... and the
+--          Elohim in whose hand thy breath is... hast thou not glorified)
+--        NT:     ★ 1 Corinthians 10:21 (the cup of devils — fellowship with idols), ★ Acts 17:25 (he giveth
+--                to all life, and breath), ★ Acts 17:28 (in him we live, and move, and have our being) —
+--                THREAD 2 (pride/idolatry) + THREAD 3 (breath in His hand)
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 4:37 (pride abased), ★ Isaiah 14:13-14 (I will ascend... I will be like the most
+--                High — the proud-throne fall), ★ Job 12:10 (in whose hand is the breath of all mankind) —
+--                THREAD 3
+--   ★★★ v.24-28 (this is the writing... MENE, MENE, TEKEL, UPHARSIN... Elohim hath numbered thy kingdom,
+--          and finished it; TEKEL; Thou art weighed in the balances, and art found wanting; PERES; Thy
+--          kingdom is divided, and given to the Medes and Persians)
+--        NT:     ★★ Revelation 18:2 (Babylon the great is fallen, is fallen) — THREAD 1 (Babylon judged in a
+--                night, the standing type of the proud world-empire)
+--        Extras: none warranted
+--        Tanakh: ★★ Job 31:6 (let me be weighed in an even balance), ★★ Psalm 62:9 (laid in the balance,
+--                lighter than vanity), ★★ Proverbs 16:2 (Yahuah weigheth the spirits), ★ Proverbs 21:2
+--                (Yahuah pondereth the hearts) — THREAD 1 (the weighing/balance motif)
+--   v.29-31 (Daniel clothed with scarlet... in that night was Belshazzar slain... Darius the Median took the
+--          kingdom)
+--        NT:     none warranted (the sentence executed; held in THREAD 1 prose — judged in a night)
+--        Extras: none warranted
+--        Tanakh: the divided kingdom *given to the Medes and Persians* (v.28) fulfilled in v.31 — woven in
+--                THREAD 1 prose
+--
+-- Threads (slug — target libraries):
+--   1. daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting — NT (Revelation 18) + Tanakh (Job 31,
+--        Psalm 62, Proverbs 16, Proverbs 21) [free]
+--      (★★★ MENE TEKEL UPHARSIN; the kingdom numbered/finished/divided; the weighing motif; Babylon fallen)
+--   2. daniel-5-praised-the-gods-of-gold-and-the-holy-vessels-profaned — NT (1 Corinthians 10) + Tanakh
+--        (Jeremiah 27) [free]
+--      (★★ pride refusing the lesson of ch4; idolatry profaning the temple vessels; their promised return)
+--   3. daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified — NT (Acts 17) + Tanakh
+--        (Job 12, Daniel 4, Isaiah 14) [free]
+--      (★★ the breath in His hand and all thy ways — the pride lifted up against the Lord of heaven, abased)
+--   4. daniel-5-the-wise-men-could-not-read-the-writing-but-daniel-interpreted — Tanakh (Daniel 2) [free]
+--      (★ the handwriting none of Babylon's wise men could read; the wisdom-of-the-Most-High pattern, ch2/ch4)
+--
+-- Framing notes:
+--   ★★★ THOU ART WEIGHED IN THE BALANCES (THREAD 1): the fingers write four words on the wall and Daniel
+--      reads the verdict: *MENE; Elohim (God) hath numbered thy kingdom, and finished it. TEKEL; Thou art
+--      weighed in the balances, and art found wanting. PERES; Thy kingdom is divided, and given to the Medes
+--      and Persians* (Daniel 5:26-28). The kingdom NUMBERED, FINISHED, DIVIDED — divine judgment weighed out.
+--      The balance is the Tanakh's own measure of every life: *Let me be weighed in an even balance, that
+--      Elohim (God) may know mine integrity* (Job 31:6); *men of high degree are a lie: to be laid in the
+--      balance, they are altogether lighter than vanity* (Psalm 62:9); *Yahuah (LORD) weigheth the spirits*
+--      (Proverbs 16:2); *Yahuah (LORD) pondereth the hearts* (Proverbs 21:2). Belshazzar, weighed, is found
+--      wanting, and *in that night was Belshazzar the king of the Chaldeans slain* (5:30) — Babylon judged in
+--      a single night, the standing type of the proud world-empire whose end John sees: *Babylon the great
+--      is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2). The wall of the
+--      feast is the assize of the nations.
+--   ★★ THE HOLY VESSELS PROFANED (THREAD 2): Belshazzar *commanded to bring the golden and silver vessels
+--      which his father Nebuchadnezzar had taken out of the temple which was in Jerusalem; that the king...
+--      might drink therein* (5:2), *and praised the gods of gold, and of silver, of brass, of iron, of wood,
+--      and of stone* (5:4). Pride that will not learn the lesson of ch4 turns to sacrilege: the holy vessels
+--      of Yahuah's house made the cups of an idol-feast. Paul names the impossibility: *Ye cannot drink the
+--      cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and
+--      of the table of devils* (1 Corinthians 10:21). And the vessels themselves were under a promise —
+--      Jeremiah had foretold both their captivity and their return: *They shall be carried to Babylon, and
+--      there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring them up,
+--      and restore them to this place* (Jeremiah 27:22). The night the cups are profaned is the night the
+--      empire that holds them falls.
+--   ★★ THE BREATH IN HIS HAND (THREAD 3): Daniel lays the charge bare: *thou his son, O Belshazzar, hast not
+--      humbled thine heart, though thou knewest all this; But hast lifted up thyself against Yahuah (Lord) of
+--      heaven... and the Elohim (God) in whose hand thy breath is, and whose are all thy ways, hast thou not
+--      glorified* (5:22-23). He knew ch4 and would not bow — *those that walk in pride he is able to abase*
+--      (Daniel 4:37). The self-exalting heart is the old fall: *I will ascend into heaven... I will be like
+--      the El Elyon (most High)* (Isaiah 14:13-14). Yet the very breath the proud king spends in praising
+--      dead gods is held in the hand he will not glorify: *In whose hand is the soul of every living thing,
+--      and the breath of all mankind* (Job 12:10). Paul preaches the same to the idol-city: He *giveth to
+--      all life, and breath, and all things* (Acts 17:25); *For in him we live, and move, and have our being*
+--      (Acts 17:28). To refuse to glorify the One who holds your breath is to be found wanting.
+--   ★ THE WISE MEN COULD NOT READ IT (THREAD 4): *Then came in all the king''s wise men: but they could not
+--      read the writing, nor make known to the king the interpretation thereof* (5:8) — the astrologers,
+--      Chaldeans, and soothsayers of Babylon are dumb before the hand of heaven, and Daniel alone interprets.
+--      This is the fixed pattern of the book: the wisdom of the Most High given to His servant where Babylon''s
+--      wisdom fails. In ch2: *The secret which the king hath demanded cannot the wise men, the astrologers,
+--      the magicians, the soothsayers, shew unto the king; But there is a Elohim (God) in heaven that
+--      revealeth secrets* (Daniel 2:27-28), and the king confessed *your Elohim (God) is... a revealer of
+--      secrets* (Daniel 2:47). The same Daniel, the same Spirit, the same Most High who reveals what no
+--      empire can read.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 carried in THREAD 2 (the feast and the profaned vessels, anchored at
+--      v.2-4); v.10-16 (the queen's counsel and Daniel summoned — the interpreter pattern, woven in THREAD 4);
+--      v.18-21 (Nebuchadnezzar's pride and abasement recounted — the ch4 lesson, woven in THREAD 3 via 4:37);
+--      v.29-31 (Daniel rewarded, Belshazzar slain that night, Darius takes the kingdom — the sentence of
+--      THREAD 1 executed, the *divided... to the Medes and Persians* fulfilled). All recorded above.
+
+CREATE TEMP VIEW _s306_dan05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): MENE, MENE, TEKEL, UPHARSIN — thou art weighed in the balances, and art found wanting
+    ('canon','daniel',5,27,'canon','job',31,6,'free',
+      E'*Let me be weighed in an even balance, that Elohim (God) may know mine integrity* (Job 31:6). Job names the very figure the wall pronounces over Belshazzar — *Thou art weighed in the balances, and art found wanting* (Daniel 5:27). Every life is set in the balance of the Most High; where Job longs to be weighed and known upright, the proud king is weighed and found wanting.'),
+    ('canon','daniel',5,27,'canon','psalms',62,9,'free',
+      E'*Surely men of low degree are vanity, and men of high degree are a lie: to be laid in the balance, they are altogether lighter than vanity* (Psalm 62:9). The Psalm sets the proud of the earth in the very scales of Daniel 5:27 — *laid in the balance, they are altogether lighter than vanity*. Belshazzar, *king of the Chaldeans* at the height of an empire, is weighed and *found wanting*: high degree on the wall''s balance is a lie.'),
+    ('canon','daniel',5,27,'canon','proverbs',16,2,'free',
+      E'*All the ways of a man are clean in his own eyes; but Yahuah (LORD) weigheth the spirits* (Proverbs 16:2). The feast looked clean in Belshazzar''s own eyes, but *Yahuah (LORD) weigheth the spirits* — and the hand writes the weighing on the wall: *Thou art weighed in the balances, and art found wanting* (Daniel 5:27). The proverb is the principle; the feast is the instance.'),
+    ('canon','daniel',5,27,'canon','proverbs',21,2,'free',
+      E'*Every way of a man is right in his own eyes: but Yahuah (LORD) pondereth the hearts* (Proverbs 21:2). The king''s way was right in his own eyes as he drank from the temple vessels; but *Yahuah (LORD) pondereth the hearts*, and the verdict is weighed out: *Thou art weighed in the balances, and art found wanting* (Daniel 5:27). The One who ponders the heart is the One who holds the scale.'),
+    ('canon','daniel',5,26,'canon','revelation',18,2,'free',
+      E'*And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit* (Revelation 18:2). The word over Belshazzar — *Elohim (God) hath numbered thy kingdom, and finished it* (Daniel 5:26), and *in that night was Belshazzar... slain* (5:30) — is the historical first fall of Babylon, the standing type. John sees the type''s consummation: the proud world-empire, numbered and finished, *is fallen, is fallen*. Babylon judged in a night, then and at the end.'),
+
+    -- THREAD 2 (★★): praised the gods of gold — the holy vessels of the temple profaned
+    ('canon','daniel',5,23,'canon','1-corinthians',10,21,'free',
+      E'*Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21). Belshazzar does the unthinkable thing Paul says cannot stand: he drinks from *the vessels of his house* and in the same breath *praised the gods of silver, and gold, of brass, iron, wood, and stone* (Daniel 5:23). The holy cup and the cup of devils joined at one table — and the wall answers it that night.'),
+    ('canon','daniel',5,2,'canon','jeremiah',27,22,'free',
+      E'*They shall be carried to Babylon, and there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring them up, and restore them to this place* (Jeremiah 27:22). The *golden and silver vessels which his father Nebuchadnezzar had taken out of the temple which was in Jerusalem* (Daniel 5:2) are the very vessels Jeremiah said would lie in Babylon *until the day that I visit them*. Belshazzar profanes what is under a promise of return — and the visitation falls on him the same night.'),
+
+    -- THREAD 3 (★★): the Elohim in whose hand thy breath is, and whose are all thy ways, hast thou not glorified
+    ('canon','daniel',5,23,'canon','acts',17,25,'free',
+      E'*Neither is worshipped with men''s hands, as though he needed any thing, seeing he giveth to all life, and breath, and all things* (Acts 17:25). Daniel charges Belshazzar that *the Elohim (God) in whose hand thy breath is, and whose are all thy ways, hast thou not glorified* (Daniel 5:23). Paul preaches the same God to the idol-city: the One who *giveth to all life, and breath* — the breath the king spends praising dead gods is His gift, ungloried.'),
+    ('canon','daniel',5,23,'canon','acts',17,28,'free',
+      E'*For in him we live, and move, and have our being; as certain also of your own poets have said, For we are also his offspring* (Acts 17:28). *Whose are all thy ways* (Daniel 5:23) is precisely *in him we live, and move, and have our being* — the proud king''s every step is held by the One he will not glorify. To live and move in Him and praise gods that *see not, nor hear, nor know* (5:23) is to be found wanting.'),
+    ('canon','daniel',5,23,'canon','job',12,10,'free',
+      E'*In whose hand is the soul of every living thing, and the breath of all mankind* (Job 12:10). Job states the truth Belshazzar refuses to honour: *the Elohim (God) in whose hand thy breath is... hast thou not glorified* (Daniel 5:23). The very breath the king draws to praise idols rests in the hand of the One whose it is — *the breath of all mankind*.'),
+    ('canon','daniel',5,22,'canon','daniel',4,37,'free',
+      E'*Now I Nebuchadnezzar praise and extol and honour the King of heaven, all whose works are truth, and his ways judgment: and those that walk in pride he is able to abase* (Daniel 4:37). Belshazzar *knewest all this* (Daniel 5:22) — he had his father''s confession before him, that the King of heaven *is able to abase* the proud — yet *hast not humbled thine heart*. The lesson of ch4 stood written, refused, and the pride is abased that night.'),
+    ('canon','daniel',5,23,'canon','isaiah',14,13,'free',
+      E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north* (Isaiah 14:13). The heart that *lifted up thyself against Yahuah (Lord) of heaven* (Daniel 5:23) is the old self-exalting fall — *I will ascend into heaven... I will exalt my throne*. The proud throne is the throne that is weighed and found wanting.'),
+    ('canon','daniel',5,23,'canon','isaiah',14,14,'free',
+      E'*I will ascend above the heights of the clouds; I will be like the El Elyon (most High)* (Isaiah 14:14). The boast *I will be like the El Elyon (most High)* is the very pride Daniel names in Belshazzar, who *lifted up thyself against Yahuah (Lord) of heaven* (Daniel 5:23) and would not glorify the El Elyon his father confessed. To reach for the Most High''s place is to be deposed, as the wall decrees.'),
+
+    -- THREAD 4 (★): the wise men could not read the writing, but Daniel interpreted (wisdom of the Most High)
+    ('canon','daniel',5,8,'canon','daniel',2,27,'free',
+      E'*Daniel answered in the presence of the king, and said, The secret which the king hath demanded cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king* (Daniel 2:27). The same helplessness falls on Babylon''s wisdom in ch5: *they could not read the writing, nor make known to the king the interpretation thereof* (Daniel 5:8). The astrologers and soothsayers are dumb before heaven''s hand — the fixed pattern that sets up the Most High''s revealer.'),
+    ('canon','daniel',5,8,'canon','daniel',2,28,'free',
+      E'*But there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:28). Where Babylon''s wise men *could not read the writing* (Daniel 5:8), *there is a Elohim (God) in heaven that revealeth secrets* — and gives the reading to Daniel. The hand on the wall is read not by magic but by the wisdom of the Most High in His servant.'),
+    ('canon','daniel',5,12,'canon','daniel',2,47,'free',
+      E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). The queen commends Daniel as one in whom is *interpreting of dreams, and shewing of hard sentences, and dissolving of doubts* (Daniel 5:12) — the very gift Nebuchadnezzar had already confessed as the mark of *a revealer of secrets*. The same Daniel, the same Spirit, across the reigns.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting',
+       E'MENE, MENE, TEKEL, UPHARSIN — thou art weighed in the balances, and art found wanting',
+       E'In the same hour that the king drank from the holy vessels, *came forth fingers of a man''s hand, and wrote over against the candlestick upon the plaister of the wall* (Daniel 5:5), and when Babylon''s wise men could not read it, Daniel gave the verdict: *And this is the writing that was written, MENE, MENE, TEKEL, UPHARSIN. This is the interpretation of the thing: MENE; Elohim (God) hath numbered thy kingdom, and finished it. TEKEL; Thou art weighed in the balances, and art found wanting. PERES; Thy kingdom is divided, and given to the Medes and Persians* (Daniel 5:25-28). Numbered, finished, weighed, divided — divine judgment weighed out in four words. The balance is the Tanakh''s own measure of a life: *Let me be weighed in an even balance, that Elohim (God) may know mine integrity* (Job 31:6); *men of high degree are a lie: to be laid in the balance, they are altogether lighter than vanity* (Psalm 62:9); *All the ways of a man are clean in his own eyes; but Yahuah (LORD) weigheth the spirits* (Proverbs 16:2); *Every way of a man is right in his own eyes: but Yahuah (LORD) pondereth the hearts* (Proverbs 21:2). The One who ponders the heart holds the scale, and the proud king is found wanting. And the sentence is executed without delay: *In that night was Belshazzar the king of the Chaldeans slain. And Darius the Median took the kingdom* (5:30-31) — the kingdom *divided, and given to the Medes and Persians* in a single night. This first fall of Babylon is the standing type; John hears its consummation cried over the proud world-empire at the end: *Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit* (Revelation 18:2). The wall of the feast is the assize of the nations: weighed, and found wanting.',
+       sv.verse_id, ev.verse_id, 'free', 30100
+  FROM _s306_dan05_lookup sv, _s306_dan05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=5 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-5-praised-the-gods-of-gold-and-the-holy-vessels-profaned',
+       E'They praised the gods of gold — the holy vessels of the temple profaned',
+       E'Belshazzar''s feast is not merely drunken; it is deliberate sacrilege. *Belshazzar, whiles he tasted the wine, commanded to bring the golden and silver vessels which his father Nebuchadnezzar had taken out of the temple which was in Jerusalem; that the king, and his princes, his wives, and his concubines, might drink therein* (Daniel 5:2), *and praised the gods of gold, and of silver, of brass, of iron, of wood, and of stone* (5:4) — the very catalogue of dead idols, *which see not, nor hear, nor know* (5:23). This is pride that refuses the lesson of ch4 and turns to profane the holy: the cups of Yahuah''s house lifted to the gods of Babylon. Paul names the impossibility the king tramples: *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils: ye cannot be partakers of Yahuah''s (Lord''s) table, and of the table of devils* (1 Corinthians 10:21). And the vessels themselves were never abandoned by their Owner — Jeremiah had foretold both their captivity and their guaranteed return: *They shall be carried to Babylon, and there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring them up, and restore them to this place* (Jeremiah 27:22). Belshazzar profanes what is under promise — and *the day that I visit them* dawns as judgment on the empire that holds them. The night the holy cups are defiled is the night Babylon falls.',
+       sv.verse_id, ev.verse_id, 'free', 30103
+  FROM _s306_dan05_lookup sv, _s306_dan05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=5 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified',
+       E'The Elohim in whose hand thy breath is, and whose are all thy ways, hast thou not glorified',
+       E'Daniel will not soften the charge. He reminds the king of his father''s humbling — *those that walk in pride he is able to abase* (Daniel 4:37) — and then names the sin: *And thou his son, O Belshazzar, hast not humbled thine heart, though thou knewest all this; But hast lifted up thyself against Yahuah (Lord) of heaven; and they have brought the vessels of his house before thee... and thou hast praised the gods of silver, and gold, of brass, iron, wood, and stone, which see not, nor hear, nor know: and the Elohim (God) in whose hand thy breath is, and whose are all thy ways, hast thou not glorified* (Daniel 5:22-23). He KNEW the lesson of ch4 and would not bow. The self-exalting heart is the ancient fall: *For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)... I will be like the El Elyon (most High)* (Isaiah 14:13-14). Yet the very breath the king spends praising blind gods is held in the hand he will not glorify: *In whose hand is the soul of every living thing, and the breath of all mankind* (Job 12:10). Paul preaches exactly this God to the idol-city of Athens — the One who *giveth to all life, and breath, and all things* (Acts 17:25), in whom *we live, and move, and have our being* (Acts 17:28). *Whose are all thy ways* is the truth Belshazzar tramples: to refuse to glorify the One who holds your breath and orders your every step is, in the end, to be weighed and found wanting.',
+       sv.verse_id, ev.verse_id, 'free', 30106
+  FROM _s306_dan05_lookup sv, _s306_dan05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=5 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-5-the-wise-men-could-not-read-the-writing-but-daniel-interpreted',
+       E'The wise men could not read the writing, but Daniel interpreted — the wisdom of the Most High',
+       E'When the hand had written, *the king cried aloud to bring in the astrologers, the Chaldeans, and the soothsayers* (Daniel 5:7), but *Then came in all the king''s wise men: but they could not read the writing, nor make known to the king the interpretation thereof* (Daniel 5:8). Babylon''s assembled wisdom is dumb before the hand of heaven, and Daniel alone is brought in, the one in whom is *interpreting of dreams, and shewing of hard sentences, and dissolving of doubts* (5:12). This is the fixed pattern of the whole book: where the wisdom of the empire fails, the wisdom of the Most High is given to His servant. It was so in ch2, before this very throne''s father: *The secret which the king hath demanded cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king; But there is a Elohim (God) in heaven that revealeth secrets, and maketh known to the king Nebuchadnezzar what shall be in the latter days* (Daniel 2:27-28). And Nebuchadnezzar confessed it: *your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets* (Daniel 2:47). The same Daniel, the same indwelling Spirit, the same Most High who reveals what no astrologer can read — across the reigns of Babylon and into the night of its fall.',
+       sv.verse_id, ev.verse_id, 'free', 30109
+  FROM _s306_dan05_lookup sv, _s306_dan05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=5 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Let me be weighed in an even balance, that Elohim (God) may know mine integrity* (Job 31:6) — the very figure of Daniel 5:27; every life set in the balance of the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=27
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=31 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *to be laid in the balance, they are altogether lighter than vanity* (Psalm 62:9) — men of high degree weighed and found wanting; the king at the height of empire weighs nothing.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=27
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=62 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah (LORD) weigheth the spirits* (Proverbs 16:2) — the feast looked clean in the king''s own eyes; the hand writes the weighing on the wall.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=27
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah (LORD) pondereth the hearts* (Proverbs 21:2) — the One who ponders the heart is the One who holds the scale that finds Belshazzar wanting.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=27
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Babylon the great is fallen, is fallen* (Revelation 18:2) — *Elohim hath numbered thy kingdom, and finished it* (Daniel 5:26); the first fall is the standing type of the proud world-empire''s end.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=26
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-thou-art-weighed-in-the-balances-and-art-found-wanting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Ye cannot drink the cup of Yahuah (Lord), and the cup of devils* (1 Corinthians 10:21) — Belshazzar joins the holy vessels to the praise of idols (Daniel 5:23); the two tables cannot stand together.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-praised-the-gods-of-gold-and-the-holy-vessels-profaned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *until the day that I visit them... then will I bring them up, and restore them* (Jeremiah 27:22) — the temple vessels (Daniel 5:2) were under a promise of return; the visitation falls on Babylon that night.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=27 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-praised-the-gods-of-gold-and-the-holy-vessels-profaned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he giveth to all life, and breath, and all things* (Acts 17:25) — the breath the king spends praising dead gods is His gift; *the Elohim in whose hand thy breath is* (Daniel 5:23).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *in him we live, and move, and have our being* (Acts 17:28) — *whose are all thy ways* (Daniel 5:23); every step of the proud king is held by the One he will not glorify.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *In whose hand is the soul of every living thing, and the breath of all mankind* (Job 12:10) — Job states the truth Belshazzar refuses to honour (Daniel 5:23).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *those that walk in pride he is able to abase* (Daniel 4:37) — Belshazzar *knewest all this* (Daniel 5:22), his father''s confession before him, yet would not humble his heart.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=22
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I will exalt my throne above the stars of Elohim (God)* (Isaiah 14:13) — the self-exalting fall behind Belshazzar''s *lifted up thyself against Yahuah of heaven* (Daniel 5:23).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I will be like the El Elyon (most High)* (Isaiah 14:14) — the boast to reach the Most High''s place; Belshazzar would not glorify the El Elyon his father confessed.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-elohim-in-whose-hand-thy-breath-is-hast-thou-not-glorified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *cannot the wise men, the astrologers, the magicians, the soothsayers, shew unto the king* (Daniel 2:27) — Babylon''s wisdom dumb before heaven; the same helplessness as *they could not read the writing* (Daniel 5:8).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=8
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-wise-men-could-not-read-the-writing-but-daniel-interpreted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *there is a Elohim (God) in heaven that revealeth secrets* (Daniel 2:28) — where the wise men fail to read the wall, the Most High gives the reading to Daniel.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=8
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-wise-men-could-not-read-the-writing-but-daniel-interpreted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *your Elohim (God) is... a revealer of secrets* (Daniel 2:47) — Nebuchadnezzar''s confession; the same gift in Daniel the queen commends (Daniel 5:12), across the reigns.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=5 AND sv.verse_number=12
+  JOIN _s306_dan05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-5-the-wise-men-could-not-read-the-writing-but-daniel-interpreted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_daniel_6.sql (Daniel 6) -----
+-- Chapter: Daniel 6 — Daniel in the lions' den. Darius sets him over the realm; the jealous
+-- presidents can find no fault *except... concerning the law of his Elohim (God)* and trap him
+-- with a signed, unalterable decree forbidding prayer to any but the king. Daniel, knowing the
+-- writing was signed, *kneeled upon his knees three times a day, and prayed... his windows being
+-- open... toward Jerusalem, as he did aforetime*; cast into the den, *my Elohim (God) hath sent his
+-- angel, and hath shut the lions'' mouths*; he is taken up *because he believed in his Elohim
+-- (God)*; and Darius decrees that all tremble before *the living Elohim (God), and stedfast for
+-- ever, and his kingdom that which shall not be destroyed... He delivereth and rescueth*.
+-- The blameless servant falsely accused, the covenant prayer-posture kept unto death, the angel
+-- that shuts the lions' mouths (woven FORWARD to Hebrews 11 and 2 Timothy 4), and the pagan king
+-- compelled to confess the everlasting kingdom (the 2:44/2:47/3:29/4:37/7:14 pattern).
+-- Tag: dan06   Session: s306   Temp view: _s306_dan06_lookup
+-- Sort band: base 30125, step 3 -> threads at 30125, 30128, 30131, 30134 (4 threads)
+-- Source of EVERY row: 'canon','daniel',6,v
+--
+-- Daniel 6 coverage:
+--   v.1-3 (Darius set 120 princes... Daniel preferred above the presidents... an excellent spirit)
+--        NT:     none warranted (the promotion that provokes the envy; preface to THREAD 4)
+--        Extras: none warranted
+--        Tanakh: none separate (narrative setup; the Yosef-pattern envy carried in prose of THREAD 4)
+--   ★ v.4-5 (sought to find occasion against Daniel... could find none... he was faithful... except
+--          we find it against him concerning the law of his Elohim (God))
+--        NT:     ★ 1 Peter 2:12 (whereas they speak against you as evildoers... by your good works),
+--                ★ 1 Peter 3:16 (they may be ashamed that falsely accuse your good conversation) —
+--                THREAD 4 (the blameless servant accused only for his faith)
+--        Extras: none warranted
+--        Tanakh: held in prose — the no-fault-found innocence carried into THREAD 2 (innocency found
+--                in me, 6:22) and the Yosef-pattern envy noted in THREAD 4 prose
+--   v.6-9 (a royal statute... whosoever shall ask a petition of any Elohim (God) or man for thirty
+--          days, save of thee, O king... cast into the den of lions... the writing signed)
+--        NT:     none warranted (the trap decree; the answer is THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (the unalterable decree of the Medes and Persians; the snare the
+--                faithful prayer of v.10 defies)
+--   ★ v.10 (when Daniel knew that the writing was signed... his windows being open in his chamber
+--          toward Jerusalem, he kneeled upon his knees three times a day, and prayed... as aforetime)
+--        NT:     ★ Acts 5:29 (We ought to obey Elohim (God) rather than men) — THREAD 1 (obey Yahuah
+--                rather than the king's decree)
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Kings 8:48 (pray unto thee toward... the city which thou hast chosen),
+--                ★★ 2 Chronicles 6:38 (pray toward... the city which thou hast chosen), ★ Psalm 55:17
+--                (Evening, and morning, and at noon, will I pray) — THREAD 1 (the covenant prayer-
+--                posture toward Jerusalem, evening-morning-noon, kept despite the decree)
+--   v.11-15 (found Daniel praying... the king sore displaced... laboured till the going down of the
+--          sun to deliver him... no decree the king establisheth may be changed)
+--        NT:     none warranted (the accusers press the unalterable decree; held to THREAD 1/2)
+--        Extras: none warranted
+--        Tanakh: none separate
+--   v.16-21 (cast him into the den... Thy Elohim (God) whom thou servest continually, he will deliver
+--          thee... a stone... sealed... the king passed the night fasting... servant of the living
+--          Elohim (God), is thy Elohim (God)... able to deliver thee from the lions?)
+--        NT:     held to THREAD 2 (the deliverance answered v.22-23)
+--        Extras: none warranted
+--        Tanakh: none separate (the stone on the den's mouth + the king's question answered in v.22)
+--   ★ v.22-23 (My Elohim (God) hath sent his angel, and hath shut the lions'' mouths... innocency was
+--          found in me... no manner of hurt... because he believed in his Elohim (God))
+--        NT:     ★★ Hebrews 11:33 (through faith... stopped the mouths of lions), ★ 2 Timothy 4:17
+--                (I was delivered out of the mouth of the lion) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 34:7 (the angel of Yahuah (LORD) encampeth round about them that fear him,
+--                and delivereth them), ★ Psalm 91:11-13 (he shall give his angels charge over thee...
+--                thou shalt tread upon the lion), ★ Psalm 22:21 (Save me from the lion''s mouth) —
+--                THREAD 2 (the angel sent, the lions' mouths shut, faith that delivered)
+--   v.24 (the accusers cast in... the lions had the mastery of them, and brake all their bones)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none separate (the snare returns on the snarers; the den that did not harm the
+--                faithful devours the accusers; held in prose of THREAD 2/4)
+--   ★ v.25-27 (Darius wrote unto all people... men tremble and fear before the Elohim (God) of Daniel:
+--          for he is the living Elohim (God), and stedfast for ever, and his kingdom that which shall
+--          not be destroyed... He delivereth and rescueth... who hath delivered Daniel from the lions)
+--        NT:     none warranted distinct (the everlasting-kingdom confession; the NT-fulfilment of
+--                Dan 7:14 dominion belongs to ch.7, bound laterally here within the book)
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 2:44 (the Elohim of heaven shall set up a kingdom, which shall never be
+--                destroyed), ★ Daniel 7:14 (his dominion is an everlasting dominion... his kingdom
+--                that which shall not be destroyed), ★ Daniel 2:47 (your Elohim is a Elohim of gods),
+--                ★ Daniel 3:29 (no other Elohim that can deliver after this sort), ★ Daniel 4:37
+--                (I Nebuchadnezzar praise... the King of heaven) — THREAD 3 (the pagan king confesses
+--                the everlasting kingdom — the recurring pattern of the book)
+--   v.28 (So this Daniel prospered in the reign of Darius, and in the reign of Cyrus) — narrative
+--          close; none warranted
+--
+-- Threads (slug — target libraries):
+--   1. daniel-6-his-windows-being-open-toward-jerusalem-he-prayed-as-aforetime — NT (Acts 5)
+--        + Tanakh (1 Kings 8, 2 Chronicles 6, Psalm 55) [free]
+--      (★ the covenant prayer-posture toward Jerusalem, evening-morning-noon, kept despite the signed
+--        decree; obey Yahuah rather than men)
+--   2. daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths — NT (Hebrews 11, 2 Timothy 4)
+--        + Tanakh (Psalm 34, Psalm 91, Psalm 22) [free]
+--      (★ the angel sent, the lions' mouths shut, the faithful preserved; *stopped the mouths of lions*)
+--   3. daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed — Tanakh (Daniel 2,
+--        Daniel 7, Daniel 3, Daniel 4) [free]
+--      (★ the pagan king confesses the everlasting kingdom — the 2:44/2:47/3:29/4:37/7:14 pattern)
+--   4. daniel-6-they-could-find-no-fault-except-concerning-the-law-of-his-elohim — NT (1 Peter 2,
+--        1 Peter 3) [free]
+--      (★ the blameless servant accused only for his faith; the righteous falsely accused → the den
+--        a death-and-deliverance figure)
+--
+-- Framing notes:
+--   ★ TOWARD JERUSALEM, AS HE DID AFORETIME (THREAD 1): the decree forbids prayer to any *Elohim
+--      (God) or man... save of thee, O king* (6:7), and Daniel's answer is not defiance for its own
+--      sake but faithfulness *as he did aforetime*: *Now when Daniel knew that the writing was signed,
+--      he went into his house; and his windows being open in his chamber toward Jerusalem, he kneeled
+--      upon his knees three times a day, and prayed, and gave thanks before his Elohim (God), as he
+--      did aforetime* (Daniel 6:10). This is the very posture Solomon foresaw for the captivity —
+--      *and pray unto thee toward their land... the city which thou hast chosen, and the house which
+--      I have built for thy name* (1 Kings 8:48; 2 Chronicles 6:38) — and the rhythm David sang:
+--      *Evening, and morning, and at noon, will I pray, and cry aloud: and he shall hear my voice*
+--      (Psalm 55:17). When the king's law and Yahuah's worship collide, the remnant answers with the
+--      apostles: *We ought to obey Elohim (God) rather than men* (Acts 5:29). Daniel obeys Yahuah and
+--      lets the den come.
+--   ★ HE HATH SHUT THE LIONS' MOUTHS (THREAD 2): cast in and sealed under a stone, Daniel is
+--      preserved: *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they
+--      have not hurt me: forasmuch as before him innocency was found in me* (Daniel 6:22), *and no
+--      manner of hurt was found upon him, because he believed in his Elohim (God)* (6:23). Hebrews
+--      lists this very deliverance among the acts of faith — *Who through faith... stopped the mouths
+--      of lions* (Hebrews 11:33) — and Paul testifies to the same hand in his own trial: *I was
+--      delivered out of the mouth of the lion* (2 Timothy 4:17). The Psalms name the deliverer and
+--      the very enemy: *The angel of Yahuah (LORD) encampeth round about them that fear him, and
+--      delivereth them* (Psalm 34:7); *he shall give his angels charge over thee... Thou shalt tread
+--      upon the lion and adder* (Psalm 91:11,13); *Save me from the lion''s mouth* (Psalm 22:21). The
+--      angel sent into the den is the encamping angel of Yahuah; faith shut the lions' mouths.
+--   ★ HIS KINGDOM THAT WHICH SHALL NOT BE DESTROYED (THREAD 3): the deliverance wrings from Darius the
+--      same confession the whole book wrings from its kings — *men tremble and fear before the Elohim
+--      (God) of Daniel: for he is the living Elohim (God), and stedfast for ever, and his kingdom that
+--      which shall not be destroyed, and his dominion shall be even unto the end. He delivereth and
+--      rescueth, and he worketh signs and wonders in heaven and in earth* (Daniel 6:26-27). The
+--      everlasting kingdom Darius names is the very kingdom revealed by vision: *the Elohim (God) of
+--      heaven shall set up a kingdom, which shall never be destroyed* (Daniel 2:44); *his dominion is
+--      an everlasting dominion, which shall not pass away, and his kingdom that which shall not be
+--      destroyed* (Daniel 7:14). And the pagan-confession pattern runs the book: *your Elohim (God) is
+--      a Elohim (God) of gods, and a Yahuah (Lord) of kings* (Daniel 2:47); *there is no other Elohim
+--      (God) that can deliver after this sort* (Daniel 3:29); *Now I Nebuchadnezzar praise and extol
+--      and honour the King of heaven* (Daniel 4:37). The empires confess the kingdom that outlasts them.
+--   ★ NO FAULT EXCEPT CONCERNING THE LAW OF HIS ELOHIM (THREAD 4): the envious presidents search and
+--      come up empty — *they could find none occasion nor fault; forasmuch as he was faithful, neither
+--      was there any error or fault found in him* (Daniel 6:4) — and conclude: *We shall not find any
+--      occasion against this Daniel, except we find it against him concerning the law of his Elohim
+--      (God)* (Daniel 6:5). The only "crime" is his faithfulness to Yahuah; the blameless servant is
+--      accused solely for his devotion. Peter names this exact pattern of the falsely-accused faithful:
+--      *whereas they speak against you as evildoers, they may by your good works, which they shall
+--      behold, glorify Elohim (God) in the day of visitation* (1 Peter 2:12); *that, whereas they speak
+--      evil of you, as of evildoers, they may be ashamed that falsely accuse your good conversation in
+--      Messiah (Christ)* (1 Peter 3:16). The righteous man framed for his obedience, sealed in a den of
+--      death, and brought up alive — a death-and-deliverance figure of the One falsely accused who rose.
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (the promotion that provokes the envy — the Yosef-pattern setup
+--      carried in THREAD 4 prose); v.6-9 (the trap decree the prayer of v.10 defies — THREAD 1); v.11-15
+--      (the accusers press the unalterable decree); v.16-21 (the casting-in, the sealed stone, the
+--      king's question — answered in THREAD 2); v.24 (the snare returns on the snarers — held in prose);
+--      v.28 (the narrative close, Daniel prospering under Darius and Cyrus). All recorded above.
+
+CREATE TEMP VIEW _s306_dan06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): his windows being open toward Jerusalem, he prayed as aforetime
+    ('canon','daniel',6,10,'canon','1-kings',8,48,'free',
+      E'*And so return unto thee with all their heart, and with all their soul, in the land of their enemies, which led them away captive, and pray unto thee toward their land, which thou gavest unto their fathers, the city which thou hast chosen, and the house which I have built for thy name* (1 Kings 8:48). Solomon foresaw the captivity praying *toward... the city which thou hast chosen* — and Daniel, in Babylon, does exactly that: *his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed* (Daniel 6:10). The covenant posture kept in exile, despite the signed decree.'),
+    ('canon','daniel',6,10,'canon','2-chronicles',6,38,'free',
+      E'*If they return to thee with all their heart and with all their soul in the land of their captivity, whither they have carried them captives, and pray toward their land, which thou gavest unto their fathers, and toward the city which thou hast chosen, and toward the house which I have built for thy name* (2 Chronicles 6:38). The dedication prayer scripts Daniel''s very act: *toward the city which thou hast chosen*. With *his windows being open... toward Jerusalem* (Daniel 6:10), Daniel prays the prayer Solomon prepared for the scattered — the worship that the king''s decree cannot cancel.'),
+    ('canon','daniel',6,10,'canon','psalms',55,17,'free',
+      E'*Evening, and morning, and at noon, will I pray, and cry aloud: and he shall hear my voice* (Psalm 55:17). David''s threefold daily prayer is Daniel''s rhythm: *he kneeled upon his knees three times a day, and prayed, and gave thanks before his Elohim (God), as he did aforetime* (Daniel 6:10). Evening, morning, and noon — the settled habit of the faithful — is what the decree tried to outlaw, and what Daniel would not surrender.'),
+    ('canon','daniel',6,10,'canon','acts',5,29,'free',
+      E'*Then Peter and the other apostles answered and said, We ought to obey Elohim (God) rather than men* (Acts 5:29). When the king''s statute forbids prayer to any *Elohim (God) or man... save of thee, O king* (Daniel 6:7), Daniel answers as the apostles will — he keeps praying *as he did aforetime* (Daniel 6:10). The remnant obeys Yahuah rather than the decree of men, and lets the den come.'),
+
+    -- THREAD 2 (★): My Elohim hath sent his angel, and hath shut the lions' mouths
+    ('canon','daniel',6,22,'canon','hebrews',11,33,'free',
+      E'*Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions* (Hebrews 11:33). Hebrews catalogues this very night among the mighty acts of faith — *stopped the mouths of lions* is Daniel in the den: *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22). The faith that shut their mouths is the faith Hebrews names; *because he believed in his Elohim (God)* (6:23) no hurt was found upon him.'),
+    ('canon','daniel',6,22,'canon','2-timothy',4,17,'free',
+      E'*Notwithstanding Yahuah (Lord) stood with me, and strengthened me; that by me the preaching might be fully known, and that all the Gentiles might hear: and I was delivered out of the mouth of the lion* (2 Timothy 4:17). Paul, on trial and forsaken, claims Daniel''s deliverance as his own — *delivered out of the mouth of the lion* echoes *he hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22). The same hand that sent the angel into the den stood with Paul in the court.'),
+    ('canon','daniel',6,22,'canon','psalms',34,7,'free',
+      E'*The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7). Daniel names exactly this angel: *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths* (Daniel 6:22). The angel of Yahuah pitches his camp about those who fear Him — Daniel feared Him unto the den — and delivers them out of it.'),
+    ('canon','daniel',6,22,'canon','psalms',91,11,'free',
+      E'*For he shall give his angels charge over thee, to keep thee in all thy ways* (Psalm 91:11). The Psalm promises the angelic guard, and the next breath names the very beast of the den: *Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet* (Psalm 91:13). Daniel walks it out — *he hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22); the angel charged to keep him kept him among the lions.'),
+    ('canon','daniel',6,22,'canon','psalms',22,21,'free',
+      E'*Save me from the lion''s mouth: for thou hast heard me from the horns of the unicorns* (Psalm 22:21). The suffering one''s cry is answered in the den: *he hath shut the lions'' mouths, that they have not hurt me* (Daniel 6:22). What the Psalm pleads — deliverance from the lion''s mouth — Daniel receives bodily; and *no manner of hurt was found upon him, because he believed in his Elohim (God)* (6:23).'),
+
+    -- THREAD 3 (★): he is the living Elohim, and his kingdom that which shall not be destroyed
+    ('canon','daniel',6,26,'canon','daniel',2,44,'free',
+      E'*And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed: and the kingdom shall not be left to other people, but it shall break in pieces and consume all these kingdoms, and it shall stand for ever* (Daniel 2:44). Darius'' decree names the kingdom the vision revealed: *his kingdom that which shall not be destroyed, and his dominion shall be even unto the end* (Daniel 6:26) is the kingdom *which shall never be destroyed... it shall stand for ever*. The pagan king confesses what the dream foretold.'),
+    ('canon','daniel',6,26,'canon','daniel',7,14,'free',
+      E'*And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). The everlasting kingdom Darius confesses is the dominion given to the One like the Son of Adam — *his kingdom that which shall not be destroyed* (Daniel 6:26) is word for word *his kingdom that which shall not be destroyed* (7:14). The king''s decree names what the night-vision shows: the indestructible everlasting reign.'),
+    ('canon','daniel',6,26,'canon','daniel',2,47,'free',
+      E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets, seeing thou couldest reveal this secret* (Daniel 2:47). Nebuchadnezzar''s first confession is the pattern Darius now repeats — *the living Elohim (God), and stedfast for ever* (Daniel 6:26). The Most High bends the mouths of empires, one king after another, to confess Him.'),
+    ('canon','daniel',6,26,'canon','daniel',3,29,'free',
+      E'*Therefore I make a decree, That every people, nation, and language, which speak any thing amiss against the Elohim (God) of Shadrach, Meshach, and Abed-nego, shall be cut in pieces... because there is no other Elohim (God) that can deliver after this sort* (Daniel 3:29). After the furnace Nebuchadnezzar decreed reverence for the delivering Elohim; after the den Darius decrees the same — *He delivereth and rescueth* (Daniel 6:27). The deliverance from fire and the deliverance from lions wring the identical confession from the throne.'),
+    ('canon','daniel',6,26,'canon','daniel',4,37,'free',
+      E'*Now I Nebuchadnezzar praise and extol and honour the King of heaven, all whose works are truth, and his ways judgment: and those that walk in pride he is able to abase* (Daniel 4:37). The full praise Nebuchadnezzar reached after his humbling is the confession Darius now makes — *he is the living Elohim (God), and stedfast for ever* (Daniel 6:26). The book marches its kings, one by one, to honour the King of heaven.'),
+
+    -- THREAD 4 (★): they could find no fault except concerning the law of his Elohim
+    ('canon','daniel',6,5,'canon','1-peter',2,12,'free',
+      E'*Having your conversation honest among the Gentiles: that, whereas they speak against you as evildoers, they may by your good works, which they shall behold, glorify Elohim (God) in the day of visitation* (1 Peter 2:12). Daniel''s accusers can find nothing but his faith to charge — *except we find it against him concerning the law of his Elohim (God)* (Daniel 6:5) — for *he was faithful, neither was there any error or fault found in him* (6:4). Peter names the same pattern: the blameless are slandered *as evildoers*, and their good works answer the slander.'),
+    ('canon','daniel',6,5,'canon','1-peter',3,16,'free',
+      E'*Having a good conscience; that, whereas they speak evil of you, as of evildoers, they may be ashamed that falsely accuse your good conversation in Messiah (Christ)* (1 Peter 3:16). The presidents *falsely accuse* the faultless Daniel — their only handle is *the law of his Elohim (God)* (Daniel 6:5). Peter''s word fits exactly: the accusers of a *good conscience* shall *be ashamed*, as Daniel''s did when the den that should have killed him brought him up alive.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-6-his-windows-being-open-toward-jerusalem-he-prayed-as-aforetime',
+       E'His windows being open toward Jerusalem, he prayed as aforetime — obey Yahuah rather than men',
+       E'The trap is a decree against worship: the jealous presidents persuade Darius to sign a *firm decree, that whosoever shall ask a petition of any Elohim (God) or man for thirty days, save of thee, O king, he shall be cast into the den of lions* (Daniel 6:7), sealed *according to the law of the Medes and Persians, which altereth not* (6:8). Daniel''s answer is not reckless defiance but steady faithfulness — he does what he always did: *Now when Daniel knew that the writing was signed, he went into his house; and his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed, and gave thanks before his Elohim (God), as he did aforetime* (Daniel 6:10). The posture is the covenant''s own. Solomon, dedicating the house, foresaw the captivity praying just so: *and pray unto thee toward their land, which thou gavest unto their fathers, the city which thou hast chosen, and the house which I have built for thy name* (1 Kings 8:48); *and pray toward their land... and toward the city which thou hast chosen, and toward the house which I have built for thy name* (2 Chronicles 6:38). And the rhythm is David''s: *Evening, and morning, and at noon, will I pray, and cry aloud: and he shall hear my voice* (Psalm 55:17). When the king''s law and Yahuah''s worship collide, the remnant answers with the apostles: *We ought to obey Elohim (God) rather than men* (Acts 5:29). Daniel keeps the window open toward the chosen city and lets the den come.',
+       sv.verse_id, ev.verse_id, 'free', 30125
+  FROM _s306_dan06_lookup sv, _s306_dan06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=6 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths',
+       E'My Elohim hath sent his angel, and hath shut the lions'' mouths',
+       E'Cast into the den and sealed under a stone, Daniel is kept untouched, and at dawn he names how: *My Elohim (God) hath sent his angel, and hath shut the lions'' mouths, that they have not hurt me: forasmuch as before him innocency was found in me; and also before thee, O king, have I done no hurt* (Daniel 6:22). He is taken up *and no manner of hurt was found upon him, because he believed in his Elohim (God)* (6:23). The whole library reaches for this night. Hebrews lists it among the acts of faith: *Who through faith subdued kingdoms, wrought righteousness, obtained promises, stopped the mouths of lions* (Hebrews 11:33) — the very faith *because he believed in his Elohim (God)* that *stopped the mouths of lions*. Paul, on trial and abandoned, claims the same hand: *Notwithstanding Yahuah (Lord) stood with me, and strengthened me... and I was delivered out of the mouth of the lion* (2 Timothy 4:17). And the Psalms name the angel and the very beast: *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7); *For he shall give his angels charge over thee, to keep thee in all thy ways... Thou shalt tread upon the lion and adder: the young lion and the dragon shalt thou trample under feet* (Psalm 91:11,13); *Save me from the lion''s mouth: for thou hast heard me from the horns of the unicorns* (Psalm 22:21). The angel sent into the den is the encamping angel of Yahuah; faith shut the lions'' mouths, and the man of prayer walked out whole.',
+       sv.verse_id, ev.verse_id, 'free', 30128
+  FROM _s306_dan06_lookup sv, _s306_dan06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=6 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed',
+       E'He is the living Elohim, and his kingdom that which shall not be destroyed — the king confesses the everlasting kingdom',
+       E'The deliverance from the den wrings from Darius the same confession the whole book wrings from its kings. He writes to all the earth: *I make a decree, That in every dominion of my kingdom men tremble and fear before the Elohim (God) of Daniel: for he is the living Elohim (God), and stedfast for ever, and his kingdom that which shall not be destroyed, and his dominion shall be even unto the end. He delivereth and rescueth, and he worketh signs and wonders in heaven and in earth, who hath delivered Daniel from the power of the lions* (Daniel 6:26-27). The everlasting kingdom the pagan king names is the very kingdom revealed by vision: *the Elohim (God) of heaven shall set up a kingdom, which shall never be destroyed... it shall stand for ever* (Daniel 2:44); and the dominion given to the One like the Son of Adam — *his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14) — is word for word Darius'' *his kingdom that which shall not be destroyed*. And the pattern of compelled confession runs the whole book: *your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings* (Daniel 2:47); *there is no other Elohim (God) that can deliver after this sort* (Daniel 3:29); *Now I Nebuchadnezzar praise and extol and honour the King of heaven* (Daniel 4:37). One throne after another — Babylon and now Persia — is bent to confess the living Elohim whose kingdom outlasts every empire that thought to destroy His servants.',
+       sv.verse_id, ev.verse_id, 'free', 30131
+  FROM _s306_dan06_lookup sv, _s306_dan06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=6 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-6-they-could-find-no-fault-except-concerning-the-law-of-his-elohim',
+       E'They could find no fault, except concerning the law of his Elohim — the blameless servant falsely accused',
+       E'The plot begins in envy. Daniel is *preferred above the presidents and princes, because an excellent spirit was in him* (Daniel 6:3), and they hunt for a charge: *Then the presidents and princes sought to find occasion against Daniel concerning the kingdom; but they could find none occasion nor fault; forasmuch as he was faithful, neither was there any error or fault found in him* (Daniel 6:4). The blameless man gives them nothing — so they conclude that his only vulnerability is his devotion: *We shall not find any occasion against this Daniel, except we find it against him concerning the law of his Elohim (God)* (Daniel 6:5). His sole "crime" is faithfulness to Yahuah; the righteous servant is framed for his obedience. Peter names this very pattern of the slandered faithful: *Having your conversation honest among the Gentiles: that, whereas they speak against you as evildoers, they may by your good works, which they shall behold, glorify Elohim (God) in the day of visitation* (1 Peter 2:12); *Having a good conscience; that, whereas they speak evil of you, as of evildoers, they may be ashamed that falsely accuse your good conversation in Messiah (Christ)* (1 Peter 3:16). The innocent man, accused only for his faith, sealed under a stone in a den of death, and brought up alive in the morning — *no manner of hurt was found upon him* (6:23) — is a death-and-deliverance figure of the One who, found with no fault and falsely accused, was sealed in a tomb and rose, while the accusers were *ashamed*.',
+       sv.verse_id, ev.verse_id, 'free', 30134
+  FROM _s306_dan06_lookup sv, _s306_dan06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=6 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *pray unto thee toward their land... the city which thou hast chosen, and the house which I have built for thy name* (1 Kings 8:48) — Solomon foresaw the captivity praying toward Jerusalem; Daniel keeps it *as he did aforetime*.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=10
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-his-windows-being-open-toward-jerusalem-he-prayed-as-aforetime'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *pray toward... the city which thou hast chosen, and toward the house which I have built for thy name* (2 Chronicles 6:38) — the dedication prayer scripts Daniel''s very act with the windows open toward Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=10
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=6 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-his-windows-being-open-toward-jerusalem-he-prayed-as-aforetime'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Evening, and morning, and at noon, will I pray, and cry aloud* (Psalm 55:17) — David''s threefold daily prayer is Daniel''s rhythm: *three times a day, and prayed... as he did aforetime*.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=10
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-his-windows-being-open-toward-jerusalem-he-prayed-as-aforetime'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *We ought to obey Elohim (God) rather than men* (Acts 5:29) — the apostolic answer to the king''s decree; Daniel keeps praying despite the signed writing.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=10
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-his-windows-being-open-toward-jerusalem-he-prayed-as-aforetime'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *through faith... stopped the mouths of lions* (Hebrews 11:33) — Hebrews names Daniel''s den among the acts of faith; *because he believed in his Elohim (God)* the lions'' mouths were shut.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I was delivered out of the mouth of the lion* (2 Timothy 4:17) — Paul claims Daniel''s deliverance as his own; the same hand that sent the angel into the den stood with him in the court.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The angel of Yahuah (LORD) encampeth round about them that fear him, and delivereth them* (Psalm 34:7) — exactly *My Elohim (God) hath sent his angel*; the angel encamps about the one who feared Him unto the den.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he shall give his angels charge over thee... Thou shalt tread upon the lion* (Psalm 91:11,13) — the angelic guard and the very beast of the den; the angel charged to keep Daniel kept him among the lions.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Save me from the lion''s mouth* (Psalm 22:21) — the suffering one''s cry answered bodily in the den: *he hath shut the lions'' mouths, that they have not hurt me*.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-my-elohim-hath-sent-his-angel-and-shut-the-lions-mouths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the Elohim (God) of heaven shall set up a kingdom, which shall never be destroyed... it shall stand for ever* (Daniel 2:44) — the kingdom Darius confesses *which shall not be destroyed* is the kingdom the dream foretold.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=26
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *his dominion is an everlasting dominion... his kingdom that which shall not be destroyed* (Daniel 7:14) — word for word Darius'' decree; the dominion given to the One like the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=26
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings* (Daniel 2:47) — Nebuchadnezzar''s first confession; the pattern Darius now repeats under the next empire.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=26
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *there is no other Elohim (God) that can deliver after this sort* (Daniel 3:29) — the furnace wrung this decree from Nebuchadnezzar; the den wrings *He delivereth and rescueth* from Darius.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=26
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=3 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Now I Nebuchadnezzar praise and extol and honour the King of heaven* (Daniel 4:37) — the full praise after his humbling; the book marches its kings, one by one, to honour the King of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=26
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-he-is-the-living-elohim-and-his-kingdom-shall-not-be-destroyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *whereas they speak against you as evildoers... by your good works... glorify Elohim (God)* (1 Peter 2:12) — the slandered faithful; Daniel''s only charge is *the law of his Elohim (God)*.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-they-could-find-no-fault-except-concerning-the-law-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they may be ashamed that falsely accuse your good conversation in Messiah (Christ)* (1 Peter 3:16) — the accusers of a good conscience shall be ashamed, as Daniel''s were when the den brought him up alive.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s306_dan06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-6-they-could-find-no-fault-except-concerning-the-law-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_daniel_7.sql (Daniel 7) -----
+-- Chapter: Daniel 7 — THE KEYSTONE of the book: the four beasts from the sea (the four world-empires),
+-- the Ancient of Days enthroned with the judgment set and the books opened, ONE LIKE THE SON OF ADAM
+-- coming WITH THE CLOUDS OF HEAVEN to receive an everlasting dominion, the little horn that makes war
+-- with the saints and thinks to change times and laws, and the saints of the El Elyon (most High) who
+-- take and possess the kingdom for ever. The single most important Tanakh chapter for the Formed-Son /
+-- Son-of-Adam Christology, and THE Tanakh kaph-comparative carve-out: "one LIKE the Son of Adam" (7:13).
+-- Tag: dan07   Session: s306   Temp view: _s306_dan07_lookup
+-- Sort band: base 30150, step 3 -> threads at 30150, 30153, 30156, 30159, 30162, 30165 (6 threads)
+-- Source of EVERY row: 'canon','daniel',7,v
+--
+-- Daniel 7 coverage:
+--   v.1 (Belshazzar; Daniel's dream and visions; he wrote the dream)
+--        NT: none warranted   Extras: none warranted   Tanakh: none separate (the frame; preface)
+--   ★ v.2-8 (the four winds strove upon the great sea; four great beasts — lion/eagle-wings, bear with
+--           three ribs, leopard with four heads, dreadful iron-toothed beast with ten horns; the little
+--           horn with eyes and a mouth speaking great things)
+--        NT:     ★ Revelation 13:1-2 (the beast from the sea, like a leopard, feet of a bear, mouth of a
+--                lion — John gathers all four of Daniel's beasts into one) — THREAD 6
+--        Extras: none warranted (no clean Similitudes/Jubilees beast-parallel; held to canon)
+--        Tanakh: ★★ Daniel 2:40,44 (the fourth iron kingdom + the stone-kingdom that breaks them all) —
+--                THREAD 6 (the four metals of ch2 = the four beasts of ch7, same succession)
+--   ★★ v.9-10 (the thrones cast down, the Ancient of days sat, garment white as snow, hair like pure
+--           wool, throne the fiery flame, wheels burning fire; a fiery stream; thousand thousands
+--           ministered, ten thousand times ten thousand stood; the judgment set, the books opened)
+--        NT:     ★★ Revelation 20:11-12 (the great white throne, the dead judged, the books opened),
+--                ★ Revelation 5:11 (ten thousand times ten thousand round the throne) — THREAD 3
+--        Extras: ★★ 1 Enoch 14:15-18 (Enoch's throne-vision: the throne like crystal, the flaming fire,
+--                columns of fire), ★★ 1 Enoch 47:3 (the Head of Days seated on the throne of His glory,
+--                the books of the living opened before Him) — THREAD 3 (extras tier)
+--        Tanakh: the throne-of-fire woven in prose; books-opened also at Daniel 12:1 (held there)
+--   v.11-12 (the beast slain, body given to the burning flame; the rest of the beasts' dominion taken,
+--           lives prolonged a season)
+--        NT: held in prose (the beast's end answered in THREAD 5 by Rev 20:10 / Dan 7:26)   Extras: none
+--        Tanakh: none separate (the verdict executed; woven into the little-horn thread)
+--   ★★★ v.13-14 (one LIKE THE SON OF ADAM came WITH THE CLOUDS of heaven, came to the Ancient of days,
+--           brought near before him; given dominion, glory, a kingdom, all people serve him; AN
+--           EVERLASTING DOMINION which shall not pass away)
+--        NT:     ★★★ Matthew 24:30 + ★★★ Matthew 26:64 + ★★★ Mark 14:62 (the Son of Adam coming in the
+--                clouds — Yahusha's own self-citation of this verse), ★★ Revelation 1:7 (Behold, he
+--                cometh with clouds), ★ Revelation 1:13 + ★ Revelation 14:14 (one like unto the Son of
+--                Adam), ★ Revelation 11:15 (the everlasting kingdom) — THREAD 1 [free]
+--        Extras: ★★★ 1 Enoch 46:1-3 (the Son of Adam with the Head of Days), ★★★ 1 Enoch 48:2-3 (his
+--                name named before the sun and the stars), ★ 1 Enoch 49:2 (the Elect One before the
+--                Yahuah of Spirits) — THREAD 2 [extras] (the Similitudes' direct development of THIS vision)
+--        Tanakh: ★★ Psalm 110:1 (Sit thou at my right hand), ★★ Psalm 2:7 (Thou art my Son), ★ Daniel
+--                2:44 (the everlasting kingdom) — THREAD 1
+--   ★★ KAPH CARVE-OUT at 7:13: "one LIKE the Son of Adam" — the kaph-comparative is PRESERVED verbatim
+--      ("like") in every note and member: the FORMED Son, brought near before the Ancient of Days (the
+--      Father), who RECEIVES the everlasting kingdom; Yahuah who has a Father — NOT co-equal-persons, NOT
+--      Arian/created. The "like" guards the Formed cloud-rider who took flesh, never a standing counterfeit.
+--   v.15-17 (Daniel grieved; asks the interpretation; four beasts = four kings out of the earth)
+--        NT: none warranted   Extras: none warranted   Tanakh: none separate (interpretation seam)
+--   ★★ v.18 (the saints of the El Elyon (most High) shall take the kingdom, and possess the kingdom for
+--           ever, even for ever and ever)
+--        NT:     ★★ Revelation 5:10 (made us kings; we shall reign on the earth), ★★ Revelation 20:4
+--                (they lived and reigned with Messiah), ★ Matthew 25:34 (inherit the kingdom prepared),
+--                ★★ Luke 12:32 (your Father's good pleasure to give you the kingdom) — THREAD 4 [free]
+--        Extras: none warranted (clean canon weave)
+--        Tanakh: ★ Daniel 2:44 (the kingdom that shall never be destroyed) — THREAD 4
+--   v.19-20 (the fourth beast again; the ten horns; the little horn with eyes and a great-speaking mouth)
+--        NT: woven into THREAD 5   Extras: none   Tanakh: none separate (re-asks the fourth-beast question)
+--   ★ v.21-22 (the horn made war with the saints and prevailed, UNTIL the Ancient of days came, and
+--           judgment was given to the saints; the saints possessed the kingdom)
+--        NT:     ★★ Revelation 13:7 (it was given unto him to make war with the saints, and to overcome
+--                them) — THREAD 5 — answered by the judgment given to the saints (the war is reversed)
+--        Extras: none warranted   Tanakh: none separate (the reversal repeats v.18/v.27)
+--   ★ v.23-25 (the fourth kingdom; the little horn speaks great words against the El Elyon, wears out the
+--           saints, and THINK TO CHANGE TIMES AND LAWS; given into his hand a time, times, and dividing)
+--        NT:     ★★ 2 Thessalonians 2:4 (the man of sin exalting himself above all that is called Elohim,
+--                sitting in the temple), ★ Revelation 13:5 (a mouth speaking great things and blasphemies)
+--                — THREAD 5 [free]
+--        Extras: none warranted (clean canon weave; no extras forced)
+--        Tanakh: ★ Daniel 8:25 (he shall magnify himself; stand up against the Prince of princes), ★
+--                Daniel 11:36 (the king shall do according to his will; speak marvellous things against
+--                the Elohim of gods), ★★ Leviticus 23:2 (the feasts of Yahuah — the appointed times the
+--                horn merely THINKS to change, and does not succeed: Torah-and-feasts never abolished) — THREAD 5
+--   ★ v.26-27 (the judgment shall sit; his dominion taken away; the kingdom under the whole heaven given
+--           to the people of the saints; an everlasting kingdom; all dominions serve and obey him)
+--        NT:     folded into THREAD 4 (the everlasting kingdom given to the saints — Rev 20:4 etc.)
+--        Extras: none warranted   Tanakh: ★ Daniel 2:44 (folded into THREAD 4)
+--   v.28 (the end of the matter; Daniel troubled; kept the matter in his heart)
+--        NT: none   Extras: none   Tanakh: none separate (the close)
+--
+-- Threads (slug — target libraries):
+--   1. daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven — NT (Matthew 24, Matthew 26,
+--      Mark 14, Revelation 1, Revelation 14, Revelation 11) + Tanakh (Psalm 110, Psalm 2, Daniel 2) [free]
+--      (★★★ THE central thread; the kaph "like" preserved; the Formed Son brought near, receiving the
+--       everlasting kingdom from the Ancient of Days the Father)
+--   2. daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes — Extras (1 Enoch 46, 48, 49) [extras]
+--      (★★★ the Similitudes' direct development of 7:13 — the Son of Adam with the Head of Days, his name
+--       named before the sun and the stars, the Elect One; kaph "like" honored in prose)
+--   3. daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened — NT (Revelation 20,
+--      Revelation 5) + Extras (1 Enoch 14, 47) [extras]
+--      (★★ the throne-of-fire vision; the great white throne and the books opened; Enoch's throne-vision
+--       and the Head of Days with the books of the living)
+--   4. daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom — NT (Revelation 5,
+--      Revelation 20, Matthew 25, Luke 12) + Tanakh (Daniel 2) [free]
+--      (★★ the everlasting kingdom given to the two-house restored people under Messiah — NOT replacement)
+--   5. daniel-7-the-little-horn-thinks-to-change-times-and-laws — NT (2 Thessalonians 2, Revelation 13)
+--      + Tanakh (Daniel 8, Daniel 11, Leviticus 23) [free]
+--      (★ the antichrist horn that THINKS to change the appointed times and the Torah — and does not
+--       succeed; the man of sin; the feasts/Sabbath never abolished, the anti-antinomian frame)
+--   6. daniel-7-the-four-beasts-from-the-sea-the-four-kingdoms — NT (Revelation 13) + Tanakh (Daniel 2) [free]
+--      (★ the four world-empires answering the metal image of ch2; the beast of Revelation gathers all four)
+--
+-- Framing notes:
+--   ★★★ THE SON OF ADAM WITH THE CLOUDS (THREAD 1): *I saw in the night visions, and, behold, one like
+--      the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought
+--      him near before him. And there was given him dominion, and glory, and a kingdom... his dominion is
+--      an everlasting dominion, which shall not pass away* (Daniel 7:13-14). The KAPH carve-out: *one LIKE
+--      the Son of Adam* — the comparative is preserved; this is the FORMED Son, the visible One drawn from
+--      the Formless Father, brought near before the Ancient of Days (the Father, the El Elyon) and given
+--      the everlasting kingdom. He is Yahuah and HAS a Father — not co-equal-persons, not a created being.
+--      Yahusha names HIMSELF this cloud-rider three times at the most weighted moments: *they shall see the
+--      Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30); under oath
+--      before Caiaphas, *Hereafter shall ye see the Son of Adam sitting on the right hand of power, and
+--      coming in the clouds of heaven* (Matthew 26:64; Mark 14:62) — fusing Daniel 7:13 with Psalm 110:1.
+--      John seals it: *Behold, he cometh with clouds* (Revelation 1:7), *one like unto the Son of Adam*
+--      (Revelation 1:13; 14:14 — the kaph again), and the everlasting kingdom realized (Revelation 11:15).
+--   ★★★ THE SIMILITUDES (THREAD 2): 1 Enoch's Book of Parables develops THIS very vision — *One who had a
+--      head of days... and with Him was another being whose countenance had the appearance of a man... This
+--      is the Son of Adam who hath righteousness* (1 Enoch 46:1,3); *before the sun and the signs were
+--      created... His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3); the Elect One who
+--      *standeth before Yahuah (God) of Spirits* (1 Enoch 49:2). The restored witness reading Daniel 7:13
+--      messianically and pre-temporally — the Son of Adam named before creation, the Formed Son.
+--   ★★ THE ANCIENT OF DAYS / BOOKS OPENED (THREAD 3): *the Ancient of days did sit... his throne was like
+--      the fiery flame... thousand thousands ministered unto him... the judgment was set, and the books
+--      were opened* (Daniel 7:9-10) -> *a great white throne... the books were opened... the dead were
+--      judged* (Revelation 20:11-12); *ten thousand times ten thousand* (Revelation 5:11). Enoch saw the
+--      same throne — *the throne... of stibium, and the top of the throne was of sapphire... a flaming
+--      fire* (1 Enoch 14:15-18) — and the Head of Days enthroned, *the books of the living were opened
+--      before Him* (1 Enoch 47:3).
+--   ★★ THE SAINTS POSSESS THE KINGDOM (THREAD 4): *the saints of the El Elyon (most High) shall take the
+--      kingdom, and possess the kingdom for ever* (Daniel 7:18,27) — the everlasting kingdom given to the
+--      two-house restored people UNDER the Son of Adam, never a replacement people: *they lived and reigned
+--      with Messiah* (Revelation 20:4); *we shall reign on the earth* (Revelation 5:10); *it is your
+--      Father's good pleasure to give you the kingdom* (Luke 12:32); *inherit the kingdom prepared for you*
+--      (Matthew 25:34).
+--   ★ THE LITTLE HORN CHANGES TIMES AND LAWS (THREAD 5): *he shall speak great words against the El Elyon
+--      (most High), and shall wear out the saints... and think to change times and laws* (Daniel 7:25). He
+--      THINKS to change them — he does not succeed: the appointed times and the Torah are Yahuah's and are
+--      never abolished. He is the man of sin who *as Elohim (God) sitteth in the temple of Elohim* (2
+--      Thessalonians 2:4), the beast with *a mouth speaking great things and blasphemies* (Revelation 13:5)
+--      who *make[s] war with the saints* (Revelation 13:7); the same self-magnifying king of Daniel 8:25
+--      and 11:36. The "times and laws" he reaches for are *the feasts of Yahuah (LORD)... my feasts*
+--      (Leviticus 23:2) — the calendar and Torah he cannot abolish, only counterfeit.
+--   ★ THE FOUR BEASTS (THREAD 6): *four great beasts came up from the sea, diverse one from another*
+--      (Daniel 7:3) — lion, bear, leopard, dreadful iron beast — the same four-empire succession as the
+--      metal image of Daniel 2: *the fourth kingdom shall be strong as iron* (Daniel 2:40), broken at last
+--      by the stone-kingdom *which shall never be destroyed* (Daniel 2:44). John gathers all four into one
+--      end-time beast: *like unto a leopard... the feet of a bear... the mouth of a lion* (Revelation 13:2).
+--   VERSES WITH NO SEPARATE ADD: v.1 (the frame), v.11-12 (the beast slain — woven into THREAD 5),
+--      v.15-17 (the interpretation seam), v.19-20 (re-asks the fourth-beast question — woven into THREADS
+--      5/6), v.26-27 (the everlasting kingdom — folded into THREAD 4), v.28 (the close). All recorded.
+
+CREATE TEMP VIEW _s306_dan07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): one LIKE the Son of Adam came with the clouds of heaven — NT + Tanakh [free]
+    ('canon','daniel',7,13,'canon','matthew',24,30,'free',
+      E'*And then shall appear the sign of the Son of Adam in heaven: and then shall all the tribes of the earth mourn, and they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30). Yahusha (Jesus) names himself the cloud-rider of *one like the Son of Adam came with the clouds of heaven* (Daniel 7:13). The kaph carve-out is honored — *one LIKE the Son of Adam* — the Formed Son who took flesh, coming as Daniel saw, to receive the everlasting dominion.'),
+    ('canon','daniel',7,13,'canon','matthew',26,64,'free',
+      E'*Yahusha (Jesus) saith unto him, Thou hast said: nevertheless I say unto you, Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven* (Matthew 26:64). Under oath before the high priest, Yahusha (Jesus) claims Daniel''s vision as his own, fusing *one like the Son of Adam came with the clouds of heaven* (Daniel 7:13) with *Sit thou at my right hand* (Psalm 110:1). This is the Formed Son — brought near before the Ancient of Days, Yahuah who has a Father.'),
+    ('canon','daniel',7,13,'canon','mark',14,62,'free',
+      E'*And Yahusha (Jesus) said, I am: and ye shall see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven* (Mark 14:62). The plainest claim: Yahusha (Jesus) is the *one like the Son of Adam* who *came with the clouds of heaven, and came to the Ancient of days* (Daniel 7:13). The kaph comparative guards the truth — the FORMED One who took flesh, not a standing counterfeit; Yahuah, and yet brought near before the Father.'),
+    ('canon','daniel',7,13,'canon','revelation',1,7,'free',
+      E'*Behold, he cometh with clouds; and every eye shall see him, and they also which pierced him: and all kindreds of the earth shall wail because of him. Even so, Amen* (Revelation 1:7). John seals Daniel''s vision — *one like the Son of Adam came with the clouds of heaven* (Daniel 7:13) — as the consummation: *all the tribes of the earth shall mourn* (Daniel 7:13 read through Zechariah 12:10). The cloud-coming Son of Adam is the One who was pierced.'),
+    ('canon','daniel',7,13,'canon','revelation',1,13,'free',
+      E'*And in the midst of the seven candlesticks one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle* (Revelation 1:13). John sees the very figure of Daniel''s vision and keeps the kaph: *one LIKE unto the Son of Adam*, echoing *one like the Son of Adam* (Daniel 7:13) — and the white hair and flame of fire of the Ancient of Days (Daniel 7:9) now rest on him. The Formed Son bears the glory of the Father.'),
+    ('canon','daniel',7,14,'canon','revelation',14,14,'free',
+      E'*And I looked, and behold a white cloud, and upon the cloud one sat like unto the Son of Adam, having on his head a golden crown, and in his hand a sharp sickle* (Revelation 14:14). The crowned cloud-rider of *one like the Son of Adam came with the clouds of heaven* (Daniel 7:13) now reaps — *there was given him dominion, and glory, and a kingdom* (Daniel 7:14) made manifest. John holds the kaph: *one LIKE unto the Son of Adam*, crowned upon the cloud.'),
+    ('canon','daniel',7,14,'canon','revelation',11,15,'free',
+      E'*And the seventh angel sounded; and there were great voices in heaven, saying, The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). This is Daniel''s everlasting kingdom realized — *his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:14). The dominion given to the Son of Adam *for ever and ever*.'),
+    ('canon','daniel',7,13,'canon','psalms',110,1,'free',
+      E'*Yahuah (LORD) said unto my Lord, Sit thou at my right hand, until I make thine enemies thy footstool* (Psalm 110:1). The Son of Adam *brought... near before* the Ancient of Days (Daniel 7:13) is the *my Lord* whom Yahuah seats at his right hand. Yahusha (Jesus) joined these two verses in one breath before Caiaphas (Matthew 26:64) — the Formed Son enthroned beside the Father, given the everlasting dominion.'),
+    ('canon','daniel',7,14,'canon','psalms',2,7,'free',
+      E'*I will declare the decree: Yahuah (LORD) hath said unto me, Thou art my Son; this day have I begotten thee. Ask of me, and I shall give thee the heathen for thine inheritance* (Psalm 2:7-8). The kingdom given to the Son of Adam — *that all people, nations, and languages, should serve him* (Daniel 7:14) — is the inheritance the Father grants his begotten Son. The Formed Son has a Father, and from him receives the nations.'),
+    ('canon','daniel',7,14,'canon','daniel',2,44,'free',
+      E'*And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed... and it shall stand for ever* (Daniel 2:44). The everlasting kingdom of *his dominion is an everlasting dominion, which shall not pass away* (Daniel 7:14) is the same indestructible kingdom of the stone-vision of chapter 2 — set up by the Elohim of heaven and given to the Son of Adam.'),
+
+    -- THREAD 2 (★★★): the Son of Adam named before the sun, in the Similitudes — EXTRAS [extras]
+    ('canon','daniel',7,13,'enoch','1-enoch',46,1,'extras',
+      E'*And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man, and his face was full of graciousness, like one of the holy angels* (1 Enoch 46:1). The Book of Parables sees exactly Daniel''s vision — a Head of Days (white like wool, Daniel 7:9) and beside him *another being whose countenance had the appearance of a man* (the kaph again, *one like the Son of Adam*, Daniel 7:13). The restored witness reads this messianically.'),
+    ('canon','daniel',7,13,'enoch','1-enoch',46,3,'extras',
+      E'*This is the Son of Adam who hath righteousness, with whom dwelleth righteousness, and who revealeth all the treasures of that which is hidden, because Yahuah (God) of Spirits hath chosen him* (1 Enoch 46:3). Enoch''s interpreting angel names the man-like One of Daniel 7:13 *the Son of Adam* — the chosen, righteous One who stands before the Head of Days, the Formed Son drawn near before the Ancient of Days.'),
+    ('canon','daniel',7,14,'enoch','1-enoch',48,2,'extras',
+      E'*And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2). The One given *dominion, and glory, and a kingdom* (Daniel 7:14) is named before the Head of Days — the same Ancient of Days of Daniel''s throne. The Son of Adam''s name lifted up before the Father, who grants him the everlasting reign.'),
+    ('canon','daniel',7,14,'enoch','1-enoch',48,3,'extras',
+      E'*Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3). The Son of Adam who receives *an everlasting dominion, which shall not pass away* (Daniel 7:14) was named before creation itself — the Formed Son, expressed from the Formless Father before the sun and stars, not a thing made among them.'),
+    ('canon','daniel',7,14,'enoch','1-enoch',49,2,'extras',
+      E'*Because the Elect One standeth before Yahuah (God) of Spirits, And his glory is for ever and ever, And his might unto all generations* (1 Enoch 49:2). The everlasting *glory, and a kingdom* (Daniel 7:14) of the Son of Adam is the *glory... for ever and ever* of the Elect One who stands before the Father. The Similitudes bind Daniel''s cloud-rider, the Son of Adam, and the Elect One into one Person — the Formed Son.'),
+
+    -- THREAD 3 (★★): the Ancient of Days, the judgment set, the books opened — NT + EXTRAS [extras]
+    ('canon','daniel',7,10,'canon','revelation',20,12,'extras',
+      E'*And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). John''s judgment scene is Daniel''s — *the judgment was set, and the books were opened* (Daniel 7:10). The same court, the same opened books before the throne of the Ancient of Days.'),
+    ('canon','daniel',7,9,'canon','revelation',20,11,'extras',
+      E'*And I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away; and there was found no place for them* (Revelation 20:11). The *thrones... cast down, and the Ancient of days did sit* of Daniel 7:9 is John''s great white throne — the Ancient of Days enthroned for the final judgment, before whom heaven and earth flee.'),
+    ('canon','daniel',7,10,'canon','revelation',5,11,'extras',
+      E'*And I beheld, and I heard the voice of many angels round about the throne and the beasts and the elders: and the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11). John counts the heavenly court exactly as Daniel did — *thousand thousands ministered unto him, and ten thousand times ten thousand stood before him* (Daniel 7:10). The numberless host that ministers before the Ancient of Days.'),
+    ('canon','daniel',7,9,'enoch','1-enoch',14,15,'extras',
+      E'*But the middle one reached to heaven, like the throne of Yahuah (God), of stibium, and the top of the throne was of sapphire* (1 Enoch 14:15). Enoch is carried up and sees the throne of the Most High, a vision twin to Daniel''s — *his throne was like the fiery flame, and his wheels as burning fire* (Daniel 7:9). The same heavenly throne-room of the Ancient of Days, seen by Enoch before Daniel.'),
+    ('canon','daniel',7,10,'enoch','1-enoch',47,3,'extras',
+      E'*In those days I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him* (1 Enoch 47:3). The Similitudes show the very scene of Daniel 7:9-10 — the Head of Days enthroned, *the books of the living were opened* (so *the judgment was set, and the books were opened*, Daniel 7:10), the host standing before him.'),
+
+    -- THREAD 4 (★★): the saints of the most High take and possess the kingdom — NT + Tanakh [free]
+    ('canon','daniel',7,18,'canon','revelation',5,10,'free',
+      E'*And hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:10). The promise that *the saints of the El Elyon (most High) shall take the kingdom, and possess the kingdom for ever* (Daniel 7:18) is sung before the throne — the redeemed of every tribe made kings to reign on the earth. The two-house restored people possessing the everlasting kingdom under the Son of Adam.'),
+    ('canon','daniel',7,18,'canon','revelation',20,4,'free',
+      E'*and I saw the souls of them that were beheaded for the witness of Yahusha (Jesus)... and they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4). Daniel''s *saints... shall take the kingdom, and possess the kingdom for ever* (Daniel 7:18) is fulfilled in those who *lived and reigned with Messiah* — the saints who endured the horn''s war now sharing the dominion given to the Son of Adam.'),
+    ('canon','daniel',7,27,'canon','luke',12,32,'free',
+      E'*Fear not, little flock; for it is your Father''s good pleasure to give you the kingdom* (Luke 12:32). The kingdom *given to the people of the saints of the El Elyon (most High)* (Daniel 7:27) is the Father''s good pleasure to give — not seized, but granted to the little flock. The everlasting kingdom of Daniel passes to the saints from the hand of the Ancient of Days.'),
+    ('canon','daniel',7,27,'canon','matthew',25,34,'free',
+      E'*Then shall the King say unto them on his right hand, Come, ye blessed of my Father, inherit the kingdom prepared for you from the foundation of the world* (Matthew 25:34). *The kingdom and dominion... shall be given to the people of the saints of the El Elyon (most High)* (Daniel 7:27) is the inheritance the King grants the blessed of his Father — the everlasting kingdom prepared for the saints.'),
+    ('canon','daniel',7,18,'canon','daniel',2,44,'free',
+      E'*And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed... and it shall stand for ever* (Daniel 2:44). The kingdom *the saints of the El Elyon (most High) shall take... and possess... for ever* (Daniel 7:18) is the same indestructible kingdom of the stone-vision — set up by the Elohim of heaven, standing for ever, and given to the saints.'),
+
+    -- THREAD 5 (★): the little horn thinks to change times and laws — NT + Tanakh [free]
+    ('canon','daniel',7,25,'canon','2-thessalonians',2,4,'free',
+      E'*Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). Paul''s man of sin is Daniel''s little horn — *he shall speak great words against the El Elyon (most High)* (Daniel 7:25). The self-exalting power that *think[s] to change times and laws* and sets himself in the place of Yahuah.'),
+    ('canon','daniel',7,25,'canon','revelation',13,5,'free',
+      E'*And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months* (Revelation 13:5). John''s beast carries Daniel''s horn — *a mouth speaking great things* (Daniel 7:8) that *speak[s] great words against the El Elyon (most High)* (Daniel 7:25) — and the *time and times and the dividing of time* (Daniel 7:25) becomes the forty-two months. The same blaspheming mouth, the same bounded season.'),
+    ('canon','daniel',7,21,'canon','revelation',13,7,'free',
+      E'*And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations* (Revelation 13:7). This is Daniel''s horn that *made war with the saints, and prevailed against them* (Daniel 7:21) — but only *until the Ancient of days came, and judgment was given to the saints* (Daniel 7:22). The war is real, the victory permitted for a season, and then reversed by the throne.'),
+    ('canon','daniel',7,25,'canon','daniel',8,25,'free',
+      E'*and he shall magnify himself in his heart, and by peace shall destroy many: he shall also stand up against the Prince of princes; but he shall be broken without hand* (Daniel 8:25). The same self-magnifying king as the little horn — *he shall speak great words against the El Elyon (most High), and shall wear out the saints* (Daniel 7:25) — stands against the Prince of princes, and is broken not by human hand but by the judgment of heaven (Daniel 7:26).'),
+    ('canon','daniel',7,25,'canon','daniel',11,36,'free',
+      E'*And the king shall do according to his will; and he shall exalt himself, and magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36). The willful king of Daniel 11 speaks the same blasphemies as the horn that *speak[s] great words against the El Elyon (most High)* (Daniel 7:25). One arrogant power across Daniel''s visions, exalting itself until the indignation is accomplished.'),
+    ('canon','daniel',7,25,'canon','leviticus',23,2,'free',
+      E'*Speak unto the children of Yashar''el (Israel), and say unto them, Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2). The *times and laws* the horn merely THINKS to change (Daniel 7:25) are Yahuah''s own — *my feasts*, the appointed times and the Sabbath given to Yashar''el. The horn counterfeits them but cannot abolish them: the Torah and the feasts stand for ever, and his thought never becomes power over them.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 6 four-beasts cross_references (separate INSERT block, same pattern)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','daniel',7,3,'canon','revelation',13,1,'free',
+      E'*And I stood upon the sand of the sea, and saw a beast rise up out of the sea, having seven heads and ten horns, and upon his horns ten crowns, and upon his heads the name of blasphemy* (Revelation 13:1). John''s beast rises where Daniel''s did — *four great beasts came up from the sea* (Daniel 7:3) — and bears the ten horns of Daniel''s fourth beast (Daniel 7:7). The sea of nations gives up the final empire that gathers all the others.'),
+    ('canon','daniel',7,6,'canon','revelation',13,2,'free',
+      E'*And the beast which I saw was like unto a leopard, and his feet were as the feet of a bear, and his mouth as the mouth of a lion: and the dragon gave him his power, and his seat, and great authority* (Revelation 13:2). John gathers all FOUR of Daniel''s beasts — the leopard (Daniel 7:6), the bear (Daniel 7:5), the lion (Daniel 7:4) — into one end-time beast. The succession of empires Daniel saw culminates in the single beast empowered by the dragon.'),
+    ('canon','daniel',7,7,'canon','daniel',2,40,'free',
+      E'*And the fourth kingdom shall be strong as iron: forasmuch as iron breaketh in pieces and subdueth all things... shall it break in pieces and bruise* (Daniel 2:40). The dreadful fourth beast with *great iron teeth* that *devoured and brake in pieces* (Daniel 7:7) is the iron fourth kingdom of the metal image — the same empire, seen first as iron legs, now as the terrible iron-toothed beast.'),
+    ('canon','daniel',7,7,'canon','daniel',2,44,'free',
+      E'*And in the days of these kings shall the Elohim (God) of heaven set up a kingdom, which shall never be destroyed... it shall break in pieces and consume all these kingdoms, and it shall stand for ever* (Daniel 2:44). The four beasts — culminating in the iron beast with *ten horns* (Daniel 7:7) — are the four kingdoms broken at last by the stone-kingdom of chapter 2, the everlasting kingdom given to the Son of Adam and the saints (Daniel 7:14,18).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven',
+       E'One like the Son of Adam came with the clouds of heaven',
+       E'At the height of the night visions Daniel sees the central figure of the whole book: *I saw in the night visions, and, behold, one like the Son of Adam came with the clouds of heaven, and came to the Ancient of days, and they brought him near before him. And there was given him dominion, and glory, and a kingdom, that all people, nations, and languages, should serve him: his dominion is an everlasting dominion, which shall not pass away, and his kingdom that which shall not be destroyed* (Daniel 7:13-14). Mark the *like* — the kaph comparative: *one LIKE the Son of Adam*. This is the FORMED Son, the visible One drawn from the Formless Father, brought near before the Ancient of Days (the Father, the El Elyon, most High) and given the everlasting kingdom. He is Yahuah and yet HAS a Father — not a co-equal person, not a created being, but the expressed Word who took flesh. Yahusha (Jesus) names HIMSELF this cloud-rider at the most weighted moments of his life: *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30); and under oath before the high priest, *Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven* (Matthew 26:64), *I am: and ye shall see the Son of Adam... coming in the clouds of heaven* (Mark 14:62) — fusing Daniel 7:13 with *Sit thou at my right hand* (Psalm 110:1). The Father had already declared of him, *Thou art my Son; this day have I begotten thee. Ask of me, and I shall give thee the heathen for thine inheritance* (Psalm 2:7-8) — the very nations Daniel saw serve him. John seals the vision: *Behold, he cometh with clouds; and every eye shall see him* (Revelation 1:7); he sees *one like unto the Son of Adam* among the candlesticks, white-haired and flaming as the Ancient of Days (Revelation 1:13), and *upon the cloud one sat like unto the Son of Adam, having on his head a golden crown* (Revelation 14:14) — the kaph preserved each time. And the everlasting dominion is realized: *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — the indestructible kingdom of *which shall never be destroyed... and it shall stand for ever* (Daniel 2:44).',
+       sv.verse_id, ev.verse_id, 'free', 30150
+  FROM _s306_dan07_lookup sv, _s306_dan07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=7 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★, extras)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes',
+       E'The Son of Adam named before the sun — the Similitudes of Enoch on Daniel 7',
+       E'The restored Book of Parables (1 Enoch 37-71, the Similitudes) is the single most important extra-canonical development of Daniel 7:13, reading the man-like One messianically and pre-temporally. Enoch sees the very pairing of Daniel''s throne-vision: *And there I saw One who had a head of days, and His head was white like wool, and with Him was another being whose countenance had the appearance of a man, and his face was full of graciousness, like one of the holy angels* (1 Enoch 46:1) — a Head of Days, white like wool as in *the Ancient of days... the hair of his head like the pure wool* (Daniel 7:9), and beside him a man-like One, the kaph again of *one like the Son of Adam* (Daniel 7:13). The interpreting angel names him plainly: *This is the Son of Adam who hath righteousness, with whom dwelleth righteousness... because Yahuah (God) of Spirits hath chosen him* (1 Enoch 46:3). And his exaltation answers the dominion given in Daniel 7:14: *And at that hour that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2), *Yea, before the sun and the signs were created, Before the stars of the heaven were made, His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3) — the Son of Adam named before creation itself, the Formed Son expressed from the Formless Father before sun and stars, not a thing made among them. The Similitudes bind this One to the Elect One: *the Elect One standeth before Yahuah (God) of Spirits, And his glory is for ever and ever, And his might unto all generations* (1 Enoch 49:2) — the everlasting glory of *his dominion is an everlasting dominion, which shall not pass away* (Daniel 7:14). One Person: the Son of Adam, the Elect One, the cloud-rider — the Formed Son who stands before the Father.',
+       sv.verse_id, ev.verse_id, 'extras', 30153
+  FROM _s306_dan07_lookup sv, _s306_dan07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=7 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★, extras)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened',
+       E'The Ancient of days, the judgment set, and the books were opened',
+       E'Before the Son of Adam comes, Daniel sees the throne-room of the Most High: *I beheld till the thrones were cast down, and the Ancient of days did sit, whose garment was white as snow, and the hair of his head like the pure wool: his throne was like the fiery flame, and his wheels as burning fire. A fiery stream issued and came forth from before him: thousand thousands ministered unto him, and ten thousand times ten thousand stood before him: the judgment was set, and the books were opened* (Daniel 7:9-10). John sees the same court at the end: *And I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away* (Revelation 20:11), *and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books* (Revelation 20:12) — the opened books of Daniel 7:10. And the numberless host is counted the same: *the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11), exactly *ten thousand times ten thousand stood before him* (Daniel 7:10). The restored witness saw this throne even earlier: Enoch, carried up in the whirlwind, beheld *the throne... of stibium, and the top of the throne was of sapphire... a flaming fire* (1 Enoch 14:15-16) — the fiery throne of the Ancient of Days; and the judgment scene itself: *I saw the Head of Days when He seated Himself upon the throne of His glory, And the books of the living were opened before Him: And all His host which is in heaven above and His counsellors stood before Him* (1 Enoch 47:3). The Head of Days enthroned, the books opened, the host standing — Daniel''s vision and Enoch''s are one throne-room, and John''s great white throne is its consummation.',
+       sv.verse_id, ev.verse_id, 'extras', 30156
+  FROM _s306_dan07_lookup sv, _s306_dan07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=7 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom',
+       E'The saints of the most High shall take and possess the kingdom for ever',
+       E'The vision''s interpretation gives the kingdom not only to the Son of Adam but, under him, to his people: *But the saints of the El Elyon (most High) shall take the kingdom, and possess the kingdom for ever, even for ever and ever* (Daniel 7:18), and again at the close, *And the kingdom and dominion, and the greatness of the kingdom under the whole heaven, shall be given to the people of the saints of the El Elyon (most High), whose kingdom is an everlasting kingdom, and all dominions shall serve and obey him* (Daniel 7:27). This is the two-house restored people of Yashar''el — Yahudah (Judah) and Ephraim/Yosef gathered as one — given the everlasting kingdom UNDER the Son of Adam; never a replacement people, but the saints who endured the horn''s war (Daniel 7:21-22) now sharing the dominion. The New Testament sings it before the throne: *And hast made us unto our Elohim (God) kings and priests: and we shall reign on the earth* (Revelation 5:10); *they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4). And it is the Father''s gift, not a thing seized: *Fear not, little flock; for it is your Father''s good pleasure to give you the kingdom* (Luke 12:32); *Come, ye blessed of my Father, inherit the kingdom prepared for you from the foundation of the world* (Matthew 25:34). It is the same indestructible kingdom of the stone-vision — *a kingdom, which shall never be destroyed... and it shall stand for ever* (Daniel 2:44) — set up by the Elohim of heaven and given at last to the saints of the most High.',
+       sv.verse_id, ev.verse_id, 'free', 30159
+  FROM _s306_dan07_lookup sv, _s306_dan07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=7 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-7-the-little-horn-thinks-to-change-times-and-laws',
+       E'The little horn makes war with the saints and thinks to change times and laws',
+       E'Among the ten horns of the fourth beast rises *another little horn... and, behold, in this horn were eyes like the eyes of man, and a mouth speaking great things* (Daniel 7:8). The interpreting word unfolds him: *I beheld, and the same horn made war with the saints, and prevailed against them; Until the Ancient of days came, and judgment was given to the saints of the El Elyon (most High)* (Daniel 7:21-22); *And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time* (Daniel 7:25). Mark the framing: he *think[s] to change times and laws* — he merely THINKS to, he does not succeed. The *times and laws* are Yahuah''s own appointed times and Torah — *Concerning the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations, even these are my feasts* (Leviticus 23:2) — the calendar and the commandments the horn can counterfeit but never abolish; they stand for ever. The New Testament names this power the man of sin: *Who opposeth and exalteth himself above all that is called Elohim (God)... so that he as Elohim (God) sitteth in the temple of Elohim (God)* (2 Thessalonians 2:4); the beast with *a mouth speaking great things and blasphemies* (Revelation 13:5) to whom *it was given... to make war with the saints, and to overcome them* (Revelation 13:7) — Daniel''s war exactly, permitted for a bounded season (the forty-two months answering *a time and times and the dividing of time*). He is the self-magnifying king across Daniel''s visions: *he shall also stand up against the Prince of princes; but he shall be broken without hand* (Daniel 8:25); *the king shall do according to his will... and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36). But the war is reversed at the throne — *the judgment shall sit, and they shall take away his dominion, to consume and to destroy it unto the end* (Daniel 7:26) — and the saints possess the kingdom.',
+       sv.verse_id, ev.verse_id, 'free', 30162
+  FROM _s306_dan07_lookup sv, _s306_dan07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=7 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-7-the-four-beasts-from-the-sea-the-four-kingdoms',
+       E'The four beasts from the sea — the four kingdoms answering the image of chapter 2',
+       E'The vision opens with the four winds and the sea: *and, behold, the four winds of the heaven strove upon the great sea. And four great beasts came up from the sea, diverse one from another* (Daniel 7:2-3). The first *like a lion, and had eagle''s wings* (7:4); the second *like to a bear... three ribs in the mouth of it* (7:5); the third *like a leopard, which had upon the back of it four wings... and four heads* (7:6); the fourth *dreadful and terrible, and strong exceedingly; and it had great iron teeth... and it had ten horns* (7:7). These are *four kings, which shall arise out of the earth* (7:17) — the same four-empire succession Daniel had already seen as the metal image of chapter 2, where *the fourth kingdom shall be strong as iron* (Daniel 2:40), broken at last by the stone-kingdom *which shall never be destroyed... and it shall stand for ever* (Daniel 2:44). And John gathers all four of Daniel''s beasts into one final beast from the same sea: *a beast rise up out of the sea, having seven heads and ten horns* (Revelation 13:1), *like unto a leopard, and his feet were as the feet of a bear, and his mouth as the mouth of a lion: and the dragon gave him his power* (Revelation 13:2). The leopard, the bear, the lion of Daniel 7 converge in the end-time beast the dragon empowers — the world-empires that culminate in the power the Son of Adam and the saints at last dispossess.',
+       sv.verse_id, ev.verse_id, 'free', 30165
+  FROM _s306_dan07_lookup sv, _s306_dan07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=7 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *they shall see the Son of Adam coming in the clouds of heaven with power and great glory* (Matthew 24:30) — Yahusha names himself the cloud-rider of *one LIKE the Son of Adam came with the clouds of heaven* (Daniel 7:13); the kaph "like" the Formed Son who took flesh.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *Hereafter shall ye see the Son of Adam sitting on the right hand of power, and coming in the clouds of heaven* (Matthew 26:64) — under oath, Yahusha fuses Daniel 7:13 (*one LIKE the Son of Adam*) with Psalm 110:1; the Formed Son brought near before the Father.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *I am: and ye shall see the Son of Adam... coming in the clouds of heaven* (Mark 14:62) — the plainest claim; Yahusha IS the *one LIKE the Son of Adam* of Daniel 7:13, the kaph guarding the Formed One who took flesh.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=14 AND tv.verse_number=62
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Behold, he cometh with clouds; and every eye shall see him* (Revelation 1:7) — John seals the cloud-coming of the Son of Adam (Daniel 7:13) as the consummation; the One who was pierced.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *one like unto the Son of Adam, clothed with a garment down to the foot* (Revelation 1:13) — John keeps the kaph "LIKE unto the Son of Adam" (Daniel 7:13), now bearing the white hair and flame of the Ancient of Days (Daniel 7:9).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *upon the cloud one sat like unto the Son of Adam, having on his head a golden crown* (Revelation 14:14) — the crowned cloud-rider of Daniel 7:13-14 reaps; the kaph "LIKE unto the Son of Adam" preserved, the dominion made manifest.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *and he shall reign for ever and ever* (Revelation 11:15) — the everlasting kingdom of Daniel 7:14 (*his dominion is an everlasting dominion, which shall not pass away*) realized: the kingdoms of this world become the Messiah''s.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *Sit thou at my right hand* (Psalm 110:1) — the *my Lord* whom Yahuah seats is the Son of Adam brought near before the Ancient of Days (Daniel 7:13); Yahusha joined the two verses before Caiaphas.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=110 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★★ *Thou art my Son; this day have I begotten thee. Ask of me, and I shall give thee the heathen for thine inheritance* (Psalm 2:7-8) — the nations that serve the Son of Adam (Daniel 7:14) are the Father''s inheritance to his begotten Son; he has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★ *a kingdom, which shall never be destroyed... and it shall stand for ever* (Daniel 2:44) — the everlasting dominion of the Son of Adam (Daniel 7:14) is the indestructible stone-kingdom of the metal-image vision.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-one-like-the-son-of-adam-came-with-the-clouds-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★, extras)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *One who had a head of days... and with Him was another being whose countenance had the appearance of a man* (1 Enoch 46:1) — the Similitudes see Daniel''s pairing: the Head of Days (white like wool, Daniel 7:9) and the man-like One (the kaph "like", Daniel 7:13).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *This is the Son of Adam who hath righteousness... because Yahuah (God) of Spirits hath chosen him* (1 Enoch 46:3) — the interpreting angel names the man-like One of Daniel 7:13 the chosen, righteous Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=13
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=46 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *that Son of Adam was named In the presence of Yahuah (God) of Spirits, And his name before the Head of Days* (1 Enoch 48:2) — the Son of Adam''s name lifted before the Head of Days (the Ancient of Days), who grants the dominion of Daniel 7:14.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★★ *before the sun and the signs were created... His name was named before Yahuah (God) of Spirits* (1 Enoch 48:3) — the Son of Adam who receives the everlasting dominion (Daniel 7:14) was named before creation: the Formed Son, not a thing made.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=48 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the Elect One standeth before Yahuah (God) of Spirits, And his glory is for ever and ever* (1 Enoch 49:2) — the everlasting glory of Daniel 7:14 belongs to the Elect One; the Similitudes bind cloud-rider, Son of Adam, and Elect One into one Person.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=14
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=49 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-son-of-adam-named-before-the-sun-in-the-similitudes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★, extras)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the books were opened... and the dead were judged out of those things which were written in the books* (Revelation 20:12) — John''s opened books are Daniel''s: *the judgment was set, and the books were opened* (Daniel 7:10).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=10
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I saw a great white throne, and him that sat on it, from whose face the earth and the heaven fled away* (Revelation 20:11) — the *Ancient of days did sit* on the fiery throne (Daniel 7:9) is John''s great white throne of judgment.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=9
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the number of them was ten thousand times ten thousand, and thousands of thousands* (Revelation 5:11) — John counts the court exactly as Daniel: *thousand thousands ministered... ten thousand times ten thousand stood before him* (Daniel 7:10).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=10
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the throne... of stibium, and the top of the throne was of sapphire... a flaming fire* (1 Enoch 14:15-16) — Enoch sees the fiery throne of the Most High, twin to *his throne was like the fiery flame* (Daniel 7:9).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=9
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *the Head of Days... seated Himself upon the throne of His glory, And the books of the living were opened before Him* (1 Enoch 47:3) — the very scene of Daniel 7:9-10: the Head of Days enthroned, the books opened, the host standing.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=10
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=47 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-ancient-of-days-the-judgment-set-and-the-books-were-opened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *made us... kings and priests: and we shall reign on the earth* (Revelation 5:10) — the saints who *take the kingdom, and possess the kingdom for ever* (Daniel 7:18); the two-house redeemed reigning under the Son of Adam.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=18
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they lived and reigned with Messiah (Christ) a thousand years* (Revelation 20:4) — the saints who endured the horn''s war (Daniel 7:21) now possess the kingdom (Daniel 7:18), reigning with the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=18
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Fear not, little flock; for it is your Father''s good pleasure to give you the kingdom* (Luke 12:32) — the kingdom *given to the people of the saints* (Daniel 7:27) is the Father''s gift, not seized.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=27
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Come, ye blessed of my Father, inherit the kingdom prepared for you from the foundation of the world* (Matthew 25:34) — the kingdom given to the saints (Daniel 7:27) is the inheritance the King grants the blessed of his Father.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=27
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *a kingdom, which shall never be destroyed... and it shall stand for ever* (Daniel 2:44) — the kingdom the saints possess for ever (Daniel 7:18) is the indestructible stone-kingdom of the metal-image vision.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=18
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-saints-of-the-most-high-shall-take-and-possess-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim* (2 Thessalonians 2:4) — Paul''s man of sin is Daniel''s little horn that *speak[s] great words against the El Elyon (most High)* (Daniel 7:25).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-little-horn-thinks-to-change-times-and-laws'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *a mouth speaking great things and blasphemies... power... to continue forty and two months* (Revelation 13:5) — Daniel''s great-speaking mouth (Daniel 7:8,25); the *time and times and dividing of time* becomes the forty-two months.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-little-horn-thinks-to-change-times-and-laws'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *it was given unto him to make war with the saints, and to overcome them* (Revelation 13:7) — Daniel''s horn that *made war with the saints, and prevailed* (Daniel 7:21), only until the Ancient of days came (Daniel 7:22).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-little-horn-thinks-to-change-times-and-laws'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he shall also stand up against the Prince of princes; but he shall be broken without hand* (Daniel 8:25) — the same self-magnifying king as the horn (Daniel 7:25), broken by heaven''s judgment, not human hand.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-little-horn-thinks-to-change-times-and-laws'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the king shall do according to his will... and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36) — the willful king blasphemes as the horn does (Daniel 7:25); one arrogant power across Daniel''s visions.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=11 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-little-horn-thinks-to-change-times-and-laws'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Concerning the feasts of Yahuah (LORD)... even these are my feasts* (Leviticus 23:2) — the *times and laws* the horn merely THINKS to change (Daniel 7:25) are Yahuah''s own appointed times and Torah; counterfeited, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-little-horn-thinks-to-change-times-and-laws'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *a beast rise up out of the sea, having seven heads and ten horns* (Revelation 13:1) — John''s beast rises where Daniel''s did (*four great beasts came up from the sea*, Daniel 7:3), bearing the ten horns of the fourth beast (Daniel 7:7).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-four-beasts-from-the-sea-the-four-kingdoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *like unto a leopard... feet... as the feet of a bear... mouth as the mouth of a lion* (Revelation 13:2) — John gathers all four of Daniel''s beasts (leopard 7:6, bear 7:5, lion 7:4) into one end-time beast the dragon empowers.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=6
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-four-beasts-from-the-sea-the-four-kingdoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the fourth kingdom shall be strong as iron... shall it break in pieces and bruise* (Daniel 2:40) — the iron-toothed fourth beast (Daniel 7:7) is the iron fourth kingdom of the metal image; one empire, two visions.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-four-beasts-from-the-sea-the-four-kingdoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *a kingdom, which shall never be destroyed... it shall break in pieces and consume all these kingdoms* (Daniel 2:44) — the four beasts are broken at last by the stone-kingdom given to the Son of Adam and the saints (Daniel 7:14,18).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s306_dan07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-7-the-four-beasts-from-the-sea-the-four-kingdoms'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_daniel_8.sql (Daniel 8) -----
+-- Chapter: Daniel 8 — the ram (Media-Persia) and the he-goat (Greece); the LITTLE HORN that waxed
+-- exceeding great toward the pleasant land, cast down the host and the stars, magnified himself
+-- against the prince of the host, took away the daily sacrifice and cast down the sanctuary; the
+-- 2300 evening-mornings and the cleansing of the sanctuary; Gabriel the angel-interpreter; the king
+-- of fierce countenance who stands up against the Prince of princes but is BROKEN WITHOUT HAND; the
+-- sealed vision for the time of the end.
+-- Tag: dan08   Temp view: _s306_dan08_lookup
+-- Sort band: base 30175, step 3 -> threads at 30175, 30178, 30181, 30184 (4 threads)
+-- Source of EVERY row: 'canon','daniel',8,v
+--
+-- Daniel 8 coverage:
+--   v.1-2 (third year of Belshazzar; Shushan in the palace; the river of Ulai)
+--        NT:     none warranted (vision setting)
+--        Extras: none warranted
+--        Tanakh: none warranted (historical/locational frame)
+--   v.3-8,20-22 (the ram with two horns = Media and Persia; the he goat from the west = Greece, the
+--          great horn the first king, broken, four come up for it)
+--        NT:     none warranted (the empires identified by Gabriel in vv.20-22)
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 7:17 (these great beasts... are four kings), ★ Daniel 2:39 (after thee
+--                shall arise another kingdom... a third kingdom of brass) — THREAD 4 (lateral to Dan 7
+--                beasts and Dan 2 image; the same succession of empires)
+--   ★ v.9-12 (a little horn waxed exceeding great toward the pleasant land; cast down the host and
+--          the stars; magnified himself to the prince of the host; the daily sacrifice taken away;
+--          the place of his sanctuary cast down; cast down the truth)
+--        NT:     ★★ 2 Thessalonians 2:4 (exalteth himself above all that is called Elohim... sitteth
+--                in the temple), ★ 2 Thessalonians 2:3 (that man of sin be revealed), ★★ Revelation
+--                13:5 (a mouth speaking great things and blasphemies; forty and two months), ★ Rev
+--                13:6 (blasphemy against Elohim, his tabernacle), ★ Rev 13:7 (war with the saints) — THREAD 1
+--        Extras: ★★ 1 Maccabees 1:54 (set up the abomination of desolation upon the altar), ★ 1
+--                Maccabees 1:45 (forbid sacrifice... profane the sabbaths) — THREAD 1 (the Antiochus
+--                prototype: the daily taken away, the sanctuary defiled — the historical horn the
+--                vision sees THROUGH to the end)
+--        Tanakh: ★★ Daniel 7:25 (speak great words against the most High, wear out the saints), ★★
+--                Daniel 11:31 (pollute the sanctuary, take away the daily sacrifice, place the
+--                abomination), ★ Daniel 12:11 (the daily sacrifice taken away, the abomination set up),
+--                ★ Daniel 9:27 (cause the sacrifice to cease... abominations... desolate) — THREAD 1
+--   ★ v.23-25 (a king of fierce countenance, understanding dark sentences; destroy the holy people;
+--          magnify himself in his heart; stand up against the Prince of princes; BROKEN WITHOUT HAND)
+--        NT:     (joined to THREAD 1 — the man of sin / beast)
+--        Extras: (joined to THREAD 1)
+--        Tanakh: ★★ Daniel 2:34 (a stone was cut out WITHOUT HANDS, which smote the image), ★ Daniel
+--                2:45 (the stone cut out of the mountain without hands) — THREAD 1 (the horn "broken
+--                without hand" 8:25 echoes the stone "cut out without hands" — judged by no human power)
+--   ★ v.13-14 (How long shall be the vision... the daily sacrifice and the transgression of
+--          desolation... the sanctuary and the host trodden under foot? Unto 2300 days; then shall
+--          the sanctuary be cleansed)
+--        NT:     ★★ Revelation 11:2 (the holy city shall they tread under foot forty and two months) — THREAD 2
+--        Extras: none warranted (Maccabean defilement held to THREAD 1)
+--        Tanakh: ★ Daniel 12:10 (many shall be purified, and made white, and tried) — THREAD 2 (the
+--                appointed limit on the desolation; the cleansing/purifying at the end)
+--   ★ v.15-19,26 (Gabriel, make this man to understand the vision; at the time of the end shall be
+--          the vision; the last end of the indignation; shut thou up the vision, for many days)
+--        NT:     ★ Revelation 22:10 (Seal not the sayings of the prophecy of this book: the time is at hand) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 12:4 (shut up the words, and seal the book, to the time of the end), ★★
+--                Daniel 12:9 (the words are closed up and sealed till the time of the end) — THREAD 3
+--                (the angel-interpreter and the sealed vision for the appointed end)
+--   v.27 (Daniel fainted, was sick, astonished at the vision; none understood it)
+--        NT:     none warranted (held to THREAD 3 — the vision sealed, not yet understood)
+--        Extras: none warranted
+--        Tanakh: none separate (the sealing-effect; woven in THREAD 3 prose)
+--
+-- Threads (slug — target libraries):
+--   1. daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host — NT (2 Thess 2, Rev 13)
+--      + Extras (1 Maccabees 1) + Tanakh (Daniel 7, 11, 12, 9, 2) [extras]
+--      (★ the self-exalting horn that takes the daily and defiles the sanctuary; man of sin / beast;
+--       Antiochus the prototype; broken without hand = the stone cut without hands)
+--   2. daniel-8-then-shall-the-sanctuary-be-cleansed — NT (Revelation 11) + Tanakh (Daniel 12) [free]
+--      (★ the 2300 evening-mornings: the appointed limit on the desolation; the holy city trodden a
+--       measured time; the purifying at the end)
+--   3. daniel-8-gabriel-make-this-man-to-understand-the-vision — NT (Revelation 22) + Tanakh (Daniel 12) [free]
+--      (★ the angel-interpreter; the sealed vision for the time of the end)
+--   4. daniel-8-the-ram-and-the-he-goat-the-kingdoms-identified — Tanakh (Daniel 7, Daniel 2) [free]
+--      (the ram = Media-Persia, the he-goat = Greece; lateral to Dan 7's beasts and Dan 2's image —
+--       the same succession of empires moving toward the kingdom that shall never be destroyed)
+--
+-- Framing notes:
+--   ★ THE LITTLE HORN AGAINST THE PRINCE OF PRINCES (THREAD 1): *And out of one of them came forth a
+--      little horn, which waxed exceeding great, toward the south, and toward the east, and toward the
+--      pleasant land... Yea, he magnified himself even to the prince of the host, and by him the daily
+--      sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:9-11); the
+--      king of fierce countenance *shall magnify himself in his heart... he shall also stand up against
+--      the Prince of princes; but he shall be broken without hand* (8:25). This is the self-exalting
+--      power that defiles the sanctuary. Paul weaves it forward: *that man of sin... who opposeth and
+--      exalteth himself above all that is called Elohim (God)... so that he as Elohim (God) sitteth in
+--      the temple of Elohim (God)* (2 Thess 2:3-4); John sees the same beast — *a mouth speaking great
+--      things and blasphemies... to make war with the saints* (Rev 13:5-7). Laterally it is Daniel's
+--      own little horn that *speak great words against the most High, and shall wear out the saints*
+--      (Dan 7:25), the arms that *take away the daily sacrifice, and... place the abomination that
+--      maketh desolate* (Dan 11:31; Dan 12:11; Dan 9:27). The Antiochus persecution is the historical
+--      prototype the vision sees through: *they set up the abomination of desolation upon the altar*
+--      (1 Macc 1:54), forbidding sacrifice and profaning the sabbaths (1:45). And mark the verdict:
+--      he *stand up against the Prince of princes; but he shall be broken WITHOUT HAND* (8:25) — the
+--      same judgment as the stone *cut out without hands* that smote the image (Dan 2:34,45): no human
+--      power topples him; Yahuah breaks him.
+--   ★ THEN SHALL THE SANCTUARY BE CLEANSED (THREAD 2): *How long shall be the vision concerning the
+--      daily sacrifice, and the transgression of desolation, to give both the sanctuary and the host
+--      to be trodden under foot? ... Unto two thousand and three hundred days; then shall the sanctuary
+--      be cleansed* (Daniel 8:13-14). The desolation has an APPOINTED LIMIT and the sanctuary a
+--      cleansing. John measures the same trodden time: *the holy city shall they tread under foot forty
+--      and two months* (Rev 11:2); and Daniel's own end-word answers the purifying: *Many shall be
+--      purified, and made white, and tried* (Dan 12:10). The treading is measured; the cleansing comes.
+--   ★ GABRIEL, MAKE THIS MAN TO UNDERSTAND (THREAD 3): *Gabriel, make this man to understand the
+--      vision... Understand, O son of Adam: for at the time of the end shall be the vision* (Daniel
+--      8:16-17); *shut thou up the vision; for it shall be for many days* (8:26). The angel-interpreter
+--      seals the vision for the appointed end — exactly as Daniel 12 will: *shut up the words, and seal
+--      the book, even to the time of the end* (Dan 12:4); *the words are closed up and sealed till the
+--      time of the end* (Dan 12:9). At the consummation the seal is lifted: *Seal not the sayings of
+--      the prophecy of this book: for the time is at hand* (Rev 22:10). The vision belongs to the end.
+--   THE RAM AND THE HE-GOAT (THREAD 4): Gabriel names the empires plainly — *The ram which thou sawest
+--      having two horns are the kings of Media and Persia. And the rough goat is the king of Grecia*
+--      (Daniel 8:20-21). The same succession Daniel saw as the four beasts — *These great beasts, which
+--      are four, are four kings* (Dan 7:17) — and as the image's metals — *after thee shall arise
+--      another kingdom... and another third kingdom of brass, which shall bear rule over all the earth*
+--      (Dan 2:39). One vision in three figures, moving toward the kingdom that *shall never be
+--      destroyed* (Dan 2:44).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (vision setting — Shushan, the Ulai), v.18 (the deep sleep,
+--      set upright — woven in THREAD 3 prose), v.27 (Daniel sick, none understood it — the sealing
+--      effect, held in THREAD 3). All recorded above.
+
+CREATE TEMP VIEW _s306_dan08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the little horn that magnified himself against the Prince of princes
+    ('canon','daniel',8,11,'canon','2-thessalonians',2,4,'free',
+      E'*Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). Paul''s man of sin is Daniel''s self-exalting horn carried forward: the horn *magnified himself even to the prince of the host, and by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:11). The same defiance of the sanctuary and the same self-deification — he sets himself in the holy place against the One who dwells there.'),
+    ('canon','daniel',8,11,'canon','2-thessalonians',2,3,'free',
+      E'*Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition* (2 Thessalonians 2:3). The horn that *magnified himself even to the prince of the host* (Daniel 8:11) and the king who *shall magnify himself in his heart... against the Prince of princes* (8:25) are the pattern of the man of sin revealed at the end — the self-exalting power judged at the consummation.'),
+    ('canon','daniel',8,11,'canon','revelation',13,5,'free',
+      E'*And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months* (Revelation 13:5). The little horn that *waxed exceeding great* and *magnified himself even to the prince of the host* (Daniel 8:9,11) is John''s beast with the boastful, blaspheming mouth — given a measured time to prosper, as the horn *practised, and prospered* (8:12).'),
+    ('canon','daniel',8,11,'canon','revelation',13,6,'free',
+      E'*And he opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle, and them that dwell in heaven* (Revelation 13:6). The horn whose magnifying *cast down the place of his sanctuary* (Daniel 8:11) is the beast whose blasphemy is aimed at the tabernacle and the dwellers of heaven — the same assault on the sanctuary and the host of heaven (8:10-11).'),
+    ('canon','daniel',8,24,'canon','revelation',13,7,'free',
+      E'*And it was given unto him to make war with the saints, and to overcome them: and power was given him over all kindreds, and tongues, and nations* (Revelation 13:7). The king of fierce countenance who *shall destroy wonderfully... and shall destroy the mighty and the holy people* (Daniel 8:24) is the beast given to make war with the saints. The horn''s warfare against *the holy people* is the same end-time assault.'),
+    ('canon','daniel',8,11,'canon','daniel',7,25,'free',
+      E'*And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time* (Daniel 7:25). Daniel''s own earlier little horn is the same self-exalting power: the horn of chapter 8 *magnified himself even to the prince of the host* and took *the daily sacrifice* (8:11); the horn of chapter 7 *speak great words against the most High* and wears out the saints for an appointed, limited time.'),
+    ('canon','daniel',8,11,'canon','daniel',11,31,'free',
+      E'*And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31). The very deed of the little horn — *by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:11) — is spelled out again in chapter 11: the sanctuary polluted, the daily taken, the abomination set up. One desolating power across the visions.'),
+    ('canon','daniel',8,11,'canon','daniel',12,11,'free',
+      E'*And from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days* (Daniel 12:11). The taking of *the daily sacrifice* and the casting down of the sanctuary in 8:11 is measured again at the close of the book — the daily removed, the abomination set up, a numbered count to the end. The same desolation the angel measured in 8:13-14.'),
+    ('canon','daniel',8,11,'canon','daniel',9,27,'free',
+      E'*And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation* (Daniel 9:27). The horn that *the daily sacrifice was taken away* by him (Daniel 8:11) is the prince who *cause the sacrifice and the oblation to cease* and brings the abomination — the same cessation and desolation, bounded *until the consummation*.'),
+    ('canon','daniel',8,25,'canon','daniel',2,34,'free',
+      E'*Thou sawest till that a stone was cut out without hands, which smote the image upon his feet that were of iron and clay, and brake them to pieces* (Daniel 2:34). The king who *stand up against the Prince of princes; but he shall be broken WITHOUT HAND* (Daniel 8:25) is judged exactly as the image is broken — by a stone *cut out without hands*. No human power topples him; Yahuah (the LORD) breaks him.'),
+    ('canon','daniel',8,25,'canon','daniel',2,45,'free',
+      E'*Forasmuch as thou sawest that the stone was cut out of the mountain without hands, and that it brake in pieces the iron, the brass, the clay, the silver, and the gold... and the dream is certain, and the interpretation thereof sure* (Daniel 2:45). The horn *broken without hand* (Daniel 8:25) and the stone *cut out of the mountain without hands* (2:45) are the same verdict: the self-exalting kingdom is shattered not by men but by the kingdom of the great Elohim (God) that shall never be destroyed.'),
+    ('canon','daniel',8,11,'apocrypha','1-maccabees',1,54,'extras',
+      E'*Now the fifteenth day of the month Casleu, in the hundred forty and fifth year, they set up the abomination of desolation upon the altar, and builded idol altars throughout the cities of Juda on every side* (1 Maccabees 1:54). The history records the prototype of the horn''s deed: *by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:11). Antiochus set the abomination on the very altar — the desolation Daniel saw, enacted in time, and the vision sees through it to the end.'),
+    ('canon','daniel',8,11,'apocrypha','1-maccabees',1,45,'extras',
+      E'*And forbid burnt offerings, and sacrifice, and drink offerings, in the temple; and that they should profane the sabbaths and festival days* (1 Maccabees 1:45). The taking of *the daily sacrifice* (Daniel 8:11) is recorded as it happened: the offerings forbidden, the sabbaths and feasts profaned, the sanctuary polluted. The appointed times themselves were the target — the horn wars against Yahuah''s (the LORD''s) calendar and the daily before his face.'),
+
+    -- THREAD 2 (★): then shall the sanctuary be cleansed — the 2300 evening-mornings
+    ('canon','daniel',8,13,'canon','revelation',11,2,'free',
+      E'*But the court which is without the temple leave out, and measure it not; for it is given unto the Gentiles: and the holy city shall they tread under foot forty and two months* (Revelation 11:2). The saint''s question — *How long... to give both the sanctuary and the host to be trodden under foot?* (Daniel 8:13) — is answered with the same measured treading: the holy city trodden a fixed term. The desolation is bounded; the cleansing of 8:14 follows the appointed limit.'),
+    ('canon','daniel',8,14,'canon','daniel',12,10,'free',
+      E'*Many shall be purified, and made white, and tried; but the wicked shall do wickedly: and none of the wicked shall understand; but the wise shall understand* (Daniel 12:10). The promise *then shall the sanctuary be cleansed* (Daniel 8:14) reaches its end-time fulfilment: at the time of the end the people themselves are purified and made white. The cleansing of the sanctuary and the purifying of the wise are one appointed work.'),
+
+    -- THREAD 3 (★): Gabriel, make this man to understand — the sealed vision for the time of the end
+    ('canon','daniel',8,26,'canon','daniel',12,4,'free',
+      E'*But thou, O Daniel, shut up the words, and seal the book, even to the time of the end: many shall run to and fro, and knowledge shall be increased* (Daniel 12:4). The command *shut thou up the vision; for it shall be for many days* (Daniel 8:26) is repeated at the book''s close: the words sealed *to the time of the end*. The vision belongs to the appointed end, kept until its hour.'),
+    ('canon','daniel',8,26,'canon','daniel',12,9,'free',
+      E'*And he said, Go thy way, Daniel: for the words are closed up and sealed till the time of the end* (Daniel 12:9). Daniel is told twice to seal the vision — *shut thou up the vision; for it shall be for many days* (Daniel 8:26) — *the words are closed up and sealed till the time of the end* (12:9). Gabriel set the rule in chapter 8: *at the time of the end shall be the vision* (8:17).'),
+    ('canon','daniel',8,17,'canon','revelation',22,10,'free',
+      E'*And he saith unto me, Seal not the sayings of the prophecy of this book: for the time is at hand* (Revelation 22:10). Gabriel told Daniel *at the time of the end shall be the vision* (Daniel 8:17) and bade him seal it; John, standing at the consummation, is told the opposite — *Seal not... for the time is at hand*. The vision Daniel sealed for the end is opened when the end has come.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 4 (Tanakh-only) cross_references — the ram and the he-goat, the kingdoms identified
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','daniel',8,20,'canon','daniel',7,17,'free',
+      E'*These great beasts, which are four, are four kings, which shall arise out of the earth* (Daniel 7:17). The ram and the he-goat Gabriel names — *the kings of Media and Persia... the king of Grecia* (Daniel 8:20-21) — are the same succession Daniel saw as the four beasts. One unfolding of empires, shown twice and interpreted by the heavenly messenger.'),
+    ('canon','daniel',8,21,'canon','daniel',2,39,'free',
+      E'*And after thee shall arise another kingdom inferior to thee, and another third kingdom of brass, which shall bear rule over all the earth* (Daniel 2:39). The he-goat that is *the king of Grecia* (Daniel 8:21) is the third kingdom of Nebuchadnezzar''s image, the brass that bears rule over all the earth. Ram, goat, beast, metal — the same powers, moving toward the kingdom of the great Elohim (God) that shall never be destroyed (Daniel 2:44).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★) — extras tier (1 Maccabees members)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host',
+       E'The little horn that magnified himself against the Prince of princes — but broken without hand',
+       E'Out of the broken Greek horn rises the figure the whole vision turns on: *And out of one of them came forth a little horn, which waxed exceeding great, toward the south, and toward the east, and toward the pleasant land. And it waxed great, even to the host of heaven; and it cast down some of the host and of the stars to the ground, and stamped upon them. Yea, he magnified himself even to the prince of the host, and by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:9-11). At the end Gabriel names him again: *a king of fierce countenance, and understanding dark sentences, shall stand up... he shall magnify himself in his heart, and by peace shall destroy many: he shall also stand up against the Prince of princes; but he shall be broken without hand* (Daniel 8:23,25). This is the self-exalting power that defiles the sanctuary and takes away the daily. Paul carries it forward to the man of sin: *Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition; Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:3-4). John sees the same beast: *And there was given unto him a mouth speaking great things and blasphemies... And he opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle... And it was given unto him to make war with the saints, and to overcome them* (Revelation 13:5-7). And it is Daniel''s own little horn of chapter 7 — *he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws* (Daniel 7:25) — and the desolating power of chapters 11, 12, and 9: *they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31); *from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up* (Daniel 12:11); *in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate* (Daniel 9:27). The history of Antiochus is the prototype the vision sees through: *they set up the abomination of desolation upon the altar* (1 Maccabees 1:54), having *forbid burnt offerings, and sacrifice, and drink offerings, in the temple; and that they should profane the sabbaths and festival days* (1 Maccabees 1:45) — the horn wars against Yahuah''s (the LORD''s) appointed times and the daily before his face. But mark the verdict that breaks the boast: he *stand up against the Prince of princes; but he shall be broken WITHOUT HAND* (Daniel 8:25) — the very judgment of the image, *a stone was cut out without hands, which smote the image* (Daniel 2:34), *the stone was cut out of the mountain without hands* (Daniel 2:45). No human arm topples him; the kingdom of the great Elohim (God) that shall never be destroyed shatters him.',
+       sv.verse_id, ev.verse_id, 'extras', 30175
+  FROM _s306_dan08_lookup sv, _s306_dan08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=8 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-8-then-shall-the-sanctuary-be-cleansed',
+       E'Then shall the sanctuary be cleansed — the appointed limit on the desolation',
+       E'The treading-down of the holy place is not endless; it is measured. A saint asks the question the whole vision presses: *How long shall be the vision concerning the daily sacrifice, and the transgression of desolation, to give both the sanctuary and the host to be trodden under foot? And he said unto me, Unto two thousand and three hundred days; then shall the sanctuary be cleansed* (Daniel 8:13-14). The desolation has an APPOINTED END, and beyond it a cleansing. John measures the same trodden time in his vision: *the holy city shall they tread under foot forty and two months* (Revelation 11:2) — a fixed term, not forever. And Daniel''s own end-word names the purifying that answers the cleansing: *Many shall be purified, and made white, and tried; but the wicked shall do wickedly... but the wise shall understand* (Daniel 12:10). The sanctuary cleansed and the people purified are one appointed work at the close. The horn prospers for a measured season (8:12), and then the limit falls and the holy place is made clean.',
+       sv.verse_id, ev.verse_id, 'free', 30178
+  FROM _s306_dan08_lookup sv, _s306_dan08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=8 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-8-gabriel-make-this-man-to-understand-the-vision',
+       E'Gabriel, make this man to understand the vision — sealed for the time of the end',
+       E'When Daniel sought the meaning, the angel-interpreter was sent: *And I heard a man''s voice between the banks of Ulai, which called, and said, Gabriel, make this man to understand the vision. So he came near where I stood... but he said unto me, Understand, O son of Adam: for at the time of the end shall be the vision* (Daniel 8:16-17). The vision belongs to the appointed end, and so it is sealed: *And the vision of the evening and the morning which was told is true: wherefore shut thou up the vision; for it shall be for many days* (Daniel 8:26) — and Daniel is left astonished, *but none understood it* (8:27). The book''s close repeats the very command: *But thou, O Daniel, shut up the words, and seal the book, even to the time of the end* (Daniel 12:4); *Go thy way, Daniel: for the words are closed up and sealed till the time of the end* (Daniel 12:9). The sealed vision waits for its hour. And when that hour has come, the seal is lifted — John at the consummation is told the opposite of Daniel: *Seal not the sayings of the prophecy of this book: for the time is at hand* (Revelation 22:10). What Daniel sealed for the end is opened when the end is here; the vision was always for the time appointed.',
+       sv.verse_id, ev.verse_id, 'free', 30181
+  FROM _s306_dan08_lookup sv, _s306_dan08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=8 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (Tanakh-only)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-8-the-ram-and-the-he-goat-the-kingdoms-identified',
+       E'The ram and the he-goat — the kingdoms named, one vision in three figures',
+       E'The vision is not left to guesswork; Gabriel names the empires: *The ram which thou sawest having two horns are the kings of Media and Persia. And the rough goat is the king of Grecia: and the great horn that is between his eyes is the first king* (Daniel 8:20-21). The ram pushing west, north, and south (8:4) is the Medo-Persian power; the he-goat from the west, touching not the ground, with the notable horn (8:5), is Greece, its great horn broken and four kingdoms rising for it (8:8,22). This is the same succession Daniel saw in his other visions, shown under different figures. As the four beasts: *These great beasts, which are four, are four kings, which shall arise out of the earth* (Daniel 7:17). As the metals of the image: *after thee shall arise another kingdom inferior to thee, and another third kingdom of brass, which shall bear rule over all the earth* (Daniel 2:39). Ram and goat, beast and metal — the kingdoms of men rising and falling in their turn, every vision bending toward the same end: the kingdom of the great Elohim (God) that *shall never be destroyed... and it shall stand for ever* (Daniel 2:44).',
+       sv.verse_id, ev.verse_id, 'free', 30184
+  FROM _s306_dan08_lookup sv, _s306_dan08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=8 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4) — the man of sin is Daniel''s horn that magnified himself to the prince of the host and cast down the sanctuary (8:11).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *that man of sin be revealed, the son of perdition* (2 Thessalonians 2:3) — the self-exalting horn (8:11,25) is the pattern of the man of sin revealed at the end.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *a mouth speaking great things and blasphemies... forty and two months* (Revelation 13:5) — the horn that waxed exceeding great and prospered (8:9,12) is John''s beast, given a measured time to boast.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *blasphemy against Elohim (God), to blaspheme his name, and his tabernacle* (Revelation 13:6) — the horn cast down the host of heaven and the sanctuary (8:10-11); the beast blasphemes the tabernacle and heaven''s dwellers.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *to make war with the saints, and to overcome them* (Revelation 13:7) — the king of fierce countenance shall destroy the mighty and the holy people (8:24); the beast wars on the saints.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=24
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *speak great words against the El Elyon (most High)... and think to change times and laws* (Daniel 7:25) — Daniel''s own earlier little horn; the same self-exalting power for an appointed, limited time.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *pollute the sanctuary of strength, and shall take away the daily sacrifice, and... place the abomination* (Daniel 11:31) — the horn''s deed of 8:11 spelled out: sanctuary polluted, daily taken, abomination set up.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up* (Daniel 12:11) — the daily removed and the abomination set up, counted to the end; the same desolation of 8:13-14.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *in the midst of the week he shall cause the sacrifice and the oblation to cease... until the consummation* (Daniel 9:27) — the prince who stops the daily and brings the abomination; the same cessation, bounded to the end.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★★ *a stone was cut out without hands, which smote the image* (Daniel 2:34) — the horn ''broken without hand'' (8:25) is judged as the image is: by a stone cut without hands, no human power.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=25
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'★ *the stone was cut out of the mountain without hands... the dream is certain* (Daniel 2:45) — the horn broken without hand and the stone cut without hands are one verdict: shattered by the kingdom of the great Elohim (God).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=25
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'★★ *they set up the abomination of desolation upon the altar* (1 Maccabees 1:54) — the Antiochus prototype enacted in time: the daily taken, the sanctuary cast down (8:11), the abomination on the altar.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 13, E'★ *forbid burnt offerings, and sacrifice... and... profane the sabbaths and festival days* (1 Maccabees 1:45) — the daily taken (8:11) is the appointed times themselves attacked: the horn wars on Yahuah''s (the LORD''s) calendar.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-little-horn-that-magnified-himself-against-the-prince-of-the-host'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the holy city shall they tread under foot forty and two months* (Revelation 11:2) — the saint''s ''how long... trodden under foot?'' (8:13) answered: the treading is measured, not endless.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=13
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-then-shall-the-sanctuary-be-cleansed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Many shall be purified, and made white, and tried... the wise shall understand* (Daniel 12:10) — the sanctuary cleansed (8:14) and the people purified are one appointed end-time work.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=14
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-then-shall-the-sanctuary-be-cleansed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *shut up the words, and seal the book, even to the time of the end* (Daniel 12:4) — the command ''shut thou up the vision; for it shall be for many days'' (8:26) repeated at the book''s close.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=26
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-gabriel-make-this-man-to-understand-the-vision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the words are closed up and sealed till the time of the end* (Daniel 12:9) — Gabriel''s rule of 8:17 (''at the time of the end shall be the vision'') sealed to the appointed hour.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=26
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-gabriel-make-this-man-to-understand-the-vision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Seal not the sayings of the prophecy of this book: for the time is at hand* (Revelation 22:10) — what Daniel sealed for the end (8:17,26) is opened when the end is here.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=17
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-gabriel-make-this-man-to-understand-the-vision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (Tanakh-only)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *These great beasts, which are four, are four kings* (Daniel 7:17) — the ram and the goat (8:20-21) are the same empires Daniel saw as the four beasts, interpreted by the messenger.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=20
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-ram-and-the-he-goat-the-kingdoms-identified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *a third kingdom of brass, which shall bear rule over all the earth* (Daniel 2:39) — the he-goat ''the king of Grecia'' (8:21) is the brass of Nebuchadnezzar''s image; ram, goat, beast, metal, one succession.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=8 AND sv.verse_number=21
+  JOIN _s306_dan08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-8-the-ram-and-the-he-goat-the-kingdoms-identified'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session306 — Daniel cross-references complete.'
