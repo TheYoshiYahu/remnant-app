@@ -499,3 +499,93 @@ resolve / any judgment call you made. Keep it tight. Do NOT apply to the DB — 
   my Father** — Tanakh: Prov 26:11, Deut 33:9 (loyalty above kin), Ps 22:22 (my brethren). FRAME:
   doing the Father's will = the true family — the anti-antinomian seal again (the will of the Father
   is His commandment).
+
+---
+## 12. PER-CHAPTER COVERAGE CHECKLIST — PACK 4 (Matthew 13, 14, 15, 16, 17) — closes Matthew 1-17
+
+### MATTHEW 13 (58 v) — band 11360+ — the parables of the kingdom
+- **13:1-23 the sower / why parables / seeing they see not** — Tanakh: Isa 6:9-10 (hear ye indeed
+  but understand not — Yahusha quotes it), Isa 55:10-11 (the rain and the word), Jer 4:3 (sow not
+  among thorns), Ezek 12:2 (eyes to see and see not). Frame: the word received in the heart.
+- **13:24-30,36-43 the tares / the harvest the end of the world** — Tanakh: Dan 12:3 (they that be
+  wise shall shine), Mal 3:18 / 4:1 (discern between righteous and wicked / the day that shall burn),
+  Joel 3:13 (put in the sickle), Zeph 1:3 (the stumblingblocks). Extras: 2 Esdras 4:28-32 (the seed
+  of evil sown) / 1 Enoch on the judgment if warranted.
+- **13:31-33 the mustard seed / the leaven** — Tanakh: Ezek 17:23 (the goodly cedar, birds lodge in
+  the branches), Dan 4:12,21 (the great tree), Ps 104:12. Frame: the kingdom's hidden growth.
+- **13:34-35 I will open my mouth in parables / things kept secret from the foundation** — Tanakh:
+  Ps 78:2 (I will open my mouth in a parable — Matthew quotes it), Ps 49:4. 
+- **13:44-50 the hidden treasure / the pearl / the net** — Tanakh: Prov 2:4-5 (search for her as
+  hid treasures), Prov 3:14-15 (more precious than rubies), Mal 3:17 (my jewels), Hab 1:14-15 (men
+  as fishes of the net). Extras: Sirach 51:25-26 (buy wisdom). Frame: the kingdom worth all.
+- **13:51-58 the householder bringeth new and old / a prophet not without honour** — Tanakh: Jer
+  6:16 (old paths), Song; 1 Sam; Frame: new AND old together — the scribe of the kingdom keeps both.
+
+### MATTHEW 14 (36 v) — band 11390+ — death of John / feeding the 5000 / walking on the sea
+- **14:1-12 death of John the Baptist / Herod / Herodias** — Tanakh: 1 Kgs 19:2,10 (Jezebel seeks
+  Elijah's life — the Elijah pattern), Lev 18:16 / 20:21 (thy brother's wife — why John rebuked),
+  Prov 29:10. Frame: the prophet slain, Elijah-figure.
+- **14:13-21 feeding the five thousand** — Tanakh: 2 Kgs 4:42-44 (Elisha feeds a hundred, and left
+  thereof), Exod 16:12-15 (manna), Ps 78:19-25 (can he furnish a table), Ps 145:15-16 (thou givest
+  them their meat). Frame: the Shepherd feeds the flock in the wilderness; greater than Elisha/Moses.
+- **14:22-33 walking on the sea / it is I, be not afraid / Peter / Son of God** — Tanakh: Job 9:8
+  (treadeth upon the waves of the sea), Ps 77:19 (thy way is in the sea), Ps 107:29-30 (he maketh the
+  storm a calm), Isa 43:2 (when thou passest through the waters), Exod 3:14 (I AM — "it is I"). Frame:
+  the Creator's authority in the Formed Son; "it is I" echoes the divine self-naming through the Son.
+- **14:34-36 they touched the hem of his garment** — Tanakh: Num 15:38-39 (the fringe), Mal 4:2
+  (healing in his wings). Frame: the tzitzit/wings of Torah (as in ch9).
+
+### MATTHEW 15 (39 v) — band 11420+ — ★★ tradition vs commandment / what defiles / the Canaanite woman / feeding 4000
+- **★★ 15:1-9 why do thy disciples transgress the tradition / ye made the commandment of none
+  effect / this people honoureth me with their lips** — Tanakh: Exod 20:12 / Deut 5:16 (honour thy
+  father — the commandment Corban voided), Exod 21:17 / Lev 20:9 (curseth father), Isa 29:13 (this
+  people draw near with their mouth... their fear toward me is taught by the precept of men — Yahusha
+  quotes it). FRAME: Yahusha DEFENDS the Torah commandment AGAINST man-made tradition (Corban). This
+  is NOT Jesus loosening the law — it is the law upheld against the traditions of men. THE anchor.
+- **15:10-20 not that which goeth into the mouth / out of the heart proceed evil thoughts** — Tanakh:
+  Gen 6:5 (the imagination of the heart evil), Jer 17:9 (the heart deceitful), Ps 51:6,10 (truth in
+  the inward parts / create a clean heart), Prov 4:23 (keep thy heart). FRAME: the context is EATING
+  WITH UNWASHED HANDS (the Pharisees' tradition, v.2,20) — NOT a repeal of Lev 11/Deut 14 clean/
+  unclean foods; "to eat with unwashen hands defileth not" (v.20) is the actual subject. Guard this.
+- **15:21-28 the Canaanite woman / the children's bread / the dogs / crumbs** — Tanakh: Isa 56:6-8
+  (the stranger that joineth himself, gathered to Israel), Ps 22:26-27 (all the ends of the world
+  shall turn), 1 Kgs 17:9 (the Zarephath widow — a gentile woman of faith). Two-house: the lost sheep
+  of Israel FIRST, then the believing stranger grafted in (Rom 11 guard).
+- **15:29-39 healing the multitudes / feeding the four thousand** — Tanakh: Isa 35:5-6 (the dumb sing,
+  the lame leap — Matthew lists them), Ps 107:9 (he filleth the hungry), Exod 16. Frame: the
+  Servant's signs; the table in the wilderness again.
+
+### MATTHEW 16 (28 v) — band 11450+ — leaven of the Pharisees / ★★ Peter's confession + the keys / the cross
+- **16:1-4 the sign of the times / no sign but Jonah** — Tanakh: Jonah 1:17, 1 Kgs 18 (discern the
+  sky but not the times). 
+- **16:5-12 the leaven of the Pharisees and Sadducees** — Tanakh: Exod 12:15 (put away leaven),
+  Hos 7:4. Frame: leaven = corrupt doctrine.
+- **★★ 16:13-20 whom say ye that I am / thou art the Messiah the Son of the living Elohim / upon this
+  rock / the keys** — Tanakh: Ps 2:7 (thou art my Son), 2 Sam 7:14, Isa 22:22 (the key of the house
+  of David, he shall open and none shut — the keys), Isa 28:16 (the tried stone, sure foundation),
+  Dan 2:45 (the stone cut without hands). FRAME: the confession = the Father reveals (16:17 flesh and
+  blood revealed it not, but my Father) the Formed Son; the Rock = the confession of Messiah / Messiah
+  himself the foundation; the keys = Isa 22:22 stewardship. NOT a co-equal-trinity reading of "Son of
+  the living God" — it is the Father's own Son confessed, revealed BY the Father.
+- **16:21-28 get thee behind me Satan / take up his cross / lose his life / the Son of man shall come
+  in glory and reward every man** — Tanakh: Isa 53 (the suffering foretold), Ps 49:7-8 (none can
+  redeem his brother), Prov 24:12 (render to every man according to his works), Dan 7:13-14 (coming
+  in glory — kaph), Zech 14:5. Frame: the suffering then glory; son-of-Adam kaph carve-out.
+
+### MATTHEW 17 (27 v) — band 11480+ — ★★ the Transfiguration / Elijah is come / the epileptic boy / tribute
+- **★★ 17:1-8 the Transfiguration / Moses and Elijah / this is my beloved Son, hear ye him** —
+  Tanakh: Exod 34:29-35 (Moses' face shone), Deut 18:15,18 (a Prophet like unto me, him shall ye
+  hear — "hear ye him" quotes it!), Mal 4:4-5 (Moses and Elijah named together — the law and the
+  prophets), Ps 2:7, Dan 7:9 (raiment white as snow), Isa 42:1 (mine elect). Extras: 1 Enoch 14:20 /
+  2 Enoch (the garments of glory) if warranted; 2 Esdras. FRAME: Moses (Torah) + Elijah (Prophets)
+  both testify to the Formed Son; the FATHER's voice "hear ye him" = Deut 18:15 the Prophet like
+  Moses. NOT three co-equal — the Father declares the Son.
+- **17:9-13 Elijah truly shall come / Elias is come already (John)** — Tanakh: Mal 4:5-6 (Elijah
+  restoreth all things). Extras: Sirach 48:10 (restore the tribes). Two-house restoration.
+- **17:14-21 the epileptic / this kind goeth not out but by prayer and fasting / faith as a grain of
+  mustard seed** — Tanakh: Isa 40:31 (they that wait renew strength), Ps 50:15 (call upon me in the
+  day of trouble), Zech 4:6-7 (not by might... the mountain made plain). Frame: faith removes
+  mountains.
+- **17:22-27 the tribute money / the fish / lest we offend** — Tanakh: Exod 30:13-14 (the half-shekel
+  of the sanctuary), Exod 19:5 (all the earth is mine — the children free), Ps 24:1 (the earth is
+  Yahuah's). Frame: the Son of the King free, yet yields; the sanctuary tribute.
