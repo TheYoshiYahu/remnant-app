@@ -618,14 +618,20 @@ async def get_chapter_cross_references(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND e.slug = 'canon' "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            # S237+ — extra-canonical apparatus (Enoch / Jasher / Jubilees and
+            # the Charles-vol2 books) is now live, so the chapter-end card must
+            # resolve non-canon editions too, not just canon. Slugs are unique
+            # only per edition (composite UNIQUE on books.(edition_id, slug));
+            # mirror the chapter-detail route's deterministic resolution so any
+            # colliding slugs land on the kept edition (lowest book id).
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )
         if book_row is None:
             raise HTTPException(
-                status_code=404, detail=f"Book '{book_slug}' not found in canon."
+                status_code=404, detail=f"Book '{book_slug}' not found."
             )
 
         chapter_row = await conn.fetchrow(
@@ -882,14 +888,20 @@ async def get_chapter_witness(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND e.slug = 'canon' "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            # S237+ — extra-canonical apparatus (Enoch / Jasher / Jubilees and
+            # the Charles-vol2 books) is now live, so the chapter-end card must
+            # resolve non-canon editions too, not just canon. Slugs are unique
+            # only per edition (composite UNIQUE on books.(edition_id, slug));
+            # mirror the chapter-detail route's deterministic resolution so any
+            # colliding slugs land on the kept edition (lowest book id).
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )
         if book_row is None:
             raise HTTPException(
-                status_code=404, detail=f"Book '{book_slug}' not found in canon."
+                status_code=404, detail=f"Book '{book_slug}' not found."
             )
 
         chapter_row = await conn.fetchrow(
@@ -981,14 +993,20 @@ async def get_chapter_kingdom(
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND e.slug = 'canon' "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            # S237+ — extra-canonical apparatus (Enoch / Jasher / Jubilees and
+            # the Charles-vol2 books) is now live, so the chapter-end card must
+            # resolve non-canon editions too, not just canon. Slugs are unique
+            # only per edition (composite UNIQUE on books.(edition_id, slug));
+            # mirror the chapter-detail route's deterministic resolution so any
+            # colliding slugs land on the kept edition (lowest book id).
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )
         if book_row is None:
             raise HTTPException(
-                status_code=404, detail=f"Book '{book_slug}' not found in canon."
+                status_code=404, detail=f"Book '{book_slug}' not found."
             )
 
         chapter_row = await conn.fetchrow(
@@ -1083,21 +1101,25 @@ async def get_chapter_commentary(
     tier = user_tier(current_user)
 
     async with pool.acquire() as conn:
-        # Resolve the canon book + chapter under the caller's tier.
+        # Resolve the book + chapter under the caller's tier. S237+ — the
+        # chapter-end apparatus now covers extra-canonical editions, so this
+        # no longer hard-filters to canon; it mirrors the chapter-detail
+        # route's deterministic per-edition resolution (slugs are unique only
+        # per edition, so ORDER BY b.id keeps the canonical/kept edition).
         book_row = await conn.fetchrow(
             "SELECT b.id AS book_id, b.slug, b.title, e.slug AS edition_slug "
             "  FROM books b "
             "  JOIN editions e ON e.id = b.edition_id "
             " WHERE b.slug = $1 "
-            "   AND e.slug = 'canon' "
-            "   AND tier_satisfies($2::content_tier, b.tier_required)",
+            "   AND tier_satisfies($2::content_tier, b.tier_required) "
+            " ORDER BY b.id ASC LIMIT 1",
             book_slug,
             tier,
         )
         if book_row is None:
             raise HTTPException(
                 status_code=404,
-                detail=f"Book '{book_slug}' not found in canon.",
+                detail=f"Book '{book_slug}' not found.",
             )
 
         chapter_row = await conn.fetchrow(
