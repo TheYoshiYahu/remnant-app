@@ -3475,6 +3475,1945 @@ SELECT t.id, cr.id, 2, E'★ *a third kingdom of brass, which shall bear rule ov
  WHERE t.slug='daniel-8-the-ram-and-the-he-goat-the-kingdoms-identified'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_daniel_9.sql (Daniel 9) -----
+-- Chapter: Daniel 9 — THE KEYSTONE of the prophetic timetable: Daniel UNDERSTANDS BY THE BOOKS the
+-- seventy years of Jeremiah and acts on the prophetic word; his great Torah-grounded CONFESSION (the
+-- exile = the Deuteronomy 28 / Leviticus 26 covenant-curse for breaking Torah, NEVER the Torah as
+-- curse — "as it is written in the law of Moses"); his intercession appealing to Yahuah's mercies and
+-- Name, NOT Israel's righteousness; Gabriel sent at the evening oblation; and THE SEVENTY WEEKS — to
+-- finish transgression, make reconciliation, bring in everlasting righteousness, Messiah the Prince,
+-- Messiah CUT OFF (but not for himself), and the abomination that maketh desolate.
+-- Tag: dan09   Session: s306   Temp view: _s306_dan09_lookup
+-- Sort band: base 30200, step 3 -> threads at 30200, 30203, 30206, 30209, 30212, 30215 (6 threads)
+-- Source of EVERY row: 'canon','daniel',9,v
+--
+-- Daniel 9 coverage:
+--   v.1 (the first year of Darius the son of Ahasuerus; the frame)
+--        NT: none warranted   Extras: none warranted   Tanakh: none separate (the historical frame)
+--   ★ v.2 (I Daniel UNDERSTOOD BY BOOKS the number of the years, whereof the word of Yahuah came to
+--          Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem)
+--        NT:     none warranted (the prophetic word studied/trusted; weave is to the Jeremiah oracles)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 25:11-12 (these nations shall serve the king of Babylon seventy years),
+--                ★ Jeremiah 29:10 (after seventy years... I will visit you), ★ 2 Chronicles 36:21 (until
+--                the land had enjoyed her sabbaths... to fulfil threescore and ten years) — THREAD 1
+--   ★★ v.3-14 (I set my face unto Yahuah Elohim to seek by prayer; the CONFESSION — we have sinned...
+--          neither have we obeyed the voice of Yahuah our Elohim, to walk in his laws... all Yashar'el
+--          have transgressed thy law... the curse is poured upon us, and the oath that is written in the
+--          law of Moses... AS IT IS WRITTEN IN THE LAW OF MOSES, all this evil is come upon us)
+--        NT:     ★ 1 John 1:9 (if we confess our sins, he is faithful and just to forgive us) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 28:15 (if thou wilt not hearken... all these curses shall come upon thee),
+--                ★★ Leviticus 26:14-16 (if ye will not... do all my commandments... I will appoint over
+--                you terror), ★ Nehemiah 9:26 (they... cast thy law behind their backs), ★ Nehemiah 9:34
+--                (neither have our kings... kept thy law) — THREAD 2 (the SAME confession; the exile =
+--                the Deut 28/Lev 26 covenant-curse for breaking Torah, never the Torah as curse)
+--   v.15-16 (thou hast brought thy people forth out of Egypt... let thine anger be turned away from thy
+--          city Jerusalem)
+--        NT: none warranted   Extras: none warranted   Tanakh: held in prose (the Exodus appeal; the
+--                ground of the plea, leads into the intercession of v.17-19 — THREAD 5)
+--   ★ v.17-19 (cause thy face to shine upon thy sanctuary for the Lord's sake... we do NOT present our
+--          supplications before thee FOR OUR RIGHTEOUSNESSES, but for thy great mercies... defer not,
+--          for thine own sake, O my Elohim)
+--        NT:     ★ Ephesians 2:8-9 (by grace are ye saved through faith... not of works, lest any man
+--                should boast), ★ Titus 3:5 (NOT by works of righteousness which we have done, but
+--                according to his mercy he saved us) — THREAD 5 (flesh-merit excluded, NOT Torah abolished)
+--        Extras: none warranted
+--        Tanakh: ★★ Exodus 32:11 (Moses besought Yahuah... why doth thy wrath wax hot against thy people),
+--                ★ Exodus 32:13 (Remember Abraham, Isaac, and Yashar'el... to whom thou swarest), ★ Psalm
+--                79:9 (Help us, O Elohim of our salvation, for the glory of thy name... for thy name's
+--                sake) — THREAD 5 (intercession on mercy and the Name, not on merit; Moses' pattern)
+--   v.20 (whiles I was confessing my sin and the sin of my people Yashar'el; the seam into Gabriel)
+--        NT: none warranted   Extras: none warranted   Tanakh: none separate (woven into THREAD 6)
+--   ★ v.21-23 (the man GABRIEL... caused to fly swiftly, touched me about the time of the EVENING
+--          OBLATION... O Daniel, I am now come forth to give thee skill and understanding... thou art
+--          greatly beloved)
+--        NT:     ★ Luke 1:11 (there appeared... an angel of Yahuah standing on the right side of the
+--                altar of incense), ★ Luke 1:13 (the angel said, Fear not... thy prayer is heard), ★★
+--                Luke 1:19 (I am Gabriel, that stand in the presence of Elohim... and am sent to speak
+--                unto thee) — THREAD 6 (Gabriel again, at the appointed sacrifice/incense hour)
+--        Extras: none warranted
+--        Tanakh: the evening oblation = the appointed daily offering (Exod 29:39 woven in prose, not
+--                forced as a separate member)
+--   ★★★ v.24-27 (SEVENTY WEEKS are determined upon thy people and upon thy holy city, to finish the
+--          transgression, and to make an end of sins, and to make reconciliation for iniquity, and to
+--          bring in EVERLASTING RIGHTEOUSNESS... unto the MESSIAH THE PRINCE... and after threescore and
+--          two weeks shall MESSIAH BE CUT OFF, but not for himself... and for the overspreading of
+--          ABOMINATIONS he shall make it desolate)
+--        NT:     ★★★ Romans 5:10 (when we were enemies, we were reconciled to Elohim by the death of his
+--                Son), ★★ Romans 5:11 (by whom we have now received the atonement) — THREAD 3;
+--                ★★ Matthew 24:15 (the abomination of desolation, spoken of by Daniel the prophet),
+--                ★★ Mark 13:14 (the abomination of desolation, spoken of by Daniel the prophet) — THREAD 4
+--        Extras: none warranted (1 Enoch ch25 known-bad; no clean Similitudes seventy-weeks parallel)
+--        Tanakh: ★★★ Isaiah 53:8 (he was CUT OFF out of the land of the living: for the transgression of
+--                my people was he stricken) — THREAD 3; ★★ Jeremiah 23:6 (this is his name... Yahuah
+--                Tsidkenu, THE LORD OUR RIGHTEOUSNESS) — THREAD 3 (the everlasting righteousness brought
+--                in); ★★ Daniel 8:13 (the transgression of desolation), ★★ Daniel 11:31 (the abomination
+--                that maketh desolate), ★★ Daniel 12:11 (the abomination that maketh desolate set up) —
+--                THREAD 4 (lateral within Daniel's own desolation-oracles)
+--
+-- Threads (slug — target libraries):
+--   1. daniel-9-understood-by-the-books-the-seventy-years-of-jeremiah — Tanakh (Jeremiah 25, Jeremiah 29,
+--      2 Chronicles 36) [free]
+--      (★ the prophetic word studied, believed, and acted on; the seventy years = the land's sabbaths kept)
+--   2. daniel-9-as-it-is-written-in-the-law-of-moses-the-confession — NT (1 John 1) + Tanakh (Deuteronomy
+--      28, Leviticus 26, Nehemiah 9) [free]
+--      (★★ the exile = the Deut 28/Lev 26 covenant-curse for breaking Torah, NEVER the Torah as curse;
+--       confession grounded in the law of Moses; the Torah affirmed as the standard, not abolished)
+--   3. daniel-9-messiah-the-prince-cut-off-and-everlasting-righteousness — NT (Romans 5) + Tanakh (Isaiah
+--      53, Jeremiah 23) [free]
+--      (★★★ the seventy weeks; Messiah cut off but not for himself; reconciliation made; everlasting
+--       righteousness brought in — Yahuah Tsidkenu)
+--   4. daniel-9-the-abomination-that-maketh-desolate — NT (Matthew 24, Mark 13) + Tanakh (Daniel 8,
+--      Daniel 11, Daniel 12) [free]
+--      (★★ the overspreading of abominations of v.27 — the abomination of desolation Yahusha names "spoken
+--       of by Daniel the prophet"; lateral to Daniel's own desolation-oracles)
+--   5. daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies — NT (Ephesians 2, Titus 3) +
+--      Tanakh (Exodus 32, Psalm 79) [free]
+--      (★ intercession appealing to mercy and the Name, NOT Israel's merit; flesh-merit excluded, NOT
+--       Torah abolished; Moses' Exodus 32 pattern)
+--   6. daniel-9-gabriel-touched-me-about-the-time-of-the-evening-oblation — NT (Luke 1) [free]
+--      (★ the angel-interpreter Gabriel coming at the appointed sacrifice/incense hour; the appointed-times
+--       frame; Gabriel again at the altar of incense in Luke)
+--
+-- Framing notes:
+--   ★ UNDERSTOOD BY THE BOOKS (THREAD 1): *In the first year of his reign I Daniel understood by books the
+--      number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the prophet, that he would
+--      accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). Daniel does not invent — he
+--      STUDIES the prophetic word and trusts it: *these nations shall serve the king of Babylon seventy
+--      years* (Jeremiah 25:11); *after seventy years be accomplished at Babylon I will visit you*
+--      (Jeremiah 29:10); and the land kept her sabbaths — *until the land had enjoyed her sabbaths... to
+--      fulfil threescore and ten years* (2 Chronicles 36:21). The prophets believed and acted upon, the
+--      timetable that opens the confession and the seventy weeks.
+--   ★★ AS IT IS WRITTEN IN THE LAW OF MOSES (THREAD 2): the confession is grounded in Torah at every turn —
+--      *neither have we obeyed the voice of Yahuah Eloheinu (the LORD our God), to walk in his laws*
+--      (9:10); *all Yashar''el (Israel) have transgressed thy law... therefore the curse is poured upon us,
+--      and the oath that is written in the law of Moses* (9:11); *As it is written in the law of Moses, all
+--      this evil is come upon us* (9:13). The exile is the covenant-CURSE foretold for breaking Torah, not
+--      the Torah itself made a curse: *if thou wilt not hearken... that all these curses shall come upon
+--      thee* (Deuteronomy 28:15); *if ye will not... do all my commandments... I will even appoint over you
+--      terror* (Leviticus 26:14-16). The SAME confession is Nehemiah''s — *they... cast thy law behind
+--      their backs* (Nehemiah 9:26), *neither have our kings... kept thy law* (Nehemiah 9:34). And the
+--      New-Covenant ground is the same posture: *If we confess our sins, he is faithful and just to forgive
+--      us our sins* (1 John 1:9). The Torah is the standard confessed AGAINST — affirmed, never abolished.
+--   ★★★ MESSIAH THE PRINCE CUT OFF (THREAD 3): *Seventy weeks are determined upon thy people and upon thy
+--      holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for
+--      iniquity, and to bring in everlasting righteousness... unto the Messiah the Prince* (Daniel 9:24-25);
+--      *And after threescore and two weeks shall Messiah be cut off, but not for himself* (9:26). Isaiah
+--      saw the cutting-off — *he was cut off out of the land of the living: for the transgression of my
+--      people was he stricken* (Isaiah 53:8); and the reconciliation is made — *when we were enemies, we
+--      were reconciled to Elohim (God) by the death of his Son* (Romans 5:10), *by whom we have now
+--      received the atonement* (Romans 5:11). The everlasting righteousness brought in is the Messiah''s own
+--      name: *this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)*
+--      (Jeremiah 23:6). Messiah kept exactly as dump_canon gives it.
+--   ★★ THE ABOMINATION THAT MAKETH DESOLATE (THREAD 4): *for the overspreading of abominations he shall make
+--      it desolate* (Daniel 9:27). Yahusha (Jesus) names this verse by the prophet: *When ye therefore shall
+--      see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place*
+--      (Matthew 24:15); *the abomination of desolation, spoken of by Daniel the prophet, standing where it
+--      ought not* (Mark 13:14). And it stands in Daniel''s own line of desolation-oracles: *the transgression
+--      of desolation* (Daniel 8:13); *they shall place the abomination that maketh desolate* (Daniel 11:31);
+--      *the abomination that maketh desolate set up* (Daniel 12:11).
+--   ★ NOT FOR OUR RIGHTEOUSNESSES (THREAD 5): *for we do not present our supplications before thee for our
+--      righteousnesses, but for thy great mercies* (Daniel 9:18); *defer not, for thine own sake* (9:19) —
+--      the plea rests on Yahuah''s mercy and Name, not Israel''s merit. It is Moses'' very intercession:
+--      *Moses besought Yahuah Elohav (the LORD his God)... why doth thy wrath wax hot against thy people*
+--      (Exodus 32:11), *Remember Abraham, Isaac, and Yashar''el (Israel)... to whom thou swarest by thine
+--      own self* (Exodus 32:13); and the Psalm''s cry, *Help us, O Elohim (God) of our salvation, for the
+--      glory of thy name... for thy name''s sake* (Psalm 79:9). The NT names the same exclusion of
+--      flesh-merit — *by grace are ye saved through faith... not of works, lest any man should boast*
+--      (Ephesians 2:8-9); *Not by works of righteousness which we have done, but according to his mercy he
+--      saved us* (Titus 3:5) — flesh-credential excluded, NOT the Torah abolished.
+--   ★ GABRIEL AT THE EVENING OBLATION (THREAD 6): *the man Gabriel... being caused to fly swiftly, touched
+--      me about the time of the evening oblation* (Daniel 9:21) — the interpreting angel comes at the
+--      appointed sacrifice hour. The same Gabriel comes at the appointed incense hour to Zacharias: *there
+--      appeared unto him an angel of Yahuah (Lord) standing on the right side of the altar of incense*
+--      (Luke 1:11), *Fear not... for thy prayer is heard* (Luke 1:13), *I am Gabriel, that stand in the
+--      presence of Elohim (God); and am sent to speak unto thee* (Luke 1:19). The appointed-times frame:
+--      heaven answers at the hour of the offering.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the historical frame), v.15-16 (the Exodus appeal — woven into
+--      THREAD 5''s ground), v.20 (the confessing seam into Gabriel — woven into THREAD 6). All recorded.
+
+CREATE TEMP VIEW _s306_dan09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): understood by the books the seventy years of Jeremiah — Tanakh [free]
+    ('canon','daniel',9,2,'canon','jeremiah',25,11,'free',
+      E'*And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11). This is the very word Daniel *understood by books* — *the word of Yahuah (LORD) came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). The prophetic timetable studied and trusted: the seventy years are Jeremiah''s own measure, and Daniel reckons by it.'),
+    ('canon','daniel',9,2,'canon','jeremiah',25,12,'free',
+      E'*And it shall come to pass, when seventy years are accomplished, that I will punish the king of Babylon, and that nation, saith Yahuah (LORD), for their iniquity* (Jeremiah 25:12). Daniel reads in the books that the seventy years would *accomplish* the desolations (Daniel 9:2), and Jeremiah''s word sets their term — *when seventy years are accomplished*. The same fixed measure Daniel acts upon, setting his face to seek Yahuah as the years run out.'),
+    ('canon','daniel',9,2,'canon','jeremiah',29,10,'free',
+      E'*For thus saith Yahuah (LORD), That after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place* (Jeremiah 29:10). The promise inside the seventy years Daniel *understood by books* (Daniel 9:2): the desolations are not the end — *I will visit you, and perform my good word*. Daniel trusts the word and, the term nearing, turns to prayer and confession.'),
+    ('canon','daniel',9,2,'canon','2-chronicles',36,21,'free',
+      E'*To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). The Chronicler names what Daniel read in the books — the seventy years of desolation are the land''s unkept sabbaths repaid: *threescore and ten years*. The desolation Daniel mourns (Daniel 9:2) is the Torah''s own sabbath-rest claimed back by the land.'),
+
+    -- THREAD 2 (★★): as it is written in the law of Moses — the confession — NT + Tanakh [free]
+    ('canon','daniel',9,11,'canon','deuteronomy',28,15,'free',
+      E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). Daniel''s confession names this exact covenant-curse: *the curse is poured upon us, and the oath that is written in the law of Moses* (Daniel 9:11). The exile is the foretold judgment for breaking Torah — never the Torah made a curse, but the curse of the broken covenant come due.'),
+    ('canon','daniel',9,11,'canon','leviticus',26,15,'free',
+      E'*And if ye shall despise my statutes, or if your soul abhor my judgments, so that ye will not do all my commandments, but that ye break my covenant* (Leviticus 26:15). The covenant Daniel confesses Yashar''el broke — *all Yashar''el (Israel) have transgressed thy law... therefore the curse is poured upon us* (Daniel 9:11) — is the very covenant of Leviticus 26, whose terms the scattering fulfills. The law is the standard transgressed against, affirmed in the confession, not abolished.'),
+    ('canon','daniel',9,11,'canon','leviticus',26,16,'free',
+      E'*I also will do this unto you; I will even appoint over you terror, consumption, and the burning ague, that shall consume the eyes, and cause sorrow of heart: and ye shall sow your seed in vain* (Leviticus 26:16). The evil Daniel says is *come upon us* — *As it is written in the law of Moses, all this evil is come upon us* (Daniel 9:13) — is the warned consequence of Leviticus 26. The Torah foretold both the breach and its harvest; Daniel confesses the breach, justifying Yahuah.'),
+    ('canon','daniel',9,5,'canon','nehemiah',9,26,'free',
+      E'*Nevertheless they were disobedient, and rebelled against thee, and cast thy law behind their backs, and slew thy prophets which testified against them to turn them to thee, and they wrought great provocations* (Nehemiah 9:26). Nehemiah''s assembly makes Daniel''s very confession — *We have sinned... and have rebelled, even by departing from thy precepts* (Daniel 9:5); *neither have we hearkened unto thy servants the prophets* (9:6). The same Torah cast behind the back, the same prophets unheard, the same returning people confessing it.'),
+    ('canon','daniel',9,6,'canon','nehemiah',9,34,'free',
+      E'*Neither have our kings, our princes, our priests, nor our fathers, kept thy law, nor hearkened unto thy commandments and thy testimonies, wherewith thou didst testify against them* (Nehemiah 9:34). Daniel confesses the same ranks in the same words — *we have not hearkened unto thy servants the prophets, which spake in thy name to our kings, our princes, and our fathers* (Daniel 9:6). The corporate confession of a people who know the law was the standard and they did not keep it.'),
+    ('canon','daniel',9,5,'canon','1-john',1,9,'free',
+      E'*If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9). Daniel does exactly this — *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled* (Daniel 9:5) — and appeals to the One to whom *belong mercies and forgivenesses* (9:9). The honest confession of sin against the commandments, and the faithful Forgiver who keeps covenant and mercy.'),
+
+    -- THREAD 3 (★★★): Messiah the Prince cut off, and everlasting righteousness — NT + Tanakh [free]
+    ('canon','daniel',9,26,'canon','isaiah',53,8,'free',
+      E'*He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken* (Isaiah 53:8). Daniel''s *Messiah be cut off, but not for himself* (Daniel 9:26) is Isaiah''s suffering Servant *cut off out of the land of the living* — and *not for himself*: *for the transgression of my people was he stricken*. The same cutting-off, for others'' sins, at the close of the sixty-two weeks.'),
+    ('canon','daniel',9,24,'canon','romans',5,10,'free',
+      E'*For if, when we were enemies, we were reconciled to Elohim (God) by the death of his Son, much more, being reconciled, we shall be saved by his life* (Romans 5:10). The seventy weeks are determined *to make reconciliation for iniquity* (Daniel 9:24) — and Paul names the reconciliation made: *when we were enemies, we were reconciled to Elohim (God) by the death of his Son*. The atonement-appointment of Daniel accomplished by the Messiah cut off.'),
+    ('canon','daniel',9,24,'canon','romans',5,11,'free',
+      E'*And not only so, but we also joy in Elohim (God) through our Lord Yahusha HaMashiach (Lord Jesus Christ), by whom we have now received the atonement* (Romans 5:11). *To make reconciliation for iniquity... and to bring in everlasting righteousness* (Daniel 9:24) is *the atonement* now received through the Messiah. The seventy weeks'' purpose — an end of sins, reconciliation, everlasting righteousness — fulfilled in the One cut off.'),
+    ('canon','daniel',9,24,'canon','jeremiah',23,6,'free',
+      E'*In his days Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6). The seventy weeks are *to bring in everlasting righteousness* (Daniel 9:24) — and that righteousness is the Messiah''s own name, *Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)*, under whom both houses, Yahudah and Yashar''el, are saved. The everlasting righteousness brought in is a Person.'),
+
+    -- THREAD 4 (★★): the abomination that maketh desolate — NT + Tanakh [free]
+    ('canon','daniel',9,27,'canon','matthew',24,15,'free',
+      E'*When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15). Yahusha (Jesus) names this very verse — *for the overspreading of abominations he shall make it desolate* (Daniel 9:27) — calling it *the abomination of desolation, spoken of by Daniel the prophet*. He sends the reader back to Daniel to understand the sign.'),
+    ('canon','daniel',9,27,'canon','mark',13,14,'free',
+      E'*But when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not, (let him that readeth understand,) then let them that be in Judæa flee to the mountains* (Mark 13:14). The abomination that *make[s] it desolate* of Daniel 9:27 is the sign Yahusha (Jesus) marks *standing where it ought not* — again *spoken of by Daniel the prophet*, again sending the reader to Daniel to understand.'),
+    ('canon','daniel',9,27,'canon','daniel',8,13,'free',
+      E'*How long shall be the vision concerning the daily sacrifice, and the transgression of desolation, to give both the sanctuary and the host to be trodden under foot?* (Daniel 8:13). The *overspreading of abominations* that *make[s] it desolate* (Daniel 9:27) stands in Daniel''s own line of desolation-oracles — the *transgression of desolation* that treads down the sanctuary. One profaning power across Daniel''s visions.'),
+    ('canon','daniel',9,27,'canon','daniel',11,31,'free',
+      E'*And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31). Daniel''s later vision names the same thing in the same words — *the abomination that maketh desolate* — that he saw in 9:27 (*he shall cause the sacrifice and the oblation to cease*). The taking-away of the daily sacrifice and the setting-up of the desolating abomination, one act across the oracles.'),
+    ('canon','daniel',9,27,'canon','daniel',12,11,'free',
+      E'*And from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days* (Daniel 12:11). The cessation of *the sacrifice and the oblation* and the *abominations* that make desolate (Daniel 9:27) are timed in Daniel''s closing word — *the abomination that maketh desolate set up*. The same desolation, now measured in days, sealing the visions of the book.'),
+
+    -- THREAD 5 (★): not for our righteousnesses, but for thy great mercies — NT + Tanakh [free]
+    ('canon','daniel',9,18,'canon','exodus',32,11,'free',
+      E'*And Moses besought Yahuah Elohav (the LORD his God), and said, Yahuah (LORD), why doth thy wrath wax hot against thy people, which thou hast brought forth out of the land of Egypt with great power, and with a mighty hand?* (Exodus 32:11). Daniel''s plea is Moses'' pattern — appealing not to merit but to Yahuah''s own act and people: *we do not present our supplications before thee for our righteousnesses, but for thy great mercies* (Daniel 9:18). The intercessor pleads the Deliverer''s mercy, not the people''s worth.'),
+    ('canon','daniel',9,18,'canon','exodus',32,13,'free',
+      E'*Remember Abraham, Isaac, and Yashar''el (Israel), thy servants, to whom thou swarest by thine own self, and saidst unto them, I will multiply your seed as the stars of heaven* (Exodus 32:13). Moses grounds his intercession in the oath to the fathers, exactly as Daniel grounds his in mercy and the Name (Daniel 9:18-19). *For thine own sake* (9:19) echoes *thou swarest by thine own self* — the appeal is to Yahuah''s own oath and glory, not Israel''s righteousness.'),
+    ('canon','daniel',9,19,'canon','psalms',79,9,'free',
+      E'*Help us, O Elohim (God) of our salvation, for the glory of thy name: and deliver us, and purge away our sins, for thy name''s sake* (Psalm 79:9). The Psalm cries exactly as Daniel does — *defer not, for thine own sake, O my Elohim (God): for thy city and thy people are called by thy name* (Daniel 9:19). The plea rests on the glory of the Name and Yahuah''s own sake, the purging of sin sought *for thy name''s sake*, not for merit.'),
+    ('canon','daniel',9,18,'canon','ephesians',2,8,'free',
+      E'*For by grace are ye saved through faith; and that not of yourselves: it is the gift of Elohim (God)* (Ephesians 2:8). Daniel''s confession that the plea is *not for our righteousnesses, but for thy great mercies* (Daniel 9:18) is the same posture — salvation *not of yourselves... the gift of Elohim (God)*. Flesh-merit is excluded; the appeal is to mercy alone.'),
+    ('canon','daniel',9,18,'canon','titus',3,5,'free',
+      E'*Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Ruach HaKodesh (Holy Spirit)* (Titus 3:5). This is Daniel''s very ground — *not for our righteousnesses, but for thy great mercies* (Daniel 9:18). *Not by works of righteousness which we have done* excludes flesh-credential, NOT the Torah: the same plea Daniel makes, that Yahuah saves *according to his mercy*.'),
+
+    -- THREAD 6 (★): Gabriel touched me about the time of the evening oblation — NT [free]
+    ('canon','daniel',9,21,'canon','luke',1,11,'free',
+      E'*And there appeared unto him an angel of Yahuah (Lord) standing on the right side of the altar of incense* (Luke 1:11). The man Gabriel comes to Daniel *about the time of the evening oblation* (Daniel 9:21); the same Gabriel comes to Zacharias at the appointed incense hour, *standing on the right side of the altar of incense*. Heaven answers at the hour of the offering — the appointed-times frame.'),
+    ('canon','daniel',9,21,'canon','luke',1,13,'free',
+      E'*But the angel said unto him, Fear not, Zacharias: for thy prayer is heard; and thy wife Elisabeth shall bear thee a son, and thou shalt call his name John* (Luke 1:13). As Gabriel told Daniel his supplications were heard — *At the beginning of thy supplications the commandment came forth, and I am come to shew thee* (Daniel 9:23) — so he tells Zacharias *thy prayer is heard*. The same messenger, at the same sacrifice hour, bearing word that the prayer is answered.'),
+    ('canon','daniel',9,21,'canon','luke',1,19,'free',
+      E'*And the angel answering said unto him, I am Gabriel, that stand in the presence of Elohim (God); and am sent to speak unto thee, and to shew thee these glad tidings* (Luke 1:19). This is *the man Gabriel* of Daniel 9:21 — named in both, *sent... to shew thee* in both (Daniel 9:23). The same standing-in-the-presence messenger who flew to Daniel at the evening oblation comes again to the temple at the incense hour with glad tidings.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-9-understood-by-the-books-the-seventy-years-of-jeremiah',
+       E'Daniel understood by the books — the seventy years of Jeremiah',
+       E'The chapter opens not with a vision but with a man reading: *In the first year of his reign I Daniel understood by books the number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). The prophetic word is studied, believed, and acted upon — Daniel reckons the term and turns to prayer. The seventy years are Jeremiah''s own measure: *this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11), *when seventy years are accomplished, that I will punish the king of Babylon* (Jeremiah 25:12); and inside that judgment a promise — *after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place* (Jeremiah 29:10). The Chronicler tells what the seventy years were for: *To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21) — the land''s unkept sabbath-rests, the Torah''s own appointed rest, claimed back. Daniel does not wait passively; he searches the books, trusts the word, and on the strength of it sets his face to seek Yahuah with fasting and confession. The prophets believed and acted on — the timetable that opens both the great confession and the seventy weeks.',
+       sv.verse_id, ev.verse_id, 'free', 30200
+  FROM _s306_dan09_lookup sv, _s306_dan09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=9 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-9-as-it-is-written-in-the-law-of-moses-the-confession',
+       E'As it is written in the law of Moses — the confession and the covenant-curse',
+       E'Daniel sets his face to seek Yahuah *by prayer and supplications, with fasting, and sackcloth, and ashes* (9:3), and pours out a confession grounded in Torah at every turn: *We have sinned, and have committed iniquity, and have done wickedly, and have rebelled, even by departing from thy precepts and from thy judgments: Neither have we hearkened unto thy servants the prophets* (9:5-6); *neither have we obeyed the voice of Yahuah Eloheinu (the LORD our God), to walk in his laws, which he set before us by his servants the prophets* (9:10); *Yea, all Yashar''el (Israel) have transgressed thy law... therefore the curse is poured upon us, and the oath that is written in the law of Moses the servant of Elohim (God)* (9:11); *As it is written in the law of Moses, all this evil is come upon us* (9:13). Mark it carefully: the exile is the covenant-CURSE foretold for breaking the Torah — never the Torah itself made a curse. It is the very sanction of *if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments... that all these curses shall come upon thee* (Deuteronomy 28:15), and of *if ye shall despise my statutes... so that ye will not do all my commandments, but that ye break my covenant... I will even appoint over you terror* (Leviticus 26:15-16). The law is the standard transgressed against — affirmed in the confession, not abolished by it. The same confession is Nehemiah''s returning assembly: *they... cast thy law behind their backs, and slew thy prophets* (Nehemiah 9:26), *neither have our kings, our princes, our priests, nor our fathers, kept thy law, nor hearkened unto thy commandments* (Nehemiah 9:34). And the New-Covenant posture is one with Daniel''s: *If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness* (1 John 1:9). Honest confession against the commandments, to the Elohim who keeps *the covenant and mercy to them that love him, and to them that keep his commandments* (9:4).',
+       sv.verse_id, ev.verse_id, 'free', 30203
+  FROM _s306_dan09_lookup sv, _s306_dan09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=9 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-9-messiah-the-prince-cut-off-and-everlasting-righteousness',
+       E'The seventy weeks — Messiah the Prince cut off, and everlasting righteousness brought in',
+       E'In answer to the confession comes the most precise messianic timetable in the prophets: *Seventy weeks are determined upon thy people and upon thy holy city, to finish the transgression, and to make an end of sins, and to make reconciliation for iniquity, and to bring in everlasting righteousness, and to seal up the vision and prophecy, and to anoint the most Holy* (Daniel 9:24); *from the going forth of the commandment to restore and to build Jerusalem unto the Messiah the Prince shall be seven weeks, and threescore and two weeks* (9:25); *And after threescore and two weeks shall Messiah be cut off, but not for himself* (9:26). The cutting-off is the Servant''s of Isaiah 53: *he was cut off out of the land of the living: for the transgression of my people was he stricken* (Isaiah 53:8) — *not for himself*, but for others'' sins. The reconciliation appointed is made: *when we were enemies, we were reconciled to Elohim (God) by the death of his Son* (Romans 5:10), *by whom we have now received the atonement* (Romans 5:11). And the everlasting righteousness brought in is a Person and a Name — *this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6), under whom *Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely*, both houses gathered. The seventy weeks'' whole purpose — to finish transgression, end sin, make reconciliation, bring in everlasting righteousness — is accomplished in the Messiah the Prince, cut off but not for himself.',
+       sv.verse_id, ev.verse_id, 'free', 30206
+  FROM _s306_dan09_lookup sv, _s306_dan09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=9 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-9-the-abomination-that-maketh-desolate',
+       E'The abomination that maketh desolate — spoken of by Daniel the prophet',
+       E'The seventy weeks close in profanation: *And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation* (Daniel 9:27). Yahusha (Jesus) takes this very verse and names it the great sign: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15); *when ye shall see the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not, (let him that readeth understand,) then let them that be in Judæa flee to the mountains* (Mark 13:14) — twice sending the reader back to Daniel to understand. And it stands in Daniel''s own line of desolation-oracles, one profaning power across the book: *the transgression of desolation, to give both the sanctuary and the host to be trodden under foot* (Daniel 8:13); *they shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31); *from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days* (Daniel 12:11). The cessation of the daily offering and the setting-up of the desolating abomination — Daniel saw it in 9:27, Yahusha pointed the watching reader to it, and the book''s closing visions time it to the consummation.',
+       sv.verse_id, ev.verse_id, 'free', 30209
+  FROM _s306_dan09_lookup sv, _s306_dan09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=9 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies',
+       E'Not for our righteousnesses, but for thy great mercies — the intercession',
+       E'Daniel''s plea rests on nothing in Israel and everything in Yahuah: *Now therefore, O our Elohim (God), hear the prayer of thy servant... cause thy face to shine upon thy sanctuary that is desolate, for Yahuah''s (Lord''s) sake* (9:17); *O my Elohim (God), incline thine ear... for we do not present our supplications before thee for our righteousnesses, but for thy great mercies* (9:18); *O Yahuah (Lord), hear; O Yahuah (Lord), forgive... defer not, for thine own sake, O my Elohim (God): for thy city and thy people are called by thy name* (9:19). This is Moses'' intercession exactly — appealing to Yahuah''s own act, oath, and glory, never to merit: *Moses besought Yahuah Elohav (the LORD his God)... Yahuah (LORD), why doth thy wrath wax hot against thy people, which thou hast brought forth out of the land of Egypt* (Exodus 32:11), *Remember Abraham, Isaac, and Yashar''el (Israel)... to whom thou swarest by thine own self* (Exodus 32:13). And the Psalm cries it: *Help us, O Elohim (God) of our salvation, for the glory of thy name... for thy name''s sake* (Psalm 79:9). The New Testament names the same exclusion of flesh-credential: *by grace are ye saved through faith; and that not of yourselves: it is the gift of Elohim (God); Not of works, lest any man should boast* (Ephesians 2:8-9); *Not by works of righteousness which we have done, but according to his mercy he saved us* (Titus 3:5). Mark the lens: *not for our righteousnesses* excludes the merit of the flesh — it does NOT abolish the Torah Daniel has just confessed transgressing. Salvation and pardon are pleaded on mercy and the Name, never on the worth of the petitioner.',
+       sv.verse_id, ev.verse_id, 'free', 30212
+  FROM _s306_dan09_lookup sv, _s306_dan09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=9 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-9-gabriel-touched-me-about-the-time-of-the-evening-oblation',
+       E'The man Gabriel touched me about the time of the evening oblation',
+       E'The answer comes at the appointed sacrifice hour: *Yea, whiles I was speaking in prayer, even the man Gabriel, whom I had seen in the vision at the beginning, being caused to fly swiftly, touched me about the time of the evening oblation* (Daniel 9:21), *And he informed me, and talked with me, and said, O Daniel, I am now come forth to give thee skill and understanding* (9:22), *At the beginning of thy supplications the commandment came forth, and I am come to shew thee; for thou art greatly beloved* (9:23). Heaven answers at the hour of the offering — the appointed-times frame. The same Gabriel comes again at the same kind of hour, the appointed incense, to Zacharias in the temple: *there appeared unto him an angel of Yahuah (Lord) standing on the right side of the altar of incense* (Luke 1:11), *Fear not, Zacharias: for thy prayer is heard* (Luke 1:13) — as Gabriel told Daniel his supplications were heard from their beginning — and he names himself, *I am Gabriel, that stand in the presence of Elohim (God); and am sent to speak unto thee, and to shew thee these glad tidings* (Luke 1:19). The standing-in-the-presence messenger who flew to Daniel at the evening oblation is sent again to the altar at the incense hour, both times to a beloved servant in prayer, both times to shew the word of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 30215
+  FROM _s306_dan09_lookup sv, _s306_dan09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=9 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11) — the very word Daniel *understood by books* (Daniel 9:2); the seventy-year term studied and trusted.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-understood-by-the-books-the-seventy-years-of-jeremiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *when seventy years are accomplished, that I will punish the king of Babylon* (Jeremiah 25:12) — Jeremiah''s fixed term that Daniel reckons by, the desolations to be *accomplished* (Daniel 9:2).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-understood-by-the-books-the-seventy-years-of-jeremiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *after seventy years be accomplished at Babylon I will visit you... in causing you to return* (Jeremiah 29:10) — the promise inside the term Daniel trusted; the desolation is not the end.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-understood-by-the-books-the-seventy-years-of-jeremiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *until the land had enjoyed her sabbaths... to fulfil threescore and ten years* (2 Chronicles 36:21) — the seventy years = the land''s unkept Torah-sabbaths repaid; the desolation Daniel mourns.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-understood-by-the-books-the-seventy-years-of-jeremiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *if thou wilt not hearken... that all these curses shall come upon thee* (Deuteronomy 28:15) — the exile = the foretold covenant-curse for breaking Torah, *the oath that is written in the law of Moses* (Daniel 9:11); never the Torah as curse.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=11
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-as-it-is-written-in-the-law-of-moses-the-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *if ye shall despise my statutes... but that ye break my covenant* (Leviticus 26:15) — the covenant *all Yashar''el have transgressed* (Daniel 9:11); the law is the standard transgressed against, affirmed not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=11
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-as-it-is-written-in-the-law-of-moses-the-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will even appoint over you terror, consumption... ye shall sow your seed in vain* (Leviticus 26:16) — the warned harvest of breaking covenant; *all this evil is come upon us* (Daniel 9:13), as it is written in the law of Moses.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=11
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-as-it-is-written-in-the-law-of-moses-the-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they... cast thy law behind their backs, and slew thy prophets* (Nehemiah 9:26) — the returning assembly''s same confession; *we have sinned... and have rebelled, even by departing from thy precepts* (Daniel 9:5).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-as-it-is-written-in-the-law-of-moses-the-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *neither have our kings, our princes, our priests, nor our fathers, kept thy law* (Nehemiah 9:34) — the same ranks Daniel names; *we have not hearkened... to our kings, our princes, and our fathers* (Daniel 9:6).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-as-it-is-written-in-the-law-of-moses-the-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *If we confess our sins, he is faithful and just to forgive us our sins* (1 John 1:9) — Daniel''s very posture; honest confession against the commandments to the One who keeps covenant and mercy (Daniel 9:5,9).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-as-it-is-written-in-the-law-of-moses-the-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *he was cut off out of the land of the living: for the transgression of my people was he stricken* (Isaiah 53:8) — the Servant cut off, *not for himself*; *Messiah be cut off, but not for himself* (Daniel 9:26).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=26
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-messiah-the-prince-cut-off-and-everlasting-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *when we were enemies, we were reconciled to Elohim (God) by the death of his Son* (Romans 5:10) — the reconciliation the seventy weeks appoint, *to make reconciliation for iniquity* (Daniel 9:24).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-messiah-the-prince-cut-off-and-everlasting-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *by whom we have now received the atonement* (Romans 5:11) — the atonement made; the seventy weeks'' end of sins and everlasting righteousness (Daniel 9:24) received through the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-messiah-the-prince-cut-off-and-everlasting-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *this is his name... Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6) — the *everlasting righteousness* brought in (Daniel 9:24) is a Person and a Name, under whom both houses are saved.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-messiah-the-prince-cut-off-and-everlasting-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place* (Matthew 24:15) — Yahusha names Daniel 9:27 by the prophet; *whoso readeth, let him understand*.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=27
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-the-abomination-that-maketh-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the abomination of desolation, spoken of by Daniel the prophet, standing where it ought not* (Mark 13:14) — again *spoken of by Daniel the prophet*; the *overspreading of abominations* of Daniel 9:27.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=27
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-the-abomination-that-maketh-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the transgression of desolation, to give both the sanctuary and the host to be trodden under foot* (Daniel 8:13) — lateral within Daniel''s own desolation-oracles; one profaning power.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=27
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-the-abomination-that-maketh-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *they shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31) — the same words; the sacrifice made to cease (Daniel 9:27) and the desolating abomination set.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=27
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-the-abomination-that-maketh-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days* (Daniel 12:11) — the book''s closing word times the desolation of Daniel 9:27 to the consummation.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=27
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-the-abomination-that-maketh-desolate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Moses besought Yahuah Elohav (the LORD his God)... why doth thy wrath wax hot against thy people* (Exodus 32:11) — Daniel''s plea is Moses'' pattern; mercy and the Deliverer''s act, not merit (Daniel 9:18).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Remember Abraham, Isaac, and Yashar''el (Israel)... to whom thou swarest by thine own self* (Exodus 32:13) — grounded in Yahuah''s own oath; *for thine own sake* (Daniel 9:19) echoes *by thine own self*.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Help us, O Elohim (God) of our salvation, for the glory of thy name... for thy name''s sake* (Psalm 79:9) — the same plea on the Name; *defer not, for thine own sake* (Daniel 9:19).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=19
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=79 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *by grace are ye saved through faith... not of yourselves: it is the gift of Elohim (God)* (Ephesians 2:8) — flesh-merit excluded; *not for our righteousnesses, but for thy great mercies* (Daniel 9:18).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Not by works of righteousness which we have done, but according to his mercy he saved us* (Titus 3:5) — Daniel''s very ground; flesh-credential excluded, NOT the Torah abolished (Daniel 9:18).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=18
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-not-for-our-righteousnesses-but-for-thy-great-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *an angel of Yahuah (Lord) standing on the right side of the altar of incense* (Luke 1:11) — Gabriel again at the appointed incense hour; Daniel touched *about the time of the evening oblation* (Daniel 9:21).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=21
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-gabriel-touched-me-about-the-time-of-the-evening-oblation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Fear not, Zacharias: for thy prayer is heard* (Luke 1:13) — as Gabriel told Daniel his supplications were heard from their beginning (Daniel 9:23); the prayer answered.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=21
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-gabriel-touched-me-about-the-time-of-the-evening-oblation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I am Gabriel, that stand in the presence of Elohim (God); and am sent to speak unto thee* (Luke 1:19) — the same *man Gabriel* (Daniel 9:21), *sent... to shew thee* in both; standing in the presence.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=9 AND sv.verse_number=21
+  JOIN _s306_dan09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-9-gabriel-touched-me-about-the-time-of-the-evening-oblation'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_daniel_10.sql (Daniel 10) -----
+-- Chapter: Daniel 10 — the vision by the great river Hiddekel; the certain man clothed in linen
+-- (loins girded with fine gold, body like the beryl, face as lightning, eyes as lamps of fire, voice
+-- as a multitude); Daniel left alone, no strength; the touch that strengthens; "O Daniel, a man
+-- greatly beloved"; the prince of the kingdom of Persia withstood me one and twenty days; Michael,
+-- one of the chief princes, came to help; Michael your prince. The throne-room of the unseen war and
+-- a full-dress theophany of the FORMED One (he reappears identically to John in Revelation 1).
+-- Tag: dan10   Temp view: _s306_dan10_lookup
+-- Sort band: base 30225, step 3 -> threads at 30225, 30228, 30231, 30234 (4 threads)
+-- Source of EVERY row: 'canon','daniel',10,v
+--
+-- Daniel 10 coverage:
+--   v.1 (third year of Cyrus; the thing was true but the time appointed was long)
+--        NT:     none warranted (historical preface)
+--        Extras: none warranted
+--        Tanakh: none separate (sets the date; woven into the mourning-fast in prose)
+--   v.2-3 (I Daniel was mourning three full weeks; ate no pleasant bread, neither flesh nor wine)
+--        NT:     none warranted (the seeking-fast posture; James 4:10 carried in THREAD 3, not here)
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 9:3 (I set my face unto Yahuah Elohim... by prayer and supplications, with
+--                fasting) — THREAD 4 (the same chastening-fast that precedes the answer)
+--   ★★ v.5-6 (a certain man clothed in linen, loins girded with fine gold of Uphaz; body like the
+--          beryl, face as lightning, eyes as lamps of fire, arms and feet like polished brass, voice
+--          like the voice of a multitude)
+--        NT:     ★★ Revelation 1:13 (one like the Son of Adam... girt about the paps with a golden
+--                girdle), ★★ Revelation 1:14 (eyes as a flame of fire), ★★ Revelation 1:15 (feet
+--                like fine brass... voice as the sound of many waters), ★ Revelation 1:17 (I fell at
+--                his feet as dead... Fear not) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 1:26-28 (the likeness as the appearance of a man... the appearance of the
+--                likeness of the glory of Yahuah) — THREAD 1 (the same visible Glory)
+--   v.7-9 (I Daniel alone saw the vision... no strength in me... a deep sleep on my face)
+--        NT:     ★ Revelation 1:17 (when I saw him I fell at his feet as dead) — carried in THREAD 1
+--        Extras: none warranted
+--        Tanakh: held in THREAD 1 (the overwhelming; Ezek 1:28 "I fell upon my face")
+--   v.10 (an hand touched me, which set me upon my knees)
+--        NT:     none separate (the strengthening touch; Rev 1:17 "he laid his right hand upon me")
+--        Extras: none warranted
+--        Tanakh: none separate (woven into THREAD 3, the beloved one raised and strengthened)
+--   ★ v.11-12 (O Daniel, a man greatly beloved... from the first day that thou didst set thine heart
+--          to understand, and to chasten thyself before thy Elohim (God), thy words were heard)
+--        NT:     ★ Matthew 6:33 (seek ye first the kingdom of Elohim), ★ Luke 1:13 (thy prayer is
+--                heard), ★ Acts 10:4 (thy prayers and thine alms are come up for a memorial) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 9:23 (At the beginning of thy supplications the commandment came forth...
+--                for thou art greatly beloved) — THREAD 3 (Daniel's other "greatly beloved" + heard-
+--                from-the-first-word)
+--   ★ v.13 (the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael,
+--          one of the chief princes, came to help me)
+--        NT:     ★ Ephesians 6:12 (we wrestle not against flesh and blood, but against principalities),
+--                ★ Revelation 12:7 (Michael and his angels fought against the dragon), ★ Jude 1:9
+--                (Michael the archangel... durst not bring against him a railing accusation) — THREAD 2
+--        Extras: none warranted (1 Enoch's archangels considered; the clean canon Michael-chain is
+--                fuller; none forced)
+--        Tanakh: ★★ Daniel 12:1 (at that time shall Michael stand up, the great prince which standeth
+--                for the children of thy people), ★ Deuteronomy 32:8 (the El Elyon (most High) divided
+--                to the nations their inheritance... according to the number of the children of
+--                Yashar'el) — THREAD 2
+--   v.14 (what shall befall thy people in the latter days)
+--        NT:     none warranted (the purpose of the visit; Dan 12:1 latter-day weave in THREAD 2)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 2 (the latter-days vision concerns "thy people")
+--   v.15-17 (I set my face toward the ground, became dumb; one like the similitude of the sons of men
+--          touched my lips; no strength, no breath left)
+--        NT:     none separate (the strengthening; carried in THREAD 3)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 3 (the touch on the lips that restores speech)
+--   ★ v.18-19 (one like the appearance of a man touched me, and he strengthened me; O man greatly
+--          beloved, fear not: peace be unto thee, be strong... I was strengthened)
+--        NT:     ★ James 4:10 (Humble yourselves in the sight of Yahuah, and he shall lift you up) —
+--                THREAD 3; Rev 1:17 "Fear not" also echoes (carried in THREAD 1)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 3 (the beloved one strengthened by the touch)
+--   ★ v.20-21 (now will I return to fight with the prince of Persia... the prince of Grecia shall
+--          come... there is none that holdeth with me in these things, but Michael your prince)
+--        NT:     carried in THREAD 2 (Eph 6:12; Rev 12:7) — the ongoing unseen war
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 12:1 (Michael... standeth for the children of thy people) — THREAD 2
+--                ("Michael YOUR prince" = the guardian of Daniel's people)
+--
+-- Threads (slug — target libraries):
+--   1. daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire — NT (Revelation 1) + Tanakh (Ezekiel 1) [free]
+--      (★★ the full-dress theophany of the FORMED One; he reappears identically to John in Rev 1; the visible Glory of Ezek 1)
+--   2. daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help — NT (Ephesians 6, Revelation 12, Jude) + Tanakh (Daniel 12, Deuteronomy 32) [free]
+--      (★ the unseen war of the principalities; the angelic princes over the nations; Michael, the people's prince)
+--   3. daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard — NT (Matthew 6, Luke 1, Acts 10, James 4) + Tanakh (Daniel 9) [free]
+--      (★ the humble seeking heard from the first day; the beloved one raised and strengthened by the touch)
+--   4. daniel-10-mourning-three-full-weeks-the-seeking-heart-before-the-vision — Tanakh (Daniel 9) [free]
+--      (the chastening-fast posture that precedes the answer; the same set face as the ch.9 confession)
+--
+-- Framing notes:
+--   ★★ THE MAN CLOTHED IN LINEN (THREAD 1): *Then I lifted up mine eyes, and looked, and behold a
+--      certain man clothed in linen, whose loins were girded with fine gold of Uphaz: His body also
+--      was like the beryl, and his face as the appearance of lightning, and his eyes as lamps of
+--      fire, and his arms and his feet like in colour to polished brass, and the voice of his words
+--      like the voice of a multitude* (Daniel 10:5-6). This is no ordinary angel — it is the visible
+--      Glory, and John meets the SAME figure on Patmos: *one like unto the Son of Adam, clothed with
+--      a garment down to the foot, and girt about the paps with a golden girdle... his eyes were as a
+--      flame of fire; And his feet like unto fine brass... and his voice as the sound of many waters*
+--      (Revelation 1:13-15). Golden girdle, eyes of fire, feet of brass, voice of a multitude/many
+--      waters — line for line the same Person. And both seers are felled: *there remained no strength
+--      in me... I was in a deep sleep on my face* (Daniel 10:8-9); *And when I saw him, I fell at his
+--      feet as dead. And he laid his right hand upon me, saying unto me, Fear not* (Revelation 1:17).
+--      This is the FORMED Son — the One drawn from the Formless Father who appeared, spoke, and walked
+--      in the Tanakh; he is Yahuah and has a Father. Ezekiel saw the same enthroned Glory: *the
+--      likeness as the appearance of a man above upon it... This was the appearance of the likeness of
+--      the glory of Yahuah (LORD). And when I saw it, I fell upon my face* (Ezekiel 1:26-28). One
+--      visible Glory across the prophets and into Revelation.
+--   ★ THE PRINCE OF PERSIA AND MICHAEL (THREAD 2): the messenger is delayed by an unseen battle —
+--      *But the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael,
+--      one of the chief princes, came to help me* (Daniel 10:13) — and the war continues: *now will I
+--      return to fight with the prince of Persia... but Michael your prince* (Daniel 10:20-21). There
+--      are angelic princes set over the nations (*the El Elyon (most High) divided to the nations
+--      their inheritance... according to the number of the children of Yashar'el (Israel)*, Deut 32:8),
+--      and Michael is the guardian of Daniel's people: *at that time shall Michael stand up, the great
+--      prince which standeth for the children of thy people* (Daniel 12:1). Paul names the same unseen
+--      front: *we wrestle not against flesh and blood, but against principalities, against powers,
+--      against the rulers of the darkness of this world* (Ephesians 6:12). John sees Michael in the
+--      open war: *And there was war in heaven: Michael and his angels fought against the dragon*
+--      (Revelation 12:7). Jude names him the archangel who *durst not bring against him a railing
+--      accusation, but said, Yahuah (Lord) rebuke thee* (Jude 1:9). The kingdoms of men have unseen
+--      principalities behind them, and the people of the covenant have a prince who stands for them.
+--   ★ A MAN GREATLY BELOVED, THY WORDS WERE HEARD (THREAD 3): *O Daniel, a man greatly beloved...
+--      from the first day that thou didst set thine heart to understand, and to chasten thyself before
+--      thy Elohim (God), thy words were heard, and I am come for thy words* (Daniel 10:11-12). The
+--      answer was loosed the FIRST day he set his heart — exactly as in ch.9: *At the beginning of thy
+--      supplications the commandment came forth... for thou art greatly beloved* (Daniel 9:23). This is
+--      the standing promise: *seek ye first the kingdom of Elohim (God)* (Matthew 6:33), and the prayer
+--      is heard — *Fear not, Zacharias: for thy prayer is heard* (Luke 1:13); *Thy prayers and thine
+--      alms are come up for a memorial before Elohim (God)* (Acts 10:4). The beloved one, overwhelmed
+--      and strengthless, is raised by a touch and told twice *fear not... be strong* (Daniel 10:18-19)
+--      — the same lifting James names: *Humble yourselves in the sight of Yahuah (Lord), and he shall
+--      lift you up* (James 4:10).
+--   THE SEEKING HEART BEFORE THE VISION (THREAD 4): *In those days I Daniel was mourning three full
+--      weeks. I ate no pleasant bread, neither came flesh nor wine in my mouth... till three whole
+--      weeks were fulfilled* (Daniel 10:2-3) — the same set face and chastening fast that opened ch.9:
+--      *And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with
+--      fasting, and sackcloth, and ashes* (Daniel 9:3). The posture of the seeking heart precedes the
+--      vision; the mourning of vv.2-3 is the soil from which the answer of vv.11-12 grows.
+--   VERSES WITH NO SEPARATE ADD: v.1 (historical date-preface), v.14 (the visit's purpose, latter-day
+--      weave carried in THREAD 2), v.15-17 (the dumbness and the touch on the lips, carried in THREAD
+--      3), v.7,9,10 (the overwhelming and the raising, carried in THREADS 1 and 3). All recorded above.
+
+CREATE TEMP VIEW _s306_dan10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the man clothed in linen — the FORMED One, identical to Revelation 1
+    ('canon','daniel',10,6,'canon','revelation',1,13,'free',
+      E'*And in the midst of the seven candlesticks one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle* (Revelation 1:13). John on Patmos meets the very figure Daniel saw: *a certain man clothed in linen, whose loins were girded with fine gold of Uphaz* (Daniel 10:5). The linen garment and the golden girdle are the same — this is the visible Glory, the FORMED Son who appeared and spoke in the Tanakh, now revealed to John. He is Yahuah and has a Father.'),
+    ('canon','daniel',10,6,'canon','revelation',1,14,'free',
+      E'*His head and his hairs were white like wool, as white as snow; and his eyes were as a flame of fire* (Revelation 1:14). Daniel''s glorious man has *his face as the appearance of lightning, and his eyes as lamps of fire* (Daniel 10:6) — the same eyes of fire. The One Daniel beheld by the Hiddekel is the One John beheld among the candlesticks: a single, visible, glorified Person across the prophets and the apostles.'),
+    ('canon','daniel',10,6,'canon','revelation',1,15,'free',
+      E'*And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters* (Revelation 1:15). This is Daniel''s man line for line: *his arms and his feet like in colour to polished brass, and the voice of his words like the voice of a multitude* (Daniel 10:6). Feet of burnished brass, voice as a multitude/many waters — the FORMED One in his glory, the same in Daniel and in Revelation.'),
+    ('canon','daniel',10,8,'canon','revelation',1,17,'free',
+      E'*And when I saw him, I fell at his feet as dead. And he laid his right hand upon me, saying unto me, Fear not; I am the first and the last* (Revelation 1:17). Daniel is felled exactly so: *there remained no strength in me: for my comeliness was turned in me into corruption* (Daniel 10:8), then *an hand touched me, which set me upon my knees* (10:10) and he is told *Fear not* (10:12). The same overwhelming before the same Glory, and the same right hand that raises and says *Fear not*.'),
+    ('canon','daniel',10,6,'canon','ezekiel',1,26,'free',
+      E'*And above the firmament that was over their heads was the likeness of a throne, as the appearance of a sapphire stone: and upon the likeness of the throne was the likeness as the appearance of a man above upon it* (Ezekiel 1:26). Ezekiel saw the enthroned likeness of a man that Daniel saw standing by the river — *a certain man clothed in linen... his face as the appearance of lightning* (Daniel 10:5-6). The same visible Glory in the form of a man, enthroned above the cherubim and walking by the Hiddekel.'),
+    ('canon','daniel',10,8,'canon','ezekiel',1,28,'free',
+      E'*As the appearance of the bow that is in the cloud in the day of rain, so was the appearance of the brightness round about. This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face* (Ezekiel 1:28). Ezekiel names the man-shaped brightness *the glory of Yahuah* and falls on his face — exactly as Daniel, who *saw this great vision, and there remained no strength in me* (Daniel 10:8). The glorious man of Daniel 10 is the glory of Yahuah of Ezekiel 1: the FORMED Son, the visible Glory who fells the prophet who beholds him.'),
+
+    -- THREAD 2 (★): the prince of Persia withstood me — but Michael came to help
+    ('canon','daniel',10,13,'canon','ephesians',6,12,'free',
+      E'*For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places* (Ephesians 6:12). Paul names the unseen war Daniel''s messenger fought: *the prince of the kingdom of Persia withstood me one and twenty days* (Daniel 10:13). The kingdoms of men have angelic *principalities* behind them; the real battle is in *high places*, against rulers of darkness, exactly as the curtain is pulled back at the Hiddekel.'),
+    ('canon','daniel',10,13,'canon','revelation',12,7,'free',
+      E'*And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels* (Revelation 12:7). The Michael who *came to help* the messenger against the prince of Persia (Daniel 10:13) is the same warring archangel John sees in open battle in heaven. The unseen conflict glimpsed at the river is the conflict that breaks fully into view in Revelation — Michael and his angels against the dragon.'),
+    ('canon','daniel',10,13,'canon','jude',1,9,'free',
+      E'*Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, Yahuah (Lord) rebuke thee* (Jude 1:9). Jude names the rank of the prince who *came to help* in Daniel 10:13: Michael the archangel, who contends with the adversary yet defers all judgment to Yahuah. The chief prince of Daniel''s vision is the archangel of Jude — mighty, yet under the Name.'),
+    ('canon','daniel',10,21,'canon','daniel',12,1,'free',
+      E'*And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble... and at that time thy people shall be delivered* (Daniel 12:1). The *Michael your prince* of Daniel 10:21 is named two chapters on as *the great prince which standeth for the children of thy people* — the guardian of the covenant people who rises in the latter-day trouble. The unseen helper of ch.10 is the deliverer who stands in ch.12.'),
+    ('canon','daniel',10,13,'canon','deuteronomy',32,8,'free',
+      E'*When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). The Song of Moses gives the root of the *prince of the kingdom of Persia* and *the prince of Grecia* (Daniel 10:13,20): the El Elyon apportioned the nations under boundaries and unseen princes, while Yahuah''s own portion is his people (Deut 32:9). The angelic princes over the nations stand behind Daniel''s vision.'),
+
+    -- THREAD 3 (★): O Daniel, a man greatly beloved — thy words were heard from the first day
+    ('canon','daniel',10,12,'canon','daniel',9,23,'free',
+      E'*At the beginning of thy supplications the commandment came forth, and I am come to shew thee; for thou art greatly beloved: therefore understand the matter, and consider the vision* (Daniel 9:23). Daniel''s other answered prayer says exactly what ch.10 says: the word went forth at *the beginning of thy supplications*, and the man is *greatly beloved* — the same *from the first day that thou didst set thine heart to understand... thy words were heard* (Daniel 10:12). The beloved one is heard the moment he begins to seek.'),
+    ('canon','daniel',10,12,'canon','matthew',6,33,'free',
+      E'*But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33). Daniel is the pattern of the seeking heart Yahusha (Jesus) commands: *from the first day that thou didst set thine heart to understand, and to chasten thyself before thy Elohim (God), thy words were heard* (Daniel 10:12). The one who sets his heart first to seek is heard and answered; the kingdom is added to the seeker.'),
+    ('canon','daniel',10,12,'canon','luke',1,13,'free',
+      E'*But the angel said unto him, Fear not, Zacharias: for thy prayer is heard; and thy wife Elisabeth shall bear thee a son* (Luke 1:13). The same word an angel brings to the praying Zacharias is the word brought to the praying Daniel: *thy words were heard, and I am come for thy words* (Daniel 10:12). The prayer of the beloved is heard, and a messenger is sent in answer — *Fear not* (Daniel 10:12; Luke 1:13).'),
+    ('canon','daniel',10,12,'canon','acts',10,4,'free',
+      E'*And when he looked on him, he was afraid, and said, What is it, Yahuah (Lord)? And he said unto him, Thy prayers and thine alms are come up for a memorial before Elohim (God)* (Acts 10:4). Cornelius, like Daniel, is told his seeking has been heard and remembered: *thy words were heard, and I am come for thy words* (Daniel 10:12). The prayers of the humble go up for a memorial, and a messenger is sent down with the answer.'),
+    ('canon','daniel',10,19,'canon','james',4,10,'free',
+      E'*Humble yourselves in the sight of Yahuah (Lord), and he shall lift you up* (James 4:10). The beloved Daniel, who chastened himself and fell strengthless, is raised and strengthened by the touch: *O man greatly beloved, fear not: peace be unto thee, be strong... And when he had spoken unto me, I was strengthened* (Daniel 10:19). The one who humbles himself before Yahuah is the one Yahuah lifts up — the chastening of vv.2-3,12 answered by the strengthening of v.19.'),
+
+    -- THREAD 4: mourning three full weeks — the seeking heart before the vision
+    ('canon','daniel',10,3,'canon','daniel',9,3,'free',
+      E'*And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes* (Daniel 9:3). The three-week mourning-fast that opens ch.10 — *I ate no pleasant bread, neither came flesh nor wine in my mouth... till three whole weeks were fulfilled* (Daniel 10:3) — is the same set face and chastening fast that opened ch.9. The posture of the seeking heart precedes the answer; the fast precedes the touch that strengthens.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire',
+       E'The man clothed in linen, his eyes as lamps of fire — the Formed One John saw again',
+       E'By the great river Hiddekel, Daniel lifts up his eyes and sees a Person no angel-category can hold: *behold a certain man clothed in linen, whose loins were girded with fine gold of Uphaz: His body also was like the beryl, and his face as the appearance of lightning, and his eyes as lamps of fire, and his arms and his feet like in colour to polished brass, and the voice of his words like the voice of a multitude* (Daniel 10:5-6). Centuries later, John on Patmos turns and sees the SAME figure, detail for detail: *one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle... his eyes were as a flame of fire; And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters* (Revelation 1:13-15). Linen robe and golden girdle, eyes of fire, feet of burnished brass, voice as a multitude/many waters — this is one and the same glorious Person. And both seers collapse before him: *there remained no strength in me: for my comeliness was turned in me into corruption* (Daniel 10:8), *I fell at his feet as dead. And he laid his right hand upon me, saying unto me, Fear not* (Revelation 1:17). This is the FORMED Son — the visible Glory drawn from the Formless Father, the One who appeared and spoke through the Tanakh, who is Yahuah and has a Father. Ezekiel saw the same man-shaped Glory enthroned: *the likeness as the appearance of a man above upon it... This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face* (Ezekiel 1:26-28). One visible Glory — by the Chebar, by the Hiddekel, and among the candlesticks — felling every prophet who beholds him and raising him again with the touch of his hand.',
+       sv.verse_id, ev.verse_id, 'free', 30225
+  FROM _s306_dan10_lookup sv, _s306_dan10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=10 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help',
+       E'The prince of Persia withstood me — but Michael, one of the chief princes, came to help',
+       E'Daniel 10 pulls back the curtain on the unseen war behind the kingdoms of men. The messenger explains his three-week delay: *the prince of the kingdom of Persia withstood me one and twenty days: but, lo, Michael, one of the chief princes, came to help me* (Daniel 10:13), and the battle is not over — *now will I return to fight with the prince of Persia: and when I am gone forth, lo, the prince of Grecia shall come... there is none that holdeth with me in these things, but Michael your prince* (Daniel 10:20-21). There are angelic princes set over the nations — the root is in the Song of Moses: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8). Paul names this same front for the saints: *we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places* (Ephesians 6:12). John sees the war break into the open: *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels* (Revelation 12:7); and Jude names his rank: *Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, Yahuah (Lord) rebuke thee* (Jude 1:9). And *Michael your prince* is the guardian of the covenant people: *at that time shall Michael stand up, the great prince which standeth for the children of thy people... and at that time thy people shall be delivered* (Daniel 12:1). The nations have their unseen principalities; Yahuah''s people have a prince who stands for them.',
+       sv.verse_id, ev.verse_id, 'free', 30228
+  FROM _s306_dan10_lookup sv, _s306_dan10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=10 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard',
+       E'O Daniel, a man greatly beloved — from the first day thy words were heard',
+       E'When Daniel is raised from the ground, the messenger tells him why he has come: *O Daniel, a man greatly beloved, understand the words that I speak unto thee* (Daniel 10:11), and then the promise that anchors the whole framework of prayer — *from the first day that thou didst set thine heart to understand, and to chasten thyself before thy Elohim (God), thy words were heard, and I am come for thy words* (Daniel 10:12). The answer was loosed the FIRST day he set his heart, exactly as in his earlier vision: *At the beginning of thy supplications the commandment came forth, and I am come to shew thee; for thou art greatly beloved* (Daniel 9:23). This is the standing pattern of the seeking heart: *seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33). The prayer of the humble is heard and remembered: *Fear not, Zacharias: for thy prayer is heard* (Luke 1:13); *Thy prayers and thine alms are come up for a memorial before Elohim (God)* (Acts 10:4). And the beloved one, fallen strengthless before the Glory, is raised by a touch and twice told to take courage: *O man greatly beloved, fear not: peace be unto thee, be strong, yea, be strong. And when he had spoken unto me, I was strengthened* (Daniel 10:19). It is the very lifting James promises: *Humble yourselves in the sight of Yahuah (Lord), and he shall lift you up* (James 4:10). The one who chastens himself and seeks is heard from the first day, and strengthened to stand.',
+       sv.verse_id, ev.verse_id, 'free', 30231
+  FROM _s306_dan10_lookup sv, _s306_dan10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=10 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-10-mourning-three-full-weeks-the-seeking-heart-before-the-vision',
+       E'Mourning three full weeks — the seeking heart before the vision',
+       E'Before any vision is given, Daniel takes the posture of the seeking heart: *In those days I Daniel was mourning three full weeks. I ate no pleasant bread, neither came flesh nor wine in my mouth, neither did I anoint myself at all, till three whole weeks were fulfilled* (Daniel 10:2-3). It is the same set face and chastening fast that opened his earlier prayer: *And I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes* (Daniel 9:3). The mourning, the fasting, the heart set to *chasten thyself before thy Elohim (God)* (Daniel 10:12) — this is the soil from which the answer grows. The three weeks of v.2-3 are the very days the messenger was withstood by the prince of Persia (v.13), and the very days the beloved one''s words were already heard (v.12). The seeking heart precedes the vision; the fast precedes the touch that strengthens.',
+       sv.verse_id, ev.verse_id, 'free', 30234
+  FROM _s306_dan10_lookup sv, _s306_dan10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=10 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *one like unto the Son of Adam... girt about the paps with a golden girdle* (Revelation 1:13) — John meets the same linen-robed, gold-girded man Daniel saw (Daniel 10:5); the FORMED One revealed again.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *his eyes were as a flame of fire* (Revelation 1:14) — the same *eyes as lamps of fire* of Daniel 10:6; one glorified Person across prophet and apostle.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *his feet like unto fine brass... and his voice as the sound of many waters* (Revelation 1:15) — line for line Daniel 10:6: feet of polished brass, voice of a multitude.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I fell at his feet as dead. And he laid his right hand upon me, saying... Fear not* (Revelation 1:17) — John felled and raised as Daniel was (Daniel 10:8-10); the same overwhelming, the same hand.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=8
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *upon the likeness of the throne was the likeness as the appearance of a man above upon it* (Ezekiel 1:26) — the man-shaped Glory Daniel saw standing was the enthroned Glory Ezekiel saw.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face* (Ezekiel 1:28) — the glorious man of Daniel 10 is the glory of Yahuah that fells the prophet.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=8
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-man-clothed-in-linen-his-eyes-as-lamps-of-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *we wrestle not against flesh and blood, but against principalities... against spiritual wickedness in high places* (Ephesians 6:12) — Paul names the unseen war behind Daniel 10:13; the kingdoms have angelic princes.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Michael and his angels fought against the dragon* (Revelation 12:7) — the Michael who helped at the Hiddekel (Daniel 10:13) seen in open heavenly war.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Michael the archangel... durst not bring against him a railing accusation, but said, Yahuah (Lord) rebuke thee* (Jude 1:9) — Jude names the rank of the chief prince of Daniel 10:13.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Michael... the great prince which standeth for the children of thy people* (Daniel 12:1) — *Michael your prince* (Daniel 10:21) named the guardian-deliverer of the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=21
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the El Elyon (most High) divided to the nations their inheritance... according to the number of the children of Yashar''el (Israel)* (Deuteronomy 32:8) — the root of the princes over Persia and Grecia (Daniel 10:13,20).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-the-prince-of-persia-withstood-me-but-michael-came-to-help'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *At the beginning of thy supplications the commandment came forth... for thou art greatly beloved* (Daniel 9:23) — Daniel''s other answered prayer: heard at the first word, the beloved one (Daniel 10:11-12).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33) — Daniel the pattern of the heart set to seek (Daniel 10:12).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Fear not, Zacharias: for thy prayer is heard* (Luke 1:13) — the same word a messenger brings to the praying Daniel: *thy words were heard* (Daniel 10:12).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Thy prayers and thine alms are come up for a memorial before Elohim (God)* (Acts 10:4) — Cornelius, like Daniel, told his seeking is heard and remembered (Daniel 10:12).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=12
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Humble yourselves in the sight of Yahuah (Lord), and he shall lift you up* (James 4:10) — the beloved one chastened and fallen, raised by the touch (Daniel 10:19).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=19
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-o-daniel-a-man-greatly-beloved-thy-words-were-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I set my face unto Yahuah Elohim (the Lord God), to seek by prayer and supplications, with fasting, and sackcloth, and ashes* (Daniel 9:3) — the same chastening fast that opened ch.9 precedes the vision of ch.10 (Daniel 10:2-3).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=10 AND sv.verse_number=3
+  JOIN _s306_dan10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-10-mourning-three-full-weeks-the-seeking-heart-before-the-vision'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_daniel_11.sql (Daniel 11) -----
+-- Chapter: Daniel 11 — the kings of the north and south; the vile person (Antiochus); the daily
+-- sacrifice taken away and THE ABOMINATION THAT MAKETH DESOLATE placed; the people that DO KNOW
+-- their Elohim (God) shall be strong and do exploits; the wise (maskilim) who instruct many and are
+-- refined unto the time of the end; and the king who EXALTS HIMSELF ABOVE EVERY GOD. A keystone
+-- prophecy: the Antiochus enactment is the near pattern, the self-exalting end-time king the far one,
+-- and the faithful two-house remnant that knows their God stands firm through both.
+-- Tag: dan11   Temp view: _s306_dan11_lookup
+-- Sort band: base 30250, step 3 -> threads at 30250, 30253, 30256, 30259 (4 threads)
+-- Source of EVERY row: 'canon','daniel',11,v
+--
+-- Daniel 11 coverage:
+--   v.2-4 (three kings in Persia, the fourth richer... a mighty king shall stand up... his kingdom
+--          shall be broken, and shall be divided toward the four winds of heaven)
+--        NT:     none warranted (the empire-succession; the NT does not quote it)
+--        Extras: ★ 1 Maccabees 1:1-9 (Alexander the Macedonian out of Chettiim... parted his kingdom
+--                among his servants) — held in THREAD 4 prose (the same Greek succession; clean witness),
+--                NOT threaded as a member (the historical narration, not a binding cross-quote)
+--        Tanakh: ★ Daniel 8:8 (the great horn was broken; for it came up four notable ones toward
+--                the four winds), ★ Daniel 8:22 (four kingdoms shall stand up out of the nation),
+--                Daniel 7:6 (the leopard with four heads) — THREAD 4
+--   v.5-30 (the kings of the south and north; leagues, battles, the daughter of women, ships of
+--          Chittim; the vile person who works deceitfully and is against the holy covenant)
+--        NT:     none warranted (the detailed Ptolemy/Seleucid history; woven in prose, not threaded)
+--        Extras: ★ 1 Maccabees 1:10-24 (the wicked root Antiochus Epiphanes... entered proudly into
+--                the sanctuary) — the Antiochus enactment; held in THREAD 1 prose as the near pattern
+--        Tanakh: none separate (the empire-conflict narration leading to v.31)
+--   ★★ v.31-32 (they shall pollute the sanctuary of strength, and shall take away the daily
+--          sacrifice, and they shall place the ABOMINATION THAT MAKETH DESOLATE... but the people
+--          that DO KNOW their Elohim (God) shall be strong, and do exploits)
+--        NT:     ★★ Matthew 24:15 (when ye therefore shall see the abomination of desolation, spoken
+--                of by Daniel the prophet, stand in the holy place) — THREAD 1
+--        Extras: ★★ 1 Maccabees 1:54 (they set up the abomination of desolation upon the altar) +
+--                1 Maccabees 1:59 (sacrifice upon the idol altar, which was upon the altar of Yahuah)
+--                — THREAD 1 (the Antiochus enactment of the very abomination; extras member ⇒ THREAD 1
+--                tier = 'extras')
+--        Tanakh: ★ Daniel 8:11-13 (by him the daily sacrifice was taken away... the transgression of
+--                desolation), ★ Daniel 9:27 (he shall cause the sacrifice and the oblation to cease...
+--                the overspreading of abominations), ★ Daniel 12:11 (from the time that the daily
+--                sacrifice shall be taken away, and the abomination that maketh desolate set up) — THREAD 1
+--   ★ v.33-35 (they that understand among the people shall instruct many: yet they shall fall by the
+--          sword... to try them, and to purge, and to make them white, even to the time of the end)
+--        NT:     ★ 1 Peter 1:7 (the trial of your faith... though it be tried with fire), ★ Revelation
+--                7:14 (came out of great tribulation, and have washed their robes, and made them white
+--                in the blood of the Lamb) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 12:3 (they that be wise shall shine as the brightness of the firmament...
+--                turn many to righteousness), ★ Daniel 12:10 (many shall be purified, and made white,
+--                and tried), ★ Malachi 3:3 (he shall sit as a refiner and purifier of silver) — THREAD 3
+--   ★★ v.36-37 (the king shall do according to his will; and he shall EXALT HIMSELF, and MAGNIFY
+--          HIMSELF ABOVE EVERY GOD, and shall speak marvellous things against the Elohim (God) of
+--          gods... Neither shall he regard the Elohim (God) of his fathers)
+--        NT:     ★★ 2 Thessalonians 2:3-4 (that man of sin... who opposeth and exalteth himself above
+--                all that is called Elohim (God)... shewing himself that he is Elohim (God)), ★★
+--                Revelation 13:5-6 (a mouth speaking great things and blasphemies... in blasphemy
+--                against Elohim (God)) — THREAD 2
+--        Extras: none warranted (no clean extras witness; Antiochus pattern noted in prose)
+--        Tanakh: ★★ Daniel 7:25 (he shall speak great words against the El Elyon (most High)... think
+--                to change times and laws), ★ Daniel 8:25 (he shall magnify himself in his heart...
+--                stand up against the Prince of princes; but he shall be broken without hand) — THREAD 2
+--   v.38-39 (he shall honour the Elohim (God) of forces; a god whom his fathers knew not)
+--        NT:     none warranted (the strange-god worship of the self-exalting king; woven in THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 2 prose (continuation of v.36-37, the god his fathers knew not)
+--   v.40-45 (the time of the end; the king of the north like a whirlwind; he shall plant the
+--          tabernacles of his palace... in the glorious holy mountain; yet he shall come to his end)
+--        NT:     none warranted (the end of the figure; answered by Daniel 12 and 2 Thess 2:8 — woven
+--                in THREAD 2 prose: whom Yahuah shall consume with the spirit of his mouth)
+--        Extras: none warranted
+--        Tanakh: held in prose — *he shall come to his end, and none shall help him* (11:45) bound to
+--                Daniel 8:25 (broken without hand) in THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim
+--      — NT (Matthew 24) + Extras (1 Maccabees 1) + Tanakh (Daniel 8, 9, 12) [extras]
+--      (★★ the desolating abomination + the faithful two-house remnant that knows their God; near pattern
+--       = Antiochus enactment in 1 Macc 1:54, far = Matt 24:15)
+--   2. daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god
+--      — NT (2 Thessalonians 2, Revelation 13) + Tanakh (Daniel 7, 8) [free]
+--      (★★ the self-exalting end-time king = the little-horn/man-of-sin/blaspheming beast)
+--   3. daniel-11-they-that-understand-shall-instruct-many-and-be-made-white
+--      — NT (1 Peter 1, Revelation 7) + Tanakh (Daniel 12, Malachi 3) [free]
+--      (★ the wise/maskilim who instruct many and are refined through persecution unto the time of the end)
+--   4. daniel-11-his-kingdom-shall-be-divided-toward-the-four-winds
+--      — Tanakh (Daniel 8, 7) [free]
+--      (the swift mighty king of Greece broken and divided to the four winds; empire-succession)
+--
+-- Framing notes:
+--   ★★ THE ABOMINATION + THE REMNANT THAT KNOWS THEIR GOD (THREAD 1): *And arms shall stand on his
+--      part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice,
+--      and they shall place the abomination that maketh desolate. And such as do wickedly against the
+--      covenant shall he corrupt by flatteries: but the people that do know their Elohim (God) shall be
+--      strong, and do exploits* (Daniel 11:31-32). The near fulfilment is the Antiochus enactment, and
+--      the restored library RECORDS it: *they set up the abomination of desolation upon the altar*
+--      (1 Maccabees 1:54). Yahusha (Jesus) reaches forward to the same word for the end: *When ye
+--      therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the
+--      holy place* (Matthew 24:15). Daniel himself triples the oracle — 8:11-13, 9:27, 12:11. And the
+--      hinge is the remnant: *the people that do know their Elohim (God) shall be strong, and do exploits*
+--      — the two-house faithful, Yahudah (Judah) and the scattered house of Yashar'el (Israel), who KNOW
+--      their God (covenant-knowledge, not bare assent — 1 John 2:3) and stand firm while the desolator rages.
+--   ★★ HE SHALL EXALT HIMSELF ABOVE EVERY GOD (THREAD 2): *And the king shall do according to his will;
+--      and he shall exalt himself, and magnify himself above every god, and shall speak marvellous things
+--      against the Elohim (God) of gods* (Daniel 11:36). This is the little-horn/antichrist figure Daniel
+--      saw before (7:25, 8:25) and that the NT names plainly: *that man of sin... who opposeth and exalteth
+--      himself above all that is called Elohim (God)... shewing himself that he is Elohim (God)* (2 Thess
+--      2:3-4); *a mouth speaking great things and blasphemies* (Revelation 13:5). The self-deifying king
+--      who changes times and laws is the standing counterfeit of the FORMED Son — the One who truly bears
+--      the Name yet defers to the Father (Daniel 7:13-14) — and he is *broken without hand* (8:25),
+--      *whom Yahuah (Lord) shall consume with the spirit of his mouth* (2 Thess 2:8). *He shall come to
+--      his end, and none shall help him* (11:45).
+--   ★ THE WISE WHO INSTRUCT MANY AND ARE MADE WHITE (THREAD 3): *And they that understand among the people
+--      shall instruct many: yet they shall fall by the sword, and by flame, by captivity, and by spoil...
+--      And some of them of understanding shall fall, to try them, and to purge, and to make them white,
+--      even to the time of the end* (Daniel 11:33,35). The maskilim — the wise who teach — are refined,
+--      not abandoned: *they that be wise shall shine as the brightness of the firmament; and they that
+--      turn many to righteousness as the stars for ever and ever* (Daniel 12:3); *Many shall be purified,
+--      and made white, and tried* (12:10). The refiner's fire is the covenant-pattern: *he shall sit as a
+--      refiner and purifier of silver* (Malachi 3:3); *the trial of your faith... though it be tried with
+--      fire* (1 Peter 1:7); and the end of the refining is the white-robed multitude *which came out of
+--      great tribulation, and have washed their robes, and made them white in the blood of the Lamb*
+--      (Revelation 7:14). The persecution is the purging; the faithful are made white through it.
+--   THE FOUR WINDS (THREAD 4): *And a mighty king shall stand up, that shall rule with great dominion,
+--      and do according to his will. And when he shall stand up, his kingdom shall be broken, and shall
+--      be divided toward the four winds of heaven* (Daniel 11:3-4) — the swift Greek conqueror (the
+--      1 Maccabees 1 Alexander, who *parted his kingdom among them*) broken and split four ways. Daniel's
+--      ram-and-goat vision names it: *the great horn was broken; and for it came up four notable ones
+--      toward the four winds of heaven* (8:8); *Now that being broken... four kingdoms shall stand up out
+--      of the nation* (8:22) — the Greek king whose kingdom fractures into the north and south that the
+--      rest of the chapter follows.
+--   VERSES WITH NO SEPARATE ADD: v.5-30 (the Ptolemy/Seleucid wars, leagues, the vile person's rise — the
+--      Antiochus narration; 1 Macc 1:10-24 noted in prose, the empire-conflict carried to v.31, not
+--      member-threaded); v.38-39 (the god of forces / strange god — continuation of the self-exalting king,
+--      THREAD 2 prose); v.40-45 (the time-of-the-end whirlwind and the king's end — woven into THREAD 2:
+--      *he shall come to his end, and none shall help him*). All three libraries weighed and recorded.
+
+CREATE TEMP VIEW _s306_dan11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the abomination that maketh desolate + the people that know their Elohim
+    ('canon','daniel',11,31,'canon','matthew',24,15,'free',
+      E'*When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15). Yahusha (Jesus) names Daniel by name and reaches forward to the very word of *they shall take away the daily sacrifice, and they shall place the abomination that maketh desolate* (Daniel 11:31). The desolating abomination set in the sanctuary is the sign Daniel foretold and the Messiah told his disciples to watch for — the near Antiochus pattern projected to the end.'),
+    ('canon','daniel',11,31,'apocrypha','1-maccabees',1,54,'extras',
+      E'*Now the fifteenth day of the month Casleu, in the hundred forty and fifth year, they set up the abomination of desolation upon the altar, and builded idol altars throughout the cities of Juda on every side* (1 Maccabees 1:54). The restored library RECORDS the enactment of Daniel''s oracle: what Daniel foretold — *they shall place the abomination that maketh desolate* (Daniel 11:31) — Antiochus Epiphanes performs, the daily sacrifice taken away and the desolating thing set on the altar. The near fulfilment that the Messiah then projects to the end (Matthew 24:15).'),
+    ('canon','daniel',11,31,'apocrypha','1-maccabees',1,59,'extras',
+      E'*Now the five and twentieth day of the month they did sacrifice upon the idol altar, which was upon the altar of Yahuah (God)* (1 Maccabees 1:59). This is the very pollution Daniel named — *they shall pollute the sanctuary of strength, and shall take away the daily sacrifice* (Daniel 11:31): the idol altar built on top of the altar of Yahuah, the daily offering stopped, swine''s flesh sacrificed (1 Macc 1:47). The library shows the prophecy walked out in history.'),
+    ('canon','daniel',11,31,'canon','daniel',8,11,'free',
+      E'*Yea, he magnified himself even to the prince of the host, and by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:11). Daniel''s ram-and-goat vision gives the same act as 11:31 — *they shall take away the daily sacrifice* — the little horn that grows out of the Greek kingdom (8:9) stops the continual offering and casts down the sanctuary. The two visions are one oracle seen twice.'),
+    ('canon','daniel',11,31,'canon','daniel',9,27,'free',
+      E'*And he shall confirm the covenant with many for one week: and in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate, even until the consummation* (Daniel 9:27). The seventy-weeks oracle names the same desolation as 11:31 — the sacrifice caused to cease and abominations that make desolate — *even until the consummation, and that determined shall be poured upon the desolate*. The pattern runs from Antiochus to the end.'),
+    ('canon','daniel',11,31,'canon','daniel',12,11,'free',
+      E'*And from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days* (Daniel 12:11). Daniel''s closing word repeats 11:31 verbatim in substance — the daily sacrifice taken away and the abomination that maketh desolate set up — and numbers the days to the end. The same desolating sign anchors the whole prophecy.'),
+    ('canon','daniel',11,32,'canon','1-john',2,3,'free',
+      E'*And hereby we do know that we know him, if we keep his commandments* (1 John 2:3). *The people that do know their Elohim (God) shall be strong, and do exploits* (Daniel 11:32) — and to KNOW him is covenant-knowledge, not bare assent: John gives the same filter, that knowing him is bound to keeping his commandments. The remnant strong against the desolator are the ones who keep the covenant the apostate forsake (11:30).'),
+
+    -- THREAD 2 (★★): he shall exalt himself and magnify himself above every god
+    ('canon','daniel',11,36,'canon','2-thessalonians',2,4,'free',
+      E'*Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). Paul names plainly the king of *he shall exalt himself, and magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36): the man of sin who lifts himself above all that is called God and sits in the temple claiming deity. Daniel''s self-exalting king is the man of sin.'),
+    ('canon','daniel',11,36,'canon','2-thessalonians',2,3,'free',
+      E'*Let no man deceive you by any means: for that day shall not come, except there come a falling away first, and that man of sin be revealed, the son of perdition* (2 Thessalonians 2:3). The falling away and the man of sin answer Daniel''s *the king shall do according to his will; and he shall exalt himself* (Daniel 11:36), set against *such as do wickedly against the covenant* whom he corrupts (11:32). The apostasy and the self-exalting king come together — and he is *whom Yahuah (Lord) shall consume with the spirit of his mouth* (2 Thess 2:8), as Daniel''s king is *broken without hand* (8:25).'),
+    ('canon','daniel',11,36,'canon','revelation',13,5,'free',
+      E'*And there was given unto him a mouth speaking great things and blasphemies; and power was given unto him to continue forty and two months* (Revelation 13:5). The beast''s mouth answers Daniel''s king who *shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36) — and the forty-two months echo Daniel''s *a time and times and the dividing of time* (7:25). The blaspheming beast and the self-magnifying king are one figure.'),
+    ('canon','daniel',11,36,'canon','revelation',13,6,'free',
+      E'*And he opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle, and them that dwell in heaven* (Revelation 13:6). John''s beast blasphemes the Name and the tabernacle exactly as Daniel''s king *shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36) and pollutes the sanctuary (11:31). The mouth against heaven runs from Daniel''s little horn to the Revelation beast.'),
+    ('canon','daniel',11,36,'canon','daniel',7,25,'free',
+      E'*And he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws: and they shall be given into his hand until a time and times and the dividing of time* (Daniel 7:25). Daniel''s little horn is the same king as 11:36 — *he shall... speak marvellous things against the Elohim (God) of gods* — speaking against the Most High and presuming to change the appointed times and the Torah. The self-exalting king wars on the covenant calendar and the saints.'),
+    ('canon','daniel',11,36,'canon','daniel',8,25,'free',
+      E'*And through his policy also he shall cause craft to prosper in his hand; and he shall magnify himself in his heart, and by peace shall destroy many: he shall also stand up against the Prince of princes; but he shall be broken without hand* (Daniel 8:25). The little horn of the goat-vision *shall magnify himself in his heart* just as 11:36''s king *shall magnify himself above all* — and the end is the same: he *shall be broken without hand*, answering *he shall come to his end, and none shall help him* (11:45).'),
+
+    -- THREAD 3 (★): they that understand shall instruct many and be made white
+    ('canon','daniel',11,33,'canon','daniel',12,3,'free',
+      E'*And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3). The maskilim of *they that understand among the people shall instruct many* (Daniel 11:33) are the wise who turn many to righteousness — those who fall by the sword are the ones who shine as the stars. The instruction that costs them their lives is crowned with everlasting light.'),
+    ('canon','daniel',11,35,'canon','daniel',12,10,'free',
+      E'*Many shall be purified, and made white, and tried; but the wicked shall do wickedly: and none of the wicked shall understand; but the wise shall understand* (Daniel 12:10). Daniel''s closing word repeats 11:35 — *to try them, and to purge, and to make them white, even to the time of the end* — the same refining of the faithful: purified, made white, and tried, while the wicked understand nothing.'),
+    ('canon','daniel',11,35,'canon','malachi',3,3,'free',
+      E'*And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The purging of *some of them of understanding shall fall, to try them, and to purge, and to make them white* (Daniel 11:35) is the refiner''s fire — Yahuah sits as a refiner to purify his people as gold and silver. The persecution is the refining that makes the offering pure.'),
+    ('canon','daniel',11,35,'canon','1-peter',1,7,'free',
+      E'*That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). Peter gives the same refining as Daniel 11:35 — *to try them, and to purge, and to make them white* — the trial of faith tried with fire like gold, that it might be found unto glory at the appearing. The fall of the understanding ones is the testing that purifies.'),
+    ('canon','daniel',11,35,'canon','revelation',7,14,'free',
+      E'*And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). The end of *to make them white, even to the time of the end* (Daniel 11:35) is the white-robed multitude — those who came out of great tribulation and were made white. The refining unto the time of the end issues in robes washed white in the Lamb''s blood.'),
+
+    -- THREAD 4: his kingdom shall be divided toward the four winds
+    ('canon','daniel',11,4,'canon','daniel',8,8,'free',
+      E'*Therefore the he goat waxed very great: and when he was strong, the great horn was broken; and for it came up four notable ones toward the four winds of heaven* (Daniel 8:8). The goat-vision gives the same Greek king as 11:3-4 — *his kingdom shall be broken, and shall be divided toward the four winds of heaven* — the great horn broken at the height of strength, four horns rising toward the four winds. One empire, two visions.'),
+    ('canon','daniel',11,4,'canon','daniel',8,22,'free',
+      E'*Now that being broken, whereas four stood up for it, four kingdoms shall stand up out of the nation, but not in his power* (Daniel 8:22). Gabriel interprets the broken horn exactly as 11:4 — the mighty king''s kingdom *divided toward the four winds* — four kingdoms standing up out of the Greek nation, but none in his power. The succession the rest of the chapter (north and south) follows.'),
+    ('canon','daniel',11,4,'canon','daniel',7,6,'free',
+      E'*After this I beheld, and lo another, like a leopard, which had upon the back of it four wings of a fowl; the beast had also four heads; and dominion was given to it* (Daniel 7:6). The leopard with four heads is the same Greek kingdom seen in the four-beast vision — its dominion divided four ways, answering *his kingdom shall be broken, and shall be divided toward the four winds of heaven* (Daniel 11:4). The fourfold division is figured across all of Daniel''s visions.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★) — tier 'extras' (1 Maccabees members)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim',
+       E'They shall place the abomination that maketh desolate — but the people that know their Elohim shall be strong',
+       E'At the heart of the prophecy the desolator strikes the sanctuary: *And arms shall stand on his part, and they shall pollute the sanctuary of strength, and shall take away the daily sacrifice, and they shall place the abomination that maketh desolate. And such as do wickedly against the covenant shall he corrupt by flatteries: but the people that do know their Elohim (God) shall be strong, and do exploits* (Daniel 11:31-32). The near fulfilment is recorded in the restored library — Antiochus Epiphanes performs the very thing: *they set up the abomination of desolation upon the altar, and builded idol altars throughout the cities of Juda on every side* (1 Maccabees 1:54), and *the five and twentieth day of the month they did sacrifice upon the idol altar, which was upon the altar of Yahuah (God)* (1 Maccabees 1:59) — the daily offering stopped, swine''s flesh sacrificed, the books of the Torah burned (1 Macc 1:47,56). Daniel triples the oracle across his visions: *by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:11); *in the midst of the week he shall cause the sacrifice and the oblation to cease, and for the overspreading of abominations he shall make it desolate* (Daniel 9:27); *from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days* (Daniel 12:11). And Yahusha (Jesus) reaches forward to the same word for the end of the age: *When ye therefore shall see the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place, (whoso readeth, let him understand:)* (Matthew 24:15). The Antiochus enactment is the near pattern; the Messiah projects it forward. But the hinge of the verse is the remnant: *the people that do know their Elohim (God) shall be strong, and do exploits* — and to KNOW their God is covenant-knowledge, not bare assent, *hereby we do know that we know him, if we keep his commandments* (1 John 2:3). These are the two-house faithful — Yahudah (Judah) and the scattered house of Yashar''el (Israel) — who keep the covenant the apostate forsake (11:30) and stand firm while the desolator rages.',
+       sv.verse_id, ev.verse_id, 'extras', 30250
+  FROM _s306_dan11_lookup sv, _s306_dan11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=11 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god',
+       E'He shall exalt himself, and magnify himself above every god — the self-exalting king',
+       E'The figure breaks from the historical Antiochus into the end-time self-deifier: *And the king shall do according to his will; and he shall exalt himself, and magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods, and shall prosper till the indignation be accomplished... Neither shall he regard the Elohim (God) of his fathers, nor the desire of women, nor regard any god: for he shall magnify himself above all* (Daniel 11:36-37). This is the little-horn/antichrist figure Daniel had already seen — *he shall speak great words against the El Elyon (most High), and shall wear out the saints of the El Elyon (most High), and think to change times and laws* (Daniel 7:25); *he shall magnify himself in his heart... he shall also stand up against the Prince of princes; but he shall be broken without hand* (Daniel 8:25). The New Testament names him plainly: *that man of sin be revealed, the son of perdition; Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:3-4); *And there was given unto him a mouth speaking great things and blasphemies* (Revelation 13:5), *And he opened his mouth in blasphemy against Elohim (God), to blaspheme his name, and his tabernacle, and them that dwell in heaven* (Revelation 13:6). The self-deifying king who changes times and laws and blasphemes the Name is the standing counterfeit of the FORMED Son — the One who truly bears the Name and the everlasting dominion yet defers to the Father (Daniel 7:13-14). And his end is fixed: *he shall be broken without hand* (8:25), *he shall come to his end, and none shall help him* (Daniel 11:45), *whom Yahuah (Lord) shall consume with the spirit of his mouth, and shall destroy with the brightness of his coming* (2 Thessalonians 2:8).',
+       sv.verse_id, ev.verse_id, 'free', 30253
+  FROM _s306_dan11_lookup sv, _s306_dan11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=11 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-11-they-that-understand-shall-instruct-many-and-be-made-white',
+       E'They that understand shall instruct many — refined, and made white, even to the time of the end',
+       E'Between the desolation and the self-exalting king stand the wise: *And they that understand among the people shall instruct many: yet they shall fall by the sword, and by flame, by captivity, and by spoil, many days... And some of them of understanding shall fall, to try them, and to purge, and to make them white, even to the time of the end: because it is yet for a time appointed* (Daniel 11:33-35). The maskilim — the wise who teach — are not abandoned in their suffering but refined by it. Daniel''s own closing words crown them: *And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3); *Many shall be purified, and made white, and tried; but the wicked shall do wickedly... but the wise shall understand* (Daniel 12:10). The refining is the covenant-pattern of the prophets: *he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). Peter gives the same word: *That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). And the end of the refining is the white-robed multitude: *These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). The persecution that fells the understanding ones is the very fire that makes them white unto the time of the end.',
+       sv.verse_id, ev.verse_id, 'free', 30256
+  FROM _s306_dan11_lookup sv, _s306_dan11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=11 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-11-his-kingdom-shall-be-divided-toward-the-four-winds',
+       E'His kingdom shall be divided toward the four winds — the swift Greek king broken',
+       E'The prophecy opens with the Greek conqueror and his fracture: *And a mighty king shall stand up, that shall rule with great dominion, and do according to his will. And when he shall stand up, his kingdom shall be broken, and shall be divided toward the four winds of heaven; and not to his posterity, nor according to his dominion which he ruled* (Daniel 11:3-4). This is the swift king whose empire splits four ways at the height of its strength, the division out of which the kings of the north and south of the rest of the chapter arise. Daniel''s earlier visions name the same break: *Therefore the he goat waxed very great: and when he was strong, the great horn was broken; and for it came up four notable ones toward the four winds of heaven* (Daniel 8:8); *Now that being broken, whereas four stood up for it, four kingdoms shall stand up out of the nation, but not in his power* (Daniel 8:22); and the leopard of the four-beast vision *had also four heads; and dominion was given to it* (Daniel 7:6). One Greek kingdom, broken and divided four ways, figured across every vision Daniel saw — the empire-succession that frames the whole conflict of north and south.',
+       sv.verse_id, ev.verse_id, 'free', 30259
+  FROM _s306_dan11_lookup sv, _s306_dan11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=11 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the abomination of desolation, spoken of by Daniel the prophet, stand in the holy place* (Matthew 24:15) — Yahusha names Daniel and projects 11:31 to the end of the age.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they set up the abomination of desolation upon the altar* (1 Maccabees 1:54) — the library records Antiochus enacting Daniel 11:31; the near pattern.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the idol altar, which was upon the altar of Yahuah (God)* (1 Maccabees 1:59) — the daily sacrifice stopped, the sanctuary polluted exactly as Daniel 11:31 foretold.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='1-maccabees' AND tv.chapter_number=1 AND tv.verse_number=59
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *by him the daily sacrifice was taken away, and the place of his sanctuary was cast down* (Daniel 8:11) — the goat-vision gives the same act as 11:31.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *in the midst of the week he shall cause the sacrifice and the oblation to cease... abominations he shall make it desolate* (Daniel 9:27) — the seventy-weeks oracle names the same desolation.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the daily sacrifice shall be taken away, and the abomination that maketh desolate set up* (Daniel 12:11) — Daniel''s closing word repeats 11:31 and numbers the days.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *hereby we do know that we know him, if we keep his commandments* (1 John 2:3) — to KNOW their God (11:32) is covenant-keeping, not bare assent; the remnant strong against the desolator.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=32
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-the-abomination-that-maketh-desolate-and-the-people-that-know-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *exalteth himself above all that is called Elohim (God)... shewing himself that he is Elohim (God)* (2 Thessalonians 2:4) — Paul names Daniel 11:36''s self-magnifying king the man of sin.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *that man of sin be revealed, the son of perdition* (2 Thessalonians 2:3) — the falling away and the man of sin answer Daniel 11:36''s self-exalting king.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *a mouth speaking great things and blasphemies* (Revelation 13:5) — the beast''s mouth answers Daniel 11:36; the 42 months echo the time-times-and-half of 7:25.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *blasphemy against Elohim (God), to blaspheme his name, and his tabernacle* (Revelation 13:6) — the beast blasphemes the Name and the sanctuary as Daniel 11:36''s king speaks against the God of gods.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *he shall speak great words against the El Elyon (most High)... think to change times and laws* (Daniel 7:25) — the little horn is the same king as 11:36, warring on the appointed times and Torah.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *he shall magnify himself in his heart... but he shall be broken without hand* (Daniel 8:25) — the goat-vision''s horn magnifies himself as 11:36, and his end answers 11:45 (he shall come to his end).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=36
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-he-shall-exalt-himself-and-magnify-himself-above-every-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars* (Daniel 12:3) — the maskilim of 11:33 crowned with everlasting light.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=33
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-they-that-understand-shall-instruct-many-and-be-made-white'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Many shall be purified, and made white, and tried... but the wise shall understand* (Daniel 12:10) — Daniel''s closing word repeats the refining of 11:35.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=35
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-they-that-understand-shall-instruct-many-and-be-made-white'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he shall sit as a refiner and purifier of silver... purge them as gold and silver* (Malachi 3:3) — the refiner''s fire is the purging of 11:35.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=35
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-they-that-understand-shall-instruct-many-and-be-made-white'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the trial of your faith... though it be tried with fire* (1 Peter 1:7) — Peter gives the same refining as 11:35, the testing that purifies unto glory.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=35
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-they-that-understand-shall-instruct-many-and-be-made-white'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14) — the end of the refining of 11:35: the white-robed multitude.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=35
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-they-that-understand-shall-instruct-many-and-be-made-white'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the great horn was broken; and for it came up four notable ones toward the four winds of heaven* (Daniel 8:8) — the goat-vision gives the same fourfold break as 11:4.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-his-kingdom-shall-be-divided-toward-the-four-winds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*four kingdoms shall stand up out of the nation, but not in his power* (Daniel 8:22) — Gabriel interprets the broken horn exactly as 11:4.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-his-kingdom-shall-be-divided-toward-the-four-winds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the beast had also four heads; and dominion was given to it* (Daniel 7:6) — the leopard of the four-beast vision: the same Greek kingdom divided four ways as 11:4.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s306_dan11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=7 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-11-his-kingdom-shall-be-divided-toward-the-four-winds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_daniel_12.sql (Daniel 12) -----
+-- Chapter: Daniel 12 — THE CLOSING KEYSTONE of the book: Michael stands up for the children of thy
+-- people; THE TIME OF TROUBLE such as never was; the deliverance of every one written in the book;
+-- and then THE RESURRECTION — *many of them that sleep in the dust of the earth shall awake, some to
+-- everlasting life, and some to shame and everlasting contempt* — the clearest resurrection text in
+-- the Tanakh, with the two destinies; the wise shall shine as the firmament and the stars; the sealed
+-- book closed up to the time of the end; the refining (purified, made white, tried) of the maskilim;
+-- the 1290 and 1335 numbered days; and the promise to Daniel himself — *thou shalt rest, and stand in
+-- thy lot at the end of the days* (he too will rise).
+-- Tag: dan12   Session: s306   Temp view: _s306_dan12_lookup
+-- Sort band: base 30275, step 3 -> threads at 30275, 30278, 30281, 30284, 30287 (5 threads)
+-- Source of EVERY row: 'canon','daniel',12,v
+--
+-- Daniel 12 coverage:
+--   ★ v.1 (And at that time shall Michael stand up, the great prince which standeth for the children of
+--          thy people: and there shall be a time of trouble, such as never was... and at that time thy
+--          people shall be delivered, every one that shall be found written in the book)
+--        NT:     ★★ Matthew 24:21 (then shall be great tribulation, such as was not since the beginning
+--                of the world to this time, no, nor ever shall be — verbatim echo of the unequaled
+--                trouble), ★★ Revelation 12:7 (Michael and his angels fought against the dragon),
+--                ★ Revelation 3:5 (I will not blot out his name out of the book of life), ★ Revelation
+--                20:15 (whosoever was not found written in the book of life was cast into the lake of
+--                fire) — THREAD 1
+--        Extras: none warranted (the Michael/book material woven canon; no clean extras forced here)
+--        Tanakh: ★ Daniel 10:21 (Michael your prince) — THREAD 1 (the same prince who stands for the people)
+--   ★★★ v.2 (And many of them that sleep in the dust of the earth shall awake, some to everlasting life,
+--          and some to shame and everlasting contempt) + ★★★ v.3 (And they that be wise shall shine as
+--          the brightness of the firmament; and they that turn many to righteousness as the stars for
+--          ever and ever)
+--        NT:     ★★★ John 5:28-29 (all that are in the graves shall hear his voice, and shall come
+--                forth; they that have done good, unto the resurrection of life; and they that have done
+--                evil, unto the resurrection of damnation — THE two-resurrection text), ★★ Revelation
+--                20:12 (the dead judged, the books opened, the book of life), ★ Revelation 20:15 (not
+--                found written... cast into the lake of fire — the second death = everlasting contempt),
+--                ★★ Matthew 13:43 (then shall the righteous shine forth as the sun), ★★ 1 Corinthians
+--                15:52 (the dead shall be raised incorruptible, at the last trump) — THREAD 2
+--        Extras: ★★ 1 Enoch 51:1 (the earth shall give back that which has been entrusted to it, and
+--                Sheol... and hell shall give back — the resurrection), ★ 1 Enoch 104:2 (I have seen,
+--                and the light has shone upon me... and I have beheld the books of life) — THREAD 2
+--                (these make THREAD 2 'extras' tier)
+--        Tanakh: ★★ Isaiah 26:19 (Thy dead men shall live... Awake and sing, ye that dwell in dust... the
+--                earth shall cast out the dead) — THREAD 2 (the Tanakh's twin awakening text)
+--   ★ v.4 (But thou, O Daniel, shut up the words, and seal the book, even to the time of the end: many
+--          shall run to and fro, and knowledge shall be increased) + ★ v.9 (the words are closed up and
+--          sealed till the time of the end)
+--        NT:     ★★ Revelation 22:10 (Seal not the sayings of the prophecy of this book: for the time is
+--                at hand — the unsealing now come, the deliberate counterpoise) — THREAD 3
+--        Extras: none warranted (the sealing motif woven canon)
+--        Tanakh: ★ Daniel 8:26 (shut thou up the vision; for it shall be for many days), ★ Amos 8:12
+--                (they shall run to and fro to seek the word of Yahuah, and shall not find it) — THREAD 3
+--   ★ v.10 (Many shall be purified, and made white, and tried; but the wicked shall do wickedly: and none
+--          of the wicked shall understand; but the wise shall understand)
+--        NT:     ★ Revelation 7:14 (these... came out of great tribulation, and have washed their robes,
+--                and made them white in the blood of the Lamb), ★ 1 Peter 1:7 (the trial of your faith...
+--                though it be tried with fire), ★ Matthew 13:11 (it is given unto you to know the
+--                mysteries of the kingdom — the wise understand) — THREAD 4
+--        Extras: none warranted (clean canon weave)
+--        Tanakh: ★ Daniel 11:33 (they that understand among the people shall instruct many; yet they
+--                shall fall... many days — the refining of the maskilim across ch11-12), ★ Malachi 4:1-2
+--                (the day that shall burn as an oven... the Sun of righteousness arise with healing) — THREAD 4
+--   v.5-8 (the two on the bank; the man clothed in linen on the waters; sware by him that liveth for ever;
+--          a time, times, and an half; scatter the power of the holy people; Daniel understood not)
+--        NT:     none warranted distinct (the time-times-half woven in prose of THREAD 5; the linen man's
+--                oath = the appointed numbered end)
+--        Extras: none warranted
+--        Tanakh: none separate (the question-and-oath frame leading into the numbered days of v.11-13)
+--   v.11-12 (the daily sacrifice taken away, the abomination that maketh desolate; a thousand two hundred
+--          and ninety days; Blessed is he that waiteth, and cometh to the thousand three hundred and five
+--          and thirty days) + ★ v.13 (But go thou thy way till the end be: for thou shalt rest, and stand
+--          in thy lot at the end of the days)
+--        NT:     ★★ Revelation 14:13 (Blessed are the dead which die in the Lord... that they may rest
+--                from their labours — the blessed waiting and the rest), ★ 1 Thessalonians 4:16 (the dead
+--                in Messiah shall rise first — Daniel stands in his lot), ★ John 5:28 (the hour... all
+--                that are in the graves shall hear his voice — Daniel's own resurrection-rest) — THREAD 5
+--        Extras: none warranted (the numbered-days material woven canon)
+--        Tanakh: ★★ Daniel 12:2 (the resurrection — *thou shalt rest, and stand in thy lot* = Daniel too
+--                will awake from the dust; self-link back to v.2) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered — NT (Matthew 24, Revelation 12,
+--      Revelation 3, Revelation 20) + Tanakh (Daniel 10) [free]
+--      (★ Michael the great prince stands; the time of trouble such as never was; deliverance of all
+--       written in the book of life)
+--   2. daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection — NT (John 5, Revelation 20,
+--      Matthew 13, 1 Corinthians 15) + Extras (1 Enoch 51, 1 Enoch 104) + Tanakh (Isaiah 26) [extras]
+--      (★★★ THE clearest Tanakh resurrection text; the two resurrections — everlasting life / shame and
+--       everlasting contempt; the wise shine as the firmament and the stars)
+--   3. daniel-12-shut-up-the-words-and-seal-the-book-till-the-time-of-the-end — NT (Revelation 22)
+--      + Tanakh (Daniel 8, Amos 8) [free]
+--      (★ the sealed prophecy for the appointed end; Revelation's deliberate counterpoise — Seal NOT...
+--       for the time is at hand)
+--   4. daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand — NT (Revelation 7,
+--      1 Peter 1, Matthew 13) + Tanakh (Daniel 11, Malachi 4) [free]
+--      (★ the refining of the faithful maskilim; made white and tried; the wise understand, the wicked
+--       do not)
+--   5. daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot — NT (Revelation 14,
+--      1 Thessalonians 4, John 5) + Tanakh (Daniel 12:2 self-link) [free]
+--      (the numbered 1290/1335 days; blessed is he that waiteth; the promise of resurrection-rest to
+--       Daniel himself — thou shalt rest, and stand in thy lot at the end of the days)
+--
+-- Framing notes:
+--   ★ MICHAEL STANDS / WRITTEN IN THE BOOK (THREAD 1): *And at that time shall Michael stand up, the
+--      great prince which standeth for the children of thy people: and there shall be a time of trouble,
+--      such as never was since there was a nation even to that same time: and at that time thy people
+--      shall be delivered, every one that shall be found written in the book* (Daniel 12:1). Yahusha
+--      (Jesus) echoes the unequaled trouble word for word — *then shall be great tribulation, such as was
+--      not since the beginning of the world to this time, no, nor ever shall be* (Matthew 24:21). Michael
+--      is the same prince who fights the dragon — *Michael and his angels fought against the dragon*
+--      (Revelation 12:7) — and who in Daniel 10:21 is named *Michael your prince*. The deliverance is of
+--      *every one that shall be found written in the book* — the book of life: *I will not blot out his
+--      name out of the book of life* (Revelation 3:5); *whosoever was not found written in the book of
+--      life was cast into the lake of fire* (Revelation 20:15). The two-house people (*the children of
+--      thy people*) delivered through the tribulation, named in the book.
+--   ★★★ THE RESURRECTION (THREAD 2): *And many of them that sleep in the dust of the earth shall awake,
+--      some to everlasting life, and some to shame and everlasting contempt. And they that be wise shall
+--      shine as the brightness of the firmament; and they that turn many to righteousness as the stars
+--      for ever and ever* (Daniel 12:2-3). THE clearest resurrection text in the Tanakh, with both
+--      destinies. Yahusha (Jesus) unfolds it into the two resurrections: *all that are in the graves shall
+--      hear his voice, And shall come forth; they that have done good, unto the resurrection of life; and
+--      they that have done evil, unto the resurrection of damnation* (John 5:28-29). The judgment-books
+--      open (Revelation 20:12); the not-written are cast into the second death (Revelation 20:15) — the
+--      *shame and everlasting contempt*. And the wise who shine? *Then shall the righteous shine forth as
+--      the sun in the kingdom of their Father* (Matthew 13:43). The awakening itself: *at the last trump...
+--      the dead shall be raised incorruptible* (1 Corinthians 15:52). Isaiah sings the twin: *Thy dead men
+--      shall live... Awake and sing, ye that dwell in dust... and the earth shall cast out the dead*
+--      (Isaiah 26:19). And the restored witness: *the earth also [shall] give back that which has been
+--      entrusted to it, And Sheol also shall give back... And hell shall give back* (1 Enoch 51:1), and
+--      the seer who *beheld the books of life* (1 Enoch 104:2). Thread tier = EXTRAS (Enoch members).
+--   ★ THE SEALED BOOK (THREAD 3): *But thou, O Daniel, shut up the words, and seal the book, even to the
+--      time of the end* (Daniel 12:4); *the words are closed up and sealed till the time of the end*
+--      (Daniel 12:9). Daniel's vision was sealed for the appointed end — *shut thou up the vision; for it
+--      shall be for many days* (Daniel 8:26). And the deliberate counterpoise: when John's Revelation is
+--      given, the seal is REVERSED — *Seal not the sayings of the prophecy of this book: for the time is
+--      at hand* (Revelation 22:10). Amos names the famine of the word in the run-to-and-fro of v.4 — *they
+--      shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12).
+--   ★ THE REFINING / THE WISE UNDERSTAND (THREAD 4): *Many shall be purified, and made white, and tried;
+--      but the wicked shall do wickedly: and none of the wicked shall understand; but the wise shall
+--      understand* (Daniel 12:10) — the same maskilim of ch11: *they that understand among the people
+--      shall instruct many: yet they shall fall by the sword, and by flame... many days* (Daniel 11:33).
+--      The made-white: *these... came out of great tribulation, and have washed their robes, and made
+--      them white in the blood of the Lamb* (Revelation 7:14); the tried: *the trial of your faith...
+--      though it be tried with fire* (1 Peter 1:7); the day that refines: *the day cometh, that shall
+--      burn as an oven... But unto you that fear my name shall the Sun of righteousness arise with healing
+--      in his wings* (Malachi 4:1-2). And to the wise it is given to understand: *it is given unto you to
+--      know the mysteries of the kingdom of heaven, but to them it is not given* (Matthew 13:11).
+--   THE NUMBERED DAYS / DANIEL'S REST (THREAD 5): the man clothed in linen swears *by him that liveth for
+--      ever* that it shall be *for a time, times, and an half* (Daniel 12:7), and the numbered days are
+--      given — *a thousand two hundred and ninety days* (12:11), *Blessed is he that waiteth, and cometh
+--      to the thousand three hundred and five and thirty days* (12:12). The appointed end is numbered and
+--      certain; the one who waits is blessed: *Blessed are the dead which die in the Lord from henceforth...
+--      that they may rest from their labours* (Revelation 14:13). And the closing promise to Daniel
+--      himself: *But go thou thy way till the end be: for thou shalt rest, and stand in thy lot at the end
+--      of the days* (Daniel 12:13) — Daniel too will sleep in the dust and AWAKE (v.2), rising in his lot
+--      at the end: *the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16); *the hour is
+--      coming, in the which all that are in the graves shall hear his voice* (John 5:28). The book's last
+--      word is the resurrection-rest of its prophet.
+--   VERSES WITH NO SEPARATE ADD: v.5-8 (the two on the bank, the linen man's oath, the time-times-half,
+--      the scattering of the holy people's power, Daniel's not-understanding — the question-and-oath frame
+--      woven into THREAD 5 prose, leading into the numbered days). All recorded.
+
+CREATE TEMP VIEW _s306_dan12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Michael shall stand up; the time of trouble; written in the book — NT + Tanakh [free]
+    ('canon','daniel',12,1,'canon','matthew',24,21,'free',
+      E'*For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be* (Matthew 24:21). Yahusha (Jesus) echoes Daniel almost word for word — *there shall be a time of trouble, such as never was since there was a nation even to that same time* (Daniel 12:1). The unequaled tribulation Daniel foresaw is the very great tribulation the Messiah names, the trouble out of which the people written in the book are delivered.'),
+    ('canon','daniel',12,1,'canon','revelation',12,7,'free',
+      E'*And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels* (Revelation 12:7). The *Michael* who *shall stand up, the great prince which standeth for the children of thy people* (Daniel 12:1) is the same prince who wars against the dragon for the people of Yahuah. His standing up for Yashar''el (Israel) is his warfare against the old serpent who persecutes them.'),
+    ('canon','daniel',12,1,'canon','revelation',3,5,'free',
+      E'*He that overcometh, the same shall be clothed in white raiment; and I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels* (Revelation 3:5). The deliverance of *every one that shall be found written in the book* (Daniel 12:1) is the keeping of the name in the book of life — the overcomer''s name not blotted out, confessed before the Father. The book Daniel names is the book of life.'),
+    ('canon','daniel',12,1,'canon','revelation',20,15,'free',
+      E'*And whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). Daniel''s deliverance — *thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1) — has its dark obverse here: those NOT found written in the book of life are cast into the lake of fire. Being written in the book is the line between deliverance and the second death.'),
+    ('canon','daniel',12,1,'canon','daniel',10,21,'free',
+      E'*But I will shew thee that which is noted in the scripture of truth: and there is none that holdeth with me in these things, but Michael your prince* (Daniel 10:21). The angel had already named him — *Michael your prince* — the same great prince who *shall stand up... for the children of thy people* (Daniel 12:1). The guardian-prince of Yashar''el (Israel) who contends for the two-house people rises at the time of the end to deliver them.'),
+
+    -- THREAD 2 (★★★, extras): many that sleep in the dust shall awake — THE resurrection — NT + Extras + Tanakh
+    ('canon','daniel',12,2,'canon','john',5,29,'extras',
+      E'*And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation* (John 5:29). Yahusha (Jesus) unfolds Daniel''s two destinies into the two resurrections — *some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2) becomes *the resurrection of life* and *the resurrection of damnation*. The same awakening of the dead, sorted to life or to shame, that Daniel foresaw.'),
+    ('canon','daniel',12,2,'canon','john',5,28,'extras',
+      E'*Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28). The *many of them that sleep in the dust of the earth* who *shall awake* (Daniel 12:2) are all that are in the graves who shall hear the voice of the Son and come forth. Daniel''s sleepers in the dust are the dead the Messiah will summon at the appointed hour.'),
+    ('canon','daniel',12,2,'canon','revelation',20,12,'extras',
+      E'*And I saw the dead, small and great, stand before Elohim (God); and the books were opened: and another book was opened, which is the book of life: and the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12). The awakened of *some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2) stand before the throne, the books opened, judged to life or to the second death. Daniel''s two destinies are the verdict at the opened books.'),
+    ('canon','daniel',12,2,'canon','revelation',20,15,'extras',
+      E'*And whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). The *shame and everlasting contempt* of Daniel 12:2 is the lake of fire, the second death — the dark half of the resurrection, for those raised but not written in the book of life. The awakening is to one of two ends, and this is the second.'),
+    ('canon','daniel',12,3,'canon','matthew',13,43,'extras',
+      E'*Then shall the righteous shine forth as the sun in the kingdom of their Father. Who hath ears to hear, let him hear* (Matthew 13:43). Daniel''s *they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:3) is fulfilled in the harvest at the end of the world — the righteous shining forth as the sun. The wise who turned many to righteousness blaze in the Father''s kingdom.'),
+    ('canon','daniel',12,2,'canon','1-corinthians',15,52,'extras',
+      E'*In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52). The *many of them that sleep in the dust of the earth* who *shall awake* (Daniel 12:2) are raised incorruptible at the last trump — the resurrection Daniel foresaw, now timed to the trumpet and the change from corruption to incorruption.'),
+    ('canon','daniel',12,2,'canon','isaiah',26,19,'extras',
+      E'*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead* (Isaiah 26:19). Isaiah sings the twin of Daniel''s resurrection — *Awake and sing, ye that dwell in dust* answers *many of them that sleep in the dust of the earth shall awake* (Daniel 12:2). Two prophets, one awakening: the dead live, the dust gives back its sleepers.'),
+    ('canon','daniel',12,2,'enoch','1-enoch',51,1,'extras',
+      E'*And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes* (1 Enoch 51:1). The restored witness sees Daniel''s resurrection — *many of them that sleep in the dust of the earth shall awake* (Daniel 12:2) — as the earth and Sheol giving back the dead entrusted to them. The dust, the grave, and the pit all surrender their sleepers at the appointed day.'),
+    ('canon','daniel',12,3,'enoch','1-enoch',104,2,'extras',
+      E'*That I have seen, and the light has shone upon me, And I have seen the holy ones of heaven, And I have beheld the books of life* (1 Enoch 104:2). The seer beholds the books of life and the light that shines on the righteous — the very glory of *they that be wise shall shine as the brightness of the firmament... as the stars for ever and ever* (Daniel 12:3). The wise whose names are in the books of life shine with the light of heaven.'),
+
+    -- THREAD 3 (★): shut up the words and seal the book till the time of the end — NT + Tanakh [free]
+    ('canon','daniel',12,4,'canon','revelation',22,10,'free',
+      E'*And he saith unto me, Seal not the sayings of the prophecy of this book: for the time is at hand* (Revelation 22:10). This is the deliberate counterpoise to Daniel: where Daniel is told *shut up the words, and seal the book, even to the time of the end* (Daniel 12:4), John is told NOT to seal — *for the time is at hand*. The prophecy sealed in Daniel for the appointed end is unsealed when that end draws near.'),
+    ('canon','daniel',12,4,'canon','daniel',8,26,'free',
+      E'*And the vision of the evening and the morning which was told is true: wherefore shut thou up the vision; for it shall be for many days* (Daniel 8:26). The same sealing command of *shut up the words, and seal the book, even to the time of the end* (Daniel 12:4) was given of the earlier vision — *shut thou up the vision; for it shall be for many days*. Daniel''s revelations are sealed for the appointed time, kept against the day of their understanding.'),
+    ('canon','daniel',12,4,'canon','amos',8,12,'free',
+      E'*And they shall wander from sea to sea, and from the north even to the east, they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12). Daniel''s *many shall run to and fro, and knowledge shall be increased* (Daniel 12:4) echoes the famine-of-the-word language — the running to and fro to seek Yahuah''s word. The sealed book and the searching age belong together, until the time of the end opens it.'),
+
+    -- THREAD 4 (★): many purified and made white and tried; the wise shall understand — NT + Tanakh [free]
+    ('canon','daniel',12,10,'canon','revelation',7,14,'free',
+      E'*And I said unto him, Sir, thou knowest. And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). Daniel''s *Many shall be purified, and made white, and tried* (Daniel 12:10) are the white-robed multitude out of the great tribulation, washed and made white. The refining of the faithful through the time of trouble (Daniel 12:1) produces a people made white.'),
+    ('canon','daniel',12,10,'canon','1-peter',1,7,'free',
+      E'*That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). The *tried* of *Many shall be purified, and made white, and tried* (Daniel 12:10) is the trial of faith refined as gold in the fire. The maskilim are purified through testing, found worthy at the appearing.'),
+    ('canon','daniel',12,10,'canon','matthew',13,11,'free',
+      E'*He answered and said unto them, Because it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given* (Matthew 13:11). Daniel''s *none of the wicked shall understand; but the wise shall understand* (Daniel 12:10) is the same divide — to the wise it is given to know the mysteries of the kingdom; to the others it is not. Understanding is the mark of the wise, withheld from the wicked.'),
+    ('canon','daniel',12,10,'canon','daniel',11,33,'free',
+      E'*And they that understand among the people shall instruct many: yet they shall fall by the sword, and by flame, by captivity, and by spoil, many days* (Daniel 11:33). The wise who understand of *the wise shall understand* (Daniel 12:10) are the same maskilim of chapter 11 — they that understand and instruct many, refined through the sword and flame and captivity. The trying of 12:10 is the falling many days of 11:33.'),
+    ('canon','daniel',12,10,'canon','malachi',4,1,'free',
+      E'*For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble... But unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:1-2). The day that refines the faithful and burns the wicked is Daniel''s same divide — *Many shall be purified, and made white, and tried; but the wicked shall do wickedly* (Daniel 12:10). The oven that makes the proud stubble heals those who fear the Name.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 5 cross_references (separate INSERT block, same pattern)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 5: blessed is he that waiteth; thou shalt rest and stand in thy lot — NT + Tanakh self-link [free]
+    ('canon','daniel',12,12,'canon','revelation',14,13,'free',
+      E'*And I heard a voice from heaven saying unto me, Write, Blessed are the dead which die in the Lord from henceforth: Yea, saith the Spirit, that they may rest from their labours; and their works do follow them* (Revelation 14:13). Daniel''s *Blessed is he that waiteth, and cometh to the thousand three hundred and five and thirty days* (Daniel 12:12) is the same beatitude of the patient — the blessed who wait and rest. The numbered days end in the rest of those who die in the Lord.'),
+    ('canon','daniel',12,13,'canon','revelation',14,13,'free',
+      E'*Blessed are the dead which die in the Lord from henceforth: Yea, saith the Spirit, that they may rest from their labours* (Revelation 14:13). The closing promise to Daniel — *thou shalt rest, and stand in thy lot at the end of the days* (Daniel 12:13) — is this very rest of the blessed dead. Daniel will rest in death and stand again in his lot; his labour ends in the rest that follows the faithful.'),
+    ('canon','daniel',12,13,'canon','1-thessalonians',4,16,'free',
+      E'*For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16). Daniel''s *thou shalt rest, and stand in thy lot at the end of the days* (Daniel 12:13) is fulfilled when the dead in Messiah rise — Daniel among them, standing in his lot at the trumpet. The prophet who slept in the dust awakes with the archangel''s voice (the same Michael, Daniel 12:1).'),
+    ('canon','daniel',12,13,'canon','john',5,28,'free',
+      E'*Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28). The promise *thou shalt rest, and stand in thy lot at the end of the days* (Daniel 12:13) means Daniel too lies in the grave and hears the voice that raises all that are in the graves. He shall rest, then stand — the resurrection of v.2 reaching the prophet himself.'),
+    ('canon','daniel',12,13,'canon','daniel',12,2,'free',
+      E'*And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt* (Daniel 12:2). The book''s last word to Daniel — *thou shalt rest, and stand in thy lot at the end of the days* (Daniel 12:13) — sends him to the very awakening of v.2: he too will sleep in the dust and AWAKE, standing in his lot to everlasting life. The resurrection promised to the many is promised to the prophet by name.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered',
+       E'Michael shall stand up, and thy people shall be delivered — every one written in the book',
+       E'The closing vision opens with the great prince and the unequaled trouble: *And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). Michael is the same guardian-prince already named in the previous chapter — *Michael your prince* (Daniel 10:21) — who contends for Yashar''el (Israel), the two-house people (*the children of thy people*). Yahusha (Jesus) echoes the trouble word for word: *For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be* (Matthew 24:21). And John sees Michael at war: *And there was war in heaven: Michael and his angels fought against the dragon; and the dragon fought and his angels* (Revelation 12:7) — the prince standing up for the people is his warfare against the old serpent who persecutes them. The deliverance is of *every one that shall be found written in the book* — the book of life: *I will not blot out his name out of the book of life, but I will confess his name before my Father, and before his angels* (Revelation 3:5); and the dark obverse, *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). Through the worst tribulation the world has ever seen, the people of Yahuah whose names are in the book are delivered.',
+       sv.verse_id, ev.verse_id, 'free', 30275
+  FROM _s306_dan12_lookup sv, _s306_dan12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=12 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★, extras)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection',
+       E'Many that sleep in the dust shall awake — the resurrection, and the wise shall shine',
+       E'Here is the clearest resurrection text in all the Tanakh, and it carries BOTH destinies: *And many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt. And they that be wise shall shine as the brightness of the firmament; and they that turn many to righteousness as the stars for ever and ever* (Daniel 12:2-3). Yahusha (Jesus) unfolds it into the two resurrections in one breath: *Marvel not at this: for the hour is coming, in the which all that are in the graves shall hear his voice, And shall come forth; they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation* (John 5:28-29). The awakened stand before the throne and the opened books — *the dead were judged out of those things which were written in the books, according to their works* (Revelation 20:12) — and the not-written meet the *shame and everlasting contempt*: *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15). And the wise who shine? *Then shall the righteous shine forth as the sun in the kingdom of their Father* (Matthew 13:43). The awakening itself is timed to the trumpet: *at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52). Isaiah sings the Tanakh''s twin: *Thy dead men shall live... Awake and sing, ye that dwell in dust... and the earth shall cast out the dead* (Isaiah 26:19). And the restored witnesses see the same: *And in those days shall the earth also give back that which has been entrusted to it, And Sheol also shall give back that which it has received, And hell shall give back that which it owes* (1 Enoch 51:1); and the seer who *beheld the books of life* upon whom *the light has shone* (1 Enoch 104:2) — the very light of those who shine as the firmament. One resurrection, two ends: everlasting life, or shame and everlasting contempt.',
+       sv.verse_id, ev.verse_id, 'extras', 30278
+  FROM _s306_dan12_lookup sv, _s306_dan12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=12 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-12-shut-up-the-words-and-seal-the-book-till-the-time-of-the-end',
+       E'Shut up the words and seal the book — till the time of the end',
+       E'Daniel is told to seal the vision for the appointed end: *But thou, O Daniel, shut up the words, and seal the book, even to the time of the end: many shall run to and fro, and knowledge shall be increased* (Daniel 12:4), and again when he asks the meaning, *And he said, Go thy way, Daniel: for the words are closed up and sealed till the time of the end* (Daniel 12:9). The same command was given of the earlier vision — *shut thou up the vision; for it shall be for many days* (Daniel 8:26): Daniel''s revelations are kept sealed, held against the day of their understanding. The running to and fro of v.4 echoes the famine of the word — *they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12). And then the deliberate counterpoise at the close of the whole canon: where Daniel is sealed, John is told NOT to seal — *And he saith unto me, Seal not the sayings of the prophecy of this book: for the time is at hand* (Revelation 22:10). What was shut up in Daniel for the time of the end is opened when that end draws near; the sealed prophecy and the unsealed prophecy bracket the appointed time.',
+       sv.verse_id, ev.verse_id, 'free', 30281
+  FROM _s306_dan12_lookup sv, _s306_dan12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=12 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand',
+       E'Many purified and made white and tried — the wise shall understand',
+       E'The refining of the faithful runs to the very end: *Many shall be purified, and made white, and tried; but the wicked shall do wickedly: and none of the wicked shall understand; but the wise shall understand* (Daniel 12:10). These are the maskilim already named in the previous chapter — *they that understand among the people shall instruct many: yet they shall fall by the sword, and by flame, by captivity, and by spoil, many days* (Daniel 11:33): the wise are refined through suffering, instructing many even as they fall. The made-white are the tribulation-multitude: *These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). The tried are the gold-tested faithful: *the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire* (1 Peter 1:7). The day that refines is Malachi''s oven: *the day cometh, that shall burn as an oven... But unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:1-2) — the same fire that makes the proud stubble heals those who fear the Name. And to the wise alone it is given to understand: *it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given* (Matthew 13:11). The wicked do wickedly and never understand; the wise are purified, made white, and given to see.',
+       sv.verse_id, ev.verse_id, 'free', 30284
+  FROM _s306_dan12_lookup sv, _s306_dan12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=12 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot',
+       E'Blessed is he that waiteth — thou shalt rest, and stand in thy lot at the end of the days',
+       E'The book closes with numbered days and a promise to Daniel himself. The man clothed in linen, upon the waters of the river, swears *by him that liveth for ever that it shall be for a time, times, and an half* (Daniel 12:7), and the numbered days are given: *And from the time that the daily sacrifice shall be taken away, and the abomination that maketh desolate set up, there shall be a thousand two hundred and ninety days. Blessed is he that waiteth, and cometh to the thousand three hundred and five and thirty days* (Daniel 12:11-12). The appointed end is numbered and certain, and the one who endures to it is blessed — the same beatitude of the patient dead: *Blessed are the dead which die in the Lord from henceforth: Yea, saith the Spirit, that they may rest from their labours* (Revelation 14:13). And then the tender closing word to the prophet: *But go thou thy way till the end be: for thou shalt rest, and stand in thy lot at the end of the days* (Daniel 12:13). Daniel will rest — sleep in death — and STAND again in his lot at the end. This sends him straight back to the resurrection of verse 2: *And many of them that sleep in the dust of the earth shall awake* (Daniel 12:2). He too will awake from the dust to everlasting life. The dead in Messiah rise: *the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16), at the voice of the archangel — the same Michael who stood up at the chapter''s opening (Daniel 12:1); *the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28). The book of Daniel ends on the resurrection-rest of its own prophet: he shall rest, and he shall stand.',
+       sv.verse_id, ev.verse_id, 'free', 30287
+  FROM _s306_dan12_lookup sv, _s306_dan12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='daniel' AND ev.chapter_number=12 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be* (Matthew 24:21) — Yahusha echoes *a time of trouble, such as never was* (Daniel 12:1) almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Michael and his angels fought against the dragon* (Revelation 12:7) — the great prince who *standeth for the children of thy people* (Daniel 12:1) wars against the serpent for Yahuah''s people.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will not blot out his name out of the book of life* (Revelation 3:5) — *every one that shall be found written in the book* (Daniel 12:1) is the name kept in the book of life, confessed before the Father.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15) — the dark obverse of Daniel''s deliverance: being in the book is the line between deliverance and the second death.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Michael your prince* (Daniel 10:21) — the angel had already named the guardian-prince of Yashar''el who *shall stand up* (Daniel 12:1) for the two-house people.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=10 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-michael-shall-stand-up-and-thy-people-shall-be-delivered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★, extras)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *they that have done good, unto the resurrection of life; and they that have done evil, unto the resurrection of damnation* (John 5:29) — Yahusha unfolds Daniel''s two destinies (Daniel 12:2) into the two resurrections.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28) — the *many of them that sleep in the dust* who *shall awake* (Daniel 12:2) hear the voice of the Son.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the books were opened... and the dead were judged out of those things which were written in the books* (Revelation 20:12) — the awakened of Daniel 12:2 judged at the opened books.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *whosoever was not found written in the book of life was cast into the lake of fire* (Revelation 20:15) — the *shame and everlasting contempt* (Daniel 12:2) is the second death, the dark half of the resurrection.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Then shall the righteous shine forth as the sun in the kingdom of their Father* (Matthew 13:43) — *they that be wise shall shine as the brightness of the firmament... as the stars* (Daniel 12:3) made manifest at the harvest.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52) — the dust-sleepers of Daniel 12:2 raised at the last trump, corruption putting on incorruption.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *Awake and sing, ye that dwell in dust... and the earth shall cast out the dead* (Isaiah 26:19) — Isaiah''s twin of *many of them that sleep in the dust of the earth shall awake* (Daniel 12:2).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *the earth also [shall] give back that which has been entrusted to it, And Sheol also shall give back... And hell shall give back* (1 Enoch 51:1) — the restored witness sees the resurrection of Daniel 12:2: the dust and grave surrender their dead.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=51 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *the light has shone upon me... and I have beheld the books of life* (1 Enoch 104:2) — the wise who *shine as the brightness of the firmament* (Daniel 12:3) are written in the books of life, lit with the light of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=104 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-that-sleep-in-the-dust-shall-awake-the-resurrection'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Seal not the sayings of the prophecy of this book: for the time is at hand* (Revelation 22:10) — the deliberate counterpoise to *seal the book, even to the time of the end* (Daniel 12:4); what Daniel sealed, John unseals.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-shut-up-the-words-and-seal-the-book-till-the-time-of-the-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *shut thou up the vision; for it shall be for many days* (Daniel 8:26) — the same sealing command of Daniel 12:4 given of the earlier vision; kept against the day of understanding.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=8 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-shut-up-the-words-and-seal-the-book-till-the-time-of-the-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12) — the *run to and fro* of Daniel 12:4 echoes the famine of the word in the sealed-book age.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-shut-up-the-words-and-seal-the-book-till-the-time-of-the-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *these... came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14) — the *purified, and made white* (Daniel 12:10) are the tribulation-multitude made white.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the trial of your faith... though it be tried with fire* (1 Peter 1:7) — the *tried* of Daniel 12:10 is the gold-tested faith refined in the fire.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *it is given unto you to know the mysteries of the kingdom of heaven, but to them it is not given* (Matthew 13:11) — *the wise shall understand* (Daniel 12:10); understanding withheld from the wicked, given to the wise.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they that understand among the people shall instruct many: yet they shall fall by the sword, and by flame... many days* (Daniel 11:33) — the wise of Daniel 12:10 are the maskilim of ch11, refined through suffering.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=11 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the day cometh, that shall burn as an oven... But unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:1-2) — the day that refines the faithful and burns the wicked, Daniel''s same divide (Daniel 12:10).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=10
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-many-purified-and-made-white-and-tried-the-wise-shall-understand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Blessed are the dead which die in the Lord... that they may rest from their labours* (Revelation 14:13) — the beatitude of the patient of *Blessed is he that waiteth* (Daniel 12:12); the numbered days end in rest.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=12
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Blessed are the dead which die in the Lord... that they may rest from their labours* (Revelation 14:13) — *thou shalt rest, and stand in thy lot* (Daniel 12:13): Daniel''s very rest is the rest of the blessed dead.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16) — Daniel *shall... stand in thy lot* (Daniel 12:13) among the risen dead, at the archangel''s voice (the same Michael, Daniel 12:1).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the hour is coming, in the which all that are in the graves shall hear his voice* (John 5:28) — Daniel too lies in the grave and hears the raising voice; *thou shalt rest, and stand in thy lot* (Daniel 12:13).'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *many of them that sleep in the dust of the earth shall awake... to everlasting life* (Daniel 12:2) — self-link: *thou shalt rest, and stand in thy lot* (Daniel 12:13) sends Daniel to the resurrection of v.2; he too will awake from the dust.'
+  FROM cross_reference_threads t
+  JOIN _s306_dan12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='daniel' AND sv.chapter_number=12 AND sv.verse_number=13
+  JOIN _s306_dan12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='daniel-12-blessed-is-he-that-waiteth-thou-shalt-rest-and-stand-in-thy-lot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session306 — Daniel cross-references complete.'
