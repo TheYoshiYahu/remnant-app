@@ -256,6 +256,7 @@ COVERAGE_GLOBS = ['session1*matt*extras_cross_references.sql',
     'session2*_2john_cross_references.sql',
     'session2*_3john_cross_references.sql',
     'session2*_jude_cross_references.sql',
+    'session2*_*_depth_cross_references.sql',
     'session3*_cross_references.sql',
     'session2*_*_extracanon_cross_references.sql',
     'session4*_*_extracanon_cross_references.sql']
