@@ -3422,6 +3422,1526 @@ SELECT t.id, x.id, 6, E'Romans 11:2 — *Elohim (God) hath not cast away his peo
    AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_matthew_09.sql (S260 Matthew depth) -----
+-- ============================================================================
+-- Matthew 9 — full-library cross-reference threads (NT DEPTH pass)
+-- 6 threads. Band 11240+, step +3. Temp-view tag _mt09_lookup.
+-- ============================================================================
+
+-- ── 3a. Temp view ──────────────────────────────────────────────────────────
+CREATE TEMP VIEW _mt09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1',
+   'pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ── 3b. cross_references rows ──────────────────────────────────────────────
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- Thread 1: thy sins be forgiven / Son of Adam hath power to forgive (9:2,6)
+  ('canon','matthew',9,2,'canon','isaiah',43,25, 'free', E'*I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25). The blotting-out of sin is Yahuah''s own prerogative — and it is exactly this the Formed Son does to the man on the bed.'),
+  ('canon','matthew',9,2,'canon','psalms',103,3, 'free', E'*Who forgiveth all thine iniquities; who healeth all thy diseases* (Psalm 103:3). Forgiving and healing stand side by side — so when Yahusha forgives, then bids him rise, he does the one to show the other.'),
+  ('canon','matthew',9,6,'canon','exodus',34,6, 'free', E'*Yahuah (LORD), Yahuah Elohim (The LORD God), merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6). The Name proclaimed to Moses is the Name made present in the Son.'),
+  ('canon','matthew',9,6,'canon','exodus',34,7, 'free', E'*Keeping mercy for thousands, forgiving iniquity and transgression and sin* (Exodus 34:7). The Father who forgives iniquity forgives it here, on earth, through the Formed Son.'),
+  ('canon','matthew',9,2,'canon','micah',7,18, 'free', E'*Who is a Elohim (God) like unto thee, that pardoneth iniquity... because he delighteth in mercy* (Micah 7:18).'),
+  ('canon','matthew',9,6,'canon','micah',7,19, 'free', E'*he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19).'),
+  ('canon','matthew',9,6,'canon','mark',2,10, 'free', E'*But that ye may know that the Son of Adam hath power on earth to forgive sins* (Mark 2:10) — the same word in the parallel Gospel.'),
+
+  -- Thread 2: call of Matthew / mercy not sacrifice / physician to the sick (9:9-13)
+  ('canon','matthew',9,13,'canon','hosea',6,6, 'free', E'*For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6) — the very verse Yahusha sends the scribes to go and learn.'),
+  ('canon','matthew',9,13,'canon','1-samuel',15,22, 'free', E'*to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22).'),
+  ('canon','matthew',9,13,'canon','proverbs',21,3, 'free', E'*To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice* (Proverbs 21:3).'),
+  ('canon','matthew',9,12,'canon','psalms',51,17, 'free', E'*The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17) — the heart the Physician comes for.'),
+  ('canon','matthew',9,12,'apocrypha','ecclesiasticus',38,1, 'extras', E'*Honour a physician with the honour due to him... for of the Most High comes healing* (Sirach 38:1-2). They that are sick need a physician — and the true Physician''s remedy is from the Most High.'),
+  ('canon','matthew',9,13,'apocrypha','ecclesiasticus',35,1, 'extras', E'*He that keepeth the law brings offerings enough... To depart from wickedness is a thing pleasing to Yahuah* (Sirach 35:1-3) — mercy and obedience ARE the weightier sacrifice, not its abolition.'),
+
+  -- Thread 3: fasting / the bridegroom / new wine new bottles (9:14-17)
+  ('canon','matthew',9,15,'canon','joel',2,16, 'free', E'*let the bridegroom go forth of his chamber, and the bride out of her closet* (Joel 2:16) — the Bridegroom is present, so the children of the bridechamber cannot mourn.'),
+  ('canon','matthew',9,15,'canon','isaiah',62,5, 'free', E'*as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee* (Isaiah 62:5).'),
+  ('canon','matthew',9,16,'canon','ecclesiastes',3,1, 'free', E'*To every thing there is a season, and a time to every purpose under the heaven* (Ecclesiastes 3:1) — a time to fast and a time to feast; the Bridegroom''s presence sets the season.'),
+  ('canon','matthew',9,17,'canon','jeremiah',31,31, 'free', E'*Behold, the days come... that I will make a new covenant with the house of Yashar''el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31) — the renewed covenant, with BOTH houses.'),
+  ('canon','matthew',9,17,'canon','jeremiah',31,33, 'free', E'*I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). The new wine is the SAME Torah written deeper — renewal, not a different law.'),
+
+  -- Thread 4: woman with the issue / the hem = the fringe / healing in his wings (9:18-26)
+  ('canon','matthew',9,20,'canon','numbers',15,38, 'free', E'*make them fringes in the borders of their garments... a ribband of blue* (Numbers 15:38) — the hem she touched was the commanded tzitzit, the fringe of the Torah itself.'),
+  ('canon','matthew',9,20,'canon','numbers',15,39, 'free', E'*that ye may look upon it, and remember all the commandments of Yahuah (LORD), and do them* (Numbers 15:39) — she grasped the very corner that calls Israel to remember and DO.'),
+  ('canon','matthew',9,20,'canon','leviticus',15,25, 'free', E'*if a woman have an issue of her blood many days... she shall be unclean* (Leviticus 15:25) — her twelve-year uncleanness; yet at the touch the flow does not defile Him, He heals her.'),
+  ('canon','matthew',9,22,'canon','malachi',4,2, 'free', E'*the Sun of righteousness arise with healing in his wings* (Malachi 4:2) — *wings* is kanaph, the same word as the corner/fringe of the garment: healing was in His wings.'),
+  ('canon','matthew',9,25,'canon','2-kings',4,34, 'free', E'*he went up, and lay upon the child... and the flesh of the child waxed warm* (2 Kings 4:34) — as Elisha raised the Shunammite''s son, so the Master takes the maid by the hand and she arises.'),
+
+  -- Thread 5: two blind men / thou Son of David (9:27-31)
+  ('canon','matthew',9,27,'canon','isaiah',35,5, 'free', E'*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5) — the messianic sign, done before their eyes.'),
+  ('canon','matthew',9,30,'canon','isaiah',42,7, 'free', E'*To open the blind eyes, to bring out the prisoners from the prison* (Isaiah 42:7) — the work of the chosen Servant.'),
+  ('canon','matthew',9,30,'canon','psalms',146,8, 'free', E'*Yahuah (LORD) openeth the eyes of the blind* (Psalm 146:8) — what Yahuah does, the Formed Son does, and the blind men call Him *Son of David*.'),
+  ('canon','matthew',9,27,'canon','2-samuel',7,12, 'free', E'*I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12) — the promise to David, whose Son they cry out to.'),
+
+  -- Thread 6: the dumb healed / harvest plenteous, labourers few / sheep without a shepherd (9:32-38)
+  ('canon','matthew',9,36,'canon','numbers',27,17, 'free', E'*that the congregation of Yahuah (LORD) be not as sheep which have no shepherd* (Numbers 27:17) — Moses'' own plea, now the compassion of the true Shepherd.'),
+  ('canon','matthew',9,36,'canon','ezekiel',34,5, 'free', E'*And they were scattered, because there is no shepherd... they became meat to all the beasts of the field* (Ezekiel 34:5).'),
+  ('canon','matthew',9,36,'canon','ezekiel',34,6, 'free', E'*My sheep wandered through all the mountains... my flock was scattered upon all the face of the earth, and none did search or seek after them* (Ezekiel 34:6) — the scattered two-house flock the Shepherd comes to gather.'),
+  ('canon','matthew',9,37,'canon','isaiah',27,12, 'free', E'*ye shall be gathered one by one, O ye children of Yashar''el (Israel)* (Isaiah 27:12) — the harvest is the in-gathering of scattered Israel.'),
+  ('canon','matthew',9,38,'canon','joel',3,13, 'free', E'*Put ye in the sickle, for the harvest is ripe* (Joel 3:13) — the labourers sent into the harvest.'),
+  ('canon','matthew',9,36,'apocrypha','baruch-with-the-letter-of-jeremiah',5,5, 'extras', E'*Arise, O Jerusalem... behold your children gathered from the west to the east by the word of the Holy One* (Baruch 5:5) — the scattered flock brought home, the harvest named.')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _mt09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _mt09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ── 3c. Threads ────────────────────────────────────────────────────────────
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34',
+       E'Thy sins be forgiven — the Son of Adam hath power on earth to forgive (Isaiah 43; Exodus 34; Micah 7)',
+       E'They bring a man sick of the palsy, and before He heals the body Yahusha speaks to the soul: *Son, be of good cheer; thy sins be forgiven thee*. The scribes are right that this is Elohim''s alone — *I, even I, am he that blotteth out thy transgressions for mine own sake, and will not remember thy sins* (Isaiah 43:25). It is Yahuah who *forgiveth all thine iniquities; who healeth all thy diseases* (Psalm 103:3) — both gifts in one hand. The Name proclaimed to Moses on the mountain is the Name now standing in the room: *Yahuah Elohim, merciful and gracious, longsuffering, and abundant in goodness and truth* (Exodus 34:6), *Keeping mercy for thousands, forgiving iniquity and transgression and sin* (Exodus 34:7). And Micah''s wonder is answered: *Who is a Elohim (God) like unto thee, that pardoneth iniquity... because he delighteth in mercy* (Micah 7:18); *he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). So when the Son says *the Son of Adam hath power on earth to forgive sins* (also Mark 2:10), He is not claiming a second godhead — He is the Formed Son in whom the one Father exercises His own prerogative, on earth, where men can see it. They rightly *glorified Elohim, which had given such power unto men*.',
+       sv.verse_id, ev.verse_id, 'free', 11240
+  FROM _mt09_lookup sv, _mt09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=9 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick',
+       E'I will have mercy and not sacrifice — the Physician to the sick (Hosea 6; 1 Samuel 15; Sirach 35, 38)',
+       E'Yahusha calls Matthew from the tax-booth and sits to eat with publicans and sinners, and when the Pharisees murmur He answers twice. First the parable: *They that be whole need not a physician, but they that are sick* — and the library knows that Physician: *Honour a physician with the honour due to him... for of the Most High comes healing* (Sirach 38:1-2). The heart He comes for is the one already named in the Psalm: *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17). Then the rebuke, and He sends them to school in their own Scriptures: *go ye and learn what that meaneth, I will have mercy, and not sacrifice* — quoting *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6). This is the weightier matter of the Torah, not its abolition: *to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22); *To do justice and judgment is more acceptable to Yahuah (LORD) than sacrifice* (Proverbs 21:3). Ben Sira says the same with both hands: *He that keepeth the law brings offerings enough... To depart from wickedness is a thing pleasing to Yahuah* (Sirach 35:1-3). The altar still stands; mercy is what it was always FOR. *I am not come to call the righteous, but sinners to repentance.*',
+       sv.verse_id, ev.verse_id, 'extras', 11243
+  FROM _mt09_lookup sv, _mt09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=9 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant',
+       E'New wine into new bottles — the Bridegroom and the renewed covenant (Joel 2; Isaiah 62; Jeremiah 31)',
+       E'John''s disciples ask why Yahusha''s disciples do not fast, and He answers as a wedding: *Can the children of the bridechamber mourn, as long as the bridegroom is with them?* The Bridegroom is no new figure — *let the bridegroom go forth of his chamber, and the bride out of her closet* (Joel 2:16); *as the bridegroom rejoiceth over the bride, so shall thy Elohim (God) rejoice over thee* (Isaiah 62:5). There is *a season, and a time to every purpose under the heaven* (Ecclesiastes 3:1) — His presence sets the season, and the days will come when they fast again. Then the two parables of newness, the new cloth and the new wine: *they put new wine into new bottles, and both are preserved*. This is NOT a different law poured out against the old. It is the very covenant Jeremiah foretold: *Behold, the days come... that I will make a new covenant with the house of Yashar''el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31) — both houses — *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). The new wine is the SAME Torah, no longer on tablets of stone but in the heart. Renewal, not replacement.',
+       sv.verse_id, ev.verse_id, 'free', 11246
+  FROM _mt09_lookup sv, _mt09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=9 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-9-the-hem-of-his-garment-the-fringe-healing-in-his-wings-numbers-15-malachi-4',
+       E'The hem of His garment — the fringe of the Torah, healing in His wings (Numbers 15; Leviticus 15; Malachi 4; 2 Kings 4)',
+       E'A ruler''s daughter lies dead and a woman has bled twelve years, and both are gathered into one healing. The woman *touched the hem of his garment* — and that hem is not a stray thread but the commanded tzitzit: *make them fringes in the borders of their garments... a ribband of blue* (Numbers 15:38), *that ye may look upon it, and remember all the commandments of Yahuah (LORD), and do them* (Numbers 15:39). She grasped the very corner of the garment that calls Israel to remember and DO the Torah. By the law of the issue she was unclean — *if a woman have an issue of her blood many days... she shall be unclean* (Leviticus 15:25) — yet her touch does not defile Him; His holiness flows the other way and she is made whole. For Malachi had promised exactly this: *the Sun of righteousness arise with healing in his wings* (Malachi 4:2) — and *wings* is kanaph, the same Hebrew word as the corner/fringe of a garment. Healing was, quite literally, in His wings. Then the maid: He puts out the mourners and *took her by the hand, and the maid arose* — as Elisha before him, who *went up, and lay upon the child... and the flesh of the child waxed warm* (2 Kings 4:34). The Formed Son does the Father''s raising work, by the hand.',
+       sv.verse_id, ev.verse_id, 'free', 11249
+  FROM _mt09_lookup sv, _mt09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=9 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-9-two-blind-men-thou-son-of-david-isaiah-35-psalm-146-2-samuel-7',
+       E'Thou Son of David, have mercy — the eyes of the blind opened (Isaiah 35; Isaiah 42; Psalm 146; 2 Samuel 7)',
+       E'Two blind men follow, crying *Thou Son of David, have mercy on us* — and the title is no accident. The promise to David was *I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12), and the sign that the Seed had come was written by Isaiah: *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5). The chosen Servant''s commission was *To open the blind eyes, to bring out the prisoners from the prison* (Isaiah 42:7). And opening blind eyes is Yahuah''s own work — *Yahuah (LORD) openeth the eyes of the blind* (Psalm 146:8) — so when the Son of David does it *according to your faith*, the Father''s work is seen in the Formed Son. He touches their eyes, *and their eyes were opened*: Isaiah''s sign, fulfilled by David''s greater Son.',
+       sv.verse_id, ev.verse_id, 'free', 11252
+  FROM _mt09_lookup sv, _mt09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=9 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5',
+       E'As sheep having no shepherd — the harvest is plenteous (Numbers 27; Ezekiel 34; Isaiah 27; Joel 3; Baruch 5)',
+       E'He goes about all the cities, *teaching... and healing every sickness*, and the sight of the crowds undoes Him: *he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd*. That is Moses'' own prayer for the people — that *the congregation of Yahuah (LORD) be not as sheep which have no shepherd* (Numbers 27:17) — and Ezekiel''s indictment of the false shepherds: *they were scattered, because there is no shepherd... they became meat to all the beasts of the field* (Ezekiel 34:5); *my flock was scattered upon all the face of the earth, and none did search or seek after them* (Ezekiel 34:6). This is the scattered, two-house flock — and the true Shepherd has come to seek it. So He names the work *harvest*: *ye shall be gathered one by one, O ye children of Yashar''el (Israel)* (Isaiah 27:12); *Put ye in the sickle, for the harvest is ripe* (Joel 3:13). And Baruch had sung the home-coming already: *Arise, O Jerusalem... behold your children gathered from the west to the east by the word of the Holy One* (Baruch 5:5). *The harvest truly is plenteous, but the labourers are few; Pray ye therefore Yahuah (LORD) of the harvest, that he will send forth labourers* — to gather the scattered sheep home.',
+       sv.verse_id, ev.verse_id, 'extras', 11255
+  FROM _mt09_lookup sv, _mt09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=9 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+-- ── 3d. Thread members ─────────────────────────────────────────────────────
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 43:25 — *I, even I, am he that blotteth out thy transgressions... and will not remember thy sins* — Yahuah''s own prerogative.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=43 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 103:3 — *Who forgiveth all thine iniquities; who healeth all thy diseases* — forgiving and healing in one hand.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=103 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 34:6 — *Yahuah Elohim, merciful and gracious... abundant in goodness and truth* — the Name made present in the Son.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Exodus 34:7 — *Keeping mercy for thousands, forgiving iniquity and transgression and sin* — forgiven on earth through the Formed Son.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Micah 7:18 — *Who is a Elohim (God) like unto thee, that pardoneth iniquity... because he delighteth in mercy*.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=2
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Micah 7:19 — *thou wilt cast all their sins into the depths of the sea*.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Mark 2:10 — *the Son of Adam hath power on earth to forgive sins* — the parallel Gospel.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-thy-sins-be-forgiven-son-of-adam-power-to-forgive-isaiah-43-exodus-34'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Hosea 6:6 — *For I desired mercy, and not sacrifice; and the knowledge of Elohim more than burnt offerings* — the verse He sends them to learn.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Samuel 15:22 — *to obey is better than sacrifice, and to hearken than the fat of rams*.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 21:3 — *To do justice and judgment is more acceptable to Yahuah than sacrifice*.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 51:17 — *a broken and a contrite heart, O Elohim, thou wilt not despise* — the heart the Physician comes for.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Sirach 38:1-2 — *Honour a physician... for of the Most High comes healing* — the true Physician''s remedy is from the Most High.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=12
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=38 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Sirach 35:1-3 — *He that keepeth the law brings offerings enough... To depart from wickedness is a thing pleasing to Yahuah* — mercy IS the weightier sacrifice.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-i-will-have-mercy-and-not-sacrifice-hosea-6-the-physician-to-the-sick'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=13
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Joel 2:16 — *let the bridegroom go forth of his chamber, and the bride out of her closet* — the Bridegroom present.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 62:5 — *as the bridegroom rejoiceth over the bride, so shall thy Elohim rejoice over thee*.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=62 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ecclesiastes 3:1 — *To every thing there is a season, and a time to every purpose under the heaven* — a time to fast, a time to feast.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jeremiah 31:31 — *a new covenant with the house of Yashar''el... and with the house of Yahudah* — both houses.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=31
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jeremiah 31:33 — *I will put my law in their inward parts, and write it in their hearts* — the new wine is the SAME Torah, written deeper.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-new-wine-into-new-bottles-the-bridegroom-jeremiah-31-renewed-covenant'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=17
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 15:38 — *make them fringes in the borders of their garments... a ribband of blue* — the hem was the commanded tzitzit.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-the-hem-of-his-garment-the-fringe-healing-in-his-wings-numbers-15-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=15 AND tv.verse_number=38
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Numbers 15:39 — *remember all the commandments of Yahuah, and do them* — she grasped the corner that calls Israel to DO the Torah.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-the-hem-of-his-garment-the-fringe-healing-in-his-wings-numbers-15-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=15 AND tv.verse_number=39
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 15:25 — *if a woman have an issue of her blood many days... she shall be unclean* — yet her touch did not defile Him; He healed her.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-the-hem-of-his-garment-the-fringe-healing-in-his-wings-numbers-15-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=15 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 4:2 — *the Sun of righteousness arise with healing in his wings* — *wings* is kanaph, the same word as the corner/fringe.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-the-hem-of-his-garment-the-fringe-healing-in-his-wings-numbers-15-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=22
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'2 Kings 4:34 — *he stretched himself upon the child; and the flesh of the child waxed warm* — as Elisha raised the Shunammite''s son, so the maid arose.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-the-hem-of-his-garment-the-fringe-healing-in-his-wings-numbers-15-malachi-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=4 AND tv.verse_number=34
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* — the messianic sign.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-two-blind-men-thou-son-of-david-isaiah-35-psalm-146-2-samuel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 42:7 — *To open the blind eyes, to bring out the prisoners from the prison* — the work of the chosen Servant.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-two-blind-men-thou-son-of-david-isaiah-35-psalm-146-2-samuel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 146:8 — *Yahuah openeth the eyes of the blind* — what Yahuah does, the Son of David does.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-two-blind-men-thou-son-of-david-isaiah-35-psalm-146-2-samuel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=30
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=146 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'2 Samuel 7:12 — *I will set up thy seed after thee... and I will establish his kingdom* — the promise to David, whose Son they cry to.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-two-blind-men-thou-son-of-david-isaiah-35-psalm-146-2-samuel-7'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Numbers 27:17 — *that the congregation of Yahuah be not as sheep which have no shepherd* — Moses'' own plea.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 34:5 — *they were scattered, because there is no shepherd... they became meat to all the beasts of the field*.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 34:6 — *my flock was scattered upon all the face of the earth, and none did search or seek after them* — the scattered two-house flock.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=36
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 27:12 — *ye shall be gathered one by one, O ye children of Yashar''el* — the harvest is the in-gathering of scattered Israel.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=27 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Joel 3:13 — *Put ye in the sickle, for the harvest is ripe* — the labourers sent into the harvest.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Baruch 5:5 — *Arise, O Jerusalem... behold your children gathered from the west to the east by the word of the Holy One* — the scattered flock brought home.'
+  FROM cross_reference_threads t, cross_references x, _mt09_lookup sv, _mt09_lookup tv
+ WHERE t.slug='matthew-9-sheep-having-no-shepherd-the-harvest-plenteous-numbers-27-ezekiel-34-baruch-5'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=9 AND sv.verse_number=36
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=5 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_matthew_10.sql (S260 Matthew depth) -----
+-- =====================================================================
+-- Matthew 10 — full-library cross-reference threads (NT DEPTH pass)
+-- 5 threads / 23 members. Band floor 11270, step +3.
+-- =====================================================================
+
+CREATE TEMP VIEW _mt10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1',
+   'pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ---------------------------------------------------------------------
+-- SECTION B — cross_references rows (one VALUES tuple per member)
+-- ---------------------------------------------------------------------
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+
+  -- THREAD 1: lost sheep of the house of Israel (10:5-6)
+  ('canon','matthew',10,6,'canon','ezekiel',34,16, 'free', E'*I will seek that which was lost, and bring again that which was driven away, and will bind up that which was broken, and will strengthen that which was sick* (Ezekiel 34:16). The Master sends the twelve to *the lost sheep of the house of Yashar''el* (Matthew 10:6) because the Shepherd Himself had already declared, two verses earlier, *I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11). The mission is the Shepherd''s own search-and-rescue of His scattered flock.'),
+  ('canon','matthew',10,6,'canon','jeremiah',50,6, 'free', E'*My people hath been lost sheep: their shepherds have caused them to go astray, they have turned them away on the mountains: they have gone from mountain to hill, they have forgotten their restingplace* (Jeremiah 50:6). This is the very phrase Yahusha takes up — *the lost sheep of the house of Yashar''el*. They are not no-people; they are Yahuah''s OWN people, lost and to be gathered home.'),
+  ('canon','matthew',10,6,'canon','jeremiah',50,17, 'free', E'*Yashar''el is a scattered sheep; the lions have driven him away: first the king of Assyria hath devoured him; and last this Nebuchadrezzar king of Babylon hath broken his bones* (Jeremiah 50:17). Assyria scattered the northern house first — *the lost sheep* dispersed among the nations. The twelve go first to gather what Assyria scattered, the dispersed of Ephraim/Yashar''el coming home.'),
+  ('canon','matthew',10,6,'canon','isaiah',53,6, 'free', E'*All we like sheep have gone astray; we have turned every one to his own way; and Yahuah hath laid on him the iniquity of us all* (Isaiah 53:6). The lost sheep are gathered not by a new errand but by the Servant who bears their iniquity — the Shepherd who lays down His life that the scattered may be brought in.'),
+  ('canon','matthew',10,6,'canon','jeremiah',50,4, 'free', E'*In those days, and in that time, saith Yahuah, the children of Yashar''el shall come, they and the children of Yahudah together, going and weeping... They shall ask the way to Zion with their faces thitherward* (Jeremiah 50:4-5). The end of the search is BOTH houses — Yashar''el and Yahudah — joined in one perpetual covenant. The lost sheep are gathered, never cast off (cf. Romans 11:1-2, *Elohim hath not cast away his people*).'),
+
+  -- THREAD 2: sheep among wolves / the Spirit of your Father speaketh (10:16-20)
+  ('canon','matthew',10,16,'canon','genesis',3,1, 'free', E'*Now the serpent was more subtil than any beast of the field which Yahuah Elohim had made* (Genesis 3:1). *Be ye therefore wise as serpents, and harmless as doves* (Matthew 10:16). The serpent''s subtlety was bent to deceive; the disciple takes the shrewdness and keeps the dove''s innocence — wise without guile, sent as sheep among wolves yet harming none.'),
+  ('canon','matthew',10,16,'canon','micah',7,5, 'free', E'*Trust ye not in a friend, put ye not confidence in a guide... For the son dishonoureth the father, the daughter riseth up against her mother... a man''s enemies are the men of his own house* (Micah 7:5-6). The wolves are not only the councils and the synagogues — they rise within a man''s own household. The sheep walk into a world already turned against them.'),
+  ('canon','matthew',10,20,'canon','exodus',4,12, 'free', E'*Now therefore go, and I will be with thy mouth, and teach thee what thou shalt say* (Exodus 4:12). When the slow-tongued Moses pleaded he could not speak, Yahuah promised to BE with his mouth. So here: *take no thought how or what ye shall speak... For it is not ye that speak, but the Spirit of your Father which speaketh in you* (Matthew 10:19-20). The same Father who filled Moses'' mouth fills the disciple''s.'),
+  ('canon','matthew',10,20,'canon','mark',13,11, 'free', E'*But when they shall lead you, and deliver you up, take no thought beforehand what ye shall speak, neither do ye premeditate: but whatsoever shall be given you in that hour, that speak ye: for it is not ye that speak, but the Ruach HaKodesh* (Mark 13:11). The promise stands across the gospels — the Father''s own Spirit answers for His sent ones in the hour of trial.'),
+
+  -- THREAD 3: fear not them which kill the body / sparrows (10:26-31)
+  ('canon','matthew',10,28,'canon','isaiah',8,12, 'free', E'*Neither fear ye their fear, nor be afraid. Sanctify Yahuah Tseva''ot himself; and let him be your fear, and let him be your dread* (Isaiah 8:12-13). *Fear not them which kill the body... but rather fear him which is able to destroy both soul and body* (Matthew 10:28). The cure for the fear of men is the fear of Yahuah — the one holy dread that drives out every other.'),
+  ('canon','matthew',10,28,'canon','psalms',56,11, 'free', E'*In Elohim have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11). The disciple sent among wolves carries David''s settled confidence — man may kill the body, but the soul rests in the One who holds it.'),
+  ('canon','matthew',10,28,'canon','proverbs',29,25, 'free', E'*The fear of man bringeth a snare: but whoso putteth his trust in Yahuah shall be safe* (Proverbs 29:25). The fear of men is itself the trap the wolves set; trust in Yahuah is the open ground. To *fear not them which kill the body* is wisdom''s own counsel.'),
+  ('canon','matthew',10,29,'apocrypha','the-wisdom-of-solomon',16,26, 'extras', E'*That thy children, O Yahuah, whom thou lovest, might know, that it is not the growing of fruits that nourisheth man: but that it is thy word, which preserveth them that put their trust in thee* (Wisdom of Solomon 16:26). *Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father* (Matthew 10:29). The same Father who numbers the hairs and marks the sparrow''s fall preserves His own — not the world''s provision but His word keeps them.'),
+  ('canon','matthew',10,31,'canon','luke',12,7, 'free', E'*But even the very hairs of your head are all numbered. Fear not therefore: ye are of more value than many sparrows* (Luke 12:7). The Master repeats it for emphasis across the gospels — the Father''s reckoning of the smallest sparrow is the measure of His care for the one He sends.'),
+
+  -- THREAD 4: not peace but a sword / a man's foes / lose your life (10:34-39)
+  ('canon','matthew',10,35,'canon','micah',7,6, 'free', E'*For the son dishonoureth the father, the daughter riseth up against her mother, the daughter in law against her mother in law; a man''s enemies are the men of his own house* (Micah 7:6). Yahusha quotes Micah word for word — *a man''s foes shall be they of his own household* (Matthew 10:36). The sword is not malice but the division that comes when one in a house turns to Yahuah and the rest will not.'),
+  ('canon','matthew',10,37,'canon','deuteronomy',33,9, 'free', E'*Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren, nor knew his own children: for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9). Levi''s blessing is loyalty to Yahuah set ABOVE kin. *He that loveth father or mother more than me is not worthy of me* (Matthew 10:37) — the fifth commandment still stands, but the Master must be loved first, as Levi loved the covenant first.'),
+  ('canon','matthew',10,37,'apocrypha','ecclesiasticus',7,27, 'extras', E'*Honour thy father with thy whole heart, and forget not the sorrows of thy mother. Remember that thou wast begotten of them; and how canst thou recompense them the things that they have done for thee?* (Sirach 7:27-28). The honour owed to father and mother is never abolished — the Master who says *love me more* in Matthew 10:37 still upholds the commandment in full. It is an ordering of loves, not a cancelling of the fifth word.'),
+  ('canon','matthew',10,38,'canon','genesis',22,12, 'free', E'*Lay not thine hand upon the lad... for now I know that thou fearest Elohim, seeing thou hast not withheld thy son, thine only son from me* (Genesis 22:12). *He that taketh not his cross, and followeth after me, is not worthy of me* (Matthew 10:38). Abraham, who did not withhold his only son, is the pattern of the cross-bearer — the one who holds even the dearest love loosely for Yahuah''s sake.'),
+  ('canon','matthew',10,39,'canon','luke',12,51, 'free', E'*Suppose ye that I am come to give peace on earth? I tell you, Nay; but rather division: For from henceforth there shall be five in one house divided... The father shall be divided against the son, and the son against the father* (Luke 12:51-53). Luke records the same hard word — the sword is the line drawn through households when the kingdom comes near, the cost of finding life by losing it.'),
+
+  -- THREAD 5: he that receiveth you receiveth me / a cup of cold water (10:40-42)
+  ('canon','matthew',10,40,'canon','exodus',4,16, 'free', E'*And he shall be thy spokesman unto the people... he shall be to thee instead of a mouth, and thou shalt be to him instead of Elohim* (Exodus 4:16). The sent one carries the Sender — to receive Aaron was to receive Moses'' word, to receive the disciple is to receive Yahusha, and *he that receiveth me receiveth him that sent me* (Matthew 10:40). The Formed Son is Himself the Sent One of the Father; His apostles bear that same chain of sending.'),
+  ('canon','matthew',10,41,'canon','1-kings',17,9, 'free', E'*Arise, get thee to Zarephath... behold, I have commanded a widow woman there to sustain thee* (1 Kings 17:9). The widow who fed Elijah with her last handful of meal received a prophet in the name of a prophet — *the barrel of meal wasted not, neither did the cruse of oil fail* (1 Kings 17:16). *He that receiveth a prophet in the name of a prophet shall receive a prophet''s reward* (Matthew 10:41).'),
+  ('canon','matthew',10,41,'canon','2-kings',4,10, 'free', E'*Let us make a little chamber, I pray thee, on the wall; and let us set for him there a bed, and a table, and a stool, and a candlestick: and it shall be, when he cometh to us, that he shall turn in thither* (2 Kings 4:10). The Shunammite who lodged Elisha received a holy man of Elohim, and her reward was a son given and a son raised. To receive the prophet is to share the prophet''s portion.'),
+  ('canon','matthew',10,42,'canon','proverbs',19,17, 'free', E'*He that hath pity upon the poor lendeth unto Yahuah; and that which he hath given will he pay him again* (Proverbs 19:17). *Whosoever shall give to drink unto one of these little ones a cup of cold water only... he shall in no wise lose his reward* (Matthew 10:42). The smallest kindness to the least is a loan to Yahuah Himself, and He repays in full.')
+
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _mt10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _mt10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ---------------------------------------------------------------------
+-- SECTION C — threads
+-- ---------------------------------------------------------------------
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50',
+       E'But go rather to the lost sheep of the house of Yashar''el — the scattered flock sought out (Ezekiel 34; Jeremiah 50; Isaiah 53)',
+       E'When Yahusha sends the twelve, He does not send them to strangers but to *the lost sheep of the house of Yashar''el* (Matthew 10:6) — and that phrase is lifted straight out of the prophets. *My people hath been lost sheep: their shepherds have caused them to go astray... they have forgotten their restingplace* (Jeremiah 50:6). The northern house was scattered first by Assyria — *Yashar''el is a scattered sheep; the lions have driven him away: first the king of Assyria hath devoured him* (Jeremiah 50:17) — dispersed among the nations and seemingly lost. But the Shepherd had already sworn to go after them Himself: *I, even I, will both search my sheep, and seek them out... I will seek that which was lost, and bring again that which was driven away* (Ezekiel 34:11,16). The mission of the twelve IS that search. And the gathering is never the casting-off of a people; it ends with BOTH houses brought home — *the children of Yashar''el shall come, they and the children of Yahudah together... they shall ask the way to Zion* (Jeremiah 50:4-5). The Servant who gathers them is the One on whom *Yahuah hath laid on him the iniquity of us all* (Isaiah 53:6). Hold the guard: *Elohim hath not cast away his people* (Romans 11:1-2). The lost sheep are sought, not rejected.',
+       sv.verse_id, ev.verse_id, 'free', 11270
+  FROM _mt10_lookup sv, _mt10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=10 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-10-sheep-among-wolves-spirit-of-your-father-speaketh-genesis-3-exodus-4',
+       E'As sheep in the midst of wolves — it is the Spirit of your Father that speaketh (Genesis 3; Exodus 4; Micah 7)',
+       E'*Behold, I send you forth as sheep in the midst of wolves: be ye therefore wise as serpents, and harmless as doves* (Matthew 10:16). The serpent of Eden was *more subtil than any beast of the field* (Genesis 3:1) — the disciple is to take that shrewdness and strip it of guile, wise without venom, innocent as the dove. And the wolves are not only the councils; they rise inside a man''s own house: *the son dishonoureth the father, the daughter riseth up against her mother... a man''s enemies are the men of his own house* (Micah 7:5-6). Yet the sheep are not sent unarmed. *Take no thought how or what ye shall speak... For it is not ye that speak, but the Spirit of your Father which speaketh in you* (Matthew 10:19-20). This is the old promise made to a slow-tongued man: *Now therefore go, and I will be with thy mouth, and teach thee what thou shalt say* (Exodus 4:12). The same Father who filled Moses'' mouth fills the disciple''s in the hour of trial — *whatsoever shall be given you in that hour, that speak ye: for it is not ye that speak, but the Ruach HaKodesh* (Mark 13:11). The sheep are defenceless; the Father is not.',
+       sv.verse_id, ev.verse_id, 'free', 11273
+  FROM _mt10_lookup sv, _mt10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=10 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56',
+       E'Fear not them which kill the body — not a sparrow falls without your Father (Isaiah 8; Psalm 56; Wisdom 16)',
+       E'*And fear not them which kill the body, but are not able to kill the soul: but rather fear him which is able to destroy both soul and body in hell* (Matthew 10:28). The cure for the fear of men is one holy dread that swallows all others — exactly Isaiah''s counsel under the Assyrian terror: *neither fear ye their fear, nor be afraid. Sanctify Yahuah Tseva''ot himself; and let him be your fear, and let him be your dread* (Isaiah 8:12-13). David had learned it in the cave: *In Elohim have I put my trust: I will not be afraid what man can do unto me* (Psalm 56:11). And wisdom names the snare itself — *the fear of man bringeth a snare: but whoso putteth his trust in Yahuah shall be safe* (Proverbs 29:25). Why so fearless? Because the Father''s reckoning reaches the smallest thing: *Are not two sparrows sold for a farthing? and one of them shall not fall on the ground without your Father. But the very hairs of your head are all numbered* (Matthew 10:29-30). The same Father who marks the sparrow''s fall keeps His own — *it is not the growing of fruits that nourisheth man: but... thy word, which preserveth them that put their trust in thee* (Wisdom of Solomon 16:26). *Fear not therefore: ye are of more value than many sparrows* (Luke 12:7).',
+       sv.verse_id, ev.verse_id, 'extras', 11276
+  FROM _mt10_lookup sv, _mt10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=10 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33',
+       E'I came not to send peace, but a sword — a man''s foes of his own household (Micah 7; Deuteronomy 33; Genesis 22)',
+       E'*Think not that I am come to send peace on earth: I came not to send peace, but a sword* (Matthew 10:34). The sword is not the Master''s malice but the line the kingdom draws through a household — and He proves it by quoting Micah word for word: *the son dishonoureth the father, the daughter riseth up against her mother, the daughter in law against her mother in law; a man''s enemies are the men of his own house* (Micah 7:6). When one in a house turns to Yahuah and the rest will not, division is the cost. This is not the abolishing of the fifth commandment — *he that loveth father or mother more than me is not worthy of me* (Matthew 10:37) is an ordering of loves, not a cancelling of honour owed (*honour thy father with thy whole heart*, Sirach 7:27 still stands). It is Levi''s loyalty: *who said unto his father and to his mother, I have not seen him... for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9) — the covenant set above kin. And it is Abraham at Moriah, who *hast not withheld thy son, thine only son* (Genesis 22:12), the pattern of the cross-bearer who holds even the dearest love loosely. *He that findeth his life shall lose it: and he that loseth his life for my sake shall find it* (Matthew 10:39) — for *suppose ye that I am come to give peace on earth? I tell you, Nay; but rather division* (Luke 12:51).',
+       sv.verse_id, ev.verse_id, 'extras', 11279
+  FROM _mt10_lookup sv, _mt10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=10 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-10-he-that-receiveth-you-receiveth-me-a-cup-of-cold-water-exodus-4-1-kings-17',
+       E'He that receiveth you receiveth me — a cup of cold water shall not lose its reward (Exodus 4; 1 Kings 17; Proverbs 19)',
+       E'*He that receiveth you receiveth me, and he that receiveth me receiveth him that sent me* (Matthew 10:40). The sent one carries the Sender — it is the pattern of Aaron, the mouth of Moses: *he shall be to thee instead of a mouth, and thou shalt be to him instead of Elohim* (Exodus 4:16). And it is the very chain of the gospel, for the Formed Son is Himself the Sent One of the Father; to receive His apostle is to receive Him, and to receive Him is to receive the Father who sent Him. The reward attaches to the welcome: *he that receiveth a prophet in the name of a prophet shall receive a prophet''s reward* (Matthew 10:41). So the widow of Zarephath, who gave Elijah her last handful — *the barrel of meal shall not waste, neither shall the cruse of oil fail* (1 Kings 17:9,16) — and the Shunammite who built Elisha a little chamber on the wall (*a bed, and a table, and a stool, and a candlestick*, 2 Kings 4:10) and was repaid with a son given and a son raised. Even the least kindness is logged in heaven: *whosoever shall give to drink unto one of these little ones a cup of cold water only... he shall in no wise lose his reward* (Matthew 10:42) — for *he that hath pity upon the poor lendeth unto Yahuah; and that which he hath given will he pay him again* (Proverbs 19:17).',
+       sv.verse_id, ev.verse_id, 'free', 11282
+  FROM _mt10_lookup sv, _mt10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=40
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=10 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+-- ---------------------------------------------------------------------
+-- SECTION D — thread_members
+-- ---------------------------------------------------------------------
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Ezekiel 34:16 — *I will seek that which was lost, and bring again that which was driven away... and will strengthen that which was sick.* The Shepherd''s own search for the scattered flock.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jeremiah 50:6 — *My people hath been lost sheep: their shepherds have caused them to go astray.* The exact phrase Yahusha takes up: lost, but still *my people.*'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Jeremiah 50:17 — *Yashar''el is a scattered sheep... first the king of Assyria hath devoured him.* The northern house scattered first — the lost sheep dispersed among the nations.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 53:6 — *All we like sheep have gone astray... and Yahuah hath laid on him the iniquity of us all.* The Servant-Shepherd who gathers the lost by bearing their sin.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Jeremiah 50:4 — *the children of Yashar''el shall come, they and the children of Yahudah together... they shall ask the way to Zion.* Both houses gathered home — the Romans 11 guard: gathered, never cast off.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-the-lost-sheep-of-the-house-of-israel-ezekiel-34-jeremiah-50'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=50 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Genesis 3:1 — *Now the serpent was more subtil than any beast of the field.* Take the serpent''s shrewdness, strip it of guile — wise as serpents, harmless as doves.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-sheep-among-wolves-spirit-of-your-father-speaketh-genesis-3-exodus-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Micah 7:5 — *Trust ye not in a friend... a man''s enemies are the men of his own house* (7:5-6). The wolves rise even within the household.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-sheep-among-wolves-spirit-of-your-father-speaketh-genesis-3-exodus-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=16
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Exodus 4:12 — *I will be with thy mouth, and teach thee what thou shalt say.* The Father who filled the slow-tongued Moses fills the disciple before the councils.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-sheep-among-wolves-spirit-of-your-father-speaketh-genesis-3-exodus-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Mark 13:11 — *it is not ye that speak, but the Ruach HaKodesh.* The same promise across the gospels — the Father''s Spirit answers in the hour of trial.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-sheep-among-wolves-spirit-of-your-father-speaketh-genesis-3-exodus-4'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=13 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 8:12-13 — *neither fear ye their fear... let him be your fear, and let him be your dread.* The fear of Yahuah drives out the fear of men.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=8 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Psalm 56:11 — *In Elohim have I put my trust: I will not be afraid what man can do unto me.* David''s settled confidence under the threat of men.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Proverbs 29:25 — *The fear of man bringeth a snare: but whoso putteth his trust in Yahuah shall be safe.* The fear of men is itself the trap.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=29 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Wisdom of Solomon 16:26 — *it is not the growing of fruits that nourisheth man: but... thy word, which preserveth them that put their trust in thee.* The Father who marks the sparrow preserves His own.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=29
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=16 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Luke 12:7 — *the very hairs of your head are all numbered. Fear not therefore: ye are of more value than many sparrows.* The Master repeats it: the Father''s reckoning is the measure of His care.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-fear-not-them-which-kill-the-body-sparrows-isaiah-8-psalm-56'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=31
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Micah 7:6 — *the son dishonoureth the father... a man''s enemies are the men of his own house.* Yahusha quotes Micah word for word — the sword is household division for Yahuah''s sake.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=35
+   AND tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 33:9 — Levi *said unto his father and to his mother, I have not seen him... for they have observed thy word, and kept thy covenant.* Loyalty to Yahuah set above kin — the fifth commandment kept, the Master loved first.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Sirach 7:27-28 — *Honour thy father with thy whole heart, and forget not the sorrows of thy mother.* The fifth word is never abolished; *love me more* is an ordering of loves, not a cancelling.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=37
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=7 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Genesis 22:12 — *thou hast not withheld thy son, thine only son from me.* Abraham at Moriah is the pattern of the cross-bearer who holds even the dearest love loosely for Yahuah.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=38
+   AND tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Luke 12:51-53 — *I am come... not to send peace, but rather division... The father shall be divided against the son.* Luke''s parallel — the sword is the line the kingdom draws through a house.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-not-peace-but-a-sword-a-mans-foes-lose-your-life-micah-7-deuteronomy-33'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=39
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=51
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Exodus 4:16 — Aaron *shall be to thee instead of a mouth, and thou shalt be to him instead of Elohim.* The sent one carries the Sender; the Formed Son is Himself the Father''s Sent One.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-he-that-receiveth-you-receiveth-me-a-cup-of-cold-water-exodus-4-1-kings-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=40
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Kings 17:9 — the widow of Zarephath commanded to sustain Elijah; she gave her last handful and *the barrel of meal wasted not* (17:16). To receive a prophet is to share a prophet''s reward.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-he-that-receiveth-you-receiveth-me-a-cup-of-cold-water-exodus-4-1-kings-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=17 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'2 Kings 4:10 — the Shunammite builds Elisha *a little chamber... a bed, and a table, and a stool, and a candlestick.* She received a holy man, and was repaid with a son given and raised.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-he-that-receiveth-you-receiveth-me-a-cup-of-cold-water-exodus-4-1-kings-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=4 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 19:17 — *He that hath pity upon the poor lendeth unto Yahuah; and that which he hath given will he pay him again.* The cup of cold water to the least is a loan to Yahuah Himself.'
+  FROM cross_reference_threads t, cross_references x, _mt10_lookup sv, _mt10_lookup tv
+ WHERE t.slug='matthew-10-he-that-receiveth-you-receiveth-me-a-cup-of-cold-water-exodus-4-1-kings-17'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=10 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_matthew_11.sql (S260 Matthew depth) -----
+-- ============================================================================
+-- Matthew 11 — full-library cross-reference threads (NT DEPTH pass)
+-- 5 threads / 26 members. Band 11300, step +3.
+-- ============================================================================
+
+-- 3a. Temp view ---------------------------------------------------------------
+CREATE TEMP VIEW _mt11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1',
+   'pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- 3b. cross_references rows ---------------------------------------------------
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+
+-- THREAD 1 : 11:2-6 art thou he — the works prove Messiah by the signs of Isaiah
+  ('canon','matthew',11,5,'canon','isaiah',35,5, 'free', E'*Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5). When John in prison sends to ask *Art thou he that should come, or do we look for another?* (Matthew 11:3), Yahusha (Jesus) does not argue — he points to the works, and the works are Isaiah''s own checklist of the days of Yahuah. The blind, the deaf — the signs were written down centuries before, so that when they came to pass no one would have to guess.'),
+  ('canon','matthew',11,5,'canon','isaiah',35,6, 'free', E'*Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break out, and streams in the desert* (Isaiah 35:6). *The lame walk... the deaf hear* (Matthew 11:5) — the very next line of Isaiah''s wilderness song. The answer to John is built straight out of the prophet: this is the One the desert was waiting for.'),
+  ('canon','matthew',11,5,'canon','isaiah',61,1, 'free', E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives* (Isaiah 61:1). *The poor have the gospel preached to them* (Matthew 11:5) is the climax of the list, and it is the anointing of Isaiah 61 — the Messiah is the Anointed One who carries the good tidings to the meek.'),
+  ('canon','matthew',11,5,'canon','isaiah',29,18, 'free', E'*And in that day shall the deaf hear the words of the book, and the eyes of the blind shall see out of obscurity, and out of darkness* (Isaiah 29:18). *The meek also shall increase their joy in Yahuah (LORD), and the poor among men shall rejoice in the Holy One of Yashar''el (Israel)* (Isaiah 29:19). Deaf hearing, blind seeing, and the poor rejoicing — bound together in Isaiah exactly as Yahusha binds them in his answer to John.'),
+  ('canon','matthew',11,5,'canon','isaiah',26,19, 'free', E'*Thy dead men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead* (Isaiah 26:19). *The dead are raised up* (Matthew 11:5) — the last and greatest sign, the resurrection promise of Isaiah, already breaking in.'),
+  ('canon','matthew',11,5,'canon','luke',7,22, 'free', E'*Then Yahusha (Jesus) answering said unto them, Go your way, and tell John what things ye have seen and heard; how that the blind see, the lame walk, the lepers are cleansed, the deaf hear, the dead are raised, to the poor the gospel is preached* (Luke 7:22). Luke records the same answer word for word — the testimony is not a proof-text wrenched from one corner; it is the consistent witness of the Messiah to the imprisoned forerunner.'),
+
+-- THREAD 2 : 11:7-15 John more than a prophet — my messenger, Elijah, restore the tribes
+  ('canon','matthew',11,10,'canon','malachi',3,1, 'free', E'*Behold, I will send my messenger, and he shall prepare the way before me: and Yahuah (Lord), whom ye seek, shall suddenly come to his temple* (Malachi 3:1). Yahusha quotes it of John: *Behold, I send my messenger before thy face, which shall prepare thy way before thee* (Matthew 11:10). John is the messenger of Malachi, the herald who goes ahead of the coming of Yahuah.'),
+  ('canon','matthew',11,10,'canon','isaiah',40,3, 'free', E'*The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah (LORD), make straight in the desert a highway for our Elohim (God)* (Isaiah 40:3). The messenger of Malachi is the wilderness voice of Isaiah — the same office: a man sent ahead to make the road ready for the One who follows.'),
+  ('canon','matthew',11,14,'canon','malachi',4,5, 'free', E'*Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah (LORD)* (Malachi 4:5). *And if ye will receive it, this is Elias, which was for to come* (Matthew 11:14). The promised Elijah is not a riddle — Malachi named him, and Yahusha says John has filled the office.'),
+  ('canon','matthew',11,14,'canon','malachi',4,6, 'free', E'*And he shall turn the heart of the fathers to the children, and the heart of the children to their fathers, lest I come and smite the earth with a curse* (Malachi 4:6). The Elijah-work is reconciliation and turning — and Malachi seals the very same chapter with *Remember ye the law of Moses my servant* (Malachi 4:4): the forerunner turns hearts back to the Torah, never away from it.'),
+  ('canon','matthew',11,14,'apocrypha','ecclesiasticus',48,10, 'extras', E'*Who were ordained for reproofs in their times, to pacify the wrath of the judgment of Yahuah (God), before it brake forth into fury, and to turn the heart of the father to the son, and to restore the tribes of Jacob* (Sirach 48:10). Ben Sira, reading Malachi two centuries before John, already understood the Elijah-mission as the restoring of the tribes of Jacob — the gathering of the scattered house, the two sticks made one. John''s coming is that two-house hope stirring.'),
+  ('canon','matthew',11,14,'canon','luke',1,17, 'free', E'*And he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children, and the disobedient to the wisdom of the just; to make ready a people prepared for Yahuah (Lord)* (Luke 1:17). The angel told Zacharias the same thing before John was born: he comes in the spirit and power of Elijah, turning hearts and making ready a people — the office Malachi promised, fulfilled.'),
+
+-- THREAD 3 : 11:16-24 this generation — woe to the cities, greater light greater judgment
+  ('canon','matthew',11,23,'canon','isaiah',14,13, 'free', E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)... I will be like the El Elyon (most High). Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:13-15). *And thou, Capernaum, which art exalted unto heaven, shalt be brought down to hell* (Matthew 11:23). Yahusha lays the ancient taunt-song of the fallen one over Capernaum: the higher the lifting up, the deeper the fall.'),
+  ('canon','matthew',11,23,'canon','isaiah',14,15, 'free', E'*Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The exact phrase Yahusha pronounces over the favoured city — *brought down to hell* — is lifted from Isaiah''s sentence on the proud. Privilege unrepented becomes the heaviest judgment.'),
+  ('canon','matthew',11,23,'canon','ezekiel',16,49, 'free', E'*Behold, this was the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness was in her and in her daughters, neither did she strengthen the hand of the poor and needy* (Ezekiel 16:49). *If the mighty works... had been done in Sodom, it would have remained until this day* (Matthew 11:23). Ezekiel names Sodom''s sin as comfortable pride that would not help the poor — the very sin of cities that watched the mighty works and would not repent.'),
+  ('canon','matthew',11,21,'canon','jonah',3,5, 'free', E'*So the people of Nineveh believed Elohim (God), and proclaimed a fast, and put on sackcloth, from the greatest of them even to the least of them* (Jonah 3:5). *They would have repented long ago in sackcloth and ashes* (Matthew 11:21). Nineveh, a heathen city, repented at one reluctant prophet; Chorazin and Bethsaida saw the mighty works themselves and did not. The pagans'' sackcloth rises up against the privileged.'),
+  ('canon','matthew',11,19,'canon','isaiah',61,3, 'free', E'*To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning... that they might be called trees of righteousness, the planting of Yahuah (LORD), that he might be glorified* (Isaiah 61:3). *Wisdom is justified of her children* (Matthew 11:19) — the generation pipes and mourns and is pleased with neither John nor the Son, but Wisdom''s true children, the planting of Yahuah, are known by the fruit she bears in them.'),
+
+-- THREAD 4 : 11:25-27 hid from the wise, revealed unto babes — the Father reveals the Son
+  ('canon','matthew',11,25,'canon','psalms',8,2, 'free', E'*Out of the mouth of babes and sucklings hast thou ordained strength because of thine enemies, that thou mightest still the enemy and the avenger* (Psalm 8:2). *Thou hast hid these things from the wise and prudent, and hast revealed them unto babes* (Matthew 11:25). What the proud cannot grasp, the lowly receive — the Father ordains his strength in the mouths of babes, just as David sang.'),
+  ('canon','matthew',11,25,'canon','isaiah',29,14, 'free', E'*Therefore, behold, I will proceed to do a marvellous work among this people, even a marvellous work and a wonder: for the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid* (Isaiah 29:14). The very pairing — *wise men* and *prudent men* whose wisdom *shall be hid* — is the pattern Yahusha thanks the Father for: revelation is not earned by cleverness; it is given.'),
+  ('canon','matthew',11,25,'canon','daniel',2,21, 'free', E'*And he changeth the times and the seasons: he removeth kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding* (Daniel 2:21). *He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him* (Daniel 2:22). Daniel learned it in Babylon: the deep things are not seized, they are revealed — by the One who is the source of all knowing.'),
+  ('canon','matthew',11,27,'canon','isaiah',11,2, 'free', E'*And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD)* (Isaiah 11:2). *All things are delivered unto me of my Father* (Matthew 11:27) — the Son knows the Father because the Father has given him the Spirit and delivered all things into his hand. He is the Formed Son who HAS a Father; the Father is the source, the Son the one who reveals him to whomever he will.'),
+  ('canon','matthew',11,27,'canon','john',6,46, 'free', E'*Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father* (John 6:46). *No man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son* (Matthew 11:27). The Son alone, who is of Elohim, has seen the Father — and he reveals the invisible Father to men. Not two co-equal persons trading knowledge, but the begotten Son making the unseen Father known.'),
+  ('canon','matthew',11,25,'canon','luke',10,21, 'free', E'*In that hour Yahusha (Jesus) rejoiced in spirit, and said, I thank thee, O Father, Yahuah (Lord) of heaven and earth, that thou hast hid these things from the wise and prudent, and hast revealed them unto babes: even so, Father; for so it seemed good in thy sight* (Luke 10:21). Luke preserves the same prayer — the Son addressing the Father as Yahuah of heaven and earth, the source from whom revelation flows down to the humble.'),
+
+-- THREAD 5 : 11:28-30 ★★ come unto me — take my yoke — the Torah rightly carried (SHOWCASE)
+  ('canon','matthew',11,29,'canon','jeremiah',6,16, 'free', E'*Thus saith Yahuah (LORD), Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls. But they said, We will not walk therein* (Jeremiah 6:16). When Yahusha says *ye shall find rest unto your souls* (Matthew 11:29) he is quoting Jeremiah word for word. The rest is found in the OLD paths — the ancient good way, the Torah walked in. His yoke is not a new burden replacing the old one; it is the old way carried rightly, the way the prophet pled with Yashar''el to walk.'),
+  ('canon','matthew',11,28,'canon','exodus',33,14, 'free', E'*And he said, My presence shall go with thee, and I will give thee rest* (Exodus 33:14). *Come unto me... and I will give you rest* (Matthew 11:28). The rest Yahusha offers is the rest Yahuah promised Moses — his presence going with his people. The Formed Son gives what the Father gave at Sinai: himself, present, and the people at rest.'),
+  ('canon','matthew',11,29,'canon','isaiah',28,12, 'free', E'*To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear* (Isaiah 28:12). Yahuah offered rest and refreshing to the weary, *yet they would not hear.* Yahusha stands in that same place — *Come unto me, all ye that labour and are heavy laden* — offering the rest his people had refused. The invitation is ancient; only the gentleness of the Master makes it bearable.'),
+  ('canon','matthew',11,29,'canon','psalms',116,7, 'free', E'*Return unto thy rest, O my soul; for Yahuah (LORD) hath dealt bountifully with thee* (Psalm 116:7). The soul''s true home is rest in Yahuah. *Ye shall find rest unto your souls* (Matthew 11:29) — the same rest of soul the psalmist returned to, now opened to all who come and take the gentle yoke.'),
+  ('canon','matthew',11,29,'apocrypha','ecclesiasticus',51,26, 'extras', E'*Put your neck under the yoke, and let your soul receive instruction: she is hard at hand to find* (Sirach 51:26). *Behold with your eyes, how that I have but little labour, and have gotten to me much rest* (Sirach 51:27). Ben Sira speaks of Wisdom — the Torah, the instruction — as a YOKE you put your neck under, and the fruit of bearing it is rest. *Take my yoke upon you, and learn of me... and ye shall find rest unto your souls* (Matthew 11:29) is the same picture exactly: the yoke IS the instruction, and rest is found by carrying it, not by casting it off.'),
+  ('canon','matthew',11,29,'canon','isaiah',61,1, 'free', E'*Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted* (Isaiah 61:1). *I am meek and lowly in heart* (Matthew 11:29) — the Master under whose yoke the weary come is the meek Anointed of Isaiah, sent to bind up the broken. The yoke is heavy or light entirely by the gentleness of the one who shares it; this Master is lowly, and so his burden is light.')
+
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _mt11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _mt11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- 3c. Threads -----------------------------------------------------------------
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61',
+       E'Art thou he that should come — the blind see, the dead are raised (Isaiah 35; Isaiah 61; Isaiah 26)',
+       E'John, in Herod''s prison, sends to ask the question every honest heart asks: *Art thou he that should come, or do we look for another?* (Matthew 11:3). Yahusha (Jesus) answers not with a claim but with a list — *The blind receive their sight, and the lame walk, the lepers are cleansed, and the deaf hear, the dead are raised up, and the poor have the gospel preached to them* (Matthew 11:5). Every item on that list was written down by Isaiah centuries before. *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped* (Isaiah 35:5); *Then shall the lame man leap as an hart, and the tongue of the dumb sing* (Isaiah 35:6). *Yahuah (LORD) hath anointed me to preach good tidings unto the meek* (Isaiah 61:1) — the poor receiving the gospel. *The deaf hear the words of the book, and the eyes of the blind shall see... the poor among men shall rejoice in the Holy One of Yashar''el (Israel)* (Isaiah 29:18-19). And the greatest sign of all: *Thy dead men shall live... Awake and sing, ye that dwell in dust* (Isaiah 26:19). The works ARE the answer, because the works are Isaiah''s own checklist of the days of Yahuah. Luke records the same reply word for word (Luke 7:22). Come and see: the Messiah did not have to argue who he was — the prophets had already filled out the description, and he simply did the things.',
+       sv.verse_id, ev.verse_id, 'free', 11300
+  FROM _mt11_lookup sv, _mt11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=11 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48',
+       E'My messenger, Elijah which was for to come — restore the tribes of Jacob (Malachi 3; Malachi 4; Sirach 48)',
+       E'*Among them that are born of women there hath not risen a greater than John the Baptist* (Matthew 11:11) — and Yahusha tells us why. *Behold, I send my messenger before thy face, which shall prepare thy way before thee* (Matthew 11:10) is Malachi quoted: *Behold, I will send my messenger, and he shall prepare the way before me* (Malachi 3:1). John is the messenger of the covenant''s herald, the wilderness voice of Isaiah — *Prepare ye the way of Yahuah (LORD), make straight in the desert a highway* (Isaiah 40:3). More than that: *if ye will receive it, this is Elias, which was for to come* (Matthew 11:14). Malachi named him too — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah* (Malachi 4:5), the prophet who would *turn the heart of the fathers to the children* (Malachi 4:6). And what is the Elijah-work? Ben Sira, reading Malachi two centuries before John was born, already knew: Elijah comes *to turn the heart of the father to the son, and to restore the tribes of Jacob* (Sirach 48:10) — the gathering of the scattered house, Judah and Ephraim, the two sticks made one. The angel said the same of John before his birth: *he shall go before him in the spirit and power of Elias, to turn the hearts of the fathers to the children... to make ready a people prepared for Yahuah* (Luke 1:17). Note well: the very chapter that promises Elijah seals with *Remember ye the law of Moses my servant* (Malachi 4:4). The forerunner turns hearts back to the Torah — he never turns them away from it.',
+       sv.verse_id, ev.verse_id, 'extras', 11303
+  FROM _mt11_lookup sv, _mt11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=11 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-11-woe-unto-the-cities-greater-light-greater-judgment-isaiah-14-ezekiel-16',
+       E'Woe unto Chorazin and Capernaum — brought down to hell (Isaiah 14; Ezekiel 16; Jonah 3)',
+       E'This generation is like sullen children who will dance to no tune — they called John mad and the Son a glutton (Matthew 11:16-19) — *but wisdom is justified of her children* (Matthew 11:19), known by the fruit she bears in those who truly receive her (compare Isaiah 61:3, the *trees of righteousness, the planting of Yahuah*). Then comes the woe. *And thou, Capernaum, which art exalted unto heaven, shalt be brought down to hell* (Matthew 11:23) — Yahusha lays the ancient taunt over the favoured town: *I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)... Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:13-15). The phrase is lifted whole from Isaiah''s sentence on the proud one. Sodom would have stood, had it seen such works (Matthew 11:23) — and Ezekiel names Sodom''s sin precisely: *pride, fulness of bread, and abundance of idleness... neither did she strengthen the hand of the poor and needy* (Ezekiel 16:49), the comfortable hardness of cities that watch heaven''s power and shrug. Heathen Nineveh, by contrast, *believed Elohim (God), and proclaimed a fast, and put on sackcloth, from the greatest of them even to the least* (Jonah 3:5) — at one reluctant prophet. The principle is older than the gospel and runs straight through the library: greater light, greater accounting. To whom much is shown, much is required.',
+       sv.verse_id, ev.verse_id, 'free', 11306
+  FROM _mt11_lookup sv, _mt11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=11 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2',
+       E'Hid from the wise, revealed unto babes — no man knoweth the Son but the Father (Psalm 8; Isaiah 29; Daniel 2)',
+       E'*I thank thee, O Father, Yahuah (Lord) of heaven and earth, because thou hast hid these things from the wise and prudent, and hast revealed them unto babes* (Matthew 11:25). Revelation is not seized by cleverness; it is GIVEN, and the giver is the Father. David sang it: *Out of the mouth of babes and sucklings hast thou ordained strength* (Psalm 8:2) — the lowly carry what the proud cannot grasp. Isaiah foretold it: *the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid* (Isaiah 29:14) — the exact pairing, wise and prudent, that Yahusha names. Daniel learned it in exile: *He revealeth the deep and secret things: he knoweth what is in the darkness, and the light dwelleth with him* (Daniel 2:22); *he giveth wisdom unto the wise* (Daniel 2:21). Then the heart of it: *All things are delivered unto me of my Father: and no man knoweth the Son, but the Father; neither knoweth any man the Father, save the Son, and he to whomsoever the Son will reveal him* (Matthew 11:27). Hold this exactly: the Son knows the Father because the Father has DELIVERED all things to him and rested his Spirit upon him — *the spirit of wisdom and understanding, the spirit of counsel and might* (Isaiah 11:2). He is the Formed Son who HAS a Father; the Father is the source, and the Son is the one who makes the invisible Father known — *Not that any man hath seen the Father, save he which is of Elohim (God), he hath seen the Father* (John 6:46). This is not two co-equal persons trading secrets; it is the begotten Son revealing the One who sent him, to whomever he will. Luke preserves the same prayer (Luke 10:21), the Son thanking the Father, Yahuah of heaven and earth, the wellspring of all revelation.',
+       sv.verse_id, ev.verse_id, 'free', 11309
+  FROM _mt11_lookup sv, _mt11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=11 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51',
+       E'Take my yoke upon you — ye shall find rest unto your souls (Jeremiah 6:16; Exodus 33; Sirach 51:26)',
+       E'*Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls. For my yoke is easy, and my burden is light* (Matthew 11:28-30). Hear what Yahusha is doing, because it is the opposite of how this verse is usually preached. *Ye shall find rest unto your souls* is Jeremiah, quoted exactly: *Stand ye in the ways, and see, and ask for the OLD PATHS, where is the good way, and walk therein, and ye shall find rest for your souls* (Jeremiah 6:16). The rest is found by WALKING the old paths — the ancient good way, the Torah trodden rightly — not by laying it down. A yoke in the Scriptures is instruction, discipline, the bearing of the commandment. Ben Sira spells it out: *Put your neck under the yoke, and let your soul receive instruction... Behold with your eyes, how that I have but little labour, and have gotten to me much rest* (Sirach 51:26-27). The yoke IS the instruction; the rest is the FRUIT of carrying it. So when Yahusha says *take my yoke,* he is not lifting the Torah off your shoulders — he is offering to carry it WITH you, as the gentle Master. The rest he gives is the rest Yahuah promised Moses: *My presence shall go with thee, and I will give thee rest* (Exodus 33:14); the rest Yahuah held out to a weary people who *would not hear* (Isaiah 28:12); the rest the psalmist returned to — *Return unto thy rest, O my soul; for Yahuah (LORD) hath dealt bountifully with thee* (Psalm 116:7). What makes the yoke easy is not that it is empty, but that the One sharing it is *meek and lowly in heart* — the very Anointed of Isaiah 61:1, *sent... to bind up the brokenhearted.* Come and see: the burden is light because the Master is gentle, and the old paths, walked beside Him, are the rest your soul was made for.',
+       sv.verse_id, ev.verse_id, 'extras', 11312
+  FROM _mt11_lookup sv, _mt11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=11 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- 3d. Thread members ----------------------------------------------------------
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 35:5 — *Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped.* The first two signs of Yahusha''s answer, written in the wilderness song.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 35:6 — *Then shall the lame man leap as an hart, and the tongue of the dumb sing.* The lame walk and the deaf hear — the next line of Isaiah''s song.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 61:1 — *Yahuah hath anointed me to preach good tidings unto the meek.* The poor receiving the gospel is the anointing of Isaiah 61, the climax of the list.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 29:18-19 — *the deaf hear the words of the book... the poor among men shall rejoice in the Holy One of Yashar''el.* Deaf, blind, and poor bound together exactly as Yahusha binds them.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 26:19 — *Thy dead men shall live... Awake and sing, ye that dwell in dust.* The dead raised — the last and greatest sign, the resurrection promise breaking in.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=26 AND tv.verse_number=19
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Luke 7:22 — *tell John what things ye have seen and heard; how that the blind see, the lame walk... the dead are raised.* Luke records the same answer word for word.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-art-thou-he-the-works-prove-messiah-isaiah-35-isaiah-61'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=7 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Malachi 3:1 — *Behold, I will send my messenger, and he shall prepare the way before me.* The verse Yahusha quotes of John: he is Malachi''s herald.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 40:3 — *The voice of him that crieth in the wilderness, Prepare ye the way of Yahuah.* The messenger of Malachi is the wilderness voice of Isaiah, the same office.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Malachi 4:5 — *Behold, I will send you Elijah the prophet before the coming of the great and dreadful day of Yahuah.* John is the promised Elijah, named by Malachi.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Malachi 4:6 — *he shall turn the heart of the fathers to the children.* The Elijah-work is reconciliation; the same chapter seals with *Remember ye the law of Moses* (4:4).'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Sirach 48:10 — *to turn the heart of the father to the son, and to restore the tribes of Jacob.* Ben Sira read the Elijah-mission as the two-house restoration, centuries before John.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=48 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Luke 1:17 — *he shall go before him in the spirit and power of Elias... to make ready a people prepared for Yahuah.* The angel told Zacharias the same of John before his birth.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-john-the-messenger-elijah-restore-the-tribes-malachi-3-malachi-4-sirach-48'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=14
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 14:13 — *I will ascend into heaven, I will exalt my throne above the stars of Elohim.* The taunt-song of the proud one, laid over the exalted city.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-woe-unto-the-cities-greater-light-greater-judgment-isaiah-14-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 14:15 — *Yet thou shalt be brought down to hell, to the sides of the pit.* The exact phrase Yahusha pronounces over Capernaum, lifted from Isaiah''s sentence on pride.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-woe-unto-the-cities-greater-light-greater-judgment-isaiah-14-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=15
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Ezekiel 16:49 — *the iniquity of thy sister Sodom, pride, fulness of bread, and abundance of idleness... neither did she strengthen the hand of the poor.* Sodom''s sin = comfortable hardness before the poor — the sin of cities that shrug at heaven''s works.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-woe-unto-the-cities-greater-light-greater-judgment-isaiah-14-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=23
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=49
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Jonah 3:5 — *the people of Nineveh believed Elohim... and put on sackcloth, from the greatest of them even to the least.* Heathen Nineveh repented at one reluctant prophet; the privileged cities, seeing the works, did not.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-woe-unto-the-cities-greater-light-greater-judgment-isaiah-14-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 61:3 — *trees of righteousness, the planting of Yahuah, that he might be glorified.* *Wisdom is justified of her children* — known by the fruit she bears in those who truly receive her.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-woe-unto-the-cities-greater-light-greater-judgment-isaiah-14-ezekiel-16'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=19
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Psalm 8:2 — *Out of the mouth of babes and sucklings hast thou ordained strength.* The lowly carry what the proud cannot grasp; the Father ordains his strength in babes.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=8 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 29:14 — *the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid.* The exact pairing — wise and prudent — whose wisdom is hid; revelation is given, not earned.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Daniel 2:21 — *he giveth wisdom unto the wise* and *revealeth the deep and secret things* (2:22). Daniel learned in exile: the deep things are revealed by the source of all knowing, not seized.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 11:2 — *the spirit of Yahuah shall rest upon him, the spirit of wisdom and understanding.* The Son knows the Father because the Father rested his Spirit upon him and delivered all things to him — the Formed Son who HAS a Father.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=2
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'John 6:46 — *Not that any man hath seen the Father, save he which is of Elohim, he hath seen the Father.* The Son alone, who is of Elohim, makes the invisible Father known — not two co-equal persons trading knowledge.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=27
+   AND tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=6 AND tv.verse_number=46
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Luke 10:21 — *I thank thee, O Father, Yahuah of heaven and earth, that thou hast hid these things from the wise and prudent.* Luke preserves the same prayer: the Son thanking the Father, the wellspring of revelation.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-hid-from-the-wise-revealed-unto-babes-the-father-reveals-the-son-psalm-8-isaiah-29-daniel-2'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jeremiah 6:16 — *ask for the OLD PATHS, where is the good way, and walk therein, and ye shall find rest for your souls.* Yahusha quotes it word for word: the rest is found by walking the ancient way, the Torah trodden rightly — not by laying it down.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=6 AND tv.verse_number=16
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 33:14 — *My presence shall go with thee, and I will give thee rest.* The rest Yahusha offers is the rest Yahuah promised Moses: his presence going with his people.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=14
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 28:12 — *This is the rest wherewith ye may cause the weary to rest... yet they would not hear.* Yahusha stands where Yahuah stood, offering the rest the weary had refused.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=28 AND tv.verse_number=12
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Psalm 116:7 — *Return unto thy rest, O my soul; for Yahuah hath dealt bountifully with thee.* The soul''s true home is rest in Yahuah — the same rest of soul now opened to all who take the gentle yoke.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=7
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Sirach 51:26 — *Put your neck under the yoke, and let your soul receive instruction... I have but little labour, and have gotten to me much rest* (51:27). Ben Sira: the yoke IS the instruction (the Torah/Wisdom), and rest is the fruit of bearing it — not of casting it off. The direct witness behind *take my yoke.*'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=51 AND tv.verse_number=26
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Isaiah 61:1 — *Yahuah hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted.* What makes the yoke light is that the Master is *meek and lowly* — the very Anointed of Isaiah 61, sent to bind up the broken.'
+  FROM cross_reference_threads t, cross_references x, _mt11_lookup sv, _mt11_lookup tv
+ WHERE t.slug='matthew-11-come-unto-me-take-my-yoke-the-old-paths-rest-for-your-souls-jeremiah-6-sirach-51'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_matthew_12.sql (S260 Matthew depth) -----
+-- ============================================================================
+-- Matthew 12 — full-library cross-reference threads (NT DEPTH pass)
+-- 6 threads, band 11330 step +3
+-- ============================================================================
+
+-- 3a. Temp view --------------------------------------------------------------
+CREATE TEMP VIEW _mt12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id = c.id JOIN books b ON c.book_id = b.id
+  JOIN editions e ON b.edition_id = e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1',
+   'pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- 3b. cross_references rows ---------------------------------------------------
+WITH input(src_edition, src_slug, src_ch, src_v,
+           tgt_edition, tgt_slug, tgt_ch, tgt_v, tier, note) AS (VALUES
+  -- THREAD 1: 12:1-8 Lord of the sabbath -------------------------------------
+  ('canon','matthew',12,1,'canon','deuteronomy',23,25, 'free', E'*When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle unto thy neighbour''s standing corn* (Deuteronomy 23:25). The Torah itself gave the disciples leave to pluck and eat — it was never theft, never sabbath-breaking. Yahusha defends them FROM the law, not against it.'),
+  ('canon','matthew',12,3,'canon','1-samuel',21,6, 'free', E'*So the priest gave him hallowed bread: for there was no bread there but the shewbread, that was taken from before Yahuah (LORD)* (1 Samuel 21:6). David in his hunger ate the shewbread — mercy toward the famished took precedence, and Scripture does not condemn him. Have ye not read?'),
+  ('canon','matthew',12,5,'canon','numbers',28,9, 'free', E'*And on the sabbath day two lambs of the first year without spot... mingled with oil, and the drink offering thereof* (Numbers 28:9). The priests labour hardest on the sabbath, kindling fire and slaying lambs — work the Torah itself commands. They "profane" it yet are blameless, for the sabbath was made for worship, not idleness.'),
+  ('canon','matthew',12,4,'canon','leviticus',24,8, 'free', E'*Every sabbath he shall set it in order before Yahuah (LORD) continually... by an everlasting covenant. And it shall be Aaron''s and his sons''; and they shall eat it in the holy place* (Leviticus 24:8-9). The shewbread David ate was the priests'' portion by perpetual statute — which is why the Lord of the sabbath, greater than the temple, may rightly judge its use.'),
+  ('canon','matthew',12,7,'canon','hosea',6,6, 'free', E'*For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6). Yahusha quotes Hosea against the Pharisees: had they known the heart of the Torah they would not have condemned the guiltless. Mercy is not the abolition of the law — it IS its weightier matter.'),
+  ('canon','matthew',12,7,'apocrypha','ecclesiasticus',35,1, 'extras', E'*He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1). The wisdom of the fathers had long taught what Yahusha presses home — obedience IS the truest sacrifice; the keeping of the commandment is the offering Elohim desires.'),
+  ('canon','matthew',12,8,'canon','mark',2,27, 'free', E'*And he said unto them, The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28). Mark gives the reason: the sabbath is a gift FOR man. The Son of Adam, its Lord, is its right Interpreter — never its abolisher.'),
+  -- THREAD 2: 12:9-14 the withered hand / lawful to do well ------------------
+  ('canon','matthew',12,12,'canon','deuteronomy',22,4, 'free', E'*Thou shalt not see thy brother''s ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again* (Deuteronomy 22:4). The Torah commands rescue even of a beast in distress — how much more a man with a withered hand? Doing good on the sabbath is the law obeyed, not broken.'),
+  ('canon','matthew',12,11,'canon','exodus',23,5, 'free', E'*If thou see the ass of him that hateth thee lying under his burden, and wouldest forbear to help him, thou shalt surely help with him* (Exodus 23:5). The law lifts a fallen beast even of an enemy. Yahusha''s "what man among you... will he not lay hold on it, and lift it out?" simply reads the commandment aloud.'),
+  ('canon','matthew',12,12,'canon','leviticus',19,18, 'free', E'*Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). To heal the man is to love the neighbour — the royal commandment. Mercy IS the sabbath kept.'),
+  ('canon','matthew',12,11,'canon','proverbs',12,10, 'free', E'*A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel* (Proverbs 12:10). The righteous heart that pities a sheep in a pit will surely pity a suffering man — the Pharisees who would forbid the healing are the cruel ones.'),
+  -- THREAD 3: 12:15-21 behold my servant (Isaiah 42) -------------------------
+  ('canon','matthew',12,18,'canon','isaiah',42,1, 'free', E'*Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* (Isaiah 42:1). Matthew names the chosen Servant — the Formed Son anointed BY the Father, in whom the Father''s soul delights. The Spirit is put UPON him; the Father is the source.'),
+  ('canon','matthew',12,20,'canon','isaiah',42,3, 'free', E'*A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth* (Isaiah 42:3). The gentle Servant — he will not crush the broken nor snuff the faint. This is the Master whose yoke is easy, the same Servant Matthew sees healing the multitudes without strife or cry.'),
+  ('canon','matthew',12,21,'canon','isaiah',42,4, 'free', E'*He shall not fail nor be discouraged, till he have set judgment in the earth: and the isles shall wait for his law* (Isaiah 42:4). "In his name shall the Gentiles trust" — the isles waiting for his Torah. The nations drawn in are scattered Yashar''el gathered home and the stranger grafted, never the law set aside.'),
+  ('canon','matthew',12,21,'canon','isaiah',49,6, 'free', E'*It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles* (Isaiah 49:6). The Servant''s twofold work — restore the tribes AND be a light to the nations. The two houses gathered into one (Ezek 37), the Gentiles brought near.'),
+  ('canon','matthew',12,21,'canon','isaiah',11,10, 'free', E'*And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious* (Isaiah 11:10). The Root of Jesse raised as a banner — *to it shall the Gentiles seek*. "In his name shall the Gentiles trust" is Isaiah''s own promise come to pass.'),
+  -- THREAD 4: 12:22-37 by Beelzebub / blasphemy against the Spirit -----------
+  ('canon','matthew',12,29,'canon','isaiah',49,24, 'free', E'*Shall the prey be taken from the mighty, or the lawful captive delivered? But thus saith Yahuah (LORD)... I will contend with him that contendeth with thee, and I will save thy children* (Isaiah 49:24-25). To plunder the strong man''s house is to take back the prey from the mighty — exactly what Isaiah promised Yahuah would do for his captive children.'),
+  ('canon','matthew',12,28,'canon','ezekiel',36,27, 'free', E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). The Spirit of Elohim by which Yahusha casts out devils is the same Spirit promised to write the statutes on the heart — the kingdom come is a people made to keep the Torah, not freed from it.'),
+  ('canon','matthew',12,24,'enoch','1-enoch',15,11, 'extras', E'*From the days of the slaughter and destruction and death of the giants, from the souls of whose flesh the spirits, having gone forth, shall destroy... until the day of the consummation, the great judgement* (1 Enoch 15:11). The library tells where the unclean spirits came from — the souls of the dead giants, the offspring of the Watchers. These are the very devils the Son binds and casts out.'),
+  ('canon','matthew',12,25,'canon','1-samuel',2,25, 'free', E'*If one man sin against another, the judge shall judge him: but if a man sin against Yahuah (LORD), who shall intreat for him?* (1 Samuel 2:25). The blasphemy against the Ruach HaKodesh is the sin that calls the work of Elohim the work of Satan — to sin against Yahuah himself, for whom no intercessor is left while the heart stays hard.'),
+  ('canon','matthew',12,37,'canon','proverbs',18,21, 'free', E'*Death and life are in the power of the tongue: and they that love it shall eat the fruit thereof* (Proverbs 18:21). "By thy words thou shalt be justified, and by thy words thou shalt be condemned" — the wisdom of Proverbs made plain: the mouth speaks out of the heart''s treasure, and the heart is judged by its fruit.'),
+  -- THREAD 5: 12:38-42 the sign of Jonah / greater than Solomon --------------
+  ('canon','matthew',12,40,'canon','jonah',1,17, 'free', E'*Now Yahuah (LORD) had prepared a great fish to swallow up Jonah. And Jonah was in the belly of the fish three days and three nights* (Jonah 1:17). The one sign given the evil generation — Jonah three days in the deep is the Son of Adam three days in the heart of the earth, the sign of resurrection.'),
+  ('canon','matthew',12,41,'canon','jonah',3,5, 'free', E'*So the people of Nineveh believed Elohim (God), and proclaimed a fast, and put on sackcloth, from the greatest of them even to the least of them* (Jonah 3:5). The men of Nineveh repented at Jonah''s preaching — and shall rise to condemn a generation that has a greater than Jonah standing before it and will not turn.'),
+  ('canon','matthew',12,42,'canon','1-kings',10,1, 'free', E'*And when the queen of Sheba heard of the fame of Solomon concerning the name of Yahuah (LORD), she came to prove him with hard questions* (1 Kings 10:1). The queen of the south came from the ends of the earth to hear Solomon''s wisdom — and a greater than Solomon is here, unsought by his own.'),
+  -- THREAD 6: 12:43-50 the unclean spirit returns / whoso doeth the will -----
+  ('canon','matthew',12,45,'canon','proverbs',26,11, 'free', E'*As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11). The house swept and empty but left untenanted is worse at the last than the first — repentance that does not fill the heart with obedience invites seven spirits more wicked back in.'),
+  ('canon','matthew',12,50,'canon','deuteronomy',33,9, 'free', E'*Who said unto his father and to his mother, I have not seen him... for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9). Levi''s blessing: loyalty to Yahuah''s covenant above flesh and kin. So Yahusha names the true family — not by blood but by keeping the Father''s word.'),
+  ('canon','matthew',12,50,'canon','psalms',22,22, 'free', E'*I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22). The Messiah calls his obedient ones brethren — the congregation gathered around the Father''s will. *Whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.*')
+)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM input i
+  JOIN _mt12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _mt12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- 3c. Threads ----------------------------------------------------------------
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6',
+       E'The Son of Adam is Lord of the sabbath — have ye not read (Deuteronomy 23; 1 Samuel 21; Numbers 28; Hosea 6; Sirach 35)',
+       E'When the Pharisees charge the disciples with sabbath-breaking for plucking corn, Yahusha does not loosen the sabbath — he reads it rightly out of the Torah itself. *When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand* (Deuteronomy 23:25): the law gave them leave; it was never theft, never breaking. Then *have ye not read what David did* — *So the priest gave him hallowed bread: for there was no bread there but the shewbread, that was taken from before Yahuah (LORD)* (1 Samuel 21:6): hunger and mercy took precedence and Scripture did not condemn him. And the priests themselves? *On the sabbath day two lambs of the first year... mingled with oil, and the drink offering thereof* (Numbers 28:9) — they labour hardest of all men on the sabbath, kindling fire and slaying lambs the Torah commands, and *are blameless*. The shewbread David ate was the priests'' own portion: *Every sabbath he shall set it in order before Yahuah (LORD) continually... and they shall eat it in the holy place... by a perpetual statute* (Leviticus 24:8-9). The Lord of the sabbath, *greater than the temple*, may rightly judge its use. The whole defense turns on Hosea: *For I desired mercy, and not sacrifice; and the knowledge of Elohim (God) more than burnt offerings* (Hosea 6:6) — had the Pharisees known the heart of the law they would not have condemned the guiltless. The fathers had taught it long before: *He that keepeth the law brings offerings enough: he that takes heed to the commandment offers a peace offering* (Sirach 35:1) — obedience IS the truest sacrifice. Mark gives the key: *The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28). The sabbath is a gift FOR man, and its Lord is its right Interpreter — never its abolisher. This is the anchor against the lie that "Jesus broke the Sabbath": he upholds it, and rebukes those who forgot mercy was always its weightier matter.',
+       sv.verse_id, ev.verse_id, 'extras', 11330
+  FROM _mt12_lookup sv, _mt12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=12 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-12-lawful-to-do-well-on-the-sabbath-the-withered-hand-deuteronomy-22-leviticus-19',
+       E'It is lawful to do well on the sabbath — the withered hand (Deuteronomy 22; Exodus 23; Leviticus 19; Proverbs 12)',
+       E'*Is it lawful to heal on the sabbath days?* — and Yahusha answers with the Torah, not against it. *What man... that shall have one sheep, and if it fall into a pit on the sabbath day, will he not lay hold on it, and lift it out?* He is simply reading the commandment aloud: *Thou shalt not see thy brother''s ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again* (Deuteronomy 22:4). The law commands rescue even of a beast — *If thou see the ass of him that hateth thee lying under his burden... thou shalt surely help with him* (Exodus 23:5) — and lifts the fallen even of an enemy. *How much then is a man better than a sheep?* To heal the withered hand is to keep the royal commandment: *thou shalt love thy neighbour as thyself: I am Yahuah (LORD)* (Leviticus 19:18). And *A righteous man regardeth the life of his beast: but the tender mercies of the wicked are cruel* (Proverbs 12:10) — the heart that pities a sheep in a pit will surely pity a suffering man; it is the Pharisees plotting his destruction who are the cruel ones. *Wherefore it is lawful to do well on the sabbath days.* Mercy is not a loophole in the sabbath — mercy IS the sabbath kept.',
+       sv.verse_id, ev.verse_id, 'free', 11333
+  FROM _mt12_lookup sv, _mt12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=12 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-12-behold-my-servant-whom-i-have-chosen-isaiah-42-isaiah-49-isaiah-11',
+       E'Behold my servant whom I have chosen — a bruised reed (Isaiah 42; Isaiah 49; Isaiah 11)',
+       E'Matthew sees the healing Servant and names him from Isaiah, quoted in full. *Behold my servant, whom I uphold; mine elect, in whom my soul delighteth; I have put my spirit upon him: he shall bring forth judgment to the Gentiles* (Isaiah 42:1) — the Formed Son chosen and anointed BY the Father, in whom the Father''s own soul delights. The Spirit is put UPON him; the Father is the source. He is gentle: *A bruised reed shall he not break, and the smoking flax shall he not quench: he shall bring forth judgment unto truth* (Isaiah 42:3) — the same Master whose yoke is easy, who heals without strife or cry. *He shall not fail nor be discouraged, till he have set judgment in the earth: and the isles shall wait for his law* (Isaiah 42:4) — and so Matthew can say *in his name shall the Gentiles trust*: the isles waiting for his Torah. This is the Servant''s twofold charge: *It is a light thing that thou shouldest be my servant to raise up the tribes of Jacob, and to restore the preserved of Yashar''el (Israel): I will also give thee for a light to the Gentiles* (Isaiah 49:6) — restore the two houses AND draw the nations. *And in that day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek* (Isaiah 11:10): the nations seeking the Root of Jesse are scattered Yashar''el gathered home and the stranger grafted in — never the law set aside, for the isles wait for it still.',
+       sv.verse_id, ev.verse_id, 'free', 11336
+  FROM _mt12_lookup sv, _mt12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=12 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15',
+       E'Binding the strong man — the blasphemy against the Ruach HaKodesh (Isaiah 49; Ezekiel 36; 1 Enoch 15; Proverbs 18)',
+       E'When the Pharisees call his work the work of Beelzebub, Yahusha shows whose power is truly at work. *How can one enter into a strong man''s house, and spoil his goods, except he first bind the strong man?* — this is Isaiah''s promise: *Shall the prey be taken from the mighty, or the lawful captive delivered? But thus saith Yahuah (LORD)... I will contend with him that contendeth with thee, and I will save thy children* (Isaiah 49:24-25). To plunder the strong man''s house is to take back the captives from the mighty. And by what Spirit? *I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the Spirit of Elohim by which the devils are cast out is the same Spirit that writes the Torah on the heart; the kingdom come is a people made to keep the commandments, not freed from them. The library even tells us what these unclean spirits ARE: *from the souls of whose flesh the spirits, having gone forth, shall destroy... until the day of the consummation, the great judgement* (1 Enoch 15:11) — the spirits of the dead giants, offspring of the Watchers, the very devils the Son binds. To call this work satanic is the unpardonable sin — *if a man sin against Yahuah (LORD), who shall intreat for him?* (1 Samuel 2:25). For the mouth betrays the heart: *Death and life are in the power of the tongue* (Proverbs 18:21); *by thy words thou shalt be justified, and by thy words thou shalt be condemned.*',
+       sv.verse_id, ev.verse_id, 'extras', 11339
+  FROM _mt12_lookup sv, _mt12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=12 AND ev.verse_number=37
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-12-the-sign-of-the-prophet-jonah-greater-than-solomon-jonah-1-jonah-3-1-kings-10',
+       E'The sign of the prophet Jonah — a greater than Solomon is here (Jonah 1; Jonah 3; 1 Kings 10)',
+       E'The evil generation seeks a sign, and only one is given. *Now Yahuah (LORD) had prepared a great fish to swallow up Jonah. And Jonah was in the belly of the fish three days and three nights* (Jonah 1:17) — *so shall the Son of Adam be three days and three nights in the heart of the earth*: the sign of resurrection, the going down into the deep and the rising again. The Ninevites will judge this generation: *So the people of Nineveh believed Elohim (God), and proclaimed a fast, and put on sackcloth, from the greatest of them even to the least of them* (Jonah 3:5) — pagans repented at Jonah''s preaching, *and, behold, a greater than Jonas is here*, yet his own will not turn. So too the queen of the south: *And when the queen of Sheba heard of the fame of Solomon concerning the name of Yahuah (LORD), she came to prove him with hard questions* (1 Kings 10:1) — she crossed the earth to hear Solomon''s wisdom, *and, behold, a greater than Solomon is here*, unsought. The witnesses of the nations will rise to condemn the unbelief of those who had the Greater standing before them.',
+       sv.verse_id, ev.verse_id, 'free', 11342
+  FROM _mt12_lookup sv, _mt12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=12 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22',
+       E'Whosoever shall do the will of my Father — the true family (Proverbs 26; Deuteronomy 33; Psalm 22)',
+       E'The unclean spirit that left returns to find the house *empty, swept, and garnished* — and brings seven worse. *As a dog returneth to his vomit, so a fool returneth to his folly* (Proverbs 26:11): a repentance that empties the heart but does not fill it with obedience leaves the door open, and *the last state of that man is worse than the first.* Then the true house is named. When his mother and brethren stand without, Yahusha defines kinship not by blood but by the Father''s will — the very loyalty of Levi: *Who said unto his father and to his mother, I have not seen him... for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9). The Messiah gathers an obedient family and calls them brethren: *I will declare thy name unto my brethren: in the midst of the congregation will I praise thee* (Psalm 22:22). *For whosoever shall do the will of my Father which is in heaven, the same is my brother, and sister, and mother.* This is the seal against every lawless reading — the will of the Father is His commandment, and the true family is the one that does it.',
+       sv.verse_id, ev.verse_id, 'free', 11345
+  FROM _mt12_lookup sv, _mt12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=43
+   AND ev.edition_slug='canon' AND ev.book_slug='matthew' AND ev.chapter_number=12 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+-- 3d. Thread members ---------------------------------------------------------
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 23:25 — *thou mayest pluck the ears with thine hand* — the Torah gave the disciples leave; it was never sabbath-breaking.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'1 Samuel 21:6 — David ate the shewbread in his hunger; mercy took precedence and Scripture did not condemn him.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=3
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=21 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Numbers 28:9 — the priests labour hardest on the sabbath by the Torah''s own command, and are blameless.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Leviticus 24:8-9 — the shewbread was the priests'' portion by everlasting covenant; the Lord greater than the temple judges its use.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=24 AND tv.verse_number=8
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Hosea 6:6 — *I desired mercy, and not sacrifice* — the weightier matter of the Torah, not its abolition.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 6, E'Sirach 35:1 — *He that keepeth the law brings offerings enough* — the fathers taught that obedience is the truest sacrifice.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=35 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 7, E'Mark 2:27-28 — *The sabbath was made for man* — the gift FOR man, whose Lord is its right Interpreter, never its abolisher.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-son-of-adam-is-lord-of-the-sabbath-deuteronomy-23-1-samuel-21-hosea-6'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=8
+   AND tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Deuteronomy 22:4 — the Torah commands rescue of a fallen beast; how much more a suffering man?'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-lawful-to-do-well-on-the-sabbath-the-withered-hand-deuteronomy-22-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=22 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Exodus 23:5 — the law lifts a fallen beast even of an enemy; Yahusha simply reads the commandment aloud.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-lawful-to-do-well-on-the-sabbath-the-withered-hand-deuteronomy-22-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Leviticus 19:18 — to heal the man is to love the neighbour; mercy IS the sabbath kept.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-lawful-to-do-well-on-the-sabbath-the-withered-hand-deuteronomy-22-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=12
+   AND tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=18
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Proverbs 12:10 — the righteous regard the life of a beast; the Pharisees who forbid the healing are the cruel ones.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-lawful-to-do-well-on-the-sabbath-the-withered-hand-deuteronomy-22-leviticus-19'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=11
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=12 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 42:1 — the chosen Servant anointed BY the Father, in whom the Father''s soul delights; the Spirit put UPON him.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-behold-my-servant-whom-i-have-chosen-isaiah-42-isaiah-49-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=18
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Isaiah 42:3 — *a bruised reed shall he not break* — the gentle Servant whose yoke is easy, healing without strife.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-behold-my-servant-whom-i-have-chosen-isaiah-42-isaiah-49-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=20
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=3
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Isaiah 42:4 — *the isles shall wait for his law* — the nations'' trust is for his Torah, not its setting aside.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-behold-my-servant-whom-i-have-chosen-isaiah-42-isaiah-49-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=42 AND tv.verse_number=4
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'Isaiah 49:6 — the Servant''s twofold work: restore the two houses AND be a light to the Gentiles.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-behold-my-servant-whom-i-have-chosen-isaiah-42-isaiah-49-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=6
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Isaiah 11:10 — the Root of Jesse a banner *to it shall the Gentiles seek* — Isaiah''s own promise of the nations'' trust.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-behold-my-servant-whom-i-have-chosen-isaiah-42-isaiah-49-isaiah-11'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=21
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=10
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Isaiah 49:24-25 — to spoil the strong man''s house is to take back the prey from the mighty, Yahuah''s own promise.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=29
+   AND tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=49 AND tv.verse_number=24
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Ezekiel 36:27 — the Spirit that casts out devils is the same Spirit that writes the statutes on the heart.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=28
+   AND tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Enoch 15:11 — the unclean spirits are the souls of the dead giants, offspring of the Watchers — the very devils the Son binds.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=24
+   AND tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=15 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 4, E'1 Samuel 2:25 — *if a man sin against Yahuah, who shall intreat for him?* — the unpardonable hardness against the Spirit.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=25
+   AND tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=25
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 5, E'Proverbs 18:21 — *death and life are in the power of the tongue* — the mouth speaks the heart''s treasure, and is judged by its fruit.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-binding-the-strong-man-blasphemy-against-the-spirit-isaiah-49-1-enoch-15'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=37
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=18 AND tv.verse_number=21
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Jonah 1:17 — three days and three nights in the belly of the fish — the sign of resurrection, the going down and the rising.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-sign-of-the-prophet-jonah-greater-than-solomon-jonah-1-jonah-3-1-kings-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=40
+   AND tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=1 AND tv.verse_number=17
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Jonah 3:5 — the Ninevites repented at Jonah''s preaching; a greater than Jonah is here, yet his own will not turn.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-sign-of-the-prophet-jonah-greater-than-solomon-jonah-1-jonah-3-1-kings-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=41
+   AND tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=3 AND tv.verse_number=5
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'1 Kings 10:1 — the queen of Sheba crossed the earth to hear Solomon''s wisdom; a greater than Solomon is here, unsought.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-the-sign-of-the-prophet-jonah-greater-than-solomon-jonah-1-jonah-3-1-kings-10'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=42
+   AND tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=10 AND tv.verse_number=1
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 1, E'Proverbs 26:11 — *as a dog returneth to his vomit* — a repentance that leaves the heart empty invites worse back in.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=45
+   AND tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=11
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 2, E'Deuteronomy 33:9 — Levi''s loyalty to the covenant above flesh and kin; the true family keeps the Father''s word.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=9
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, x.id, 3, E'Psalm 22:22 — the Messiah calls his obedient ones brethren in the congregation; the will of the Father is His commandment.'
+  FROM cross_reference_threads t, cross_references x, _mt12_lookup sv, _mt12_lookup tv
+ WHERE t.slug='matthew-12-whosoever-shall-do-the-will-of-my-father-the-true-family-deuteronomy-33-psalm-22'
+   AND sv.edition_slug='canon' AND sv.book_slug='matthew' AND sv.chapter_number=12 AND sv.verse_number=50
+   AND tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=22 AND tv.verse_number=22
+   AND x.source_verse_id=sv.verse_id AND x.target_verse_id=tv.verse_id AND x.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session260 — Matthew (depth) cross-references complete.'

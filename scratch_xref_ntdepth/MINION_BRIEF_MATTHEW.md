@@ -411,3 +411,91 @@ resolve / any judgment call you made. Keep it tight. Do NOT apply to the DB — 
   65:4 (which eat swine's flesh — the unclean herd). Extras: 1 Enoch 15-16 (the spirits of the
   giants = evil spirits on the earth) — strong Watchers tie-in for the demons. Frame: the demons
   subject to the Son.
+
+---
+## 11. PER-CHAPTER COVERAGE CHECKLIST — PACK 3 (Matthew 9, 10, 11, 12)
+
+### MATTHEW 9 (38 v) — band 11240+ — palsy forgiven / call of Matthew / mercy not sacrifice / new wine / Jairus / blind / harvest
+- **9:1-8 thy sins be forgiven / the Son of man hath power on earth to forgive** — Tanakh: Isa 43:25
+  (I, even I, am he that blotteth out thy transgressions), Ps 103:3 (forgiveth all thine iniquities),
+  Exod 34:6-7, Mic 7:18-19. Frame: the Father's prerogative exercised in the Formed Son; son-of-Adam
+  (Dan 7:13 kaph). NT: Mark 2:10.
+- **9:9-13 call of Matthew / I will have mercy and not sacrifice / came to call sinners** — Tanakh:
+  Hos 6:6 (I desired mercy, and not sacrifice — Matthew QUOTES it), 1 Sam 15:22, Ps 51:16-17, Prov
+  21:3. Frame: the weightier matters of the Torah (mercy), not abolition of sacrifice; the physician
+  to the sick.
+- **9:14-17 fasting / new wine into old bottles / the bridegroom** — Tanakh: Joel 2:16 (bridegroom),
+  Isa 62:5, Eccl 3:1 (a time), Jer 31:31-33 (the new covenant = Torah on the heart, the "new
+  garment/wine" is the renewed covenant not a different law). Frame: renewal, not replacement.
+- **9:18-26 Jairus's daughter / the woman with the issue of blood** — Tanakh: Lev 15:25-27 (the
+  issue/uncleanness), Num 15:38-39 (the fringe/tzitzit she touched), 2 Kgs 4:32-35 (Elisha raises the
+  child), Mal 4:2 (healing in his wings = the corner/kanaph she grasped). Frame: the hem = the wings/
+  fringe of Torah.
+- **9:27-31 two blind men / thou son of David** — Tanakh: Isa 35:5 (the eyes of the blind opened),
+  Isa 42:7, Ps 146:8. Two-house: Son of David mercy.
+- **9:32-38 the dumb / the harvest is plenty, labourers few / sheep without a shepherd** — Tanakh:
+  Num 27:17 (sheep which have no shepherd), Ezek 34:5-6 (scattered, no shepherd), Isa 27:12 (gathered
+  one by one), Joel 3:13 (put in the sickle). Two-house gathering of the scattered flock.
+
+### MATTHEW 10 (42 v) — band 11270+ — the twelve / mission discourse / sheep among wolves / confess me / sword / lose your life
+- **10:1-15 the twelve sent / lost sheep of the house of Israel / freely give** — Tanakh: Ezek 34:16
+  (I will seek that which was lost), Jer 50:6 (my people lost sheep), Isa 53:6. TWO-HOUSE: *the lost
+  sheep of the house of Israel* = the dispersed northern house first (Rom 11 guard — gathering not
+  rejection). Frame held tight.
+- **10:16-23 sheep among wolves / wise as serpents / it is the Spirit of your Father that speaketh** —
+  Tanakh: Gen 3:1 (the serpent subtle), Mic 7:5-6 (a man's enemies the men of his own house), Exod
+  4:12 (I will be with thy mouth). NT: Mark 13:11.
+- **10:24-31 the disciple not above his master / fear not them which kill the body / sparrows** —
+  Tanakh: Ps 56:11 (I will not fear what man can do), Isa 8:12-13 (fear Yahuah, not their fear), Prov
+  29:25, Ps 121. Frame: the fear of Yahuah.
+- **10:32-39 confess me before men / not peace but a sword / a man's foes / take his cross / lose
+  his life to find it** — Tanakh: Mic 7:6 (son dishonoureth the father — Yahusha quotes it), Deut
+  33:9 (Levi who said I have not seen my brethren — loyalty to Yahuah above kin), Gen 22 (the cost).
+  Frame: division for the sake of Yahuah, the cost of discipleship.
+- **10:40-42 he that receiveth you receiveth me / a cup of cold water / a prophet's reward** —
+  Tanakh: 1 Kgs 17:9-16 (the widow who fed Elijah), 2 Kgs 4:8-10 (the Shunammite), Prov 19:17. Frame:
+  the sent one carries the Sender (the Formed Son sent by the Father).
+
+### MATTHEW 11 (30 v) — band 11300+ — art thou he / Elijah / the violent / woe to the cities / ★★ come unto me, the yoke
+- **11:2-6 art thou he that should come / the blind see, the poor have the gospel** — Tanakh: Isa
+  35:5-6 (then the eyes of the blind), Isa 61:1 (to preach good tidings unto the meek), Isa 29:18-19,
+  Isa 26:19 (the dead raised). Frame: the works prove the Messiah by Isaiah's own signs.
+- **11:7-15 John more than a prophet / my messenger / Elijah which was for to come** — Tanakh: Mal
+  3:1 (I send my messenger — Yahusha quotes it), Mal 4:5-6 (Elijah). Extras: Sirach 48:10 (Elijah to
+  restore the tribes). Frame: the forerunner; two-house restoration.
+- **11:16-24 this generation like children / woe unto Chorazin, Bethsaida, Capernaum** — Tanakh:
+  Isa 14:13-15 (brought down to hell — Capernaum exalted to heaven), Ezek 16:48-50 (Sodom's pride),
+  Lam 4:6, Jonah 3 (Nineveh repented). Frame: greater light, greater judgment.
+- **★ 11:25-27 hid from the wise, revealed unto babes / no man knoweth the Son but the Father** —
+  Tanakh: Ps 8:2 (out of the mouth of babes), Prov 3:34, Isa 29:14 (the wisdom of the wise shall
+  perish), Dan 2:21-22 (revealeth deep things). FRAME: the Father reveals; the Son known of the
+  Father — the Formed Son who HAS a Father, the Father the source of all revelation. NOT co-equal.
+- **★★ 11:28-30 come unto me all ye that labour / take my yoke / my burden is light** — Tanakh: Jer
+  6:16 (the old paths, ye shall find rest for your souls — Yahusha quotes it), Exod 33:14 (I will
+  give thee rest), Isa 28:12, Ps 116:7. Extras: Sirach 51:23-27 (put your neck under the yoke of
+  wisdom/instruction and find rest — DIRECT witness). FRAME: the yoke = the Torah rightly carried
+  under a gentle Master, NOT a burden lifted off; "rest for your souls" = Jeremiah's old paths.
+
+### MATTHEW 12 (50 v) — band 11330+ — ★★ Lord of the sabbath / withered hand / my servant / blasphemy / sign of Jonah / my mother and brethren
+- **★★ 12:1-8 the disciples pluck corn / have ye not read / I will have mercy / the Son of man is
+  Lord of the sabbath** — Tanakh: Deut 23:25 (pluck the ears with thine hand — it was LAWFUL),
+  1 Sam 21:6 (David ate the shewbread), Num 28:9-10 (priests profane the sabbath and are blameless),
+  Hos 6:6 (mercy not sacrifice), Lev 24:5-9 (shewbread). FRAME: the Sabbath UPHELD and rightly
+  interpreted — Yahusha defends his disciples FROM the Torah, the Lord of the Sabbath is its right
+  interpreter, NOT its abolisher. THE anchor against "Jesus broke the Sabbath."
+- **12:9-14 the withered hand / lawful to do well on the sabbath day** — Tanakh: Deut 22:4 (lift up
+  thy brother's ox fallen), Exod 23:4-5, Lev 19:18, Prov 12:10 (a righteous man regardeth his beast).
+  Frame: mercy IS the Sabbath kept, doing good is lawful.
+- **12:15-21 behold my servant whom I have chosen / a bruised reed** — Tanakh: Isa 42:1-4 (Matthew
+  quotes it in full — my servant, my beloved, I will put my spirit upon him, the Gentiles trust).
+  FRAME: the chosen Servant anointed by the Father; two-house/nations trust.
+- **12:22-37 by Beelzebub / a kingdom divided / blasphemy against the Ruach HaKodesh / by thy words
+  judged** — Tanakh: Isa 49:24-25 (the prey taken from the mighty), 1 Sam 2:25, Prov 18:21 (death
+  and life in the tongue). Frame: binding the strong man.
+- **12:38-42 the sign of the prophet Jonah / the queen of the south / a greater than Solomon** —
+  Tanakh: Jonah 1:17 (three days and three nights), Jonah 3:5 (Nineveh repented), 1 Kgs 10:1-9 (the
+  queen of Sheba). Frame: the sign of resurrection; greater than Jonah/Solomon.
+- **12:43-50 the unclean spirit returns / my mother and my brethren / whosoever shall do the will of
+  my Father** — Tanakh: Prov 26:11, Deut 33:9 (loyalty above kin), Ps 22:22 (my brethren). FRAME:
+  doing the Father's will = the true family — the anti-antinomian seal again (the will of the Father
+  is His commandment).
