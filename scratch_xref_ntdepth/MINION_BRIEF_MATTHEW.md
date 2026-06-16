@@ -148,7 +148,15 @@ ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 4. **edition==book-slug doubles:** for Jubilees the edition slug AND book slug are both
    `'jubilees'`; for Jasher both `'jasher'`; for 1 Enoch edition=`'enoch'` book=`'1-enoch'`. Write
    the tuple with BOTH fields: `('canon','matthew',N,V,'jubilees','jubilees',CH,VV,'extras',E'...')`.
-   For 1 Enoch: `(...,'enoch','1-enoch',CH,VV,...)`.
+   For 1 Enoch: `(...,'enoch','1-enoch',CH,VV,...)`. ALSO: every extras tuple has exactly **10**
+   fields — do not collapse `'jasher','jasher'` to one `'jasher'` (the arity bug); count them.
+4a. **⚠⚠ EXTRAS EDITION SLUG — the #1 silent-drop bug.** An extra-canonical target's `tgt_edition`
+   is the EDITION, NEVER `'canon'`. 1 Enoch=`'enoch'` (NOT `'canon'`!), Sirach/Wisdom/Tobit/Baruch/
+   Maccabees=`'apocrypha'`, 2 Enoch/4 Macc=`'pseudepigrapha'`. Writing `('canon','1-enoch',...)`
+   makes the row silently fail to resolve and the member VANISHES — pglast + arity PASS, only the
+   dry-run catches it. SELF-GATE (must be empty in BOTH the VALUES rows and the member joins):
+   `grep -nE "'canon','(1-enoch|jubilees|jasher|ecclesiasticus|the-wisdom-of-solomon|tobit|baruch[a-z-]*|[0-9]-maccabees|2-enoch|4-maccabees)'" yourfile.sql`.
+   Use the pinned (edition,slug) pairs in §6 EXACTLY.
 5. **Tier rule.** A member row whose **target is canon** (Tanakh OR NT) → `'free'`. A member row
    whose **target is extra-canonical** → `'extras'`. A **thread's** `tier_required` = `'extras'` if
    it contains ANY extras member, else `'free'`.
@@ -320,3 +328,86 @@ resolve / any judgment call you made. Keep it tight. Do NOT apply to the DB — 
 - **7:24-27 the wise & foolish builders / the rock** — Tanakh: Isa 28:16 (a tried stone, sure
   foundation), Ps 1:1-3 vs Ps 1:4 (chaff), Prov 10:25 (the righteous an everlasting foundation),
   Ezek 13:10-14 (the untempered wall). NT: Luke 6:47-49.
+
+---
+## 10. PER-CHAPTER COVERAGE CHECKLIST — PACK 2 (Matthew 2, 3, 4, 8)
+
+### MATTHEW 2 (23 v) — band 11030+ — the magi / Bethlehem / flight to Egypt / Rachel weeping
+- **2:1-6 the star / born King of the Jews / Bethlehem** — Tanakh: Micah 5:2 (out of Bethlehem
+  shall he come forth that is to be ruler in Israel), Num 24:17 (a Star out of Jacob, a Sceptre),
+  2 Sam 5:2 (thou shalt feed my people Israel). Frame: the scepter of Judah, two-house Ruler.
+- **2:1-2,11 wise men from the east / gold, frankincense, myrrh** — Tanakh: Isa 60:3,6 (the
+  Gentiles to thy light / gold and incense), Ps 72:10-11,15 (kings shall bring gifts / bow),
+  Num 24:17. Two-house: the nations drawn to the King.
+- **2:13-15 flight to Egypt / out of Egypt have I called my son** — Tanakh: Hos 11:1 (when Israel
+  was a child... called my son out of Egypt), Exod 4:22 (Israel is my son, my firstborn). Frame:
+  Messiah recapitulates Israel's story; the Son embodies the firstborn nation. Extras: Jubilees
+  on the descent to Egypt if warranted; Jasher 81 (Egypt sojourn). NT: none needed.
+- **2:16-18 Herod slays the children / Rachel weeping** — Tanakh: Jer 31:15 (Rachel weeping for
+  her children) — and bind the comfort: Jer 31:16-17 (thy children shall come again) + 31:31-33
+  (the new covenant, Torah on the heart). Frame: lament that opens onto restoration, NOT despair.
+- **2:19-23 return / He shall be called a Nazarene** — Tanakh: Isa 11:1 (a Branch/netzer out of
+  his roots — the Nazarene wordplay), Judg 13:5 (the Nazarite), Isa 53:2-3 (despised). Frame: the
+  despised Branch.
+
+### MATTHEW 3 (17 v) — band 11060+ — John the Baptist / voice in the wilderness / the baptism
+- **3:1-3 voice crying in the wilderness, prepare ye the way** — Tanakh: Isa 40:3 (prepare ye the
+  way of Yahuah), Mal 3:1 (my messenger shall prepare the way), Mal 4:5-6 (Elijah). Extras:
+  Sirach 48:10 (Elijah to turn the heart) — strong. NT: Luke 3:4-6.
+- **3:4-6 raiment of camel's hair, locusts / Jordan baptism** — Tanakh: 2 Kgs 1:8 (Elijah hairy
+  man, leathern girdle), Lev 11:21-22 (locusts clean to eat — Torah-affirmed diet). Frame: the
+  Elijah figure; clean food.
+- **3:7-10 O generation of vipers / the axe to the root / fruits meet for repentance** — Tanakh:
+  Isa 1:16-17 (cease to do evil, learn to do well), Jer 4:3-4 (break up your fallow ground),
+  Ezek 18:30-31 (repent, make you a new heart), Isa 10:33-34 (boughs lopped). Frame: repentance =
+  turning to obedience, not a feeling. Stones raised to Abraham = two-house grafting (Rom 11 guard).
+- **3:11-12 baptize with the Ruach HaKodesh and fire / fan / chaff** — Tanakh: Isa 4:4 (spirit of
+  burning), Ezek 36:25-27 (sprinkle clean water, my spirit within you), Joel 2:28-29 (pour out my
+  spirit), Mal 3:2-3 (refiner's fire), Ps 1:4 (the chaff). Frame: the Spirit poured = new-heart-
+  unto-obedience (Ezek 36 keeps the statutes).
+- **3:13-17 the baptism / the heavens opened / this is my beloved Son** — Tanakh: Ps 2:7 (thou art
+  my Son, this day have I begotten thee), Isa 42:1 (my servant, mine elect, my spirit upon him),
+  Gen 22:2 (thine only son whom thou lovest), Isa 11:2 (the spirit shall rest upon him). FRAME:
+  the FATHER speaks FROM heaven of the Formed Son — Father (voice), Son (in the water), Spirit
+  (descending dove): the Father is the source who declares and anoints; NOT three co-equal persons.
+
+### MATTHEW 4 (25 v) — band 11090+ — the temptation / it is written / begins to preach / calls disciples
+- **4:1-4 tempted of the devil / man shall not live by bread alone** — Tanakh: Deut 8:3 (man doth
+  not live by bread only, but by every word). Frame: Messiah answers with TORAH; recapitulates
+  Israel's 40 years (Deut 8:2). Extras: none needed.
+- **4:5-7 cast thyself down / thou shalt not tempt Yahuah** — Tanakh: Deut 6:16 (ye shall not
+  tempt Yahuah, as in Massah), Ps 91:11-12 (he shall give his angels charge — the verse the devil
+  twists). Frame: Scripture rightly vs wrongly handled.
+- **4:8-11 all the kingdoms / thou shalt worship Yahuah and him only serve** — Tanakh: Deut 6:13 /
+  10:20 (fear Yahuah thy God, him shalt thou serve), Exod 34:14 (worship no other), Deut 5:7-9.
+  Frame: the first commandment held; Messiah obeys the Torah he gave.
+- **4:12-16 Galilee of the nations / the people which sat in darkness saw great light** — Tanakh:
+  Isa 9:1-2 (land of Zebulun and Naphtali... the people that walked in darkness have seen a great
+  light). Two-house: light to the northern tribes / the nations.
+- **4:17-22 repent, the kingdom at hand / fishers of men / they left their nets** — Tanakh: Jer
+  16:16 (I will send for many fishers), Ezek 18:30 (repent), 1 Kgs 19:19-21 (Elisha leaves the
+  oxen to follow). Frame: the call answered by leaving all.
+- **4:23-25 healing every sickness / great multitudes** — Tanakh: Isa 53:4 (himself took our
+  infirmities), Ps 103:3 (who healeth all thy diseases), Mal 4:2 (healing in his wings). NT: none.
+
+### MATTHEW 8 (34 v) — band 11210+ — the leper / centurion / Peter's mother / Son of man / storm / demoniacs
+- **8:1-4 the leper / offer the gift Moses commanded** — Tanakh: Lev 13-14 (the law of the leper),
+  Lev 14:2-4 (the cleansing offering), 2 Kgs 5:14 (Naaman). FRAME: Yahusha SENDS him to keep the
+  Torah — *offer the gift that Moses commanded* — the Torah upheld, not abolished.
+- **8:5-13 the centurion / many shall come from east and west / sit with Abraham** — Tanakh: Isa
+  49:12 (these shall come from far), Isa 25:6 (a feast for all people), Ps 107:3 (gathered out of
+  the lands), Mal 1:11 (my name great among the Gentiles). Two-house: the nations + scattered Israel
+  gathered to the feast — NOT the children of the kingdom cast off as a people (Rom 11 guard:
+  individual unbelief, not national rejection).
+- **8:14-17 Peter's mother / himself took our infirmities** — Tanakh: Isa 53:4 (surely he hath
+  borne our griefs, carried our sorrows — Matthew quotes it). Frame: the suffering servant bearing.
+- **8:18-22 the Son of man hath not where to lay his head / let the dead bury their dead** — Tanakh:
+  Dan 7:13 (one LIKE the Son of man — preserve the kaph comparative), Ps 109:25. Frame: son-of-Adam
+  kaph carve-out; the cost of following.
+- **8:23-27 he rebukes the wind and sea / what manner of man** — Tanakh: Ps 107:28-29 (he maketh
+  the storm a calm), Ps 89:9 (thou rulest the raging of the sea), Ps 65:7, Job 38:8-11, Jonah 1:15.
+  Frame: the One through whom the Father stills the sea — the Creator's authority in the Formed Son.
+- **8:28-34 the Gadarene demoniacs / the swine** — Tanakh: Ps 106:37 (sacrificed to devils), Isa
+  65:4 (which eat swine's flesh — the unclean herd). Extras: 1 Enoch 15-16 (the spirits of the
+  giants = evil spirits on the earth) — strong Watchers tie-in for the demons. Frame: the demons
+  subject to the Son.
