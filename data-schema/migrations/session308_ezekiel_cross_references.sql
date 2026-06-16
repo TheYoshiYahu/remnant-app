@@ -3370,6 +3370,1303 @@ SELECT t.id, cr.id, 6, E'★ *For this is my covenant unto them, when I shall ta
  WHERE t.slug='ezekiel-39-i-have-poured-out-my-spirit-upon-the-whole-house'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_4.sql (Ezekiel 4) -----
+-- Chapter: Ezekiel 4 — THE SIGN OF THE SIEGE OF JERUSALEM. The prophet's first sign-act: a tile
+-- pourtraying the besieged city, the iron pan set as a wall of iron between him and it — *this shall be
+-- a sign to the house of Yashar''el (Israel)*. He lies on his left side to bear the iniquity of the house
+-- of Yashar''el 390 days, on his right side for Yahudah (Judah) 40 days — *I have appointed thee each day
+-- for a year*. He eats bread by weight and drinks water by measure (the famine of the siege), and is told
+-- to eat *defiled bread among the Gentiles* — but protests *my soul hath not been polluted... neither came
+-- there abominable flesh into my mouth* (he has kept the Torah dietary law, Leviticus 11/Deuteronomy 14),
+-- and Yahuah relents on the fuel. A judgment sign-act chapter: the besieged city, the borne iniquity, the
+-- famine-and-defiled-bread — the prophet ACTS OUT the sign; the true sin-bearing is the Servant''s.
+-- Tag: ezek04   Temp view: _s308_ezek04_lookup
+-- Sort band: base 32075, step 3 -> threads at 32075, 32078, 32081 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',4,v
+--
+-- Ezekiel 4 coverage:
+--   ★ v.1-3 (the tile pourtraying besieged Jerusalem; the iron pan a wall of iron between thee and the
+--          city; THIS SHALL BE A SIGN to the house of Yashar''el)
+--        NT:     ★ Luke 19:43-44 (thine enemies shall cast a trench about thee... not leave one stone upon
+--                another — the later siege the Messiah weeps over) — THREAD 1
+--        Extras: none warranted (a clean canon-NT sign-act/siege weave)
+--        Tanakh: ★★ 2 Kings 25:1-4 (the siege fulfilled — forts round about, famine, the city broken up),
+--                ★ Jeremiah 6:6 (cast a mount against Jerusalem — the prophesied siege-mound), ★ Isaiah 20:3
+--                (my servant Isaiah... for a sign and wonder — the prophet AS a sign-act) — THREAD 1
+--   ★ v.4-8 (lie upon thy left side, lay the iniquity of the house of Yashar''el upon it; 390 days +
+--          40 days for Yahudah; I have appointed thee EACH DAY FOR A YEAR; thou shalt bear their iniquity)
+--        NT:     none separate distinct (the bearing-of-iniquity TYPE answered by Isaiah 53, woven in
+--                THREAD 2; the prophet ACTS a sign, the Servant truly bears — frame carefully)
+--        Extras: none warranted
+--        Tanakh: ★★ Numbers 14:34 (each day for a year... ye shall bear your iniquities — the SAME
+--                day-for-a-year principle), ★★ Isaiah 53:11 (he shall bear their iniquities — the prophet''s
+--                sign-bearing points FORWARD to the Servant who truly bears it) — THREAD 2
+--   ★ v.9-17 (eat bread by weight and water by measure; bake with dung; EAT DEFILED BREAD AMONG THE
+--          GENTILES; my soul hath not been polluted... neither came there abominable flesh into my mouth;
+--          break the staff of bread in Jerusalem)
+--        NT:     none warranted (siege-famine + Torah dietary faithfulness; the Gentile-defilement is the
+--                exile-curse, no NT fulfillment forced)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 28:53 (eat the fruit of thine own body... in the siege — the covenant-curse
+--                famine), ★ Deuteronomy 28:68 (Yahuah shall bring thee into Egypt again — the exile/Gentile
+--                driving), ★★ Leviticus 26:26 (broken the staff of your bread... bread again by weight), ★★
+--                Deuteronomy 14:21 (ye shall not eat of any thing that dieth of itself — the very law
+--                Ezekiel keeps, *that which dieth of itself*, 4:14), ★ Hosea 9:4 (their bread... as the bread
+--                of mourners; all that eat thereof shall be polluted — unclean bread in exile) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege — NT (Luke 19) + Tanakh (2 Kings 25, Jeremiah 6, Isaiah 20) [free]
+--      (★ the prophet's sign-act of the coming siege; the iron-wall tile; the siege fulfilled; the later siege Messiah weeps over; the prophet AS a sign)
+--   2. ezekiel-4-bearing-the-iniquity-each-day-for-a-year — Tanakh (Numbers 14, Isaiah 53) [free]
+--      (★ the prophet symbolically BEARING the people's iniquity for the appointed days; day-for-a-year; the sign-bearing points to the Servant who TRULY bears it)
+--   3. ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile — Tanakh (Deuteronomy 28, Leviticus 26, Deuteronomy 14, Hosea 9) [free]
+--      (★ the famine of the siege and defiled bread in exile; the Torah dietary law STANDS — the prophet will not eat the unclean, and Yahuah relents on the fuel)
+--
+-- Framing notes:
+--   ★ THE SIGN OF THE SIEGE (THREAD 1): *take thee a tile... and pourtray upon it the city, even
+--      Jerusalem: And lay siege against it... take thou unto thee an iron pan, and set it for a wall of iron
+--      between thee and the city... This shall be a sign to the house of Yashar''el (Israel)* (4:1-3). The
+--      prophet ACTS OUT the coming siege. It is fulfilled to the letter in 587 BC: *Nebuchadnezzar king of
+--      Babylon came... and pitched against it; and they built forts against it round about... the famine
+--      prevailed in the city, and there was no bread* (2 Kings 25:1-3); Jeremiah names the same siege-mound:
+--      *cast a mount against Jerusalem* (Jer 6:6). The prophet himself is the sign — as *my servant Isaiah
+--      hath walked naked and barefoot three years for a sign and wonder* (Isa 20:3). And the LATER siege,
+--      the one the Messiah weeps over, repeats it: *thine enemies shall cast a trench about thee, and compass
+--      thee round... and shall not leave in thee one stone upon another* (Luke 19:43-44).
+--   ★ BEARING THE INIQUITY (THREAD 2): *Lie thou also upon thy left side, and lay the iniquity of the house
+--      of Yashar''el (Israel) upon it... thou shalt bear their iniquity... three hundred and ninety days...
+--      the iniquity of the house of Yahudah (Judah) forty days: I have appointed thee each day for a year*
+--      (4:4-6). The day-for-a-year is the SAME principle of the wilderness sentence: *After the number of the
+--      days in which ye searched the land, even forty days, each day for a year, shall ye bear your
+--      iniquities* (Num 14:34). FRAME CAREFULLY: the prophet ACTS OUT a sign, lying bound to bear the
+--      symbol of the people''s guilt for the appointed days — but the TRUE sin-bearing is the Servant''s: *by
+--      his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isa
+--      53:11). Ezekiel''s sign-bearing is a finite, enacted figure; it points forward to the One who truly
+--      bears iniquity.
+--   ★ BREAD BY WEIGHT / THE TORAH STANDS (THREAD 3): *thy meat which thou shalt eat shall be by weight...
+--      Thou shalt drink also water by measure* (4:10-11) — the famine-ration of the siege, the covenant-curse
+--      of *the siege* (Deut 28:53) and the broken *staff of bread* (Lev 26:26; echoed in Ezek 4:16). Told to
+--      *eat their defiled bread among the Gentiles, whither I will drive them* (4:13), the prophet protests:
+--      *my soul hath not been polluted: for from my youth up even till now have I not eaten of that which
+--      dieth of itself, or is torn in pieces; neither came there abominable flesh into my mouth* (4:14). He
+--      has KEPT the Torah dietary law — *ye shall not eat of any thing that dieth of itself* (Deut 14:21);
+--      Leviticus 11 and Deuteronomy 14 STAND — and so Yahuah relents on the fuel: *Lo, I have given thee
+--      cow''s dung for man''s dung* (4:15). The unclean bread is the exile-curse (*they shall eat unclean
+--      things in Assyria*; *all that eat thereof shall be polluted*, Hosea 9:3-4), never a repeal of the
+--      dietary law. The prophet''s faithfulness IS Torah-affirming.
+--   VERSES WITH NO SEPARATE ADD: none — all three blocks (vv.1-3, 4-8, 9-17) carry a thread; every verse is
+--      recorded in the coverage checklist above and woven into one of the three threads' prose.
+
+CREATE TEMP VIEW _s308_ezek04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the tile, the iron pan — the sign of the siege
+    ('canon','ezekiel',4,3,'canon','2-kings',25,1,'free',
+      E'*And it came to pass in the ninth year of his reign, in the tenth month, in the tenth day of the month, that Nebuchadnezzar king of Babylon came, he, and all his host, against Jerusalem, and pitched against it; and they built forts against it round about* (2 Kings 25:1). The sign-act of the tile and the iron pan — *And lay siege against it, and build a fort against it... This shall be a sign to the house of Yashar''el (Israel)* (Ezekiel 4:2-3) — is fulfilled to the letter: Babylon pitches against Jerusalem and builds the forts round about. What the prophet pourtrayed on the tile, Nebuchadnezzar enacts in the field.'),
+    ('canon','ezekiel',4,2,'canon','2-kings',25,3,'free',
+      E'*And on the ninth day of the fourth month the famine prevailed in the city, and there was no bread for the people of the land* (2 Kings 25:3). The siege the prophet lays against the tile — *And lay siege against it, and build a fort against it, and cast a mount against it... and set battering rams against it round about* (Ezekiel 4:2) — ends in the very famine the chapter foretells (Ezekiel 4:16-17): the bread fails, there is none for the people. The pourtrayed siege becomes the real hunger within the walls.'),
+    ('canon','ezekiel',4,2,'canon','jeremiah',6,6,'free',
+      E'*For thus hath Yahuah Tseva''ot (LORD of hosts) said, Hew ye down trees, and cast a mount against Jerusalem: this is the city to be visited; she is wholly oppression in the midst of her* (Jeremiah 6:6). Jeremiah, prophesying in the same generation, speaks the same siege-mound Ezekiel casts against the tile — *cast a mount against it* (Ezekiel 4:2). Two prophets, one sentence: the mount cast against Jerusalem, the city visited for her oppression.'),
+    ('canon','ezekiel',4,3,'canon','isaiah',20,3,'free',
+      E'*And Yahuah (LORD) said, Like as my servant Isaiah hath walked naked and barefoot three years for a sign and wonder upon Egypt and upon Ethiopia* (Isaiah 20:3). Ezekiel''s tile-and-iron-pan is the same kind of prophetic sign-act Isaiah performed — *This shall be a sign to the house of Yashar''el (Israel)* (Ezekiel 4:3) answers *for a sign and wonder*. The prophet himself, with his body and his props, becomes the message: the coming judgment made visible.'),
+    ('canon','ezekiel',4,3,'canon','luke',19,43,'free',
+      E'*For the days shall come upon thee, that thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side* (Luke 19:43). The siege Ezekiel signs against the tile — *set it for a wall of iron between thee and the city... and it shall be besieged* (Ezekiel 4:3) — is the same kind of trench-and-compassing the Messiah weeps over for a later Jerusalem. The wall of iron the prophet sets up foreshadows the enemy''s trench cast about the city that knew not the time of her visitation.'),
+    ('canon','ezekiel',4,3,'canon','luke',19,44,'free',
+      E'*And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44). The besieged city of the tile — *it shall be besieged, and thou shalt lay siege against it* (Ezekiel 4:3) — is the same Jerusalem whose later siege the Messiah foretells with tears: not one stone left upon another. The sign-act of Ezekiel and the lament of Luke bracket the city''s two desolations, both for the same cause.'),
+
+    -- THREAD 2 (★): bearing the iniquity — each day for a year
+    ('canon','ezekiel',4,5,'canon','numbers',14,34,'free',
+      E'*After the number of the days in which ye searched the land, even forty days, each day for a year, shall ye bear your iniquities, even forty years, and ye shall know my breach of promise* (Numbers 14:34). The measure Yahuah lays on the prophet — *I have laid upon thee the years of their iniquity, according to the number of the days... so shalt thou bear the iniquity of the house of Yashar''el (Israel)* (Ezekiel 4:5), *I have appointed thee each day for a year* (4:6) — is the very day-for-a-year principle of the wilderness sentence. As Yashar''el bore forty years for forty days, so the prophet bears the years of their iniquity day by appointed day.'),
+    ('canon','ezekiel',4,4,'canon','isaiah',53,11,'free',
+      E'*He shall see of the travail of his soul, and shall be satisfied: by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). The prophet is told to *lay the iniquity of the house of Yashar''el (Israel) upon it... thou shalt bear their iniquity* (Ezekiel 4:4) — but his bearing is an enacted SIGN, a finite figure bound to his side for the appointed days. It points forward to the One whose bearing is real and saving: *my righteous servant... shall bear their iniquities*. Ezekiel acts out the burden; the Servant truly carries it, and justifies many.'),
+
+    -- THREAD 3 (★): bread by weight, the defiled bread of exile — and the Torah stands
+    ('canon','ezekiel',4,10,'canon','deuteronomy',28,53,'free',
+      E'*And thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters, which Yahuah Elohayka (the LORD thy God) hath given thee, in the siege, and in the straitness, wherewith thine enemies shall distress thee* (Deuteronomy 28:53). The famine-ration of the sign — *thy meat which thou shalt eat shall be by weight, twenty shekels a day... Thou shalt drink also water by measure* (Ezekiel 4:10-11) — is the covenant-curse of the siege spelled out in the Torah: the besieged distress that strips a people to the last and most dreadful morsel. The siege Ezekiel signs is the curse Moses wrote.'),
+    ('canon','ezekiel',4,13,'canon','deuteronomy',28,68,'free',
+      E'*And Yahuah (LORD) shall bring thee into Egypt again with ships, by the way whereof I spake unto thee, Thou shalt see it no more again: and there ye shall be sold unto your enemies for bondmen and bondwomen, and no man shall buy you* (Deuteronomy 28:68). The defiled bread *among the Gentiles, whither I will drive them* (Ezekiel 4:13) is the exile the Torah forewarned — the driving-out among the nations, back among the heathen. The unclean food of dispersion is the bitter end of the covenant-curse: scattered, sold, eating defiled bread in a strange land.'),
+    ('canon','ezekiel',4,16,'canon','leviticus',26,26,'free',
+      E'*And when I have broken the staff of your bread, ten women shall bake your bread in one oven, and they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied* (Leviticus 26:26). Ezekiel''s sentence repeats the words of the Torah curse almost exactly — *I will break the staff of bread in Jerusalem: and they shall eat bread by weight, and with care* (Ezekiel 4:16). The broken staff of bread, the rationed loaf weighed out and never enough — Leviticus wrote the curse, Ezekiel signs its coming upon Jerusalem.'),
+    ('canon','ezekiel',4,14,'canon','deuteronomy',14,21,'free',
+      E'*Ye shall not eat of any thing that dieth of itself: thou shalt give it unto the stranger that is in thy gates, that he may eat it; or thou mayest sell it unto an alien: for thou art an holy people unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 14:21). When told to eat defiled bread, the prophet protests by the very law he has kept — *I have not eaten of that which dieth of itself, or is torn in pieces; neither came there abominable flesh into my mouth* (Ezekiel 4:14): *that which dieth of itself* is the exact thing Deuteronomy forbids the holy people. The dietary Torah STANDS; Ezekiel''s faithfulness moves Yahuah to relent on the fuel (4:15). His scruple is obedience, not legalism.'),
+    ('canon','ezekiel',4,13,'canon','hosea',9,4,'free',
+      E'*They shall not offer wine offerings to Yahuah (LORD), neither shall they be pleasing unto him: their sacrifices shall be unto them as the bread of mourners; all that eat thereof shall be polluted: for their bread for their soul shall not come into the house of Yahuah (LORD)* (Hosea 9:4). The defiled bread of exile — *eat their defiled bread among the Gentiles, whither I will drive them* (Ezekiel 4:13) — is the polluted bread Hosea names for the scattered northern house: bread of mourners, defiling all who eat it, far from the house of Yahuah. To be driven among the nations is to be cut off from clean bread and acceptable offering alike.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege',
+       E'The tile and the iron pan — this shall be a sign to the house of Yashar''el',
+       E'Ezekiel''s first sign-act is the coming siege made visible: *Thou also, son of Adam, take thee a tile, and lay it before thee, and pourtray upon it the city, even Jerusalem: And lay siege against it, and build a fort against it, and cast a mount against it; set the camp also against it, and set battering rams against it round about* (4:1-2); then *take thou unto thee an iron pan, and set it for a wall of iron between thee and the city: and set thy face against it, and it shall be besieged, and thou shalt lay siege against it. This shall be a sign to the house of Yashar''el (Israel)* (4:3). The prophet ACTS OUT what Babylon will do. It is fulfilled to the letter in the days of Zedekiah: *Nebuchadnezzar king of Babylon came, he, and all his host, against Jerusalem, and pitched against it; and they built forts against it round about* (2 Kings 25:1), until *the famine prevailed in the city, and there was no bread for the people of the land* (2 Kings 25:3), and *the city was broken up* (25:4). Jeremiah, in the same generation, speaks the same siege-mound: *cast a mount against Jerusalem: this is the city to be visited* (Jeremiah 6:6). And the prophet himself is the message — as *my servant Isaiah hath walked naked and barefoot three years for a sign and wonder* (Isaiah 20:3), so Ezekiel''s tile and iron-wall are a sign and wonder to the house of Yashar''el (Israel). Centuries later a greater Prophet weeps over the same city facing the same kind of siege: *thine enemies shall cast a trench about thee, and compass thee round, and keep thee in on every side, And shall lay thee even with the ground... they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:43-44). The tile pourtrayed the first desolation; the Messiah''s tears name the second — one city, one cause.',
+       sv.verse_id, ev.verse_id, 'free', 32075
+  FROM _s308_ezek04_lookup sv, _s308_ezek04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=4 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-4-bearing-the-iniquity-each-day-for-a-year',
+       E'Lie upon thy side and bear their iniquity — I have appointed thee each day for a year',
+       E'The prophet is bound to bear the people''s guilt in sign: *Lie thou also upon thy left side, and lay the iniquity of the house of Yashar''el (Israel) upon it: according to the number of the days that thou shalt lie upon it thou shalt bear their iniquity. For I have laid upon thee the years of their iniquity, according to the number of the days, three hundred and ninety days: so shalt thou bear the iniquity of the house of Yashar''el (Israel)* (4:4-5); then *lie again on thy right side, and thou shalt bear the iniquity of the house of Yahudah (Judah) forty days: I have appointed thee each day for a year* (4:6), bound so that *thou shalt not turn thee from one side to another, till thou hast ended the days of thy siege* (4:8). The measure is the day-for-a-year of the wilderness sentence: *After the number of the days in which ye searched the land, even forty days, each day for a year, shall ye bear your iniquities, even forty years* (Numbers 14:34) — the same reckoning, the same bearing of iniquity day by appointed day. But mark the kind of bearing: Ezekiel ACTS OUT a sign. He lies bound to his side, a living figure of the people''s guilt, for the appointed span — a finite, enacted picture. The TRUE sin-bearing, the bearing that saves and justifies, belongs to another: *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). The prophet carries the symbol; the Servant carries the sin. Ezekiel''s burden on his side points forward to the One who bore the iniquity of us all and was satisfied.',
+       sv.verse_id, ev.verse_id, 'free', 32078
+  FROM _s308_ezek04_lookup sv, _s308_ezek04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=4 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile',
+       E'Bread by weight and the defiled bread of exile — neither came there abominable flesh into my mouth',
+       E'The sign-act turns to the famine of the siege and the unclean bread of exile. The prophet must eat a coarse mixed loaf *according to the number of the days* (4:9), and *thy meat which thou shalt eat shall be by weight, twenty shekels a day... Thou shalt drink also water by measure, the sixth part of an hin* (4:10-11) — the rationed hunger of a besieged city. This is the covenant-curse the Torah wrote long before: *thou shalt eat the fruit of thine own body... in the siege, and in the straitness, wherewith thine enemies shall distress thee* (Deuteronomy 28:53); and Ezekiel''s own words at the close echo Leviticus almost exactly — *I will break the staff of bread in Jerusalem: and they shall eat bread by weight, and with care* (4:16) answers *when I have broken the staff of your bread... they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied* (Leviticus 26:26). Then the sharper word: *Even thus shall the children of Yashar''el (Israel) eat their defiled bread among the Gentiles, whither I will drive them* (4:13) — the driving-out among the nations the Torah forewarned (*Yahuah (LORD) shall bring thee into Egypt again*, Deuteronomy 28:68), the polluted bread Hosea names for the scattered house (*all that eat thereof shall be polluted; for their bread for their soul shall not come into the house of Yahuah (LORD)*, Hosea 9:4). And here the prophet protests by the very Torah he has kept: *Ah Yahuah (Lord) GOD! behold, my soul hath not been polluted: for from my youth up even till now have I not eaten of that which dieth of itself, or is torn in pieces; neither came there abominable flesh into my mouth* (4:14). *That which dieth of itself* is the exact thing Deuteronomy forbids the holy people — *Ye shall not eat of any thing that dieth of itself... for thou art an holy people unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 14:21); the dietary law of Leviticus 11 and Deuteronomy 14 STANDS, and the prophet has kept it from his youth. So Yahuah relents on the fuel: *Lo, I have given thee cow''s dung for man''s dung, and thou shalt prepare thy bread therewith* (4:15). The defiled bread is the exile-curse, never a repeal of clean and unclean; the prophet''s scruple is obedience, and his faithfulness is Torah-affirming to the end.',
+       sv.verse_id, ev.verse_id, 'free', 32081
+  FROM _s308_ezek04_lookup sv, _s308_ezek04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=4 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they built forts against it round about* (2 Kings 25:1) — the tile-siege of Ezekiel 4:2-3 fulfilled to the letter: Babylon pitches against Jerusalem and casts up the forts.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the famine prevailed in the city, and there was no bread* (2 Kings 25:3) — the siege laid against the tile (Ezekiel 4:2) ends in the very famine the chapter foretells (4:16-17).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *cast a mount against Jerusalem: this is the city to be visited* (Jeremiah 6:6) — the same siege-mound Ezekiel casts against the tile (4:2); two prophets, one sentence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=2
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *my servant Isaiah hath walked naked and barefoot three years for a sign and wonder* (Isaiah 20:3) — Ezekiel''s tile-and-iron-pan is the same kind of prophetic sign-act; the prophet AS the message.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *thine enemies shall cast a trench about thee, and compass thee round* (Luke 19:43) — the wall of iron the prophet sets up (4:3) foreshadows the later siege the Messiah weeps over.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44) — the besieged city of the tile (4:3) is the same Jerusalem of the second desolation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-the-tile-and-the-iron-pan-a-sign-of-the-siege'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *forty days, each day for a year, shall ye bear your iniquities* (Numbers 14:34) — the SAME day-for-a-year principle Yahuah lays on the prophet (Ezekiel 4:5-6); the years of iniquity borne day by day.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=5
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bearing-the-iniquity-each-day-for-a-year'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11) — the prophet ACTS OUT a sign-bearing (4:4); the TRUE sin-bearing that justifies is the Servant''s.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bearing-the-iniquity-each-day-for-a-year'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou shalt eat the fruit of thine own body... in the siege, and in the straitness* (Deuteronomy 28:53) — the famine-ration by weight (Ezekiel 4:10-11) is the covenant-curse of the siege the Torah wrote.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=10
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=53
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) shall bring thee into Egypt again... ye shall be sold unto your enemies* (Deuteronomy 28:68) — the defiled bread *among the Gentiles, whither I will drive them* (4:13) is the exile the Torah forewarned.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=13
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=68
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *when I have broken the staff of your bread... bread again by weight: and ye shall eat, and not be satisfied* (Leviticus 26:26) — Ezekiel 4:16 echoes the Torah curse almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=16
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Ye shall not eat of any thing that dieth of itself... for thou art an holy people* (Deuteronomy 14:21) — the very law Ezekiel keeps (*that which dieth of itself*, 4:14); the dietary Torah STANDS and Yahuah relents on the fuel.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=14
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *all that eat thereof shall be polluted; for their bread... shall not come into the house of Yahuah (LORD)* (Hosea 9:4) — the polluted bread of exile, the same defiled bread among the Gentiles (4:13).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=4 AND sv.verse_number=13
+  JOIN _s308_ezek04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-4-bread-by-weight-and-the-defiled-bread-of-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_5.sql (Ezekiel 5) -----
+-- Chapter: Ezekiel 5 — the razor and the hair divided into THREE parts: a third burned with fire in the
+-- midst of the city, a third smitten with the sword/knife, a third scattered to the wind (with a sword drawn
+-- out after them); a few bound in the prophet's skirts = the reserved remnant. *This is Jerusalem: I have set
+-- it in the midst of the nations* — the center, judged MORE severely than the nations because she changed
+-- Yahuah's judgments into wickedness and did NOT walk in his statutes. The siege-curses: the fathers eat the
+-- sons, the evil arrows of famine, the staff of bread broken — the explicit Deuteronomy 28 / Leviticus 26
+-- covenant-curse for forsaking the Torah. A judgment chapter; the Torah affirmed as the standard, the curse
+-- never the Torah itself but the Deut-28 penalty for breaking it.
+-- Tag: ezek05   Temp view: _s308_ezek05_lookup
+-- Sort band: base 32100, step 3 -> threads at 32100, 32103, 32106 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',5,v
+--
+-- Ezekiel 5 coverage:
+--   ★ v.1-4,12 (the razor; divide the hair; a third burned with fire, a third smitten with the knife/sword,
+--          a third scattered to the wind, I will draw out a sword after them; a few bound in the skirts;
+--          v.12 names the three plainly — pestilence/famine, sword, scattering)
+--        NT:     ★ Revelation 6:8 (a pale horse... Death... power... to kill with sword, and with hunger,
+--                and with death, and with the beasts of the earth) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh judgment-portions weave; no extras forced)
+--        Tanakh: ★★ Jeremiah 15:2-3 (such as are for death, to death; for the sword, to the sword; for the
+--                famine, to the famine; for the captivity, to the captivity — and four kinds: sword, dogs,
+--                fowls, beasts), ★★ Zechariah 13:8-9 (two parts cut off and die; but the third shall be left
+--                therein, brought through the fire and refined — the reserved/refined remnant) — THREAD 1
+--   ★★ v.5-9 (This is Jerusalem: I have set it in the midst of the nations... and she hath changed my
+--          judgments into wickedness MORE than the nations... because ye multiplied more than the nations,
+--          and have NOT walked in my statutes, neither kept my judgments; therefore Behold, I am against
+--          thee... because of all thine abominations)
+--        NT:     ★ Luke 12:48 (unto whomsoever much is given, of him shall be much required), ★ Romans 2:9
+--                (tribulation and anguish... of the Yahudi (Jew) first) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Amos 3:2 (You only have I known of all the families of the earth: therefore I will
+--                punish you for all your iniquities), ★★ Daniel 9:11 (all Yashar'el have transgressed thy
+--                law... therefore the curse is poured upon us... written in the law of Moses), ★ Daniel
+--                9:12 (under the whole heaven hath not been done as hath been done upon Jerusalem) — THREAD 2
+--   ★ v.10,16-17 (the fathers shall eat the sons, and the sons their fathers; I will send the evil arrows
+--          of famine... and I will increase the famine upon you, and will break your staff of bread; famine
+--          and evil beasts and pestilence and blood and the sword)
+--        NT:     none warranted (the OT covenant-curse enacted; the NT echo of sword/hunger/death held in
+--                THREAD 1 via Revelation 6:8; not duplicated here)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 28:53 (thou shalt eat the fruit of thine own body, the flesh of thy sons
+--                and of thy daughters... in the siege), ★ Leviticus 26:29 (ye shall eat the flesh of your
+--                sons, and the flesh of your daughters), ★ Lamentations 4:10 (the pitiful women have sodden
+--                their own children — the curse enacted in 586 BC) — THREAD 3
+--   v.11 (thou hast defiled my sanctuary with all thy detestable things... mine eye shall not spare) —
+--        the ground of the judgment; woven into THREAD 2 prose (the abominations / defiled sanctuary);
+--        no separate add (NT none / Extras none / Tanakh held in THREAD 2).
+--   v.13-15 (mine anger accomplished... they shall know that I Yahuah have spoken it in my zeal; a reproach
+--        and a taunt, an instruction and an astonishment to the nations) — the verdict-formula; woven into
+--        THREAD 2 prose (judged in the sight of the nations); no separate add.
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered — NT (Revelation 6) + Tanakh (Jeremiah 15, Zechariah 13) [free]
+--      (★ the razor and the three portions of judgment — fire/famine, sword, scattering; the reserved/refined third = the remnant)
+--   2. ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations — NT (Luke 12, Romans 2) + Tanakh (Amos 3, Daniel 9) [free]
+--      (★★ the center judged MORE severely for breaking the Torah she was given; privilege = greater accountability; the statutes affirmed as the standard)
+--   3. ezekiel-5-the-fathers-shall-eat-the-sons-the-deuteronomy-28-curse — Tanakh (Deuteronomy 28, Leviticus 26, Lamentations 4) [free]
+--      (★ the siege-cannibalism and the broken staff of bread = the explicit covenant-curse; the curse for breaking the Torah, never the Torah itself)
+--
+-- Framing notes:
+--   ★ THE HAIR DIVIDED IN THREE (THREAD 1): *cause it to pass upon thine head and upon thy beard: then take
+--      thee balances to weigh, and divide the hair* (5:1) — and the three portions: *a third part... burn
+--      with fire... a third part... smite about it with a knife: and a third part thou shalt scatter in the
+--      wind; and I will draw out a sword after them* (5:2), spelled out plainly in *A third part of thee
+--      shall die with the pestilence, and with famine... a third part shall fall by the sword... and I will
+--      scatter a third part into all the winds* (5:12). The Revelation rider gathers the same instruments:
+--      *power was given unto them over the fourth part of the earth, to kill with sword, and with hunger,
+--      and with death, and with the beasts of the earth* (Rev 6:8). Jeremiah sorts the people into the same
+--      lots: *Such as are for death, to death; and such as are for the sword, to the sword; and such as are
+--      for the famine, to the famine; and such as are for the captivity, to the captivity* (Jer 15:2). And
+--      Zechariah gives the remnant-key: *two parts therein shall be cut off and die; but the third shall be
+--      left therein. And I will bring the third part through the fire, and will refine them as silver is
+--      refined* (Zech 13:8-9) — the scattered third, *a few in number... bound in thy skirts* (5:3), is the
+--      reserved and refined remnant that survives the razor.
+--   ★★ THIS IS JERUSALEM (THREAD 2): *This is Jerusalem: I have set it in the midst of the nations and
+--      countries that are round about her* (5:5) — the chosen center, and therefore judged MORE, not less:
+--      *she hath changed my judgments into wickedness more than the nations, and my statutes more than the
+--      countries... for they have refused my judgments and my statutes, they have not walked in them* (5:6),
+--      *Because ye multiplied more than the nations... and have not walked in my statutes* (5:7). The
+--      judgment is FOR forsaking the statutes — the Torah affirmed as the standard. Amos names the principle:
+--      *You only have I known of all the families of the earth: therefore I will punish you for all your
+--      iniquities* (Amos 3:2). The Messiah seals it: *unto whomsoever much is given, of him shall be much
+--      required* (Luke 12:48). Paul keeps the order: tribulation *of the Yahudi (Jew) first* (Rom 2:9).
+--      Daniel confesses the very curse: *all Yashar''el (Israel) have transgressed thy law... therefore the
+--      curse is poured upon us... written in the law of Moses* (Dan 9:11), *under the whole heaven hath not
+--      been done as hath been done upon Jerusalem* (Dan 9:12) — the unparalleled judgment of Ezekiel 5:9.
+--   ★ THE FATHERS SHALL EAT THE SONS (THREAD 3): *the fathers shall eat the sons in the midst of thee, and
+--      the sons shall eat their fathers* (5:10); *I will send... the evil arrows of famine... and I will
+--      increase the famine upon you, and will break your staff of bread* (5:16). This is the explicit
+--      Deuteronomy 28 / Leviticus 26 covenant-curse: *thou shalt eat the fruit of thine own body, the flesh
+--      of thy sons and of thy daughters... in the siege* (Deut 28:53); *ye shall eat the flesh of your sons,
+--      and the flesh of your daughters shall ye eat* (Lev 26:29). And Jeremiah's lament records it enacted in
+--      586 BC: *The hands of the pitiful women have sodden their own children: they were their meat in the
+--      destruction of the daughter of my people* (Lam 4:10). The horror is the covenant-penalty for breaking
+--      the Torah — never the Torah itself, which Jerusalem forsook (5:6-7).
+--   VERSES WITH NO SEPARATE ADD: v.3-4 (the few bound in the skirts / cast again into the fire — the reserved
+--      remnant, woven into THREAD 1 prose), v.8-9 (Behold I am against thee / the unparalleled judgment —
+--      woven into THREAD 2, with Dan 9:12 carrying the "unparalleled" weight), v.11 (the defiled sanctuary /
+--      detestable abominations — the ground of judgment, woven into THREAD 2 prose), v.13-15 (mine anger
+--      accomplished / they shall know I Yahuah have spoken it / a reproach to the nations — the verdict-
+--      formula, woven into THREAD 2). All verses recorded; every block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the hair divided in three — a third burned, smitten, scattered; the reserved/refined remnant
+    ('canon','ezekiel',5,12,'canon','revelation',6,8,'free',
+      E'*And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). The four-fold sentence of the pale rider gathers the same instruments Ezekiel weighs out over the divided hair — *A third part of thee shall die with the pestilence, and with famine shall they be consumed... and a third part shall fall by the sword... and I will scatter a third part into all the winds* (Ezekiel 5:12). Sword, hunger (famine), and death (pestilence) are Yahuah''s appointed portions of judgment, then and at the end.'),
+    ('canon','ezekiel',5,2,'canon','jeremiah',15,2,'free',
+      E'*And it shall come to pass, if they say unto thee, Whither shall we go forth? then thou shalt tell them, Thus saith Yahuah (LORD); Such as are for death, to death; and such as are for the sword, to the sword; and such as are for the famine, to the famine; and such as are for the captivity, to the captivity* (Jeremiah 15:2). Jeremiah sorts the people into the very lots Ezekiel divides with the razor — *a third part... burn with fire... a third part... smite about it with a knife: and a third part thou shalt scatter in the wind* (Ezekiel 5:2). Each portion has its appointed end: the burned, the smitten, the scattered, each to its judgment.'),
+    ('canon','ezekiel',5,12,'canon','jeremiah',15,2,'free',
+      E'*Such as are for death, to death; and such as are for the sword, to the sword; and such as are for the famine, to the famine; and such as are for the captivity, to the captivity* (Jeremiah 15:2). When Ezekiel names the three plainly — *A third part of thee shall die with the pestilence, and with famine... a third part shall fall by the sword... and I will scatter a third part into all the winds* (Ezekiel 5:12) — he is dividing the people into Jeremiah''s same lots: death, sword, famine, and the captivity of the scattered. The judgment is measured and apportioned, none escaping their appointed share.'),
+    ('canon','ezekiel',5,12,'canon','jeremiah',15,3,'free',
+      E'*And I will appoint over them four kinds, saith Yahuah (LORD): the sword to slay, and the dogs to tear, and the fowls of the heaven, and the beasts of the earth, to devour and destroy* (Jeremiah 15:3). The sword Ezekiel draws out after the scattered third — *I will scatter a third part into all the winds, and I will draw out a sword after them* (Ezekiel 5:12) — is one of Yahuah''s four appointed kinds of destruction. The sword pursues even those flung to the winds; the scattering is no escape from the appointed judgment.'),
+    ('canon','ezekiel',5,3,'canon','zechariah',13,8,'free',
+      E'*And it shall come to pass, that in all the land, saith Yahuah (LORD), two parts therein shall be cut off and die; but the third shall be left therein* (Zechariah 13:8). Ezekiel''s thirds end the same way: two portions perish — burned and smitten — but of the scattered third *thou shalt also take thereof a few in number, and bind them in thy skirts* (Ezekiel 5:3). A remnant is reserved out of the judgment; the third left therein is the preserved seed.'),
+    ('canon','ezekiel',5,3,'canon','zechariah',13,9,'free',
+      E'*And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people: and they shall say, Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9). The few bound in the prophet''s skirts — *a few in number, and bind them in thy skirts* (Ezekiel 5:3) — are the refined third: a remnant carried through the fire and claimed as Yahuah''s people. The scattering is not only judgment but the sifting out of a purified seed.'),
+
+    -- THREAD 2 (★★): This is Jerusalem, set in the midst of the nations — judged MORE for forsaking the statutes
+    ('canon','ezekiel',5,6,'canon','amos',3,2,'free',
+      E'*You only have I known of all the families of the earth: therefore I will punish you for all your iniquities* (Amos 3:2). Amos names the principle Ezekiel enacts: the chosen people are judged MORE, not less, for their sin — *she hath changed my judgments into wickedness more than the nations, and my statutes more than the countries... they have not walked in them* (Ezekiel 5:6). Election is no shield from judgment; the people Yahuah knew are punished for forsaking the very statutes they alone were given.'),
+    ('canon','ezekiel',5,5,'canon','luke',12,48,'free',
+      E'*But he that knew not, and did commit things worthy of stripes, shall be beaten with few stripes. For unto whomsoever much is given, of him shall be much required: and to whom men have committed much, of him they will ask the more* (Luke 12:48). The Messiah states the law of Ezekiel''s judgment: Jerusalem, *set... in the midst of the nations* (Ezekiel 5:5) and given the statutes, is the one to whom much was committed — and therefore of her much is required. The center is held to the higher account precisely because she received the most.'),
+    ('canon','ezekiel',5,8,'canon','romans',2,9,'free',
+      E'*Tribulation and anguish, upon every soul of man that doeth evil, of the Yahudi (Jew) first, and also of the Gentile* (Romans 2:9). Paul keeps the order of Ezekiel''s sentence — *Behold, I, even I, am against thee, and will execute judgments in the midst of thee in the sight of the nations* (Ezekiel 5:8): judgment falls on the privileged people first. The one set in the midst of the nations, given the judgments, answers for them first of all.'),
+    ('canon','ezekiel',5,6,'canon','daniel',9,11,'free',
+      E'*Yea, all Yashar''el (Israel) have transgressed thy law, even by departing, that they might not obey thy voice; therefore the curse is poured upon us, and the oath that is written in the law of Moses the servant of Elohim (God), because we have sinned against him* (Daniel 9:11). Daniel confesses the very charge Ezekiel brings — *they have refused my judgments and my statutes, they have not walked in them* (Ezekiel 5:6): the people transgressed the Torah, and the written curse of the law of Moses is poured out. The judgment is for breaking the statutes, and the Torah stands as the standard they were measured by.'),
+    ('canon','ezekiel',5,9,'canon','daniel',9,12,'free',
+      E'*And he hath confirmed his words, which he spake against us, and against our judges that judged us, by bringing upon us a great evil: for under the whole heaven hath not been done as hath been done upon Jerusalem* (Daniel 9:12). Ezekiel''s unparalleled sentence — *I will do in thee that which I have not done, and whereunto I will not do any more the like, because of all thine abominations* (Ezekiel 5:9) — is the great evil Daniel says was done as nowhere else under heaven. The center''s judgment is without equal because her privilege was without equal.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★): the fathers shall eat the sons — the Deuteronomy 28 / Leviticus 26 covenant-curse
+    ('canon','ezekiel',5,10,'canon','deuteronomy',28,53,'free',
+      E'*And thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters, which Yahuah Elohayka (the LORD thy God) hath given thee, in the siege, and in the straitness, wherewith thine enemies shall distress thee* (Deuteronomy 28:53). Ezekiel''s horror — *the fathers shall eat the sons in the midst of thee, and the sons shall eat their fathers* (Ezekiel 5:10) — is the explicit siege-curse written in the Torah long before. The cannibalism is the covenant-penalty for breaking the covenant, foretold in the very law Jerusalem forsook.'),
+    ('canon','ezekiel',5,10,'canon','leviticus',26,29,'free',
+      E'*And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29). The curse Ezekiel pronounces — *the fathers shall eat the sons in the midst of thee, and the sons shall eat their fathers* (Ezekiel 5:10) — is named in the covenant-sanctions of Leviticus, among the judgments for refusing to walk in Yahuah''s statutes. The siege-cannibalism is no arbitrary cruelty but the written penalty for covenant-breaking.'),
+    ('canon','ezekiel',5,16,'canon','leviticus',26,29,'free',
+      E'*And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29). The broken staff of bread — *I will increase the famine upon you, and will break your staff of bread* (Ezekiel 5:16) — drives the people to the very cannibalism Leviticus foretold as a covenant-curse. The famine and its horror are the appointed penalty of the law for forsaking the law.'),
+    ('canon','ezekiel',5,10,'canon','lamentations',4,10,'free',
+      E'*The hands of the pitiful women have sodden their own children: they were their meat in the destruction of the daughter of my people* (Lamentations 4:10). Jeremiah''s lament records Ezekiel''s sentence enacted in the fall of Jerusalem — *the fathers shall eat the sons in the midst of thee, and the sons shall eat their fathers* (Ezekiel 5:10). The covenant-curse foretold in the Torah and threatened by the prophet came to pass in the siege of 586 BC; the word was confirmed in horror.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered',
+       E'The razor and the hair divided in three — a third burned, a third smitten, a third scattered',
+       E'Yahuah turns the prophet himself into the sign of the siege: *take thee a sharp knife, take thee a barber''s razor, and cause it to pass upon thine head and upon thy beard: then take thee balances to weigh, and divide the hair* (5:1). The hair is the people, weighed and divided into three portions of judgment: *Thou shalt burn with fire a third part in the midst of the city, when the days of the siege are fulfilled: and thou shalt take a third part, and smite about it with a knife: and a third part thou shalt scatter in the wind; and I will draw out a sword after them* (5:2). The meaning is spelled out plainly at the chapter''s close: *A third part of thee shall die with the pestilence, and with famine shall they be consumed in the midst of thee: and a third part shall fall by the sword round about thee; and I will scatter a third part into all the winds, and I will draw out a sword after them* (5:12). The Revelation rider gathers the same instruments of judgment: *And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). Jeremiah sorts the people into the same lots: *Such as are for death, to death; and such as are for the sword, to the sword; and such as are for the famine, to the famine; and such as are for the captivity, to the captivity* (Jeremiah 15:2), and appoints *four kinds... the sword to slay, and the dogs to tear, and the fowls of the heaven, and the beasts of the earth* (Jeremiah 15:3). Yet out of the scattered third a remnant is reserved: *Thou shalt also take thereof a few in number, and bind them in thy skirts* (5:3). Zechariah names that surviving third the refined seed: *two parts therein shall be cut off and die; but the third shall be left therein. And I will bring the third part through the fire, and will refine them as silver is refined... I will say, It is my people* (Zechariah 13:8-9). The razor that destroys two portions sifts out a third, carried through the fire and kept.',
+       sv.verse_id, ev.verse_id, 'free', 32100
+  FROM _s308_ezek05_lookup sv, _s308_ezek05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=5 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations',
+       E'This is Jerusalem, set in the midst of the nations — judged more for forsaking the statutes',
+       E'Yahuah names the meaning of the sign: *Thus saith Adonai Yahuah (the Lord GOD); This is Jerusalem: I have set it in the midst of the nations and countries that are round about her* (5:5). The chosen center is judged MORE severely than the nations precisely because she was given the statutes and broke them: *And she hath changed my judgments into wickedness more than the nations, and my statutes more than the countries that are round about her: for they have refused my judgments and my statutes, they have not walked in them* (5:6), *Because ye multiplied more than the nations that are round about you, and have not walked in my statutes, neither have kept my judgments* (5:7). So the verdict: *Behold, I, even I, am against thee, and will execute judgments in the midst of thee in the sight of the nations* (5:8), *I will do in thee that which I have not done, and whereunto I will not do any more the like, because of all thine abominations* (5:9). The judgment is FOR forsaking the statutes — the Torah is upheld as the very standard by which she is condemned. Amos states the principle: *You only have I known of all the families of the earth: therefore I will punish you for all your iniquities* (Amos 3:2). The Messiah seals it: *unto whomsoever much is given, of him shall be much required: and to whom men have committed much, of him they will ask the more* (Luke 12:48). Paul keeps the order — tribulation *of the Yahudi (Jew) first, and also of the Gentile* (Romans 2:9). And Daniel, praying over this very ruin, confesses the charge and names the standard: *all Yashar''el (Israel) have transgressed thy law, even by departing, that they might not obey thy voice; therefore the curse is poured upon us, and the oath that is written in the law of Moses* (Daniel 9:11), *for under the whole heaven hath not been done as hath been done upon Jerusalem* (Daniel 9:12) — the unparalleled judgment of 5:9, because the privilege was unparalleled. Election is no shield; it is the higher accountability, and the Torah she defiled (5:11) is affirmed, not abolished.',
+       sv.verse_id, ev.verse_id, 'free', 32103
+  FROM _s308_ezek05_lookup sv, _s308_ezek05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=5 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-5-the-fathers-shall-eat-the-sons-the-deuteronomy-28-curse',
+       E'The fathers shall eat the sons — the broken staff of bread, the Deuteronomy 28 covenant-curse',
+       E'The siege brings the most terrible of the covenant-curses: *Therefore the fathers shall eat the sons in the midst of thee, and the sons shall eat their fathers; and I will execute judgments in thee, and the whole remnant of thee will I scatter into all the winds* (5:10), and the famine that drives it: *When I shall send upon them the evil arrows of famine, which shall be for their destruction... and I will increase the famine upon you, and will break your staff of bread* (5:16). This horror is not arbitrary — it is the explicit covenant-curse written in the Torah long before, the appointed penalty for breaking the covenant. Moses foretold it word for word: *And thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters, which Yahuah Elohayka (the LORD thy God) hath given thee, in the siege, and in the straitness, wherewith thine enemies shall distress thee* (Deuteronomy 28:53); and Leviticus named it among the sanctions for refusing the statutes: *And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29). Jeremiah''s lament records the curse enacted in the fall of the city: *The hands of the pitiful women have sodden their own children: they were their meat in the destruction of the daughter of my people* (Lamentations 4:10). The judgment is the covenant-penalty for forsaking the Torah (5:6-7), never the Torah itself — the law Jerusalem broke is the same law that warned, in mercy, of exactly this end.',
+       sv.verse_id, ev.verse_id, 'free', 32106
+  FROM _s308_ezek05_lookup sv, _s308_ezek05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=5 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8) — the pale rider gathers the same portions Ezekiel 5:12 weighs out: sword, famine, pestilence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=12
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Such as are for death, to death; and such as are for the sword, to the sword; and such as are for the famine, to the famine* (Jeremiah 15:2) — Jeremiah sorts the people into the same lots the razor divides (Ezekiel 5:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=2
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Such as are for death, to death... for the famine, to the famine; and such as are for the captivity, to the captivity* (Jeremiah 15:2) — the three named plainly (Ezekiel 5:12) are Jeremiah''s same apportioned lots.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=12
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the sword to slay, and the dogs to tear, and the fowls of the heaven, and the beasts of the earth* (Jeremiah 15:3) — the drawn-out sword after the scattered third (Ezekiel 5:12) is one of Yahuah''s four appointed kinds.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=12
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *two parts therein shall be cut off and die; but the third shall be left therein* (Zechariah 13:8) — the few bound in the skirts (Ezekiel 5:3) are the third reserved out of the judgment.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=13 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I will bring the third part through the fire, and will refine them as silver is refined... I will say, It is my people* (Zechariah 13:9) — the bound few (Ezekiel 5:3) are the refined remnant carried through the fire.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=3
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-hair-divided-in-three-a-third-burned-smitten-scattered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *You only have I known of all the families of the earth: therefore I will punish you for all your iniquities* (Amos 3:2) — the principle Ezekiel 5:6 enacts; the chosen are judged more, not less.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=6
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *unto whomsoever much is given, of him shall be much required* (Luke 12:48) — Jerusalem set in the midst of the nations (Ezekiel 5:5), given the statutes, answers to the higher account.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Tribulation and anguish, upon every soul of man that doeth evil, of the Yahudi (Jew) first* (Romans 2:9) — Paul keeps the order of Ezekiel 5:8; judgment on the privileged people first.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=8
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *all Yashar''el (Israel) have transgressed thy law... therefore the curse is poured upon us... written in the law of Moses* (Daniel 9:11) — Daniel confesses the charge of Ezekiel 5:6; the Torah is the standard, the curse for breaking it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=6
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *under the whole heaven hath not been done as hath been done upon Jerusalem* (Daniel 9:12) — the unparalleled judgment of Ezekiel 5:9, because the privilege was unparalleled.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=9
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-this-is-jerusalem-set-in-the-midst-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters... in the siege* (Deuteronomy 28:53) — Ezekiel 5:10 is the explicit Torah siege-curse, foretold word for word.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=10
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=53
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-fathers-shall-eat-the-sons-the-deuteronomy-28-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29) — the cannibalism of Ezekiel 5:10 named in the Leviticus covenant-sanctions for refusing the statutes.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=10
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-fathers-shall-eat-the-sons-the-deuteronomy-28-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29) — the broken staff of bread (Ezekiel 5:16) drives the people to the curse Leviticus foretold.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=16
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-fathers-shall-eat-the-sons-the-deuteronomy-28-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The hands of the pitiful women have sodden their own children: they were their meat in the destruction of the daughter of my people* (Lamentations 4:10) — Ezekiel 5:10 enacted in the fall of Jerusalem, 586 BC.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=5 AND sv.verse_number=10
+  JOIN _s308_ezek05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-5-the-fathers-shall-eat-the-sons-the-deuteronomy-28-curse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_6.sql (Ezekiel 6) -----
+-- Chapter: Ezekiel 6 — prophecy against the MOUNTAINS of Yashar''el (Israel); the high places and idols
+-- destroyed, the altars made desolate, the slain cast down before the idols; the recognition-formula
+-- refrain *ye shall know that I am Yahuah (LORD)* (vv.7,10,13,14); YET a remnant preserved who, scattered
+-- among the nations, REMEMBER and lothe themselves and repent; and the threefold covenant-judgment —
+-- the sword, the famine, and the pestilence — stretched over the land to make it desolate. Ezekiel quotes
+-- the Leviticus 26 covenant-curse nearly verbatim (*I will destroy your high places, and cut down your
+-- images*); the judgment is covenant-lawsuit against idolatry, never ethnic hatred — and the remnant kept
+-- is the two-house people brought to repentance in exile.
+-- Tag: ezek06   Temp view: _s308_ezek06_lookup
+-- Sort band: base 32125, step 3 -> threads at 32125, 32128, 32131 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',6,v
+--
+-- Ezekiel 6 coverage:
+--   v.1-2 (set thy face toward the mountains of Yashar''el, and prophesy against them) — the sign-act
+--          framing/address; woven into THREAD 1 prose; no separate add.
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — the mountains-of-Yashar''el address mirrors Ezekiel 36:1 (the same mountains
+--                later RESTORED); noted in THREAD 2 prose.
+--   ★ v.3-7 (Behold, I... will bring a sword upon you, and I will destroy your high places... your altars
+--          shall be desolate, your images broken... I will cast down your slain men before your idols...
+--          and ye shall know that I am Yahuah)
+--        NT:     ★ 1 Corinthians 10:14 (flee from idolatry), ★ 1 Corinthians 10:7 (Neither be ye
+--                idolaters, as were some of them) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 26:30 (I will destroy your high places, and cut down your images — Ezekiel
+--                quotes the covenant-curse nearly verbatim), ★ Leviticus 26:31 (bring your sanctuaries unto
+--                desolation), ★ 2 Kings 23:14 (he brake in pieces the images, and cut down the groves, and
+--                filled their places with the bones of men — Josiah's destruction of the high places),
+--                ★ 2 Kings 23:20 (he slew all the priests of the high places... and burned men's bones upon
+--                them) — THREAD 1
+--   ★ v.13 (Then shall ye know that I am Yahuah, when their slain men shall be among their idols round
+--          about their altars, upon every high hill... and under every green tree) — the recognition-formula
+--          repeated; the high-place idolatry catalogued.
+--        NT:     held in THREAD 1 (the idolatry-judged weave)
+--        Extras: none warranted
+--        Tanakh: bound to Leviticus 26:30 and the recognition-formula in THREAD 1 prose; *under every green
+--                tree* echoed back to the high-place catalogue (woven, not a separate row).
+--   ★ v.8-10 (Yet will I leave a remnant... they that escape of you shall remember me among the nations...
+--          and they shall lothe themselves for the evils which they have committed)
+--        NT:     ★★ Romans 11:5 (even so then at this present time also there is a remnant according to the
+--                election of grace), ★ Romans 11:1-2 (Hath Elohim cast away his people? Elohim forbid... God
+--                hath not cast away his people which he foreknew) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 30:1-2 (thou shalt call them to mind among all the nations... and shalt
+--                return unto Yahuah Elohayka), ★★ Ezekiel 36:31 (then shall ye remember your own evil ways...
+--                and shall lothe yourselves in your own sight), ★ Zechariah 13:9 (I will bring the third part
+--                through the fire, and will refine them... they shall call on my name) — THREAD 2
+--   ★ v.11-14 (Smite with thine hand, and stamp with thy foot... they shall fall by the sword, by the
+--          famine, and by the pestilence... So will I stretch out my hand upon them, and make the land
+--          desolate... and they shall know that I am Yahuah)
+--        NT:     ★★ Revelation 6:8 (his name that sat on him was Death... power was given unto them over the
+--                fourth part of the earth, to kill with sword, and with hunger, and with death, and with the
+--                beasts of the earth) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 14:12 (I will consume them by the sword, and by the famine, and by the
+--                pestilence), ★★ Ezekiel 5:12 (a third part of thee shall die with the pestilence... a third
+--                part shall fall by the sword... I will scatter a third part into all the winds — the lateral
+--                sister-oracle) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah — Tanakh (Leviticus 26, 2 Kings 23) + NT (1 Corinthians 10) [free]
+--      (★ the high-place idolatry judged; Ezekiel quotes the Leviticus 26 covenant-curse nearly verbatim;
+--       Josiah's destruction of the high places enacts it; flee idolatry; the recognition-formula — the Name vindicated)
+--   2. ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations — Tanakh (Deuteronomy 30, Ezekiel 36, Zechariah 13) + NT (Romans 11) [free]
+--      (★ the preserved remnant who remember and repent in exile; call them to mind among the nations and return;
+--       a remnant according to the election of grace; the third part refined; the two-house remnant kept and brought to repentance)
+--   3. ezekiel-6-the-sword-the-famine-and-the-pestilence-upon-the-land — Tanakh (Jeremiah 14, Ezekiel 5) + NT (Revelation 6) [free]
+--      (★ the threefold covenant-judgment — sword/famine/pestilence — stretched over the land; the pale horse of Revelation 6)
+--
+-- Framing notes:
+--   ★ THE HIGH PLACES DESTROYED / YE SHALL KNOW THAT I AM YAHUAH (THREAD 1): *Behold, I, even I, will bring a
+--      sword upon you, and I will destroy your high places. And your altars shall be desolate, and your images
+--      shall be broken: and I will cast down your slain men before your idols* (6:3-4), *and ye shall know that
+--      I am Yahuah (LORD)* (6:7). Ezekiel quotes the covenant-curse of Leviticus nearly word for word — *And I
+--      will destroy your high places, and cut down your images, and cast your carcases upon the carcases of
+--      your idols* (Leviticus 26:30). The judgment is the covenant-lawsuit FOR idolatry, the Torah''s own
+--      sanction enacted, never ethnic hatred. Josiah had already done it in the flesh — *he brake in pieces
+--      the images, and cut down the groves, and filled their places with the bones of men* (2 Kings 23:14),
+--      *and he slew all the priests of the high places that were there upon the altars, and burned men''s bones
+--      upon them* (2 Kings 23:20) — the very slain-cast-before-idols Ezekiel foretells. Paul gives the standing
+--      command to the called-out people: *Wherefore, my dearly beloved, flee from idolatry* (1 Corinthians
+--      10:14), *Neither be ye idolaters, as were some of them* (1 Corinthians 10:7). And the refrain — *ye
+--      shall know that I am Yahuah (LORD)* (6:7,13,14) — is the whole aim: the Name vindicated, the idols cut
+--      down, Yahuah known as Yahuah.
+--   ★ THE REMNANT WHO REMEMBER (THREAD 2): *Yet will I leave a remnant... And they that escape of you shall
+--      remember me among the nations whither they shall be carried captives... and they shall lothe themselves
+--      for the evils which they have committed* (6:8-9). In the midst of the judgment a remnant is kept,
+--      scattered but not destroyed, and brought to remembrance and repentance. This is the Torah''s own promise
+--      of exile-and-return — *thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the
+--      LORD thy God) hath driven thee, And shalt return unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy
+--      30:1-2). Ezekiel''s own restoration-chapter answers it word for word — *Then shall ye remember your own
+--      evil ways... and shall lothe yourselves in your own sight for your iniquities* (Ezekiel 36:31). Zechariah
+--      sees the remnant refined — *I will bring the third part through the fire... they shall call on my name,
+--      and I will hear them: I will say, It is my people* (Zechariah 13:9). And Paul names the remnant kept in
+--      his own day — *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Even so then
+--      at this present time also there is a remnant according to the election of grace* (Romans 11:5). The
+--      two-house people are never cast off; a remnant is always kept and brought home, remembering.
+--   ★ THE SWORD, THE FAMINE, AND THE PESTILENCE (THREAD 3): *Alas for all the evil abominations of the house of
+--      Yashar''el (Israel)! for they shall fall by the sword, by the famine, and by the pestilence* (6:11), *So
+--      will I stretch out my hand upon them, and make the land desolate* (6:14). The threefold covenant-judgment
+--      — sword, famine, pestilence — is Jeremiah''s same triad — *I will consume them by the sword, and by the
+--      famine, and by the pestilence* (Jeremiah 14:12) — and Ezekiel''s own sister-oracle a chapter before — *A
+--      third part of thee shall die with the pestilence... and a third part shall fall by the sword... and I
+--      will scatter a third part into all the winds* (Ezekiel 5:12). The same triad rides into Revelation under
+--      the pale horse — *his name that sat on him was Death... power was given unto them over the fourth part
+--      of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth*
+--      (Revelation 6:8). The judgment is real and it is total, *and they shall know that I am Yahuah (LORD)* (6:14).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the sign-act address — set thy face toward the mountains; woven into
+--      THREAD 1/2 prose, the mountains later RESTORED in Ezekiel 36:1); v.5-6 (the dead carcases scattered,
+--      cities laid waste — the same high-place judgment of THREAD 1, woven); v.10 (the recognition-formula
+--      repeated — carried in THREAD 1/2 prose); v.12 (he that is far off... near... besieged — the distribution
+--      of the threefold judgment, woven into THREAD 3 prose). All verses recorded in the coverage checklist;
+--      every block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): I will destroy your high places — and ye shall know that I am Yahuah
+    ('canon','ezekiel',6,3,'canon','leviticus',26,30,'free',
+      E'*And I will destroy your high places, and cut down your images, and cast your carcases upon the carcases of your idols, and my soul shall abhor you* (Leviticus 26:30). Ezekiel quotes the covenant-curse nearly word for word — *Behold, I, even I, will bring a sword upon you, and I will destroy your high places. And your altars shall be desolate, and your images shall be broken* (Ezekiel 6:3-4). The judgment is the Torah''s own sanction for idolatry, the Leviticus 26 curse enacted upon the high places — covenant-lawsuit against the sin, never ethnic hatred.'),
+    ('canon','ezekiel',6,4,'canon','leviticus',26,30,'free',
+      E'*And I will destroy your high places, and cut down your images, and cast your carcases upon the carcases of your idols, and my soul shall abhor you* (Leviticus 26:30). The casting of the slain before the idols — *I will cast down your slain men before your idols* (Ezekiel 6:4) — is the very *cast your carcases upon the carcases of your idols* of the covenant-curse. The dead are heaped on the dead gods they served; the idolatry judged by the idols'' own ruin.'),
+    ('canon','ezekiel',6,6,'canon','leviticus',26,31,'free',
+      E'*And I will make your cities waste, and bring your sanctuaries unto desolation, and I will not smell the savour of your sweet odours* (Leviticus 26:31). Ezekiel''s *In all your dwellingplaces the cities shall be laid waste, and the high places shall be desolate... and your works may be abolished* (Ezekiel 6:6) is the same Leviticus 26 desolation poured out — the cities laid waste, the false sanctuaries brought to nought. The covenant-curse of Sinai falls on the high-place worship.'),
+    ('canon','ezekiel',6,4,'canon','2-kings',23,14,'free',
+      E'*And he brake in pieces the images, and cut down the groves, and filled their places with the bones of men* (2 Kings 23:14). Josiah had already enacted in the flesh what Ezekiel foretells — *And your altars shall be desolate, and your images shall be broken: and I will cast down your slain men before your idols* (Ezekiel 6:4). The images broken and the places filled with men''s bones are the high-place idolatry desecrated and undone, exactly as the prophet declares.'),
+    ('canon','ezekiel',6,5,'canon','2-kings',23,20,'free',
+      E'*And he slew all the priests of the high places that were there upon the altars, and burned men''s bones upon them, and returned to Jerusalem* (2 Kings 23:20). Josiah''s slaughter of the high-place priests upon their own altars is the very thing Ezekiel prophesies — *And I will lay the dead carcases of the children of Yashar''el (Israel) before their idols; and I will scatter your bones round about your altars* (Ezekiel 6:5). The altars of the high places are defiled with the bones of those who served them.'),
+    ('canon','ezekiel',6,3,'canon','1-corinthians',10,14,'free',
+      E'*Wherefore, my dearly beloved, flee from idolatry* (1 Corinthians 10:14). The high places Yahuah destroys — *I will destroy your high places* (Ezekiel 6:3) — are the idolatry the called-out people are charged to flee. What Ezekiel sees judged in the flesh, Paul makes the standing command: turn from the idols before the sword comes.'),
+    ('canon','ezekiel',6,4,'canon','1-corinthians',10,7,'free',
+      E'*Neither be ye idolaters, as were some of them; as it is written, The people sat down to eat and drink, and rose up to play* (1 Corinthians 10:7). The idols before which the slain are cast down — *I will cast down your slain men before your idols* (Ezekiel 6:4) — are the same snare Paul warns against, the idolatry that overthrew the fathers in the wilderness. The lesson of the broken images is written for our admonition.'),
+
+    -- THREAD 2 (★): Yet will I leave a remnant — they shall remember me among the nations and repent
+    ('canon','ezekiel',6,9,'canon','deuteronomy',30,1,'free',
+      E'*And it shall come to pass, when all these things are come upon thee, the blessing and the curse, which I have set before thee, and thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee* (Deuteronomy 30:1). The remembering of the scattered remnant — *they that escape of you shall remember me among the nations whither they shall be carried captives* (Ezekiel 6:9) — is the Torah''s own promise of exile-and-recall: when the curse has fallen, the driven people *call them to mind among all the nations*. The remembrance is the first turn of repentance.'),
+    ('canon','ezekiel',6,9,'canon','deuteronomy',30,2,'free',
+      E'*And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day, thou and thy children, with all thine heart, and with all thy soul* (Deuteronomy 30:2). The self-lothing of the remnant — *they shall lothe themselves for the evils which they have committed* (Ezekiel 6:9) — is the turning Moses foretold: those who remember among the nations *return unto Yahuah Elohayka* with all the heart. The remnant kept is the remnant brought back to obedience, the Torah not abolished but returned to.'),
+    ('canon','ezekiel',6,9,'canon','ezekiel',36,31,'free',
+      E'*Then shall ye remember your own evil ways, and your doings that were not good, and shall lothe yourselves in your own sight for your iniquities and for your abominations* (Ezekiel 36:31). Ezekiel''s own restoration-chapter answers chapter 6 word for word — *they shall lothe themselves for the evils which they have committed* (Ezekiel 6:9) becomes *shall lothe yourselves in your own sight*. The same self-lothing repentance that the judgment begins is what the cleansing of the new heart completes.'),
+    ('canon','ezekiel',6,8,'canon','zechariah',13,9,'free',
+      E'*And I will bring the third part through the fire, and will refine them as silver is refined, and will try them as gold is tried: they shall call on my name, and I will hear them: I will say, It is my people, and they shall say, Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9). The remnant left through the judgment — *Yet will I leave a remnant, that ye may have some that shall escape the sword among the nations* (Ezekiel 6:8) — is the third part refined in the fire, brought through to call on the Name. The kept remnant is the purified people, *It is my people... Yahuah is my Elohim*.'),
+    ('canon','ezekiel',6,8,'canon','romans',11,5,'free',
+      E'*Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The promise *Yet will I leave a remnant* (Ezekiel 6:8) runs straight to Paul''s own day — there is always *a remnant according to the election of grace*. Yahuah never destroys his people utterly; in every generation of judgment a remnant is preserved and called.'),
+    ('canon','ezekiel',6,8,'canon','romans',11,1,'free',
+      E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). The leaving of a remnant — *Yet will I leave a remnant* (Ezekiel 6:8) — is the proof Paul presses: Yahuah has *not cast away his people*. The two-house people scattered through the countries are not abandoned; a remnant of the seed of Abraham is always kept.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★): the sword, the famine, and the pestilence upon the land
+    ('canon','ezekiel',6,11,'canon','jeremiah',14,12,'free',
+      E'*When they fast, I will not hear their cry; and when they offer burnt offering and an oblation, I will not accept them: but I will consume them by the sword, and by the famine, and by the pestilence* (Jeremiah 14:12). Jeremiah names the same threefold judgment Ezekiel pronounces — *they shall fall by the sword, by the famine, and by the pestilence* (Ezekiel 6:11). The covenant-triad — sword, famine, pestilence — is the standing sentence of the prophets upon a people who will not turn.'),
+    ('canon','ezekiel',6,12,'canon','ezekiel',5,12,'free',
+      E'*A third part of thee shall die with the pestilence, and with famine shall they be consumed in the midst of thee: and a third part shall fall by the sword round about thee; and I will scatter a third part into all the winds, and I will draw out a sword after them* (Ezekiel 5:12). Ezekiel''s own sister-oracle a chapter before distributes the same threefold judgment — *He that is far off shall die of the pestilence; and he that is near shall fall by the sword; and he that remaineth and is besieged shall die by the famine* (Ezekiel 6:12). Sword, famine, and pestilence are apportioned to far, near, and besieged alike; the fury accomplished.'),
+    ('canon','ezekiel',6,12,'canon','revelation',6,8,'free',
+      E'*And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). The threefold judgment of *the pestilence... the sword... the famine* (Ezekiel 6:12) rides forward under the pale horse — *to kill with sword, and with hunger, and with death*. The same covenant-sentence the prophet pronounced on the land is loosed upon the earth at the opening of the fourth seal.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah',
+       E'I will destroy your high places — and ye shall know that I am Yahuah',
+       E'The word comes against the mountains of Yashar''el (Israel) themselves — the very heights where the idols were set: *Behold, I, even I, will bring a sword upon you, and I will destroy your high places. And your altars shall be desolate, and your images shall be broken: and I will cast down your slain men before your idols* (Ezekiel 6:3-4), *And the slain shall fall in the midst of you, and ye shall know that I am Yahuah (LORD)* (6:7). Ezekiel is quoting the covenant-curse of Sinai nearly word for word: *And I will destroy your high places, and cut down your images, and cast your carcases upon the carcases of your idols, and my soul shall abhor you* (Leviticus 26:30), *And I will make your cities waste, and bring your sanctuaries unto desolation* (Leviticus 26:31). This is no arbitrary wrath but the Torah''s own sanction for idolatry, enacted — covenant-lawsuit against the SIN, never hatred of the people. Josiah had already done the deed in the flesh, the high places torn down a generation before the exile: *And he brake in pieces the images, and cut down the groves, and filled their places with the bones of men* (2 Kings 23:14), *And he slew all the priests of the high places that were there upon the altars, and burned men''s bones upon them* (2 Kings 23:20) — the very slain-cast-before-idols, the very bones-round-about-the-altars Ezekiel foretells. And to the called-out people the standing command stands: *Wherefore, my dearly beloved, flee from idolatry* (1 Corinthians 10:14), *Neither be ye idolaters, as were some of them* (1 Corinthians 10:7). But the whole aim of the judgment is named in the refrain that tolls three times through the chapter — *and ye shall know that I am Yahuah (LORD)* (6:7,13,14): the idols cut down, the high places desolate, the Name vindicated and Yahuah known as Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 32125
+  FROM _s308_ezek06_lookup sv, _s308_ezek06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=6 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations',
+       E'Yet will I leave a remnant — they shall remember me among the nations',
+       E'In the very midst of the judgment, mercy is kept: *Yet will I leave a remnant, that ye may have some that shall escape the sword among the nations, when ye shall be scattered through the countries. And they that escape of you shall remember me among the nations whither they shall be carried captives... and they shall lothe themselves for the evils which they have committed in all their abominations* (Ezekiel 6:8-9). The people are scattered but not destroyed; a remnant is preserved, and in exile it remembers and repents. This is the Torah''s own promise of exile-and-return: *thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee, And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice... with all thine heart, and with all thy soul* (Deuteronomy 30:1-2). The remembering is the first turn of repentance, and the returning is to obedience — the Torah not cast off but returned to. Ezekiel''s own restoration-chapter answers it word for word: *Then shall ye remember your own evil ways... and shall lothe yourselves in your own sight for your iniquities and for your abominations* (Ezekiel 36:31). Zechariah sees the remnant refined: *I will bring the third part through the fire, and will refine them as silver is refined... they shall call on my name, and I will hear them: I will say, It is my people, and they shall say, Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9). And Paul names the kept remnant of his own day: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Even so then at this present time also there is a remnant according to the election of grace* (Romans 11:5). The two-house people scattered through the countries are never abandoned; a remnant is always kept and brought home, remembering and returning.',
+       sv.verse_id, ev.verse_id, 'free', 32128
+  FROM _s308_ezek06_lookup sv, _s308_ezek06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=6 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-6-the-sword-the-famine-and-the-pestilence-upon-the-land',
+       E'The sword, the famine, and the pestilence — I will make the land desolate',
+       E'The prophet is told to act out the grief of the verdict: *Smite with thine hand, and stamp with thy foot, and say, Alas for all the evil abominations of the house of Yashar''el (Israel)! for they shall fall by the sword, by the famine, and by the pestilence* (Ezekiel 6:11), and the threefold judgment is apportioned to all alike: *He that is far off shall die of the pestilence; and he that is near shall fall by the sword; and he that remaineth and is besieged shall die by the famine: thus will I accomplish my fury upon them* (6:12), *So will I stretch out my hand upon them, and make the land desolate... and they shall know that I am Yahuah (LORD)* (6:14). Sword, famine, and pestilence are the standing covenant-triad of the prophets. Jeremiah pronounces the same: *I will consume them by the sword, and by the famine, and by the pestilence* (Jeremiah 14:12). And Ezekiel''s own sister-oracle a chapter before distributes it by thirds: *A third part of thee shall die with the pestilence, and with famine shall they be consumed in the midst of thee: and a third part shall fall by the sword round about thee; and I will scatter a third part into all the winds* (Ezekiel 5:12). The same triad rides forward into the Revelation under the fourth seal: *and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). The judgment is real and it is total — and through it, again, the same end: *they shall know that I am Yahuah (LORD)* (6:14).',
+       sv.verse_id, ev.verse_id, 'free', 32131
+  FROM _s308_ezek06_lookup sv, _s308_ezek06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=6 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will destroy your high places, and cut down your images, and cast your carcases upon the carcases of your idols* (Leviticus 26:30) — Ezekiel 6:3 quotes the covenant-curse of Sinai nearly verbatim; the Torah''s own sanction for idolatry enacted.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *cast your carcases upon the carcases of your idols* (Leviticus 26:30) — the slain cast before the idols (Ezekiel 6:4) is the dead heaped on the dead gods they served; the same Sinai curse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will make your cities waste, and bring your sanctuaries unto desolation* (Leviticus 26:31) — the cities laid waste and high places made desolate (Ezekiel 6:6) is the same Leviticus 26 desolation poured out.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he brake in pieces the images, and cut down the groves, and filled their places with the bones of men* (2 Kings 23:14) — Josiah enacts in the flesh what Ezekiel 6:4 foretells: images broken, places filled with bones.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *he slew all the priests of the high places... and burned men''s bones upon them* (2 Kings 23:20) — the bones scattered round about the altars (Ezekiel 6:5) defile the high-place altars, as Josiah did.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *flee from idolatry* (1 Corinthians 10:14) — the high places Yahuah destroys (Ezekiel 6:3) are the idolatry the called-out people are charged to flee; the standing command.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Neither be ye idolaters, as were some of them* (1 Corinthians 10:7) — the idols before which the slain are cast (Ezekiel 6:4) are the snare written for our admonition; the lesson of the broken images.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=4
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-i-will-destroy-your-high-places-and-ye-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee* (Deuteronomy 30:1) — the remnant remembering among the nations (Ezekiel 6:9) is the Torah''s own promise of exile-and-recall.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=9
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *And shalt return unto Yahuah Elohayka (the LORD thy God)... with all thine heart, and with all thy soul* (Deuteronomy 30:2) — the self-lothing of the remnant (Ezekiel 6:9) is the turning back to obedience; the Torah returned to, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=9
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Then shall ye remember your own evil ways... and shall lothe yourselves in your own sight* (Ezekiel 36:31) — the restoration-chapter answers Ezekiel 6:9 word for word; the same self-lothing repentance the cleansing completes.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=9
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will bring the third part through the fire, and will refine them... It is my people... Yahuah (LORD) is my Elohim (God)* (Zechariah 13:9) — the remnant left (Ezekiel 6:8) is the third part refined and brought through to call on the Name.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *there is a remnant according to the election of grace* (Romans 11:5) — the promise *Yet will I leave a remnant* (Ezekiel 6:8) runs straight to Paul''s day; in every judgment a remnant is preserved.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1) — the leaving of a remnant (Ezekiel 6:8) is Paul''s proof Yahuah has not cast away the two-house people; the seed of Abraham is kept.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-yet-will-i-leave-a-remnant-that-shall-remember-me-among-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will consume them by the sword, and by the famine, and by the pestilence* (Jeremiah 14:12) — Jeremiah names the same threefold judgment Ezekiel 6:11 pronounces; the standing covenant-triad of the prophets.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=11
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-the-sword-the-famine-and-the-pestilence-upon-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *A third part of thee shall die with the pestilence... a third part shall fall by the sword... I will scatter a third part into all the winds* (Ezekiel 5:12) — the sister-oracle a chapter before distributes the same triad Ezekiel 6:12 apportions to far, near, and besieged.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=12
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=5 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-the-sword-the-famine-and-the-pestilence-upon-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8) — the threefold judgment of Ezekiel 6:12 rides forward under the pale horse at the fourth seal; the same covenant-sentence loosed on the earth.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=6 AND sv.verse_number=12
+  JOIN _s308_ezek06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-6-the-sword-the-famine-and-the-pestilence-upon-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_7.sql (Ezekiel 7) -----
+-- Chapter: Ezekiel 7 — AN END, THE END IS COME upon the four corners of the land. The day of trouble,
+-- the day of the wrath of Yahuah (LORD): the end pronounced on the land of Yashar''el (Israel), anger
+-- poured out, recompense according to their ways. The sword without and the pestilence and famine within;
+-- silver cast in the streets and gold removed — WEALTH CANNOT RANSOM in the day of wrath. And in the
+-- judgment a famine of the word: they shall seek a vision of the prophet, but the law shall perish from
+-- the priest, and counsel from the ancients. A Deuteronomy-28 covenant-lawsuit chapter: the curse is the
+-- exile-judgment for covenant-breaking, never the Torah itself.
+-- Tag: ezek07   Temp view: _s308_ezek07_lookup
+-- Sort band: base 32150, step 3 -> 32150, 32153, 32156 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',7,v
+--
+-- Ezekiel 7 coverage:
+--   v.1 (the word of Yahuah came) — superscription; no add (NT none / Extras none / Tanakh none warranted).
+--   ★★ v.2-6 (An end, the end is come upon the four corners of the land... Now is the end come upon thee...
+--          An end is come, the end is come: it watcheth for thee... the day of trouble is near)
+--        NT:     ★★ Matthew 24:6 (the end is not yet) + ★★ Matthew 24:14 (then shall the end come),
+--                ★★ Revelation 7:1 (four angels on the four corners of the earth, holding the four winds) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh day-of-Yahuah / the-end weave)
+--        Tanakh: ★★★ Amos 8:2 (The end is come upon my people of Yashar''el), ★ Lamentations 4:18 (our end
+--                is near, our days are fulfilled; for our end is come) — THREAD 1
+--   v.7-14 (the morning come, the rod blossomed, pride budded; wrath upon all the multitude; the trumpet
+--          blown but none goeth to battle) — the unfolding of the day of trouble; woven into THREAD 1 prose;
+--          no separate add (NT none distinct / Extras none / Tanakh none warranted — held in THREAD 1).
+--   ★ v.15-19 (The sword without, the pestilence and famine within... They shall cast their silver in the
+--          streets, and their gold shall be removed: their silver and their gold shall not be able to
+--          deliver them in the day of the wrath of Yahuah)
+--        NT:     ★★ James 5:1-3 (your gold and silver is cankered... ye have heaped treasure together for
+--                the last days), ★ 1 Peter 1:18 (not redeemed with corruptible things, as silver and gold) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Zephaniah 1:18 (neither their silver nor their gold shall be able to deliver them in
+--                the day of the LORD''S wrath — Zephaniah echoes Ezekiel verbatim), ★ Proverbs 11:4 (Riches
+--                profit not in the day of wrath) — THREAD 2
+--   v.20-25 (the beauty of his ornament made into images of abominations; given to strangers for a prey;
+--          the worst of the heathen possess their houses; destruction cometh, they seek peace, none) —
+--          the desecrated sanctuary / the invading heathen; woven into THREAD 2/3 prose; no separate add
+--          (NT none / Extras none / Tanakh none warranted as distinct rows).
+--   ★ v.26-27 (Then shall they seek a vision of the prophet; but the law shall perish from the priest, and
+--          counsel from the ancients... the king shall mourn, the prince clothed with desolation)
+--        NT:     none warranted (the famine-of-the-word is answered laterally in the Tanakh prophets; no NT
+--                quotation forced — held in prose)
+--        Extras: none warranted
+--        Tanakh: ★★ Amos 8:11-12 (a famine... of hearing the words of Yahuah; they shall run to and fro to
+--                seek the word of Yahuah, and shall not find it), ★ Psalm 74:9 (there is no more any prophet),
+--                ★ Micah 3:6-7 (night... that ye shall not have a vision; the seers ashamed) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land — NT (Matthew 24, Revelation 7) + Tanakh (Amos 8, Lamentations 4) [free]
+--      (★★ THE END pronounced on the land; the day of trouble, the day of Yahuah; the four corners / four winds)
+--   2. ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath — NT (James 5, 1 Peter 1) + Tanakh (Zephaniah 1, Proverbs 11) [free]
+--      (★ wealth cannot ransom in the day of wrath; silver cast in the streets, the stumblingblock of their iniquity)
+--   3. ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word — Tanakh (Amos 8, Psalm 74, Micah 3) [free]
+--      (★ the famine of the word in the judgment; they seek a vision but find none; the Torah withheld from the rebellious)
+--
+-- Framing notes:
+--   ★★ THE END UPON THE FOUR CORNERS (THREAD 1): *thus saith Adonai Yahuah (the Lord GOD) unto the land of
+--      Yashar''el (Israel); An end, the end is come upon the four corners of the land* (7:2), *Now is the end
+--      come upon thee... I will judge thee according to thy ways* (7:3), *An end is come, the end is come: it
+--      watcheth for thee; behold, it is come* (7:6), *the day of trouble is near* (7:7). Amos sounded the same
+--      word over the same northern house — *The end is come upon my people of Yashar''el (Israel); I will not
+--      again pass by them any more* (Amos 8:2); Jeremiah''s lament confesses it fulfilled — *our end is near,
+--      our days are fulfilled; for our end is come* (Lam 4:18). The Formed Son carries "the end" forward to
+--      the consummation — *the end is not yet* (Matt 24:6), *then shall the end come* (Matt 24:14) — and John
+--      sees the four corners again — *four angels standing on the four corners of the earth, holding the four
+--      winds* (Rev 7:1). The day of trouble of one land foreshadows the day of Yahuah on all the earth.
+--   ★ SILVER AND GOLD CANNOT DELIVER (THREAD 2): *The sword is without, and the pestilence and the famine
+--      within* (7:15); *They shall cast their silver in the streets, and their gold shall be removed: their
+--      silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD)...
+--      because it is the stumblingblock of their iniquity* (7:19). Zephaniah echoes it almost word for word —
+--      *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath*
+--      (Zeph 1:18); Proverbs names the rule — *Riches profit not in the day of wrath: but righteousness
+--      delivereth from death* (Prov 11:4). James turns it on the last-days rich — *Your gold and silver is
+--      cankered... Ye have heaped treasure together for the last days* (Jas 5:3); and Peter names the only
+--      ransom that holds — not *silver and gold* but *the precious blood of Messiah (Christ)* (1 Pet 1:18-19).
+--   ★ THE LAW SHALL PERISH FROM THE PRIEST (THREAD 3): *then shall they seek a vision of the prophet; but
+--      the law shall perish from the priest, and counsel from the ancients* (7:26). The judgment is a famine
+--      of the word — not the Torah abolished, but withheld from the rebellious who would not keep it. Amos
+--      names it — *a famine... of hearing the words of Yahuah (LORD)... they shall run to and fro to seek the
+--      word of Yahuah, and shall not find it* (Amos 8:11-12); Asaph mourns it — *We see not our signs: there
+--      is no more any prophet* (Ps 74:9); Micah pronounces it on the false prophets — *night... that ye shall
+--      not have a vision... the seers ashamed, and the diviners confounded... for there is no answer of
+--      Elohim (God)* (Mic 3:6-7). When the people will not hear the instruction, the instruction is taken away.
+--   VERSES WITH NO SEPARATE ADD: v.1 (superscription); v.7-14 (the unfolding day of trouble — held in THREAD
+--      1 prose); v.20-25 (the desecrated sanctuary and invading heathen — held in THREAD 2/3 prose). All
+--      verses recorded in the coverage checklist above; every meaningful block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): An end, the end is come upon the four corners of the land — the day of trouble
+    ('canon','ezekiel',7,2,'canon','amos',8,2,'free',
+      E'*And he said, Amos, what seest thou? And I said, A basket of summer fruit. Then said Yahuah (LORD) unto me, The end is come upon my people of Yashar''el (Israel); I will not again pass by them any more* (Amos 8:2). Amos hears over the same people the very word Ezekiel hears over the land — *An end, the end is come upon the four corners of the land* (Ezekiel 7:2). The summer-fruit basket (ripe for harvest) and the four-cornered end are the one sentence: *the end is come upon my people*, Yahuah will pass by them no more.'),
+    ('canon','ezekiel',7,6,'canon','amos',8,2,'free',
+      E'*Then said Yahuah (LORD) unto me, The end is come upon my people of Yashar''el (Israel); I will not again pass by them any more* (Amos 8:2). The drumbeat *An end is come, the end is come: it watcheth for thee; behold, it is come* (Ezekiel 7:6) is Amos''s sentence spoken again — *the end is come upon my people*. The end that watches and will not be passed by is the covenant-judgment fallen full.'),
+    ('canon','ezekiel',7,6,'canon','lamentations',4,18,'free',
+      E'*They hunt our steps, that we cannot go in our streets: our end is near, our days are fulfilled; for our end is come* (Lamentations 4:18). Jeremiah''s lament confesses fulfilled the very word Ezekiel announced — *An end is come, the end is come... behold, it is come* (Ezekiel 7:6). From the prophet''s warning to the mourner''s confession: *for our end is come*; the days were fulfilled and the sentence fell.'),
+    ('canon','ezekiel',7,2,'canon','revelation',7,1,'free',
+      E'*And after these things I saw four angels standing on the four corners of the earth, holding the four winds of the earth, that the wind should not blow on the earth, nor on the sea, nor on any tree* (Revelation 7:1). The end *come upon the four corners of the land* (Ezekiel 7:2) opens forward into John''s vision of the four angels on *the four corners of the earth*, the winds of judgment held until the servants of Elohim (God) are sealed. The day of trouble on one land foreshadows the day of Yahuah upon all the earth.'),
+    ('canon','ezekiel',7,7,'canon','matthew',24,6,'free',
+      E'*And ye shall hear of wars and rumours of wars: see that ye be not troubled: for all these things must come to pass, but the end is not yet* (Matthew 24:6). The Formed Son takes up *the end* and *the day of trouble is near* (Ezekiel 7:7) and stretches it to the consummation — *the end is not yet*: the wars and rumours that fill Ezekiel''s chapter (7:14, 7:25-26) are the birth-pangs, not the final end. The end of one land is the type of the end of the age.'),
+    ('canon','ezekiel',7,6,'canon','matthew',24,14,'free',
+      E'*And this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come* (Matthew 24:14). Ezekiel''s *An end is come, the end is come* (Ezekiel 7:6) is the near, local fulfilment of the word the Son carries to its full reach — *then shall the end come*. The same sentence runs from the land of Yashar''el (Israel) to all nations: an end is decreed, and it comes.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): silver and gold shall not deliver in the day of the wrath of Yahuah
+    ('canon','ezekiel',7,19,'canon','zephaniah',1,18,'free',
+      E'*Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath; but the whole land shall be devoured by the fire of his jealousy: for he shall make even a speedy riddance of all them that dwell in the land* (Zephaniah 1:18). Zephaniah echoes Ezekiel almost word for word — *their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD)* (Ezekiel 7:19). In the day of wrath no purchase price can ransom; the hoarded silver and gold are powerless against the fire of his jealousy.'),
+    ('canon','ezekiel',7,19,'canon','proverbs',11,4,'free',
+      E'*Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4). The proverb names the rule Ezekiel''s judgment enacts — *their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD)* (Ezekiel 7:19): riches cannot deliver, only righteousness delivers from death. The silver cast in the streets *shall not satisfy their souls* (7:19), for it never could.'),
+    ('canon','ezekiel',7,19,'canon','james',5,3,'free',
+      E'*Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). James turns Ezekiel''s judgment on the last-days rich: the very *gold and silver* that Ezekiel says *shall not be able to deliver them in the day of the wrath of Yahuah (LORD)* (Ezekiel 7:19) is cankered, a witness against its hoarders, fuel for the fire. Treasure heaped for the last days delivers no one.'),
+    ('canon','ezekiel',7,19,'canon','james',5,1,'free',
+      E'*Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1). The wailing of those who *cast their silver in the streets* (Ezekiel 7:19) is the *weep and howl* of the rich whose miseries are come. The silver that cannot deliver becomes the occasion of their mourning in the day of wrath.'),
+    ('canon','ezekiel',7,19,'canon','1-peter',1,18,'free',
+      E'*Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers* (1 Peter 1:18). Ezekiel''s verdict that *silver and... gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD)* (Ezekiel 7:19) is the negative of Peter''s gospel: corruptible silver and gold redeem nothing; only *the precious blood of Messiah (Christ), as of a lamb without blemish* (1 Pet 1:19) ransoms. The wealth that fails in the day of wrath is no redemption at all.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★): the law shall perish from the priest — a famine of the word
+    ('canon','ezekiel',7,26,'canon','amos',8,11,'free',
+      E'*Behold, the days come, saith Adonai Yahuah (the Lord GOD), that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)* (Amos 8:11). Amos names the very deprivation Ezekiel pronounces — *the law shall perish from the priest, and counsel from the ancients* (Ezekiel 7:26): a famine not of bread but of the word. When the people will not keep the instruction, the instruction is withdrawn.'),
+    ('canon','ezekiel',7,26,'canon','amos',8,12,'free',
+      E'*And they shall wander from sea to sea, and from the north even to the east, they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12). The seeking of *a vision of the prophet* that finds none, *but the law shall perish from the priest* (Ezekiel 7:26), is Amos''s running to and fro for the word that is no longer found. The desperate search in the day of judgment meets only silence.'),
+    ('canon','ezekiel',7,26,'canon','psalms',74,9,'free',
+      E'*We see not our signs: there is no more any prophet: neither is there among us any that knoweth how long* (Psalm 74:9). Asaph mourns the very famine Ezekiel decrees — *then shall they seek a vision of the prophet; but the law shall perish from the priest* (Ezekiel 7:26). When the sanctuary is defiled (7:22, 24) the vision ceases: *there is no more any prophet*, and none knows how long.'),
+    ('canon','ezekiel',7,26,'canon','micah',3,7,'free',
+      E'*Then shall the seers be ashamed, and the diviners confounded: yea, they shall all cover their lips; for there is no answer of Elohim (God)* (Micah 3:7). Micah pronounces on the false prophets the dearth Ezekiel announces — *they seek a vision of the prophet; but the law shall perish from the priest* (Ezekiel 7:26): the seers ashamed, the night without vision (Mic 3:6), *for there is no answer of Elohim (God)*. The withheld word leaves the would-be seers silent.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land',
+       E'An end, the end is come upon the four corners of the land — the day of trouble is near',
+       E'The word falls with terrible finality: *thus saith Adonai Yahuah (the Lord GOD) unto the land of Yashar''el (Israel); An end, the end is come upon the four corners of the land* (7:2), *Now is the end come upon thee, and I will send mine anger upon thee, and will judge thee according to thy ways* (7:3). The drumbeat repeats and will not be stilled: *An end is come, the end is come: it watcheth for thee; behold, it is come* (7:6), *The morning is come unto thee, O thou that dwellest in the land: the time is come, the day of trouble is near* (7:7). This is the Deuteronomy-28 covenant-judgment fallen full — never the Torah itself indicted, but the land judged for breaking it. Amos heard the same sentence over the same people: *The end is come upon my people of Yashar''el (Israel); I will not again pass by them any more* (Amos 8:2). And Jeremiah''s lament confesses it fulfilled: *our end is near, our days are fulfilled; for our end is come* (Lamentations 4:18). The Formed Son takes up "the end" and stretches it to the consummation of the age — *all these things must come to pass, but the end is not yet* (Matthew 24:6), *and this gospel of the kingdom shall be preached in all the world for a witness unto all nations; and then shall the end come* (Matthew 24:14) — and John sees the four corners of Ezekiel once more: *four angels standing on the four corners of the earth, holding the four winds of the earth* (Revelation 7:1). The day of trouble on one land is the near foreshadow of the day of Yahuah upon all the earth.',
+       sv.verse_id, ev.verse_id, 'free', 32150
+  FROM _s308_ezek07_lookup sv, _s308_ezek07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=7 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath',
+       E'Their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah',
+       E'The judgment closes every door of escape: *The sword is without, and the pestilence and the famine within: he that is in the field shall die with the sword; and he that is in the city, famine and pestilence shall devour him* (7:15). And the one refuge men trust most — their wealth — fails utterly: *They shall cast their silver in the streets, and their gold shall be removed: their silver and their gold shall not be able to deliver them in the day of the wrath of Yahuah (LORD): they shall not satisfy their souls, neither fill their bowels: because it is the stumblingblock of their iniquity* (7:19). Silver flung in the streets as worthless, gold powerless — for it was the very *stumblingblock of their iniquity*, the idol that turned their hearts. Zephaniah echoes the verdict almost word for word: *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath; but the whole land shall be devoured by the fire of his jealousy* (Zephaniah 1:18). Proverbs names the rule beneath it: *Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4). James turns the same word on the last-days rich: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you... Your gold and silver is cankered; and the rust of them shall be a witness against you... Ye have heaped treasure together for the last days* (James 5:1,3). And Peter names the only ransom that holds: *ye were not redeemed with corruptible things, as silver and gold... But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:18-19). The wealth that cannot deliver in the day of wrath was never a redemption at all.',
+       sv.verse_id, ev.verse_id, 'free', 32153
+  FROM _s308_ezek07_lookup sv, _s308_ezek07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=7 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word',
+       E'The law shall perish from the priest, and counsel from the ancients — a famine of the word',
+       E'In the day of judgment a strange dearth falls: *Mischief shall come upon mischief, and rumour shall be upon rumour; then shall they seek a vision of the prophet; but the law shall perish from the priest, and counsel from the ancients* (7:26). They will look at last for the word they would not keep — and it is gone. This is no abolition of the Torah; it is the instruction withheld from a people who despised it, the lamp removed from those who would not walk by it. Amos names the very famine: *Behold, the days come... that I will send a famine in the land, not a famine of bread, nor a thirst for water, but of hearing the words of Yahuah (LORD)* (Amos 8:11), *they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12). Asaph mourns it in the ruined sanctuary: *We see not our signs: there is no more any prophet: neither is there among us any that knoweth how long* (Psalm 74:9). And Micah pronounces it on the false prophets who led the people astray: *night... that ye shall not have a vision; and it shall be dark unto you, that ye shall not divine... Then shall the seers be ashamed, and the diviners confounded... for there is no answer of Elohim (God)* (Micah 3:6-7). When the priest will not teach the Torah and the people will not hear it, the word itself is taken away — and the seekers of a vision find only silence.',
+       sv.verse_id, ev.verse_id, 'free', 32156
+  FROM _s308_ezek07_lookup sv, _s308_ezek07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=7 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *The end is come upon my people of Yashar''el (Israel); I will not again pass by them any more* (Amos 8:2) — Amos hears over the people the word Ezekiel hears over the land; the four-cornered end and the summer-fruit basket are one sentence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *The end is come upon my people of Yashar''el (Israel)* (Amos 8:2) — the drumbeat *An end is come, the end is come* (Ezekiel 7:6) is Amos''s sentence spoken again; the end will not be passed by.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=6
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *our end is near, our days are fulfilled; for our end is come* (Lamentations 4:18) — Jeremiah''s lament confesses fulfilled the word Ezekiel 7:6 announced; from warning to mourning.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=6
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *four angels standing on the four corners of the earth, holding the four winds* (Revelation 7:1) — the end upon *the four corners of the land* (Ezekiel 7:2) opens into John''s four angels on the four corners of the earth; one land foreshadows all the earth.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *all these things must come to pass, but the end is not yet* (Matthew 24:6) — the Formed Son stretches *the day of trouble is near* (Ezekiel 7:7) to the consummation; the end of one land is the type of the end of the age.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *and then shall the end come* (Matthew 24:14) — Ezekiel''s *An end is come, the end is come* (Ezekiel 7:6) is the near fulfilment of the word the Son carries to all nations; an end is decreed, and it comes.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=6
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-an-end-the-end-is-come-upon-the-four-corners-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Neither their silver nor their gold shall be able to deliver them in the day of the LORD''S wrath* (Zephaniah 1:18) — Zephaniah echoes Ezekiel 7:19 almost word for word; no price ransoms in the day of wrath.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=19
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4) — the proverb names the rule Ezekiel 7:19 enacts; silver and gold cannot satisfy the soul.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=19
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Your gold and silver is cankered... Ye have heaped treasure together for the last days* (James 5:3) — James turns Ezekiel 7:19''s verdict on the last-days rich; the hoarded wealth is a witness against them.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=19
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Go to now, ye rich men, weep and howl for your miseries* (James 5:1) — the wailing of those who cast their silver in the streets (Ezekiel 7:19) is the howl of the rich whose miseries are come.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=19
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *ye were not redeemed with corruptible things, as silver and gold* (1 Peter 1:18) — the wealth that fails in the day of wrath (Ezekiel 7:19) is no ransom; only the precious blood of Messiah (Christ) redeems (1 Peter 1:19).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=19
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-their-silver-and-gold-shall-not-deliver-in-the-day-of-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *a famine in the land, not a famine of bread... but of hearing the words of Yahuah (LORD)* (Amos 8:11) — Amos names the very dearth Ezekiel 7:26 pronounces; the word withdrawn from a people who despised it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=26
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall run to and fro to seek the word of Yahuah (LORD), and shall not find it* (Amos 8:12) — the seeking of a vision that finds none (Ezekiel 7:26); the desperate search meets only silence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=26
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *We see not our signs: there is no more any prophet* (Psalm 74:9) — Asaph mourns in the ruined sanctuary the famine Ezekiel 7:26 decrees; the vision ceases when the holy place is defiled.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=26
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=74 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the seers be ashamed, and the diviners confounded... for there is no answer of Elohim (God)* (Micah 3:7) — Micah pronounces on the false prophets the dearth of Ezekiel 7:26; the night without vision.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=7 AND sv.verse_number=26
+  JOIN _s308_ezek07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-7-the-law-shall-perish-from-the-priest-a-famine-of-the-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
