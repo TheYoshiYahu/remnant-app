@@ -207,6 +207,15 @@ body {
 .verse-interactive {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  /* iOS hijacks press-and-hold on selectable text to show its native
+     Copy / Look Up / Share callout (and the selection magnifier), which
+     fires pointercancel and kills our 500ms long-press timer before the
+     VerseActionMenu can open — so iPhone users could never reach
+     highlight/note/etc. Disabling the callout + text selection keeps the
+     long-press gesture ours. Short-tap (Strong's) is unaffected. */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* S123 W4 — range-selection visual treatment per DESIGN_LANGUAGE.md §21.
@@ -261,6 +270,12 @@ body {
 .word-tappable {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  /* Same iOS callout/selection suppression as .verse-interactive — a
+     long-press anchored on a Strong's word must open the VerseActionMenu,
+     not iOS's native text menu. Short-tap still fires the Strong's lookup. */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 @media (hover: hover) {
   .word-tappable:hover {
