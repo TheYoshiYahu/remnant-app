@@ -803,7 +803,7 @@ function Reader() {
     | null
   >(null);
   const [strongsState, setStrongsState] = useState<
-    { strong: string; surface: string } | null
+    { strong: string; surface: string; verseId?: number | null } | null
   >(null);
 
   // S173 — Capacitor deep-link entry. App.tsx subscribes to
@@ -1048,7 +1048,11 @@ function Reader() {
       commitEndVerse(verseId);
       return;
     }
-    setStrongsState(word);
+    // Carry the verse context so the Strong's sheet can offer a single-tap
+    // "Verse menu" tab (Highlight / Note / Copy / Share). This is the
+    // reliable iPhone path: long-press is unreliable in the iOS WebView, but
+    // short-tap-to-Strong's works, so the verse-level actions hang off it.
+    setStrongsState({ ...word, verseId });
   }
 
   // S123 W4 — build a RangeVerseRef from a verse_id in the currently
@@ -3980,6 +3984,18 @@ function Reader() {
               setInitialScrollVerse(verseNumber);
             }
           }}
+          onOpenVerseMenu={
+            strongsState.verseId != null
+              ? () => {
+                  const vid = strongsState.verseId!;
+                  setStrongsState(null);
+                  // word:null → verse scope (Highlight / Note / Copy /
+                  // Share); the Word-study section drops out since the
+                  // partner is already looking at the Strong's entry.
+                  setMenuState({ verseId: vid, word: null });
+                }
+              : undefined
+          }
           onClose={() => setStrongsState(null)}
         />
       )}

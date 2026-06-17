@@ -55,6 +55,16 @@ interface StrongsLookupProps {
     chapterNumber: number,
     verseNumber: number
   ) => void;
+  /**
+   * When set, renders the prominent "Verse menu" tab at the top of the
+   * sheet. Tapping it closes this lookup and opens the VerseActionMenu
+   * (Highlight / Note / Copy / Share) for the verse the tapped word
+   * belongs to. This is the reliable single-tap path to verse actions on
+   * iPhone, where the long-press gesture is unreliable in the WebView.
+   * Omitted (undefined) when there's no verse context — e.g. a Strong's
+   * opened from a deep link or from the menu itself — so the tab hides.
+   */
+  onOpenVerseMenu?: () => void;
   onClose: () => void;
 }
 
@@ -62,6 +72,7 @@ export default function StrongsLookup({
   strongNumber,
   surface,
   onNavigate,
+  onOpenVerseMenu,
   onClose,
 }: StrongsLookupProps) {
   const [entry, setEntry] = useState<StrongEntry | null>(null);
@@ -255,6 +266,30 @@ export default function StrongsLookup({
             </button>
           </div>
         </div>
+
+        {/* Verse menu tab — the reliable single-tap path to verse actions
+            on iPhone (long-press is unreliable in the iOS WebView). Sits
+            above the lexicon body so the partner sees "I can highlight /
+            note / copy / share this verse" the moment the Strong's opens.
+            Red metallic chrome (chrome-metal-scarlet) so it reads as a
+            distinct action tab, not part of the lexicon content. */}
+        {onOpenVerseMenu && (
+          <button
+            type="button"
+            onClick={onOpenVerseMenu}
+            aria-label="Open the verse menu — highlight, note, copy, share"
+            className="chrome-metal-scarlet mb-4 flex w-full items-center justify-between gap-3 rounded-md border px-4 py-2.5 font-sans text-sm font-semibold shadow-sm hover:opacity-90"
+            data-export-suppress
+          >
+            <span className="flex items-center gap-2">
+              <span aria-hidden="true">☰</span>
+              <span>Verse Menu</span>
+            </span>
+            <span className="text-xs font-medium opacity-90">
+              Highlight · Note · Copy · Share
+            </span>
+          </button>
+        )}
 
         {loading && (
           <p className="font-sans text-sm text-[var(--reader-muted)]">
