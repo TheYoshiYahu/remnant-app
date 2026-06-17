@@ -47,7 +47,7 @@
  * upgrade to use the eventual feature.
  */
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 export interface MenuItem {
   key: string;
@@ -157,10 +157,27 @@ export default function VerseActionMenu({
   // verse-scope when no tappable word was the long-press anchor).
   const visibleSections = sections.filter((s) => s.items.length > 0);
 
+  // The long-press that OPENS this menu has its finger already down when
+  // the backdrop mounts. When the finger lifts, the browser dispatches one
+  // trailing `click` on the backdrop — which would call onClose and dismiss
+  // the menu in the same instant it opened (on iPhone this looked like the
+  // long-press "did nothing"). Guard: only close on a COMPLETE tap that the
+  // backdrop itself saw begin (pointerdown) and end (click). The opening
+  // gesture's pointerdown landed on the verse, not the backdrop, so its
+  // trailing click is ignored; a genuine tap-to-dismiss still closes.
+  const backdropArmedRef = useRef(false);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-end justify-center bg-black/40 p-4 sm:items-center"
-      onClick={onClose}
+      onPointerDown={(e) => {
+        if (e.target === e.currentTarget) backdropArmedRef.current = true;
+      }}
+      onClick={(e) => {
+        if (e.target !== e.currentTarget) return;
+        if (!backdropArmedRef.current) return;
+        onClose();
+      }}
     >
       <div
         className="flex max-h-[85vh] w-full max-w-6xl flex-col rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] shadow-xl"
