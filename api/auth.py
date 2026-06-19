@@ -81,7 +81,7 @@ import jwt
 from fastapi import Cookie, Depends, Header, HTTPException, status
 from pydantic import BaseModel
 
-from db import get_pool
+from db import get_pool, upsert_user
 
 logger = logging.getLogger(__name__)
 
@@ -105,6 +105,26 @@ PartnerTier = Literal[
     "complete_study",
     "everything",
 ]
+
+
+# ---------------------------------------------------------------------------
+# No-card free trial.
+#
+# Every newly created account gets full access for a window after signup —
+# no payment method required. Implemented purely as a tier-resolution rule:
+# a partner with NO active paid subscription whose local ``users`` row is
+# younger than ``TRIAL_DAYS`` resolves to ``TRIAL_TIER`` instead of ``free``.
+# A real paid subscription always wins over the trial.
+#
+# When the window closes the partner drops to ``free`` — their saved notes,
+# highlights, bookmarks, and reading positions are untouched (data is never
+# tier-gated), so nothing is lost; the premium TOOLS simply lock until they
+# upgrade. The trial clock is ``users.created_at`` (seeded on the partner's
+# first authenticated request — see ``get_current_user_optional``).
+#
+# Set ``TRIAL_DAYS = 0`` to switch the trial off without a schema change.
+TRIAL_DAYS = 7
+TRIAL_TIER: PartnerTier = "everything"
 
 
 class User(BaseModel):
@@ -224,15 +244,21 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
     try:
         pool = get_pool()
         async with pool.acquire() as conn:
-            tier = await conn.fetchval(
-                "SELECT s.tier::text "
-                "  FROM subscriptions s "
-                "  JOIN users u ON u.id = s.user_id "
-                " WHERE u.wordpress_user_id = $1 "
-                "   AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
-                " ORDER BY s.started_at DESC "
-                " LIMIT 1",
+            row = await conn.fetchrow(
+                "SELECT "
+                "    (u.created_at > now() - make_interval(days => $2)) AS in_trial, "
+                "    ( "
+                "      SELECT s.tier::text "
+                "        FROM subscriptions s "
+                "       WHERE s.user_id = u.id "
+                "         AND s.status NOT IN ('canceled', 'unpaid', 'incomplete_expired') "
+                "       ORDER BY s.started_at DESC "
+                "       LIMIT 1 "
+                "    ) AS tier "
+                "  FROM users u "
+                " WHERE u.wordpress_user_id = $1",
                 wp_user_id,
+                TRIAL_DAYS,
             )
     except Exception as exc:
         # Transient DB failure (pool exhausted, connection reset,
@@ -244,31 +270,38 @@ async def _resolve_tier_from_db(wp_user_id_str: str) -> Optional[PartnerTier]:
         )
         return None
 
-    if tier is None:
-        # No matching users row, OR the users row exists but carries
-        # no non-terminal subscription. Either way, the partner is
-        # at the free tier — same effective result as the JWT
-        # claim defaulting to 'free'.
+    if row is None:
+        # No local users row yet. The row is seeded on the partner's
+        # first authenticated request (see get_current_user_optional),
+        # so this is the brief pre-seed window or a token that never
+        # reached an authed route. Treat as free.
         return "free"
 
-    if tier not in {
-        "free",
-        "study_notes",
-        "extras",
-        "complete_study",
-        "everything",
-    }:
-        # Defensive: the DB enum should not carry anything outside
-        # the PartnerTier Literal, but if a future tier landed in
-        # the schema without the API code catching up, downgrade
-        # rather than letting an unknown value escape upward.
-        logger.warning(
-            "[auth] db returned unknown tier=%r wp_user_id=%s — downgrading to free",
-            tier, wp_user_id_str,
-        )
-        return "free"
+    paid_tier = row["tier"]
 
-    return tier  # type: ignore[return-value]
+    if paid_tier is not None:
+        # An active (non-terminal) subscription always wins over the
+        # trial. Validate defensively against the PartnerTier Literal.
+        if paid_tier not in {
+            "free",
+            "study_notes",
+            "extras",
+            "complete_study",
+            "everything",
+        }:
+            logger.warning(
+                "[auth] db returned unknown tier=%r wp_user_id=%s — downgrading to free",
+                paid_tier, wp_user_id_str,
+            )
+            return "free"
+        return paid_tier  # type: ignore[return-value]
+
+    # No active paid subscription. Grant the no-card trial while the
+    # account is still inside its window; otherwise the partner is free.
+    if TRIAL_DAYS > 0 and row["in_trial"]:
+        return TRIAL_TIER
+
+    return "free"
 
 
 async def get_current_user_optional(
@@ -307,6 +340,21 @@ async def get_current_user_optional(
 
     if user is None:
         return None
+
+    # Seed the local users row on the partner's FIRST authenticated
+    # request (not just first write). This guarantees users.created_at
+    # exists — the no-card trial clock reads it, so a partner browsing
+    # premium content read-only still gets their trial window. Failure
+    # here must never break auth, so it's swallowed: worst case the
+    # trial simply doesn't start until the partner's first write.
+    try:
+        pool = get_pool()
+        async with pool.acquire() as conn:
+            await upsert_user(conn, user)
+    except Exception as exc:
+        logger.warning(
+            "[auth] user-seed upsert failed id=%s err=%s", user.id, exc
+        )
 
     # DB-wins tier resolution. On lookup success, the DB value
     # overrides the JWT claim. On transient failure (None return),

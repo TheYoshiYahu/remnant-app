@@ -228,6 +228,10 @@ function SigninStep({
         keeps all of it, and carries it to every device you read on.
       </p>
 
+      <p className="mt-3 rounded-md border border-[var(--reader-accent)] bg-[var(--reader-bg)] px-3 py-2 text-center font-sans text-sm font-semibold text-[var(--reader-text)]">
+        Your first 7 days unlock every feature &mdash; free, no card needed.
+      </p>
+
       <img
         src="/promo/account-collage.png"
         alt="Inside the app: 12 highlight colors, your own color meanings, exhaustive cross-references, and every extra-canonical book — all saved to your account."

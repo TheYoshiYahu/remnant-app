@@ -112,7 +112,13 @@ import stripe
 from fastapi import APIRouter, Depends, Header, HTTPException, Request
 from pydantic import BaseModel, Field
 
-from auth import PartnerTier, User, get_current_user_optional
+from auth import (
+    TRIAL_DAYS,
+    TRIAL_TIER,
+    PartnerTier,
+    User,
+    get_current_user_optional,
+)
 from config import settings
 from db import get_pool, upsert_user
 
@@ -982,8 +988,26 @@ async def get_my_subscription(
             wp_user_id,
         )
 
-    if row is None:
-        return SubscriptionMeResponse(status="none")
+        if row is None:
+            # No subscription row. Surface the no-card trial while the
+            # account is still inside its window so the chrome shows
+            # "trial active / days left" (and the day-of-expiry upgrade
+            # nudge) rather than a bare paywall while features are unlocked.
+            if TRIAL_DAYS > 0:
+                trial = await conn.fetchrow(
+                    "SELECT (created_at + make_interval(days => $2)) AS trial_end "
+                    "  FROM users "
+                    " WHERE wordpress_user_id = $1 "
+                    "   AND created_at > now() - make_interval(days => $2)",
+                    wp_user_id, TRIAL_DAYS,
+                )
+                if trial is not None:
+                    return SubscriptionMeResponse(
+                        status="trialing",
+                        tier=TRIAL_TIER,
+                        current_period_end=trial["trial_end"].isoformat(),
+                    )
+            return SubscriptionMeResponse(status="none")
 
     return SubscriptionMeResponse(
         status=row["status"],
