@@ -512,6 +512,26 @@ export default function App() {
   return <>{welcomeModal}{offlinePrompt}<Landing /></>;
 }
 
+/**
+ * Reader-app posture (Apple 3.1.3 / Google Play). On the native
+ * Capacitor shells the app must not surface purchase or upgrade
+ * steering — no prices, no "Become a partner" / "Resubscribe" buttons,
+ * no links into the checkout flow. Tier upgrades happen on the web from
+ * the partner's account. Pricing.tsx already strips its prices on native
+ * (S206); this helper gates the reader-chrome upsell CTAs to web-only.
+ * Same runtime-bridge detection used in SignIn.tsx / Pricing.tsx — no
+ * Capacitor import, so the web bundle stays slim and the by-URL shell
+ * picks it up on the next web deploy with no app rebuild.
+ */
+function isNativeShell(): boolean {
+  return (
+    typeof window !== "undefined" &&
+    (window as unknown as {
+      Capacitor?: { isNativePlatform?: () => boolean };
+    }).Capacitor?.isNativePlatform?.() === true
+  );
+}
+
 function Reader() {
   const [books, setBooks] = useState<BookSummary[]>([]);
   const [booksError, setBooksError] = useState<string | null>(null);
@@ -2586,18 +2606,22 @@ function Reader() {
                 Manage account
               </a>
             ) : me && me.status === "none" ? (
-              <a href="/pricing" className="chrome-metal chrome-metal-emerald">
-                Become a partner
-              </a>
+              isNativeShell() ? null : (
+                <a href="/pricing" className="chrome-metal chrome-metal-emerald">
+                  Become a partner
+                </a>
+              )
             ) : me &&
               (me.status === "canceled" ||
                 me.status === "past_due" ||
                 me.status === "unpaid" ||
                 me.status === "incomplete" ||
                 me.status === "incomplete_expired") ? (
-              <a href="/pricing" className="chrome-metal chrome-metal-emerald">
-                Resubscribe
-              </a>
+              isNativeShell() ? null : (
+                <a href="/pricing" className="chrome-metal chrome-metal-emerald">
+                  Resubscribe
+                </a>
+              )
             ) : meChecked ? (
               <a href="/sign-in" className="chrome-metal chrome-metal-emerald">
                 Sign in
