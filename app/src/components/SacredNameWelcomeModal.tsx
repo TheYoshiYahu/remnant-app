@@ -145,7 +145,7 @@ export default function SacredNameWelcomeModal({
       aria-labelledby="sacred-name-welcome-title"
     >
       <div
-        className="w-full max-w-md rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
+        className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-lg border border-[var(--reader-rule)] bg-[var(--reader-surface)] p-5 shadow-xl"
         onClick={(e) => e.stopPropagation()}
       >
         <h2
@@ -218,13 +218,24 @@ function SigninStep({
 }) {
   return (
     <>
-      <p className="mt-3 font-sans text-sm font-semibold text-[var(--reader-text)]">
-        Save your work across devices
+      <p className="mt-3 font-sans text-base font-semibold text-[var(--reader-text)]">
+        Don&rsquo;t lose your work
       </p>
       <p className="mt-2 font-sans text-sm leading-relaxed text-[var(--reader-muted)]">
-        Sign in or create an account to keep your notes, bookmarks,
-        highlights, and reading position across every device you read
-        on. Otherwise your work stays on this device only.
+        You&rsquo;re reading free &mdash; and that never changes. But your
+        highlights, notes, bookmarks, and your place stay on this device
+        only, and vanish if you reinstall or switch phones. A free account
+        keeps all of it, and carries it to every device you read on.
+      </p>
+
+      <img
+        src="/promo/account-collage.png"
+        alt="Inside the app: 12 highlight colors, your own color meanings, exhaustive cross-references, and every extra-canonical book — all saved to your account."
+        loading="lazy"
+        className="mt-4 w-full rounded-md border border-[var(--reader-rule)]"
+      />
+      <p className="mt-2 text-center font-sans text-xs italic text-[var(--reader-muted)]">
+        Everything that comes with your free account
       </p>
 
       <div className="mt-4 space-y-3">
@@ -233,7 +244,7 @@ function SigninStep({
           onClick={onSignIn}
           className="block w-full rounded-md border border-[var(--reader-text)] bg-[var(--reader-text)] px-4 py-3 text-center text-base font-semibold text-[var(--reader-bg)] hover:opacity-90"
         >
-          Sign in or create an account
+          Create my free account
         </button>
         <button
           type="button"
@@ -245,7 +256,9 @@ function SigninStep({
       </div>
 
       <p className="mt-4 font-sans text-xs italic text-[var(--reader-muted)]">
-        The text is always free. Signing in only saves your work.
+        Everything you do is saved to your account &mdash; your
+        highlights, notes, bookmarks, and your place &mdash; and it stays
+        waiting for you on every device, even when you upgrade later.
       </p>
     </>
   );
