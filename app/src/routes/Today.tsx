@@ -371,6 +371,12 @@ function BiblicalDayPanel({
 }) {
   const bd = detail.biblical;
   const sabbath = detail.isSabbath;
+  // The label reflects what's actually set: the elected reckoning (how the
+  // months begin) and the chosen place (whose sunset bounds the day). "Jerusalem"
+  // is a LOCATION, not a reckoning — so the two are named distinctly.
+  const reckoningLabel =
+    RECKONINGS.find((r) => r.kind === monthKind)?.label ?? "Calculated";
+  const placeLabel = getLocationPref()?.label ?? "Jerusalem";
   return (
     <section className="today-day mb-7">
       <div className="today-day-topbar">
@@ -384,7 +390,7 @@ function BiblicalDayPanel({
         {/* The date */}
         <div className="today-date">
           <div className="today-eyebrow today-eyebrow-gold">
-            Today &middot; Jerusalem reckoning
+            Today &middot; {reckoningLabel} &middot; {placeLabel}
           </div>
           <div className="today-date-big">
             <span className="today-date-day">{bd.day}</span>
