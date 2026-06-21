@@ -4690,6 +4690,1204 @@ SELECT t.id, cr.id, 3, E'*nevertheless not as I will, but as thou wilt* (Matthew
  WHERE t.slug='2-samuel-15-carry-back-the-ark-let-him-do-as-seemeth-good'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2-samuel_16.sql (2 Samuel 16) -----
+--
+-- 2 Samuel 16 — full-library cross-references
+-- TAG: 2sa16   VIEW: _s341_2sa16_lookup   SORT BAND: base 37625, step 3
+--
+-- 2 Samuel 16 coverage:
+--   v.1-4  (Ziba meets David, slanders Mephibosheth — the false accusation)
+--          NT:     none warranted (the figure resolves WITHIN the Tanakh, ch19)
+--          Extras: none warranted
+--          Tanakh: 2-samuel 19:24-27 (Ziba's slander corrected; Mephibosheth answers) — THREADED
+--   v.5-13 (Shimei curses, casts stones; David forbids Abishai to slay him; leaves it to Yahuah)
+--          NT:     1-peter 2:23 (reviled, reviled not again); matthew 5:11 (blessed when reviled);
+--                  matthew 5:44 (bless them that curse you); romans 12:19 (vengeance is mine) — THREADED
+--          Extras: none warranted (clean canon witnesses carry the weave)
+--          Tanakh: lamentations 3:30 (he giveth his cheek to him that smiteth him) — THREADED
+--   v.14   (the king came weary, refreshed) — none warranted
+--   v.15-20 (Absalom enters Jerusalem; Hushai; Ahithophel) — none warranted (narrative setup)
+--   v.21-22 (Ahithophel: go in to thy father's concubines on the roof, in the sight of all Yashar'el)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2-samuel 12:11-12 (Nathan's word — I will take thy wives... he shall lie with
+--                  thy wives in the sight of this sun) — THREADED (the EXACT fulfillment)
+--   v.23   (the counsel of Ahithophel as the oracle of Elohim) — none warranted
+--
+-- THREADS (3):
+--   2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him   [free]  — NT (1-peter, matthew, romans) + Tanakh (lamentations)
+--   2-samuel-16-he-shall-lie-with-thy-wives-in-the-sight-of-this-sun  [free]  — Tanakh (2-samuel 12)
+--   2-samuel-16-ziba-slandereth-his-master-mephibosheth   [free]  — Tanakh (2-samuel 19)
+--
+-- Framework: the reviled anointed king who does NOT retaliate, leaving vengeance to Yahuah, is the
+-- Messianic type the Formed Son fills (1 Pet 2:23, reviled-and-reviled-not-again). Nathan's covenant-
+-- lawsuit word (12:11-12) fulfilled to the letter is the sword/shame in the house — judgment within
+-- the covenant, NOT a casting-off of the anointed line. Ziba's slander is the false accuser corrected
+-- later within the same canon (ch19).
+
+CREATE TEMP VIEW _s341_2sa16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: let him curse; for Yahuah hath bidden him (16:10-12) — the reviled king who retaliates not
+    ('canon','2-samuel',16,10,'canon','1-peter',2,23,'free',
+      E'*Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). When Shimei curses, David restrains the sword — *so let him curse, because Yahuah (LORD) hath said unto him, Curse David* (2 Samuel 16:10). The anointed king who absorbs the reviling and refuses vengeance is the type the Formed Son fills: he too committed his cause to *him that judgeth righteously*.'),
+    ('canon','2-samuel',16,11,'canon','matthew',5,11,'free',
+      E'*Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake* (Matthew 5:11). David is reviled by *this Benjamite* of the house of Saul and answers, *let him alone, and let him curse; for Yahuah (LORD) hath bidden him* (2 Samuel 16:11). The reviled anointed who blesses rather than strikes back stands at the head of the beatitude on the reviled.'),
+    ('canon','2-samuel',16,11,'canon','matthew',5,44,'free',
+      E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you... and persecute you* (Matthew 5:44). Shimei is the man who curses, yet David will not slay him — *let him alone, and let him curse* (2 Samuel 16:11). David enacts, under the rod of his own affliction, the very mercy the Formed Son later commands toward *them that curse you*.'),
+    ('canon','2-samuel',16,12,'canon','romans',12,19,'free',
+      E'*Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). David hands the whole matter to Yahuah: *It may be that Yahuah (LORD) will look on mine affliction, and that Yahuah (LORD) will requite me good for his cursing this day* (2 Samuel 16:12). He refuses Abishai''s sword precisely because vengeance belongs to Yahuah, not to him.'),
+    ('canon','2-samuel',16,12,'canon','lamentations',3,30,'free',
+      E'*He giveth his cheek to him that smiteth him: he is filled full with reproach* (Lamentations 3:30). David, *filled full with reproach* by Shimei''s curse and stones, gives his cheek and waits: *that Yahuah (LORD) will requite me good for his cursing this day* (2 Samuel 16:12). The man of affliction who bears the smiting and hopes in Yahuah is one figure across both passages.'),
+
+    -- THREAD 2: he shall lie with thy wives in the sight of this sun (16:21-22) — Nathan's word fulfilled
+    ('canon','2-samuel',16,21,'canon','2-samuel',12,11,'free',
+      E'*Thus saith Yahuah (LORD), Behold, I will raise up evil against thee out of thine own house, and I will take thy wives before thine eyes, and give them unto thy neighbour, and he shall lie with thy wives in the sight of this sun* (2 Samuel 12:11). Ahithophel''s counsel — *Go in unto thy father''s concubines... and all Yashar''el (Israel) shall hear that thou art abhorred of thy father* (2 Samuel 16:21) — is Nathan''s covenant-lawsuit word coming to pass to the letter: evil raised up *out of thine own house*.'),
+    ('canon','2-samuel',16,22,'canon','2-samuel',12,12,'free',
+      E'*For thou didst it secretly: but I will do this thing before all Yashar''el (Israel), and before the sun* (2 Samuel 12:12). What David did secretly is now answered openly: *Absalom went in unto his father''s concubines in the sight of all Yashar''el (Israel)* upon *the top of the house* (2 Samuel 16:22). The secret sin is requited *before the sun* — the sword and shame in the house, judgment within the covenant, not the casting-off of the anointed line.'),
+
+    -- THREAD 3: Ziba slandereth his master Mephibosheth (16:3-4) — the false accuser corrected in ch19
+    ('canon','2-samuel',16,3,'canon','2-samuel',19,26,'free',
+      E'*And he answered, My lord, O king, my servant deceived me: for thy servant said, I will saddle me an ass, that I may ride thereon, and go to the king; because thy servant is lame* (2 Samuel 19:26). Ziba''s charge — *To day shall the house of Yashar''el (Israel) restore me the kingdom of my father* (2 Samuel 16:3) — is exposed in Mephibosheth''s own answer as a slander: the lame man was deceived, not disloyal.'),
+    ('canon','2-samuel',16,4,'canon','2-samuel',19,27,'free',
+      E'*And he hath slandered thy servant unto my lord the king; but my lord the king is as an angel of Elohim (God): do therefore what is good in thine eyes* (2 Samuel 19:27). David, on the false report, had said *Behold, thine are all that pertained unto Mephibosheth* (2 Samuel 16:4); the same canon later names the deed plainly — *he hath slandered thy servant* — the false accuser answered within the story itself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him',
+  E'Let him curse, for Yahuah hath bidden him — the reviled king who retaliates not',
+  E'When Shimei of the house of Saul casts stones and curses, Abishai begs to take off his head; but David answers, *so let him curse, because Yahuah (LORD) hath said unto him, Curse David* (2 Samuel 16:10), and again, *let him alone, and let him curse; for Yahuah (LORD) hath bidden him* (2 Samuel 16:11), closing with *It may be that Yahuah (LORD) will look on mine affliction, and that Yahuah (LORD) will requite me good for his cursing this day* (2 Samuel 16:12). The anointed king will not avenge himself; he commits the whole matter to Yahuah.\n\nThis is the Messianic type. *Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23) — the Formed Son fills the figure David enacts under the rod. So the beatitude crowns it: *Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely* (Matthew 5:11), and the command, *bless them that curse you... and persecute you* (Matthew 5:44). The vengeance David refuses is reserved to Yahuah: *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). And the affliction he bears in silence is the man of Lamentations: *He giveth his cheek to him that smiteth him: he is filled full with reproach* (Lamentations 3:30).',
+  sv.verse_id, ev.verse_id, 'free', 37625
+  FROM _s341_2sa16_lookup sv, _s341_2sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=16 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-16-he-shall-lie-with-thy-wives-in-the-sight-of-this-sun',
+  E'He shall lie with thy wives in the sight of this sun — Nathan''s word fulfilled to the letter',
+  E'Ahithophel counsels Absalom: *Go in unto thy father''s concubines, which he hath left to keep the house; and all Yashar''el (Israel) shall hear that thou art abhorred of thy father* (2 Samuel 16:21), and so *Absalom went in unto his father''s concubines in the sight of all Yashar''el (Israel)* upon the top of the house (2 Samuel 16:22). This is no accident of court intrigue; it is the covenant-lawsuit word of Nathan coming to pass to the letter.\n\nNathan had said: *Behold, I will raise up evil against thee out of thine own house, and I will take thy wives before thine eyes, and give them unto thy neighbour, and he shall lie with thy wives in the sight of this sun* (2 Samuel 12:11), *For thou didst it secretly: but I will do this thing before all Yashar''el (Israel), and before the sun* (2 Samuel 12:12). The secret sin with Bath-sheba is now requited *before the sun* — by David''s own son, *out of thine own house*. This is the sword and the shame in the house, judgment WITHIN the covenant upon the anointed who repented and was not cut off — never a casting-away of the Davidic line.',
+  sv.verse_id, ev.verse_id, 'free', 37628
+  FROM _s341_2sa16_lookup sv, _s341_2sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=16 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-16-ziba-slandereth-his-master-mephibosheth',
+  E'Ziba slandereth his master Mephibosheth — the false accuser answered within the story',
+  E'As David flees, Ziba meets him with provisions and slips in a slander against his lame master: *where is thy master''s son? And Ziba said unto the king, Behold, he abideth at Jerusalem: for he said, To day shall the house of Yashar''el (Israel) restore me the kingdom of my father* (2 Samuel 16:3). On the unexamined report David grants, *Behold, thine are all that pertained unto Mephibosheth* (2 Samuel 16:4).\n\nThe same canon corrects the false accuser. When David returns, Mephibosheth comes mourning, unwashed since the king departed, and answers: *My lord, O king, my servant deceived me: for thy servant said, I will saddle me an ass, that I may ride thereon, and go to the king; because thy servant is lame* (2 Samuel 19:26), *And he hath slandered thy servant unto my lord the king; but my lord the king is as an angel of Elohim (God): do therefore what is good in thine eyes* (2 Samuel 19:27). The charge of disloyalty was a slander; the lame man was deceived, not faithless — the false witness named plainly within the story itself.',
+  sv.verse_id, ev.verse_id, 'free', 37631
+  FROM _s341_2sa16_lookup sv, _s341_2sa16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=16 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Who, when he was reviled, reviled not again... but committed himself to him that judgeth righteously* (1 Peter 2:23) — the Formed Son fills the type of the anointed king who absorbs the curse and refuses the sword.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely* (Matthew 5:11) — David, reviled by the Benjamite of Saul''s house, stands at the head of this beatitude.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=11
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*bless them that curse you, do good to them that hate you... and persecute you* (Matthew 5:44) — *let him alone, and let him curse* enacts the mercy the Formed Son commands toward them that curse.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=11
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — David hands the cursing to Yahuah, refusing Abishai''s sword; vengeance belongs to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=12
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He giveth his cheek to him that smiteth him: he is filled full with reproach* (Lamentations 3:30) — the man of affliction who bears the smiting and hopes in Yahuah is one figure with David under Shimei''s stones.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=12
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-let-him-curse-for-yahuah-hath-bidden-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will take thy wives before thine eyes, and give them unto thy neighbour, and he shall lie with thy wives in the sight of this sun* (2 Samuel 12:11) — Ahithophel''s counsel is Nathan''s word raised up *out of thine own house*.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=21
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-he-shall-lie-with-thy-wives-in-the-sight-of-this-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For thou didst it secretly: but I will do this thing before all Yashar''el (Israel), and before the sun* (2 Samuel 12:12) — the secret sin requited openly on the housetop *in the sight of all Yashar''el*; the sword and shame in the house.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=22
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-he-shall-lie-with-thy-wives-in-the-sight-of-this-sun'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*My lord, O king, my servant deceived me... because thy servant is lame* (2 Samuel 19:26) — Ziba''s charge that Mephibosheth sought the kingdom (16:3) exposed as slander in the lame man''s own answer.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=3
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=19 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-ziba-slandereth-his-master-mephibosheth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And he hath slandered thy servant unto my lord the king* (2 Samuel 19:27) — David''s grant of all Mephibosheth''s goods to Ziba (16:4) rested on a false report; the canon names the slander plainly.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s341_2sa16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=19 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-16-ziba-slandereth-his-master-mephibosheth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_17.sql (2 Samuel 17) -----
+--
+-- Chapter: 2 Samuel 17 — Ahithophel's shrewd counsel to strike David at once; Hushai's
+--   contrary counsel to delay; Yahuah (LORD) APPOINTS to defeat the good counsel of Ahithophel
+--   (17:14, answering David's prayer of 15:31); David warned, crosses Jordan; Ahithophel,
+--   his counsel rejected, sets his house in order and HANGS HIMSELF (17:23); Barzillai and
+--   others provision David in the wilderness.
+-- Tag: 2sa17   View: _s341_2sa17_lookup   Sort band: 37650, step 3 (37650, 37653, 37656)
+--
+-- 2 Samuel 17 coverage:
+--   v.1-3  (Ahithophel's smite-the-king-only counsel)
+--          NT:     none warranted (woven via the providence + betrayer threads on v.14/v.23)
+--          Extras: none warranted
+--          Tanakh: none warranted directly (the conspiracy frame carried at v.14)
+--   v.7-13 (Hushai's contrary counsel — the planted friend)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 15:34 (David sent Hushai to defeat the counsel) — woven in T1 prose; bound via 15:31
+--   v.14  ★★★ Yahuah appointed to defeat the good counsel of Ahithophel
+--          NT:     none warranted (the principle weaves OUT to wisdom literature, not forward)
+--          Extras: none warranted
+--          Tanakh: Proverbs 21:30; Proverbs 19:21; Psalms 33:10-11; Job 5:12-13; 2 Samuel 15:31 (prayer answered) — T1
+--   v.16-22 (David warned, crosses Jordan, not one lacking)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Psalms 3:1-8 (David's own song fleeing Absalom — shield, lifter of the head, sustained) — T3
+--   v.23  ★ Ahithophel saddled his ass, set his house in order, and hanged himself
+--          NT:     Matthew 27:5 (Judas hanged himself); Acts 1:18 (the field of blood); John 13:18 (heel lifted up) — T2
+--          Extras: none warranted
+--          Tanakh: Psalms 41:9 (familiar friend lifted up heel); Psalms 55:12-14 (mine equal, sweet counsel together) — T2
+--   v.24-26 (David to Mahanaim; Absalom over Jordan; Amasa captain) — none warranted
+--   v.27-29 (Shobi, Machir, Barzillai provision David) — woven into T3 prose (Yahuah sustains the fleeing king); no separate thread
+--
+-- THREADS:
+--   T1  2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel
+--         (★★★ v.14 sovereign providence overruling the wise counsel of the enemy, answering 15:31)
+--         targets: Tanakh only (Proverbs 21:30, Proverbs 19:21, Psalms 33:10-11, Job 5:12-13, 2 Samuel 15:31) — tier free
+--   T2  2-samuel-17-ahithophel-the-familiar-friend-hanged-himself
+--         (★ v.23 the betraying counsellor's end → Judas; the Ps 41/55 familiar friend)
+--         targets: NT + Tanakh (Matthew 27:5, Acts 1:18, John 13:18, Psalms 41:9, Psalms 55:12, Psalms 55:13, Psalms 55:14) — tier free
+--   T3  2-samuel-17-the-king-passed-over-jordan-and-yahuah-sustained-him
+--         (v.16,22 deliverance through the crossing → David's own song of the flight)
+--         targets: Tanakh only (Psalms 3:3, Psalms 3:5, Psalms 3:8) — tier free
+--
+
+CREATE TEMP VIEW _s341_2sa17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- T1 — Yahuah appointed to defeat the good counsel of Ahithophel (v.14)
+    ('canon','2-samuel',17,14,'canon','proverbs',21,30,'free',
+      E'*There is no wisdom nor understanding nor counsel against Yahuah (LORD)* (Proverbs 21:30). Ahithophel''s counsel was shrewd — *I will arise and pursue after David this night* (17:1) — yet *Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel* (17:14). The wisest device of the enemy is no counsel at all set against the Most High.'),
+    ('canon','2-samuel',17,14,'canon','proverbs',19,21,'free',
+      E'*There are many devices in a man''s heart; nevertheless the counsel of Yahuah (LORD), that shall stand* (Proverbs 19:21). Absalom and all the men of Yashar''el (Israel) chose Hushai''s word over Ahithophel''s, but the choosing was not theirs — *Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel* (17:14). The device of the conspirator yields; the counsel of Yahuah stands.'),
+    ('canon','2-samuel',17,14,'canon','psalms',33,10,'free',
+      E'*Yahuah (LORD) bringeth the counsel of the heathen to nought: he maketh the devices of the people of none effect* (Psalms 33:10). This is exactly what is wrought in *Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel, to the intent that Yahuah (LORD) might bring evil upon Absalom* (17:14) — the rebel''s strategy brought to nought.'),
+    ('canon','2-samuel',17,14,'canon','psalms',33,11,'free',
+      E'*The counsel of Yahuah (LORD) standeth for ever, the thoughts of his heart to all generations* (Psalms 33:11). Over against Ahithophel''s shrewd plan stands the unmovable counsel of the Most High; *Yahuah (LORD) had appointed* (17:14) — and what He appoints endures.'),
+    ('canon','2-samuel',17,14,'canon','job',5,12,'free',
+      E'*He disappointeth the devices of the crafty, so that their hands cannot perform their enterprise* (Job 5:12). Ahithophel was the craftiest counsellor in Yashar''el (Israel), yet his enterprise could not be performed, for *Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel* (17:14).'),
+    ('canon','2-samuel',17,14,'canon','job',5,13,'free',
+      E'*He taketh the wise in their own craftiness: and the counsel of the froward is carried headlong* (Job 5:13). Ahithophel, the wise man taken in his own craftiness, will saddle his ass and be carried headlong to his own house and his own rope (17:23) — for *Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel* (17:14).'),
+    ('canon','2-samuel',17,14,'canon','2-samuel',15,31,'free',
+      E'*O Yahuah (LORD), I pray thee, turn the counsel of Ahithophel into foolishness* (2 Samuel 15:31). This was David''s prayer on the ascent of Olivet; *Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel* (17:14) is the prayer answered to the letter — the planted friend Hushai was the very instrument David sent back (15:34) to do it.'),
+
+    -- T2 — Ahithophel the familiar friend hanged himself (v.23)
+    ('canon','2-samuel',17,23,'canon','matthew',27,5,'free',
+      E'*And he cast down the pieces of silver in the temple, and departed, and went and hanged himself* (Matthew 27:5). Ahithophel *put his household in order, and hanged himself, and died* (17:23). These are the only two named men in all the Scriptures to hang themselves — and both betrayed the anointed: Ahithophel against David''s throne, Judas against the Son of David.'),
+    ('canon','2-samuel',17,23,'canon','acts',1,18,'free',
+      E'*Now this man purchased a field with the reward of iniquity; and falling headlong, he burst asunder in the midst, and all his bowels gushed out* (Acts 1:18). The betrayer''s end is one end: Ahithophel *hanged himself, and died, and was buried in the sepulchre of his father* (17:23); Judas''s field of blood is the same wage of treachery against the anointed king.'),
+    ('canon','2-samuel',17,23,'canon','john',13,18,'free',
+      E'*that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18). Yahusha (Jesus) names the betrayer at the table by the song of the familiar friend; Ahithophel was that friend to David — his counsellor who *did eat of my bread* — and his rejected counsel sends him home to set his house in order and hang himself (17:23).'),
+    ('canon','2-samuel',17,23,'canon','psalms',41,9,'free',
+      E'*Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalms 41:9). David''s own psalm names Ahithophel''s treachery before the deed; the trusted counsellor turned, and when his counsel was not followed *he saddled his ass... and hanged himself* (17:23).'),
+    ('canon','2-samuel',17,23,'canon','psalms',55,12,'free',
+      E'*For it was not an enemy that reproached me; then I could have borne it... then I would have hid myself from him* (Psalms 55:12). The wound is not the open enemy Absalom but the intimate counsellor — Ahithophel, whose end is the rope (17:23). This is the betrayal that cuts deepest because it comes from the friend.'),
+    ('canon','2-samuel',17,23,'canon','psalms',55,13,'free',
+      E'*But it was thou, a man mine equal, my guide, and mine acquaintance* (Psalms 55:13). David sings of Ahithophel — his guide and counsellor — turned conspirator; the betraying friend who *put his household in order, and hanged himself* (17:23).'),
+    ('canon','2-samuel',17,23,'canon','psalms',55,14,'free',
+      E'*We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalms 55:14). The sweet counsel they once took together is the very thing now turned against the king; and the counsellor whose counsel is at last rejected goes home and hangs himself (17:23).'),
+
+    -- T3 — the king passed over Jordan and Yahuah sustained him (v.16, v.22)
+    ('canon','2-samuel',17,16,'canon','psalms',3,3,'free',
+      E'*But thou, O Yahuah (LORD), art a shield for me; my glory, and the lifter up of mine head* (Psalms 3:3). Psalm 3 is David''s own song *when he fled from Absalom his son*; Hushai''s urgent word *speedily pass over; lest the king be swallowed up* (17:16) is the danger from which Yahuah, his shield, lifts up his head.'),
+    ('canon','2-samuel',17,22,'canon','psalms',3,5,'free',
+      E'*I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalms 3:5). *By the morning light there lacked not one of them that was not gone over Jordan* (17:22) — the whole company brought safe through the night and the crossing because Yahuah sustained the fleeing king, just as his own psalm of the flight confesses.'),
+    ('canon','2-samuel',17,22,'canon','psalms',3,8,'free',
+      E'*Salvation belongeth unto Yahuah (LORD): thy blessing is upon thy people* (Psalms 3:8). David crosses Jordan with not one lacking (17:22), and Barzillai and others meet him with bread in the wilderness (17:27-29) — for salvation and provision belong to Yahuah, whose blessing rests upon his fleeing but faithful people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel',
+       E'Yahuah Appointed to Defeat the Good Counsel of Ahithophel',
+       E'Ahithophel''s counsel was shrewd and swift — *Let me now choose out twelve thousand men, and I will arise and pursue after David this night... and I will smite the king only* (17:1-2) — and *the saying pleased Absalom well, and all the elders of Yashar''el (Israel)* (17:4). Hushai the Archite, David''s planted friend, gave the contrary counsel of delay. Then the hinge of the whole chapter: *And Absalom and all the men of Yashar''el (Israel) said, The counsel of Hushai the Archite is better than the counsel of Ahithophel. For Yahuah (LORD) had appointed to defeat the good counsel of Ahithophel, to the intent that Yahuah (LORD) might bring evil upon Absalom* (17:14). The choosing looked like men weighing two counsels; it was Yahuah overruling. This is the prayer of the ascent answered: *O Yahuah (LORD), I pray thee, turn the counsel of Ahithophel into foolishness* (2 Samuel 15:31) — and the very friend David sent back to do it (15:34) is the instrument. The wisdom books sing the same sovereignty: *There is no wisdom nor understanding nor counsel against Yahuah (LORD)* (Proverbs 21:30); *There are many devices in a man''s heart; nevertheless the counsel of Yahuah (LORD), that shall stand* (Proverbs 19:21); *Yahuah (LORD) bringeth the counsel of the heathen to nought: he maketh the devices of the people of none effect. The counsel of Yahuah (LORD) standeth for ever* (Psalms 33:10-11); *He disappointeth the devices of the crafty... He taketh the wise in their own craftiness* (Job 5:12-13). The craftiest counsellor in Yashar''el is taken in his own craftiness, his enterprise unperformed.',
+       sv.verse_id, ev.verse_id, 'free', 37650
+  FROM _s341_2sa17_lookup sv, _s341_2sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=17 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-17-ahithophel-the-familiar-friend-hanged-himself',
+       E'Ahithophel the Familiar Friend Hanged Himself',
+       E'When Ahithophel saw that his counsel was not followed, *he saddled his ass, and arose, and gat him home to his house, to his city, and put his household in order, and hanged himself, and died, and was buried in the sepulchre of his father* (17:23). The betraying counsellor''s end. He is one of only two named men in all the Scriptures to hang himself — and both were betrayers of the anointed. David''s own psalms had already sung the wound, for Ahithophel was no open enemy but the trusted intimate: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalms 41:9); *For it was not an enemy that reproached me; then I could have borne it... But it was thou, a man mine equal, my guide, and mine acquaintance. We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalms 55:12-14). The Son of David takes up that very song at the table to name his betrayer: *He that eateth bread with me hath lifted up his heel against me* (John 13:18). And Judas walks Ahithophel''s road to its end: *he cast down the pieces of silver in the temple, and departed, and went and hanged himself* (Matthew 27:5); *falling headlong, he burst asunder in the midst, and all his bowels gushed out* (Acts 1:18). The familiar friend who lifts up his heel against the anointed comes to one end — the rope and the field of blood.',
+       sv.verse_id, ev.verse_id, 'free', 37653
+  FROM _s341_2sa17_lookup sv, _s341_2sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=17 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-17-the-king-passed-over-jordan-and-yahuah-sustained-him',
+       E'The King Passed Over Jordan and Yahuah Sustained Him',
+       E'Hushai sent word in haste: *Lodge not this night in the plains of the wilderness, but speedily pass over; lest the king be swallowed up, and all the people that are with him* (17:16). Warned by Zadok''s and Abiathar''s sons, *David arose, and all the people that were with him, and they passed over Jordan: by the morning light there lacked not one of them that was not gone over Jordan* (17:22) — not one lost in the night crossing. And Yahuah sustained him in the wilderness through Shobi, Machir, and Barzillai, who *brought beds, and basons... wheat, and barley... honey, and butter, and sheep, and cheese of kine, for David, and for the people... for they said, The people is hungry, and weary, and thirsty, in the wilderness* (17:27-29). This is the very flight David sang of in his own psalm *when he fled from Absalom his son*: *But thou, O Yahuah (LORD), art a shield for me; my glory, and the lifter up of mine head* (Psalms 3:3); *I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalms 3:5); *Salvation belongeth unto Yahuah (LORD): thy blessing is upon thy people* (Psalms 3:8). The deliverance of the king through the crossing and the provision in the wilderness is Yahuah being to David exactly the shield and sustainer the psalm confesses.',
+       sv.verse_id, ev.verse_id, 'free', 37656
+  FROM _s341_2sa17_lookup sv, _s341_2sa17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=17 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- T1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There is no wisdom nor understanding nor counsel against Yahuah (LORD)* (Proverbs 21:30) — the shrewdest counsel is nothing set against the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*nevertheless the counsel of Yahuah (LORD), that shall stand* (Proverbs 19:21) — the many devices yield to the one standing counsel.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) bringeth the counsel of the heathen to nought* (Psalms 33:10) — the rebel''s strategy brought to nought.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The counsel of Yahuah (LORD) standeth for ever* (Psalms 33:11) — what He appointed (17:14) endures to all generations.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He disappointeth the devices of the crafty* (Job 5:12) — Ahithophel''s enterprise could not be performed.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=5 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*He taketh the wise in their own craftiness* (Job 5:13) — the wise counsellor carried headlong to his own house and rope (17:23).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*turn the counsel of Ahithophel into foolishness* (2 Samuel 15:31) — David''s prayer of the ascent, answered to the letter in 17:14.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=14
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=15 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-yahuah-appointed-to-defeat-the-good-counsel-of-ahithophel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*and went and hanged himself* (Matthew 27:5) — Judas walks Ahithophel''s road; the only two named men to hang themselves, both betrayers of the anointed.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*falling headlong, he burst asunder in the midst* (Acts 1:18) — the betrayer''s field of blood, the same wage of treachery.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He that eateth bread with me hath lifted up his heel against me* (John 13:18) — the Son of David names his betrayer by the song of the familiar friend.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=13 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalms 41:9) — David names Ahithophel''s treachery before the deed.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=41 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*For it was not an enemy that reproached me; then I could have borne it* (Psalms 55:12) — the wound is the intimate, not the open enemy.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*But it was thou, a man mine equal, my guide, and mine acquaintance* (Psalms 55:13) — David sings of Ahithophel, his guide turned conspirator.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*We took sweet counsel together, and walked unto the house of Elohim (God) in company* (Psalms 55:14) — the sweet counsel once shared now turned against the king.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=55 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-ahithophel-the-familiar-friend-hanged-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou, O Yahuah (LORD), art a shield for me; my glory, and the lifter up of mine head* (Psalms 3:3) — David''s own song *when he fled from Absalom*, the shield over the night flight (17:16).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-the-king-passed-over-jordan-and-yahuah-sustained-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I laid me down and slept; I awaked; for Yahuah (LORD) sustained me* (Psalms 3:5) — not one lacking over Jordan by the morning light (17:22).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-the-king-passed-over-jordan-and-yahuah-sustained-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Salvation belongeth unto Yahuah (LORD): thy blessing is upon thy people* (Psalms 3:8) — provision in the wilderness by Barzillai and others (17:27-29), the blessing on the fleeing king.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s341_2sa17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-17-the-king-passed-over-jordan-and-yahuah-sustained-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_18.sql (2 Samuel 18) -----
+--
+-- Book/chapter: 2 Samuel 18    Tag: 2sa18    View: _s341_2sa18_lookup
+-- Sort band: base 37675, step 3  ->  37675, 37678, 37681, 37684
+--
+-- 2 Samuel 18 coverage:
+--   v.5    (Deal gently for my sake with the young man, even with Absalom) -> THREAD 3 source / anchor-start
+--          NT:     none warranted here (the father's heart carried into THREAD 3 with v.33)
+--          Extras: none warranted
+--          Tanakh: none warranted (the charge gathers up with v.33 grief)
+--   v.6-8  (battle in the wood of Ephraim; the wood devoured more than the sword) -> THREAD 2
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 12:10-11 (the sword shall never depart from thine house; I will raise up evil against thee out of thine own house) -> THREAD 2
+--   v.9    ★ KEYSTONE (Absalom caught by his head in the great oak, taken up between the heaven and the earth) -> THREAD 1 source / anchor-start
+--          NT:     Galatians 3:13 (Messiah redeemed us from the curse... Cursed is every one that hangeth on a tree) -> THREAD 1
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 21:22-23 (he that is hanged is accursed of Elohim) -> THREAD 1
+--   v.10   (Behold, I saw Absalom hanged in an oak) -> THREAD 1
+--   v.14-15 (Joab thrust three darts through the heart of Absalom against the king's order) -> THREAD 2
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 12:10 (the sword shall never depart from thine house) -> THREAD 2
+--   v.17   (cast him into a great pit; a very great heap of stones upon him) -> THREAD 1 anchor-end (the rebel under the curse, buried under stones)
+--          Tanakh: Deuteronomy 21:21 (all the men of his city shall stone him with stones, that he die — the rebellious son) -> THREAD 1
+--   v.18   (Absalom reared a pillar: I have no son to keep my name) -> narrative; none warranted
+--   v.19-31 (Ahimaaz and Cushi run; Yahuah hath avenged the king of his enemies) -> THREAD 2 (the avenging of the rebellion)
+--          Tanakh: none warranted beyond THREAD 2 framing
+--   v.32   (the enemies of my lord the king... be as that young man is) -> THREAD 2
+--   v.33   ★★ KEYSTONE (O my son Absalom... would Elohim I had died for thee) -> THREAD 3 anchor-end / THREAD 4 source
+--          NT:     John 3:16 (Elohim so loved... he gave his only begotten Son); Romans 5:6,8 (Messiah died for the ungodly... while we were yet sinners) -> THREAD 4
+--          Extras: none warranted
+--          Tanakh: none warranted (the NT carries the substitution forward)
+--
+-- THREADS:
+--   2-samuel-18-the-rebel-son-hanged-between-the-heaven-and-the-earth        (free)
+--       -> Tanakh (Deuteronomy 21:22-23 the hanged is accursed; 21:21 the rebellious son stoned) + NT (Galatians 3:13) — KEYSTONE
+--   2-samuel-18-the-wood-devoured-more-than-the-sword-out-of-thine-own-house (free)
+--       -> Tanakh (2 Samuel 12:10-11) — the sword in David's own house, the prophesied evil come to pass
+--   2-samuel-18-deal-gently-the-father-weeps-o-my-son-absalom                (free)
+--       -> wholly within 2 Samuel 18 (the charge v.5 answered by the grief v.33; the king who could not deal gently enough)
+--   2-samuel-18-would-i-had-died-for-thee-the-father-who-did-give-the-son    (free)
+--       -> NT (John 3:16; Romans 5:6,8) — the father longing to die for the rebel, a FAINT type of the One who DID
+--
+-- Framework-load-bearing framing:
+--   * 18:9 KEYSTONE — *he was taken up between the heaven and the earth*. The rebel son hangs by his own head in the oak,
+--     suspended between heaven and earth, and is there pierced — the very posture of the one under the curse of the tree:
+--     *he that is hanged is accursed of Elohim (God)* (Deuteronomy 21:23). Absalom is the stubborn and rebellious son the
+--     Torah marks for stoning (Deuteronomy 21:18-21), and he ends *cast into a great pit* under *a very great heap of stones*
+--     (18:17). Galatians 3:13 names the deep reversal: *Cursed is every one that hangeth on a tree* — the curse the rebel
+--     justly bore, the Formed Son bore in the place of the guilty. Here the rebel hangs under his OWN curse; there the
+--     sinless One hangs under OURS. Torah is NEVER the curse — the curse is the judgment on the rebel; and the tree on which
+--     the cursed hangs becomes the place of redemption when the innocent takes it.
+--   * 18:6-8,14 — *the wood devoured more people that day than the sword devoured*, and Joab thrusts *three darts... through
+--     the heart of Absalom*. This is the sword Nathan foretold: *the sword shall never depart from thine house* (2 Sam 12:10)
+--     and *I will raise up evil against thee out of thine own house* (12:11). David's adultery and murder return as a son's
+--     rebellion and a son's death — covenant chastening within the house, the word of Yahuah accomplished.
+--   * 18:33 KEYSTONE — *would Elohim (God) I had died for thee, O Absalom, my son, my son!* The father longs to die in the
+--     place of his rebel son but CANNOT — David could not bear Absalom's curse, could not exchange his life for the guilty
+--     one. This is a faint shadow, never the full substitution: it points FORWARD to the Father who *so loved the world,
+--     that he gave his only begotten Son* (John 3:16) and to the Son who *died for the ungodly... while we were yet sinners*
+--     (Romans 5:6,8). David's impotent grief is the ache the cross answers — the love that grieves the lost made effectual
+--     in the One who actually died in the rebel's place. A type, never the substance.
+
+CREATE TEMP VIEW _s341_2sa18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the rebel son hanged between the heaven and the earth (KEYSTONE)
+    ('canon','2-samuel',18,9,'canon','deuteronomy',21,23,'free',
+      E'*His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);) that thy land be not defiled* (Deuteronomy 21:23). Absalom, *taken up between the heaven and the earth* (2 Samuel 18:9) and pierced in the oak, dies in the very posture Torah names accursed — the one hanged on a tree. The rebel hangs under the curse he earned; the tree marks him as cut off from the land of the covenant.'),
+    ('canon','2-samuel',18,9,'canon','deuteronomy',21,22,'free',
+      E'*And if a man have committed a sin worthy of death, and he be to be put to death, and thou hang him on a tree* (Deuteronomy 21:22). The hanging in Deuteronomy follows a death-worthy sin: the body on the tree publishes the guilt. Absalom, who raised the sword against his own father and king, is *taken up between the heaven and the earth* (2 Samuel 18:9) — the rebellion answered by the tree, the sin worthy of death made visible to all Yashar''el (Israel).'),
+    ('canon','2-samuel',18,17,'canon','deuteronomy',21,21,'free',
+      E'*And all the men of his city shall stone him with stones, that he die: so shalt thou put evil away from among you; and all Yashar''el (Israel) shall hear, and fear* (Deuteronomy 21:21). The stubborn and rebellious son the Torah marks for stoning ends, in Absalom, *cast... into a great pit in the wood, and laid a very great heap of stones upon him* (2 Samuel 18:17). The heap of stones over the rebel son is the Torah''s own sentence rendered: evil put away, and Yashar''el (Israel) made to hear and fear.'),
+    ('canon','2-samuel',18,9,'canon','galatians',3,13,'free',
+      E'*Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13). The same Deuteronomy 21 curse that hangs over the rebel Absalom *between the heaven and the earth* (2 Samuel 18:9) is the curse the Formed Son took upon Himself — but in reverse. Absalom hangs under his OWN curse for his OWN rebellion; the sinless Messiah hangs on the tree under the curse of the guilty, redeeming them from it. The tree of the rebel''s judgment becomes the tree of the innocent One''s redemption.')
+    ,
+    -- THREAD 2: the wood devoured more than the sword — out of thine own house
+    ('canon','2-samuel',18,8,'canon','2-samuel',12,10,'free',
+      E'*Now therefore the sword shall never depart from thine house; because thou hast despised me, and hast taken the wife of Uriah the Hittite to be thy wife* (2 Samuel 12:10). The slaughter in the wood of Ephraim, where *the wood devoured more people that day than the sword devoured* (2 Samuel 18:8), is the sword Nathan foretold over David''s house — the bloodshed for Uriah returning now as a son slain in a son''s rebellion. The word of Yahuah (LORD) does not fall to the ground.'),
+    ('canon','2-samuel',18,14,'canon','2-samuel',12,11,'free',
+      E'*Thus saith Yahuah (LORD), Behold, I will raise up evil against thee out of thine own house* (2 Samuel 12:11). When Joab takes *three darts in his hand, and thrust them through the heart of Absalom* (2 Samuel 18:14), the evil raised up against David is his own son''s death by his own captain''s hand — the chastening Nathan named, risen out of David''s own house exactly as Yahuah (LORD) said.'),
+    ('canon','2-samuel',18,32,'canon','2-samuel',12,10,'free',
+      E'*Now therefore the sword shall never depart from thine house* (2 Samuel 12:10). Cushi''s word — *The enemies of my lord the king, and all that rise against thee to do thee hurt, be as that young man is* (2 Samuel 18:32) — closes the loop: the king''s enemy is his own son, and the sword that will not depart has fallen within the house, not without. The victory is also a bereavement, the chastening and the deliverance bound together.')
+    ,
+    -- THREAD 3: deal gently — the father weeps, O my son Absalom (wholly within ch.18)
+    ('canon','2-samuel',18,5,'canon','2-samuel',18,33,'free',
+      E'*And the king was much moved, and went up to the chamber over the gate, and wept: and as he went, thus he said, O my son Absalom, my son, my son Absalom! would Elohim (God) I had died for thee, O Absalom, my son, my son!* (2 Samuel 18:33). The charge *Deal gently for my sake with the young man, even with Absalom* (2 Samuel 18:5) finds its end here. The father whose only command for the battle was tenderness toward his rebel son receives the news he dreaded, and his grief breaks open: the king who would have spared could not, and the love that charged the captains now weeps over the grave.'),
+    ('canon','2-samuel',18,33,'canon','2-samuel',18,5,'free',
+      E'*And the king commanded Joab and Abishai and Ittai, saying, Deal gently for my sake with the young man, even with Absalom* (2 Samuel 18:5). The weeping *O my son Absalom... would Elohim (God) I had died for thee* (2 Samuel 18:33) is the deal-gently charge laid bare: it was never strategy but a father''s heart. Even as Absalom marched to take his throne and his life, David''s one word over him was mercy — and when mercy could not save the rebel, the father mourned as for himself.')
+    ,
+    -- THREAD 4: would I had died for thee — the Father who DID give the Son (KEYSTONE)
+    ('canon','2-samuel',18,33,'canon','john',3,16,'free',
+      E'*For Elohim (God) so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life* (John 3:16). David''s cry *would Elohim (God) I had died for thee, O Absalom, my son* (2 Samuel 18:33) is a father longing to die in his rebel son''s place — and unable. It is a faint shadow that points past itself: the Father did not merely wish, He *gave his only begotten Son*. Where David could not exchange his life for the guilty one, Yahuah (LORD) provided the very exchange the grieving king could only ache for.'),
+    ('canon','2-samuel',18,33,'canon','romans',5,8,'free',
+      E'*But Elohim (God) commendeth his love toward us, in that, while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8). David weeps *would Elohim (God) I had died for thee* over a son who died in open rebellion (2 Samuel 18:33) — but the wish stays a wish; the father cannot die for the rebel. The Formed Son does what David could not: He dies for sinners *while we were yet sinners*, the love that grieves the lost made effectual in actual substitution.'),
+    ('canon','2-samuel',18,33,'canon','romans',5,6,'free',
+      E'*For when we were yet without strength, in due time Messiah (Christ) died for the ungodly* (Romans 5:6). The rebel Absalom is the ungodly one, and David''s anguished *would Elohim (God) I had died for thee* (2 Samuel 18:33) is the impotent love of a father who cannot reach him. *In due time Messiah (Christ) died for the ungodly* — the substitution David could only long for is accomplished in the One who actually laid down His life for the rebellious. A type that aches toward its fulfilment, never the substance itself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-18-the-rebel-son-hanged-between-the-heaven-and-the-earth', E'The rebel son hanged between the heaven and the earth', E'In the wood of Ephraim Absalom''s end comes by his own head: *the mule went under the thick boughs of a great oak, and his head caught hold of the oak, and he was taken up between the heaven and the earth; and the mule that was under him went away* (2 Samuel 18:9). A certain man reports it plainly — *Behold, I saw Absalom hanged in an oak* (2 Samuel 18:10) — and there in the tree Joab pierces him. The posture is the Torah''s mark of the accursed: *if a man have committed a sin worthy of death... and thou hang him on a tree* (Deuteronomy 21:22), *for he that is hanged is accursed of Elohim (God); that thy land be not defiled* (Deuteronomy 21:23). Absalom, who raised the sword against his father and king, is the stubborn and rebellious son the Torah marks for death — and he ends *cast... into a great pit in the wood, and laid a very great heap of stones upon him* (2 Samuel 18:17), the very sentence of Deuteronomy 21:21: *all the men of his city shall stone him with stones, that he die... and all Yashar''el (Israel) shall hear, and fear*.\n\nHere is the depth: the rebel hangs under his OWN curse for his OWN rebellion. But the same Deuteronomy 21 word becomes, in the Formed Son, the deepest reversal — *Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13). Absalom hangs between heaven and earth under the curse he earned; the sinless Messiah hangs on the tree under the curse of the guilty, redeeming them from it. Torah is never the curse — the curse is the judgment on the rebel, and the tree of the rebel''s judgment becomes the tree of the innocent One''s redemption.',
+       sv.verse_id, ev.verse_id, 'free', 37675
+  FROM _s341_2sa18_lookup sv, _s341_2sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=18 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-18-the-wood-devoured-more-than-the-sword-out-of-thine-own-house', E'The wood devoured more than the sword — out of thine own house', E'The battle spreads across the country and the forest itself becomes the executioner: *the battle was there scattered over the face of all the country: and the wood devoured more people that day than the sword devoured* (2 Samuel 18:8). When Absalom hangs, Joab *took three darts in his hand, and thrust them through the heart of Absalom, while he was yet alive in the midst of the oak* (2 Samuel 18:14). This is no random disaster — it is the word of Yahuah (LORD) through Nathan accomplished.\n\nFor David''s sin in the matter of Uriah, the sentence had been spoken: *Now therefore the sword shall never depart from thine house; because thou hast despised me, and hast taken the wife of Uriah the Hittite to be thy wife* (2 Samuel 12:10), and *Behold, I will raise up evil against thee out of thine own house* (2 Samuel 12:11). The bloodshed David dealt to Uriah returns as bloodshed within his own house — a son in rebellion, a son slain by the king''s own captain. Cushi names it without knowing its full weight: *The enemies of my lord the king, and all that rise against thee to do thee hurt, be as that young man is* (2 Samuel 18:32) — the king''s enemy is his own son. This is covenant chastening, the sword that will not depart fallen within the house. Even the victory comes wrapped in bereavement, the discipline and the deliverance bound into one day.',
+       sv.verse_id, ev.verse_id, 'free', 37678
+  FROM _s341_2sa18_lookup sv, _s341_2sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=18 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-18-deal-gently-the-father-weeps-o-my-son-absalom', E'Deal gently — the father weeps, O my son Absalom', E'David''s one command as the army marches out is not for victory but for mercy: *And the king commanded Joab and Abishai and Ittai, saying, Deal gently for my sake with the young man, even with Absalom. And all the people heard when the king gave all the captains charge concerning Absalom* (2 Samuel 18:5). Even as Absalom marched to seize his father''s throne and his father''s life, the father''s heart over him was tenderness — *deal gently*.\n\nMercy could not save the rebel, and the charge breaks open at the gate into raw grief: *And the king was much moved, and went up to the chamber over the gate, and wept: and as he went, thus he said, O my son Absalom, my son, my son Absalom! would Elohim (God) I had died for thee, O Absalom, my son, my son!* (2 Samuel 18:33). The repeated cry — my son, my son — is the deal-gently charge laid bare: it was never strategy, only a father''s love. The king who would have spared could not; the king who charged for gentleness now mourns as though he himself had fallen. The whole chapter hangs between these two words — the charge of mercy and the wail of loss — and the father''s love for the one who hated him stands at the centre.',
+       sv.verse_id, ev.verse_id, 'free', 37681
+  FROM _s341_2sa18_lookup sv, _s341_2sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=18 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-18-would-i-had-died-for-thee-the-father-who-did-give-the-son', E'Would I had died for thee — the Father who DID give the Son', E'At the height of his grief David cries the wish no father can fulfil: *would Elohim (God) I had died for thee, O Absalom, my son, my son!* (2 Samuel 18:33). He longs to die in his rebel son''s place — to take Absalom''s death upon himself, to exchange his own life for the guilty one. But it stays a wish. David cannot bear Absalom''s curse; he cannot die the rebel''s death for him. The grief is real and the love is real, but the substitution is impossible. The father can only weep.\n\nThis is a faint shadow that points wholly past itself. Where David could only long, the Father acted: *For Elohim (God) so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life* (John 3:16). And the Formed Son does what no human father could — He dies for the rebellious: *when we were yet without strength, in due time Messiah (Christ) died for the ungodly* (Romans 5:6), *Elohim (God) commendeth his love toward us, in that, while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8). David''s impotent ache — *I had died for thee* — is the very thing the cross answers. Never read it as the full substitution itself; the king could NOT die for Absalom, and that is the point. It is a type that aches toward its fulfilment, the love that grieves the lost made effectual at last in the One who actually died in the rebel''s place.',
+       sv.verse_id, ev.verse_id, 'free', 37684
+  FROM _s341_2sa18_lookup sv, _s341_2sa18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=18 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1: the rebel son hanged between the heaven and the earth
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he that is hanged is accursed of Elohim (God); that thy land be not defiled* (Deuteronomy 21:23) — Absalom hangs in the oak in the posture Torah names accursed.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-rebel-son-hanged-between-the-heaven-and-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*if a man have committed a sin worthy of death... and thou hang him on a tree* (Deuteronomy 21:22) — the body on the tree publishes a death-worthy guilt; Absalom raised the sword against his king.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-rebel-son-hanged-between-the-heaven-and-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*all the men of his city shall stone him with stones... and all Yashar''el (Israel) shall hear, and fear* (Deuteronomy 21:21) — the rebellious son''s sentence rendered in the great heap of stones over Absalom (18:17).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=17
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=21 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-rebel-son-hanged-between-the-heaven-and-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Cursed is every one that hangeth on a tree* (Galatians 3:13) — the reversal: the rebel hangs under his own curse; the sinless Messiah hangs under the curse of the guilty to redeem them.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-rebel-son-hanged-between-the-heaven-and-the-earth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the wood devoured more than the sword — out of thine own house
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the sword shall never depart from thine house... thou hast taken the wife of Uriah the Hittite* (2 Samuel 12:10) — the slaughter in the wood is the sword Nathan foretold over David''s house.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-wood-devoured-more-than-the-sword-out-of-thine-own-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Behold, I will raise up evil against thee out of thine own house* (2 Samuel 12:11) — the three darts through Absalom''s heart are the evil risen out of David''s own house, exactly as Yahuah said.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=14
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-wood-devoured-more-than-the-sword-out-of-thine-own-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the sword shall never depart from thine house* (2 Samuel 12:10) — Cushi''s word makes the king''s enemy his own son; the undeparting sword has fallen within the house.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=32
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-the-wood-devoured-more-than-the-sword-out-of-thine-own-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: deal gently — the father weeps, O my son Absalom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*O my son Absalom, my son, my son Absalom! would Elohim (God) I had died for thee* (2 Samuel 18:33) — the deal-gently charge laid bare as a father''s grief; mercy could not save the rebel.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=18 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-deal-gently-the-father-weeps-o-my-son-absalom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Deal gently for my sake with the young man, even with Absalom* (2 Samuel 18:5) — the one command for the battle was tenderness toward the rebel son; love, not strategy.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=33
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-deal-gently-the-father-weeps-o-my-son-absalom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: would I had died for thee — the Father who DID give the Son
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Elohim (God) so loved the world, that he gave his only begotten Son* (John 3:16) — where David could only WISH to die for his rebel son, the Father GAVE the Son.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=33
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-would-i-had-died-for-thee-the-father-who-did-give-the-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*while we were yet sinners, Messiah (Christ) died for us* (Romans 5:8) — the substitution David could only ache for, accomplished by the Son who died for the rebellious.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=33
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-would-i-had-died-for-thee-the-father-who-did-give-the-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*in due time Messiah (Christ) died for the ungodly* (Romans 5:6) — the rebel is the ungodly one; the type that aches toward its fulfilment, never the substance itself.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=18 AND sv.verse_number=33
+  JOIN _s341_2sa18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-18-would-i-had-died-for-thee-the-father-who-did-give-the-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_19.sql (2 Samuel 19) -----
+-- 2 Samuel 19 — The day of the king's return. Joab rebukes David's excessive mourning
+--   (the king must not shame the army that saved him); David is brought back over Jordan;
+--   Shimei who cursed him in ch16 begs pardon and the king SWEARS he shall not die — *shall
+--   there any man be put to death this day in Yashar'el?* (the day of return is a day of mercy,
+--   vengeance withheld); Mephibosheth's slander by Ziba is answered; Barzillai the aged faithful
+--   friend declines reward; and the STRIFE between the men of Yahudah and the men of Yashar'el
+--   over who shall bring the king back — the two-house rivalry over the one king, the fracture
+--   that the Davidic/Messianic King finally heals.
+-- Tag: 2sa19   View: _s341_2sa19_lookup   Sort band: 37700, step 3 (37700, 37703, 37706, 37709)
+--
+-- THREADS (4):
+--   2-samuel-19-the-day-of-the-kings-return-vengeance-withheld     [canon: Luke, Psalms]
+--   2-samuel-19-thou-and-ziba-divide-the-land-slander-answered     [canon: 2-samuel(self)]
+--   2-samuel-19-we-have-ten-parts-in-the-king-the-two-house-strife [canon: 1-kings, Ezekiel]
+--   2-samuel-19-the-king-brought-back-over-jordan                  [canon: 2-samuel(self)]
+--
+-- COVERAGE CHECKLIST:
+--   v.1-8 (Joab rebukes the king's mourning; the king sits in the gate; the army restored):
+--        NT:     none warranted (Joab's hard counsel is conduct-within; the return motif carried in thread 4)
+--        Extras: none warranted
+--        Tanakh: subsumed in thread 4 (the rejected king brought back) — none separate warranted
+--   v.9-15 (the strife in the tribes; David sends to Yahudah, ye are my bones and my flesh;
+--           the heart of Yahudah bowed as one man; the king returns to Jordan/Gilgal):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Kings 12 (the coming split this rivalry foreshadows) — USED in thread 3
+--   v.16-23 (Shimei the curser falls down, begs pardon; Abishai would slay him; David swears
+--            he shall not die — shall any man be put to death this day in Yashar'el):
+--        NT:     Luke 23:34 (Father, forgive them) — the restored King forgiving on his day — USED
+--        Extras: none warranted
+--        Tanakh: Psalm 130:3-4 (if thou shouldest mark iniquities, who shall stand? but there is
+--                forgiveness with thee) — USED. (NB 1 Kings 2:8-9 later qualifies the oath — noted,
+--                not threaded as the mercy weave; the day-of-return mercy is the frame here.)
+--   v.24-30 (Mephibosheth slandered by Ziba; my lord the king is as an angel of Elohim;
+--            thou and Ziba divide the land; let him take all):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 9:7-13 + 16:1-4 (the table-kindness covenant and Ziba's slander) — USED (self-link)
+--   v.31-40 (Barzillai the aged faithful friend declines reward; Chimham sent over; the kiss
+--            and blessing; all Yahudah and half Yashar'el conduct the king):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Kings 2:7 (David's charge to show kindness to Barzillai's sons) — noted; the
+--                aged-friend honour is self-contained, carried lightly in thread 4 anchor — none separate
+--   v.41-43 (the men of Yashar'el and Yahudah contend — we have ten parts in the king, more
+--            right in David — and the words of Yahudah were fiercer):
+--        NT:     none warranted (the healing of the two houses is OT-prophetic — Ezekiel 37)
+--        Extras: none warranted
+--        Tanakh: 1 Kings 12:16 (what portion have we in David... to your tents) + Ezekiel 37:19,22
+--                (one stick, one king, no more two nations) — USED in thread 3
+--
+-- No verse-block silently skipped; every meaningful unit weighed across all three libraries.
+
+CREATE TEMP VIEW _s341_2sa19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: The day of the king's return — vengeance withheld
+    ('canon','2-samuel',19,22,'canon','luke',23,34,'free',
+      E'*Then said Yahusha (Jesus), Father, forgive them; for they know not what they do* (Luke 23:34). On the day the rejected king came back to his throne, David turned away the sword from the man who had cursed him: *shall there any man be put to death this day in Yashar''el (Israel)? for do not I know that I am this day king over Yashar''el (Israel)?* (2 Samuel 19:22). The day of the anointed king''s restoration is a day of mercy, not of vengeance — and the Son of David perfects it, forgiving from the very tree those who put Him there.'),
+    ('canon','2-samuel',19,23,'canon','luke',23,34,'free',
+      E'*Father, forgive them; for they know not what they do* (Luke 23:34). David''s oath to Shimei is the shadow: *Thou shalt not die. And the king sware unto him* (2 Samuel 19:23). The curser of ch16 who threw stones and dust is sworn safe on the day of the king''s return — the restored king withholds vengeance, foreshadowing the King who pardons His revilers in the hour of His exaltation.'),
+    ('canon','2-samuel',19,22,'canon','psalms',130,3,'free',
+      E'*If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand?* (Psalm 130:3). David refuses to mark Shimei''s iniquity on the day of his return — *What have I to do with you, ye sons of Zeruiah, that ye should this day be adversaries unto me?* (2 Samuel 19:22). The king who himself depends on Yahuah''s mercy will not stand as the avenger; if the LORD marked iniquities none could stand, so the restored king lets the curse go unpunished.'),
+    ('canon','2-samuel',19,23,'canon','psalms',130,4,'free',
+      E'*But there is forgiveness with thee, that thou mayest be feared* (Psalm 130:4). When David swears *Thou shalt not die* (2 Samuel 19:23), the throne is showing the very character of Yahuah the psalm confesses: mercy that pardons, not vengeance that destroys. The day of the king''s return is a day of *forgiveness*, and that mercy is what draws the fear and love of the people back to the throne.'),
+
+    -- Thread 2: Thou and Ziba divide the land — the slander answered, the table-kindness kept
+    ('canon','2-samuel',19,28,'canon','2-samuel',9,7,'free',
+      E'*And David said unto him, Fear not: for I will surely shew thee kindness for Jonathan thy father''s sake, and will restore thee all the land of Saul thy father; and thou shalt eat bread at my table continually* (2 Samuel 9:7). Mephibosheth pleads that very covenant on the day of return: *yet didst thou set thy servant among them that did eat at thine own table. What right therefore have I yet to cry any more unto the king?* (2 Samuel 19:28). The lame son of Jonathan rests not on his own deserving but on the king''s sworn kindness — the same table-grace that first lifted a *dead dog* to the king''s board.'),
+    ('canon','2-samuel',19,26,'canon','2-samuel',16,3,'free',
+      E'*And Ziba said unto the king, Behold, he abideth at Jerusalem: for he said, To day shall the house of Yashar''el (Israel) restore me the kingdom of my father* (2 Samuel 16:3) — the slander spoken while David fled. Now the slandered man answers: *My lord, O king, my servant deceived me... And he hath slandered thy servant unto my lord the king* (2 Samuel 19:26-27). What Ziba seized by a lie in the day of trouble, Mephibosheth lays bare in the day of return; the king''s judgment *Thou and Ziba divide the land* (19:29) answers the false tongue with mercy rather than ruin.'),
+    ('canon','2-samuel',19,30,'canon','2-samuel',16,4,'free',
+      E'*Then said the king to Ziba, Behold, thine are all that pertained unto Mephibosheth* (2 Samuel 16:4) — the whole estate handed to the slanderer in the day of flight. The true heart shows itself in the day of return: *Yea, let him take all, forasmuch as my lord the king is come again in peace unto his own house* (2 Samuel 19:30). Mephibosheth wants the king, not the land — restored loyalty cares nothing for the inheritance once the anointed king is safely home.'),
+
+    -- Thread 3: We have ten parts in the king — the two-house strife over the one king
+    ('canon','2-samuel',19,43,'canon','1-kings',12,16,'free',
+      E'*What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Yashar''el (Israel): now see to thine own house, David. So Yashar''el (Israel) departed unto their tents* (1 Kings 12:16). The bitter quarrel over the one king — *We have ten parts in the king, and we have also more right in David than ye* (2 Samuel 19:43) — is the first crack of the wound that will tear the kingdom in two under Rehoboam. The ten parts of Yashar''el (Israel) contending here will soon be ten tribes torn from the house of David.'),
+    ('canon','2-samuel',19,41,'canon','1-kings',12,16,'free',
+      E'*To your tents, O Yashar''el (Israel): now see to thine own house, David* (1 Kings 12:16). The grievance is already smouldering at the Jordan: *Why have our brethren the men of Yahudah (Judah) stolen thee away?* (2 Samuel 19:41). The same north-against-south jealousy over a place in the king that David''s return exposes becomes, a generation later, the open rebellion that splits Yahudah (Judah) from Yashar''el (Israel) — the two houses fractured over the one throne.'),
+    ('canon','2-samuel',19,43,'canon','ezekiel',37,19,'free',
+      E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The strife of *the men of Yashar''el (Israel)* against *the men of Yahudah (Judah)* over their portion in the king (2 Samuel 19:43) is the wound no earthly king could close. Yahuah promises through the Formed Son to take the two divided sticks — Joseph/Ephraim and Yahudah — and make them one in His own hand.'),
+    ('canon','2-samuel',19,43,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The contention *We have ten parts in the king... why then did ye despise us* (2 Samuel 19:43) is the rivalry that ends only when *one king* — the true Son of David, the one Shepherd — reigns over both houses gathered. The fracture David''s return only exposed, the Messianic King finally heals into one kingdom under one crown.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-19-the-day-of-the-kings-return-vengeance-withheld',
+       E'The day of the king''s return — vengeance withheld',
+       E'On the day the rejected anointed king is brought back, Shimei — the very man who in chapter sixteen *cast stones at David* and *cursed as he went* — hastes down to the Jordan, *fell down before the king*, and pleads *Let not my lord impute iniquity unto me* (2 Samuel 19:18-19). Abishai would draw the sword: *Shall not Shimei be put to death for this, because he cursed the LORD''S anointed?* (19:21). But David refuses to make his restoration a day of vengeance: *What have I to do with you, ye sons of Zeruiah, that ye should this day be adversaries unto me? shall there any man be put to death this day in Yashar''el (Israel)? for do not I know that I am this day king over Yashar''el (Israel)?* (19:22). And the verdict: *Thou shalt not die. And the king sware unto him* (19:23).\n\nDavid''s mercy is the mercy of Yahuah he himself leans upon: *If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand? But there is forgiveness with thee, that thou mayest be feared* (Psalm 130:3-4). The restored king will not mark the curse; the day of his return is a day of pardon. And the Son of David carries that mercy to its fullness — on the day His own enemies exalt Him on the tree, *Then said Yahusha (Jesus), Father, forgive them; for they know not what they do* (Luke 23:34). The anointed king''s hour of restoration is the hour of forgiveness withheld from the sword.',
+       sv.verse_id, ev.verse_id, 'free', 37700
+  FROM _s341_2sa19_lookup sv, _s341_2sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=19 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-19-thou-and-ziba-divide-the-land-slander-answered',
+       E'Thou and Ziba divide the land — the slander answered, the table kept',
+       E'When David fled, Ziba met him with provisions and a lie, taking the whole estate of his master''s son: *Behold, he abideth at Jerusalem: for he said, To day shall the house of Yashar''el (Israel) restore me the kingdom of my father* (2 Samuel 16:3), and the king in haste said *Behold, thine are all that pertained unto Mephibosheth* (16:4). On the day of return the slandered man comes down — unwashed, unkempt, having mourned the whole exile — and answers the lie: *my servant deceived me... And he hath slandered thy servant unto my lord the king; but my lord the king is as an angel of Elohim (God)* (19:26-27).\n\nMephibosheth rests not on his own merit but on the king''s sworn covenant of table-kindness — the very grace that first lifted him: *thou shalt eat bread at my table continually* (2 Samuel 9:7). So he says, *yet didst thou set thy servant among them that did eat at thine own table. What right therefore have I yet to cry any more unto the king?* (19:28). When the king rules *Thou and Ziba divide the land* (19:29), the answer reveals the loyal heart: *Yea, let him take all, forasmuch as my lord the king is come again in peace unto his own house* (19:30). Restored loyalty wants the king, not the inheritance — the slander is answered, and the covenant of grace at the king''s table stands.',
+       sv.verse_id, ev.verse_id, 'free', 37703
+  FROM _s341_2sa19_lookup sv, _s341_2sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=19 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-19-we-have-ten-parts-in-the-king-the-two-house-strife',
+       E'We have ten parts in the king — the two-house strife over the one king',
+       E'The chapter ends not in peace but in a quarrel between the two houses over who has the greater claim to the king. *And, behold, all the men of Yashar''el (Israel) came to the king, and said unto the king, Why have our brethren the men of Yahudah (Judah) stolen thee away?* (2 Samuel 19:41). Yahudah answers that the king is *near of kin to us* (19:42), and Yashar''el presses harder: *We have ten parts in the king, and we have also more right in David than ye: why then did ye despise us, that our advice should not be first had in bringing back our king? And the words of the men of Yahudah (Judah) were fiercer than the words of the men of Yashar''el (Israel)* (19:43).\n\nThis is the first crack of the wound that will tear the kingdom in two. A generation later the same north-against-south jealousy bursts open: *What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Yashar''el (Israel)... So Yashar''el (Israel) departed unto their tents* (1 Kings 12:16) — the ten parts torn from the house of David into the divided northern kingdom. No earthly king can close this rift. Only Yahuah, through the Formed Son, the true Son of David, heals it: *I will take the stick of Joseph, which is in the hand of Ephraim... even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19); *one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The two houses contending over the one king here are the two sticks the Messiah finally makes one.',
+       sv.verse_id, ev.verse_id, 'free', 37706
+  FROM _s341_2sa19_lookup sv, _s341_2sa19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=41
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=19 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- Thread 1: The day of the king's return — vengeance withheld
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Father, forgive them; for they know not what they do* (Luke 23:34) — the Son of David forgiving His revilers on His day, perfecting *shall there any man be put to death this day in Yashar''el (Israel)?* (2 Samuel 19:22).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-the-day-of-the-kings-return-vengeance-withheld'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Father, forgive them* (Luke 23:34) — the restored King''s pardon, the fullness of David''s oath *Thou shalt not die. And the king sware unto him* (2 Samuel 19:23).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-the-day-of-the-kings-return-vengeance-withheld'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand?* (Psalm 130:3) — the king who leans on Yahuah''s mercy will not stand as the avenger (2 Samuel 19:22).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=130 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-the-day-of-the-kings-return-vengeance-withheld'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*But there is forgiveness with thee, that thou mayest be feared* (Psalm 130:4) — the LORD''s pardoning character shown in *Thou shalt not die* on the day of return (2 Samuel 19:23).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=130 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-the-day-of-the-kings-return-vengeance-withheld'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Thou and Ziba divide the land — slander answered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt eat bread at my table continually* (2 Samuel 9:7) — the sworn table-covenant Mephibosheth pleads, *thou didst set thy servant among them that did eat at thine own table* (2 Samuel 19:28).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=28
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-thou-and-ziba-divide-the-land-slander-answered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*To day shall the house of Yashar''el (Israel) restore me the kingdom* (2 Samuel 16:3) — Ziba''s slander in the flight, now bared: *he hath slandered thy servant* (2 Samuel 19:26).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=26
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=16 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-thou-and-ziba-divide-the-land-slander-answered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Behold, thine are all that pertained unto Mephibosheth* (2 Samuel 16:4) — the estate given the slanderer, answered by *let him take all... my lord the king is come again in peace* (2 Samuel 19:30).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=30
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=16 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-thou-and-ziba-divide-the-land-slander-answered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: We have ten parts in the king — the two-house strife
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*What portion have we in David?... to your tents, O Yashar''el (Israel)* (1 Kings 12:16) — the strife over *more right in David* (2 Samuel 19:43) bursting into the kingdom''s split a generation later.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=43
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-we-have-ten-parts-in-the-king-the-two-house-strife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*now see to thine own house, David* (1 Kings 12:16) — the north-against-south jealousy first exposed at the Jordan: *Why have our brethren the men of Yahudah (Judah) stolen thee away?* (2 Samuel 19:41).'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=41
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-we-have-ten-parts-in-the-king-the-two-house-strife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the stick of Joseph... even with the stick of Yahudah (Judah), and make them one stick* (Ezekiel 37:19) — the two houses contending over the one king (2 Samuel 19:43) made one in the Messiah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=43
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-we-have-ten-parts-in-the-king-the-two-house-strife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*one king shall be king to them all: and they shall be no more two nations* (Ezekiel 37:22) — the rivalry *we have ten parts in the king* (2 Samuel 19:43) healed under the one Son of David.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=19 AND sv.verse_number=43
+  JOIN _s341_2sa19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-19-we-have-ten-parts-in-the-king-the-two-house-strife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_20.sql (2 Samuel 20) -----
+-- 2 Samuel 20 — Sheba's revolt, Joab's treachery, the wise woman of Abel
+-- TAG: 2sa20   VIEW: _s341_2sa20_lookup   SORT BAND: 37725 step 3
+--
+-- 2 Samuel 20 coverage:
+--   v.1  (Sheba's cry: We have no part in David... to your tents, O Yashar'el)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1-kings 12:16 (the SAME words at the schism under Jeroboam),
+--                1-kings 11:31 (kingdom rent, ten tribes to the north),
+--                ezekiel 37:19/37:22 (the two sticks made one — the fracture healed)
+--   v.2  (every man of Yashar'el went up from after David; Yahudah clave to the king)
+--        NT/Extras: none warranted
+--        Tanakh: 1-kings 12:16 (same north/south split foreshadowed) — folded into v.1 thread
+--   v.3  (ten concubines shut up in widowhood) — NT/Extras/Tanakh: none warranted (narrative consequence of ch.16)
+--   v.9  (Joab took Amasa by the beard to kiss him) — the kiss before the blow
+--        NT/Extras: none warranted
+--        Tanakh: 2-samuel 3:27 (Joab takes Abner aside to speak quietly, then smites him)
+--   v.10 (smote him in the fifth rib; the bloody man Joab)
+--        NT/Extras: none warranted
+--        Tanakh: 2-samuel 3:27 (Abner smitten under the fifth rib — same hand, same place),
+--                1-kings 2:5 (David names the war-blood Joab shed in peace),
+--                1-kings 2:32 (the blood returned upon Joab's own head — judged)
+--   v.16 (a wise woman cried out of the city) — NT/Extras: none warranted; Tanakh: ecclesiastes 9:14-16, proverbs 21:22
+--   v.19 (peaceable and faithful... a mother in Yashar'el... the inheritance of Yahuah)
+--        NT/Extras: none warranted
+--        Tanakh: ecclesiastes 9:15 (a poor wise man by his wisdom delivered the city)
+--   v.22 (she went unto all the people in her wisdom; the city saved) — Tanakh: ecclesiastes 9:16, proverbs 21:22
+--   v.23-26 (David's officers list) — NT/Extras/Tanakh: none warranted (administrative roster)
+--
+-- THREADS (3):
+--   2-samuel-20-we-have-no-part-in-david-the-northern-cry  [Tanakh] — v.1-2 → 1Kg12:16, 1Kg11:31, Ezek37:19, Ezek37:22
+--   2-samuel-20-joab-the-bloody-man-the-kiss-and-the-sword [Tanakh] — v.9-10 → 2Sa3:27, 1Kg2:5, 1Kg2:32
+--   2-samuel-20-the-wise-woman-who-saved-the-city          [Tanakh] — v.16,19,22 → Eccl9:14, Eccl9:15, Eccl9:16, Prov21:22
+
+CREATE TEMP VIEW _s341_2sa20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== CROSS_REFERENCES =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the northern cry against David
+    ('canon','2-samuel',20,1,'canon','1-kings',12,16,'free',
+     E'*So when all Yashar''el (Israel) saw that the king hearkened not unto them, the people answered the king, saying, What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Yashar''el (Israel): now see to thine own house, David. So Yashar''el (Israel) departed unto their tents.* (1 Kings 12:16). Sheba''s rebel-cry — *We have no part in David, neither have we inheritance in the son of Jesse: every man to his tents, O Yashar''el (Israel)* — is word for word the cry the whole northern house raises when the kingdom tears apart under Jeroboam. The two-house fracture is rehearsed here in one man of Belial before it becomes a nation; the rejection of the one Davidic king is the recurring wound of Ephraim.'),
+    ('canon','2-samuel',20,2,'canon','1-kings',12,16,'free',
+     E'*So when all Yashar''el (Israel) saw that the king hearkened not unto them, the people answered the king, saying, What portion have we in David?... to your tents, O Yashar''el (Israel)... So Yashar''el (Israel) departed unto their tents.* (1 Kings 12:16). When *every man of Yashar''el (Israel) went up from after David, and followed Sheba the son of Bichri: but the men of Yahudah (Judah) clave unto their king*, the line of the coming schism is already drawn — north after a son of Bichri, Yahudah cleaving to the throne. The same north/south parting that hardens into two kingdoms.'),
+    ('canon','2-samuel',20,1,'canon','1-kings',11,31,'free',
+     E'*And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). Sheba''s *every man to his tents, O Yashar''el (Israel)* is the first tremor of the rending Yahuah will decree — ten tribes torn from the house of David. The seed-promise still holds the throne for David''s line, but the north''s heart is already turning.'),
+    ('canon','2-samuel',20,1,'canon','ezekiel',37,19,'free',
+     E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand.* (Ezekiel 37:19). Against the cry *We have no part in David*, Yahuah swears the opposite end: the stick of Joseph and the stick of Yahudah (Judah) made one in his hand. The fracture Sheba sounds is the very break the two sticks heal — the divided people gathered back under one king.'),
+    ('canon','2-samuel',20,1,'canon','ezekiel',37,22,'free',
+     E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). Sheba''s *We have no part in David* says there shall be two; Yahuah answers *they shall be no more two nations... neither shall they be divided into two kingdoms any more at all.* The one king over the regathered house is the undoing of the very tents-cry sounded here.'),
+    -- THREAD 2 — Joab the bloody man, the kiss and the sword
+    ('canon','2-samuel',20,9,'canon','2-samuel',3,27,'free',
+     E'*And when Abner was returned to Hebron, Joab took him aside in the gate to speak with him quietly, and smote him there under the fifth rib, that he died, for the blood of Asahel his brother.* (2 Samuel 3:27). Joab''s feigned greeting — *Art thou in health, my brother? And Joab took Amasa by the beard with the right hand to kiss him* — is the same deceit he worked on Abner: draw the man close with a brother''s word, then drive the sword. The kiss of peace covering the murder, the bloody man''s signature.'),
+    ('canon','2-samuel',20,10,'canon','2-samuel',3,27,'free',
+     E'*And when Abner was returned to Hebron, Joab took him aside in the gate to speak with him quietly, and smote him there under the fifth rib, that he died, for the blood of Asahel his brother.* (2 Samuel 3:27). Amasa *took no heed to the sword that was in Joab''s hand: so he smote him therewith in the fifth rib* — the very same wound, the very same hand. Joab twice sheds the blood of war in peace, striking the captain of the host under the fifth rib.'),
+    ('canon','2-samuel',20,10,'canon','1-kings',2,5,'free',
+     E'*Moreover thou knowest also what Joab the son of Zeruiah did to me, and what he did to the two captains of the hosts of Yashar''el (Israel), unto Abner the son of Ner, and unto Amasa the son of Jether, whom he slew, and shed the blood of war in peace, and put the blood of war upon his girdle that was about his loins, and in his shoes that were on his feet.* (1 Kings 2:5). David names the two murders together — Abner and Amasa — as *the blood of war in peace*. The deed of 20:10 is the second charge laid against the bloody man, the innocent blood that must be answered.'),
+    ('canon','2-samuel',20,10,'canon','1-kings',2,32,'free',
+     E'*And Yahuah (LORD) shall return his blood upon his own head, who fell upon two men more righteous and better than he, and slew them with the sword, my father David not knowing thereof, to wit, Abner the son of Ner, captain of the host of Yashar''el (Israel), and Amasa the son of Jether, captain of the host of Yahudah (Judah).* (1 Kings 2:32). The blood Joab shed in 20:10 does not go unanswered: Yahuah returns it upon his own head. Amasa and Abner were *more righteous and better than he* — the victims, not the enemies — and the bloodguilt is judged at the horns of the altar.'),
+    -- THREAD 3 — the wise woman who saved the city
+    ('canon','2-samuel',20,16,'canon','ecclesiastes',9,14,'free',
+     E'*There was a little city, and few men within it; and there came a great king against it, and besieged it, and built great bulwarks against it* (Ecclesiastes 9:14). Abel of Beth-maachah is that little city — *they cast up a bank against the city... and battered the wall, to throw it down* — when *a wise woman cried out of the city, Hear, hear.* The preacher''s parable of the besieged town and the wisdom hidden in it is enacted at her wall.'),
+    ('canon','2-samuel',20,19,'canon','ecclesiastes',9,15,'free',
+     E'*Now there was found in it a poor wise man, and he by his wisdom delivered the city; yet no man remembered that same poor man.* (Ecclesiastes 9:15). The wise woman pleads *I am one of them that are peaceable and faithful in Yashar''el (Israel): thou seekest to destroy a city and a mother in Yashar''el (Israel): why wilt thou swallow up the inheritance of Yahuah (LORD)?* — and by her wisdom the city is delivered, the unnamed deliverer of Ecclesiastes'' parable. Her counsel, not the sword, saves *the inheritance of Yahuah (LORD).*'),
+    ('canon','2-samuel',20,22,'canon','ecclesiastes',9,16,'free',
+     E'*Then said I, Wisdom is better than strength: nevertheless the poor man''s wisdom is despised, and his words are not heard.* (Ecclesiastes 9:16). *Then the woman went unto all the people in her wisdom* and the siege was lifted — the proof that *wisdom is better than strength.* Joab''s mighty men battering the wall could not take what one wise woman''s words secured.'),
+    ('canon','2-samuel',20,22,'canon','proverbs',21,22,'free',
+     E'*A wise man scaleth the city of the mighty, and casteth down the strength of the confidence thereof* (Proverbs 21:22). Here it is a wise woman, and she does it from within: she goes *unto all the people in her wisdom*, and the strength of Joab''s confident siege is cast down by counsel, not arms. Wisdom takes the city the mighty could not.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== THREADS =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-20-we-have-no-part-in-david-the-northern-cry',
+       E'We have no part in David — the northern cry against the one king',
+       E'A man of Belial blows a trumpet and the whole northern house breaks away: *And there happened to be there a man of Belial, whose name was Sheba, the son of Bichri, a Benjamite: and he blew a trumpet, and said, We have no part in David, neither have we inheritance in the son of Jesse: every man to his tents, O Yashar''el (Israel)* (2 Samuel 20:1). *So every man of Yashar''el (Israel) went up from after David... but the men of Yahudah (Judah) clave unto their king* (20:2) — north and south part, Yahudah holding the throne. These are not Sheba''s own words; they are the words of the coming schism. When the kingdom finally tears under Jeroboam the whole northern house cries them again: *What portion have we in David? neither have we inheritance in the son of Jesse: to your tents, O Yashar''el (Israel)... So Yashar''el (Israel) departed unto their tents* (1 Kings 12:16). The tearing was decreed: *Take thee ten pieces: for thus saith Yahuah (LORD)... Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). But the cry *We have no part in David* is the wound, not the last word. Yahuah swears the healing: *Behold, I will take the stick of Joseph, which is in the hand of Ephraim... and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19); *they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The rebel-trumpet sounds the fracture; the two sticks made one undo it.',
+       sv.verse_id, ev.verse_id, 'free', 37725
+  FROM _s341_2sa20_lookup sv, _s341_2sa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=20 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-20-joab-the-bloody-man-the-kiss-and-the-sword',
+       E'Joab the bloody man — the kiss and the sword',
+       E'Joab greets Amasa as a brother and kills him in the same breath: *And Joab said to Amasa, Art thou in health, my brother? And Joab took Amasa by the beard with the right hand to kiss him* (2 Samuel 20:9). *But Amasa took no heed to the sword that was in Joab''s hand: so he smote him therewith in the fifth rib, and shed out his bowels to the ground... and he died* (20:10). It is the murder of Abner exactly repeated: *And when Abner was returned to Hebron, Joab took him aside in the gate to speak with him quietly, and smote him there under the fifth rib, that he died* (2 Samuel 3:27) — the same hand, the same wound, the same false peace. David names the two together on his deathbed: *what he did to the two captains of the hosts of Yashar''el (Israel), unto Abner the son of Ner, and unto Amasa the son of Jether, whom he slew, and shed the blood of war in peace* (1 Kings 2:5). And the blood is judged: *And Yahuah (LORD) shall return his blood upon his own head, who fell upon two men more righteous and better than he... to wit, Abner the son of Ner... and Amasa the son of Jether* (1 Kings 2:32). The captains are *more righteous and better than he* — victims, not enemies — and the kiss that covered the sword is answered at the horns of the altar.',
+       sv.verse_id, ev.verse_id, 'free', 37737
+  FROM _s341_2sa20_lookup sv, _s341_2sa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=20 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-20-the-wise-woman-who-saved-the-city',
+       E'The wise woman who saved a city — wisdom better than strength',
+       E'When Joab''s mighty men batter the wall of Abel of Beth-maachah, the city is saved not by the sword but by one voice: *Then cried a wise woman out of the city, Hear, hear; say, I pray you, unto Joab, Come near hither, that I may speak with thee* (2 Samuel 20:16). She pleads for the inheritance: *I am one of them that are peaceable and faithful in Yashar''el (Israel): thou seekest to destroy a city and a mother in Yashar''el (Israel): why wilt thou swallow up the inheritance of Yahuah (LORD)?* (20:19). *Then the woman went unto all the people in her wisdom* and the siege is lifted (20:22). This is the preacher''s parable acted out: *There was a little city, and few men within it; and there came a great king against it, and besieged it, and built great bulwarks against it* (Ecclesiastes 9:14); *Now there was found in it a poor wise man, and he by his wisdom delivered the city; yet no man remembered that same poor man* (Ecclesiastes 9:15); *Wisdom is better than strength* (Ecclesiastes 9:16). And Proverbs says the same: *A wise man scaleth the city of the mighty, and casteth down the strength of the confidence thereof* (Proverbs 21:22). One wise woman, working from within, casts down the strength of Joab''s confident siege — the wisdom that saves what arms could only destroy.',
+       sv.verse_id, ev.verse_id, 'free', 37749
+  FROM _s341_2sa20_lookup sv, _s341_2sa20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=20 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== THREAD MEMBERS =====================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 12:16 — the SAME cry at the schism: *What portion have we in David?... to your tents, O Yashar''el (Israel)* — Sheba''s revolt rehearsed as a nation.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=1
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-we-have-no-part-in-david-the-northern-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 12:16 — north and south part as here: Yashar''el departs to its tents, Yahudah cleaves to the throne.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-we-have-no-part-in-david-the-northern-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 11:31 — the rending decreed: *I will rend the kingdom... and will give ten tribes to thee* — the seed of Sheba''s cry.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=1
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-we-have-no-part-in-david-the-northern-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ezekiel 37:19 — the answer to the fracture: the stick of Joseph and the stick of Yahudah (Judah) made one in Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=1
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-we-have-no-part-in-david-the-northern-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Ezekiel 37:22 — *they shall be no more two nations... neither... divided into two kingdoms any more at all* — the tents-cry undone, one king over all.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=1
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-we-have-no-part-in-david-the-northern-cry'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Samuel 3:27 — Abner murdered the same way: Joab draws him aside with a quiet word, then smites under the fifth rib.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=3 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-joab-the-bloody-man-the-kiss-and-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Samuel 3:27 — the identical wound: *smote him there under the fifth rib* — Joab''s signature on a second captain.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=3 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-joab-the-bloody-man-the-kiss-and-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 2:5 — David charges the two murders together: Abner and Amasa, *the blood of war in peace*.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-joab-the-bloody-man-the-kiss-and-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Kings 2:32 — the bloodguilt judged: Yahuah returns the blood on Joab''s own head; Amasa and Abner were *more righteous and better than he*.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=2 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-joab-the-bloody-man-the-kiss-and-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Ecclesiastes 9:14 — the little city besieged by a great king: Abel of Beth-maachah, with Joab''s bank cast up against the wall.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=16
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=9 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-the-wise-woman-who-saved-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Ecclesiastes 9:15 — *by his wisdom delivered the city*: the wise woman is that unnamed deliverer, pleading for *the inheritance of Yahuah (LORD)*.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=19
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=9 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-the-wise-woman-who-saved-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ecclesiastes 9:16 — *Wisdom is better than strength*: she goes to the people in her wisdom and the siege is lifted.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=22
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-the-wise-woman-who-saved-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Proverbs 21:22 — *A wise man scaleth the city of the mighty, and casteth down the strength of the confidence thereof*: wisdom takes what arms could not.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=20 AND sv.verse_number=22
+  JOIN _s341_2sa20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-20-the-wise-woman-who-saved-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session341 — 2 Samuel cross-references complete.'
