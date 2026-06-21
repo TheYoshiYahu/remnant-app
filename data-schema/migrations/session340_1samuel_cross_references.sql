@@ -1353,6 +1353,1355 @@ SELECT t.id, cr.id, 3, E'*Not unto us, O Yahuah (LORD)... but unto thy name give
  WHERE t.slug='1-samuel-5-the-captive-ark-vindicates-itself-among-the-heathen'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-samuel_6.sql (1 Samuel 6) -----
+--
+-- Book/chapter: 1 Samuel 6  (the Philistines return the ark on a new cart drawn by two
+--   milch kine with the golden trespass offering; the kine go straight to Beth-shemesh lowing,
+--   Yahuah vindicating Himself; the men of Beth-shemesh smitten for looking INTO the ark;
+--   "Who is able to stand before this holy Yahuah Elohim?")
+-- Tag: 1sa06    View: _s340_1sa06_lookup    Sort band: 36525 step 3 (36525,36528,36531,36534,36537)
+--
+-- 1 Samuel 6 coverage checklist:
+--   v.3-5,8,17 (trespass offering returns glory to Yahuah):
+--        NT:     none warranted (covered by Lev typology; NT atonement woven elsewhere)
+--        Extras: none warranted
+--        Tanakh: Leviticus 5 (the trespass/guilt offering — asham) — THREAD 1
+--   v.6 (harden not your hearts as the Egyptians and Pharaoh):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 8:15, Exodus 8:32 (Pharaoh hardened his heart) — THREAD 2
+--   v.7,8,11 (new cart, two milch kine bear the ark — irregular handling):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 6:3,6,7 (Uzzah's new cart and breach); 1 Chronicles 13:7,9,10;
+--                Numbers 4:15 (the Kohathites BEAR it, not touch) — THREAD 3
+--   v.13-15 (Beth-shemesh rejoice, burnt offerings, Levites take down the ark):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: folded into THREAD 3 / THREAD 4 (the reverence frame)
+--   v.19 (smitten for looking INTO the ark of Yahuah):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 4:15,20 (touch not / see not the holy things, lest they die);
+--                Exodus 19:21 (lest they break through to gaze and perish) — THREAD 4
+--   v.20 (Who is able to stand before this holy Yahuah Elohim?):
+--        NT:     Hebrews 12:28-29 (serve with reverence; our Elohim is a consuming fire)
+--        Extras: none warranted
+--        Tanakh: Psalm 24:3 (who shall stand in his holy place?); Psalm 130:3 (who shall stand?) — THREAD 5
+--   v.21 (sent to Kirjath-jearim to fetch up the ark): folded into THREAD 3 frame.
+--
+-- Threads (slug — target libraries — framing):
+--   1. 1-samuel-6-the-trespass-offering-that-returns-glory-to-yahuah
+--        [Tanakh: Leviticus] — the Philistines, healed only by an asham (trespass/guilt
+--        offering), instinctively return GLORY to the Elohim of Yashar'el; Torah's own
+--        guilt-offering law (Lev 5) is what they grope toward. Torah affirmed, not abolished.
+--   2. 1-samuel-6-harden-not-your-hearts-as-pharaoh
+--        [Tanakh: Exodus] — even Philistine diviners cite the lesson of Pharaoh; the hardened
+--        heart that fights Yahuah and is broken anyway.
+--   3. 1-samuel-6-the-new-cart-and-the-ark-of-his-presence
+--        [Tanakh: 2 Samuel, 1 Chronicles, Numbers] — the new-cart shortcut returns again under
+--        David and kills Uzzah; Torah set the ark to be BORNE on the shoulders of the Kohathites,
+--        never carted. The Presence is not handled on man's terms.
+--   4. 1-samuel-6-they-looked-into-the-ark-and-were-smitten
+--        [Tanakh: Numbers, Exodus] — the holiness of the Presence; the Kohathites forbidden to
+--        touch or even SEE the holy things uncovered (Num 4); the bounds at Sinai lest any gaze
+--        and perish (Exod 19). The Formed Glory between the cherubim is not common.
+--   5. 1-samuel-6-who-is-able-to-stand-before-this-holy-yahuah-elohim
+--        [Tanakh: Psalms; NT: Hebrews] — the cry of Beth-shemesh joins Psalm 24's "who shall
+--        stand in his holy place?" and Psalm 130's "who shall stand?"; answered forward in
+--        Hebrews 12 — serve with reverence, for our Elohim is a consuming fire. The Formed Son
+--        who dwelt between the cherubim is Yahuah and has a Father.
+--
+-- Contested/load-bearing framing notes:
+--   * Trespass offering (asham): the Philistines grope toward Torah's own remedy (Lev 5);
+--     read as Torah AFFIRMED — guilt requires restitution + atonement — not "old-covenant ritual."
+--   * v.19 slaughter: NOT ethnic/arbitrary cruelty but the consistent holiness of the Presence
+--     already legislated in Torah (Num 4); victims-not-enemies frame — the men were warned by Torah.
+--   * Christology: the ark-Glory "that dwelleth between the cherubims" is the Formed Son, the
+--     visible Presence who is Yahuah and HAS a Father — Heb 12 names him the Mediator who speaks
+--     from heaven; no co-equal-persons grammar imposed.
+
+CREATE TEMP VIEW _s340_1sa06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the trespass offering that returns glory to Yahuah
+    ('canon','1-samuel',6,3,'canon','leviticus',5,6,
+      E'*And he shall bring his trespass offering unto Yahuah (LORD) for his sin which he hath sinned, a female from the flock, a lamb or a kid of the goats, for a sin offering; and the priest shall make an atonement for him concerning his sin.* (Leviticus 5:6). The Philistine priests counsel, *in any wise return him a trespass offering: then ye shall be healed* (1 Samuel 6:3) — even the heathen grope toward Torah''s own remedy, the asham: guilt is not waved away but answered with restitution and atonement. Torah is affirmed, not foreign.',
+      'free'),
+    ('canon','1-samuel',6,5,'canon','leviticus',5,15,
+      E'*If a soul commit a trespass, and sin through ignorance, in the holy things of Yahuah (LORD); then he shall bring for his trespass unto Yahuah (LORD) a ram without blemish out of the flocks ... for a trespass offering* (Leviticus 5:15). The trespass against the *holy things* is exactly the Philistine crime — they seized the ark. Their counsel to *give glory unto the Elohim (God) of Yashar''el (Israel)* (1 Samuel 6:5) is the trespass-offering instinct: glory restored to its Owner.',
+      'free'),
+    ('canon','1-samuel',6,16,'canon','leviticus',5,16,
+      E'*And he shall make amends for the harm that he hath done in the holy thing, and shall add the fifth part thereto, and give it unto the priest: and the priest shall make an atonement for him with the ram of the trespass offering, and it shall be forgiven him.* (Leviticus 5:16). Torah''s asham adds a fifth in restitution; the five lords with their *five golden emerods, and five golden mice* (1 Samuel 6:4) pay a fivefold reparation back to Yahuah before they turn home — the law''s pattern enacted by Philistia.',
+      'free'),
+
+    -- THREAD 2: harden not your hearts as Pharaoh
+    ('canon','1-samuel',6,6,'canon','exodus',8,15,
+      E'*But when Pharaoh saw that there was respite, he hardened his heart, and hearkened not unto them; as Yahuah (LORD) had said.* (Exodus 8:15). The Philistine diviners themselves preach the Exodus sermon: *Wherefore then do ye harden your hearts, as the Egyptians and Pharaoh hardened their hearts?* (1 Samuel 6:6) — the relented respite that only re-hardens is the very sin they warn against.',
+      'free'),
+    ('canon','1-samuel',6,6,'canon','exodus',8,32,
+      E'*And Pharaoh hardened his heart at this time also, neither would he let the people go.* (Exodus 8:32). Plague after plague, Pharaoh''s heart sets harder against Yahuah and is shattered anyway; *did they not let the people go, and they departed?* (1 Samuel 6:6) — the Philistines fear to repeat the contest they know Egypt lost.',
+      'free'),
+
+    -- THREAD 3: the new cart and the ark of his Presence
+    ('canon','1-samuel',6,7,'canon','2-samuel',6,3,
+      E'*And they set the ark of Elohim (God) upon a new cart, and brought it out of the house of Abinadab that was in Gibeah: and Uzzah and Ahio, the sons of Abinadab, drave the new cart.* (2 Samuel 6:3). Israel later copies the Philistine method — *Now therefore make a new cart* (1 Samuel 6:7) — but what the heathen may be excused for, the covenant people are not: Torah set the ark to be BORNE, not carted.',
+      'free'),
+    ('canon','1-samuel',6,7,'canon','2-samuel',6,7,
+      E'*And the anger of Yahuah (LORD) was kindled against Uzzah; and Elohim (God) smote him there for his error; and there he died by the ark of Elohim (God).* (2 Samuel 6:7). The new-cart shortcut that brought the ark home from Philistia (1 Samuel 6:7) returns under David and kills a man of Israel — the Presence is not handled on man''s convenient terms.',
+      'free'),
+    ('canon','1-samuel',6,11,'canon','1-chronicles',13,10,
+      E'*And the anger of Yahuah (LORD) was kindled against Uzza, and he smote him, because he put his hand to the ark: and there he died before Elohim (God).* (1 Chronicles 13:10). They *laid the ark of Yahuah (LORD) upon the cart* (1 Samuel 6:11) — and the Chronicler records the same fatal cart, the hand stretched to a thing too holy to steady by human touch.',
+      'free'),
+    ('canon','1-samuel',6,15,'canon','numbers',4,15,
+      E'*And when Aaron and his sons have made an end of covering the sanctuary, and all the vessels of the sanctuary ... after that, the sons of Kohath shall come to bear it: but they shall not touch any holy thing, lest they die.* (Numbers 4:15). Here at Beth-shemesh *the Levites took down the ark of Yahuah (LORD)* (1 Samuel 6:15) — the BEARING that Torah ordained, set against the cart: the ark belongs on the shoulders of the Kohathites.',
+      'free'),
+
+    -- THREAD 4: they looked into the ark and were smitten
+    ('canon','1-samuel',6,19,'canon','numbers',4,15,
+      E'*... after that, the sons of Kohath shall come to bear it: but they shall not touch any holy thing, lest they die.* (Numbers 4:15). The men of Beth-shemesh *had looked into the ark of Yahuah (LORD)* (1 Samuel 6:19) and were smitten — Torah had already warned that even the appointed bearers die if they touch the most holy things. Holiness is not cruelty; it is the law they were given.',
+      'free'),
+    ('canon','1-samuel',6,19,'canon','numbers',4,20,
+      E'*But they shall not go in to see when the holy things are covered, lest they die.* (Numbers 4:20). Even the Kohathites were forbidden to SEE the holy things uncovered; the men of Beth-shemesh *looked into the ark* (1 Samuel 6:19) and fell under the same word — the gaze that presumes upon the Presence is fatal.',
+      'free'),
+    ('canon','1-samuel',6,19,'canon','exodus',19,21,
+      E'*And Yahuah (LORD) said unto Moses, Go down, charge the people, lest they break through unto Yahuah (LORD) to gaze, and many of them perish.* (Exodus 19:21). At Sinai the bounds were set lest the people *gaze* and perish; at Beth-shemesh the bounds are crossed by eyes that *looked into the ark* (1 Samuel 6:19) — the Glory between the cherubim is the same consuming holiness.',
+      'free'),
+
+    -- THREAD 5: who is able to stand before this holy Yahuah Elohim
+    ('canon','1-samuel',6,20,'canon','psalms',24,3,
+      E'*Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place?* (Psalm 24:3). Beth-shemesh''s cry — *Who is able to stand before this holy Yahuah Elohim (LORD God)?* (1 Samuel 6:20) — is the ark-psalm''s own question; and the answer follows: *He that hath clean hands, and a pure heart* (Psalm 24:4), not the presumptuous eye.',
+      'free'),
+    ('canon','1-samuel',6,20,'canon','psalms',130,3,
+      E'*If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand?* (Psalm 130:3). None can stand on his own before the holy Presence — *Who is able to stand before this holy Yahuah Elohim?* (1 Samuel 6:20); yet the psalm answers, *But there is forgiveness with thee, that thou mayest be feared* (Psalm 130:4): reverence, not despair.',
+      'free'),
+    ('canon','1-samuel',6,20,'canon','hebrews',12,29,
+      E'*For our Elohim (God) is a consuming fire.* (Hebrews 12:29). The terror of Beth-shemesh — *Who is able to stand before this holy Yahuah Elohim?* (1 Samuel 6:20) — is carried forward: *let us have grace, whereby we may serve Elohim (God) acceptably with reverence and godly fear* (Hebrews 12:28). The same holy Presence between the cherubim is the Formed Son, the Mediator who speaks from heaven, who is Yahuah and HAS a Father.',
+      'free')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,note,tier)
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-6-the-trespass-offering-that-returns-glory-to-yahuah',
+       E'The Trespass Offering That Returns Glory to Yahuah',
+       E'Held seven months under the plague, the Philistine priests counsel: *send it not empty; but in any wise return him a trespass offering: then ye shall be healed* (1 Samuel 6:3), and *ye shall give glory unto the Elohim (God) of Yashar''el (Israel)* (1 Samuel 6:5). Even the heathen grope toward Torah''s own remedy. The law of the asham (guilt offering) is precisely this: *And he shall bring his trespass offering unto Yahuah (LORD) for his sin which he hath sinned ... and the priest shall make an atonement for him concerning his sin* (Leviticus 5:6); and where the sin is *in the holy things of Yahuah* — exactly the Philistine crime of seizing the ark — *then he shall bring for his trespass unto Yahuah (LORD) a ram without blemish ... for a trespass offering* (Leviticus 5:15). Torah even fixes the restitution: *he shall make amends for the harm that he hath done in the holy thing, and shall add the fifth part thereto* (Leviticus 5:16) — and the five lords pay a fivefold reparation, *Five golden emerods, and five golden mice* (1 Samuel 6:4), back to its Owner. The glory stolen is returned; guilt is not waved away but answered. Torah is affirmed, not abolished — its pattern is so deep that pagans stumble into it.',
+       sv.verse_id, ev.verse_id, 'free', 36525
+  FROM _s340_1sa06_lookup sv, _s340_1sa06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=6 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-6-harden-not-your-hearts-as-pharaoh',
+       E'Harden Not Your Hearts as Pharaoh',
+       E'The Philistine diviners preach an Exodus sermon to their own lords: *Wherefore then do ye harden your hearts, as the Egyptians and Pharaoh hardened their hearts? when he had wrought wonderfully among them, did they not let the people go, and they departed?* (1 Samuel 6:6). They remember the contest Egypt lost. Plague by plague Pharaoh''s heart set harder: *when Pharaoh saw that there was respite, he hardened his heart, and hearkened not unto them; as Yahuah (LORD) had said* (Exodus 8:15) — and again, *Pharaoh hardened his heart at this time also, neither would he let the people go* (Exodus 8:32). The respite that only re-hardens is the surest road to ruin. Yahuah is vindicated against the hard heart whether at the Nile or in Philistia; the wise course is to let His ark go up, and not fight the One who already shattered Egypt.',
+       sv.verse_id, ev.verse_id, 'free', 36528
+  FROM _s340_1sa06_lookup sv, _s340_1sa06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=6 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-6-the-new-cart-and-the-ark-of-his-presence',
+       E'The New Cart and the Ark of His Presence',
+       E'The Philistines build *a new cart* and yoke *two milch kine, on which there hath come no yoke* (1 Samuel 6:7), lay the ark upon it (1 Samuel 6:11), and the lowing kine go straight to Beth-shemesh — Yahuah vindicating Himself, needing no Israelite hand. But what the heathen may be excused, the covenant people are not. Years later David copies the very method: *they set the ark of Elohim (God) upon a new cart ... and Uzzah and Ahio ... drave the new cart* (2 Samuel 6:3), and when Uzzah steadies it the cart kills him — *the anger of Yahuah (LORD) was kindled against Uzzah; and Elohim (God) smote him there for his error* (2 Samuel 6:7); the Chronicler records the same: *he smote him, because he put his hand to the ark: and there he died before Elohim (God)* (1 Chronicles 13:10). The cart was never the way. At Beth-shemesh *the Levites took down the ark of Yahuah (LORD)* (1 Samuel 6:15) — the bearing Torah ordained, *the sons of Kohath shall come to bear it: but they shall not touch any holy thing, lest they die* (Numbers 4:15). The Presence between the cherubim is the Formed Glory of Yahuah; He is carried on consecrated shoulders, never handled on man''s convenient terms.',
+       sv.verse_id, ev.verse_id, 'free', 36531
+  FROM _s340_1sa06_lookup sv, _s340_1sa06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=6 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-6-they-looked-into-the-ark-and-were-smitten',
+       E'They Looked Into the Ark and Were Smitten',
+       E'*And he smote the men of Beth-shemesh, because they had looked into the ark of Yahuah (LORD)* (1 Samuel 6:19). This is not arbitrary cruelty but the consistent holiness of the Presence, already legislated in Torah. The Kohathites — the very bearers — were charged: *they shall not touch any holy thing, lest they die* (Numbers 4:15), and more, *they shall not go in to see when the holy things are covered, lest they die* (Numbers 4:20). Even the gaze of the appointed is forbidden. At Sinai the bounds carried the same warning: *charge the people, lest they break through unto Yahuah (LORD) to gaze, and many of them perish* (Exodus 19:21). The men of Beth-shemesh, warned by the Torah they possessed, presumed to look INTO the ark — and fell under the word they already had. The fire between the cherubim is the Formed Presence of Yahuah; reverence, not the prying eye, is its only safe posture.',
+       sv.verse_id, ev.verse_id, 'free', 36534
+  FROM _s340_1sa06_lookup sv, _s340_1sa06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=6 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-6-who-is-able-to-stand-before-this-holy-yahuah-elohim',
+       E'Who Is Able to Stand Before This Holy Yahuah Elohim',
+       E'Reeling from the slaughter, Beth-shemesh cries, *Who is able to stand before this holy Yahuah Elohim (LORD God)?* (1 Samuel 6:20). It is the ark-psalm''s own question: *Who shall ascend into the hill of Yahuah (LORD)? or who shall stand in his holy place?* (Psalm 24:3) — answered, *He that hath clean hands, and a pure heart* (Psalm 24:4), not the presumptuous eye. And again the cry of the depths: *If thou, Yahuah (LORD), shouldest mark iniquities, O Yahuah (Lord), who shall stand?* (Psalm 130:3) — yet *there is forgiveness with thee, that thou mayest be feared* (Psalm 130:4): reverence, not despair, is the door. The whole arc carries forward to the assembly that comes not to a mountain that burned but to the heavenly Jerusalem: *let us have grace, whereby we may serve Elohim (God) acceptably with reverence and godly fear: For our Elohim (God) is a consuming fire* (Hebrews 12:28-29). The holy Presence between the cherubim — the One who smote Beth-shemesh — is the Formed Son, the Mediator who speaks from heaven; He is Yahuah, and He has a Father.',
+       sv.verse_id, ev.verse_id, 'free', 36537
+  FROM _s340_1sa06_lookup sv, _s340_1sa06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=6 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== thread_members =====================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 5:6 — *he shall bring his trespass offering unto Yahuah (LORD) ... and the priest shall make an atonement for him* — Torah''s asham, the very remedy the Philistines grope toward.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=3
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=5 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-trespass-offering-that-returns-glory-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 5:15 — trespass *in the holy things of Yahuah* requires *a ram without blemish ... for a trespass offering*: the Philistine sin against the ark is exactly this category.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=5
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-trespass-offering-that-returns-glory-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 5:16 — *add the fifth part thereto* in restitution; the fivefold golden reparation of the five lords enacts the asham''s added-fifth.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=5 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-trespass-offering-that-returns-glory-to-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 8:15 — *when Pharaoh saw that there was respite, he hardened his heart*: the relented respite that only re-hardens, the exact sin Philistia is warned against.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=8 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-harden-not-your-hearts-as-pharaoh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 8:32 — *Pharaoh hardened his heart at this time also*: the heart that fights Yahuah and is broken anyway; the contest Philistia fears to repeat.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=8 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-harden-not-your-hearts-as-pharaoh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Samuel 6:3 — David *set the ark ... upon a new cart*: Israel copies the Philistine method that Torah never sanctioned.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-new-cart-and-the-ark-of-his-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Samuel 6:7 — *Elohim (God) smote him there for his error*: the new-cart shortcut kills Uzzah; the Presence is not handled on man''s terms.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-new-cart-and-the-ark-of-his-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Chronicles 13:10 — *because he put his hand to the ark ... he died*: the Chronicler''s witness to the same fatal cart.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=11
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=13 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-new-cart-and-the-ark-of-his-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Numbers 4:15 — *the sons of Kohath shall come to bear it: but they shall not touch any holy thing, lest they die*: the ark belongs on consecrated shoulders, as the Levites take it down here.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=15
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=4 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-the-new-cart-and-the-ark-of-his-presence'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 4:15 — *they shall not touch any holy thing, lest they die*: Torah''s warning the men of Beth-shemesh already possessed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=19
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=4 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-they-looked-into-the-ark-and-were-smitten'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 4:20 — *they shall not go in to see when the holy things are covered, lest they die*: even the gaze is forbidden; Beth-shemesh looked INTO the ark.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=19
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=4 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-they-looked-into-the-ark-and-were-smitten'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 19:21 — *lest they break through unto Yahuah (LORD) to gaze, and many of them perish*: the Sinai bounds, the same consuming holiness crossed by the prying eye.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=19
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-they-looked-into-the-ark-and-were-smitten'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 24:3 — *who shall stand in his holy place?*: the ark-psalm''s own question, echoed by Beth-shemesh; answered by clean hands and a pure heart.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-who-is-able-to-stand-before-this-holy-yahuah-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 130:3 — *who shall stand?*: none on his own merit; yet *there is forgiveness with thee, that thou mayest be feared* — reverence, not despair.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=130 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-who-is-able-to-stand-before-this-holy-yahuah-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 12:29 — *For our Elohim (God) is a consuming fire*: the holiness of the Presence carried forward; serve with reverence — the Formed Mediator who speaks from heaven, Yahuah who has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s340_1sa06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-6-who-is-able-to-stand-before-this-holy-yahuah-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_7.sql (1 Samuel 7) -----
+-- Chapter: 1 Samuel 7 — national repentance at Mizpeh. Samuel calls the whole house to
+--   return with all their hearts, put away the strange gods and Ashtaroth, and serve Yahuah
+--   only (7:3-4); Yashar'el gathers, draws and pours out water, fasts, confesses "We have
+--   sinned" (7:5-6); the Philistines come up and Yahuah thunders and routs them while Samuel
+--   offers the lamb and cries (7:8-11); Samuel raises the stone Eben-ezer — "Hitherto hath
+--   Yahuah helped us" (7:12); the prophet-judge-intercessor judges Yashar'el all his days
+--   and builds an altar at Ramah (7:15-17).
+-- Tag: 1sa07   View: _s340_1sa07_lookup   Sort band: base 36550, step 3 → 36550,36553,36556,36559,36562
+--
+-- 1 Samuel 7 coverage:
+--   v.3-4  (return with all your hearts; put away the strange gods and Ashtaroth; serve him only)
+--          NT:     none warranted (covenant-renewal pattern; Mediator weave goes to THREAD 4)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 30:2-3 (return... and gather thee from all the nations);
+--                  Deuteronomy 6:13-14 (fear Yahuah, serve him, go not after other gods);
+--                  Joshua 24:14,23 (put away the strange gods... serve him); Judges 10:15-16
+--                  (put away the strange gods, served Yahuah) — THREAD 1
+--   v.5-6  (gather to Mizpeh; drew water and poured it out; fasted; We have sinned against Yahuah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Judges 10:10 (We have sinned... forsaken... served Baalim); 1 Samuel 12:10
+--                  (We have sinned... served Baalim and Ashtaroth: but now deliver us) — THREAD 2
+--   v.8-11 (Cease not to cry unto Yahuah our God; Samuel offers the lamb and cries; Yahuah
+--           thundered and discomfited the Philistines)
+--          NT:     none warranted (Samuel-as-intercessor folds to THREAD 4)
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 12:17-18 (Samuel called; Yahuah sent thunder) — THREAD 3 (deliverance)
+--   v.12   (Eben-ezer — the stone: Hitherto hath Yahuah helped us)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Joshua 24:26-27 (Joshua took a great stone... this stone shall be a witness);
+--                  1 Samuel 12:11 (Yahuah sent... and delivered you) — THREAD 3
+--   v.8-10, 9, 5  (Samuel the prophet-judge-intercessor who stands in the breach)
+--          NT:     Hebrews 7:25 (he ever liveth to make intercession); 1 Timothy 2:5 (one
+--                  mediator between Elohim and men, the man HaMashiach Yahusha) — THREAD 4
+--          Extras: none warranted
+--          Tanakh: Psalm 99:6 (Samuel among them that call upon his name; he answered them);
+--                  Jeremiah 15:1 (Though Moses and Samuel stood before me); 1 Samuel 12:23
+--                  (I should sin against Yahuah in ceasing to pray for you) — THREAD 4
+--   v.15-17 (Samuel judged Yashar'el all the days of his life; circuit; altar at Ramah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 12:1-5 (the judge's clean hands — witness against me);
+--                  Judges 10:1-3 (the judges who arose to defend Yashar'el) — THREAD 5
+--
+-- THREADS:
+--   1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods (1-samuel; deuteronomy; joshua; judges) — free
+--        The covenant-renewal call: return with the whole heart, put away the strange gods and
+--        Ashtaroth, serve Yahuah only — Deut 30 turn-and-be-gathered, Deut 6 serve him only,
+--        Josh 24 and Judg 10 the same putting-away. Torah is the inheritance, never the curse.
+--   1-samuel-7-we-have-sinned-the-confession-at-mizpeh (1-samuel; judges) — free
+--        Drew water, poured it out, fasted, "We have sinned against Yahuah" — the same confession
+--        as Judg 10:10 and 1 Sam 12:10; true return is owned guilt, not a manipulated relic.
+--   1-samuel-7-eben-ezer-hitherto-hath-yahuah-helped-us (1-samuel; joshua) — free
+--        Yahuah thunders and routs the Philistines; Samuel raises the witness-stone Eben-ezer —
+--        as Joshua raised the witness-stone at Shechem; the help is Yahuah's, the stone testifies.
+--   1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach (1-samuel; psalms; jeremiah; hebrews; 1-timothy) — free
+--        Samuel the intercessor — cry unto Yahuah our God for us; Ps 99:6 and Jer 15:1 name him
+--        with Moses as the one who stands before Yahuah; the Moses-pattern mediator who foreshadows
+--        the One who EVER liveth to make intercession (Heb 7:25), the one Mediator (1 Tim 2:5,
+--        a MAN with a Father, not a co-equal person).
+--   1-samuel-7-samuel-judged-yasharel-all-his-days-the-faithful-judge (1-samuel; judges) — free
+--        The prophet-judge in circuit all his life, an altar at Ramah; the clean-handed judge of
+--        ch12 ("whose ox have I taken?"), the line of judges raised to defend Yashar'el (Judg 10).
+
+CREATE TEMP VIEW _s340_1sa07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- THREAD 1: return with all your hearts and put away the strange gods
+  ('canon','1-samuel',7,3,'canon','deuteronomy',30,2,'free',
+   E'*And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day, thou and thy children, with all thine heart, and with all thy soul;* (Deuteronomy 30:2). Samuel''s call — *If ye do return unto Yahuah (LORD) with all your hearts... and prepare your hearts unto Yahuah (LORD), and serve him only* (1 Samuel 7:3) — is Moses'' covenant promise enacted. The return is with the WHOLE heart, the Torah obeyed not abolished; this is the road back, never a curse but the inheritance owned again.'),
+  ('canon','1-samuel',7,3,'canon','deuteronomy',30,3,'free',
+   E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee.* (Deuteronomy 30:3). When Yashar''el returns with the whole heart, Yahuah will *deliver you out of the hand of the Philistines* (1 Samuel 7:3) — the local deliverance is the firstfruit of the great promise: He who scatters the two houses will turn and gather them when they turn to Him.'),
+  ('canon','1-samuel',7,3,'canon','deuteronomy',6,13,'free',
+   E'*Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him, and shalt swear by his name.* (Deuteronomy 6:13). Samuel''s *serve him only* (1 Samuel 7:3) is the Shema''s charge pressed home: undivided service to the one Yahuah. The strange gods cannot share the heart that is His alone.'),
+  ('canon','1-samuel',7,4,'canon','deuteronomy',6,14,'free',
+   E'*Ye shall not go after other gods, of the gods of the people which are round about you;* (Deuteronomy 6:14). *Then the children of Yashar''el (Israel) did put away Baalim and Ashtaroth, and served Yahuah (LORD) only* (1 Samuel 7:4) is exact obedience to the command — turning from the gods of the surrounding peoples to Yahuah alone.'),
+  ('canon','1-samuel',7,3,'canon','joshua',24,14,'free',
+   E'*Now therefore fear Yahuah (LORD), and serve him in sincerity and in truth: and put away the gods which your fathers served on the other side of the flood, and in Egypt; and serve ye Yahuah (LORD).* (Joshua 24:14). Joshua''s charge at Shechem and Samuel''s at Mizpeh are one covenant-renewal: *put away the strange gods and Ashtaroth from among you... and serve him only* (1 Samuel 7:3). The same prophet-leader summons, the same demand — sincere, whole-hearted service of Yahuah alone.'),
+  ('canon','1-samuel',7,4,'canon','joshua',24,23,'free',
+   E'*Now therefore put away, said he, the strange gods which are among you, and incline your heart unto Yahuah Elohim (the LORD God) of Yashar''el (Israel).* (Joshua 24:23). *Then the children of Yashar''el (Israel) did put away Baalim and Ashtaroth* (1 Samuel 7:4) answers Joshua''s very words — the heart inclined to Yahuah, the foreign idols put out from the midst.'),
+  ('canon','1-samuel',7,4,'canon','judges',10,16,'free',
+   E'*And they put away the strange gods from among them, and served Yahuah (LORD): and his soul was grieved for the misery of Yashar''el (Israel).* (Judges 10:16). The judges-era pattern is renewed under Samuel: *did put away Baalim and Ashtaroth, and served Yahuah (LORD) only* (1 Samuel 7:4). The putting-away is the proof of the turned heart, and Yahuah''s grieving compassion meets it.'),
+  -- THREAD 2: We have sinned — the confession at Mizpeh
+  ('canon','1-samuel',7,6,'canon','judges',10,10,'free',
+   E'*And the children of Yashar''el (Israel) cried unto Yahuah (LORD), saying, We have sinned against thee, both because we have forsaken our Elohim (God), and also served Baalim.* (Judges 10:10). At Mizpeh they gathered *and said there, We have sinned against Yahuah (LORD)* (1 Samuel 7:6) — the same owned confession, naming the sin of forsaking Yahuah for the Baalim. Repentance begins in spoken guilt, not in a managed ritual.'),
+  ('canon','1-samuel',7,6,'canon','1-samuel',12,10,'free',
+   E'*And they cried unto Yahuah (LORD), and said, We have sinned, because we have forsaken Yahuah (LORD), and have served Baalim and Ashtaroth: but now deliver us out of the hand of our enemies, and we will serve thee.* (1 Samuel 12:10). Samuel later rehearses this very confession as the pattern of every deliverance; at Mizpeh it is freshly made — *We have sinned against Yahuah (LORD)* (1 Samuel 7:6) — fasting, pouring out water, the whole house owning its guilt before the routing of the Philistines.'),
+  -- THREAD 3: Eben-ezer — Hitherto hath Yahuah helped us
+  ('canon','1-samuel',7,12,'canon','joshua',24,26,'free',
+   E'*And Joshua wrote these words in the book of the law of Elohim (God), and took a great stone, and set it up there under an oak, that was by the sanctuary of Yahuah (LORD).* (Joshua 24:26). As Joshua raised a witness-stone to seal the covenant at Shechem, Samuel *took a stone, and set it between Mizpeh and Shen, and called the name of it Eben-ezer* (1 Samuel 7:12). The standing stone is memory made visible — a marker that the help came from Yahuah and the covenant was renewed here.'),
+  ('canon','1-samuel',7,12,'canon','joshua',24,27,'free',
+   E'*And Joshua said unto all the people, Behold, this stone shall be a witness unto us; for it hath heard all the words of Yahuah (LORD) which he spake unto us: it shall be therefore a witness unto you, lest ye deny your Elohim (God).* (Joshua 24:27). Eben-ezer, *saying, Hitherto hath Yahuah (LORD) helped us* (1 Samuel 7:12), is such a witness-stone — set so that no generation can deny the deliverance Yahuah wrought, the thunder that scattered the Philistines remembered in stone.'),
+  ('canon','1-samuel',7,12,'canon','1-samuel',12,11,'free',
+   E'*And Yahuah (LORD) sent Jerubbaal, and Bedan, and Jephthah, and Samuel, and delivered you out of the hand of your enemies on every side, and ye dwelled safe.* (1 Samuel 12:11). The Eben-ezer stone — *Hitherto hath Yahuah (LORD) helped us* (1 Samuel 7:12) — is one chapter in the long record Samuel names: Yahuah Himself raising deliverers and delivering His people. The help was His doing through Samuel, never Samuel''s own arm.'),
+  -- THREAD 4: Cease not to cry — the prophet who stands in the breach (the Mediator foreshadowed)
+  ('canon','1-samuel',7,8,'canon','psalms',99,6,'free',
+   E'*Moses and Aaron among his priests, and Samuel among them that call upon his name; they called upon Yahuah (LORD), and he answered them.* (Psalm 99:6). The people beg *Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us* (1 Samuel 7:8), and the Psalm enthrones Samuel beside Moses and Aaron as one who calls and is answered — the prophet-intercessor whose cry Yahuah hears for the whole house.'),
+  ('canon','1-samuel',7,9,'canon','jeremiah',15,1,'free',
+   E'*Then said Yahuah (LORD) unto me, Though Moses and Samuel stood before me, yet my mind could not be toward this people: cast them out of my sight, and let them go forth.* (Jeremiah 15:1). When *Samuel cried unto Yahuah (LORD) for Yashar''el (Israel); and Yahuah (LORD) heard him* (1 Samuel 7:9), he became the proverb of effectual intercession — Yahuah names Moses and Samuel as the two whose standing-before-Him most surely turns His hand, the Moses-pattern mediator standing in the breach.'),
+  ('canon','1-samuel',7,8,'canon','1-samuel',12,23,'free',
+   E'*Moreover as for me, Elohim (God) forbid that I should sin against Yahuah (LORD) in ceasing to pray for you: but I will teach you the good and the right way:* (1 Samuel 12:23). Samuel takes the people''s plea — *Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us* (1 Samuel 7:8) — as a binding charge: to stop interceding would itself be sin. The faithful mediator joins ceaseless prayer to teaching the right way of Yahuah.'),
+  ('canon','1-samuel',7,9,'canon','hebrews',7,25,'free',
+   E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them.* (Hebrews 7:25). *Samuel cried unto Yahuah (LORD) for Yashar''el (Israel); and Yahuah (LORD) heard him* (1 Samuel 7:9) — the prophet who stands in the breach foreshadows the Formed Son who never ceases to intercede. Samuel must die and pass his circuit on; the One after the order of Melek Tsadiq (Melchizedek) *ever liveth*, the intercession that never lifts.'),
+  ('canon','1-samuel',7,9,'canon','1-timothy',2,5,'free',
+   E'*For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus);* (1 Timothy 2:5). Samuel offering the lamb and crying for Yashar''el (1 Samuel 7:9) is the shadow; the substance is the one Mediator — and Paul names Him *the man*, the Formed Son who has a Father, who stands between Elohim and men. Not a co-equal person of a triad and no created angel, but the One drawn from the Formless who took flesh to mediate.'),
+  ('canon','1-samuel',7,15,'canon','judges',10,1,'free',
+   E'*And after Abimelech there arose to defend Yashar''el (Israel) Tola the son of Puah, the son of Dodo, a man of Issachar; and he dwelt in Shamir in mount Ephraim* (Judges 10:1); *And he judged Yashar''el (Israel) twenty and three years* (Judges 10:2). Samuel *judged Yashar''el (Israel) all the days of his life* (1 Samuel 7:15) — the faithful capstone of the line of judges Yahuah (LORD) raised up to defend and deliver His people.'),
+  ('canon','1-samuel',7,15,'canon','1-samuel',12,3,'free',
+   E'*Behold, here I am: witness against me before Yahuah (LORD), and before his anointed: whose ox have I taken? or whose ass have I taken? or whom have I defrauded? whom have I oppressed?* (1 Samuel 12:3). The judge who *judged Yashar''el (Israel) all the days of his life* (1 Samuel 7:15) ends with clean hands — the proof of a faithful prophet-judge, taking nothing, oppressing none.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods',
+  E'Return with all your hearts — and put away the strange gods',
+  E'After twenty years of mourning, Samuel calls the whole house back: *If ye do return unto Yahuah (LORD) with all your hearts, then put away the strange gods and Ashtaroth from among you, and prepare your hearts unto Yahuah (LORD), and serve him only: and he will deliver you out of the hand of the Philistines* (1 Samuel 7:3), and they obey — *did put away Baalim and Ashtaroth, and served Yahuah (LORD) only* (1 Samuel 7:4). This is Moses'' covenant promise enacted: *And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice... with all thine heart, and with all thy soul* (Deuteronomy 30:2), with the assurance that follows — *he will... return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). The local rescue from the Philistines is the firstfruit of the great two-house ingathering: the One who scatters will gather the heart that turns to Him. *Serve him only* is the Shema''s own charge — *Thou shalt fear Yahuah Elohayka (the LORD thy God), and serve him* (Deuteronomy 6:13), *Ye shall not go after other gods* (Deuteronomy 6:14). And it is the very renewal Joshua led at Shechem — *put away the gods which your fathers served... and serve ye Yahuah (LORD)* (Joshua 24:14), *incline your heart unto Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 24:23) — and that the judges saw again and again: *And they put away the strange gods from among them, and served Yahuah (LORD)* (Judges 10:16). The Torah here is no curse but the inheritance owned again; the road back is always the whole heart turned and the idols put out.',
+  sv.verse_id, ev.verse_id, 'free', 36550
+  FROM _s340_1sa07_lookup sv, _s340_1sa07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=7 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-7-we-have-sinned-the-confession-at-mizpeh',
+  E'We have sinned — the confession at Mizpeh',
+  E'The returning house gathers and humbles itself: *And they gathered together to Mizpeh, and drew water, and poured it out before Yahuah (LORD), and fasted on that day, and said there, We have sinned against Yahuah (LORD)* (1 Samuel 7:6). The poured-out water and the fast are the body''s confession; the spoken *We have sinned* is the heart''s. It is the same owned guilt the judges'' generation made — *We have sinned against thee, both because we have forsaken our Elohim (God), and also served Baalim* (Judges 10:10) — and the same Samuel himself will hold up as the pattern of every deliverance: *We have sinned, because we have forsaken Yahuah (LORD), and have served Baalim and Ashtaroth: but now deliver us out of the hand of our enemies, and we will serve thee* (1 Samuel 12:10). True return is not a managed relic or a magic shout (as the ark had been mishandled at Aphek), but named, spoken, owned sin, and the resolve to serve Yahuah alone. Yahuah answers the broken heart, not the manipulated symbol.',
+  sv.verse_id, ev.verse_id, 'free', 36553
+  FROM _s340_1sa07_lookup sv, _s340_1sa07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=7 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-7-eben-ezer-hitherto-hath-yahuah-helped-us',
+  E'Eben-ezer — Hitherto hath Yahuah helped us',
+  E'As Samuel offers the lamb and cries, *Yahuah (LORD) thundered with a great thunder on that day upon the Philistines, and discomfited them; and they were smitten before Yashar''el (Israel)* (1 Samuel 7:10) — Yahuah Himself, not Israel''s arm, wins the field. To seal the memory Samuel *took a stone, and set it between Mizpeh and Shen, and called the name of it Eben-ezer, saying, Hitherto hath Yahuah (LORD) helped us* (1 Samuel 7:12). It is the witness-stone of covenant renewal, exactly as Joshua had raised one at Shechem: *took a great stone, and set it up there under an oak, that was by the sanctuary of Yahuah (LORD)* (Joshua 24:26), declaring *Behold, this stone shall be a witness unto us; for it hath heard all the words of Yahuah (LORD)... lest ye deny your Elohim (God)* (Joshua 24:27). The standing stone is memory made unforgettable — set so no later generation can deny what Yahuah did here. And the help named in stone is one chapter of the long record Samuel rehearses: *And Yahuah (LORD) sent Jerubbaal, and Bedan, and Jephthah, and Samuel, and delivered you out of the hand of your enemies on every side* (1 Samuel 12:11). The credit is Yahuah''s; the prophet only raises the marker that says so.',
+  sv.verse_id, ev.verse_id, 'free', 36556
+  FROM _s340_1sa07_lookup sv, _s340_1sa07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=7 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach',
+  E'Cease not to cry — the prophet who stands in the breach',
+  E'Afraid of the Philistines, the people throw themselves on Samuel''s intercession: *Cease not to cry unto Yahuah Eloheinu (the LORD our God) for us, that he will save us out of the hand of the Philistines* (1 Samuel 7:8), and he does — *Samuel cried unto Yahuah (LORD) for Yashar''el (Israel); and Yahuah (LORD) heard him* (1 Samuel 7:9). Samuel becomes the very emblem of effectual intercession. The Psalm enthrones him with the great mediators: *Moses and Aaron among his priests, and Samuel among them that call upon his name; they called upon Yahuah (LORD), and he answered them* (Psalm 99:6). And Yahuah names him with Moses as the standing-before-Him most able to turn His hand: *Though Moses and Samuel stood before me, yet my mind could not be toward this people* (Jeremiah 15:1) — only such pleading could so move Him. Samuel held this office as a sacred duty: *Elohim (God) forbid that I should sin against Yahuah (LORD) in ceasing to pray for you* (1 Samuel 12:23). All of it is the shadow of the One it foreshadows — the Moses-pattern mediator who stands in the breach is filled by the Formed Son who *ever liveth to make intercession for them* (Hebrews 7:25), the priest after the order of Melek Tsadiq (Melchizedek) whose cry never lifts. He is *one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5) — *the man*, the One drawn from the Formless who has a Father and took flesh to stand between, not a co-equal of a triad nor a created angel. Samuel must die and hand on his circuit; the true Intercessor never ceases.',
+  sv.verse_id, ev.verse_id, 'free', 36559
+  FROM _s340_1sa07_lookup sv, _s340_1sa07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=7 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-7-samuel-judged-yasharel-all-his-days-the-faithful-judge',
+  E'Samuel judged Yashar''el all his days — the faithful judge',
+  E'The chapter closes on a settled, lifelong faithfulness: *And Samuel judged Yashar''el (Israel) all the days of his life. And he went from year to year in circuit to Beth-el, and Gilgal, and Mizpeh, and judged Yashar''el (Israel) in all those places. And his return was to Ramah; for there was his house; and there he judged Yashar''el (Israel); and there he built an altar unto Yahuah (LORD)* (1 Samuel 7:15-17). Samuel stands in the line of the judges Yahuah raised to defend His people — *And after Abimelech there arose to defend Yashar''el (Israel) Tola... and he judged Yashar''el (Israel) twenty and three years* (Judges 10:1-2) — but he is the faithful capstone of that line, a prophet-judge whose hands are clean. At the end of his circuit he will dare the whole nation to accuse him: *whose ox have I taken? or whose ass have I taken? or whom have I defrauded? whom have I oppressed?* (1 Samuel 12:3), and they answer *Thou hast not defrauded us, nor oppressed us* (1 Samuel 12:4). The shepherd-judge who builds an altar at his own door, who oppresses no one and intercedes for all, is the Moses-pattern leader Yashar''el needed — and the pattern the true Shepherd-King will fulfil without flaw.',
+  sv.verse_id, ev.verse_id, 'free', 36562
+  FROM _s340_1sa07_lookup sv, _s340_1sa07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=7 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And shalt return unto Yahuah Elohayka... with all thine heart, and with all thy soul* (Deuteronomy 30:2) — Moses'' covenant promise that Samuel''s call enacts.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...will return and gather thee from all the nations, whither... hath scattered thee* (Deuteronomy 30:3) — the local rescue is firstfruit of the two-house ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thou shalt fear Yahuah Elohayka... and serve him* (Deuteronomy 6:13) — the Shema''s charge behind Samuel''s "serve him only."'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Ye shall not go after other gods* (Deuteronomy 6:14) — exactly what Yashar''el obeys in putting away Baalim and Ashtaroth.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=4
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*...put away the gods which your fathers served... and serve ye Yahuah* (Joshua 24:14) — Joshua''s Shechem renewal, one covenant with Samuel''s Mizpeh.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*...put away... the strange gods... and incline your heart unto Yahuah Elohim of Yashar''el* (Joshua 24:23) — the very words Yashar''el answers in putting away the idols.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=4
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*And they put away the strange gods... and served Yahuah: and his soul was grieved for the misery of Yashar''el* (Judges 10:16) — the judges-era pattern renewed, met by Yahuah''s compassion.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=4
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-return-with-all-your-hearts-and-put-away-the-strange-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*We have sinned against thee... we have forsaken our Elohim, and also served Baalim* (Judges 10:10) — the same owned confession the house makes at Mizpeh.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=6
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-we-have-sinned-the-confession-at-mizpeh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*We have sinned... served Baalim and Ashtaroth: but now deliver us... and we will serve thee* (1 Samuel 12:10) — Samuel later names this very pattern of confession-then-deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=6
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-we-have-sinned-the-confession-at-mizpeh'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...took a great stone, and set it up there... by the sanctuary of Yahuah* (Joshua 24:26) — Joshua''s witness-stone, the pattern of Samuel''s Eben-ezer.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-eben-ezer-hitherto-hath-yahuah-helped-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Behold, this stone shall be a witness unto us... lest ye deny your Elohim* (Joshua 24:27) — the standing stone set so no generation can deny what Yahuah did.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-eben-ezer-hitherto-hath-yahuah-helped-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And Yahuah sent... and delivered you out of the hand of your enemies on every side* (1 Samuel 12:11) — Eben-ezer is one chapter in Yahuah''s long record of help.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=12
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-eben-ezer-hitherto-hath-yahuah-helped-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...Samuel among them that call upon his name; they called upon Yahuah, and he answered them* (Psalm 99:6) — Samuel enthroned with Moses and Aaron as effectual intercessor.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=8
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=99 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Though Moses and Samuel stood before me...* (Jeremiah 15:1) — Yahuah names Samuel with Moses as the standing-before-Him most able to turn His hand.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=9
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...Elohim forbid that I should sin against Yahuah in ceasing to pray for you* (1 Samuel 12:23) — Samuel holds the people''s "cease not to cry" as a binding charge.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=8
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...he ever liveth to make intercession for them* (Hebrews 7:25) — Samuel''s cry foreshadows the Formed Son whose intercession never lifts.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=9
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*...one mediator between Elohim and men, the man HaMashiach Yahusha* (1 Timothy 2:5) — *the man*, the Formed Son with a Father, the substance of Samuel''s shadow.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=9
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-cease-not-to-cry-the-prophet-who-stands-in-the-breach'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...there arose to defend Yashar''el Tola... and he judged Yashar''el twenty and three years* (Judges 10:1-2) — the line of judges Yahuah raised, of which Samuel is the faithful capstone.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=15
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-samuel-judged-yasharel-all-his-days-the-faithful-judge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...whose ox have I taken?... whom have I defrauded? whom have I oppressed?* (1 Samuel 12:3) — the clean-handed judge''s challenge, the proof of a faithful prophet-judge.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=7 AND sv.verse_number=15
+  JOIN _s340_1sa07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-7-samuel-judged-yasharel-all-his-days-the-faithful-judge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_8.sql (1 Samuel 8) -----
+-- Chapter: 1 Samuel 8 — Yashar'el demands a king like all the nations; the rejection of Yahuah's own kingship.
+-- Tag: 1sa08   Session: s340   View: _s340_1sa08_lookup
+-- Sort band: base 36575, step 3  (36575, 36578, 36581)
+--
+-- 1 Samuel 8 coverage:
+--   v.5,20 (a king like all the nations):
+--        NT:     Acts 13:21 (they desired a king; Elohim gave them Saul) — lateral recap
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 17:14-15 (the king-law: a brother, Yahuah's choice); Judges 8:23 (Gideon refused: Yahuah shall rule over you)
+--   v.7 (they have not rejected thee but me, that I should not reign over them):
+--        NT:     John 19:15 (We have no king but Caesar — the ultimate rejection of the King)
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 10:19 (ye have this day rejected your Elohim); 1 Samuel 12:12 (Yahuah Elohaychem was your king); Hosea 13:10-11 (I gave thee a king in mine anger)
+--   v.8 (forsaken me, served other gods since Egypt): Tanakh 1 Samuel 10:19 / 12:12 covered above; none new warranted
+--   v.11-18 (the manner of the king who will TAKE — sons, daughters, fields, tenth, servants):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 17:16-17 (the king-law: not multiply horses/wives/silver — the very burdens foretold); 1 Samuel 12:17-19 (your wickedness is great in asking a king)
+--   v.18 (ye shall cry out... Yahuah will not hear): folded into the manner-of-the-king thread
+--
+-- Threads (3):
+--   1-samuel-8-they-have-not-rejected-thee-but-they-have-rejected-me        [free]  Tanakh(1Sam10,12; Hosea13) + NT(John19)
+--   1-samuel-8-make-us-a-king-like-all-the-nations                         [free]  Tanakh(Deut17; Judges8) + NT(Acts13)
+--   1-samuel-8-the-manner-of-the-king-that-shall-reign-the-king-who-takes  [free]  Tanakh(Deut17; 1Sam12)
+--
+-- Christology note: the King they reject in 8:7 is Yahuah the Formed Son — Yashar'el's true reigning King
+--   (1 Sam 12:12 Yahuah Elohaychem WAS your king; Judges 8:23 Yahuah shall rule over you) — who HAS a Father,
+--   not a co-equal-trinity person, not Arian. John 19:15 is the same rejection consummated in the flesh.
+
+CREATE TEMP VIEW _s340_1sa08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: they have rejected ME (8:7) — the rejection of Yahuah's own kingship
+    ('canon','1-samuel',8,7,'canon','1-samuel',10,19,'free',
+      E'*And ye have this day rejected your Elohim (God), who himself saved you out of all your adversities and your tribulations; and ye have said unto him, Nay, but set a king over us...* (1 Samuel 10:19). At Mizpeh Samuel names the demand for what Yahuah called it at *they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7) — the King set aside is Yahuah Himself, the One who *saved you out of all your adversities*.'),
+    ('canon','1-samuel',8,7,'canon','1-samuel',12,12,'free',
+      E'*And when ye saw that Nahash the king of the children of Ammon came against you, ye said unto me, Nay; but a king shall reign over us: when Yahuah Elohaychem (the LORD your God) was your king* (1 Samuel 12:12). Samuel says plainly what 8:7 declared — *they have rejected me, that I should not reign over them*: Yahuah, the Formed Son who led Yashar''el (Israel), WAS already their reigning King, and they traded Him for a man.'),
+    ('canon','1-samuel',8,7,'canon','hosea',13,10,'free',
+      E'*I will be thy king: where is any other that may save thee in all thy cities? and thy judges of whom thou saidst, Give me a king and princes?* (Hosea 13:10). Generations later Yahuah throws the same demand back at the northern house — the very words of 8:7, *they have rejected me, that I should not reign over them* — for He alone is King and saviour.'),
+    ('canon','1-samuel',8,7,'canon','hosea',13,11,'free',
+      E'*I gave thee a king in mine anger, and took him away in my wrath* (Hosea 13:11). The granting of 8:7 was never blessing but judgment — *Hearken unto the voice of the people... for they have rejected me* — the king given in anger and removed in wrath.'),
+    ('canon','1-samuel',8,7,'canon','john',19,15,'free',
+      E'*But they cried out, Away with him, away with him, crucify him. Pilate saith unto them, Shall I crucify your King? The chief priests answered, We have no king but Caesar* (John 19:15). The rejection of 8:7 — *they have rejected me, that I should not reign over them* — reaches its end when the Formed Son stands among His people in the flesh and they choose Caesar over Yahuah their King.'),
+
+    -- Thread 2: a king like all the nations (8:5,20) vs the king-law (Deut 17) and Gideon's refusal
+    ('canon','1-samuel',8,5,'canon','deuteronomy',17,14,'free',
+      E'*When thou art come unto the land which Yahuah Elohayka (the LORD thy God) giveth thee... and shalt say, I will set a king over me, like as all the nations that are about me* (Deuteronomy 17:14). The elders'' demand — *make us a king to judge us like all the nations* (1 Samuel 8:5) — quotes the Torah word for word; the sin is not the office but the heart, wanting a king *like all the nations* rather than the King Yahuah would choose.'),
+    ('canon','1-samuel',8,5,'canon','deuteronomy',17,15,'free',
+      E'*Thou shalt in any wise set him king over thee, whom Yahuah Elohayka (the LORD thy God) shall choose: one from among thy brethren shalt thou set king over thee: thou mayest not set a stranger over thee, which is not thy brother* (Deuteronomy 17:15). The Torah''s king is Yahuah''s choice and a brother — the opposite of *like all the nations* (1 Samuel 8:5), a king demanded by the people for themselves.'),
+    ('canon','1-samuel',8,5,'canon','judges',8,23,'free',
+      E'*And Gideon said unto them, I will not rule over you, neither shall my son rule over you: Yahuah (LORD) shall rule over you* (Judges 8:23). A generation before, offered a dynasty, Gideon names the truth the elders forget at *make us a king to judge us like all the nations* (1 Samuel 8:5): Yahuah Himself is Yashar''el''s (Israel''s) King.'),
+    ('canon','1-samuel',8,20,'canon','acts',13,21,'free',
+      E'*And afterward they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin, by the space of forty years* (Acts 13:21). Paul rehearses the demand of *that we also may be like all the nations; and that our king may judge us, and go out before us, and fight our battles* (1 Samuel 8:20) — the people''s desire, granted as Yahuah foretold.'),
+
+    -- Thread 3: the manner of the king who will TAKE (8:11-18) vs the king-law's limits
+    ('canon','1-samuel',8,11,'canon','deuteronomy',17,16,'free',
+      E'*But he shall not multiply horses to himself, nor cause the people to return to Egypt, to the end that he should multiply horses...* (Deuteronomy 17:16). The very burdens Samuel foretells — *He will take your sons... for his chariots, and to be his horsemen* (1 Samuel 8:11) — are what the Torah''s king-law forbade; the king *like all the nations* breaks every limit Yahuah set.'),
+    ('canon','1-samuel',8,17,'canon','deuteronomy',17,17,'free',
+      E'*Neither shall he multiply wives to himself, that his heart turn not away: neither shall he greatly multiply to himself silver and gold* (Deuteronomy 17:17). Against this the demanded king *will take the tenth of your sheep: and ye shall be his servants* (1 Samuel 8:17) — the taking, multiplying king the Torah expressly warned against.'),
+    ('canon','1-samuel',8,18,'canon','1-samuel',12,17,'free',
+      E'*Is it not wheat harvest to day? I will call unto Yahuah (LORD), and he shall send thunder and rain; that ye may perceive and see that your wickedness is great, which ye have done in the sight of Yahuah (LORD), in asking you a king* (1 Samuel 12:17). The cry foretold in *ye shall cry out in that day because of your king which ye shall have chosen you; and Yahuah (LORD) will not hear you* (1 Samuel 8:18) begins at the coronation, where Samuel calls down thunder to expose the great wickedness of the demand.'),
+    ('canon','1-samuel',8,18,'canon','1-samuel',12,19,'free',
+      E'*And all the people said unto Samuel... we have added unto all our sins this evil, to ask us a king* (1 Samuel 12:19). The dread of *ye shall cry out in that day because of your king* (1 Samuel 8:18) breaks upon the people at last — they confess the asking of a king as evil added to all their sins.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-8-they-have-not-rejected-thee-but-they-have-rejected-me',
+       E'They have not rejected thee, but they have rejected me',
+       E'When Yashar''el (Israel) demands a king, Yahuah answers Samuel: *Hearken unto the voice of the people in all that they say unto thee: for they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7). The King set aside is Yahuah Himself — the Formed Son who led Yashar''el out of Egypt — not Samuel. Samuel says it twice more: *ye have this day rejected your Elohim (God), who himself saved you out of all your adversities... and ye have said unto him, Nay, but set a king over us* (1 Samuel 10:19), and *ye said unto me, Nay; but a king shall reign over us: when Yahuah Elohaychem (the LORD your God) was your king* (1 Samuel 12:12). The granting was judgment, not gift: to the northern house Yahuah later says *I will be thy king: where is any other that may save thee?* (Hosea 13:10) and *I gave thee a king in mine anger, and took him away in my wrath* (Hosea 13:11). The rejection runs its full course when the Formed Son stands among His own in the flesh and the chief priests answer Pilate, *We have no king but Caesar* (John 19:15) — the same King set aside, the same words made final.',
+       sv.verse_id, ev.verse_id, 'free', 36575
+  FROM _s340_1sa08_lookup sv, _s340_1sa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=8 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=8 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-8-make-us-a-king-like-all-the-nations',
+       E'Make us a king like all the nations',
+       E'The elders frame their demand in the Torah''s own words: *make us a king to judge us like all the nations* (1 Samuel 8:5), echoed at *that we also may be like all the nations; and that our king may judge us, and go out before us, and fight our battles* (1 Samuel 8:20). The king-law had anticipated this very moment — *I will set a king over me, like as all the nations that are about me* (Deuteronomy 17:14) — yet bound it: *Thou shalt in any wise set him king over thee, whom Yahuah Elohayka (the LORD thy God) shall choose: one from among thy brethren shalt thou set king over thee* (Deuteronomy 17:15). The Torah''s king is Yahuah''s choice and a brother; the elders want a king *like all the nations* of their own demanding. Gideon had already named the truth they forget, refusing a dynasty: *I will not rule over you, neither shall my son rule over you: Yahuah (LORD) shall rule over you* (Judges 8:23). Paul rehearses the whole episode: *they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin* (Acts 13:21).',
+       sv.verse_id, ev.verse_id, 'free', 36578
+  FROM _s340_1sa08_lookup sv, _s340_1sa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=8 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=8 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-8-the-manner-of-the-king-that-shall-reign-the-king-who-takes',
+       E'The manner of the king — the king who takes',
+       E'Samuel sets the cost before them: *This will be the manner of the king that shall reign over you: He will take your sons... for his chariots, and to be his horsemen* (1 Samuel 8:11), down to *He will take the tenth of your sheep: and ye shall be his servants* (1 Samuel 8:17). The verb is *take* — sons, daughters, fields, vineyards, the tenth, the servants. These are precisely the excesses the king-law forbade: *he shall not multiply horses to himself, nor cause the people to return to Egypt* (Deuteronomy 17:16), and *neither shall he multiply wives to himself... neither shall he greatly multiply to himself silver and gold* (Deuteronomy 17:17). The king *like all the nations* breaks every limit Yahuah set. And Samuel foretells the cry: *ye shall cry out in that day because of your king which ye shall have chosen you; and Yahuah (LORD) will not hear you in that day* (1 Samuel 8:18) — a cry that begins at the very coronation, when Samuel calls down thunder *that ye may perceive and see that your wickedness is great... in asking you a king* (1 Samuel 12:17), and the people confess, *we have added unto all our sins this evil, to ask us a king* (1 Samuel 12:19).',
+       sv.verse_id, ev.verse_id, 'free', 36581
+  FROM _s340_1sa08_lookup sv, _s340_1sa08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=8 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=8 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: they have rejected me
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (8,7,'canon','1-samuel',10,19,1,E'*ye have this day rejected your Elohim (God)... and ye have said unto him, Nay, but set a king over us* (1 Samuel 10:19) — Samuel names the demand for what 8:7 called it.'),
+    (8,7,'canon','1-samuel',12,12,2,E'*a king shall reign over us: when Yahuah Elohaychem (the LORD your God) was your king* (1 Samuel 12:12) — Yahuah, the Formed Son, was already their reigning King.'),
+    (8,7,'canon','hosea',13,10,3,E'*I will be thy king: where is any other that may save thee?* (Hosea 13:10) — the same charge thrown back at the northern house.'),
+    (8,7,'canon','hosea',13,11,4,E'*I gave thee a king in mine anger, and took him away in my wrath* (Hosea 13:11) — the granting was judgment, not blessing.'),
+    (8,7,'canon','john',19,15,5,E'*We have no king but Caesar* (John 19:15) — the rejection of 8:7 consummated when the King stands in the flesh.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-8-they-have-not-rejected-thee-but-they-have-rejected-me'
+  JOIN _s340_1sa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s340_1sa08_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: a king like all the nations
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (8,5,'canon','deuteronomy',17,14,1,E'*I will set a king over me, like as all the nations that are about me* (Deuteronomy 17:14) — the elders quote the king-law word for word.'),
+    (8,5,'canon','deuteronomy',17,15,2,E'*whom Yahuah Elohayka (the LORD thy God) shall choose: one from among thy brethren* (Deuteronomy 17:15) — Yahuah''s choice, a brother, not a king *like all the nations*.'),
+    (8,5,'canon','judges',8,23,3,E'*I will not rule over you... Yahuah (LORD) shall rule over you* (Judges 8:23) — Gideon names the King the elders forget.'),
+    (8,20,'canon','acts',13,21,4,E'*they desired a king: and Elohim (God) gave unto them Saul* (Acts 13:21) — Paul rehearses the demand of 8:20.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-8-make-us-a-king-like-all-the-nations'
+  JOIN _s340_1sa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s340_1sa08_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the manner of the king who takes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (8,11,'canon','deuteronomy',17,16,1,E'*he shall not multiply horses to himself, nor cause the people to return to Egypt* (Deuteronomy 17:16) — the chariots-and-horsemen the king will take, forbidden by the Torah.'),
+    (8,17,'canon','deuteronomy',17,17,2,E'*neither shall he greatly multiply to himself silver and gold* (Deuteronomy 17:17) — against the taking, multiplying king.'),
+    (8,18,'canon','1-samuel',12,17,3,E'*your wickedness is great... in asking you a king* (1 Samuel 12:17) — the foretold cry begins at the coronation under thunder.'),
+    (8,18,'canon','1-samuel',12,19,4,E'*we have added unto all our sins this evil, to ask us a king* (1 Samuel 12:19) — the people confess at last.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN cross_reference_threads t ON t.slug='1-samuel-8-the-manner-of-the-king-that-shall-reign-the-king-who-takes'
+  JOIN _s340_1sa08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s340_1sa08_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_9.sql (1 Samuel 9) -----
+-- 1 Samuel 9 — Saul son of Kish sought, found, and set in the chief place; the seer Samuel;
+-- Yahuah's hidden providence ordering the lost asses unto the kingdom.
+-- TAG: 1sa09   VIEW: _s340_1sa09_lookup   SORT BAND: 36600, step 3 (36600,36603,36606)
+--
+-- 1 Samuel 9 coverage:
+--   v.1   NT: none warranted | Extras: none warranted | Tanakh: none warranted (genealogy of Kish)
+--   v.2   (Saul a choice young man, from his shoulders and upward higher than any of the people)
+--         NT:     none warranted
+--         Extras: none warranted (Jasher weighed — no clean non-noise witness for this beat)
+--         Tanakh: 1Sam 10:23-24 (higher than any, See whom Yahuah hath chosen); 1Sam 16:7
+--                 (Yahuah looketh on the heart); 1Sam 8:5,7 (a king like the nations = rejected me)
+--                 -> THREAD 1
+--   v.3-5 NT: none warranted | Extras: none warranted | Tanakh: feeds THREAD 3 (the lost asses)
+--   v.6   (a man of Elohim; all that he saith cometh surely to pass)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Deut 18:22 (the prophet's word that comes to pass) -> THREAD 2
+--   v.9   (the Seer / he that is now called a Prophet was beforetime called a Seer)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Deut 18:18 (a Prophet... I will put my words in his mouth) -> THREAD 2
+--   v.11-14 NT: none | Extras: none | Tanakh: none warranted (the maidens, the high place)
+--   v.15  (Yahuah had told Samuel in his ear a day before Saul came)
+--   v.16  (I will send thee a man... thou shalt anoint him to be captain over my people)
+--   v.17  (Behold the man whom I spake to thee of! this same shall reign over my people)
+--   v.20  (the lost asses are found; on whom is all the desire of Yashar'el?)
+--         NT:     Acts 13:21 (Elohim gave unto them Saul the son of Cis, of the tribe of Benjamin)
+--         Extras: none warranted
+--         Tanakh: Prov 16:9 (a man's heart deviseth his way, but Yahuah directeth his steps);
+--                 Prov 16:33 (the lot is cast, but the whole disposing is of Yahuah);
+--                 Gen 24:27 (I being in the way, Yahuah led me) -> THREAD 3
+--   v.21  (Am not I a Benjamite, of the smallest of the tribes?) -> folds into THREAD 1
+--   v.22-27 NT: none | Extras: none | Tanakh: none warranted (the parlour, the shoulder, the word of Elohim)
+--
+-- THREADS:
+--   1 1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw   [Tanakh; free]
+--   2 1-samuel-9-the-seer-the-man-of-elohim-whose-word-comes-to-pass       [Tanakh; free]
+--   3 1-samuel-9-told-in-his-ear-the-hidden-hand-that-ordered-the-lost-asses [Tanakh + NT; free]
+-- All members canon -> every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s340_1sa09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the king the people chose by sight
+    ('canon','1-samuel',9,2,'canon','1-samuel',10,23,'free',
+     E'*And they ran and fetched him thence: and when he stood among the people, he was higher than any of the people from his shoulders and upward* (1 Samuel 10:23). The very mark that named Saul in 9:2 — *from his shoulders and upward he was higher than any of the people* — is the mark the crowd will gaze on at his presentation. The king is measured to the eye before ever a word of his heart is heard.'),
+    ('canon','1-samuel',9,2,'canon','1-samuel',10,24,'free',
+     E'*And Samuel said to all the people, See ye him whom Yahuah (LORD) hath chosen, that there is none like him among all the people? And all the people shouted, and said, Elohim (God) save the king* (1 Samuel 10:24). The *goodlier person than he* of 9:2 is set before all Yashar''el (Israel) and they shout for the man they can see. This is the king the people demanded — chosen to their sight, granted to their cry.'),
+    ('canon','1-samuel',9,2,'canon','1-samuel',16,7,'free',
+     E'*But Yahuah (LORD) said unto Samuel, Look not on his countenance, or on the height of his stature; because I have refused him: for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart* (1 Samuel 16:7). Here is the deliberate contrast the whole book draws: Saul is *higher than any of the people* (9:2), and at the next anointing Yahuah refuses the tall son Eliab and warns Samuel off *the height of his stature*. The people''s eye fastens on the shoulders; Yahuah weighs the heart.'),
+    ('canon','1-samuel',9,2,'canon','1-samuel',8,5,'free',
+     E'*And said unto him, Behold, thou art old, and thy sons walk not in thy ways: now make us a king to judge us like all the nations* (1 Samuel 8:5). Saul the *choice young man* of 9:2 is the answer to this demand — a king *like all the nations*, sought and measured the way the nations measure, by stature and bearing. The reader meets the man the people asked for.'),
+    ('canon','1-samuel',9,2,'canon','1-samuel',8,7,'free',
+     E'*And Yahuah (LORD) said unto Samuel, Hearken unto the voice of the people in all that they say unto thee: for they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7). Behind the tall *goodly* young man of 9:2 stands this verdict: in demanding a king to the eye, Yashar''el (Israel) had rejected the reign of Yahuah himself. Saul''s very height is the shape of that rejection granted.'),
+
+    -- THREAD 2 — the seer, the man of Elohim whose word comes to pass
+    ('canon','1-samuel',9,6,'canon','deuteronomy',18,22,'free',
+     E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously: thou shalt not be afraid of him* (Deuteronomy 18:22). The servant''s testimony of the man of Elohim (God) — *all that he saith cometh surely to pass* (9:6) — is Torah''s own test of the true prophet sounded back: his word stands because it follows. Samuel is no diviner of the nations but the trustworthy mouth Moses promised.'),
+    ('canon','1-samuel',9,9,'canon','deuteronomy',18,18,'free',
+     E'*I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth; and he shall speak unto them all that I shall command him* (Deuteronomy 18:18). When 9:9 pauses to explain — *he that is now called a Prophet was beforetime called a Seer* — it names the very office Yahuah pledged through Moses: a brother who speaks the words put in his mouth. The Formed Word that spoke at Horeb is the same that *told Samuel in his ear* (9:15) and now speaks through the seer.'),
+
+    -- THREAD 3 — Yahuah told Samuel in his ear: the hidden hand ordering the lost asses
+    ('canon','1-samuel',9,15,'canon','proverbs',16,9,'free',
+     E'*A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9). Saul set out only to find his father''s strayed asses, yet *Yahuah (LORD) had told Samuel in his ear a day before Saul came* (9:15). The young man devised a search for cattle; Yahuah directed every step of it toward a throne. The lost asses were the leash of providence.'),
+    ('canon','1-samuel',9,20,'canon','proverbs',16,33,'free',
+     E'*The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)* (Proverbs 16:33). *As for thine asses that were lost three days ago, set not thy mind on them; for they are found* (9:20) — the small mishap that drove Saul to the seer was no chance. What looked like a wandering of beasts was the whole disposing of Yahuah, who had already named the man in Samuel''s ear.'),
+    ('canon','1-samuel',9,17,'canon','genesis',24,27,'free',
+     E'*And he said, Blessed be Yahuah Elohim (the LORD God) of my master Abraham, who hath not left destitute my master of his mercy and his truth: I being in the way, Yahuah (LORD) led me to the house of my master''s brethren* (Genesis 24:27). As Abraham''s servant, *being in the way*, was led unawares to the appointed woman at the well, so Saul *in the way* of the lost asses is brought to the very gate where *Yahuah (LORD) said unto him, Behold the man whom I spake to thee of! this same shall reign over my people* (9:17). The same hidden hand leads the servant to Rebekah and the seeker to the seer.'),
+    ('canon','1-samuel',9,16,'canon','acts',13,21,'free',
+     E'*And afterward they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin, by the space of forty years* (Acts 13:21). Paul, retelling the history in the synagogue, fixes 9:16 — *I will send thee a man out of the land of Benjamin, and thou shalt anoint him to be captain over my people* — as the moment Elohim (God) *gave* the king the people desired. The man of Benjamin sent to Samuel''s door is the kingship granted in answer to their cry, before *he had removed him* and raised up David (Acts 13:22).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw',
+       E'Saul higher from his shoulders — the king the people saw',
+       E'Yashar''el (Israel) had asked for *a king to judge us like all the nations* (1 Samuel 8:5), and the man the narrative now sets before us is measured to the eye: *a choice young man, and a goodly: and there was not among the children of Yashar''el (Israel) a goodlier person than he: from his shoulders and upward he was higher than any of the people* (1 Samuel 9:2). That same height becomes the public sign at his coronation — *when he stood among the people, he was higher than any of the people from his shoulders and upward* (1 Samuel 10:23) — and Samuel points to it: *See ye him whom Yahuah (LORD) hath chosen, that there is none like him among all the people?* (1 Samuel 10:24), and the people shout. This is the king chosen to their sight. The book itself answers it at the next anointing: *Look not on his countenance, or on the height of his stature... for Yahuah (LORD) seeth not as man seeth; for man looketh on the outward appearance, but Yahuah (LORD) looketh on the heart* (1 Samuel 16:7). And under the whole demand lay Yahuah''s verdict — *they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7). Saul''s very shoulders are the shape of a kingship granted to the people''s eye.',
+       sv.verse_id, ev.verse_id, 'free', 36600
+  FROM _s340_1sa09_lookup sv, _s340_1sa09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=9 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-9-the-seer-the-man-of-elohim-whose-word-comes-to-pass',
+       E'The seer — the man of Elohim whose word comes to pass',
+       E'Saul''s servant knows where to turn: *there is in this city a man of Elohim (God), and he is an honourable man; all that he saith cometh surely to pass* (1 Samuel 9:6). That single phrase is the Torah''s own test of a true prophet: *When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken... thou shalt not be afraid of him* (Deuteronomy 18:22). Samuel''s word stands because it follows — he is not a diviner of the nations but the trustworthy mouth Moses promised. The narrator even pauses to mark the office: *he that is now called a Prophet was beforetime called a Seer* (1 Samuel 9:9) — the very office Yahuah pledged: *I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth; and he shall speak unto them all that I shall command him* (Deuteronomy 18:18). The same Formed Word that put words in the seer''s mouth is the One who *told Samuel in his ear a day before Saul came* (1 Samuel 9:15).',
+       sv.verse_id, ev.verse_id, 'free', 36603
+  FROM _s340_1sa09_lookup sv, _s340_1sa09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=9 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-9-told-in-his-ear-the-hidden-hand-that-ordered-the-lost-asses',
+       E'Told in his ear — the hidden hand that ordered the lost asses',
+       E'Saul left home only to recover his father''s strayed beasts. But the search was a leash: *Now Yahuah (LORD) had told Samuel in his ear a day before Saul came* (1 Samuel 9:15), and at the gate *Yahuah (LORD) said unto him, Behold the man whom I spake to thee of! this same shall reign over my people* (1 Samuel 9:17). What looked like the wandering of asses was the whole disposing of Yahuah: *A man''s heart deviseth his way: but Yahuah (LORD) directeth his steps* (Proverbs 16:9); *The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)* (Proverbs 16:33). So Samuel can wave the lost cattle aside — *as for thine asses that were lost three days ago, set not thy mind on them; for they are found* (1 Samuel 9:20) — because they had already done their hidden work. It is the same pattern as Abraham''s servant, who could say, *I being in the way, Yahuah (LORD) led me to the house of my master''s brethren* (Genesis 24:27): the seeker is led unawares to the appointed place. And Paul names the outcome plainly — *they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin* (Acts 13:21) — the man of Benjamin sent to the seer''s door (1 Samuel 9:16) is the kingship granted in answer to their cry.',
+       sv.verse_id, ev.verse_id, 'free', 36606
+  FROM _s340_1sa09_lookup sv, _s340_1sa09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=9 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 10:23 — *higher than any of the people from his shoulders and upward*: the mark of 9:2 becomes the coronation sign.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=10 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 10:24 — *See ye him whom Yahuah hath chosen... and all the people shouted*: the king granted to the people''s eye.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=10 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 16:7 — *Yahuah looketh on the heart*: the deliberate contrast — refused for his height, the next king chosen by the heart.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Samuel 8:5 — *make us a king... like all the nations*: Saul is the answer to a demand measured the nations'' way.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Samuel 8:7 — *they have rejected me, that I should not reign over them*: the verdict beneath the tall king''s height.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=2
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-saul-higher-from-his-shoulders-the-king-the-people-saw'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 18:22 — *if the thing follow not, nor come to pass*: Torah''s test; the man of Elohim whose word *cometh surely to pass* (9:6) passes it.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=6
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-the-seer-the-man-of-elohim-whose-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 18:18 — *a Prophet... I will put my words in his mouth*: the Seer/Prophet office of 9:9, the mouth Yahuah pledged through Moses.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-the-seer-the-man-of-elohim-whose-word-comes-to-pass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Proverbs 16:9 — *Yahuah directeth his steps*: Saul devised a hunt for asses; Yahuah, who *told Samuel in his ear* (9:15), aimed every step.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=15
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-told-in-his-ear-the-hidden-hand-that-ordered-the-lost-asses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 16:33 — *the whole disposing thereof is of Yahuah*: the strayed asses of 9:20, no chance, but the appointed leash.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=20
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-told-in-his-ear-the-hidden-hand-that-ordered-the-lost-asses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 24:27 — *I being in the way, Yahuah led me*: Abraham''s servant led to Rebekah, as Saul *in the way* is led to *the man whom I spake to thee of* (9:17).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=17
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=24 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-told-in-his-ear-the-hidden-hand-that-ordered-the-lost-asses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 13:21 — *Elohim gave unto them Saul the son of Cis, of the tribe of Benjamin*: the man sent from Benjamin (9:16) is the kingship granted to their cry.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=9 AND sv.verse_number=16
+  JOIN _s340_1sa09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-9-told-in-his-ear-the-hidden-hand-that-ordered-the-lost-asses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_10.sql (1 Samuel 10) -----
+-- Chapter: 1 Samuel 10 — Samuel anoints Saul, the first king of Yashar'el (Israel), with the vial of
+-- oil: *Then Samuel took a vial of oil, and poured it upon his head, and kissed him, and said, Is it
+-- not because Yahuah (LORD) hath anointed thee to be captain over his inheritance?* (10:1). The signs
+-- are given (10:2-8); ★ *the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with
+-- them, and shalt be turned into another man* (10:6), and *Elohim (God) gave him another heart* (10:9),
+-- *and the Spirit of Elohim (God) came upon him, and he prophesied* (10:10). The people marvel: *Is Saul
+-- also among the prophets?* (10:11-12). At Mizpeh Samuel rehearses the rejection — *ye have this day
+-- rejected your Elohim (God)... and ye have said... set a king over us* (10:18-19); Saul is taken by lot
+-- but *hath hid himself among the stuff* (10:22); set before the people, *all the people shouted, and
+-- said, Elohim (God) save the king* (10:24); but *the children of Belial said, How shall this man save
+-- us? And they despised him* (10:27). The anointing + the Spirit-upon-the-anointed weave FORWARD to the
+-- true Anointed (Isaiah 11; Acts 13:21-22), the Spirit-empowered Son who is NOT a separate divine
+-- person but the Ruach of Yahuah resting on the chosen.
+-- Tag: 1sa10   Temp view: _s340_1sa10_lookup
+-- Sort band: base 36625, step 3 -> threads at 36625, 36628, 36631, 36634 (4 threads)
+-- Source of EVERY row: 'canon','1-samuel',10,v
+--
+-- 1 Samuel 10 coverage:
+--   ★★ v.1 (Samuel anoints Saul with the vial of oil; captain over his inheritance)
+--        NT:     ★★ Acts 13:21 (Elohim gave unto them Saul the son of Cis... a man of the tribe of Benjamin)
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Samuel 9:16-17 (thou shalt anoint him to be captain over my people), ★★ 1 Samuel
+--                16:13 (Samuel took the horn of oil, and anointed him... the Spirit of Yahuah came upon David),
+--                ★★ Isaiah 11:1-2 (a Branch... the spirit of Yahuah shall rest upon him) — THREAD 1
+--   ★★★ v.6, v.9-10 (the Spirit of Yahuah comes upon Saul; turned into another man; another heart;
+--          prophesied among the prophets)
+--        NT:     ★ Acts 2:17 (I will pour out of my Spirit upon all flesh... your sons and your daughters
+--                shall prophesy)
+--        Extras: none warranted
+--        Tanakh: ★★ Judges 14:6 (the Spirit of Yahuah came mightily upon Samson), ★★ 1 Samuel 16:13 (the
+--                Spirit of Yahuah came upon David from that day forward), ★★ Numbers 11:25 (the spirit
+--                rested upon them, they prophesied), ★★ Numbers 11:29 (would Elohim that all the LORD'S
+--                people were prophets, and that Yahuah would put his spirit upon them) — THREAD 2
+--   ★ v.11-12 (Is Saul also among the prophets? — became a proverb)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Samuel 19:23-24 (the Spirit of Elohim was upon him also... Wherefore they say, Is Saul
+--                also among the prophets?) — THREAD 3
+--   ★★ v.18-19, v.24, v.27 (rejected your Elohim, set a king over us; Elohim save the king; sons of
+--          Belial despised him)
+--        NT:     ★ Acts 13:21 (afterward they desired a king: and Elohim gave unto them Saul)
+--        Extras: none warranted
+--        Tanakh: ★★★ 1 Samuel 8:7 (they have not rejected thee, but they have rejected me, that I should
+--                not reign over them) — THREAD 4
+--   v.2-5, v.7-8 (the three signs; Gilgal) — held in THREAD 1/2 prose (the confirming signs of the call)
+--        NT: none warranted   Extras: none warranted   Tanakh: held in prose
+--   v.13-17, v.20-23, v.25-26 (the proverb closes; Mizpeh; the lot; hidden among the stuff; the manner of
+--          the kingdom written in a book) — held in THREAD 3/4 prose
+--        NT: none warranted   Extras: none warranted   Tanakh: held in prose
+--
+-- Threads (slug — target libraries):
+--   1. 1-samuel-10-anointed-to-be-captain-over-his-inheritance — NT (Acts 13) + Tanakh (1 Samuel 9, 1 Samuel 16, Isaiah 11) [free]
+--      (★★ the vial of oil poured on the head; the anointed captain; forward to David and to the true Anointed)
+--   2. 1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man — NT (Acts 2) + Tanakh (Judges 14, 1 Samuel 16, Numbers 11) [free]
+--      (★★★ the Spirit of Yahuah upon the chosen — NOT a separate divine person but the Ruach resting on the anointed)
+--   3. 1-samuel-10-is-saul-also-among-the-prophets — Tanakh (1 Samuel 19) [free]
+--      (★ the proverb born, and confirmed when the Spirit takes Saul again at Naioth)
+--   4. 1-samuel-10-they-have-rejected-me-that-i-should-not-reign-set-a-king-over-us — NT (Acts 13) + Tanakh (1 Samuel 8) [free]
+--      (★★ the king demanded is the rejection of Yahuah's kingship; Elohim save the king; the sons of Belial despise him)
+--
+-- Framing notes:
+--   ★★ THE ANOINTED CAPTAIN (THREAD 1): the vial of oil poured on the head sets apart the first king of
+--      Yashar'el — *Is it not because Yahuah (LORD) hath anointed thee to be captain over his inheritance?*
+--      (10:1) — fulfilling the word given in Samuel's ear, *thou shalt anoint him to be captain over my
+--      people Yashar'el (Israel)* (9:16). The same horn anoints David (16:13), and Paul recaps the whole
+--      arc — *Elohim (God) gave unto them Saul the son of Cis* (Acts 13:21). The anointing reaches its
+--      term in the Branch of Jesse on whom *the spirit of Yahuah (LORD) shall rest* (Isaiah 11:1-2): the
+--      true Anointed of whom Saul is the first, failing shadow.
+--   ★★★ THE SPIRIT UPON THE CHRIST-OLOGY (THREAD 2): *the Spirit of Yahuah (LORD) will come upon thee...
+--      and shalt be turned into another man* (10:6); *Elohim (God) gave him another heart* (10:9); *the
+--      Spirit of Elohim (God) came upon him, and he prophesied* (10:10). This is the Ruach of Yahuah — the
+--      SAME Spirit that came mightily upon Samson (Judges 14:6), upon David (1 Samuel 16:13), upon the
+--      seventy elders (Numbers 11:25) — resting on the chosen vessel, NOT a separate co-equal divine
+--      person. Moses' longing — *would Elohim (God) that all the LORD'S people were prophets, and that
+--      Yahuah (LORD) would put his spirit upon them!* (Numbers 11:29) — is the trajectory the NT names at
+--      Shavuot: *I will pour out of my Spirit upon all flesh* (Acts 2:17). The Father's one Spirit on the
+--      anointed, never a second God.
+--   ★ THE PROVERB (THREAD 3): *Is Saul also among the prophets?* (10:11-12) becomes a proverb in Yashar'el,
+--      and is confirmed at the chapter's far echo when the Spirit takes Saul again at Naioth and *they say,
+--      Is Saul also among the prophets?* (1 Samuel 19:24) — the Spirit's sovereignty over even the rejected
+--      king.
+--   ★★ THE KING DEMANDED = YAHUAH REJECTED (THREAD 4): Samuel names it plainly — *ye have this day rejected
+--      your Elohim (God), who himself saved you... and ye have said unto him, Nay, but set a king over us*
+--      (10:18-19), the same charge of chapter 8: *they have not rejected thee, but they have rejected me,
+--      that I should not reign over them* (8:7). Yet Yahuah grants the king and the people shout *Elohim
+--      (God) save the king* (10:24); only *the children of Belial* despise him (10:27). Paul records it as
+--      the people's own desire — *they desired a king: and Elohim (God) gave unto them Saul* (Acts 13:21).
+--   VERSES WITH NO SEPARATE ADD: v.2-5,7-8 (the confirming signs; Gilgal — held in THREAD 1/2 prose);
+--      v.13-17,20-23,25-26 (the proverb's close; Mizpeh; the lot; hidden among the stuff; the kingdom
+--      written in a book — held in THREAD 3/4 prose). All recorded, none silently skipped.
+
+CREATE TEMP VIEW _s340_1sa10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): anointed to be captain over his inheritance
+    ('canon','1-samuel',10,1,'canon','1-samuel',9,16,'free',
+      E'*To morrow about this time I will send thee a man out of the land of Benjamin, and thou shalt anoint him to be captain over my people Yashar''el (Israel), that he may save my people out of the hand of the Philistines: for I have looked upon my people, because their cry is come unto me* (1 Samuel 9:16). The vial poured on Saul''s head — *Is it not because Yahuah (LORD) hath anointed thee to be captain over his inheritance?* (1 Samuel 10:1) — performs the very word Yahuah spoke in Samuel''s ear the day before. The anointing is no man''s choosing: Yahuah names the captain over His own inheritance.'),
+    ('canon','1-samuel',10,1,'canon','1-samuel',16,13,'free',
+      E'*Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13). The same prophet, the same oil, the same Spirit-upon-the-anointed — *Then Samuel took a vial of oil, and poured it upon his head* (1 Samuel 10:1). Saul is the first anointed king and David the second; the oil that sets Saul apart for the throne is the pattern fulfilled in the man after Yahuah''s own heart, the seed from whom the true Anointed comes.'),
+    ('canon','1-samuel',10,1,'canon','isaiah',11,2,'free',
+      E'*And the spirit of Yahuah (LORD) shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of Yahuah (LORD)* (Isaiah 11:2). Saul anointed *captain over his inheritance* (1 Samuel 10:1) is the first, failing shadow of the Branch out of the stem of Jesse on whom the Spirit *shall rest* without measure. The kingship begun here in oil and Spirit reaches its term in the true Anointed who will not be turned aside.'),
+    ('canon','1-samuel',10,1,'canon','acts',13,21,'free',
+      E'*And afterward they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin, by the space of forty years* (Acts 13:21). Paul, recapping Yashar''el (Israel)''s history in the synagogue at Antioch, names the very moment of 1 Samuel 10 — Saul *the son of Kish*, of *the border of Benjamin* (10:2), given the kingdom. The anointing of *captain over his inheritance* (10:1) is the head of the line Paul traces straight to David and to *Yahusha (Jesus)... a Saviour* (Acts 13:23).')
+,
+    -- THREAD 2 (★★★): the Spirit of Yahuah came upon him, turned into another man
+    ('canon','1-samuel',10,6,'canon','judges',14,6,'free',
+      E'*And the Spirit of Yahuah (LORD) came mightily upon him, and he rent him as he would have rent a kid, and he had nothing in his hand* (Judges 14:6). The Spirit that empowers Samson against the lion is the same Ruach promised to Saul — *the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man* (1 Samuel 10:6). One Spirit of Yahuah, coming upon the chosen vessel for the work appointed: never a second God, but the Father''s own Spirit resting on the man He raises up.'),
+    ('canon','1-samuel',10,6,'canon','1-samuel',16,13,'free',
+      E'*And the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13). The very words spoken over Saul — *the Spirit of Yahuah (LORD) will come upon thee... and shalt be turned into another man* (1 Samuel 10:6) — fall on David at his anointing. The Spirit of Yahuah is one and the same, given to whom Yahuah chooses; what comes upon Saul and departs (16:14) rests on David *from that day forward*.'),
+    ('canon','1-samuel',10,9,'canon','numbers',11,25,'free',
+      E'*And Yahuah (LORD) came down in a cloud, and spake unto him, and took of the spirit that was upon him, and gave it unto the seventy elders: and it came to pass, that, when the spirit rested upon them, they prophesied, and did not cease* (Numbers 11:25). As the seventy *prophesied* when the spirit rested on them, so *Elohim (God) gave* Saul *another heart* (1 Samuel 10:9) and the Spirit made him prophesy. It is the one Spirit of Yahuah, taken and given, resting where He wills — the Father''s Ruach upon men, not a separate divine person beside Him.'),
+    ('canon','1-samuel',10,10,'canon','numbers',11,29,'free',
+      E'*And Moses said unto him, Enviest thou for my sake? would Elohim (God) that all the LORD''S people were prophets, and that Yahuah (LORD) would put his spirit upon them!* (Numbers 11:29). Moses'' longing — that Yahuah would *put his spirit* upon all His people — is glimpsed in Saul: *the Spirit of Elohim (God) came upon him, and he prophesied among them* (1 Samuel 10:10). The Spirit poured on one anointed head points to the day the Father pours His Spirit on all flesh.'),
+    ('canon','1-samuel',10,10,'canon','acts',2,17,'free',
+      E'*And it shall come to pass in the last days, saith Elohim (God), I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy, and your young men shall see visions, and your old men shall dream dreams* (Acts 2:17). The Spirit that comes upon Saul so that *he prophesied among them* (1 Samuel 10:10) is the same Spirit of Yahuah poured out at Shavuot upon all flesh. Moses'' wish (Numbers 11:29) and Saul''s prophesying are the seed of the Father''s one Spirit given to His whole people — never a rival deity, but Yahuah putting His Ruach where He wills.')
+,
+    -- THREAD 3 (★): Is Saul also among the prophets?
+    ('canon','1-samuel',10,11,'canon','1-samuel',19,24,'free',
+      E'*And he stripped off his clothes also, and prophesied before Samuel in like manner, and lay down naked all that day and all that night. Wherefore they say, Is Saul also among the prophets?* (1 Samuel 19:24). The proverb born here — *Is Saul also among the prophets?* (1 Samuel 10:11) — is sealed at the chapter''s far echo, when Saul, hunting David, is himself overtaken by the Spirit of Elohim (God) at Naioth. The Spirit of Yahuah is sovereign even over the king He has rejected; the same wonder is repeated and the proverb fixed in Yashar''el (Israel).')
+,
+    -- THREAD 4 (★★): they have rejected me; set a king over us
+    ('canon','1-samuel',10,19,'canon','1-samuel',8,7,'free',
+      E'*And Yahuah (LORD) said unto Samuel, Hearken unto the voice of the people in all that they say unto thee: for they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7). At Mizpeh Samuel names the people''s sin in Yahuah''s own words — *ye have this day rejected your Elohim (God), who himself saved you out of all your adversities... and ye have said unto him, Nay, but set a king over us* (1 Samuel 10:19). The demand for a king *like all the nations* is the rejection of Yahuah''s own kingship; the throne Saul receives is the measure of how far the people have turned.'),
+    ('canon','1-samuel',10,24,'canon','acts',13,21,'free',
+      E'*And afterward they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin, by the space of forty years* (Acts 13:21). When *all the people shouted, and said, Elohim (God) save the king* (1 Samuel 10:24), they hail the king they themselves *desired*. Paul names it as the people''s own asking and Yahuah''s granting; the *forty years* of Saul are the gift withheld in mercy and given in judgment, the line Paul traces on to David and to the promised Saviour (Acts 13:22-23).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-10-anointed-to-be-captain-over-his-inheritance',
+       E'Anointed to be captain over his inheritance — the vial of oil and the line of the Anointed',
+       E'Samuel pours the vial of oil on the head of the first king of Yashar''el (Israel) and kisses him: *Then Samuel took a vial of oil, and poured it upon his head, and kissed him, and said, Is it not because Yahuah (LORD) hath anointed thee to be captain over his inheritance?* (1 Samuel 10:1). The anointing is no man''s choosing — it performs the word Yahuah had already spoken in Samuel''s ear: *thou shalt anoint him to be captain over my people Yashar''el (Israel), that he may save my people out of the hand of the Philistines* (9:16). The same prophet, the same oil, will soon anoint David — *Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of Yahuah (LORD) came upon David from that day forward* (16:13) — and the kingship begun here in oil and Spirit reaches its term in the Branch out of the stem of Jesse on whom *the spirit of Yahuah (LORD) shall rest, the spirit of wisdom and understanding, the spirit of counsel and might* (Isaiah 11:2). Paul, rehearsing the history in the synagogue at Antioch, names this very moment — *they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin* (Acts 13:21) — the head of the line he traces straight on to David and to *Yahusha (Jesus)... a Saviour* (Acts 13:23). Saul, anointed captain over Yahuah''s inheritance, is the first and failing shadow of the true Anointed.',
+       sv.verse_id, ev.verse_id, 'free', 36625
+  FROM _s340_1sa10_lookup sv, _s340_1sa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=10 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man',
+       E'The Spirit of Yahuah came upon him, turned into another man — the one Ruach upon the chosen',
+       E'The sign that seals the call is the Spirit: *And the Spirit of Yahuah (LORD) will come upon thee, and thou shalt prophesy with them, and shalt be turned into another man* (1 Samuel 10:6); and so it came — *Elohim (God) gave him another heart* (10:9), *and the Spirit of Elohim (God) came upon him, and he prophesied among them* (10:10). This is the Ruach of Yahuah, the SAME Spirit that came *mightily* upon Samson against the lion (Judges 14:6), that *came upon David from that day forward* (1 Samuel 16:13), that Yahuah *took of the spirit that was upon* Moses and *gave it unto the seventy elders... and they prophesied* (Numbers 11:25). It is the Father''s one Spirit, taken and given and resting where He wills upon the vessel He raises up — never a separate, co-equal divine person standing beside Him. Moses had longed for the day it would fall on all: *would Elohim (God) that all the LORD''S people were prophets, and that Yahuah (LORD) would put his spirit upon them!* (Numbers 11:29) — and the apostles name that day at Shavuot: *I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy* (Acts 2:17). The Spirit poured on Saul''s one anointed head, turning him into another man, is the seed of the Father''s Ruach poured out on all His people; the Spirit and the chosen are joined, but the Spirit is Yahuah''s own, not a second God.',
+       sv.verse_id, ev.verse_id, 'free', 36628
+  FROM _s340_1sa10_lookup sv, _s340_1sa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=10 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-10-is-saul-also-among-the-prophets',
+       E'Is Saul also among the prophets? — the proverb born and sealed',
+       E'The townsfolk who knew Saul before are astonished to see him caught up among the prophets: *when all that knew him beforetime saw that, behold, he prophesied among the prophets, then the people said one to another, What is this that is come unto the son of Kish? Is Saul also among the prophets?* (1 Samuel 10:11); *Therefore it became a proverb, Is Saul also among the prophets?* (10:12). The proverb is sealed at the chapter''s far echo, when Saul, now the rejected king hunting David to kill him, is himself overtaken by the Spirit at Naioth: *And the Spirit of Elohim (God) was upon him also, and he went on, and prophesied... And he stripped off his clothes also, and prophesied before Samuel in like manner, and lay down naked all that day and all that night. Wherefore they say, Is Saul also among the prophets?* (1 Samuel 19:23-24). The Spirit of Yahuah is sovereign even over the king He has set aside — the same wonder repeated, the proverb fixed in Yashar''el (Israel).',
+       sv.verse_id, ev.verse_id, 'free', 36631
+  FROM _s340_1sa10_lookup sv, _s340_1sa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=10 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-10-they-have-rejected-me-that-i-should-not-reign-set-a-king-over-us',
+       E'They have rejected me, set a king over us — Yahuah''s kingship refused, the king granted',
+       E'At Mizpeh Samuel gathers the tribes and lays the charge in Yahuah''s own words: *I brought up Yashar''el (Israel) out of Egypt, and delivered you out of the hand of the Egyptians... And ye have this day rejected your Elohim (God), who himself saved you out of all your adversities and your tribulations; and ye have said unto him, Nay, but set a king over us* (1 Samuel 10:18-19). This is the verdict already spoken when the people first demanded a king *like all the nations*: *they have not rejected thee, but they have rejected me, that I should not reign over them* (8:7). The demand for a throne is the rejection of Yahuah''s own kingship. Yet Yahuah grants it — Saul is taken by lot, found where *he hath hid himself among the stuff* (10:22), set before the people a head taller than any, and *all the people shouted, and said, Elohim (God) save the king* (10:24). Only *the children of Belial said, How shall this man save us? And they despised him, and brought him no presents* (10:27). Paul records the whole transaction as the people''s own desire and Yahuah''s granting: *afterward they desired a king: and Elohim (God) gave unto them Saul the son of Cis... by the space of forty years* (Acts 13:21) — the king given in mercy and in judgment, before the LORD raised up David, the man after His own heart (Acts 13:22).',
+       sv.verse_id, ev.verse_id, 'free', 36634
+  FROM _s340_1sa10_lookup sv, _s340_1sa10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=10 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou shalt anoint him to be captain over my people Yashar''el (Israel)* (1 Samuel 9:16) — the vial poured on Saul''s head (1 Samuel 10:1) performs the word Yahuah spoke in Samuel''s ear; the captain is Yahuah''s naming.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-anointed-to-be-captain-over-his-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Samuel took the horn of oil, and anointed him... and the Spirit of Yahuah (LORD) came upon David* (1 Samuel 16:13) — the same prophet, oil, and Spirit-upon-the-anointed as Saul''s vial (1 Samuel 10:1); Saul first, David the man after Yahuah''s heart.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-anointed-to-be-captain-over-his-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the spirit of Yahuah (LORD) shall rest upon him* (Isaiah 11:2) — Saul anointed *captain over his inheritance* (1 Samuel 10:1) is the failing shadow of the Branch of Jesse, the true Anointed on whom the Spirit rests without measure.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-anointed-to-be-captain-over-his-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *they desired a king: and Elohim (God) gave unto them Saul the son of Cis, a man of the tribe of Benjamin* (Acts 13:21) — Paul names this very anointing (1 Samuel 10:1) as the head of the line he traces on to David and to Yahusha (Jesus) the Saviour.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-anointed-to-be-captain-over-his-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the Spirit of Yahuah (LORD) came mightily upon him* (Judges 14:6) — the same Ruach that empowers Samson is promised to Saul: *the Spirit of Yahuah (LORD) will come upon thee... and shalt be turned into another man* (1 Samuel 10:6); one Spirit on the chosen vessel.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the Spirit of Yahuah (LORD) came upon David from that day forward* (1 Samuel 16:13) — the very words spoken over Saul (1 Samuel 10:6) fall on David; one and the same Spirit of Yahuah, given to whom He chooses.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=16 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the spirit rested upon them, they prophesied* (Numbers 11:25) — as the seventy prophesied, so *Elohim (God) gave* Saul *another heart* (1 Samuel 10:9); the one Spirit of Yahuah taken and given, resting where He wills.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=9
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *would Elohim (God) that all the LORD''S people were prophets, and that Yahuah (LORD) would put his spirit upon them!* (Numbers 11:29) — Moses'' longing glimpsed in Saul prophesying (1 Samuel 10:10); the Spirit on one head points to the Spirit on all flesh.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=10
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I will pour out of my Spirit upon all flesh... your sons and your daughters shall prophesy* (Acts 2:17) — the Spirit that made Saul prophesy (1 Samuel 10:10) poured out at Shavuot on all flesh; the Father''s one Ruach, never a rival deity.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=10
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-the-spirit-of-yahuah-came-upon-him-turned-into-another-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *prophesied before Samuel... Wherefore they say, Is Saul also among the prophets?* (1 Samuel 19:24) — the proverb born here (1 Samuel 10:11) is sealed when the Spirit overtakes the rejected king again at Naioth; the Spirit sovereign even over the king set aside.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=11
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=19 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-is-saul-also-among-the-prophets'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7) — Samuel''s Mizpeh charge (1 Samuel 10:19) speaks Yahuah''s own verdict: the demand for a king is the rejection of Yahuah''s kingship.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=19
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-they-have-rejected-me-that-i-should-not-reign-set-a-king-over-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they desired a king: and Elohim (God) gave unto them Saul... by the space of forty years* (Acts 13:21) — when the people shout *Elohim (God) save the king* (1 Samuel 10:24), Paul names it their own desire and Yahuah''s granting, before David is raised up.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=10 AND sv.verse_number=24
+  JOIN _s340_1sa10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-10-they-have-rejected-me-that-i-should-not-reign-set-a-king-over-us'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session340 — 1 Samuel cross-references complete.'
