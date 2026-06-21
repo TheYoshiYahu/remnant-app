@@ -1442,6 +1442,1794 @@ SELECT t.id, cr.id, 3, E'*For he is our peace, who hath made both one, and hath 
  WHERE t.slug='1-kings-5-the-counsel-of-peace-between-them-both'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-kings_6.sql (1 Kings 6) -----
+-- 1 Kings 6 — Solomon builds the house of Yahuah; the prepared stones, the
+--             Torah-conditioned indwelling Presence, the most holy place, the cherubim.
+-- TAG: 1ki06   VIEW: _s342_1ki06_lookup   SORT BAND: 38025, step 3 (38025,38028,38031,38034)
+-- SOURCE rows all 'canon','1-kings',6,v.
+--
+-- 1 Kings 6 coverage:
+--   v.1    (480th year after the exodus; began to build the house) — dating from the redemption.
+--          NT:     none warranted   Extras: none warranted
+--          Tanakh: covered laterally (exodus the anchor-event); none threaded
+--   v.7    (the house built of stone made ready before brought; no hammer/axe/tool of iron heard)
+--          NT:     1 Pet 2:4-5 (living/lively stones, spiritual house); Eph 2:21-22 (fitly framed temple) [thread 1]
+--          Extras: none warranted
+--          Tanakh: covered by NT weave; none added [thread 1]
+--   v.11-13 (the word: IF thou wilt walk in my statutes... THEN I will dwell among Yashar'el)
+--          NT:     John 1:14 (the Word dwelt among us); Rev 21:3 (the tabernacle of Elohim with men) [thread 2]
+--          Extras: none warranted
+--          Tanakh: Lev 26:3,11-12 (walk in my statutes / I will set my tabernacle among you, be my people);
+--                  Deut 11:1,22 (love Yahuah, keep his commandments, cleave); 1 Kings 9:3-4 (echo, the condition) [thread 2]
+--   v.16,19-22 (the oracle, the most holy place; the ark; overlaid with pure gold)
+--          NT:     Heb 9:3-4 (the Holiest of all; the ark overlaid with gold) [thread 3]
+--          Extras: none warranted
+--          Tanakh: Exod 25:8-9 (make me a sanctuary that I may dwell; after the pattern) [thread 3]
+--   v.23-28 (two cherubims of olive tree overlaid with gold in the oracle)
+--          NT:     Heb 9:5 (the cherubims of glory shadowing the mercyseat) [thread 4]
+--          Extras: none warranted
+--          Tanakh: Exod 25:18-20,22 (two cherubims of gold; there I will meet with thee from between them) [thread 4]
+--   v.2-6,8-10,14-15,17-18,29-38 (dimensions, chambers, cedar, carvings, courts, the seven years) —
+--          construction detail, none warranted; load-bearing pieces folded into the threads above.
+--
+-- THREADS:
+--   1-kings-6-the-prepared-stones-no-tool-of-iron-heard (free) — NT: 1Pet2, Eph2
+--   1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell (free) — Tanakh+NT: Lev26, Deut11, 1Kings9, John1, Rev21
+--   1-kings-6-the-oracle-the-most-holy-place-overlaid-with-gold (free) — Tanakh+NT: Exod25, Heb9
+--   1-kings-6-the-cherubims-of-the-oracle-overlaid-with-gold (free) — Tanakh+NT: Exod25, Heb9
+--
+-- Framework-load-bearing framing: 6:12-13 is the keystone — the indwelling Presence is CONDITIONED
+-- on Torah-keeping (*if thou wilt walk in my statutes... then will I... dwell among the children of
+-- Yashar'el*), echoing Lev 26:3,11-12 and Deut 11; Torah is the condition of the tabernacling Glory,
+-- never the curse. The goal of the whole story is Yahuah DWELLING among His people, opening forward to
+-- the Word made flesh who dwelt among us (John 1:14, the Formed Glory, not a co-equal person) and the
+-- consummation, the tabernacle of Elohim with men (Rev 21:3). The prepared stones (6:7) read forward to
+-- the living-stones temple (1 Pet 2:5, Eph 2:21-22) — focused on the SILENCE / no tool of iron, distinct
+-- from the ch5 prepared-stones thread (Zech 6 builder). The most holy place / cherubim are the heavenly
+-- pattern (Exod 25:8-9,40) the NT names as figure (Heb 9).
+
+CREATE TEMP VIEW _s342_1ki06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the prepared stones — no tool of iron heard (6:7)
+    ('canon','1-kings',6,7,'canon','1-peter',2,4,'free',E'*To whom coming, as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4). The house was *built of stone made ready before it was brought thither* (1 Kings 6:7) — every stone shaped beforehand, chosen and fitted away from the site; so the true temple is built of living stones, chosen of Elohim and made ready before they are set in their place.'),
+    ('canon','1-kings',6,7,'canon','1-peter',2,5,'free',E'*Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to Elohim (God) by Yahusha HaMashiach (Jesus Christ)* (1 Peter 2:5). The stone-house of Solomon, raised in silence so that *there was neither hammer nor axe nor any tool of iron heard in the house, while it was in building* (1 Kings 6:7), is the shadow of the spiritual house of living stones — the people of Yashar''el fitted into the dwelling of Yahuah.'),
+    ('canon','1-kings',6,7,'canon','ephesians',2,21,'free',E'*In whom all the building fitly framed together groweth unto an holy temple in Yahuah (Lord)* (Ephesians 2:21). The stones of 1 Kings 6:7 are *made ready before* they are brought — fitly framed before the wall ever rises; the true temple grows the same way, each stone prepared and joined into one holy house for the Name.'),
+    ('canon','1-kings',6,7,'canon','ephesians',2,22,'free',E'*In whom ye also are builded together for an habitation of Elohim (God) through the Spirit* (Ephesians 2:22). The silent, pre-fitted house of 1 Kings 6:7 — *there was neither hammer nor axe nor any tool of iron heard* — is the figure of the habitation of Elohim built together by the Spirit, the dwelling the whole chapter is reaching toward.'),
+
+    -- THREAD 2: if thou wilt walk in my statutes, then I will dwell (6:11-13)
+    ('canon','1-kings',6,12,'canon','leviticus',26,3,'free',E'*If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3). Solomon''s word from Yahuah is the same condition spoken at Sinai: *if thou wilt walk in my statutes, and execute my judgments, and keep all my commandments to walk in them; then will I perform my word with thee* (1 Kings 6:12). Torah-keeping is the condition — never the curse — of the promise.'),
+    ('canon','1-kings',6,13,'canon','leviticus',26,11,'free',E'*And I will set my tabernacle among you: and my soul shall not abhor you* (Leviticus 26:11). The whole purpose of the house is this dwelling: *and I will dwell among the children of Yashar''el (Israel), and will not forsake my people Yashar''el (Israel)* (1 Kings 6:13). The tabernacling Presence, promised at Sinai, is what Solomon builds the house to receive.'),
+    ('canon','1-kings',6,13,'canon','leviticus',26,12,'free',E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). Yahuah''s vow *I will dwell among the children of Yashar''el (Israel), and will not forsake my people Yashar''el (Israel)* (1 Kings 6:13) is the Levitical covenant-formula — I dwelling, they my people — the heart of the two-house inheritance.'),
+    ('canon','1-kings',6,12,'canon','deuteronomy',11,1,'free',E'*Therefore thou shalt love Yahuah Elohayka (the LORD thy God), and keep his charge, and his statutes, and his judgments, and his commandments, alway* (Deuteronomy 11:1). The IF of 1 Kings 6:12 — *if thou wilt walk in my statutes, and execute my judgments, and keep all my commandments to walk in them* — is the Deuteronomy charge laid on the house itself: the indwelling stands on covenant obedience.'),
+    ('canon','1-kings',6,12,'canon','deuteronomy',11,22,'free',E'*For if ye shall diligently keep all these commandments which I command you, to do them, to love Yahuah Elohaychem (the LORD your God), to walk in all his ways, and to cleave unto him* (Deuteronomy 11:22). To *walk in my statutes... and keep all my commandments to walk in them* (1 Kings 6:12) is to cleave unto Yahuah; the blessing of His abiding nearness follows the keeping of His ways.'),
+    ('canon','1-kings',6,12,'canon','1-kings',9,4,'free',E'*And if thou wilt walk before me, as David thy father walked, in integrity of heart, and in uprightness, to do according to all that I have commanded thee, and wilt keep my statutes and my judgments* (1 Kings 9:4). Yahuah speaks the same condition again once the house is finished, the IF of 1 Kings 6:12 renewed face to face: the throne and the dwelling alike hang on keeping the statutes.'),
+    ('canon','1-kings',6,13,'canon','1-kings',9,3,'free',E'*I have hallowed this house, which thou hast built, to put my name there for ever; and mine eyes and mine heart shall be there perpetually* (1 Kings 9:3). The promise Solomon hears mid-building — *I will dwell among the children of Yashar''el (Israel)* (1 Kings 6:13) — is sealed when the house is done: Yahuah hallows it and sets His name and heart there, the indwelling Presence the whole work was for.'),
+    ('canon','1-kings',6,13,'canon','john',1,14,'free',E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). Yahuah''s word over the house — *I will dwell among the children of Yashar''el (Israel)* (1 Kings 6:13) — opens forward to the Formed Glory tabernacling in flesh: the Word who dwelt among us, beheld in glory, who has a Father.'),
+    ('canon','1-kings',6,13,'canon','revelation',21,3,'free',E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The vow of 1 Kings 6:13 — *I will dwell among the children of Yashar''el (Israel), and will not forsake my people* — reaches its consummation here: the dwelling Presence with His people for ever, the goal of the whole story.'),
+
+    -- THREAD 3: the oracle, the most holy place, overlaid with gold (6:16,19-22)
+    ('canon','1-kings',6,16,'canon','exodus',25,8,'free',E'*And let them make me a sanctuary; that I may dwell among them* (Exodus 25:8). The oracle Solomon partitions off — *he even built them for it within, even for the oracle, even for the most holy place* (1 Kings 6:16) — answers the first command of the sanctuary: a holy place made so that Yahuah may dwell among His people.'),
+    ('canon','1-kings',6,19,'canon','exodus',25,9,'free',E'*According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9). Solomon''s oracle is built *to set there the ark of the covenant of Yahuah (LORD)* (1 Kings 6:19) — the same ark of the wilderness pattern, the house enlarging the tabernacle shown to Moses in the mount.'),
+    ('canon','1-kings',6,20,'canon','hebrews',9,3,'free',E'*And after the second veil, the tabernacle which is called the Holiest of all* (Hebrews 9:3). The oracle Solomon overlaid — *twenty cubits in length, and twenty cubits in breadth, and twenty cubits in the height thereof: and he overlaid it with pure gold* (1 Kings 6:20) — is the Holiest of all, the inner room the high priest entered once a year, a figure of the true.'),
+    ('canon','1-kings',6,22,'canon','hebrews',9,4,'free',E'*Which had the golden censer, and the ark of the covenant overlaid round about with gold, wherein was the golden pot that had manna, and Aaron''s rod that budded, and the tables of the covenant* (Hebrews 9:4). *And the whole house he overlaid with gold, until he had finished all the house* (1 Kings 6:22): the gold-covered most holy place and its ark are the pattern Hebrews reads as the shadow of the heavenly things.'),
+
+    -- THREAD 4: the cherubims of the oracle, overlaid with gold (6:23-28)
+    ('canon','1-kings',6,23,'canon','exodus',25,18,'free',E'*And thou shalt make two cherubims of gold, of beaten work shalt thou make them, in the two ends of the mercy seat* (Exodus 25:18). *And within the oracle he made two cherubims of olive tree, each ten cubits high* (1 Kings 6:23): Solomon enlarges the two cherubim of the mercy seat into the great olive-wood guardians of the oracle, the same throne-figures of the wilderness ark.'),
+    ('canon','1-kings',6,27,'canon','exodus',25,20,'free',E'*And the cherubims shall stretch forth their wings on high, covering the mercy seat with their wings, and their faces shall look one to another; toward the mercy seat shall the faces of the cherubims be* (Exodus 25:20). *They stretched forth the wings of the cherubims... and their wings touched one another in the midst of the house* (1 Kings 6:27): the stretched wings of the oracle echo the mercy-seat cherubim, the canopy over the place of meeting.'),
+    ('canon','1-kings',6,28,'canon','exodus',25,22,'free',E'*And there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims which are upon the ark of the testimony* (Exodus 25:22). *And he overlaid the cherubims with gold* (1 Kings 6:28): the gilded cherubim mark the very place where Yahuah meets and communes with His people, the throne above the testimony.'),
+    ('canon','1-kings',6,23,'canon','hebrews',9,5,'free',E'*And over it the cherubims of glory shadowing the mercyseat; of which we can not now speak particularly* (Hebrews 9:5). The two cherubims Solomon set within the oracle (1 Kings 6:23) are the cherubims of glory overshadowing the mercyseat — the figures Hebrews names as it reads the holy of holies as the pattern of the true.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS --
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-6-the-prepared-stones-no-tool-of-iron-heard', E'The prepared stones — no tool of iron heard', E'The house rose in silence: *the house, when it was in building, was built of stone made ready before it was brought thither: so that there was neither hammer nor axe nor any tool of iron heard in the house, while it was in building* (1 Kings 6:7). Every stone was shaped and fitted away from the site, then brought and set without a sound of cutting. That quiet, pre-fitted house is the figure of the true temple of living stones: *to whom coming, as unto a living stone, disallowed indeed of men, but chosen of Elohim (God), and precious* (1 Peter 2:4); *ye also, as lively stones, are built up a spiritual house, an holy priesthood* (1 Peter 2:5). Each stone is chosen and made ready beforehand, then joined into one house — *in whom all the building fitly framed together groweth unto an holy temple in Yahuah (Lord)* (Ephesians 2:21); *in whom ye also are builded together for an habitation of Elohim (God) through the Spirit* (Ephesians 2:22). The people of Yashar''el, fitted by Yahuah, are the stones of the dwelling the whole chapter is reaching toward.',
+       sv.verse_id, ev.verse_id, 'free', 38025
+  FROM _s342_1ki06_lookup sv, _s342_1ki06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=6 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell', E'If thou wilt walk in my statutes, then I will dwell among them', E'Mid-building, the word of Yahuah comes to Solomon and names the condition of the whole work: *Concerning this house which thou art in building, if thou wilt walk in my statutes, and execute my judgments, and keep all my commandments to walk in them; then will I perform my word with thee, which I spake unto David thy father: And I will dwell among the children of Yashar''el (Israel), and will not forsake my people Yashar''el (Israel)* (1 Kings 6:12-13). The IF is Torah-keeping; the THEN is the indwelling Presence — the goal the house exists for. This is the Sinai covenant exactly: *if ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3), *and I will set my tabernacle among you* (Leviticus 26:11), *and I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). It is the Deuteronomy charge: *therefore thou shalt love Yahuah Elohayka (the LORD thy God), and keep his charge, and his statutes, and his judgments, and his commandments, alway* (Deuteronomy 11:1), *to love Yahuah Elohaychem (the LORD your God), to walk in all his ways, and to cleave unto him* (Deuteronomy 11:22). Torah is the condition of the abiding Glory, never the curse. Yahuah renews the same word when the house is finished: *I have hallowed this house... to put my name there for ever; and mine eyes and mine heart shall be there perpetually* (1 Kings 9:3) — *and if thou wilt walk before me, as David thy father walked* (1 Kings 9:4). And the dwelling itself opens forward: *the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father)* (John 1:14) — the Formed Glory tabernacling in flesh, who has a Father — until the consummation, *behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3).',
+       sv.verse_id, ev.verse_id, 'free', 38028
+  FROM _s342_1ki06_lookup sv, _s342_1ki06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=6 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-6-the-oracle-the-most-holy-place-overlaid-with-gold', E'The oracle — the most holy place overlaid with gold', E'Within the house Solomon partitions off the inner room: *he even built them for it within, even for the oracle, even for the most holy place* (1 Kings 6:16), *and the oracle he prepared in the house within, to set there the ark of the covenant of Yahuah (LORD)* (1 Kings 6:19). It is overlaid utterly with gold: *the oracle in the forepart was twenty cubits in length, and twenty cubits in breadth, and twenty cubits in the height thereof: and he overlaid it with pure gold* (1 Kings 6:20); *and the whole house he overlaid with gold, until he had finished all the house* (1 Kings 6:22). This is the first command of the sanctuary enlarged — *and let them make me a sanctuary; that I may dwell among them* (Exodus 25:8), *according to all that I shew thee, after the pattern of the tabernacle* (Exodus 25:9). And the NT names the inner room as the figure of the true: *and after the second veil, the tabernacle which is called the Holiest of all* (Hebrews 9:3), *which had... the ark of the covenant overlaid round about with gold, wherein was the golden pot that had manna, and Aaron''s rod that budded, and the tables of the covenant* (Hebrews 9:4). The gold-covered most holy place is the shadow; the heavenly dwelling is the substance.',
+       sv.verse_id, ev.verse_id, 'free', 38031
+  FROM _s342_1ki06_lookup sv, _s342_1ki06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=6 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-6-the-cherubims-of-the-oracle-overlaid-with-gold', E'The cherubims of the oracle, overlaid with gold', E'Within the most holy place Solomon sets the great guardians: *and within the oracle he made two cherubims of olive tree, each ten cubits high* (1 Kings 6:23); *they stretched forth the wings of the cherubims, so that the wing of the one touched the one wall, and the wing of the other cherub touched the other wall; and their wings touched one another in the midst of the house* (1 Kings 6:27); *and he overlaid the cherubims with gold* (1 Kings 6:28). These enlarge the two cherubim of the wilderness mercy seat: *and thou shalt make two cherubims of gold, of beaten work shalt thou make them, in the two ends of the mercy seat* (Exodus 25:18); *and the cherubims shall stretch forth their wings on high, covering the mercy seat with their wings, and their faces shall look one to another* (Exodus 25:20). They mark the very place of meeting: *and there I will meet with thee, and I will commune with thee from above the mercy seat, from between the two cherubims which are upon the ark of the testimony* (Exodus 25:22). The NT reads them as the figures of the holy of holies: *and over it the cherubims of glory shadowing the mercyseat; of which we can not now speak particularly* (Hebrews 9:5) — the gold-overlaid throne-figures over the place where Yahuah dwells with His people.',
+       sv.verse_id, ev.verse_id, 'free', 38034
+  FROM _s342_1ki06_lookup sv, _s342_1ki06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=6 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS --
+
+-- THREAD 1: the prepared stones — no tool of iron heard (6:7)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Peter 2:4 — the living stone, chosen of Elohim and precious, made ready before being set.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-prepared-stones-no-tool-of-iron-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Peter 2:5 — lively stones built up a spiritual house; the silent stone-house as figure.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-prepared-stones-no-tool-of-iron-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ephesians 2:21 — the building fitly framed, each stone prepared before it rises.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-prepared-stones-no-tool-of-iron-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ephesians 2:22 — the habitation of Elohim built together by the Spirit; the dwelling sought.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=7
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-prepared-stones-no-tool-of-iron-heard'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: if thou wilt walk in my statutes, then I will dwell (6:11-13)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 26:3 — if ye walk in my statutes and keep my commandments; the Sinai condition.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=12
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 26:11 — I will set my tabernacle among you; the indwelling promised at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=13
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 26:12 — I will walk among you, ye shall be my people; the covenant-formula.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=13
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 11:1 — love Yahuah, keep his statutes and commandments alway.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=12
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Deuteronomy 11:22 — keep all these commandments, walk in his ways, and cleave unto him.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=12
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=11 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'1 Kings 9:4 — the same condition renewed: if thou wilt walk before me and keep my statutes.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=12
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'1 Kings 9:3 — the house hallowed, the name and heart set there for ever; the dwelling sealed.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=13
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'John 1:14 — the Word made flesh dwelt among us; the Formed Glory tabernacling, who has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=13
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'Revelation 21:3 — the tabernacle of Elohim with men; the indwelling Presence consummated.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=13
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-if-thou-wilt-walk-in-my-statutes-then-i-will-dwell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: the oracle, the most holy place, overlaid with gold (6:16,19-22)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 25:8 — make me a sanctuary that I may dwell among them; the oracle answers this.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-oracle-the-most-holy-place-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 25:9 — after the pattern of the tabernacle; the oracle holds the ark of that pattern.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=19
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-oracle-the-most-holy-place-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 9:3 — the Holiest of all behind the second veil; the gold oracle as figure.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-oracle-the-most-holy-place-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 9:4 — the ark overlaid round about with gold; the whole house overlaid with gold.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-oracle-the-most-holy-place-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the cherubims of the oracle, overlaid with gold (6:23-28)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 25:18 — two cherubims of gold on the mercy seat; Solomon enlarges them in the oracle.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=23
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-cherubims-of-the-oracle-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 25:20 — the cherubims stretch forth their wings on high, covering the mercy seat.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=27
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-cherubims-of-the-oracle-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 25:22 — there I will meet with thee from between the two cherubims; the place of meeting.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=28
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-cherubims-of-the-oracle-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 9:5 — the cherubims of glory shadowing the mercyseat; the figures of the holy of holies.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=6 AND sv.verse_number=23
+  JOIN _s342_1ki06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-6-the-cherubims-of-the-oracle-overlaid-with-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_7.sql (1 Kings 7) -----
+-- 1 Kings 7 — Hiram's bronze work for the house: the two pillars Jachin and Boaz,
+-- the molten sea on the twelve oxen, and all the vessels of bright brass finished.
+-- TAG: 1ki07   VIEW: _s342_1ki07_lookup   SORT BAND: 38050, step 3 (38050,38053,38056,...)
+-- SOURCE rows all 'canon','1-kings',7,v.
+--
+-- 1 Kings 7 coverage:
+--   v.1-12 (Solomon's own house, the house of the forest of Lebanon, the porch of judgment)
+--          NT:     none warranted (royal architecture; the porch of judgment is administrative)
+--          Extras: none warranted
+--          Tanakh: none warranted (parallel 2 Chron not extant for the royal houses)
+--   v.21   (the two pillars set up; the right Jachin, the left Boaz) ★ keystone
+--          NT:     Revelation 3:12 (overcomer made a pillar in the temple, go no more out) [thread 1]
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 3:15,17 (the parallel — the two pillars, Jachin and Boaz);
+--                  Jeremiah 52:17,20,21 (the brass pillars broken and carried to Babylon) [thread 1]
+--   v.15-16 (the two pillars cast, eighteen cubits, the chapiters) — folded into thread 1
+--   v.23-26 (the molten sea, ten cubits, on twelve oxen, for the washing) ★ keystone
+--          NT:     Revelation 4:6 (a sea of glass like crystal before the throne) [thread 2]
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 4:2,4,6 (the parallel sea; the priests to wash therein);
+--                  Exodus 30:18,19,20 (the laver of brass, wash that they die not) [thread 2]
+--   v.27-39 (the ten bases, the ten lavers, the wheels) — folded into thread 2 prose
+--   v.40,45,48,51 (the vessels of bright brass; all the work finished; David's dedicated things)
+--          NT:     none warranted (handled laterally; finishing weaves to Chron parallel)
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 4:11,16 (Huram made an end of all the work, bright brass);
+--                  2 Chronicles 5:1 (all the work ended; David's dedicated things brought in) [thread 3]
+--
+-- THREADS:
+--   1-kings-7-jachin-and-boaz-the-overcomer-a-pillar-in-the-temple (free) — Tanakh+NT: 2Chr3, Jer52, Rev3
+--   1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service (free) — Tanakh+NT: 2Chr4, Exod30, Rev4
+--   1-kings-7-all-the-vessels-of-bright-brass-the-work-finished (free) — Tanakh: 2Chr4, 2Chr5
+-- Framework-load-bearing framing:
+--   7:21 — Jachin (*he shall establish*) and Boaz (*in him is strength*) are the named witness that
+--          Yahuah establishes and strengthens his house. The overcomer is made *a pillar in the
+--          temple of my Elohim* (Rev 3:12) and *shall go no more out* — the established, immovable
+--          standing of the gathered. Jeremiah 52 shows the pillars broken and carried to Babylon for
+--          covenant-breaking (the Deut 28 judgment on the sin, never the Torah) — yet the true temple,
+--          the overcomer's pillar, can never be broken.
+--   7:23-26 — the molten sea resting on twelve oxen (three toward each quarter) = the great laver of
+--          cleansing borne by the twelve tribes; the washing of the priests for the holy service
+--          (Exod 30:18-21, wash that they die not). It opens forward to the sea of glass before the
+--          throne (Rev 4:6) — the cleansing perfected. The twelve oxen = the two-house people of the
+--          twelve tribes bearing the cleansing of Yahuah.
+
+CREATE TEMP VIEW _s342_1ki07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Jachin and Boaz — the overcomer a pillar in the temple (7:21)
+    ('canon','1-kings',7,21,'canon','2-chronicles',3,17,'free',E'*And he reared up the pillars before the temple, one on the right hand, and the other on the left; and called the name of that on the right hand Jachin, and the name of that on the left Boaz* (2 Chronicles 3:17). The Chronicler records the same two named pillars Solomon set at the porch: *and he set up the right pillar, and called the name thereof Jachin: and he set up the left pillar, and called the name thereof Boaz* (1 Kings 7:21). Jachin — *he shall establish*; Boaz — *in him is strength*: the two witnesses that Yahuah establishes and strengthens his house.'),
+    ('canon','1-kings',7,21,'canon','jeremiah',52,17,'free',E'*Also the pillars of brass that were in the house of Yahuah (LORD), and the bases, and the brasen sea that was in the house of Yahuah (LORD), the Chaldeans brake, and carried all the brass of them to Babylon* (Jeremiah 52:17). The very pillars Solomon *set up... in the porch of the temple* (1 Kings 7:21) were broken and carried away when the house was given over — the Deuteronomy 28 judgment upon covenant-breaking, never upon the Torah; the brass pillars fall, but what they witnessed — the established, strengthened house — endures past Babylon.'),
+    ('canon','1-kings',7,21,'canon','jeremiah',52,21,'free',E'*And concerning the pillars, the height of one pillar was eighteen cubits; and a fillet of twelve cubits did compass it; and the thickness thereof was four fingers: it was hollow* (Jeremiah 52:21). Jeremiah measures the fallen pillar by the exact dimension Hiram cast — *two pillars of brass, of eighteen cubits high apiece: and a line of twelve cubits did compass either of them about* (1 Kings 7:15) — so that the reader knows these are the same Jachin and Boaz, carried to Babylon for the sin of the house.'),
+    ('canon','1-kings',7,21,'canon','revelation',3,12,'free',E'*Him that overcometh will I make a pillar in the temple of my Elohim (God), and he shall go no more out: and I will write upon him the name of my Elohim (God), and the name of the city of my Elohim (God), which is new Jerusalem* (Revelation 3:12). Jachin and Boaz, *set up... in the porch of the temple* (1 Kings 7:21), are the type the Formed Son fills: the overcomer is himself made a pillar in the true temple, established and never again removed — the standing the bronze pillars only foreshadowed, with the very Name written upon him.'),
+
+    -- THREAD 2: the molten sea on the twelve oxen — the washing for the holy service (7:23-26)
+    ('canon','1-kings',7,23,'canon','2-chronicles',4,2,'free',E'*Also he made a molten sea of ten cubits from brim to brim, round in compass, and five cubits the height thereof; and a line of thirty cubits did compass it round about* (2 Chronicles 4:2). The Chronicler gives the same great laver Hiram cast: *And he made a molten sea, ten cubits from the one brim to the other: it was round all about, and his height was five cubits: and a line of thirty cubits did compass it round about* (1 Kings 7:23) — the vessel that held the water of cleansing for the house.'),
+    ('canon','1-kings',7,25,'canon','2-chronicles',4,4,'free',E'*It stood upon twelve oxen, three looking toward the north, and three looking toward the west, and three looking toward the south, and three looking toward the east: and the sea was set above upon them, and all their hinder parts were inward* (2 Chronicles 4:4). Word for word with Solomon''s sea — *It stood upon twelve oxen, three looking toward the north, and three looking toward the west, and three looking toward the south, and three looking toward the east* (1 Kings 7:25): the twelve oxen bear the sea toward all four quarters, the twelve tribes of Yashar''el (Israel) bearing up the cleansing of Yahuah.'),
+    ('canon','1-kings',7,23,'canon','2-chronicles',4,6,'free',E'*He made also ten lavers, and put five on the right hand, and five on the left, to wash in them: such things as they offered for the burnt offering they washed in them; but the sea was for the priests to wash in* (2 Chronicles 4:6). Chronicles names the purpose of the great sea Solomon made: it *was for the priests to wash in* — the washing that fits them for the holy service, the cleansing the molten sea (1 Kings 7:23) was cast to hold.'),
+    ('canon','1-kings',7,23,'canon','exodus',30,18,'free',E'*Thou shalt also make a laver of brass, and his foot also of brass, to wash withal: and thou shalt put it between the tabernacle of the congregation and the altar, and thou shalt put water therein* (Exodus 30:18). The molten sea of brass (1 Kings 7:23) is the temple''s great answer to the tabernacle laver: the same brass vessel of water set for the washing, now grown to a sea borne by the twelve tribes.'),
+    ('canon','1-kings',7,23,'canon','exodus',30,20,'free',E'*When they go into the tabernacle of the congregation, they shall wash with water, that they die not; or when they come near to the altar to minister, to burn offering made by fire unto Yahuah (LORD)* (Exodus 30:20). The water the molten sea held (1 Kings 7:23) is the water of life-or-death: the priests *wash with water, that they die not* before they minister — the cleansing the holy service requires, no man drawing near unwashed.'),
+    ('canon','1-kings',7,23,'canon','revelation',4,6,'free',E'*And before the throne there was a sea of glass like unto crystal: and in the midst of the throne, and round about the throne, were four beasts full of eyes before and behind* (Revelation 4:6). The molten sea of cleansing in the earthly house (1 Kings 7:23) opens forward to its heavenly antitype: the sea of glass like crystal before the throne — the cleansing made perfect and still, where the washed stand before Yahuah.'),
+
+    -- THREAD 3: all the vessels of bright brass — the work finished (7:40,45,51)
+    ('canon','1-kings',7,40,'canon','2-chronicles',4,11,'free',E'*And Huram made the pots, and the shovels, and the basons. And Huram finished the work that he was to make for king Solomon for the house of Elohim (God)* (2 Chronicles 4:11). The Chronicler closes Hiram''s labour as Kings does — *And Hiram made the lavers, and the shovels, and the basons. So Hiram made an end of doing all the work that he made king Solomon for the house of Yahuah (LORD)* (1 Kings 7:40): the craftsman of Tyre brings the whole furnishing of the house to completion.'),
+    ('canon','1-kings',7,45,'canon','2-chronicles',4,16,'free',E'*The pots also, and the shovels, and the fleshhooks, and all their instruments, did Huram his father make to king Solomon for the house of Yahuah (LORD) of bright brass* (2 Chronicles 4:16). Every vessel for the holy worship is of bright brass in both witnesses: *the pots, and the shovels, and the basons: and all these vessels, which Hiram made to king Solomon for the house of Yahuah (LORD), were of bright brass* (1 Kings 7:45) — the instruments of the service, burnished and ready.'),
+    ('canon','1-kings',7,51,'canon','2-chronicles',5,1,'free',E'*Thus all the work that Solomon made for the house of Yahuah (LORD) was finished: and Solomon brought in all the things that David his father had dedicated; and the silver, and the gold, and all the instruments, put he among the treasures of the house of Elohim (God)* (2 Chronicles 5:1). Kings ends the building with the same finishing and the same act of remembrance — *So was ended all the work that king Solomon made for the house of Yahuah (LORD). And Solomon brought in the things which David his father had dedicated... did he put among the treasures of the house of Yahuah (LORD)* (1 Kings 7:51): the work is finished, and the father''s dedicated treasure is gathered into the house of the Name.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-7-jachin-and-boaz-the-overcomer-a-pillar-in-the-temple',
+       E'Jachin and Boaz — the overcomer a pillar in the temple',
+       E'Hiram of Tyre, the widow''s son of Naphtali *filled with wisdom, and understanding, and cunning to work all works in brass* (1 Kings 7:14), casts two great pillars: *two pillars of brass, of eighteen cubits high apiece: and a line of twelve cubits did compass either of them about* (1 Kings 7:15). And he sets them at the threshold of the house and names them: *And he set up the pillars in the porch of the temple: and he set up the right pillar, and called the name thereof Jachin: and he set up the left pillar, and called the name thereof Boaz* (1 Kings 7:21). The names are a confession standing in bronze — Jachin, *he shall establish*; Boaz, *in him is strength*: Yahuah establishes the house and Yahuah is its strength. The Chronicler records the same two named pillars: *and called the name of that on the right hand Jachin, and the name of that on the left Boaz* (2 Chronicles 3:17). When the house is given over for covenant-breaking, the pillars themselves are broken: *the pillars of brass that were in the house of Yahuah (LORD)... the Chaldeans brake, and carried all the brass of them to Babylon* (Jeremiah 52:17), and Jeremiah measures the fallen pillar by Hiram''s exact cubits — *the height of one pillar was eighteen cubits; and a fillet of twelve cubits did compass it* (Jeremiah 52:21) — that no reader mistake which pillars fell. Yet the witness Jachin and Boaz bore can never be carried to Babylon, for the Formed Son fills the type: *Him that overcometh will I make a pillar in the temple of my Elohim (God), and he shall go no more out: and I will write upon him the name of my Elohim (God), and the name of the city of my Elohim (God), which is new Jerusalem* (Revelation 3:12). The overcomer is himself made the established, strengthened pillar in the true temple — set up, never again removed, the Name written upon him.',
+       sv.verse_id, ev.verse_id, 'free', 38050
+  FROM _s342_1ki07_lookup sv, _s342_1ki07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=7 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service',
+       E'The molten sea on the twelve oxen — the washing for the holy service',
+       E'Hiram casts a great basin of bronze for the house: *And he made a molten sea, ten cubits from the one brim to the other: it was round all about, and his height was five cubits: and a line of thirty cubits did compass it round about* (1 Kings 7:23). It does not rest on the ground but upon a living burden: *It stood upon twelve oxen, three looking toward the north, and three looking toward the west, and three looking toward the south, and three looking toward the east: and the sea was set above upon them* (1 Kings 7:25) — the twelve tribes of Yashar''el (Israel), facing every quarter of the earth, bearing up the cleansing of Yahuah. The Chronicler gives the same sea word for word and names its use: it *was for the priests to wash in* (2 Chronicles 4:6). This is the temple''s great answer to the tabernacle laver: *Thou shalt also make a laver of brass, and his foot also of brass, to wash withal... and thou shalt put water therein* (Exodus 30:18), the washing without which the priest may not draw near — *they shall wash with water, that they die not* (Exodus 30:20). Cleansing is not optional to the holy service; it is life or death at the threshold. And the molten sea is itself a shadow: John sees the cleansing made perfect and still before the throne — *before the throne there was a sea of glass like unto crystal* (Revelation 4:6). The twelve oxen bearing the sea toward all four winds are the two-house people of the twelve tribes upholding the cleansing of Yahuah, until the washed stand as a sea of glass before him.',
+       sv.verse_id, ev.verse_id, 'free', 38053
+  FROM _s342_1ki07_lookup sv, _s342_1ki07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=7 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-7-all-the-vessels-of-bright-brass-the-work-finished',
+       E'All the vessels of bright brass — the work finished',
+       E'The chapter closes with the whole furnishing of the house brought to completion. Hiram finishes the bronze: *And Hiram made the lavers, and the shovels, and the basons. So Hiram made an end of doing all the work that he made king Solomon for the house of Yahuah (LORD)* (1 Kings 7:40), and every instrument of the service is burnished and ready — *the pots, and the shovels, and the basons: and all these vessels, which Hiram made to king Solomon for the house of Yahuah (LORD), were of bright brass* (1 Kings 7:45). The Chronicler closes the same labour the same way: *And Huram finished the work that he was to make for king Solomon for the house of Elohim (God)* (2 Chronicles 4:11), *all their instruments, did Huram his father make to king Solomon for the house of Yahuah (LORD) of bright brass* (2 Chronicles 4:16). Then the building is sealed with an act of remembrance: *So was ended all the work that king Solomon made for the house of Yahuah (LORD). And Solomon brought in the things which David his father had dedicated; even the silver, and the gold, and the vessels, did he put among the treasures of the house of Yahuah (LORD)* (1 Kings 7:51) — and Chronicles echoes, *Thus all the work that Solomon made for the house of Yahuah (LORD) was finished: and Solomon brought in all the things that David his father had dedicated* (2 Chronicles 5:1). The work is finished, and the father''s long-dedicated treasure is gathered at last into the house of the Name — the son completing what the father purposed and laid up.',
+       sv.verse_id, ev.verse_id, 'free', 38056
+  FROM _s342_1ki07_lookup sv, _s342_1ki07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=40
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=7 AND ev.verse_number=51
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: Jachin and Boaz
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*and called the name of that on the right hand Jachin, and the name of that on the left Boaz* (2 Chronicles 3:17) — the parallel record of the same two named pillars.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-jachin-and-boaz-the-overcomer-a-pillar-in-the-temple'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the pillars of brass that were in the house of Yahuah (LORD)... the Chaldeans brake, and carried all the brass of them to Babylon* (Jeremiah 52:17) — the pillars broken for covenant-breaking, the Deut 28 judgment on the sin, not the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-jachin-and-boaz-the-overcomer-a-pillar-in-the-temple'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the height of one pillar was eighteen cubits; and a fillet of twelve cubits did compass it* (Jeremiah 52:21) — measured by Hiram''s exact cubits, so the reader knows these are Jachin and Boaz.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-jachin-and-boaz-the-overcomer-a-pillar-in-the-temple'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Him that overcometh will I make a pillar in the temple of my Elohim (God), and he shall go no more out... and I will write upon him the name of my Elohim (God)* (Revelation 3:12) — the overcomer himself made the established, strengthened pillar in the true temple.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=21
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-jachin-and-boaz-the-overcomer-a-pillar-in-the-temple'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the molten sea on the twelve oxen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Also he made a molten sea of ten cubits from brim to brim, round in compass, and five cubits the height thereof* (2 Chronicles 4:2) — the parallel record of the same great laver.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*It stood upon twelve oxen, three looking toward the north... three toward the west... three toward the south... three toward the east* (2 Chronicles 4:4) — the twelve tribes facing every quarter, bearing the sea of cleansing.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=25
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*but the sea was for the priests to wash in* (2 Chronicles 4:6) — Chronicles names the purpose: the washing that fits the priests for the holy service.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou shalt also make a laver of brass... to wash withal... and thou shalt put water therein* (Exodus 30:18) — the tabernacle laver the molten sea answers and enlarges.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they shall wash with water, that they die not... when they come near to the altar to minister* (Exodus 30:20) — cleansing is life or death at the threshold of the holy service.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*And before the throne there was a sea of glass like unto crystal* (Revelation 4:6) — the cleansing made perfect and still, the heavenly antitype of the molten sea.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=23
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-the-molten-sea-on-the-twelve-oxen-the-washing-for-the-holy-service'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: all the vessels of bright brass — the work finished
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Huram finished the work that he was to make for king Solomon for the house of Elohim (God)* (2 Chronicles 4:11) — the parallel close of Hiram''s bronze labour.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=40
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-all-the-vessels-of-bright-brass-the-work-finished'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*all their instruments, did Huram his father make to king Solomon for the house of Yahuah (LORD) of bright brass* (2 Chronicles 4:16) — every vessel of the service burnished and ready.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=45
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-all-the-vessels-of-bright-brass-the-work-finished'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Thus all the work that Solomon made for the house of Yahuah (LORD) was finished: and Solomon brought in all the things that David his father had dedicated* (2 Chronicles 5:1) — the work sealed, the father''s dedicated treasure gathered into the house.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=7 AND sv.verse_number=51
+  JOIN _s342_1ki07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-7-all-the-vessels-of-bright-brass-the-work-finished'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_8.sql (1 Kings 8) -----
+-- Chapter: 1 Kings 8 — THE DEDICATION OF THE TEMPLE. Solomon assembles the elders of Yashar'el
+-- and brings up the ark into the oracle, the most holy place, under the wings of the cherubims
+-- (8:1-9). When the priests come out, *the cloud filled the house of Yahuah... for the glory of
+-- Yahuah had filled the house* (8:10-11) — the Formed Glory-Presence taking up the house as it
+-- took the tabernacle. Solomon blesses, recounts the Davidic promise fulfilled (8:14-21), then
+-- prays the great dedication prayer: there is no Elohim like Yahuah, who keepeth covenant and
+-- mercy (8:23); yet *the heaven and heaven of heavens cannot contain thee* (8:27) — the formless
+-- Father uncontainable, while the Presence dwells. He prays the house into a house of prayer
+-- toward which all supplication is made (8:29-30), even the stranger from a far country who comes
+-- for the Name (8:41-43), and — the keystone — the scattered captives who bethink themselves,
+-- repent, and return with all their heart (8:46-50). He closes blessing Yahuah who *hath given
+-- rest unto his people Yashar'el... there hath not failed one word of all his good promise* (8:56).
+-- Tag: 1ki08   Temp view: _s342_1ki08_lookup
+-- Sort band: base 38075, step 3 -> threads at 38075, 38078, 38081, 38084, 38087, 38090, 38093, 38096 (8 threads)
+-- Source of EVERY row: 'canon','1-kings',8,v
+--
+-- 1 Kings 8 coverage:
+--   ★★★ v.10-11 (the cloud filled the house of Yahuah... for the glory of Yahuah had filled the house)
+--        NT:     ★ John 1:14 (the Word made flesh, dwelt among us, we beheld his glory), ★ Revelation
+--                21:3 (the tabernacle of Elohim is with men) — THREAD 1
+--        Extras: none warranted (the Glory-filling carried best by the canon tabernacle/temple parallels)
+--        Tanakh: ★ Exodus 40:34-35 (the cloud covered the tent... the glory filled the tabernacle),
+--                2 Chronicles 5:13-14 (the house filled with a cloud... priests could not stand),
+--                2 Chronicles 7:1-2 (the glory of Yahuah filled the house) — THREAD 1
+--   ★ v.12-13 (Yahuah said that he would dwell in the thick darkness... a settled place... for ever)
+--        NT:     none warranted distinct
+--        Extras: none warranted distinct
+--        Tanakh: ★ Psalm 132:13-14 (Yahuah hath chosen Zion... This is my rest for ever: here will I
+--                dwell), Exodus 40:34 (the cloud — the thick darkness Yahuah dwells in) — THREAD 2
+--   ★★ v.23 (there is no Elohim like thee... who keepest covenant and mercy)
+--        NT:     none warranted distinct (the covenant-keeping El is a Torah/Tanakh confession)
+--        Extras: none warranted distinct
+--        Tanakh: ★ Deuteronomy 7:9 (the faithful Elohim, which keepeth covenant and mercy... to a
+--                thousand generations), Nehemiah 1:5 (the great and terrible Elohim, that keepeth
+--                covenant and mercy for them that love him and keep his commandments) — THREAD 3
+--   ★★★ v.27 (the heaven and heaven of heavens cannot contain thee; how much less this house?)
+--        NT:     ★★ Acts 7:48-49 (the Most High dwelleth not in temples made with hands... Heaven is
+--                my throne, and earth is my footstool) — THREAD 4
+--        Extras: ★ Wisdom of Solomon 9:8 (you commanded me to build a temple... a resemblance of the
+--                holy tabernacle, which you have prepared from the beginning) — THREAD 4
+--        Tanakh: ★★ 2 Chronicles 6:18 (verbatim parallel: heaven and the heaven of heavens cannot
+--                contain thee), Isaiah 66:1 (The heaven is my throne, and the earth is my footstool) — THREAD 4
+--   ★★ v.29-30 (thine eyes open toward this house... hearken to the prayer which thy servant shall
+--          make toward this place)
+--        NT:     ★ Luke 18:13 (the publican... smote upon his breast, saying, Elohim be merciful to me) — THREAD 5
+--        Extras: none warranted distinct
+--        Tanakh: ★ Daniel 6:10 (his windows being open... toward Jerusalem, he kneeled... and prayed) — THREAD 5
+--   ★★ v.41-43 (the stranger... out of a far country for thy name's sake... that all people of the
+--          earth may know thy name)
+--        NT:     none warranted distinct (the Name-to-the-nations gathering weighed in Tanakh + extras)
+--        Extras: ★ Tobit 13:11 (Many nations shall come from far to the name of Yahuah), Tobit 14:6-7
+--                (all nations shall turn, and fear Yahuah... his people shall confess Yahuah) — THREAD 6
+--        Tanakh: ★★ Isaiah 56:6-7 (the sons of the stranger, that join themselves to Yahuah... mine
+--                house shall be called an house of prayer for all people) — THREAD 6
+--   ★★★ v.46-50 (carried away captives... bethink themselves... repent... return unto thee with all
+--          their heart... then hear... and forgive)
+--        NT:     none warranted distinct (the captivity-return = two-house regathering, weighed Tanakh + extras)
+--        Extras: ★★ Baruch 2:30-34 (in the land of their captivities they shall remember themselves...
+--                return... and I will bring them again into the land) — THREAD 7
+--        Tanakh: ★★★ Deuteronomy 30:1-4 (thou shalt call them to mind among all the nations... return...
+--                gather thee from all the nations), Nehemiah 1:8-9 (if ye turn unto me... yet will I
+--                gather them from thence) — THREAD 7
+--   ★ v.56 (Blessed be Yahuah, that hath given rest unto his people... there hath not failed one word
+--          of all his good promise)
+--        NT:     ★ Hebrews 4:8-9 (if Yahusha had given them rest... there remaineth a rest to the people
+--                of Elohim) — THREAD 8
+--        Extras: none warranted distinct
+--        Tanakh: ★ Joshua 21:45 (There failed not ought of any good thing which Yahuah had spoken),
+--                Joshua 23:14 (not one thing hath failed of all the good things) — THREAD 8
+--   v.14-21 (the Davidic promise fulfilled — thy son... he shall build the house) — held in prose
+--        (carried in the dedication frame; the seed/throne weave belongs to 2 Samuel 7 chapters)
+--
+-- THREADS (slug — target libraries):
+--   1ki08-glory-filled-the-house            canon NT(John,Rev) + Tanakh(Exod,2Chr)         [free]
+--   1ki08-dwell-in-thick-darkness-rest      canon Tanakh(Ps132,Exod)                       [free]
+--   1ki08-no-elohim-like-thee-covenant      canon Tanakh(Deut,Neh)                         [free]
+--   1ki08-heaven-of-heavens-cannot-contain  canon Tanakh(2Chr,Isa) + NT(Acts) + extras(Wis)[extras]
+--   1ki08-house-of-prayer-toward-this-place canon Tanakh(Dan) + NT(Luke)                    [free]
+--   1ki08-the-stranger-for-thy-names-sake   canon Tanakh(Isa56) + extras(Tobit)            [extras]
+--   1ki08-captivity-and-return-regathering  canon Tanakh(Deut30,Neh) + extras(Baruch)      [extras]
+--   1ki08-rest-not-one-word-of-promise      canon Tanakh(Josh) + NT(Heb)                   [free]
+
+CREATE TEMP VIEW _s342_1ki08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): the cloud filled the house — the Glory-Presence
+    ('canon','1-kings',8,11,'canon','exodus',40,34,'free',
+      E'*Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34). What filled the tabernacle at its rearing fills the temple at its dedication: *the cloud filled the house of Yahuah (LORD)... for the glory of Yahuah (LORD) had filled the house* (1 Kings 8:11). The same Glory-Presence that led Yashar''el (Israel) through the wilderness now takes up the settled house — one Presence, one Formed Glory, dwelling among his people.'),
+    ('canon','1-kings',8,11,'canon','exodus',40,35,'free',
+      E'*And Moses was not able to enter into the tent of the congregation, because the cloud abode thereon, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:35). As Moses could not enter for the cloud, so *the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house* (1 Kings 8:11). The pattern is exact — when the Glory comes in fulness, flesh must give way; the ministering hand stops before the Presence.'),
+    ('canon','1-kings',8,10,'canon','2-chronicles',5,13,'free',
+      E'*the trumpeters and singers were as one... when they lifted up their voice... and praised Yahuah (LORD)... that then the house was filled with a cloud, even the house of Yahuah (LORD)* (2 Chronicles 5:13). The Chronicler tells the same moment from within the worship: as the song rose, *the cloud filled the house of Yahuah (LORD)* (1 Kings 8:10). The Glory descends upon the praise of the gathered house — the cloud answers the song.'),
+    ('canon','1-kings',8,11,'canon','2-chronicles',5,14,'free',
+      E'*So that the priests could not stand to minister by reason of the cloud: for the glory of Yahuah (LORD) had filled the house of Elohim (God)* (2 Chronicles 5:14). Word for word the parallel to 1 Kings 8:11: *the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house*. Two witnesses to the one descent — the Presence so weighty that the priesthood itself falls still.'),
+    ('canon','1-kings',8,11,'canon','2-chronicles',7,1,'free',
+      E'*Now when Solomon had made an end of praying, the fire came down from heaven, and consumed the burnt offering and the sacrifices; and the glory of Yahuah (LORD) filled the house* (2 Chronicles 7:1). After the prayer the Glory comes a second time, sealing the dedication with fire — the same *glory of Yahuah... had filled the house* that fell at the ark''s entering (1 Kings 8:11). The house is doubly claimed: by cloud at the ark, by fire at the altar.'),
+    ('canon','1-kings',8,11,'canon','john',1,14,'free',
+      E'*And the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father,) full of grace and truth* (John 1:14). The Glory that *filled the house* (1 Kings 8:11) is the Formed Word — the expressed Presence drawn from the Formless Father. The verb *dwelt* is the tabernacling word: the same Glory that took the tent and then the temple at last took flesh, and they beheld it.'),
+    ('canon','1-kings',8,11,'canon','revelation',21,3,'free',
+      E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The dedication of Solomon''s house — *the glory of Yahuah (LORD) had filled the house* (1 Kings 8:11) — is a down-payment on the consummation, when the Glory dwells with men without veil or cloud. Tent, temple, and flesh all point here: Elohim tabernacling with his people for ever.'),
+
+    -- THREAD 2 (★): dwell in the thick darkness — the settled place, the rest for ever
+    ('canon','1-kings',8,13,'canon','psalms',132,13,'free',
+      E'*For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation* (Psalm 132:13). Solomon''s word — *I have surely built thee an house to dwell in, a settled place for thee to abide in for ever* (1 Kings 8:13) — answers the Psalm''s election of Zion. The house Solomon built is not the king''s choosing but Yahuah''s desire; Zion is the habitation he himself has chosen.'),
+    ('canon','1-kings',8,13,'canon','psalms',132,14,'free',
+      E'*This is my rest for ever: here will I dwell; for I have desired it* (Psalm 132:14). The Psalm gives Yahuah''s own answer to Solomon''s *a settled place for thee to abide in for ever* (1 Kings 8:13): *here will I dwell*. The temple is the place of his rest — the Presence settled, no longer a tent moved from station to station, but a dwelling he himself has desired.'),
+    ('canon','1-kings',8,12,'canon','exodus',40,34,'free',
+      E'*Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34). Solomon names the cloud the thick darkness Yahuah dwells in: *Yahuah (LORD) said that he would dwell in the thick darkness* (1 Kings 8:12). The covering cloud of the tabernacle is that very thick darkness — the veiled Glory, present yet shrouded, so that none may look upon the Formless and live.'),
+
+    -- THREAD 3 (★★): there is no Elohim like thee — the covenant-keeping El
+    ('canon','1-kings',8,23,'canon','deuteronomy',7,9,'free',
+      E'*Know therefore that Yahuah Elohayka (the LORD thy God), he is Elohim (God), the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations* (Deuteronomy 7:9). Solomon prays the Torah back to Yahuah: *there is no Elohim (God) like thee... who keepest covenant and mercy with thy servants that walk before thee with all their heart* (1 Kings 8:23). The covenant-keeping is bound to love-and-commandment-keeping — the keeping flows both ways, and the Torah is the faithful El''s own pledge, never the curse.'),
+    ('canon','1-kings',8,23,'canon','nehemiah',1,5,'free',
+      E'*I beseech thee, O Yahuah Elohim (LORD God) of heaven, the great and terrible Elohim (God), that keepeth covenant and mercy for them that love him and observe his commandments* (Nehemiah 1:5). Centuries after Solomon, Nehemiah opens his prayer with the same confession — *that keepeth covenant and mercy* (1 Kings 8:23). From the dedication to the return-from-exile, one unchanging El: the One who keeps covenant and mercy with those who love him and keep his commandments.'),
+
+    -- THREAD 4 (★★★): heaven of heavens cannot contain thee — the Formless uncontained
+    ('canon','1-kings',8,27,'canon','2-chronicles',6,18,'free',
+      E'*But will Elohim (God) in very deed dwell with men on the earth? behold, heaven and the heaven of heavens cannot contain thee; how much less this house which I have built!* (2 Chronicles 6:18). The verbatim parallel to Solomon''s wonder: *the heaven and heaven of heavens cannot contain thee; how much less this house that I have builded?* (1 Kings 8:27). The Formless Father is uncontainable — no house holds him — yet the Formed Presence condescends to dwell. The temple does not box in El; it is the place he chooses to set his Name.'),
+    ('canon','1-kings',8,27,'canon','isaiah',66,1,'free',
+      E'*Thus saith Yahuah (LORD), The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?* (Isaiah 66:1). Isaiah voices Solomon''s own humility made prophecy — *the heaven and heaven of heavens cannot contain thee; how much less this house* (1 Kings 8:27). The Most High is not housed by hands; heaven itself is but his throne. The dedication never imagines the temple confines him — it is grace that he dwells there at all.'),
+    ('canon','1-kings',8,27,'canon','acts',7,48,'free',
+      E'*Howbeit the El Elyon (most High) dwelleth not in temples made with hands; as saith the prophet* (Acts 7:48). Stephen speaks straight from Solomon''s confession: *the heaven and heaven of heavens cannot contain thee; how much less this house that I have builded?* (1 Kings 8:27). The temple was never the cage of the Most High — Solomon said so at the dedication itself. The Formless El is not held by walls; he is enthroned in the heaven of heavens and dwells where he wills.'),
+    ('canon','1-kings',8,27,'canon','acts',7,49,'free',
+      E'*Heaven is my throne, and earth is my footstool: what house will ye build me? saith Yahuah (Lord): or what is the place of my rest?* (Acts 7:49). Stephen seals the point with Isaiah''s words, the same wonder Solomon prayed — *how much less this house that I have builded?* (1 Kings 8:27). The Most High needs no house; heaven is his throne. The dwelling is condescension, not containment — the Formless cannot be enclosed.'),
+    ('canon','1-kings',8,27,'apocrypha','the-wisdom-of-solomon',9,8,'extras',
+      E'*You have commanded me to build a temple upon your holy mount, and an altar in the city in which you dwellest, a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8). Wisdom puts into Solomon''s mouth the very theology of his dedication prayer: the temple is *a resemblance of the holy tabernacle* — an earthly likeness of the heavenly pattern, not a container for the uncontainable. So Solomon marvels, *the heaven and heaven of heavens cannot contain thee; how much less this house that I have builded?* (1 Kings 8:27). The house is a shadow of the true dwelling Yahuah prepared from the beginning.'),
+
+    -- THREAD 5 (★★): the house of prayer — eyes open toward this place
+    ('canon','1-kings',8,29,'canon','daniel',6,10,'free',
+      E'*Now when Daniel knew that the writing was signed, he went into his house; and his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed, and gave thanks before his Elohim (God), as he did aforetime* (Daniel 6:10). Solomon prayed that Yahuah''s eyes would be *open toward this house... the place of which thou hast said, My name shall be there* (1 Kings 8:29) — and that the scattered would *pray toward this place* (8:30). Daniel, in Babylon, does exactly that: windows open toward Jerusalem, he prays toward the house, taking Solomon''s petition at its word from the land of captivity.'),
+    ('canon','1-kings',8,30,'canon','luke',18,13,'free',
+      E'*And the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13). Solomon built the house for exactly this cry: *hearken thou to the supplication of thy servant, and of thy people... and when thou hearest, forgive* (1 Kings 8:30). The publican''s broken plea for mercy is the prayer toward the place answered — the supplication of the contrite, heard in heaven and forgiven.'),
+
+    -- THREAD 6 (★★): the stranger for thy Name's sake — the Name to the nations
+    ('canon','1-kings',8,43,'canon','isaiah',56,6,'free',
+      E'*Also the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD), to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). Solomon''s stranger *that cometh out of a far country for thy name''s sake* (1 Kings 8:41) is no false-inclusion: he is the sojourner who joins himself to Yahuah, loves the Name, keeps the sabbath, and takes hold of the covenant. He does not abolish the covenant by coming — he enters it.'),
+    ('canon','1-kings',8,43,'canon','isaiah',56,7,'free',
+      E'*Even them will I bring to my holy mountain, and make them joyful in my house of prayer... for mine house shall be called an house of prayer for all people* (Isaiah 56:7). Solomon prayed *that all people of the earth may know thy name... and that they may know that this house... is called by thy name* (1 Kings 8:43). Isaiah answers: the house Solomon dedicated *shall be called an house of prayer for all people* — the Name made known to the nations, the joined stranger brought to the holy mountain.'),
+    ('canon','1-kings',8,43,'apocrypha','tobit',13,11,'extras',
+      E'*Many nations shall come from far to the name of Yahuah (God) with gifts in their hands, even gifts to the King of heaven; all generations shall praise you with great joy* (Tobit 13:11). Tobit sings what Solomon prayed: *that all people of the earth may know thy name* (1 Kings 8:43). The far country of Solomon''s stranger becomes the *many nations... from far* who come to the Name — not Israel replaced, but the Name carried out and the nations drawn in to praise the King of heaven.'),
+    ('canon','1-kings',8,43,'apocrypha','tobit',14,6,'extras',
+      E'*And all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols* (Tobit 14:6). The end of Solomon''s petition — *that all people of the earth may know thy name, to fear thee* (1 Kings 8:43) — is Tobit''s hope: all nations turning, fearing Yahuah, casting away their idols. The Name made known is not a tolerance of idols but their burial; the nations come to fear the one true El.'),
+    ('canon','1-kings',8,43,'apocrypha','tobit',14,7,'extras',
+      E'*So shall all nations praise Yahuah (God), and his people shall confess Yahuah (God), and Yahuah (God) shall exalt his people; and all those which love Yahuah (God) in truth and justice shall rejoice* (Tobit 14:7). Solomon''s stranger comes *that all people of the earth may know thy name* (1 Kings 8:43) — and Tobit completes the picture: the nations praise while *his people* are confessed and exalted. The ingathering of the stranger does not displace the people; both rejoice, those who love Yahuah in truth and justice.'),
+
+    -- THREAD 7 (★★★): the captivity-and-return prayer — the two-house regathering through repentance
+    ('canon','1-kings',8,47,'canon','deuteronomy',30,1,'free',
+      E'*And it shall come to pass, when all these things are come upon thee, the blessing and the curse... and thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee* (Deuteronomy 30:1). Solomon prays the Deuteronomy 30 pattern straight into the dedication: *if they shall bethink themselves in the land whither they were carried captives* (1 Kings 8:47). To *bethink themselves* is to *call them to mind among all the nations* — the first turn of the scattered heart toward home.'),
+    ('canon','1-kings',8,48,'canon','deuteronomy',30,2,'free',
+      E'*And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice... thou and thy children, with all thine heart, and with all thy soul* (Deuteronomy 30:2). Solomon''s *and so return unto thee with all their heart, and with all their soul, in the land of their enemies* (1 Kings 8:48) is Deuteronomy 30:2 word for word. The return is whole-hearted obedience — turning back to the voice, the Torah taken up again, not abandoned.'),
+    ('canon','1-kings',8,48,'canon','deuteronomy',30,3,'free',
+      E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). When the captives *return... with all their heart* (1 Kings 8:48), this is Yahuah''s answer: he gathers them *from all the nations*. This is the two-house regathering — Yahudah (Judah) and the scattered house of Yashar''el (Israel) brought back through repentance, the divided people made one again.'),
+    ('canon','1-kings',8,48,'canon','deuteronomy',30,4,'free',
+      E'*If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee, and from thence will he fetch thee* (Deuteronomy 30:4). No distance is too far for the regathering Solomon prays toward — *the land of the enemy, far or near* (1 Kings 8:46). Even the *outmost parts of heaven* yield up the scattered. The Shepherd who scattered Yashar''el (Israel) will fetch him home.'),
+    ('canon','1-kings',8,47,'canon','nehemiah',1,8,'free',
+      E'*Remember, I beseech thee, the word that thou commandedst thy servant Moses, saying, If ye transgress, I will scatter you abroad among the nations* (Nehemiah 1:8). Nehemiah pleads the same covenant Solomon built into his prayer — the scattering for transgression, *carried them away captives unto the land of the enemy* (1 Kings 8:46). The scattering is the Deuteronomy 28 exile-judgment for covenant-breaking, the very condition Solomon foresaw at the dedication.'),
+    ('canon','1-kings',8,48,'canon','nehemiah',1,9,'free',
+      E'*But if ye turn unto me, and keep my commandments, and do them; though there were of you cast out unto the uttermost part of the heaven, yet will I gather them from thence, and will bring them unto the place that I have chosen to set my name there* (Nehemiah 1:9). Nehemiah prays the turn Solomon prayed — *so return unto thee with all their heart* (1 Kings 8:48) — and the gathering follows: brought back to *the place... to set my name there*, the very house Solomon dedicated. The regathering ends where the prayer began: at the Name.'),
+    ('canon','1-kings',8,47,'apocrypha','baruch-with-the-letter-of-jeremiah',2,30,'extras',
+      E'*For I knew that they would not hear me, because it is a stiffnecked people: but in the land of their captivities they shall remember themselves* (Baruch 2:30). Baruch echoes Solomon almost word for word — *yet if they shall bethink themselves in the land whither they were carried captives* (1 Kings 8:47). The *remember themselves* of Baruch is the *bethink themselves* of the dedication prayer: the first stirring of repentance in the land of exile.'),
+    ('canon','1-kings',8,48,'apocrypha','baruch-with-the-letter-of-jeremiah',2,34,'extras',
+      E'*And I will bring them again into the land which I promised with an oath to their fathers, Abraham, Isaac, and Jacob, and they shall be lords of it: and I will increase them, and they shall not be diminished* (Baruch 2:34). The return Solomon prays toward — *pray unto thee toward their land, which thou gavest unto their fathers* (1 Kings 8:48) — is the oath-bound regathering: brought again into the land sworn to Abraham, Isaac, and Jacob. The seed of promise, the paternal covenant line, gathered home and increased, no more diminished.'),
+
+    -- THREAD 8 (★): rest given — not one word of his promise has failed
+    ('canon','1-kings',8,56,'canon','joshua',21,45,'free',
+      E'*There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45). Solomon''s benediction echoes Joshua''s — *there hath not failed one word of all his good promise* (1 Kings 8:56). From the conquest-rest under Joshua to the temple-rest under Solomon, the verdict is one: not one word fails. The faithful El keeps every good thing he has spoken.'),
+    ('canon','1-kings',8,56,'canon','joshua',23,14,'free',
+      E'*ye know in all your hearts and in all your souls, that not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake concerning you; all are come to pass unto you, and not one thing hath failed thereof* (Joshua 23:14). Joshua''s farewell and Solomon''s dedication speak the identical testimony — *there hath not failed one word of all his good promise* (1 Kings 8:56). The witness is doubled across the generations: every good word of Yahuah stands; not one of them falls to the ground.'),
+    ('canon','1-kings',8,56,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). Solomon blessed Yahuah *that hath given rest unto his people Yashar''el (Israel)* (1 Kings 8:56) — yet Hebrews shows the rest reaches further still: *if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8). The temple-rest is real but not final; a sabbath-rest remains, the consummation toward which every given rest points.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-glory-filled-the-house',
+       E'The cloud filled the house — the Glory-Presence taking up the temple',
+       E'When the priests bring the ark into the oracle and come out, *the cloud filled the house of Yahuah (LORD), So that the priests could not stand to minister because of the cloud: for the glory of Yahuah (LORD) had filled the house of Yahuah (LORD)* (1 Kings 8:10-11). This is the same descent that crowned the tabernacle: *Then a cloud covered the tent of the congregation, and the glory of Yahuah (LORD) filled the tabernacle. And Moses was not able to enter... because the cloud abode thereon* (Exodus 40:34-35). Tent and temple receive the one Presence; when the Glory comes in fulness, flesh gives way and ministry stops. The Chronicler shows the cloud descending upon the praise — *as the trumpeters and singers were as one... the house was filled with a cloud* (2 Chronicles 5:13) — and a second time as fire after the prayer: *the fire came down from heaven... and the glory of Yahuah (LORD) filled the house* (2 Chronicles 7:1). This Glory is the Formed Word, the expressed Presence drawn from the Formless Father — and the same Glory at last took flesh: *the Word was made flesh, and dwelt among us, (and we beheld his glory, the glory as of the only begotten of the Father)* (John 1:14), the tabernacling word. The dedication is a down-payment on the consummation, when the veil is gone: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3). Tent, temple, flesh, and the city to come — one Glory dwelling among his people.',
+       sv.verse_id, ev.verse_id, 'free', 38075
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-dwell-in-thick-darkness-rest',
+       E'He would dwell in the thick darkness — a settled place to abide for ever',
+       E'Solomon names the descended cloud for what it is: *Yahuah (LORD) said that he would dwell in the thick darkness. I have surely built thee an house to dwell in, a settled place for thee to abide in for ever* (1 Kings 8:12-13). The thick darkness is the very *cloud* that *covered the tent of the congregation* (Exodus 40:34) — the veiled Glory, present yet shrouded, so that none looks upon the Formless and lives. And the *settled place* answers Yahuah''s own election of Zion: *For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation* (Psalm 132:13); *This is my rest for ever: here will I dwell; for I have desired it* (Psalm 132:14). The house is not the king''s presumption but Yahuah''s desire — the wandering Presence of the wilderness now given a settled dwelling, the place of his rest, chosen and desired by him.',
+       sv.verse_id, ev.verse_id, 'free', 38078
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-no-elohim-like-thee-covenant',
+       E'There is no Elohim like thee — who keepest covenant and mercy',
+       E'Solomon opens his prayer with the great confession: *Yahuah Elohim (LORD God) of Yashar''el (Israel), there is no Elohim (God) like thee, in heaven above, or on earth beneath, who keepest covenant and mercy with thy servants that walk before thee with all their heart* (1 Kings 8:23). This is the Torah''s own portrait of the faithful El: *Know therefore that Yahuah Elohayka (the LORD thy God), he is Elohim (God), the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations* (Deuteronomy 7:9). The covenant-keeping and the commandment-keeping are bound together — the faithful El pledges himself to those who walk before him with all their heart. Centuries later Nehemiah prays the identical confession from the ruins of the exile: *the great and terrible Elohim (God), that keepeth covenant and mercy for them that love him and observe his commandments* (Nehemiah 1:5). From the dedication to the return, one unchanging El — and the Torah is his covenant pledge, never the curse.',
+       sv.verse_id, ev.verse_id, 'free', 38081
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-heaven-of-heavens-cannot-contain',
+       E'The heaven of heavens cannot contain thee — the Formless uncontained, yet dwelling',
+       E'At the height of his prayer Solomon marvels: *But will Elohim (God) indeed dwell on the earth? behold, the heaven and heaven of heavens cannot contain thee; how much less this house that I have builded?* (1 Kings 8:27). The dedication never imagines the temple boxes in the Most High — the Formless Father is uncontainable, and the house is grace, the place he chooses to set his Name, while the Formed Presence condescends to dwell. The Chronicler keeps it word for word: *heaven and the heaven of heavens cannot contain thee; how much less this house which I have built!* (2 Chronicles 6:18). Isaiah makes the wonder a prophecy: *The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me?* (Isaiah 66:1). And Stephen, on trial, speaks straight from Solomon: *the El Elyon (most High) dwelleth not in temples made with hands... Heaven is my throne, and earth is my footstool: what house will ye build me?* (Acts 7:48-49). Even Wisdom puts the right theology in Solomon''s mouth — the temple is *a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8), an earthly likeness of the heavenly pattern, never a container for the uncontainable. The house is a shadow; the dwelling is condescension, not confinement.',
+       sv.verse_id, ev.verse_id, 'extras', 38084
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-house-of-prayer-toward-this-place',
+       E'Thine eyes open toward this house — the place toward which the scattered pray',
+       E'Solomon prays the house into a house of prayer: *That thine eyes may be open toward this house night and day, even toward the place of which thou hast said, My name shall be there: that thou mayest hearken unto the prayer which thy servant shall make toward this place. And hearken thou to the supplication of thy servant, and of thy people Yashar''el (Israel), when they shall pray toward this place... and when thou hearest, forgive* (1 Kings 8:29-30). The place becomes the direction of every plea — and Daniel, captive in Babylon, takes the petition at its word: *his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed* (Daniel 6:10). The house Solomon dedicated draws the prayers of the scattered home from exile. And the cry it is built to hear is the broken one: *the publican, standing afar off, would not lift up so much as his eyes unto heaven, but smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13) — the supplication of the contrite, heard in heaven and forgiven.',
+       sv.verse_id, ev.verse_id, 'free', 38087
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-the-stranger-for-thy-names-sake',
+       E'Concerning a stranger from a far country — the Name made known to the nations',
+       E'Solomon''s prayer reaches beyond Yashar''el (Israel): *Moreover concerning a stranger, that is not of thy people Yashar''el (Israel), but cometh out of a far country for thy name''s sake... Hear thou in heaven thy dwelling place, and do according to all that the stranger calleth to thee for: that all people of the earth may know thy name, to fear thee, as do thy people Yashar''el (Israel)* (1 Kings 8:41-43). This is no false inclusion that empties the covenant — it is the sojourner who comes *for thy name''s sake*, the one Isaiah describes: *the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD)... every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). He enters the covenant, he does not abolish it — and so *mine house shall be called an house of prayer for all people* (Isaiah 56:7). Tobit sings the same ingathering: *Many nations shall come from far to the name of Yahuah (God)* (Tobit 13:11); *all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols* (Tobit 14:6); *So shall all nations praise Yahuah (God), and his people shall confess Yahuah (God), and Yahuah (God) shall exalt his people* (Tobit 14:7). The Name carried to the nations does not displace the people — both rejoice, those who love Yahuah in truth and justice.',
+       sv.verse_id, ev.verse_id, 'extras', 38090
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=41
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-captivity-and-return-regathering',
+       E'If they bethink themselves and return — the captivity-and-return prayer, the two-house regathering',
+       E'The keystone of Solomon''s prayer foresees the exile and prays the way home: *If they sin against thee... and thou deliver them to the enemy, so that they carry them away captives unto the land of the enemy, far or near; Yet if they shall bethink themselves in the land whither they were carried captives, and repent, and make supplication unto thee... And so return unto thee with all their heart, and with all their soul... then hear thou their prayer... and forgive thy people* (1 Kings 8:46-50). This is the Deuteronomy 30 pattern built into the temple''s dedication: *thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee* (Deuteronomy 30:1); *And shalt return unto Yahuah Elohayka (the LORD thy God)... with all thine heart, and with all thy soul* (Deuteronomy 30:2); *will turn thy captivity... and will return and gather thee from all the nations* (Deuteronomy 30:3); *If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee* (Deuteronomy 30:4). This is the two-house regathering — Yahudah (Judah) and the scattered house of Yashar''el (Israel) brought home through repentance, the divided people made one. Nehemiah prays the same from the exile: *If ye transgress, I will scatter you abroad among the nations... But if ye turn unto me... yet will I gather them from thence, and will bring them unto the place that I have chosen to set my name there* (Nehemiah 1:8-9). And Baruch echoes Solomon almost word for word: *in the land of their captivities they shall remember themselves* (Baruch 2:30); *And I will bring them again into the land which I promised with an oath to their fathers, Abraham, Isaac, and Jacob* (Baruch 2:34) — the seed of promise, the paternal covenant line, gathered home and increased, no more diminished. The scattering is the Deuteronomy 28 judgment for covenant-breaking, never the Torah itself; the return is the Torah taken up again, with all the heart.',
+       sv.verse_id, ev.verse_id, 'extras', 38093
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=46
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=50
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 8 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-8-rest-not-one-word-of-promise',
+       E'Rest unto his people — not one word of all his good promise has failed',
+       E'Solomon ends the dedication blessing Yahuah: *Blessed be Yahuah (LORD), that hath given rest unto his people Yashar''el (Israel), according to all that he promised: there hath not failed one word of all his good promise, which he promised by the hand of Moses his servant* (1 Kings 8:56). This is the standing verdict of the covenant. Joshua spoke it at the conquest-rest: *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45); and again in his farewell: *not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake concerning you; all are come to pass unto you, and not one thing hath failed thereof* (Joshua 23:14). From Joshua''s rest to Solomon''s rest, the testimony is one — the faithful El keeps every good word. Yet the rest is not yet final: *if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day. There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:8-9). The temple-rest is real, and it points beyond itself to the sabbath-rest still to come — toward which not one word of the good promise will fail.',
+       sv.verse_id, ev.verse_id, 'free', 38096
+  FROM _s342_1ki08_lookup sv, _s342_1ki08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=56
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=8 AND ev.verse_number=56
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — the tabernacle-filling that the temple-filling of 1 Kings 8:10-11 repeats; one Presence for tent and house.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Moses was not able to enter... because the cloud abode thereon* (Exodus 40:35) — as Moses could not enter, so the priests could not stand (1 Kings 8:11); flesh gives way before the fulness of the Glory.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the house was filled with a cloud* (2 Chronicles 5:13) — the Chronicler''s witness: the cloud descends upon the praise of the gathered house, the same cloud of 1 Kings 8:10.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=10
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the priests could not stand to minister by reason of the cloud: for the glory of Yahuah (LORD) had filled the house of Elohim (God)* (2 Chronicles 5:14) — word for word the parallel to 1 Kings 8:11; two witnesses to the one descent.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=5 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the fire came down from heaven... and the glory of Yahuah (LORD) filled the house* (2 Chronicles 7:1) — the Glory returns as fire after the prayer; the house doubly claimed, by cloud at the ark and fire at the altar (1 Kings 8:11).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the Word was made flesh, and dwelt among us... and we beheld his glory* (John 1:14) — the Glory that filled the house (1 Kings 8:11) is the Formed Word, the tabernacling Presence that at last took flesh.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the dedication is a down-payment on the consummation, the Glory dwelling with men without veil (1 Kings 8:11).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=11
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-glory-filled-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation* (Psalm 132:13) — the house Solomon built (1 Kings 8:13) is Yahuah''s own choosing, not the king''s presumption.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=13
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-dwell-in-thick-darkness-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*This is my rest for ever: here will I dwell; for I have desired it* (Psalm 132:14) — Yahuah''s own answer to Solomon''s *a settled place... for ever* (1 Kings 8:13).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=13
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-dwell-in-thick-darkness-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a cloud covered the tent... the glory of Yahuah (LORD) filled the tabernacle* (Exodus 40:34) — the covering cloud is the *thick darkness* Yahuah dwells in (1 Kings 8:12); the veiled Glory, present yet shrouded.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=12
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=40 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-dwell-in-thick-darkness-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the faithful Elohim (God), which keepeth covenant and mercy with them that love him and keep his commandments to a thousand generations* (Deuteronomy 7:9) — the Torah''s own portrait of the El Solomon confesses in 1 Kings 8:23; covenant-mercy bound to commandment-keeping.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=23
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-no-elohim-like-thee-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the great and terrible Elohim (God), that keepeth covenant and mercy for them that love him and observe his commandments* (Nehemiah 1:5) — the identical confession prayed from the exile; from dedication to return, one covenant-keeping El (1 Kings 8:23).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=23
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-no-elohim-like-thee-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *heaven and the heaven of heavens cannot contain thee; how much less this house which I have built!* (2 Chronicles 6:18) — the verbatim parallel to 1 Kings 8:27; the Formless Father uncontained.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-heaven-of-heavens-cannot-contain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me?* (Isaiah 66:1) — Solomon''s humility made prophecy; no house holds the Most High (1 Kings 8:27).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-heaven-of-heavens-cannot-contain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the El Elyon (most High) dwelleth not in temples made with hands* (Acts 7:48) — Stephen speaks straight from Solomon''s confession (1 Kings 8:27); the temple never the cage of the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-heaven-of-heavens-cannot-contain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Heaven is my throne, and earth is my footstool: what house will ye build me?* (Acts 7:49) — Stephen seals the point with Isaiah''s words, Solomon''s very wonder (1 Kings 8:27).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-heaven-of-heavens-cannot-contain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *a resemblance of the holy tabernacle, which you have prepared from the beginning* (Wisdom of Solomon 9:8) — the temple an earthly likeness of the heavenly pattern, never a container for the uncontainable (1 Kings 8:27).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='the-wisdom-of-solomon' AND tv.chapter_number=9 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-heaven-of-heavens-cannot-contain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed* (Daniel 6:10) — Daniel takes Solomon''s petition at its word, praying toward the house from captivity (1 Kings 8:29).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=29
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-house-of-prayer-toward-this-place'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the publican... smote upon his breast, saying, Elohim (God) be merciful to me a sinner* (Luke 18:13) — the broken cry for which the house of prayer is built, the supplication heard and forgiven (1 Kings 8:30).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=30
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=18 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-house-of-prayer-toward-this-place'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the sons of the stranger, that join themselves to Yahuah (LORD)... to love the name of Yahuah (LORD)... and taketh hold of my covenant* (Isaiah 56:6) — Solomon''s stranger who comes *for thy name''s sake* (1 Kings 8:41) enters the covenant, not abolishes it.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=43
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-the-stranger-for-thy-names-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *mine house shall be called an house of prayer for all people* (Isaiah 56:7) — the house Solomon dedicated, the Name made known so *all people of the earth may know thy name* (1 Kings 8:43).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=43
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-the-stranger-for-thy-names-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Many nations shall come from far to the name of Yahuah (God)* (Tobit 13:11) — the far country of Solomon''s stranger becomes the many nations drawn to the Name (1 Kings 8:43).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=43
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=13 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-the-stranger-for-thy-names-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*all nations shall turn, and fear Yahuah (God) truly, and shall bury their idols* (Tobit 14:6) — the Name made known is not tolerance of idols but their burial; the nations come to fear the one El (1 Kings 8:43).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=43
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-the-stranger-for-thy-names-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*all nations shall praise Yahuah (God), and his people shall confess Yahuah (God), and Yahuah (God) shall exalt his people* (Tobit 14:7) — the ingathering of the stranger does not displace the people; both rejoice (1 Kings 8:43).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=43
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='tobit' AND tv.chapter_number=14 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-the-stranger-for-thy-names-sake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *thou shalt call them to mind among all the nations, whither Yahuah Elohayka (the LORD thy God) hath driven thee* (Deuteronomy 30:1) — to *bethink themselves* (1 Kings 8:47) is to call to mind among the nations; the first turn of the scattered heart.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=47
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *And shalt return unto Yahuah Elohayka (the LORD thy God)... with all thine heart, and with all thy soul* (Deuteronomy 30:2) — Solomon''s *return unto thee with all their heart, and with all their soul* (1 Kings 8:48) word for word; the whole-hearted return to the voice.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=48
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *will turn thy captivity... and will return and gather thee from all the nations* (Deuteronomy 30:3) — the two-house regathering: Yahudah and the scattered house of Yashar''el brought back when they return with all their heart (1 Kings 8:48).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=48
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*If any of thine be driven out unto the outmost parts of heaven, from thence will Yahuah Elohayka (the LORD thy God) gather thee* (Deuteronomy 30:4) — no distance too far for the regathering; *far or near* (1 Kings 8:46), the Shepherd fetches the scattered home.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=48
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*If ye transgress, I will scatter you abroad among the nations* (Nehemiah 1:8) — the scattering for covenant-breaking that Solomon foresaw, *carried them away captives* (1 Kings 8:46); the Deuteronomy 28 judgment, never the Torah itself.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=47
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*But if ye turn unto me... yet will I gather them from thence, and will bring them unto the place that I have chosen to set my name there* (Nehemiah 1:9) — the regathering ends at the Name, the very house Solomon dedicated (1 Kings 8:48).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=48
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *in the land of their captivities they shall remember themselves* (Baruch 2:30) — Baruch''s *remember themselves* is Solomon''s *bethink themselves* (1 Kings 8:47); the first stirring of repentance in exile.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=47
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *I will bring them again into the land which I promised with an oath to their fathers, Abraham, Isaac, and Jacob* (Baruch 2:34) — the oath-bound regathering, the paternal covenant line gathered home and increased (1 Kings 8:48).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=48
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='baruch-with-the-letter-of-jeremiah' AND tv.chapter_number=2 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-captivity-and-return-regathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 8 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *There failed not ought of any good thing which Yahuah (LORD) had spoken unto the house of Yashar''el (Israel); all came to pass* (Joshua 21:45) — the conquest-rest verdict echoed in Solomon''s *not failed one word of all his good promise* (1 Kings 8:56).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=56
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=21 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-rest-not-one-word-of-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*not one thing hath failed of all the good things which Yahuah Elohaychem (the LORD your God) spake... all are come to pass* (Joshua 23:14) — Joshua''s farewell, the identical testimony to Solomon''s benediction (1 Kings 8:56); the witness doubled across the generations.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=56
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-rest-not-one-word-of-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *if Yahusha (Jesus) had given them rest... There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:8-9) — the temple-rest is real but not final; a sabbath-rest remains, toward which Solomon''s given rest points (1 Kings 8:56).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=8 AND sv.verse_number=56
+  JOIN _s342_1ki08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-8-rest-not-one-word-of-promise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_9.sql (1 Kings 9) -----
+-- Chapter: 1 Kings 9 — Yahuah appears to Solomon the SECOND time; the Name placed in the house
+--   for ever; the CONDITIONAL throne (Torah-keeping the condition); the exile-judgment for
+--   covenant-breaking (Deut 28-29 / Lev 26 — the curse is the breach-consequence, NEVER the
+--   Torah itself); Solomon's building works, Cabul, the navy of Ophir gold.
+-- Tag: 1ki09   View: _s342_1ki09_lookup   Sort band: 38100 step 3 (38100..38112)
+--
+-- 1 Kings 9 coverage:
+--   v.3  (the Name in the house for ever; prayer heard)
+--        NT:     none warranted here (Name-placement is the Tanakh thread; NT throne sits at v.5)
+--        Extras: none warranted
+--        Tanakh: 1 Kings 8:29 (Solomon's prayer this answers); 2 Samuel 7:13 (house for my name);
+--                Deuteronomy 28:58 (the glorious and fearful Name) — Name-thread
+--   v.4-5 (the conditional throne — Torah the condition; throne upon Yashar'el for ever)
+--        NT:     Luke 1:32-33 (the throne of his father David, reign for ever — the Formed Son)
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 7:12-16 (the Davidic covenant); 2 Chronicles 7:17-18 (the parallel) — throne-thread
+--   v.6-9 (turn away / cut off / cast out / proverb-byword / because they forsook)
+--        NT:     none warranted (covenant-sanction is Tanakh-internal here)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 28:36-37,45,64; Deuteronomy 29:24-28; Leviticus 26:31-33;
+--                2 Chronicles 7:19-22; Jeremiah 22:8-9 — covenant-sanction thread
+--   v.7  (Yashar'el a proverb and a byword; this house cast out — the scattering of both houses)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 2 Kings 17:6,18,20-21 (the north scattered to Assyria); 1 Kings 11:11,31
+--                (the kingdom rent); Deuteronomy 28:37 — scattering thread
+--   v.10-28 (Hiram / Cabul / the levy / building works / navy of Ophir) — narrative detail,
+--        no library cross-add warranted (none of the three layers carries framework weight here
+--        beyond what the conditional-covenant threads above already bear).
+--
+-- Threads (4):
+--   1-kings-9-i-have-hallowed-this-house-to-put-my-name-there-for-ever  (Tanakh) — v.3
+--   1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk  (Tanakh+NT) — v.4-5
+--   1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel  (Tanakh) — v.6-9
+--   1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering  (Tanakh) — v.7
+--
+-- FRAMING NOTE (load-bearing / contested): vv.6-9 are the Deuteronomy 28-29 / Leviticus 26
+-- covenant sanction. The exile-judgment is the CONSEQUENCE of forsaking the covenant and going
+-- after other gods (9:9 — *Because they forsook Yahuah their Elohim... therefore hath Yahuah
+-- brought upon them all this evil*) — it is NEVER the Torah itself being a curse. The condition
+-- in v.4 is Torah-keeping (*keep my statutes and my judgments*); the breach in v.6 is idolatry
+-- (*go and serve other gods*). This is the exact backstory to the scattering of BOTH houses
+-- (2 Kings 17 → north to Assyria; the south later to Babylon, Jer 22:8-9), the two-house exile
+-- the whole library exists to reverse by ingathering.
+
+CREATE TEMP VIEW _s342_1ki09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Name placed in the house for ever (9:3)
+    ('canon','1-kings',9,3,'canon','1-kings',8,29,'free',E'*That thine eyes may be open toward this house night and day, even toward the place of which thou hast said, My name shall be there: that thou mayest hearken unto the prayer which thy servant shall make toward this place* (1 Kings 8:29). The second appearance answers the exact prayer Solomon prayed at the dedication: when 9:3 says *I have heard thy prayer and thy supplication, that thou hast made before me: I have hallowed this house... to put my name there for ever; and mine eyes and mine heart shall be there perpetually*, Yahuah is granting word-for-word what was asked — the Name, the open eyes, the place of prayer.'),
+    ('canon','1-kings',9,3,'canon','2-samuel',7,13,'free',E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The house Solomon finished is the house promised to David for the Name; when Yahuah says *I have hallowed this house, which thou hast built, to put my name there for ever*, he is fulfilling the word spoken to David — the Name and the everlasting throne are bound together in the same covenant.'),
+    ('canon','1-kings',9,3,'canon','deuteronomy',28,58,'free',E'*If thou wilt not observe to do all the words of this law that are written in this book, that thou mayest fear this glorious and fearful name, THE Yahuah (LORD) THY GOD* (Deuteronomy 28:58). The Name placed *there for ever* in 9:3 is the same *glorious and fearful name* the Torah commands Yashar''el (Israel) to fear and keep — the house exists to house the Name, and forsaking the Name (9:9) is the very breach the sanction answers.'),
+
+    -- THREAD 2: the conditional throne — Torah-keeping the condition (9:4-5)
+    ('canon','1-kings',9,5,'canon','2-samuel',7,12,'free',E'*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). The promise *Then I will establish the throne of thy kingdom upon Yashar''el (Israel) for ever, as I promised to David thy father* (9:5) reaches straight back to the seed-promise to David — the throne is the Davidic line, carried by paternal bloodline AND covenant-word together.'),
+    ('canon','1-kings',9,5,'canon','2-samuel',7,16,'free',E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). When 9:5 says *as I promised to David thy father, saying, There shall not fail thee a man upon the throne of Yashar''el (Israel)*, it is quoting back the for-ever throne of the Davidic covenant — the unbreakable promise that the conditional sets Solomon''s own footing within.'),
+    ('canon','1-kings',9,4,'canon','2-chronicles',7,17,'free',E'*And as for thee, if thou wilt walk before me, as David thy father walked, and do according to all that I have commanded thee, and shalt observe my statutes and my judgments* (2 Chronicles 7:17). The Chronicler''s parallel of the same night carries the same condition word for word — *if thou wilt walk before me, as David thy father walked... and wilt keep my statutes and my judgments* (9:4): the condition of the throne is Torah-keeping, never anything less.'),
+    ('canon','1-kings',9,5,'canon','2-chronicles',7,18,'free',E'*Then will I stablish the throne of thy kingdom, according as I have covenanted with David thy father, saying, There shall not fail thee a man to be ruler in Yashar''el (Israel)* (2 Chronicles 7:18). The twin of 9:5 — the same establishing of the throne *upon Yashar''el (Israel) for ever* — confirms the covenant frame: the everlasting Davidic rule held out on the condition of walking in the statutes.'),
+    ('canon','1-kings',9,5,'canon','luke',1,32,'free',E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The throne held out conditionally to Solomon finds its unfailing heir in the Formed Son — the One who walks before the Father in perfect integrity where Solomon would fail (1 Kings 11), so that *there shall not fail thee a man upon the throne of Yashar''el (Israel)* (9:5) stands for ever in him.'),
+    ('canon','1-kings',9,5,'canon','luke',1,33,'free',E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The *for ever* of 9:5 — *I will establish the throne of thy kingdom upon Yashar''el (Israel) for ever* — is the very for-ever the Formed Son fulfils, reigning over the house of Jacob (both houses regathered) with a kingdom that has no end.'),
+
+    -- THREAD 3: the exile-judgment for covenant-breaking — Deut 28-29 / Lev 26 (9:6-9)
+    ('canon','1-kings',9,7,'canon','deuteronomy',28,36,'free',E'*Yahuah (LORD) shall bring thee, and thy king which thou shalt set over thee, unto a nation which neither thou nor thy fathers have known; and there shalt thou serve other gods, wood and stone* (Deuteronomy 28:36). The threat *Then will I cut off Yashar''el (Israel) out of the land which I have given them* (9:7) is the Deuteronomy 28 covenant sanction restated to Solomon — the exile is the consequence of going to *serve other gods* (9:6), never the Torah itself being a curse.'),
+    ('canon','1-kings',9,7,'canon','deuteronomy',28,37,'free',E'*And thou shalt become an astonishment, a proverb, and a byword, among all nations whither Yahuah (LORD) shall lead thee* (Deuteronomy 28:37). The very words *Yashar''el (Israel) shall be a proverb and a byword among all people* (9:7) are lifted from the Torah''s own sanction — Solomon is being shown that the breach he is warned against triggers the exact curse Moses spoke, the breach-consequence, not the inheritance.'),
+    ('canon','1-kings',9,9,'canon','deuteronomy',28,45,'free',E'*Moreover all these curses shall come upon thee, and shall pursue thee, and overtake thee, till thou be destroyed; because thou hearkenedst not unto the voice of Yahuah Elohayka (the LORD thy God), to keep his commandments and his statutes which he commanded thee* (Deuteronomy 28:45). The cause named in 9:9 — *Because they forsook Yahuah (LORD) their Elohim (God)... therefore hath Yahuah (LORD) brought upon them all this evil* — is the Torah''s own logic: the curse comes *because* of forsaking, the breach of the covenant, never the keeping of it.'),
+    ('canon','1-kings',9,7,'canon','deuteronomy',28,64,'free',E'*And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone* (Deuteronomy 28:64). Cutting Yashar''el (Israel) off *out of the land* (9:7) is the scattering Moses foretold — the exile-judgment that follows turning to *serve other gods* (9:6), the covenant-faithfulness sanction, not Torah-as-curse.'),
+    ('canon','1-kings',9,9,'canon','deuteronomy',29,24,'free',E'*Even all nations shall say, Wherefore hath Yahuah (LORD) done thus unto this land? what meaneth the heat of this great anger?* (Deuteronomy 29:24). The passer-by''s question in 9:8 — *Why hath Yahuah (LORD) done thus unto this land, and to this house?* — is the very question Moses put in the nations'' mouths; the answer is identical: the covenant was forsaken.'),
+    ('canon','1-kings',9,9,'canon','deuteronomy',29,25,'free',E'*Then men shall say, Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers, which he made with them when he brought them forth out of the land of Egypt* (Deuteronomy 29:25). The answer of 9:9 — *Because they forsook Yahuah (LORD) their Elohim (God), who brought forth their fathers out of the land of Egypt* — is word for word the answer Moses gave: the exile is the consequence of forsaking the covenant, not the covenant condemning the people.'),
+    ('canon','1-kings',9,9,'canon','deuteronomy',29,28,'free',E'*And Yahuah (LORD) rooted them out of their land in anger, and in wrath, and in great indignation, and cast them into another land, as it is this day* (Deuteronomy 29:28). The casting *out of the land* threatened in 9:7 is the rooting-out Moses described — the same covenant sanction, the breach-consequence falling because they *take hold upon other gods* (9:9).'),
+    ('canon','1-kings',9,7,'canon','leviticus',26,31,'free',E'*And I will make your cities waste, and bring your sanctuaries unto desolation, and I will not smell the savour of your sweet odours* (Leviticus 26:31). The house *cast out of my sight* in 9:7 is the desolated sanctuary Leviticus warned of — the third witness (with Deut 28 and Deut 29) that the exile is the covenant sanction for idolatry, never the Torah being the curse.'),
+    ('canon','1-kings',9,7,'canon','leviticus',26,33,'free',E'*And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). Cutting Yashar''el (Israel) off *out of the land* (9:7) is the Levitical scattering — and Leviticus 26 ends not in abandonment but in remembered covenant (26:42-45), the very mercy that makes the scattering a discipline, not a divorce without return.'),
+    ('canon','1-kings',9,9,'canon','2-chronicles',7,22,'free',E'*And it shall be answered, Because they forsook Yahuah Elohim (the LORD God) of their fathers, which brought them forth out of the land of Egypt, and laid hold on other gods, and worshipped them, and served them: therefore hath he brought all this evil upon them* (2 Chronicles 7:22). The Chronicler''s parallel of 9:9 gives the identical verdict — the evil came *because they forsook* and *laid hold on other gods*: the consequence of breaking faith, never the law itself.'),
+    ('canon','1-kings',9,9,'canon','jeremiah',22,9,'free',E'*Then they shall answer, Because they have forsaken the covenant of Yahuah (LORD) their Elohim (God), and worshipped other gods, and served them* (Jeremiah 22:9). Generations later Jeremiah gives the same answer to the same question — proving the warning of 9:6-9 was no idle threat: Yahudah (Judah) too would forsake the covenant and *worship other gods*, and the byword would come exactly as foretold.'),
+
+    -- THREAD 4: a proverb and a byword — the scattering of both houses (9:7)
+    ('canon','1-kings',9,7,'canon','2-kings',17,6,'free',E'*In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes* (2 Kings 17:6). The threat of 9:7 — *Then will I cut off Yashar''el (Israel) out of the land* — falls on the northern house first: the ten tribes carried into Assyria, the very scattering the conditional warned of, the two-house exile the whole library exists to reverse.'),
+    ('canon','1-kings',9,7,'canon','2-kings',17,18,'free',E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18). *Removed... out of his sight* is the cutting-off of 9:7 made history — and it leaves *Yahudah (Judah) only*, the two houses now visibly split: the north divorced and scattered, the south alone for a season.'),
+    ('canon','1-kings',9,7,'canon','2-kings',17,20,'free',E'*And Yahuah (LORD) rejected all the seed of Yashar''el (Israel), and afflicted them, and delivered them into the hand of spoilers, until he had cast them out of his sight* (2 Kings 17:20). The house and the land *cast out of my sight* (9:7) — here it is, *cast... out of his sight*; the byword among the nations begins, the scattering that Ezekiel''s two sticks and Jeremiah''s *He that scattered Yashar''el (Israel) will gather him* are spoken to undo.'),
+    ('canon','1-kings',9,7,'canon','1-kings',11,11,'free',E'*Wherefore Yahuah (LORD) said unto Solomon, Forasmuch as this is done of thee, and thou hast not kept my covenant and my statutes, which I have commanded thee, I will surely rend the kingdom from thee, and will give it to thy servant* (1 Kings 11:11). Two chapters on, Solomon himself does exactly what 9:6 warned — *turn from following me* — and the rending begins in him: the conditional of chapter 9 is not abstract; the king it was spoken to is the first to break it.'),
+    ('canon','1-kings',9,7,'canon','1-kings',11,31,'free',E'*And he said to Jeroboam, Take thee ten pieces: for thus saith Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31). The ten pieces given to Jeroboam are the birth of the two houses — Yashar''el (Israel)/Ephraim in the north, Yahudah (Judah) in the south — the division that begins the road to the proverb-and-byword scattering of 9:7.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS --
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-9-i-have-hallowed-this-house-to-put-my-name-there-for-ever',
+       E'I have hallowed this house, to put my name there for ever',
+       E'Yahuah (LORD) appears to Solomon the second time and answers, word for word, the prayer of the dedication: *I have heard thy prayer and thy supplication, that thou hast made before me: I have hallowed this house, which thou hast built, to put my name there for ever; and mine eyes and mine heart shall be there perpetually* (1 Kings 9:3). This is the granting of what Solomon asked — *That thine eyes may be open toward this house night and day, even toward the place of which thou hast said, My name shall be there* (1 Kings 8:29). And it is the keeping of the word to David: *He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The Name placed *there for ever* is the same *glorious and fearful name, THE Yahuah (LORD) THY GOD* (Deuteronomy 28:58) the Torah commands Yashar''el (Israel) to fear — so that to forsake the Name (as 9:9 warns) is to break the very covenant the house was raised to honour.',
+       sv.verse_id, ev.verse_id, 'free', 38100
+  FROM _s342_1ki09_lookup sv, _s342_1ki09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=9 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk',
+       E'The throne upon Yashar''el for ever — if thou wilt walk before me',
+       E'The promise of the everlasting throne is held out on a condition, and the condition is Torah-keeping: *And if thou wilt walk before me, as David thy father walked, in integrity of heart, and in uprightness, to do according to all that I have commanded thee, and wilt keep my statutes and my judgments: Then I will establish the throne of thy kingdom upon Yashar''el (Israel) for ever* (1 Kings 9:4-5). The throne itself is the Davidic seed-promise — *I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12), *thy throne shall be established for ever* (2 Samuel 7:16) — and the Chronicler''s parallel of the same night carries the same condition: *if thou wilt walk before me, as David thy father walked... and shalt observe my statutes and my judgments; Then will I stablish the throne of thy kingdom* (2 Chronicles 7:17-18). Solomon would not keep it (1 Kings 11), so the unfailing *man upon the throne of Yashar''el (Israel)* is found at last in the Formed Son: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32), *and he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the for-ever throne kept by the One who walks before the Father in perfect integrity, reigning over both houses regathered.',
+       sv.verse_id, ev.verse_id, 'free', 38103
+  FROM _s342_1ki09_lookup sv, _s342_1ki09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=9 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel',
+       E'If ye turn from following me — the curse is the breach, never the Torah',
+       E'The other half of the conditional is the covenant sanction, spoken straight out of the Torah: *But if ye shall at all turn from following me... and will not keep my commandments and my statutes which I have set before you, but go and serve other gods, and worship them: Then will I cut off Yashar''el (Israel) out of the land which I have given them; and this house... will I cast out of my sight* (1 Kings 9:6-7). The trigger is idolatry — *go and serve other gods* — and the verdict is named plainly: *Because they forsook Yahuah (LORD) their Elohim (God)... therefore hath Yahuah (LORD) brought upon them all this evil* (1 Kings 9:9). This is the Deuteronomy 28-29 / Leviticus 26 curse-for-breaking, and the wording is lifted from the Torah itself: *Yahuah (LORD) shall scatter thee among all people* (Deuteronomy 28:64), the curses come *because thou hearkenedst not... to keep his commandments* (Deuteronomy 28:45), the nations ask *Wherefore hath Yahuah (LORD) done thus unto this land?* and the answer is *Because they have forsaken the covenant* (Deuteronomy 29:24-25,28); *I will make your cities waste, and bring your sanctuaries unto desolation... I will scatter you among the heathen* (Leviticus 26:31,33). The Chronicler''s parallel gives the same verdict (2 Chronicles 7:22), and Jeremiah will give it again over the southern house: *Because they have forsaken the covenant of Yahuah (LORD) their Elohim (God)* (Jeremiah 22:9). The curse is always the consequence of forsaking — never the law itself; and Leviticus 26 ends not in divorce but in remembered covenant (26:42-45), the discipline that holds the door open for return.',
+       sv.verse_id, ev.verse_id, 'free', 38106
+  FROM _s342_1ki09_lookup sv, _s342_1ki09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=9 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering',
+       E'A proverb and a byword — the scattering of both houses begins',
+       E'The byword named in the warning is the backstory of the two-house exile: *Yashar''el (Israel) shall be a proverb and a byword among all people* (1 Kings 9:7) — the very curse Moses spoke, *thou shalt become an astonishment, a proverb, and a byword, among all nations* (Deuteronomy 28:37). It does not stay theoretical. Solomon himself breaks the condition first: *thou hast not kept my covenant and my statutes... I will surely rend the kingdom from thee* (1 Kings 11:11), and the ten tribes are torn away — *Behold, I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31) — the birth of the two houses, Yashar''el (Israel)/Ephraim in the north and Yahudah (Judah) in the south. Then the northern house is cut off *out of the land* exactly as 9:7 threatened: *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria* (2 Kings 17:6); *Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18); *and Yahuah (LORD) rejected all the seed of Yashar''el (Israel)... until he had cast them out of his sight* (2 Kings 17:20). The house *cast out of my sight* of 9:7 is now history — and it is precisely this scattering that the two sticks made one (Ezekiel 37) and *He that scattered Yashar''el (Israel) will gather him* (Jeremiah 31:10) are spoken to reverse.',
+       sv.verse_id, ev.verse_id, 'free', 38109
+  FROM _s342_1ki09_lookup sv, _s342_1ki09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=9 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS --
+
+-- Thread 1: the Name in the house for ever
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The very prayer answered: *That thine eyes may be open toward this house... My name shall be there* (1 Kings 8:29) — 9:3 grants it word for word.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=3
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-i-have-hallowed-this-house-to-put-my-name-there-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The word to David fulfilled: *He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — Name and everlasting throne bound together.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=3
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-i-have-hallowed-this-house-to-put-my-name-there-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'The same Name to be feared and kept: *this glorious and fearful name, THE Yahuah (LORD) THY GOD* (Deuteronomy 28:58) — to forsake it (9:9) is to break the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=3
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=58
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-i-have-hallowed-this-house-to-put-my-name-there-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the conditional throne
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The Davidic seed-promise: *I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12) — the throne is the line carried by bloodline and word together.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The for-ever throne quoted back: *thy throne shall be established for ever* (2 Samuel 7:16) — the unbreakable promise the conditional sets Solomon''s footing within.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'The parallel condition, word for word: *if thou wilt walk before me, as David thy father walked... and shalt observe my statutes and my judgments* (2 Chronicles 7:17) — Torah-keeping is the condition.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'The parallel establishing of the throne: *Then will I stablish the throne of thy kingdom... There shall not fail thee a man to be ruler in Yashar''el (Israel)* (2 Chronicles 7:18).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=7 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'The unfailing heir: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — the Formed Son keeps the condition Solomon would break.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'The for-ever reign over both houses: *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the *for ever* of 9:5 fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-the-throne-of-thy-kingdom-upon-yasharel-for-ever-if-thou-walk'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the curse is the breach, never the Torah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The sanction restated: *Yahuah (LORD) shall bring thee, and thy king... unto a nation... and there shalt thou serve other gods* (Deuteronomy 28:36) — exile is the consequence of idolatry.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The byword lifted from the Torah: *thou shalt become an astonishment, a proverb, and a byword, among all nations* (Deuteronomy 28:37) — 9:7 quotes Moses'' own curse.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'The Torah''s own logic of cause: the curses come *because thou hearkenedst not... to keep his commandments* (Deuteronomy 28:45) — the breach, never the keeping.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'The scattering foretold: *Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64) — cutting off *out of the land* (9:7).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'The nations'' question, put first by Moses: *Wherefore hath Yahuah (LORD) done thus unto this land?* (Deuteronomy 29:24) — echoed exactly in 9:8.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'The identical answer: *Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25) — the consequence of forsaking, matching 9:9.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'The rooting-out: *Yahuah (LORD) rooted them out of their land in anger... and cast them into another land* (Deuteronomy 29:28) — the casting *out of the land* of 9:7.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'The third witness — the desolated sanctuary: *I will make your cities waste, and bring your sanctuaries unto desolation* (Leviticus 26:31) — the house cast out of sight (9:7).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'The Levitical scattering — held within mercy: *I will scatter you among the heathen* (Leviticus 26:33), yet 26:42-45 remembers the covenant: discipline, not divorce without return.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'The Chronicler''s identical verdict: *Because they forsook Yahuah Elohim (the LORD God) of their fathers... therefore hath he brought all this evil upon them* (2 Chronicles 7:22).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'The southern house too, generations later: *Because they have forsaken the covenant of Yahuah (LORD) their Elohim (God), and worshipped other gods* (Jeremiah 22:9) — the warning proved true.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=9
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-if-ye-turn-from-following-me-then-will-i-cut-off-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: a proverb and a byword — the scattering of both houses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'The northern house carried off: *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria* (2 Kings 17:6) — the cutting-off of 9:7 made history.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The two houses visibly split: *removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18).'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'The house cast out of sight, exactly as 9:7: *cast them out of his sight* (2 Kings 17:20) — the scattering the two sticks (Ezekiel 37) are spoken to undo.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Solomon breaks the condition first: *thou hast not kept my covenant... I will surely rend the kingdom from thee* (1 Kings 11:11) — 9:6 made flesh in the king it was spoken to.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'The birth of the two houses: *I will rend the kingdom out of the hand of Solomon, and will give ten tribes to thee* (1 Kings 11:31) — Ephraim north, Yahudah (Judah) south.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=9 AND sv.verse_number=7
+  JOIN _s342_1ki09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-9-yasharel-shall-be-a-proverb-and-a-byword-the-scattering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-kings_10.sql (1 Kings 10) -----
+-- 1 Kings 10 — the queen of Sheba seeks the wisdom; the kingdom-glory foretaste; the quiet warning of accumulation.
+-- TAG: 1ki10   VIEW: _s342_1ki10_lookup   SORT BAND: 38125, step 3 (38125,38128,38131,38134)
+-- SOURCE rows all 'canon','1-kings',10,v.
+--
+-- 1 Kings 10 coverage:
+--   v.1    (queen of Sheba heard the fame of Solomon concerning the NAME of Yahuah; came to prove him)
+--          NT:     Matthew 12:42; Luke 11:31 (the queen of the south came to hear the wisdom; a greater than Solomon is here) [thread 1]
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 9:1 (parallel); Isaiah 60:3,6 (kings to thy light; Sheba bring gold) [thread 1/2]
+--   v.6-7  (it was a true report... the half was not told me: thy wisdom and prosperity exceedeth the fame)
+--          NT:     Matthew 12:42; Luke 11:31 (she came from the uttermost parts; a greater than Solomon) [thread 1]
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 9:5-6 (parallel) [folded into thread 1 prose]
+--   v.9    (Blessed be Yahuah... which delighted in thee, to set thee on the throne of Yashar'el; loved Yashar'el for ever)
+--          NT:     none warranted (covered laterally + thread 2)
+--          Extras: none warranted
+--          Tanakh: Psalm 72:1-2,17,18 (give the king thy judgments; blessed be Yahuah Elohim of Yashar'el) [thread 2]
+--   v.10,25 (she gave gold and spices and precious stones; all brought gold, spices)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Psalm 72:10-11,15 (kings of Sheba shall offer gifts; gold of Sheba given him); Isaiah 60:6 (from Sheba gold and incense) [thread 3]
+--   v.23-24 (Solomon exceeded all the kings of the earth for riches and wisdom; all the earth sought him)
+--          NT:     none warranted (thread 3 carries the kingdom-glory weave)
+--          Extras: none warranted
+--          Tanakh: Psalm 72:11 (all kings shall fall down before him); Isaiah 60:3 (kings to the brightness of thy rising) [thread 3]
+--   v.26-28 (Solomon gathered chariots and horsemen; multiplied silver as stones; horses out of Egypt)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 17:16-17 (the king shall not multiply horses, nor cause to return to Egypt, nor multiply silver and gold); 1 Kings 11:1-3 (the heart turned away) [thread 4]
+--
+-- THREADS:
+--   1-kings-10-the-queen-of-the-south-who-sought-the-wisdom (free) — Tanakh+NT: 2Chr9, Matt12, Luke11
+--   1-kings-10-the-nations-drawn-to-the-name-and-the-light-of-zion (free) — Tanakh: Isa60, Ps72
+--   1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold (free) — Tanakh: Ps72, Isa60
+--   1-kings-10-the-quiet-warning-of-accumulation-the-kings-law (free) — Tanakh: Deut17, 1Kings11
+-- Framework-load-bearing framing: 10:1's fame is *concerning the name of Yahuah (LORD)* — the
+-- queen is drawn by the NAME, not bare statecraft. The Formed Son reads her forward: she SOUGHT
+-- the wisdom from the uttermost parts and so condemns the generation that ignores the greater Son
+-- (Matt 12:42 / Luke 11:31) — the nations drawn to the light of Zion and the Name (Isa 60), the
+-- kings bringing gifts to the Davidic King (Ps 72), NOT replacement of Yashar'el but the nations
+-- streaming to her restored King. Thread 4 holds the quiet warning: 10:26-28's multiplying of
+-- horses (out of Egypt), silver, and gold brushes against the king-law of Deut 17:16-17 and
+-- foreshadows the fall of ch11 — the glory was real but the accumulation seeds the turning.
+
+CREATE TEMP VIEW _s342_1ki10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the queen of the south who sought the wisdom (10:1,6,7)
+    ('canon','1-kings',10,1,'canon','2-chronicles',9,1,'free',E'*And when the queen of Sheba heard of the fame of Solomon, she came to prove Solomon with hard questions at Jerusalem* (2 Chronicles 9:1). The Chronicler tells the same coming the same way; here the fame is named for what it truly is — *the queen of Sheba heard of the fame of Solomon concerning the name of Yahuah (LORD)* (1 Kings 10:1). She is drawn not by gold but by the Name.'),
+    ('canon','1-kings',10,1,'canon','matthew',12,42,'free',E'*The queen of the south shall rise up in the judgment with this generation, and shall condemn it: for she came from the uttermost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here* (Matthew 12:42). The Formed Son reads the queen of 1 Kings 10:1 forward: she crossed the uttermost parts to seek the wisdom *concerning the name of Yahuah (LORD)*, and so she rises to condemn those who ignore the greater Son standing before them.'),
+    ('canon','1-kings',10,1,'canon','luke',11,31,'free',E'*The queen of the south shall rise up in the judgment with the men of this generation, and condemn them: for she came from the utmost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here* (Luke 11:31). The seeking heart of the queen — who *came to prove him with hard questions* (1 Kings 10:1) — judges the unseeking generation; the one who sought the lesser wisdom condemns those who spurn the greater.'),
+    ('canon','1-kings',10,7,'canon','matthew',12,42,'free',E'*and, behold, a greater than Solomon is here* (Matthew 12:42). The queen confessed *the half was not told me: thy wisdom and prosperity exceedeth the fame which I heard* (1 Kings 10:7); the wonder that overwhelmed her at Solomon''s wisdom is the measure of how much greater the One the generation refused.'),
+
+    -- THREAD 2: the nations drawn to the Name and the light of Zion (10:1,9)
+    ('canon','1-kings',10,1,'canon','isaiah',60,3,'free',E'*And the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3). The queen who came because she *heard of the fame of Solomon concerning the name of Yahuah (LORD)* (1 Kings 10:1) is the firstfruits of the prophet''s vision — the nations and their kings streaming to the light risen upon Yashar''el (Israel), drawn by the Name.'),
+    ('canon','1-kings',10,9,'canon','psalms',72,17,'free',E'*His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed* (Psalm 72:17). The queen blessed Yahuah for the king — *Blessed be Yahuah Elohayka (the LORD thy God), which delighted in thee, to set thee on the throne of Yashar''el (Israel)* (1 Kings 10:9) — a foreshadow of the day all nations call the Davidic King blessed.'),
+    ('canon','1-kings',10,9,'canon','psalms',72,18,'free',E'*Blessed be Yahuah Elohim (the LORD God), the Elohim (God) of Yashar''el (Israel), who only doeth wondrous things* (Psalm 72:18). The queen''s blessing and the psalm''s blessing are one breath: she blesses *Yahuah Elohayka (the LORD thy God)... because Yahuah (LORD) loved Yashar''el (Israel) for ever* (1 Kings 10:9) — the throne stands not for Solomon''s sake but for the everlasting love of Yahuah for his people.'),
+
+    -- THREAD 3: the kingdom-glory foretaste, the kings bring gold (10:10,23,24,25)
+    ('canon','1-kings',10,10,'canon','psalms',72,15,'free',E'*And he shall live, and to him shall be given of the gold of Sheba: prayer also shall be made for him continually; and daily shall he be praised* (Psalm 72:15). The hundred and twenty talents of gold and the spices the queen *gave to king Solomon* (1 Kings 10:10) are the gold of Sheba the psalm sings — the tribute of the nations to the King, a foretaste of the messianic kingdom-glory.'),
+    ('canon','1-kings',10,10,'canon','isaiah',60,6,'free',E'*all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6). Sheba''s gold and *spices very great store* brought to Solomon (1 Kings 10:10) prefigure the day Sheba comes again — not to a man''s court only, but bringing gold and incense to show forth the praises of Yahuah in the restored kingdom.'),
+    ('canon','1-kings',10,23,'canon','psalms',72,11,'free',E'*Yea, all kings shall fall down before him: all nations shall serve him* (Psalm 72:11). That *Solomon exceeded all the kings of the earth for riches and for wisdom* (1 Kings 10:23) is a shadow cast forward: the kingdom where all kings bow and all nations serve the King whom Yahuah sets on the throne.'),
+    ('canon','1-kings',10,24,'canon','isaiah',60,3,'free',E'*And the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3). When *all the earth sought to Solomon, to hear his wisdom, which Elohim (God) had put in his heart* (1 Kings 10:24), the seeking of all the earth toward the wisdom of Yahuah''s king is the firstfruit of the nations coming to the light of Zion.'),
+    ('canon','1-kings',10,25,'canon','psalms',72,10,'free',E'*The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* (Psalm 72:10). The yearly tribute — *they brought every man his present, vessels of silver, and vessels of gold... a rate year by year* (1 Kings 10:25) — is the kings'' offered gifts of the psalm, the nations'' homage gathered to the throne.'),
+
+    -- THREAD 4: the quiet warning of accumulation, the king-law (10:26,27,28)
+    ('canon','1-kings',10,26,'canon','deuteronomy',17,16,'free',E'*But he shall not multiply horses to himself, nor cause the people to return to Egypt, to the end that he should multiply horses: forasmuch as Yahuah (LORD) hath said unto you, Ye shall henceforth return no more that way* (Deuteronomy 17:16). The king-law stands as the measure: *Solomon gathered together chariots and horsemen: and he had a thousand and four hundred chariots, and twelve thousand horsemen* (1 Kings 10:26). The glory is real, yet the multiplying of horses brushes the very line Torah drew.'),
+    ('canon','1-kings',10,27,'canon','deuteronomy',17,17,'free',E'*Neither shall he multiply wives to himself, that his heart turn not away: neither shall he greatly multiply to himself silver and gold* (Deuteronomy 17:17). *The king made silver to be in Jerusalem as stones* (1 Kings 10:27) — the greatly-multiplied silver and gold the king was warned against, the quiet beginning of the heart''s turning the very next chapter records.'),
+    ('canon','1-kings',10,28,'canon','deuteronomy',17,16,'free',E'*nor cause the people to return to Egypt, to the end that he should multiply horses* (Deuteronomy 17:16). *And Solomon had horses brought out of Egypt* (1 Kings 10:28) — the one road Torah forbade the king to reopen. The splendour of the chapter ends pointing back to Egypt, and the warning of Deuteronomy hangs over it.'),
+    ('canon','1-kings',10,27,'canon','1-kings',11,3,'free',E'*And he had seven hundred wives, princesses, and three hundred concubines: and his wives turned away his heart* (1 Kings 11:3). The accumulation that began in glory — *the king made silver to be in Jerusalem as stones* (1 Kings 10:27) — runs on into the multiplied wives of the next chapter, and the heart Deuteronomy warned would *turn away* (Deuteronomy 17:17) is turned. The foretaste of glory and the seed of the fall stand side by side.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREADS
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-10-the-queen-of-the-south-who-sought-the-wisdom',
+       E'The queen of the south who sought the wisdom',
+       E'A queen crosses the desert because of a Name. *And when the queen of Sheba heard of the fame of Solomon concerning the name of Yahuah (LORD), she came to prove him with hard questions* (1 Kings 10:1) — and the Chronicler tells it the same way, *she came to prove Solomon with hard questions at Jerusalem* (2 Chronicles 9:1). What she found broke her: *Howbeit I believed not the words, until I came, and mine eyes had seen it: and, behold, the half was not told me: thy wisdom and prosperity exceedeth the fame which I heard* (1 Kings 10:7). The Formed Son takes her up as a witness against his own generation: *The queen of the south shall rise up in the judgment with this generation, and shall condemn it: for she came from the uttermost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here* (Matthew 12:42), *and condemn them: for she came from the utmost parts of the earth to hear the wisdom of Solomon; and, behold, a greater than Solomon is here* (Luke 11:31). The one who travelled the uttermost parts to seek the lesser wisdom condemns those who would not cross the room to the greater Son. The seeking heart, not the lineage, is what rises in the judgment — and the Name that drew her draws the nations still.',
+       sv.verse_id, ev.verse_id, 'free', 38125
+  FROM _s342_1ki10_lookup sv, _s342_1ki10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=10 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-10-the-nations-drawn-to-the-name-and-the-light-of-zion',
+       E'The nations drawn to the Name and the light of Zion',
+       E'The queen of Sheba is not an exception but a firstfruit. She came *concerning the name of Yahuah (LORD)* (1 Kings 10:1), and Isaiah sees the whole vision behind her single journey: *And the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3). When she blessed the king it was Yahuah she blessed, and for his people''s sake: *Blessed be Yahuah Elohayka (the LORD thy God), which delighted in thee, to set thee on the throne of Yashar''el (Israel): because Yahuah (LORD) loved Yashar''el (Israel) for ever, therefore made he thee king, to do judgment and justice* (1 Kings 10:9). The throne stands not for the man but for the everlasting love of Yahuah for Yashar''el. The psalm of the king sings the same to its end: *His name shall endure for ever: his name shall be continued as long as the sun: and men shall be blessed in him: all nations shall call him blessed* (Psalm 72:17), *Blessed be Yahuah Elohim (the LORD God), the Elohim (God) of Yashar''el (Israel), who only doeth wondrous things* (Psalm 72:18). The nations drawn to the Name do not replace Yashar''el; they stream to her restored King and bless the Elohim of Yashar''el.',
+       sv.verse_id, ev.verse_id, 'free', 38128
+  FROM _s342_1ki10_lookup sv, _s342_1ki10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=10 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold',
+       E'The kingdom-glory foretaste — the kings bring gold',
+       E'The gold pouring into Jerusalem is more than a king''s wealth; it is a foretaste of the messianic kingdom-glory the psalm and the prophet describe. The queen *gave the king an hundred and twenty talents of gold, and of spices very great store, and precious stones* (1 Kings 10:10), and the gold of Sheba is exactly what Psalm 72 sings to the King: *And he shall live, and to him shall be given of the gold of Sheba* (Psalm 72:15); *The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* (Psalm 72:10). The yearly homage matches the psalm: *they brought every man his present, vessels of silver, and vessels of gold... a rate year by year* (1 Kings 10:25), for *Solomon exceeded all the kings of the earth for riches and for wisdom* (1 Kings 10:23) and *all the earth sought to Solomon, to hear his wisdom, which Elohim (God) had put in his heart* (1 Kings 10:24) — the very shape of *all kings shall fall down before him: all nations shall serve him* (Psalm 72:11). And Isaiah names Sheba''s gold again, but turned to its true end: *all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6). Solomon''s golden hour is the small picture; the kingdom where the nations bring their glory to the praise of Yahuah is the great one.',
+       sv.verse_id, ev.verse_id, 'free', 38131
+  FROM _s342_1ki10_lookup sv, _s342_1ki10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=10 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-kings-10-the-quiet-warning-of-accumulation-the-kings-law',
+       E'The quiet warning of accumulation — the king-law',
+       E'The chapter that crowns Solomon also, in its last verses, brushes against the one law written for the king. Torah had drawn three lines: *he shall not multiply horses to himself, nor cause the people to return to Egypt, to the end that he should multiply horses... neither shall he greatly multiply to himself silver and gold* (Deuteronomy 17:16-17). Now read the close of 1 Kings 10 against it: *Solomon gathered together chariots and horsemen: and he had a thousand and four hundred chariots, and twelve thousand horsemen* (1 Kings 10:26); *the king made silver to be in Jerusalem as stones* (1 Kings 10:27); *and Solomon had horses brought out of Egypt* (1 Kings 10:28) — the one road the king was forbidden to reopen. Every line of the warning is here in the splendour. And the warning had a reason: that *his heart turn not away* (Deuteronomy 17:17). The very next chapter records the turning: *he had seven hundred wives, princesses, and three hundred concubines: and his wives turned away his heart* (1 Kings 11:3). The foretaste of glory and the seed of the fall stand in the same chapter — the accumulation that dazzled the queen is the accumulation Torah warned would undo the king.',
+       sv.verse_id, ev.verse_id, 'free', 38134
+  FROM _s342_1ki10_lookup sv, _s342_1ki10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-kings' AND ev.chapter_number=10 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD MEMBERS
+
+-- Thread 1: the queen of the south who sought the wisdom
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And when the queen of Sheba heard of the fame of Solomon, she came to prove Solomon with hard questions at Jerusalem* (2 Chronicles 9:1) — the parallel telling of the same coming.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=9 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-queen-of-the-south-who-sought-the-wisdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The queen of the south shall rise up in the judgment with this generation, and shall condemn it... a greater than Solomon is here* (Matthew 12:42) — the seeking queen judges the unseeking generation.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-queen-of-the-south-who-sought-the-wisdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The queen of the south shall rise up in the judgment with the men of this generation, and condemn them... a greater than Solomon is here* (Luke 11:31) — she sought the lesser wisdom; the generation spurned the greater.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=11 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-queen-of-the-south-who-sought-the-wisdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*and, behold, a greater than Solomon is here* (Matthew 12:42) — her wonder at *the half was not told me* (1 Kings 10:7) measures how much greater the One refused.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=7
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-queen-of-the-south-who-sought-the-wisdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the nations drawn to the Name and the light of Zion
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3) — the queen drawn by the Name is the firstfruit of the nations streaming to Zion''s light.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=1
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-nations-drawn-to-the-name-and-the-light-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*His name shall endure for ever... and men shall be blessed in him: all nations shall call him blessed* (Psalm 72:17) — the day all nations bless the Davidic King the queen''s blessing foreshadows.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=9
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-nations-drawn-to-the-name-and-the-light-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed be Yahuah Elohim (the LORD God), the Elohim (God) of Yashar''el (Israel), who only doeth wondrous things* (Psalm 72:18) — one breath with the queen''s blessing; the throne stands for Yahuah''s everlasting love of Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=9
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-nations-drawn-to-the-name-and-the-light-of-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the kingdom-glory foretaste, the kings bring gold
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And he shall live, and to him shall be given of the gold of Sheba* (Psalm 72:15) — the queen''s gold of Sheba is the tribute the psalm sings to the King.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=10
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*all they from Sheba shall come: they shall bring gold and incense; and they shall shew forth the praises of Yahuah (LORD)* (Isaiah 60:6) — Sheba''s gold turned to its true end, the praise of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=10
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yea, all kings shall fall down before him: all nations shall serve him* (Psalm 72:11) — Solomon exceeding all the kings of the earth is the shadow of the King all kings serve.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=23
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And the Gentiles shall come to thy light, and kings to the brightness of thy rising* (Isaiah 60:3) — all the earth seeking Solomon''s wisdom is the firstfruit of the nations coming to Zion''s light.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=24
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*The kings of Tarshish and of the isles shall bring presents: the kings of Sheba and Seba shall offer gifts* (Psalm 72:10) — the yearly tribute is the kings'' offered gifts of the psalm.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=25
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-kingdom-glory-foretaste-the-kings-bring-gold'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the quiet warning of accumulation, the king-law
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he shall not multiply horses to himself, nor cause the people to return to Egypt... to multiply horses* (Deuteronomy 17:16) — the king-law against the chariots and horsemen Solomon gathered.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=26
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-quiet-warning-of-accumulation-the-kings-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*neither shall he greatly multiply to himself silver and gold* (Deuteronomy 17:17) — the silver made as stones in Jerusalem is the very multiplying the king was warned against.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-quiet-warning-of-accumulation-the-kings-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*nor cause the people to return to Egypt, to the end that he should multiply horses* (Deuteronomy 17:16) — Solomon''s horses brought out of Egypt reopen the one road Torah forbade.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=28
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-quiet-warning-of-accumulation-the-kings-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*and his wives turned away his heart* (1 Kings 11:3) — the accumulation begun in glory runs on into the heart Deuteronomy warned would turn away.'
+  FROM cross_reference_threads t
+  JOIN _s342_1ki10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-kings' AND sv.chapter_number=10 AND sv.verse_number=27
+  JOIN _s342_1ki10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-kings-10-the-quiet-warning-of-accumulation-the-kings-law'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session342 — 1 Kings cross-references complete.'
