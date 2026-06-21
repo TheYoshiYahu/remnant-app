@@ -2019,6 +2019,2012 @@ SELECT t.id, cr.id, 2, E'★ *Elohim (God) sent forth his Son, made of a woman, 
  WHERE t.slug='jeremiah-31-a-woman-shall-compass-a-man-a-new-thing-created'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_2.sql (Jeremiah 2) -----
+-- Chapter: Jeremiah 2 — THE COVENANT LAWSUIT opens: Yashar''el (Israel) the bride who left her first
+-- love. *I remember thee, the kindness of thy youth, the love of thine espousals, when thou wentest
+-- after me in the wilderness* (2:2) — the wilderness honeymoon. *My people have committed two evils;
+-- they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns,
+-- that can hold no water* (2:13) — the living Fountain abandoned for cracked cisterns, idolatry''s
+-- bankruptcy. *I had planted thee a noble vine, wholly a right seed: how then art thou turned into the
+-- degenerate plant of a strange vine* (2:21) — the chosen vine gone wild; the bride who *forgot me days
+-- without number* (2:32). This is covenant-marriage lawsuit AGAINST SIN, never ethnic indictment: the
+-- harsh language is the wronged husband''s grief over a people who left the love of their espousals.
+-- Tag: jer02   Temp view: _s309_jer02_lookup
+-- Sort band: base 34025, step 3 -> threads at 34025, 34028, 34031 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',2,v
+--
+-- Jeremiah 2 coverage:
+--   v.1 (the word of Yahuah came to me) — preface, woven in prose
+--        NT: none warranted   Extras: none warranted   Tanakh: none separate
+--   ★ v.2-3 (I remember thee, the kindness of thy youth, the love of thine espousals... thou wentest after
+--          me in the wilderness; Yashar''el was holiness unto Yahuah, the firstfruits of his increase)
+--        NT:     ★★ Revelation 2:4 (thou hast left thy first love) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh weave; no extra forced)
+--        Tanakh: ★★ Hosea 2:14-15 (I will allure her... into the wilderness... as in the days of her youth),
+--                ★ Deuteronomy 8:2 (Yahuah led thee these forty years in the wilderness), ★ Exodus 19:5-6
+--                (a peculiar treasure... a kingdom of priests, and an holy nation) — THREAD 1
+--   v.4-8 (house of Jacob; what iniquity have your fathers found in me; the priests, they that handle the
+--          law, the pastors, the prophets prophesied by Baal) — the covenant-lawsuit charge
+--        NT:     none warranted (the lawsuit-against-sin; the Fountain-charge crystallizes at v.13, THREAD 2)
+--        Extras: none warranted
+--        Tanakh: held in prose — the leaders who handle the Torah yet knew Yahuah not (bound to THREAD 2)
+--   v.9-10 (I will yet plead with you; pass over the isles of Chittim) — the plea/lawsuit form
+--        NT: none   Extras: none   Tanakh: none separate (the plea framing v.11-13)
+--   ★★ v.11-13 (Hath a nation changed their gods, which are yet no gods?... my people have committed two
+--          evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken
+--          cisterns, that can hold no water)
+--        NT:     ★★★ John 4:10 (the gift of Elohim... he would have given thee living water), ★★★ John 4:14
+--                (a well of water springing up into everlasting life), ★★ John 7:37-38 (if any man thirst...
+--                out of his belly shall flow rivers of living water) — THREAD 2
+--        Extras: none warranted (clean canon-NT weave; the living-water motif is canon-NT spine)
+--        Tanakh: ★★ Jeremiah 17:13 (they have forsaken Yahuah, the fountain of living waters — lateral, same
+--                prophet), ★ Psalm 36:9 (with thee is the fountain of life) — THREAD 2
+--   v.14-19 (Is Yashar''el a servant?... thou hast forsaken Yahuah Elohayka; thy backslidings shall reprove
+--          thee; the way of Egypt, the waters of Sihor; the way of Assyria) — the fruit of forsaking
+--        NT:     none warranted (the consequence of v.13''s forsaking; woven in THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — *thou hast forsaken Yahuah Elohayka (the LORD thy God)* (2:17,19) is the
+--                two-evils charge of v.13 unfolded; bound to THREAD 2
+--   ★ v.20-22 (of old time I have broken thy yoke... thou wanderest, playing the harlot; I had planted thee
+--          a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange
+--          vine?... though thou wash thee with nitre... thine iniquity is marked before me)
+--        NT:     none warranted distinct (the vineyard-judgment held to Isaiah 5; the harlotry-charge is the
+--                bride-lawsuit of THREAD 1/3)
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 5:1-4 (a vineyard... it brought forth wild grapes), ★ Psalm 80:8-9 (a vine out
+--                of Egypt... it filled the land — lateral), ★ Hosea 10:1 (Yashar''el is an empty vine) — THREAD 3
+--   v.23-28 (I have not gone after Baalim; a wild ass... I have loved strangers; the house of Yashar''el
+--          ashamed; saying to a stock, Thou art my father; according to the number of thy cities are thy
+--          gods, O Yahudah) — the idolatry catalogued (BOTH houses named)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: held in prose — the harlotry/idolatry charge; *the house of Yashar''el (Israel)* (2:26) and
+--                *O Yahudah (Judah)* (2:28) — both houses indicted, bound to THREAD 3
+--   v.29-31 (ye all have transgressed; in vain have I smitten your children; Have I been a wilderness unto
+--          Yashar''el?) — the lawsuit pressed
+--        NT: none   Extras: none   Tanakh: none separate (the plea continues; framed in prose)
+--   ★ v.32 (Can a maid forget her ornaments, or a bride her attire? yet my people have forgotten me days
+--          without number)
+--        NT:     none warranted distinct (the forgetting-bride is the heart of the bride-lawsuit; THREAD 3)
+--        Extras: none warranted
+--        Tanakh: bound to THREAD 3 (the bride who forgot her husband — the inversion of v.2''s remembered love)
+--   v.33-37 (why trimmest thou thy way to seek love?... in thy skirts is found the blood of the poor
+--          innocents; thou shalt be ashamed of Egypt, as thou wast ashamed of Assyria; Yahuah hath rejected
+--          thy confidences) — the verdict, the failed foreign alliances
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: held in prose — the trusting-in-Egypt/Assyria (the broken cisterns of v.13 in political
+--                form); the verdict closing the lawsuit; bound to THREADs 2/3
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness — NT (Revelation 2) +
+--      Tanakh (Hosea 2, Deuteronomy 8, Exodus 19) [free]
+--      (★ the bride''s first love in the wilderness honeymoon; Yashar''el holiness unto Yahuah, the firstfruits)
+--   2. jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns — NT (John 4, John 7) +
+--      Tanakh (Jeremiah 17, Psalm 36) [free]
+--      (★★ the two evils: the living Fountain abandoned for cracked cisterns; the living water Yahusha gives)
+--   3. jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot — Tanakh (Isaiah 5, Psalm 80,
+--      Hosea 10) [free]
+--      (★ the noble vine gone wild; the bride who forgot her husband days without number)
+--
+-- Framing notes:
+--   ★ THE LOVE OF THINE ESPOUSALS (THREAD 1): *I remember thee, the kindness of thy youth, the love of
+--      thine espousals, when thou wentest after me in the wilderness, in a land that was not sown* (2:2) —
+--      the covenant is a MARRIAGE, and Yahuah remembers the honeymoon: the bride who followed her husband
+--      out into the wilderness, when *Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits
+--      of his increase* (2:3). Hosea sings the very restoration of that first love: *I will allure her, and
+--      bring her into the wilderness... and she shall sing there, as in the days of her youth* (Hos 2:14-15).
+--      Deuteronomy names the wilderness leading: *thou shalt remember all the way which Yahuah Elohayka
+--      (the LORD thy God) led thee these forty years in the wilderness* (Deut 8:2). Exodus names what the
+--      bride was made: *a peculiar treasure unto me above all people... a kingdom of priests, and an holy
+--      nation* (Exod 19:5-6) — the holiness of 2:3. And the Spirit''s word to Ephesus is the same grief:
+--      *thou hast left thy first love* (Rev 2:4) — the espousal-love forsaken. Covenant-marriage lawsuit
+--      against SIN, never ethnic indictment: the wronged Husband grieving a bride who left her first love.
+--   ★★ THE FOUNTAIN FORSAKEN FOR BROKEN CISTERNS (THREAD 2): *My people have committed two evils; they
+--      have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that
+--      can hold no water* (2:13) — the heart of the lawsuit. The first evil: abandoning the living Fountain
+--      (Yahuah himself). The second: digging cracked cisterns (the no-gods, *which are yet no gods*, 2:11)
+--      that hold no water. The same prophet says it again: *they have forsaken Yahuah (LORD), the fountain
+--      of living waters* (Jer 17:13). The psalm names the Fountain: *with thee is the fountain of life: in
+--      thy light shall we see light* (Ps 36:9). And the FORMED Son weaves it forward at Jacob''s well:
+--      *If thou knewest the gift of Elohim (God), and who it is that saith to thee, Give me to drink; thou
+--      wouldest have asked of him, and he would have given thee living water* (John 4:10), *the water that
+--      I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14); and
+--      at the feast: *If any man thirst, let him come unto me, and drink. He that believeth on me... out of
+--      his belly shall flow rivers of living water* (John 7:37-38). The living Fountain forsaken in Jeremiah
+--      is the living water offered in Yahusha — the cracked cistern can never hold what the Fountain freely
+--      gives.
+--   ★ THE NOBLE VINE TURNED DEGENERATE (THREAD 3): *Yet I had planted thee a noble vine, wholly a right
+--      seed: how then art thou turned into the degenerate plant of a strange vine unto me?* (2:21) — the
+--      chosen vine gone wild. Isaiah sings the same vineyard: *he planted it with the choicest vine... and
+--      he looked that it should bring forth grapes, and it brought forth wild grapes* (Isa 5:2,4), *for the
+--      vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isa 5:7). The psalm
+--      laments the vine out of Egypt: *Thou hast brought a vine out of Egypt... and didst cause it to take
+--      deep root, and it filled the land* (Ps 80:8-9). Hosea names the emptiness: *Yashar''el (Israel) is an
+--      empty vine, he bringeth forth fruit unto himself* (Hos 10:1). And the chapter closes the bride-figure:
+--      *Can a maid forget her ornaments, or a bride her attire? yet my people have forgotten me days without
+--      number* (2:32) — the bride who forgot her Husband, the inversion of the remembered espousal-love of
+--      v.2. The noble vine and the forgetting bride are one indictment: a people planted holy, turned wild.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the word-came preface), v.4-8 (the lawsuit charge against the leaders
+--      who handle the Torah yet knew Yahuah not — woven into THREAD 2 prose), v.9-10 (the plea form), v.14-19
+--      (the fruit of forsaking, the way of Egypt/Assyria — the broken cisterns of v.13 unfolded, THREAD 2),
+--      v.23-28 (the idolatry catalogued, BOTH houses named — bound to THREAD 3), v.29-31 (the plea pressed),
+--      v.33-37 (the verdict, the failed foreign alliances — bound to THREADs 2/3). All blocks recorded above;
+--      every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer02_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the love of thine espousals — Yashar'el the bride in the wilderness
+    ('canon','jeremiah',2,2,'canon','revelation',2,4,'free',
+      E'*Nevertheless I have somewhat against thee, because thou hast left thy first love* (Revelation 2:4). The Spirit''s grief over Ephesus is the very grief of the covenant Husband — *I remember thee, the kindness of thy youth, the love of thine espousals, when thou wentest after me in the wilderness* (Jeremiah 2:2). The espousal-love of the bride''s youth, forsaken, is the first love left; in both, the One who loved first remembers, and calls his people back to the first works of that love.'),
+    ('canon','jeremiah',2,2,'canon','hosea',2,14,'free',
+      E'*Therefore, behold, I will allure her, and bring her into the wilderness, and speak comfortably unto her* (Hosea 2:14). Hosea promises to restore the very honeymoon Jeremiah remembers — *the love of thine espousals, when thou wentest after me in the wilderness* (Jeremiah 2:2). The wilderness where the bride once followed her Husband becomes the place he woos her again, speaking comfortably to win back the love of her youth.'),
+    ('canon','jeremiah',2,2,'canon','hosea',2,15,'free',
+      E'*And she shall sing there, as in the days of her youth, and as in the day when she came up out of the land of Egypt* (Hosea 2:15). The kindness of the bride''s youth that Yahuah remembers — *the kindness of thy youth, the love of thine espousals* (Jeremiah 2:2) — is the very singing Hosea promises to renew: *as in the days of her youth*. The wilderness honeymoon forsaken is the wilderness honeymoon restored.'),
+    ('canon','jeremiah',2,2,'canon','deuteronomy',8,2,'free',
+      E'*And thou shalt remember all the way which Yahuah Elohayka (the LORD thy God) led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no* (Deuteronomy 8:2). Jeremiah''s *when thou wentest after me in the wilderness, in a land that was not sown* (Jeremiah 2:2) recalls this same leading — the bride following her Husband through the wilderness. The remembering Moses commands is the kindness of the youth Yahuah himself remembers.'),
+    ('canon','jeremiah',2,3,'canon','exodus',19,5,'free',
+      E'*Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5). What Jeremiah calls the bride — *Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits of his increase* (Jeremiah 2:3) — Exodus makes the marriage-covenant: a peculiar treasure, set apart and holy unto Yahuah above all people. The firstfruits-holiness of Jeremiah 2:3 is the peculiar-treasure calling of Sinai.'),
+    ('canon','jeremiah',2,3,'canon','exodus',19,6,'free',
+      E'*And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel)* (Exodus 19:6). *Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits of his increase* (Jeremiah 2:3) names what Sinai made the bride: a holy nation, a kingdom of priests, set apart unto her Husband. The holiness Jeremiah grieves the loss of is the holy-nation calling spoken at the mount.'),
+
+    -- THREAD 2 (★★): the two evils — the fountain of living waters forsaken for broken cisterns
+    ('canon','jeremiah',2,13,'canon','john',4,10,'free',
+      E'*Yahusha (Jesus) answered and said unto her, If thou knewest the gift of Elohim (God), and who it is that saith to thee, Give me to drink; thou wouldest have asked of him, and he would have given thee living water* (John 4:10). At Jacob''s well the FORMED Son offers the very thing Jeremiah''s people forsook — *they have forsaken me the fountain of living waters* (Jeremiah 2:13). The living water abandoned in the lawsuit is the gift of Elohim freely held out; the Fountain himself stands at the well, asking the bride to drink.'),
+    ('canon','jeremiah',2,13,'canon','john',4,14,'free',
+      E'*But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14). Jeremiah''s broken cisterns *that can hold no water* (Jeremiah 2:13) are answered by the well that never runs dry — *a well of water springing up into everlasting life*. The cracked cistern leaks and leaves the soul thirsting; the living water Yahusha gives wells up within, forever.'),
+    ('canon','jeremiah',2,13,'canon','john',7,37,'free',
+      E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink* (John 7:37). To a people who *hewed them out cisterns, broken cisterns, that can hold no water* (Jeremiah 2:13), the Fountain cries the invitation: *if any man thirst, let him come unto me*. The two evils of forsaking the Fountain and digging dry cisterns are undone by coming to the One who is the living water.'),
+    ('canon','jeremiah',2,13,'canon','john',7,38,'free',
+      E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:38). Where Jeremiah''s cisterns held *no water* (Jeremiah 2:13), the One who is the Fountain makes the believer himself a spring — *out of his belly shall flow rivers of living water*. The forsaken fountain of living waters becomes, in those who come to him, an overflowing river.'),
+    ('canon','jeremiah',2,13,'canon','jeremiah',17,13,'free',
+      E'*O Yahuah (LORD), the hope of Yashar''el (Israel), all that forsake thee shall be ashamed, and they that depart from me shall be written in the earth, because they have forsaken Yahuah (LORD), the fountain of living waters* (Jeremiah 17:13). The same prophet names the same evil twice: to forsake Yahuah is to forsake *the fountain of living waters* (Jeremiah 2:13). The Fountain abandoned is the hope of Yashar''el departed from; those who leave the living waters for cracked cisterns are written in the dust.'),
+    ('canon','jeremiah',2,13,'canon','psalms',36,9,'free',
+      E'*For with thee is the fountain of life: in thy light shall we see light* (Psalm 36:9). The psalm names the very Fountain Jeremiah''s people forsook — *the fountain of living waters* (Jeremiah 2:13). With Yahuah is the fountain of life; to forsake him for broken cisterns is to leave the source of life itself for vessels that hold no water.'),
+
+    -- THREAD 3 (★): the noble vine turned degenerate — the bride who forgot her husband
+    ('canon','jeremiah',2,21,'canon','isaiah',5,2,'free',
+      E'*And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a winepress therein: and he looked that it should bring forth grapes, and it brought forth wild grapes* (Isaiah 5:2). Isaiah''s vineyard-song is Jeremiah''s charge in another key — *I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* (Jeremiah 2:21). The choicest vine planted by the Husbandman brought forth wild grapes; the noble vine turned degenerate.'),
+    ('canon','jeremiah',2,21,'canon','isaiah',5,4,'free',
+      E'*What could have been done more to my vineyard, that I have not done in it? wherefore, when I looked that it should bring forth grapes, brought it forth wild grapes?* (Isaiah 5:4). The grieved Husbandman of Isaiah asks what Jeremiah''s lawsuit asks — *how then art thou turned into the degenerate plant of a strange vine unto me?* (Jeremiah 2:21). Nothing was lacking in the planting; the noble vine, given every care, turned wild of its own backsliding.'),
+    ('canon','jeremiah',2,21,'canon','psalms',80,8,'free',
+      E'*Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8). The psalm remembers the planting Jeremiah names — *I had planted thee a noble vine, wholly a right seed* (Jeremiah 2:21). The vine brought out of Egypt and planted in the land is the noble vine of the covenant; its breaking-down is the degeneration Jeremiah grieves.'),
+    ('canon','jeremiah',2,21,'canon','psalms',80,9,'free',
+      E'*Thou preparedst room before it, and didst cause it to take deep root, and it filled the land* (Psalm 80:9). The deep-rooted vine that *filled the land* is the *noble vine, wholly a right seed* (Jeremiah 2:21) Yahuah planted. The psalm''s lament that its hedges are broken down (Ps 80:12) is the same turning Jeremiah names — the planted vine gone strange.'),
+    ('canon','jeremiah',2,32,'canon','hosea',10,1,'free',
+      E'*Yashar''el (Israel) is an empty vine, he bringeth forth fruit unto himself: according to the multitude of his fruit he hath increased the altars* (Hosea 10:1). Hosea names the emptiness behind the forgetting — *yet my people have forgotten me days without number* (Jeremiah 2:32). The vine that bears fruit *unto himself*, not unto his Husband, is the bride who forgot her attire; the noble vine made empty by its own backsliding.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness',
+       E'The love of thine espousals — Yashar''el the bride in the wilderness',
+       E'The covenant lawsuit opens not with a list of charges but with a memory of love, for the covenant is a MARRIAGE: *Thus saith Yahuah (LORD); I remember thee, the kindness of thy youth, the love of thine espousals, when thou wentest after me in the wilderness, in a land that was not sown* (2:2). Yahuah remembers the honeymoon — the bride who followed her Husband out into the trackless wilderness, when she was wholly his: *Yashar''el (Israel) was holiness unto Yahuah (LORD), and the firstfruits of his increase* (2:3). That holiness is the calling spoken at Sinai: *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people... And ye shall be unto me a kingdom of priests, and an holy nation* (Exodus 19:5-6). The wilderness leading is the very thing Moses bids her remember: *thou shalt remember all the way which Yahuah Elohayka (the LORD thy God) led thee these forty years in the wilderness... to know what was in thine heart, whether thou wouldest keep his commandments, or no* (Deuteronomy 8:2). And Hosea promises to win that first love back: *Therefore, behold, I will allure her, and bring her into the wilderness, and speak comfortably unto her... and she shall sing there, as in the days of her youth, and as in the day when she came up out of the land of Egypt* (Hosea 2:14-15). The wilderness where the bride first loved becomes the place her Husband woos her again. And the Spirit speaks the same grief to Ephesus: *Nevertheless I have somewhat against thee, because thou hast left thy first love* (Revelation 2:4) — *Remember therefore from whence thou art fallen, and repent, and do the first works* (Rev 2:5). This is covenant-marriage lawsuit against SIN, never an indictment of a people: the wronged Husband grieving a bride who left the love of her espousals, and calling her home to the first works of that love.',
+       sv.verse_id, ev.verse_id, 'free', 34025
+  FROM _s309_jer02_lookup sv, _s309_jer02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=2 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns',
+       E'The fountain of living waters forsaken for broken cisterns',
+       E'Here is the heart of the lawsuit, the charge that names the whole tragedy: *For my people have committed two evils; they have forsaken me the fountain of living waters, and hewed them out cisterns, broken cisterns, that can hold no water* (2:13). Two evils, not one. The first: abandoning the living Fountain — Yahuah himself, the source of life. The second: digging cracked cisterns in his place — the no-gods, *which are yet no gods* (2:11), idols that hold no water and quench no thirst. The folly is staggering: *Hath a nation changed their gods, which are yet no gods? but my people have changed their glory for that which doth not profit* (2:11). The same prophet repeats the charge in his own prayer: *they have forsaken Yahuah (LORD), the fountain of living waters* (Jeremiah 17:13). The psalm names what was forsaken: *For with thee is the fountain of life: in thy light shall we see light* (Psalm 36:9). And the FORMED Son weaves it forward — wearied at Jacob''s well, he becomes the Fountain offering himself to a Samaritan bride: *If thou knewest the gift of Elohim (God), and who it is that saith to thee, Give me to drink; thou wouldest have asked of him, and he would have given thee living water* (John 4:10), *the water that I shall give him shall be in him a well of water springing up into everlasting life* (John 4:14). And on the great day of the feast he cries the invitation aloud: *If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:37-38). The living Fountain forsaken in Jeremiah is the living water freely offered in Yahusha (Jesus); the cracked cistern can never hold what the Fountain forever gives. The thirsty bride need only come back to the Fountain she left.',
+       sv.verse_id, ev.verse_id, 'free', 34028
+  FROM _s309_jer02_lookup sv, _s309_jer02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=2 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot',
+       E'I had planted thee a noble vine — the degenerate plant, the bride who forgot',
+       E'Yahuah turns to a second figure for the same betrayal — the vineyard: *Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?* (2:21). The Husbandman planted the choicest stock, *wholly a right seed*, and looked for noble grapes; he found a wild and strange vine. The stain runs deep: *For though thou wash thee with nitre, and take thee much soap, yet thine iniquity is marked before me* (2:22). Isaiah sings the same vineyard-song: *he planted it with the choicest vine... and he looked that it should bring forth grapes, and it brought forth wild grapes* (Isaiah 5:2); *What could have been done more to my vineyard, that I have not done in it?* (Isaiah 5:4) — *for the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isa 5:7). The psalm remembers the planting and laments the breaking-down: *Thou hast brought a vine out of Egypt... and didst cause it to take deep root, and it filled the land* (Psalm 80:8-9). And Hosea names the emptiness: *Yashar''el (Israel) is an empty vine, he bringeth forth fruit unto himself* (Hosea 10:1) — fruit for himself, not for his Husband. The chapter closes the bride-figure where it opened: *Can a maid forget her ornaments, or a bride her attire? yet my people have forgotten me days without number* (2:32). No bride forgets her wedding-attire — yet this bride forgot her Husband himself, days beyond counting. The noble vine gone wild and the bride who forgot are one indictment: a people planted holy, a right seed, turned strange — and yet the One who planted them is the One who can yet make them sing as in the days of their youth.',
+       sv.verse_id, ev.verse_id, 'free', 34031
+  FROM _s309_jer02_lookup sv, _s309_jer02_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=2 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou hast left thy first love* (Revelation 2:4) — the Spirit''s grief over Ephesus is the covenant Husband''s grief over the *love of thine espousals* (Jeremiah 2:2) forsaken.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will allure her, and bring her into the wilderness, and speak comfortably unto her* (Hosea 2:14) — Yahuah woos the bride back to the wilderness honeymoon of Jeremiah 2:2.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *she shall sing there, as in the days of her youth... when she came up out of the land of Egypt* (Hosea 2:15) — the kindness of the youth Yahuah remembers (Jeremiah 2:2), renewed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah Elohayka (the LORD thy God) led thee these forty years in the wilderness* (Deuteronomy 8:2) — the wilderness leading the bride followed in Jeremiah 2:2.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=2
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *a peculiar treasure unto me above all people... for all the earth is mine* (Exodus 19:5) — the holiness of the bride (Jeremiah 2:3) is the peculiar-treasure calling of Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=3
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *a kingdom of priests, and an holy nation* (Exodus 19:6) — what *Yashar''el (Israel) was holiness unto Yahuah (LORD)* (Jeremiah 2:3) names: the holy-nation calling spoken at the mount.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=3
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-love-of-thine-espousals-israel-the-bride-in-the-wilderness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *he would have given thee living water* (John 4:10) — at Jacob''s well the Formed Son offers the very Fountain Jeremiah 2:13''s people forsook; the gift of Elohim held out to the bride.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=13
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *a well of water springing up into everlasting life* (John 4:14) — the broken cisterns *that can hold no water* (Jeremiah 2:13) answered by the well that never runs dry.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=13
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *If any man thirst, let him come unto me, and drink* (John 7:37) — the Fountain''s invitation to those who dug dry cisterns (Jeremiah 2:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=13
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *out of his belly shall flow rivers of living water* (John 7:38) — where Jeremiah 2:13''s cisterns held no water, the believer becomes an overflowing spring.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=13
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *they have forsaken Yahuah (LORD), the fountain of living waters* (Jeremiah 17:13) — the same prophet names the same evil twice; the Fountain abandoned (Jeremiah 2:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=13
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *with thee is the fountain of life: in thy light shall we see light* (Psalm 36:9) — the psalm names the Fountain Jeremiah 2:13''s people left for cracked cisterns.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=13
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=36 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-fountain-of-living-waters-forsaken-for-broken-cisterns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he planted it with the choicest vine... and it brought forth wild grapes* (Isaiah 5:2) — Isaiah''s vineyard-song is the *noble vine... turned into the degenerate plant* (Jeremiah 2:21) in another key.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=21
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *What could have been done more to my vineyard?* (Isaiah 5:4) — the grieved Husbandman asks what Jeremiah 2:21 asks: nothing was lacking, yet the vine turned wild.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=21
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Thou hast brought a vine out of Egypt... and planted it* (Psalm 80:8) — the vine out of Egypt is the *noble vine, wholly a right seed* (Jeremiah 2:21) Yahuah planted.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=21
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *didst cause it to take deep root, and it filled the land* (Psalm 80:9) — the deep-rooted vine of the covenant is the noble vine of Jeremiah 2:21, its hedges later broken.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=21
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Yashar''el (Israel) is an empty vine, he bringeth forth fruit unto himself* (Hosea 10:1) — the emptiness behind the bride who *forgotten me days without number* (Jeremiah 2:32); fruit borne unto self, not unto the Husband.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer02_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=2 AND sv.verse_number=32
+  JOIN _s309_jer02_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-2-the-noble-vine-turned-degenerate-the-bride-who-forgot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_3.sql (Jeremiah 3) -----
+-- Chapter: Jeremiah 3 — ★★ THE TWO-HOUSE DIAGNOSIS AND THE CALL TO RETURN. The northern house,
+-- backsliding Yashar''el (Israel), is gone up upon every high mountain and there played the harlot;
+-- for all her adulteries Yahuah put her away and gave her a bill of divorce — the divorced north,
+-- Hosea''s Lo-Ammi. Her treacherous sister Yahudah (Judah) saw it and feared not, and turned not with
+-- her whole heart but feignedly. Yet the word toward the NORTH is mercy: *Return, thou backsliding
+-- Yashar''el... for I am merciful... I am married unto you; and I will take you one of a city, and
+-- two of a family, and I will bring you to Zion* — the divorced wife mercifully regathered. He
+-- promises pastors according to his own heart; a day when the ark is not missed and Jerusalem is
+-- the throne of Yahuah, the nations gathered to it; and the two houses walking TOGETHER out of the
+-- north (3:18, the Ezekiel-37 frame). The chapter closes on the penitent confession — *Return, ye
+-- backsliding children, and I will heal your backslidings... truly in Yahuah Eloheinu (the LORD our
+-- God) is the salvation of Yashar''el (Israel).*
+-- Tag: jer03   Temp view: _s309_jer03_lookup
+-- Sort band: base 34050, step 3 -> threads at 34050, 34053, 34056, 34059, 34062 (5 threads)
+-- Source of EVERY row: 'canon','jeremiah',3,v
+--
+-- Jeremiah 3 coverage:
+--   v.1-5 (If a man put away his wife... shall he return unto her again?... thou hast played the
+--          harlot with many lovers; yet return again to me; Wilt thou not... cry unto me, My father?)
+--        NT:     none warranted distinct (the put-away wife / the harlot-yet-called-back; the divorce
+--                doctrine carried by THREAD 1, the return-call by THREAD 2)
+--        Extras: none warranted
+--        Tanakh: the divorce-of-the-wife motif bound to Isaiah 50:1 in THREAD 1 prose; held there
+--   ★★★ v.6-11 (backsliding Yashar''el is gone up upon every high mountain... played the harlot; Turn
+--          thou unto me, but she returned not; her treacherous sister Yahudah saw it; I had put her
+--          away, and given her a bill of divorce; yet treacherous Yahudah feared not... backsliding
+--          Yashar''el hath justified herself more than treacherous Yahudah)
+--        NT:     none warranted (the two-house diagnosis is rooted Tanakh-and-Hosea; no extra forced)
+--        Extras: none warranted
+--        Tanakh: ★★★ Hosea 1:6 (Lo-ruhamah: I will no more have mercy upon the house of Yashar''el),
+--                ★★★ Hosea 1:9 (Lo-ammi: ye are not my people), ★★ Hosea 2:2 (she is not my wife,
+--                neither am I her husband), ★★ Ezekiel 23:4 (Aholah and Aholibah, the two sisters —
+--                Samaria and Jerusalem), ★★ Isaiah 50:1 (where is the bill of your mother''s
+--                divorcement?), ★★ 2 Kings 17:18 (Yahuah removed Yashar''el out of his sight) — THREAD 1
+--   ★★★ v.12-14 (Return, thou backsliding Yashar''el... I am merciful... I will not keep anger for
+--          ever; Turn, O backsliding children... for I am married unto you: and I will take you one
+--          of a city, and two of a family, and I will bring you to Zion)
+--        NT:     ★★ Romans 11:26 (all Yashar''el shall be saved... out of Sion the Deliverer),
+--                ★ Romans 11:27 (this is my covenant... when I shall take away their sins) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★★ Hosea 2:19 (I will betroth thee unto me for ever), ★★★ Hosea 2:23 (I will say to
+--                them which were not my people, Thou art my people), ★★ Hosea 3:1 (love a woman...
+--                yet an adulteress), ★★ Hosea 3:5 (afterward shall the children of Yashar''el return),
+--                ★★ Ezekiel 37:21 (I will take the children of Yashar''el from among the heathen),
+--                ★★ Ezekiel 37:22 (I will make them one nation) — THREAD 2
+--   ★★ v.15 (And I will give you pastors according to mine heart, which shall feed you with knowledge
+--          and understanding)
+--        NT:     ★ John 21:17 (Feed my sheep), ★ Acts 20:28 (feed the church of Elohim),
+--                ★ Ephesians 4:11 (he gave some, pastors and teachers) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 34:23 (one shepherd, my servant David — lateral), ★ Jeremiah 23:4 (I will
+--                set up shepherds over them — lateral) — THREAD 3
+--   ★ v.16-17 (they shall say no more, The ark of the covenant of Yahuah; neither shall they remember
+--          it; At that time they shall call Jerusalem the throne of Yahuah; and all the nations shall
+--          be gathered unto it, to the name of Yahuah)
+--        NT:     ★ Revelation 21:3 (the tabernacle of Elohim is with men), ★ Revelation 21:24 (the
+--                nations of them which are saved shall walk in the light of it), ★ John 4:23 (the true
+--                worshippers shall worship the Father in spirit and in truth) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 2:3 (out of Zion shall go forth the law... all nations shall flow unto it),
+--                ★ Zechariah 8:22 (many people and strong nations shall come to seek Yahuah) — THREAD 4
+--   v.18 (the house of Yahudah shall walk with the house of Yashar''el... out of the land of the north)
+--        NT:     none warranted distinct (the two houses made one; the Ezekiel-37 frame held in THREAD 2)
+--        Extras: none warranted
+--        Tanakh: held in prose — *they shall come together out of the land of the north* binds to the
+--                regathering of THREAD 2 (Ezekiel 37:21-22); woven there
+--   v.19-21 (How shall I put thee among the children... Thou shalt call me, My father; as a wife
+--          treacherously departeth... so have ye dealt treacherously, O house of Yashar''el; a voice...
+--          weeping of the children of Yashar''el, for they have perverted their way)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the treacherous-wife charge restates v.6-11 (THREAD 1); the weeping
+--                on the high places turns to the penitent return of v.22-25 (THREAD 5)
+--   ★ v.22-25 (Return, ye backsliding children, and I will heal your backslidings; Behold, we come
+--          unto thee; truly in vain is salvation hoped for from the hills... truly in Yahuah Eloheinu
+--          is the salvation of Yashar''el; we have sinned against Yahuah Eloheinu)
+--        NT:     none warranted (the penitent confession is Hosea-rooted; no NT forced)
+--        Extras: none warranted
+--        Tanakh: ★★ Hosea 14:1 (O Yashar''el, return unto Yahuah Elohayka), ★★ Hosea 14:4 (I will heal
+--                their backsliding), ★ Hosea 6:1 (come, and let us return unto Yahuah) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah — Tanakh (Hosea 1, Hosea 2, Ezekiel 23, Isaiah 50, 2 Kings 17) [free]
+--      (★★★ THE two-house diagnosis: the northern house divorced — the bill of divorce, Lo-Ammi — and the southern house treacherous)
+--   2. jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion — NT (Romans 11) + Tanakh (Hosea 2, Hosea 3, Ezekiel 37) [free]
+--      (★★★ the call to the divorced north to RETURN — mercy over the divorce, married still, one of a city and two of a family, brought to Zion, the two-house regathering)
+--   3. jeremiah-3-pastors-according-to-mine-heart — NT (John 21, Acts 20, Ephesians 4) + Tanakh (Ezekiel 34, Jeremiah 23) [free]
+--      (★★ the true shepherds promised — pastors according to Yahuah''s heart, the one Shepherd, the flock fed)
+--   4. jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered — NT (Revelation 21, John 4) + Tanakh (Isaiah 2, Zechariah 8) [free]
+--      (★ the ark not missed — Yahuah himself present; Jerusalem the throne, all the nations gathered, the true worship)
+--   5. jeremiah-3-return-ye-backsliding-children-i-will-heal-your-backslidings — Tanakh (Hosea 14, Hosea 6) [free]
+--      (★ the penitent return and confession — I will heal your backslidings; in Yahuah is the salvation of Yashar''el)
+--
+-- Framing notes:
+--   ★★★ THE TWO-HOUSE DIAGNOSIS (THREAD 1): *Hast thou seen that which backsliding Yashar''el (Israel)
+--      hath done? she is gone up upon every high mountain... and there hath played the harlot... And I
+--      saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put
+--      her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not*
+--      (3:6,8). This is the heart of the two-house frame: the NORTHERN house (Yashar''el/Ephraim) was
+--      divorced and scattered through Assyria, and the SOUTHERN house (Yahudah) saw it and feared not.
+--      Hosea names the divorce by the children''s names: *Call her name Lo-ruhamah: for I will no more
+--      have mercy upon the house of Yashar''el (Israel)* (Hos 1:6), *Call his name Lo-ammi: for ye are
+--      not my people* (Hos 1:9), *she is not my wife, neither am I her husband* (Hos 2:2). Ezekiel draws
+--      the two sisters: *Samaria is Aholah, and Jerusalem Aholibah* (Ezek 23:4). Isaiah asks after the
+--      very document: *Where is the bill of your mother''s divorcement, whom I have put away?* (Isa 50:1).
+--      And Kings records the putting-away: *Therefore Yahuah (LORD) was very angry with Yashar''el
+--      (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah)
+--      only* (2 Kgs 17:18). The divorced north, the treacherous south — both gone a-whoring, but ONE
+--      people still claimed.
+--   ★★★ RETURN, THOU BACKSLIDING YASHAR''EL — I WILL BRING YOU TO ZION (THREAD 2): the divorce is not
+--      the end. *Go and proclaim these words toward the north, and say, Return, thou backsliding
+--      Yashar''el (Israel)... for I am merciful... and I will not keep anger for ever* (3:12); *Turn, O
+--      backsliding children... for I am married unto you: and I will take you one of a city, and two of
+--      a family, and I will bring you to Zion* (3:14). The divorced wife is wooed back — *I am married
+--      unto you* — and regathered ONE of a city, TWO of a family, to Zion. Hosea sings the re-betrothal:
+--      *I will betroth thee unto me for ever* (Hos 2:19), *I will say to them which were not my people,
+--      Thou art my people* (Hos 2:23) — Lo-Ammi made Ammi. *Go yet, love a woman... yet an adulteress*
+--      (Hos 3:1), *afterward shall the children of Yashar''el (Israel) return* (Hos 3:5). Ezekiel makes
+--      it the regathering of the scattered: *I will take the children of Yashar''el (Israel) from among
+--      the heathen... and bring them into their own land* (Ezek 37:21), *and I will make them one nation*
+--      (Ezek 37:22) — the very *one of a city, and two of a family* gathered to Zion, the two houses
+--      walking together out of the north (Jer 3:18). Paul seals it: *all Yashar''el (Israel) shall be
+--      saved: as it is written, There shall come out of Sion the Deliverer* (Rom 11:26), *when I shall
+--      take away their sins* (Rom 11:27). The divorce reversed by mercy, the scattered house brought home.
+--   ★★ PASTORS ACCORDING TO MINE HEART (THREAD 3): *And I will give you pastors according to mine heart,
+--      which shall feed you with knowledge and understanding* (3:15) — true shepherds, against the false
+--      ones the prophets rebuke. Jeremiah himself promises it again: *I will set up shepherds over them
+--      which shall feed them* (Jer 23:4). Ezekiel names the One Shepherd: *I will set up one shepherd
+--      over them, and he shall feed them, even my servant David* (Ezek 34:23). The risen Messiah commits
+--      the flock to Peter: *Feed my sheep* (John 21:17); Paul charges the elders: *feed the church of
+--      Elohim (God), which he hath purchased with his own blood* (Acts 20:28); and the Head gives the
+--      gift: *he gave some... pastors and teachers* (Eph 4:11). The shepherds after Yahuah''s own heart.
+--   ★ JERUSALEM THE THRONE — THE NATIONS GATHERED (THREAD 4): *they shall say no more, The ark of the
+--      covenant of Yahuah (LORD)... neither shall they remember it... At that time they shall call
+--      Jerusalem the throne of Yahuah (LORD); and all the nations shall be gathered unto it* (3:16-17).
+--      The ark is not missed because Yahuah himself is present and enthroned. Isaiah: *out of Zion shall
+--      go forth the law... and all nations shall flow unto it* (Isa 2:3, with 2:2). Zechariah: *many
+--      people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem*
+--      (Zech 8:22). The end answers it: *the tabernacle of Elohim (God) is with men, and he will dwell
+--      with them* (Rev 21:3), *and the nations of them which are saved shall walk in the light of it*
+--      (Rev 21:24); and the Messiah lifts worship past place to spirit: *the true worshippers shall
+--      worship the Father in spirit and in truth* (John 4:23). The throne, not the ark; the nations
+--      gathered to the Name.
+--   ★ RETURN, YE BACKSLIDING CHILDREN — I WILL HEAL YOUR BACKSLIDINGS (THREAD 5): *Return, ye backsliding
+--      children, and I will heal your backslidings. Behold, we come unto thee; for thou art Yahuah
+--      Eloheinu (the LORD our God)* (3:22), *truly in Yahuah Eloheinu (the LORD our God) is the salvation
+--      of Yashar''el (Israel)* (3:23). The penitent answer — they come, confessing. Hosea voices the same
+--      return-and-healing: *O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God)* (Hos
+--      14:1), *I will heal their backsliding, I will love them freely* (Hos 14:4), *Come, and let us
+--      return unto Yahuah (LORD): for he hath torn, and he will heal us* (Hos 6:1). The backsliding healed
+--      by the Healer, salvation found in Yahuah alone, not in the hills.
+--   VERSES WITH NO SEPARATE ADD: v.1-5 (the put-away wife / the harlot-yet-called-back — the divorce
+--      doctrine carried by THREAD 1 via Isaiah 50:1, the return-call by THREAD 2), v.18 (the two houses
+--      walking together out of the north — bound to the Ezekiel-37 regathering of THREAD 2), v.19-21 (the
+--      treacherous-wife charge restating v.6-11, the weeping that turns to the penitent return of v.22).
+--      All blocks recorded; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer03_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): backsliding Yashar'el divorced, treacherous Yahudah — the two-house diagnosis
+    ('canon','jeremiah',3,8,'canon','hosea',1,6,'free',
+      E'*And she conceived again, and bare a daughter. And Elohim (God) said unto him, Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel); but I will utterly take them away* (Hosea 1:6). Hosea names the divorce of the northern house by his daughter''s name — Lo-ruhamah, "no mercy" — which is the very *bill of divorce* Yahuah gave backsliding Yashar''el: *I had put her away, and given her a bill of divorce* (Jeremiah 3:8). The northern house, divorced and unpitied.'),
+    ('canon','jeremiah',3,8,'canon','hosea',1,9,'free',
+      E'*Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God)* (Hosea 1:9). The bill of divorce given to backsliding Yashar''el (Jeremiah 3:8) is spoken by Hosea as Lo-ammi — "not my people." The northern house is put away, divorced and disowned; yet the same Yahuah who names her Lo-ammi will undo it (Hosea 2:23), as Jeremiah''s *Return, thou backsliding Yashar''el (Israel)* (3:12) undoes the divorce.'),
+    ('canon','jeremiah',3,8,'canon','hosea',2,2,'free',
+      E'*Plead with your mother, plead: for she is not my wife, neither am I her husband: let her therefore put away her whoredoms out of her sight, and her adulteries from between her breasts* (Hosea 2:2). Hosea draws the same marriage-and-divorce picture Jeremiah does — the wife *put away* for her adulteries (Jeremiah 3:8): *she is not my wife, neither am I her husband*. The harlotry of the northern house is the breach of a marriage, and the divorce its consequence — yet the husband still pleads.'),
+    ('canon','jeremiah',3,6,'canon','ezekiel',23,4,'free',
+      E'*And the names of them were Aholah the elder, and Aholibah her sister... Thus were their names; Samaria is Aholah, and Jerusalem Aholibah* (Ezekiel 23:4). Ezekiel draws as two harlot sisters exactly what Jeremiah names — *backsliding Yashar''el (Israel)... hath played the harlot* and *her treacherous sister Yahudah (Judah)* (Jeremiah 3:6-8): Samaria (the northern house) and Jerusalem (the southern house), the two sisters who both went a-whoring. The two-house frame, drawn as the two unfaithful sisters.'),
+    ('canon','jeremiah',3,8,'canon','isaiah',50,1,'free',
+      E'*Thus saith Yahuah (LORD), Where is the bill of your mother''s divorcement, whom I have put away?... Behold, for your iniquities have ye sold yourselves, and for your transgressions is your mother put away* (Isaiah 50:1). Isaiah asks after the very document Jeremiah names — *I had put her away, and given her a bill of divorce* (Jeremiah 3:8): the mother *put away* for her own iniquities. The divorce is real, and it is the people''s sin that caused it; yet Yahuah''s hand is *not shortened... that it cannot redeem* (Isa 50:2).'),
+    ('canon','jeremiah',3,8,'canon','2-kings',17,18,'free',
+      E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18). Kings records the divorce Jeremiah names — *I had put her away, and given her a bill of divorce* (Jeremiah 3:8): the northern house *removed out of his sight*, carried into Assyria, *there was none left but the tribe of Yahudah (Judah) only*. The bill of divorce was the Assyrian exile of the ten tribes.'),
+
+    -- THREAD 2 (★★★): Return, thou backsliding Yashar'el — I am married unto you — I will bring you to Zion
+    ('canon','jeremiah',3,14,'canon','hosea',2,19,'free',
+      E'*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19). The divorced wife is re-married: as Jeremiah says *for I am married unto you... and I will bring you to Zion* (Jeremiah 3:14), Hosea promises the everlasting betrothal — *I will betroth thee unto me for ever*. The divorce reversed; the put-away wife wooed back into an unbreakable covenant.'),
+    ('canon','jeremiah',3,14,'canon','hosea',2,23,'free',
+      E'*And I will sow her unto me in the earth; and I will have mercy upon her that had not obtained mercy; and I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). The Lo-Ammi divorce of the northern house is undone exactly as Jeremiah''s *Return, thou backsliding Yashar''el (Israel)... for I am merciful* (Jeremiah 3:12) undoes it: *I will say to them which were not my people, Thou art my people*. Not-my-people made my-people; the divorced wife reclaimed.'),
+    ('canon','jeremiah',3,14,'canon','hosea',3,1,'free',
+      E'*Then said Yahuah (LORD) unto me, Go yet, love a woman beloved of her friend, yet an adulteress, according to the love of Yahuah (LORD) toward the children of Yashar''el (Israel), who look to other gods* (Hosea 3:1). Hosea is told to love again the adulterous wife — the very love behind Jeremiah''s *Turn, O backsliding children... for I am married unto you* (Jeremiah 3:14). Though she played the harlot, the husband loves her still and buys her back; the picture of Yahuah''s mercy toward the divorced northern house.'),
+    ('canon','jeremiah',3,14,'canon','hosea',3,5,'free',
+      E'*Afterward shall the children of Yashar''el (Israel) return, and seek Yahuah (LORD) their Elohim (God), and David their king; and shall fear Yahuah (LORD) and his goodness in the latter days* (Hosea 3:5). Hosea names the return Jeremiah commands — *Return, thou backsliding Yashar''el (Israel)* (Jeremiah 3:12): in the latter days *the children of Yashar''el (Israel) return, and seek Yahuah (LORD)... and David their king*. The backsliding house turns home, regathered under the one King.'),
+    ('canon','jeremiah',3,14,'canon','ezekiel',37,21,'free',
+      E'*Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). Jeremiah''s *I will take you one of a city, and two of a family, and I will bring you to Zion* (Jeremiah 3:14) is Ezekiel''s regathering: the scattered children taken from among the heathen and brought home. The divorced, scattered house gathered on every side to its own land.'),
+    ('canon','jeremiah',3,14,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The two houses Jeremiah sees walking together — *the house of Yahudah (Judah) shall walk with the house of Yashar''el (Israel)... out of the land of the north* (Jeremiah 3:18) — are Ezekiel''s one nation: *no more two nations*. The regathering to Zion (3:14) is the two sticks made one.'),
+    ('canon','jeremiah',3,12,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). Paul names the end of Jeremiah''s northward call — *Return, thou backsliding Yashar''el (Israel)... for I am merciful* (Jeremiah 3:12): the divorced, scattered house is not cast off for ever but saved, *out of Sion the Deliverer*. The mercy that calls the backsliding north home is the mercy that saves all Yashar''el.'),
+    ('canon','jeremiah',3,14,'canon','romans',11,27,'free',
+      E'*For this is my covenant unto them, when I shall take away their sins* (Romans 11:27). The covenant that brings the divorced wife back — *for I am married unto you: and... I will bring you to Zion* (Jeremiah 3:14) — is, in Paul, the covenant of sin-removal: *when I shall take away their sins*. The marriage restored to the backsliding house is grounded in the taking-away of the very adulteries that broke it.'),
+
+    -- THREAD 3 (★★): pastors according to mine heart — the true shepherds
+    ('canon','jeremiah',3,15,'canon','ezekiel',34,23,'free',
+      E'*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). The pastors Jeremiah promises — *I will give you pastors according to mine heart, which shall feed you with knowledge and understanding* (Jeremiah 3:15) — are gathered under Ezekiel''s one Shepherd: *one shepherd... even my servant David*. The shepherds after Yahuah''s heart serve the one Davidic Shepherd-King.'),
+    ('canon','jeremiah',3,15,'canon','jeremiah',23,4,'free',
+      E'*And I will set up shepherds over them which shall feed them: and they shall fear no more, nor be dismayed, neither shall they be lacking, saith Yahuah (LORD)* (Jeremiah 23:4). Jeremiah repeats his own promise of *pastors according to mine heart, which shall feed you* (Jeremiah 3:15): true shepherds *set up... which shall feed them*, against the false shepherds who scattered the flock (Jer 23:1-2). The pastors after Yahuah''s heart feed and keep, so the flock fears no more.'),
+    ('canon','jeremiah',3,15,'canon','john',21,17,'free',
+      E'*He saith unto him the third time, Simon, son of Jonas, lovest thou me?... Yahusha (Jesus) saith unto him, Feed my sheep* (John 21:17). The risen Messiah makes Peter a pastor according to Yahuah''s own heart — *I will give you pastors according to mine heart, which shall feed you* (Jeremiah 3:15): *Feed my sheep*. The shepherd-charge of the prophet is handed on, the flock fed by those the Shepherd appoints.'),
+    ('canon','jeremiah',3,15,'canon','acts',20,28,'free',
+      E'*Take heed therefore unto yourselves, and to all the flock, over the which the Ruach HaKodesh (Holy Spirit) hath made you overseers, to feed the church of Elohim (God), which he hath purchased with his own blood* (Acts 20:28). Paul charges the elders as the pastors Jeremiah promised — *pastors according to mine heart, which shall feed you with knowledge and understanding* (Jeremiah 3:15): *to feed the church of Elohim (God)*. The Spirit sets them over the flock to feed it, shepherds after the heart of Yahuah.'),
+    ('canon','jeremiah',3,15,'canon','ephesians',4,11,'free',
+      E'*And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers* (Ephesians 4:11). The risen Head gives the very gift Jeremiah promised — *I will give you pastors according to mine heart, which shall feed you with knowledge and understanding* (Jeremiah 3:15): *he gave some... pastors and teachers*. The pastors after Yahuah''s heart are the Messiah''s gift to feed and build his people in knowledge.'),
+
+    -- THREAD 4 (★): Jerusalem the throne of Yahuah — the nations gathered, the ark not missed
+    ('canon','jeremiah',3,16,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). Jeremiah''s word that the ark shall be missed no more — *they shall say no more, The ark of the covenant of Yahuah (LORD)... neither shall they remember it* (Jeremiah 3:16) — reaches its end when Yahuah himself dwells with men: *the tabernacle of Elohim (God) is with men*. The ark is not missed because the Presence itself has come.'),
+    ('canon','jeremiah',3,17,'canon','revelation',21,24,'free',
+      E'*And the nations of them which are saved shall walk in the light of it: and the kings of the earth do bring their glory and honour into it* (Revelation 21:24). Jeremiah''s promise — *they shall call Jerusalem the throne of Yahuah (LORD); and all the nations shall be gathered unto it* (Jeremiah 3:17) — is fulfilled in the city where *the nations of them which are saved shall walk in the light of it*. The nations gathered to the throne of Yahuah, to the Name, to Jerusalem.'),
+    ('canon','jeremiah',3,17,'canon','isaiah',2,3,'free',
+      E'*And many people shall go and say, Come ye, and let us go up to the mountain of Yahuah (LORD)... for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). Isaiah sees the same ingathering of the nations Jeremiah names — *all the nations shall be gathered unto it, to the name of Yahuah (LORD), to Jerusalem* (Jeremiah 3:17): *out of Zion shall go forth the law*, the peoples streaming up to be taught. The throne of Yahuah at Jerusalem draws all nations.'),
+    ('canon','jeremiah',3,17,'canon','zechariah',8,22,'free',
+      E'*Yea, many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem, and to pray before Yahuah (LORD)* (Zechariah 8:22). Zechariah echoes Jeremiah''s gathering of the nations — *all the nations shall be gathered unto it, to the name of Yahuah (LORD)* (Jeremiah 3:17): *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem*. The nations gathered to the throne, to seek and pray before Yahuah.'),
+    ('canon','jeremiah',3,17,'canon','john',4,23,'free',
+      E'*But the hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him* (John 4:23). Jeremiah lifts worship past the ark to the throne itself — *they shall call Jerusalem the throne of Yahuah (LORD)... neither shall they walk any more after the imagination of their evil heart* (Jeremiah 3:17) — and the Messiah lifts it past the place to the Spirit: *the true worshippers shall worship the Father in spirit and in truth*. The throne, not the relic; the heart, not the place.'),
+
+    -- THREAD 5 (★): Return, ye backsliding children — I will heal your backslidings
+    ('canon','jeremiah',3,22,'canon','hosea',14,1,'free',
+      E'*O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God); for thou hast fallen by thine iniquity* (Hosea 14:1). Hosea sounds the same call Jeremiah does — *Return, ye backsliding children, and I will heal your backslidings* (Jeremiah 3:22): *O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God)*. The fallen, backsliding house is summoned home to the One it forsook.'),
+    ('canon','jeremiah',3,22,'canon','hosea',14,4,'free',
+      E'*I will heal their backsliding, I will love them freely: for mine anger is turned away from him* (Hosea 14:4). Hosea speaks Jeremiah''s very promise — *Return, ye backsliding children, and I will heal your backslidings* (Jeremiah 3:22): *I will heal their backsliding, I will love them freely*. The same Yahuah who calls the backsliders home heals the backsliding itself, freely, his anger turned away.'),
+    ('canon','jeremiah',3,22,'canon','hosea',6,1,'free',
+      E'*Come, and let us return unto Yahuah (LORD): for he hath torn, and he will heal us; he hath smitten, and he will bind us up* (Hosea 6:1). The penitent answer Jeremiah records — *Behold, we come unto thee; for thou art Yahuah Eloheinu (the LORD our God)* (Jeremiah 3:22) — is Hosea''s very confession: *Come, and let us return unto Yahuah (LORD)... he will heal us*. The torn and smitten house returns to the only One who can bind it up.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah',
+       E'Backsliding Yashar''el divorced, treacherous Yahudah — the two sisters',
+       E'Here is the two-house diagnosis laid bare. *Yahuah (LORD) said also unto me in the days of Josiah the king, Hast thou seen that which backsliding Yashar''el (Israel) hath done? she is gone up upon every high mountain and under every green tree, and there hath played the harlot* (3:6). The northern house — Yashar''el, Ephraim, the ten tribes — went a-whoring after other gods, and would not return: *And I said after she had done all these things, Turn thou unto me. But she returned not. And her treacherous sister Yahudah (Judah) saw it* (3:7). So the divorce was given: *And I saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also* (3:8). The southern house saw the divorce of the north and feared not — *Yahudah (Judah) hath not turned unto me with her whole heart, but feignedly* (3:10) — so that *the backsliding Yashar''el (Israel) hath justified herself more than treacherous Yahudah (Judah)* (3:11). Hosea names the divorce by the children''s names: *Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel)* (Hosea 1:6), *Call his name Lo-ammi: for ye are not my people* (Hosea 1:9), *she is not my wife, neither am I her husband* (Hosea 2:2). Ezekiel draws the two sisters whole: *Samaria is Aholah, and Jerusalem Aholibah* (Ezekiel 23:4) — the northern and southern houses, both unfaithful. Isaiah asks after the document itself: *Where is the bill of your mother''s divorcement, whom I have put away?... for your transgressions is your mother put away* (Isaiah 50:1). And Kings records the divorce as history: *Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18) — the bill of divorce was the Assyrian exile of the ten tribes. The divorced north, the treacherous south: this is the wound the rest of the chapter sets out to heal.',
+       sv.verse_id, ev.verse_id, 'free', 34050
+  FROM _s309_jer03_lookup sv, _s309_jer03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=3 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion',
+       E'Return, thou backsliding Yashar''el — I am married unto you, I will bring you to Zion',
+       E'The divorce is not the last word. The very prophet who announced the bill of divorce is now sent to call the divorced wife home — and northward, to the scattered ten tribes: *Go and proclaim these words toward the north, and say, Return, thou backsliding Yashar''el (Israel), saith Yahuah (LORD); and I will not cause mine anger to fall upon you: for I am merciful, saith Yahuah (LORD), and I will not keep anger for ever* (3:12). Mercy over the divorce. *Only acknowledge thine iniquity* (3:13) — and then the astonishing word to the put-away wife: *Turn, O backsliding children, saith Yahuah (LORD); for I am married unto you: and I will take you one of a city, and two of a family, and I will bring you to Zion* (3:14). *I am married unto you* — the divorce reversed by the husband''s own mercy; and the regathering is remnant-by-remnant, one of a city and two of a family, brought home to Zion. Hosea sings the re-betrothal: *I will betroth thee unto me for ever* (Hosea 2:19), and the undoing of Lo-Ammi: *I will say to them which were not my people, Thou art my people* (Hosea 2:23). The husband is told to love the adulteress again — *Go yet, love a woman... yet an adulteress* (Hosea 3:1) — for *afterward shall the children of Yashar''el (Israel) return, and seek Yahuah (LORD) their Elohim (God), and David their king* (Hosea 3:5). Ezekiel makes it the great regathering: *I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land* (Ezekiel 37:21), *and I will make them one nation... they shall be no more two nations* (Ezekiel 37:22) — which is exactly Jeremiah''s next breath: *the house of Yahudah (Judah) shall walk with the house of Yashar''el (Israel)... out of the land of the north* (3:18). And Paul seals the whole: *all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer* (Romans 11:26), *For this is my covenant unto them, when I shall take away their sins* (Romans 11:27). The divorced wife wooed back, the scattered house regathered, the two houses made one and brought to Zion.',
+       sv.verse_id, ev.verse_id, 'free', 34053
+  FROM _s309_jer03_lookup sv, _s309_jer03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=3 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-3-pastors-according-to-mine-heart',
+       E'I will give you pastors according to mine heart',
+       E'To the regathered house Yahuah promises true shepherds, against the false ones who scattered it: *And I will give you pastors according to mine heart, which shall feed you with knowledge and understanding* (3:15). The promise stands over the whole prophetic vision of the flock. Jeremiah himself repeats it: *I will set up shepherds over them which shall feed them: and they shall fear no more, nor be dismayed* (Jeremiah 23:4). Ezekiel gathers all the shepherds under the One: *I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). And the risen Messiah hands the charge on: to Peter — *Yahusha (Jesus) saith unto him, Feed my sheep* (John 21:17); to the elders, through Paul — *feed the church of Elohim (God), which he hath purchased with his own blood* (Acts 20:28); and to the whole body, as the Head''s own gift — *he gave some... pastors and teachers* (Ephesians 4:11). The pastors after Yahuah''s own heart feed the flock with knowledge and understanding, under the one Shepherd, David''s greater Son.',
+       sv.verse_id, ev.verse_id, 'free', 34056
+  FROM _s309_jer03_lookup sv, _s309_jer03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=3 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered',
+       E'Jerusalem the throne of Yahuah — and all the nations gathered unto it',
+       E'In the restored day, the ark itself is not missed, because the One it pointed to is present and enthroned: *they shall say no more, The ark of the covenant of Yahuah (LORD): neither shall it come to mind: neither shall they remember it; neither shall they visit it; neither shall that be done any more* (3:16). The relic gives way to the Presence: *At that time they shall call Jerusalem the throne of Yahuah (LORD); and all the nations shall be gathered unto it, to the name of Yahuah (LORD), to Jerusalem: neither shall they walk any more after the imagination of their evil heart* (3:17). Isaiah sees the same nations streaming up: *Come ye, and let us go up to the mountain of Yahuah (LORD)... for out of Zion shall go forth the law, and the word of Yahuah (LORD) from Jerusalem* (Isaiah 2:3). Zechariah too: *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zechariah 8:22). The Messiah lifts worship past the place to the Spirit: *the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him* (John 4:23). And the end answers it whole: *the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3), *and the nations of them which are saved shall walk in the light of it* (Revelation 21:24). The ark not missed, the throne of Yahuah at Jerusalem, the nations gathered to the Name.',
+       sv.verse_id, ev.verse_id, 'free', 34059
+  FROM _s309_jer03_lookup sv, _s309_jer03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=3 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-3-return-ye-backsliding-children-i-will-heal-your-backslidings',
+       E'Return, ye backsliding children — and I will heal your backslidings',
+       E'The chapter closes on the call and the penitent answer. *Return, ye backsliding children, and I will heal your backslidings. Behold, we come unto thee; for thou art Yahuah Eloheinu (the LORD our God)* (3:22) — the summons and the response in one breath: they come, confessing. And the confession turns from the high places to Yahuah alone: *Truly in vain is salvation hoped for from the hills, and from the multitude of mountains: truly in Yahuah Eloheinu (the LORD our God) is the salvation of Yashar''el (Israel)* (3:23). They own the shame: *we have sinned against Yahuah Eloheinu (the LORD our God), we and our fathers, from our youth even unto this day* (3:25). Hosea voices the same return-and-healing word for word: *O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God); for thou hast fallen by thine iniquity* (Hosea 14:1), and the answering promise — *I will heal their backsliding, I will love them freely: for mine anger is turned away from him* (Hosea 14:4). And the penitent come, as Hosea taught them to: *Come, and let us return unto Yahuah (LORD): for he hath torn, and he will heal us; he hath smitten, and he will bind us up* (Hosea 6:1). The backsliding house turns home, and the One who tore them heals the very backsliding — salvation found in Yahuah, never in the hills.',
+       sv.verse_id, ev.verse_id, 'free', 34062
+  FROM _s309_jer03_lookup sv, _s309_jer03_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=3 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel)* (Hosea 1:6) — the divorce of the northern house named "no mercy"; Jeremiah''s bill of divorce (3:8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=8
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *Call his name Lo-ammi: for ye are not my people* (Hosea 1:9) — the bill of divorce spoken as Lo-ammi; the northern house put away and disowned (Jeremiah 3:8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=8
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *she is not my wife, neither am I her husband* (Hosea 2:2) — the harlotry as a broken marriage; the wife put away (Jeremiah 3:8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=8
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Samaria is Aholah, and Jerusalem Aholibah* (Ezekiel 23:4) — the two harlot sisters = the two houses, Jeremiah''s backsliding Yashar''el and treacherous Yahudah (3:6-8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=6
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=23 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Where is the bill of your mother''s divorcement, whom I have put away?* (Isaiah 50:1) — Isaiah names the very document of Jeremiah 3:8; the mother put away for her own transgressions.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=8
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=50 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18) — the bill of divorce as history: the Assyrian exile of the ten northern tribes (Jeremiah 3:8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=8
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-backsliding-yasharel-divorced-and-treacherous-yahudah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will betroth thee unto me for ever* (Hosea 2:19) — the divorced wife re-married; Jeremiah''s *I am married unto you* (3:14), the divorce reversed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *I will say to them which were not my people, Thou art my people* (Hosea 2:23) — Lo-Ammi made Ammi; the divorce undone, as *Return, thou backsliding Yashar''el* (Jeremiah 3:12).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Go yet, love a woman... yet an adulteress* (Hosea 3:1) — the husband told to love the adulterous wife again; the mercy behind *I am married unto you* (Jeremiah 3:14).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *afterward shall the children of Yashar''el (Israel) return... and David their king* (Hosea 3:5) — the backsliding house turns home in the latter days; Jeremiah''s *Return* (3:12) answered.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land* (Ezekiel 37:21) — the regathering of *one of a city, and two of a family* to Zion (Jeremiah 3:14).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *I will make them one nation... they shall be no more two nations* (Ezekiel 37:22) — the two houses made one; Jeremiah''s Yahudah walking with Yashar''el out of the north (3:18).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer* (Romans 11:26) — the divorced, scattered house not cast off; the mercy of Jeremiah 3:12 fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=12
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *this is my covenant unto them, when I shall take away their sins* (Romans 11:27) — the restored marriage grounded in the taking-away of the adulteries that broke it (Jeremiah 3:14).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=14
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-thou-backsliding-yasharel-i-will-bring-you-to-zion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will set up one shepherd over them... even my servant David* (Ezekiel 34:23) — the pastors of Jeremiah 3:15 gathered under the one Davidic Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-pastors-according-to-mine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will set up shepherds over them which shall feed them* (Jeremiah 23:4) — Jeremiah repeats his own promise of pastors after Yahuah''s heart (3:15), against the false shepherds.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-pastors-according-to-mine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahusha (Jesus) saith unto him, Feed my sheep* (John 21:17) — the risen Messiah makes Peter a pastor after Yahuah''s heart (Jeremiah 3:15); the flock fed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=21 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-pastors-according-to-mine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *feed the church of Elohim (God), which he hath purchased with his own blood* (Acts 20:28) — Paul charges the elders as the pastors Jeremiah promised (3:15); the Spirit sets them over the flock.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=20 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-pastors-according-to-mine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *he gave some... pastors and teachers* (Ephesians 4:11) — the pastors after Yahuah''s heart (Jeremiah 3:15) are the risen Head''s gift to feed and build his people.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=15
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-pastors-according-to-mine-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the ark not missed because the Presence has come; Jeremiah 3:16.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=16
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the nations of them which are saved shall walk in the light of it* (Revelation 21:24) — the nations gathered to the throne of Yahuah at Jerusalem (Jeremiah 3:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=17
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *out of Zion shall go forth the law... all nations shall flow unto it* (Isaiah 2:3) — the nations streaming up to Jerusalem the throne of Yahuah (Jeremiah 3:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=17
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *many people and strong nations shall come to seek Yahuah Tseva''ot (LORD of hosts) in Jerusalem* (Zechariah 8:22) — the nations gathered to seek the throne of Yahuah (Jeremiah 3:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=17
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the true worshippers shall worship the Father in spirit and in truth* (John 4:23) — the Messiah lifts worship past place to the Spirit; the throne, not the relic (Jeremiah 3:16-17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=17
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-jerusalem-the-throne-of-yahuah-the-nations-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *O Yashar''el (Israel), return unto Yahuah Elohayka (the LORD thy God)* (Hosea 14:1) — Hosea sounds Jeremiah''s call: *Return, ye backsliding children* (3:22).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=22
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=14 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-ye-backsliding-children-i-will-heal-your-backslidings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will heal their backsliding, I will love them freely* (Hosea 14:4) — Hosea speaks Jeremiah''s promise word for word: *I will heal your backslidings* (3:22).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=22
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-ye-backsliding-children-i-will-heal-your-backslidings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Come, and let us return unto Yahuah (LORD)... he will heal us* (Hosea 6:1) — the penitent answer of Jeremiah 3:22 (*Behold, we come unto thee*) in Hosea''s own words.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer03_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=3 AND sv.verse_number=22
+  JOIN _s309_jer03_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-3-return-ye-backsliding-children-i-will-heal-your-backslidings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_4.sql (Jeremiah 4) -----
+-- Chapter: Jeremiah 4 — the call to RETURN and to CIRCUMCISE THE HEART (break up your fallow ground;
+-- circumcise yourselves to Yahuah, take away the foreskins of your heart); the destruction from the north
+-- (the lion from his thicket, the destroyer of the Gentiles); the call to WASH THE HEART from wickedness,
+-- the judgment self-procured (thy way and thy doings have procured these things); and the DE-CREATION
+-- vision (I beheld the earth, and, lo, it was without form, and void — the world unmade back to Genesis 1:2
+-- chaos). A keystone chapter for the inward Torah: circumcision of the heart the Torah always demanded,
+-- NEVER its abolition.
+-- Tag: jer04   Temp view: _s309_jer04_lookup
+-- Sort band: base 34075, step 3 -> threads at 34075, 34078, 34081 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',4,v
+--
+-- Jeremiah 4 coverage:
+--   v.1-2 (If thou wilt return, O Yashar'el (Israel)... return unto me; the nations shall bless themselves
+--          in him) — the call to return; the Abrahamic blessing-of-the-nations note
+--        NT:     none warranted distinct (the return is the gateway to the heart-circumcision of v.3-4;
+--                woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the nations blessing themselves echoes Genesis 22:18, but the verse's
+--                weight here is the RETURN that THREAD 1 carries; not forced separately
+--   ★★ v.3-4 (Break up your fallow ground, and sow not among thorns. Circumcise yourselves to Yahuah (LORD),
+--          and take away the foreskins of your heart, ye men of Yahudah (Judah) and inhabitants of Jerusalem)
+--        NT:     ★★ Romans 2:29 (circumcision is that of the heart, in the spirit), ★ Romans 2:28 (not that
+--                circumcision which is outward in the flesh), ★ Matthew 13:7 (some fell among thorns), ★ Matthew
+--                13:22 (the care of this world... choke the word) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 10:16 (circumcise therefore the foreskin of your heart), ★★ Deuteronomy 30:6
+--                (Yahuah will circumcise thine heart, to love Yahuah), ★ Hosea 10:12 (break up your fallow
+--                ground: for it is time to seek Yahuah) — THREAD 1
+--   v.5-13 (Blow ye the trumpet; the lion is come up from his thicket; the destroyer of the Gentiles; he
+--          shall come up as clouds) — the alarm and the invader from the north
+--        NT:     none warranted (the historical Babylonian judgment; woven in prose)
+--        Extras: none warranted     Tanakh: none separate (the trumpet/destroyer; preface to v.14)
+--   ★ v.14,18 (O Jerusalem, wash thine heart from wickedness, that thou mayest be saved... Thy way and thy
+--          doings have procured these things unto thee; this is thy wickedness)
+--        NT:     ★ James 4:8 (Cleanse your hands... and purify your hearts), ★ Galatians 6:7 (whatsoever a
+--                man soweth, that shall he also reap) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 1:16 (Wash you, make you clean), ★ Psalm 51:10 (Create in me a clean heart) — THREAD 2
+--   v.15-17 (a voice from Dan... mount Ephraim; watchers come from a far country; keepers of a field) — the
+--          besieging watchers; the rebellion named
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the besiegers (v.17 because she hath been rebellious) lead into the
+--                self-procured judgment of v.18 (THREAD 2)
+--   v.19-22 (My bowels, my bowels! I am pained at my very heart... my people is foolish, they have not known
+--          me; wise to do evil, but to do good they have no knowledge) — the prophet's anguish; the people's folly
+--        NT:     none warranted distinct (the prophet's grief; woven in prose; the no-knowledge folly echoes
+--                Romans 1, but not forced here)
+--        Extras: none warranted     Tanakh: none separate (the lament that opens onto the de-creation vision)
+--   ★★ v.23-26 (I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no
+--          light... I beheld, and, lo, there was no man... the fruitful place was a wilderness)
+--        NT:     ★ 2 Peter 3:10 (the heavens shall pass away with a great noise), ★ 2 Peter 3:12 (the heavens
+--                being on fire shall be dissolved) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★★ Genesis 1:2 (the earth was without form, and void; and darkness was upon the face of the
+--                deep), ★★ Isaiah 24:1 (Yahuah maketh the earth empty), ★ Isaiah 24:19 (the earth is utterly
+--                broken down), ★ Zephaniah 1:2 (I will utterly consume all things from off the land), ★ Zephaniah
+--                1:3 (I will cut off man from off the land) — THREAD 3
+--   v.27-31 (The whole land shall be desolate; yet will I not make a full end... the daughter of Zion... woe
+--          is me now) — the desolation tempered by the remnant-mercy (not a full end); the travailing daughter
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — *yet will I not make a full end* (v.27) is the remnant-mercy that bounds the
+--                de-creation of THREAD 3; the un-creation is judgment, not annihilation
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-4-circumcise-the-foreskins-of-your-heart — NT (Romans 2, Matthew 13) + Tanakh (Deuteronomy 10,
+--      Deuteronomy 30, Hosea 10) [free]
+--      (★★ the heart-circumcision the Torah always demanded — inward, not merely outward; the Torah on the
+--      heart, NOT its abolition; break up the fallow ground, sow not among thorns)
+--   2. jeremiah-4-wash-thine-heart-from-wickedness — NT (James 4, Galatians 6) + Tanakh (Isaiah 1, Psalm 51) [free]
+--      (★ the call to cleanse the heart that thou mayest be saved; the judgment self-procured — thy doings
+--      have procured these things; whatsoever a man soweth, that shall he also reap)
+--   3. jeremiah-4-i-beheld-the-earth-without-form-and-void — NT (2 Peter 3) + Tanakh (Genesis 1, Isaiah 24,
+--      Zephaniah 1) [free]
+--      (★★ the de-creation vision — the covenant-judgment unmaking the world back to Genesis 1:2 chaos; the
+--      earth without form and void, no light, no man, the fruitful place a wilderness)
+--
+-- Framing notes:
+--   ★★ THE CIRCUMCISION OF THE HEART (THREAD 1): *Break up your fallow ground, and sow not among thorns.
+--      Circumcise yourselves to Yahuah (LORD), and take away the foreskins of your heart, ye men of Yahudah
+--      (Judah) and inhabitants of Jerusalem* (4:3-4). This is NOT a new demand and NOT the abolition of the
+--      sign — it is what the Torah always required INWARDLY. Moses commanded it twice: *Circumcise therefore
+--      the foreskin of your heart, and be no more stiffnecked* (Deut 10:16), and promised Yahuah himself would
+--      do it: *Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to
+--      love Yahuah Elohayka (the LORD thy God) with all thine heart* (Deut 30:6). Paul reads it exactly so:
+--      *he is a Yahudi (Jew), which is one inwardly; and circumcision is that of the heart, in the spirit, and
+--      not in the letter* (Rom 2:29) — the inward reality the outward sign always pointed to, never a repeal of
+--      the covenant. Hosea sounds the same plowing-call: *break up your fallow ground: for it is time to seek
+--      Yahuah (LORD)* (Hos 10:12). And the sowing-among-thorns warns of the choked seed: *some fell among
+--      thorns; and the thorns sprung up, and choked them* (Matt 13:7), *the care of this world, and the
+--      deceitfulness of riches, choke the word* (Matt 13:22). The Torah inward — the heart circumcised, the
+--      ground broken up — is the framework's anti-antinomian core, not its undoing.
+--   ★ WASH THINE HEART — THE JUDGMENT SELF-PROCURED (THREAD 2): *O Jerusalem, wash thine heart from
+--      wickedness, that thou mayest be saved* (4:14); *Thy way and thy doings have procured these things unto
+--      thee; this is thy wickedness* (4:18). The cleansing of the heart is the same call Isaiah gives — *Wash
+--      you, make you clean; put away the evil of your doings* (Isa 1:16) — and David prays — *Create in me a
+--      clean heart, O Elohim (God)* (Ps 51:10). James echoes it forward: *Cleanse your hands, ye sinners; and
+--      purify your hearts, ye double minded* (Jas 4:8). And the judgment is not arbitrary but reaped: *thy way
+--      and thy doings have procured these things* (4:18) — *Be not deceived; Elohim (God) is not mocked: for
+--      whatsoever a man soweth, that shall he also reap* (Gal 6:7). The covenant-lawsuit names sin within the
+--      covenant; the door of return stands open — that thou mayest be saved.
+--   ★★ THE DE-CREATION VISION (THREAD 3): *I beheld the earth, and, lo, it was without form, and void; and the
+--      heavens, and they had no light. I beheld the mountains, and, lo, they trembled... I beheld, and, lo,
+--      there was no man... the fruitful place was a wilderness* (4:23-26). The judgment unmakes the world: the
+--      very words of creation's first chaos are pulled back over the land — *And the earth was without form, and
+--      void; and darkness was upon the face of the deep* (Gen 1:2). The covenant-judgment is an UN-creation, a
+--      reversal of the six days. Isaiah's earth-emptying is the same: *Behold, Yahuah (LORD) maketh the earth
+--      empty, and maketh it waste* (Isa 24:1), *The earth is utterly broken down* (Isa 24:19). Zephaniah's
+--      consuming too: *I will utterly consume all things from off the land* (Zeph 1:2), *I will cut off man from
+--      off the land* (Zeph 1:3). And the final un-making is the dissolution of the day of Yahuah: *the heavens
+--      shall pass away with a great noise* (2 Pet 3:10), *the heavens being on fire shall be dissolved* (2 Pet
+--      3:12). Yet mark the bound: *yet will I not make a full end* (4:27) — the un-creation is judgment, not
+--      annihilation; the remnant-mercy stands.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the call to return; the nations blessing themselves — the return is
+--      the gateway carried into THREAD 1), v.5-13 (the trumpet-alarm and the lion/destroyer from the north —
+--      the historical Babylonian invasion, woven in prose), v.15-17 (the besieging watchers and the rebellion
+--      named — leads into the self-procured judgment of THREAD 2), v.19-22 (the prophet's anguish and the
+--      people's folly — the lament that opens onto the de-creation vision), v.27-31 (the desolation tempered by
+--      *I will not make a full end*; the travailing daughter of Zion — the remnant-mercy that bounds THREAD 3).
+--      All blocks recorded; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer04_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): circumcise the foreskins of your heart — the inward Torah, not its abolition
+    ('canon','jeremiah',4,4,'canon','deuteronomy',10,16,'free',
+      E'*Circumcise therefore the foreskin of your heart, and be no more stiffnecked* (Deuteronomy 10:16). Jeremiah''s command — *Circumcise yourselves to Yahuah (LORD), and take away the foreskins of your heart* (Jeremiah 4:4) — is no new thing: it is Moses'' own word, the heart-circumcision the Torah always demanded alongside the sign in the flesh. The outward circumcision was ever meant to be matched by the inward; the prophet calls Yahudah (Judah) back to what the Torah required from the first.'),
+    ('canon','jeremiah',4,4,'canon','deuteronomy',30,6,'free',
+      E'*And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live* (Deuteronomy 30:6). What Jeremiah commands — *take away the foreskins of your heart* (Jeremiah 4:4) — Moses promises Yahuah himself will perform: the circumcised heart that loves and obeys. The inward Torah is the covenant''s own goal, the heart made able to love Yahuah and live; never the law set aside.'),
+    ('canon','jeremiah',4,4,'canon','romans',2,29,'free',
+      E'*But he is a Yahudi (Jew), which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of Elohim (God)* (Romans 2:29). Paul reads the prophets exactly: the *circumcision of the heart* Jeremiah commands (Jeremiah 4:4) is the true circumcision, *in the spirit, and not in the letter*. This is not the abolition of the Torah but its inward fulfilment — the sign in the flesh was always pointing to the sign in the heart.'),
+    ('canon','jeremiah',4,4,'canon','romans',2,28,'free',
+      E'*For he is not a Yahudi (Jew), which is one outwardly; neither is that circumcision, which is outward in the flesh* (Romans 2:28). Jeremiah''s rebuke — that an outwardly-circumcised Yahudah (Judah) still bears uncircumcised hearts (Jeremiah 4:4) — is Paul''s very point: the flesh-sign without the heart-sign profits nothing. The Torah''s demand was always for both; the foreskin of the heart taken away is what makes the outward true.'),
+    ('canon','jeremiah',4,3,'canon','hosea',10,12,'free',
+      E'*Sow to yourselves in righteousness, reap in mercy; break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you* (Hosea 10:12). Hosea sounds the same plowing-call Jeremiah gives — *Break up your fallow ground, and sow not among thorns* (Jeremiah 4:3). The hard, untilled heart must be broken open before the seed of righteousness can take; both prophets summon the people to break up the ground and seek Yahuah while there is time.'),
+    ('canon','jeremiah',4,3,'canon','matthew',13,7,'free',
+      E'*And some fell among thorns; and the thorns sprung up, and choked them* (Matthew 13:7). Jeremiah''s warning — *sow not among thorns* (Jeremiah 4:3) — is the parable of the sower in seed: the word sown into a thorny, unbroken heart is choked before it can bear. The fallow ground must be broken up and cleared, or the good seed comes to nothing.'),
+    ('canon','jeremiah',4,3,'canon','matthew',13,22,'free',
+      E'*He also that received seed among the thorns is he that heareth the word; and the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful* (Matthew 13:22). The Messiah names the thorns Jeremiah warned of — *sow not among thorns* (Jeremiah 4:3): the cares and riches of the world that strangle the word in an unbroken heart. The remedy is the broken-up ground, the circumcised heart, that the word may take root and bear.'),
+
+    -- THREAD 2 (★): wash thine heart from wickedness — the judgment self-procured
+    ('canon','jeremiah',4,14,'canon','isaiah',1,16,'free',
+      E'*Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil* (Isaiah 1:16). Jeremiah''s call — *O Jerusalem, wash thine heart from wickedness, that thou mayest be saved* (Jeremiah 4:14) — is Isaiah''s same summons to a defiled people: wash, put away the evil doings, cease. The cleansing demanded is of the heart and the deeds together; the door of salvation stands open to the one who will be made clean.'),
+    ('canon','jeremiah',4,14,'canon','psalms',51,10,'free',
+      E'*Create in me a clean heart, O Elohim (God); and renew a right spirit within me* (Psalm 51:10). What Jeremiah commands Jerusalem — *wash thine heart from wickedness* (Jeremiah 4:14) — David prays as the only true remedy: a clean heart that Elohim (God) must create. The washing of the heart is no mere outward reform; it is the new, clean heart the contrite sinner asks of Yahuah.'),
+    ('canon','jeremiah',4,14,'canon','james',4,8,'free',
+      E'*Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8). James echoes Jeremiah''s call forward — *wash thine heart from wickedness, that thou mayest be saved* (Jeremiah 4:14): the double-minded must purify the heart, not the hands alone. The inward cleansing Jeremiah demanded is the same the apostle presses on those who would draw near to Elohim.'),
+    ('canon','jeremiah',4,18,'canon','galatians',6,7,'free',
+      E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). Jeremiah names the judgment self-procured — *Thy way and thy doings have procured these things unto thee; this is thy wickedness* (Jeremiah 4:18). The harvest of ruin is reaped from the seed of the people''s own doings; Paul states the principle plainly: Elohim (God) is not mocked, and a people reaps what it sows.'),
+
+    -- THREAD 3 (★★): I beheld the earth, and, lo, it was without form, and void — the de-creation vision
+    ('canon','jeremiah',4,23,'canon','genesis',1,2,'free',
+      E'*And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of Elohim (God) moved upon the face of the waters* (Genesis 1:2). Jeremiah''s vision pulls the very words of the first chaos back over the land — *I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light* (Jeremiah 4:23). The covenant-judgment is an UN-creation: the world unmade back to the formless void and the lightless deep, the six days reversed.'),
+    ('canon','jeremiah',4,23,'canon','isaiah',24,1,'free',
+      E'*Behold, Yahuah (LORD) maketh the earth empty, and maketh it waste, and turneth it upside down, and scattereth abroad the inhabitants thereof* (Isaiah 24:1). Isaiah sees the same emptying Jeremiah beholds — *I beheld, and, lo, there was no man... the fruitful place was a wilderness* (Jeremiah 4:25-26). The earth made empty and waste, the inhabitants scattered: the judgment turns the ordered world back to desolation.'),
+    ('canon','jeremiah',4,23,'canon','isaiah',24,19,'free',
+      E'*The earth is utterly broken down, the earth is clean dissolved, the earth is moved exceedingly* (Isaiah 24:19). The trembling mountains and quaking hills of Jeremiah''s vision — *I beheld the mountains, and, lo, they trembled, and all the hills moved lightly* (Jeremiah 4:24) — are Isaiah''s earth utterly broken down and dissolved. The very foundations shake; the un-creation reaches the frame of the world itself.'),
+    ('canon','jeremiah',4,25,'canon','zephaniah',1,2,'free',
+      E'*I will utterly consume all things from off the land, saith Yahuah (LORD)* (Zephaniah 1:2). Jeremiah''s no-man, no-bird desolation — *I beheld, and, lo, there was no man, and all the birds of the heavens were fled* (Jeremiah 4:25) — is Zephaniah''s utter consuming of all things from off the land. The judgment sweeps the land bare of life, man and creature alike.'),
+    ('canon','jeremiah',4,25,'canon','zephaniah',1,3,'free',
+      E'*I will consume man and beast; I will consume the fowls of the heaven, and the fishes of the sea, and the stumblingblocks with the wicked; and I will cut off man from off the land, saith Yahuah (LORD)* (Zephaniah 1:3). Zephaniah names the very emptying Jeremiah saw — *there was no man, and all the birds of the heavens were fled* (Jeremiah 4:25): man, beast, and fowl consumed, the land cut off. The de-creation undoes the fifth and sixth days, the birds and the man.'),
+    ('canon','jeremiah',4,23,'canon','2-peter',3,10,'free',
+      E'*But the day of Yahuah (Lord) will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also and the works that are therein shall be burned up* (2 Peter 3:10). Jeremiah''s lightless heavens and unmade earth — *the heavens, and they had no light* (Jeremiah 4:23) — reach their final form in the day of Yahuah, when the heavens pass away. The covenant un-creation in Jeremiah foreshadows the last dissolution of heaven and earth.'),
+    ('canon','jeremiah',4,23,'canon','2-peter',3,12,'free',
+      E'*Looking for and hasting unto the coming of the day of Elohim (God), wherein the heavens being on fire shall be dissolved, and the elements shall melt with fervent heat?* (2 Peter 3:12). The dissolving of the world Jeremiah beholds in vision — *without form, and void; and the heavens, and they had no light* (Jeremiah 4:23) — is consummated when *the heavens being on fire shall be dissolved*. The local un-creation of the land prefigures the cosmic one; yet for the faithful it issues in *new heavens and a new earth* (2 Peter 3:13).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-4-circumcise-the-foreskins-of-your-heart',
+       E'Circumcise yourselves to Yahuah — take away the foreskins of your heart',
+       E'The chapter opens with the door of return held open: *If thou wilt return, O Yashar''el (Israel), saith Yahuah (LORD), return unto me: and if thou wilt put away thine abominations out of my sight, then shalt thou not remove* (4:1). Then comes the command that names what real return is: *For thus saith Yahuah (LORD) to the men of Yahudah (Judah) and Jerusalem, Break up your fallow ground, and sow not among thorns. Circumcise yourselves to Yahuah (LORD), and take away the foreskins of your heart, ye men of Yahudah (Judah) and inhabitants of Jerusalem: lest my fury come forth like fire* (4:3-4). Mark well: this is NOT a new demand, and it is NOT the abolition of the sign in the flesh. It is exactly what the Torah always required INWARDLY. Moses commanded it: *Circumcise therefore the foreskin of your heart, and be no more stiffnecked* (Deuteronomy 10:16); and Moses promised Yahuah himself would do it: *Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live* (Deuteronomy 30:6). The outward circumcision was ever meant to be matched by the inward — a heart laid bare and yielded, not a stiff neck. Paul reads the prophets precisely so: *he is not a Yahudi (Jew), which is one outwardly; neither is that circumcision, which is outward in the flesh: But he is a Yahudi (Jew), which is one inwardly; and circumcision is that of the heart, in the spirit, and not in the letter* (Romans 2:28-29). This is the inward fulfilment of the Torah, never its undoing. Hosea sounds the very plowing-call: *break up your fallow ground: for it is time to seek Yahuah (LORD), till he come and rain righteousness upon you* (Hosea 10:12) — the hard, untilled heart broken open before the seed can take. And the sowing-among-thorns is the Messiah''s warning in seed: *some fell among thorns; and the thorns sprung up, and choked them* (Matthew 13:7), for *the care of this world, and the deceitfulness of riches, choke the word, and he becometh unfruitful* (Matthew 13:22). The fallow ground broken up, the foreskin of the heart taken away, the thorns cleared — this is the Torah inward, the framework''s anti-antinomian core, the law loved and kept from the heart, not the law set aside.',
+       sv.verse_id, ev.verse_id, 'free', 34075
+  FROM _s309_jer04_lookup sv, _s309_jer04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=4 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-4-wash-thine-heart-from-wickedness',
+       E'O Jerusalem, wash thine heart from wickedness — thy doings have procured these things',
+       E'The same inward demand returns as a cleansing-call in the face of the coming destruction: *O Jerusalem, wash thine heart from wickedness, that thou mayest be saved. How long shall thy vain thoughts lodge within thee?* (4:14). The heart is the thing to be washed — not the hands only, not the outward show — and salvation is held out to the one who will be made clean. This is the summons Isaiah gave a defiled people: *Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil* (Isaiah 1:16); and the prayer David prayed when no outward reform would do: *Create in me a clean heart, O Elohim (God); and renew a right spirit within me* (Psalm 51:10). James presses the same cleansing forward on the double-minded: *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8). And the judgment that comes is not arbitrary but reaped: *Thy way and thy doings have procured these things unto thee; this is thy wickedness, because it is bitter, because it reacheth unto thine heart* (4:18). The ruin is the harvest of the people''s own seed — *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). This is covenant-lawsuit, conduct named within the covenant, never ethnic accusation; and even here the door stands open — *wash thine heart... that thou mayest be saved*.',
+       sv.verse_id, ev.verse_id, 'free', 34078
+  FROM _s309_jer04_lookup sv, _s309_jer04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=4 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-4-i-beheld-the-earth-without-form-and-void',
+       E'I beheld the earth, and, lo, it was without form, and void — the judgment as un-creation',
+       E'Then the prophet is given a vision that pulls the world back to its beginning-chaos: *I beheld the earth, and, lo, it was without form, and void; and the heavens, and they had no light. I beheld the mountains, and, lo, they trembled, and all the hills moved lightly. I beheld, and, lo, there was no man, and all the birds of the heavens were fled. I beheld, and, lo, the fruitful place was a wilderness, and all the cities thereof were broken down at the presence of Yahuah (LORD), and by his fierce anger* (4:23-26). These are the very words of the first day''s chaos: *And the earth was without form, and void; and darkness was upon the face of the deep* (Genesis 1:2). The covenant-judgment is an UN-creation — the six days run backward: the light withdrawn, the dry land made waste, the birds fled, the man gone. Isaiah saw the same emptying: *Behold, Yahuah (LORD) maketh the earth empty, and maketh it waste, and turneth it upside down* (Isaiah 24:1), *The earth is utterly broken down, the earth is clean dissolved, the earth is moved exceedingly* (Isaiah 24:19). Zephaniah the same consuming: *I will utterly consume all things from off the land, saith Yahuah (LORD)* (Zephaniah 1:2), *I will consume man and beast; I will consume the fowls of the heaven... and I will cut off man from off the land* (Zephaniah 1:3). And the final un-making is the day of Yahuah at the end: *the heavens shall pass away with a great noise, and the elements shall melt with fervent heat* (2 Peter 3:10), *the heavens being on fire shall be dissolved* (2 Peter 3:12). Yet mark the bound Yahuah sets even here: *For thus hath Yahuah (LORD) said, The whole land shall be desolate; yet will I not make a full end* (4:27). The un-creation is judgment, not annihilation; the remnant-mercy stands, and beyond the dissolving the faithful look for *new heavens and a new earth, wherein dwelleth righteousness* (2 Peter 3:13).',
+       sv.verse_id, ev.verse_id, 'free', 34081
+  FROM _s309_jer04_lookup sv, _s309_jer04_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=4 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Circumcise therefore the foreskin of your heart, and be no more stiffnecked* (Deuteronomy 10:16) — Moses'' own command; the heart-circumcision the Torah always demanded, not a new thing.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahuah will circumcise thine heart... to love Yahuah... that thou mayest live* (Deuteronomy 30:6) — Moses promises Yahuah himself will perform the heart-circumcision Jeremiah commands; the covenant''s own goal.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *circumcision is that of the heart, in the spirit, and not in the letter* (Romans 2:29) — Paul reads Jeremiah 4:4 exactly: the true circumcision is inward, the Torah''s fulfilment, not its abolition.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *neither is that circumcision, which is outward in the flesh* (Romans 2:28) — the flesh-sign without the heart-sign profits nothing; the Torah always demanded both.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=4
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *break up your fallow ground: for it is time to seek Yahuah (LORD)* (Hosea 10:12) — Hosea''s same plowing-call; the hard heart broken open before the seed of righteousness can take.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *some fell among thorns; and the thorns sprung up, and choked them* (Matthew 13:7) — Jeremiah''s *sow not among thorns* (4:3) in seed; the word choked in an unbroken heart.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *the care of this world, and the deceitfulness of riches, choke the word* (Matthew 13:22) — the thorns named: the cares that strangle the word where the fallow ground is not broken up.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=3
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-circumcise-the-foreskins-of-your-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Wash you, make you clean; put away the evil of your doings* (Isaiah 1:16) — Isaiah''s same summons to a defiled people; the cleansing of heart and deeds together.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=14
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-wash-thine-heart-from-wickedness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Create in me a clean heart, O Elohim (God)* (Psalm 51:10) — the washing of the heart Jeremiah commands is the new heart only Elohim can create; David''s contrite prayer.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=14
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-wash-thine-heart-from-wickedness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8) — James echoes Jeremiah 4:14 forward; the inward cleansing pressed on those who draw near to Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=14
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-wash-thine-heart-from-wickedness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *whatsoever a man soweth, that shall he also reap* (Galatians 6:7) — the judgment self-procured: *thy doings have procured these things* (4:18); the ruin reaped from the people''s own seed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=18
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-wash-thine-heart-from-wickedness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *And the earth was without form, and void; and darkness was upon the face of the deep* (Genesis 1:2) — Jeremiah 4:23 pulls the first-day chaos back over the land; the judgment as un-creation, the six days reversed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=23
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yahuah (LORD) maketh the earth empty, and maketh it waste* (Isaiah 24:1) — Isaiah''s same emptying: the fruitful place a wilderness, the inhabitants scattered.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=23
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The earth is utterly broken down, the earth is clean dissolved* (Isaiah 24:19) — the trembling mountains and quaking hills of Jeremiah 4:24; the very frame of the world shaken.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=23
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=24 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will utterly consume all things from off the land* (Zephaniah 1:2) — Jeremiah''s no-man, no-bird desolation (4:25); the land swept bare of life.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=25
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I will consume man and beast... the fowls of the heaven... and I will cut off man from off the land* (Zephaniah 1:3) — the de-creation undoes the fifth and sixth days, the birds and the man (Jeremiah 4:25).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=25
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the heavens shall pass away with a great noise, and the elements shall melt with fervent heat* (2 Peter 3:10) — Jeremiah''s lightless, unmade heavens (4:23) reach their final form in the day of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=23
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *the heavens being on fire shall be dissolved* (2 Peter 3:12) — the local un-creation of the land prefigures the cosmic one; beyond it, *new heavens and a new earth* (2 Peter 3:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer04_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=4 AND sv.verse_number=23
+  JOIN _s309_jer04_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-4-i-beheld-the-earth-without-form-and-void'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_5.sql (Jeremiah 5) -----
+-- Chapter: Jeremiah 5 — the COVENANT LAWSUIT of the city. *Run ye to and fro through the streets of
+-- Jerusalem... if ye can find a man... that seeketh the truth; and I will pardon it* — the search for one
+-- righteous man, none found high or low (the poor know not the way, the great men have broken the yoke).
+-- Then the senseless people: *which have eyes, and see not; which have ears, and hear not* — a revolting and
+-- rebellious heart, that will not fear Yahuah who set the sand to bound the sea. And the climax: *A wonderful
+-- and horrible thing is committed in the land; The prophets prophesy falsely, and the priests bear rule by
+-- their means; and my people love to have it so* — the false prophets, the complicit priests, and a people
+-- in love with the lie. (Note: the two-house phrase v.11 — *the house of Yashar''el (Israel) and the house
+-- of Yahudah (Judah)* — woven in prose; the lawsuit is against BOTH houses.)
+-- Tag: jer05   Temp view: _s309_jer05_lookup   Session: s309
+-- Sort band: base 34100, step 3 -> threads at 34100, 34103, 34106 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',5,v
+--
+-- Jeremiah 5 coverage:
+--   ★ v.1-5 (Run ye to and fro through the streets of Jerusalem... if ye can find a man, if there be any
+--          that executeth judgment, that seeketh the truth; and I will pardon it... I will get me unto the
+--          great men... but these have altogether broken the yoke, and burst the bonds)
+--        NT:     ★ Romans 3:10-12 (There is none righteous, no, not one... none that doeth good) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Genesis 18:23-32 (if there be fifty righteous... peradventure ten — Sodom), ★ Psalm
+--                14:2-3 (Yahuah looked down... there is none that doeth good), ★ Ezekiel 22:30 (I sought
+--                for a man... but I found none — lateral) — THREAD 1
+--   v.6-10 (a lion out of the forest shall slay them; their backslidings are increased; thy children have
+--          forsaken me; go ye up upon her walls, and destroy; but make not a full end)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the judgment-by-beasts and the adultery of the people; woven in prose, the
+--                covenant-lawsuit verdict on the unrighteous city of THREAD 1)
+--   v.11-13 (the house of Yashar''el and the house of Yahudah have dealt very treacherously; they have
+--          belied Yahuah... the prophets shall become wind, and the word is not in them)
+--        NT:     none warranted distinct (the false-prophet word held to the climax v.30-31, THREAD 3)
+--        Extras: none warranted
+--        Tanakh: held in prose — the two-house treachery (both houses) and the windy prophets prefacing
+--                THREAD 3 (the prophets prophesy falsely)
+--   v.14-19 (I will make my words in thy mouth fire... I will bring a nation upon you from far... yet I
+--          will not make a full end with you... so shall ye serve strangers in a land that is not yours)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the Babylonian invasion-judgment; the covenant-curse of serving strangers;
+--                woven in prose as the verdict of the lawsuit)
+--   ★ v.20-24 (Hear now this, O foolish people, and without understanding; which have eyes, and see not;
+--          which have ears, and hear not: Fear ye not me? saith Yahuah... but this people hath a revolting
+--          and a rebellious heart... that giveth rain, both the former and the latter)
+--        NT:     ★★ Matthew 13:14-15 (By hearing ye shall hear, and shall not understand — the Messiah
+--                quotes Esaias), ★ Mark 8:18 (Having eyes, see ye not? and having ears, hear ye not?),
+--                ★ Romans 11:8 (the spirit of slumber, eyes that they should not see) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 6:9-10 (Hear ye indeed, but understand not; see ye indeed, but perceive not),
+--                ★ Deuteronomy 29:4 (Yahuah hath not given you an heart to perceive, and eyes to see) — THREAD 2
+--   v.25-29 (your iniquities have turned away these things; among my people are found wicked men... they
+--          judge not the cause of the fatherless... shall I not visit for these things?)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the corruption of all ranks — the snare-setters, the fat and the rich who
+--                do not judge the fatherless; the social-injustice indictment, woven in prose, leading to
+--                the climax of v.30-31)
+--   ★★ v.30-31 (A wonderful and horrible thing is committed in the land; The prophets prophesy falsely,
+--          and the priests bear rule by their means; and my people love to have it so: and what will ye
+--          do in the end thereof?)
+--        NT:     ★★ 2 Timothy 4:3-4 (they will not endure sound doctrine... turn away their ears from the
+--                truth), ★★ 2 Thessalonians 2:10-12 (they received not the love of the truth... Elohim
+--                shall send them strong delusion) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 23:21 (I have not sent these prophets, yet they ran — lateral), ★★ Isaiah
+--                30:10 (Prophesy not unto us right things, speak unto us smooth things) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth — NT (Romans 3) + Tanakh (Genesis 18, Psalm 14, Ezekiel 22) [free]
+--      (★ the search for one righteous man in the city — none found, high or low; none righteous, no, not one)
+--   2. jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart — NT (Matthew 13, Mark 8, Romans 11) + Tanakh (Isaiah 6, Deuteronomy 29) [free]
+--      (★ the senseless people who neither see nor hear nor fear — the blind, unfearing, rebellious heart)
+--   3. jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so — NT (2 Timothy 4, 2 Thessalonians 2) + Tanakh (Jeremiah 23, Isaiah 30) [free]
+--      (★★ the false prophets and complicit priests, and a people who LOVE the lie — what will ye do in the end thereof?)
+--
+-- Framing notes:
+--   ★ THE SEARCH FOR ONE JUST MAN (THREAD 1): *Run ye to and fro through the streets of Jerusalem, and see
+--      now, and know, and seek in the broad places thereof, if ye can find a man, if there be any that
+--      executeth judgment, that seeketh the truth; and I will pardon it* (5:1). The whole city is searched —
+--      and none is found, neither low nor high: *Therefore I said, Surely these are poor; they are foolish:
+--      for they know not the way of Yahuah (LORD)... I will get me unto the great men... but these have
+--      altogether broken the yoke, and burst the bonds* (5:4-5). This is the very plea of Abraham over Sodom —
+--      *Peradventure there be fifty righteous within the city... Peradventure ten shall be found there* (Gen
+--      18:24,32) — but where Sodom might have ten, Jerusalem has not one. Paul gathers the verdict: *There is
+--      none righteous, no, not one... there is none that doeth good, no, not one* (Rom 3:10,12), itself
+--      quoting the psalm — *Yahuah (LORD) looked down from heaven upon the children of men, to see if there
+--      were any that did understand, and seek Elohim (God). They are all gone aside... there is none that
+--      doeth good, no, not one* (Ps 14:2-3). And Ezekiel runs the same search for one intercessor and comes
+--      up empty: *I sought for a man among them, that should make up the hedge, and stand in the gap before
+--      me for the land... but I found none* (Ezek 22:30). None righteous in the city; the One who could pardon
+--      finds none to pardon for.
+--   ★ THE BLIND, UNFEARING HEART (THREAD 2): *Hear now this, O foolish people, and without understanding;
+--      which have eyes, and see not; which have ears, and hear not: Fear ye not me? saith Yahuah (LORD)...
+--      But this people hath a revolting and a rebellious heart; they are revolted and gone* (5:21,23). The
+--      senseless people neither see nor hear nor fear the One who *placed the sand for the bound of the sea
+--      by a perpetual decree* (5:22). This is Isaiah''s commission word — *Hear ye indeed, but understand not;
+--      and see ye indeed, but perceive not* (Isa 6:9) — and the Torah''s diagnosis — *Yahuah (LORD) hath not
+--      given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deut 29:4). The
+--      Messiah quotes Isaiah of the same dull crowd — *By hearing ye shall hear, and shall not understand;
+--      and seeing ye shall see, and shall not perceive* (Matt 13:14) — and rebukes his own with Jeremiah''s
+--      very figure: *Having eyes, see ye not? and having ears, hear ye not?* (Mark 8:18). Paul names the
+--      hardening: *the spirit of slumber, eyes that they should not see, and ears that they should not hear*
+--      (Rom 11:8). The blind, unfearing, rebellious heart that will not tremble at Yahuah''s presence.
+--   ★★ A PEOPLE IN LOVE WITH THE LIE (THREAD 3): *A wonderful and horrible thing is committed in the land;
+--      The prophets prophesy falsely, and the priests bear rule by their means; and my people love to have it
+--      so: and what will ye do in the end thereof?* (5:30-31). The corruption runs through every rank — false
+--      prophets, complicit priests — and, worst, a people who LOVE to have it so. Jeremiah elsewhere names the
+--      unsent prophets: *I have not sent these prophets, yet they ran: I have not spoken to them, yet they
+--      prophesied* (Jer 23:21). Isaiah names the appetite for flattery: *Prophesy not unto us right things,
+--      speak unto us smooth things, prophesy deceits* (Isa 30:10). Paul tells the end of it: *the time will
+--      come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves
+--      teachers, having itching ears; And they shall turn away their ears from the truth* (2 Tim 4:3-4); and
+--      the final judgment on the love of the lie — *because they received not the love of the truth... Elohim
+--      (God) shall send them strong delusion, that they should believe a lie* (2 Thess 2:10-11). A people in
+--      love with falsehood; what WILL they do in the end thereof?
+--   VERSES WITH NO SEPARATE ADD: v.6-10 (the judgment-by-beasts, the adultery, destroy-but-make-not-a-full-end
+--      — the lawsuit verdict on the unrighteous city, woven in THREAD 1 prose), v.11-13 (the two-house
+--      treachery and the windy prophets — held to THREAD 3, the prophets prophesy falsely), v.14-19 (the
+--      Babylonian invasion from far, the curse of serving strangers — covenant-curse verdict, woven in prose),
+--      v.25-29 (the corruption of all ranks, the snare-setters, the fatherless unjudged — the social-injustice
+--      indictment leading into the climax of v.30-31). All blocks recorded; every meaningful section carries
+--      or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer05_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the search for one righteous man in the city — none found, high or low
+    ('canon','jeremiah',5,1,'canon','romans',3,10,'free',
+      E'*As it is written, There is none righteous, no, not one* (Romans 3:10). Paul gathers the verdict of Jeremiah''s search — *if ye can find a man... that seeketh the truth; and I will pardon it* (Jeremiah 5:1): the city is combed, and none is found. *There is none righteous, no, not one* is the answer to *if ye can find a man*; the streets of Jerusalem yield not one just man.'),
+    ('canon','jeremiah',5,1,'canon','romans',3,12,'free',
+      E'*They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:12). Jeremiah is sent to seek one that *executeth judgment, that seeketh the truth* (Jeremiah 5:1), and finds none — Paul says why: *they are all gone out of the way... there is none that doeth good, no, not one*. The pardon waits on one righteous man, and there is not one.'),
+    ('canon','jeremiah',5,1,'canon','genesis',18,32,'free',
+      E'*And he said, Oh let not Yahuah (Lord) be angry, and I will speak yet but this once: Peradventure ten shall be found there. And he said, I will not destroy it for ten''s sake* (Genesis 18:32). Abraham bargained Yahuah (Lord) down to ten righteous to spare Sodom; Jeremiah is sent to find but ONE to pardon Jerusalem — *if ye can find a man... and I will pardon it* (Jeremiah 5:1). Where Sodom might have had ten, the holy city cannot yield one.'),
+    ('canon','jeremiah',5,1,'canon','genesis',18,23,'free',
+      E'*And Abraham drew near, and said, Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23). The search of Jeremiah 5:1 — *if ye can find a man, if there be any that executeth judgment... and I will pardon it* — is the question Abraham pressed over Sodom: will the righteous be swept away with the wicked? Yahuah will pardon the whole city for the sake of the righteous found in it; the tragedy is that, in Jerusalem, none is found.'),
+    ('canon','jeremiah',5,1,'canon','psalms',14,3,'free',
+      E'*They are all gone aside, they are all together become filthy: there is none that doeth good, no, not one* (Psalm 14:3). The psalm is the verdict Jeremiah''s street-search confirms — *if ye can find a man... that seeketh the truth* (Jeremiah 5:1): *Yahuah (LORD) looked down from heaven... to see if there were any that did understand, and seek Elohim (God)* (Ps 14:2), and found them all gone aside. None righteous, none that doeth good, no, not one.'),
+    ('canon','jeremiah',5,5,'canon','ezekiel',22,30,'free',
+      E'*And I sought for a man among them, that should make up the hedge, and stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30). Ezekiel runs the same search Jeremiah runs and comes up as empty: Jeremiah goes even to *the great men* (Jeremiah 5:5) and finds them all with the yoke broken; Ezekiel seeks one to *stand in the gap* and finds none. Neither low nor great, neither prophet nor priest — *but I found none*.'),
+
+    -- THREAD 2 (★): which have eyes, and see not — a revolting and rebellious heart
+    ('canon','jeremiah',5,21,'canon','isaiah',6,9,'free',
+      E'*And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9). Isaiah''s commission names the very dullness Jeremiah confronts — *O foolish people, and without understanding; which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21). The people have eyes and ears, yet neither perceive nor understand: the seeing that does not see, the hearing that does not hear.'),
+    ('canon','jeremiah',5,21,'canon','deuteronomy',29,4,'free',
+      E'*Yet Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4). The Torah''s own diagnosis stands behind Jeremiah''s rebuke — *which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21): a people with eyes and ears but no heart to perceive. The faculties are there; the understanding is withheld from the rebellious heart.'),
+    ('canon','jeremiah',5,21,'canon','matthew',13,14,'free',
+      E'*And in them is fulfilled the prophecy of Esaias, which saith, By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive* (Matthew 13:14). The Messiah quotes Isaiah of the same dull crowd Jeremiah faced — *which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21): *For this people''s heart is waxed gross, and their ears are dull of hearing* (Matt 13:15). The blind, unhearing heart is the same in every generation that will not return.'),
+    ('canon','jeremiah',5,21,'canon','mark',8,18,'free',
+      E'*Having eyes, see ye not? and having ears, hear ye not? and do ye not remember?* (Mark 8:18). The Messiah rebukes his own disciples with Jeremiah''s very figure — *which have eyes, and see not; which have ears, and hear not* (Jeremiah 5:21). The reproach of the unperceiving eye and the unhearing ear reaches even the household of faith: see, and see not; hear, and hear not.'),
+    ('canon','jeremiah',5,23,'canon','romans',11,8,'free',
+      E'*Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear; unto this day* (Romans 11:8). Paul names the hardening Jeremiah describes — *this people hath a revolting and a rebellious heart; they are revolted and gone* (Jeremiah 5:23): the spirit of slumber, eyes that see not, ears that hear not. The rebellious heart and the slumbering eyes are one judgment, *unto this day*.'),
+
+    -- THREAD 3 (★★): the prophets prophesy falsely, the priests bear rule, and my people love to have it so
+    ('canon','jeremiah',5,31,'canon','2-timothy',4,3,'free',
+      E'*For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears* (2 Timothy 4:3). Paul foretells the end of Jeremiah''s indictment — *The prophets prophesy falsely... and my people love to have it so* (Jeremiah 5:31): a people who will not endure sound doctrine, but heap up teachers to scratch their itching ears. The false prophets are wanted; the people love to have it so.'),
+    ('canon','jeremiah',5,31,'canon','2-timothy',4,4,'free',
+      E'*And they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4). The love of the lie Jeremiah names — *my people love to have it so* (Jeremiah 5:31) — is the turning of the ear from truth to fable: they will not hear the right word, so they are turned unto fables. *What will ye do in the end thereof?* (Jeremiah 5:31) is answered by the turning-away itself.'),
+    ('canon','jeremiah',5,31,'canon','isaiah',30,10,'free',
+      E'*Which say to the seers, See not; and to the prophets, Prophesy not unto us right things, speak unto us smooth things, prophesy deceits* (Isaiah 30:10). Isaiah names the appetite behind Jeremiah''s charge — *The prophets prophesy falsely... and my people love to have it so* (Jeremiah 5:31): the people demand the smooth word and the flattering deceit. The false prophet prophesies falsely because the people love to have it so.'),
+    ('canon','jeremiah',5,31,'canon','jeremiah',23,21,'free',
+      E'*I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21). Jeremiah elsewhere unmasks the very prophets of this chapter — *The prophets prophesy falsely* (Jeremiah 5:31): unsent, yet running; unspoken to, yet prophesying. The word is not in them (Jeremiah 5:13); they prophesy out of their own hearts, and the people love to have it so.'),
+    ('canon','jeremiah',5,31,'canon','2-thessalonians',2,10,'free',
+      E'*And with all deceivableness of unrighteousness in them that perish; because they received not the love of the truth, that they might be saved* (2 Thessalonians 2:10). Paul names the root of Jeremiah''s horror — *my people love to have it so* (Jeremiah 5:31): they *received not the love of the truth*. The people who love the lie do not love the truth; and the love of the lie is itself the ground of their perishing.'),
+    ('canon','jeremiah',5,31,'canon','2-thessalonians',2,11,'free',
+      E'*And for this cause Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11). The end Jeremiah asks after — *what will ye do in the end thereof?* (Jeremiah 5:31) — Paul declares: to those who love the lie, *Elohim (God) shall send them strong delusion, that they should believe a lie*. The people who loved the false prophet are given over to believe the falsehood they loved.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth',
+       E'Run ye through the streets of Jerusalem — if ye can find a man that seeketh the truth',
+       E'The chapter opens on a search and a promise of pardon hung upon it: *Run ye to and fro through the streets of Jerusalem, and see now, and know, and seek in the broad places thereof, if ye can find a man, if there be any that executeth judgment, that seeketh the truth; and I will pardon it* (5:1). One just man would save the city. So the search runs through every rank. First the lowly: *Therefore I said, Surely these are poor; they are foolish: for they know not the way of Yahuah (LORD), nor the judgment of their Elohim (God)* (5:4). Then the great: *I will get me unto the great men, and will speak unto them; for they have known the way of Yahuah (LORD)... but these have altogether broken the yoke, and burst the bonds* (5:5). High and low alike — none found. This is the very plea Abraham pressed over Sodom: *Wilt thou also destroy the righteous with the wicked? Peradventure there be fifty righteous within the city* (Genesis 18:23-24), down to the last appeal — *Peradventure ten shall be found there. And he said, I will not destroy it for ten''s sake* (Genesis 18:32). Sodom might have had ten; Jerusalem cannot yield one. Paul gathers the verdict whole: *There is none righteous, no, not one... They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one* (Romans 3:10,12) — himself quoting the psalm: *Yahuah (LORD) looked down from heaven upon the children of men, to see if there were any that did understand, and seek Elohim (God). They are all gone aside... there is none that doeth good, no, not one* (Psalm 14:2-3). And Ezekiel runs the same search for one intercessor and finds the same emptiness: *I sought for a man among them, that should make up the hedge, and stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30). The One who would pardon for the sake of one righteous man searches the whole city, and finds none.',
+       sv.verse_id, ev.verse_id, 'free', 34100
+  FROM _s309_jer05_lookup sv, _s309_jer05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=5 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart',
+       E'Which have eyes, and see not — a revolting and rebellious heart',
+       E'The lawsuit turns to the senseless people, blind and deaf to the One they will not fear: *Hear now this, O foolish people, and without understanding; which have eyes, and see not; which have ears, and hear not: Fear ye not me? saith Yahuah (LORD): will ye not tremble at my presence, which have placed the sand for the bound of the sea by a perpetual decree* (5:21-22). The Maker who fences the sea cannot make them tremble. And the heart is the trouble: *But this people hath a revolting and a rebellious heart; they are revolted and gone* (5:23). This is the commission word given to Isaiah — *Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9) — and the Torah''s own diagnosis of the wilderness generation: *Yet Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear, unto this day* (Deuteronomy 29:4). The Messiah takes up the same figure: he quotes Isaiah of the unbelieving crowd — *By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive: For this people''s heart is waxed gross* (Matthew 13:14-15) — and rebukes even his own disciples with it: *Having eyes, see ye not? and having ears, hear ye not? and do ye not remember?* (Mark 8:18). Paul seals it: *Elohim (God) hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear; unto this day* (Romans 11:8). The eyes and ears are whole; it is the revolting, unfearing heart that will not see, will not hear, will not tremble.',
+       sv.verse_id, ev.verse_id, 'free', 34103
+  FROM _s309_jer05_lookup sv, _s309_jer05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=5 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so',
+       E'The prophets prophesy falsely — and my people love to have it so',
+       E'The chapter ends on a horror that runs through every rank and is loved by the people: *A wonderful and horrible thing is committed in the land; The prophets prophesy falsely, and the priests bear rule by their means; and my people love to have it so: and what will ye do in the end thereof?* (5:30-31). The prophets speak lies, the priests rule on the strength of those lies, and — the deepest wound — *my people love to have it so*. The corruption is wanted. Jeremiah elsewhere unmasks these very prophets: *I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21) — unsent, unspoken-to, yet prophesying out of their own hearts, for *the word is not in them* (5:13). Isaiah names the appetite that breeds them: a people that say *to the prophets, Prophesy not unto us right things, speak unto us smooth things, prophesy deceits* (Isaiah 30:10). The smooth lie is demanded, so the smooth lie is supplied. Paul traces the same disease to its end: *the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears; And they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:3-4). And the final answer to *what will ye do in the end thereof?* is the judgment on the love of the lie: *because they received not the love of the truth, that they might be saved... for this cause Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:10-11). Those who loved the false prophet are given over to believe the very falsehood they loved. The lie is not merely tolerated — it is loved; and that love is the snare.',
+       sv.verse_id, ev.verse_id, 'free', 34106
+  FROM _s309_jer05_lookup sv, _s309_jer05_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=5 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *There is none righteous, no, not one* (Romans 3:10) — Paul gathers the verdict of Jeremiah 5:1''s search; the city is combed and not one just man is found.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *there is none that doeth good, no, not one* (Romans 3:12) — none seeks the truth Jeremiah 5:1 sends to find; all gone out of the way.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Peradventure ten shall be found there... I will not destroy it for ten''s sake* (Genesis 18:32) — Sodom might have had ten righteous; Jeremiah 5:1 seeks but ONE for Jerusalem, and finds none.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Wilt thou also destroy the righteous with the wicked?* (Genesis 18:23) — Abraham''s plea over Sodom: Yahuah pardons the city for the righteous found in it; the tragedy of Jeremiah 5:1 is that none is found.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *there is none that doeth good, no, not one* (Psalm 14:3) — Yahuah looked down from heaven for one that sought him (Ps 14:2); the psalm is the verdict Jeremiah 5:1''s street-search confirms.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=1
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=14 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I sought for a man... that should... stand in the gap before me for the land... but I found none* (Ezekiel 22:30) — lateral: even the great men of Jeremiah 5:5 have broken the yoke; Ezekiel seeks one intercessor and finds none.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=5
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=22 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-run-through-the-streets-and-seek-if-there-be-any-that-seeketh-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Hear ye indeed, but understand not; and see ye indeed, but perceive not* (Isaiah 6:9) — Isaiah''s commission word names the very dullness of Jeremiah 5:21; eyes that see not, ears that hear not.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) hath not given you an heart to perceive, and eyes to see, and ears to hear* (Deuteronomy 29:4) — the Torah''s diagnosis behind Jeremiah 5:21: faculties present, understanding withheld from the rebellious heart.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *By hearing ye shall hear, and shall not understand; and seeing ye shall see, and shall not perceive* (Matthew 13:14) — the Messiah quotes Esaias of the same dull crowd Jeremiah 5:21 faced; the heart waxed gross.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Having eyes, see ye not? and having ears, hear ye not?* (Mark 8:18) — the Messiah rebukes even his own with Jeremiah 5:21''s figure; the reproach reaches the household of faith.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=21
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=8 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the spirit of slumber, eyes that they should not see, and ears that they should not hear* (Romans 11:8) — Paul names the hardening of Jeremiah 5:23''s revolting heart; one judgment, unto this day.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=23
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-which-have-eyes-and-see-not-a-revolting-and-rebellious-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they will not endure sound doctrine... heap to themselves teachers, having itching ears* (2 Timothy 4:3) — Paul foretells the end of Jeremiah 5:31''s love of the lie; the false prophet is wanted.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=31
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4) — the love of the lie (Jeremiah 5:31) turns the ear from truth to fable.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=31
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Prophesy not unto us right things, speak unto us smooth things, prophesy deceits* (Isaiah 30:10) — Isaiah names the appetite behind Jeremiah 5:31; the smooth lie is demanded, so it is supplied.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=31
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I have not sent these prophets, yet they ran... yet they prophesied* (Jeremiah 23:21) — lateral: Jeremiah elsewhere unmasks the false prophets of 5:31; unsent, the word not in them (5:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=31
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *because they received not the love of the truth, that they might be saved* (2 Thessalonians 2:10) — the root of Jeremiah 5:31''s horror: those who LOVE the lie do not love the truth.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=31
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11) — the answer to Jeremiah 5:31''s *what will ye do in the end thereof?*: given over to believe the falsehood they loved.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer05_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=5 AND sv.verse_number=31
+  JOIN _s309_jer05_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-5-the-prophets-prophesy-falsely-and-my-people-love-to-have-it-so'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_6.sql (Jeremiah 6) -----
+-- Chapter: Jeremiah 6 — the SIEGE FROM THE NORTH and the covenant-lawsuit against Jerusalem. The Babylonian
+-- foe drawn up at noon and by night; the city wholly oppression; the uncircumcised ear that cannot hearken;
+-- and at the heart of it three framework-bearing words: ★★★ v.16 STAND YE IN THE WAYS... ASK FOR THE OLD
+-- PATHS, WHERE IS THE GOOD WAY, AND WALK THEREIN, AND YE SHALL FIND REST FOR YOUR SOULS — the ancient Torah
+-- way that gives rest, refused; ★★ vv.13-15 the false healers crying PEACE, PEACE, WHEN THERE IS NO PEACE;
+-- ★ vv.19-20,30 the Torah REJECTED and the sacrifices UNACCEPTABLE — incense from Sheba unwanted, REPROBATE
+-- SILVER, because Yahuah hath rejected them. The old/good way = the Torah, never abolished; the rest is in
+-- walking it.
+-- Tag: jer06   Temp view: _s309_jer06_lookup
+-- Sort band: base 34125, step 3 -> threads at 34125, 34128, 34131 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',6,v
+--
+-- Jeremiah 6 coverage:
+--   v.1-8 (children of Benjamin flee out of Jerusalem; evil out of the north; prepare ye war against her,
+--          arise and go up at noon; the city wholly oppression; be thou instructed, O Jerusalem)
+--        NT:     none warranted (the imminent northern siege; woven in prose — the judgment v.16/v.19 answers)
+--        Extras: none warranted
+--        Tanakh: held in prose (the foe from the north = the Babylonian invader; the siege-frame of the chapter)
+--   v.9-12 (throughly glean the remnant of Yashar'el as a vine; their ear is uncircumcised; the word of Yahuah
+--          is unto them a reproach; the fury of Yahuah poured out)
+--        NT:     none warranted (the uncircumcised ear / word-as-reproach; bound to the rejected-word THREAD 3
+--                in prose — they have no delight in it answers v.19 they rejected it)
+--        Extras: none warranted
+--        Tanakh: held in prose — the uncircumcised, undelighting ear is the same refusal of v.16-17 and v.19
+--   ★★ v.13-15 (from the least to the greatest every one given to covetousness; from the prophet to the priest
+--          every one dealeth falsely; they have healed the hurt of the daughter of my people slightly, saying,
+--          PEACE, PEACE; when there is no peace; were they ashamed? nay, they could not blush)
+--        NT:     ★★ 1 Thessalonians 5:3 (when they shall say, Peace and safety; then sudden destruction cometh
+--                upon them) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 13:10 (they have seduced my people, saying, Peace; and there was no peace —
+--                lateral, the daubed wall), ★★ Ezekiel 13:16 (which see visions of peace for her, and there is
+--                no peace), ★★ Jeremiah 8:11 (healed the hurt of the daughter of my people slightly, saying,
+--                Peace, peace; when there is no peace — the SAME oracle repeated), ★ Micah 3:5 (the prophets
+--                that make my people err... and cry, Peace) — THREAD 2
+--   ★★★ v.16 (Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk
+--          therein, and ye shall find rest for your souls. But they said, We will not walk therein)
+--        NT:     ★★★ Matthew 11:29 (Take my yoke upon you... and ye shall find rest unto your souls — the
+--                Messiah echoes Jeremiah's rest for your souls), ★★ Matthew 11:28 (Come unto me, all ye that
+--                labour and are heavy laden, and I will give you rest) — THREAD 1
+--        Extras: none warranted (clean canon weave; the old paths = the Torah, no extra forced)
+--        Tanakh: ★★ Deuteronomy 32:7 (Remember the days of old, consider the years of many generations),
+--                ★★ Isaiah 30:21 (thine ears shall hear a word behind thee, saying, This is the way, walk ye
+--                in it), ★ Psalm 1:1-2 (walketh not in the counsel of the ungodly... his delight is in the law
+--                of Yahuah) — THREAD 1
+--   v.17 (Also I set watchmen over you, saying, Hearken to the sound of the trumpet. But they said, We will
+--          not hearken) — the refused watchmen
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose (the second refusal, twin to We will not walk therein of v.16; bound to THREAD 1)
+--   v.18-19 (hear, ye nations; behold, I will bring evil upon this people... because they have not hearkened
+--          unto my words, nor to my law, but rejected it)
+--        NT:     none warranted (the rejected-Torah verdict; held in canon-Tanakh THREAD 3)
+--        Extras: none warranted
+--        Tanakh: ★★ Proverbs 28:9 (he that turneth away his ear from hearing the law, even his prayer shall be
+--                abomination) — THREAD 3
+--   ★ v.20 (To what purpose cometh there to me incense from Sheba, and the sweet cane from a far country? your
+--          burnt offerings are not acceptable, nor your sacrifices sweet unto me)
+--        NT:     none warranted (the unacceptable-worship word answered fully within the Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Samuel 15:22 (to obey is better than sacrifice, and to hearken than the fat of rams),
+--                ★★ Isaiah 1:11 (To what purpose is the multitude of your sacrifices unto me?), ★ Jeremiah
+--                7:21-22 (Put your burnt offerings unto your sacrifices... I spake not unto your fathers...
+--                concerning burnt offerings, but Obey my voice) — THREAD 3
+--   v.21-26 (I will lay stumblingblocks before this people; a people cometh from the north country; cruel,
+--          have no mercy; gird thee with sackcloth, O daughter of my people; the spoiler shall suddenly come)
+--        NT:     none warranted (the renewed siege-announcement; woven in prose, frames the rejected word)
+--        Extras: none warranted
+--        Tanakh: held in prose (the cruel northern people = the Babylonian executioner of the verdict)
+--   ★ v.27-30 (I have set thee for a tower and a fortress... that thou mayest know and try their way; they are
+--          brass and iron, all corrupters; the founder melteth in vain, the wicked are not plucked away;
+--          REPROBATE SILVER shall men call them, because Yahuah hath rejected them)
+--        NT:     none warranted (the assayer's verdict — refined dross that will not purify; held in Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 1:22 (Thy silver is become dross — lateral, the same assay-image) — THREAD 3;
+--                ★ Isaiah 1:25 (purely purge away thy dross) noted in THREAD 3 prose
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls — NT (Matthew 11) + Tanakh (Deuteronomy 32, Isaiah 30, Psalm 1) [free]
+--      (★★★ THE old paths = the ancient Torah way that gives rest, refused — answered forward by the Messiah's
+--       yoke that gives rest unto the soul; the rest is in walking the way, not in leaving it)
+--   2. jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing — NT (1 Thessalonians 5) + Tanakh (Ezekiel 13, Jeremiah 8, Micah 3) [free]
+--      (★★ the false healers who cry peace where there is none — the slight healing, the daubed wall, the
+--       sudden destruction that overtakes the cry of Peace and safety)
+--   3. jeremiah-6-they-have-rejected-my-law-the-reprobate-silver — Tanakh (Proverbs 28, 1 Samuel 15, Isaiah 1, Jeremiah 7) [free]
+--      (★ the Torah rejected and the sacrifices unacceptable — ritual without obedience; the prayer turned
+--       abomination; to obey better than sacrifice; the reprobate silver Yahuah hath rejected)
+--
+-- Framing notes:
+--   ★★★ THE OLD PATHS (THREAD 1): *Thus saith Yahuah (LORD), Stand ye in the ways, and see, and ask for the
+--      old paths, where is the good way, and walk therein, and ye shall find rest for your souls. But they
+--      said, We will not walk therein* (6:16). The OLD PATHS / the GOOD WAY are the ancient Torah way — the
+--      instruction given to the fathers, the road that gives rest to the soul. It is not an outworn path to be
+--      abandoned; it is the very thing to ask for, find, and WALK IN. The rest is IN the walking. The Messiah
+--      takes up Jeremiah's exact words: *Come unto me, all ye that labour and are heavy laden, and I will give
+--      you rest. Take my yoke upon you, and learn of me... and ye shall find rest unto your souls* (Matt
+--      11:28-29) — *rest unto your souls* answers *rest for your souls*; his yoke is not the abolition of the
+--      old path but the good way walked in him. Moses: *Remember the days of old, consider the years of many
+--      generations* (Deut 32:7). Isaiah: *thine ears shall hear a word behind thee, saying, This is the way,
+--      walk ye in it* (Isa 30:21). The psalm sets the two ways: *Blessed is the man that walketh not in the
+--      counsel of the ungodly... But his delight is in the law of Yahuah (LORD)* (Ps 1:1-2). The old/good way
+--      is the Torah, never abolished — refused here, *We will not walk therein*, and refused again at the
+--      watchmen, *We will not hearken* (6:17).
+--   ★★ PEACE, PEACE (THREAD 2): *from the prophet even unto the priest every one dealeth falsely. They have
+--      healed also the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no
+--      peace* (6:13-14). The false healers cry peace over a wound they will not truly bind. Ezekiel names the
+--      same seduction and the daubed wall: *they have seduced my people, saying, Peace; and there was no
+--      peace; and one built up a wall, and, lo, others daubed it with untempered morter* (Ezek 13:10), *which
+--      see visions of peace for her, and there is no peace* (Ezek 13:16). Jeremiah himself repeats the oracle
+--      word for word two chapters on: *they have healed the hurt of the daughter of my people slightly,
+--      saying, Peace, peace; when there is no peace* (Jer 8:11). Micah: *the prophets that make my people
+--      err... and cry, Peace* (Micah 3:5). And Paul carries the false cry to the end: *when they shall say,
+--      Peace and safety; then sudden destruction cometh upon them... and they shall not escape* (1 Thess 5:3).
+--      The slight healing, the false peace, the sudden ruin.
+--   ★ THE REJECTED LAW / REPROBATE SILVER (THREAD 3): *I will bring evil upon this people, even the fruit of
+--      their thoughts, because they have not hearkened unto my words, nor to my law, but rejected it. To what
+--      purpose cometh there to me incense from Sheba... your burnt offerings are not acceptable, nor your
+--      sacrifices sweet unto me* (6:19-20). The Torah rejected, the sacrifices made worthless — ritual without
+--      obedience is no worship at all. Proverbs: *He that turneth away his ear from hearing the law, even his
+--      prayer shall be abomination* (Prov 28:9). Samuel to Saul: *to obey is better than sacrifice, and to
+--      hearken than the fat of rams* (1 Sam 15:22). Isaiah: *To what purpose is the multitude of your
+--      sacrifices unto me?* (Isa 1:11). Jeremiah at the temple gate: *Put your burnt offerings unto your
+--      sacrifices, and eat flesh. For I spake not unto your fathers... concerning burnt offerings or
+--      sacrifices: But this thing commanded I them, saying, Obey my voice* (Jer 7:21-23). And the assayer's
+--      verdict: *Reprobate silver shall men call them, because Yahuah (LORD) hath rejected them* (6:30) — the
+--      refining fails, the dross will not purge; *Thy silver is become dross* (Isa 1:22). The rejected word and
+--      the worthless worship are one thing: they would not obey, so the sacrifice is rejected with them.
+--   VERSES WITH NO SEPARATE ADD: v.1-8 (the foe from the north, the siege at noon and by night — the historical
+--      judgment the chapter announces; woven in prose), v.9-12 (the uncircumcised ear, the word-as-reproach —
+--      the same refusal as v.16/v.19, bound to THREADs 1 and 3 in prose), v.17 (the refused watchmen — twin to
+--      We will not walk therein, THREAD 1 prose), v.21-26 (the renewed siege-announcement, the cruel northern
+--      people — the executioner of the verdict, woven in prose), v.27-29 (the founder's failed refining — the
+--      assay-image that culminates in the reprobate-silver verdict of v.30, THREAD 3). Every meaningful block
+--      recorded; each is carried by or bound to a thread.
+
+CREATE TEMP VIEW _s309_jer06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): ask for the old paths, the good way, and ye shall find rest for your souls
+    ('canon','jeremiah',6,16,'canon','matthew',11,29,'free',
+      E'*Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls* (Matthew 11:29). The Messiah takes up Jeremiah''s exact promise — *ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls* (Jeremiah 6:16): his *rest unto your souls* is the very rest of the old paths. The yoke he gives is not the abolition of the ancient way but the good way walked in him; the rest is found, as Jeremiah said, in walking therein.'),
+    ('canon','jeremiah',6,16,'canon','matthew',11,28,'free',
+      E'*Come unto me, all ye that labour and are heavy laden, and I will give you rest* (Matthew 11:28). To the heavy-laden the Messiah offers the rest Jeremiah held out and the people refused — *and ye shall find rest for your souls. But they said, We will not walk therein* (Jeremiah 6:16). The rest the old paths promised, refused by that generation, is given to all who come; *for my yoke is easy, and my burden is light* (Matthew 11:30).'),
+    ('canon','jeremiah',6,16,'canon','deuteronomy',32,7,'free',
+      E'*Remember the days of old, consider the years of many generations: ask thy father, and he will shew thee; thy elders, and they will tell thee* (Deuteronomy 32:7). Moses commands exactly what Jeremiah commands — to look back to the ancient way and ask after it: *ask for the old paths, where is the good way* (Jeremiah 6:16). The old paths are not lost; they are remembered, asked for, and handed down from the fathers — the Torah way the generation of Jeremiah would not walk.'),
+    ('canon','jeremiah',6,16,'canon','isaiah',30,21,'free',
+      E'*And thine ears shall hear a word behind thee, saying, This is the way, walk ye in it, when ye turn to the right hand, and when ye turn to the left* (Isaiah 30:21). Isaiah names the very good way Jeremiah bids the people ask for — *where is the good way, and walk therein* (Jeremiah 6:16). There is one way to walk, marked out and spoken; the prophets do not invent a new path but point back to the old, good road of the Torah.'),
+    ('canon','jeremiah',6,16,'canon','psalms',1,1,'free',
+      E'*Blessed is the man that walketh not in the counsel of the ungodly, nor standeth in the way of sinners, nor sitteth in the seat of the scornful. But his delight is in the law of Yahuah (LORD)* (Psalm 1:1-2). The psalm sets the two ways before the man who would *stand... in the ways, and see* (Jeremiah 6:16): the way of sinners that perishes, and the good way whose blessing is the *delight... in the law of Yahuah (LORD)*. The old/good way Jeremiah commends is the way of the man whose delight is the Torah.'),
+
+    -- THREAD 2 (★★): Peace, peace; when there is no peace — the false healers, the slight healing
+    ('canon','jeremiah',6,14,'canon','ezekiel',13,10,'free',
+      E'*Because, even because they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter* (Ezekiel 13:10). Ezekiel names the same false cry Jeremiah exposes — *saying, Peace, peace; when there is no peace* (Jeremiah 6:14): the prophets seduce the people with a word of peace and daub a doomed wall to hide its cracks. The slight healing of Jeremiah is Ezekiel''s untempered morter — a covering that cannot hold.'),
+    ('canon','jeremiah',6,14,'canon','ezekiel',13,16,'free',
+      E'*To wit, the prophets of Yashar''el (Israel) which prophesy concerning Jerusalem, and which see visions of peace for her, and there is no peace, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 13:16). The false prophets *see visions of peace for her, and there is no peace* — Jeremiah''s very verdict, *Peace, peace; when there is no peace* (Jeremiah 6:14). The vision of peace over a city under judgment is a lie that leaves the wound unhealed.'),
+    ('canon','jeremiah',6,14,'canon','jeremiah',8,11,'free',
+      E'*For they have healed the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (Jeremiah 8:11). Jeremiah repeats the oracle word for word two chapters on: the same *healed... the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (Jeremiah 6:14). The doubled word is the doubled charge — the false healers persist, and the slight healing is named again over the unrepentant people.'),
+    ('canon','jeremiah',6,14,'canon','micah',3,5,'free',
+      E'*Thus saith Yahuah (LORD) concerning the prophets that make my people err, that bite with their teeth, and cry, Peace; and he that putteth not into their mouths, they even prepare war against him* (Micah 3:5). Micah indicts the same hireling prophets Jeremiah exposes — those who *cry, Peace* to whoever feeds them, *saying, Peace, peace; when there is no peace* (Jeremiah 6:14). The peace they preach is for hire, not from Yahuah; it makes the people err.'),
+    ('canon','jeremiah',6,14,'canon','1-thessalonians',5,3,'free',
+      E'*For when they shall say, Peace and safety; then sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape* (1 Thessalonians 5:3). Paul carries the false cry to the day of Yahuah: the very word *Peace, peace; when there is no peace* (Jeremiah 6:14) becomes *Peace and safety*, and the sudden destruction overtakes those who trusted it. The slight healing ends in the ruin it could not prevent; *they shall not escape*.'),
+
+    -- THREAD 3 (★): they have rejected my law; your sacrifices not acceptable; reprobate silver
+    ('canon','jeremiah',6,19,'canon','proverbs',28,9,'free',
+      E'*He that turneth away his ear from hearing the law, even his prayer shall be abomination* (Proverbs 28:9). Proverbs names the principle of Jeremiah''s verdict — *because they have not hearkened unto my words, nor to my law, but rejected it* (Jeremiah 6:19): the ear turned from the Torah makes even worship abominable. So the incense and burnt offerings of the next verse are rejected with the law they would not hear.'),
+    ('canon','jeremiah',6,20,'canon','1-samuel',15,22,'free',
+      E'*And Samuel said, Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22). Samuel teaches what Jeremiah enacts — *your burnt offerings are not acceptable, nor your sacrifices sweet unto me* (Jeremiah 6:20): where there is no obedience, the sacrifice is rejected. *To obey is better than sacrifice*; the incense from Sheba cannot buy back the rejected word.'),
+    ('canon','jeremiah',6,20,'canon','isaiah',1,11,'free',
+      E'*To what purpose is the multitude of your sacrifices unto me? saith Yahuah (LORD): I am full of the burnt offerings of rams, and the fat of fed beasts; and I delight not in the blood of bullocks, or of lambs, or of he goats* (Isaiah 1:11). Isaiah asks Jeremiah''s very question — *To what purpose cometh there to me incense from Sheba... your burnt offerings are not acceptable* (Jeremiah 6:20). The sacrifices of a disobedient people are no pleasure to Yahuah; the ritual without the obedient walk is rejected.'),
+    ('canon','jeremiah',6,20,'canon','jeremiah',7,21,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); Put your burnt offerings unto your sacrifices, and eat flesh. For I spake not unto your fathers... concerning burnt offerings or sacrifices: But this thing commanded I them, saying, Obey my voice* (Jeremiah 7:21-23). At the temple gate Jeremiah says plainly what 6:20 implies — the burnt offerings are nothing without the obedience Yahuah first required: *Obey my voice, and I will be your Elohim (God)*. Worship that refuses the voice is the *burnt offerings... not acceptable* of this chapter.'),
+    ('canon','jeremiah',6,30,'canon','isaiah',1,22,'free',
+      E'*Thy silver is become dross, thy wine mixed with water* (Isaiah 1:22). Isaiah names the same assay-verdict as Jeremiah''s — *Reprobate silver shall men call them, because Yahuah (LORD) hath rejected them* (Jeremiah 6:30): the people, tried in the fire, come out as worthless dross, not refined silver. Yet Isaiah holds out the purging Jeremiah''s founder could not accomplish — *I will... purely purge away thy dross* (Isaiah 1:25) — by Yahuah''s own hand.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls',
+       E'Ask for the old paths, where is the good way — and ye shall find rest for your souls',
+       E'At the heart of the lawsuit comes the great summons: *Thus saith Yahuah (LORD), Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls. But they said, We will not walk therein* (6:16). The OLD PATHS and the GOOD WAY are the ancient Torah way — the instruction given to the fathers, the road that gives rest to the soul. Mark that it is not an outworn path to be left behind: it is the very thing to STAND and ask for, to FIND, and to WALK IN. The rest is IN the walking. And mark the refusal — *But they said, We will not walk therein* — repeated at once when the watchmen sound the trumpet: *But they said, We will not hearken* (6:17). The Messiah takes up Jeremiah''s words exactly: *Come unto me, all ye that labour and are heavy laden, and I will give you rest. Take my yoke upon you, and learn of me; for I am meek and lowly in heart: and ye shall find rest unto your souls* (Matthew 11:28-29). His *rest unto your souls* is the very rest of the old paths — *rest for your souls* — and his yoke is not the abolition of the ancient way but the good way walked in him: *for my yoke is easy, and my burden is light* (Matthew 11:30). Moses commands the same backward look: *Remember the days of old, consider the years of many generations: ask thy father, and he will shew thee* (Deuteronomy 32:7). Isaiah names the one road: *thine ears shall hear a word behind thee, saying, This is the way, walk ye in it* (Isaiah 30:21). And the psalm sets the two ways before the man who would stand in them: *Blessed is the man that walketh not in the counsel of the ungodly... But his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:1-2). The old/good way is the Torah, never abolished — and the rest is found, as Jeremiah said, in walking therein.',
+       sv.verse_id, ev.verse_id, 'free', 34125
+  FROM _s309_jer06_lookup sv, _s309_jer06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=6 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing',
+       E'Peace, peace; when there is no peace — the false healers, the slight healing',
+       E'The corruption runs top to bottom — *from the least of them even unto the greatest of them every one is given to covetousness; and from the prophet even unto the priest every one dealeth falsely* (6:13) — and it shows most plainly in the false healers: *They have healed also the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (6:14). They cry peace over a wound they will not truly bind, and they cannot even blush for it (6:15). Ezekiel names the same seduction and the doomed, daubed wall: *they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter* (Ezekiel 13:10); *which see visions of peace for her, and there is no peace, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 13:16). Jeremiah himself repeats the oracle word for word two chapters on: *they have healed the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (Jeremiah 8:11) — the doubled word, the doubled charge. Micah indicts the hireling prophets who cry peace for pay: *the prophets that make my people err, that bite with their teeth, and cry, Peace* (Micah 3:5). And Paul carries the false cry to the end of the age: *For when they shall say, Peace and safety; then sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape* (1 Thessalonians 5:3). The slight healing, the daubed wall, the vision of peace — all end in the ruin they could not prevent. The wound the false prophets covered over is healed only when the people return to the old paths they refused.',
+       sv.verse_id, ev.verse_id, 'free', 34128
+  FROM _s309_jer06_lookup sv, _s309_jer06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=6 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-6-they-have-rejected-my-law-the-reprobate-silver',
+       E'They have rejected my law — your sacrifices not acceptable, the reprobate silver',
+       E'The verdict names the root sin: *Behold, I will bring evil upon this people, even the fruit of their thoughts, because they have not hearkened unto my words, nor to my law, but rejected it* (6:19). And because the Torah is rejected, the worship is rejected with it: *To what purpose cometh there to me incense from Sheba, and the sweet cane from a far country? your burnt offerings are not acceptable, nor your sacrifices sweet unto me* (6:20). Ritual without obedience is no worship at all. Proverbs states the principle plainly: *He that turneth away his ear from hearing the law, even his prayer shall be abomination* (Proverbs 28:9) — the ear turned from the Torah turns even prayer into abomination. Samuel taught it to Saul over the spared spoil of Amalek: *Hath Yahuah (LORD) as great delight in burnt offerings and sacrifices, as in obeying the voice of Yahuah (LORD)? Behold, to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22). Isaiah asks Jeremiah''s very question of a disobedient people: *To what purpose is the multitude of your sacrifices unto me?... I delight not in the blood of bullocks, or of lambs, or of he goats* (Isaiah 1:11). And Jeremiah himself, standing in the temple gate, says it without veil: *Put your burnt offerings unto your sacrifices, and eat flesh. For I spake not unto your fathers... concerning burnt offerings or sacrifices: But this thing commanded I them, saying, Obey my voice, and I will be your Elohim (God)* (Jeremiah 7:21-23). The whole assay ends in the founder''s failed refining and the assayer''s verdict: *The bellows are burned, the lead is consumed of the fire; the founder melteth in vain: for the wicked are not plucked away. Reprobate silver shall men call them, because Yahuah (LORD) hath rejected them* (6:29-30). Isaiah names the same dross: *Thy silver is become dross, thy wine mixed with water* (Isaiah 1:22) — yet holds out the purging Jeremiah''s furnace could not give: *I will... purely purge away thy dross* (Isaiah 1:25). The rejected word and the worthless worship are one: where the law is refused, the sacrifice is reprobate silver.',
+       sv.verse_id, ev.verse_id, 'free', 34131
+  FROM _s309_jer06_lookup sv, _s309_jer06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=6 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Take my yoke upon you, and learn of me... and ye shall find rest unto your souls* (Matthew 11:29) — the Messiah echoes Jeremiah 6:16''s *rest for your souls*; the rest is the old, good way walked in him.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Come unto me, all ye that labour and are heavy laden, and I will give you rest* (Matthew 11:28) — the rest the old paths promised, refused by that generation, given now to all who come.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Remember the days of old, consider the years of many generations: ask thy father, and he will shew thee* (Deuteronomy 32:7) — Moses bids the same backward look Jeremiah 6:16 commands; the old paths are remembered, not abandoned.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *thine ears shall hear a word behind thee, saying, This is the way, walk ye in it* (Isaiah 30:21) — Isaiah names the one good way Jeremiah 6:16 bids the people ask for; the prophets point back to the old road.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *his delight is in the law of Yahuah (LORD); and in his law doth he meditate day and night* (Psalm 1:1-2) — the good way Jeremiah 6:16 commends is the way of the man whose delight is the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-ask-for-the-old-paths-the-good-way-rest-for-your-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they have seduced my people, saying, Peace; and there was no peace... daubed it with untempered morter* (Ezekiel 13:10) — the slight healing of Jeremiah 6:14 is Ezekiel''s daubed wall, a covering that cannot hold.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *which see visions of peace for her, and there is no peace* (Ezekiel 13:16) — the prophets'' vision of peace over a doomed city is Jeremiah 6:14''s very lie.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they have healed the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (Jeremiah 8:11) — the SAME oracle repeated word for word; the doubled charge.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the prophets that make my people err... and cry, Peace* (Micah 3:5) — the hireling prophets who cry peace for pay, the same false cry as Jeremiah 6:14.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *when they shall say, Peace and safety; then sudden destruction cometh upon them... and they shall not escape* (1 Thessalonians 5:3) — the false cry of Jeremiah 6:14 carried to the day of Yahuah; the slight healing ends in ruin.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-peace-peace-when-there-is-no-peace-the-slight-healing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *He that turneth away his ear from hearing the law, even his prayer shall be abomination* (Proverbs 28:9) — the ear turned from the Torah (Jeremiah 6:19) makes even worship abominable; so the sacrifices are rejected with the law.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=19
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-they-have-rejected-my-law-the-reprobate-silver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *to obey is better than sacrifice, and to hearken than the fat of rams* (1 Samuel 15:22) — Samuel''s word to Saul: where there is no obedience, the sacrifice is rejected, as in Jeremiah 6:20.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-they-have-rejected-my-law-the-reprobate-silver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *To what purpose is the multitude of your sacrifices unto me?* (Isaiah 1:11) — Isaiah asks Jeremiah 6:20''s very question; the sacrifices of a disobedient people are no pleasure to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-they-have-rejected-my-law-the-reprobate-silver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I spake not unto your fathers... concerning burnt offerings... But... Obey my voice* (Jeremiah 7:21-22) — Jeremiah at the temple gate says plainly what 6:20 implies: worship without obedience is unacceptable.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=20
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-they-have-rejected-my-law-the-reprobate-silver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Thy silver is become dross, thy wine mixed with water* (Isaiah 1:22) — the same assay-verdict as the *reprobate silver* of Jeremiah 6:30; yet Isaiah holds out the purging Yahuah himself gives (Isaiah 1:25).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=6 AND sv.verse_number=30
+  JOIN _s309_jer06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-6-they-have-rejected-my-law-the-reprobate-silver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
