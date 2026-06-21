@@ -26,6 +26,8 @@
  * Render Static Site deploy serves it alongside the bundle).
  */
 
+import { openGiving } from "../lib/giving.ts";
+
 const TECHELET = "#1A6FE5";
 const ARGAMAN = "#8E4FB3";
 const GOLD = "#caa84a";
@@ -79,7 +81,26 @@ export default function Landing() {
         ["--gold" as string]: GOLD,
       }}
     >
-      <main className="mx-auto flex max-w-3xl flex-col items-center px-6 py-16 text-center">
+      {/* A quiet support affordance at the very top of the page — small and
+          off to the side so it frames rather than interrupts. Opens the Tithely
+          giving page in a new tab. (On the native shell Landing is bypassed
+          entirely, so this is a web-surface affordance.) */}
+      <div className="mx-auto flex w-full max-w-3xl justify-end px-6 pt-5">
+        <button
+          type="button"
+          onClick={() => {
+            void openGiving();
+          }}
+          className="inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-sm font-medium transition hover:opacity-90"
+          style={{ borderColor: GOLD, color: GOLD }}
+          aria-label="Support this work — opens the giving page"
+        >
+          <span aria-hidden="true">♥</span>
+          <span>Support this work</span>
+        </button>
+      </div>
+
+      <main className="mx-auto flex max-w-3xl flex-col items-center px-6 pb-16 pt-8 text-center">
         {/* Brand-mark hero. The asset itself carries the three sacred-color
             registers (techelet title, argaman tribe labels, gold menorahs),
             so the chrome around it stays restrained — the mark is the

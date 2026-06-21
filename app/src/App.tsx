@@ -40,6 +40,7 @@ import { hasStoredSacredNamePreference } from "./lib/useSacredNameMask";
 import { hasSeenSigninAsk } from "./lib/signinAsk";
 import { hasJwtCookie } from "./lib/display-prefs-sync";
 import { loadStoredNativeToken } from "./lib/native-auth";
+import { openGiving } from "./lib/giving.ts";
 import OfflineDownloadPrompt from "./components/OfflineDownloadPrompt";
 import { readThrough, setContentCacheScope } from "./lib/contentCache";
 import ChapterEndCard from "./components/ChapterEndCard";
@@ -49,6 +50,7 @@ import WitnessEndCard from "./components/WitnessEndCard";
 import KingdomCard from "./components/KingdomCard";
 import KingdomEndCard from "./components/KingdomEndCard";
 import ArrangedReading from "./components/ArrangedReading";
+import YearPlanHeader from "./components/YearPlanHeader";
 import HighlightPicker, {
   markClassFor,
   markCssVarsFor,
@@ -532,12 +534,47 @@ function isNativeShell(): boolean {
   );
 }
 
+/**
+ * S235 — read a `?book=<slug>&chapter=<n>` reader deep link (the calendar
+ * day-view's tap-through into a year-plan chapter). Returns null when absent or
+ * malformed. The slug matches chronological-reading.json's `book_id`, which is
+ * the same slug the reader's book picker and ArrangedReading use.
+ */
+function readReaderDeepLink(): { book: string; chapter: number } | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const q = new URLSearchParams(window.location.search);
+    const book = q.get("book");
+    const chapter = Number(q.get("chapter"));
+    if (book && Number.isFinite(chapter) && chapter >= 1) {
+      return { book, chapter: Math.floor(chapter) };
+    }
+  } catch {
+    /* malformed query — fall through to saved position */
+  }
+  return null;
+}
+
 function Reader() {
   const [books, setBooks] = useState<BookSummary[]>([]);
   const [booksError, setBooksError] = useState<string | null>(null);
 
-  const [selectedBookSlug, setSelectedBookSlug] = useState<string>("genesis");
-  const [selectedChapter, setSelectedChapter] = useState<number>(1);
+  // S235 — calendar cross-link tap-through (roadmap B-3). The reader normally
+  // rehydrates its position from the API/localStorage on mount; a `?book=&chapter=`
+  // deep link (the calendar day-view's "open this chapter" action) overrides that
+  // so tapping the day's assigned reading lands on the right chapter. Read once,
+  // synchronously, so the initial paint is already on the linked chapter; the
+  // position-restore effect below then skips its book/chapter overwrite when a
+  // link was present.
+  const readerDeepLink = useRef<{ book: string; chapter: number } | null>(
+    readReaderDeepLink(),
+  );
+  const [selectedBookSlug, setSelectedBookSlug] = useState<string>(
+    readerDeepLink.current?.book ?? "genesis",
+  );
+  const [selectedChapter, setSelectedChapter] = useState<number>(
+    readerDeepLink.current?.chapter ?? 1,
+  );
   // S211 — Arranged Reading overlay (chronological apparatus) open state.
   const [arrangedOpen, setArrangedOpen] = useState<boolean>(false);
 
@@ -1635,7 +1672,11 @@ function Reader() {
       loadInitialPosition()
         .then((pos) => {
           if (cancelled) return;
-          if (pos !== null) {
+          // S235 — a `?book=&chapter=` deep link (calendar tap-through) wins over
+          // the saved position: the partner asked for a specific chapter, so don't
+          // clobber it with the last-read row. The deep-link values already seeded
+          // selectedBookSlug/Chapter in the initializers above.
+          if (pos !== null && !readerDeepLink.current) {
             setSelectedBookSlug(pos.bookSlug);
             setSelectedChapter(pos.chapter);
             setCurrentVerse(pos.verseNumber);
@@ -2630,6 +2671,18 @@ function Reader() {
           </div>
         </div>
       </header>
+
+      {/* S235 — reader date header + the Read-the-Scriptures-in-a-Year doorway
+          (roadmap B-2). Sits at the very top of the reader; drives the
+          ArrangedReading overlay for start/resume. */}
+      <YearPlanHeader
+        onOpenArranged={() => setArrangedOpen(true)}
+        onNavigate={(slug, ch) => {
+          setSelectedBookSlug(slug);
+          setSelectedChapter(ch);
+          setCurrentVerse(1);
+        }}
+      />
 
       {booksError && (
         <div className="mb-4 rounded border border-red-300 bg-red-50 p-3 text-sm text-red-800">
@@ -3885,6 +3938,26 @@ function Reader() {
               </span>
             </button>
           </nav>
+
+          {/*
+            A quiet support line at the very bottom of the chapter — reached
+            only after the partner has finished reading, so it frames rather
+            than interrupts. Muted register, a single small text link; no
+            chrome button, no color block. Opens the Tithely giving page
+            (system browser on native, new tab on web).
+          */}
+          <div className="mt-8 text-center font-sans text-xs text-[var(--reader-muted)]">
+            <button
+              type="button"
+              onClick={() => {
+                void openGiving();
+              }}
+              className="underline-offset-4 transition hover:text-[var(--reader-accent)] hover:underline"
+              aria-label="Support this work — opens the giving page"
+            >
+              <span aria-hidden="true">♥</span> Support this work
+            </button>
+          </div>
         </article>
       )}
 

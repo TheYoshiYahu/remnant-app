@@ -29,6 +29,7 @@ import {
   type ReckoningState,
 } from "../lib/calendar/view-model.ts";
 import {
+  attachReadingAssignments,
   buildDayDetail,
   buildLayerGrid,
   computeOmer,
@@ -40,6 +41,9 @@ import {
   type LayerGrid,
   type OmerStatus,
 } from "../lib/calendar/day-view-model.ts";
+import { buildYearPlan, type DayReadingItem } from "../lib/reading-plan/pacing.ts";
+import { getParshaForDate } from "../lib/torah/parsha.ts";
+import { getYearPlanState } from "../lib/reading-plan/plan-store.ts";
 import {
   eventsOnBiblicalDate,
   HISTORY_IS_SEED,
@@ -47,6 +51,14 @@ import {
   type BiblicalHistoryEvent,
 } from "../lib/calendar/biblical-history.ts";
 import { civilDayId, type PlannerItem, type PlannerItemKind } from "../lib/planner-store.ts";
+import { getReckoningPref, setReckoningPref } from "../lib/calendar/reckoning-pref.ts";
+import {
+  getLocationPref,
+  hasChosenLocation,
+  setLocationPref,
+} from "../lib/calendar/location-pref.ts";
+import { JERUSALEM } from "../lib/calendar/types.ts";
+import { LocationBar, LocationPicker } from "../components/LocationPicker.tsx";
 import { useDaysWithItems, useJournal, usePlannerDay } from "../lib/usePlanner.ts";
 
 /**
@@ -89,10 +101,16 @@ function readQuery(): {
       ? new URLSearchParams(window.location.search)
       : new URLSearchParams();
   const base: BaseLayer = q.get("base") === "hebrew" ? "hebrew" : "gregorian";
-  // The ministry follows the dark new moon (conjunction) — so the biblical view
-  // opens on conjunction by default (the position note explains why). Every
-  // reckoning stays selectable; a ?reck= deep-link still overrides this.
-  const reck: ReckoningState = { ...DEFAULT_RECKONING, month: "conjunction" };
+  // The reckoning is the app-wide shared preference (lib/calendar/reckoning-pref):
+  // the Today hub dials and these controls both read and write it, so the choice
+  // a partner makes on either surface is the choice they see everywhere. Defaults
+  // to calculated rabbinic (HebCal) when unset. A `?reck=` deep-link still wins
+  // for this load (and is then persisted as the new shared choice on mount).
+  const reck: ReckoningState = {
+    ...DEFAULT_RECKONING,
+    month: getReckoningPref(),
+    location: getLocationPref() ?? JERUSALEM,
+  };
   const r = q.get("reck");
   if (r === "conjunction" || r === "crescent" || r === "rabbinic" || r === "enoch") {
     reck.month = r;
@@ -233,6 +251,27 @@ export default function Calendar() {
     }
   }, [biblicalView]);
 
+  // Persist the chosen reckoning to the app-wide shared key whenever it changes
+  // (the dials in ReckoningControls drive `reck.month`). This is the Calendar
+  // route's half of the shared source of truth — the Today hub reads it on load,
+  // and so do the Torah-portions / year-plan features.
+  useEffect(() => {
+    setReckoningPref(reck.month);
+  }, [reck.month]);
+
+  // S236 — location accuracy. The engine computes sunset / Sabbath / feast times
+  // for `reck.location`; until the reader picks a place it's Jerusalem. Prompt
+  // for it on the first calendar open (per the resolved spec), and let them
+  // change it anytime via the LocationBar. Both write the shared `cal.location`
+  // key and recompute the grid by patching `reck.location`.
+  const [locationPromptOpen, setLocationPromptOpen] = useState(
+    () => !hasChosenLocation(),
+  );
+  const applyLocation = (loc: ReckoningState["location"]) => {
+    setLocationPref(loc);
+    setReck((r) => ({ ...r, location: loc }));
+  };
+
   // Live tick — drives the countdown and keeps "today" honest. Frozen when the
   // view is time-travelled to a fixed instant via ?at=.
   useEffect(() => {
@@ -261,10 +300,31 @@ export default function Calendar() {
   const dBase = useDeferredValue(base);
 
   const todayResult = useMemo(() => compute(dReck, today), [dReck, today]);
+
+  // S235 — the active Read-the-Scriptures-in-a-Year plan (roadmap B-3). Read
+  // once from plan-store; null when no plan is running. The bucketed sequence +
+  // its Day-1 date are all `attachReadingAssignments` needs to tag the grid.
+  const yearPlan = useMemo(() => {
+    const st = getYearPlanState();
+    if (!st) return null;
+    return { buckets: buildYearPlan(st.scope), startDateISO: st.startDateISO };
+  }, []);
+
   const grid = useMemo(
-    () => buildLayerGrid(dReck, dFocus, today, dBase),
-    [dReck, dFocus, today, dBase],
+    () =>
+      attachReadingAssignments(
+        buildLayerGrid(dReck, dFocus, today, dBase),
+        yearPlan?.buckets ?? null,
+        yearPlan?.startDateISO ?? null,
+      ),
+    [dReck, dFocus, today, dBase, yearPlan],
   );
+
+  // Tap-through into the reader at a year-plan chapter. Navigation in this app
+  // is browser-native; the reader honors `?book=&chapter=` on mount (S235).
+  const openReaderAt = (item: DayReadingItem) => {
+    window.location.href = `/read?book=${encodeURIComponent(item.book_id)}&chapter=${item.chapter}`;
+  };
 
   const todayCell = grid.cells.find((c) => c.isToday);
   const todayIsSabbath = !!todayCell?.morningSabbath;
@@ -275,6 +335,8 @@ export default function Calendar() {
     <div className="cal-root min-h-screen bg-[var(--reader-bg)] text-[var(--reader-text)]">
       <main className="mx-auto w-full max-w-5xl px-4 py-6 sm:px-6 sm:py-9">
         <Header biblicalView={biblicalView} onPlainGregorian={() => setBiblicalView(false)} />
+        {/* S236 — your place drives sunset / Sabbath / feast accuracy. */}
+        <LocationBar className="mb-6" onChange={applyLocation} />
         {biblicalView ? (
           <>
             <ReckoningControls reck={reck} setReck={setReck} notes={todayResult.notes} />
@@ -320,7 +382,21 @@ export default function Calendar() {
         </footer>
       </main>
       {selected && (
-        <DayView reck={reck} cell={selected} onClose={() => setSelected(null)} />
+        <DayView
+          reck={reck}
+          cell={selected}
+          onClose={() => setSelected(null)}
+          onOpenReading={openReaderAt}
+        />
+      )}
+      {locationPromptOpen && (
+        <LocationPicker
+          required
+          onPick={(city) => {
+            applyLocation(city);
+            setLocationPromptOpen(false);
+          }}
+        />
       )}
     </div>
   );
@@ -437,6 +513,9 @@ function GregorianView({
               <div className="cal-cell-top">
                 <span className="cal-cell-day">{c.primaryLabel}</span>
               </div>
+              {c.readingAssignment && c.readingAssignment.length > 0 && (
+                <ReadingMarker items={c.readingAssignment} />
+              )}
               {daysWithItems.has(civilDayId(c.daytime)) && (
                 <span className="cal-cell-dot" aria-label="has planner items" />
               )}
@@ -1522,8 +1601,32 @@ function LayerDayCell({
         ) : null}
       </div>
 
+      {cell.readingAssignment && cell.readingAssignment.length > 0 && (
+        <ReadingMarker items={cell.readingAssignment} />
+      )}
       {hasItems && <span className="cal-cell-dot" aria-label="has planner items" />}
     </button>
+  );
+}
+
+/**
+ * The year-plan reading marker shown in a calendar cell (roadmap B-3). A
+ * non-interactive label — the cell itself is the button; tapping opens the day
+ * view, where each chapter taps through into the reader.
+ */
+function ReadingMarker({ items }: { items: DayReadingItem[] }) {
+  const first = items[0];
+  const more = items.length - 1;
+  return (
+    <span
+      className="cal-cell-reading"
+      title={`Scriptures in a Year: ${items
+        .map((i) => `${i.book_title} ${i.chapter}`)
+        .join(" · ")}`}
+    >
+      ✦ {first.book_title} {first.chapter}
+      {more > 0 ? ` +${more}` : ""}
+    </span>
   );
 }
 
@@ -1572,10 +1675,12 @@ function DayView({
   reck,
   cell,
   onClose,
+  onOpenReading,
 }: {
   reck: ReckoningState;
   cell: LayerCell;
   onClose: () => void;
+  onOpenReading: (item: DayReadingItem) => void;
 }) {
   const detail = useMemo(() => buildDayDetail(reck, cell), [reck, cell]);
   const dayId = civilDayId(cell.daytime);
@@ -1612,6 +1717,13 @@ function DayView({
           <DayViewWholeDay detail={detail} />
         )}
         <DayViewStatus detail={detail} />
+        {cell.readingAssignment && cell.readingAssignment.length > 0 && (
+          <DayViewReading
+            items={cell.readingAssignment}
+            onOpenReading={onOpenReading}
+          />
+        )}
+        <DayViewParsha reck={reck} cell={cell} />
         <OnThisDay events={detail.history} />
         <DayViewTabs dayId={dayId} detail={detail} />
         <PlaceholderSlots />
@@ -1747,6 +1859,90 @@ function DayViewStatus({ detail }: { detail: DayDetail }) {
         );
       })}
     </div>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Read-the-Scriptures-in-a-Year cross-link (roadmap B-3): the day's assigned
+// portion, each chapter tapping through into the reader.
+// ───────────────────────────────────────────────────────────────────────
+
+function DayViewReading({
+  items,
+  onOpenReading,
+}: {
+  items: DayReadingItem[];
+  onOpenReading: (item: DayReadingItem) => void;
+}) {
+  return (
+    <section className="cal-dv-section">
+      <div className="cal-dv-section-head">
+        <h3 className="cal-dv-section-title">Today&rsquo;s reading</h3>
+        <span className="cal-dv-reading-tag">Scriptures in a Year</span>
+      </div>
+      <div className="cal-dv-reading-list">
+        {items.map((it) => (
+          <button
+            key={it.seq}
+            type="button"
+            className="cal-dv-reading-chip"
+            onClick={() => onOpenReading(it)}
+            title={`Open ${it.book_title} ${it.chapter} in the reader`}
+          >
+            ✦ {it.book_title} {it.chapter}
+          </button>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Weekly Torah portion (roadmap C-3, optional): the parsha for this day's
+// week, resolved under the elected reckoning, each reference tapping through
+// into the reader. Sits beside "Today's reading".
+// ───────────────────────────────────────────────────────────────────────
+
+function DayViewParsha({ reck, cell }: { reck: ReckoningState; cell: LayerCell }) {
+  const portion = useMemo(
+    () => getParshaForDate(cell.daytime, reck.month),
+    [cell.daytime, reck.month],
+  );
+  if (!portion) return null;
+
+  const open = (slug: string, chapter: number) => {
+    window.location.href = `/read?book=${encodeURIComponent(slug)}&chapter=${chapter}`;
+  };
+
+  return (
+    <section className="cal-dv-section">
+      <div className="cal-dv-section-head">
+        <h3 className="cal-dv-section-title">Torah portion · {portion.name}</h3>
+        <span className="cal-dv-reading-tag">Parashat ha-Shavua</span>
+      </div>
+      <div className="cal-dv-reading-list">
+        <button
+          type="button"
+          className="cal-dv-reading-chip"
+          onClick={() => open(portion.opening.book_id, portion.opening.chapter)}
+          title={`Open ${portion.torahRef} in the reader`}
+        >
+          ✦ {portion.torahRef}
+        </button>
+        {portion.haftarahOpening && (
+          <button
+            type="button"
+            className="cal-dv-reading-chip"
+            onClick={() =>
+              open(portion.haftarahOpening!.book_id, portion.haftarahOpening!.chapter)
+            }
+            title={`Open ${portion.haftarahRef} in the reader`}
+          >
+            ✦ {portion.haftarahRef}
+          </button>
+        )}
+      </div>
+    </section>
   );
 }
 

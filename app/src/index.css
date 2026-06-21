@@ -1358,6 +1358,22 @@ body {
 }
 .cal-cell-sab { font-size: 0.58rem; font-weight: 600; color: var(--cal-ink-soft); letter-spacing: 0.04em; }
 
+/* S235 — the Read-the-Scriptures-in-a-Year portion marker in a calendar cell.
+   Gold (the study/light register), single line, truncates; full list in title. */
+.cal-cell-reading {
+  display: block;
+  max-width: 100%;
+  margin-top: 0.1rem;
+  overflow: hidden;
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #F4D58D;
+  text-shadow: 0 0 8px rgba(244, 213, 141, 0.45);
+}
+
 /* Gregorian-first landing — the plain view the calendar opens on. ─────────── */
 /* "Plain Gregorian view" return control in the header (biblical view only). */
 .cal-view-back {
@@ -1724,6 +1740,31 @@ body {
 .cal-dv-saved { font-size: 0.66rem; color: var(--cal-ink-soft); letter-spacing: 0.04em; }
 .cal-dv-empty { margin: 0; font-size: 0.8rem; line-height: 1.5; color: var(--cal-ink-soft); font-style: italic; }
 
+/* S235 — Read-the-Scriptures-in-a-Year cross-link in the day view. Gold tag,
+   tappable gold chapter chips that open the reader. */
+.cal-dv-reading-tag {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2a1c00;
+  background: #F4D58D;
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+.cal-dv-reading-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.cal-dv-reading-chip {
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #F4D58D;
+  background: linear-gradient(160deg, color-mix(in srgb, #5a4400 32%, transparent) 0%, transparent 100%);
+  border: 1px solid color-mix(in srgb, #F4D58D 45%, transparent);
+  border-radius: 999px;
+  padding: 0.28rem 0.7rem;
+}
+.cal-dv-reading-chip:hover { border-color: #F4D58D; text-shadow: 0 0 10px rgba(244, 213, 141, 0.5); }
+
 /* On-this-day list */
 .cal-dv-history { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.7rem; }
 .cal-dv-hist {
@@ -2088,6 +2129,31 @@ body {
 }
 .today-subtitle { color: var(--today-soft); }
 
+/* ── Support the work ──────────────────────────────────────────────────── */
+.today-support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 1.5rem;
+}
+.today-support-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.42rem 1rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.today-support-glyph { color: var(--today-gold); }
+.today-support-note {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: var(--today-soft);
+}
+
 /* ── The day panel ─────────────────────────────────────────────────────── */
 .today-day {
   border: 1px solid var(--today-rule);
@@ -2367,15 +2433,115 @@ body {
   letter-spacing: 0.1em;
   color: var(--today-soft);
 }
-.today-theme-select {
-  background: color-mix(in srgb, #0A2D84 30%, #000);
-  color: var(--today-ink);
-  border: 1px solid color-mix(in srgb, #FCECAF 32%, transparent);
-  border-radius: 8px;
-  padding: 0.35rem 0.6rem;
+/* The Themes button — a chrome-metal affordance that opens the picker sheet. */
+.today-theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
   font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 9px;
+  cursor: pointer;
 }
-.today-theme-select option { background: #06122e; color: var(--today-ink); }
+.today-theme-btn-glyph { color: var(--today-gold); font-size: 0.95rem; }
+.today-theme-btn-label { letter-spacing: 0.02em; }
+.today-theme-btn-current {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--today-soft);
+  padding-left: 0.55rem;
+  border-left: 1px solid color-mix(in srgb, #FCECAF 28%, transparent);
+}
+
+/* Theme picker sheet — modal overlay + list of themes. */
+.today-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+  background: color-mix(in srgb, #03081c 78%, transparent);
+  backdrop-filter: blur(3px);
+  animation: today-sheet-fade 0.16s ease;
+}
+@media (min-width: 640px) { .today-sheet-overlay { align-items: center; } }
+@keyframes today-sheet-fade { from { opacity: 0; } to { opacity: 1; } }
+.today-sheet {
+  width: 100%;
+  max-width: 30rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  border-radius: 16px;
+  padding: 1.1rem 1.1rem 1.3rem;
+  background: linear-gradient(160deg, color-mix(in srgb, #0A2D84 30%, #000) 0%, color-mix(in srgb, #03081c 92%, #000) 100%);
+  border: 1px solid color-mix(in srgb, #FCECAF 30%, transparent);
+  box-shadow: 0 18px 50px color-mix(in srgb, #000 70%, transparent);
+  animation: today-sheet-rise 0.2s ease;
+}
+@keyframes today-sheet-rise { from { transform: translateY(14px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.today-sheet-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+}
+.today-sheet-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--today-soft);
+  background: color-mix(in srgb, #0A2D84 24%, #000);
+  border: 1px solid color-mix(in srgb, #93C0FF 24%, transparent);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.today-sheet-close:hover { color: var(--today-gold); border-color: var(--today-gold); }
+.today-sheet-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.today-sheet-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  text-align: left;
+  border-radius: 11px;
+  padding: 0.7rem 0.85rem;
+  cursor: pointer;
+  background: color-mix(in srgb, #0A2D84 20%, #000);
+  border: 1px solid color-mix(in srgb, #93C0FF 26%, transparent);
+  transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+}
+.today-sheet-item:hover { transform: translateY(-1px); border-color: color-mix(in srgb, #FCECAF 50%, transparent); }
+.today-sheet-item-on {
+  background: linear-gradient(135deg, color-mix(in srgb, #645028 26%, #000) 0%, color-mix(in srgb, #0A2D84 24%, #000) 100%);
+  border-color: var(--today-gold);
+}
+.today-sheet-item-main { display: flex; flex-direction: column; gap: 0.18rem; flex: 1 1 auto; min-width: 0; }
+.today-sheet-item-title {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--today-ink);
+}
+.today-sheet-item-on .today-sheet-item-title { color: var(--today-gold); }
+.today-sheet-item-sub { font-size: 0.78rem; line-height: 1.4; color: var(--today-soft); }
+.today-sheet-item-count {
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--today-soft);
+  white-space: nowrap;
+}
+.today-sheet-item-on .today-sheet-item-count { color: var(--today-gold-cream); }
+.today-sheet-item-check { flex: 0 0 auto; color: var(--today-gold); font-weight: 700; }
 
 /* ── Prayer ────────────────────────────────────────────────────────────── */
 .today-prayer-subtitle { color: var(--today-soft); font-size: 0.88rem; margin-bottom: 0.6rem; }

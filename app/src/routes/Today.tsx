@@ -44,19 +44,29 @@ import {
   historyTone,
   type BiblicalHistoryEvent,
 } from "../lib/calendar/biblical-history.ts";
-import type { Moed } from "../lib/calendar/types.ts";
+import { JERUSALEM, type Moed } from "../lib/calendar/types.ts";
+import {
+  getReckoningPref,
+  setReckoningPref,
+} from "../lib/calendar/reckoning-pref.ts";
+import { getLocationPref } from "../lib/calendar/location-pref.ts";
+import { LocationBar } from "../components/LocationPicker.tsx";
+import { openGiving } from "../lib/giving.ts";
 import {
   DEVOTIONAL_IS_SEED,
   biblicalDayOrdinal,
   contentForOrdinal,
   listThemes,
   setActiveTheme,
+  type DevotionalTheme,
   type TodaysContent,
 } from "../lib/devotional/index.ts";
 
-// localStorage keys — the onboarding choice persists once the partner sets it.
+// localStorage key — the onboarding choice persists once the partner sets it.
+// The chosen reckoning is NOT stored here anymore; it lives in the app-wide
+// `cal.reckoning` key (lib/calendar/reckoning-pref) so the Today hub, the
+// Calendar route, and the Torah-portions / year-plan work all share one answer.
 const BIBLICAL_ON_KEY = "rop_today_biblical_on_v1";
-const RECKONING_KEY = "rop_today_reckoning_v1";
 
 interface ReckoningOption {
   kind: MonthKind;
@@ -75,7 +85,11 @@ const RECKONINGS: ReckoningOption[] = [
 ];
 
 function reckoningFor(kind: MonthKind): ReckoningState {
-  return { ...DEFAULT_RECKONING, month: kind };
+  return {
+    ...DEFAULT_RECKONING,
+    month: kind,
+    location: getLocationPref() ?? JERUSALEM,
+  };
 }
 
 export default function Today() {
@@ -96,13 +110,10 @@ export default function Today() {
       typeof window !== "undefined" &&
       window.localStorage.getItem(BIBLICAL_ON_KEY) === "true",
   );
-  const [monthKind, setMonthKind] = useState<MonthKind>(() => {
-    if (typeof window === "undefined") return "crescent";
-    const stored = window.localStorage.getItem(RECKONING_KEY);
-    return stored && RECKONINGS.some((r) => r.kind === stored)
-      ? (stored as MonthKind)
-      : "crescent";
-  });
+  // Seed from the shared app-wide reckoning preference (defaults to HebCal/
+  // rabbinic when the reader hasn't chosen). Reading and writing the same key
+  // the Calendar route uses keeps the two surfaces in lockstep.
+  const [monthKind, setMonthKind] = useState<MonthKind>(() => getReckoningPref());
 
   function persistBiblicalOn(on: boolean) {
     setBiblicalOn(on);
@@ -112,9 +123,7 @@ export default function Today() {
   }
   function persistReckoning(kind: MonthKind) {
     setMonthKind(kind);
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(RECKONING_KEY, kind);
-    }
+    setReckoningPref(kind);
   }
   // The unsure-user one-tap: a sensible working biblical calendar in one click.
   function useHebcalDefault() {
@@ -124,8 +133,15 @@ export default function Today() {
 
   // Theme selection lives in localStorage; this bump re-reads it after a change.
   const [themeTick, setThemeTick] = useState(0);
+  // Chosen location lives in localStorage; this bump recomputes after a change.
+  const [locationTick, setLocationTick] = useState(0);
 
-  const reck = useMemo(() => reckoningFor(monthKind), [monthKind]);
+  const reck = useMemo(
+    () => reckoningFor(monthKind),
+    // locationTick forces a recompute after the reader changes their place.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [monthKind, locationTick],
+  );
 
   // The biblical layer is only computed when it's turned on — the default state
   // stays simple and does no astronomy.
@@ -165,6 +181,25 @@ export default function Today() {
       <main className="mx-auto w-full max-w-4xl px-4 py-7 sm:px-6 sm:py-10">
         <HubHeader />
 
+        {/* A quiet invitation to support the work — above the doors, but small
+            and unobtrusive so it frames rather than interrupts. Opens the
+            Tithely giving page (system browser on native, new tab on web). */}
+        <SupportBar />
+
+        {/* S233 — the doors (Read / Appointed Times / My Study) ride at the very
+            top, directly under the title, so the partner meets them without
+            scrolling past the date + onboarding panel. The date / biblical
+            layer follows beneath. */}
+        <DoorRow />
+
+        {/* S236 — choose your place so sunset / Sabbath / feast times are
+            computed for the reader's own sky, not always Jerusalem's. Sits
+            above the day so it frames everything beneath it. */}
+        <LocationBar
+          className="mb-7"
+          onChange={() => setLocationTick((t) => t + 1)}
+        />
+
         {biblicalOn && detail ? (
           <BiblicalDayPanel
             detail={detail}
@@ -183,8 +218,6 @@ export default function Today() {
             onHebcal={useHebcalDefault}
           />
         )}
-
-        <DoorRow />
 
         <DevotionalCard
           content={content}
@@ -500,6 +533,30 @@ function OmerStrip({ omer }: { omer: OmerStatus }) {
 }
 
 // ───────────────────────────────────────────────────────────────────────
+// Support the work — a quiet giving affordance above the doors
+// ───────────────────────────────────────────────────────────────────────
+
+function SupportBar() {
+  return (
+    <div className="today-support" aria-label="Support this work">
+      <button
+        type="button"
+        className="chrome-metal chrome-metal-gold today-support-btn"
+        onClick={() => {
+          void openGiving();
+        }}
+      >
+        <span className="today-support-glyph" aria-hidden="true">♥</span>
+        <span>Support this work</span>
+      </button>
+      <span className="today-support-note">
+        keep the study Bible free &amp; growing
+      </span>
+    </div>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
 // Quick doors
 // ───────────────────────────────────────────────────────────────────────
 
@@ -559,6 +616,7 @@ function DevotionalCard({
 }) {
   const { theme, entry, entryNumber } = content;
   const themes = listThemes();
+  const [sheetOpen, setSheetOpen] = useState(false);
   return (
     <section className="today-card today-card-devo mb-7">
       <div className="today-card-head">
@@ -590,26 +648,119 @@ function DevotionalCard({
         <p className="today-devo-closing">{entry.closing}</p>
       </div>
 
+      {/* Themes affordance — shown only once there's more than one theme to
+          choose between. A chrome-metal button opens a small sheet listing each
+          theme with its one-line frame and entry count; picking one persists
+          the choice (setActiveTheme) and re-reads the day's content (themeTick).
+          While only the seed theme exists, this stays hidden — just like the old
+          <select> did. */}
       {themes.length > 1 && (
         <div className="today-theme-pick">
-          <label htmlFor="today-theme" className="today-theme-pick-label">
-            Devotional theme
-          </label>
-          <select
-            id="today-theme"
-            className="today-theme-select"
-            value={theme.id}
-            onChange={(e) => onPickTheme(e.target.value)}
+          <span className="today-theme-pick-label">Devotional theme</span>
+          <button
+            type="button"
+            className="chrome-metal chrome-metal-gold today-theme-btn"
+            onClick={() => setSheetOpen(true)}
+            aria-haspopup="dialog"
+            aria-expanded={sheetOpen}
           >
-            {themes.map((t) => (
-              <option key={t.id} value={t.id}>
-                {t.title}
-              </option>
-            ))}
-          </select>
+            <span className="today-theme-btn-glyph" aria-hidden="true">❖</span>
+            <span className="today-theme-btn-label">Themes</span>
+            <span className="today-theme-btn-current">{theme.title}</span>
+          </button>
         </div>
       )}
+
+      {sheetOpen && (
+        <ThemeSheet
+          themes={themes}
+          activeId={theme.id}
+          onPick={(id) => {
+            onPickTheme(id);
+            setSheetOpen(false);
+          }}
+          onClose={() => setSheetOpen(false)}
+        />
+      )}
     </section>
+  );
+}
+
+// ───────────────────────────────────────────────────────────────────────
+// Theme picker sheet — the list of themes, each with its frame + entry count
+// ───────────────────────────────────────────────────────────────────────
+
+function ThemeSheet({
+  themes,
+  activeId,
+  onPick,
+  onClose,
+}: {
+  themes: DevotionalTheme[];
+  activeId: string;
+  onPick: (id: string) => void;
+  onClose: () => void;
+}) {
+  // Escape closes the sheet, mirroring a dialog.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="today-sheet-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Choose a devotional theme"
+      onClick={onClose}
+    >
+      <div className="today-sheet" onClick={(e) => e.stopPropagation()}>
+        <div className="today-sheet-head">
+          <div className="today-eyebrow today-eyebrow-gold">Devotional themes</div>
+          <button
+            type="button"
+            className="today-sheet-close"
+            onClick={onClose}
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <ul className="today-sheet-list">
+          {themes.map((t) => {
+            const isActive = t.id === activeId;
+            return (
+              <li key={t.id}>
+                <button
+                  type="button"
+                  className={"today-sheet-item" + (isActive ? " today-sheet-item-on" : "")}
+                  onClick={() => onPick(t.id)}
+                  aria-pressed={isActive}
+                >
+                  <span className="today-sheet-item-main">
+                    <span className="today-sheet-item-title">{t.title}</span>
+                    <span className="today-sheet-item-sub">{t.subtitle}</span>
+                  </span>
+                  <span className="today-sheet-item-count">
+                    {t.entries.length}{" "}
+                    {t.entries.length === 1 ? "entry" : "entries"}
+                  </span>
+                  {isActive && (
+                    <span className="today-sheet-item-check" aria-hidden="true">
+                      ✓
+                    </span>
+                  )}
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 }
 

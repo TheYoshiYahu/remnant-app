@@ -48,6 +48,7 @@ import {
   downloadMarkdown,
   openStudyPrintView,
 } from "../lib/study-export";
+import { loadStoredNativeToken } from "../lib/native-auth";
 
 interface MyStudyProps {
   /** Books list from App state — drives canonical book ordering in
@@ -176,19 +177,29 @@ export default function MyStudy({ books, onNavigate, onClose }: MyStudyProps) {
 
   useEffect(() => {
     let cancelled = false;
-    getStudyIndex()
-      .then((res) => {
-        if (!cancelled) setData(res);
-      })
-      .catch((e) => {
-        if (!cancelled) {
-          setError(
-            e instanceof Error
-              ? e.message
-              : "Couldn't load your study — try again.",
-          );
-        }
-      });
+    // S233 — hydrate the native JWT from Capacitor Preferences BEFORE the
+    // first study-index fetch. Opening My Study via the Today-hub deep link
+    // (/read?study=1) mounts this component before the token cache is warm on
+    // native shells, so getStudyIndex() would fire unauthenticated, come back
+    // free-tier (note_cap !== null), and falsely render the "purchase this
+    // feature" paywall to a paying partner. Awaiting the token load first
+    // mirrors the /me and notes fetches in App.tsx (S178/S200/S201 pattern).
+    void loadStoredNativeToken().then(() => {
+      if (cancelled) return;
+      getStudyIndex()
+        .then((res) => {
+          if (!cancelled) setData(res);
+        })
+        .catch((e) => {
+          if (!cancelled) {
+            setError(
+              e instanceof Error
+                ? e.message
+                : "Couldn't load your study — try again.",
+            );
+          }
+        });
+    });
     return () => {
       cancelled = true;
     };

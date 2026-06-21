@@ -35,6 +35,7 @@ import {
   eventsOnBiblicalDate,
   type BiblicalHistoryEvent,
 } from "./biblical-history.ts";
+import { DAYS_IN_PLAN, readingForDay, type DayReadingItem } from "../reading-plan/pacing.ts";
 
 const DAY_MS = 86_400_000;
 
@@ -104,6 +105,14 @@ export interface LayerCell {
   illum: number;
   waxing: boolean;
   moedim: Moed[];
+  /**
+   * The "Read the Scriptures in a Year" portion assigned to this civil day,
+   * when an active plan covers it (roadmap B-3). Undefined when no plan is
+   * running or the box falls outside the plan window. Attached after the grid
+   * is built, by `attachReadingAssignments` — `buildLayerGrid` stays pure and
+   * plan-agnostic.
+   */
+  readingAssignment?: DayReadingItem[];
 }
 
 export interface LayerGrid {
@@ -354,6 +363,43 @@ export function buildLayerGrid(
   return base === "gregorian"
     ? buildGregorianGrid(s, focus, today)
     : buildHebrewGrid(s, focus, today);
+}
+
+/**
+ * Cross-link (roadmap B-3): tag each cell that falls inside an active
+ * year-plan with that day's reading portion. The plan is the bucketed
+ * sequence (`buildYearPlan(scope)`) and `startDateISO` is the plan's Day-1
+ * civil date — both owned by the caller, who reads plan-store. Each cell's
+ * Gregorian civil day (its UTC-noon `daytime`) is mapped to a 1-indexed plan
+ * day; boxes outside the [start, start+364] window get nothing.
+ *
+ * Mutates and returns the same grid (cells are freshly built each render, so
+ * in-place tagging is safe). No-op when there is no plan.
+ */
+export function attachReadingAssignments(
+  grid: LayerGrid,
+  plan: DayReadingItem[][] | null,
+  startDateISO: string | null,
+): LayerGrid {
+  if (!plan || !startDateISO) return grid;
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(startDateISO);
+  if (!m) return grid;
+  // Plan Day 1 as a UTC civil midnight, so day math is timezone-stable against
+  // the grid's UTC-noon cell instants.
+  const startUTC = Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+  for (const cell of grid.cells) {
+    const d = cell.daytime; // UTC-noon representative of the Gregorian box
+    const cellUTC = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+    const elapsed = Math.round((cellUTC - startUTC) / DAY_MS);
+    const n = elapsed + 1; // 1-indexed, like pacing's dayNumberFor
+    // Outside the plan window [start, start+364] → no assignment. We must NOT
+    // clamp here (as the reader header does), or every past box would falsely
+    // show Day 1's portion and every future box Day 365's.
+    if (n < 1 || n > DAYS_IN_PLAN) continue;
+    const items = readingForDay(plan, n);
+    if (items.length) cell.readingAssignment = items;
+  }
+  return grid;
 }
 
 // ---------------------------------------------------------------------------
