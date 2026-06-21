@@ -1,6 +1,10 @@
 # Scratch / inbox — Yoshi's local workspaces, not part of the project source
 _scratch/
 _inbox/
+scratch_xref_*/
+
+# Local agent / editor config — not project source
+.claude/
 
 # S175 — sandbox-probe leftovers from the cowork-mount permission test.
 # The mount allowed create + overwrite but blocked delete, so these two
