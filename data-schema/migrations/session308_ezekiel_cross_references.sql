@@ -8874,6 +8874,1267 @@ SELECT t.id, cr.id, 6, E'★★ *he shall sit as a refiner and purifier of silve
  WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_21.sql (Ezekiel 21) -----
+-- Chapter: Ezekiel 21 — THE SWORD SONG. The sword of Yahuah drawn out of his sheath against all flesh,
+-- sharpened and furbished to glitter, doubled the third time; smite upon thy thigh, the sword of my people.
+-- The king of Babylon at the parting of the way using divination — arrows bright, images, the liver — yet
+-- his lot falls as Yahuah wills. And the keystone: the profane wicked prince of Yashar'el, Remove the
+-- diadem, take off the crown; I will OVERTURN, OVERTURN, OVERTURN it, and it shall be no more, UNTIL HE
+-- COME WHOSE RIGHT IT IS — the crown stripped from the failed Davidic line and SUSPENDED until the rightful
+-- King receives it.
+-- Tag: ezek21   Temp view: _s308_ezek21_lookup   Session: s308
+-- Sort band: base 32500, step 3 -> threads at 32500, 32503, 32506 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',21,v
+--
+-- Ezekiel 21 coverage:
+--   v.1-7 (set thy face toward Jerusalem; I am against thee, and will draw forth my sword out of his
+--          sheath; cut off the righteous and the wicked; every heart shall melt)
+--        NT:     none warranted (the drawing of the sword — held in THREAD 1 as the frame for the sword song)
+--        Extras: none warranted
+--        Tanakh: held in prose — the sword drawn out of his sheath (v.3-5) prefaces the sharpened sword of THREAD 1
+--   ★ v.9-17 (A sword, a sword is sharpened, and also furbished... that it may glitter... it is the sword
+--          of the great men that are slain; smite therefore upon thy thigh; the sword of my people)
+--        NT:     ★ Revelation 19:15 (out of his mouth goeth a sharp sword, that with it he should smite the
+--                nations) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Deuteronomy 32:41 (If I whet my glittering sword, and mine hand take hold on judgment),
+--                ★ Jeremiah 47:6 (O thou sword of Yahuah, how long?), ★ Isaiah 34:5 (my sword shall be
+--                bathed in heaven... it shall come down... to judgment) — THREAD 1
+--   v.18-20 (appoint thee two ways, that the sword of the king of Babylon may come; to Rabbath of the
+--          Ammonites, and to Yahudah in Jerusalem) — the sign-act setup; woven into THREAD 3 prose
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none separate (the two-ways setup; preface to the divination of v.21-23)
+--   ★ v.21-23 (the king of Babylon stood at the parting of the way... to use divination: he made his
+--          arrows bright, he consulted with images, he looked in the liver... the divination for Jerusalem)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 16:33 (the lot is cast into the lap; but the whole disposing thereof is of
+--                Yahuah), ★ Proverbs 21:1 (the king's heart is in the hand of Yahuah... he turneth it
+--                whithersoever he will) — THREAD 3
+--   v.24 (because ye have made your iniquity to be remembered... ye shall be taken with the hand) — the
+--        verdict on Jerusalem; woven into THREAD 2/THREAD 3 prose; no separate add
+--   ★★★ v.25-27 (And thou, profane wicked prince of Yashar'el... Remove the diadem, and take off the crown...
+--          I will overturn, overturn, overturn, it: and it shall be no more, UNTIL HE COME WHOSE RIGHT IT IS;
+--          and I will give it him)
+--        NT:     ★★★ Luke 1:32-33 (Yahuah Elohim shall give unto him the throne of his father David... and
+--                of his kingdom there shall be no end), ★★ Revelation 19:12 (on his head were many crowns),
+--                ★★ Revelation 11:15 (the kingdoms of this world are become the kingdoms of our Lord, and of
+--                his Messiah; and he shall reign for ever and ever) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★★ Genesis 49:10 (the sceptre shall not depart from Yahudah... until Shiloh come),
+--                ★★ Psalm 2:6-8 (Yet have I set my king upon my holy hill of Zion... Thou art my Son... I
+--                shall give thee the heathen for thine inheritance) — THREAD 2
+--   v.28-32 (the sword against the Ammonites; thou shalt be for fuel to the fire... no more remembered) —
+--        the oracle against Ammon; the sword turned on Babylon's instrument; woven into THREAD 1 prose
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none separate (the Ammonite oracle; the same sword song extended; no add forced)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-21-a-sword-a-sword-is-sharpened-the-sword-of-yahuah — NT (Revelation 19) + Tanakh (Deuteronomy 32, Jeremiah 47, Isaiah 34) [free]
+--      (★ the sword of Yahuah's judgment drawn, whetted, furbished to glitter; the glittering sword of Deut 32; the sharp sword out of his mouth)
+--   2. ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is — NT (Luke 1, Revelation 19, Revelation 11) + Tanakh (Genesis 49, Psalm 2) [free]
+--      (★★★ THE keystone: crown removed from the failed Davidic line, overturned thrice, SUSPENDED until Shiloh, the rightful King, receives it)
+--   3. ezekiel-21-the-king-of-babylon-at-the-parting-of-the-way — Tanakh (Proverbs 16, Proverbs 21) [free]
+--      (★ even the pagan king's divination — arrows, images, the liver — falls as Yahuah's hidden hand directs; the lot disposed of Yahuah)
+--
+-- Framing notes:
+--   ★ THE SWORD SONG (THREAD 1): Yahuah draws his sword — *I am against thee, and will draw forth my sword
+--      out of his sheath* (21:3) — and then the sword song proper: *A sword, a sword is sharpened, and also
+--      furbished: It is sharpened to make a sore slaughter; it is furbished that it may glitter* (21:9-10),
+--      *smite therefore upon thy thigh* (21:12), *let the sword be doubled the third time* (21:14). It is
+--      Yahuah's own sword of judgment. The Torah sang it first: *If I whet my glittering sword, and mine
+--      hand take hold on judgment* (Deuteronomy 32:41). Jeremiah addressed it: *O thou sword of Yahuah
+--      (LORD), how long?* (Jeremiah 47:6). Isaiah: *my sword shall be bathed in heaven... it shall come
+--      down... to judgment* (Isaiah 34:5). And it reaches its end in the mouth of the King: *out of his
+--      mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15). The sword
+--      drawn over Yashar'el (Israel) is the same sword of Yahuah that judges the nations at the last.
+--   ★★★ REMOVE THE DIADEM — UNTIL HE COME WHOSE RIGHT IT IS (THREAD 2, the keystone): *And thou, profane
+--      wicked prince of Yashar'el (Israel), whose day is come, when iniquity shall have an end... Remove the
+--      diadem, and take off the crown: this shall not be the same: exalt him that is low, and abase him that
+--      is high. I will overturn, overturn, overturn, it: and it shall be no more, until he come whose right
+--      it is; and I will give it him* (21:25-27). The crown is STRIPPED from the failed Davidic line
+--      (Zedekiah, the last reigning king) and the throne OVERTURNED three times — suspended, vacant — UNTIL
+--      the rightful King comes. This is Jacob's blessing held open: *The sceptre shall not depart from
+--      Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be* (Genesis
+--      49:10). Gabriel names the One whose right it is: *Yahuah Elohim (the Lord God) shall give unto him
+--      the throne of his father David: And he shall reign over the house of Jacob for ever; and of his
+--      kingdom there shall be no end* (Luke 1:32-33). The Father had decreed it: *Yet have I set my king
+--      upon my holy hill of Zion... Thou art my Son... Ask of me, and I shall give thee the heathen for
+--      thine inheritance* (Psalm 2:6-8). And the crown is restored at the consummation: *on his head were
+--      many crowns* (Revelation 19:12); *The kingdoms of this world are become the kingdoms of our Lord, and
+--      of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The diadem removed
+--      from the wicked prince is the diadem reserved for the Formed Son, the Son of David whose right it is.
+--   ★ THE KING OF BABYLON AT THE PARTING OF THE WAY (THREAD 3): *For the king of Babylon stood at the
+--      parting of the way, at the head of the two ways, to use divination: he made his arrows bright, he
+--      consulted with images, he looked in the liver* (21:21), and his lot fell on Jerusalem (21:22). The
+--      pagan king's divination — for all its arrows and images — falls exactly where Yahuah's hidden hand
+--      directs: *The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)*
+--      (Proverbs 16:33); *The king's heart is in the hand of Yahuah (LORD)... he turneth it whithersoever he
+--      will* (Proverbs 21:1). Nebuchadnezzar thinks he chooses; Yahuah is the One who calls to remembrance
+--      the iniquity that they may be taken (21:23). The rod of judgment is in Yahuah's hand even when an
+--      idolater holds the sword.
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the sword drawn out of the sheath — the frame for THREAD 1),
+--      v.18-20 (the two-ways sign-act — preface to the divination of THREAD 3), v.24 (the verdict on
+--      Jerusalem — woven into THREAD 2/3 prose), v.28-32 (the Ammonite oracle — the same sword song
+--      extended, no add forced). All verses recorded in the coverage checklist above.
+
+CREATE TEMP VIEW _s308_ezek21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): a sword, a sword is sharpened — the sword of Yahuah's judgment
+    ('canon','ezekiel',21,9,'canon','deuteronomy',32,41,'free',
+      E'*If I whet my glittering sword, and mine hand take hold on judgment; I will render vengeance to mine enemies, and will reward them that hate me* (Deuteronomy 32:41). The Torah sang the sword song before Ezekiel: the *sword... sharpened, and also furbished* that it may *glitter* (Ezekiel 21:9-10) is Yahuah''s own glittering sword, whetted, his hand taking hold on judgment. The blade drawn over Yashar''el (Israel) is the sword of the Most High himself.'),
+    ('canon','ezekiel',21,9,'canon','jeremiah',47,6,'free',
+      E'*O thou sword of Yahuah (LORD), how long will it be ere thou be quiet? put up thyself into thy scabbard, rest, and be still* (Jeremiah 47:6). Jeremiah names the very weapon — *the sword of Yahuah* — that Ezekiel draws *out of his sheath* (Ezekiel 21:3) and sees *sharpened... furbished* (21:9). The sword that will not return to its scabbard until the slaughter is done is Yahuah''s sword of judgment, drawn at his word.'),
+    ('canon','ezekiel',21,15,'canon','isaiah',34,5,'free',
+      E'*For my sword shall be bathed in heaven: behold, it shall come down upon Idumea, and upon the people of my curse, to judgment* (Isaiah 34:5). Isaiah''s sword *bathed in heaven... come down... to judgment* is the same sword Ezekiel sees *made bright... wrapped up for the slaughter* (Ezekiel 21:15). The furbished, glittering blade is Yahuah''s instrument of judgment, set against the gates that the heart may faint.'),
+    ('canon','ezekiel',21,9,'canon','revelation',19,15,'free',
+      E'*And out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron* (Revelation 19:15). The sword song reaches its end in the mouth of the King: the *sword... sharpened, and also furbished* (Ezekiel 21:9) becomes the *sharp sword* proceeding from the Word of Elohim (God) to smite the nations. The same sword of Yahuah drawn over Yashar''el (Israel) is the sword by which the Formed Son judges at the last.'),
+
+    -- THREAD 2 (★★★): Remove the diadem, take off the crown — until he come whose right it is
+    ('canon','ezekiel',21,27,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). Jacob''s blessing is the very promise Ezekiel holds open: the crown removed and the throne *overturn, overturn, overturn... until he come whose right it is* (Ezekiel 21:27) is the sceptre that *shall not depart from Yahudah (Judah)... until Shiloh come*. The kingship is not destroyed but suspended — kept for the rightful King, Shiloh, to whom the gathering of the people belongs.'),
+    ('canon','ezekiel',21,27,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). Gabriel names the One whose right it is: the crown overturned *until he come whose right it is; and I will give it him* (Ezekiel 21:27) is *the throne of his father David* given to the Son of the Highest. The diadem stripped from the failed line is the throne reserved for the Son of David.'),
+    ('canon','ezekiel',21,27,'canon','luke',1,33,'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The throne *overturned* and held vacant until *he come whose right it is* (Ezekiel 21:27) is established in the everlasting reign Gabriel announces — *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end*. The thrice-overturned crown comes to rest on the One whose kingdom has no end.'),
+    ('canon','ezekiel',21,26,'canon','psalms',2,6,'free',
+      E'*Yet have I set my king upon my holy hill of Zion* (Psalm 2:6). Against the *profane wicked prince* whose crown is removed (Ezekiel 21:25-26), the Father has already set his own King — *Yet have I set my king upon my holy hill of Zion*. The diadem taken from the abased prince is given to the One the Father enthrones in Zion.'),
+    ('canon','ezekiel',21,27,'canon','psalms',2,8,'free',
+      E'*Ask of me, and I shall give thee the heathen for thine inheritance, and the uttermost parts of the earth for thy possession* (Psalm 2:8). The crown given to *him... whose right it is* (Ezekiel 21:27) is the inheritance the Father decrees to his Son — *I shall give thee the heathen for thine inheritance*. The One who receives the overturned throne receives with it the nations and the ends of the earth.'),
+    ('canon','ezekiel',21,27,'canon','revelation',19,12,'free',
+      E'*His eyes were as a flame of fire, and on his head were many crowns; and he had a name written, that no man knew, but he himself* (Revelation 19:12). The diadem *take off the crown... until he come whose right it is* (Ezekiel 21:26-27) is restored at the consummation, when the rider Faithful and True appears with *many crowns* upon his head. The crown removed from the wicked prince is the crown the rightful King wears in glory.'),
+    ('canon','ezekiel',21,27,'canon','revelation',11,15,'free',
+      E'*The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The throne overturned *until he come whose right it is; and I will give it him* (Ezekiel 21:27) reaches its end when the kingdom is given over — *the kingdoms of this world are become the kingdoms of our Lord, and of his Messiah*. The crown suspended through the exile comes at last to the Messiah who reigns for ever and ever.'),
+
+    -- THREAD 3 (★): the king of Babylon at the parting of the way — the lot disposed of Yahuah
+    ('canon','ezekiel',21,21,'canon','proverbs',16,33,'free',
+      E'*The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)* (Proverbs 16:33). The king of Babylon *stood at the parting of the way... to use divination: he made his arrows bright, he consulted with images, he looked in the liver* (Ezekiel 21:21) — yet his lot falls on Jerusalem (21:22) exactly where Yahuah disposes. The pagan king casts his arrows into the lap; the whole disposing thereof is of Yahuah.'),
+    ('canon','ezekiel',21,21,'canon','proverbs',21,1,'free',
+      E'*The king''s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will* (Proverbs 21:1). Nebuchadnezzar thinks his *divination* — *arrows... images... the liver* (Ezekiel 21:21) — chooses his path; but the heart of the king is in Yahuah''s hand, turned whithersoever he will. The idolater''s lot is steered by the hidden hand that calls the iniquity to remembrance (21:23).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-21-a-sword-a-sword-is-sharpened-the-sword-of-yahuah',
+       E'A sword, a sword is sharpened, and also furbished — the sword of Yahuah drawn out of his sheath',
+       E'Yahuah draws his sword: *Behold, I am against thee, and will draw forth my sword out of his sheath, and will cut off from thee the righteous and the wicked* (21:3), *it shall not return any more* (21:5). Then comes the sword song proper, the blade chanted into the prophet''s mouth: *A sword, a sword is sharpened, and also furbished: It is sharpened to make a sore slaughter; it is furbished that it may glitter* (21:9-10); *Cry and howl, son of Adam: for it shall be upon my people... smite therefore upon thy thigh* (21:12); *let the sword be doubled the third time, the sword of the slain* (21:14); *ah! it is made bright, it is wrapped up for the slaughter* (21:15). This is no human weapon — it is Yahuah''s own sword of judgment. The Torah sang it first: *If I whet my glittering sword, and mine hand take hold on judgment; I will render vengeance to mine enemies* (Deuteronomy 32:41). Jeremiah cried out to it: *O thou sword of Yahuah (LORD), how long will it be ere thou be quiet? put up thyself into thy scabbard* (Jeremiah 47:6). Isaiah saw it descend: *my sword shall be bathed in heaven: behold, it shall come down... to judgment* (Isaiah 34:5). And the sword song reaches its end in the mouth of the King: *out of his mouth goeth a sharp sword, that with it he should smite the nations: and he shall rule them with a rod of iron* (Revelation 19:15). The furbished, glittering blade drawn over the princes of Yashar''el (Israel) is the same sword of Yahuah that the Formed Son wields against the nations at the last.',
+       sv.verse_id, ev.verse_id, 'free', 32500
+  FROM _s308_ezek21_lookup sv, _s308_ezek21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=21 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is',
+       E'Remove the diadem, take off the crown — until he come whose right it is',
+       E'Here is the keystone of the whole oracle. To the last reigning king of the Davidic line Yahuah says: *And thou, profane wicked prince of Yashar''el (Israel), whose day is come, when iniquity shall have an end, Thus saith Adonai Yahuah (the Lord GOD); Remove the diadem, and take off the crown: this shall not be the same: exalt him that is low, and abase him that is high. I will overturn, overturn, overturn, it: and it shall be no more, until he come whose right it is; and I will give it him* (21:25-27). The crown is stripped from the failed line, the throne overturned three times — not abolished, but SUSPENDED, held vacant — *until he come whose right it is*. This is Jacob''s blessing held open across the centuries: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The kingship of Yahudah is reserved for Shiloh, the One whose right it is. Gabriel names him: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). The Father had decreed it from of old: *Yet have I set my king upon my holy hill of Zion* (Psalm 2:6), *Ask of me, and I shall give thee the heathen for thine inheritance, and the uttermost parts of the earth for thy possession* (Psalm 2:8). And the crown removed in shame is restored in glory: *on his head were many crowns; and he had a name written, that no man knew, but he himself* (Revelation 19:12); *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15). The diadem taken from the wicked prince is the diadem reserved for the Formed Son, the Son of David whose right it is — and to him at the last the throne is given.',
+       sv.verse_id, ev.verse_id, 'free', 32503
+  FROM _s308_ezek21_lookup sv, _s308_ezek21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=21 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-21-the-king-of-babylon-at-the-parting-of-the-way',
+       E'The king of Babylon at the parting of the way — the lot disposed of Yahuah',
+       E'Yahuah tells the prophet to appoint two ways for the sword of the king of Babylon to come — one to Rabbath of the Ammonites, one to *Yahudah (Judah) in Jerusalem the defenced* (21:20). And at the fork the pagan king casts his omens: *For the king of Babylon stood at the parting of the way, at the head of the two ways, to use divination: he made his arrows bright, he consulted with images, he looked in the liver* (21:21); *At his right hand was the divination for Jerusalem* (21:22). Nebuchadnezzar shakes his arrows, consults his idols, reads the liver of the sacrifice — and the lot falls on Jerusalem. Yet the lot falls exactly where Yahuah''s hidden hand directs: *The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)* (Proverbs 16:33); *The king''s heart is in the hand of Yahuah (LORD), as the rivers of water: he turneth it whithersoever he will* (Proverbs 21:1). The idolater thinks his divination chooses his path, but it is Yahuah who *will call to remembrance the iniquity, that they may be taken* (21:23). Even the pagan king''s arrows are steered by the One who holds the rod of judgment — the sword of Babylon is Yahuah''s rod, the divination of an enemy bent to the purpose of the Most High.',
+       sv.verse_id, ev.verse_id, 'free', 32506
+  FROM _s308_ezek21_lookup sv, _s308_ezek21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=21 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *If I whet my glittering sword, and mine hand take hold on judgment* (Deuteronomy 32:41) — the Torah sang the sword song first; the sharpened, glittering blade of Ezekiel 21:9 is Yahuah''s own glittering sword.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-a-sword-a-sword-is-sharpened-the-sword-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *O thou sword of Yahuah (LORD), how long will it be ere thou be quiet?* (Jeremiah 47:6) — Jeremiah names the weapon Ezekiel draws *out of his sheath* (21:3); the sword that will not return until the slaughter is done.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=47 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-a-sword-a-sword-is-sharpened-the-sword-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *my sword shall be bathed in heaven... it shall come down... to judgment* (Isaiah 34:5) — the same sword Ezekiel sees *made bright... wrapped up for the slaughter* (21:15); Yahuah''s blade of judgment.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=15
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-a-sword-a-sword-is-sharpened-the-sword-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *out of his mouth goeth a sharp sword, that with it he should smite the nations* (Revelation 19:15) — the sword song''s end; the same sword of Yahuah, now in the mouth of the Word of Elohim, smites the nations.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-a-sword-a-sword-is-sharpened-the-sword-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come* (Genesis 49:10) — Jacob''s blessing held open; the crown suspended in Ezekiel 21:27 is the sceptre reserved for Shiloh, the rightful King.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — Gabriel names the One *whose right it is* (21:27); the throne stripped from the failed line is given to the Son of David.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the thrice-overturned crown (21:27) comes to rest on the King whose kingdom has no end.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Yet have I set my king upon my holy hill of Zion* (Psalm 2:6) — against the *profane wicked prince* whose crown is removed (21:25-26), the Father has already enthroned his own King.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=26
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I shall give thee the heathen for thine inheritance* (Psalm 2:8) — the One who receives the overturned throne (21:27) receives with it the nations and the ends of the earth.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *on his head were many crowns; and he had a name written, that no man knew, but he himself* (Revelation 19:12) — the diadem removed in shame (21:26) restored in glory on the rider Faithful and True.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *The kingdoms of this world are become the kingdoms of our Lord, and of his Messiah (Christ); and he shall reign for ever and ever* (Revelation 11:15) — the crown suspended through the exile (21:27) comes at last to the Messiah who reigns for ever.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=27
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-remove-the-diadem-until-he-come-whose-right-it-is'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The lot is cast into the lap; but the whole disposing thereof is of Yahuah (LORD)* (Proverbs 16:33) — the king of Babylon''s arrows and images (21:21) fall on Jerusalem exactly where Yahuah disposes.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-the-king-of-babylon-at-the-parting-of-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The king''s heart is in the hand of Yahuah (LORD)... he turneth it whithersoever he will* (Proverbs 21:1) — Nebuchadnezzar''s divination (21:21) is steered by the hidden hand that calls the iniquity to remembrance (21:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s308_ezek21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-21-the-king-of-babylon-at-the-parting-of-the-way'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_22.sql (Ezekiel 22) -----
+-- Chapter: Ezekiel 22 — THE BLOODY CITY and her catalogue of sins. The covenant-lawsuit against
+-- Jerusalem: blood shed in her midst, idols, the Torah broken point by point (father and mother,
+-- the stranger/fatherless/widow, the sabbaths, usury, bloodshed); the house of Yashar''el (Israel)
+-- become DROSS, gathered into the furnace and melted in the fire of Yahuah''s wrath; the prophets,
+-- priests, and princes corrupt; and the heart of the chapter — ★★★ *I sought for a man... that should
+-- make up the hedge, and stand in the gap before me for the land... but I found none.* The intercessor
+-- sought and not found among them — the gap none could fill, that the Formed Son fills.
+-- Tag: ezek22   Session: s308   Temp view: _s308_ezek22_lookup
+-- Sort band: base 32525, step 3 -> 32525, 32528, 32531 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',22,v
+--
+-- Ezekiel 22 coverage:
+--   v.1-5 (wilt thou judge the bloody city?... maketh idols against herself; a reproach unto the heathen)
+--        NT:     none warranted (the indictment-summons framing the catalogue; woven in prose of THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (the bloodshed/idol charge unfolded verse by verse in vv.6-12; held in prose)
+--   ★ v.6-12 (set light by father and mother; oppressed the stranger; vexed the fatherless and the widow;
+--          despised mine holy things, profaned my sabbaths; shed blood; taken usury and increase)
+--        NT:     none warranted (the Torah broken is named here from the Torah itself; the forward weave
+--                is the LAW she broke, not an NT type — kept to the Tanakh Torah)
+--        Extras: none warranted
+--        Tanakh: ★ Exodus 20:12 (honour thy father and thy mother), ★ Exodus 22:21 (vex not a stranger),
+--                ★ Exodus 22:22 (afflict not any widow, or fatherless child), ★ Leviticus 19:30 (keep my
+--                sabbaths, and reverence my sanctuary), ★ Leviticus 25:36 (take thou no usury) — THREAD 1
+--   v.13-17 (I have smitten mine hand at thy dishonest gain; I will scatter thee among the heathen)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none separate (the verdict — scattering — bridges into the furnace of v.18; woven in prose)
+--   ★★ v.18-22 (the house of Yashar''el is become DROSS... I will gather you into the midst of the furnace...
+--          blow upon you in the fire of my wrath, and ye shall be melted in the midst thereof)
+--        NT:     ★ 1 Peter 1:7 (the trial of your faith... though it be tried with fire) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 1:22 (thy silver is become dross), ★★ Isaiah 1:25 (purely purge away thy dross),
+--                ★★ Malachi 3:2 (like a refiner''s fire), ★★ Malachi 3:3 (sit as a refiner... purify the
+--                sons of Levi), ★ Proverbs 17:3 (the fining pot for silver) — THREAD 2
+--   v.23-29 (the land not cleansed; prophets a conspiracy; priests violated my law and profaned my holy
+--          things; princes like wolves; the people used oppression and vexed the poor, the stranger)
+--        NT:     none warranted (the catalogue of corrupt leaders; the law-violation echoes THREAD 1 in prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — v.26 (priests violated my law, put no difference holy/profane, hid eyes
+--                from my sabbaths) echoes the broken-Torah of THREAD 1 and the sabbaths of Lev 19:30; woven there
+--   ★★★ v.30-31 (I sought for a man... that should make up the hedge, and stand in the gap before me for the
+--          land, that I should not destroy it: but I found none; therefore have I poured out mine indignation)
+--        NT:     ★★★ 1 Timothy 2:5 (one mediator between Elohim (God) and men, the man HaMashiach Yahusha),
+--                ★★ Hebrews 7:25 (he ever liveth to make intercession) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 106:23 (Moses his chosen stood before him in the breach, to turn away his wrath),
+--                ★★ Isaiah 59:16 (he saw that there was no man... no intercessor: therefore his arm brought
+--                salvation) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke — Tanakh (Exodus 20, Exodus 22, Leviticus 19, Leviticus 25) [free]
+--      (★ the catalogue of sins IS the Torah broken point by point — the very commandments she was given)
+--   2. ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace — Tanakh (Isaiah 1, Malachi 3, Proverbs 17) + NT (1 Peter 1) [free]
+--      (★★ the refining furnace; dross gathered and melted in the fire of wrath; the refiner''s fire)
+--   3. ezekiel-22-i-sought-for-a-man-to-stand-in-the-gap-but-i-found-none — Tanakh (Psalm 106, Isaiah 59) + NT (1 Timothy 2, Hebrews 7) [free]
+--      (★★★ the intercessor sought and not found among them — the gap the Formed Son alone fills)
+--
+-- Framing notes:
+--   ★ THE TORAH SHE BROKE (THREAD 1): the catalogue of the bloody city''s sins is not a generic list of
+--      vices — it is the Torah she was given, broken commandment by commandment. *In thee have they set
+--      light by father and mother: in the midst of thee have they dealt by oppression with the stranger:
+--      in thee have they vexed the fatherless and the widow. Thou hast despised mine holy things, and hast
+--      profaned my sabbaths* (Ezekiel 22:7-8); *In thee have they taken gifts to shed blood; thou hast
+--      taken usury and increase* (22:12). Each charge names a Torah word: *Honour thy father and thy
+--      mother* (Exodus 20:12); *Thou shalt neither vex a stranger, nor oppress him* (Exodus 22:21); *Ye
+--      shall not afflict any widow, or fatherless child* (Exodus 22:22); *Ye shall keep my sabbaths, and
+--      reverence my sanctuary* (Leviticus 19:30); *Take thou no usury of him, or increase* (Leviticus
+--      25:36). The Torah is the standard the lawsuit measures by — her guilt is precisely the breaking of
+--      the covenant instruction she was given, NEVER the Torah being a curse. The priests'' own sin seals
+--      it: *Her priests have violated my law... have hid their eyes from my sabbaths* (22:26).
+--   ★★ THE DROSS IN THE FURNACE (THREAD 2): *Son of Adam, the house of Yashar''el (Israel) is to me become
+--      dross... they are even the dross of silver* (Ezekiel 22:18); *I will gather you, and blow upon you in
+--      the fire of my wrath, and ye shall be melted in the midst thereof* (22:21). The exile is a refining
+--      furnace — judgment that purges, not annihilation. Isaiah names the same dross and the same purging:
+--      *Thy silver is become dross* (Isaiah 1:22), *and purely purge away thy dross, and take away all thy
+--      tin* (Isaiah 1:25). Malachi names the Refiner himself: *he is like a refiner''s fire... And he shall
+--      sit as a refiner and purifier of silver: and he shall purify the sons of Levi* (Malachi 3:2-3).
+--      Proverbs gives the proverb under it: *The fining pot is for silver, and the furnace for gold: but
+--      Yahuah (LORD) trieth the hearts* (Proverbs 17:3). And the trial reaches forward to the refining of
+--      faith: *the trial of your faith... though it be tried with fire* (1 Peter 1:7). The furnace melts
+--      to purify, the dross removed that the silver may be clean.
+--   ★★★ I SOUGHT FOR A MAN — AND FOUND NONE (THREAD 3, the heart of the chapter): *And I sought for a man
+--      among them, that should make up the hedge, and stand in the gap before me for the land, that I should
+--      not destroy it: but I found none. Therefore have I poured out mine indignation upon them* (Ezekiel
+--      22:30-31). Yahuah looks for an intercessor to stand in the breach and turn away the wrath, and among
+--      THEM finds none. The Psalm remembers when there had been one: *Moses his chosen stood before him in
+--      the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). Isaiah names the
+--      same emptiness and the answer to it: *he saw that there was no man, and wondered that there was no
+--      intercessor: therefore his arm brought salvation unto him* (Isaiah 59:16) — when no man stood,
+--      Yahuah''s own arm (the Formed Son) brought the salvation. The gap none could fill among them is
+--      filled forward by the one Mediator: *there is one Elohim (God), and one mediator between Elohim (God)
+--      and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5), who *ever liveth to make
+--      intercession for them* (Hebrews 7:25). The man sought and not found in Ezekiel''s generation is the
+--      Formed Son, the true Intercessor who stands in the gap for ever.
+--   VERSES WITH NO SEPARATE ADD: v.1-5 (the indictment-summons of the bloody city; framing prose of THREAD
+--      1), v.13-17 (the verdict and scattering; bridge to the furnace, woven in THREAD 2 prose), v.23-29
+--      (the corrupt prophets/priests/princes; v.26''s law-violation/sabbaths echoes THREAD 1, held in prose).
+--      All meaningful verses recorded in the coverage checklist; every block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the catalogue of sins = the Torah broken point by point
+    ('canon','ezekiel',22,7,'canon','exodus',20,12,'free',
+      E'*Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The first charge of the bloody city is the breaking of this very word — *In thee have they set light by father and mother* (Ezekiel 22:7). The commandment whose keeping lengthens days upon the land is the commandment whose breaking brings her days near (22:4); her sin is measured by the Torah she was given.'),
+    ('canon','ezekiel',22,7,'canon','exodus',22,21,'free',
+      E'*Thou shalt neither vex a stranger, nor oppress him: for ye were strangers in the land of Egypt* (Exodus 22:21). The catalogue names this Torah word broken — *in the midst of thee have they dealt by oppression with the stranger* (Ezekiel 22:7). The stranger Yahuah commanded her to shelter, remembering her own bondage, she has oppressed; the lawsuit charges her by the very statute.'),
+    ('canon','ezekiel',22,7,'canon','exodus',22,22,'free',
+      E'*Ye shall not afflict any widow, or fatherless child* (Exodus 22:22). Ezekiel names this Torah broken — *in thee have they vexed the fatherless and the widow* (Ezekiel 22:7). The Torah warned that their cry would be heard and Yahuah''s wrath wax hot (Exodus 22:23-24); the bloody city has done the very thing the commandment forbade, and the indignation is poured out (22:31).'),
+    ('canon','ezekiel',22,8,'canon','leviticus',19,30,'free',
+      E'*Ye shall keep my sabbaths, and reverence my sanctuary: I am Yahuah (LORD)* (Leviticus 19:30). The charge *Thou hast despised mine holy things, and hast profaned my sabbaths* (Ezekiel 22:8) is the exact inversion of this word — the sabbaths to be kept are profaned, the holy things to be reverenced despised. Her priests do the same: *have hid their eyes from my sabbaths, and I am profaned among them* (22:26). The Torah''s sabbath-command is the standard her guilt is weighed against.'),
+    ('canon','ezekiel',22,12,'canon','leviticus',25,36,'free',
+      E'*Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36). The charge *thou hast taken usury and increase, and thou hast greedily gained of thy neighbours by extortion* (Ezekiel 22:12) breaks this very Torah word — the usury and increase forbidden, that the poor brother might live, she has taken to shed blood. The covenant instruction she despised is the measure of her dishonest gain.'),
+
+    -- THREAD 2 (★★): the house of Yashar'el become DROSS — melted in the refining furnace
+    ('canon','ezekiel',22,18,'canon','isaiah',1,22,'free',
+      E'*Thy silver is become dross, thy wine mixed with water* (Isaiah 1:22). Isaiah names the same corruption Ezekiel sees — *the house of Yashar''el (Israel) is to me become dross... they are even the dross of silver* (Ezekiel 22:18). The faithful city turned harlot, the silver turned dross: what was precious has become worthless slag, fit only for the fire that purges.'),
+    ('canon','ezekiel',22,20,'canon','isaiah',1,25,'free',
+      E'*And I will turn my hand upon thee, and purely purge away thy dross, and take away all thy tin* (Isaiah 1:25). The furnace of Ezekiel — *so will I gather you in mine anger and in my fury, and I will leave you there, and melt you* (Ezekiel 22:20) — is the purging Isaiah promises: the dross purely purged away, the tin taken out. The melting is not annihilation but refining; the fire removes the dross that the silver may be clean.'),
+    ('canon','ezekiel',22,21,'canon','malachi',3,2,'free',
+      E'*But who may abide the day of his coming? and who shall stand when he appeareth? for he is like a refiner''s fire, and like fullers'' soap* (Malachi 3:2). The fire of wrath that melts the dross — *I will gather you, and blow upon you in the fire of my wrath* (Ezekiel 22:21) — is the refiner''s fire of the day of his coming. The One who blows the fire upon the furnace is the Refiner who tries who may stand when he appeareth.'),
+    ('canon','ezekiel',22,22,'canon','malachi',3,3,'free',
+      E'*And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The melting of the silver in the furnace — *As silver is melted in the midst of the furnace, so shall ye be melted in the midst thereof* (Ezekiel 22:22) — is the work of the Refiner who purifies. The fire melts not to destroy but that the purged silver may offer in righteousness; even the corrupt priests (22:26) are met by the One who purifies the sons of Levi.'),
+    ('canon','ezekiel',22,18,'canon','proverbs',17,3,'free',
+      E'*The fining pot is for silver, and the furnace for gold: but Yahuah (LORD) trieth the hearts* (Proverbs 17:3). The proverb under the prophecy: the house become *the dross of silver* (Ezekiel 22:18) is put to the fining pot and the furnace, for it is Yahuah who tries the hearts. The furnace of wrath is the testing of the heart, the dross of the corrupt heart laid bare and burned away.'),
+    ('canon','ezekiel',22,21,'canon','1-peter',1,7,'free',
+      E'*That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). The fire of Ezekiel''s furnace — *blow upon you in the fire of my wrath, and ye shall be melted* (Ezekiel 22:21) — reaches forward to the trial that refines faith. As silver is tried in the furnace, so faith is tried with fire, the dross consumed and the precious found unto praise at his appearing.'),
+
+    -- THREAD 3 (★★★): I sought for a man to stand in the gap — but I found none
+    ('canon','ezekiel',22,30,'canon','psalms',106,23,'free',
+      E'*Therefore he said that he would destroy them, had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). The Psalm remembers the intercessor Yahuah now seeks in vain — *I sought for a man among them, that should make up the hedge, and stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30). Moses once stood in the breach and turned away the wrath; in Ezekiel''s generation no such man is found, and so the indignation is poured out.'),
+    ('canon','ezekiel',22,30,'canon','isaiah',59,16,'free',
+      E'*And he saw that there was no man, and wondered that there was no intercessor: therefore his arm brought salvation unto him; and his righteousness, it sustained him* (Isaiah 59:16). Isaiah names the same emptiness Ezekiel records — *I sought for a man... to stand in the gap before me for the land... but I found none* (Ezekiel 22:30) — and gives its answer: when there was no man, no intercessor, Yahuah''s own arm brought the salvation. The gap none among them could fill is filled by the arm of Yahuah himself, the Formed Son.'),
+    ('canon','ezekiel',22,30,'canon','1-timothy',2,5,'free',
+      E'*For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5). The man sought and not found in the gap — *that should make up the hedge, and stand in the gap before me for the land... but I found none* (Ezekiel 22:30) — is found forward in the one Mediator, the man HaMashiach Yahusha. The intercessor Ezekiel''s generation lacked is the Formed Son who stands between Elohim and men.'),
+    ('canon','ezekiel',22,30,'canon','hebrews',7,25,'free',
+      E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). The gap before Yahuah that no man would stand in — *stand in the gap before me for the land, that I should not destroy it: but I found none* (Ezekiel 22:30) — is filled by the One who *ever liveth to make intercession*. The breach where wrath was poured out for want of an intercessor is the breach the Formed Son fills for ever, saving to the uttermost.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke',
+       E'Set light by father and mother — the catalogue of the Torah she broke',
+       E'The lawsuit against the bloody city is not a vague charge of wickedness; it is the Torah she was given, broken commandment by commandment, read back to her from the very statutes. *In thee have they set light by father and mother: in the midst of thee have they dealt by oppression with the stranger: in thee have they vexed the fatherless and the widow. Thou hast despised mine holy things, and hast profaned my sabbaths* (Ezekiel 22:7-8), *In thee have they taken gifts to shed blood; thou hast taken usury and increase* (22:12). Each charge names a Torah word turned upside down. *Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12) — set light by. *Thou shalt neither vex a stranger, nor oppress him: for ye were strangers in the land of Egypt* (Exodus 22:21) — the stranger oppressed. *Ye shall not afflict any widow, or fatherless child* (Exodus 22:22) — the widow and the fatherless vexed. *Ye shall keep my sabbaths, and reverence my sanctuary: I am Yahuah (LORD)* (Leviticus 19:30) — the sabbaths profaned, the holy things despised. *Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36) — usury and increase taken to shed blood. The Torah is the standard the whole indictment is measured by — her guilt is precisely the breaking of the covenant instruction she received, never the Torah itself being a curse. The priests seal it: *Her priests have violated my law, and have profaned mine holy things... and have hid their eyes from my sabbaths, and I am profaned among them* (22:26). The bloody city''s sins are the Torah''s commandments broken, one after another.',
+       sv.verse_id, ev.verse_id, 'free', 32525
+  FROM _s308_ezek22_lookup sv, _s308_ezek22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=22 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace',
+       E'The house of Yashar''el become dross — melted in the midst of the furnace',
+       E'The verdict turns the bloody city into a furnace. *Son of Adam, the house of Yashar''el (Israel) is to me become dross: all they are brass, and tin, and iron, and lead, in the midst of the furnace; they are even the dross of silver* (Ezekiel 22:18); *As they gather silver, and brass, and iron, and lead, and tin, into the midst of the furnace, to blow the fire upon it, to melt it; so will I gather you in mine anger and in my fury, and I will leave you there, and melt you* (22:20); *I will gather you, and blow upon you in the fire of my wrath, and ye shall be melted in the midst thereof* (22:21); *As silver is melted in the midst of the furnace, so shall ye be melted in the midst thereof* (22:22). The exile is a refining fire — wrath that purges, not mere destruction. Isaiah named the same dross and the same purging: *Thy silver is become dross, thy wine mixed with water* (Isaiah 1:22), *and purely purge away thy dross, and take away all thy tin* (Isaiah 1:25). Malachi names the Refiner who does the work: *he is like a refiner''s fire, and like fullers'' soap... And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:2-3) — even the corrupt priests of 22:26 met by the One who purifies the sons of Levi. The proverb under it all: *The fining pot is for silver, and the furnace for gold: but Yahuah (LORD) trieth the hearts* (Proverbs 17:3). And the fire reaches forward to the refining of faith: *the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise and honour and glory at the appearing of Yahusha HaMashiach (Jesus Christ)* (1 Peter 1:7). The furnace melts to purify; the dross is burned away that the silver may be clean.',
+       sv.verse_id, ev.verse_id, 'free', 32528
+  FROM _s308_ezek22_lookup sv, _s308_ezek22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=22 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-22-i-sought-for-a-man-to-stand-in-the-gap-but-i-found-none',
+       E'I sought for a man to stand in the gap — but I found none',
+       E'Here is the heart of the chapter, and the verse the whole framework turns toward. After the catalogue of the bloody city''s sins and the corruption of her prophets, priests, and princes, Yahuah looks for one man to turn away the wrath: *And I sought for a man among them, that should make up the hedge, and stand in the gap before me for the land, that I should not destroy it: but I found none. Therefore have I poured out mine indignation upon them; I have consumed them with the fire of my wrath* (Ezekiel 22:30-31). An intercessor is sought to stand in the breach — and among THEM none is found. The Psalm remembers when there had been such a man: *Therefore he said that he would destroy them, had not Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23). Moses stood in the gap and the wrath was turned; in Ezekiel''s generation the gap stands empty. Isaiah names the same emptiness and its answer: *And he saw that there was no man, and wondered that there was no intercessor: therefore his arm brought salvation unto him; and his righteousness, it sustained him* (Isaiah 59:16) — when no man stood, Yahuah''s own arm, the Formed Son, brought the salvation no man could. And so the man sought and not found among them is found forward, the one true Intercessor: *For there is one Elohim (God), and one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5), who *is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). The gap none could fill in Ezekiel''s day — the hedge none would make up, the breach none would stand in — is the gap the Formed Son fills for ever, the Man who stands in the breach between Elohim and men and turns away the wrath.',
+       sv.verse_id, ev.verse_id, 'free', 32531
+  FROM _s308_ezek22_lookup sv, _s308_ezek22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=22 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12) — the commandment *set light by* (Ezekiel 22:7); the Torah word broken first in the catalogue.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Thou shalt neither vex a stranger, nor oppress him: for ye were strangers in the land of Egypt* (Exodus 22:21) — the Torah she broke in *oppression with the stranger* (Ezekiel 22:7).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Ye shall not afflict any widow, or fatherless child* (Exodus 22:22) — the Torah she broke in *they vexed the fatherless and the widow* (Ezekiel 22:7); their cry brings the wrath (Exodus 22:23-24).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Ye shall keep my sabbaths, and reverence my sanctuary: I am Yahuah (LORD)* (Leviticus 19:30) — the exact inversion of *despised mine holy things, and hast profaned my sabbaths* (Ezekiel 22:8).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36) — the Torah she broke in *thou hast taken usury and increase* (Ezekiel 22:12).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-set-light-by-father-and-mother-the-torah-she-broke'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Thy silver is become dross, thy wine mixed with water* (Isaiah 1:22) — Isaiah names the same dross as *the dross of silver* (Ezekiel 22:18); the precious turned to worthless slag.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *and purely purge away thy dross, and take away all thy tin* (Isaiah 1:25) — the melting (Ezekiel 22:20) is purging, not annihilation; the dross removed that the silver may be clean.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he is like a refiner''s fire, and like fullers'' soap* (Malachi 3:2) — the fire of wrath blown on the furnace (Ezekiel 22:21) is the refiner''s fire of the day of his coming.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi* (Malachi 3:3) — the silver melted in the furnace (Ezekiel 22:22) is purified, not destroyed; even the corrupt priests met by the Refiner.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *The fining pot is for silver, and the furnace for gold: but Yahuah (LORD) trieth the hearts* (Proverbs 17:3) — the proverb under the furnace (Ezekiel 22:18); the corrupt heart laid bare and tried.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the trial of your faith... though it be tried with fire, might be found unto praise and honour and glory* (1 Peter 1:7) — the fire of the furnace (Ezekiel 22:21) reaches forward to the refining of faith; the dross consumed, the precious found.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-the-house-of-yasharel-become-dross-melted-in-the-furnace'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Moses his chosen stood before him in the breach, to turn away his wrath, lest he should destroy them* (Psalm 106:23) — the intercessor Yahuah once had and now seeks in vain (Ezekiel 22:30); Moses stood in the gap.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-i-sought-for-a-man-to-stand-in-the-gap-but-i-found-none'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he saw that there was no man... no intercessor: therefore his arm brought salvation unto him* (Isaiah 59:16) — the same emptiness as Ezekiel 22:30, with its answer: when no man stood, Yahuah''s own arm (the Formed Son) brought salvation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=59 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-i-sought-for-a-man-to-stand-in-the-gap-but-i-found-none'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *one mediator between Elohim (God) and men, the man HaMashiach Yahusha (Christ Jesus)* (1 Timothy 2:5) — the man sought and not found in the gap (Ezekiel 22:30) found forward in the one Mediator, the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-i-sought-for-a-man-to-stand-in-the-gap-but-i-found-none'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *he ever liveth to make intercession for them* (Hebrews 7:25) — the breach none would stand in (Ezekiel 22:30) is the gap the Formed Son fills for ever, saving to the uttermost.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s308_ezek22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-22-i-sought-for-a-man-to-stand-in-the-gap-but-i-found-none'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_23.sql (Ezekiel 23) -----
+-- Chapter: Ezekiel 23 — AHOLAH AND AHOLIBAH, the two adulterous sisters, the daughters of one mother:
+-- Samaria the elder (Aholah = the northern house, Ephraim/Yosef) and Jerusalem the younger (Aholibah =
+-- the southern house, Yahudah). Their whoredoms in Egypt, with Assyria and Babylon; Jerusalem MORE
+-- corrupt than her sister; the cup of astonishment and desolation that the younger must drink after the
+-- elder. THIS IS THE TWO HOUSES IN THEIR UNFAITHFULNESS — the dark side of the Ezekiel 37 reunion hope.
+-- The harsh imagery is COVENANT-ADULTERY language (the lawsuit against SIN, the houses as victims of the
+-- lie, never ethnic), never Jew-hatred; the sisters *were mine* (23:4) — Yahuah''s own divorced and
+-- straying wives, to be judged and yet (chapters 36-37) raised, cleansed, and made ONE again.
+-- Tag: ezek23   Temp view: _s308_ezek23_lookup
+-- Sort band: base 32550, step 3 -> 32550, 32553, 32556 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',23,v
+--
+-- Ezekiel 23 coverage:
+--   ★★★ v.2-4 (two women, the daughters of one mother; they committed whoredoms in Egypt in their youth;
+--          Aholah the elder and Aholibah her sister; and they were mine; Samaria is Aholah, and Jerusalem
+--          Aholibah)
+--        NT:     none warranted (the two-house diagnosis is a Tanakh-internal frame; the reunion-forward
+--                weave belongs to Ezekiel 37 / Hosea, held there and lateral here)
+--        Extras: none warranted
+--        Tanakh: ★★★ Jeremiah 3:6 (backsliding Yashar''el... played the harlot), ★★★ Jeremiah 3:8 (I had
+--                put her away, and given her a bill of divorce; yet her treacherous sister Yahudah played
+--                the harlot also), ★★ Jeremiah 3:11 (backsliding Yashar''el hath justified herself more
+--                than treacherous Yahudah), ★★ Ezekiel 37:16 + ★★ Ezekiel 37:19 (the two sticks — the
+--                SAME two houses to be made ONE), ★ Hosea 1:6 + ★ Hosea 1:9 (Lo-ruhamah / Lo-ammi — the
+--                divorced northern house) — THREAD 1
+--   ★★ v.5-21 (Aholah doted on the Assyrians her lovers; Aholibah was MORE corrupt in her inordinate love
+--          than her sister; she doted on the Babylonians; she multiplied her whoredoms, remembering Egypt)
+--        NT:     none warranted (political-religious harlotry with the empires; a Tanakh-internal indictment)
+--        Extras: none warranted
+--        Tanakh: ★★ Hosea 8:9 (Ephraim hath hired lovers — gone up to Assyria), ★★ 2 Kings 16:7 (Ahaz''s
+--                alliance with Assyria — Aholibah/Yahudah''s historical harlotry with the empire), ★★
+--                Jeremiah 2:18 (what hast thou to do in the way of Egypt... or of Assyria?), ★ Jeremiah
+--                2:36 (ashamed of Egypt, as thou wast ashamed of Assyria), ★★ Ezekiel 16:51 (Samaria
+--                committed not half thy sins; thou hast multiplied thine abominations more than they —
+--                lateral, the SAME Jerusalem-worse-than-her-sisters indictment) — THREAD 2
+--   ★ v.22-35 (I will raise up thy lovers against thee; thou shalt drink of thy sister''s cup deep and
+--          large; the cup of astonishment and desolation, the cup of thy sister Samaria)
+--        NT:     ★ Revelation 14:10 (drink of the wine of the wrath of Elohim... the cup of his
+--                indignation), ★ Revelation 18:6 (in the cup which she hath filled fill to her double) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 25:15 (take the wine cup of this fury... cause all the nations to drink it),
+--                ★★ Isaiah 51:17 (Jerusalem, which hast drunk... the cup of his fury; the dregs of the cup
+--                of trembling), ★ Psalm 75:8 (in the hand of Yahuah there is a cup... the wicked shall
+--                wring out the dregs) — THREAD 3
+--   v.36-49 (wilt thou judge Aholah and Aholibah?; they have defiled my sanctuary and profaned my sabbaths;
+--          the righteous men shall judge them; that all women may be taught not to do after your lewdness;
+--          ye shall know that I am Adonai Yahuah)
+--        NT:     none warranted (the judicial summary — the profaned sanctuary/sabbaths and the verdict;
+--                the Sabbath-profanation is rebuked, the appointed times honored, woven in THREAD 3 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (recapitulation of the two sisters'' abominations and the sentence; the
+--                profaned sabbaths/sanctuary noted in prose — the Sabbath is Yahuah''s, broken here, never
+--                abolished; the cup-judgment thread already bounds the sentence)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses — Tanakh (Jeremiah 3, Ezekiel 37, Hosea 1) [free]
+--      (★★★ THE two-house frame in its unfaithfulness; the two sisters of one mother = the two houses, both Yahuah''s)
+--   2. ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister — Tanakh (Hosea 8, 2 Kings 16, Jeremiah 2, Ezekiel 16) [free]
+--      (★★ the political-religious harlotry with Assyria/Egypt/Babylon; the younger more corrupt than the elder)
+--   3. ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment — NT (Revelation 14, Revelation 18) + Tanakh (Jeremiah 25, Isaiah 51, Psalm 75) [extras-free; all canon]
+--      (★ the cup of judgment Aholibah must drink after Aholah; the wine cup of fury runs the whole canon)
+--
+-- Framing notes:
+--   ★★★ TWO SISTERS OF ONE MOTHER (THREAD 1): *Son of Adam, there were two women, the daughters of one
+--      mother... And the names of them were Aholah the elder, and Aholibah her sister: and they were mine...
+--      Samaria is Aholah, and Jerusalem Aholibah* (23:2-4). THE two-house frame in its dark mirror: the two
+--      sisters of one mother are the TWO HOUSES — Samaria/Ephraim the elder (the northern kingdom) and
+--      Jerusalem/Yahudah the younger (the southern) — both *mine*, both Yahuah''s wives. Jeremiah gives the
+--      identical two-sister diagnosis: *backsliding Yashar''el (Israel)... hath played the harlot* (Jer 3:6),
+--      *I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah)...
+--      played the harlot also* (Jer 3:8). And the two sticks of Ezekiel 37 are the SAME two houses: the
+--      harlot-sisters of ch23 divided are the *one stick* of Yahudah and the *stick of Ephraim* (37:16,19)
+--      to be made one. Hosea names the divorce of the elder: *Lo-ruhamah... Lo-ammi: for ye are not my
+--      people* (Hos 1:6,9). The lawsuit is against the SIN; the sisters are Yahuah''s own, to be judged and
+--      yet gathered.
+--   ★★ SHE DOTED ON HER LOVERS — THE EMPIRES (THREAD 2): *Aholah played the harlot when she was mine; and
+--      she doted on her lovers, on the Assyrians* (23:5); *Aholibah... was more corrupt in her inordinate
+--      love than her sister... she doted upon the Babylonians* (23:11-17). The harlotry is political-
+--      religious alliance with the empires — Assyria, Babylon, Egypt — and Jerusalem is WORSE than Samaria.
+--      Hosea: *Ephraim hath hired lovers* (Hos 8:9); the history is real — *Ahaz sent messengers to
+--      Tiglath-pileser king of Assyria, saying, I am thy servant* (2 Kings 16:7). Jeremiah rebukes the same
+--      Egypt-and-Assyria turning: *what hast thou to do in the way of Egypt... or of Assyria?* (Jer 2:18),
+--      *ashamed of Egypt, as thou wast ashamed of Assyria* (Jer 2:36). And Ezekiel''s own ch16 makes the
+--      same lateral charge — Jerusalem worse than her sisters: *Neither hath Samaria committed half of thy
+--      sins; but thou hast multiplied thine abominations more than they* (Ezek 16:51).
+--   ★ THOU SHALT DRINK OF THY SISTER''S CUP (THREAD 3): *thou shalt drink of thy sister''s cup deep and
+--      large... the cup of astonishment and desolation, with the cup of thy sister Samaria* (23:32-33).
+--      Aholibah/Yahudah must drink the cup the elder already drank — the cup of the wine of fury that runs
+--      the whole canon: *Take the wine cup of this fury at my hand, and cause all the nations... to drink it*
+--      (Jer 25:15); *O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury... the
+--      dregs of the cup of trembling* (Isa 51:17); *in the hand of Yahuah (LORD) there is a cup... the
+--      dregs thereof, all the wicked of the earth shall wring them out, and drink them* (Ps 75:8). The same
+--      cup is poured at the canon''s close: *drink of the wine of the wrath of Elohim (God)... the cup of
+--      his indignation* (Rev 14:10); *in the cup which she hath filled fill to her double* (Rev 18:6).
+--   VERSES WITH NO SEPARATE ADD: v.1 (the prophetic-word formula), v.36-49 (the judicial summary — *wilt
+--      thou judge Aholah and Aholibah?*; the defiled sanctuary and profaned sabbaths rebuked, the appointed
+--      times honored not abolished; the verdict of the cup-thread bounds the sentence). All recorded above.
+
+CREATE TEMP VIEW _s308_ezek23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): two sisters of one mother — Samaria and Jerusalem, the two houses
+    ('canon','ezekiel',23,4,'canon','jeremiah',3,6,'free',
+      E'*Yahuah (LORD) said also unto me in the days of Josiah the king, Hast thou seen that which backsliding Yashar''el (Israel) hath done? she is gone up upon every high mountain and under every green tree, and there hath played the harlot* (Jeremiah 3:6). Jeremiah gives the identical two-sister diagnosis Ezekiel draws — *Samaria is Aholah, and Jerusalem Aholibah* (Ezekiel 23:4): the elder sister is backsliding Yashar''el (Israel), the northern house, who *hath played the harlot*. The two adulterous sisters of one mother are the two houses of Yahuah''s own people.'),
+    ('canon','ezekiel',23,4,'canon','jeremiah',3,8,'free',
+      E'*And I saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also* (Jeremiah 3:8). Here is the two-sister frame exactly: the elder, Yashar''el (Israel)/Samaria (Aholah), divorced for her adultery; *yet her treacherous sister Yahudah (Judah)*, Jerusalem (Aholibah), *played the harlot also*. Ezekiel''s *Aholah the elder, and Aholibah her sister... and they were mine* (Ezekiel 23:4) is the same two houses — both Yahuah''s wives, both unfaithful.'),
+    ('canon','ezekiel',23,11,'canon','jeremiah',3,11,'free',
+      E'*And Yahuah (LORD) said unto me, The backsliding Yashar''el (Israel) hath justified herself more than treacherous Yahudah (Judah)* (Jeremiah 3:11). Jeremiah''s verdict mirrors Ezekiel''s — that Aholibah/Jerusalem *was more corrupt in her inordinate love than her sister* (Ezekiel 23:11): the northern house, for all her harlotry, is *justified... more than treacherous Yahudah (Judah)*, the southern house being the worse. The two houses are weighed sister against sister.'),
+    ('canon','ezekiel',23,4,'canon','ezekiel',37,16,'free',
+      E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). The two harlot-sisters of one mother — *Samaria is Aholah, and Jerusalem Aholibah* (Ezekiel 23:4) — are the two sticks of the same prophet: Yahudah (Judah)/Jerusalem and Joseph/Ephraim/Samaria. The divided, unfaithful houses of ch23 are the very houses to be written, joined, and made ONE in his hand.'),
+    ('canon','ezekiel',23,4,'canon','ezekiel',37,19,'free',
+      E'*Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The two sisters who *were mine* (Ezekiel 23:4) — Aholah (Samaria/Ephraim) and Aholibah (Jerusalem/Yahudah) — are the two sticks made one. Chapter 23 is the dark side of chapter 37''s hope: the harlot-houses judged here are the reunited house there, gathered and cleansed.'),
+    ('canon','ezekiel',23,5,'canon','hosea',1,6,'free',
+      E'*And she conceived again, and bare a daughter. And Elohim (God) said unto him, Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel); but I will utterly take them away* (Hosea 1:6). Aholah, who *played the harlot when she was mine* (Ezekiel 23:5), is the northern house Hosea names Lo-ruhamah — the house on whom Yahuah will *no more have mercy*. The elder sister''s harlotry brings the divorce of the northern kingdom.'),
+    ('canon','ezekiel',23,5,'canon','hosea',1,9,'free',
+      E'*Then said Elohim (God), Call his name Lo-ammi: for ye are not my people, and I will not be your Elohim (God)* (Hosea 1:9). The whoredom of Aholah — Samaria, the elder, who doted on the Assyrians *when she was mine* (Ezekiel 23:5) — ends in Lo-ammi, *not my people*: the divorced northern house. Yet the very name Hosea reverses (Hosea 1:10-11; 2:23) — the divorced sister is to be regathered, as Ezekiel 37 makes the two sticks one.'),
+
+    -- THREAD 2 (★★): she doted on her lovers — Assyria, Babylon, Egypt; Jerusalem worse than her sister
+    ('canon','ezekiel',23,5,'canon','hosea',8,9,'free',
+      E'*For they are gone up to Assyria, a wild ass alone by himself: Ephraim hath hired lovers* (Hosea 8:9). Aholah/Samaria — *she doted on her lovers, on the Assyrians her neighbours* (Ezekiel 23:5) — is the Ephraim who *hath hired lovers*, gone up to Assyria. The harlotry is political alliance with the empire: the northern house buying the very nation that will devour her.'),
+    ('canon','ezekiel',23,12,'canon','2-kings',16,7,'free',
+      E'*So Ahaz sent messengers to Tiglath-pileser king of Assyria, saying, I am thy servant and thy son: come up, and save me out of the hand of the king of Syria, and out of the hand of the king of Yashar''el (Israel), which rise up against me* (2 Kings 16:7). Aholibah/Jerusalem *doted upon the Assyrians her neighbours... and sent messengers unto them* (Ezekiel 23:12,16) — the very deed of Ahaz of Yahudah (Judah), who sent to Assyria and called himself its servant and son. The southern house''s harlotry is recorded history: courting the empire instead of trusting Yahuah.'),
+    ('canon','ezekiel',23,19,'canon','jeremiah',2,18,'free',
+      E'*And now what hast thou to do in the way of Egypt, to drink the waters of Sihor? or what hast thou to do in the way of Assyria, to drink the waters of the river?* (Jeremiah 2:18). Aholibah *multiplied her whoredoms, in calling to remembrance the days of her youth, wherein she had played the harlot in the land of Egypt* (Ezekiel 23:19) — the same running to Egypt and Assyria Jeremiah rebukes. The covenant-wife has no business drinking the waters of the empires when Yahuah is her fountain.'),
+    ('canon','ezekiel',23,19,'canon','jeremiah',2,36,'free',
+      E'*Why gaddest thou about so much to change thy way? thou also shalt be ashamed of Egypt, as thou wast ashamed of Assyria* (Jeremiah 2:36). The remembering of Egypt — *she had played the harlot in the land of Egypt* (Ezekiel 23:19) — is the gadding-about Jeremiah names: turning from lover to lover, Egypt to Assyria. The shame of the empires is the wage of the harlotry; the alliances fail and disgrace her.'),
+    ('canon','ezekiel',23,11,'canon','ezekiel',16,51,'free',
+      E'*Neither hath Samaria committed half of thy sins; but thou hast multiplied thine abominations more than they, and hast justified thy sisters in all thine abominations which thou hast done* (Ezekiel 16:51). Ezekiel makes the same charge twice: as Aholibah *was more corrupt in her inordinate love than her sister* (Ezekiel 23:11), so here Jerusalem outsins Samaria — *Samaria... committed not half of thy sins*. The younger, southern house, given more light, is the more guilty of the two.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★): thou shalt drink of thy sister's cup — the cup of astonishment and desolation
+    ('canon','ezekiel',23,31,'canon','jeremiah',25,15,'free',
+      E'*For thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel) unto me; Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it* (Jeremiah 25:15). The sentence on Aholibah — *Thou hast walked in the way of thy sister; therefore will I give her cup into thine hand* (Ezekiel 23:31) — is the wine cup of fury Jeremiah pours: the same cup of Yahuah''s wrath given to the nations, and to his unfaithful wife first. The sister''s cup is the cup of the fury of Yahuah.'),
+    ('canon','ezekiel',23,33,'canon','isaiah',51,17,'free',
+      E'*Awake, awake, stand up, O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling, and wrung them out* (Isaiah 51:17). Isaiah names the very Jerusalem who must drink *the cup of astonishment and desolation, with the cup of thy sister Samaria* (Ezekiel 23:33): she *hath drunk at the hand of Yahuah (LORD) the cup of his fury*, the dregs of the cup of trembling. The cup of the sisters is the cup of Yahuah''s fury — and Isaiah promises it shall be taken from her hand (Isaiah 51:22).'),
+    ('canon','ezekiel',23,33,'canon','psalms',75,8,'free',
+      E'*For in the hand of Yahuah (LORD) there is a cup, and the wine is red; it is full of mixture; and he poureth out of the same: but the dregs thereof, all the wicked of the earth shall wring them out, and drink them* (Psalm 75:8). The cup Aholibah must drink — *the cup of astonishment and desolation* (Ezekiel 23:33) — is the cup in the hand of Yahuah (LORD), the red and mixed wine whose dregs the wicked wring out. The judgment cup of the harlot-sister is the same cup the whole earth''s wicked must drink.'),
+    ('canon','ezekiel',23,33,'canon','revelation',14,10,'free',
+      E'*The same shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation; and he shall be tormented with fire and brimstone in the presence of the holy angels, and in the presence of the Lamb* (Revelation 14:10). The cup of astonishment Aholibah drinks (Ezekiel 23:33) runs to the canon''s end as *the cup of his indignation* — the wine of the wrath of Elohim (God). One cup of fury, from the harlot-sisters to the final judgment of all who worship the beast.'),
+    ('canon','ezekiel',23,32,'canon','revelation',18,6,'free',
+      E'*Reward her even as she rewarded you, and double unto her double according to her works: in the cup which she hath filled fill to her double* (Revelation 18:6). The sentence *Thou shalt drink of thy sister''s cup deep and large... it containeth much* (Ezekiel 23:32) is the same measure poured to Babylon the harlot at the end — *in the cup which she hath filled fill to her double*. The unfaithful city drinks the deep cup she filled for herself; the cup-judgment of Ezekiel''s sisters is the cup of the great harlot''s fall.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses',
+       E'Two sisters of one mother — Samaria and Jerusalem, the two houses in their unfaithfulness',
+       E'The chapter opens with the whole two-house frame held up in its dark mirror: *Son of Adam, there were two women, the daughters of one mother: And they committed whoredoms in Egypt; they committed whoredoms in their youth... And the names of them were Aholah the elder, and Aholibah her sister: and they were mine, and they bare sons and daughters... Samaria is Aholah, and Jerusalem Aholibah* (23:2-4). Two sisters of ONE mother — both Yahuah''s wives, both unfaithful: Samaria/Ephraim the elder (the northern kingdom) and Jerusalem/Yahudah (Judah) the younger (the southern). This is the two houses in their sin, the same two houses the prophet will make one stick in chapter 37. Jeremiah draws the identical two-sister diagnosis: *Hast thou seen that which backsliding Yashar''el (Israel) hath done? she is gone up upon every high mountain... and there hath played the harlot* (Jeremiah 3:6), and *I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not, but went and played the harlot also* (Jeremiah 3:8) — the elder divorced, the younger no better; *The backsliding Yashar''el (Israel) hath justified herself more than treacherous Yahudah (Judah)* (Jeremiah 3:11). And the two harlot-sisters are the very two sticks of Ezekiel''s own keystone: *take thee one stick, and write upon it, For Yahudah (Judah)... then take another stick... For Joseph, the stick of Ephraim* (Ezekiel 37:16), *and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). Hosea names the divorce of the elder: *Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel)* (Hosea 1:6); *Call his name Lo-ammi: for ye are not my people* (Hosea 1:9). Read rightly, the savage imagery is covenant-adultery language — the lawsuit against the SIN of houses that *were mine* — never ethnic hatred; the divorced and straying sisters are the very people Yahuah will cleanse, raise, and make ONE again. Chapter 23 is the shadow side of chapters 36-37: the harlot-houses here are the reunited, Spirit-filled house there.',
+       sv.verse_id, ev.verse_id, 'free', 32550
+  FROM _s308_ezek23_lookup sv, _s308_ezek23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=23 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister',
+       E'She doted on her lovers — Assyria, Babylon, Egypt — and Jerusalem worse than her sister',
+       E'The whoredom of the two sisters is political-religious harlotry with the empires. Aholah/Samaria went first: *Aholah played the harlot when she was mine; and she doted on her lovers, on the Assyrians her neighbours... with all their idols she defiled herself* (23:5-7). Then the younger surpassed her: *And when her sister Aholibah saw this, she was more corrupt in her inordinate love than she, and in her whoredoms more than her sister in her whoredoms* (23:11), doting on the Assyrians and then the Babylonians, *and sent messengers unto them into Chaldea* (23:12-16), and *multiplied her whoredoms, in calling to remembrance the days of her youth, wherein she had played the harlot in the land of Egypt* (23:19). Hosea names the elder''s harlotry plainly: *For they are gone up to Assyria, a wild ass alone by himself: Ephraim hath hired lovers* (Hosea 8:9). And the younger''s is recorded history — *Ahaz sent messengers to Tiglath-pileser king of Assyria, saying, I am thy servant and thy son: come up, and save me* (2 Kings 16:7): the king of Yahudah (Judah) courting the empire instead of trusting Yahuah. Jeremiah rebukes the same running to the empires: *what hast thou to do in the way of Egypt... or... of Assyria, to drink the waters of the river?* (Jeremiah 2:18), *thou also shalt be ashamed of Egypt, as thou wast ashamed of Assyria* (Jeremiah 2:36). And the verdict that Jerusalem is the worse of the two sisters is Ezekiel''s own double charge: *Neither hath Samaria committed half of thy sins; but thou hast multiplied thine abominations more than they* (Ezekiel 16:51). The younger house, given more light and the temple itself, is the more guilty — the harlotry of the alliances is the wage of forsaking her one Husband.',
+       sv.verse_id, ev.verse_id, 'free', 32553
+  FROM _s308_ezek23_lookup sv, _s308_ezek23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=23 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment',
+       E'Thou shalt drink of thy sister''s cup — the cup of astonishment and desolation',
+       E'The sentence on Aholibah/Jerusalem is the cup her sister already drank: *Thou hast walked in the way of thy sister; therefore will I give her cup into thine hand. Thus saith Adonai Yahuah (the Lord GOD); Thou shalt drink of thy sister''s cup deep and large: thou shalt be laughed to scorn and had in derision; it containeth much. Thou shalt be filled with drunkenness and sorrow, with the cup of astonishment and desolation, with the cup of thy sister Samaria* (23:31-33). It is the cup of the wine of Yahuah''s fury that runs the whole canon. Jeremiah pours it on all the nations: *Take the wine cup of this fury at my hand, and cause all the nations, to whom I send thee, to drink it* (Jeremiah 25:15). Isaiah names this very Jerusalem drinking it: *Awake, awake, stand up, O Jerusalem, which hast drunk at the hand of Yahuah (LORD) the cup of his fury; thou hast drunken the dregs of the cup of trembling* (Isaiah 51:17) — and promises it shall be taken from her hand and given to her tormentors (51:22). The psalm holds the same cup in Yahuah''s hand: *in the hand of Yahuah (LORD) there is a cup, and the wine is red; it is full of mixture... the dregs thereof, all the wicked of the earth shall wring them out, and drink them* (Psalm 75:8). And the cup reaches the canon''s close: *The same shall drink of the wine of the wrath of Elohim (God), which is poured out without mixture into the cup of his indignation* (Revelation 14:10); *Reward her even as she rewarded you, and double unto her double... in the cup which she hath filled fill to her double* (Revelation 18:6). One cup of fury, from the harlot-sisters of Samaria and Jerusalem to the fall of Babylon the great. (The same chapter''s sentence names the deeper wound: *they have defiled my sanctuary... and have profaned my sabbaths* (23:38) — the appointed times of Yahuah broken here, rebuked, never abolished.)',
+       sv.verse_id, ev.verse_id, 'free', 32556
+  FROM _s308_ezek23_lookup sv, _s308_ezek23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=23 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *backsliding Yashar''el (Israel)... there hath played the harlot* (Jeremiah 3:6) — Jeremiah''s elder sister is Aholah/Samaria, the northern house; the same two-sister diagnosis.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *I... given her a bill of divorce; yet her treacherous sister Yahudah (Judah)... played the harlot also* (Jeremiah 3:8) — the two-sister frame exactly: elder divorced, younger no better. Both Yahuah''s.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *The backsliding Yashar''el (Israel) hath justified herself more than treacherous Yahudah (Judah)* (Jeremiah 3:11) — Aholibah more corrupt than her sister (23:11); the southern house the worse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *one stick... For Yahudah (Judah)... another stick... For Joseph, the stick of Ephraim* (Ezekiel 37:16) — the two harlot-sisters are the two sticks to be made one.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *make them one stick, and they shall be one in mine hand* (Ezekiel 37:19) — ch23 is the dark side of ch37: the harlot-houses judged here are the reunited house there.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Call her name Lo-ruhamah: for I will no more have mercy upon the house of Yashar''el (Israel)* (Hosea 1:6) — Aholah/Samaria, the elder, the divorced northern house.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Call his name Lo-ammi: for ye are not my people* (Hosea 1:9) — the elder sister''s harlotry ends in Lo-ammi; yet the name is reversed and the divorced house regathered.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-two-sisters-of-one-mother-samaria-and-jerusalem-the-two-houses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *gone up to Assyria... Ephraim hath hired lovers* (Hosea 8:9) — Aholah doting on the Assyrians (23:5); the northern house buying the empire that devours her.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=8 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Ahaz sent messengers to Tiglath-pileser king of Assyria... I am thy servant and thy son* (2 Kings 16:7) — Aholibah''s doting on Assyria (23:12,16) as recorded history: Yahudah courting the empire.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=12
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=16 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *what hast thou to do in the way of Egypt... or... of Assyria?* (Jeremiah 2:18) — the running to the empires Aholibah remembers from Egypt (23:19); no business at the empires'' waters.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *ashamed of Egypt, as thou wast ashamed of Assyria* (Jeremiah 2:36) — the gadding from lover to lover; the shame of the empires is the wage of the harlotry.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Samaria... committed not half of thy sins; but thou hast multiplied thine abominations more than they* (Ezekiel 16:51) — Ezekiel''s lateral twin: Jerusalem the younger outsins Samaria, as Aholibah outsins Aholah (23:11).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=16 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-she-doted-on-her-lovers-the-empires-jerusalem-worse-than-her-sister'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Take the wine cup of this fury at my hand, and cause all the nations... to drink it* (Jeremiah 25:15) — the sister''s cup (23:31) is the wine cup of Yahuah''s fury.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=31
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *O Jerusalem, which hast drunk... the cup of his fury... the dregs of the cup of trembling* (Isaiah 51:17) — the very Jerusalem of the cup of astonishment (23:33); to be taken from her hand at last (51:22).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=33
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *in the hand of Yahuah (LORD) there is a cup... the wicked of the earth shall wring them out, and drink them* (Psalm 75:8) — the cup of astonishment is the cup in Yahuah''s hand for all the wicked.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=33
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=75 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *drink of the wine of the wrath of Elohim (God)... the cup of his indignation* (Revelation 14:10) — the cup of astonishment runs to the canon''s end; one cup of fury.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=33
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *in the cup which she hath filled fill to her double* (Revelation 18:6) — the deep cup of the sister (23:32) is the cup of the great harlot''s fall; the same measure poured back.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=23 AND sv.verse_number=32
+  JOIN _s308_ezek23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-23-thou-shalt-drink-of-thy-sisters-cup-the-cup-of-astonishment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_24.sql (Ezekiel 24) -----
+-- Chapter: Ezekiel 24 — ★★ THE SIEGE BEGINS THIS SAME DAY. The exact day of the day recorded by the
+-- prophet far from Jerusalem (write thee the name of the day... the king of Babylon set himself against
+-- Jerusalem this same day) — a sign of the true word; the parable of the BLOODY CITY and the boiling
+-- POT whose scum will not go out (because I have purged thee, and thou wast not purged, thou shalt not be
+-- purged any more); and the DEATH of Ezekiel''s wife, the DESIRE OF HIS EYES, whom he may not mourn — a
+-- sign-act that when the sanctuary (the desire of THEIR eyes) falls they shall be too benumbed to weep.
+-- The prophet''s own grief becomes the sermon: the unmournable loss of the temple.
+-- Tag: ezek24   Temp view: _s308_ezek24_lookup
+-- Sort band: base 32575, step 3 -> threads at 32575, 32578, 32581 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',24,v
+--
+-- Ezekiel 24 coverage:
+--   ★ v.1-2 (write thee the name of the day, even of this same day: the king of Babylon set himself
+--          against Jerusalem this same day)
+--        NT:     none warranted (the true-word fulfilment held in the Tanakh/dating witnesses)
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:1 (the ninth year... tenth month... tenth day... Nebuchadnezzar came
+--                against Jerusalem — the precise fulfilment), ★ Jeremiah 52:4 (same date, same siege),
+--                ★ Ezekiel 12:25 (the word that I shall speak shall come to pass) — THREAD 1
+--   ★★ v.3-14 (the parable of the bloody city; set on a pot; her scum is not gone out of her; I will
+--          make the pile for fire great; the filthiness molten; her scum shall be in the fire; because
+--          I have purged thee, and thou wast not purged, thou shalt not be purged any more)
+--        NT:     none warranted (the prophetic furnace-judgment held in the Tanakh dross/furnace weave)
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 22:18 + Ezekiel 22:20 (the house become dross; gathered into the furnace to
+--                be melted — the lateral within Ezekiel), ★★ Jeremiah 6:29 + Jeremiah 6:30 (the founder
+--                melteth in vain... reprobate silver), ★ Nahum 3:1 (Woe to the bloody city), ★ Isaiah
+--                1:25 (purely purge away thy dross) — THREAD 2
+--   ★★ v.15-24 (I take away from thee the desire of thine eyes with a stroke: yet neither shalt thou
+--          mourn nor weep; at even my wife died; I will profane my sanctuary... the desire of your eyes;
+--          Ezekiel is unto you a sign; ye shall not mourn nor weep)
+--        NT:     ★★ Luke 19:44 (they shall not leave in thee one stone upon another — the later
+--                destruction the Messiah weeps over) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 16:5 + Jeremiah 16:7 (enter not into the house of mourning; no cup of
+--                consolation for father or mother), ★ Lamentations 2:1 (Yahuah covered the daughter of
+--                Zion... remembered not his footstool — the sanctuary cast down) — THREAD 3
+--        (self) Ezekiel 24:21 is the interpreting verse WITHIN the thread — woven in prose, the sanctuary
+--                = the desire of your eyes; no self-row needed.)
+--   v.25-27 (in the day... the desire of their eyes... he that escapeth shall come unto thee; thy mouth
+--          shall be opened; thou shalt be a sign) — the dumbness-lifted epilogue (Ezek 33:21-22 fulfils
+--          it); woven into THREAD 3 prose, no separate add (NT none / Extras none / Tanakh none warranted).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-24-write-thee-the-name-of-the-day-the-siege-begins — Tanakh (2 Kings 25, Jeremiah 52, Ezekiel 12) [free]
+--      (★ the exact day of the siege recorded far away; the true word that comes to pass)
+--   2. ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged — Tanakh (Ezekiel 22, Jeremiah 6, Nahum 3, Isaiah 1) [free]
+--      (★★ the caldron of the bloody city; the dross/furnace; the scum that would not be purged any more)
+--   3. ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary — NT (Luke 19) + Tanakh (Jeremiah 16, Lamentations 2) [free]
+--      (★★ the death of the prophet''s wife as a sign; the sanctuary = the desire of your eyes; too benumbed to mourn)
+--
+-- Framing notes:
+--   ★ THE DAY RECORDED (THREAD 1): *Son of Adam, write thee the name of the day, even of this same day:
+--      the king of Babylon set himself against Jerusalem this same day* (24:2). The prophet, exiled in
+--      Babylon hundreds of miles from the city, is told the very day the siege began — a sign of the true
+--      word. The dating witnesses confirm it to the day: *in the ninth year... in the tenth month, in the
+--      tenth day of the month... Nebuchadnezzar king of Babylon came... against Jerusalem* (2 Kings 25:1;
+--      Jeremiah 52:4) — the identical date Ezekiel 24:1 carries. *the word that I shall speak shall come
+--      to pass* (Ezekiel 12:25). The word given far off is fulfilled to the day.
+--   ★★ THE BLOODY CITY / THE UNPURGED SCUM (THREAD 2): *Woe to the bloody city, to the pot whose scum is
+--      therein, and whose scum is not gone out of it!* (24:6); *because I have purged thee, and thou wast
+--      not purged, thou shalt not be purged from thy filthiness any more* (24:13). The caldron is the
+--      bloody city; the scum that clings is the guilt the fire could not refine away. The lateral within
+--      Ezekiel is the dross-furnace: *the house of Yashar''el (Israel) is to me become dross... in the
+--      midst of the furnace* (22:18), *so will I gather you in mine anger... and melt you* (22:20).
+--      Jeremiah ran the same assay first: *the founder melteth in vain... Reprobate silver shall men call
+--      them* (Jeremiah 6:29-30). Nahum''s woe to Nineveh names the same crime — *Woe to the bloody city!*
+--      (Nahum 3:1) — and Isaiah held out the mercy this caldron forfeits: *purely purge away thy dross*
+--      (Isaiah 1:25). NOT the Torah as curse: the curse is the covenant-judgment for blood and lewdness.
+--   ★★ THE DESIRE OF THINE EYES (THREAD 3): *behold, I take away from thee the desire of thine eyes with a
+--      stroke: yet neither shalt thou mourn nor weep* (24:16); *at even my wife died; and I did in the
+--      morning as I was commanded* (24:18). The prophet''s own grief becomes the sermon — and the meaning
+--      is the temple: *Behold, I will profane my sanctuary, the excellency of your strength, the desire of
+--      your eyes... ye shall not mourn nor weep* (24:21,23). When the sanctuary falls the people will be
+--      too benumbed to weep, as the prophet was forbidden to. Jeremiah was likewise told *Enter not into
+--      the house of mourning* (16:5), no *cup of consolation... for their father or for their mother*
+--      (16:7). Lamentations sings the cast-down sanctuary: *How hath Yahuah (Lord) covered the daughter of
+--      Zion with a cloud... and remembered not his footstool* (2:1). And the Messiah weeps over the second
+--      fall of the same city: *they shall not leave in thee one stone upon another* (Luke 19:44). The
+--      unmournable loss of the temple, the desire of the eyes, twice over.
+--   VERSES WITH NO SEPARATE ADD: v.25-27 (the dumbness-lifted epilogue — he that escapeth shall come, thy
+--      mouth shall be opened, thou shalt be a sign; fulfilled Ezek 33:21-22; woven into THREAD 3 prose).
+--      All verses recorded in the coverage checklist above.
+
+CREATE TEMP VIEW _s308_ezek24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): write thee the name of the day — the siege begins this same day
+    ('canon','ezekiel',24,2,'canon','2-kings',25,1,'free',
+      E'*And it came to pass in the ninth year of his reign, in the tenth month, in the tenth day of the month, that Nebuchadnezzar king of Babylon came, he, and all his host, against Jerusalem, and pitched against it; and they built forts against it round about* (2 Kings 25:1). This is the precise fulfilment of the day Ezekiel was told to record — *write thee the name of the day, even of this same day: the king of Babylon set himself against Jerusalem this same day* (Ezekiel 24:2). The prophet, exiled far from the city, names the very day the siege begins; the chronicle confirms it to the month and the day. A sign of the true word.'),
+    ('canon','ezekiel',24,2,'canon','jeremiah',52,4,'free',
+      E'*And it came to pass in the ninth year of his reign, in the tenth month, in the tenth day of the month, that Nebuchadrezzar king of Babylon came, he and all his army, against Jerusalem, and pitched against it, and built forts against it round about* (Jeremiah 52:4). Jeremiah dates the siege exactly as Ezekiel was commanded to — *write thee the name of the day, even of this same day: the king of Babylon set himself against Jerusalem this same day* (Ezekiel 24:2). The same ninth year, tenth month, tenth day: the word given to the exile is the day the history records.'),
+    ('canon','ezekiel',24,2,'canon','ezekiel',12,25,'free',
+      E'*For I am Yahuah (LORD): I will speak, and the word that I shall speak shall come to pass; it shall be no more prolonged: for in your days, O rebellious house, will I say the word, and will perform it* (Ezekiel 12:25). The dated word of *this same day* (Ezekiel 24:2) is the promise of Ezekiel 12 made good — the word Yahuah speaks comes to pass, no longer prolonged. Against the proverb that *every vision faileth* (12:22), the exact day of the siege proves the true word.'),
+
+    -- THREAD 2 (★★): Woe to the bloody city — the dross/furnace, the scum that would not be purged
+    ('canon','ezekiel',24,11,'canon','ezekiel',22,18,'free',
+      E'*Son of Adam, the house of Yashar''el (Israel) is to me become dross: all they are brass, and tin, and iron, and lead, in the midst of the furnace; they are even the dross of silver* (Ezekiel 22:18). The empty pot set on the coals *that the filthiness of it may be molten in it, that the scum of it may be consumed* (Ezekiel 24:11) is the same furnace-assay: the bloody city is dross in the fire. The caldron of chapter 24 enacts the verdict already spoken in chapter 22.'),
+    ('canon','ezekiel',24,11,'canon','ezekiel',22,20,'free',
+      E'*As they gather silver, and brass, and iron, and lead, and tin, into the midst of the furnace, to blow the fire upon it, to melt it; so will I gather you in mine anger and in my fury, and I will leave you there, and melt you* (Ezekiel 22:20). The brass of the pot made hot *that the filthiness of it may be molten in it* (Ezekiel 24:11) is this gathering-into-the-furnace to be melted. The bloody city is the metal in the fire of Yahuah''s fury.'),
+    ('canon','ezekiel',24,6,'canon','jeremiah',6,29,'free',
+      E'*The bellows are burned, the lead is consumed of the fire; the founder melteth in vain: for the wicked are not plucked away* (Jeremiah 6:29). Jeremiah ran the same assay over the same city before Ezekiel — the founder melts *in vain* because the dross will not part, as *her scum is not gone out of it* (Ezekiel 24:6). The fire that should refine only proves the metal reprobate.'),
+    ('canon','ezekiel',24,13,'canon','jeremiah',6,30,'free',
+      E'*Reprobate silver shall men call them, because Yahuah (LORD) hath rejected them* (Jeremiah 6:30). The verdict *thou wast not purged, thou shalt not be purged from thy filthiness any more* (Ezekiel 24:13) is Jeremiah''s reprobate silver — metal that the refiner''s fire could not cleanse, rejected. The scum that would not go out is the guilt no furnace could melt away.'),
+    ('canon','ezekiel',24,6,'canon','nahum',3,1,'free',
+      E'*Woe to the bloody city! it is all full of lies and robbery; the prey departeth not* (Nahum 3:1). Nahum''s woe over Nineveh names the very charge laid on Jerusalem — *Woe to the bloody city, to the pot whose scum is therein* (Ezekiel 24:6). The bloody city, full of lies, is judged whether it be Nineveh or the city of Yahuah''s own sanctuary: blood and lewdness draw the same woe.'),
+    ('canon','ezekiel',24,13,'canon','isaiah',1,25,'free',
+      E'*And I will turn my hand upon thee, and purely purge away thy dross, and take away all thy tin* (Isaiah 1:25). Isaiah held out the refining-mercy this caldron forfeits — the city that *wast not purged, thou shalt not be purged from thy filthiness any more* (Ezekiel 24:13) had been offered the pure purging-away of its dross. The fire that could have refined now only consumes, because the scum would not go out.'),
+
+    -- THREAD 3 (★★): the desire of thine eyes — the death of the wife, the unmournable sanctuary
+    ('canon','ezekiel',24,16,'canon','jeremiah',16,5,'free',
+      E'*For thus saith Yahuah (LORD), Enter not into the house of mourning, neither go to lament nor bemoan them: for I have taken away my peace from this people, saith Yahuah (LORD), even lovingkindness and mercies* (Jeremiah 16:5). Jeremiah, like Ezekiel, is made a sign by forbidden mourning — as Ezekiel may *neither... mourn nor weep* over *the desire of thine eyes* (Ezekiel 24:16), so Jeremiah may not enter the house of mourning. The withheld grief preaches the withdrawn peace: the coming loss is past lamenting.'),
+    ('canon','ezekiel',24,17,'canon','jeremiah',16,7,'free',
+      E'*Neither shall men tear themselves for them in mourning, to comfort them for the dead; neither shall men give them the cup of consolation to drink for their father or for their mother* (Jeremiah 16:7). The command *make no mourning for the dead... eat not the bread of men* (Ezekiel 24:17) is the same denied consolation — no cup of comfort for the dead, even a father or mother. The customary mourning is forbidden because the judgment leaves no room for it.'),
+    ('canon','ezekiel',24,21,'canon','lamentations',2,1,'free',
+      E'*How hath Yahuah (Lord) covered the daughter of Zion with a cloud in his anger, and cast down from heaven unto the earth the beauty of Yashar''el (Israel), and remembered not his footstool in the day of his anger!* (Lamentations 2:1). The threatened *I will profane my sanctuary, the excellency of your strength, the desire of your eyes* (Ezekiel 24:21) is the very fall Lamentations weeps — the beauty of Yashar''el cast down, the footstool (the sanctuary) unremembered in the day of anger. The desire of their eyes is laid in the dust.'),
+    ('canon','ezekiel',24,21,'canon','luke',19,44,'free',
+      E'*And shall lay thee even with the ground, and thy children within thee; and they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44). When *I will profane my sanctuary... the desire of your eyes; and your sons and your daughters... shall fall by the sword* (Ezekiel 24:21), it foreshadows the second fall the Messiah weeps over — the same city, the same temple, *one stone upon another* thrown down. The Formed Son weeps the grief Ezekiel was forbidden to weep: the unmournable loss of the house of Yahuah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-24-write-thee-the-name-of-the-day-the-siege-begins',
+       E'Write thee the name of the day — the king of Babylon set himself against Jerusalem this same day',
+       E'In the ninth year, on the tenth day of the tenth month, the word comes to the prophet far away in Babylon: *Son of Adam, write thee the name of the day, even of this same day: the king of Babylon set himself against Jerusalem this same day* (Ezekiel 24:1-2). Ezekiel cannot see the city; he is hundreds of miles into exile. Yet he is told the very day the siege begins and commanded to record it — a sign of the true word, to be proved when the news at last arrives. The dating witnesses confirm it to the day: *And it came to pass in the ninth year of his reign, in the tenth month, in the tenth day of the month, that Nebuchadnezzar king of Babylon came, he, and all his host, against Jerusalem, and pitched against it; and they built forts against it round about* (2 Kings 25:1); and Jeremiah, in the city, dates it identically — *in the ninth year of his reign, in the tenth month, in the tenth day of the month, that Nebuchadrezzar king of Babylon came... against Jerusalem* (Jeremiah 52:4). The same year, month, and day the exile was given is the day the chronicle records. This is the answer to the scoffers'' proverb that *every vision faileth* (Ezekiel 12:22): *I will speak, and the word that I shall speak shall come to pass; it shall be no more prolonged* (Ezekiel 12:25). The word given far off is fulfilled to the day; the true prophet is known by it.',
+       sv.verse_id, ev.verse_id, 'free', 32575
+  FROM _s308_ezek24_lookup sv, _s308_ezek24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=24 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged',
+       E'Woe to the bloody city — the pot whose scum would not be purged any more',
+       E'On the day the siege begins, the prophet utters a parable over the city: *Set on a pot, set it on, and also pour water into it: Gather the pieces thereof into it... Take the choice of the flock, and burn also the bones under it, and make it boil well* (Ezekiel 24:3-5). Then the woe: *Woe to the bloody city, to the pot whose scum is therein, and whose scum is not gone out of it!* (24:6) — for *her blood is in the midst of her; she set it upon the top of a rock... that it should not be covered* (24:7-8). The pot is set empty on the coals till the brass burns, *that the filthiness of it may be molten in it, that the scum of it may be consumed* (24:11) — yet *her great scum went not forth out of her: her scum shall be in the fire* (24:12). And the verdict: *because I have purged thee, and thou wast not purged, thou shalt not be purged from thy filthiness any more, till I have caused my fury to rest upon thee* (24:13). The caldron is the bloody city, the scum the guilt the fire cannot refine away. This is the furnace already named in Ezekiel: *the house of Yashar''el (Israel) is to me become dross... in the midst of the furnace* (Ezekiel 22:18), *so will I gather you in mine anger and in my fury... and melt you* (22:20). Jeremiah ran the same assay first: *the founder melteth in vain: for the wicked are not plucked away. Reprobate silver shall men call them, because Yahuah (LORD) hath rejected them* (Jeremiah 6:29-30). Nahum''s woe over Nineveh names the same crime — *Woe to the bloody city!* (Nahum 3:1) — and Isaiah had held out the refining-mercy this caldron now forfeits: *I will turn my hand upon thee, and purely purge away thy dross* (Isaiah 1:25). The fire that could have refined now only consumes. And this is covenant-judgment for blood and lewdness — the Deuteronomy curse upon the covenant-breaker — never the Torah itself made a curse.',
+       sv.verse_id, ev.verse_id, 'free', 32578
+  FROM _s308_ezek24_lookup sv, _s308_ezek24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=24 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary',
+       E'The desire of thine eyes taken with a stroke — the sanctuary they may not mourn',
+       E'The hardest sign in the book: *Son of Adam, behold, I take away from thee the desire of thine eyes with a stroke: yet neither shalt thou mourn nor weep, neither shall thy tears run down. Forbear to cry, make no mourning for the dead* (Ezekiel 24:16-17). The prophet obeys — *So I spake unto the people in the morning: and at even my wife died; and I did in the morning as I was commanded* (24:18) — and his withheld grief becomes the sermon. When the people ask its meaning, the word is the temple: *Speak unto the house of Yashar''el (Israel)... Behold, I will profane my sanctuary, the excellency of your strength, the desire of your eyes, and that which your soul pitieth; and your sons and your daughters whom ye have left shall fall by the sword* (24:21); *ye shall not mourn nor weep; but ye shall pine away for your iniquities* (24:23). The wife was the desire of the prophet''s eyes; the sanctuary is the desire of theirs — and when it falls they will be too benumbed to weep, as he was forbidden to. *Thus Ezekiel is unto you a sign* (24:24). Jeremiah was made the same kind of sign: *Enter not into the house of mourning, neither go to lament nor bemoan them: for I have taken away my peace from this people* (Jeremiah 16:5), no *cup of consolation to drink for their father or for their mother* (16:7). Lamentations weeps the fall itself: *How hath Yahuah (Lord) covered the daughter of Zion with a cloud in his anger... and remembered not his footstool in the day of his anger!* (Lamentations 2:1) — the footstool the sanctuary, cast down. And the Formed Son weeps over the second fall of the same city, the grief Ezekiel was forbidden: *they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44). The unmournable loss of the house of Yahuah, the desire of the eyes, twice laid in the dust. (And after the silence, the sign turns: *he that escapeth in that day shall come unto thee... and thou shalt speak, and be no more dumb* — 24:26-27 — the prophet''s mouth opened when the news of the fall arrives.)',
+       sv.verse_id, ev.verse_id, 'free', 32581
+  FROM _s308_ezek24_lookup sv, _s308_ezek24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=24 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *in the ninth year... in the tenth month, in the tenth day of the month, that Nebuchadnezzar king of Babylon came... against Jerusalem* (2 Kings 25:1) — the chronicle confirms the day Ezekiel 24:2 was told to record, to the very date.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-write-thee-the-name-of-the-day-the-siege-begins'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *in the ninth year of his reign, in the tenth month, in the tenth day of the month, that Nebuchadrezzar king of Babylon came... against Jerusalem* (Jeremiah 52:4) — Jeremiah, in the city, dates the siege identically to the exile''s word (Ezekiel 24:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-write-thee-the-name-of-the-day-the-siege-begins'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the word that I shall speak shall come to pass; it shall be no more prolonged* (Ezekiel 12:25) — the dated word of *this same day* (Ezekiel 24:2) is the answer to the proverb that every vision fails.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=12 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-write-thee-the-name-of-the-day-the-siege-begins'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the house of Yashar''el (Israel) is to me become dross... in the midst of the furnace* (Ezekiel 22:18) — the empty pot on the coals (Ezekiel 24:11) is the same furnace-assay, the bloody city as dross.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=11
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *so will I gather you in mine anger and in my fury, and I will leave you there, and melt you* (Ezekiel 22:20) — the brass made hot to melt the filthiness (Ezekiel 24:11) is this gathering-into-the-furnace to be melted.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=11
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=22 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the founder melteth in vain: for the wicked are not plucked away* (Jeremiah 6:29) — the fire that should refine only proves the dross will not part, as her scum is not gone out (Ezekiel 24:6).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=6 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Reprobate silver shall men call them, because Yahuah (LORD) hath rejected them* (Jeremiah 6:30) — the verdict *thou shalt not be purged... any more* (Ezekiel 24:13) is the metal the fire could not cleanse, rejected.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=6 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Woe to the bloody city! it is all full of lies and robbery* (Nahum 3:1) — Nahum''s woe over Nineveh names the very charge laid on Jerusalem (Ezekiel 24:6); blood draws the same woe.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nahum' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I will turn my hand upon thee, and purely purge away thy dross* (Isaiah 1:25) — the refining-mercy the caldron forfeits; the city that *wast not purged* (Ezekiel 24:13) had been offered a pure purging.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-woe-to-the-bloody-city-the-scum-that-would-not-be-purged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Enter not into the house of mourning, neither go to lament nor bemoan them: for I have taken away my peace from this people* (Jeremiah 16:5) — Jeremiah, like Ezekiel (24:16), is made a sign by forbidden mourning; the withheld grief preaches the withdrawn peace.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *neither shall men give them the cup of consolation to drink for their father or for their mother* (Jeremiah 16:7) — the command *make no mourning for the dead* (Ezekiel 24:17) is the same denied consolation, no cup of comfort even for a parent.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=16 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *How hath Yahuah (Lord) covered the daughter of Zion with a cloud... and remembered not his footstool* (Lamentations 2:1) — the profaned sanctuary (Ezekiel 24:21), the footstool, cast down in the day of anger.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=21
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *they shall not leave in thee one stone upon another; because thou knewest not the time of thy visitation* (Luke 19:44) — the Formed Son weeps the second fall of the same city, the grief Ezekiel was forbidden over the desire of the eyes (Ezekiel 24:21).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=24 AND sv.verse_number=21
+  JOIN _s308_ezek24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
