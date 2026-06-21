@@ -10135,6 +10135,1295 @@ SELECT t.id, cr.id, 4, E'★★ *they shall not leave in thee one stone upon ano
  WHERE t.slug='ezekiel-24-the-desire-of-thine-eyes-the-unmournable-sanctuary'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_25.sql (Ezekiel 25) -----
+-- Chapter: Ezekiel 25 — the oracles against the FOUR neighbor nations who rejoiced over and harmed
+-- Yahuah''s covenant people when Yahudah (Judah) fell: Ammon (vv.1-7), Moab and Seir/Edom (vv.8-11),
+-- Edom (vv.12-14), and Philistia (vv.15-17). The charge in each is the SAME — they gloated over the
+-- profaned sanctuary, the desolate land of Yashar''el, the captive house of Yahudah, and dealt by
+-- revenge; the verdict in each is the SAME — *I will execute great vengeance... and they shall know
+-- that I am Yahuah (LORD)*. Two framework cords run the chapter: (1) he that curseth Abraham''s seed is
+-- cursed (Gen 12:3) — the nations judged for touching the apple of Yahuah''s eye; (2) the recognition-
+-- formula — even the judgment of the heathen vindicates the Name; and (3) vengeance belongs to Yahuah,
+-- executed in his time by the hand of his people.
+-- Tag: ezek25   Temp view: _s308_ezek25_lookup
+-- Sort band: base 32600, step 3 -> threads at 32600, 32603, 32606 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',25,v
+--
+-- Ezekiel 25 coverage:
+--   ★ v.3 (Because thou saidst, Aha, against my sanctuary, when it was profaned... against the land of
+--          Yashar''el, when it was desolate; and against the house of Yahudah, when they went into captivity)
+--        NT:     none warranted (the OT covenant-lawsuit against the gloating nations; Rom 12:19 vengeance
+--                weave held in THREAD 3 at v.14)
+--        Extras: none warranted (clean canon-Tanakh weave)
+--        Tanakh: ★ Genesis 12:3 (curse him that curseth thee), ★ Zechariah 2:8 (toucheth the apple of his
+--                eye) — THREAD 1
+--   v.4-5 (delivered to the men of the east; Rabbah a stable for camels; ye shall know that I am Yahuah)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: the recognition-formula of v.5 carried in THREAD 2; the Ammon-judgment lateral (Jer 49:1-6)
+--                bound at v.3 in THREAD 1
+--   ★ v.6 (Because thou hast clapped thine hands, and stamped with the feet, and rejoiced in heart with
+--          all thy despite against the land of Yashar''el)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★ Obadiah 1:10-15 (for thy violence against thy brother Jacob... as thou hast done, it
+--                shall be done unto thee) — the gloating-over-the-fall charge; THREAD 1
+--   v.7 (I will cut thee off from the people... thou shalt know that I am Yahuah)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: recognition-formula — THREAD 2
+--   ★ v.8 (Because that Moab and Seir do say, Behold, the house of Yahudah is like unto all the heathen)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: bound in THREAD 1 (the despising of the covenant people = the curse of Gen 12:3); the
+--                Moab/Edom lateral held in the Jer 49 / Obadiah members
+--   v.9-11 (the side of Moab opened... I will execute judgments upon Moab; they shall know that I am Yahuah)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: recognition-formula of v.11 — THREAD 2
+--   ★ v.12 (Because that Edom hath dealt against the house of Yahudah by taking vengeance, and hath greatly
+--          offended, and revenged himself upon them)
+--        NT:     none warranted (the Edom-charge; the vengeance-belongs-to-Yahuah answer at v.14)
+--        Extras: none warranted
+--        Tanakh: ★ Obadiah 1:10 (for thy violence against thy brother Jacob), ★ Joel 3:19 (Edom a desolate
+--                wilderness, for the violence against the children of Yahudah), ★ Jeremiah 49:7 (Concerning
+--                Edom... is wisdom no more in Teman?) — THREAD 1
+--   ★ v.13 (I will... cut off man and beast from it... make it desolate from Teman; Dedan shall fall by the
+--          sword) — woven into THREAD 1 / THREAD 3 prose (the Edom desolation; Teman echoed by Obad/Jer 49)
+--   ★★ v.14 (And I will lay my VENGEANCE upon Edom by the hand of my people Yashar''el... they shall know my
+--          vengeance, saith Adonai Yahuah)
+--        NT:     ★★ Romans 12:19 (avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah) —
+--                THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 32:35 (To me belongeth vengeance, and recompence), ★ Obadiah 1:18 (the house
+--                of Jacob a fire... the house of Esau for stubble) — THREAD 3
+--   ★ v.15 (Because the Philistines have dealt by revenge, and have taken vengeance with a despiteful heart,
+--          to destroy it for the old hatred)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: bound in THREAD 1 (the despiteful-revenge charge against the covenant people = Gen 12:3 /
+--                Zech 2:8)
+--   v.16-17 (I will cut off the Cherethims... I will execute GREAT vengeance upon them with furious rebukes;
+--          they shall know that I am Yahuah, when I shall lay my vengeance upon them)
+--        NT:     none warranted (the Philistia verdict; vengeance answered in THREAD 3)
+--        Extras: none warranted
+--        Tanakh: recognition-formula of v.17 — THREAD 2; the great-vengeance clause = THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-25-because-thou-saidst-aha-against-my-sanctuary — Tanakh (Genesis 12, Zechariah 2, Obadiah 1,
+--      Joel 3, Jeremiah 49) [free]
+--      (★ the four nations judged for gloating over and harming the covenant people; he that curseth Abraham''s
+--       seed is cursed; the apple of Yahuah''s eye; violence against thy brother Jacob)
+--   2. ezekiel-25-and-they-shall-know-that-i-am-yahuah — Tanakh (Ezekiel 36, Psalm 9, Psalm 83) [free]
+--      (★ the recognition-formula refrain vv.5,7,11,17 — even the judgment of the heathen vindicates the Name)
+--   3. ezekiel-25-i-will-lay-my-vengeance-upon-edom-by-the-hand-of-my-people — NT (Romans 12) + Tanakh
+--      (Deuteronomy 32, Obadiah 1) [free]
+--      (★★ vengeance belongs to Yahuah, executed in his time by the hand of his people)
+--
+-- Framing notes:
+--   ★ BECAUSE THOU SAIDST, AHA (THREAD 1): the FOUR oracles share one charge — the nations gloated over the
+--      fall of Yahuah''s covenant people. Ammon: *Because thou saidst, Aha, against my sanctuary, when it was
+--      profaned; and against the land of Yashar''el (Israel), when it was desolate; and against the house of
+--      Yahudah (Judah), when they went into captivity* (25:3); *Because thou hast clapped thine hands, and
+--      stamped with the feet, and rejoiced in heart with all thy despite against the land of Yashar''el
+--      (Israel)* (25:6). Moab/Seir: *Because that Moab and Seir do say, Behold, the house of Yahudah (Judah)
+--      is like unto all the heathen* (25:8). Edom: *Because that Edom hath dealt against the house of Yahudah
+--      (Judah) by taking vengeance* (25:12). Philistia: *Because the Philistines have dealt by revenge...
+--      for the old hatred* (25:15). The frame is the Abrahamic promise: *I will bless them that bless thee,
+--      and curse him that curseth thee* (Genesis 12:3) — and Zechariah names the touching of the people the
+--      touching of Yahuah himself: *he that toucheth you toucheth the apple of his eye* (Zechariah 2:8).
+--      Edom''s violence against his brother Jacob is the type the prophets press: *For thy violence against
+--      thy brother Jacob shame shall cover thee... as thou hast done, it shall be done unto thee* (Obadiah
+--      1:10,15); *Edom shall be a desolate wilderness, for the violence against the children of Yahudah
+--      (Judah)* (Joel 3:19); and the lateral oracles against Ammon and Edom in Jeremiah 49 (the same nations,
+--      the same verdict).
+--   ★ AND THEY SHALL KNOW THAT I AM YAHUAH (THREAD 2): the refrain seals each oracle — *and ye shall know
+--      that I am Yahuah (LORD)* (25:5), *thou shalt know that I am Yahuah (LORD)* (25:7), *they shall know
+--      that I am Yahuah (LORD)* (25:11), *they shall know that I am Yahuah (LORD), when I shall lay my
+--      vengeance upon them* (25:17). The recognition-formula: even the judgment of the heathen vindicates
+--      the Name. Ezekiel says it plainly a chapter-block later — *I will sanctify my great name... and the
+--      heathen shall know that I am Yahuah (LORD)* (Ezekiel 36:23). The Psalms sing it: *Yahuah (LORD) is
+--      known by the judgment which he executeth* (Psalm 9:16); *That men may know that thou, whose name alone
+--      is JEHOVAH, art the most high over all the earth* (Psalm 83:18).
+--   ★★ I WILL LAY MY VENGEANCE (THREAD 3): *And I will lay my vengeance upon Edom by the hand of my people
+--      Yashar''el (Israel): and they shall do in Edom according to mine anger and according to my fury; and
+--      they shall know my vengeance, saith Adonai Yahuah (the Lord GOD)* (25:14). Vengeance is YAHUAH''S, not
+--      the people''s to seize — *To me belongeth vengeance, and recompence; their foot shall slide in due
+--      time* (Deuteronomy 32:35); the New Testament quotes that very Torah word — *avenge not yourselves...
+--      for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). And the
+--      instrument — *by the hand of my people Yashar''el* — is Obadiah''s fire and stubble: *the house of
+--      Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble* (Obadiah
+--      1:18). Edom''s self-taken vengeance (25:12) is answered by Yahuah''s righteous vengeance in his time.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the prophet set against the Ammonites — the commission framing),
+--      v.4-5 (the men of the east, Rabbah a stable — the Ammon sentence; v.5 formula in THREAD 2), v.9-10
+--      (the cities of Moab opened — the Moab sentence), v.13 (the Edom desolation from Teman — woven in
+--      THREAD 1/3 prose), v.16 (the Cherethims cut off — the Philistia sentence). All recorded above; every
+--      meaningful block carries at least one thread (NT none / Extras none beyond what is noted).
+
+CREATE TEMP VIEW _s308_ezek25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Because thou saidst, Aha — the nations judged for gloating over the covenant people
+    ('canon','ezekiel',25,3,'canon','genesis',12,3,'free',
+      E'*And I will bless them that bless thee, and curse him that curseth thee: and in thee shall all families of the earth be blessed* (Genesis 12:3). The Abrahamic promise is the frame of the whole chapter: the nations that say *Aha, against my sanctuary, when it was profaned; and against the land of Yashar''el (Israel), when it was desolate; and against the house of Yahudah (Judah), when they went into captivity* (Ezekiel 25:3) have cursed the seed of Abraham — and the curse returns upon them. To gloat over the fall of the covenant people is to come under the curse Yahuah pronounced over Abraham''s house.'),
+    ('canon','ezekiel',25,3,'canon','zechariah',2,8,'free',
+      E'*For thus saith Yahuah Tseva''ot (LORD of hosts); After the glory hath he sent me unto the nations which spoiled you: for he that toucheth you toucheth the apple of his eye* (Zechariah 2:8). The rejoicing *against my sanctuary... and against the house of Yahudah (Judah), when they went into captivity* (Ezekiel 25:3) is no light thing: to touch Yahuah''s people is to touch *the apple of his eye*. The nations who spoiled and despised them have struck at Yahuah himself, and his judgment follows.'),
+    ('canon','ezekiel',25,6,'canon','obadiah',1,10,'free',
+      E'*For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). The despite that *clapped thine hands, and stamped with the feet, and rejoiced in heart with all thy despite against the land of Yashar''el (Israel)* (Ezekiel 25:6) is the very violence-against-the-brother Obadiah condemns in Edom. Rejoicing over a brother''s calamity brings shame and being cut off — the gloating itself is the crime.'),
+    ('canon','ezekiel',25,6,'canon','obadiah',1,15,'free',
+      E'*For the day of Yahuah (LORD) is near upon all the heathen: as thou hast done, it shall be done unto thee: thy reward shall return upon thine own head* (Obadiah 1:15). The despite and rejoicing over the desolation of *the land of Yashar''el (Israel)* (Ezekiel 25:6) meets the measure-for-measure verdict: *as thou hast done, it shall be done unto thee*. What the nations did to the covenant people returns upon their own head in the day of Yahuah.'),
+    ('canon','ezekiel',25,12,'canon','obadiah',1,10,'free',
+      E'*For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). Ezekiel''s charge that *Edom hath dealt against the house of Yahudah (Judah) by taking vengeance, and hath greatly offended, and revenged himself upon them* (Ezekiel 25:12) is the same indictment Obadiah brings: Edom''s violence against his brother Jacob. The kinship makes the crime worse — Esau against Jacob, brother against brother.'),
+    ('canon','ezekiel',25,12,'canon','joel',3,19,'free',
+      E'*Egypt shall be a desolation, and Edom shall be a desolate wilderness, for the violence against the children of Yahudah (Judah), because they have shed innocent blood in their land* (Joel 3:19). Edom''s taking of vengeance and revenging himself upon the house of Yahudah (Ezekiel 25:12) is the *violence against the children of Yahudah (Judah)* Joel names — and the sentence is the same: Edom made *a desolate wilderness*. The blood shed against the covenant people is required of the nation that shed it.'),
+    ('canon','ezekiel',25,12,'canon','jeremiah',49,7,'free',
+      E'*Concerning Edom, thus saith Yahuah Tseva''ot (LORD of hosts); Is wisdom no more in Teman? is counsel perished from the prudent? is their wisdom vanished?* (Jeremiah 49:7). Jeremiah''s oracle against Edom runs parallel to Ezekiel''s — the same nation, the same charge of dealing *against the house of Yahudah (Judah) by taking vengeance* (Ezekiel 25:12), the same coming desolation from Teman (25:13). Edom''s wisdom and counsel cannot save it from the judgment for striking its brother.'),
+    ('canon','ezekiel',25,3,'canon','jeremiah',49,1,'free',
+      E'*Concerning the Ammonites, thus saith Yahuah (LORD); Hath Yashar''el (Israel) no sons? hath he no heir? why then doth their king inherit Gad, and his people dwell in his cities?* (Jeremiah 49:1). Jeremiah''s oracle against Ammon stands beside Ezekiel''s: Ammon seized the inheritance of Yashar''el and gloated over the captivity (Ezekiel 25:3). To say *Aha* against the land and the heir of Yahuah''s people, and to take their cities, is to despise the covenant inheritance — and Ammon is judged for it in both prophets.'),
+
+    -- THREAD 2 (★): and they shall know that I am Yahuah — the recognition-formula
+    ('canon','ezekiel',25,5,'canon','ezekiel',36,23,'free',
+      E'*And I will sanctify my great name, which was profaned among the heathen, which ye have profaned in the midst of them; and the heathen shall know that I am Yahuah (LORD), saith Adonai Yahuah (the Lord GOD), when I shall be sanctified in you before their eyes* (Ezekiel 36:23). The refrain *ye shall know that I am Yahuah (LORD)* (Ezekiel 25:5) is the purpose of the whole chapter, stated plainly later: the judgment of the heathen sanctifies and vindicates the profaned Name. Even the sentence on Ammon, Moab, Edom, and Philistia exists *that the heathen shall know that I am Yahuah*.'),
+    ('canon','ezekiel',25,7,'canon','psalms',9,16,'free',
+      E'*Yahuah (LORD) is known by the judgment which he executeth: the wicked is snared in the work of his own hands. Higgaion. Selah* (Psalm 9:16). The verdict on Ammon — *I will cut thee off from the people... and thou shalt know that I am Yahuah (LORD)* (Ezekiel 25:7) — is exactly the way Yahuah makes himself known: *by the judgment which he executeth*. The nations are *snared in the work of their own hands*, their despite returning upon them, and so they come to know the Name.'),
+    ('canon','ezekiel',25,17,'canon','psalms',83,18,'free',
+      E'*That men may know that thou, whose name alone is JEHOVAH, art the most high over all the earth* (Psalm 83:18). The closing word of the chapter — *they shall know that I am Yahuah (LORD), when I shall lay my vengeance upon them* (Ezekiel 25:17) — is the Psalm''s own cry against the confederate nations: that by his judgment all men may know *that thou... art the most high over all the earth*. The judgment of the gloating nations is the vindication of the Name above every nation.'),
+
+    -- THREAD 3 (★★): I will lay my vengeance upon Edom by the hand of my people
+    ('canon','ezekiel',25,14,'canon','deuteronomy',32,35,'free',
+      E'*To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand, and the things that shall come upon them make haste* (Deuteronomy 32:35). Yahuah''s word *I will lay my vengeance upon Edom* (Ezekiel 25:14) rests on the Song of Moses: vengeance is HIS, in his appointed *due time*. Edom took vengeance for itself (25:12); Yahuah answers that the vengeance is his alone to repay, and he will repay it.'),
+    ('canon','ezekiel',25,14,'canon','romans',12,19,'free',
+      E'*Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The New Testament quotes the very Torah principle that governs Ezekiel''s oracle: *I will lay my vengeance upon Edom by the hand of my people Yashar''el (Israel)* (Ezekiel 25:14). The covenant people do not seize their own revenge — as Edom did and was judged for (25:12); they give place unto Yahuah''s wrath, who repays in his time and by his own hand.'),
+    ('canon','ezekiel',25,14,'canon','obadiah',1,18,'free',
+      E'*And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble, and they shall kindle in them, and devour them; and there shall not be any remaining of the house of Esau; for Yahuah (LORD) hath spoken it* (Obadiah 1:18). The promise *by the hand of my people Yashar''el (Israel)* (Ezekiel 25:14) is Obadiah''s fire and stubble: the house of Jacob (both Yahudah and Joseph) made the instrument of Yahuah''s vengeance, the house of Esau as stubble before them. The vengeance is Yahuah''s, executed through his restored people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-25-because-thou-saidst-aha-against-my-sanctuary',
+       E'Because thou saidst, Aha — the nations judged for gloating over the covenant people',
+       E'Four times in this chapter Yahuah brings the same charge against the neighbor nations who rejoiced when Yahudah (Judah) fell. Ammon: *Because thou saidst, Aha, against my sanctuary, when it was profaned; and against the land of Yashar''el (Israel), when it was desolate; and against the house of Yahudah (Judah), when they went into captivity* (25:3), *Because thou hast clapped thine hands, and stamped with the feet, and rejoiced in heart with all thy despite against the land of Yashar''el (Israel)* (25:6). Moab and Seir: *Because that Moab and Seir do say, Behold, the house of Yahudah (Judah) is like unto all the heathen* (25:8). Edom: *Because that Edom hath dealt against the house of Yahudah (Judah) by taking vengeance, and hath greatly offended, and revenged himself upon them* (25:12). Philistia: *Because the Philistines have dealt by revenge, and have taken vengeance with a despiteful heart, to destroy it for the old hatred* (25:15). The frame is the oldest promise to Abraham: *I will bless them that bless thee, and curse him that curseth thee* (Genesis 12:3). To gloat over the covenant people is to curse Abraham''s seed — and Zechariah names the gravity of it: *he that toucheth you toucheth the apple of his eye* (Zechariah 2:8). The case against Edom is the case against a brother: *For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10), and the verdict is measure for measure — *as thou hast done, it shall be done unto thee: thy reward shall return upon thine own head* (Obadiah 1:15); *Edom shall be a desolate wilderness, for the violence against the children of Yahudah (Judah)* (Joel 3:19). The same oracles stand in Jeremiah against the same nations: against Ammon who seized the inheritance — *Hath Yashar''el (Israel) no sons? hath he no heir?* (Jeremiah 49:1) — and against Edom — *Concerning Edom... Is wisdom no more in Teman?* (Jeremiah 49:7). Every nation that despised the desolate land and the captive house is brought into the same judgment: he that curseth the seed is cursed.',
+       sv.verse_id, ev.verse_id, 'free', 32600
+  FROM _s308_ezek25_lookup sv, _s308_ezek25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=25 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-25-and-they-shall-know-that-i-am-yahuah',
+       E'And they shall know that I am Yahuah — the recognition-formula over the nations',
+       E'A single refrain seals each of the four oracles, marking the purpose of every judgment: the Ammon-sentence ends *and ye shall know that I am Yahuah (LORD)* (25:5); the second Ammon-word, *thou shalt know that I am Yahuah (LORD)* (25:7); the Moab-sentence, *and they shall know that I am Yahuah (LORD)* (25:11); and the Philistia-sentence at the chapter''s close, *and they shall know that I am Yahuah (LORD), when I shall lay my vengeance upon them* (25:17). This is the recognition-formula: even the judgment of the heathen is not mere wrath but revelation — it makes the Name known. Ezekiel states the purpose plainly: *I will sanctify my great name, which was profaned among the heathen... and the heathen shall know that I am Yahuah (LORD)... when I shall be sanctified in you before their eyes* (Ezekiel 36:23). The Psalms had sung the same truth: *Yahuah (LORD) is known by the judgment which he executeth: the wicked is snared in the work of his own hands* (Psalm 9:16); and the prayer against the confederate nations, *That men may know that thou, whose name alone is JEHOVAH, art the most high over all the earth* (Psalm 83:18). The gloating nations meant to bury the Name with the people; instead their own judgment lifts it up — they shall know that he is Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 32603
+  FROM _s308_ezek25_lookup sv, _s308_ezek25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=25 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-25-i-will-lay-my-vengeance-upon-edom-by-the-hand-of-my-people',
+       E'I will lay my vengeance upon Edom — vengeance belongs to Yahuah, in his time',
+       E'At the heart of the Edom-oracle stands the principle that governs the whole chapter: *And I will lay my vengeance upon Edom by the hand of my people Yashar''el (Israel): and they shall do in Edom according to mine anger and according to my fury; and they shall know my vengeance, saith Adonai Yahuah (the Lord GOD)* (25:14). Edom had taken vengeance for itself — *revenged himself upon them* (25:12) — and that self-seized revenge is the very crime. Vengeance is Yahuah''s alone. The Song of Moses laid it down: *To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand* (Deuteronomy 32:35). The apostolic word quotes that Torah principle outright: *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — the covenant people do not grasp their own revenge as Edom did, but give place to Yahuah, who repays in his time and *by the hand of my people*. And the instrument is Obadiah''s fire and stubble: *And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble... and there shall not be any remaining of the house of Esau; for Yahuah (LORD) hath spoken it* (Obadiah 1:18). The house of Jacob — both Yahudah and Joseph, the restored people — is made the flame that consumes the stubble of Esau, not by their own anger but according to Yahuah''s anger and his fury, in his own day.',
+       sv.verse_id, ev.verse_id, 'free', 32606
+  FROM _s308_ezek25_lookup sv, _s308_ezek25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=25 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *curse him that curseth thee* (Genesis 12:3) — the Abrahamic frame; to gloat over the captive house of Yahudah (Ezekiel 25:3) is to curse Abraham''s seed and come under the curse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he that toucheth you toucheth the apple of his eye* (Zechariah 2:8) — the despite against the sanctuary and the captive house (Ezekiel 25:3) strikes at Yahuah himself.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *for thy violence against thy brother Jacob shame shall cover thee* (Obadiah 1:10) — the despite and rejoicing of 25:6 is the brother-against-brother violence Obadiah condemns in Edom.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *as thou hast done, it shall be done unto thee: thy reward shall return upon thine own head* (Obadiah 1:15) — measure-for-measure on the rejoicing over the desolate land (25:6).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *for thy violence against thy brother Jacob* (Obadiah 1:10) — Edom''s dealing against the house of Yahudah by taking vengeance (25:12) is the same brother-violence; the kinship makes it worse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Edom shall be a desolate wilderness, for the violence against the children of Yahudah (Judah)* (Joel 3:19) — the same charge and the same desolation as Ezekiel 25:12.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Concerning Edom... Is wisdom no more in Teman?* (Jeremiah 49:7) — the parallel oracle against the same nation, the same Teman-desolation Ezekiel names (25:12-13).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Concerning the Ammonites... Hath Yashar''el (Israel) no sons? hath he no heir?* (Jeremiah 49:1) — the parallel oracle against Ammon, who seized the inheritance and gloated over the captivity (25:3).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=49 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-because-thou-saidst-aha-against-my-sanctuary'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the heathen shall know that I am Yahuah (LORD)... when I shall be sanctified in you* (Ezekiel 36:23) — the purpose of the refrain (25:5): the judgment of the nations vindicates the profaned Name.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=5
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-and-they-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (LORD) is known by the judgment which he executeth* (Psalm 9:16) — the way the formula works at 25:7: the nations snared in their own hands come to know the Name.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-and-they-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *That men may know that thou, whose name alone is JEHOVAH, art the most high over all the earth* (Psalm 83:18) — the chapter''s closing formula (25:17): the judgment of the confederate nations lifts the Name above all.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=17
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=83 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-and-they-shall-know-that-i-am-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *To me belongeth vengeance, and recompence... in due time* (Deuteronomy 32:35) — the Song of Moses; Yahuah''s vengeance on Edom (25:14) is his alone, in his appointed time.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=14
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-i-will-lay-my-vengeance-upon-edom-by-the-hand-of-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — the NT quotes the Torah principle behind 25:14; the people give place to Yahuah''s wrath, as Edom did not.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=14
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-i-will-lay-my-vengeance-upon-edom-by-the-hand-of-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the house of Jacob a fire... the house of Esau for stubble* (Obadiah 1:18) — the instrument *by the hand of my people Yashar''el* (25:14): the restored house made the flame that consumes Esau''s stubble.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=25 AND sv.verse_number=14
+  JOIN _s308_ezek25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-25-i-will-lay-my-vengeance-upon-edom-by-the-hand-of-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_26.sql (Ezekiel 26) -----
+-- Chapter: Ezekiel 26 — the oracle against Tyrus (Tyre), the proud merchant-city that said AHA over
+-- Jerusalem's fall and looked to profit by it. Yahuah is against her: many nations come up as the sea's
+-- waves; her walls and towers broken, her dust scraped, *made like the top of a rock* — a bare place for
+-- the spreading of nets. The noise of her songs and harps silenced; *thou shalt be built no more*; brought
+-- down to the pit with them of old time; a terror, and no more — *though thou be sought for, yet shalt thou
+-- never be found again*. The trading city's gloating-over-Jerusalem judged, and its permanent fall = the
+-- TYPE of the doomed merchant-world-system, drawn forward by John for the fall of Babylon.
+-- Tag: ezek26   Temp view: _s308_ezek26_lookup
+-- Sort band: base 32625, step 3 -> threads at 32625, 32628 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',26,v
+--
+-- Ezekiel 26 coverage:
+--   v.1 (the word of Yahuah came in the eleventh year) — historical dating preface; no add
+--        NT: none warranted   Extras: none warranted   Tanakh: none warranted
+--   ★ v.2-5 (because Tyrus said against Jerusalem, AHA, she is broken... I shall be replenished, now she
+--          is laid waste: therefore... I will cause many nations to come up against thee... make her like
+--          the top of a rock; a place for the spreading of nets)
+--        NT:     none warranted distinct (the gloating-merchant judgment; NT fall-of-the-city weave held to
+--                THREAD 2's Revelation 18)
+--        Extras: none warranted
+--        Tanakh: ★ Proverbs 17:5 (he that is glad at calamities shall not be unpunished), ★ Obadiah 1:12
+--                (neither shouldest thou have rejoiced over the children of Yahudah in the day of their
+--                destruction), ★ Isaiah 23:8-9 (the burden of Tyre, the crowning city, whose merchants are
+--                princes — Yahuah purposed it to stain the pride of all glory) — THREAD 1
+--   v.6-12 (her daughters slain; Nebuchadrezzar king of Babylon brought up; forts, engines, hoofs;
+--          riches spoiled; stones and timber and dust cast in the midst of the water) — the executing
+--          siege; woven into THREAD 1/2 prose; no separate add
+--        NT: none warranted   Extras: none warranted   Tanakh: held in prose
+--   ★★ v.13-14 (I will cause the noise of thy songs to cease; the sound of thy harps shall be no more heard;
+--          make thee like the top of a rock; thou shalt be built no more)
+--        NT:     ★★★ Revelation 18:22 (the voice of harpers, and musicians... shall be heard no more at all
+--                in thee), ★★★ Revelation 18:21 (with violence shall that great city Babylon be thrown
+--                down, and shall be found no more at all) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: the songs/harps-silenced answered forward to Revelation; Isaiah 23 lateral held in THREAD 1
+--   ★★ v.19-21 (a desolate city; bring up the deep upon thee; bring thee down with them that descend into
+--          the pit, with the people of old time; a terror, and thou shalt be no more: though thou be sought
+--          for, yet shalt thou never be found again)
+--        NT:     ★★★ Revelation 18:21 (found no more at all), ★ Revelation 18:11 (the merchants of the earth
+--                shall weep and mourn over her) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 14:15 (yet thou shalt be brought down to hell, to the sides of the pit) — THREAD 2
+--   v.15-18 (the isles shake at thy fall; the princes of the sea come down from their thrones... take up a
+--          lamentation, How art thou destroyed) — the sea-kings' lament; woven into THREAD 2 prose; no add
+--        NT: none warranted (the kings/merchants' lament answered forward in Rev 18:9-19, carried in THREAD 2)
+--        Extras: none warranted   Tanakh: held in prose
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-26-tyrus-said-aha-against-jerusalem-made-like-the-top-of-a-rock — Tanakh (Proverbs 17, Obadiah 1, Isaiah 23) [free]
+--      (★ the proud merchant-city judged for gloating over Jerusalem's fall and seeking to profit by it; brought to a bare rock)
+--   2. ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit — NT (Revelation 18) + Tanakh (Isaiah 14) [free]
+--      (★★ the permanent fall and descent to the pit; songs/harps silenced; found no more — the type John draws for Babylon the merchant-world)
+--
+-- Framing notes:
+--   ★ AHA AGAINST JERUSALEM (THREAD 1): *because that Tyrus hath said against Jerusalem, Aha, she is broken
+--      that was the gates of the people: she is turned unto me: I shall be replenished, now she is laid
+--      waste* (26:2) — Tyre gloats over Jerusalem's fall and reckons to profit by it (the trade-rival gone,
+--      her custom now Tyre's). For that gladness-at-calamity Yahuah is against her: *I will cause many
+--      nations to come up against thee, as the sea causeth his waves to come up* (26:3), *and make her like
+--      the top of a rock. It shall be a place for the spreading of nets* (26:4-5). Proverbs names the sin:
+--      *he that is glad at calamities shall not be unpunished* (Prov 17:5). Obadiah lays the same charge on
+--      Edom for the same day: *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in
+--      the day of their destruction* (Obad 1:12). And Isaiah's burden of Tyre names the pride brought low:
+--      *the crowning city, whose merchants are princes... Yahuah Tseva''ot (LORD of hosts) hath purposed it,
+--      to stain the pride of all glory* (Isa 23:8-9). The proud merchant-city's gloating is the thing judged.
+--   ★★ BUILT NO MORE / DOWN TO THE PIT (THREAD 2): *And I will cause the noise of thy songs to cease; and
+--      the sound of thy harps shall be no more heard... thou shalt be built no more* (26:13-14); *When I
+--      shall bring thee down with them that descend into the pit... I will make thee a terror, and thou
+--      shalt be no more: though thou be sought for, yet shalt thou never be found again* (26:20-21). John
+--      draws this fall-of-Tyre directly for the fall of Babylon the merchant-world: *Thus with violence
+--      shall that great city Babylon be thrown down, and shall be found no more at all* (Rev 18:21) answers
+--      *thou be sought for, yet shalt thou never be found again*; *the voice of harpers, and musicians...
+--      shall be heard no more at all in thee* (Rev 18:22) answers *the noise of thy songs to cease... the
+--      sound of thy harps shall be no more heard*; and *the merchants of the earth shall weep and mourn over
+--      her* (Rev 18:11) is the sea-kings' lament of 26:15-18 raised to the world-scale. Isaiah names the
+--      descent: *yet thou shalt be brought down to hell, to the sides of the pit* (Isa 14:15). The proud
+--      trading city = the type of the doomed world-system, fallen and found no more.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the dating preface), v.6-12 (the executing siege — Nebuchadrezzar,
+--      the forts and engines, the riches spoiled; woven into the thread prose), v.15-18 (the isles' shaking
+--      and the sea-princes' lament — answered forward in Revelation 18:9-19, carried in THREAD 2 prose).
+--      All blocks recorded; every meaningful block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Tyrus said AHA against Jerusalem — glad at calamity, made like the top of a rock
+    ('canon','ezekiel',26,2,'canon','proverbs',17,5,'free',
+      E'*Whoso mocketh the poor reproacheth his Maker: and he that is glad at calamities shall not be unpunished* (Proverbs 17:5). Tyre''s sin is named here in a line: *because that Tyrus hath said against Jerusalem, Aha, she is broken... I shall be replenished, now she is laid waste* (Ezekiel 26:2) is to be *glad at calamities* — rejoicing at a brother-city''s ruin and reckoning to profit by it. And *he that is glad at calamities shall not be unpunished*: for that gladness Yahuah (LORD) sets himself against Tyre.'),
+    ('canon','ezekiel',26,2,'canon','obadiah',1,12,'free',
+      E'*But thou shouldest not have looked on the day of thy brother in the day that he became a stranger; neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction; neither shouldest thou have spoken proudly in the day of distress* (Obadiah 1:12). The very charge Yahuah lays on Tyre''s *Aha, she is broken* (Ezekiel 26:2) is the charge against Edom — rejoicing over Yahudah (Judah) in the day of her fall. To gloat over Jerusalem''s destruction, whether the merchant Tyre or the brother Edom, is the sin that draws the judgment.'),
+    ('canon','ezekiel',26,3,'canon','isaiah',23,8,'free',
+      E'*Who hath taken this counsel against Tyre, the crowning city, whose merchants are princes, whose traffickers are the honourable of the earth?* (Isaiah 23:8). Isaiah''s burden of Tyre names the same proud merchant-city that Ezekiel''s *Behold, I am against thee, O Tyrus* (Ezekiel 26:3) brings down — the crowning city *whose merchants are princes*. The trade-glory that made her gloat over Jerusalem is the very glory marked for ruin.'),
+    ('canon','ezekiel',26,4,'canon','isaiah',23,9,'free',
+      E'*Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory, and to bring into contempt all the honourable of the earth* (Isaiah 23:9). When Yahuah says he will *scrape her dust from her, and make her like the top of a rock* (Ezekiel 26:4), it is the purpose Isaiah names — *to stain the pride of all glory*. The proud merchant-city is scraped to a bare rock precisely to humble the pride that exalted itself over a fallen Jerusalem.'),
+
+    -- THREAD 2 (★★): the songs silenced, built no more, down to the pit — the type of doomed Babylon
+    ('canon','ezekiel',26,21,'canon','revelation',18,21,'free',
+      E'*And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21). John draws Ezekiel''s fall of Tyre straight onto the fall of Babylon the merchant-world: *I will make thee a terror, and thou shalt be no more: though thou be sought for, yet shalt thou never be found again* (Ezekiel 26:21) becomes *shall be found no more at all*. The proud trading city is the type of the doomed world-system, thrown down to be found no more.'),
+    ('canon','ezekiel',26,13,'canon','revelation',18,22,'free',
+      E'*And the voice of harpers, and musicians, and of pipers, and trumpeters, shall be heard no more at all in thee... and the sound of a millstone shall be heard no more at all in thee* (Revelation 18:22). The silencing of Tyre''s music — *I will cause the noise of thy songs to cease; and the sound of thy harps shall be no more heard* (Ezekiel 26:13) — is taken up word for word over Babylon: the harpers and musicians *heard no more at all in thee*. The merchant-city''s festal noise is hushed forever.'),
+    ('canon','ezekiel',26,14,'canon','revelation',18,21,'free',
+      E'*Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21). Ezekiel''s sentence on Tyre — *I will make thee like the top of a rock... thou shalt be built no more: for I Yahuah (LORD) have spoken it* (Ezekiel 26:14) — is the same irrevocable fall John pronounces on Babylon: thrown down with violence, *found no more at all*. Built no more, found no more: the permanent ruin of the proud merchant-city.'),
+    ('canon','ezekiel',26,19,'canon','revelation',18,11,'free',
+      E'*And the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11). When Yahuah makes Tyre *a desolate city... when I shall bring up the deep upon thee, and great waters shall cover thee* (Ezekiel 26:19), the lament of the sea-merchants that follows (26:16-18) opens into the world-wide grief of Babylon''s merchants — *weep and mourn over her; for no man buyeth their merchandise any more*. The merchants weep because the trading-city, their source of riches, is desolate.'),
+    ('canon','ezekiel',26,20,'canon','isaiah',14,15,'free',
+      E'*Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The descent of Tyre — *When I shall bring thee down with them that descend into the pit, with the people of old time, and shall set thee in the low parts of the earth... with them that go down to the pit* (Ezekiel 26:20) — is the same fall Isaiah pronounces on the proud king: *brought down to hell, to the sides of the pit*. The exalted merchant-city, like the exalted king, is brought down to the lowest parts.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-26-tyrus-said-aha-against-jerusalem-made-like-the-top-of-a-rock',
+       E'Tyrus said, Aha, against Jerusalem — the proud merchant-city made like the top of a rock',
+       E'The oracle opens with Tyre''s sin spoken aloud: *Son of Adam, because that Tyrus hath said against Jerusalem, Aha, she is broken that was the gates of the people: she is turned unto me: I shall be replenished, now she is laid waste* (Ezekiel 26:2). The merchant-city gloats over Jerusalem''s fall and reckons to profit by it — the trade-rival gone, her custom now Tyre''s gain. For that gladness-at-calamity Yahuah (LORD) sets himself against her: *Behold, I am against thee, O Tyrus, and will cause many nations to come up against thee, as the sea causeth his waves to come up. And they shall destroy the walls of Tyrus, and break down her towers: I will also scrape her dust from her, and make her like the top of a rock. It shall be a place for the spreading of nets in the midst of the sea* (Ezekiel 26:3-5). The proud trading-city, crowded with merchandise, is scraped to a bare rock where fishermen dry their nets. Proverbs names the sin in a single line: *Whoso mocketh the poor reproacheth his Maker: and he that is glad at calamities shall not be unpunished* (Proverbs 17:5). Obadiah lays the same charge on Edom for the very same day of Jerusalem''s fall: *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction; neither shouldest thou have spoken proudly in the day of distress* (Obadiah 1:12). And Isaiah''s burden of Tyre names the pride that is marked for ruin: *the crowning city, whose merchants are princes, whose traffickers are the honourable of the earth?* — *Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory, and to bring into contempt all the honourable of the earth* (Isaiah 23:8-9). The merchant-glory that made Tyre glad at Jerusalem''s calamity is the very thing scraped down to a rock.',
+       sv.verse_id, ev.verse_id, 'free', 32625
+  FROM _s308_ezek26_lookup sv, _s308_ezek26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=26 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit',
+       E'Thou shalt be built no more — the merchant-city silenced and brought down to the pit',
+       E'The sentence on Tyre is permanent and total. First the festal noise is silenced: *And I will cause the noise of thy songs to cease; and the sound of thy harps shall be no more heard. And I will make thee like the top of a rock: thou shalt be a place to spread nets upon; thou shalt be built no more: for I Yahuah (LORD) have spoken it, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 26:13-14). Then the descent: *When I shall make thee a desolate city... when I shall bring up the deep upon thee, and great waters shall cover thee; When I shall bring thee down with them that descend into the pit, with the people of old time, and shall set thee in the low parts of the earth... I will make thee a terror, and thou shalt be no more: though thou be sought for, yet shalt thou never be found again* (Ezekiel 26:19-21). The sea-princes come down from their thrones and take up a lamentation (26:16-17) — and John draws this whole fall-of-Tyre straight onto the fall of Babylon the merchant-world: *And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21) answers *though thou be sought for, yet shalt thou never be found again*; *the voice of harpers, and musicians, and of pipers, and trumpeters, shall be heard no more at all in thee* (Revelation 18:22) answers *the noise of thy songs to cease... the sound of thy harps shall be no more heard*; and the world''s merchants weep as Tyre''s sea-kings did — *the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11). Isaiah names the same descent for the proud king of Babylon: *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The proud trading-city — built no more, found no more, brought down to the pit — is the type of the doomed world-system that lives deliciously by its merchandise and falls in an hour.',
+       sv.verse_id, ev.verse_id, 'free', 32628
+  FROM _s308_ezek26_lookup sv, _s308_ezek26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=26 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he that is glad at calamities shall not be unpunished* (Proverbs 17:5) — names Tyre''s sin (Ezekiel 26:2): rejoicing at Jerusalem''s ruin and reckoning to profit by it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-tyrus-said-aha-against-jerusalem-made-like-the-top-of-a-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12) — the same charge on Edom; gloating over Jerusalem''s fall is the sin Tyre''s *Aha* commits.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-tyrus-said-aha-against-jerusalem-made-like-the-top-of-a-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the crowning city, whose merchants are princes, whose traffickers are the honourable of the earth?* (Isaiah 23:8) — Isaiah''s burden names the same proud merchant-Tyre that Ezekiel 26:3 brings down.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=23 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-tyrus-said-aha-against-jerusalem-made-like-the-top-of-a-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory* (Isaiah 23:9) — the scraping to a bare rock (Ezekiel 26:4) is purposed precisely to humble the pride that gloated over Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=4
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=23 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-tyrus-said-aha-against-jerusalem-made-like-the-top-of-a-rock'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21) — John draws Ezekiel 26:21''s *never be found again* onto the fall of Babylon the merchant-world.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=21
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *the voice of harpers, and musicians... shall be heard no more at all in thee* (Revelation 18:22) — taken word for word from Ezekiel 26:13''s silenced songs and harps.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=13
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Thus with violence shall that great city Babylon be thrown down* (Revelation 18:21) — answers *thou shalt be built no more: for I Yahuah (LORD) have spoken it* (Ezekiel 26:14); built no more, found no more.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=14
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11) — the sea-kings'' lament of Ezekiel 26:16-18 raised to the world-scale over desolate Babylon (26:19).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15) — the same descent Ezekiel 26:20 pronounces on Tyre, *down with them that descend into the pit*.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=26 AND sv.verse_number=20
+  JOIN _s308_ezek26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-26-thou-shalt-be-built-no-more-the-merchant-city-down-to-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_27.sql (Ezekiel 27) -----
+-- Chapter: Ezekiel 27 — ★★ THE LAMENTATION OVER TYRE as a glorious merchant-ship. The city situate at
+-- the entry of the sea, boasting *I am of perfect beauty*, her builders perfecting her beauty, her ship
+-- boards of fir and masts of cedar — laden with all the riches and trade of the nations (a long
+-- trade-catalogue of places and commodities) — then WRECKED: her rowers bring her into great waters, the
+-- east wind breaks her in the midst of the seas, her riches and merchandise fall into the heart of the
+-- seas in the day of her ruin, and the merchants/mariners of the world wail, cast dust on their heads, and
+-- hiss — *thou shalt be a terror, and never shalt be any more*. John draws this Tyre-lament directly for
+-- the fall of Babylon the merchant-world (Revelation 18). The framework reading: the splendor of trade is
+-- pride going before destruction; riches profit not in the day of wrath; the merchant-world weeps in one
+-- hour over the riches come to nought.
+-- Tag: ezek27   Temp view: _s308_ezek27_lookup
+-- Sort band: base 32650, step 3 -> 32650, 32653 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',27,v
+--
+-- Ezekiel 27 coverage:
+--   v.1-2 (the word of Yahuah; take up a lamentation for Tyrus)
+--        NT/Extras/Tanakh: none warranted (the prophet's commission framing; woven in prose)
+--   ★ v.3-11 (O Tyrus, thou hast said, I am of perfect beauty; thy builders have perfected thy beauty;
+--          ship boards of fir, masts of cedar... they have made thy beauty perfect)
+--        NT:     none warranted (no NT verse quotes the beauty-boast directly)
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 28:12 (full of wisdom, and perfect in beauty), ★ Ezekiel 28:17 (thine heart
+--                was lifted up because of thy beauty... thou hast corrupted thy wisdom by reason of thy
+--                brightness), ★ Isaiah 23:9 (Yahuah Tseva''ot hath purposed it, to stain the pride of all
+--                glory), ★ Proverbs 16:18 (pride goeth before destruction) — THREAD 2
+--   v.12-24 (the TRADE-CATALOGUE: Tarshish, Javan, Tubal, Meshech, Togarmah, Dedan, Syria, Yahudah and the
+--          land of Yashar''el, Damascus, Dan, Arabia, Sheba, Raamah, Haran, Canneh, Eden... silver, iron,
+--          tin, lead, horses, ivory, emeralds, wheat, honey, oil, wine, spices, precious stones, gold)
+--        NT:     held — NOT threaded verse-by-verse per brief (the catalogue of place/commodity names);
+--                its weight (the laded riches of all nations) is carried FORWARD in THREAD 1 (Rev 18:12-13
+--                deliberately re-catalogues the same wares of Babylon). Curated, not dumped.
+--        Extras: none warranted
+--        Tanakh: none separate (the catalogue is the inventory of the riches that sink in THREAD 1)
+--   v.25 (the ships of Tarshish did sing of thee... made very glorious in the midst of the seas) — the
+--        hinge from glory to wreck; woven into THREAD 1 prose; no separate add.
+--   ★★ v.26-36 (thy rowers have brought thee into great waters: the east wind hath broken thee in the
+--          midst of the seas; thy riches, thy fairs, thy merchandise... shall fall into the midst of the
+--          seas in the day of thy ruin; the mariners cry bitterly, cast up dust on their heads; the
+--          merchants among the people shall hiss at thee; thou shalt be a terror, and never shalt be any
+--          more)
+--        NT:     ★★ Revelation 18:11 (the merchants of the earth shall weep and mourn over her; for no man
+--                buyeth their merchandise any more), ★★ Revelation 18:17 (in one hour so great riches is
+--                come to nought; every shipmaster, and all the company in ships... stood afar off),
+--                ★★ Revelation 18:19 (they cast dust on their heads, and cried, weeping and wailing...
+--                for in one hour is she made desolate), ★ Revelation 18:15 (the merchants... shall stand
+--                afar off for the fear of her torment, weeping and wailing), ★ James 5:1 (ye rich men, weep
+--                and howl for your miseries that shall come upon you), ★ James 5:3 (your gold and silver is
+--                cankered... ye have heaped treasure together for the last days) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh merchant-judgment weave)
+--        Tanakh: ★ Proverbs 11:4 (riches profit not in the day of wrath) — THREAD 1
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas — NT (Revelation 18, James 5) + Tanakh (Proverbs 11) [free]
+--      (★★ the laden merchant-ship of Tyre broken by the east wind; the traders of the world wailing; John
+--       draws the Tyre-lament forward for the fall of Babylon the merchant-world — riches come to nought in
+--       one hour; riches profit not in the day of wrath)
+--   2. ezekiel-27-i-am-of-perfect-beauty-the-pride-of-the-merchant-city — Tanakh (Ezekiel 28, Isaiah 23, Proverbs 16) [free]
+--      (★ the city's boast of perfect beauty — her glory all of trade and craft, soon sunk; the pride behind
+--       the splendor that Yahuah purposes to stain; pride goeth before destruction)
+--
+-- Framing notes:
+--   ★★ THE MERCHANT-SHIP WRECKED (THREAD 1): Tyre, *replenished, and made very glorious in the midst of the
+--      seas* (27:25), is broken at the height of her trade: *Thy rowers have brought thee into great waters:
+--      the east wind hath broken thee in the midst of the seas* (27:26); *Thy riches, and thy fairs, thy
+--      merchandise... shall fall into the midst of the seas in the day of thy ruin* (27:27); and the
+--      mariners *cast up dust upon their heads* (27:30) and *the merchants among the people shall hiss at
+--      thee; thou shalt be a terror, and never shalt be any more* (27:36). John draws this lament DIRECTLY
+--      for the fall of Babylon the merchant-world — *the merchants of the earth shall weep and mourn over
+--      her; for no man buyeth their merchandise any more* (Revelation 18:11), *in one hour so great riches
+--      is come to nought* (18:17), *they cast dust on their heads, and cried, weeping and wailing* (18:19,
+--      Ezekiel's gesture verbatim). James turns it on the rich who hoard: *Go to now, ye rich men, weep and
+--      howl for your miseries that shall come upon you* (James 5:1); and the proverb names the verdict:
+--      *Riches profit not in the day of wrath* (Proverbs 11:4). The catalogue of all nations' wares (vv.12-24)
+--      is the very inventory that sinks — Babylon's wares of Rev 18:12-13 re-catalogue it.
+--   ★ THE BOAST OF PERFECT BEAUTY (THREAD 2): *O Tyrus, thou hast said, I am of perfect beauty* (27:3);
+--      *thy builders have perfected thy beauty* (27:4); *they have made thy beauty perfect* (27:11). The
+--      city's whole glory is her trade and craft — and it is pride that goes before the wreck. The next
+--      chapter names the pride behind the splendor: the king of Tyrus, *full of wisdom, and perfect in
+--      beauty* (Ezekiel 28:12), whose *heart was lifted up because of thy beauty* and who *corrupted thy
+--      wisdom by reason of thy brightness* (Ezekiel 28:17). Isaiah names Yahuah's purpose against all such
+--      glory: *Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory* (Isaiah
+--      23:9, of Tyre); and the proverb is the law of it: *Pride goeth before destruction, and an haughty
+--      spirit before a fall* (Proverbs 16:18).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (commission to lament — framing), v.12-24 (the trade-catalogue of
+--      place/commodity names — NOT threaded verse-by-verse per assignment; its weight carried forward in
+--      THREAD 1, where Rev 18:12-13 re-catalogues the same wares), v.25 (the hinge from glory to wreck —
+--      woven into THREAD 1 prose). All blocks recorded; every meaningful block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the merchant-ship wrecked in the midst of the seas; the traders of the world wail
+    ('canon','ezekiel',27,27,'canon','revelation',18,11,'free',
+      E'*And the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11). John draws Ezekiel''s Tyre-lament directly onto the fall of Babylon the merchant-world: as *Thy riches, and thy fairs, thy merchandise... shall fall into the midst of the seas in the day of thy ruin* (Ezekiel 27:27), so the traders of the whole earth weep when no man buys their merchandise any more. The glory of trade sinks, and the merchants who grew rich by it mourn.'),
+    ('canon','ezekiel',27,34,'canon','revelation',18,17,'free',
+      E'*For in one hour so great riches is come to nought. And every shipmaster, and all the company in ships, and sailors, and as many as trade by sea, stood afar off* (Revelation 18:17). Tyre, *broken by the seas in the depths of the waters*, her *merchandise and all thy company in the midst of thee shall fall* (Ezekiel 27:34) — and John''s Babylon falls the same way: in one hour the great riches come to nought, and every shipmaster and sea-trader stands afar off. The merchant-ship of Tyre is the type of the merchant-world undone.'),
+    ('canon','ezekiel',27,30,'canon','revelation',18,19,'free',
+      E'*And they cast dust on their heads, and cried, weeping and wailing, saying, Alas, alas, that great city, wherein were made rich all that had ships in the sea by reason of her costliness! for in one hour is she made desolate* (Revelation 18:19). John takes Ezekiel''s very gesture of grief: the mariners of Tyre *shall cast up dust upon their heads, they shall wallow themselves in the ashes* (Ezekiel 27:30), and so the shipmen of Babylon cast dust on their heads and wail over the city made desolate in one hour. The same mourning over the same sunk riches.'),
+    ('canon','ezekiel',27,36,'canon','revelation',18,15,'free',
+      E'*The merchants of these things, which were made rich by her, shall stand afar off for the fear of her torment, weeping and wailing* (Revelation 18:15). As *The merchants among the people shall hiss at thee; thou shalt be a terror, and never shalt be any more* (Ezekiel 27:36), so the merchants made rich by Babylon stand afar off, weeping and wailing at her end. The traders who profited by the merchant-city survive only to lament her — she is a terror, and is no more.'),
+    ('canon','ezekiel',27,27,'canon','james',5,1,'free',
+      E'*Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1). The sinking of Tyre''s *riches, and thy fairs, thy merchandise... in the day of thy ruin* (Ezekiel 27:27) is the very judgment James pronounces on hoarded wealth: the rich are called to weep and howl for the miseries coming upon them. Riches gathered for glory become the occasion of wailing in the day of ruin.'),
+    ('canon','ezekiel',27,27,'canon','james',5,3,'free',
+      E'*Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days* (James 5:3). The heaped riches of Tyre that *shall fall into the midst of the seas in the day of thy ruin* (Ezekiel 27:27) are the treasure James says is heaped *for the last days* — gold and silver that cankers and witnesses against its hoarder. The merchant-city''s wealth is no security but an indictment in the day of wrath.'),
+    ('canon','ezekiel',27,27,'canon','proverbs',11,4,'free',
+      E'*Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4). The proverb names the whole verdict of the chapter: Tyre''s *riches, and thy fairs, thy merchandise... shall fall into the midst of the seas in the day of thy ruin* (Ezekiel 27:27) because riches profit not in the day of wrath. All the trade of the nations cannot save the merchant-ship from the east wind; only righteousness delivers from death.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): I am of perfect beauty — the pride of the merchant-city
+    ('canon','ezekiel',27,3,'canon','ezekiel',28,12,'free',
+      E'*Son of Adam, take up a lamentation upon the king of Tyrus, and say unto him, Thus saith Adonai Yahuah (the Lord GOD); Thou sealest up the sum, full of wisdom, and perfect in beauty* (Ezekiel 28:12). The city''s boast *O Tyrus, thou hast said, I am of perfect beauty* (Ezekiel 27:3) is matched by her king, *perfect in beauty* — the splendor of the merchant-city embodied in her prince. The same perfection of beauty is the very thing that goes to the wreck.'),
+    ('canon','ezekiel',27,4,'canon','ezekiel',28,17,'free',
+      E'*Thine heart was lifted up because of thy beauty, thou hast corrupted thy wisdom by reason of thy brightness: I will cast thee to the ground* (Ezekiel 28:17). When *thy builders have perfected thy beauty* (Ezekiel 27:4), the perfected beauty becomes pride: the heart lifted up because of beauty, the wisdom corrupted by brightness, cast to the ground. The glory of trade and craft is the very thing that lifts the heart and brings the fall.'),
+    ('canon','ezekiel',27,3,'canon','isaiah',23,9,'free',
+      E'*Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory, and to bring into contempt all the honourable of the earth* (Isaiah 23:9). Isaiah''s own burden of Tyre names Yahuah''s purpose against the boast *I am of perfect beauty* (Ezekiel 27:3): to *stain the pride of all glory*. The crowning merchant-city, *whose merchants are princes* (Isaiah 23:8), is brought into contempt — her perfect beauty stained.'),
+    ('canon','ezekiel',27,3,'canon','proverbs',16,18,'free',
+      E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The boast *I am of perfect beauty* (Ezekiel 27:3) is the pride that goes before the destruction of the next verses — the haughty spirit before the fall into the midst of the seas. The proverb is the law beneath the lament: the merchant-city''s self-glory precedes her wreck.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas',
+       E'Thy rowers have brought thee into great waters — the merchant-ship wrecked in the midst of the seas',
+       E'Tyre is sung as a glorious merchant-ship, *replenished, and made very glorious in the midst of the seas* (27:25), laded with the trade and riches of all the nations (the long catalogue of vv.12-24: silver and iron and tin, horses and ivory, emeralds and wheat and honey and wine and spices, *all precious stones, and gold*). And at the height of her glory she is wrecked: *Thy rowers have brought thee into great waters: the east wind hath broken thee in the midst of the seas* (27:26); *Thy riches, and thy fairs, thy merchandise, thy mariners, and thy pilots... shall fall into the midst of the seas in the day of thy ruin* (27:27). The mariners of the world come down from their ships and *shall cause their voice to be heard against thee, and shall cry bitterly, and shall cast up dust upon their heads* (27:29-30), wailing *What city is like Tyrus, like the destroyed in the midst of the sea?* (27:32) — *The merchants among the people shall hiss at thee; thou shalt be a terror, and never shalt be any more* (27:36). John draws this lament DIRECTLY onto the fall of Babylon the merchant-world: *the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11); *in one hour so great riches is come to nought. And every shipmaster, and all the company in ships... stood afar off* (Revelation 18:17); *they cast dust on their heads, and cried, weeping and wailing... for in one hour is she made desolate* (Revelation 18:19) — Ezekiel''s very gesture of grief; *The merchants of these things, which were made rich by her, shall stand afar off... weeping and wailing* (Revelation 18:15). The wares John re-catalogues (Revelation 18:12-13) are the same nations'' merchandise that laded Tyre. James turns the same judgment on the hoarders: *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1); *Ye have heaped treasure together for the last days* (James 5:3). And the proverb names the verdict beneath it all: *Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4). All the trade of the nations cannot save the ship from the east wind.',
+       sv.verse_id, ev.verse_id, 'free', 32650
+  FROM _s308_ezek27_lookup sv, _s308_ezek27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=27 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-27-i-am-of-perfect-beauty-the-pride-of-the-merchant-city',
+       E'I am of perfect beauty — the pride of the merchant-city before the fall',
+       E'Before the wreck comes the boast. Tyre says of herself: *O Tyrus, thou hast said, I am of perfect beauty* (27:3); *Thy borders are in the midst of the seas, thy builders have perfected thy beauty* (27:4); and her walls and towers and armies *have made thy beauty perfect* (27:11). Her whole glory is her trade and craft — ship boards of fir, masts of cedar of Lebanon, sails of fine linen from Egypt, blue and purple from the isles — a splendor soon sunk in the midst of the seas. The next chapter names the pride behind the splendor: the king of Tyrus, *full of wisdom, and perfect in beauty* (Ezekiel 28:12), of whom Yahuah says *Thine heart was lifted up because of thy beauty, thou hast corrupted thy wisdom by reason of thy brightness: I will cast thee to the ground* (Ezekiel 28:17). The perfected beauty becomes a lifted-up heart, and the lifted-up heart goes to the ground. Isaiah''s own burden of Tyre names Yahuah''s purpose against all such glory: *Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory, and to bring into contempt all the honourable of the earth* (Isaiah 23:9). And the proverb is the law beneath the lament: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The city that said *I am of perfect beauty* is broken in the heart of the seas.',
+       sv.verse_id, ev.verse_id, 'free', 32653
+  FROM _s308_ezek27_lookup sv, _s308_ezek27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=27 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the merchants of the earth shall weep and mourn over her; for no man buyeth their merchandise any more* (Revelation 18:11) — John draws Ezekiel''s Tyre-lament forward onto the fall of Babylon the merchant-world; the riches of 27:27 sink and the traders mourn.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=27
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *in one hour so great riches is come to nought... every shipmaster, and all the company in ships... stood afar off* (Revelation 18:17) — Tyre broken in the depths (27:34) is Babylon''s riches come to nought; the sea-traders stand afar off.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=34
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they cast dust on their heads, and cried, weeping and wailing... for in one hour is she made desolate* (Revelation 18:19) — John takes Ezekiel''s very gesture: the mariners cast up dust on their heads (27:30) over the desolated merchant-city.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The merchants of these things, which were made rich by her, shall stand afar off... weeping and wailing* (Revelation 18:15) — as the merchants hiss and Tyre is no more (27:36), the traders made rich by Babylon survive only to lament her.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=36
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1) — the sinking riches of 27:27 are the judgment James pronounces on hoarded wealth.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=27
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Ye have heaped treasure together for the last days* (James 5:3) — Tyre''s heaped riches that fall into the seas (27:27) are treasure that cankers and witnesses against its hoarder.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=27
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Riches profit not in the day of wrath: but righteousness delivereth from death* (Proverbs 11:4) — the proverb names the verdict: all the trade of the nations cannot save the merchant-ship from the east wind (27:27).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=27
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-the-merchant-ship-wrecked-in-the-midst-of-the-seas'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *full of wisdom, and perfect in beauty* (Ezekiel 28:12) — the city''s boast *I am of perfect beauty* (27:3) embodied in her king; the same perfection goes to the wreck.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=3
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-i-am-of-perfect-beauty-the-pride-of-the-merchant-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Thine heart was lifted up because of thy beauty, thou hast corrupted thy wisdom by reason of thy brightness* (Ezekiel 28:17) — when the builders perfect her beauty (27:4), the perfected beauty becomes pride and the heart is cast to the ground.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=4
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=28 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-i-am-of-perfect-beauty-the-pride-of-the-merchant-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Yahuah Tseva''ot (LORD of hosts) hath purposed it, to stain the pride of all glory* (Isaiah 23:9) — Isaiah''s own burden of Tyre names Yahuah''s purpose against the boast *I am of perfect beauty* (27:3).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=3
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=23 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-i-am-of-perfect-beauty-the-pride-of-the-merchant-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — the proverb is the law beneath the lament; the boast *I am of perfect beauty* (27:3) is the pride before the wreck.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=27 AND sv.verse_number=3
+  JOIN _s308_ezek27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-27-i-am-of-perfect-beauty-the-pride-of-the-merchant-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_28.sql (Ezekiel 28) -----
+-- Chapter: Ezekiel 28 — ★★ THE PRINCE AND THE KING OF TYRUS. The prince of Tyrus whose heart is lifted
+-- up and says *I am a Elohim (God)* — the CREATURE claiming Godhood, yet *thou art a man, and not Elohim
+-- (God)*, brought down by the hand of him that slayeth him. Then, beyond the human king, the lamentation
+-- over the king of Tyrus = THE FALLEN ANOINTED CHERUB: *Thou hast been in Eden the garden of Elohim
+-- (God)... Thou art the anointed cherub that covereth... Thou wast perfect in thy ways... till iniquity
+-- was found in thee... I will cast thee to the ground* — the satan/serpent-type, the pride-of-the-creature
+-- that wars against the seed (Genesis 3:15). Then Zidon judged, the pricking brier removed from the house;
+-- and the chapter closes on the TWO-HOUSE regathering — *When I shall have gathered the house of Yashar''el
+-- (Israel)... then shall they dwell in their land... and shall dwell safely*.
+-- Tag: ezek28   Temp view: _s308_ezek28_lookup
+-- Sort band: base 32675, step 3 -> 32675, 32678, 32681, 32684, 32687 (5 threads)
+-- Source of EVERY row: 'canon','ezekiel',28,v
+--
+-- Ezekiel 28 coverage:
+--   ★★ v.2-9 (the prince of Tyrus; *Because thine heart is lifted up, and thou hast said, I am a Elohim
+--          (God), I sit in the seat of Elohim (God)... yet thou art a man, and not Elohim (God)... Wilt thou
+--          yet say before him that slayeth thee, I am Elohim (God)? but thou shalt be a man, and no Elohim*)
+--        NT:     ★★ 2 Thessalonians 2:4 (so that he as Elohim sitteth in the temple of Elohim, shewing
+--                himself that he is Elohim), ★★ Acts 12:21-23 (the voice of a god... the angel of Yahuah
+--                smote him... eaten of worms) — THREAD 1
+--        Extras: none warranted (clean canon-NT weave)
+--        Tanakh: ★★ Daniel 11:36 (he shall exalt himself, and magnify himself above every god... against
+--                the Elohim of gods), ★ Isaiah 31:3 (the Egyptians are men, and not Elohim) — THREAD 1
+--   v.3-5 (wiser than Daniel; by wisdom and traffick gotten riches; heart lifted up because of riches)
+--        NT:     none warranted (the merchant-pride preface; woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the riches/wisdom-pride; the engine of v.2 self-deification)
+--   v.10 (thou shalt die the deaths of the uncircumcised by the hand of strangers)
+--        NT:     none warranted (the executed sentence on the prince; woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: none separate
+--   ★★★ v.12-17 (the king of Tyrus; *Thou sealest up the sum, full of wisdom, and perfect in beauty. Thou
+--          hast been in Eden the garden of Elohim (God)... Thou art the anointed cherub that covereth...
+--          thou wast upon the holy mountain of Elohim (God)... Thou wast perfect in thy ways from the day
+--          that thou wast created, till iniquity was found in thee... I will cast thee as profane out of the
+--          mountain of Elohim (God)... I will cast thee to the ground*)
+--        NT:     ★★ Luke 10:18 (I beheld Satan as lightning fall from heaven), ★★ Revelation 12:9 (the great
+--                dragon... that old serpent, called the Devil, and Satan... cast out into the earth) — THREAD 2
+--        Extras: none warranted (the Eden-cherub fall held in clean canon weave; the Watcher/fall material
+--                of 1 Enoch is a SEPARATE rebellion — not forced onto the cherub-of-Eden here)
+--        Tanakh: ★★★ Isaiah 14:12-15 (How art thou fallen from heaven, O Lucifer... I will be like the El
+--                Elyon (most High)... thou shalt be brought down to hell), ★★ Genesis 3:1-15 (the serpent...
+--                I will put enmity between thee and the woman, and between thy seed and her seed), ★ Job 15:7-8
+--                (Art thou the first man that was born? ...Hast thou heard the secret of Elohim?) — THREAD 2
+--   v.18-19 (defiled thy sanctuaries; a fire from the midst of thee; thou shalt be a terror, never any more)
+--        NT:     none warranted (the consummation of the cherub''s ruin; woven into THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: none separate
+--   ★ v.20-24 (against Zidon; *I will be glorified in the midst of thee... and there shall be no more a
+--          pricking brier unto the house of Yashar''el (Israel), nor any grieving thorn... that despised
+--          them*)
+--        NT:     none warranted (the judgment of Zidon / the thorns removed; an OT-Torah weave)
+--        Extras: none warranted
+--        Tanakh: ★★ Numbers 33:55 (those which ye let remain... shall be pricks in your eyes, and thorns in
+--                your sides), ★ Joshua 23:13 (they shall be... scourges in your sides, and thorns in your
+--                eyes) — THREAD 3
+--   ★★ v.25-26 (*When I shall have gathered the house of Yashar''el (Israel) from the people among whom they
+--          are scattered... then shall they dwell in their land... And they shall dwell safely therein...
+--          and they shall know that I am Yahuah (LORD) their Elohim (God)*)
+--        NT:     none warranted distinct (the national regathering; NT two-house weave held in Ezekiel 37)
+--        Extras: none warranted
+--        Tanakh: ★★★ Ezekiel 37:21-22 (I will take the children of Yashar''el from among the heathen... and
+--                make them one nation), ★★ Ezekiel 37:25 (they shall dwell in the land... and my servant
+--                David shall be their prince for ever), ★ Jeremiah 23:6 (Yahudah shall be saved, and
+--                Yashar''el shall dwell safely), ★★ Ezekiel 34:25 (a covenant of peace... they shall dwell
+--                safely), ★ Ezekiel 34:28 (they shall dwell safely, and none shall make them afraid) — THREAD 4
+--   ★ v.25-26 closing-refrain (*they shall know that I am Yahuah (LORD) their Elohim (God)* — the recognition
+--          formula sealing the oracles against the nations and the gathering)
+--        Woven into THREAD 4 prose (the regathering thread); no separate add.
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-28-yet-thou-art-a-man-and-not-elohim — NT (2 Thessalonians 2, Acts 12) + Tanakh (Daniel 11, Isaiah 31) [free]
+--      (★★ the prince of Tyrus''s self-deification; the creature claiming Godhood, smitten as a man)
+--   2. ezekiel-28-the-anointed-cherub-cast-out-of-eden — NT (Luke 10, Revelation 12) + Tanakh (Isaiah 14, Genesis 3, Job 15) [free]
+--      (★★★ the fallen anointed cherub behind the tyrant; the satan/serpent-type; the pride that wars against the seed)
+--   3. ezekiel-28-no-more-a-pricking-brier-unto-the-house — Tanakh (Numbers 33, Joshua 23) [free]
+--      (★ Zidon judged; the thorns and pricking briers to the house removed — the Torah-warning reversed)
+--   4. ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel — Tanakh (Ezekiel 37, Jeremiah 23, Ezekiel 34) [free]
+--      (★★ the two-house regathering after the nations are judged; dwell safely; the hope after the oracles)
+--   5. ezekiel-28-i-am-a-god-i-sit-in-the-seat-of-god — NT (2 Thessalonians 2) [free]
+--      (★ the seated counterfeit — sitteth in the temple of Elohim shewing himself that he is Elohim; the seat-of-god ape)
+--
+-- Framing notes:
+--   ★★ THE CREATURE CLAIMING GODHOOD (THREAD 1): *Because thine heart is lifted up, and thou hast said, I am
+--      a Elohim (God), I sit in the seat of Elohim (God), in the midst of the seas; yet thou art a man, and
+--      not Elohim (God)* (28:2); *Wilt thou yet say before him that slayeth thee, I am Elohim (God)? but thou
+--      shalt be a man, and no Elohim (God), in the hand of him that slayeth thee* (28:9). The prince of Tyrus
+--      apes deity — and is exposed as a man. Paul names the same pride in the man of sin — *so that he as
+--      Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thess
+--      2:4). Herod accepted *the voice of a god, and not of a man* (Acts 12:22) and *immediately the angel of
+--      Yahuah (Lord) smote him... and he was eaten of worms* (12:23). Daniel''s king *shall exalt himself,
+--      and magnify himself above every god* (Dan 11:36); Isaiah''s verdict on Egypt is the same measure —
+--      *the Egyptians are men, and not Elohim (God)* (Isa 31:3). The pride that apes the Most High is always
+--      brought down to the dust it came from.
+--   ★★★ THE FALLEN ANOINTED CHERUB (THREAD 2): beyond the human king stands the spiritual power behind
+--      Tyrus''s arrogance — *Thou hast been in Eden the garden of Elohim (God)... Thou art the anointed cherub
+--      that covereth... thou wast upon the holy mountain of Elohim (God)... Thou wast perfect in thy ways from
+--      the day that thou wast created, till iniquity was found in thee* (28:13-15), *thine heart was lifted up
+--      because of thy beauty... I will cast thee to the ground* (28:17). This is the satan/serpent-type, the
+--      pride-of-the-creature read through the seed-war. Isaiah''s parallel lament — *How art thou fallen from
+--      heaven, O Lucifer, son of the morning!... I will be like the El Elyon (most High): Yet thou shalt be
+--      brought down to hell* (Isa 14:12-15). The Formed Son saw the fall — *I beheld Satan as lightning fall
+--      from heaven* (Luke 10:18) — and John names the cast-out one — *the great dragon... that old serpent,
+--      called the Devil, and Satan* (Rev 12:9), the SAME old serpent of *I will put enmity between thee and
+--      the woman, and between thy seed and her seed* (Gen 3:15). Job sets the creature in its place — *Art
+--      thou the first man that was born? ...Hast thou heard the secret of Elohim (God)?* (Job 15:7-8). The
+--      pride that would be God is the pride that wars against the seed, and it is cast to the ground.
+--   ★ THE PRICKING BRIER REMOVED (THREAD 3): *I am against thee, O Zidon... And there shall be no more a
+--      pricking brier unto the house of Yashar''el (Israel), nor any grieving thorn of all that are round
+--      about them, that despised them* (28:22-24). The thorns the Torah warned of — when the nations were not
+--      driven out — are removed: *those which ye let remain of them shall be pricks in your eyes, and thorns
+--      in your sides* (Num 33:55); *they shall be... scourges in your sides, and thorns in your eyes* (Josh
+--      23:13). The judgment of the nations round about clears the briers from the house at last.
+--   ★★ THE TWO-HOUSE REGATHERING (THREAD 4): the hope after the oracles against the nations — *When I shall
+--      have gathered the house of Yashar''el (Israel) from the people among whom they are scattered... then
+--      shall they dwell in their land that I have given to my servant Jacob. And they shall dwell safely
+--      therein... and they shall know that I am Yahuah (LORD) their Elohim (God)* (28:25-26). This is the
+--      regathering Ezekiel makes explicit in the two-sticks chapter — *I will take the children of Yashar''el
+--      (Israel) from among the heathen... and will bring them into their own land: And I will make them one
+--      nation* (Ezek 37:21-22), *and my servant David shall be their prince for ever* (37:25). Jeremiah:
+--      *Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely* (Jer 23:6). And the
+--      covenant of peace of the Shepherd-chapter — *I will make with them a covenant of peace... and they
+--      shall dwell safely* (Ezek 34:25), *they shall dwell safely, and none shall make them afraid* (34:28).
+--      Both houses gathered, dwelling safely, knowing Yahuah their Elohim.
+--   ★ THE SEAT-OF-GOD APE (THREAD 5): the prince says *I sit in the seat of Elohim (God), in the midst of
+--      the seas* (28:2) — the SEATED counterfeit, the creature taking the throne of God. Paul names the same
+--      seated pretender — *he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he
+--      is Elohim (God)* (2 Thess 2:4). The seat-of-god claim is the signature of the man of sin, the same
+--      pride from Tyrus to the temple. (2 Thess 2:4 is carried in BOTH thread 1 and thread 5 — the same
+--      cross_reference row joined to both threads: the man-of-sin self-deification AND the seated-in-the-seat
+--      ape.)
+--   VERSES WITH NO SEPARATE ADD: v.1, v.11, v.20 (the messenger-formula *The word of Yahuah came...*),
+--      v.3-5 (the merchant-pride preface, woven into THREAD 1), v.10 (the executed sentence on the prince),
+--      v.18-19 (the consummation of the cherub''s ruin, woven into THREAD 2), v.23 (the pestilence on Zidon,
+--      woven into THREAD 3). All recorded; every framework-bearing block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek28_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): yet thou art a man, and not Elohim — the creature claiming Godhood
+    ('canon','ezekiel',28,2,'canon','2-thessalonians',2,4,'free',
+      E'*Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). The prince of Tyrus''s boast — *Because thine heart is lifted up, and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God)... yet thou art a man, and not Elohim (God)* (Ezekiel 28:2) — is the very pride Paul names in the man of sin, the creature exalting himself into the place of Elohim. The same lifted-up heart, the same self-deification, the same end.'),
+    ('canon','ezekiel',28,9,'canon','2-thessalonians',2,4,'free',
+      E'*Who opposeth and exalteth himself above all that is called Elohim (God)... shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). Ezekiel''s mockery — *Wilt thou yet say before him that slayeth thee, I am Elohim (God)? but thou shalt be a man, and no Elohim (God), in the hand of him that slayeth thee* (Ezekiel 28:9) — exposes the man of sin''s claim before it is made: the self-exalting creature is, in the hand of the One who slays him, only a man. The pretender to Godhood dies as a man.'),
+    ('canon','ezekiel',28,2,'canon','acts',12,22,'free',
+      E'*And the people gave a shout, saying, It is the voice of a god, and not of a man* (Acts 12:22). The prince''s claim *I am a Elohim (God)... yet thou art a man, and not Elohim (God)* (Ezekiel 28:2) is acted out in Herod, who took *the voice of a god* and *gave not Elohim (God) the glory* (Acts 12:23). The man who accepts the worship due to Elohim is exposed as a man.'),
+    ('canon','ezekiel',28,9,'canon','acts',12,23,'free',
+      E'*And immediately the angel of Yahuah (Lord) smote him, because he gave not Elohim (God) the glory: and he was eaten of worms, and gave up the ghost* (Acts 12:23). Ezekiel''s word against the prince — *Wilt thou yet say before him that slayeth thee, I am Elohim (God)? but thou shalt be a man, and no Elohim (God), in the hand of him that slayeth thee* (Ezekiel 28:9) — is enacted on Herod: smitten in the moment of his god-claim, eaten of worms, dying as a man in the hand that slew him. The creature who would be God is brought to the dust.'),
+    ('canon','ezekiel',28,2,'canon','daniel',11,36,'free',
+      E'*And the king shall do according to his will; and he shall exalt himself, and magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36). The lifted-up heart of Tyrus — *thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God)* (Ezekiel 28:2) — is the same self-magnifying pride Daniel sees in the little-horn king who exalts himself above every god. The creature that magnifies itself above Elohim is the recurring figure of the seed-war.'),
+    ('canon','ezekiel',28,2,'canon','isaiah',31,3,'free',
+      E'*Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit. When Yahuah (LORD) shall stretch out his hand... they all shall fail together* (Isaiah 31:3). Isaiah''s measure on Egypt is the verdict on Tyrus: *thou art a man, and not Elohim (God)* (Ezekiel 28:2). Whatever the creature boasts, it is flesh, not spirit; man, not Elohim — and it fails when Yahuah stretches out his hand.'),
+
+    -- THREAD 2 (★★★): the anointed cherub cast out of Eden — the satan/serpent-type, the seed-war
+    ('canon','ezekiel',28,17,'canon','isaiah',14,12,'free',
+      E'*How art thou fallen from heaven, O Lucifer, son of the morning! how art thou cut down to the ground, which didst weaken the nations!* (Isaiah 14:12). Isaiah''s lament over the king of Babylon is the twin of Ezekiel''s over the king of Tyrus — *thine heart was lifted up because of thy beauty... I will cast thee to the ground* (Ezekiel 28:17). Behind both tyrants stands the same fallen one: lifted up, then cut down to the ground.'),
+    ('canon','ezekiel',28,14,'canon','isaiah',14,13,'free',
+      E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north* (Isaiah 14:13). The anointed cherub *upon the holy mountain of Elohim (God)* (Ezekiel 28:14) is the same figure that purposed to exalt his throne above the stars of Elohim — the creature on the holy mountain who covets the throne above it. The pride of the covering cherub is the pride that would ascend into heaven.'),
+    ('canon','ezekiel',28,17,'canon','isaiah',14,14,'free',
+      E'*I will ascend above the heights of the clouds; I will be like the El Elyon (most High)* (Isaiah 14:14). The heart *lifted up because of thy beauty* (Ezekiel 28:17) is the heart that says *I will be like the El Elyon (most High)*. This is the root sin of the fallen cherub — to be like the Most High — and the answer to both is the same: cast to the ground, brought down to hell (Isaiah 14:15).'),
+    ('canon','ezekiel',28,17,'canon','luke',10,18,'free',
+      E'*And he said unto them, I beheld Satan as lightning fall from heaven* (Luke 10:18). The Formed Son names what stands behind the king of Tyrus — *I will cast thee to the ground, I will lay thee before kings* (Ezekiel 28:17): the fall of the anointed cherub is the fall of Satan, seen as lightning from heaven. The casting-down of the covering cherub and the fall the Son beheld are one event.'),
+    ('canon','ezekiel',28,16,'canon','revelation',12,9,'free',
+      E'*And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him* (Revelation 12:9). The sentence on the cherub — *I will cast thee as profane out of the mountain of Elohim (God): and I will destroy thee, O covering cherub* (Ezekiel 28:16) — is the casting-out John sees: the same old serpent, the Devil and Satan, cast out into the earth. The covering cherub and the old serpent are one fallen one, cast down.'),
+    ('canon','ezekiel',28,16,'canon','genesis',3,15,'free',
+      E'*And I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The covering cherub cast out of the garden — *I will cast thee as profane out of the mountain of Elohim (God)... O covering cherub* (Ezekiel 28:16) — is the old serpent of Eden, the head of the serpent''s seed in the seed-war. The pride-of-the-creature that wars against the woman''s seed is the very one Yahuah promises to bruise.'),
+    ('canon','ezekiel',28,13,'canon','genesis',3,1,'free',
+      E'*Now the serpent was more subtil than any beast of the field which Yahuah Elohim (the LORD God) had made* (Genesis 3:1). The one *in Eden the garden of Elohim (God)* (Ezekiel 28:13) is the serpent of the garden — the subtle one in Eden through whom iniquity entered. The anointed cherub who walked in Eden and the subtle serpent of Eden are read as the one fallen power behind the fall.'),
+    ('canon','ezekiel',28,15,'canon','job',15,7,'free',
+      E'*Art thou the first man that was born? or wast thou made before the hills?* (Job 15:7). Eliphaz''s rebuke of the proud creature names the lie the cherub believed — that he was first, that the secret of Elohim was his (Job 15:8). But the cherub too *wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee* (Ezekiel 28:15): a made thing, not the Maker. The created cannot be as the Creator; iniquity is found in the one who forgets he was created.'),
+
+    -- THREAD 3 (★): no more a pricking brier unto the house — Zidon judged, the thorns removed
+    ('canon','ezekiel',28,24,'canon','numbers',33,55,'free',
+      E'*But if ye will not drive out the inhabitants of the land from before you; then it shall come to pass, that those which ye let remain of them shall be pricks in your eyes, and thorns in your sides, and shall vex you in the land wherein ye dwell* (Numbers 33:55). The Torah''s warning of the thorns left undriven is reversed in Ezekiel''s word — *there shall be no more a pricking brier unto the house of Yashar''el (Israel), nor any grieving thorn of all that are round about them, that despised them* (Ezekiel 28:24). The nations that became pricks and thorns are judged at last, and the briers cleared from the house.'),
+    ('canon','ezekiel',28,24,'canon','joshua',23,13,'free',
+      E'*they shall be snares and traps unto you, and scourges in your sides, and thorns in your eyes, until ye perish from off this good land which Yahuah Elohaychem (the LORD your God) hath given you* (Joshua 23:13). Joshua warned the same: the nations left would be thorns in the eyes of the house. Ezekiel announces the end of it — *there shall be no more a pricking brier unto the house of Yashar''el (Israel)* (Ezekiel 28:24): the despising nations round about are judged, and the thorns removed from the house for good.'),
+
+    -- THREAD 4 (★★): when I shall have gathered the house of Yashar'el — the two-house regathering
+    ('canon','ezekiel',28,25,'canon','ezekiel',37,21,'free',
+      E'*Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). The promise *When I shall have gathered the house of Yashar''el (Israel) from the people among whom they are scattered... then shall they dwell in their land* (Ezekiel 28:25) is the same regathering of the two-sticks chapter — the scattered house taken from among the heathen and brought home. The oracles against the nations end in the gathering of Yashar''el.'),
+    ('canon','ezekiel',28,25,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The gathered *house of Yashar''el (Israel)* of Ezekiel 28:25 is made ONE nation in 37:22 — the two houses, Yahudah and Ephraim/Yosef, no more divided. The regathering of 28:25 is the reunion of the two houses into one.'),
+    ('canon','ezekiel',28,25,'canon','ezekiel',37,25,'free',
+      E'*And they shall dwell in the land that I have given unto Jacob my servant... even they, and their children, and their children''s children for ever: and my servant David shall be their prince for ever* (Ezekiel 37:25). The land *that I have given to my servant Jacob* where the gathered house shall dwell (Ezekiel 28:25) is the everlasting inheritance of 37:25, under the one Shepherd-King David for ever. The same servant Jacob, the same land, the same safe dwelling — now with the prince for ever.'),
+    ('canon','ezekiel',28,26,'canon','jeremiah',23,6,'free',
+      E'*In his days Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6). The promise *they shall dwell safely therein... and they shall know that I am Yahuah (LORD) their Elohim (God)* (Ezekiel 28:26) is the two-house safety Jeremiah names — Yahudah saved, Yashar''el dwelling safely under the righteous Branch. Both houses dwell safe under the King whose name is Yahuah our Righteousness.'),
+    ('canon','ezekiel',28,26,'canon','ezekiel',34,25,'free',
+      E'*And I will make with them a covenant of peace, and will cause the evil beasts to cease out of the land: and they shall dwell safely in the wilderness, and sleep in the woods* (Ezekiel 34:25). The safe dwelling of *they shall dwell safely therein... they shall dwell with confidence* (Ezekiel 28:26) is the covenant of peace of the Shepherd-chapter — the evil beasts ceased, the house dwelling safely. The regathering and the covenant of peace bring the same security.'),
+    ('canon','ezekiel',28,26,'canon','ezekiel',34,28,'free',
+      E'*And they shall no more be a prey to the heathen, neither shall the beast of the land devour them; but they shall dwell safely, and none shall make them afraid* (Ezekiel 34:28). The confident dwelling of Ezekiel 28:26 — when Yahuah has *executed judgments upon all those that despise them round about* — is the *dwell safely, and none shall make them afraid* of the Shepherd-chapter. The despising nations judged, the house dwells without fear.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-28-yet-thou-art-a-man-and-not-elohim',
+       E'I am a God — yet thou art a man, and not Elohim, in the hand of him that slayeth thee',
+       E'The word against the prince of Tyrus is a word against the oldest pride: the creature that claims to be God. *Son of Adam, say unto the prince of Tyrus, Thus saith Adonai Yahuah (the Lord GOD); Because thine heart is lifted up, and thou hast said, I am a Elohim (God), I sit in the seat of Elohim (God), in the midst of the seas; yet thou art a man, and not Elohim (God), though thou set thine heart as the heart of Elohim (God)* (28:2). By wisdom and traffick he has gotten riches, and *thine heart is lifted up because of thy riches* (28:5) — the engine of the self-deification is pride in his own getting. Yahuah strips the claim bare: *Wilt thou yet say before him that slayeth thee, I am Elohim (God)? but thou shalt be a man, and no Elohim (God), in the hand of him that slayeth thee* (28:9). The pretender to Godhood dies as a man. Paul names the same pride at the end — *Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). Herod acted it out — when the people shouted *It is the voice of a god, and not of a man* (Acts 12:22), *immediately the angel of Yahuah (Lord) smote him, because he gave not Elohim (God) the glory: and he was eaten of worms, and gave up the ghost* (Acts 12:23). Daniel saw the recurring figure — *he shall exalt himself, and magnify himself above every god, and shall speak marvellous things against the Elohim (God) of gods* (Daniel 11:36). And Isaiah set the measure once for all: *Now the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit* (Isaiah 31:3). The creature that apes the Most High is flesh, not spirit; man, not Elohim — and it is brought down to the dust it came from.',
+       sv.verse_id, ev.verse_id, 'free', 32675
+  FROM _s308_ezek28_lookup sv, _s308_ezek28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=28 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-28-the-anointed-cherub-cast-out-of-eden',
+       E'Thou art the anointed cherub that covereth — cast as profane out of the mountain of Elohim',
+       E'The lamentation over the king of Tyrus reaches beyond any human monarch to the spiritual power behind Tyrus''s arrogance — the fallen anointed cherub whose pride and fall stand behind every tyrant. *Thou sealest up the sum, full of wisdom, and perfect in beauty. Thou hast been in Eden the garden of Elohim (God)... Thou art the anointed cherub that covereth; and I have set thee so: thou wast upon the holy mountain of Elohim (God); thou hast walked up and down in the midst of the stones of fire. Thou wast perfect in thy ways from the day that thou wast created, till iniquity was found in thee* (28:12-15). Then the sentence: *therefore I will cast thee as profane out of the mountain of Elohim (God): and I will destroy thee, O covering cherub* (28:16); *thine heart was lifted up because of thy beauty, thou hast corrupted thy wisdom by reason of thy brightness: I will cast thee to the ground* (28:17). Isaiah''s twin lament names the same fall — *How art thou fallen from heaven, O Lucifer, son of the morning!... For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God)... I will be like the El Elyon (most High): Yet thou shalt be brought down to hell* (Isaiah 14:12-15). The Formed Son saw it happen — *I beheld Satan as lightning fall from heaven* (Luke 10:18) — and John names the cast-out one — *the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth* (Revelation 12:9). This old serpent is the serpent of Eden, *more subtil than any beast of the field* (Genesis 3:1), the head of the serpent''s seed in the seed-war — *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head* (Genesis 3:15). And Job sets the proud creature in its place — *Art thou the first man that was born? or wast thou made before the hills? Hast thou heard the secret of Elohim (God)?* (Job 15:7-8). The anointed cherub was *created* (28:15) — a made thing, not the Maker. The pride that would be God is the pride that wars against the seed, and it is cast to the ground.',
+       sv.verse_id, ev.verse_id, 'free', 32678
+  FROM _s308_ezek28_lookup sv, _s308_ezek28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=28 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-28-no-more-a-pricking-brier-unto-the-house',
+       E'Against Zidon — no more a pricking brier nor grieving thorn unto the house of Yashar''el',
+       E'After the king of Tyrus, Yahuah turns to Zidon: *set thy face against Zidon, and prophesy against it... Behold, I am against thee, O Zidon; and I will be glorified in the midst of thee... when I shall have executed judgments in her, and shall be sanctified in her* (28:21-22). And the judgment of the despising nation serves the house: *And there shall be no more a pricking brier unto the house of Yashar''el (Israel), nor any grieving thorn of all that are round about them, that despised them; and they shall know that I am Adonai Yahuah (the Lord GOD)* (28:24). The thorns and briers are the very figure the Torah warned of when the nations were not driven out — *those which ye let remain of them shall be pricks in your eyes, and thorns in your sides, and shall vex you in the land wherein ye dwell* (Numbers 33:55) — and Joshua repeated it — *they shall be snares and traps unto you, and scourges in your sides, and thorns in your eyes* (Joshua 23:13). What was left undriven became a grief to the house; now the despising nations round about are judged, and the briers are cleared from the house at last. The judgment of the nations is mercy to Yashar''el.',
+       sv.verse_id, ev.verse_id, 'free', 32681
+  FROM _s308_ezek28_lookup sv, _s308_ezek28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=28 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel',
+       E'When I shall have gathered the house of Yashar''el — then shall they dwell safely in their land',
+       E'The whole cycle of oracles against the nations ends not in destruction but in the regathering of the scattered house. *Thus saith Adonai Yahuah (the Lord GOD); When I shall have gathered the house of Yashar''el (Israel) from the people among whom they are scattered, and shall be sanctified in them in the sight of the heathen, then shall they dwell in their land that I have given to my servant Jacob. And they shall dwell safely therein, and shall build houses, and plant vineyards; yea, they shall dwell with confidence, when I have executed judgments upon all those that despise them round about them; and they shall know that I am Yahuah (LORD) their Elohim (God)* (28:25-26). This is the two-house regathering Ezekiel makes explicit in the two-sticks chapter: *I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21), *And I will make them one nation... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (37:22) — the gathered house made ONE, Yahudah and Ephraim/Yosef no more divided — *and my servant David shall be their prince for ever* (37:25). Jeremiah names the same two-house safety: *In his days Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely* (Jeremiah 23:6). And the Shepherd-chapter''s covenant of peace gives the same security: *I will make with them a covenant of peace... and they shall dwell safely* (Ezekiel 34:25), *they shall dwell safely, and none shall make them afraid* (Ezekiel 34:28). The despising nations judged round about, both houses gathered home, dwelling safely and with confidence — and they shall know that Yahuah is their Elohim. This is the hope after the oracles: the gathering of the scattered house.',
+       sv.verse_id, ev.verse_id, 'free', 32684
+  FROM _s308_ezek28_lookup sv, _s308_ezek28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=28 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-28-i-am-a-god-i-sit-in-the-seat-of-god',
+       E'I sit in the seat of God — the seated counterfeit who sitteth in the temple of Elohim',
+       E'One phrase in the prince''s boast is the signature of the whole pride: *I sit in the seat of Elohim (God), in the midst of the seas* (28:2). It is not enough to claim divinity — the creature takes the SEAT of God, the throne. Paul names the same seated pretender at the end of the age: *Who opposeth and exalteth himself above all that is called Elohim (God), or that is worshipped; so that he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4). From the prince of Tyrus seated in the seat of Elohim to the man of sin seated in the temple of Elohim, it is one pride: the creature usurping the throne, *shewing himself that he is Elohim (God)*. And the end is one too — *yet thou art a man, and not Elohim (God)* (28:2); the seat is taken from him and he is brought to the ground. The seat-of-god ape never holds the throne it steals.',
+       sv.verse_id, ev.verse_id, 'free', 32687
+  FROM _s308_ezek28_lookup sv, _s308_ezek28_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=28 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4) — the man of sin''s self-deification answers the prince''s *I am a Elohim* (Ezekiel 28:2); the same lifted-up heart.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-yet-thou-art-a-man-and-not-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *so that he as Elohim (God) sitteth in the temple of Elohim (God)* (2 Thessalonians 2:4) — answers *Wilt thou yet say... I am Elohim? but thou shalt be a man* (Ezekiel 28:9); the pretender dies as a man.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-yet-thou-art-a-man-and-not-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *It is the voice of a god, and not of a man* (Acts 12:22) — Herod acts out the prince''s claim *I am a Elohim... yet thou art a man* (Ezekiel 28:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=12 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-yet-thou-art-a-man-and-not-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *immediately the angel of Yahuah (Lord) smote him... and he was eaten of worms* (Acts 12:23) — enacts *thou shalt be a man, and no Elohim, in the hand of him that slayeth thee* (Ezekiel 28:9).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=9
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=12 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-yet-thou-art-a-man-and-not-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *he shall exalt himself, and magnify himself above every god* (Daniel 11:36) — the same self-magnifying pride as the prince''s *I am a Elohim* (Ezekiel 28:2); the recurring figure of the seed-war.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=11 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-yet-thou-art-a-man-and-not-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the Egyptians are men, and not Elohim (God); and their horses flesh, and not spirit* (Isaiah 31:3) — Isaiah''s measure is the verdict on Tyrus: *thou art a man, and not Elohim* (Ezekiel 28:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-yet-thou-art-a-man-and-not-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *How art thou fallen from heaven, O Lucifer, son of the morning!... how art thou cut down to the ground* (Isaiah 14:12) — Isaiah''s twin lament over the king of Babylon; the same fallen one cast to the ground (Ezekiel 28:17).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation* (Isaiah 14:13) — the cherub *upon the holy mountain of Elohim* (Ezekiel 28:14) covets the throne above it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=14
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I will ascend above the heights of the clouds; I will be like the El Elyon (most High)* (Isaiah 14:14) — the root sin of the heart *lifted up because of thy beauty* (Ezekiel 28:17): to be like the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I beheld Satan as lightning fall from heaven* (Luke 10:18) — the Formed Son names the fall behind the king of Tyrus; the cherub cast to the ground (Ezekiel 28:17) is the fall of Satan.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=17
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *the great dragon was cast out, that old serpent, called the Devil, and Satan... cast out into the earth* (Revelation 12:9) — the sentence on the covering cherub *cast as profane out of the mountain of Elohim* (Ezekiel 28:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head* (Genesis 3:15) — the covering cherub cast out of the garden (Ezekiel 28:16) is the old serpent in the seed-war.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=16
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Now the serpent was more subtil than any beast of the field* (Genesis 3:1) — the one *in Eden the garden of Elohim* (Ezekiel 28:13) is the subtle serpent of the garden.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=13
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *Art thou the first man that was born? or wast thou made before the hills?* (Job 15:7) — the cherub too was *created* (Ezekiel 28:15), a made thing, not the Maker; iniquity is found in the one who forgets it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=15
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=15 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-the-anointed-cherub-cast-out-of-eden'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *those which ye let remain of them shall be pricks in your eyes, and thorns in your sides* (Numbers 33:55) — the Torah''s warning of the undriven thorns, reversed in *no more a pricking brier unto the house* (Ezekiel 28:24).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=24
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-no-more-a-pricking-brier-unto-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they shall be... scourges in your sides, and thorns in your eyes* (Joshua 23:13) — Joshua''s same warning; the despising nations round about now judged, the thorns removed from the house (Ezekiel 28:24).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=24
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-no-more-a-pricking-brier-unto-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land* (Ezekiel 37:21) — the regathering of the two-sticks chapter answers *When I shall have gathered the house of Yashar''el* (Ezekiel 28:25).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=25
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will make them one nation... they shall be no more two nations* (Ezekiel 37:22) — the gathered house of 28:25 made ONE; Yahudah and Ephraim/Yosef no more divided.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=25
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they shall dwell in the land that I have given unto Jacob my servant... and my servant David shall be their prince for ever* (Ezekiel 37:25) — the land *given to my servant Jacob* (Ezekiel 28:25) under the Shepherd-King for ever.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=25
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely* (Jeremiah 23:6) — the two-house safety of *they shall dwell safely therein* (Ezekiel 28:26), under the righteous Branch.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=26
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will make with them a covenant of peace... and they shall dwell safely* (Ezekiel 34:25) — the Shepherd-chapter''s covenant of peace gives the same secure dwelling as Ezekiel 28:26.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=26
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *they shall dwell safely, and none shall make them afraid* (Ezekiel 34:28) — the despising nations judged round about (Ezekiel 28:26), the house dwells without fear.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=26
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-when-i-shall-have-gathered-the-house-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he as Elohim (God) sitteth in the temple of Elohim (God), shewing himself that he is Elohim (God)* (2 Thessalonians 2:4) — the seated counterfeit answers *I sit in the seat of Elohim* (Ezekiel 28:2); from the seat of Tyrus to the temple, one usurping pride.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek28_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=28 AND sv.verse_number=2
+  JOIN _s308_ezek28_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-28-i-am-a-god-i-sit-in-the-seat-of-god'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
