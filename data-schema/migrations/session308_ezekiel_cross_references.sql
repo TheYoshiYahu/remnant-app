@@ -15388,6 +15388,1235 @@ SELECT t.id, cr.id, 6, E'*Ask now the priests concerning the law* (Haggai 2:11) 
  WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_45.sql (Ezekiel 45) -----
+-- Chapter: Ezekiel 45 — the holy oblation/portion of the land set apart for the sanctuary, the
+-- priests, the Levites, the city, and the prince; the prince''s possession that he may NO MORE
+-- oppress the people; the CALL TO JUSTICE AND HONEST WEIGHTS — just balances, a just ephah, a just
+-- bath; the prince''s offerings for the feasts, the new moons, the sabbaths; and the APPOINTED TIMES
+-- KEPT in the restored kingdom — the Passover and Unleavened Bread in the first month, the feast of
+-- the seventh month (Tabernacles). Two framework-bearing threads: (1) justice/honest weights/measures
+-- required of the ruler against the oppressing princes; (2) the Lev 23 appointed times kept in the
+-- restored kingdom, NOT abolished.
+-- Tag: ezek45   Temp view: _s308_ezek45_lookup
+-- Sort band: base 33100, step 3 -> threads at 33100, 33103 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',45,v
+--
+-- Ezekiel 45 coverage:
+--   v.1-8 (the holy oblation divided by lot; the portion for the sanctuary, the priests, the Levites,
+--          the city, and the prince; *my princes shall no more oppress my people*)
+--        NT:     none warranted (the land-division/portion is the surveyor''s vision; the oppression
+--                clause v.8 leads straight into the justice call of THREAD 1, woven in its prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — v.8 *my princes shall no more oppress my people* is the hinge into
+--                the justice thread (THREAD 1)
+--   ★★ v.9-12 (*Let it suffice you, O princes of Yashar''el: remove violence and spoil, and execute
+--          judgment and justice... Ye shall have just balances, and a just ephah, and a just bath*)
+--        NT:     none warranted (the honest-weights/measures call is a Torah-and-prophets weave; the
+--                NT does not quote it; woven canon-Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 19:35-36 (do no unrighteousness in judgment, in weight, or in measure;
+--                just balances, just weights, a just ephah), ★★ Deuteronomy 25:13-15 (thou shalt not
+--                have divers weights... a perfect and just weight), ★★ Proverbs 11:1 (a false balance
+--                is abomination to Yahuah; but a just weight is his delight), ★ Micah 6:11 (the wicked
+--                balances and the bag of deceitful weights), ★ Amos 8:5 (making the ephah small, and
+--                the shekel great, and falsifying the balances by deceit) — THREAD 1
+--   v.13-16 (the appointed oblation — wheat, barley, oil, one lamb out of the flock — given for the
+--          prince to make reconciliation)
+--        NT:     none warranted (the measured offerings; woven into THREAD 2 prose with v.17)
+--        Extras: none warranted
+--        Tanakh: held in prose (the people''s oblation FOR the prince, that he may offer; leads into v.17)
+--   ★★ v.17,21-25 (*it shall be the prince''s part to give... in the feasts, and in the new moons, and
+--          in the sabbaths, in all solemnities of the house of Yashar''el... In the first month, in the
+--          fourteenth day... ye shall have the passover, a feast of seven days; unleavened bread shall
+--          be eaten... In the seventh month, in the fifteenth day... in the feast of the seven days*)
+--        NT:     ★★ 1 Corinthians 5:7-8 (Messiah our passover is sacrificed for us... let us keep the
+--                feast... with the unleavened bread of sincerity and truth) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 23:5-6 (the LORD''S passover... the feast of unleavened bread), ★★
+--                Leviticus 23:34 (the feast of tabernacles for seven days), ★ Exodus 12:6 (kill it...
+--                in the fourteenth day at even), ★ Exodus 12:18 (in the fourteenth day at even ye shall
+--                eat unleavened bread), ★★ Zechariah 14:16 (all the nations... go up... to keep the
+--                feast of tabernacles) — THREAD 2
+--   v.18-20 (the first-day and seventh-day cleansing of the sanctuary with the blood of the sin
+--          offering — *so shall ye reconcile the house*)
+--        NT:     none warranted distinct (the sanctuary-cleansing rite; the reconciliation/blood-on-the-
+--                posts woven into THREAD 2 prose as the setting of the feast-keeping)
+--        Extras: none warranted
+--        Tanakh: none separate (the consecration of the altar; held in prose)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-45-just-balances-a-just-ephah-and-a-just-bath — Tanakh (Leviticus 19, Deuteronomy 25, Proverbs 11, Micah 6, Amos 8) [free]
+--      (★★ the call to justice and honest weights/measures against the oppressing princes; the ruler
+--       must execute judgment and justice and deal honestly)
+--   2. ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom — NT (1 Corinthians 5) + Tanakh (Leviticus 23, Exodus 12, Zechariah 14) [free]
+--      (★★ the appointed times — Passover/Unleavened Bread and Tabernacles — kept in the restored
+--       kingdom; the feasts are not abolished but kept)
+--
+-- Framing notes:
+--   ★★ JUST BALANCES (THREAD 1): the land-portion for the prince is given so that *my princes shall no
+--      more oppress my people* (45:8), and the charge follows at once: *Thus saith Adonai Yahuah (the
+--      Lord GOD); Let it suffice you, O princes of Yashar''el (Israel): remove violence and spoil, and
+--      execute judgment and justice, take away your exactions from my people... Ye shall have just
+--      balances, and a just ephah, and a just bath* (45:9-10). The ruler is bound to the Torah''s
+--      standard of honest dealing — *Ye shall do no unrighteousness in judgment, in meteyard, in weight,
+--      or in measure. Just balances, just weights, a just ephah, and a just hin, shall ye have* (Lev
+--      19:35-36); *thou shalt not have in thy bag divers weights... a perfect and just weight... shalt
+--      thou have* (Deut 25:13-15). Solomon names the heart of it — *A false balance is abomination to
+--      Yahuah (LORD): but a just weight is his delight* (Prov 11:1) — and the prophets indict the
+--      cheaters: *Shall I count them pure with the wicked balances, and with the bag of deceitful
+--      weights?* (Micah 6:11); *making the ephah small, and the shekel great, and falsifying the
+--      balances by deceit* (Amos 8:5). Justice and honest measure are required of the ruler; the same
+--      Torah that governs the marketplace governs the prince.
+--   ★★ THE FEASTS KEPT IN THE KINGDOM (THREAD 2): in the restored kingdom the prince keeps the appointed
+--      times — *it shall be the prince''s part to give burnt offerings, and meat offerings, and drink
+--      offerings, in the feasts, and in the new moons, and in the sabbaths, in all solemnities of the
+--      house of Yashar''el (Israel)* (45:17) — and the calendar is named: *In the first month, in the
+--      fourteenth day of the month, ye shall have the passover, a feast of seven days; unleavened bread
+--      shall be eaten* (45:21), and *In the seventh month, in the fifteenth day of the month, shall he
+--      do the like in the feast of the seven days* (45:25). These are the feasts of Lev 23 — *In the
+--      fourteenth day of the first month at even is the LORD''S passover. And on the fifteenth day...
+--      the feast of unleavened bread* (Lev 23:5-6); *the fifteenth day of this seventh month shall be
+--      the feast of tabernacles for seven days* (Lev 23:34) — rooted in the Exodus night, *the whole
+--      assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exod 12:6),
+--      *in the fourteenth day of the month at even, ye shall eat unleavened bread* (Exod 12:18). Far
+--      from abolished, the feasts are kept BY THE NATIONS in the kingdom — *every one that is left of
+--      all the nations... shall even go up from year to year... to keep the feast of tabernacles* (Zech
+--      14:16) — and the NT fills the Passover with the Lamb while still commanding its keeping: *Messiah
+--      (Christ) our passover is sacrificed for us: Therefore let us keep the feast... with the
+--      unleavened bread of sincerity and truth* (1 Cor 5:7-8). The appointed times stand — kept in the
+--      kingdom, kept by the nations, kept by the assembly in Messiah.
+--   VERSES WITH NO SEPARATE ADD: v.1-8 (the holy oblation divided by lot — the surveyor''s portions;
+--      v.8 oppression clause woven into THREAD 1), v.13-16 (the measured oblation for the prince; woven
+--      into THREAD 2), v.18-20 (the first-/seventh-day sanctuary-cleansing; woven into THREAD 2 prose).
+--      All recorded; every meaningful block carries a thread or is woven in prose.
+
+CREATE TEMP VIEW _s308_ezek45_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): just balances, a just ephah, a just bath — justice and honest weights
+    ('canon','ezekiel',45,10,'canon','leviticus',19,35,'free',
+      E'*Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure* (Leviticus 19:35). Ezekiel''s charge to the prince — *Ye shall have just balances, and a just ephah, and a just bath* (Ezekiel 45:10) — is the very Torah standard of honest dealing: no unrighteousness in judgment, in weight, or in measure. The ruler is held to the same instruction that governs every marketplace; honest measure is righteousness, not custom.'),
+    ('canon','ezekiel',45,10,'canon','leviticus',19,36,'free',
+      E'*Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt* (Leviticus 19:36). The words of Ezekiel''s charge are drawn straight from the Torah — *Ye shall have just balances, and a just ephah, and a just bath* (Ezekiel 45:10) answers *just balances, just weights, a just ephah*. Honest measure is bound to Yahuah''s own Name and the redemption from Egypt; the prince who cheats denies the Elohim who freed the people.'),
+    ('canon','ezekiel',45,10,'canon','deuteronomy',25,13,'free',
+      E'*Thou shalt not have in thy bag divers weights, a great and a small* (Deuteronomy 25:13). The demand for *just balances, and a just ephah, and a just bath* (Ezekiel 45:10) is the flipside of the Torah''s ban on the rigged scale — no two weights, one to buy with and one to sell with. The prince who must *take away your exactions from my people* (45:9) is forbidden the merchant''s deceit.'),
+    ('canon','ezekiel',45,10,'canon','deuteronomy',25,15,'free',
+      E'*But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Deuteronomy 25:15). The just balances Ezekiel requires (Ezekiel 45:10) are the *perfect and just weight* the Torah ties to long life in the land. Honest measure is not a private virtue but the condition of dwelling in the land Yahuah gives — and the prince keeps it for the whole house.'),
+    ('canon','ezekiel',45,9,'canon','proverbs',11,1,'free',
+      E'*A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1). The charge *remove violence and spoil, and execute judgment and justice, take away your exactions from my people* (Ezekiel 45:9) names what Solomon names: the false balance is an abomination, the just weight Yahuah''s delight. The oppressing prince and the cheating merchant share one sin; the just ruler shares Yahuah''s own delight in the honest scale.'),
+    ('canon','ezekiel',45,9,'canon','micah',6,11,'free',
+      E'*Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11). Micah''s lawsuit against the cheating city is the same indictment Ezekiel lays on the princes — *remove violence and spoil... take away your exactions from my people* (Ezekiel 45:9). The wicked balances and the bag of deceitful weights cannot be counted pure; Yahuah requires the just balance of the next verse (45:10).'),
+    ('canon','ezekiel',45,9,'canon','amos',8,5,'free',
+      E'*Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* (Amos 8:5). Amos exposes the very exactions Ezekiel commands the princes to remove — *take away your exactions from my people* (Ezekiel 45:9): the small ephah, the great shekel, the falsified balance. Ezekiel''s answer is the just ephah and the just bath of v.10; honest measure undoes the oppressor''s trade.'),
+
+    -- THREAD 2 (★★): the passover and the feast kept in the restored kingdom
+    ('canon','ezekiel',45,21,'canon','leviticus',23,5,'free',
+      E'*In the fourteenth day of the first month at even is the LORD''S passover* (Leviticus 23:5). The appointed time kept in the restored kingdom — *In the first month, in the fourteenth day of the month, ye shall have the passover, a feast of seven days* (Ezekiel 45:21) — is the very Passover of the appointed times of Yahuah. The calendar of Lev 23 is not abolished; it is kept by the prince and the people in the kingdom.'),
+    ('canon','ezekiel',45,21,'canon','leviticus',23,6,'free',
+      E'*And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6). Ezekiel''s *a feast of seven days; unleavened bread shall be eaten* (Ezekiel 45:21) is the feast of unleavened bread of Lev 23 — seven days, the leaven put away — kept in the restored kingdom exactly as Yahuah appointed it.'),
+    ('canon','ezekiel',45,25,'canon','leviticus',23,34,'free',
+      E'*Speak unto the children of Yashar''el (Israel), saying, The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34). The seventh-month feast Ezekiel keeps — *In the seventh month, in the fifteenth day of the month, shall he do the like in the feast of the seven days* (Ezekiel 45:25) — is the feast of tabernacles of Lev 23, the seven-day ingathering, kept in the restored kingdom. The appointed times stand from Sinai to the kingdom.'),
+    ('canon','ezekiel',45,21,'canon','exodus',12,6,'free',
+      E'*And ye shall keep it up until the fourteenth day of the same month: and the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exodus 12:6). The Passover Ezekiel sets *in the fourteenth day of the month* (Ezekiel 45:21) is the very night of the Exodus — the lamb killed in the evening of the fourteenth. The kingdom-Passover reaches back to the redemption from Egypt; the same appointed day binds the deliverance and the restoration.'),
+    ('canon','ezekiel',45,21,'canon','exodus',12,18,'free',
+      E'*In the first month, on the fourteenth day of the month at even, ye shall eat unleavened bread, until the one and twentieth day of the month at even* (Exodus 12:18). Ezekiel''s seven-day feast of *unleavened bread* in the first month (Ezekiel 45:21) is the Exodus ordinance — unleavened bread from the fourteenth to the twenty-first. The feast kept in the kingdom is the feast commanded *by an ordinance for ever* at the founding of the nation.'),
+    ('canon','ezekiel',45,25,'canon','zechariah',14,16,'free',
+      E'*And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16). The feast of tabernacles Ezekiel keeps in the kingdom (Ezekiel 45:25) is the feast the NATIONS go up to keep in Zechariah''s kingdom-vision. Far from abolished, Tabernacles is the feast of the consummated reign — kept by the prince, by the house, and by all the nations.'),
+    ('canon','ezekiel',45,17,'canon','1-corinthians',5,7,'free',
+      E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The prince''s offerings *in the feasts, and in the new moons, and in the sabbaths, in all solemnities of the house of Yashar''el (Israel)* (Ezekiel 45:17) are the appointed times the NT still keeps — filled, not cancelled: Messiah is the Passover lamb, the leaven still purged. The feast remains; the Lamb is named.'),
+    ('canon','ezekiel',45,21,'canon','1-corinthians',5,8,'free',
+      E'*Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Ezekiel''s *passover, a feast of seven days; unleavened bread shall be eaten* (Ezekiel 45:21) is the very feast Paul commands the assembly to keep — *let us keep the feast... with the unleavened bread of sincerity and truth*. The appointed time is not abolished but kept in Messiah; the leaven put away is now the leaven of malice.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-45-just-balances-a-just-ephah-and-a-just-bath',
+       E'Just balances, a just ephah, and a just bath — execute judgment and justice',
+       E'The holy oblation gives the prince his own portion *in the land* so that *my princes shall no more oppress my people* (45:8), and the charge follows at once: *Thus saith Adonai Yahuah (the Lord GOD); Let it suffice you, O princes of Yashar''el (Israel): remove violence and spoil, and execute judgment and justice, take away your exactions from my people, saith Adonai Yahuah (the Lord GOD). Ye shall have just balances, and a just ephah, and a just bath* (45:9-10). The ruler is bound to the Torah''s own standard of honest dealing: *Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure. Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt* (Leviticus 19:35-36) — honest measure bound to Yahuah''s own Name and the redemption from Egypt. The Torah forbids the rigged scale outright: *Thou shalt not have in thy bag divers weights, a great and a small... But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land* (Deuteronomy 25:13-15). Solomon names the heart of it: *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1). And the prophets indict the cheaters whose exactions Ezekiel commands the princes to remove: *Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11); *making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5). Justice and honest measure are required of the ruler; the same instruction that governs the marketplace governs the prince. The just balance is not custom but righteousness — Yahuah''s delight, and the oppressor''s undoing.',
+       sv.verse_id, ev.verse_id, 'free', 33100
+  FROM _s308_ezek45_lookup sv, _s308_ezek45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=45 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom',
+       E'The passover and the feast of seven days — the appointed times kept in the kingdom',
+       E'In the restored kingdom the prince keeps the appointed times of Yahuah: *And it shall be the prince''s part to give burnt offerings, and meat offerings, and drink offerings, in the feasts, and in the new moons, and in the sabbaths, in all solemnities of the house of Yashar''el (Israel)* (45:17). The calendar is named outright: *In the first month, in the fourteenth day of the month, ye shall have the passover, a feast of seven days; unleavened bread shall be eaten* (45:21), and *In the seventh month, in the fifteenth day of the month, shall he do the like in the feast of the seven days* (45:25). These are the feasts of Yahuah given at Sinai — *In the fourteenth day of the first month at even is the LORD''S passover. And on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:5-6); *The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34) — rooted in the Exodus night, *the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exodus 12:6), *in the fourteenth day of the month at even, ye shall eat unleavened bread* (Exodus 12:18). Far from abolished, the feasts are kept by the nations in the kingdom: *every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16). And the New Testament fills the Passover with the Lamb while still commanding its keeping: *Messiah (Christ) our passover is sacrificed for us: Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:7-8). The appointed times stand from Sinai to the kingdom — kept by the prince, kept by the nations, kept by the assembly in Messiah; not a shadow cast off, but the calendar of the redeemed.',
+       sv.verse_id, ev.verse_id, 'free', 33103
+  FROM _s308_ezek45_lookup sv, _s308_ezek45_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=45 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure* (Leviticus 19:35) — Ezekiel 45:10''s just balances is the Torah standard; honest measure is righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=10
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Just balances, just weights, a just ephah, and a just hin, shall ye have* (Leviticus 19:36) — Ezekiel 45:10 draws its words straight from the Torah; bound to Yahuah''s Name and the redemption from Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=10
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Thou shalt not have in thy bag divers weights, a great and a small* (Deuteronomy 25:13) — the flipside of Ezekiel 45:10''s just ephah; the prince is forbidden the merchant''s rigged scale.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=10
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land* (Deuteronomy 25:15) — Ezekiel 45:10''s honest measure is the Torah condition of dwelling in the land.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=10
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=25 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1) — the just ruler of Ezekiel 45:9 shares Yahuah''s own delight in the honest scale.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=9
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11) — Micah''s lawsuit is the same indictment Ezekiel 45:9 lays on the oppressing princes.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=9
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5) — the very exactions Ezekiel 45:9 commands the princes to remove; the just ephah of v.10 undoes the cheat.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=9
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-just-balances-a-just-ephah-and-a-just-bath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *In the fourteenth day of the first month at even is the LORD''S passover* (Leviticus 23:5) — Ezekiel 45:21''s kingdom-Passover is the appointed time of Lev 23, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=21
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6) — Ezekiel 45:21''s seven-day unleavened feast is the feast of Lev 23.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=21
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34) — Ezekiel 45:25''s seventh-month feast is Tabernacles of Lev 23.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=25
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the whole assembly of the congregation of Yashar''el (Israel) shall kill it in the evening* (Exodus 12:6) — Ezekiel 45:21''s fourteenth-day Passover reaches back to the Exodus night.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=21
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *in the fourteenth day of the month at even, ye shall eat unleavened bread* (Exodus 12:18) — Ezekiel 45:21''s unleavened feast is the Exodus ordinance, commanded for ever.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=21
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *all the nations... shall even go up from year to year... to keep the feast of tabernacles* (Zechariah 14:16) — Ezekiel 45:25''s Tabernacles is kept by the NATIONS in the kingdom; not abolished but universal.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=25
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7) — the prince''s feast-offerings (Ezekiel 45:17) are filled, not cancelled; the Lamb is named, the leaven still purged.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=17
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8) — Ezekiel 45:21''s seven-day feast is kept in Messiah; the appointed time stands, the leaven of malice put away.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek45_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=45 AND sv.verse_number=21
+  JOIN _s308_ezek45_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-45-the-passover-and-the-feast-kept-in-the-kingdom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_46.sql (Ezekiel 46) -----
+-- Chapter: Ezekiel 46 — the worship at the east gate of the inner court in the restored kingdom:
+-- the gate SHUT the six working days but OPENED on the sabbath and in the day of the new moon; the
+-- prince entering by the porch and the people of the land worshipping at the door before Yahuah (LORD)
+-- *in the sabbaths and in the new moons*; the sabbath and new-moon burnt offerings; the ordered worship
+-- of the gathered people at the solemn feasts (in by the north gate, out by the south, the prince in the
+-- midst of them); the continual daily burnt offering every morning by a perpetual ordinance; the prince's
+-- inheritance to his sons; and the boiling/baking places where the ministers boil the people's sacrifice.
+-- ★★ THE KEYSTONE OF THIS CHAPTER: the Sabbath and the new moons are KEPT in the restored kingdom — the
+-- appointed times observed, not abolished — answered forward to Isaiah 66:23 and Colossians 2:16-17.
+-- Tag: ezek46   Temp view: _s308_ezek46_lookup
+-- Sort band: base 33125, step 3 -> 33125, 33128 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',46,v
+--
+-- Ezekiel 46 coverage:
+--   ★★ v.1-3 (the east gate SHUT the six working days, OPENED on the sabbath and in the day of the new
+--          moon; the prince enters and worships at the threshold; *Likewise the people of the land shall
+--          worship at the door of this gate before Yahuah (LORD) in the sabbaths and in the new moons*)
+--        NT:     ★★ Colossians 2:16-17 (let no man judge you... in respect of an holyday, or of the new
+--                moon, or of the sabbath days: which are a shadow of things to come; but the body is of
+--                Messiah) — the feasts STILL kept, the body is Messiah's, NOT abolished — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh appointed-times weave)
+--        Tanakh: ★★ Isaiah 66:23 (from one new moon to another, and from one sabbath to another, shall all
+--                flesh come to worship before me), ★ Numbers 28:11 (in the beginnings of your months ye
+--                shall offer a burnt offering), ★ Psalm 81:3 (Blow up the trumpet in the new moon... a
+--                statute for Yashar''el) — THREAD 1
+--   v.4-7 (the sabbath and new-moon burnt offerings — six lambs and a ram on the sabbath; a young bullock
+--          and six lambs and a ram on the new moon; the meat offerings and the oil)
+--        NT:     none warranted distinct (the appointed-times offerings; the sabbath/new-moon weave held in
+--                THREAD 1; Numbers 28:9-11 carried there)
+--        Extras: none warranted
+--        Tanakh: ★ Numbers 28:9-14 woven in THREAD 1 prose (the sabbath and new-moon offerings of the Torah)
+--   ★ v.8-10 (the prince enters and goes forth by the porch; *when the people of the land shall come before
+--          Yahuah (LORD) in the solemn feasts*, in by the north gate and out by the south, *he shall not
+--          return by the way of the gate whereby he came in*; *And the prince in the midst of them*)
+--        NT:     ★ Hebrews 10:25 (not forsaking the assembling of ourselves together) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 84:7 (they go from strength to strength, every one of them in Zion appeareth before
+--                Elohim), ★ Ezekiel 34:24 (my servant David a prince among them — lateral, the prince in the
+--                midst) — THREAD 2
+--   v.11-12 (the meat offering at the feasts and solemnities; the prince's voluntary burnt offering, the
+--          east gate opened for it then shut) — woven into THREAD 1/THREAD 2 prose; no separate add
+--        NT: none warranted / Extras: none warranted / Tanakh: none separate (the feast/voluntary offerings)
+--   v.13-15 (the CONTINUAL daily burnt offering of a lamb every morning, *a meat offering continually by a
+--          perpetual ordinance unto Yahuah (LORD)*, for a continual burnt offering)
+--        NT:     none warranted distinct (the daily continual offering; the shadow-fulfilled weave held to
+--                Colossians 2:17 / the perpetual ordinance noted in THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: ★ Numbers 28:3-4 (two lambs... day by day, for a continual burnt offering; the one in the
+--                morning) — woven in THREAD 1 prose (the continual offering of the Torah, every morning)
+--   v.16-18 (the prince's inheritance to his sons; the gift to a servant returns at the year of liberty;
+--          *the prince shall not take of the people''s inheritance by oppression... that my people be not
+--          scattered every man from his possession*)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (the just prince guarding the people''s inheritance; the year-of-liberty
+--                jubilee echo of Leviticus 25 — noted in prose, no separate row; a righteous ruler not above
+--                the people but guarding their possession)
+--   v.19-24 (the holy chambers of the priests; the boiling/baking places where the priests boil the trespass
+--          and sin offering and bake the meat offering; the four corner courts with boiling places where the
+--          ministers boil the sacrifice of the people)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (the architectural detail of the boiling places; the priests'' service of the
+--                people''s sacrifice; no forced weave)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon — NT (Colossians 2) + Tanakh (Isaiah 66, Numbers 28, Psalm 81) [free]
+--      (★★ THE appointed-times keystone of the chapter; the Sabbath and new moons KEPT in the restored
+--       kingdom; the people worship before Yahuah in the sabbaths and new moons; a shadow STILL kept, the
+--       body is Messiah''s — NOT abolished)
+--   2. ezekiel-46-the-people-before-yahuah-the-prince-in-the-midst — NT (Hebrews 10) + Tanakh (Psalm 84, Ezekiel 34) [free]
+--      (★ the ordered worship of the gathered people at the solemn feasts; the assembling not forsaken; the
+--       prince in the midst of them, among the people and not above — David a prince among them)
+--
+-- Framing notes:
+--   ★★ THE SABBATH AND THE NEW MOON KEPT (THREAD 1): *The gate of the inner court that looketh toward the
+--      east shall be shut the six working days; but on the sabbath it shall be opened, and in the day of the
+--      new moon it shall be opened* (46:1), and *Likewise the people of the land shall worship at the door of
+--      this gate before Yahuah (LORD) in the sabbaths and in the new moons* (46:3). In the RESTORED kingdom —
+--      the temple-vision of Ezekiel 40-48 — the Sabbath and the new moon are still kept, the gate opened for
+--      worship on exactly these appointed times. Isaiah saw the same consummation: *from one new moon to
+--      another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah
+--      (LORD)* (Isaiah 66:23). The new-moon and sabbath offerings are the Torah''s own (Numbers 28:9-11), and
+--      the new moon is *a statute for Yashar''el (Israel)* (Psalm 81:3-4). Therefore Paul''s word is read
+--      rightly: *Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the
+--      new moon, or of the sabbath days: Which are a shadow of things to come; but the body is of Messiah
+--      (Christ)* (Colossians 2:16-17) — the holyday, the new moon, the sabbath are *a shadow of things to
+--      come*, the body that casts the shadow is Messiah''s; they are STILL kept, no man''s judgment over them,
+--      NOT abolished. Ezekiel''s restored worship is the proof: the appointed times are observed in the
+--      kingdom to come.
+--   ★ THE GATHERED PEOPLE / THE PRINCE IN THE MIDST (THREAD 2): *when the people of the land shall come
+--      before Yahuah (LORD) in the solemn feasts, he that entereth in by the way of the north gate to worship
+--      shall go out by the way of the south gate... he shall not return by the way of the gate whereby he
+--      came in, but shall go forth over against it. And the prince in the midst of them* (46:9-10). The
+--      gathered people coming before Yahuah at the feasts in ordered worship — the assembling not forsaken:
+--      *Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one
+--      another* (Hebrews 10:25). The pilgrims of the Psalm *go from strength to strength, every one of them
+--      in Zion appeareth before Elohim (God)* (Psalm 84:7). And the prince is *in the midst of them* — among
+--      the people, going in when they go in and forth when they go forth, not lording over them — the David
+--      already named: *my servant David a prince among them* (Ezekiel 34:24), the Shepherd-King in the midst
+--      of his flock, not above it.
+--   VERSES WITH NO SEPARATE ADD: v.4-7 (the sabbath/new-moon offerings — Numbers 28 carried in THREAD 1
+--      prose), v.11-12 (the feast/voluntary offerings — woven in prose), v.13-15 (the continual daily
+--      offering — Numbers 28:3-4 in THREAD 1 prose), v.16-18 (the prince''s inheritance / year of liberty —
+--      the just ruler guarding the people''s possession; jubilee echo noted, no forced weave), v.19-24 (the
+--      boiling/baking places — architectural detail of the priests'' service; no forced weave). All verses
+--      recorded; every meaningful block weighed across all three libraries.
+
+CREATE TEMP VIEW _s308_ezek46_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the east gate opened on the sabbath and the new moon — the appointed times kept
+    ('canon','ezekiel',46,3,'canon','isaiah',66,23,'free',
+      E'*And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). Isaiah sees the very worship Ezekiel''s gate is opened for: *Likewise the people of the land shall worship at the door of this gate before Yahuah (LORD) in the sabbaths and in the new moons* (Ezekiel 46:3). In the restored kingdom the Sabbath and the new moon are still the days all flesh comes to worship — the appointed times observed, never abolished.'),
+    ('canon','ezekiel',46,1,'canon','colossians',2,16,'free',
+      E'*Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days* (Colossians 2:16). The gate *shut the six working days; but on the sabbath it shall be opened, and in the day of the new moon it shall be opened* (Ezekiel 46:1) is the worship Paul guards from every man''s judgment: the holyday, the new moon, the sabbath are kept, and no man is to judge another over them. Ezekiel''s restored sabbath and new-moon worship is the proof they stand.'),
+    ('canon','ezekiel',46,1,'canon','colossians',2,17,'free',
+      E'*Which are a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:17). The sabbath and new-moon worship at the opened gate (Ezekiel 46:1) is *a shadow of things to come* — and a shadow proves a body: *the body is of Messiah*. The appointed times are not erased but filled; the gate opened on the sabbath and the new moon casts the shadow whose substance is Messiah, kept still in the kingdom to come.'),
+    ('canon','ezekiel',46,3,'canon','numbers',28,11,'free',
+      E'*And in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD); two young bullocks, and one ram, seven lambs of the first year without spot* (Numbers 28:11). The new-moon worship of Ezekiel''s gate — *in the sabbaths and in the new moons* (Ezekiel 46:3) — keeps the Torah''s own new-moon offering, commanded *in the beginnings of your months*. The restored kingdom observes the appointed-times offerings Moses received at Sinai.'),
+    ('canon','ezekiel',46,3,'canon','psalms',81,3,'free',
+      E'*Blow up the trumpet in the new moon, in the time appointed, on our solemn feast day* (Psalm 81:3). The new moon Ezekiel keeps at the opened gate (Ezekiel 46:3) is the new moon the psalm proclaims with the trumpet — *For this was a statute for Yashar''el (Israel), and a law of the Elohim (God) of Jacob* (Psalm 81:4). The new moon is a statute and a law, the appointed time kept from of old and kept again in the restored worship.'),
+
+    -- THREAD 2 (★): the people before Yahuah in the solemn feasts — the prince in the midst of them
+    ('canon','ezekiel',46,9,'canon','hebrews',10,25,'free',
+      E'*Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching* (Hebrews 10:25). The ordered gathering of *the people of the land... come before Yahuah (LORD) in the solemn feasts* (Ezekiel 46:9) is the assembling not to be forsaken: the people coming together to worship before Yahuah, exhorting one another. The restored worship is a gathered people, not a scattered one.'),
+    ('canon','ezekiel',46,9,'canon','psalms',84,7,'free',
+      E'*They go from strength to strength, every one of them in Zion appeareth before Elohim (God)* (Psalm 84:7). The pilgrims of the psalm are Ezekiel''s people of the land — *come before Yahuah (LORD) in the solemn feasts* (Ezekiel 46:9), passing in by one gate and out by another to appear before him. They go from strength to strength, every one appearing before Elohim in Zion, the ordered worship of the gathered house.'),
+    ('canon','ezekiel',46,10,'canon','ezekiel',34,24,'free',
+      E'*And I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them; I Yahuah (LORD) have spoken it* (Ezekiel 34:24). The prince who is *in the midst of them, when they go in... and when they go forth* (Ezekiel 46:10) is David the prince *among them* — in the midst of the people, going in and forth with them, the Shepherd-King among his flock and not above it. The restored kingdom''s prince is the David of the shepherd-chapter, a prince among the people Yahuah claims as his own.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon',
+       E'The gate opened on the sabbath and in the day of the new moon — the appointed times kept',
+       E'In the temple-vision of the restored kingdom, the east gate of the inner court keeps the appointed times: *The gate of the inner court that looketh toward the east shall be shut the six working days; but on the sabbath it shall be opened, and in the day of the new moon it shall be opened* (46:1). The prince enters and worships at the threshold (46:2), and *Likewise the people of the land shall worship at the door of this gate before Yahuah (LORD) in the sabbaths and in the new moons* (46:3) — with the sabbath burnt offering of six lambs and a ram (46:4) and the new-moon offering of a young bullock and six lambs and a ram (46:6), and the continual daily lamb *every morning... a meat offering continually by a perpetual ordinance unto Yahuah (LORD)* (46:13-14). Here is the keystone of the chapter: in the kingdom to come the Sabbath and the new moon are STILL kept, the gate opened for worship on exactly these days. Isaiah saw the same end: *And it shall come to pass, that from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith Yahuah (LORD)* (Isaiah 66:23). These offerings are the Torah''s own — *And in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11), the sabbath and new-moon and continual offerings of Numbers 28 — and the new moon is *a statute for Yashar''el (Israel), and a law of the Elohim (God) of Jacob* (Psalm 81:3-4). Read in this light Paul''s word is unmistakable: *Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days: Which are a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:16-17). The holyday, the new moon, the sabbath are *a shadow of things to come* — and a shadow proves a body; the substance is Messiah''s, the days are kept, no man''s judgment over them. The appointed times are not abolished; Ezekiel''s restored worship keeps them in the kingdom to come.',
+       sv.verse_id, ev.verse_id, 'free', 33125
+  FROM _s308_ezek46_lookup sv, _s308_ezek46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=46 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-46-the-people-before-yahuah-the-prince-in-the-midst',
+       E'The people come before Yahuah in the solemn feasts — and the prince in the midst of them',
+       E'When the people gather for the feasts, their worship is ordered and their prince is among them: *But when the people of the land shall come before Yahuah (LORD) in the solemn feasts, he that entereth in by the way of the north gate to worship shall go out by the way of the south gate; and he that entereth by the way of the south gate shall go forth by the way of the north gate: he shall not return by the way of the gate whereby he came in, but shall go forth over against it. And the prince in the midst of them, when they go in, shall go in; and when they go forth, shall go forth* (46:9-10). The gathered people coming before Yahuah at the appointed feasts is the assembling not to be forsaken: *Not forsaking the assembling of ourselves together, as the manner of some is; but exhorting one another: and so much the more, as ye see the day approaching* (Hebrews 10:25). It is the pilgrim worship of the psalm: *They go from strength to strength, every one of them in Zion appeareth before Elohim (God)* (Psalm 84:7) — each one passing through to appear before Yahuah. And the prince is *in the midst of them*, going in when they go in and forth when they go forth — among the people, not above them. He is the David already named in the shepherd-chapter: *And I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them; I Yahuah (LORD) have spoken it* (Ezekiel 34:24) — the Shepherd-King in the midst of his flock, leading the gathered people in worship before Yahuah, not lording over them.',
+       sv.verse_id, ev.verse_id, 'free', 33128
+  FROM _s308_ezek46_lookup sv, _s308_ezek46_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=46 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *from one new moon to another, and from one sabbath to another, shall all flesh come to worship before me* (Isaiah 66:23) — Isaiah sees the very sabbath/new-moon worship Ezekiel 46:3 keeps; the appointed times observed in the kingdom.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Let no man therefore judge you... in respect of an holyday, or of the new moon, or of the sabbath days* (Colossians 2:16) — the worship of the gate opened on the sabbath and new moon (Ezekiel 46:1) is kept, no man''s judgment over it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=1
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Which are a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:17) — the sabbath/new-moon worship (Ezekiel 46:1) is a shadow whose body is Messiah''s; filled, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=1
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *in the beginnings of your months ye shall offer a burnt offering unto Yahuah (LORD)* (Numbers 28:11) — Ezekiel''s new-moon worship (46:3) keeps the Torah''s own new-moon offering from Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=28 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Blow up the trumpet in the new moon, in the time appointed* (Psalm 81:3) — the new moon Ezekiel keeps (46:3) is *a statute for Yashar''el (Israel), and a law of the Elohim (God) of Jacob* (Psalm 81:4).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=3
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=81 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-gate-opened-on-the-sabbath-and-the-new-moon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Not forsaking the assembling of ourselves together... but exhorting one another* (Hebrews 10:25) — the gathered people coming before Yahuah at the feasts (Ezekiel 46:9) is the assembling not to be forsaken.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=9
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-people-before-yahuah-the-prince-in-the-midst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *They go from strength to strength, every one of them in Zion appeareth before Elohim (God)* (Psalm 84:7) — the pilgrim worship of the people coming before Yahuah in the solemn feasts (Ezekiel 46:9).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=9
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=84 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-people-before-yahuah-the-prince-in-the-midst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *my servant David a prince among them; I Yahuah (LORD) have spoken it* (Ezekiel 34:24) — the prince *in the midst of them* (46:10) is the David of the shepherd-chapter, a prince among the people, not above.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek46_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=46 AND sv.verse_number=10
+  JOIN _s308_ezek46_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-46-the-people-before-yahuah-the-prince-in-the-midst'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_47.sql (Ezekiel 47) -----
+-- Chapter: Ezekiel 47 — ★★★ KEYSTONE: THE RIVER OF LIFE from the sanctuary. Waters issue out from
+-- under the threshold of the house eastward, ever-deepening — ankles, knees, loins, a river that could
+-- not be passed over, waters to swim in; the trees of life/healing lining both banks, new fruit every
+-- month, the leaf for medicine; the waters heal the Dead Sea; the borders of the land are drawn; and the
+-- ger/stranger that sojourns is given a FULL inheritance AMONG the tribes of Yashar''el — grafted into the
+-- SAME people, not a separate church. Eden''s river and tree of life returned; the two-house land restored
+-- with the stranger made one with Yashar''el.
+-- Tag: ezek47   Temp view: _s308_ezek47_lookup
+-- Sort band: base 33150, step 3 -> 33150, 33153, 33156 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',47,v
+--
+-- Ezekiel 47 coverage:
+--   ★★★ v.1-6 (waters issued out from under the threshold of the house eastward... to the ankles... to the
+--          knees... to the loins... a river that I could not pass over: for the waters were risen, waters to
+--          swim in, a river that could not be passed over)
+--        NT:     ★★★ Revelation 22:1 (a pure river of water of life, clear as crystal, proceeding out of the
+--                throne of Elohim and of the Lamb), ★★ John 7:38 (out of his belly shall flow rivers of
+--                living water) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh river-of-life weave)
+--        Tanakh: ★★★ Joel 3:18 (a fountain shall come forth of the house of Yahuah), ★★ Zechariah 14:8
+--                (living waters shall go out from Jerusalem), ★★ Psalm 46:4 (there is a river, the streams
+--                whereof shall make glad the city of Elohim) — THREAD 1
+--   ★★★ v.7-12 (at the bank of the river were very many trees on the one side and on the other... every
+--          thing shall live whither the river cometh... shall grow all trees for meat, whose leaf shall not
+--          fade... new fruit according to his months... the fruit for meat, the leaf for medicine)
+--        NT:     ★★★ Revelation 22:2 (on either side of the river, was there the tree of life, which bare
+--                twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were
+--                for the healing of the nations) — THREAD 2
+--        Extras: none warranted (clean canon weave — Eden and the New Jerusalem)
+--        Tanakh: ★★★ Genesis 2:9 (the tree of life... in the midst of the garden), ★★★ Genesis 2:10 (a
+--                river went out of Eden to water the garden), ★★ Psalm 1:3 (a tree planted by the rivers of
+--                water... his leaf also shall not wither) — THREAD 2
+--   ★★ v.13-23 (this shall be the border, whereby ye shall inherit the land according to the twelve tribes
+--          of Yashar''el... ye shall divide it by lot for an inheritance unto you, and to the strangers that
+--          sojourn among you... they shall be unto you as born in the country among the children of
+--          Yashar''el; they shall have inheritance with you among the tribes of Yashar''el)
+--        NT:     ★★ Ephesians 2:12 (strangers from the covenants of promise), ★★ Ephesians 2:19 (no more
+--                strangers and foreigners, but fellowcitizens with the saints), ★ Romans 11:17 (a wild olive
+--                tree, wert graffed in among them) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 56:6-7 (the sons of the stranger that join themselves to Yahuah... them will I
+--                bring to my holy mountain), ★ Isaiah 56:8 (gathereth the outcasts of Yashar''el... yet will
+--                I gather others to him), ★★ Numbers 15:16 (one law and one manner shall be for you, and for
+--                the stranger), ★ Numbers 15:15 (one ordinance both for you... and for the stranger) — THREAD 3
+--   v.10-11,15-20 (the fishers from En-gedi to En-eglaim; the miry places given to salt; the border
+--          place-names of the land — the way of Hethlon, Hamath, Hazar-enan, Tamar, Kadesh, the great sea)
+--          — descriptive detail of the healed sea and the surveyed borders; woven into THREAD 2/3 prose;
+--          no separate add (NT none warranted / Extras none warranted / Tanakh none warranted).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house — NT (Revelation 22, John 7) + Tanakh (Joel 3, Zechariah 14, Psalm 46) [free]
+--      (★★★ the ever-deepening river of life issuing from the sanctuary; the fountain from the house; living
+--       waters out of Jerusalem; the river that makes glad the city of Elohim; rivers of living water)
+--   2. ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored — NT (Revelation 22) + Tanakh (Genesis 2, Psalm 1) [free]
+--      (★★★ the trees of life/healing lining the river, fruit every month, leaves for medicine — Eden''s river
+--       and tree of life returned, the New Jerusalem''s tree of life for the healing of the nations)
+--   3. ezekiel-47-the-stranger-given-inheritance-among-the-tribes — NT (Ephesians 2, Romans 11) + Tanakh (Isaiah 56, Numbers 15) [free]
+--      (★★ the ger/stranger given a FULL inheritance among the tribes of Yashar''el — grafted into the SAME
+--       people, one law for the homeborn and the stranger; the two-house/one-people frame, NOT a separate church)
+--
+-- Framing notes:
+--   ★★★ THE RIVER OF LIFE (THREAD 1): *behold, waters issued out from under the threshold of the house
+--      eastward* (47:1), and as the man measures a thousand cubits at a time the river deepens — *the waters
+--      were to the ankles* (47:3), *to the knees... to the loins* (47:4), until *it was a river that I could
+--      not pass over: for the waters were risen, waters to swim in, a river that could not be passed over*
+--      (47:5). The water of life issues from the Presence, ever-deepening. John fills it forward: *a pure
+--      river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the
+--      Lamb* (Revelation 22:1); and the Formed Son names himself the source — *out of his belly shall flow
+--      rivers of living water* (John 7:38). The prophets sing the same fountain: *a fountain shall come
+--      forth of the house of Yahuah (LORD)* (Joel 3:18); *living waters shall go out from Jerusalem*
+--      (Zechariah 14:8); *there is a river, the streams whereof shall make glad the city of Elohim (God)*
+--      (Psalm 46:4). The river from the sanctuary is the river from the throne.
+--   ★★★ THE TREES OF HEALING — PARADISE RESTORED (THREAD 2): *at the bank of the river were very many trees
+--      on the one side and on the other* (47:7), and *every thing shall live whither the river cometh*
+--      (47:9); *shall grow all trees for meat, whose leaf shall not fade... it shall bring forth new fruit
+--      according to his months, because their waters they issued out of the sanctuary: and the fruit thereof
+--      shall be for meat, and the leaf thereof for medicine* (47:12). This is Eden returned: *the tree of
+--      life also in the midst of the garden* (Genesis 2:9) and *a river went out of Eden to water the
+--      garden* (Genesis 2:10) — the river and the tree of life that man was driven from, come back. The
+--      New Jerusalem answers it exactly: *on either side of the river, was there the tree of life, which
+--      bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for
+--      the healing of the nations* (Revelation 22:2) — the same trees, both banks, monthly fruit, leaves for
+--      healing. And the righteous man is already such a tree: *like a tree planted by the rivers of water...
+--      his leaf also shall not wither* (Psalm 1:3). Paradise lost is paradise restored.
+--   ★★ THE STRANGER''S INHERITANCE (THREAD 3): the borders are drawn — *This shall be the border, whereby ye
+--      shall inherit the land according to the twelve tribes of Yashar''el (Israel)* (47:13) — and then the
+--      ger is given a full portion IN the land: *ye shall divide it by lot for an inheritance unto you, and
+--      to the strangers that sojourn among you... they shall be unto you as born in the country among the
+--      children of Yashar''el (Israel); they shall have inheritance with you among the tribes of Yashar''el
+--      (Israel)* (47:22). The stranger is not a separate people beside Yashar''el but made *as born in the
+--      country*, given inheritance *among the tribes* — grafted into the SAME people. The Torah said it
+--      from the first: *One law and one manner shall be for you, and for the stranger that sojourneth with
+--      you* (Numbers 15:16). Isaiah opens the holy mountain to them: *the sons of the stranger, that join
+--      themselves to Yahuah (LORD)... Even them will I bring to my holy mountain* (Isaiah 56:6-7), the same
+--      Yahuah *which gathereth the outcasts of Yashar''el (Israel)* (Isaiah 56:8). Paul names the mechanism
+--      — the far-off, once *strangers from the covenants of promise* (Ephesians 2:12), are *no more
+--      strangers and foreigners, but fellowcitizens with the saints* (Ephesians 2:19), *graffed in among
+--      them* into the one olive tree (Romans 11:17). The grafted-in are made one with Yashar''el — the
+--      two-house/one-people frame, NEVER a separate church replacing the people.
+--   VERSES WITH NO SEPARATE ADD: v.10-11 (the fishers from En-gedi to En-eglaim; the miry places given to
+--      salt — the healed Dead Sea teeming with fish; woven into THREAD 2 prose), v.15-20 (the border
+--      place-names of the land; woven into THREAD 3 prose). All recorded in the coverage checklist above.
+
+CREATE TEMP VIEW _s308_ezek47_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): the river of life from under the threshold of the house
+    ('canon','ezekiel',47,5,'canon','revelation',22,1,'free',
+      E'*And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). The ever-deepening river of Ezekiel — *it was a river that I could not pass over: for the waters were risen, waters to swim in, a river that could not be passed over* (Ezekiel 47:5) — is the pure river of the water of life John sees, proceeding from the very throne. The waters that issued from under the threshold of the house are the river from the throne of Elohim and of the Lamb.'),
+    ('canon','ezekiel',47,1,'canon','revelation',22,1,'free',
+      E'*And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). The waters *issued out from under the threshold of the house eastward* (Ezekiel 47:1) — out of the sanctuary, the place of the Presence — and John names their source plainly: the throne of Elohim and of the Lamb. The river of life flows from where Yahuah dwells.'),
+    ('canon','ezekiel',47,1,'canon','john',7,38,'free',
+      E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:38). On the last day of the feast of tabernacles the Formed Son names himself the wellspring of the very river Ezekiel saw issuing *from under the threshold of the house* (Ezekiel 47:1) — the living water flows from him and from those who believe on him. The sanctuary the water came from has come in the flesh.'),
+    ('canon','ezekiel',47,1,'canon','joel',3,18,'free',
+      E'*And it shall come to pass in that day, that the mountains shall drop down new wine, and the hills shall flow with milk, and all the rivers of Yahudah (Judah) shall flow with waters, and a fountain shall come forth of the house of Yahuah (LORD), and shall water the valley of Shittim* (Joel 3:18). Joel names the same fountain as Ezekiel — *waters issued out from under the threshold of the house* (Ezekiel 47:1): a fountain coming forth *of the house of Yahuah* to water the dry valley. The river of the day of restoration flows from the house of Yahuah.'),
+    ('canon','ezekiel',47,8,'canon','zechariah',14,8,'free',
+      E'*And it shall be in that day, that living waters shall go out from Jerusalem; half of them toward the former sea, and half of them toward the hinder sea: in summer and in winter shall it be* (Zechariah 14:8). Zechariah sees the same living waters going out and *into the sea: which being brought forth into the sea, the waters shall be healed* (Ezekiel 47:8) — the river from the holy city, flowing year-round to heal the seas. The waters from the sanctuary are the living waters out of Jerusalem.'),
+    ('canon','ezekiel',47,1,'canon','psalms',46,4,'free',
+      E'*There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4). The river that *issued out from under the threshold of the house* (Ezekiel 47:1) is the river that *make[s] glad the city of Elohim*, the holy place of the tabernacles of the Most High. The river and the sanctuary belong together — Yahuah in the midst of his city, and the stream that gladdens it.'),
+
+    -- THREAD 2 (★★★): the trees of healing on both banks — paradise restored
+    ('canon','ezekiel',47,12,'canon','revelation',22,2,'free',
+      E'*In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). John''s vision answers Ezekiel''s point for point — *shall grow all trees for meat, whose leaf shall not fade... it shall bring forth new fruit according to his months... and the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12): the same trees on either side of the river, the same monthly fruit, the same leaves for healing. The trees of life by the sanctuary river are the tree of life in the New Jerusalem.'),
+    ('canon','ezekiel',47,7,'canon','revelation',22,2,'free',
+      E'*On either side of the river, was there the tree of life... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). Ezekiel sees them first: *at the bank of the river were very many trees on the one side and on the other* (Ezekiel 47:7) — trees on both banks of the river of life. What the prophet saw lining the sanctuary river, John sees lining the river of the throne: the tree of life, on either side.'),
+    ('canon','ezekiel',47,12,'canon','genesis',2,9,'free',
+      E'*And out of the ground made Yahuah Elohim (the LORD God) to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil* (Genesis 2:9). The trees by the river — *all trees for meat, whose leaf shall not fade... the fruit thereof shall be for meat, and the leaf thereof for medicine* (Ezekiel 47:12) — are the trees of Eden returned, the tree of life that man was driven from come back. Paradise lost is paradise restored, the tree of life again within reach.'),
+    ('canon','ezekiel',47,12,'canon','genesis',2,10,'free',
+      E'*And a river went out of Eden to water the garden; and from thence it was parted, and became into four heads* (Genesis 2:10). The river *out of the sanctuary* (Ezekiel 47:12), with the trees of life on its banks, is Eden''s river restored — *a river went out of Eden to water the garden*, the very pattern of a life-giving river flowing from the place of the Presence. The garden river and the sanctuary river are one promise: Yahuah dwelling, and life flowing out from him.'),
+    ('canon','ezekiel',47,12,'canon','psalms',1,3,'free',
+      E'*And he shall be like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither; and whatsoever he doeth shall prosper* (Psalm 1:3). The trees by the sanctuary river — *whose leaf shall not fade, neither shall the fruit thereof be consumed* (Ezekiel 47:12) — are the very figure of the man whose *delight is in the law of Yahuah* (Psalm 1:2): a tree by the waters, fruitful in season, the leaf unwithering. The Torah-delighting man is rooted by the river of life.'),
+
+    -- THREAD 3 (★★): the stranger given inheritance among the tribes
+    ('canon','ezekiel',47,22,'canon','ephesians',2,19,'free',
+      E'*Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of Elohim (God)* (Ephesians 2:19). Ezekiel''s promise to the ger — *the strangers that sojourn among you... they shall have inheritance with you among the tribes of Yashar''el (Israel)* (Ezekiel 47:22) — is Paul''s *no more strangers and foreigners, but fellowcitizens*. The stranger is not kept outside as a separate people but made a fellowcitizen, given a portion among the tribes — one people, not a second one.'),
+    ('canon','ezekiel',47,22,'canon','ephesians',2,12,'free',
+      E'*That at that time ye were without Messiah (Christ), being aliens from the commonwealth of Yashar''el (Israel), and strangers from the covenants of promise, having no hope, and without Elohim (God) in the world* (Ephesians 2:12). The strangers Ezekiel brings IN — given *inheritance with you among the tribes of Yashar''el (Israel)* (Ezekiel 47:22) — are the far-off Paul describes: once *aliens from the commonwealth of Yashar''el*, now made nigh. The inheritance among the tribes is exactly the commonwealth of Yashar''el they are brought into.'),
+    ('canon','ezekiel',47,22,'canon','romans',11,17,'free',
+      E'*And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree* (Romans 11:17). The stranger given inheritance *among the tribes of Yashar''el (Israel)* (Ezekiel 47:22) is the wild branch *graffed in among them* — partaking of the SAME root, the one olive tree of Yashar''el. Not a separate tree planted beside, but grafted into the one people, sharing the one inheritance.'),
+    ('canon','ezekiel',47,22,'canon','isaiah',56,7,'free',
+      E'*Even them will I bring to my holy mountain, and make them joyful in my house of prayer: their burnt offerings and their sacrifices shall be accepted upon mine altar; for mine house shall be called an house of prayer for all people* (Isaiah 56:7). The stranger who is made *as born in the country among the children of Yashar''el (Israel)* (Ezekiel 47:22) is the son of the stranger Isaiah brings to the holy mountain — full worship at the altar, a place in the house. The ger is not held at the door but brought all the way in.'),
+    ('canon','ezekiel',47,22,'canon','isaiah',56,6,'free',
+      E'*Also the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD), to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). The stranger given inheritance *among the tribes* (Ezekiel 47:22) is the one who *join[s] himself to Yahuah* — Sabbath-keeping, covenant-holding — joined to the people by the covenant, not standing apart from it. The grafting is into the covenant Torah-life of Yashar''el.'),
+    ('canon','ezekiel',47,23,'canon','isaiah',56,8,'free',
+      E'*Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel) saith, Yet will I gather others to him, beside those that are gathered unto him* (Isaiah 56:8). The word *in what tribe the stranger sojourneth, there shall ye give him his inheritance* (Ezekiel 47:23) is the same gathering Isaiah names — Yahuah who gathers the outcasts of Yashar''el will *gather others to him* into the same fold. The stranger is one of the others gathered to the regathered house, given a tribal portion among them.'),
+    ('canon','ezekiel',47,22,'canon','numbers',15,16,'free',
+      E'*One law and one manner shall be for you, and for the stranger that sojourneth with you* (Numbers 15:16). The full inheritance given the ger — *they shall be unto you as born in the country among the children of Yashar''el (Israel)* (Ezekiel 47:22) — is the Torah''s own principle from the wilderness: one law, one manner, for the homeborn and the stranger alike. The stranger made *as born in the country* lives under the one Torah of the one people.'),
+    ('canon','ezekiel',47,22,'canon','numbers',15,15,'free',
+      E'*One ordinance shall be both for you of the congregation, and also for the stranger that sojourneth with you, an ordinance for ever in your generations: as ye are, so shall the stranger be before Yahuah (LORD)* (Numbers 15:15). *As ye are, so shall the stranger be* is Ezekiel''s *as born in the country among the children of Yashar''el (Israel)* (Ezekiel 47:22) — the stranger set on the same footing as the homeborn before Yahuah. The equal inheritance in the land flows from the equal standing in the covenant.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house',
+       E'The river of life from under the threshold of the house — waters to swim in',
+       E'The prophet is brought back to the door of the house, and there it begins: *behold, waters issued out from under the threshold of the house eastward... and the waters came down from under from the right side of the house, at the south side of the altar* (47:1). The water of life flows out of the sanctuary, from beside the altar, eastward. Then the man with the measuring line leads Ezekiel into it, a thousand cubits at a time, and the river deepens at every measure: *the waters were to the ankles* (47:3), *the waters were to the knees... the waters were to the loins* (47:4), and at last *it was a river that I could not pass over: for the waters were risen, waters to swim in, a river that could not be passed over* (47:5). The river from the Presence cannot be exhausted; it only deepens. The whole canon names its source: *a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) — the waters from under the threshold are the waters from the throne. The Formed Son names himself the spring: standing on the last great day of the feast of tabernacles, *If any man thirst, let him come unto me, and drink. He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:37-38). And the prophets sing the same fountain: *a fountain shall come forth of the house of Yahuah (LORD), and shall water the valley of Shittim* (Joel 3:18); *living waters shall go out from Jerusalem... in summer and in winter shall it be* (Zechariah 14:8); *There is a river, the streams whereof shall make glad the city of Elohim (God), the holy place of the tabernacles of the El Elyon (most High)* (Psalm 46:4). Wherever Yahuah dwells, the river of life flows out.',
+       sv.verse_id, ev.verse_id, 'free', 33150
+  FROM _s308_ezek47_lookup sv, _s308_ezek47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=47 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored',
+       E'The trees of healing on both banks — new fruit every month, the leaf for medicine',
+       E'Where the river goes, death is undone. *These waters issue out toward the east country, and go down into the desert, and go into the sea: which being brought forth into the sea, the waters shall be healed* (47:8) — the river heals even the Dead Sea, *and every thing shall live whither the river cometh* (47:9), the salt waters teeming with fish *as the fish of the great sea, exceeding many* (47:10). And lining both banks stand the trees of life: *at the bank of the river were very many trees on the one side and on the other* (47:7), and *by the river upon the bank thereof, on this side and on that side, shall grow all trees for meat, whose leaf shall not fade, neither shall the fruit thereof be consumed: it shall bring forth new fruit according to his months, because their waters they issued out of the sanctuary: and the fruit thereof shall be for meat, and the leaf thereof for medicine* (47:12). This is Eden returned. The garden had both river and tree of life: *the tree of life also in the midst of the garden* (Genesis 2:9), and *a river went out of Eden to water the garden* (Genesis 2:10) — the river and the tree man was driven from, come back. And the New Jerusalem answers Ezekiel word for word: *In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2) — the same trees, both banks, the monthly fruit, the leaves for healing. The righteous man is already such a tree, rooted by these waters: *like a tree planted by the rivers of water, that bringeth forth his fruit in his season; his leaf also shall not wither* (Psalm 1:3). From the sanctuary river flows the healing of the world, and the tree of life is in reach again.',
+       sv.verse_id, ev.verse_id, 'free', 33153
+  FROM _s308_ezek47_lookup sv, _s308_ezek47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=47 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-47-the-stranger-given-inheritance-among-the-tribes',
+       E'The stranger given inheritance among the tribes — as born in the country',
+       E'The borders of the land are drawn for the returning people — *This shall be the border, whereby ye shall inherit the land according to the twelve tribes of Yashar''el (Israel)* (47:13) — and then comes the word that breaks the wall between insider and outsider: *And it shall come to pass, that ye shall divide it by lot for an inheritance unto you, and to the strangers that sojourn among you, which shall beget children among you: and they shall be unto you as born in the country among the children of Yashar''el (Israel); they shall have inheritance with you among the tribes of Yashar''el (Israel)* (47:22), *in what tribe the stranger sojourneth, there shall ye give him his inheritance* (47:23). The ger is not a guest tolerated at the edge but made *as born in the country*, given a real portion *among the tribes* — grafted into the SAME people, not a separate people beside them. This was the Torah''s heart from the wilderness: *One ordinance shall be both for you of the congregation, and also for the stranger that sojourneth with you... as ye are, so shall the stranger be before Yahuah (LORD)* (Numbers 15:15), *One law and one manner shall be for you, and for the stranger that sojourneth with you* (Numbers 15:16). Isaiah throws the holy mountain open to them: *the sons of the stranger, that join themselves to Yahuah (LORD)... Even them will I bring to my holy mountain, and make them joyful in my house of prayer* (Isaiah 56:6-7), spoken by the same Yahuah *which gathereth the outcasts of Yashar''el (Israel)* and *will gather others to him* (Isaiah 56:8). And Paul names the mechanism: the far-off, once *aliens from the commonwealth of Yashar''el (Israel), and strangers from the covenants of promise* (Ephesians 2:12), are *no more strangers and foreigners, but fellowcitizens with the saints* (Ephesians 2:19) — a *wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree* (Romans 11:17). One root, one olive tree, one inheritance: the grafted-in are made one with Yashar''el, never a separate church replacing the people.',
+       sv.verse_id, ev.verse_id, 'free', 33156
+  FROM _s308_ezek47_lookup sv, _s308_ezek47_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=47 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) — the river that could not be passed over (Ezekiel 47:5) is the river from the throne.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=5
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) — the waters issuing from under the threshold of the house (Ezekiel 47:1) flow from the throne where Yahuah dwells.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=1
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *out of his belly shall flow rivers of living water* (John 7:38) — at the feast of tabernacles the Formed Son names himself the source of the sanctuary river (Ezekiel 47:1).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=1
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★★ *a fountain shall come forth of the house of Yahuah (LORD)* (Joel 3:18) — Joel names the same fountain coming forth of the house as Ezekiel 47:1.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=1
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *living waters shall go out from Jerusalem... in summer and in winter shall it be* (Zechariah 14:8) — the waters that go into the sea and heal it (Ezekiel 47:8) are the living waters out of Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=8
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *There is a river, the streams whereof shall make glad the city of Elohim (God)* (Psalm 46:4) — the river from under the threshold (Ezekiel 47:1) gladdens the city of Elohim, the tabernacles of the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=1
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-river-of-life-from-under-the-threshold-of-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2) — answers Ezekiel 47:12 point for point: both banks, monthly fruit, leaf for healing.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=12
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *on either side of the river, was there the tree of life* (Revelation 22:2) — the very many trees on one side and the other (Ezekiel 47:7) are the tree of life lining the river of the throne.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=7
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *the tree of life also in the midst of the garden* (Genesis 2:9) — the trees for meat and medicine (Ezekiel 47:12) are Eden''s tree of life returned.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=12
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★★ *a river went out of Eden to water the garden* (Genesis 2:10) — the river out of the sanctuary (Ezekiel 47:12) is Eden''s river restored, life flowing from the Presence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=12
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *like a tree planted by the rivers of water... his leaf also shall not wither* (Psalm 1:3) — the unfading-leaf trees by the sanctuary river (Ezekiel 47:12) are the figure of the Torah-delighting man rooted by the water.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=12
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-trees-of-healing-on-both-banks-paradise-restored'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *no more strangers and foreigners, but fellowcitizens with the saints* (Ephesians 2:19) — the stranger given inheritance among the tribes (Ezekiel 47:22) is made a fellowcitizen, not a separate people.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *aliens from the commonwealth of Yashar''el (Israel), and strangers from the covenants of promise* (Ephesians 2:12) — the far-off Ezekiel 47:22 brings into the inheritance among the tribes.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *a wild olive tree, wert graffed in among them, and with them partakest of the root* (Romans 11:17) — the stranger among the tribes (Ezekiel 47:22) is grafted into the SAME olive tree, sharing the one root.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Even them will I bring to my holy mountain, and make them joyful in my house of prayer* (Isaiah 56:7) — the stranger made as born in the country (Ezekiel 47:22) is brought all the way into the house, the altar, the holy mountain.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the sons of the stranger, that join themselves to Yahuah (LORD)... taketh hold of my covenant* (Isaiah 56:6) — the grafted-in stranger (Ezekiel 47:22) joins the covenant Torah-life of Yashar''el, not standing apart from it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *which gathereth the outcasts of Yashar''el (Israel)... Yet will I gather others to him* (Isaiah 56:8) — the stranger given a tribal portion (Ezekiel 47:23) is one of the others gathered to the regathered house.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=23
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *One law and one manner shall be for you, and for the stranger that sojourneth with you* (Numbers 15:16) — the Torah''s own principle behind the stranger made as born in the country (Ezekiel 47:22).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=15 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *as ye are, so shall the stranger be before Yahuah (LORD)* (Numbers 15:15) — the equal inheritance in the land (Ezekiel 47:22) flows from the stranger''s equal standing in the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek47_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=47 AND sv.verse_number=22
+  JOIN _s308_ezek47_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=15 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-47-the-stranger-given-inheritance-among-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_48.sql (Ezekiel 48) -----
+-- Chapter: Ezekiel 48 — ★★ THE CONSUMMATION THAT CLOSES THE BOOK. The allotments of the TWELVE TRIBES,
+-- all given their inheritance together in the land (the two houses — north and south — reunited as one
+-- people, the ch37 two-sticks fulfilled); the holy oblation and the sanctuary in the midst; the city with
+-- TWELVE GATES each named for a tribe; and the city's everlasting name: YAHUAH SHAMMAH — *Yahuah is THERE*
+-- — the Presence dwelling with the restored two-house people for ever. Ezekiel's city draws straight up
+-- into the New Jerusalem of Revelation 21-22.
+-- Tag: ezek48   Temp view: _s308_ezek48_lookup
+-- Sort band: base 33175, step 3 -> threads at 33175, 33178, 33181 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',48,v
+--
+-- Ezekiel 48 coverage:
+--   ★★ v.1-7, 23-29 (Now these are the names of the tribes... Dan... Asher... Naphtali... Manasseh...
+--          Ephraim... Reuben... Yahudah (Judah)... Benjamin... Simeon... Issachar... Zebulun... Gad — ALL
+--          TWELVE TRIBES given their inheritance together in the land; the land divided by lot unto the
+--          tribes of Yashar'el for inheritance, v.29)
+--        NT:     ★★ Revelation 7:4 (sealed an hundred and forty and four thousand of all the tribes of the
+--                children of Yashar'el), ★ Revelation 7:5 (the roll-call of the twelve tribes), ★★ James 1:1
+--                (to the twelve tribes which are scattered abroad) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh two-house weave; no extras forced)
+--        Tanakh: ★★ Ezekiel 37:21-22 (I will make them one nation... no more two nations — the two-sticks
+--                reunion this allotment fulfills), ★★ Genesis 49:28 (all these are the twelve tribes of
+--                Yashar'el) — THREAD 1
+--   vv.8-22 (the holy oblation, the priests' portion, the sons of Zadok, the Levites' portion, the profane
+--          place for the city, the prince's portion; the SANCTUARY in the midst) — the cultic/measured
+--          centre framing; the sanctuary-in-the-midst answered FORWARD in THREAD 3 (Yahuah Shammah / no
+--          temple but Yahuah and the Lamb); not separately threaded (NT none distinct / Extras none / Tanakh
+--          held to the ch37 sanctuary-in-the-midst and THREAD 3). Woven in prose.
+--   ★★ v.30-34 (And these are the goings out of the city... three gates; one gate of Reuben, one gate of
+--          Yahudah (Judah), one gate of Levi... Joseph... Benjamin... Dan... Simeon... Issachar... Zebulun
+--          ... Gad, Asher, Naphtali — the TWELVE GATES each named for a tribe)
+--        NT:     ★★ Revelation 21:12 (twelve gates... names written thereon, which are the names of the
+--                twelve tribes of the children of Yashar'el), ★ Revelation 21:13 (on the east three gates;
+--                on the north three gates...) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: held in prose (Ezekiel's own city is the source; Revelation draws it forward)
+--   ★★★ v.35 (It was round about eighteen thousand measures: and the name of the city from that day shall
+--          be, Yahuah Shammah (The LORD is there))
+--        NT:     ★★★ Revelation 21:3 (the tabernacle of Elohim is with men, and he will dwell with them...
+--                Elohim himself shall be with them, and be their Elohim), ★★ Revelation 22:3 (the throne of
+--                Elohim and of the Lamb shall be in it; and his servants shall serve him), ★★ Revelation
+--                22:4 (they shall see his face), ★★ Revelation 21:22 (the Lord God Almighty and the Lamb
+--                are the temple of it), ★ Revelation 21:23 (the glory of Elohim did lighten it), ★ Matthew
+--                1:23 (Emmanuel... Elohim with us) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 60:19 (Yahuah shall be unto thee an everlasting light), ★ Isaiah 60:20 (Yahuah
+--                shall be thine everlasting light) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-48-the-twelve-tribes-given-their-inheritance-together — NT (Revelation 7, James 1) + Tanakh (Ezekiel 37, Genesis 49) [free]
+--      (★★ ALL TWELVE TRIBES given their portion together — the two houses reunited as one, the ch37 two-sticks fulfilled)
+--   2. ezekiel-48-the-city-with-twelve-gates-named-for-the-tribes — NT (Revelation 21) [free]
+--      (★★ the city's twelve gates each bearing a tribal name — drawn directly into the New Jerusalem)
+--   3. ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there — NT (Revelation 21, Revelation 22, Matthew 1) + Tanakh (Isaiah 60) [free]
+--      (★★★ THE consummation: the city's everlasting name is Yahuah-is-THERE — the Presence with his people for ever)
+--
+-- Framing notes:
+--   ★★ THE TWELVE TRIBES TOGETHER (THREAD 1): *Now these are the names of the tribes* (48:1) — and the
+--      chapter lays out a portion for EVERY tribe, the northern house and the southern house side by side:
+--      Dan, Asher, Naphtali, Manasseh, Ephraim, Reuben, Yahudah (Judah) (48:1-7), then Benjamin, Simeon,
+--      Issachar, Zebulun, Gad (48:23-27), *the land which ye shall divide by lot unto the tribes of
+--      Yashar''el (Israel) for inheritance* (48:29). This IS the two-sticks reunion of Ezekiel 37 made land:
+--      *I will make them one nation in the land... and they shall be no more two nations, neither shall they
+--      be divided into two kingdoms any more at all* (Ezekiel 37:22). The twelve-tribe people restored whole,
+--      *All these are the twelve tribes of Yashar''el (Israel)* (Genesis 49:28). Revelation seals all twelve:
+--      *sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el
+--      (Israel)* (Revelation 7:4), and James writes *to the twelve tribes which are scattered abroad* (James
+--      1:1) — the dispersion gathered home and given their inheritance together. Never replacement; the two
+--      houses made one.
+--   ★★ THE TWELVE GATES (THREAD 2): *the gates of the city shall be after the names of the tribes of
+--      Yashar''el (Israel): three gates northward; one gate of Reuben, one gate of Yahudah (Judah), one gate
+--      of Levi* (48:31), and so round the four sides — twelve gates, each named for a tribe. John's New
+--      Jerusalem draws Ezekiel's city directly: *had twelve gates... and names written thereon, which are
+--      the names of the twelve tribes of the children of Yashar''el (Israel): On the east three gates; on
+--      the north three gates...* (Revelation 21:12-13). The same city, the same twelve-tribe gates.
+--   ★★★ YAHUAH SHAMMAH (THREAD 3, the climax of the whole book): *and the name of the city from that day
+--      shall be, Yahuah Shammah (The LORD is there)* (48:35). The everlasting name of the city is the
+--      Presence itself — *Yahuah is THERE*. The whole framework consummates here: *Behold, the tabernacle of
+--      Elohim (God) is with men, and he will dwell with them... and be their Elohim (God)* (Revelation 21:3);
+--      *the throne of Elohim (God) and of the Lamb shall be in it... And they shall see his face* (Revelation
+--      22:3-4); *the Lord God Almighty and the Lamb are the temple of it* (Revelation 21:22) and *the glory
+--      of Elohim (God) did lighten it* (21:23); Isaiah sang it — *Yahuah (LORD) shall be unto thee an
+--      everlasting light* (Isaiah 60:19); and it begins in the Formed Son taking flesh — *Emmanuel, which
+--      being interpreted is, Elohim (God) with us* (Matthew 1:23). The city's name from that day is Yahuah
+--      dwelling with the restored two-house people for ever.
+--   VERSES WITH NO SEPARATE ADD: vv.8-22 (the holy oblation / the sons of Zadok / the Levites' and prince's
+--      portions / the sanctuary in the midst — the measured cultic centre; the sanctuary-in-the-midst is
+--      answered FORWARD in THREAD 3, where the New Jerusalem has no temple but Yahuah and the Lamb; woven in
+--      prose, no separate row: NT none distinct / Extras none / Tanakh held to ch37 + THREAD 3). All
+--      meaningful blocks recorded in the coverage checklist above; every block carries a thread or is woven.
+
+CREATE TEMP VIEW _s308_ezek48_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): all twelve tribes given their inheritance together — the two houses made one
+    ('canon','ezekiel',48,1,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The allotment that begins *Now these are the names of the tribes* (Ezekiel 48:1) — a portion for every tribe, north and south together — IS this reunion made land: the two kingdoms divided since Solomon are gathered into one nation in one inheritance. The two-sticks promise of ch37 is fulfilled in the twelve-tribe allotment of ch48.'),
+    ('canon','ezekiel',48,1,'canon','ezekiel',37,21,'free',
+      E'*And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). The scattered children gathered *into their own land* are the very tribes given their portions in *the land which ye shall divide by lot unto the tribes of Yashar''el (Israel) for inheritance* (Ezekiel 48:29). The ingathering of ch37 ends in the apportioned inheritance of ch48.'),
+    ('canon','ezekiel',48,29,'canon','genesis',49,28,'free',
+      E'*All these are the twelve tribes of Yashar''el (Israel): and this is it that their father spake unto them, and blessed them; every one according to his blessing he blessed them* (Genesis 49:28). The land *divide(d) by lot unto the tribes of Yashar''el (Israel) for inheritance* (Ezekiel 48:29) is given to *all these... the twelve tribes of Yashar''el (Israel)* whom Jacob blessed — the whole twelve-tribe house, each receiving its portion. What the patriarch foretold over his twelve sons, Ezekiel sees apportioned in the restored land.'),
+    ('canon','ezekiel',48,29,'canon','revelation',7,4,'free',
+      E'*And I heard the number of them which were sealed: and there were sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4). The inheritance *divide(d)... unto the tribes of Yashar''el (Israel)* (Ezekiel 48:29) is the same whole-house people John sees sealed — *of all the tribes of the children of Yashar''el (Israel)*, every tribe numbered. The twelve-tribe people, restored and sealed, given their portion together.'),
+    ('canon','ezekiel',48,1,'canon','revelation',7,5,'free',
+      E'*Of the tribe of Juda were sealed twelve thousand. Of the tribe of Reuben were sealed twelve thousand. Of the tribe of Gad were sealed twelve thousand* (Revelation 7:5). John''s tribe-by-tribe roll-call answers Ezekiel''s tribe-by-tribe allotment — *Now these are the names of the tribes... a portion for Dan... for Asher... for Reuben... for Yahudah (Judah)* (Ezekiel 48:1-7): every tribe named and numbered, the whole house accounted for. The catalogue of the sealed mirrors the catalogue of the inheritance.'),
+    ('canon','ezekiel',48,29,'canon','james',1,1,'free',
+      E'*James, a servant of Elohim (God) and of the Lord Yahusha HaMashiach (Lord Jesus Christ), to the twelve tribes which are scattered abroad, greeting* (James 1:1). The tribes who receive *the land which ye shall divide by lot unto the tribes of Yashar''el (Israel) for inheritance* (Ezekiel 48:29) are the same *twelve tribes which are scattered abroad* — the two-house dispersion. Ezekiel shows the scattered twelve gathered home and apportioned; James writes to them still in dispersion, awaiting that inheritance.'),
+
+    -- THREAD 2 (★★): the city with twelve gates each named for a tribe
+    ('canon','ezekiel',48,31,'canon','revelation',21,12,'free',
+      E'*And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12). John''s New Jerusalem draws Ezekiel''s city directly: *the gates of the city shall be after the names of the tribes of Yashar''el (Israel): three gates northward; one gate of Reuben, one gate of Yahudah (Judah), one gate of Levi* (Ezekiel 48:31). Twelve gates, each bearing a tribal name — the same city, the same twelve-tribe gates written for ever.'),
+    ('canon','ezekiel',48,30,'canon','revelation',21,13,'free',
+      E'*On the east three gates; on the north three gates; on the south three gates; and on the west three gates* (Revelation 21:13). The fourfold arrangement of the gates John sees is Ezekiel''s own — *And these are the goings out of the city on the north side... three gates northward* (Ezekiel 48:30-31), then east, south, and west, three gates to a side. The pattern of the holy city''s twelve tribal gates is one across both visions.'),
+
+    -- THREAD 3 (★★★): the name of the city — YAHUAH SHAMMAH, Yahuah is there
+    ('canon','ezekiel',48,35,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The city''s everlasting name — *the name of the city from that day shall be, Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) — IS this: Yahuah present, dwelling with his people. The book that began in exile, far from the temple, ends with the city whose name is the Presence; John sees that Presence consummated.'),
+    ('canon','ezekiel',48,35,'canon','revelation',22,3,'free',
+      E'*And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). The name *Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) is the throne of Elohim and of the Lamb set in the city — the Presence not merely visiting but enthroned, served for ever. The city''s name is its King''s dwelling.'),
+    ('canon','ezekiel',48,35,'canon','revelation',22,4,'free',
+      E'*And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4). The city named *Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) reaches its end in the face-to-face Presence — *they shall see his face*. Yahuah is not only THERE; his people behold him, his Name on them. The whole hope of the book lands here.'),
+    ('canon','ezekiel',48,35,'canon','revelation',21,22,'free',
+      E'*And I saw no temple therein: for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22). Ezekiel''s closing chapters measured a temple and set *the sanctuary... in the midst* (Ezekiel 48:8) — yet the city''s very name is *Yahuah Shammah (The LORD is there)* (Ezekiel 48:35). John sees what that name means consummated: no separate temple is needed, *for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it*. The Presence is the sanctuary.'),
+    ('canon','ezekiel',48,35,'canon','revelation',21,23,'free',
+      E'*And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). The city *Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) needs no other light — *the glory of Elohim (God) did lighten it*. Where Yahuah is THERE, his glory is the city''s light, the Lamb its lamp.'),
+    ('canon','ezekiel',48,35,'canon','isaiah',60,19,'free',
+      E'*The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* (Isaiah 60:19). Isaiah sang the city Ezekiel names — *Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) — as the place where *Yahuah (LORD) shall be unto thee an everlasting light*. The Presence that names the city is its everlasting light; Revelation 21:23 fills both.'),
+    ('canon','ezekiel',48,35,'canon','matthew',1,23,'free',
+      E'*Behold, a virgin shall be with child, and shall bring forth a son, and they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23). The name *Yahuah Shammah (The LORD is there)* (Ezekiel 48:35) takes flesh in *Emmanuel... Elohim (God) with us* — the Formed Son, Yahuah present among his people. The city''s everlasting name and the Messiah''s name are one promise: God is HERE, with us.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-48-the-twelve-tribes-given-their-inheritance-together',
+       E'Now these are the names of the tribes — all twelve given their inheritance together',
+       E'The closing chapter opens with a roll-call of the whole house: *Now these are the names of the tribes* (48:1), and a portion is named for every tribe in turn, the northern house and the southern house side by side — *a portion for Dan* (48:1), *for Asher* (48:2), *for Naphtali* (48:3), *for Manasseh* (48:4), *for Ephraim* (48:5), *for Reuben* (48:6), *for Yahudah (Judah)* (48:7); and after the holy oblation, *Benjamin shall have a portion* (48:23), *Simeon* (48:24), *Issachar* (48:25), *Zebulun* (48:26), *Gad* (48:27) — *This is the land which ye shall divide by lot unto the tribes of Yashar''el (Israel) for inheritance, and these are their portions, saith Adonai Yahuah (the Lord GOD)* (48:29). This is the two-sticks reunion of Ezekiel 37 made into land. There the promise was spoken: *Behold, I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land: And I will make them one nation in the land upon the mountains of Yashar''el (Israel)... and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:21-22). Here it is apportioned — Ephraim and Yahudah (Judah), the divorced north and the south, given their inheritance in one land as one people. They are *All these... the twelve tribes of Yashar''el (Israel)* whom the patriarch blessed, *every one according to his blessing* (Genesis 49:28). And the whole twelve-tribe house carries forward to the end: John hears *sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4), named tribe by tribe — *Of the tribe of Juda... Of the tribe of Reuben... Of the tribe of Gad* (Revelation 7:5) — and James writes *to the twelve tribes which are scattered abroad* (James 1:1), the dispersion still awaiting this homecoming. Never replacement, never a new people grafted in by confession: the two houses made one, the twelve-tribe people restored whole and given their portion together.',
+       sv.verse_id, ev.verse_id, 'free', 33175
+  FROM _s308_ezek48_lookup sv, _s308_ezek48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=48 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-48-the-city-with-twelve-gates-named-for-the-tribes',
+       E'The city with twelve gates, each named for a tribe — drawn into the New Jerusalem',
+       E'The book''s last picture before the city''s name is its gates: *And these are the goings out of the city on the north side, four thousand and five hundred measures. And the gates of the city shall be after the names of the tribes of Yashar''el (Israel): three gates northward; one gate of Reuben, one gate of Yahudah (Judah), one gate of Levi* (48:30-31), and so round the four sides — *one gate of Joseph, one gate of Benjamin, one gate of Dan* on the east (48:32), *one gate of Simeon, one gate of Issachar, one gate of Zebulun* on the south (48:33), *one gate of Gad, one gate of Asher, one gate of Naphtali* on the west (48:34). Twelve gates, each bearing a tribal name, the whole house written into the very walls of the city. John''s New Jerusalem draws Ezekiel''s city directly: *And had a wall great and high, and had twelve gates, and at the gates twelve angels, and names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel): On the east three gates; on the north three gates; on the south three gates; and on the west three gates* (Revelation 21:12-13). The same city, the same fourfold arrangement, the same twelve-tribe gates — Ezekiel''s vision opening straight into the holy Jerusalem that comes down from Elohim. The twelve tribes are not erased in the consummation; their names are the gates of the eternal city.',
+       sv.verse_id, ev.verse_id, 'free', 33178
+  FROM _s308_ezek48_lookup sv, _s308_ezek48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=48 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there',
+       E'YAHUAH SHAMMAH — and the name of the city from that day shall be, Yahuah is there',
+       E'The whole book — the book of exile, of the glory departing from the temple, of the valley of dry bones, of the measured house — closes on a single name: *It was round about eighteen thousand measures: and the name of the city from that day shall be, Yahuah Shammah (The LORD is there)* (48:35). The city''s everlasting name is the Presence itself — *Yahuah is THERE* — Yahuah dwelling with his restored two-house people for ever. This is the consummation the whole framework reaches toward, and John sees it filled: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The Presence is enthroned and served — *the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him: And they shall see his face* (Revelation 22:3-4). Where Ezekiel measured a sanctuary in the midst, the city named *Yahuah is there* needs no separate temple at the last — *I saw no temple therein: for Yahuah Elohim (the Lord God) Almighty and the Lamb are the temple of it* (Revelation 21:22), *for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). Isaiah sang the same everlasting light: *Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* (Isaiah 60:19). And the name takes flesh in the Formed Son: *they shall call his name Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23). Yahuah Shammah and Emmanuel are one promise — God is HERE, with his people, for ever. The book that opened with the glory leaving ends with the city whose name is the glory present and dwelling, never to depart.',
+       sv.verse_id, ev.verse_id, 'free', 33181
+  FROM _s308_ezek48_lookup sv, _s308_ezek48_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=48 AND ev.verse_number=35
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will make them one nation in the land... no more two nations, neither... divided into two kingdoms any more at all* (Ezekiel 37:22) — the two-sticks reunion of ch37 made land in the ch48 allotment.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=1
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-twelve-tribes-given-their-inheritance-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land* (Ezekiel 37:21) — the ingathering of ch37 ends in the apportioned inheritance of ch48.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=1
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-twelve-tribes-given-their-inheritance-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *All these are the twelve tribes of Yashar''el (Israel)... blessed them; every one according to his blessing* (Genesis 49:28) — the whole twelve-tribe house Jacob blessed, given its portion in the land.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=29
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-twelve-tribes-given-their-inheritance-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *sealed an hundred and forty and four thousand of all the tribes of the children of Yashar''el (Israel)* (Revelation 7:4) — the same whole-house people, every tribe numbered and sealed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=29
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-twelve-tribes-given-their-inheritance-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Of the tribe of Juda... Of the tribe of Reuben... Of the tribe of Gad* (Revelation 7:5) — John''s tribe-by-tribe roll-call answers Ezekiel''s tribe-by-tribe allotment.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=1
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-twelve-tribes-given-their-inheritance-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *to the twelve tribes which are scattered abroad* (James 1:1) — the two-house dispersion still awaiting the homecoming Ezekiel apportions.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=29
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-twelve-tribes-given-their-inheritance-together'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *twelve gates... names written thereon, which are the names of the twelve tribes of the children of Yashar''el (Israel)* (Revelation 21:12) — the New Jerusalem draws Ezekiel 48:31''s tribal gates directly.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=31
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-city-with-twelve-gates-named-for-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *On the east three gates; on the north three gates; on the south three gates; and on the west three gates* (Revelation 21:13) — the fourfold gate-pattern is Ezekiel''s own (48:30-34).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=30
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-city-with-twelve-gates-named-for-the-tribes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the tabernacle of Elohim (God) is with men, and he will dwell with them... and be their Elohim (God)* (Revelation 21:3) — Yahuah Shammah consummated: the Presence dwelling with his people.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3) — the Presence not visiting but enthroned in the city named "Yahuah is there."'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *And they shall see his face; and his name shall be in their foreheads* (Revelation 22:4) — the city named "Yahuah is there" ends in the face-to-face Presence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the Lord God Almighty and the Lamb are the temple of it* (Revelation 21:22) — where Yahuah is THERE, the Presence is the sanctuary; no separate temple needed at the last.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23) — where Yahuah is THERE, his glory is the city''s light.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Yahuah (LORD) shall be unto thee an everlasting light, and thy Elohim (God) thy glory* (Isaiah 60:19) — Isaiah sang the city Ezekiel names: the Presence is its everlasting light.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=60 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Emmanuel, which being interpreted is, Elohim (God) with us* (Matthew 1:23) — Yahuah Shammah takes flesh in the Formed Son; "Yahuah is there" and "God with us" are one promise.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek48_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=48 AND sv.verse_number=35
+  JOIN _s308_ezek48_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-48-the-name-of-the-city-yahuah-shammah-yahuah-is-there'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
