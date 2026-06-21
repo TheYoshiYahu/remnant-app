@@ -12552,6 +12552,1597 @@ SELECT t.id, cr.id, 7, E'★★ *And death and hell were cast into the lake of f
  WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_33.sql (Ezekiel 33) -----
+-- Chapter: Ezekiel 33 — THE WATCHMAN RECOMMISSIONED. If the watchman see the sword come and blow not the
+-- trumpet, the slain man''s blood will I require at the watchman''s hand; Yahuah sets the prophet a watchman
+-- unto the house of Yashar''el (Israel). ★★★ The heart of Yahuah for the wicked: *As I live... I have no
+-- pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye...
+-- for why will ye die, O house of Yashar''el (Israel)?* Present standing, not past record — *the
+-- righteousness of the righteous shall not deliver him in the day of his transgression*; the equal way of
+-- Yahuah. News of Jerusalem''s fall arrives; the people hear the word as a very lovely song but do it not —
+-- the anti-antinomian filter: hearing without doing is self-deception.
+-- Tag: ezek33   Temp view: _s308_ezek33_lookup
+-- Sort band: base 32800, step 3 -> threads at 32800, 32803, 32806, 32809 (4 threads)
+-- Source of EVERY row: 'canon','ezekiel',33,v
+--
+-- Ezekiel 33 coverage:
+--   ★★ v.1-9 (if the watchman see the sword come, and blow not the trumpet... his blood will I require at
+--          the watchman''s hand; I have set thee a watchman unto the house of Yashar''el; if thou dost not
+--          speak to warn the wicked... his blood will I require at thine hand; but thou hast delivered thy
+--          soul)
+--        NT:     ★★ Acts 20:26-27 (I am pure from the blood of all men... I have not shunned to declare
+--                all the counsel of Elohim), ★ Acts 18:6 (your blood be upon your own heads; I am clean),
+--                ★ 2 Timothy 4:2 (preach the word... reprove, rebuke, exhort) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh watchman weave)
+--        Tanakh: ★★ Ezekiel 3:17-19 (the FIRST commission — I have made thee a watchman... his blood will
+--                I require at thine hand) — THREAD 1
+--   ★★★ v.10-11 (As I live, saith Adonai Yahuah, I have no pleasure in the death of the wicked; but that
+--          the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die,
+--          O house of Yashar''el?)
+--        NT:     ★★★ 2 Peter 3:9 (not willing that any should perish, but that all should come to
+--                repentance), ★ 1 Timothy 2:4 (who will have all men to be saved), ★★ Luke 13:3 (except ye
+--                repent, ye shall all likewise perish), ★ Acts 3:19 (repent ye therefore, and be converted)
+--                — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 18:23 (have I any pleasure that the wicked should die?) + ★★ Ezekiel 18:32
+--                (I have no pleasure in the death of him that dieth... turn yourselves, and live ye) —
+--                THREAD 2
+--   ★ v.12-20 (the righteousness of the righteous shall not deliver him in the day of his transgression...
+--          when the wicked turneth from his wickedness... he shall live thereby; yet ye say, The way of
+--          Adonai is not equal... I will judge you every one after his ways)
+--        NT:     ★ Romans 2:6 (who will render to every man according to his deeds), ★ Hebrews 10:38 (if
+--                any man draw back, my soul shall have no pleasure in him) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 18:24 (when the righteous turneth away from his righteousness... he shall die)
+--                + ★ Ezekiel 18:30 (I will judge you... every one according to his ways), ★ 2 Chronicles
+--                15:2 (if ye seek him, he will be found... but if ye forsake him, he will forsake you) —
+--                THREAD 3
+--   v.21-22 (one that had escaped out of Jerusalem came unto me... The city is smitten; my mouth was opened)
+--        NT:     none warranted (the news of Jerusalem''s fall arrives; the prophet''s dumbness ended —
+--                woven in prose; cf. Ezek 24:27, held there)
+--        Extras: none warranted
+--        Tanakh: none separate (the fulfillment of the sign; narrative hinge of the chapter)
+--   v.23-29 (Abraham was one, and he inherited the land: but we are many; ye eat with the blood... and shall
+--          ye possess the land?)
+--        NT:     none warranted (the false claim of bare lineage/possession rebuked — possession is by
+--                covenant-walk, not bloodline-alone-nor-confession-alone; woven in THREAD 3/4 prose)
+--        Extras: none warranted
+--        Tanakh: none forced (the wastes-dwellers'' presumption answered by desolation)
+--   ★★ v.30-32 (thou art unto them as a very lovely song of one that hath a pleasant voice... for they hear
+--          thy words, but they do them not)
+--        NT:     ★★★ James 1:22-23 (be ye doers of the word, and not hearers only, deceiving your own
+--                selves), ★★ Matthew 7:24-27 (the wise man doeth these sayings... the foolish heareth and
+--                doeth not), ★★ Luke 6:46 (why call ye me, Lord, Lord, and do not the things which I say?),
+--                ★ 1 John 2:3-4 (we know him if we keep his commandments) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: held in prose — the love-with-the-mouth/heart-after-covetousness (v.31) is the hearer
+--                without the doer; the measure is the same Torah-doing, not abolished
+--   v.33 (when this cometh to pass... then shall they know that a prophet hath been among them) — the
+--        vindication of the word; woven into THREAD 4 prose; no separate add (NT none / Extras none /
+--        Tanakh none warranted).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand — NT (Acts 20, Acts 18, 2 Timothy 4) + Tanakh (Ezekiel 3) [free]
+--      (★★ the watchman''s charge restated; blow the trumpet or the blood is required; the warner delivers his own soul)
+--   2. ezekiel-33-turn-ye-turn-ye-why-will-ye-die — NT (2 Peter 3, 1 Timothy 2, Luke 13, Acts 3) + Tanakh (Ezekiel 18) [free]
+--      (★★★ Yahuah''s heart for repentance; no pleasure in the death of the wicked; turn ye, turn ye and live)
+--   3. ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him — NT (Romans 2, Hebrews 10) + Tanakh (Ezekiel 18, 2 Chronicles 15) [free]
+--      (★ present standing not past record; the equal way of Yahuah; judged every one after his ways)
+--   4. ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not — NT (James 1, Matthew 7, Luke 6, 1 John 2) [free]
+--      (★★ hearers who delight in the word but will not obey; the anti-antinomian filter — hearing without doing is self-deception)
+--
+-- Framing notes:
+--   ★★ THE WATCHMAN RECOMMISSIONED (THREAD 1): *But if the watchman see the sword come, and blow not the
+--      trumpet, and the people be not warned; if the sword come, and take any person from among them, he is
+--      taken away in his iniquity; but his blood will I require at the watchman''s hand* (33:6); *So thou, O
+--      son of Adam, I have set thee a watchman unto the house of Yashar''el (Israel)... if thou dost not
+--      speak to warn the wicked from his way... but his blood will I require at thine hand. Nevertheless, if
+--      thou warn the wicked... thou hast delivered thy soul* (33:7-9). This restates the first commission of
+--      Ezekiel 3:17-19 — *I have made thee a watchman unto the house of Yashar''el (Israel)... his blood will
+--      I require at thine hand... but thou hast delivered thy soul*. Paul lives the charge: *I am pure from
+--      the blood of all men. For I have not shunned to declare unto you all the counsel of Elohim (God)*
+--      (Acts 20:26-27); *Your blood be upon your own heads; I am clean* (Acts 18:6). And the standing order:
+--      *Preach the word; be instant in season, out of season; reprove, rebuke, exhort* (2 Timothy 4:2).
+--   ★★★ TURN YE, TURN YE (THREAD 2): *As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in
+--      the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your
+--      evil ways; for why will ye die, O house of Yashar''el (Israel)?* (33:11). The same oath Ezekiel swore
+--      before: *Have I any pleasure at all that the wicked should die?* (18:23); *I have no pleasure in the
+--      death of him that dieth... wherefore turn yourselves, and live ye* (18:32). Peter names the heart:
+--      *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9); *who will
+--      have all men to be saved* (1 Timothy 2:4). And the Formed Son makes it urgent: *except ye repent, ye
+--      shall all likewise perish* (Luke 13:3); *Repent ye therefore, and be converted, that your sins may be
+--      blotted out* (Acts 3:19). Repentance — turning — is the way to life, not works of merit; Yahuah''s
+--      whole desire is the turning, not the death.
+--   ★ THE EQUAL WAY OF YAHUAH (THREAD 3): *The righteousness of the righteous shall not deliver him in the
+--      day of his transgression... when the wicked turneth from his wickedness... he shall live thereby. Yet
+--      ye say, The way of Yahuah (Lord) is not equal... O ye house of Yashar''el (Israel), I will judge you
+--      every one after his ways* (33:12,19-20). Present standing, not past record — already said in Ezekiel
+--      18:24,30. Paul: *Who will render to every man according to his deeds* (Romans 2:6); Hebrews: *if any
+--      man draw back, my soul shall have no pleasure in him* (10:38); the Chronicler: *if ye seek him, he
+--      will be found of you; but if ye forsake him, he will forsake you* (2 Chronicles 15:2). The equal way
+--      of Yahuah measures the living walk, not the stored credit — the turning saves, the drawing-back
+--      condemns. (And v.24-29: bare lineage *Abraham was one, and he inherited the land* without the
+--      covenant-walk possesses nothing — never bloodline-alone, never confession-alone.)
+--   ★★ A VERY LOVELY SONG (THREAD 4): *And they come unto thee as the people cometh, and they sit before thee
+--      as my people, and they hear thy words, but they will not do them... And, lo, thou art unto them as a
+--      very lovely song of one that hath a pleasant voice... for they hear thy words, but they do them not*
+--      (33:31-32). THE anti-antinomian filter: delight in the word without obedience is self-deception.
+--      James names it exactly: *But be ye doers of the word, and not hearers only, deceiving your own selves*
+--      (1:22-23). The Formed Son: *whosoever heareth these sayings of mine, and doeth them, I will liken him
+--      unto a wise man... and every one that heareth these sayings of mine, and doeth them not... a foolish
+--      man* (Matthew 7:24,26); *why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I
+--      say?* (Luke 6:46). And the filter stands: *hereby we do know that we know him, if we keep his
+--      commandments. He that saith, I know him, and keepeth not his commandments, is a liar* (1 John 2:3-4).
+--      Hearing the lovely song is not knowing him; doing the word is.
+--   VERSES WITH NO SEPARATE ADD: v.21-22 (the escaped one brings news *The city is smitten* — the sign
+--      fulfilled, the prophet''s mouth opened; narrative hinge, woven in prose), v.23-29 (the wastes-dwellers''
+--      bare-lineage presumption rebuked — possession by covenant-walk, woven in THREAD 3 prose), v.33 (the
+--      word vindicated — *then shall they know that a prophet hath been among them*; woven in THREAD 4).
+--      All recorded; every framework block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the watchman recommissioned — his blood at thine hand
+    ('canon','ezekiel',33,7,'canon','ezekiel',3,17,'free',
+      E'*Son of Adam, I have made thee a watchman unto the house of Yashar''el (Israel): therefore hear the word at my mouth, and give them warning from me* (Ezekiel 3:17). The recommission *So thou, O son of Adam, I have set thee a watchman unto the house of Yashar''el (Israel); therefore thou shalt hear the word at my mouth, and warn them from me* (Ezekiel 33:7) repeats the prophet''s first charge word for word. The watchman''s office is to hear at Yahuah''s mouth and sound the warning to the house of Yashar''el (Israel).'),
+    ('canon','ezekiel',33,8,'canon','ezekiel',3,18,'free',
+      E'*When I say unto the wicked, Thou shalt surely die; and thou givest him not warning, nor speakest to warn the wicked from his wicked way, to save his life; the same wicked man shall die in his iniquity; but his blood will I require at thine hand* (Ezekiel 3:18). The same word is laid on the prophet again — *if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand* (Ezekiel 33:8). The silent watchman shares the guilt of the unwarned dead; the warning is not optional.'),
+    ('canon','ezekiel',33,9,'canon','ezekiel',3,19,'free',
+      E'*Yet if thou warn the wicked, and he turn not from his wickedness, nor from his wicked way, he shall die in his iniquity; but thou hast delivered thy soul* (Ezekiel 3:19). The recommission ends as the first did — *Nevertheless, if thou warn the wicked of his way to turn from it; if he do not turn from his way, he shall die in his iniquity; but thou hast delivered thy soul* (Ezekiel 33:9). The faithful warner is clear of blood whatever the hearer does; the duty is to sound the trumpet, not to compel the turning.'),
+    ('canon','ezekiel',33,8,'canon','acts',20,26,'free',
+      E'*Wherefore I take you to record this day, that I am pure from the blood of all men* (Acts 20:26). Paul speaks as Ezekiel''s watchman cleared of blood — against *his blood will I require at thine hand* (Ezekiel 33:8), the faithful watchman who has warned is *pure from the blood of all men*. He has blown the trumpet and delivered his soul.'),
+    ('canon','ezekiel',33,7,'canon','acts',20,27,'free',
+      E'*For I have not shunned to declare unto you all the counsel of Elohim (God)* (Acts 20:27). The watchman''s charge *I have set thee a watchman unto the house of Yashar''el (Israel)... and warn them from me* (Ezekiel 33:7) is exactly what Paul fulfills — he has *not shunned to declare... all the counsel of Elohim (God)*. To declare the whole counsel and warn from Yahuah''s mouth is the watchman''s office kept.'),
+    ('canon','ezekiel',33,9,'canon','acts',18,6,'free',
+      E'*And when they opposed themselves, and blasphemed, he shook his raiment, and said unto them, Your blood be upon your own heads; I am clean: from henceforth I will go unto the Gentiles* (Acts 18:6). Paul speaks the watchman''s verdict of Ezekiel 33 — having warned and been refused, *but thou hast delivered thy soul* (Ezekiel 33:9): *Your blood be upon your own heads; I am clean*. The warner who has sounded the trumpet is delivered, and the unheeding bear their own blood.'),
+    ('canon','ezekiel',33,7,'canon','2-timothy',4,2,'free',
+      E'*Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine* (2 Timothy 4:2). The watchman set *to hear the word at my mouth, and warn them from me* (Ezekiel 33:7) is the same office Paul charges Timothy with — to *preach the word... reprove, rebuke, exhort*. The trumpet must be blown in season and out; the warning is the watchman''s standing order.'),
+
+    -- THREAD 2 (★★★): turn ye, turn ye — I have no pleasure in the death of the wicked
+    ('canon','ezekiel',33,11,'canon','ezekiel',18,23,'free',
+      E'*Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (Ezekiel 18:23). Ezekiel had already sworn the oath restated in *I have no pleasure in the death of the wicked; but that the wicked turn from his way and live* (Ezekiel 33:11). Yahuah''s whole desire is the turning and the living, never the death of the one who could return.'),
+    ('canon','ezekiel',33,11,'canon','ezekiel',18,32,'free',
+      E'*For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye* (Ezekiel 18:32). The double call *turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 33:11) repeats the very plea of the earlier chapter — *wherefore turn yourselves, and live ye*. The same heart, the same summons: turn, and do not die.'),
+    ('canon','ezekiel',33,11,'canon','2-peter',3,9,'free',
+      E'*Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). Peter names the heart Ezekiel reveals — *I have no pleasure in the death of the wicked; but that the wicked turn from his way and live* (Ezekiel 33:11): Yahuah is *not willing that any should perish, but that all should come to repentance*. The turning is the whole aim; the patience of Yahuah is room to turn.'),
+    ('canon','ezekiel',33,11,'canon','1-timothy',2,4,'free',
+      E'*Who will have all men to be saved, and to come unto the knowledge of the truth* (1 Timothy 2:4). The oath *As I live... I have no pleasure in the death of the wicked; but that the wicked turn from his way and live* (Ezekiel 33:11) is the same will Paul names — Yahuah *will have all men to be saved*. The death of the wicked is no pleasure to him; salvation and the knowledge of the truth are.'),
+    ('canon','ezekiel',33,11,'canon','luke',13,3,'free',
+      E'*I tell you, Nay: but, except ye repent, ye shall all likewise perish* (Luke 13:3). The plea *turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 33:11) is the Formed Son''s own warning — *except ye repent, ye shall all likewise perish*. The turning is the only way past death; to refuse to turn is to choose to die.'),
+    ('canon','ezekiel',33,11,'canon','acts',3,19,'free',
+      E'*Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of Yahuah (Lord)* (Acts 3:19). Peter''s call answers Ezekiel''s plea — *turn ye, turn ye from your evil ways... for why will ye die?* (Ezekiel 33:11): *Repent ye therefore, and be converted, that your sins may be blotted out*. The turning brings the blotting-out and the refreshing; the death is undone in the repentance.'),
+
+    -- THREAD 3 (★): the righteousness of the righteous shall not deliver him — the equal way of Yahuah
+    ('canon','ezekiel',33,12,'canon','ezekiel',18,24,'free',
+      E'*But when the righteous turneth away from his righteousness, and committeth iniquity... All his righteousness that he hath done shall not be mentioned: in his trespass that he hath trespassed... in them shall he die* (Ezekiel 18:24). The rule *the righteousness of the righteous shall not deliver him in the day of his transgression* (Ezekiel 33:12) is the same word of the earlier chapter — stored righteousness does not cover present iniquity. It is the living walk, not the past record, that stands.'),
+    ('canon','ezekiel',33,20,'canon','ezekiel',18,30,'free',
+      E'*Therefore I will judge you, O house of Yashar''el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30). The verdict *O ye house of Yashar''el (Israel), I will judge you every one after his ways* (Ezekiel 33:20) repeats it — each judged by his own ways, and the call to turn so iniquity is not the ruin. The equal way of Yahuah weighs the present walk.'),
+    ('canon','ezekiel',33,20,'canon','romans',2,6,'free',
+      E'*Who will render to every man according to his deeds* (Romans 2:6). Paul states the equal way of Yahuah that Ezekiel defends — *I will judge you every one after his ways* (Ezekiel 33:20): Yahuah *will render to every man according to his deeds*. The way of Yahuah is equal precisely because it measures each one''s actual deeds, not bare lineage nor stored credit.'),
+    ('canon','ezekiel',33,13,'canon','hebrews',10,38,'free',
+      E'*Now the just shall live by faith: but if any man draw back, my soul shall have no pleasure in him* (Hebrews 10:38). The warning *if he trust to his own righteousness, and commit iniquity, all his righteousnesses shall not be remembered* (Ezekiel 33:13) is the same drawing-back Hebrews names — *if any man draw back, my soul shall have no pleasure in him*. Past faith or righteousness does not hold the one who turns away; the living walk must continue.'),
+    ('canon','ezekiel',33,12,'canon','2-chronicles',15,2,'free',
+      E'*And he went out to meet Asa... if ye seek him, he will be found of you; but if ye forsake him, he will forsake you* (2 Chronicles 15:2). The principle of present standing — *neither shall the righteous be able to live for his righteousness in the day that he sinneth* (Ezekiel 33:12) — is the same covenant rule Azariah gives Asa: the relationship holds while the seeking holds, and the forsaking forfeits it. Not stored record, but present walk.'),
+
+    -- THREAD 4 (★★): a very lovely song — they hear thy words, but they do them not
+    ('canon','ezekiel',33,32,'canon','james',1,22,'free',
+      E'*But be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22). James names the very deception of Ezekiel 33 — *they hear thy words, but they do them not* (Ezekiel 33:32): to be a hearer only, not a doer, is *deceiving your own selves*. The lovely song delighted in but not obeyed is self-deception, not knowledge of Yahuah.'),
+    ('canon','ezekiel',33,32,'canon','james',1,23,'free',
+      E'*For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass* (James 1:23). The people who *hear thy words, but they do them not* (Ezekiel 33:32) are James''s hearer-not-doer, who glances in the glass and forgets. Hearing the word as a pleasant song changes nothing; only the doing abides.'),
+    ('canon','ezekiel',33,31,'canon','matthew',7,24,'free',
+      E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). Against those who *sit before thee as my people, and they hear thy words, but they will not do them* (Ezekiel 33:31), the Formed Son sets the wise man who *heareth these sayings of mine, and doeth them*. The hearing that saves is the hearing that does; the house stands on the doing.'),
+    ('canon','ezekiel',33,32,'canon','matthew',7,26,'free',
+      E'*And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand* (Matthew 7:26). The hearers who treat the word as *a very lovely song... for they hear thy words, but they do them not* (Ezekiel 33:32) are the foolish man who *heareth these sayings of mine, and doeth them not*. The pleasant voice is the sand; when the flood comes, hearing without doing falls.'),
+    ('canon','ezekiel',33,31,'canon','luke',6,46,'free',
+      E'*And why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I say?* (Luke 6:46). The people who come *as my people* and *shew much love* with the mouth while *their heart goeth after their covetousness* (Ezekiel 33:31) are answered by the Formed Son''s question — *why call ye me, Lord, Lord, and do not the things which I say?* Honoring with the lips while refusing the doing is the same emptiness.'),
+    ('canon','ezekiel',33,31,'canon','1-john',2,3,'free',
+      E'*And hereby we do know that we know him, if we keep his commandments* (1 John 2:3). The hearers who *hear thy words, but they will not do them* (Ezekiel 33:31) fail the filter John gives: knowing him is bound to keeping his commandments. The lovely song heard and not done is not knowledge of Yahuah; the doing is.'),
+    ('canon','ezekiel',33,32,'canon','1-john',2,4,'free',
+      E'*He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:4). Those for whom the word is *a very lovely song... for they hear thy words, but they do them not* (Ezekiel 33:32) are exactly the one who claims to know him yet *keepeth not his commandments*. Delight in the word without obedience is the liar''s claim; the truth is in the doer.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand',
+       E'I have set thee a watchman unto the house of Yashar''el — his blood at thine hand',
+       E'The chapter opens by restating the watchman''s charge that first came in chapter 3. Yahuah lays out the figure: *When I bring the sword upon a land, if the people of the land take a man of their coasts, and set him for their watchman: If when he seeth the sword come upon the land, he blow the trumpet, and warn the people; Then whosoever heareth the sound of the trumpet, and taketh not warning... his blood shall be upon his own head* (33:2-4). But the silent watchman bears the guilt: *But if the watchman see the sword come, and blow not the trumpet, and the people be not warned; if the sword come, and take any person from among them, he is taken away in his iniquity; but his blood will I require at the watchman''s hand* (33:6). Then the application: *So thou, O son of Adam, I have set thee a watchman unto the house of Yashar''el (Israel)... if thou dost not speak to warn the wicked from his way, that wicked man shall die in his iniquity; but his blood will I require at thine hand. Nevertheless, if thou warn the wicked of his way to turn from it; if he do not turn from his way, he shall die in his iniquity; but thou hast delivered thy soul* (33:7-9). This is the lateral echo of the prophet''s first commission: *Son of Adam, I have made thee a watchman unto the house of Yashar''el (Israel)... his blood will I require at thine hand... but thou hast delivered thy soul* (Ezekiel 3:17-19). Paul lives the watchman''s office cleared of blood: *Wherefore I take you to record this day, that I am pure from the blood of all men. For I have not shunned to declare unto you all the counsel of Elohim (God)* (Acts 20:26-27); and to the refusing: *Your blood be upon your own heads; I am clean* (Acts 18:6). The standing order remains: *Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine* (2 Timothy 4:2). The watchman cannot save by warning alone, but by warning he delivers his own soul — and the unwarned blood is required at the silent hand.',
+       sv.verse_id, ev.verse_id, 'free', 32800
+  FROM _s308_ezek33_lookup sv, _s308_ezek33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=33 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-33-turn-ye-turn-ye-why-will-ye-die',
+       E'Turn ye, turn ye from your evil ways — for why will ye die, O house of Yashar''el?',
+       E'When the people answer the watchman with despair — *If our transgressions and our sins be upon us, and we pine away in them, how should we then live?* (33:10) — Yahuah swears the heart of the whole framework: *Say unto them, As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar''el (Israel)?* (33:11). This is the same oath Ezekiel swore before: *Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (18:23); *For I have no pleasure in the death of him that dieth... wherefore turn yourselves, and live ye* (18:32). The New Testament names the same heart: *Yahuah (Lord) is not slack concerning his promise... not willing that any should perish, but that all should come to repentance* (2 Peter 3:9); *Who will have all men to be saved, and to come unto the knowledge of the truth* (1 Timothy 2:4). And the Formed Son makes the turning urgent: *except ye repent, ye shall all likewise perish* (Luke 13:3); *Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of Yahuah (Lord)* (Acts 3:19). The way past death is not a stored merit nor a despairing resignation — it is the turning. Yahuah''s whole desire is the turning and the living: turn ye, turn ye, and why will ye die?',
+       sv.verse_id, ev.verse_id, 'free', 32803
+  FROM _s308_ezek33_lookup sv, _s308_ezek33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=33 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him',
+       E'The righteousness of the righteous shall not deliver him — the equal way of Yahuah',
+       E'The turning of chapter 11 is grounded in a rule of judgment: present standing, not past record. *The righteousness of the righteous shall not deliver him in the day of his transgression: as for the wickedness of the wicked, he shall not fall thereby in the day that he turneth from his wickedness... When I shall say to the righteous, that he shall surely live; if he trust to his own righteousness, and commit iniquity, all his righteousnesses shall not be remembered; but for his iniquity that he hath committed, he shall die for it* (33:12-13). And the other way: *if he turn from his sin, and do that which is lawful and right... he shall surely live, he shall not die* (33:14-15). When the people protest *The way of Yahuah (Lord) is not equal*, the answer comes twice: *When the righteous turneth from his righteousness, and committeth iniquity, he shall even die thereby. But if the wicked turn from his wickedness, and do that which is lawful and right, he shall live thereby... O ye house of Yashar''el (Israel), I will judge you every one after his ways* (33:18-20). This is the very word of Ezekiel 18: *when the righteous turneth away from his righteousness... in them shall he die* (18:24); *I will judge you, O house of Yashar''el (Israel), every one according to his ways... Repent, and turn yourselves* (18:30). Paul states the equal way plainly: *Who will render to every man according to his deeds* (Romans 2:6); Hebrews names the drawing-back: *if any man draw back, my soul shall have no pleasure in him* (10:38); and the Chronicler gives the covenant rule: *if ye seek him, he will be found of you; but if ye forsake him, he will forsake you* (2 Chronicles 15:2). The way of Yahuah is equal precisely because it weighs the living walk, not the stored credit — the same reason the wastes-dwellers'' boast (*Abraham was one, and he inherited the land: but we are many; the land is given us for inheritance*, 33:24) fails: bare lineage without the covenant-walk possesses nothing.',
+       sv.verse_id, ev.verse_id, 'free', 32806
+  FROM _s308_ezek33_lookup sv, _s308_ezek33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=33 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not',
+       E'A very lovely song — for they hear thy words, but they do them not',
+       E'The chapter closes on the people who delight in the word but will not obey it: *Also, thou son of Adam, the children of thy people still are talking against thee by the walls and in the doors of the houses... Come, I pray you, and hear what is the word that cometh forth from Yahuah (LORD). And they come unto thee as the people cometh, and they sit before thee as my people, and they hear thy words, but they will not do them: for with their mouth they shew much love, but their heart goeth after their covetousness. And, lo, thou art unto them as a very lovely song of one that hath a pleasant voice, and can play well on an instrument: for they hear thy words, but they do them not* (33:30-32). They make the prophet a concert; they relish the word as music and never do it. This is the anti-antinomian filter exactly. James names the deception: *But be ye doers of the word, and not hearers only, deceiving your own selves. For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass* (James 1:22-23). The Formed Son draws the two houses: *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock... And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand* (Matthew 7:24,26) — when the flood comes, the lovely song falls. And the lips-without-doing: *why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I say?* (Luke 6:46). The filter stands: *hereby we do know that we know him, if we keep his commandments. He that saith, I know him, and keepeth not his commandments, is a liar, and the truth is not in him* (1 John 2:3-4). Hearing the pleasant voice is not knowing Yahuah; doing the word is. And the warning lands: *when this cometh to pass, (lo, it will come,) then shall they know that a prophet hath been among them* (33:33) — the word they would not do is vindicated when it comes true.',
+       sv.verse_id, ev.verse_id, 'free', 32809
+  FROM _s308_ezek33_lookup sv, _s308_ezek33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=33 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I have made thee a watchman unto the house of Yashar''el (Israel)* (Ezekiel 3:17) — the FIRST commission, restated word for word in 33:7; hear at Yahuah''s mouth and warn.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=7
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *his blood will I require at thine hand* (Ezekiel 3:18) — the silent watchman shares the guilt of the unwarned dead; the same word laid on the prophet again in 33:8.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=8
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *if thou warn the wicked... thou hast delivered thy soul* (Ezekiel 3:19) — the faithful warner is clear of blood whatever the hearer does; the recommission ends as the first did (33:9).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=9
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I am pure from the blood of all men* (Acts 20:26) — Paul speaks as the watchman cleared of blood; against *his blood will I require at thine hand* (33:8), the warner who has sounded the trumpet is clean.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=8
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=20 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I have not shunned to declare unto you all the counsel of Elohim (God)* (Acts 20:27) — to declare the whole counsel and warn from Yahuah''s mouth is the watchman''s office of 33:7 kept.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=7
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=20 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Your blood be upon your own heads; I am clean* (Acts 18:6) — having warned and been refused, the warner is delivered (33:9) and the unheeding bear their own blood.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=9
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Preach the word... reprove, rebuke, exhort* (2 Timothy 4:2) — the trumpet must be blown in season and out; the watchman''s standing order (33:7).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=7
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-i-have-set-thee-a-watchman-his-blood-at-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Have I any pleasure at all that the wicked should die?* (Ezekiel 18:23) — the same oath Ezekiel swore before; Yahuah''s desire is the turning and the living, restated in 33:11.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=11
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-turn-ye-turn-ye-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I have no pleasure in the death of him that dieth... wherefore turn yourselves, and live ye* (Ezekiel 18:32) — the very plea repeated in *turn ye, turn ye... for why will ye die?* (33:11).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=11
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-turn-ye-turn-ye-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9) — Peter names the heart of 33:11; the turning is the whole aim, the patience of Yahuah is room to turn.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=11
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-turn-ye-turn-ye-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Who will have all men to be saved* (1 Timothy 2:4) — the death of the wicked is no pleasure to him (33:11); salvation and the knowledge of the truth are.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=11
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-turn-ye-turn-ye-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *except ye repent, ye shall all likewise perish* (Luke 13:3) — the Formed Son makes the turning urgent; the only way past death (33:11).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=11
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=13 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-turn-ye-turn-ye-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Repent ye therefore, and be converted, that your sins may be blotted out* (Acts 3:19) — Peter''s call answers *turn ye, turn ye* (33:11); the turning brings the blotting-out and the refreshing.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=11
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-turn-ye-turn-ye-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *when the righteous turneth away from his righteousness... in them shall he die* (Ezekiel 18:24) — stored righteousness does not cover present iniquity; the rule of 33:12.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=12
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will judge you... every one according to his ways... Repent, and turn yourselves* (Ezekiel 18:30) — each judged by his own ways; the verdict of 33:20.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Who will render to every man according to his deeds* (Romans 2:6) — the equal way of Yahuah measures each one''s actual deeds (33:20), not lineage nor stored credit.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *if any man draw back, my soul shall have no pleasure in him* (Hebrews 10:38) — past faith does not hold the one who turns away; the warning of 33:13.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=13
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *if ye seek him, he will be found of you; but if ye forsake him, he will forsake you* (2 Chronicles 15:2) — the relationship holds while the seeking holds; present walk, not stored record (33:12).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=12
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-the-righteousness-of-the-righteous-shall-not-deliver-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22) — James names the very deception of 33:32; the lovely song delighted in but not obeyed is self-deception.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=32
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *a hearer of the word, and not a doer... beholding his natural face in a glass* (James 1:23) — the hearer-not-doer of 33:32 glances and forgets; only the doing abides.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=32
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *whosoever heareth these sayings of mine, and doeth them... a wise man, which built his house upon a rock* (Matthew 7:24) — the hearing that saves is the hearing that does; against those who hear but will not do (33:31).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=31
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *heareth these sayings of mine, and doeth them not... a foolish man, which built his house upon the sand* (Matthew 7:26) — the pleasant voice is the sand (33:32); when the flood comes, hearing without doing falls.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=32
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I say?* (Luke 6:46) — the lips-without-doing of 33:31; honoring with the mouth while refusing the doing is the same emptiness.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=31
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *hereby we do know that we know him, if we keep his commandments* (1 John 2:3) — the lovely song heard and not done (33:31) is not knowledge of Yahuah; the doing is.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=31
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *He that saith, I know him, and keepeth not his commandments, is a liar* (1 John 2:4) — delight in the word without obedience (33:32) is the liar''s claim; the truth is in the doer.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=33 AND sv.verse_number=32
+  JOIN _s308_ezek33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-33-a-very-lovely-song-they-hear-but-do-them-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_34.sql (Ezekiel 34) -----
+-- Chapter: Ezekiel 34 — ★★★ THE SHEPHERD KEYSTONE (partner to Ezekiel 37). WOE to the false shepherds
+-- of Yashar''el (Israel) that feed THEMSELVES and not the flock — the diseased not strengthened, the lost
+-- not sought, ruled with force and cruelty, the sheep scattered for want of a shepherd. Then the turn:
+-- *Behold, I, even I, will both search my sheep, and seek them out* — Yahuah HIMSELF the Shepherd who
+-- regathers the scattered two-house flock, feeds them in a good pasture, binds up the broken, judges
+-- between the fat bullies and the lean. He sets up ONE shepherd over them, *my servant David* the
+-- prince — and makes a *covenant of peace*, dwelling with his flock who *are men, and I am your Elohim*.
+-- Yahuah the Shepherd is the FORMED Son who took flesh (*I am the good shepherd*).
+-- Tag: ezek34   Temp view: _s308_ezek34_lookup
+-- Sort band: base 32825, step 3 -> 32825, 32828, 32831, 32834, 32837 (5 threads)
+-- Source of EVERY row: 'canon','ezekiel',34,v
+--
+-- Ezekiel 34 coverage:
+--   v.1 (the word of Yahuah came) — formula; no separate add (NT/Extras/Tanakh none warranted)
+--   ★★ v.2-6 (Woe be to the shepherds of Yashar''el that do feed themselves... the diseased have ye not
+--          strengthened... neither sought that which was lost; but with force and with cruelty have ye
+--          ruled them... they were scattered, because there is no shepherd)
+--        NT:     ★★ John 10:12-13 (the hireling... leaveth the sheep... careth not for the sheep),
+--                ★ Matthew 9:36 (the multitude... scattered abroad, as sheep having no shepherd) — THREAD 1
+--        Extras: none warranted (clean prophetic covenant-lawsuit weave)
+--        Tanakh: ★★ Jeremiah 23:1-2 (Woe be unto the pastors that destroy and scatter the sheep of my
+--                pasture), ★ Zechariah 11:17 (Woe to the idol shepherd that leaveth the flock) — THREAD 1
+--   v.7-10 (ye shepherds, hear the word of Yahuah; I am against the shepherds; I will require my flock
+--          at their hand) — the verdict on the false shepherds; woven into THREAD 1 prose; no separate add
+--   ★★★ v.11-16 (Behold, I, even I, will both search my sheep, and seek them out... will deliver them out
+--          of all places where they have been scattered... I will feed them in a good pasture... I will
+--          seek that which was lost, and bring again that which was driven away, and will bind up that
+--          which was broken)
+--        NT:     ★★★ John 10:11 (I am the good shepherd: the good shepherd giveth his life for the sheep),
+--                ★★★ John 10:14 (I am the good shepherd, and know my sheep), ★★★ John 10:16 (other sheep I
+--                have... one fold, and one shepherd), ★★ Luke 15:4 (go after that which is lost, until he
+--                find it), ★ Luke 15:5 (he layeth it on his shoulders, rejoicing), ★ Luke 15:6 (Rejoice
+--                with me; for I have found my sheep which was lost), ★★ Luke 19:10 (the Son of Adam is come
+--                to seek and to save that which was lost), ★★ 1 Peter 2:25 (returned unto the Shepherd and
+--                Bishop of your souls) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 23:1 (Yahuah Ra''ah, The LORD is my shepherd; I shall not want), ★ Psalm 23:2
+--                (he maketh me to lie down in green pastures), ★ Psalm 23:3 (He restoreth my soul) — THREAD 2
+--   ★ v.17-22 (I judge between cattle and cattle, between the rams and the he goats... ye have thrust with
+--          side and with shoulder... till ye have scattered them abroad; Therefore will I save my flock)
+--        NT:     ★ Matthew 25:32 (he shall separate them... as a shepherd divideth his sheep from the
+--                goats), ★ Matthew 25:33 (the sheep on his right hand, the goats on the left), ★ Matthew
+--                25:40 (Inasmuch as ye have done it unto one of the least of these), ★ Matthew 25:45
+--                (Inasmuch as ye did it not to one of the least of these) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: none warranted distinct (the judgment-within-the-flock weave held in NT)
+--   ★★★ v.23-24 (And I will set up one shepherd over them, and he shall feed them, even my servant David...
+--          and my servant David a prince among them)
+--        NT:     ★★ John 10:11 (the good shepherd giveth his life for the sheep — carried in THREAD 2;
+--                here the ONE shepherd David), ★ Hebrews 13:20 (that great shepherd of the sheep), ★ 1
+--                Peter 5:4 (when the chief Shepherd shall appear), ★ Luke 1:32 (the throne of his father
+--                David) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 37:24 (David my servant shall be king over them... one shepherd — lateral, the
+--                same one Shepherd) — THREAD 4
+--   ★★ v.25-31 (a covenant of peace... they shall dwell safely in the wilderness... ye my flock, the flock
+--          of my pasture, are men, and I am your Elohim)
+--        NT:     ★★ Revelation 7:16 (They shall hunger no more, neither thirst any more), ★★ Revelation
+--                7:17 (the Lamb... shall feed them, and shall lead them unto living fountains of waters) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 37:26 (the everlasting covenant of peace — lateral), ★ Isaiah 11:6 (the wolf
+--                shall dwell with the lamb), ★ Isaiah 11:9 (they shall not hurt nor destroy in all my holy
+--                mountain), ★ Leviticus 26:6 (I will give peace in the land) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-34-woe-to-the-shepherds-that-feed-themselves — NT (John 10, Matthew 9) + Tanakh (Jeremiah 23, Zechariah 11) [free]
+--      (★★ the false shepherds/rulers who exploit instead of feed; the flock scattered for want of a shepherd)
+--   2. ezekiel-34-behold-i-even-i-will-seek-out-my-sheep — NT (John 10, Luke 15, Luke 19, 1 Peter 2) + Tanakh (Psalm 23) [free]
+--      (★★★ Yahuah HIMSELF the Shepherd who seeks the scattered two-house flock — the Formed Son who took flesh)
+--   3. ezekiel-34-i-judge-between-the-fat-and-the-lean — NT (Matthew 25) [free]
+--      (★ Yahuah judges within the flock — the fat bullies separated from the oppressed sheep)
+--   4. ezekiel-34-one-shepherd-my-servant-david — NT (John 10, Hebrews 13, 1 Peter 5, Luke 1) + Tanakh (Ezekiel 37) [free]
+--      (★★★ the one Davidic Shepherd-King set over the reunited flock — partner to Ezekiel 37:24)
+--   5. ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture — NT (Revelation 7) + Tanakh (Ezekiel 37, Isaiah 11, Leviticus 26) [free]
+--      (★★ the covenant of peace; Yahuah dwelling with his flock who are men, and he their Elohim)
+--
+-- Framing notes:
+--   ★★ THE FALSE SHEPHERDS (THREAD 1): *Woe be to the shepherds of Yashar''el (Israel) that do feed
+--      themselves! should not the shepherds feed the flocks?* (34:2) — the rulers and priests who exploit
+--      instead of feed: *The diseased have ye not strengthened... neither have ye sought that which was
+--      lost; but with force and with cruelty have ye ruled them. And they were scattered, because there is
+--      no shepherd* (34:4-5). Jeremiah cries the same woe — *Woe be unto the pastors that destroy and
+--      scatter the sheep of my pasture* (Jer 23:1); Zechariah names the worthless one — *Woe to the idol
+--      shepherd that leaveth the flock* (Zech 11:17). The Formed Son sets the contrast: *he that is an
+--      hireling... seeth the wolf coming, and leaveth the sheep... and careth not for the sheep* (John
+--      10:12-13); and he sees the cost — *the multitudes... were scattered abroad, as sheep having no
+--      shepherd* (Matt 9:36). The shepherds are judged: *I am against the shepherds; and I will require my
+--      flock at their hand* (34:10).
+--   ★★★ I, EVEN I, WILL SEEK MY SHEEP (THREAD 2, the heart of the chapter): against the failed shepherds,
+--      Yahuah takes the office himself — *Behold, I, even I, will both search my sheep, and seek them out*
+--      (34:11), *so will I seek out my sheep, and will deliver them out of all places where they have been
+--      scattered* (34:12), *I will feed them in a good pasture* (34:14), *I will seek that which was lost,
+--      and bring again that which was driven away, and will bind up that which was broken* (34:16). This is
+--      the two-house regathering — the scattered flock sought from every place. And the Shepherd who speaks
+--      it takes flesh: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John
+--      10:11), *other sheep I have, which are not of this fold... one fold, and one shepherd* (John 10:16),
+--      *go after that which is lost, until he find it... he layeth it on his shoulders, rejoicing* (Luke
+--      15:4-5), *the Son of Adam is come to seek and to save that which was lost* (Luke 19:10), *returned
+--      unto the Shepherd and Bishop of your souls* (1 Pet 2:25). David sang it: *Yahuah Ra''ah (The LORD is
+--      my shepherd); I shall not want... He restoreth my soul* (Ps 23:1,3). Yahuah the Shepherd is the
+--      FORMED Son, Yahuah who has a Father, come in flesh to seek the lost.
+--   ★ I JUDGE BETWEEN THE FAT AND THE LEAN (THREAD 3): *Behold, I judge between cattle and cattle, between
+--      the rams and the he goats* (34:17) — the bullies who *thrust with side and with shoulder, and pushed
+--      all the diseased... till ye have scattered them abroad* (34:21) are separated from the oppressed,
+--      *Therefore will I save my flock* (34:22). The Son of Adam does the same separation at the last:
+--      *he shall separate them one from another, as a shepherd divideth his sheep from the goats* (Matt
+--      25:32), and the measure is how the least were treated — *Inasmuch as ye have done it unto one of the
+--      least of these my brethren, ye have done it unto me* (Matt 25:40); *Inasmuch as ye did it not to one
+--      of the least of these, ye did it not to me* (Matt 25:45). The flock is judged; the fat are weighed
+--      by the lean.
+--   ★★★ ONE SHEPHERD, MY SERVANT DAVID (THREAD 4): *And I will set up one shepherd over them, and he shall
+--      feed them, even my servant David; he shall feed them, and he shall be their shepherd* (34:23), *and
+--      my servant David a prince among them* (34:24). The same word stands in the partner chapter — *David
+--      my servant shall be king over them; and they all shall have one shepherd* (Ezek 37:24). The one
+--      Shepherd lays down his life — *the good shepherd giveth his life for the sheep* (John 10:11); he is
+--      *that great shepherd of the sheep* (Heb 13:20) and *the chief Shepherd* (1 Pet 5:4); given *the
+--      throne of his father David* (Luke 1:32). The one Davidic Shepherd-King over the reunited flock.
+--   ★★ A COVENANT OF PEACE (THREAD 5): *And I will make with them a covenant of peace... and they shall
+--      dwell safely in the wilderness, and sleep in the woods* (34:25), and the formula closes the chapter:
+--      *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (34:31). The same
+--      everlasting covenant of peace seals Ezekiel 37 — *I will make a covenant of peace with them; it
+--      shall be an everlasting covenant* (Ezek 37:26). The peace is creation healed — *The wolf also shall
+--      dwell with the lamb* (Isa 11:6), *They shall not hurt nor destroy in all my holy mountain* (Isa
+--      11:9); the Torah promise of safety — *I will give peace in the land* (Lev 26:6); and the Lamb-
+--      Shepherd at the consummation — *They shall hunger no more, neither thirst any more* (Rev 7:16), *the
+--      Lamb... shall feed them, and shall lead them unto living fountains of waters* (Rev 7:17).
+--   VERSES WITH NO SEPARATE ADD: v.1 (the word-came formula); v.7-10 (the verdict on the false shepherds
+--      — woven into THREAD 1 prose; *I am against the shepherds* answered there). All blocks recorded above;
+--      every meaningful verse-block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Woe to the shepherds that feed themselves
+    ('canon','ezekiel',34,2,'canon','jeremiah',23,1,'free',
+      E'*Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD)* (Jeremiah 23:1). Jeremiah cries the same woe Ezekiel cries — *Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* (Ezekiel 34:2): the shepherds appointed over Yahuah''s pasture have destroyed and scattered the very sheep they were given to feed. The flock belongs to Yahuah; the shepherds answer for it.'),
+    ('canon','ezekiel',34,4,'canon','jeremiah',23,2,'free',
+      E'*Therefore thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel) against the pastors that feed my people; Ye have scattered my flock, and driven them away, and have not visited them: behold, I will visit upon you the evil of your doings* (Jeremiah 23:2). Where Ezekiel charges the shepherds — *neither have ye brought again that which was driven away, neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (Ezekiel 34:4) — Jeremiah pronounces the visitation: the flock driven away and unvisited, and the careless shepherds repaid the evil of their doings.'),
+    ('canon','ezekiel',34,5,'canon','zechariah',11,17,'free',
+      E'*Woe to the idol shepherd that leaveth the flock! the sword shall be upon his arm, and upon his right eye: his arm shall be clean dried up, and his right eye shall be utterly darkened* (Zechariah 11:17). Ezekiel''s flock *were scattered, because there is no shepherd: and they became meat to all the beasts of the field* (Ezekiel 34:5); Zechariah names the worthless shepherd who abandons them to that fate — the idol shepherd who leaves the flock, his arm and eye struck. The shepherd who deserts the sheep is judged for the scattering.'),
+    ('canon','ezekiel',34,5,'canon','matthew',9,36,'free',
+      E'*But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd* (Matthew 9:36). The very condition Ezekiel laments — *they were scattered, because there is no shepherd* (Ezekiel 34:5) — is what the Formed Son sees in the crowds: sheep fainting, scattered abroad, having no shepherd. The compassion that moves him is the answer to the woe upon the shepherds who left the flock untended.'),
+    ('canon','ezekiel',34,3,'canon','john',10,12,'free',
+      E'*But he that is an hireling, and not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth: and the wolf catcheth them, and scattereth the sheep* (John 10:12). The shepherds who *eat the fat, and... clothe you with the wool... but ye feed not the flock* (Ezekiel 34:3) are hirelings whose own the sheep are not — they flee the wolf and the sheep are caught and scattered. The hireling feeds himself; he does not give his life for the flock.'),
+    ('canon','ezekiel',34,4,'canon','john',10,13,'free',
+      E'*The hireling fleeth, because he is an hireling, and careth not for the sheep* (John 10:13). Ezekiel''s indictment — *The diseased have ye not strengthened, neither have ye healed that which was sick... neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (Ezekiel 34:4) — is the hireling who *careth not for the sheep*. The mark of the false shepherd is that the flock''s welfare is nothing to him; he tends only himself.'),
+
+    -- THREAD 2 (★★★): Behold, I, even I, will both search my sheep, and seek them out
+    ('canon','ezekiel',34,11,'canon','john',10,11,'free',
+      E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). When the hireling shepherds fail, Yahuah takes the office himself — *Behold, I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11). The Formed Son speaks that promise in flesh: *I am the good shepherd*, who unlike the hireling lays down his own life for the sheep. The Shepherd who seeks the scattered is Yahuah come in flesh, the good Shepherd.'),
+    ('canon','ezekiel',34,12,'canon','john',10,16,'free',
+      E'*And other sheep I have, which are not of this fold: them also I must bring, and they shall hear my voice; and there shall be one fold, and one shepherd* (John 10:16). Yahuah''s pledge to *seek out my sheep, and... deliver them out of all places where they have been scattered* (Ezekiel 34:12) is the gathering of the scattered two-house flock — the *other sheep... not of this fold* brought home into *one fold, and one shepherd*. The scattered northern house and Yahudah (Judah) made one flock under one Shepherd.'),
+    ('canon','ezekiel',34,14,'canon','john',10,14,'free',
+      E'*I am the good shepherd, and know my sheep, and am known of mine* (John 10:14). The promise *I will feed them in a good pasture, and upon the high mountains of Yashar''el (Israel) shall their fold be* (Ezekiel 34:14) is kept by the Shepherd who *know my sheep, and am known of mine* — the good pasture and the fold are his own knowing care of the flock. The One who feeds them knows each by name (John 10:3).'),
+    ('canon','ezekiel',34,16,'canon','luke',15,4,'free',
+      E'*What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?* (Luke 15:4). Yahuah''s word *I will seek that which was lost, and bring again that which was driven away* (Ezekiel 34:16) is the parable of the Shepherd who leaves the ninety and nine and goes after the one lost sheep *until he find it*. The seeking is relentless; the Shepherd will not stop till the lost is found.'),
+    ('canon','ezekiel',34,16,'canon','luke',15,5,'free',
+      E'*And when he hath found it, he layeth it on his shoulders, rejoicing* (Luke 15:5). The promise to *bring again that which was driven away, and... bind up that which was broken* (Ezekiel 34:16) is the Shepherd who carries the found sheep home on his own shoulders, rejoicing. The driven-away and the broken are not merely recovered but borne by the Shepherd himself.'),
+    ('canon','ezekiel',34,11,'canon','luke',15,6,'free',
+      E'*And when he cometh home, he calleth together his friends and neighbours, saying unto them, Rejoice with me; for I have found my sheep which was lost* (Luke 15:6). The Shepherd who said *I, even I, will both search my sheep, and seek them out* (Ezekiel 34:11) rejoices when the search succeeds — *Rejoice with me; for I have found my sheep which was lost*. Heaven''s joy over the regathered flock answers Yahuah''s own resolve to seek them out.'),
+    ('canon','ezekiel',34,16,'canon','luke',19,10,'free',
+      E'*For the Son of Adam is come to seek and to save that which was lost* (Luke 19:10). Yahuah''s pledge — *I will seek that which was lost* (Ezekiel 34:16) — is the very mission the Son of Adam names of himself: *come to seek and to save that which was lost*. The Shepherd of Ezekiel 34 and the Son of Adam who seeks the lost are one and the same.'),
+    ('canon','ezekiel',34,11,'canon','1-peter',2,25,'free',
+      E'*For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). The straying, scattered sheep Yahuah resolves to *search... and seek them out* (Ezekiel 34:11) are *now returned unto the Shepherd and Bishop of your souls* — the seeking Shepherd has found them and brought them back. The promise of the prophet is fulfilled in the returned flock.'),
+    ('canon','ezekiel',34,12,'canon','psalms',23,1,'free',
+      E'*Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1). David sang the truth Ezekiel proclaims — that Yahuah himself is the Shepherd who *seeketh out his flock... so will I seek out my sheep* (Ezekiel 34:12). When Yahuah is the Shepherd, the sheep *shall not want*: the scattered are sought, gathered, and supplied.'),
+    ('canon','ezekiel',34,14,'canon','psalms',23,2,'free',
+      E'*He maketh me to lie down in green pastures: he leadeth me beside the still waters* (Psalm 23:2). The promise *I will feed them in a good pasture... there shall they lie in a good fold* (Ezekiel 34:14) is the green pastures and still waters of David''s psalm — the Shepherd who lays his flock down in rest and plenty. The good pasture of Ezekiel is the green pasture of Psalm 23.'),
+    ('canon','ezekiel',34,16,'canon','psalms',23,3,'free',
+      E'*He restoreth my soul: he leadeth me in the paths of righteousness for his name''s sake* (Psalm 23:3). Yahuah''s work to *bring again that which was driven away, and... bind up that which was broken, and... strengthen that which was sick* (Ezekiel 34:16) is the restoring of the soul David knew — the Shepherd who recovers, heals, and leads the flock in right paths. The binding-up of the broken is the restoring of the soul.'),
+
+    -- THREAD 3 (★): I judge between the fat and the lean
+    ('canon','ezekiel',34,17,'canon','matthew',25,32,'free',
+      E'*And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats* (Matthew 25:32). Yahuah''s judgment *between cattle and cattle, between the rams and the he goats* (Ezekiel 34:17) is the Son of Adam''s separation at the last — *as a shepherd divideth his sheep from the goats*. The same Shepherd who feeds the flock also judges within it, dividing sheep from goats.'),
+    ('canon','ezekiel',34,17,'canon','matthew',25,33,'free',
+      E'*And he shall set the sheep on his right hand, but the goats on the left* (Matthew 25:33). The judgment Ezekiel names — *Behold, I judge between cattle and cattle, between the rams and the he goats* (Ezekiel 34:17) — is the setting of the sheep on the right and the goats on the left. The flock is sorted by the Shepherd-King; not all within the fold stand the same.'),
+    ('canon','ezekiel',34,21,'canon','matthew',25,40,'free',
+      E'*And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40). The fat cattle who *thrust with side and with shoulder, and pushed all the diseased with your horns, till ye have scattered them abroad* (Ezekiel 34:21) are weighed by the King''s measure — how the least were treated. To despise the weak of the flock is to despise the Shepherd: *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me*.'),
+    ('canon','ezekiel',34,22,'canon','matthew',25,45,'free',
+      E'*Then shall he answer them, saying, Verily I say unto you, Inasmuch as ye did it not to one of the least of these, ye did it not to me* (Matthew 25:45). Yahuah saves the oppressed lean — *Therefore will I save my flock, and they shall no more be a prey; and I will judge between cattle and cattle* (Ezekiel 34:22) — and condemns the bullies by the same measure: what was withheld from the least was withheld from the Shepherd himself. The flock is judged, and the strong who trod down the weak are answered.'),
+
+    -- THREAD 4 (★★★): one shepherd over them, even my servant David
+    ('canon','ezekiel',34,23,'canon','ezekiel',37,24,'free',
+      E'*And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24). The same one Shepherd-King stands in both chapters — *I will set up one shepherd over them, and he shall feed them, even my servant David* (Ezekiel 34:23) is repeated in *they all shall have one shepherd... my servant David*. One Davidic Shepherd over the reunited two-house flock, who keep the statutes under him — the Torah honored, not abolished.'),
+    ('canon','ezekiel',34,23,'canon','john',10,11,'free',
+      E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). The *one shepherd over them... even my servant David* (Ezekiel 34:23) speaks: *I am the good shepherd*. David''s greater Son is the one Shepherd-King who does what no hireling will — lays down his life for the flock. The one Shepherd of Ezekiel is the good Shepherd of John.'),
+    ('canon','ezekiel',34,23,'canon','hebrews',13,20,'free',
+      E'*Now the Elohim (God) of peace, that brought again from the dead our Lord Yahusha (Lord Jesus), that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20). The one Shepherd Yahuah sets up — *even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23) — is *that great shepherd of the sheep*, raised by the Elohim of peace through the blood of the everlasting covenant. The Shepherd-King and the covenant of peace (34:25) are one promise.'),
+    ('canon','ezekiel',34,23,'canon','1-peter',5,4,'free',
+      E'*And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away* (1 Peter 5:4). The *one shepherd over them... even my servant David* (Ezekiel 34:23) is *the chief Shepherd* whose appearing the flock awaits — over every under-shepherd stands the one Shepherd Yahuah appointed. The Davidic Shepherd-King is the chief Shepherd of the whole flock.'),
+    ('canon','ezekiel',34,24,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The promise *my servant David a prince among them* (Ezekiel 34:24) is fulfilled in the One given *the throne of his father David* — the Davidic prince over the flock. The one Shepherd-prince of Ezekiel is the Son of David enthroned.'),
+
+    -- THREAD 5 (★★): a covenant of peace — the flock of my pasture are men, and I am your Elohim
+    ('canon','ezekiel',34,25,'canon','ezekiel',37,26,'free',
+      E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26). The *covenant of peace* of Ezekiel 34:25 is the everlasting covenant of peace sealed in the partner chapter — the same pledge that the flock *shall dwell safely in the wilderness, and sleep in the woods* (Ezekiel 34:25). Peace with the Shepherd is everlasting, and his sanctuary in their midst for evermore.'),
+    ('canon','ezekiel',34,25,'canon','isaiah',11,6,'free',
+      E'*The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf and the young lion and the fatling together; and a little child shall lead them* (Isaiah 11:6). The covenant of peace that *cause[s] the evil beasts to cease out of the land* (Ezekiel 34:25) is Isaiah''s healed creation — the wolf dwelling with the lamb, the beasts no longer a prey to the flock. The peace of the Shepherd undoes the enmity of the beasts.'),
+    ('canon','ezekiel',34,28,'canon','isaiah',11,9,'free',
+      E'*They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of Yahuah (LORD), as the waters cover the sea* (Isaiah 11:9). The promise *they shall no more be a prey to the heathen, neither shall the beast of the land devour them; but they shall dwell safely* (Ezekiel 34:28) is Isaiah''s holy mountain where none hurt nor destroy. The safe-dwelling flock of Ezekiel is the unhurt creation of Isaiah, full of the knowledge of Yahuah.'),
+    ('canon','ezekiel',34,25,'canon','leviticus',26,6,'free',
+      E'*And I will give peace in the land, and ye shall lie down, and none shall make you afraid: and I will rid evil beasts out of the land, and the sword shall not go through your land* (Leviticus 26:6). The covenant of peace — *they shall dwell safely in the wilderness* (Ezekiel 34:25), *and none shall make them afraid* (34:28) — is the Torah covenant-blessing word for word: peace in the land, none making them afraid, the evil beasts removed. The Shepherd''s covenant of peace is the promised blessing of the land.'),
+    ('canon','ezekiel',34,29,'canon','revelation',7,16,'free',
+      E'*They shall hunger no more, neither thirst any more; neither shall the sun light on them, nor any heat* (Revelation 7:16). Yahuah''s promise that the flock *shall be no more consumed with hunger in the land, neither bear the shame of the heathen any more* (Ezekiel 34:29) reaches its consummation — *They shall hunger no more, neither thirst any more*. The fed and unashamed flock of Ezekiel is the multitude before the throne who hunger no more.'),
+    ('canon','ezekiel',34,31,'canon','revelation',7,17,'free',
+      E'*For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). The closing word *ye my flock, the flock of my pasture, are men, and I am your Elohim (God)* (Ezekiel 34:31) ends in the Lamb who feeds them and leads them to living fountains. The Shepherd-Elohim of Ezekiel is the Lamb-Shepherd of the Revelation, feeding his flock for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-34-woe-to-the-shepherds-that-feed-themselves',
+       E'Woe be to the shepherds of Yashar''el that do feed themselves',
+       E'The chapter opens with a covenant-lawsuit against the rulers and priests set over Yahuah''s flock: *Son of Adam, prophesy against the shepherds of Yashar''el (Israel)... Woe be to the shepherds of Yashar''el (Israel) that do feed themselves! should not the shepherds feed the flocks?* (34:2). They exploit instead of feed: *Ye eat the fat, and ye clothe you with the wool, ye kill them that are fed: but ye feed not the flock* (34:3); *The diseased have ye not strengthened, neither have ye healed that which was sick, neither have ye bound up that which was broken, neither have ye brought again that which was driven away, neither have ye sought that which was lost; but with force and with cruelty have ye ruled them* (34:4). And the flock pays for it: *they were scattered, because there is no shepherd: and they became meat to all the beasts of the field* (34:5). Jeremiah cries the same woe — *Woe be unto the pastors that destroy and scatter the sheep of my pasture* (Jeremiah 23:1), *Ye have scattered my flock, and driven them away, and have not visited them: behold, I will visit upon you the evil of your doings* (Jeremiah 23:2). Zechariah names the worthless one — *Woe to the idol shepherd that leaveth the flock* (Zechariah 11:17). The Formed Son draws the contrast in his own parable: *he that is an hireling, and not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth... and careth not for the sheep* (John 10:12-13). And he sees the cost of the woe in the crowds: *when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd* (Matthew 9:36). The verdict falls: *Behold, I am against the shepherds; and I will require my flock at their hand* (34:10) — the flock is Yahuah''s, and the false shepherds answer for every scattered sheep.',
+       sv.verse_id, ev.verse_id, 'free', 32825
+  FROM _s308_ezek34_lookup sv, _s308_ezek34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=34 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-34-behold-i-even-i-will-seek-out-my-sheep',
+       E'Behold, I, even I, will both search my sheep, and seek them out',
+       E'Against the shepherds who fed themselves, Yahuah takes the office into his own hand: *For thus saith Adonai Yahuah (the Lord GOD); Behold, I, even I, will both search my sheep, and seek them out* (34:11). He will gather the scattered from everywhere they were driven: *As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day* (34:12); *I will bring them out from the people, and gather them from the countries, and will bring them to their own land* (34:13). This is the two-house regathering — the flock scattered upon all the face of the earth (34:6) sought out and brought home. He feeds and heals them: *I will feed them in a good pasture* (34:14), *I will seek that which was lost, and bring again that which was driven away, and will bind up that which was broken, and will strengthen that which was sick* (34:16). And the Shepherd who speaks these words took flesh: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11); *other sheep I have, which are not of this fold: them also I must bring... and there shall be one fold, and one shepherd* (John 10:16) — the scattered house and Yahudah (Judah) made one flock. He is the Shepherd of the parable who will *go after that which is lost, until he find it* (Luke 15:4), and *when he hath found it, he layeth it on his shoulders, rejoicing* (Luke 15:5), and calls all to *Rejoice with me; for I have found my sheep which was lost* (Luke 15:6) — for *the Son of Adam is come to seek and to save that which was lost* (Luke 19:10). Peter names the flock found: *ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). And David sang it before Ezekiel saw it: *Yahuah Ra''ah (The LORD is my shepherd); I shall not want. He maketh me to lie down in green pastures... He restoreth my soul* (Psalm 23:1-3). Yahuah the Shepherd is the FORMED Son, Yahuah who has a Father, come in flesh to seek and save the lost.',
+       sv.verse_id, ev.verse_id, 'free', 32828
+  FROM _s308_ezek34_lookup sv, _s308_ezek34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=34 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-34-i-judge-between-the-fat-and-the-lean',
+       E'I judge between the fat cattle and the lean — the bullies separated from the flock',
+       E'The Shepherd who gathers also judges within the flock. To the strong who trampled the weak Yahuah says: *And as for you, O my flock, thus saith Adonai Yahuah (the Lord GOD); Behold, I judge between cattle and cattle, between the rams and the he goats* (34:17). Their offence is to spoil what the others must live on: *Seemeth it a small thing unto you to have eaten up the good pasture, but ye must tread down with your feet the residue of your pastures? and to have drunk of the deep waters, but ye must foul the residue with your feet?* (34:18). They shove and gore the weak: *Because ye have thrust with side and with shoulder, and pushed all the diseased with your horns, till ye have scattered them abroad* (34:21). So Yahuah saves the oppressed: *Behold, I, even I, will judge between the fat cattle and between the lean cattle* (34:20); *Therefore will I save my flock, and they shall no more be a prey; and I will judge between cattle and cattle* (34:22). The Son of Adam does the same separation at the last: *he shall separate them one from another, as a shepherd divideth his sheep from the goats* (Matthew 25:32), *And he shall set the sheep on his right hand, but the goats on the left* (Matthew 25:33). And the measure is how the least were treated: *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40); *Inasmuch as ye did it not to one of the least of these, ye did it not to me* (Matthew 25:45). The flock is judged, and the fat who trod down the lean are weighed by the very ones they despised.',
+       sv.verse_id, ev.verse_id, 'free', 32831
+  FROM _s308_ezek34_lookup sv, _s308_ezek34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=34 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-34-one-shepherd-my-servant-david',
+       E'I will set up one shepherd over them, even my servant David',
+       E'Over the regathered flock Yahuah sets one Shepherd-King: *And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd. And I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them; I Yahuah (LORD) have spoken it* (34:23-24). The same word stands in the partner chapter — *And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24), the reunited two-house flock keeping the Torah under the one Shepherd, not freed from it. This is no second David by blood but David''s greater Son, who lays down his life as no hireling will: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). He is *that great shepherd of the sheep*, raised *through the blood of the everlasting covenant* (Hebrews 13:20) — the Shepherd-King and the covenant of peace of the next verses bound in one. He is *the chief Shepherd* whose appearing the under-shepherds await (1 Peter 5:4). And he is given the everlasting throne: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). One Shepherd, one prince, set by Yahuah over the whole flock for ever.',
+       sv.verse_id, ev.verse_id, 'free', 32834
+  FROM _s308_ezek34_lookup sv, _s308_ezek34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=34 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture',
+       E'A covenant of peace — ye my flock, the flock of my pasture, are men, and I am your Elohim',
+       E'The chapter closes on the Shepherd dwelling with his flock in peace: *And I will make with them a covenant of peace, and will cause the evil beasts to cease out of the land: and they shall dwell safely in the wilderness, and sleep in the woods* (34:25). The land itself is blessed — *there shall be showers of blessing* (34:26), *the tree of the field shall yield her fruit, and the earth shall yield her increase, and they shall be safe in their land* (34:27) — and the flock secured: *they shall no more be a prey to the heathen... but they shall dwell safely, and none shall make them afraid* (34:28). It ends with the covenant-formula in shepherd-language: *And ye my flock, the flock of my pasture, are men, and I am your Elohim (God), saith Adonai Yahuah (the Lord GOD)* (34:31). The same everlasting covenant of peace seals the partner chapter — *I will make a covenant of peace with them; it shall be an everlasting covenant* (Ezekiel 37:26). The peace is creation healed: *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid* (Isaiah 11:6), *They shall not hurt nor destroy in all my holy mountain* (Isaiah 11:9); the Torah blessing of the land kept: *I will give peace in the land, and ye shall lie down, and none shall make you afraid: and I will rid evil beasts out of the land* (Leviticus 26:6). And at the consummation the Lamb is the Shepherd: *They shall hunger no more, neither thirst any more* (Revelation 7:16), *For the Lamb which is in the midst of the throne shall feed them, and shall lead them unto living fountains of waters: and Elohim (God) shall wipe away all tears from their eyes* (Revelation 7:17). The Shepherd-Elohim of Ezekiel 34 is the Lamb-Shepherd who feeds his flock for ever.',
+       sv.verse_id, ev.verse_id, 'free', 32837
+  FROM _s308_ezek34_lookup sv, _s308_ezek34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=34 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Woe be unto the pastors that destroy and scatter the sheep of my pasture* (Jeremiah 23:1) — Jeremiah cries the same woe as Ezekiel 34:2; the flock is Yahuah''s, the shepherds answer for it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=2
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-woe-to-the-shepherds-that-feed-themselves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Ye have scattered my flock, and driven them away... I will visit upon you the evil of your doings* (Jeremiah 23:2) — the unvisited flock of Ezekiel 34:4 and the visitation on the careless shepherds.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-woe-to-the-shepherds-that-feed-themselves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe to the idol shepherd that leaveth the flock* (Zechariah 11:17) — the worthless shepherd who abandons the flock to the beasts of Ezekiel 34:5.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=5
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=11 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-woe-to-the-shepherds-that-feed-themselves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the multitudes... were scattered abroad, as sheep having no shepherd* (Matthew 9:36) — the Formed Son sees the very condition of Ezekiel 34:5 and is moved with compassion.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=5
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-woe-to-the-shepherds-that-feed-themselves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *the hireling... seeth the wolf coming, and leaveth the sheep, and fleeth* (John 10:12) — the shepherds who feed themselves (Ezekiel 34:3) are hirelings whose own the sheep are not.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=3
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-woe-to-the-shepherds-that-feed-themselves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *The hireling fleeth, because he is an hireling, and careth not for the sheep* (John 10:13) — the mark of the false shepherd of Ezekiel 34:4: the flock''s welfare is nothing to him.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-woe-to-the-shepherds-that-feed-themselves'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11) — the Shepherd who said *I, even I, will... seek them out* (Ezekiel 34:11) speaks in flesh; Yahuah come as the good Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=11
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *other sheep I have, which are not of this fold... one fold, and one shepherd* (John 10:16) — the scattered two-house flock of Ezekiel 34:12 gathered into one fold under one Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=12
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I am the good shepherd, and know my sheep, and am known of mine* (John 10:14) — the good pasture and fold of Ezekiel 34:14 is the Shepherd''s own knowing care of his flock.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=14
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *go after that which is lost, until he find it* (Luke 15:4) — Yahuah''s *I will seek that which was lost* (Ezekiel 34:16) is the Shepherd who leaves the ninety and nine.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=16
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *he layeth it on his shoulders, rejoicing* (Luke 15:5) — the driven-away and broken of Ezekiel 34:16 are borne home on the Shepherd''s own shoulders.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=16
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Rejoice with me; for I have found my sheep which was lost* (Luke 15:6) — heaven''s joy answers Yahuah''s resolve to *seek them out* (Ezekiel 34:11).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=11
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *the Son of Adam is come to seek and to save that which was lost* (Luke 19:10) — the very mission of Ezekiel 34:16 named by the Son of Adam of himself.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=16
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=19 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25) — the straying flock of Ezekiel 34:11 returned to the seeking Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=11
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★★ *Yahuah Ra''ah (The LORD is my shepherd); I shall not want* (Psalm 23:1) — David sang the truth Ezekiel 34:12 proclaims; when Yahuah is the Shepherd, the sheep shall not want.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=12
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★ *He maketh me to lie down in green pastures: he leadeth me beside the still waters* (Psalm 23:2) — the good pasture and good fold of Ezekiel 34:14.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=14
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'★ *He restoreth my soul: he leadeth me in the paths of righteousness* (Psalm 23:3) — the binding-up of the broken and strengthening of the sick of Ezekiel 34:16 is the restoring of the soul.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=16
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-behold-i-even-i-will-seek-out-my-sheep'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *he shall separate them one from another, as a shepherd divideth his sheep from the goats* (Matthew 25:32) — the Son of Adam''s separation answers Yahuah''s *I judge between cattle and cattle* (Ezekiel 34:17).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=17
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-i-judge-between-the-fat-and-the-lean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *he shall set the sheep on his right hand, but the goats on the left* (Matthew 25:33) — the sorting within the flock of Ezekiel 34:17; not all in the fold stand the same.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=17
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-i-judge-between-the-fat-and-the-lean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40) — the fat who pushed the diseased (Ezekiel 34:21) are weighed by how the least were treated.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=21
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-i-judge-between-the-fat-and-the-lean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Inasmuch as ye did it not to one of the least of these, ye did it not to me* (Matthew 25:45) — Yahuah saves the oppressed flock (Ezekiel 34:22) and condemns the bullies by the same measure.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=22
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-i-judge-between-the-fat-and-the-lean'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *David my servant shall be king over them; and they all shall have one shepherd* (Ezekiel 37:24) — the same one Shepherd-King as Ezekiel 34:23, the reunited flock keeping the statutes under him.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=23
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-one-shepherd-my-servant-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11) — the one Shepherd David of Ezekiel 34:23 speaks; David''s greater Son lays down his life.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=23
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-one-shepherd-my-servant-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20) — the one Shepherd of Ezekiel 34:23 raised through the covenant of peace (34:25).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=23
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-one-shepherd-my-servant-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *when the chief Shepherd shall appear, ye shall receive a crown of glory* (1 Peter 5:4) — the one Shepherd of Ezekiel 34:23 is the chief Shepherd over every under-shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=23
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-one-shepherd-my-servant-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — *my servant David a prince among them* (Ezekiel 34:24) enthroned, the Son of David.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=24
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-one-shepherd-my-servant-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will make a covenant of peace with them; it shall be an everlasting covenant* (Ezekiel 37:26) — the same everlasting covenant of peace as Ezekiel 34:25.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=25
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid* (Isaiah 11:6) — the evil beasts ceasing (Ezekiel 34:25) is creation healed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=25
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *They shall not hurt nor destroy in all my holy mountain* (Isaiah 11:9) — the flock no more a prey, dwelling safely (Ezekiel 34:28), is Isaiah''s holy mountain.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=28
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will give peace in the land... none shall make you afraid... I will rid evil beasts out of the land* (Leviticus 26:6) — the Torah covenant-blessing word for word behind Ezekiel 34:25,28.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=25
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *They shall hunger no more, neither thirst any more* (Revelation 7:16) — the flock no more consumed with hunger (Ezekiel 34:29) at the consummation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=29
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *the Lamb... shall feed them, and shall lead them unto living fountains of waters* (Revelation 7:17) — the Shepherd-Elohim of Ezekiel 34:31 is the Lamb-Shepherd who feeds his flock for ever.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=34 AND sv.verse_number=31
+  JOIN _s308_ezek34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-34-a-covenant-of-peace-the-flock-of-my-pasture'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_35.sql (Ezekiel 35) -----
+-- Chapter: Ezekiel 35 — the oracle against MOUNT SEIR / EDOM. Set thy face against mount Seir; I am
+-- against thee, and I will make thee most desolate; perpetual desolations. The indictment: a PERPETUAL
+-- HATRED, the blood of the children of Yashar''el (Israel) shed by the sword in the time of their
+-- calamity; the design to seize the land of BOTH houses — *These two nations and these two countries
+-- shall be mine* — whereas Yahuah (LORD) was there; and the gloating *As thou didst rejoice at the
+-- inheritance of the house of Yashar''el (Israel), because it was desolate, so will I do unto thee.* This
+-- is the SEED-WAR — the Esau-line conduct (the perpetual brother-hatred and bloodshed) against the
+-- covenant line — NEVER ethnic spite. The very next chapter (Ezek 36) is the CONTRAST: the mountains of
+-- Yashar''el blessed while Mount Seir is cursed.
+-- Tag: ezek35   Temp view: _s308_ezek35_lookup
+-- Sort band: base 32850, step 3 -> threads at 32850, 32853 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',35,v
+--
+-- Ezekiel 35 coverage:
+--   v.1-2 (Son of Adam, set thy face against mount Seir, and prophesy against it)
+--        NT:     none warranted (the oracle-frame; the sign-act of facing Edom)
+--        Extras: none warranted
+--        Tanakh: none separate (preface; bound into THREAD 1/2 prose)
+--   ★ v.3-4,9 (Behold, O mount Seir, I am against thee... I will make thee most desolate; I will lay thy
+--          cities waste... I will make thee perpetual desolations, and thy cities shall not return; and ye
+--          shall know that I am Yahuah)
+--        NT:     none warranted (the desolation-judgment of the gloating enemy; canon-Tanakh weave)
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 36:1-7 (the CONTRAST — the mountains of Yashar''el blessed while Mount Seir
+--                cursed; the very next chapter; the heathen that despoiled the land shall bear their shame),
+--                ★ Isaiah 34:5-10 (the sword of Yahuah bathed in heaven, come down upon Idumea; Bozrah a
+--                sacrifice; burning pitch for ever), ★ Joel 3:19 (Edom a desolate wilderness for the
+--                violence against the children of Yahudah) — THREAD 2
+--   ★★ v.5-6 (Because thou hast had a PERPETUAL HATRED, and hast shed the blood of the children of
+--          Yashar''el by the force of the sword in the time of their calamity... I will prepare thee unto
+--          blood, and blood shall pursue thee)
+--        NT:     none warranted (the seed-war indictment; the brother-hatred read across the Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★★ Obadiah 1:10 (for thy violence against thy brother Jacob shame shall cover thee), ★★
+--                Genesis 27:41 (Esau hated Jacob... then will I slay my brother Jacob), ★ Amos 1:11 (Edom
+--                did pursue his brother with the sword, and did cast off all pity) — THREAD 1
+--   v.7-8 (Thus will I make mount Seir most desolate... I will fill his mountains with his slain men)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — the slain-filled mountains = the desolation of THREAD 2 (Isa 34:3,7)
+--   ★★ v.10-13 (Because thou hast said, These two nations and these two countries shall be mine, and we
+--          will possess it; whereas Yahuah was there... thy blasphemies which thou hast spoken against the
+--          mountains of Yashar''el, saying, They are laid desolate, they are given us to consume)
+--        NT:     none warranted (the design to seize the land of BOTH houses; covenant-lawsuit, not ethnic)
+--        Extras: none warranted
+--        Tanakh: ★★ Obadiah 1:11 (in the day that thou stoodest on the other side... and cast lots upon
+--                Jerusalem, even thou wast as one of them), ★ Obadiah 1:13 (thou shouldest not have
+--                entered into the gate of my people in the day of their calamity... nor have laid hands on
+--                their substance), ★★ Malachi 1:3-4 (I... laid his mountains and his heritage waste... they
+--                shall build, but I will throw down) — THREAD 1
+--   ★ v.14-15 (When the whole earth rejoiceth, I will make thee desolate. As thou didst rejoice at the
+--          inheritance of the house of Yashar''el, because it was desolate, so will I do unto thee)
+--        NT:     none warranted (measure-for-measure; as thou hast done, it shall be done unto thee)
+--        Extras: none warranted
+--        Tanakh: ★★ Obadiah 1:15 (the day of Yahuah is near upon all the heathen: as thou hast done, it
+--                shall be done unto thee; thy reward shall return upon thine own head), ★ Obadiah 1:12
+--                (neither shouldest thou have rejoiced over the children of Yahudah in the day of their
+--                destruction) — THREAD 1 (the gloating answered measure-for-measure)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-35-the-perpetual-hatred-against-the-brother — Tanakh (Obadiah 1, Genesis 27, Malachi 1, Amos 1) [free]
+--      (★★ the seed-war: Esau-line conduct vs the covenant line; perpetual brother-hatred, blood of the
+--       children of Yashar''el; the design to seize the land of BOTH houses — "these two nations"; gloating
+--       answered measure-for-measure; NEVER ethnic spite)
+--   2. ezekiel-35-i-will-make-thee-perpetual-desolations — Tanakh (Ezekiel 36, Isaiah 34, Joel 3) [free]
+--      (★ the measure-for-measure desolation of the gloating enemy; Mount Seir cursed while the mountains
+--       of Yashar''el are blessed — the very next chapter; the sword of Yahuah upon Idumea)
+--
+-- Framing notes:
+--   ★★ THE PERPETUAL HATRED (THREAD 1): *Because thou hast had a perpetual hatred, and hast shed the blood
+--      of the children of Yashar''el (Israel) by the force of the sword in the time of their calamity*
+--      (35:5), and *Because thou hast said, These two nations and these two countries shall be mine, and we
+--      will possess it; whereas Yahuah (LORD) was there* (35:10). This is the SEED-WAR — not ethnic spite,
+--      but the Esau-line CONDUCT (the perpetual brother-hatred, the bloodshed, the land-seizing) set
+--      against the covenant line. Obadiah names it the same: *for thy violence against thy brother Jacob*
+--      (Obad 1:10), *in the day that thou stoodest on the other side... even thou wast as one of them*
+--      (Obad 1:11). It reaches back to the root: *Esau hated Jacob... then will I slay my brother Jacob*
+--      (Gen 27:41). Amos: *he did pursue his brother with the sword, and did cast off all pity* (Amos
+--      1:11). Malachi: *I... laid his mountains and his heritage waste... they shall build, but I will
+--      throw down* (Mal 1:3-4). The TWO-HOUSE detail is load-bearing: *these two nations and these two
+--      countries* = the two houses (Yahudah and Yashar''el) Edom coveted whole. And the gloating is
+--      answered measure-for-measure: *as thou hast done, it shall be done unto thee* (Obad 1:15).
+--   ★ THE PERPETUAL DESOLATIONS (THREAD 2): *Behold, O mount Seir, I am against thee... I will make thee
+--      most desolate* (35:3), *I will make thee perpetual desolations, and thy cities shall not return*
+--      (35:9). The gloating enemy who rejoiced at the inheritance of the house of Yashar''el laid desolate
+--      is himself made desolate. The CONTRAST is the very next chapter — *ye mountains of Yashar''el
+--      (Israel)... ye shall shoot forth your branches, and yield your fruit to my people of Yashar''el*
+--      (Ezek 36:8), the heathen that despoiled the land bearing their own shame (Ezek 36:7). Isaiah: *my
+--      sword shall be bathed in heaven: behold, it shall come down upon Idumea* (Isa 34:5), Bozrah a
+--      sacrifice, the land burning pitch for ever. Joel: *Edom shall be a desolate wilderness, for the
+--      violence against the children of Yahudah (Judah)* (Joel 3:19).
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the oracle-frame / set-thy-face sign-act; bound in prose), v.7-8
+--      (the slain-filled mountains — the desolation of THREAD 2; held in prose). All verses recorded above;
+--      every block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the perpetual hatred against the brother — the seed-war
+    ('canon','ezekiel',35,5,'canon','obadiah',1,10,'free',
+      E'*For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever* (Obadiah 1:10). Ezekiel''s charge against Edom — *Because thou hast had a perpetual hatred, and hast shed the blood of the children of Yashar''el (Israel) by the force of the sword in the time of their calamity* (Ezekiel 35:5) — is Obadiah''s *violence against thy brother Jacob*. The crime is the brother-hatred, the Esau-line conduct against the covenant line; not ethnic spite but the perpetual enmity of the seed-war.'),
+    ('canon','ezekiel',35,5,'canon','genesis',27,41,'free',
+      E'*And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart, The days of mourning for my father are at hand; then will I slay my brother Jacob* (Genesis 27:41). The *perpetual hatred* and the *blood of the children of Yashar''el (Israel)* shed by the sword (Ezekiel 35:5) reach back to the root — Esau''s hatred of his brother and his heart-vow to slay him. The mountain of Seir carries Esau''s ancient enmity down the generations; the issue is the conduct of the line, never the ethnicity.'),
+    ('canon','ezekiel',35,5,'canon','amos',1,11,'free',
+      E'*Thus saith Yahuah (LORD); For three transgressions of Edom, and for four, I will not turn away the punishment thereof; because he did pursue his brother with the sword, and did cast off all pity, and his anger did tear perpetually, and he kept his wrath for ever* (Amos 1:11). Amos names the very sin Ezekiel names — Edom *did pursue his brother with the sword* and *kept his wrath for ever*, the *perpetual hatred* that *shed the blood of the children of Yashar''el (Israel) by the force of the sword* (Ezekiel 35:5). The brother pursued with the sword, pity cast off, wrath kept for ever: the seed-war indictment.'),
+    ('canon','ezekiel',35,10,'canon','obadiah',1,11,'free',
+      E'*In the day that thou stoodest on the other side, in the day that the strangers carried away captive his forces, and foreigners entered into his gates, and cast lots upon Jerusalem, even thou wast as one of them* (Obadiah 1:11). Edom''s claim *These two nations and these two countries shall be mine, and we will possess it; whereas Yahuah (LORD) was there* (Ezekiel 35:10) is the same grasping at the brother''s ruin: standing *on the other side* as Jerusalem fell, *as one of them* who plundered her. Coveting the land of both houses in the day of their calamity is the design Ezekiel condemns.'),
+    ('canon','ezekiel',35,13,'canon','obadiah',1,13,'free',
+      E'*Thou shouldest not have entered into the gate of my people in the day of their calamity; yea, thou shouldest not have looked on their affliction in the day of their calamity, nor have laid hands on their substance in the day of their calamity* (Obadiah 1:13). The blasphemies Edom spoke against *the mountains of Yashar''el (Israel)* — *They are laid desolate, they are given us to consume* (Ezekiel 35:12) — and the boasting *against me* (35:13) are the entering of the brother''s gate and the laying of hands on his substance in the day of his calamity. The gloating tongue and the grasping hand are one crime.'),
+    ('canon','ezekiel',35,10,'canon','malachi',1,3,'free',
+      E'*And I hated Esau, and laid his mountains and his heritage waste for the dragons of the wilderness* (Malachi 1:3). Against Edom''s claim to *these two nations and these two countries* (Ezekiel 35:10), Malachi sets Yahuah''s verdict on the line of Esau — the mountains and heritage of Seir *laid waste*. The love of Jacob and the hatred of Esau (Malachi 1:2-3) is the election of the covenant line over the line that despised it; the conduct of the seed, not the blood of the man.'),
+    ('canon','ezekiel',35,9,'canon','malachi',1,4,'free',
+      E'*Whereas Edom saith, We are impoverished, but we will return and build the desolate places; thus saith Yahuah Tseva''ot (LORD of hosts), They shall build, but I will throw down; and they shall call them, The border of wickedness, and, The people against whom Yahuah (LORD) hath indignation for ever* (Malachi 1:4). The *perpetual desolations* of Seir whose *cities shall not return* (Ezekiel 35:9) are Malachi''s *They shall build, but I will throw down* — the indignation for ever upon the border of wickedness. What Ezekiel decrees as perpetual, Malachi confirms: Edom shall not rebuild against the verdict of Yahuah.'),
+    ('canon','ezekiel',35,15,'canon','obadiah',1,15,'free',
+      E'*For the day of Yahuah (LORD) is near upon all the heathen: as thou hast done, it shall be done unto thee: thy reward shall return upon thine own head* (Obadiah 1:15). Edom''s gloating — *As thou didst rejoice at the inheritance of the house of Yashar''el (Israel), because it was desolate, so will I do unto thee* (Ezekiel 35:15) — is answered measure-for-measure: *as thou hast done, it shall be done unto thee*. The rejoicing at the brother''s desolation returns upon Edom''s own head.'),
+    ('canon','ezekiel',35,15,'canon','obadiah',1,12,'free',
+      E'*But thou shouldest not have looked on the day of thy brother in the day that he became a stranger; neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction; neither shouldest thou have spoken proudly in the day of distress* (Obadiah 1:12). The very gloating Ezekiel names — *As thou didst rejoice at the inheritance of the house of Yashar''el (Israel), because it was desolate* (Ezekiel 35:15) — is Obadiah''s *rejoiced over the children of Yahudah (Judah) in the day of their destruction*. Edom looked on the brother''s ruin and rejoiced; so the desolation is turned back on him.'),
+
+    -- THREAD 2 (★): I will make thee perpetual desolations — the measure-for-measure desolation
+    ('canon','ezekiel',35,3,'canon','ezekiel',36,7,'free',
+      E'*Therefore thus saith Adonai Yahuah (the Lord GOD); I have lifted up mine hand, Surely the heathen that are about you, they shall bear their shame* (Ezekiel 36:7). The hand stretched against Seir — *I am against thee, and I will stretch out mine hand against thee, and I will make thee most desolate* (Ezekiel 35:3) — is the hand lifted up in the very next breath: the heathen that despoiled the land shall bear their own shame. The curse on Mount Seir and the blessing on the mountains of Yashar''el (Israel) are one oracle in two chapters.'),
+    ('canon','ezekiel',35,4,'canon','ezekiel',36,8,'free',
+      E'*But ye, O mountains of Yashar''el (Israel), ye shall shoot forth your branches, and yield your fruit to my people of Yashar''el (Israel); for they are at hand to come* (Ezekiel 36:8). Against the laying-waste of Seir — *I will lay thy cities waste, and thou shalt be desolate* (Ezekiel 35:4) — stands the contrast of the next chapter: the mountains of Yashar''el shoot forth their branches and yield their fruit to the returning people. Seir made desolate; the mountains of Yashar''el made fruitful — the measure-for-measure reversal.'),
+    ('canon','ezekiel',35,9,'canon','isaiah',34,5,'free',
+      E'*For my sword shall be bathed in heaven: behold, it shall come down upon Idumea, and upon the people of my curse, to judgment* (Isaiah 34:5). The *perpetual desolations* of Mount Seir whose *cities shall not return* (Ezekiel 35:9) are Isaiah''s sword bathed in heaven coming down *upon Idumea* — for the chapter ends naming Seir *all Idumea, even all of it* (35:15). The sword of Yahuah falls on the people of his curse, the land made a perpetual waste.'),
+    ('canon','ezekiel',35,9,'canon','isaiah',34,10,'free',
+      E'*It shall not be quenched night nor day; the smoke thereof shall go up for ever: from generation to generation it shall lie waste; none shall pass through it for ever and ever* (Isaiah 34:10). Ezekiel''s *I will make thee perpetual desolations, and thy cities shall not return* (Ezekiel 35:9) is Isaiah''s *from generation to generation it shall lie waste*, the smoke going up for ever. The desolation of Idumea is unending — *none shall pass through it* — answering the cut-off *him that passeth out and him that returneth* (Ezekiel 35:7).'),
+    ('canon','ezekiel',35,15,'canon','joel',3,19,'free',
+      E'*Egypt shall be a desolation, and Edom shall be a desolate wilderness, for the violence against the children of Yahudah (Judah), because they have shed innocent blood in their land* (Joel 3:19). Joel names the same cause and the same sentence as Ezekiel — *so will I do unto thee: thou shalt be desolate, O mount Seir, and all Idumea* (Ezekiel 35:15): Edom made *a desolate wilderness for the violence against the children of Yahudah (Judah)*, the shed blood of the brother answered with desolation. The bloodshed of Ezekiel 35:5 is the innocent blood Joel names.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-35-the-perpetual-hatred-against-the-brother',
+       E'A perpetual hatred against the brother — the blood of Yashar''el and the seizing of both houses'' land',
+       E'The oracle against Mount Seir names the crime of Edom plainly: *Because thou hast had a perpetual hatred, and hast shed the blood of the children of Yashar''el (Israel) by the force of the sword in the time of their calamity, in the time that their iniquity had an end* (35:5), and *Because thou hast said, These two nations and these two countries shall be mine, and we will possess it; whereas Yahuah (LORD) was there* (35:10). This is the SEED-WAR — never ethnic spite, but the Esau-line CONDUCT set against the covenant line: the perpetual brother-hatred, the bloodshed in the day of the brother''s calamity, the design to seize the inheritance. It reaches back to the root, to Esau himself: *And Esau hated Jacob because of the blessing wherewith his father blessed him: and Esau said in his heart... then will I slay my brother Jacob* (Genesis 27:41). Obadiah names the same violence: *For thy violence against thy brother Jacob shame shall cover thee* (Obadiah 1:10), *In the day that thou stoodest on the other side... and cast lots upon Jerusalem, even thou wast as one of them* (Obadiah 1:11), *Thou shouldest not have entered into the gate of my people in the day of their calamity... nor have laid hands on their substance* (Obadiah 1:13). Amos: *he did pursue his brother with the sword, and did cast off all pity, and his anger did tear perpetually, and he kept his wrath for ever* (Amos 1:11). And Malachi sets the election against the line that despised it: *yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste* (Malachi 1:2-3), *They shall build, but I will throw down... The people against whom Yahuah (LORD) hath indignation for ever* (Malachi 1:4). Mark the two-house detail: *these two nations and these two countries* — Yahudah (Judah) and Yashar''el (Israel), the two houses Edom coveted whole. And the gloating is answered measure-for-measure: *As thou didst rejoice at the inheritance of the house of Yashar''el (Israel), because it was desolate, so will I do unto thee* (35:15), for *as thou hast done, it shall be done unto thee; thy reward shall return upon thine own head* (Obadiah 1:15). The issue is the conduct of the seed — the perpetual hatred and bloodshed against the brother — not the ethnicity of any people.',
+       sv.verse_id, ev.verse_id, 'free', 32850
+  FROM _s308_ezek35_lookup sv, _s308_ezek35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=35 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-35-i-will-make-thee-perpetual-desolations',
+       E'I will make thee perpetual desolations — Mount Seir cursed while the mountains of Yashar''el are blessed',
+       E'The sentence on the gloating enemy is desolation for desolation: *Behold, O mount Seir, I am against thee, and I will stretch out mine hand against thee, and I will make thee most desolate. I will lay thy cities waste, and thou shalt be desolate, and thou shalt know that I am Yahuah (LORD)* (35:3-4), *I will make thee perpetual desolations, and thy cities shall not return: and ye shall know that I am Yahuah (LORD)* (35:9). Edom rejoiced when the inheritance of the house of Yashar''el lay desolate; so Edom is made desolate. The CONTRAST is the very next chapter, the same hand turned to blessing: *I have lifted up mine hand, Surely the heathen that are about you, they shall bear their shame. But ye, O mountains of Yashar''el (Israel), ye shall shoot forth your branches, and yield your fruit to my people of Yashar''el (Israel); for they are at hand to come* (Ezekiel 36:7-8). Mount Seir cursed, the mountains of Yashar''el blessed — one oracle in two chapters. Isaiah saw the same sword fall on Idumea: *For my sword shall be bathed in heaven: behold, it shall come down upon Idumea, and upon the people of my curse, to judgment* (Isaiah 34:5), and the land made an unquenchable waste — *the smoke thereof shall go up for ever: from generation to generation it shall lie waste; none shall pass through it for ever and ever* (Isaiah 34:10), answering Ezekiel''s cut-off *him that passeth out and him that returneth* (35:7). And Joel names the cause: *Edom shall be a desolate wilderness, for the violence against the children of Yahudah (Judah), because they have shed innocent blood in their land* (Joel 3:19). The shed blood of the brother is answered with perpetual desolation.',
+       sv.verse_id, ev.verse_id, 'free', 32853
+  FROM _s308_ezek35_lookup sv, _s308_ezek35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=35 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *For thy violence against thy brother Jacob shame shall cover thee* (Obadiah 1:10) — Ezekiel''s *perpetual hatred* and bloodshed (35:5) is Obadiah''s violence against the brother; the seed-war.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=5
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *And Esau hated Jacob... then will I slay my brother Jacob* (Genesis 27:41) — the root of the *perpetual hatred* (35:5); Esau''s heart-vow to slay the brother, carried down the line of Seir.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=5
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=27 AND tv.verse_number=41
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he did pursue his brother with the sword, and did cast off all pity... and kept his wrath for ever* (Amos 1:11) — the same sin Ezekiel 35:5 names: the brother pursued with the sword, the perpetual wrath.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=5
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *thou stoodest on the other side... and cast lots upon Jerusalem, even thou wast as one of them* (Obadiah 1:11) — Edom''s claim on *these two nations* (35:10) = standing with the plunderers in the day of the brother''s calamity.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=10
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *thou shouldest not have entered into the gate of my people in the day of their calamity... nor have laid hands on their substance* (Obadiah 1:13) — the blasphemies against *the mountains of Yashar''el* (35:12-13) = the grasping hand in the brother''s ruin.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=13
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *yet I loved Jacob, And I hated Esau, and laid his mountains and his heritage waste* (Malachi 1:2-3) — the election of the covenant line over the line that despised it; the conduct of the seed, set against Edom''s claim (35:10).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=10
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *They shall build, but I will throw down... indignation for ever* (Malachi 1:4) — confirms the *perpetual desolations* whose cities *shall not return* (35:9); Edom shall not rebuild against the verdict.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=9
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *as thou hast done, it shall be done unto thee; thy reward shall return upon thine own head* (Obadiah 1:15) — Edom''s rejoicing at the brother''s desolation (35:15) answered measure-for-measure.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=15
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *neither shouldest thou have rejoiced over the children of Yahudah (Judah) in the day of their destruction* (Obadiah 1:12) — the gloating Ezekiel names (35:15): Edom looked on the brother''s ruin and rejoiced.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=15
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-the-perpetual-hatred-against-the-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the heathen that are about you, they shall bear their shame* (Ezekiel 36:7) — the hand stretched against Seir (35:3) is the hand lifted up in the next chapter; one oracle, curse and blessing.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=3
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-i-will-make-thee-perpetual-desolations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *ye mountains of Yashar''el (Israel)... ye shall shoot forth your branches, and yield your fruit to my people* (Ezekiel 36:8) — the CONTRAST: Seir laid waste (35:4) while the mountains of Yashar''el are made fruitful.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=4
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-i-will-make-thee-perpetual-desolations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *my sword shall be bathed in heaven: behold, it shall come down upon Idumea* (Isaiah 34:5) — the perpetual desolations of Seir/Idumea (35:9,15) = the sword of Yahuah on the people of his curse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=9
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-i-will-make-thee-perpetual-desolations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *from generation to generation it shall lie waste; none shall pass through it for ever and ever* (Isaiah 34:10) — Ezekiel''s *perpetual desolations* whose cities *shall not return* (35:9); the unending waste of Idumea.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=9
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=34 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-i-will-make-thee-perpetual-desolations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Edom shall be a desolate wilderness, for the violence against the children of Yahudah (Judah)* (Joel 3:19) — same cause and sentence as Ezekiel 35:15; the shed blood of the brother answered with desolation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=35 AND sv.verse_number=15
+  JOIN _s308_ezek35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-35-i-will-make-thee-perpetual-desolations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_40.sql (Ezekiel 40) -----
+-- Chapter: Ezekiel 40 — THE GREAT TEMPLE-VISION BEGINS (ch40-48). In the visions of Elohim (God) the
+-- prophet is carried to the land of Yashar''el (Israel) and set upon a very high mountain; there stands
+-- a man whose appearance is like brass, with a line of flax and a measuring reed in his hand, who
+-- measures the gates, chambers, and courts of the house. Most of the chapter is the architectural
+-- measurement-catalogue (cubits, gates, little chambers, posts, arches, palm trees, steps, tables) —
+-- NOT threaded verse-by-verse. Curated to TWO framework threads: the man-with-the-reed on the high
+-- mountain (the measured visionary temple/city, woven FORWARD to Revelation 21 + Revelation 11 + the
+-- man-with-the-line of Zechariah 2), and the God-given pattern measured exactly (the tabernacle/Solomon
+-- pattern, Exodus 25 + 1 Chronicles 28 + Hebrews 8 + the foursquare city of Revelation 21).
+-- Tag: ezek40   Temp view: _s308_ezek40_lookup
+-- Sort band: base 32975, step 3 -> 32975, 32978 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',40,v
+--
+-- Ezekiel 40 coverage:
+--   v.1 (the date-frame; the hand of Yahuah (LORD) was upon me, and brought me thither)
+--        NT:     none warranted (the dating/transport preface; woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the captivity-date framing; preface to the vision of vv.2-4)
+--   ★★ v.2-4 (in the visions of Elohim brought he me into the land of Yashar''el, and set me upon a very
+--          high mountain... a man, whose appearance was like the appearance of brass, with a line of flax
+--          and a measuring reed; declare all that thou seest to the house of Yashar''el)
+--        NT:     ★★ Revelation 21:10 (he carried me away in the spirit to a great and high mountain, and
+--                shewed me that great city, the holy Jerusalem), ★★ Revelation 21:9 (the bride, the Lamb''s
+--                wife), ★★ Revelation 21:15 (he that talked with me had a golden reed to measure the city),
+--                ★★ Revelation 11:1 (a reed like unto a rod... Rise, and measure the temple of Elohim) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh measured-temple weave)
+--        Tanakh: ★★ Zechariah 2:1-2 (a man with a measuring line in his hand... To measure Jerusalem) — THREAD 1
+--   ★ v.5,17-19,47 (a measuring reed of six cubits long by the cubit and an hand breadth... so he measured
+--          the court, an hundred cubits long, and an hundred cubits broad, foursquare)
+--        NT:     ★ Hebrews 8:5 (see that thou make all things according to the pattern shewed to thee in
+--                the mount), ★ Revelation 21:16 (the city lieth foursquare) — THREAD 2
+--        Extras: none warranted (clean canon-NT pattern weave)
+--        Tanakh: ★★ Exodus 25:9 (after the pattern of the tabernacle... even so shall ye make it), ★ Exodus
+--                25:40 (look that thou make them after their pattern, which was shewed thee in the mount),
+--                ★★ 1 Chronicles 28:19 (Yahuah made me understand in writing... all the works of this
+--                pattern), ★ 1 Chronicles 28:11 (David gave to Solomon the pattern of the porch) — THREAD 2
+--   v.6-16 (the east gate, threshold, little chambers, posts, arches, windows, palm trees measured)
+--        NT/Extras/Tanakh: none warranted — architectural measurement-catalogue; the act of measuring is
+--                carried in THREAD 1, the exactness of the pattern in THREAD 2; not threaded verse-by-verse.
+--   v.20-46 (the north and south gates, the inner court, the tables for the offerings, the chambers of the
+--          singers and the priests, the sons of Zadok) — measurement-catalogue + service detail; none
+--          warranted as separate threads (the courts/altar measuring summarized in THREAD 2 via v.47).
+--   v.48-49 (the porch of the house, the posts, the pillars) — the approach to the house proper (ch41);
+--          none warranted (architectural; opens the next chapter's interior measuring).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain — NT (Revelation 21, Revelation 11) + Tanakh (Zechariah 2) [free]
+--      (★★ the prophet carried in vision to a very high mountain; the man like brass with the line of flax
+--       and measuring reed; the measured visionary temple/city, answered in the New Jerusalem measured with
+--       a golden reed and in the reed-like-a-rod that measures the temple of Elohim)
+--   2. ezekiel-40-the-house-measured-exactly-the-god-given-pattern — NT (Hebrews 8, Revelation 21) + Tanakh (Exodus 25, 1 Chronicles 28) [free]
+--      (★ the precise measuring of the holy house — the foursquare court — as the God-given pattern, as
+--       with the tabernacle shewed in the mount and the temple-plan David received in writing by Yahuah's
+--       hand; the foursquare city of the consummation)
+--
+-- Framing notes:
+--   ★★ THE MAN WITH THE MEASURING REED (THREAD 1): *In the visions of Elohim (God) brought he me into the
+--      land of Yashar''el (Israel), and set me upon a very high mountain... and, behold, there was a man,
+--      whose appearance was like the appearance of brass, with a line of flax in his hand, and a measuring
+--      reed* (40:2-3). The prophet is carried in vision to a high mountain to see the city/temple, and a
+--      shining man measures it. John''s vision answers it word for word: *he carried me away in the spirit
+--      to a great and high mountain, and shewed me that great city, the holy Jerusalem* (Revelation 21:10),
+--      *he that talked with me had a golden reed to measure the city* (Revelation 21:15); and the temple is
+--      measured again — *there was given me a reed like unto a rod... Rise, and measure the temple of Elohim
+--      (God)* (Revelation 11:1). Zechariah saw the same measuring man — *a man with a measuring line in his
+--      hand... To measure Jerusalem* (Zechariah 2:1-2). The measured visionary temple/city is one vision
+--      across the prophets and the Revelation.
+--   ★ THE GOD-GIVEN PATTERN, MEASURED EXACTLY (THREAD 2): *a measuring reed of six cubits long by the cubit
+--      and an hand breadth* (40:5); *he measured the court, an hundred cubits long, and an hundred cubits
+--      broad, foursquare* (40:47). The exactness of the pattern is the same exactness given for the
+--      tabernacle and the temple: *According to all that I shew thee, after the pattern of the tabernacle...
+--      even so shall ye make it* (Exodus 25:9), *look that thou make them after their pattern, which was
+--      shewed thee in the mount* (Exodus 25:40); the temple-plan David handed Solomon — *the pattern of the
+--      porch* (1 Chronicles 28:11), *All this... Yahuah (LORD) made me understand in writing by his hand
+--      upon me, even all the works of this pattern* (1 Chronicles 28:19); Hebrews names the principle —
+--      *See... that thou make all things according to the pattern shewed to thee in the mount* (Hebrews
+--      8:5); and the foursquare court answers the foursquare city — *the city lieth foursquare* (Revelation
+--      21:16). The house is no improvisation; it is the heavenly pattern measured into earth.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the captivity-date/transport framing — woven into THREAD 1 prose);
+--      v.6-16, v.20-46, v.48-49 (the architectural measurement-catalogue — gates, chambers, posts, arches,
+--      windows, palm trees, steps, the tables for the offerings, the chambers of the singers and the sons
+--      of Zadok; the ACT of measuring carried in THREAD 1, the EXACTNESS of the pattern in THREAD 2; not
+--      threaded verse-by-verse per the curation instruction). All blocks recorded in the coverage checklist.
+
+CREATE TEMP VIEW _s308_ezek40_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the man with the measuring reed on the very high mountain — the measured city/temple
+    ('canon','ezekiel',40,2,'canon','revelation',21,10,'free',
+      E'*And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10). John''s vision answers Ezekiel''s word for word: *In the visions of Elohim (God) brought he me into the land of Yashar''el (Israel), and set me upon a very high mountain* (Ezekiel 40:2), and there is shewn the city. The prophet carried in the spirit to a high mountain to behold the holy city is the same vision, opened at the canon''s close.'),
+    ('canon','ezekiel',40,3,'canon','revelation',21,15,'free',
+      E'*And he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof* (Revelation 21:15). The man Ezekiel sees — *whose appearance was like the appearance of brass, with a line of flax in his hand, and a measuring reed* (Ezekiel 40:3) — is the same measuring figure John sees with *a golden reed to measure the city*. The line of flax and the measuring reed become the golden reed; the gates and walls measured in Ezekiel are measured again in the New Jerusalem.'),
+    ('canon','ezekiel',40,3,'canon','revelation',21,9,'free',
+      E'*And there came unto me one of the seven angels which had the seven vials full of the seven last plagues, and talked with me, saying, Come hither, I will shew thee the bride, the Lamb''s wife* (Revelation 21:9). The shining man who *stood in the gate* to shew Ezekiel the house (Ezekiel 40:3) answers the angel who comes to shew John the bride — both are the heavenly guide who shews the seer the measured dwelling of Elohim (God). What Ezekiel sees as the temple, John sees as the bride, the holy city.'),
+    ('canon','ezekiel',40,3,'canon','revelation',11,1,'free',
+      E'*And there was given me a reed like unto a rod: and the angel stood, saying, Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein* (Revelation 11:1). The measuring reed in the hand of the man like brass (Ezekiel 40:3) is the reed-like-a-rod given to John to *measure the temple of Elohim (God), and the altar*. The same measured temple — gates, altar, courts — is set before both seers; the act of measuring marks out the holy house of the latter days.'),
+    ('canon','ezekiel',40,3,'canon','zechariah',2,1,'free',
+      E'*I lifted up mine eyes again, and looked, and behold a man with a measuring line in his hand* (Zechariah 2:1). Zechariah saw the same measuring man as Ezekiel — *a man, whose appearance was like the appearance of brass, with a line of flax in his hand, and a measuring reed* (Ezekiel 40:3). The man with the measuring line stands in both visions; the city of Yahuah (LORD) is measured out by his hand.'),
+    ('canon','ezekiel',40,2,'canon','zechariah',2,2,'free',
+      E'*Then said I, Whither goest thou? And he said unto me, To measure Jerusalem, to see what is the breadth thereof, and what is the length thereof* (Zechariah 2:2). The measuring of the city Ezekiel is carried to a *very high mountain* to behold (Ezekiel 40:2) is the very errand of Zechariah''s man — *To measure Jerusalem, to see what is the breadth thereof, and what is the length thereof*. The restored city is a measured city, its breadth and length marked by Yahuah (LORD).'),
+
+    -- THREAD 2 (★): the house measured exactly — the God-given pattern (tabernacle, Solomon's temple, the foursquare city)
+    ('canon','ezekiel',40,5,'canon','exodus',25,9,'free',
+      E'*According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9). The measuring of Ezekiel''s house begins as the tabernacle began — by a shewn pattern: *and in the man''s hand a measuring reed of six cubits long by the cubit and an hand breadth: so he measured the breadth of the building* (Ezekiel 40:5). The house is no man''s design but the heavenly pattern measured exactly, as Moses was charged to make all *after the pattern*.'),
+    ('canon','ezekiel',40,5,'canon','exodus',25,40,'free',
+      E'*And look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). The reed that measures the house *to the intent that I might shew them unto thee* (Ezekiel 40:4-5) is the same charge given Moses — *make them after their pattern, which was shewed thee in the mount*. The exactness of the cubits is the exactness of obedience to a shewn, God-given pattern, not human invention.'),
+    ('canon','ezekiel',40,5,'canon','1-chronicles',28,19,'free',
+      E'*All this, said David, Yahuah (LORD) made me understand in writing by his hand upon me, even all the works of this pattern* (1 Chronicles 28:19). As the measuring reed lays out Ezekiel''s house cubit by cubit (Ezekiel 40:5), so the whole plan of Solomon''s temple came by Yahuah''s hand — *made me understand in writing by his hand upon me, even all the works of this pattern*. The measured house is the written pattern of Yahuah (LORD), received and built exactly.'),
+    ('canon','ezekiel',40,5,'canon','1-chronicles',28,11,'free',
+      E'*Then David gave to Solomon his son the pattern of the porch, and of the houses thereof, and of the treasuries thereof, and of the upper chambers thereof, and of the inner parlours thereof, and of the place of the mercy seat* (1 Chronicles 28:11). The reed measuring the breadth and height of the building (Ezekiel 40:5) measures the same kind of God-given plan David handed Solomon — *the pattern of the porch, and of the houses thereof... and of the place of the mercy seat*. Porch, chambers, and courts are all laid out by a pattern given from above.'),
+    ('canon','ezekiel',40,5,'canon','hebrews',8,5,'free',
+      E'*Who serve unto the example and shadow of heavenly things, as Moses was admonished of Elohim (God) when he was about to make the tabernacle: for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5). Hebrews names the principle that governs Ezekiel''s measured house — *that thou make all things according to the pattern shewed to thee in the mount*. The reed of six cubits (Ezekiel 40:5) measures an earthly copy of a heavenly thing; the temple-vision is the heavenly pattern measured into form.'),
+    ('canon','ezekiel',40,47,'canon','revelation',21,16,'free',
+      E'*And the city lieth foursquare, and the length is as large as the breadth: and he measured the city with the reed, twelve thousand furlongs. The length and the breadth and the height of it are equal* (Revelation 21:16). Ezekiel''s measured court answers forward to the measured city — *So he measured the court, an hundred cubits long, and an hundred cubits broad, foursquare* (Ezekiel 40:47). The foursquare court and the foursquare city are one measured shape: the perfect, equal dwelling of Yahuah (LORD), laid out by the reed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain',
+       E'The man with the measuring reed on the very high mountain — the measured city',
+       E'The great temple-vision (chapters 40-48) opens with the prophet carried in vision to a high mountain to behold the house: *In the visions of Elohim (God) brought he me into the land of Yashar''el (Israel), and set me upon a very high mountain, by which was as the frame of a city on the south. And he brought me thither, and, behold, there was a man, whose appearance was like the appearance of brass, with a line of flax in his hand, and a measuring reed; and he stood in the gate* (Ezekiel 40:2-3). The shining man charges him to look and to *declare all that thou seest to the house of Yashar''el (Israel)* (40:4), and begins measuring the gates and courts cubit by cubit. The Revelation answers this vision word for word at the canon''s close: *And he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem, descending out of heaven from Elohim (God)* (Revelation 21:10) — the same carrying-away in the spirit, the same very high mountain, the same shewing of the holy city. The measuring man returns: *he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof* (Revelation 21:15) — the line of flax and the measuring reed become a golden reed, the gates and walls of Ezekiel measured again. And the angel who *talked with me, saying, Come hither, I will shew thee the bride, the Lamb''s wife* (Revelation 21:9) is the same heavenly guide who *stood in the gate* to shew Ezekiel the house. John is told to measure the temple too: *there was given me a reed like unto a rod: and the angel stood, saying, Rise, and measure the temple of Elohim (God), and the altar, and them that worship therein* (Revelation 11:1). And Zechariah saw the same measuring man before either: *I lifted up mine eyes again, and looked, and behold a man with a measuring line in his hand. Then said I, Whither goest thou? And he said unto me, To measure Jerusalem, to see what is the breadth thereof, and what is the length thereof* (Zechariah 2:1-2). One vision runs through the prophets and the Revelation: a man with a measuring reed, a very high mountain, the holy city of Yahuah (LORD) marked out and measured.',
+       sv.verse_id, ev.verse_id, 'free', 32975
+  FROM _s308_ezek40_lookup sv, _s308_ezek40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=40 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-40-the-house-measured-exactly-the-god-given-pattern',
+       E'The house measured exactly — the God-given pattern, foursquare',
+       E'The reed in the shining man''s hand measures the house with exactness: *and in the man''s hand a measuring reed of six cubits long by the cubit and an hand breadth: so he measured the breadth of the building, one reed; and the height, one reed* (Ezekiel 40:5), and on through every gate and chamber and court, until *he measured the court, an hundred cubits long, and an hundred cubits broad, foursquare* (Ezekiel 40:47). This precise measuring is no architect''s improvisation; it is the same God-given pattern by which the tabernacle and the temple were built. To Moses Yahuah (LORD) said: *According to all that I shew thee, after the pattern of the tabernacle, and the pattern of all the instruments thereof, even so shall ye make it* (Exodus 25:9), and *look that thou make them after their pattern, which was shewed thee in the mount* (Exodus 25:40). To Solomon the whole plan came in writing: David *gave to Solomon his son the pattern of the porch, and of the houses thereof... and of the place of the mercy seat* (1 Chronicles 28:11), and confessed, *All this, said David, Yahuah (LORD) made me understand in writing by his hand upon me, even all the works of this pattern* (1 Chronicles 28:19). Hebrews gathers the principle: the priests *serve unto the example and shadow of heavenly things... for, See, saith he, that thou make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — the earthly house a measured copy of a heavenly thing. And the foursquare court answers the foursquare city of the end: *the city lieth foursquare, and the length is as large as the breadth: and he measured the city with the reed* (Revelation 21:16). The house, the temple, the city — all are the heavenly pattern measured exactly into earth, every cubit told by the reed of Yahuah (LORD).',
+       sv.verse_id, ev.verse_id, 'free', 32978
+  FROM _s308_ezek40_lookup sv, _s308_ezek40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=40 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he carried me away in the spirit to a great and high mountain, and shewed me that great city, the holy Jerusalem* (Revelation 21:10) — John''s vision answers Ezekiel 40:2 word for word: the seer carried in the spirit to a very high mountain to behold the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he that talked with me had a golden reed to measure the city, and the gates thereof, and the wall thereof* (Revelation 21:15) — the line of flax and measuring reed of Ezekiel 40:3 become the golden reed; the gates and walls measured again.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Come hither, I will shew thee the bride, the Lamb''s wife* (Revelation 21:9) — the angel who shews John the bride answers the man who stood in the gate to shew Ezekiel the house (40:3); the temple is the bride, the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *a reed like unto a rod... Rise, and measure the temple of Elohim (God), and the altar* (Revelation 11:1) — the measuring reed of Ezekiel 40:3 is the reed-like-a-rod given John to measure the temple and altar.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *behold a man with a measuring line in his hand* (Zechariah 2:1) — Zechariah saw the same measuring man as Ezekiel 40:3; the man with the line stands in both visions to mark out the city.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *To measure Jerusalem, to see what is the breadth thereof, and what is the length thereof* (Zechariah 2:2) — the errand of Zechariah''s man is the measuring of the city Ezekiel is carried up the high mountain to behold (40:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-man-with-the-measuring-reed-on-the-high-mountain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *after the pattern of the tabernacle... even so shall ye make it* (Exodus 25:9) — Ezekiel''s measured house (40:5) begins as the tabernacle did, by a shewn, God-given pattern, not human design.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=5
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *make them after their pattern, which was shewed thee in the mount* (Exodus 25:40) — the exactness of Ezekiel''s cubits (40:5) is obedience to a shewn pattern, as Moses was charged.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=5
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Yahuah (LORD) made me understand in writing by his hand upon me, even all the works of this pattern* (1 Chronicles 28:19) — Ezekiel''s measured house (40:5) is the written pattern of Yahuah, as Solomon''s temple-plan was.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=5
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=28 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *David gave to Solomon his son the pattern of the porch, and of the houses thereof... and of the place of the mercy seat* (1 Chronicles 28:11) — porch, chambers, and courts laid out by a pattern given from above, as the reed lays out Ezekiel''s house (40:5).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=5
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=28 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *make all things according to the pattern shewed to thee in the mount* (Hebrews 8:5) — Hebrews names the principle: Ezekiel''s reed (40:5) measures an earthly copy of a heavenly thing.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=5
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the city lieth foursquare... and he measured the city with the reed* (Revelation 21:16) — the foursquare court of Ezekiel 40:47 answers forward to the foursquare city, the perfect equal dwelling measured by the reed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=40 AND sv.verse_number=47
+  JOIN _s308_ezek40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
