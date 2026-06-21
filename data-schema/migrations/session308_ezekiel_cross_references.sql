@@ -7453,6 +7453,1427 @@ SELECT t.id, cr.id, 10, E'★ *this is my covenant unto them, when I shall take 
  WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_17.sql (Ezekiel 17) -----
+-- Chapter: Ezekiel 17 — THE RIDDLE OF THE TWO GREAT EAGLES. The first great eagle (Babylon) crops the
+-- highest branch of the cedar and carries it off; from the seed of the land a low spreading vine is
+-- planted; a second great eagle (Egypt) draws the vine's roots toward itself. The riddle is read out:
+-- the king of Babylon took of the king's seed (Zedekiah), made a covenant, took an oath — and Zedekiah
+-- rebelled, sending to Egypt for horses; the despised oath and broken covenant are recompensed on his
+-- own head. Then the turn: Yahuah HIMSELF will take of the highest branch of the high cedar — a tender
+-- twig — and plant it on a high mountain of Yashar''el, where it becomes a goodly cedar sheltering all
+-- fowl; the high tree brought down, the low tree exalted. The broken covenant-oath of a faithless king
+-- against the planted-and-exalted Messianic tree of Yahuah.
+-- Tag: ezek17   Temp view: _s308_ezek17_lookup
+-- Sort band: base 32400, step 3 -> threads at 32400, 32403 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',17,v
+--
+-- Ezekiel 17 coverage:
+--   v.1-10 (the riddle/parable: the two great eagles; the highest branch of the cedar cropped and carried
+--          to a land of traffick; the seed of the land made a low spreading vine; the second eagle the vine
+--          bends its roots toward; shall it prosper? the east wind withers it)
+--        NT:     none warranted (the riddle itself; read out and answered in vv.12-21 — the figure is
+--                interpreted within the chapter, so the NT weave attaches to the interpretation, not the riddle)
+--        Extras: none warranted
+--        Tanakh: none separate (the figure of Babylon/Egypt and Zedekiah's vine; woven in prose of THREAD 1)
+--   ★ v.12-19 (the king of Babylon took of the king's seed, made a covenant, took an oath... but he
+--          rebelled, sending to Egypt... seeing he despised the oath by breaking the covenant... mine oath
+--          that he hath despised, and my covenant that he hath broken, even it will I recompense upon his
+--          own head)
+--        NT:     ★ Romans 1:31 (covenantbreakers, without natural affection), ★ Matthew 5:33-37 (perform
+--                unto Yahuah thine oaths... Swear not at all... let your communication be, Yea, yea) — THREAD 1
+--        Extras: none warranted (clean canon weave; oath-keeping is a Torah/wisdom matter the canon itself
+--                carries)
+--        Tanakh: ★★ 2 Chronicles 36:13 (he also rebelled against king Nebuchadnezzar, who had made him swear
+--                by Elohim), ★ Ecclesiastes 5:4-5 (when thou vowest a vow... defer not to pay it... better
+--                not to vow than vow and not pay) — THREAD 1
+--   v.20-21 (I will spread my net upon him... his fugitives shall fall by the sword, and they that remain
+--          shall be scattered toward all winds; ye shall know that I Yahuah have spoken it) — the execution
+--          of the recompense; woven into THREAD 1 prose (NT none / Extras none / Tanakh none warranted).
+--   ★★ v.22-24 (I will also take of the highest branch of the high cedar... a tender one... and will plant
+--          it upon an high mountain and eminent... it shall bring forth boughs, and bear fruit, and be a
+--          goodly cedar: and under it shall dwell all fowl of every wing... I Yahuah have brought down the
+--          high tree, have exalted the low tree)
+--        NT:     ★★ Matthew 13:31-32 (the grain of mustard seed... becometh a tree, so that the birds of the
+--                air come and lodge in the branches thereof — the kingdom), ★ Luke 1:52 (he hath put down
+--                the mighty from their seats, and exalted them of low degree) — THREAD 2
+--        Extras: none warranted (the Messianic tree/Branch is a canon-prophetic line; no extras forced)
+--        Tanakh: ★★ Isaiah 11:1 (a rod out of the stem of Jesse, and a Branch shall grow out of his roots),
+--                ★★ Isaiah 53:2 (he shall grow up before him as a tender plant, and as a root out of a dry
+--                ground), ★ Jeremiah 23:5 (I will raise unto David a righteous Branch), ★ Daniel 4:10-12
+--                (a tree in the midst of the earth... the fowls of the heaven dwelt in the boughs thereof —
+--                lateral kingdom-tree) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake — NT (Romans 1, Matthew 5) + Tanakh (2 Chronicles 36, Ecclesiastes 5) [free]
+--      (★ Zedekiah's broken covenant-oath, sworn by Yahuah's name, recompensed on his own head; oaths are sacred)
+--   2. ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar — NT (Matthew 13, Luke 1) + Tanakh (Isaiah 11, Isaiah 53, Jeremiah 23, Daniel 4) [free]
+--      (★★ the Messianic tender-twig Yahuah plants and exalts into the kingdom-tree; the high brought down, the low exalted)
+--
+-- Framing notes:
+--   ★ THE OATH HE DESPISED (THREAD 1): the riddle read out — *the king of Babylon is come to Jerusalem, and
+--      hath taken the king thereof... And hath taken of the king's seed, and made a covenant with him, and
+--      hath taken an oath of him* (17:12-13), *that... by keeping of his covenant it might stand* (17:14).
+--      But Zedekiah *rebelled against him in sending his ambassadors into Egypt* (17:15), and the verdict is
+--      sworn: *Seeing he despised the oath by breaking the covenant, when, lo, he had given his hand... he
+--      shall not escape* (17:18); *mine oath that he hath despised, and my covenant that he hath broken, even
+--      it will I recompense upon his own head* (17:19). LOAD-BEARING: though the oath was sworn TO Babylon's
+--      king, Yahuah calls it *MINE oath* and *MY covenant* — the oath bound by Yahuah's Name is binding, and
+--      breaking it is trespass against Yahuah himself (17:20). 2 Chronicles names the same king: *he also
+--      rebelled against king Nebuchadnezzar, who had made him swear by Elohim (God)* (36:13). The wisdom of
+--      the vow: *defer not to pay it... better not vow than vow and not pay* (Eccl 5:4-5). Paul lists
+--      *covenantbreakers* among the reprobate (Rom 1:31). And the Formed Son seals it: *perform unto Yahuah
+--      (Lord) thine oaths... Swear not at all... let your communication be, Yea, yea* (Matt 5:33-37) — not an
+--      abolishing of the sworn word but its perfecting: the yea that needs no oath because it never breaks.
+--   ★★ THE TENDER TWIG (THREAD 2): the turn from the faithless king's withered vine to Yahuah's own
+--      planting — *I will also take of the highest branch of the high cedar, and will set it; I will crop off
+--      from the top of his young twigs a tender one, and will plant it upon an high mountain and eminent: In
+--      the mountain of the height of Yashar''el (Israel) will I plant it: and it shall bring forth boughs, and
+--      bear fruit, and be a goodly cedar: and under it shall dwell all fowl of every wing* (17:22-23), *I
+--      Yahuah (LORD) have brought down the high tree, have exalted the low tree* (17:24). The tender twig is
+--      the Messianic Branch: *a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isa
+--      11:1); *he shall grow up before him as a tender plant, and as a root out of a dry ground* (Isa 53:2);
+--      *I will raise unto David a righteous Branch* (Jer 23:5). The goodly cedar sheltering *all fowl of every
+--      wing* is the kingdom-tree of the mustard seed — *it... becometh a tree, so that the birds of the air
+--      come and lodge in the branches thereof* (Matt 13:32) — lateral to the great tree of Daniel where *the
+--      fowls of the heaven dwelt in the boughs thereof* (Dan 4:12). And the reversal — *brought down the high
+--      tree... exalted the low tree* — is the Magnificat: *he hath put down the mighty from their seats, and
+--      exalted them of low degree* (Luke 1:52). Where the high king's vine withered for breaking covenant,
+--      Yahuah's own tender twig, planted by his hand, becomes the everlasting kingdom-tree.
+--   VERSES WITH NO SEPARATE ADD: v.1-10 (the riddle/parable itself — interpreted within the chapter, the weave
+--      attaching to the interpretation in THREAD 1); v.20-21 (the net spread, the fugitives scattered — the
+--      execution of v.19's recompense; woven into THREAD 1 prose). All verses recorded; every block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the oath he despised and the covenant he brake — recompensed on his own head
+    ('canon','ezekiel',17,16,'canon','2-chronicles',36,13,'free',
+      E'*And he also rebelled against king Nebuchadnezzar, who had made him swear by Elohim (God): but he stiffened his neck, and hardened his heart from turning unto Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (2 Chronicles 36:13). The Chronicler names the very king of Ezekiel''s riddle: Zedekiah, *whose oath he despised, and whose covenant he brake* (Ezekiel 17:16). The oath to Babylon''s king was sworn *by Elohim (God)* — so its breaking was a hardening against Yahuah himself, and the king dies *in the midst of Babylon*.'),
+    ('canon','ezekiel',17,19,'canon','2-chronicles',36,13,'free',
+      E'*And he also rebelled against king Nebuchadnezzar, who had made him swear by Elohim (God): but he stiffened his neck, and hardened his heart from turning unto Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (2 Chronicles 36:13). Because the oath was sworn *by Elohim (God)*, Yahuah claims it as his own — *mine oath that he hath despised, and my covenant that he hath broken, even it will I recompense upon his own head* (Ezekiel 17:19). The oath bound by Yahuah''s Name is binding, and breaking it is trespass against Yahuah, not merely against Babylon.'),
+    ('canon','ezekiel',17,19,'canon','ecclesiastes',5,4,'free',
+      E'*When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4). The Preacher names the sin Ezekiel''s king is judged for — *mine oath that he hath despised, and my covenant that he hath broken* (Ezekiel 17:19): a vow made to Elohim and not kept. Elohim *hath no pleasure in fools*; the sworn word must be paid.'),
+    ('canon','ezekiel',17,18,'canon','ecclesiastes',5,5,'free',
+      E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). Zedekiah *despised the oath by breaking the covenant, when, lo, he had given his hand* (Ezekiel 17:18) — the very evil the Preacher warns against: it is better never to have sworn than to swear and break it. The given hand and the despised oath bring the recompense.'),
+    ('canon','ezekiel',17,18,'canon','romans',1,31,'free',
+      E'*Without understanding, covenantbreakers, without natural affection, implacable, unmerciful* (Romans 1:31). Paul lists *covenantbreakers* among the marks of the reprobate mind — the very charge against the king who *despised the oath by breaking the covenant* (Ezekiel 17:18). Faithlessness to the sworn word is named a sign of the heart given over, then and now.'),
+    ('canon','ezekiel',17,16,'canon','matthew',5,33,'free',
+      E'*Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33). The Formed Son names the Torah-standard the faithless king broke — one must *perform unto Yahuah thine oaths*; Zedekiah, *whose oath he despised, and whose covenant he brake* (Ezekiel 17:16), did the opposite. The oath sworn before Yahuah must be performed.'),
+    ('canon','ezekiel',17,19,'canon','matthew',5,34,'free',
+      E'*But I say unto you, Swear not at all; neither by heaven; for it is Elohim''s (God’s) throne* (Matthew 5:34). Because every oath finally invokes Yahuah — *mine oath that he hath despised* (Ezekiel 17:19) — the Formed Son drives the standard to the root: rather than swear and break, *swear not at all*. The lesson of the despised oath is that the sworn word is never trivial; it binds before the throne of Elohim.'),
+    ('canon','ezekiel',17,19,'canon','matthew',5,37,'free',
+      E'*But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:37). Against the broken oath recompensed *upon his own head* (Ezekiel 17:19), the Messiah sets the perfected word — a *yea* so faithful it needs no oath, never despised, never broken. Not an abolishing of the sworn word but its fulfilment: the truthful yea that keeps covenant.'),
+
+    -- THREAD 2 (★★): the tender twig Yahuah plants — the goodly cedar, the high brought low and low exalted
+    ('canon','ezekiel',17,22,'canon','isaiah',11,1,'free',
+      E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). The tender twig Yahuah crops and plants — *I will crop off from the top of his young twigs a tender one, and will plant it upon an high mountain and eminent* (Ezekiel 17:22) — is the Davidic Branch out of the stem of Jesse. Where the high king''s line is cut off, Yahuah raises a Branch from the root and plants it on the mountain.'),
+    ('canon','ezekiel',17,22,'canon','isaiah',53,2,'free',
+      E'*For he shall grow up before him as a tender plant, and as a root out of a dry ground: he hath no form nor comeliness; and when we shall see him, there is no beauty that we should desire him* (Isaiah 53:2). The *tender one* Yahuah plants (Ezekiel 17:22) is the suffering Servant — *a tender plant, and as a root out of a dry ground* — small and unregarded at first, yet the One Yahuah''s own hand sets and raises. The tender twig and the tender plant are the same lowly, planted Messiah.'),
+    ('canon','ezekiel',17,22,'canon','jeremiah',23,5,'free',
+      E'*Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5). The cedar-twig Yahuah plants to *be a goodly cedar* (Ezekiel 17:23) is the *righteous Branch* raised unto David — a King who reigns where the faithless king fell. The planted twig becomes the reigning, righteous King.'),
+    ('canon','ezekiel',17,23,'canon','matthew',13,32,'free',
+      E'*Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:32). The Formed Son''s parable fills Ezekiel''s cedar: the tender twig becomes *a goodly cedar: and under it shall dwell all fowl of every wing... in the shadow of the branches thereof* (Ezekiel 17:23), as the mustard seed *becometh a tree, so that the birds of the air come and lodge in the branches thereof*. The smallest planting grows into the sheltering kingdom-tree.'),
+    ('canon','ezekiel',17,23,'canon','matthew',13,31,'free',
+      E'*Another parable put he forth unto them, saying, The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field* (Matthew 13:31). The kingdom-tree of Ezekiel''s tender twig — planted by Yahuah to shelter *all fowl of every wing* (Ezekiel 17:23) — is *the kingdom of heaven... like to a grain of mustard seed* sown in a field. A small planting, a great tree; the kingdom Yahuah grows from the tender one.'),
+    ('canon','ezekiel',17,23,'canon','daniel',4,12,'free',
+      E'*The leaves thereof were fair, and the fruit thereof much, and in it was meat for all: the beasts of the field had shadow under it, and the fowls of the heaven dwelt in the boughs thereof, and all flesh was fed of it* (Daniel 4:12). Daniel''s great tree, *the fowls of the heaven dwelt in the boughs thereof*, is the same kingdom-tree figure as Ezekiel''s goodly cedar where *under it shall dwell all fowl of every wing* (Ezekiel 17:23). But where Nebuchadnezzar''s tree is hewn down for pride, Yahuah''s tender twig is planted and exalted to endure.'),
+    ('canon','ezekiel',17,24,'canon','luke',1,52,'free',
+      E'*He hath put down the mighty from their seats, and exalted them of low degree* (Luke 1:52). The Magnificat sings Ezekiel''s reversal — *I Yahuah (LORD) have brought down the high tree, have exalted the low tree, have dried up the green tree, and have made the dry tree to flourish* (Ezekiel 17:24). The high king brought low and the lowly twig exalted is the very work Mary praises: Yahuah puts down the mighty and lifts the low.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake',
+       E'The oath he despised and the covenant he brake — recompensed upon his own head',
+       E'The riddle of the two eagles is read out plainly: *the king of Babylon is come to Jerusalem, and hath taken the king thereof... And hath taken of the king''s seed, and made a covenant with him, and hath taken an oath of him: he hath also taken the mighty of the land: That the kingdom might be base, that it might not lift itself up, but that by keeping of his covenant it might stand* (17:12-14). Zedekiah, set under oath as a vassal, *rebelled against him in sending his ambassadors into Egypt, that they might give him horses and much people* (17:15) — and the verdict is sworn twice over: *Seeing he despised the oath by breaking the covenant, when, lo, he had given his hand, and hath done all these things, he shall not escape* (17:18); *Therefore thus saith Adonai Yahuah (the Lord GOD); As I live, surely mine oath that he hath despised, and my covenant that he hath broken, even it will I recompense upon his own head* (17:19). Mark what makes this more than politics: the oath was sworn to Babylon''s king, yet Yahuah calls it *MINE oath* and *MY covenant* — for the oath was sworn *by Elohim (God)*. The Chronicler names the same act: *he also rebelled against king Nebuchadnezzar, who had made him swear by Elohim (God): but he stiffened his neck, and hardened his heart from turning unto Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (2 Chronicles 36:13). The breaking of the sworn word is trespass against Yahuah himself, and so the net is spread: *I will spread my net upon him, and he shall be taken in my snare... and will plead with him there for his trespass that he hath trespassed against me* (17:20). The wisdom-word stands behind it: *When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4), *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). Paul lists *covenantbreakers* (Romans 1:31) among the marks of the reprobate. And the Formed Son seals it, not loosening the sworn word but perfecting it: *ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths: But I say unto you, Swear not at all; neither by heaven; for it is Elohim''s (God’s) throne... But let your communication be, Yea, yea; Nay, nay* (Matthew 5:33-37) — the yea so faithful it never needs an oath because it never breaks one. The oath bound by Yahuah''s Name is binding; the king who despised it bears it on his own head.',
+       sv.verse_id, ev.verse_id, 'free', 32400
+  FROM _s308_ezek17_lookup sv, _s308_ezek17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=17 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar',
+       E'The tender twig Yahuah plants — a goodly cedar, the high tree brought down and the low exalted',
+       E'Against the withered vine of the faithless king comes the great turn — Yahuah''s own planting: *Thus saith Adonai Yahuah (the Lord GOD); I will also take of the highest branch of the high cedar, and will set it; I will crop off from the top of his young twigs a tender one, and will plant it upon an high mountain and eminent: In the mountain of the height of Yashar''el (Israel) will I plant it: and it shall bring forth boughs, and bear fruit, and be a goodly cedar: and under it shall dwell all fowl of every wing; in the shadow of the branches thereof shall they dwell* (17:22-23). The *tender one* Yahuah crops and plants by his own hand is the Messianic Branch the prophets sing: *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1); *he shall grow up before him as a tender plant, and as a root out of a dry ground* (Isaiah 53:2) — small, unregarded, planted in dry ground; *I will raise unto David a righteous Branch, and a King shall reign and prosper* (Jeremiah 23:5). The goodly cedar that shelters *all fowl of every wing* is the kingdom-tree of the Formed Son''s parable: *The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field... when it is grown... becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:31-32) — and it stands lateral to Nebuchadnezzar''s great tree where *the fowls of the heaven dwelt in the boughs thereof* (Daniel 4:12), save that the proud tree is hewn down while Yahuah''s planted twig endures. The chapter closes on the reversal that is the heart of the whole framework: *And all the trees of the field shall know that I Yahuah (LORD) have brought down the high tree, have exalted the low tree, have dried up the green tree, and have made the dry tree to flourish: I Yahuah (LORD) have spoken and have done it* (17:24) — the Magnificat before the Magnificat: *He hath put down the mighty from their seats, and exalted them of low degree* (Luke 1:52). Where the high king''s vine withered for breaking covenant, the tender twig Yahuah plants with his own hand becomes the everlasting kingdom-tree; the high brought down, the low exalted, and Yahuah has done it.',
+       sv.verse_id, ev.verse_id, 'free', 32403
+  FROM _s308_ezek17_lookup sv, _s308_ezek17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=17 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he also rebelled against king Nebuchadnezzar, who had made him swear by Elohim (God)* (2 Chronicles 36:13) — the Chronicler names the very king of the riddle; Zedekiah, whose oath he despised (Ezekiel 17:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *who had made him swear by Elohim (God)* (2 Chronicles 36:13) — because sworn by Elohim, Yahuah claims it as *mine oath... my covenant* (Ezekiel 17:19); breaking it is trespass against Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *When thou vowest a vow unto Elohim (God), defer not to pay it... pay that which thou hast vowed* (Ecclesiastes 5:4) — the wisdom behind the judgment; a vow to Elohim must be kept.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5) — the very evil of the king who gave his hand and despised the oath (Ezekiel 17:18).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *covenantbreakers, without natural affection* (Romans 1:31) — Paul lists the king''s sin among the marks of the reprobate mind; faithlessness to the sworn word.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33) — the Formed Son names the Torah-standard the king broke; the oath sworn before Yahuah must be performed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Swear not at all; neither by heaven; for it is Elohim''s (God’s) throne* (Matthew 5:34) — every oath finally invokes Yahuah, who calls it *mine oath* (Ezekiel 17:19); the sworn word is never trivial.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*let your communication be, Yea, yea; Nay, nay* (Matthew 5:37) — the perfected word against the broken oath; a yea so faithful it never needs an oath because it never breaks one.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=19
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-oath-he-despised-and-the-covenant-he-brake'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1) — the tender twig Yahuah plants (Ezekiel 17:22) is the Davidic Branch from Jesse''s root.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he shall grow up before him as a tender plant, and as a root out of a dry ground* (Isaiah 53:2) — the *tender one* of Ezekiel 17:22 is the suffering Servant, small and unregarded, raised by Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=22
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *I will raise unto David a righteous Branch, and a King shall reign and prosper* (Jeremiah 23:5) — the goodly cedar (Ezekiel 17:23) is the righteous Branch who reigns where the faithless king fell.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:32) — the mustard-seed kingdom fills the cedar where *all fowl of every wing* dwell (Ezekiel 17:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *The kingdom of heaven is like to a grain of mustard seed, which a man took, and sowed in his field* (Matthew 13:31) — the kingdom-tree Yahuah grows from the tender twig; a small planting, a great tree.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the fowls of the heaven dwelt in the boughs thereof, and all flesh was fed of it* (Daniel 4:12) — lateral kingdom-tree where the fowls lodge; but the proud tree is hewn down, Yahuah''s planted twig endures (Ezekiel 17:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=23
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *He hath put down the mighty from their seats, and exalted them of low degree* (Luke 1:52) — the Magnificat sings the reversal of Ezekiel 17:24: the high tree brought down, the low tree exalted.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=17 AND sv.verse_number=24
+  JOIN _s308_ezek17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-17-the-tender-twig-planted-into-a-goodly-cedar'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_18.sql (Ezekiel 18) -----
+-- Chapter: Ezekiel 18 — ★★ INDIVIDUAL RESPONSIBILITY AND THE CALL TO TURN AND LIVE. The sour-grapes
+-- proverb refuted (the fathers have eaten sour grapes, and the children''s teeth are set on edge) — every
+-- soul accountable for ITSELF: *the soul that sinneth, it shall die*; the son shall not bear the iniquity
+-- of the father. The marks of the just man = walking in the statutes (Torah-keeping IS the description of
+-- the righteous, never abolished). And the heart of the chapter: *Have I any pleasure at all that the
+-- wicked should die?... and not that he should return from his ways, and live?* — Yahuah desires
+-- repentance, not death; turn and live; make you a new heart (the command answered by the promise of
+-- Ezek 36:26 to GIVE one).
+-- Tag: ezek18   Temp view: _s308_ezek18_lookup
+-- Sort band: base 32425, step 3 -> threads at 32425, 32428, 32431, 32434 (4 threads)
+-- Source of EVERY row: 'canon','ezekiel',18,v
+--
+-- Ezekiel 18 coverage:
+--   ★★ v.2-4 (What mean ye, that ye use this proverb... The fathers have eaten sour grapes, and the
+--          children''s teeth are set on edge?... Behold, all souls are mine... the soul that sinneth, it
+--          shall die)
+--        NT:     none warranted distinct here (the personal-judgment forward-weave carried in THREAD 3,
+--                vv.20-23, where the same axiom recurs and opens into repentance)
+--        Extras: none warranted (clean canon-Tanakh covenant-justice weave)
+--        Tanakh: ★★ Jeremiah 31:29-30 (they shall say no more, The fathers have eaten a sour grape...
+--                every one shall die for his own iniquity — the same proverb refuted), ★★ Deuteronomy
+--                24:16 (the fathers shall not be put to death for the children... every man shall be put
+--                to death for his own sin — the Torah root), ★ 2 Kings 14:6 (the children of the murderers
+--                he slew not: according to that which is written in the book of the law of Moses) — THREAD 1
+--   ★★ v.5-9 (if a man be just, and do that which is lawful and right... Hath walked in my statutes, and
+--          hath kept my judgments, to deal truly; he is just, he shall surely live)
+--        NT:     ★★ Romans 2:13 (the doers of the law shall be justified), ★ 1 John 3:7 (he that doeth
+--                righteousness is righteous) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 18:5 (which if a man do, he shall live in them), ★ Psalm 15:1-2 (who shall
+--                abide in thy tabernacle?... He that walketh uprightly), ★ Psalm 24:3-4 (who shall ascend...
+--                He that hath clean hands, and a pure heart) — THREAD 2
+--   v.10-19 (the wicked son who doeth all these abominations shall die; the righteous son who seeth his
+--          father''s sins and doeth not such like shall surely live; the son shall not bear the iniquity of
+--          the father)
+--        NT:     none warranted distinct (the case-law expansion of the axiom; the son-not-bearing-the-
+--                father carried forward in THREAD 3 at v.20 where it is stated as the law)
+--        Extras: none warranted
+--        Tanakh: held in prose — the three-generation case (just father / wicked son / righteous grandson)
+--                woven into THREAD 1 and THREAD 3; no separate add
+--   ★★★ v.20-23 (The soul that sinneth, it shall die. The son shall not bear the iniquity of the father...
+--          the righteousness of the righteous shall be upon him... But if the wicked will turn from all his
+--          sins... he shall surely live, he shall not die... Have I any pleasure at all that the wicked
+--          should die?... and not that he should return from his ways, and live?)
+--        NT:     ★★★ 2 Peter 3:9 (not willing that any should perish, but that all should come to
+--                repentance), ★★ 1 Timothy 2:4 (who will have all men to be saved), ★★ Luke 15:7 (joy...
+--                over one sinner that repenteth), ★ Acts 3:19 (Repent ye... that your sins may be blotted
+--                out) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: held in prose (the turn-and-live refrain reprised at vv.27-28, woven into THREAD 3/4)
+--   v.24-29 (when the righteous turneth away from his righteousness... he shall die; the way of Yahuah is
+--          not equal? are not YOUR ways unequal?; when the wicked turneth away from his wickedness he shall
+--          save his soul alive)
+--        NT:     none warranted distinct (the apostasy/return symmetry; the wicked-man-turns clause of
+--                v.27-28 echoes the turn-and-live of THREAD 3; the equal-ways vindication woven in prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the divine equity (*Is not my way equal?*) framed in THREAD 4 lead-in
+--   ★★ v.30-32 (I will judge you... every one according to his ways... Repent, and turn yourselves from all
+--          your transgressions... Cast away from you all your transgressions... and make you a new heart and
+--          a new spirit: for why will ye die, O house of Yashar''el (Israel)? For I have no pleasure in the
+--          death of him that dieth... wherefore turn yourselves, and live ye)
+--        NT:     ★ Acts 2:38 (Repent, and be baptized every one of you... for the remission of sins), ★
+--                Matthew 3:2 (Repent ye: for the kingdom of heaven is at hand) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★★ Ezekiel 36:26 (a new heart will I give you, and a new spirit will I put within you —
+--                what Yahuah COMMANDS here he PROMISES to give there), ★ Joel 2:13 (rend your heart...
+--                and turn unto Yahuah) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-18-the-soul-that-sinneth-it-shall-die — Tanakh (Jeremiah 31, Deuteronomy 24, 2 Kings 14) [free]
+--      (★★ the sour-grapes proverb refuted; every soul accountable for itself; the Torah root of individual judgment)
+--   2. ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live — NT (Romans 2, 1 John 3) + Tanakh (Leviticus 18, Psalm 15, Psalm 24) [free]
+--      (★★ the marks of the just man = walking in the statutes; Torah-keeping is the description of the righteous, never abolished)
+--   3. ezekiel-18-turn-and-live-i-have-no-pleasure-in-the-death-of-the-wicked — NT (2 Peter 3, 1 Timothy 2, Luke 15, Acts 3) [free]
+--      (★★★ turn and live; Yahuah desires repentance, not death; not willing that any should perish)
+--   4. ezekiel-18-make-you-a-new-heart-why-will-ye-die — NT (Acts 2, Matthew 3) + Tanakh (Ezekiel 36, Joel 2) [free]
+--      (★★ the call to repentance and the new heart; the command to make a new heart answered by the promise to give one)
+--
+-- Framing notes:
+--   ★★ THE SOUR-GRAPES PROVERB REFUTED (THREAD 1): *What mean ye, that ye use this proverb concerning the
+--      land of Yashar''el (Israel), saying, The fathers have eaten sour grapes, and the children''s teeth
+--      are set on edge?* (18:2) — the fatalist proverb that says the children are doomed for the fathers''
+--      sin. Yahuah breaks it: *Behold, all souls are mine; as the soul of the father, so also the soul of
+--      the son is mine: the soul that sinneth, it shall die* (18:4). Jeremiah carries the very same word:
+--      *they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on
+--      edge. But every one shall die for his own iniquity* (Jeremiah 31:29-30). And the axiom is older than
+--      both prophets — it is the Torah: *The fathers shall not be put to death for the children, neither
+--      shall the children be put to death for the fathers: every man shall be put to death for his own sin*
+--      (Deuteronomy 24:16), a law Amaziah obeyed to the letter (2 Kings 14:6). Each soul belongs to Yahuah
+--      and answers for itself.
+--   ★★ THE MARKS OF THE JUST MAN (THREAD 2): *if a man be just, and do that which is lawful and right...
+--      Hath walked in my statutes, and hath kept my judgments, to deal truly; he is just, he shall surely
+--      live* (18:5,9). The description of the righteous man is a man WALKING IN THE STATUTES — Torah-keeping
+--      is the very portrait of the just, not a defunct burden. This is Leviticus 18:5 made personal: *which
+--      if a man do, he shall live in them* — the same live-in-them promise. The Psalms ask the gate-question
+--      and answer it the same way: *who shall abide in thy tabernacle?... He that walketh uprightly, and
+--      worketh righteousness* (Psalm 15:1-2); *who shall ascend into the hill of Yahuah?... He that hath
+--      clean hands, and a pure heart* (Psalm 24:3-4). And the apostolic word agrees: *not the hearers of
+--      the law are just before Elohim (God), but the doers of the law shall be justified* (Romans 2:13);
+--      *he that doeth righteousness is righteous* (1 John 3:7). The doer of the statutes is the just man who
+--      lives — never the law abolished, never merit-by-flesh, but the obedient living faith Yahuah calls
+--      righteousness.
+--   ★★★ TURN AND LIVE (THREAD 3): *The soul that sinneth, it shall die. The son shall not bear the iniquity
+--      of the father... the righteousness of the righteous shall be upon him, and the wickedness of the
+--      wicked shall be upon him* (18:20) — and then the door swings open: *But if the wicked will turn from
+--      all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right,
+--      he shall surely live, he shall not die* (18:21). Then the heart of the whole framework: *Have I any
+--      pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he
+--      should return from his ways, and live?* (18:23). This is the very mercy the apostolic word proclaims:
+--      *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9); *Who will
+--      have all men to be saved* (1 Timothy 2:4); *joy shall be in heaven over one sinner that repenteth*
+--      (Luke 15:7); *Repent ye therefore, and be converted, that your sins may be blotted out* (Acts 3:19) —
+--      the transgressions *not... mentioned unto him* (18:22). Yahuah does not delight in death; he calls
+--      the wicked to turn and live.
+--   ★★ MAKE YOU A NEW HEART (THREAD 4): the chapter ends in the appeal: *Repent, and turn yourselves from
+--      all your transgressions; so iniquity shall not be your ruin. Cast away from you all your
+--      transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will
+--      ye die, O house of Yashar''el (Israel)? For I have no pleasure in the death of him that dieth... turn
+--      yourselves, and live ye* (18:30-32). The command to *make you a new heart and a new spirit* is the
+--      same heart Yahuah PROMISES to GIVE in the next sweep of the prophecy: *A new heart also will I give
+--      you, and a new spirit will I put within you* (Ezekiel 36:26). What Yahuah commands he supplies — the
+--      turning he demands he works in his people. Joel sounds the same call: *rend your heart, and not your
+--      garments, and turn unto Yahuah* (Joel 2:13); and the apostolic preaching opens with it: *Repent ye:
+--      for the kingdom of heaven is at hand* (Matthew 3:2); *Repent, and be baptized every one of you...
+--      for the remission of sins* (Acts 2:38). Why will ye die? Turn, and live.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the word-of-Yahuah formula), v.10-19 (the three-generation case-law
+--      expansion — just father / wicked son / righteous grandson — woven into THREAD 1 and THREAD 3),
+--      v.24-29 (the apostasy/return symmetry and the *Is not my way equal?* vindication — the wicked-man-
+--      turns of v.27-28 reprises THREAD 3; the equal-ways framed in THREAD 4 lead-in). All recorded; every
+--      meaningful block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the sour-grapes proverb refuted — the soul that sinneth, it shall die
+    ('canon','ezekiel',18,2,'canon','jeremiah',31,29,'free',
+      E'*In those days they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on edge* (Jeremiah 31:29). Jeremiah speaks Ezekiel''s very word against the fatalist proverb — *What mean ye, that ye use this proverb... The fathers have eaten sour grapes, and the children''s teeth are set on edge?* (Ezekiel 18:2). The proverb that blames the fathers for the children''s doom is abolished in the day of the new covenant; each one answers for himself.'),
+    ('canon','ezekiel',18,4,'canon','jeremiah',31,30,'free',
+      E'*But every one shall die for his own iniquity: every man that eateth the sour grape, his teeth shall be set on edge* (Jeremiah 31:30). The axiom *the soul that sinneth, it shall die* (Ezekiel 18:4) is Jeremiah''s *every one shall die for his own iniquity*. Not the fathers'' sour grape but a man''s own sets his own teeth on edge — each soul accountable for itself before Yahuah (LORD).'),
+    ('canon','ezekiel',18,4,'canon','deuteronomy',24,16,'free',
+      E'*The fathers shall not be put to death for the children, neither shall the children be put to death for the fathers: every man shall be put to death for his own sin* (Deuteronomy 24:16). The principle *the soul that sinneth, it shall die* (Ezekiel 18:4) is older than the prophets — it is the Torah itself. Ezekiel is not announcing a new ethic but recalling Yashar''el (Israel) to the standing law of personal accountability.'),
+    ('canon','ezekiel',18,20,'canon','deuteronomy',24,16,'free',
+      E'*The fathers shall not be put to death for the children, neither shall the children be put to death for the fathers: every man shall be put to death for his own sin* (Deuteronomy 24:16). The law of Ezekiel — *The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son* (Ezekiel 18:20) — is word for word the Torah''s own justice. The prophet states the statute, not a novelty; the righteousness of the righteous is upon him, and the wickedness of the wicked upon him.'),
+    ('canon','ezekiel',18,20,'canon','2-kings',14,6,'free',
+      E'*But the children of the murderers he slew not: according unto that which is written in the book of the law of Moses, wherein Yahuah (LORD) commanded, saying, The fathers shall not be put to death for the children, nor the children be put to death for the fathers; but every man shall be put to death for his own sin* (2 Kings 14:6). King Amaziah obeyed the very law Ezekiel restates — *The son shall not bear the iniquity of the father* (Ezekiel 18:20) — sparing the children of his father''s killers because the book of the law of Moses commands each man die for his own sin. The principle was Torah, kept in the kingdom long before the proverb arose.'),
+
+    -- THREAD 2 (★★): the marks of the just man — walking in the statutes, he shall live
+    ('canon','ezekiel',18,9,'canon','leviticus',18,5,'free',
+      E'*Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5). The just man of Ezekiel *Hath walked in my statutes, and hath kept my judgments, to deal truly; he is just, he shall surely live* (Ezekiel 18:9) — the same statutes-and-judgments, the same live-in-them promise. To keep the Torah and live by it is the portrait of the righteous, given by Yahuah''s own mouth.'),
+    ('canon','ezekiel',18,9,'canon','romans',2,13,'free',
+      E'*(For not the hearers of the law are just before Elohim (God), but the doers of the law shall be justified* (Romans 2:13). Ezekiel''s just man is the doer Paul names — *Hath walked in my statutes, and hath kept my judgments... he is just, he shall surely live* (Ezekiel 18:9): not the hearer but the doer of the law is just. The statutes walked-in, not merely heard, mark the righteous who live.'),
+    ('canon','ezekiel',18,9,'canon','1-john',3,7,'free',
+      E'*Little children, let no man deceive you: he that doeth righteousness is righteous, even as he is righteous* (1 John 3:7). John gives the same plain test as Ezekiel — *if a man be just, and do that which is lawful and right... he is just, he shall surely live* (Ezekiel 18:5,9): righteousness is something DONE, not merely professed. He that doeth righteousness is righteous; the doer of the statutes lives.'),
+    ('canon','ezekiel',18,5,'canon','psalms',15,2,'free',
+      E'*He that walketh uprightly, and worketh righteousness, and speaketh the truth in his heart* (Psalm 15:2). The Psalm asks who may abide in Yahuah''s tabernacle and answers exactly as Ezekiel describes the just man — *if a man be just, and do that which is lawful and right* (Ezekiel 18:5). The upright walker who works righteousness is the one who *shall never be moved* (Psalm 15:5); the marks of the just are the same in the prophet and the song.'),
+    ('canon','ezekiel',18,7,'canon','psalms',24,4,'free',
+      E'*He that hath clean hands, and a pure heart; who hath not lifted up his soul unto vanity, nor sworn deceitfully* (Psalm 24:4). The just man of Ezekiel who *hath given his bread to the hungry, and... hath withdrawn his hand from iniquity* (Ezekiel 18:7-8) is the clean-handed, pure-hearted one who *shall ascend into the hill of Yahuah (LORD)* (Psalm 24:3-4). The deeds that mark the righteous are the very deeds that fit a man to stand in Yahuah''s holy place.'),
+
+    -- THREAD 3 (★★★): turn and live — I have no pleasure in the death of the wicked
+    ('canon','ezekiel',18,23,'canon','2-peter',3,9,'free',
+      E'*Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). Peter''s gospel is Ezekiel''s heart: *Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (Ezekiel 18:23). Yahuah takes no pleasure in death; he is longsuffering, not willing that any perish, but that all turn and live.'),
+    ('canon','ezekiel',18,23,'canon','1-timothy',2,4,'free',
+      E'*Who will have all men to be saved, and to come unto the knowledge of the truth* (1 Timothy 2:4). The will of Yahuah that Ezekiel names — *not that he should return from his ways, and live?* (Ezekiel 18:23) — is the will Paul declares: Yahuah *will have all men to be saved*. He desires the wicked''s return, not his ruin.'),
+    ('canon','ezekiel',18,21,'canon','luke',15,7,'free',
+      E'*I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance* (Luke 15:7). The promise *if the wicked will turn from all his sins... he shall surely live, he shall not die* (Ezekiel 18:21) is the very turning heaven rejoices over — *joy... over one sinner that repenteth*. The wicked man''s turn to life is the cause of joy in heaven.'),
+    ('canon','ezekiel',18,22,'canon','acts',3,19,'free',
+      E'*Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of Yahuah (Lord)* (Acts 3:19). Ezekiel''s promise to the man who turns — *All his transgressions that he hath committed, they shall not be mentioned unto him: in his righteousness that he hath done he shall live* (Ezekiel 18:22) — is the blotting-out Peter preaches: repent, and the sins are wiped away, no more to be mentioned. Turning brings the times of refreshing, not death.'),
+
+    -- THREAD 4 (★★): make you a new heart — why will ye die
+    ('canon','ezekiel',18,31,'canon','ezekiel',36,26,'free',
+      E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). The command *make you a new heart and a new spirit* (Ezekiel 18:31) is answered by Yahuah''s own promise to GIVE that very heart — *A new heart also will I give you, and a new spirit will I put within you*. What Yahuah commands of the people he undertakes to work in them; the turning he demands he supplies.'),
+    ('canon','ezekiel',18,30,'canon','joel',2,13,'free',
+      E'*And rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful, slow to anger, and of great kindness, and repenteth him of the evil* (Joel 2:13). Joel sounds the same call as Ezekiel — *Repent, and turn yourselves from all your transgressions* (Ezekiel 18:30): a rending of the heart, a turning unto Yahuah who is gracious and merciful. The summons to turn rests on the mercy of the One who has no pleasure in death.'),
+    ('canon','ezekiel',18,30,'canon','matthew',3,2,'free',
+      E'*And saying, Repent ye: for the kingdom of heaven is at hand* (Matthew 3:2). The herald''s first word is Ezekiel''s appeal — *Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin* (Ezekiel 18:30). The call to turn that runs through the prophets opens the kingdom-preaching: repent, that iniquity be not your ruin.'),
+    ('canon','ezekiel',18,31,'canon','acts',2,38,'free',
+      E'*Then Peter said unto them, Repent, and be baptized every one of you in the name of Yahusha HaMashiach (Jesus Christ) for the remission of sins, and ye shall receive the gift of the Ruach HaKodesh (Holy Spirit)* (Acts 2:38). Ezekiel''s double command — *Cast away from you all your transgressions... and make you a new heart and a new spirit* (Ezekiel 18:31) — is fulfilled in the apostolic call: repent for the remission of sins, and receive the Ruach HaKodesh (Holy Spirit), the new spirit Yahuah puts within. The transgressions cast away, the new spirit given.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-18-the-soul-that-sinneth-it-shall-die',
+       E'The sour-grapes proverb refuted — the soul that sinneth, it shall die',
+       E'The exiles comforted themselves with a fatalist proverb that made them helpless victims of their fathers'' sin: *What mean ye, that ye use this proverb concerning the land of Yashar''el (Israel), saying, The fathers have eaten sour grapes, and the children''s teeth are set on edge?* (18:2). Yahuah (LORD) breaks it: *As I live, saith Adonai Yahuah (the Lord GOD), ye shall not have occasion any more to use this proverb in Yashar''el (Israel). Behold, all souls are mine; as the soul of the father, so also the soul of the son is mine: the soul that sinneth, it shall die* (18:3-4). Each soul belongs to Yahuah and answers for itself. The same word stands at the close of the case: *The soul that sinneth, it shall die. The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son: the righteousness of the righteous shall be upon him, and the wickedness of the wicked shall be upon him* (18:20). Jeremiah carries the identical refutation: *In those days they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on edge. But every one shall die for his own iniquity* (Jeremiah 31:29-30). And neither prophet invents the rule — it is the Torah: *The fathers shall not be put to death for the children, neither shall the children be put to death for the fathers: every man shall be put to death for his own sin* (Deuteronomy 24:16), a statute King Amaziah obeyed to the letter, sparing his father''s murderers'' children *according unto that which is written in the book of the law of Moses* (2 Kings 14:6). The exiles are not doomed by their fathers; each is called to answer, and so each is free to turn.',
+       sv.verse_id, ev.verse_id, 'free', 32425
+  FROM _s308_ezek18_lookup sv, _s308_ezek18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=18 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live',
+       E'The just man hath walked in my statutes — he shall surely live',
+       E'Having declared that each soul answers for itself, Ezekiel paints the just man — and the portrait is a man who keeps the Torah: *But if a man be just, and do that which is lawful and right, And hath not eaten upon the mountains, neither hath lifted up his eyes to the idols of the house of Yashar''el (Israel)... hath given his bread to the hungry, and hath covered the naked with a garment... that hath withdrawn his hand from iniquity, hath executed true judgment between man and man, Hath walked in my statutes, and hath kept my judgments, to deal truly; he is just, he shall surely live, saith Adonai Yahuah (the Lord GOD)* (18:5-9). Walking in the statutes IS the description of the righteous, never a defunct burden. This is Leviticus 18:5 made personal: *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* — the same statutes, the same live-in-them promise. The Psalms ask the gate-question and answer the same way: *who shall abide in thy tabernacle?... He that walketh uprightly, and worketh righteousness* (Psalm 15:1-2); *who shall ascend into the hill of Yahuah (LORD)?... He that hath clean hands, and a pure heart* (Psalm 24:3-4). And the apostolic word affirms it: *not the hearers of the law are just before Elohim (God), but the doers of the law shall be justified* (Romans 2:13); *he that doeth righteousness is righteous, even as he is righteous* (1 John 3:7). The doer of the statutes — not the hearer, not the professor — is the just man who lives.',
+       sv.verse_id, ev.verse_id, 'free', 32428
+  FROM _s308_ezek18_lookup sv, _s308_ezek18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=18 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-18-turn-and-live-i-have-no-pleasure-in-the-death-of-the-wicked',
+       E'Turn and live — I have no pleasure in the death of the wicked',
+       E'The law of personal judgment is not a sentence of despair but a door of mercy. *The soul that sinneth, it shall die. The son shall not bear the iniquity of the father... the righteousness of the righteous shall be upon him, and the wickedness of the wicked shall be upon him* (18:20) — and then the door opens: *But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die. All his transgressions that he hath committed, they shall not be mentioned unto him: in his righteousness that he hath done he shall live* (18:21-22). Here is the heart of the whole framework: *Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (18:23). Yahuah (LORD) takes no delight in death; he longs for the wicked to turn. The apostolic word proclaims the same heart: *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9); *Who will have all men to be saved, and to come unto the knowledge of the truth* (1 Timothy 2:4); *joy shall be in heaven over one sinner that repenteth* (Luke 15:7); *Repent ye therefore, and be converted, that your sins may be blotted out* (Acts 3:19) — the very blotting-out of the transgressions that *shall not be mentioned unto him*. The wicked man is not held to his past; if he turns, he lives, and heaven rejoices.',
+       sv.verse_id, ev.verse_id, 'free', 32431
+  FROM _s308_ezek18_lookup sv, _s308_ezek18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=18 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-18-make-you-a-new-heart-why-will-ye-die',
+       E'Make you a new heart — why will ye die, O house of Yashar''el?',
+       E'The chapter ends in a direct, pleading appeal: *Therefore I will judge you, O house of Yashar''el (Israel), every one according to his ways, saith Adonai Yahuah (the Lord GOD). Repent, and turn yourselves from all your transgressions; so iniquity shall not be your ruin. Cast away from you all your transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will ye die, O house of Yashar''el (Israel)? For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye* (18:30-32). The command to *make you a new heart and a new spirit* is the very heart Yahuah PROMISES to GIVE in the next sweep of the prophecy: *A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). What Yahuah commands of the people he undertakes to work in them — the turning he demands, he supplies; the new heart he requires, he gives. Joel sounds the same call: *rend your heart, and not your garments, and turn unto Yahuah Elohaychem (the LORD your God): for he is gracious and merciful* (Joel 2:13). And the apostolic preaching opens with it: *Repent ye: for the kingdom of heaven is at hand* (Matthew 3:2); *Repent, and be baptized every one of you in the name of Yahusha HaMashiach (Jesus Christ) for the remission of sins, and ye shall receive the gift of the Ruach HaKodesh (Holy Spirit)* (Acts 2:38) — the transgressions cast away, the new spirit given. Why will ye die? Turn, and live.',
+       sv.verse_id, ev.verse_id, 'free', 32434
+  FROM _s308_ezek18_lookup sv, _s308_ezek18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=18 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on edge* (Jeremiah 31:29) — Jeremiah speaks Ezekiel 18:2''s very word; the fatalist proverb abolished.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=2
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-soul-that-sinneth-it-shall-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *every one shall die for his own iniquity* (Jeremiah 31:30) — the axiom *the soul that sinneth, it shall die* (Ezekiel 18:4); each man''s own sin sets his own teeth on edge.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-soul-that-sinneth-it-shall-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *every man shall be put to death for his own sin* (Deuteronomy 24:16) — the Torah root of *the soul that sinneth, it shall die* (Ezekiel 18:4); a standing law, not a new ethic.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-soul-that-sinneth-it-shall-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *The fathers shall not be put to death for the children... every man shall be put to death for his own sin* (Deuteronomy 24:16) — word for word the law of *The son shall not bear the iniquity of the father* (Ezekiel 18:20).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-soul-that-sinneth-it-shall-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the children of the murderers he slew not: according unto... the law of Moses... every man shall be put to death for his own sin* (2 Kings 14:6) — Amaziah obeyed the very Torah Ezekiel 18:20 restates.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-soul-that-sinneth-it-shall-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them* (Leviticus 18:5) — the just man''s *Hath walked in my statutes... he shall surely live* (Ezekiel 18:9); the same live-in-them promise.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *not the hearers of the law are just before Elohim (God), but the doers of the law shall be justified* (Romans 2:13) — Ezekiel''s just man is the doer (18:9), not the hearer; the statutes walked-in mark the righteous.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he that doeth righteousness is righteous* (1 John 3:7) — the same plain test as *if a man be just, and do that which is lawful and right* (Ezekiel 18:5); righteousness is DONE, not merely professed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *He that walketh uprightly, and worketh righteousness* (Psalm 15:2) — who abides in Yahuah''s tabernacle is the upright walker, the same portrait as the just man of Ezekiel 18:5.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=5
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *He that hath clean hands, and a pure heart* (Psalm 24:4) — the deeds that mark Ezekiel''s just man (18:7-8) fit a man to *ascend into the hill of Yahuah* (Psalm 24:3).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=7
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=24 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-the-just-man-walketh-in-my-statutes-shall-live'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9) — Peter''s gospel is Ezekiel''s heart: *Have I any pleasure at all that the wicked should die?* (Ezekiel 18:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=23
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-turn-and-live-i-have-no-pleasure-in-the-death-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Who will have all men to be saved* (1 Timothy 2:4) — the will Ezekiel names: *not that he should return from his ways, and live?* (Ezekiel 18:23); Yahuah desires the wicked''s return.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=23
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-turn-and-live-i-have-no-pleasure-in-the-death-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *joy shall be in heaven over one sinner that repenteth* (Luke 15:7) — the turning of *if the wicked will turn from all his sins... he shall surely live* (Ezekiel 18:21) is the very turn heaven rejoices over.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=21
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-turn-and-live-i-have-no-pleasure-in-the-death-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Repent ye therefore... that your sins may be blotted out* (Acts 3:19) — the blotting-out of the transgressions that *shall not be mentioned unto him* (Ezekiel 18:22); turning brings refreshing, not death.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=22
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-turn-and-live-i-have-no-pleasure-in-the-death-of-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *A new heart also will I give you, and a new spirit will I put within you* (Ezekiel 36:26) — the command *make you a new heart and a new spirit* (Ezekiel 18:31) answered by Yahuah''s promise to GIVE it; what he commands, he supplies.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=31
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-make-you-a-new-heart-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *rend your heart, and not your garments, and turn unto Yahuah* (Joel 2:13) — the same call as *Repent, and turn yourselves from all your transgressions* (Ezekiel 18:30); a rending of the heart unto the merciful One.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-make-you-a-new-heart-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Repent ye: for the kingdom of heaven is at hand* (Matthew 3:2) — the herald''s first word is Ezekiel''s appeal: *Repent, and turn yourselves from all your transgressions* (Ezekiel 18:30).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-make-you-a-new-heart-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Repent, and be baptized every one of you... for the remission of sins, and ye shall receive the gift of the Ruach HaKodesh (Holy Spirit)* (Acts 2:38) — the transgressions cast away and the new spirit given (Ezekiel 18:31).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=18 AND sv.verse_number=31
+  JOIN _s308_ezek18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-18-make-you-a-new-heart-why-will-ye-die'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_19.sql (Ezekiel 19) -----
+-- Chapter: Ezekiel 19 — A LAMENTATION FOR THE PRINCES OF YASHAR'EL. The lioness (the royal house,
+-- the mother-city/nation) and her whelps: one whelp taken in their pit and brought with chains unto
+-- EGYPT (Jehoahaz to Pharaoh-nechoh), another taken in their net and brought to the KING OF BABYLON
+-- (Jehoiachin/Zedekiah) — the lions of Yahudah (Judah) caged, the royal-lion tribe brought low. Then
+-- the figure shifts: the mother is a VINE planted by the waters, fruitful, with strong rods for the
+-- sceptres of them that bare rule — but plucked up in fury, cast down, the east wind drying her fruit,
+-- the fire devouring, SO THAT SHE HATH NO STRONG ROD TO BE A SCEPTRE TO RULE. The Davidic house fallen,
+-- the throne vacant, the sceptre suspended until Shiloh comes. A short chapter; two threads.
+-- Tag: ezek19   Temp view: _s308_ezek19_lookup
+-- Sort band: base 32450, step 3 -> threads at 32450, 32453 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',19,v
+--
+-- Ezekiel 19 coverage:
+--   ★ v.1-9 (a lamentation for the princes of Yashar''el; a lioness... her whelps; one whelp a young lion
+--          that devoured men, taken in their pit, brought with chains unto Egypt; another taken in their
+--          net, brought to the king of Babylon, his voice no more heard on the mountains of Yashar''el)
+--        NT:     ★ Revelation 5:5 (the Lion of the tribe of Juda, the Root of David, hath prevailed) — the
+--                CONTRAST: the failed caged princes vs the true royal Lion they pointed to — THREAD 1
+--        Extras: none warranted (the historical captivity of the kings; no extras witness needed)
+--        Tanakh: ★ Genesis 49:9 (Yahudah is a lion''s whelp), ★ 2 Kings 23:33-34 (Pharaoh-nechoh / Jehoahaz
+--                to Egypt), ★ 2 Kings 24:15 (Jehoiachin carried away to Babylon) — THREAD 1
+--   ★ v.10-14 (thy mother is like a vine... planted by the waters; strong rods for the sceptres of them
+--          that bare rule; but she was plucked up in fury, cast down, the east wind dried up her fruit,
+--          the fire consumed; fire is gone out of a rod of her branches... so that she hath no strong rod
+--          to be a sceptre to rule)
+--        NT:     none warranted distinct (the Lion-of-Judah forward-weave held in THREAD 1; the restoration
+--                answered by Amos 9:11 below — the rebuilt tabernacle quoted forward in Acts 15 belongs to
+--                Amos, not forced here)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 80:8-16 (the vine out of Egypt now broken down and burned — lateral), ★ Ezekiel
+--                15:6 (the vine tree given to the fire for fuel), ★ Genesis 49:10 (the sceptre shall not
+--                depart from Yahudah until Shiloh come), ★ Amos 9:11 (I will raise up the tabernacle of
+--                David that is fallen) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed — NT (Revelation 5) + Tanakh (Genesis 49, 2 Kings 23, 2 Kings 24) [free]
+--      (★ the captive princes — Jehoahaz to Egypt, Jehoiachin to Babylon — the royal-lion tribe caged; the CONTRAST to the Lion of Judah who prevailed)
+--   2. ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre — Tanakh (Psalm 80, Ezekiel 15, Genesis 49, Amos 9) [free]
+--      (★ the Davidic vine uprooted and burned, no sceptre left to rule — the throne fallen until Shiloh comes, the tabernacle of David to be raised up again)
+--
+-- Framing notes:
+--   ★ THE CAGED LIONS (THREAD 1): *take thou up a lamentation for the princes of Yashar''el (Israel)* (19:1).
+--      The mother is *A lioness: she lay down among lions, she nourished her whelps among young lions* (19:2)
+--      — the royal house of the lion-tribe. One whelp *became a young lion... it devoured men* but *he was
+--      taken in their pit, and they brought him with chains unto the land of Egypt* (19:3-4) — Jehoahaz,
+--      whom *Pharaoh-nechoh put... in bands... and he came to Egypt, and died there* (2 Kings 23:33-34).
+--      Another whelp *was taken in their pit. And they put him in ward in chains, and brought him to the king
+--      of Babylon* (19:8-9) — Jehoiachin, whom Nebuchadnezzar *carried away... to Babylon* (2 Kings 24:15).
+--      These are the lions of *Yahudah... a lion''s whelp* (Genesis 49:9) — the royal-lion tribe, now caged.
+--      The CONTRAST is the true Lion: *the Lion of the tribe of Juda, the Root of David, hath prevailed to
+--      open the book* (Revelation 5:5). Where the princes were caught, chained, and silenced, the One the
+--      lion-tribe pointed to PREVAILED — the Formed Son, root and offspring of David, the Lion no net could
+--      take. (NT spelling "Juda" / "Root of David" quoted exactly as the parse returns it.)
+--   ★ THE VINE / NO SCEPTRE (THREAD 2): the figure shifts to the vine — *Thy mother is like a vine in thy
+--      blood, planted by the waters: she was fruitful and full of branches* (19:10), *And she had strong
+--      rods for the sceptres of them that bare rule* (19:11). But *she was plucked up in fury, she was cast
+--      down to the ground... her strong rods were broken and withered; the fire consumed them* (19:12), *so
+--      that she hath no strong rod to be a sceptre to rule* (19:14). The Davidic vine uprooted, the throne
+--      fallen, the sceptre gone. The same burned-vine figure is Psalm 80''s vine out of Egypt — *Thou hast
+--      brought a vine out of Egypt... It is burned with fire, it is cut down* (Psalm 80:8,16) — and Ezekiel''s
+--      own earlier word, the vine *given to the fire for fuel* (Ezekiel 15:6). But the sceptre is not gone
+--      forever — only SUSPENDED: *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come*
+--      (Genesis 49:10). The throne that has *no strong rod to be a sceptre* awaits the One; and Yahuah swears
+--      to rebuild it — *In that day will I raise up the tabernacle of David that is fallen* (Amos 9:11). The
+--      lamentation is real, but it is not the last word: the fallen house is raised in Shiloh.
+--   VERSES WITH NO SEPARATE ADD: v.5-7 (the second whelp''s rise — the desolate palaces, the roaring — woven
+--      into THREAD 1 prose as the figure of the second captive prince), v.13 (she planted in the wilderness,
+--      a dry and thirsty ground — woven into THREAD 2 prose as part of the uprooting). All recorded; both
+--      blocks carry a thread.
+
+CREATE TEMP VIEW _s308_ezek19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the caged lions of Yahudah and the true Lion who prevailed
+    ('canon','ezekiel',19,2,'canon','genesis',49,9,'free',
+      E'*Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). Jacob blessed Yahudah (Judah) as the royal-lion tribe — and Ezekiel''s lament names that very lion-house: *A lioness: she lay down among lions, she nourished her whelps among young lions* (Ezekiel 19:2). The lioness and her whelps are the kings of the lion-tribe; the blessing of the unrousable lion has come to a caged and chained whelp.'),
+    ('canon','ezekiel',19,4,'canon','2-kings',23,33,'free',
+      E'*And Pharaoh-nechoh put him in bands at Riblah in the land of Hamath, that he might not reign in Jerusalem; and put the land to a tribute of an hundred talents of silver, and a talent of gold* (2 Kings 23:33). This is the first caged whelp of the lament — *he was taken in their pit, and they brought him with chains unto the land of Egypt* (Ezekiel 19:4): Jehoahaz, son of Josiah, bound by Pharaoh-nechoh, that he might not reign. The young lion who devoured men is caught and chained.'),
+    ('canon','ezekiel',19,4,'canon','2-kings',23,34,'free',
+      E'*And Pharaoh-nechoh made Eliakim the son of Josiah king in the room of Josiah his father, and turned his name to Jehoiakim, and took Jehoahaz away: and he came to Egypt, and died there* (2 Kings 23:34). The whelp *brought... with chains unto the land of Egypt* (Ezekiel 19:4) is Jehoahaz, *taken... away* by Pharaoh, who *came to Egypt, and died there*. The lament''s first lion never returned to the mountains of Yashar''el (Israel).'),
+    ('canon','ezekiel',19,9,'canon','2-kings',24,15,'free',
+      E'*And he carried away Jehoiachin to Babylon, and the king''s mother, and the king''s wives, and his officers, and the mighty of the land, those carried he into captivity from Jerusalem to Babylon* (2 Kings 24:15). The second caged whelp — *they put him in ward in chains, and brought him to the king of Babylon... that his voice should no more be heard upon the mountains of Yashar''el (Israel)* (Ezekiel 19:9) — is Jehoiachin, carried captive to Babylon with the king''s mother. The royal lion is silenced and removed from the land.'),
+    ('canon','ezekiel',19,2,'canon','revelation',5,5,'free',
+      E'*And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5). The caged whelps of *A lioness... she nourished her whelps among young lions* (Ezekiel 19:2) were the lions of Yahudah (Judah) caught, chained, and silenced — but they pointed beyond themselves to the true Lion of the tribe of Judah, the Root of David, who *hath prevailed*. Where the princes were taken in the net, the Formed Son could not be caged; the failed royal lions are the foil to the Lion who overcame.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): the vine plucked up, no strong rod to be a sceptre
+    ('canon','ezekiel',19,10,'canon','psalms',80,8,'free',
+      E'*Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8). The lament''s vine — *Thy mother is like a vine in thy blood, planted by the waters: she was fruitful and full of branches* (Ezekiel 19:10) — is the same vine Asaph sings, Yashar''el (Israel) brought out of Egypt and planted by Yahuah (LORD). The royal house is that planted vine, fruitful before the fury fell.'),
+    ('canon','ezekiel',19,12,'canon','psalms',80,16,'free',
+      E'*It is burned with fire, it is cut down: they perish at the rebuke of thy countenance* (Psalm 80:16). The vine *plucked up in fury... cast down to the ground... the fire consumed them* (Ezekiel 19:12) is the burned and cut-down vine of the Psalm, perishing at the rebuke of Yahuah''s (LORD''s) countenance. The same figure of the broken vine sings of the same judgment on the same house.'),
+    ('canon','ezekiel',19,12,'canon','ezekiel',15,6,'free',
+      E'*Therefore thus saith Adonai Yahuah (the Lord GOD); As the vine tree among the trees of the forest, which I have given to the fire for fuel, so will I give the inhabitants of Jerusalem* (Ezekiel 15:6). Ezekiel had already given the vine to the fire — and now in the lament *the fire consumed them* (Ezekiel 19:12), *fire is gone out of a rod of her branches, which hath devoured her fruit* (Ezekiel 19:14). The vine meet for no work but burning is the house given over to the flame.'),
+    ('canon','ezekiel',19,14,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The lament ends *so that she hath no strong rod to be a sceptre to rule* (Ezekiel 19:14) — the Davidic sceptre fallen. Yet Jacob''s word stands: the sceptre does not finally depart, it is suspended *until Shiloh come*. The empty throne of the lament awaits the One to whom the gathering of the people shall be.'),
+    ('canon','ezekiel',19,14,'canon','amos',9,11,'free',
+      E'*In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old* (Amos 9:11). The house with *no strong rod to be a sceptre to rule* (Ezekiel 19:14) is the fallen tabernacle of David — and Yahuah (LORD) swears to raise it up again, to close its breaches and build it as of old. The lamentation is not the last word: the fallen Davidic house is restored in Shiloh.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed',
+       E'The lions of Yahudah caged — the princes taken to Egypt and Babylon — and the true Lion who prevailed',
+       E'Ezekiel is told to *take thou up a lamentation for the princes of Yashar''el (Israel)* (19:1), and the figure is the royal lion-house: *What is thy mother? A lioness: she lay down among lions, she nourished her whelps among young lions* (19:2). The first whelp *became a young lion, and it learned to catch the prey; it devoured men* — but *he was taken in their pit, and they brought him with chains unto the land of Egypt* (19:3-4): Jehoahaz, whom *Pharaoh-nechoh put... in bands at Riblah* (2 Kings 23:33) and *took... away: and he came to Egypt, and died there* (2 Kings 23:34). A second whelp rose and *devoured men* and laid waste cities (19:6-7), but the nations *spread their net over him: he was taken in their pit. And they put him in ward in chains, and brought him to the king of Babylon... that his voice should no more be heard upon the mountains of Yashar''el (Israel)* (19:8-9): Jehoiachin, whom Nebuchadnezzar *carried away... to Babylon, and the king''s mother* (2 Kings 24:15). These are the lions of the lion-tribe — *Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up... who shall rouse him up?* (Genesis 49:9) — now caught, chained, and silenced. And here is the contrast that the lament leaves room for: the failed, caged princes pointed beyond themselves to the true royal Lion, the One who could not be netted. At the throne of heaven the cry goes up, and the answer comes: *Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof* (Revelation 5:5). Where Jehoahaz and Jehoiachin were taken in the pit and brought low, the Formed Son — root and offspring of David, the Lion of Yahudah — PREVAILED. The lament for the caged lions is the dark foil to the Lion who overcame.',
+       sv.verse_id, ev.verse_id, 'free', 32450
+  FROM _s308_ezek19_lookup sv, _s308_ezek19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=19 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre',
+       E'Thy mother is like a vine — plucked up and burned, no strong rod left to be a sceptre to rule',
+       E'The lament turns from the lioness to the vine: *Thy mother is like a vine in thy blood, planted by the waters: she was fruitful and full of branches by reason of many waters. And she had strong rods for the sceptres of them that bare rule, and her stature was exalted among the thick branches* (19:10-11). The Davidic house was a fruitful vine whose strong rods were royal sceptres — kings to rule. But the fury fell: *she was plucked up in fury, she was cast down to the ground, and the east wind dried up her fruit: her strong rods were broken and withered; the fire consumed them* (19:12); *And now she is planted in the wilderness, in a dry and thirsty ground* (19:13); *And fire is gone out of a rod of her branches, which hath devoured her fruit, so that she hath no strong rod to be a sceptre to rule. This is a lamentation, and shall be for a lamentation* (19:14). The throne is empty, the sceptre gone, the vine burned. It is the very vine Asaph sang — *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8), now *burned with fire... cut down* (Psalm 80:16) — and the vine Ezekiel had already given over: *the vine tree among the trees of the forest, which I have given to the fire for fuel* (Ezekiel 15:6). Yet the fallen sceptre is not gone forever, only suspended: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The throne that *hath no strong rod to be a sceptre* awaits the One; and Yahuah (LORD) swears the fallen house will rise: *In that day will I raise up the tabernacle of David that is fallen, and close up the breaches thereof; and I will raise up his ruins, and I will build it as in the days of old* (Amos 9:11). The lamentation is real — but the burned vine is not the end of the line of David.',
+       sv.verse_id, ev.verse_id, 'free', 32453
+  FROM _s308_ezek19_lookup sv, _s308_ezek19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=19 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Yahudah (Judah) is a lion''s whelp... who shall rouse him up?* (Genesis 49:9) — Jacob''s blessing named the royal lion-tribe; the lioness and her whelps (Ezekiel 19:2) are its kings.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=2
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Pharaoh-nechoh put him in bands at Riblah... that he might not reign* (2 Kings 23:33) — the first whelp brought with chains unto Egypt (Ezekiel 19:4) is Jehoahaz, bound by Pharaoh.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *took Jehoahaz away: and he came to Egypt, and died there* (2 Kings 23:34) — the lament''s first lion (Ezekiel 19:4) never returned to the mountains of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=23 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *he carried away Jehoiachin to Babylon, and the king''s mother* (2 Kings 24:15) — the second whelp brought in chains to the king of Babylon (Ezekiel 19:9), his voice silenced.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=9
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the Lion of the tribe of Juda, the Root of David, hath prevailed* (Revelation 5:5) — the CONTRAST: the caged princes (Ezekiel 19:2) are the foil to the true royal Lion the lion-tribe pointed to, who could not be netted.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=2
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-lions-of-yahudah-caged-and-the-true-lion-who-prevailed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Thou hast brought a vine out of Egypt... and planted it* (Psalm 80:8) — the lament''s vine planted by the waters (Ezekiel 19:10) is the same vine Asaph sings, Yashar''el (Israel) brought out of Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *It is burned with fire, it is cut down... they perish at the rebuke of thy countenance* (Psalm 80:16) — the vine consumed by fire (Ezekiel 19:12) is the burned vine of the Psalm, the same judgment on the same house.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the vine tree... which I have given to the fire for fuel* (Ezekiel 15:6) — Ezekiel had already given the vine to the flame; now the fire consumes it (Ezekiel 19:12,14).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=12
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=15 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come* (Genesis 49:10) — the throne with no strong rod to be a sceptre (Ezekiel 19:14) is suspended, not abolished; it awaits the One.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=14
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *In that day will I raise up the tabernacle of David that is fallen* (Amos 9:11) — the fallen house with no sceptre (Ezekiel 19:14) is the tabernacle of David Yahuah (LORD) swears to rebuild; the lament is not the last word.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=19 AND sv.verse_number=14
+  JOIN _s308_ezek19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-19-the-vine-plucked-up-no-strong-rod-to-be-a-sceptre'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_20.sql (Ezekiel 20) -----
+-- Chapter: Ezekiel 20 — ★★ THE SABBATH-SIGN KEYSTONE. The elders come to enquire; Yahuah will not be
+-- enquired of. He rehearses the rebellious history of Yashar''el from Egypt through the wilderness:
+-- I GAVE THEM MY STATUTES... WHICH IF A MAN DO, HE SHALL EVEN LIVE IN THEM; I GAVE THEM MY SABBATHS, TO
+-- BE A SIGN BETWEEN ME AND THEM, THAT THEY MIGHT KNOW THAT I AM YAHUAH THAT SANCTIFY THEM. The Sabbath
+-- given as the perpetual sign of the covenant and of sanctification — never abolished, the statutes are
+-- LIFE not bondage. Through every rebellion Yahuah acts FOR MY NAME''S SAKE, that it should not be
+-- polluted before the heathen — grace, not merit. The judicial giving-over (statutes that were not good).
+-- And the second-exodus regathering and purging: I will gather you... bring you into the wilderness...
+-- cause you to pass under the rod... purge out the rebels... and ye shall know that I am Yahuah; the
+-- accepted on the holy mountain.
+-- Tag: ezek20   Temp view: _s308_ezek20_lookup
+-- Sort band: base 32475, step 3 -> 32475, 32478, 32481, 32484 (4 threads)
+-- Source of EVERY row: 'canon','ezekiel',20,v
+--
+-- ⚠ The dump returns a Unicode right-single-quote U+2019 (’) in name’s / fathers’ / hearts’ — preserved
+--   EXACTLY as dumped (it needs no doubling, it is not an ASCII apostrophe). The ASCII apostrophe in
+--   Yashar'el is DOUBLED to Yashar''el throughout.
+--
+-- Ezekiel 20 coverage:
+--   v.1-7 (the elders come to enquire; I will not be enquired of; the day I chose Yashar''el and made
+--          myself known in Egypt; cast away the abominations of Egypt)
+--        NT:     none warranted (the history's preface; woven into THREAD 2/4 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the Egypt-election preface; carried in prose)
+--   ★★ v.8-9 (they rebelled... I would pour out my fury... BUT I WROUGHT FOR MY NAME''S SAKE, that it
+--          should not be polluted before the heathen)
+--        NT:     ★ Romans 9:17 (that I might shew my power in thee, and that my name might be declared) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 36:22 (not for your sakes... but for mine holy name''s sake), ★★ Psalm 106:8
+--                (he saved them for his name''s sake), ★ Isaiah 48:9-11 (for my name''s sake will I defer
+--                mine anger... how should my name be polluted?) — THREAD 2
+--   ★★★ v.11-13,20 (I GAVE THEM MY STATUTES... WHICH IF A MAN DO, HE SHALL EVEN LIVE IN THEM; I GAVE
+--          THEM MY SABBATHS, TO BE A SIGN... THAT SANCTIFY THEM; hallow my sabbaths; a sign between me
+--          and you, that ye may know that I am Yahuah Elohaychem)
+--        NT:     ★★★ Hebrews 4:9 (there remaineth therefore a rest to the people of Elohim), ★★ Mark
+--                2:27-28 (the sabbath was made for man... the Son of Adam is Yahuah also of the sabbath) — THREAD 1
+--        Extras: none warranted (clean Torah-NT Sabbath weave)
+--        Tanakh: ★★★ Exodus 31:13,16-17 (a sign between me and you... a perpetual covenant... a sign for
+--                ever), ★★ Exodus 20:8-11 (remember the sabbath day... wherefore Yahuah blessed it),
+--                ★★ Leviticus 18:5 (which if a man do, he shall live in them), ★★ Isaiah 56:2,6 (blessed
+--                is the man that keepeth the sabbath... taketh hold of my covenant) — THREAD 1
+--   v.14-22 (the children rebel as the fathers; I wrought for my name''s sake again — name''s-sake refrain
+--          carried in THREAD 2; the statutes/sabbaths despised carried in THREAD 1 prose)
+--        NT:     none separate (refrains; carried in THREADS 1 & 2)
+--        Extras: none warranted
+--        Tanakh: held in prose (the wilderness rebellion; Ezekiel's own refrain)
+--   ★ v.25-26 (WHEREFORE I GAVE THEM ALSO STATUTES THAT WERE NOT GOOD, and judgments whereby they
+--          should not live; I polluted them in their own gifts... pass through the fire)
+--        NT:     ★★ Romans 1:24,26,28 (Elohim gave them up / gave them over to a reprobate mind),
+--                ★ Romans 7:12 (the law is holy, and the commandment holy, and just, and good — GUARD:
+--                Yahuah''s own Torah IS good; v.25 is the giving-over to the idol-statutes they chose),
+--                ★ 2 Thessalonians 2:11 (shall send them strong delusion) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 81:11-12 (I gave them up unto their own hearts'' lust; and they walked in their
+--                own counsels) — THREAD 3
+--   v.27-32 (the high places, Bamah; we will be as the heathen — shall not be) — the idolatry indictment;
+--        woven into THREAD 3/4 prose; no separate add (NT none / Extras none / Tanakh none warranted)
+--   ★★ v.33-44 (I will bring you out from the people... gather you out of the countries... bring you into
+--          the wilderness of the people... plead with you face to face... cause you to pass under the
+--          rod... bring you into the bond of the covenant: and I will purge out the rebels... ye shall
+--          know that I am Yahuah; in mine holy mountain... there will I accept them)
+--        NT:     ★★ Matthew 25:32-33 (separate them... as a shepherd divideth his sheep from the goats) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 34:17 (I judge between cattle and cattle, between the rams and the he goats),
+--                ★ Jeremiah 33:13 (the flocks pass again under the hands of him that telleth them),
+--                ★★ Amos 9:9-10 (I will sift the house of Yashar''el... yet shall not the least grain
+--                fall), ★★ Malachi 3:3 (he shall sit as a refiner and purifier of silver... and purge
+--                them as gold and silver) — THREAD 4
+--   v.45-49 (the forest of the south; the kindled fire; Doth he not speak parables?) — the fire-oracle
+--        appended (ch. 21 in MT); woven in prose; no separate add (none warranted any library).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign — Tanakh (Exodus 31, Exodus 20, Leviticus 18, Isaiah 56) + NT (Hebrews 4, Mark 2) [free]
+--      (★★★ the Sabbath given as the perpetual sign of the covenant and of sanctification; the statutes are LIFE, never abolished)
+--   2. ezekiel-20-for-my-names-sake-i-wrought — Tanakh (Ezekiel 36, Psalm 106, Isaiah 48) + NT (Romans 9) [free]
+--      (★★ Yahuah acts to vindicate his Name, not for their merit — grace-not-works through every rebellion)
+--   3. ezekiel-20-statutes-that-were-not-good-given-over — NT (Romans 1, Romans 7, 2 Thessalonians 2) + Tanakh (Psalm 81) [free]
+--      (★ the judicial giving-over to the idol-statutes they preferred — NOT that Yahuah''s Torah is "not good"; Rom 7:12 guard)
+--   4. ezekiel-20-pass-under-the-rod-purge-out-the-rebels — NT (Matthew 25) + Tanakh (Ezekiel 34, Jeremiah 33, Amos 9, Malachi 3) [free]
+--      (★★ the second-exodus regathering and purging; pass under the rod; the rebels purged; accepted on the holy mountain)
+--
+-- Framing notes:
+--   ★★★ THE SABBATH-SIGN (THREAD 1): *And I gave them my statutes, and shewed them my judgments, which if
+--      a man do, he shall even live in them. Moreover also I gave them my sabbaths, to be a sign between
+--      me and them, that they might know that I am Yahuah (LORD) that sanctify them* (20:11-12); *And
+--      hallow my sabbaths; and they shall be a sign between me and you, that ye may know that I am Yahuah
+--      Elohaychem (the LORD your God)* (20:20). The Sabbath is the perpetual SIGN of the covenant and of
+--      sanctification — exactly as Exodus swore it: *it is a sign between me and you... a perpetual
+--      covenant... a sign between me and the children of Yashar''el (Israel) for ever: for in six days
+--      Yahuah (LORD) made heaven and earth* (Exod 31:13,16-17), the seventh-day rest creation-rooted
+--      (Exod 20:8-11). The statutes are LIFE — *which if a man do, he shall live in them* (Lev 18:5) —
+--      not bondage. Isaiah keeps it open to all who join: *Blessed is the man... that keepeth the sabbath*
+--      (Isa 56:2,6). And it is never abolished: *There remaineth therefore a rest to the people of Elohim
+--      (God)* (Heb 4:9); *The sabbath was made for man... the Son of Adam is Yahuah (Lord) also of the
+--      sabbath* (Mark 2:27-28) — the Formed Son is its Lord, not its abolisher.
+--   ★★ FOR MY NAME''S SAKE (THREAD 2): through every rebellion the refrain holds — *But I wrought for my
+--      name''s sake, that it should not be polluted before the heathen* (20:9,14,22). Yahuah acts to
+--      vindicate his Name, NOT for their merit: *I do not this for your sakes... but for mine holy name''s
+--      sake* (Ezek 36:22); *Nevertheless he saved them for his name''s sake* (Ps 106:8); *For my name''s
+--      sake will I defer mine anger... how should my name be polluted?* (Isa 48:9-11); and Pharaoh raised
+--      up *that my name might be declared throughout all the earth* (Rom 9:17). Grace, not works.
+--   ★ STATUTES THAT WERE NOT GOOD (THREAD 3): *Wherefore I gave them also statutes that were not good, and
+--      judgments whereby they should not live* (20:25). GUARD CAREFULLY — this is NOT Yahuah calling his
+--      own Torah "not good": *the law is holy, and the commandment holy, and just, and good* (Rom 7:12),
+--      and v.11 just called the statutes LIFE. v.25 is the judicial GIVING-OVER to the idolatrous
+--      "statutes" they preferred — the consequence of their chosen idolatry. Paul names the same handing-
+--      over: *Elohim (God) gave them up... gave them over to a reprobate mind* (Rom 1:24,26,28); the
+--      Psalm: *So I gave them up unto their own hearts'' lust* (Ps 81:12); the delusion sent: *Elohim
+--      (God) shall send them strong delusion* (2 Thess 2:11). They are given over to what they chose.
+--   ★★ PASS UNDER THE ROD (THREAD 4): the second-exodus regathering and purging — *I will bring you out
+--      from the people, and will gather you out of the countries... And I will bring you into the
+--      wilderness of the people, and there will I plead with you face to face... And I will cause you to
+--      pass under the rod, and I will bring you into the bond of the covenant: And I will purge out from
+--      among you the rebels* (20:34-38). The Shepherd numbers and divides the flock: *I judge between
+--      cattle and cattle, between the rams and the he goats* (Ezek 34:17); *he shall separate them one
+--      from another, as a shepherd divideth his sheep from the goats* (Matt 25:32-33); *the flocks pass
+--      again under the hands of him that telleth them* (Jer 33:13); *I will sift the house of Yashar''el
+--      (Israel)... yet shall not the least grain fall* (Amos 9:9); *he shall sit as a refiner and purifier
+--      of silver... and purge them as gold and silver* (Mal 3:3). The accepted are gathered on *mine holy
+--      mountain* (20:40).
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the enquiring elders; Egypt-election preface — woven THREAD 2/4),
+--      v.14-22 (the children's rebellion; the name''s-sake and statutes/sabbaths refrains — carried in
+--      THREADS 1 & 2), v.27-32 (the high places, Bamah; "we will be as the heathen" — woven THREAD 3/4),
+--      v.45-49 (the forest-of-the-south fire-oracle, ch. 21 in MT — woven in prose). All recorded above.
+
+CREATE TEMP VIEW _s308_ezek20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): I gave them my sabbaths, to be a sign — the perpetual sign of the covenant
+    ('canon','ezekiel',20,12,'canon','exodus',31,13,'free',
+      E'*Speak thou also unto the children of Yashar''el (Israel), saying, Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13). Ezekiel rehearses this very gift — *I gave them my sabbaths, to be a sign between me and them, that they might know that I am Yahuah (LORD) that sanctify them* (Ezekiel 20:12). Word for word: the Sabbath is the sign of the covenant AND of sanctification — *I am Yahuah that sanctify them*. The Sabbath marks the people Yahuah makes holy.'),
+    ('canon','ezekiel',20,12,'canon','exodus',31,17,'free',
+      E'*It is a sign between me and the children of Yashar''el (Israel) for ever: for in six days Yahuah (LORD) made heaven and earth, and on the seventh day he rested, and was refreshed* (Exodus 31:17). The sabbath-sign Ezekiel names — *to be a sign between me and them* (Ezekiel 20:12) — is the creation-rooted sign *for ever*, grounded in the seventh day Yahuah rested. It is no temporary ordinance: a perpetual sign anchored in the making of heaven and earth.'),
+    ('canon','ezekiel',20,12,'canon','exodus',31,16,'free',
+      E'*Wherefore the children of Yashar''el (Israel) shall keep the sabbath, to observe the sabbath throughout their generations, for a perpetual covenant* (Exodus 31:16). The sabbaths Yahuah *gave them... to be a sign* (Ezekiel 20:12) are a *perpetual covenant* — kept throughout the generations. The sign and the covenant are one and the same; to keep the Sabbath is to keep covenant.'),
+    ('canon','ezekiel',20,20,'canon','exodus',20,8,'free',
+      E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The command *And hallow my sabbaths; and they shall be a sign between me and you* (Ezekiel 20:20) repeats the fourth word of the Ten — to remember and hallow the day. The hallowing of the Sabbath in Ezekiel is the keeping of the commandment graven at Sinai.'),
+    ('canon','ezekiel',20,20,'canon','exodus',20,11,'free',
+      E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). To *hallow my sabbaths* (Ezekiel 20:20) is to keep the day Yahuah himself *hallowed* at creation — the Sabbath is creation-rooted, blessed and set apart before any nation existed. The sign points back to the seventh day of the making of the world.'),
+    ('canon','ezekiel',20,11,'canon','leviticus',18,5,'free',
+      E'*Ye shall therefore keep my statutes, and my judgments: which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5). Ezekiel quotes this Torah promise verbatim — *I gave them my statutes, and shewed them my judgments, which if a man do, he shall even live in them* (Ezekiel 20:11). The statutes are LIFE, not bondage: to do them is to live. The instruction of Yahuah is the path of life, never the curse.'),
+    ('canon','ezekiel',20,11,'canon','hebrews',4,9,'free',
+      E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The sabbaths Yahuah gave as *a sign... that I am Yahuah (LORD) that sanctify them* (Ezekiel 20:12) are not abolished but remain — the word is literally a sabbath-keeping (sabbatismos) that *remaineth... to the people of Elohim*. The Sabbath the fathers polluted still stands for the people of Yahuah.'),
+    ('canon','ezekiel',20,12,'canon','mark',2,27,'free',
+      E'*And he said unto them, The sabbath was made for man, and not man for the sabbath* (Mark 2:27). The Sabbath Yahuah *gave them... to be a sign* (Ezekiel 20:12) was made FOR man, a gift of rest and sanctification — not a burden man was made to serve. The Formed Son defends the Sabbath as the gift it always was, against those who made it a snare.'),
+    ('canon','ezekiel',20,12,'canon','mark',2,28,'free',
+      E'*Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:28). The One who said *I am Yahuah (LORD) that sanctify them* by the sabbath-sign (Ezekiel 20:12) is the Son of Adam who is *Yahuah (Lord) also of the sabbath* — the Formed Son, Lord of the day he gave, who keeps and hallows it, never abolishes it. The sabbath''s Lord is the sabbath''s Giver.'),
+    ('canon','ezekiel',20,20,'canon','isaiah',56,2,'free',
+      E'*Blessed is the man that doeth this, and the son of Adam that layeth hold on it; that keepeth the sabbath from polluting it, and keepeth his hand from doing any evil* (Isaiah 56:2). Against the fathers who *polluted my sabbaths* (Ezekiel 20:20-21), Isaiah pronounces blessed the one who keeps the Sabbath *from polluting it*. The very thing the rebellious profaned is the blessing of the faithful — the sign honored, not abolished.'),
+    ('canon','ezekiel',20,20,'canon','isaiah',56,6,'free',
+      E'*Also the sons of the stranger, that join themselves to Yahuah (LORD), to serve him, and to love the name of Yahuah (LORD), to be his servants, every one that keepeth the sabbath from polluting it, and taketh hold of my covenant* (Isaiah 56:6). The sabbath-sign and covenant Ezekiel names — *a sign between me and you, that ye may know that I am Yahuah Elohaychem (the LORD your God)* (Ezekiel 20:20) — is open even to the joined stranger who keeps the Sabbath and *taketh hold of my covenant*. The sign of the covenant gathers all who hold to it.'),
+
+    -- THREAD 2 (★★): for my name's sake I wrought — grace, not their merit
+    ('canon','ezekiel',20,9,'canon','ezekiel',36,22,'free',
+      E'*Therefore say unto the house of Yashar''el (Israel), Thus saith Adonai Yahuah (the Lord GOD); I do not this for your sakes, O house of Yashar''el (Israel), but for mine holy name’s sake, which ye have profaned among the heathen, whither ye went* (Ezekiel 36:22). The refrain *But I wrought for my name’s sake, that it should not be polluted before the heathen* (Ezekiel 20:9) is Ezekiel''s own master-key, stated plainly a few chapters on: *not for your sakes... but for mine holy name’s sake*. Yahuah acts to vindicate his Name, never for their merit.'),
+    ('canon','ezekiel',20,9,'canon','psalms',106,8,'free',
+      E'*Nevertheless he saved them for his name’s sake, that he might make his mighty power to be known* (Psalm 106:8). The Psalm sings the same Egypt-deliverance Ezekiel rehearses — *I wrought for my name’s sake, that it should not be polluted before the heathen... in bringing them forth out of the land of Egypt* (Ezekiel 20:9): not for their worthiness, but *for his name’s sake* and the making known of his power. Salvation is grounded in his Name, not their deserving.'),
+    ('canon','ezekiel',20,9,'canon','isaiah',48,9,'free',
+      E'*For my name’s sake will I defer mine anger, and for my praise will I refrain for thee, that I cut thee not off* (Isaiah 48:9). Isaiah names the same restraint Ezekiel records — *I wrought for my name’s sake, that it should not be polluted before the heathen* (Ezekiel 20:9): Yahuah defers his anger and does not cut off the rebellious *for my name’s sake*. The Name, not the people''s merit, stays the judgment.'),
+    ('canon','ezekiel',20,9,'canon','isaiah',48,11,'free',
+      E'*For mine own sake, even for mine own sake, will I do it: for how should my name be polluted? and I will not give my glory unto another* (Isaiah 48:11). The very fear that drives the refrain — *that it should not be polluted before the heathen* (Ezekiel 20:9) — is Isaiah''s *how should my name be polluted?* Yahuah acts to keep his Name from pollution and his glory undivided: the deliverance is for his own sake.'),
+    ('canon','ezekiel',20,9,'canon','romans',9,17,'free',
+      E'*For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth* (Romans 9:17). Paul reads the Exodus the way Ezekiel does — Yahuah wrought *for my name’s sake* (Ezekiel 20:9), *that my name might be declared throughout all the earth*. The deliverance from Egypt is the declaring of the Name among the heathen, a work of sovereign mercy, not human merit.'),
+
+    -- THREAD 3 (★): statutes that were not good — the judicial giving-over (NOT Yahuah's Torah)
+    ('canon','ezekiel',20,25,'canon','romans',1,24,'free',
+      E'*Wherefore Elohim (God) also gave them up to uncleanness through the lusts of their own hearts, to dishonour their own bodies between themselves* (Romans 1:24). The hard word *Wherefore I gave them also statutes that were not good, and judgments whereby they should not live* (Ezekiel 20:25) is the judicial GIVING-OVER Paul names — *Elohim (God) also gave them up*. Yahuah does not call his own Torah evil (it is life, 20:11); he hands the rebellious over to the idolatrous "statutes" they preferred.'),
+    ('canon','ezekiel',20,25,'canon','romans',1,28,'free',
+      E'*And even as they did not like to retain Elohim (God) in their knowledge, Elohim (God) gave them over to a reprobate mind, to do those things which are not convenient* (Romans 1:28). To be given *statutes that were not good, and judgments whereby they should not live* (Ezekiel 20:25) is to be *given over to a reprobate mind* — abandoned to the consequences of chosen idolatry. The giving-over is the judgment, not a flaw in Yahuah''s instruction.'),
+    ('canon','ezekiel',20,25,'canon','romans',7,12,'free',
+      E'*Wherefore the law is holy, and the commandment holy, and just, and good* (Romans 7:12). This is the guard on Ezekiel 20:25: when Yahuah says *I gave them also statutes that were not good*, he is NOT calling his own Torah evil — *the law is holy, and the commandment holy, and just, and good*, and his statutes are LIFE (*which if a man do, he shall even live in them*, 20:11). The "not good" statutes are the idol-ordinances they were given over to, not the commandment of Yahuah.'),
+    ('canon','ezekiel',20,25,'canon','psalms',81,12,'free',
+      E'*So I gave them up unto their own hearts’ lust: and they walked in their own counsels* (Psalm 81:12). The Psalm states the giving-over of Ezekiel 20:25 plainly — *I gave them up unto their own hearts’ lust*. Because *my people would not hearken to my voice* (Ps 81:11), Yahuah handed them to their own counsels: the *statutes that were not good* are the lusts of their own hearts they chose over his.'),
+    ('canon','ezekiel',20,25,'canon','2-thessalonians',2,11,'free',
+      E'*And for this cause Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11). The same judicial handing-over runs forward: as Yahuah gave the rebellious *statutes that were not good* (Ezekiel 20:25), so *Elohim (God) shall send them strong delusion* to those who would not love the truth. The lie believed is the judgment on the truth refused.'),
+
+    -- THREAD 4 (★★): pass under the rod, purge out the rebels — the regathering and purging
+    ('canon','ezekiel',20,37,'canon','ezekiel',34,17,'free',
+      E'*And as for you, O my flock, thus saith Adonai Yahuah (the Lord GOD); Behold, I judge between cattle and cattle, between the rams and the he goats* (Ezekiel 34:17). The promise *I will cause you to pass under the rod, and I will bring you into the bond of the covenant* (Ezekiel 20:37) is the Shepherd numbering and dividing his flock — *I judge between cattle and cattle, between the rams and the he goats*. The rod that counts the sheep also separates the rebels from the covenant-keepers.'),
+    ('canon','ezekiel',20,38,'canon','matthew',25,32,'free',
+      E'*And before him shall be gathered all nations: and he shall separate them one from another, as a shepherd divideth his sheep from the goats* (Matthew 25:32). The purging *I will purge out from among you the rebels, and them that transgress against me* (Ezekiel 20:38) is the Shepherd-King''s separation — *he shall separate them one from another, as a shepherd divideth his sheep from the goats*. The gathered flock is sifted; the rebels do not enter the land, the accepted stand on his right hand.'),
+    ('canon','ezekiel',20,38,'canon','matthew',25,33,'free',
+      E'*And he shall set the sheep on his right hand, but the goats on the left* (Matthew 25:33). To *purge out... the rebels... and they shall not enter into the land of Yashar''el (Israel)* (Ezekiel 20:38) is the dividing of sheep from goats — the rebels set apart from those *accepted* on the holy mountain (20:40). The same separating judgment closes Ezekiel''s second-exodus and opens the Shepherd-King''s.'),
+    ('canon','ezekiel',20,37,'canon','jeremiah',33,13,'free',
+      E'*...in the cities of Yahudah (Judah), shall the flocks pass again under the hands of him that telleth them, saith Yahuah (LORD)* (Jeremiah 33:13). Jeremiah names the very rod of Ezekiel — *I will cause you to pass under the rod* (Ezekiel 20:37) — as the restoration in which *the flocks pass again under the hands of him that telleth them*. The passing-under-the-rod is the Shepherd telling and reclaiming his own.'),
+    ('canon','ezekiel',20,38,'canon','amos',9,9,'free',
+      E'*For, lo, I will command, and I will sift the house of Yashar''el (Israel) among all nations, like as corn is sifted in a sieve, yet shall not the least grain fall upon the earth* (Amos 9:9). The purging of the rebels — *I will purge out from among you the rebels, and them that transgress against me* (Ezekiel 20:38) — is Amos''s sifting: the house of Yashar''el (Israel) shaken among the nations, the chaff removed, *yet shall not the least grain fall*. The purging loses none of the true seed.'),
+    ('canon','ezekiel',20,38,'canon','malachi',3,3,'free',
+      E'*And he shall sit as a refiner and purifier of silver: and he shall purify the sons of Levi, and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The purging *I will purge out from among you the rebels* (Ezekiel 20:38) is the refiner''s fire of Malachi — *he shall purify... and purge them as gold and silver*. The purged remnant is brought to *mine holy mountain... there will I accept them* (20:40), to offer in righteousness.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign',
+       E'I gave them my sabbaths, to be a sign — the perpetual sign of the covenant and of sanctification',
+       E'At the heart of the rehearsed history stands the gift that names the people: *And I gave them my statutes, and shewed them my judgments, which if a man do, he shall even live in them. Moreover also I gave them my sabbaths, to be a sign between me and them, that they might know that I am Yahuah (LORD) that sanctify them* (20:11-12). And to the children: *I am Yahuah Elohaychem (the LORD your God); walk in my statutes, and keep my judgments, and do them; And hallow my sabbaths; and they shall be a sign between me and you, that ye may know that I am Yahuah Elohaychem (the LORD your God)* (20:19-20). Two things are bound here forever: the statutes are LIFE — *which if a man do, he shall even live in them* — and the Sabbath is the SIGN of the covenant and of sanctification, *that I am Yahuah that sanctify them*. This is no temporary ordinance. Exodus swore it word for word: *Verily my sabbaths ye shall keep: for it is a sign between me and you throughout your generations; that ye may know that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13), *for a perpetual covenant* (31:16), *a sign between me and the children of Yashar''el (Israel) for ever: for in six days Yahuah (LORD) made heaven and earth, and on the seventh day he rested* (31:17). It is the fourth word of the Ten, creation-rooted: *Remember the sabbath day, to keep it holy... For in six days Yahuah (LORD) made heaven and earth... wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:8,11). The statutes are life, not bondage — *which if a man do, he shall live in them* (Leviticus 18:5). Isaiah keeps the sign open to all who hold to it: *Blessed is the man... that keepeth the sabbath from polluting it* (Isaiah 56:2), even *the sons of the stranger, that join themselves to Yahuah (LORD)... that keepeth the sabbath from polluting it, and taketh hold of my covenant* (56:6). And it is never abolished: *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — a sabbath-keeping that still remains; *The sabbath was made for man, and not man for the sabbath: Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:27-28) — the Formed Son is the Lord of the day he gave, who keeps and hallows it, never undoes it. The sign the fathers polluted is the sign that marks the people Yahuah sanctifies still.',
+       sv.verse_id, ev.verse_id, 'free', 32475
+  FROM _s308_ezek20_lookup sv, _s308_ezek20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=20 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-20-for-my-names-sake-i-wrought',
+       E'But I wrought for my name’s sake — Yahuah vindicates his Name, not their merit',
+       E'Through every act of the rehearsed history the same refrain holds. They rebelled in Egypt and deserved fury, *But I wrought for my name’s sake, that it should not be polluted before the heathen, among whom they were... in bringing them forth out of the land of Egypt* (20:9). They rebelled in the wilderness, *But I wrought for my name’s sake, that it should not be polluted before the heathen, in whose sight I brought them out* (20:14). The children rebelled, *Nevertheless I withdrew mine hand, and wrought for my name’s sake* (20:22). The deliverance is grace, NEVER merit — Yahuah acts to vindicate his Name. Ezekiel himself states the master-key plainly a few chapters on: *I do not this for your sakes, O house of Yashar''el (Israel), but for mine holy name’s sake, which ye have profaned among the heathen, whither ye went* (Ezekiel 36:22). The Psalm sings the Egypt-deliverance the same way: *Nevertheless he saved them for his name’s sake, that he might make his mighty power to be known* (Psalm 106:8). Isaiah names the same restraint: *For my name’s sake will I defer mine anger... that I cut thee not off* (Isaiah 48:9), *For mine own sake, even for mine own sake, will I do it: for how should my name be polluted?* (48:11). And Paul reads the Exodus exactly so: Pharaoh was raised up *that my name might be declared throughout all the earth* (Romans 9:17). The salvation of Yashar''el rests on the holiness of the Name, not the worthiness of the people — grace, not works.',
+       sv.verse_id, ev.verse_id, 'free', 32478
+  FROM _s308_ezek20_lookup sv, _s308_ezek20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=20 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-20-statutes-that-were-not-good-given-over',
+       E'Statutes that were not good — the judicial giving-over to the idolatry they chose',
+       E'Comes one of the hardest words in the prophets: *Wherefore I gave them also statutes that were not good, and judgments whereby they should not live; And I polluted them in their own gifts, in that they caused to pass through the fire all that openeth the womb* (20:25-26). Read carefully, for the antichrist reading seizes this verse to say Yahuah''s Torah was a bad gift. It is NOT — and the chapter itself forbids that reading. Yahuah''s own statutes are LIFE: *which if a man do, he shall even live in them* (20:11); his commandment is *holy, and just, and good* (Romans 7:12). The *statutes that were not good* are not the Torah of Yahuah but the idolatrous ordinances they preferred — and v.25 is the language of the judicial GIVING-OVER: because they would not walk in his good statutes, Yahuah handed them over to the consequences of the statutes they chose, even to the child-sacrifice that *openeth the womb* (20:26). Paul names this same handing-over three times: *Elohim (God) also gave them up to uncleanness through the lusts of their own hearts* (Romans 1:24), *Elohim (God) gave them up unto vile affections* (1:26), *Elohim (God) gave them over to a reprobate mind* (1:28). The Psalm states it of Yashar''el outright: *But my people would not hearken to my voice... So I gave them up unto their own hearts’ lust: and they walked in their own counsels* (Psalm 81:11-12). And it runs forward into the gospel age: *Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11). The judgment is to be given over to what you chose. Yahuah''s instruction remains good; the "not good" statutes are the idol-ordinances of a people abandoned to their own lust.',
+       sv.verse_id, ev.verse_id, 'free', 32481
+  FROM _s308_ezek20_lookup sv, _s308_ezek20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=20 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-20-pass-under-the-rod-purge-out-the-rebels',
+       E'I will cause you to pass under the rod — the second exodus, the purging of the rebels',
+       E'The rehearsed history of rebellion opens into a promise of a SECOND exodus, a regathering and purging: *I will bring you out from the people, and will gather you out of the countries wherein ye are scattered, with a mighty hand, and with a stretched out arm, and with fury poured out: And I will bring you into the wilderness of the people, and there will I plead with you face to face. Like as I pleaded with your fathers in the wilderness of the land of Egypt, so will I plead with you* (20:34-36). As the first exodus passed through the wilderness, so the scattered house is gathered and led through the wilderness of the peoples to be judged face to face. Then the Shepherd''s rod: *And I will cause you to pass under the rod, and I will bring you into the bond of the covenant: And I will purge out from among you the rebels, and them that transgress against me... and they shall not enter into the land of Yashar''el (Israel): and ye shall know that I am Yahuah (LORD)* (20:37-38). The rod counts and divides the flock — *Behold, I judge between cattle and cattle, between the rams and the he goats* (Ezekiel 34:17); *he shall separate them one from another, as a shepherd divideth his sheep from the goats... And he shall set the sheep on his right hand, but the goats on the left* (Matthew 25:32-33); *the flocks pass again under the hands of him that telleth them* (Jeremiah 33:13). The purging loses none of the true seed — *I will sift the house of Yashar''el (Israel) among all nations, like as corn is sifted in a sieve, yet shall not the least grain fall upon the earth* (Amos 9:9) — and refines the rest: *he shall sit as a refiner and purifier of silver... and purge them as gold and silver, that they may offer unto Yahuah (LORD) an offering in righteousness* (Malachi 3:3). The accepted remnant is gathered home to worship: *For in mine holy mountain, in the mountain of the height of Yashar''el (Israel)... there shall all the house of Yashar''el (Israel)... serve me: there will I accept them* (20:40), *and I will be sanctified in you before the heathen* (20:41). The rebels are purged out; the accepted stand on the holy mountain, and know that he is Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 32484
+  FROM _s308_ezek20_lookup sv, _s308_ezek20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=20 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *my sabbaths ye shall keep: for it is a sign between me and you... that I am Yahuah (LORD) that doth sanctify you* (Exodus 31:13) — Ezekiel 20:12 word for word; the Sabbath = sign of covenant AND sanctification.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *a sign between me and the children of Yashar''el (Israel) for ever: for in six days Yahuah (LORD) made heaven and earth* (Exodus 31:17) — the sabbath-sign of Ezekiel 20:12 is creation-rooted and perpetual.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *to observe the sabbath throughout their generations, for a perpetual covenant* (Exodus 31:16) — the sabbaths given as a sign (Ezekiel 20:12) are a perpetual covenant.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=31 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Remember the sabbath day, to keep it holy* (Exodus 20:8) — *hallow my sabbaths* (Ezekiel 20:20) is the fourth word of the Ten.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=20
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *in six days Yahuah (LORD) made heaven and earth... wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11) — to hallow the sabbaths (Ezekiel 20:20) is to keep the day creation hallowed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=20
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *which if a man do, he shall live in them: I am Yahuah (LORD)* (Leviticus 18:5) — Ezekiel 20:11 verbatim; the statutes are LIFE, not bondage.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★★ *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — a sabbath-keeping still REMAINS; the Sabbath the fathers polluted (Ezekiel 20:12) is not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *The sabbath was made for man, and not man for the sabbath* (Mark 2:27) — the sabbaths Yahuah gave (Ezekiel 20:12) were made FOR man, a gift of rest, not a burden.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★★ *the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:28) — the One who said *I am Yahuah that sanctify them* (Ezekiel 20:12) is Lord of the day he gave, not its abolisher.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=12
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★ *Blessed is the man... that keepeth the sabbath from polluting it* (Isaiah 56:2) — against the fathers who polluted the sabbaths (Ezekiel 20:20-21), the Sabbath-keeper is blessed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=20
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'★ *the sons of the stranger, that join themselves to Yahuah (LORD)... every one that keepeth the sabbath... and taketh hold of my covenant* (Isaiah 56:6) — the sabbath-sign (Ezekiel 20:20) gathers all who hold the covenant.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=20
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-i-gave-them-my-sabbaths-to-be-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I do not this for your sakes... but for mine holy name’s sake* (Ezekiel 36:22) — Ezekiel''s own master-key for the refrain *I wrought for my name’s sake* (20:9): grace, not merit.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-for-my-names-sake-i-wrought'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Nevertheless he saved them for his name’s sake, that he might make his mighty power to be known* (Psalm 106:8) — the Egypt-deliverance of Ezekiel 20:9 sung: saved for his Name, not their worth.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-for-my-names-sake-i-wrought'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *For my name’s sake will I defer mine anger... that I cut thee not off* (Isaiah 48:9) — the same restraint as Ezekiel 20:9; the Name stays the judgment.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=48 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-for-my-names-sake-i-wrought'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *For mine own sake... will I do it: for how should my name be polluted?* (Isaiah 48:11) — the very fear of Ezekiel 20:9 (*that it should not be polluted before the heathen*).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=48 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-for-my-names-sake-i-wrought'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *that my name might be declared throughout all the earth* (Romans 9:17) — Paul reads the Exodus as Ezekiel does (20:9): the deliverance declares the Name, a work of sovereign mercy.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-for-my-names-sake-i-wrought'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Elohim (God) also gave them up to uncleanness through the lusts of their own hearts* (Romans 1:24) — the judicial giving-over of Ezekiel 20:25; handed to the consequences of chosen idolatry.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-statutes-that-were-not-good-given-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Elohim (God) gave them over to a reprobate mind* (Romans 1:28) — to be given *statutes that were not good* (Ezekiel 20:25) is to be abandoned to a reprobate mind.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-statutes-that-were-not-good-given-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the law is holy, and the commandment holy, and just, and good* (Romans 7:12) — THE GUARD: Yahuah''s own Torah is good (Ezekiel 20:11); v.25''s "not good" statutes are the idol-ordinances, not the commandment.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-statutes-that-were-not-good-given-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *So I gave them up unto their own hearts’ lust: and they walked in their own counsels* (Psalm 81:12) — Ezekiel 20:25 stated plainly of Yashar''el: handed to the lusts they chose.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=81 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-statutes-that-were-not-good-given-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11) — the same handing-over runs forward; the lie believed is the judgment on the truth refused.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=25
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-statutes-that-were-not-good-given-over'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I judge between cattle and cattle, between the rams and the he goats* (Ezekiel 34:17) — the rod of Ezekiel 20:37 is the Shepherd numbering and dividing his flock.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=37
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he shall separate them one from another, as a shepherd divideth his sheep from the goats* (Matthew 25:32) — the purging of the rebels (Ezekiel 20:38) is the Shepherd-King''s separation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=38
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *And he shall set the sheep on his right hand, but the goats on the left* (Matthew 25:33) — the rebels purged out (Ezekiel 20:38) do not enter; the accepted stand on the right hand.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=38
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the flocks pass again under the hands of him that telleth them* (Jeremiah 33:13) — the passing-under-the-rod of Ezekiel 20:37 is the Shepherd telling and reclaiming his own.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=37
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will sift the house of Yashar''el (Israel) among all nations... yet shall not the least grain fall* (Amos 9:9) — the purging of Ezekiel 20:38 loses none of the true seed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=38
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *he shall sit as a refiner and purifier of silver... and purge them as gold and silver* (Malachi 3:3) — the rebels purged out (Ezekiel 20:38) and the remnant refined for an offering in righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=20 AND sv.verse_number=38
+  JOIN _s308_ezek20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-20-pass-under-the-rod-purge-out-the-rebels'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
