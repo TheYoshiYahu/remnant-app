@@ -7683,6 +7683,1567 @@ SELECT t.id, cr.id, 5, E'★ *There remaineth therefore a rest to the people of 
  WHERE t.slug='jeremiah-17-hallow-the-sabbath-day-the-hinge-of-blessing'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_18.sql (Jeremiah 18) -----
+-- Chapter: Jeremiah 18 — THE POTTER AND THE CLAY. *Cannot I do with you as this potter? saith Yahuah (LORD).
+-- Behold, as the clay is in the potter's hand, so are ye in mine hand, O house of Yashar'el (Israel)* — the
+-- Potter's sovereign right to make and remake the vessel. Then the CONDITIONAL nature of prophecy: at what
+-- instant He speaks to pluck up, if that nation turn from its evil He relents; and if a nation He would build
+-- do evil, He repents of the good — judgment averted by repentance, blessing forfeited by sin. And the plot
+-- against the prophet who interceded for them: *Come, and let us devise devices against Jeremiah... Shall evil
+-- be recompensed for good? for they have digged a pit for my soul.* Three threads: the Potter's hand, the
+-- relenting upon repentance, the evil returned for good.
+-- Tag: jer18   Temp view: _s309_jer18_lookup
+-- Sort band: base 34425, step 3 -> threads at 34425, 34428, 34431 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',18,v
+--
+-- Jeremiah 18 coverage:
+--   v.1-2 (Arise, and go down to the potter's house, and there I will cause thee to hear my words)
+--        NT:     none warranted (the call to the sign; the sign itself is v.3-6, THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (preface to the potter sign)
+--   ★★★ v.3-6 (Then I went down to the potter's house... the vessel that he made of clay was marred in the
+--          hand of the potter: so he made it again another vessel... cannot I do with you as this potter?...
+--          as the clay is in the potter's hand, so are ye in mine hand, O house of Yashar'el)
+--        NT:     ★★★ Romans 9:21 (hath not the potter power over the clay, of the same lump to make one
+--                vessel unto honour, and another unto dishonour?), ★★ Romans 9:20 (shall the thing formed
+--                say to him that formed it, Why hast thou made me thus?) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 64:8 (we are the clay, and thou our potter; and we all are the work of thy hand),
+--                ★ Isaiah 45:9 (Woe unto him that striveth with his Maker!... Shall the clay say to him that
+--                fashioneth it, What makest thou?), ★ Isaiah 29:16 (shall the work say of him that made it,
+--                He made me not?) — THREAD 1
+--   ★★ v.7-10 (At what instant I shall speak concerning a nation... to pluck up... If that nation... turn
+--          from their evil, I will repent of the evil... And at what instant I shall speak... to build... If
+--          it do evil in my sight... then I will repent of the good)
+--        NT:     none warranted distinct (the relenting-on-repentance has no single NT quotation; the
+--                Nineveh-fulfilment Jonah is the Tanakh witness, lateral Ezekiel — held there)
+--        Extras: none warranted
+--        Tanakh: ★★★ Jonah 3:10 (God saw their works, that they turned from their evil way; and God repented
+--                of the evil), ★★ Ezekiel 18:21 (if the wicked will turn from all his sins... he shall surely
+--                live), ★ Ezekiel 18:23 (Have I any pleasure at all that the wicked should die?... and not
+--                that he should return from his ways, and live?), ★ Ezekiel 33:11 (turn ye, turn ye from your
+--                evil ways; for why will ye die, O house of Yashar'el?), ★★ 2 Chronicles 7:14 (if my people...
+--                shall humble themselves... then will I hear... and will heal their land) — THREAD 2
+--   v.11-12 (Behold, I frame evil against you... return ye now every one from his evil way... And they said,
+--          There is no hope: but we will walk after our own devices)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — the call to return and the refusal apply the conditional word of v.7-10 to
+--                Yahudah (Judah); bound to THREAD 2
+--   v.13-17 (the virgin of Yashar'el hath done a very horrible thing... my people hath forgotten me... from
+--          the ancient paths... I will scatter them as with an east wind)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none separate (the covenant-lawsuit indictment and the scattering; the ancient-paths charge
+--                belongs to Jeremiah 6:16, held there)
+--   ★ v.18-20 (Come, and let us devise devices against Jeremiah... let us smite him with the tongue... Shall
+--          evil be recompensed for good? for they have digged a pit for my soul... I stood before thee to
+--          speak good for them)
+--        NT:     ★ John 10:32 (Many good works have I shewed you from my Father; for which of those works do
+--                ye stone me?) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 35:12 (They rewarded me evil for good to the spoiling of my soul), ★ Psalm 109:5
+--                (they have rewarded me evil for good, and hatred for my love), ★★ Jeremiah 11:19 (I was like
+--                a lamb or an ox that is brought to the slaughter... they had devised devices against me) —
+--                THREAD 3 (the lamb-to-slaughter, lateral within Jeremiah)
+--   v.21-23 (Therefore deliver up their children to the famine... forgive not their iniquity... let them be
+--          overthrown before thee) — the imprecation
+--        NT:     none warranted (the prophet's imprecatory cry; the psalter's imprecations are the kin, woven
+--                in THREAD 3 prose via Psalm 35/109)
+--        Extras: none warranted
+--        Tanakh: held in prose — the cry against the plotters; the Psalm 35/109 imprecations are the lateral
+--                kin, bound to THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-18-the-clay-in-the-potters-hand — NT (Romans 9) + Tanakh (Isaiah 64, Isaiah 45, Isaiah 29) [free]
+--      (★★★ the Potter's sovereign hand over the clay — make and remake; Paul's potter-and-clay; the clay does
+--      not reply against its Maker)
+--   2. jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil — Tanakh (Jonah 3, Ezekiel 18, Ezekiel 33,
+--      2 Chronicles 7) [free]
+--      (★★ the conditional nature of prophecy — judgment averted by repentance, blessing forfeited by sin; the
+--      relenting upon turning; Nineveh the proof)
+--   3. jeremiah-18-shall-evil-be-recompensed-for-good — NT (John 10) + Tanakh (Psalm 35, Psalm 109, Jeremiah 11) [free]
+--      (★ the plot against the interceding prophet; evil returned for good; the lamb to the slaughter)
+--
+-- Framing notes:
+--   ★★★ THE CLAY IN THE POTTER'S HAND (THREAD 1): Jeremiah is sent to the potter's house — *the vessel that he
+--      made of clay was marred in the hand of the potter: so he made it again another vessel, as seemed good to
+--      the potter to make it* (18:4) — and the word comes: *O house of Yashar'el (Israel), cannot I do with you
+--      as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter's hand, so are ye in mine hand,
+--      O house of Yashar'el (Israel)* (18:6). The Potter has sovereign right to make and to remake the marred
+--      vessel. Paul takes up the very figure: *Nay but, O man, who art thou that repliest against Elohim (God)?
+--      Shall the thing formed say to him that formed it, Why hast thou made me thus? Hath not the potter power
+--      over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans
+--      9:20-21). And Isaiah confessed the same hand from the clay's side: *But now, O Yahuah (LORD), thou art
+--      our father; we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8) —
+--      and warned against striving with it: *Woe unto him that striveth with his Maker!... Shall the clay say to
+--      him that fashioneth it, What makest thou?* (Isaiah 45:9), *shall the work say of him that made it, He
+--      made me not?* (Isaiah 29:16). The clay does not reply against the Potter; yet mark that this is no cold
+--      fate — the very next word (v.7-10) makes the Potter's hand respond to the clay's turning. Sovereignty and
+--      the conditional call stand together.
+--   ★★ IF THAT NATION TURN, I WILL REPENT OF THE EVIL (THREAD 2): the potter sign opens into the law of
+--      prophecy: *At what instant I shall speak concerning a nation... to pluck up... If that nation, against
+--      whom I have pronounced, turn from their evil, I will repent of the evil that I thought to do unto them*
+--      (18:7-8); and the reverse — *at what instant I shall speak concerning a nation... to build... If it do
+--      evil in my sight... then I will repent of the good* (18:9-10). Prophecy is conditional: judgment is
+--      averted by repentance, blessing forfeited by sin. Nineveh is the proof Yahuah cites in another book:
+--      *And Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the
+--      evil, that he had said that he would do unto them; and he did it not* (Jonah 3:10). Ezekiel preaches the
+--      same turning: *if the wicked will turn from all his sins that he hath committed, and keep all my statutes,
+--      and do that which is lawful and right, he shall surely live* (Ezekiel 18:21); *Have I any pleasure at all
+--      that the wicked should die?... and not that he should return from his ways, and live?* (Ezekiel 18:23);
+--      *turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar'el (Israel)?* (Ezekiel
+--      33:11). And Solomon was promised the same relenting: *If my people, which are called by my name, shall
+--      humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from
+--      heaven, and will forgive their sin, and will heal their land* (2 Chronicles 7:14). The Potter remakes the
+--      vessel that yields; Yahudah refuses — *There is no hope: but we will walk after our own devices* (18:12) —
+--      and so brings the pluck-up upon itself.
+--   ★ SHALL EVIL BE RECOMPENSED FOR GOOD (THREAD 3): the men who would not return turn instead on the prophet
+--      who interceded for them: *Come, and let us devise devices against Jeremiah... Come, and let us smite him
+--      with the tongue, and let us not give heed to any of his words* (18:18); and he cries, *Shall evil be
+--      recompensed for good? for they have digged a pit for my soul. Remember that I stood before thee to speak
+--      good for them, and to turn away thy wrath from them* (18:20). The psalter sings the same wound: *They
+--      rewarded me evil for good to the spoiling of my soul* (Psalm 35:12); *they have rewarded me evil for good,
+--      and hatred for my love* (Psalm 109:5). Within Jeremiah's own book it is the lamb-to-slaughter: *But I was
+--      like a lamb or an ox that is brought to the slaughter; and I knew not that they had devised devices
+--      against me* (Jeremiah 11:19). And it reaches forward to the One who asked it whole: *Many good works have
+--      I shewed you from my Father; for which of those works do ye stone me?* (John 10:32) — the rejected
+--      prophet a type of the rejected, interceding Messiah, evil returned for the good he did.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the call to the potter's house — preface to the sign), v.11-12 (the call
+--      to return and Yahudah's refusal — applies the conditional word, bound to THREAD 2), v.13-17 (the
+--      covenant-lawsuit indictment, the ancient paths forsaken, the scattering — the ancient-paths charge held
+--      to Jeremiah 6:16), v.21-23 (the prophet's imprecation against the plotters — kin to the Psalm 35/109
+--      imprecations, woven in THREAD 3 prose). All blocks recorded; every meaningful section carries or is bound
+--      to a thread. Extras: none warranted across the chapter (clean canon-NT weave).
+
+CREATE TEMP VIEW _s309_jer18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): the clay in the potter's hand — make and remake; the thing formed cannot reply against the Potter
+    ('canon','jeremiah',18,6,'canon','romans',9,21,'free',
+      E'*Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:21). Paul takes up Jeremiah''s very sign — *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6) — and presses its plain force: the Potter has sovereign right over the clay, to make one vessel unto honour and another unto dishonour. The house of Yashar''el (Israel), like the marred vessel, is wholly in the Maker''s hand.'),
+    ('canon','jeremiah',18,6,'canon','romans',9,20,'free',
+      E'*Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20). The clay does not answer back to the Potter — *cannot I do with you as this potter? saith Yahuah (LORD)* (Jeremiah 18:6). What Jeremiah saw at the potter''s wheel, Paul names the silence of the formed thing before the One who formed it: the vessel has no standing to charge its Maker.'),
+    ('canon','jeremiah',18,6,'canon','isaiah',64,8,'free',
+      E'*But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8). Isaiah confesses from the clay''s own side the truth Jeremiah is shown at the wheel — *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6). The people are not their own makers; they are the work of Yahuah''s hand, the clay yielding to the Potter who is also their father.'),
+    ('canon','jeremiah',18,6,'canon','isaiah',45,9,'free',
+      E'*Woe unto him that striveth with his Maker! Let the potsherd strive with the potsherds of the earth. Shall the clay say to him that fashioneth it, What makest thou? or thy work, He hath no hands?* (Isaiah 45:9). To resist the Potter''s hand is to strive with the Maker — the very thing Jeremiah''s sign forbids: *as the clay is in the potter''s hand, so are ye in mine hand* (Jeremiah 18:6). The clay that demands an account of its fashioner is a potsherd striving against the One who shaped it.'),
+    ('canon','jeremiah',18,6,'canon','isaiah',29,16,'free',
+      E'*Surely your turning of things upside down shall be esteemed as the potter''s clay: for shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16). Isaiah names the same absurdity Jeremiah''s sign exposes — *as the clay is in the potter''s hand, so are ye in mine hand* (Jeremiah 18:6): the work cannot deny its maker nor charge the Potter with no understanding. The clay that turns things upside down esteems itself the potter.'),
+
+    -- THREAD 2 (★★): if that nation turn from their evil, I will repent of the evil — the conditional word
+    ('canon','jeremiah',18,8,'canon','jonah',3,10,'free',
+      E'*And Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil, that he had said that he would do unto them; and he did it not* (Jonah 3:10). Nineveh is the living proof of Jeremiah''s conditional word — *If that nation, against whom I have pronounced, turn from their evil, I will repent of the evil that I thought to do unto them* (Jeremiah 18:8). The threatened overthrow was averted the moment the city turned; the pronounced judgment is undone by repentance.'),
+    ('canon','jeremiah',18,8,'canon','ezekiel',18,21,'free',
+      E'*But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die* (Ezekiel 18:21). Ezekiel preaches to the single soul what Jeremiah declares over the nation — *If that nation... turn from their evil, I will repent of the evil that I thought to do unto them* (Jeremiah 18:8). The death pronounced is lifted when the wicked turns and keeps the statutes; the relenting hinges on the turning.'),
+    ('canon','jeremiah',18,8,'canon','ezekiel',18,23,'free',
+      E'*Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (Ezekiel 18:23). The heart behind Jeremiah''s conditional word is laid bare: Yahuah takes no pleasure in the threatened evil — *I will repent of the evil that I thought to do unto them* (Jeremiah 18:8) — but desires that the nation return and live. The pronounced judgment is His warning, not His delight.'),
+    ('canon','jeremiah',18,8,'canon','ezekiel',33,11,'free',
+      E'*Say unto them, As I live, saith Adonai Yahuah (the Lord GOD), I have no pleasure in the death of the wicked; but that the wicked turn from his way and live: turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 33:11). The watchman''s plea is Jeremiah''s potter-word in the imperative — *If that nation... turn from their evil, I will repent of the evil* (Jeremiah 18:8). The remaking of the marred vessel waits only on the turning: *turn ye, turn ye from your evil ways.*'),
+    ('canon','jeremiah',18,9,'canon','2-chronicles',7,14,'free',
+      E'*If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land* (2 Chronicles 7:14). The same conditional Yahuah set before Jeremiah''s nation — *at what instant I shall speak concerning a nation... to build and to plant it* (Jeremiah 18:9) — He set before His people at the house: the good is held out to those who humble themselves and turn, the healing of the land hinging on the turning, as the threatened judgment hinges on its absence (Jeremiah 18:10).'),
+
+    -- THREAD 3 (★): shall evil be recompensed for good — the plot against the interceding prophet
+    ('canon','jeremiah',18,20,'canon','psalms',35,12,'free',
+      E'*They rewarded me evil for good to the spoiling of my soul* (Psalm 35:12). David''s lament is Jeremiah''s very cry — *Shall evil be recompensed for good? for they have digged a pit for my soul* (Jeremiah 18:20). The prophet who *stood before thee to speak good for them, and to turn away thy wrath from them* (18:20) is repaid with a pit, as the psalmist''s good is repaid with the spoiling of his soul.'),
+    ('canon','jeremiah',18,20,'canon','psalms',109,5,'free',
+      E'*And they have rewarded me evil for good, and hatred for my love* (Psalm 109:5). The psalm names the exact recompense Jeremiah protests — *Shall evil be recompensed for good?* (Jeremiah 18:20). For his intercession, *I stood before thee to speak good for them* (18:20), the prophet receives hatred; love returned with enmity, good with evil.'),
+    ('canon','jeremiah',18,18,'canon','jeremiah',11,19,'free',
+      E'*But I was like a lamb or an ox that is brought to the slaughter; and I knew not that they had devised devices against me, saying, Let us destroy the tree with the fruit thereof* (Jeremiah 11:19). The earlier plot of the men of Anathoth is the same conspiracy Jeremiah meets again here — *Come, and let us devise devices against Jeremiah... Come, and let us smite him with the tongue* (Jeremiah 18:18). The prophet is the lamb led to the slaughter, his enemies devising devices to cut him off from the land of the living.'),
+    ('canon','jeremiah',18,20,'canon','john',10,32,'free',
+      E'*Many good works have I shewed you from my Father; for which of those works do ye stone me?* (John 10:32). The Messiah asks the very question Jeremiah asked — *Shall evil be recompensed for good?* (Jeremiah 18:20). The rejected, interceding prophet, repaid with a pit for the good he spoke, foreshadows the rejected Son repaid with stones for the good works He showed; evil returned for good, the plotting against the one who came to save.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-18-the-clay-in-the-potters-hand',
+       E'As the clay is in the potter''s hand — the Potter''s right to make and remake',
+       E'Yahuah sends the prophet to a workshop to learn a parable in the making: *Then I went down to the potter''s house, and, behold, he wrought a work on the wheels. And the vessel that he made of clay was marred in the hand of the potter: so he made it again another vessel, as seemed good to the potter to make it* (18:3-4). The marred vessel is not thrown away — it is reworked. Then comes the word: *O house of Yashar''el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (18:6). The Potter has sovereign right to make and to remake; the people are clay in His hand. Paul takes up the very figure to silence the clay that would charge its Maker: *Nay but, O man, who art thou that repliest against Elohim (God)? Shall the thing formed say to him that formed it, Why hast thou made me thus? Hath not the potter power over the clay, of the same lump to make one vessel unto honour, and another unto dishonour?* (Romans 9:20-21). And Isaiah had already confessed it from the clay''s own side: *But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8); and warned against resisting the hand that shapes — *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9); *shall the work say of him that made it, He made me not? or shall the thing framed say of him that framed it, He had no understanding?* (Isaiah 29:16). The clay does not reply against the Potter. Yet this is no blind fate: the very next word (18:7-10) shows the Potter''s hand answering to the clay''s turning — the marred vessel remade is the nation that repents. Sovereignty and the conditional call stand together in the one hand.',
+       sv.verse_id, ev.verse_id, 'free', 34425
+  FROM _s309_jer18_lookup sv, _s309_jer18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=18 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil',
+       E'If that nation turn from their evil, I will repent of the evil — the conditional word',
+       E'The potter sign opens straight into the law that governs all prophecy: *At what instant I shall speak concerning a nation, and concerning a kingdom, to pluck up, and to pull down, and to destroy it; If that nation, against whom I have pronounced, turn from their evil, I will repent of the evil that I thought to do unto them* (18:7-8); and the reverse holds too — *at what instant I shall speak concerning a nation... to build and to plant it; If it do evil in my sight, that it obey not my voice, then I will repent of the good, wherewith I said I would benefit them* (18:9-10). Prophecy is conditional: the announced judgment is averted by repentance, the announced blessing forfeited by sin. Nineveh is the proof Yahuah Himself would later cite: *And Elohim (God) saw their works, that they turned from their evil way; and Elohim (God) repented of the evil, that he had said that he would do unto them; and he did it not* (Jonah 3:10). Ezekiel preaches the same turning to the single soul: *if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die* (Ezekiel 18:21); and lays bare the heart behind it — *Have I any pleasure at all that the wicked should die?... and not that he should return from his ways, and live?* (Ezekiel 18:23); *turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 33:11). And the same conditional was set before His people at the house: *If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land* (2 Chronicles 7:14). The Potter remakes the vessel that yields. But Yahudah (Judah) will not yield — *There is no hope: but we will walk after our own devices, and we will every one do the imagination of his evil heart* (18:12) — and so brings the pluck-up upon its own head.',
+       sv.verse_id, ev.verse_id, 'free', 34428
+  FROM _s309_jer18_lookup sv, _s309_jer18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=18 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-18-shall-evil-be-recompensed-for-good',
+       E'Shall evil be recompensed for good? — the plot against the interceding prophet',
+       E'The men who would not return turn instead on the prophet who pleaded for them: *Then said they, Come, and let us devise devices against Jeremiah; for the law shall not perish from the priest, nor counsel from the wise, nor the word from the prophet. Come, and let us smite him with the tongue, and let us not give heed to any of his words* (18:18). And Jeremiah lays his cause before Yahuah: *Shall evil be recompensed for good? for they have digged a pit for my soul. Remember that I stood before thee to speak good for them, and to turn away thy wrath from them* (18:20). He had interceded for the very men now digging his pit. The psalter sings the same wound: *They rewarded me evil for good to the spoiling of my soul* (Psalm 35:12); *they have rewarded me evil for good, and hatred for my love* (Psalm 109:5). And within Jeremiah''s own book it is the lamb led to the slaughter: *But I was like a lamb or an ox that is brought to the slaughter; and I knew not that they had devised devices against me, saying, Let us destroy the tree with the fruit thereof* (Jeremiah 11:19). The rejected, interceding prophet is a type of the rejected Son, who asked the same question whole: *Many good works have I shewed you from my Father; for which of those works do ye stone me?* (John 10:32). Evil returned for good — the plotting against the one who stood between the people and the wrath, to turn it away.',
+       sv.verse_id, ev.verse_id, 'free', 34431
+  FROM _s309_jer18_lookup sv, _s309_jer18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=18 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Hath not the potter power over the clay... to make one vessel unto honour, and another unto dishonour?* (Romans 9:21) — Paul takes up Jeremiah 18:6; the Potter''s sovereign right over the clay.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-the-clay-in-the-potters-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Shall the thing formed say to him that formed it, Why hast thou made me thus?* (Romans 9:20) — the clay does not reply against the Potter of Jeremiah 18:6; the formed thing has no charge against its Maker.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-the-clay-in-the-potters-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8) — Isaiah confesses from the clay''s side the truth of Jeremiah 18:6; the people the work of Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=64 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-the-clay-in-the-potters-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Woe unto him that striveth with his Maker!... Shall the clay say to him that fashioneth it, What makest thou?* (Isaiah 45:9) — to resist the Potter''s hand (Jeremiah 18:6) is to strive with the Maker.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-the-clay-in-the-potters-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *shall the work say of him that made it, He made me not?... He had no understanding?* (Isaiah 29:16) — the same absurdity Jeremiah 18:6 exposes; the work cannot deny its maker.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=6
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=29 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-the-clay-in-the-potters-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *God saw their works, that they turned from their evil way; and God repented of the evil... and he did it not* (Jonah 3:10) — Nineveh is the living proof of Jeremiah 18:8; the overthrow averted by turning.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jonah' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *if the wicked will turn from all his sins... he shall surely live, he shall not die* (Ezekiel 18:21) — the conditional word of Jeremiah 18:8 preached to the single soul; the death lifted by turning.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Have I any pleasure at all that the wicked should die?... and not that he should return... and live?* (Ezekiel 18:23) — the heart behind Jeremiah 18:8; no delight in the threatened evil.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *turn ye, turn ye from your evil ways; for why will ye die, O house of Yashar''el (Israel)?* (Ezekiel 33:11) — Jeremiah''s potter-word in the imperative; the remaking waits on the turning.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *If my people... shall humble themselves... then will I hear... and will heal their land* (2 Chronicles 7:14) — the same conditional good of Jeremiah 18:9, the healing hinging on the turning.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=9
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-if-that-nation-turn-i-will-repent-of-the-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *They rewarded me evil for good to the spoiling of my soul* (Psalm 35:12) — David''s lament is Jeremiah''s very cry (18:20); the interceding good repaid with a pit.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=35 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-shall-evil-be-recompensed-for-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they have rewarded me evil for good, and hatred for my love* (Psalm 109:5) — the exact recompense Jeremiah 18:20 protests; love returned with enmity.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=109 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-shall-evil-be-recompensed-for-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I was like a lamb or an ox that is brought to the slaughter... they had devised devices against me* (Jeremiah 11:19) — the same conspiracy met again in 18:18; the prophet the lamb led to the slaughter.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=18
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-shall-evil-be-recompensed-for-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Many good works have I shewed you from my Father; for which of those works do ye stone me?* (John 10:32) — the Messiah asks Jeremiah 18:20''s question whole; the rejected prophet a type of the rejected Son.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=18 AND sv.verse_number=20
+  JOIN _s309_jer18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-18-shall-evil-be-recompensed-for-good'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_19.sql (Jeremiah 19) -----
+-- Chapter: Jeremiah 19 — THE BROKEN POTTER'S EARTHEN BOTTLE. Where Jeremiah 18 watched the potter
+-- REMAKE the marred clay (mercy still open if the nation turn), Jeremiah 19 takes a finished, fired
+-- bottle into the valley of the son of Hinnom — Tophet, where they burned their sons to Baal — and
+-- SHATTERS it: *Even so will I break this people and this city, as one breaketh a potter''s vessel,
+-- that cannot be made whole again* (19:11). Judgment now sealed; the vessel beyond the remaking.
+-- Around it: the child-sacrifice at Tophet *which I commanded not, nor spake it, neither came it into
+-- my mind* (19:5) — the blood of innocents, the abomination Yahuah never commanded, the valley turned
+-- into the valley of slaughter.
+-- Tag: jer19   Temp view: _s309_jer19_lookup
+-- Sort band: base 34450, step 3 -> threads at 34450, 34453 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',19,v
+--
+-- Jeremiah 19 coverage:
+--   v.1-3 (a potter''s earthen bottle; the ancients of the people and priests; the valley of the son of
+--          Hinnom; Behold, I will bring evil upon this place, his ears shall tingle)
+--        NT:     none warranted (the prophetic sign-act setup; the bottle-breaking weave held to THREAD 1)
+--        Extras: none warranted
+--        Tanakh: held in prose (the tingling ears = 1 Sam 3:11 / 2 Kgs 21:12 idiom; the bottle weave in THREAD 1)
+--   ★ v.4-6 (forsaken me... filled this place with the blood of innocents; built the high places of Baal,
+--          to burn their sons with fire... unto Baal, which I commanded not, nor spake it, neither came it
+--          into my mind; the valley of slaughter)
+--        NT:     none warranted (the child-sacrifice abomination has no direct NT quotation; its judgment
+--                stands in the Tanakh and Torah weave)
+--        Extras: none warranted (clean canon-Torah weave; no extra forced)
+--        Tanakh: ★ Jeremiah 7:31 (the SAME Tophet, the same *which I commanded them not* — lateral), ★★
+--                Leviticus 18:21 (thou shalt not let any of thy seed pass through the fire to Molech), ★
+--                Deuteronomy 12:31 (their sons and daughters they have burnt in the fire to their gods),
+--                ★ Psalm 106:37-38 (they sacrificed their sons... unto devils, and shed innocent blood) — THREAD 2
+--   v.7-9 (I will make void the counsel of Yahudah; fall by the sword; carcases meat for the fowls;
+--          the city desolate and an hissing; eat the flesh of their sons in the siege)
+--        NT:     none warranted (the siege-curse; the cannibalism is the Deut 28:53 / Lev 26:29 covenant
+--                curse — held to those, not forced as separate members here)
+--        Extras: none warranted
+--        Tanakh: held in prose (the siege-horror = the Deut 28 / Lev 26 covenant curse realized; the
+--                fowls-and-beasts = lateral to Jeremiah 7:33, woven in THREAD 2 prose)
+--   ★★ v.10-11 (break the bottle in the sight of the men... Even so will I break this people and this city,
+--          as one breaketh a potter''s vessel, that cannot be made whole again; bury in Tophet till there
+--          be no place)
+--        NT:     ★★ Revelation 2:27 (as the vessels of a potter shall they be broken to shivers) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 18:4 (the vessel marred... so he made it again another vessel — the CONTRAST),
+--                ★★ Jeremiah 18:6 (as the clay is in the potter''s hand, so are ye in mine hand), ★★ Psalm
+--                2:9 (thou shalt dash them in pieces like a potter''s vessel), ★ Isaiah 30:14 (he shall
+--                break it as the breaking of the potters'' vessel... he shall not spare) — THREAD 1
+--   v.12-13 (make this city as Tophet; the houses of Jerusalem and of the kings of Yahudah defiled... because
+--          they have burned incense unto all the host of heaven, and poured out drink offerings unto other gods)
+--        NT:     none warranted (the host-of-heaven worship; judgment woven into THREAD 1 / THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose (the rooftop host-of-heaven worship = the same apostasy of v.4-5, THREAD 2)
+--   v.14-15 (Jeremiah came from Tophet... stood in the court of the LORD''S house; I will bring upon this
+--          city all the evil... because they have hardened their necks, that they might not hear my words)
+--        NT:     none warranted (the hardened-neck refusal to hear; the sealed verdict of the whole chapter)
+--        Extras: none warranted
+--        Tanakh: held in prose (the hardened neck = the cause of the unmendable break; seals THREAD 1)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again — NT (Revelation 2) + Tanakh (Jeremiah 18, Psalm 2, Isaiah 30) [free]
+--      (★★ the fired bottle SHATTERED beyond mending — the contrast to ch18''s remaking; the potter''s-vessel
+--       judgment from Psalm 2 to Revelation 2; the nation broken beyond the remaking once mercy is refused)
+--   2. jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not — Tanakh (Jeremiah 7, Leviticus 18, Deuteronomy 12, Psalm 106) [free]
+--      (★ the child-sacrifice at Tophet Yahuah NEVER commanded — the blood of innocents, the valley of
+--       slaughter; the Torah ban on passing seed through the fire; the abomination that filled the cup)
+--
+-- Framing notes:
+--   ★★ THE BROKEN BOTTLE (THREAD 1): In chapter 18 the potter REMAKES the marred clay — *the vessel that
+--      he made of clay was marred in the hand of the potter: so he made it again another vessel* (18:4),
+--      *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (18:6)
+--      — soft clay on the wheel, mercy still open if the nation turn. Chapter 19 is the CONTRAST: the
+--      bottle is now FIRED, finished, hard; and Jeremiah does not remould it but SMASHES it before the
+--      elders — *Even so will I break this people and this city, as one breaketh a potter''s vessel, that
+--      cannot be made whole again* (19:11). Once the neck is hardened past hearing (19:15), the clay is
+--      past the remaking; the judgment is sealed. The potter''s-vessel image runs the canon as the picture
+--      of sovereign shattering judgment: *Thou shalt break them with a rod of iron; thou shalt dash them
+--      in pieces like a potter''s vessel* (Psalm 2:9); *he shall break it as the breaking of the potters''
+--      vessel that is broken in pieces; he shall not spare* (Isaiah 30:14); and the risen Messiah inherits
+--      the same rod — *as the vessels of a potter shall they be broken to shivers* (Revelation 2:27). The
+--      vessel that would not be remade is shattered.
+--   ★ THE BLOOD OF INNOCENTS — THE ABOMINATION I COMMANDED NOT (THREAD 2): the cause of the unmendable
+--      break is named — *they have filled this place with the blood of innocents; They have built also the
+--      high places of Baal, to burn their sons with fire for burnt offerings unto Baal, which I commanded
+--      not, nor spake it, neither came it into my mind* (19:4-5). Child-sacrifice in the valley of Hinnom,
+--      at Tophet — and the triple denial, *which I commanded not, nor spake it, neither came it into my
+--      mind*, hammers it: Yahuah never asked this; it is pure abomination borrowed from the nations. The
+--      same Tophet, the same denial, sounds in Jeremiah 7:31 — *to burn their sons and their daughters in
+--      the fire; which I commanded them not, neither came it into my heart*. The Torah forbade it from the
+--      first: *thou shalt not let any of thy seed pass through the fire to Molech* (Leviticus 18:21); *for
+--      even their sons and their daughters they have burnt in the fire to their gods* (Deuteronomy 12:31),
+--      *thou shalt not do so unto Yahuah Elohayka (the LORD thy God)*. And the Psalter names the full horror
+--      — *Yea, they sacrificed their sons and their daughters unto devils, And shed innocent blood... and
+--      the land was polluted with blood* (Psalm 106:37-38). The valley of the son of Hinnom becomes *The
+--      valley of slaughter* (19:6) — the place of the shed innocent blood becomes the place of the nation''s
+--      own slaughter.
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (the sign-act setup, the earthen bottle and the elders — the
+--      bottle-weave held to THREAD 1; tingling ears woven in prose), v.7-9 (the siege-curse, the carcases
+--      and the cannibalism — the Deut 28 / Lev 26 covenant curse realized; held to those, woven in THREAD 2
+--      prose), v.12-13 (the city made as Tophet, the rooftop host-of-heaven worship — the same apostasy of
+--      v.4-5, woven in THREAD 2), v.14-15 (Jeremiah from Tophet to the temple court; the hardened necks
+--      that would not hear — the cause of the unmendable break, sealing THREAD 1). Every block recorded.
+
+CREATE TEMP VIEW _s309_jer19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the broken bottle that cannot be made whole again — beyond the remaking of ch18
+    ('canon','jeremiah',19,11,'canon','jeremiah',18,4,'free',
+      E'*And the vessel that he made of clay was marred in the hand of the potter: so he made it again another vessel, as seemed good to the potter to make it* (Jeremiah 18:4). This is the CONTRAST that makes chapter 19 terrible: in chapter 18 the clay is soft on the wheel and the marred vessel is REMADE — mercy still open if the nation turn. But the bottle of *Even so will I break this people and this city, as one breaketh a potter''s vessel, that cannot be made whole again* (Jeremiah 19:11) is fired and finished; it is not remoulded but shattered. The clay that would not yield while it was soft is broken once it is hard.'),
+    ('canon','jeremiah',19,11,'canon','jeremiah',18,6,'free',
+      E'*O house of Yashar''el (Israel), cannot I do with you as this potter? saith Yahuah (LORD). Behold, as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6). The potter''s right over the clay — to remake or to break — is the frame of both chapters. In chapter 18 the hand remakes; in chapter 19 the same hand breaks the fired vessel that *cannot be made whole again* (Jeremiah 19:11). The sovereignty is one; the people''s hardening (19:15) is what turns the remaking into the shattering.'),
+    ('canon','jeremiah',19,11,'canon','psalms',2,9,'free',
+      E'*Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9). The potter''s-vessel image is the canon''s picture of sovereign shattering judgment, given to the anointed King: the rebellious dashed *in pieces like a potter''s vessel*. Jeremiah enacts the same word over Jerusalem — *as one breaketh a potter''s vessel, that cannot be made whole again* (Jeremiah 19:11). What the King will do to the raging nations, Yahuah does to the city that would not hear.'),
+    ('canon','jeremiah',19,11,'canon','revelation',2,27,'free',
+      E'*And he shall rule them with a rod of iron; as the vessels of a potter shall they be broken to shivers: even as I received of my Father* (Revelation 2:27). The risen Messiah inherits the rod of Psalm 2 and the potter''s-vessel judgment Jeremiah enacted — *as one breaketh a potter''s vessel, that cannot be made whole again* (Jeremiah 19:11). The Formed Son, *even as I received of my Father*, wields the same shattering authority: the vessel that will not be remade is broken to shivers.'),
+    ('canon','jeremiah',19,11,'canon','isaiah',30,14,'free',
+      E'*And he shall break it as the breaking of the potters'' vessel that is broken in pieces; he shall not spare: so that there shall not be found in the bursting of it a sherd to take fire from the hearth, or to take water withal out of the pit* (Isaiah 30:14). Isaiah draws the same picture of unsparing, total shattering — *he shall not spare*, not a usable sherd left — over the rebellious children who would not hear the law (Isaiah 30:9). It is the very judgment of *as one breaketh a potter''s vessel, that cannot be made whole again* (Jeremiah 19:11): the vessel broken past all mending.'),
+
+    -- THREAD 2 (★): the blood of innocents — the child-sacrifice at Tophet which I commanded not
+    ('canon','jeremiah',19,5,'canon','jeremiah',7,31,'free',
+      E'*And they have built the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart* (Jeremiah 7:31). This is the SAME Tophet and the SAME triple-denial as chapter 19 — *to burn their sons with fire for burnt offerings unto Baal, which I commanded not, nor spake it, neither came it into my mind* (Jeremiah 19:5). Jeremiah names the one abomination twice: the child-sacrifice in the valley of Hinnom that Yahuah never asked for, never spoke, never conceived.'),
+    ('canon','jeremiah',19,5,'canon','leviticus',18,21,'free',
+      E'*And thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 18:21). The Torah forbade from the first the very thing the high places of Baal practised — passing the seed through the fire. Jeremiah''s *to burn their sons with fire... which I commanded not* (Jeremiah 19:5) is the direct violation of this command: what Yahuah explicitly banned, they built altars to do. The abomination is not an oversight in the law but a defiance of it.'),
+    ('canon','jeremiah',19,5,'canon','deuteronomy',12,31,'free',
+      E'*Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods; for even their sons and their daughters they have burnt in the fire to their gods* (Deuteronomy 12:31). The Torah named the child-burning a heathen abomination Yahuah HATES, never to be borrowed for his worship. Jeremiah''s indictment — *to burn their sons with fire for burnt offerings unto Baal, which I commanded not* (Jeremiah 19:5) — is the people doing the very thing Deuteronomy forbade, the abomination of the nations turned against their own children.'),
+    ('canon','jeremiah',19,4,'canon','psalms',106,37,'free',
+      E'*Yea, they sacrificed their sons and their daughters unto devils* (Psalm 106:37). The Psalter''s history of apostasy names the same horror Jeremiah charges — *they have filled this place with the blood of innocents* (Jeremiah 19:4): the sons and daughters offered up, not to Yahuah but *unto devils*. The blood of innocents that fills Jerusalem is the blood of its own children, shed in the valley of Hinnom.'),
+    ('canon','jeremiah',19,4,'canon','psalms',106,38,'free',
+      E'*And shed innocent blood, even the blood of their sons and of their daughters, whom they sacrificed unto the idols of Canaan: and the land was polluted with blood* (Psalm 106:38). The Psalm names exactly what Jeremiah names — *the blood of innocents* (Jeremiah 19:4) is *the blood of their sons and of their daughters*, and the land *polluted with blood*. The shed innocent blood is why the valley of the son of Hinnom becomes *The valley of slaughter* (Jeremiah 19:6): the polluted land vomits out its own.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again',
+       E'The broken bottle — even so will I break this people, that cannot be made whole again',
+       E'Chapter 18 left mercy''s door open: the potter''s marred clay was REMADE — *the vessel that he made of clay was marred in the hand of the potter: so he made it again another vessel, as seemed good to the potter to make it* (18:4); *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (18:6). Soft clay on the wheel; if the nation would turn, it could yet be reshaped. Chapter 19 closes that door. Yahuah sends Jeremiah to buy *a potter''s earthen bottle* (19:1) — fired, finished, hard — and to carry it with the elders to the valley of the son of Hinnom, and there to SHATTER it before them: *Then shalt thou break the bottle in the sight of the men that go with thee, And shalt say unto them, Thus saith Yahuah Tseva''ot (LORD of hosts); Even so will I break this people and this city, as one breaketh a potter''s vessel, that cannot be made whole again: and they shall bury them in Tophet, till there be no place to bury* (19:10-11). The marred-but-soft clay could be remade; the fired bottle, once broken, *cannot be made whole again*. What seals it is named at the end: *they have hardened their necks, that they might not hear my words* (19:15) — the clay baked past the remaking by its own refusal. The potter''s-vessel shattering is the canon''s picture of sovereign judgment from the first. To the anointed King the decree runs: *Thou shalt break them with a rod of iron; thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9). Isaiah draws the same unsparing break over the children who *will not hear the law of Yahuah (LORD)* (Isaiah 30:9): *he shall break it as the breaking of the potters'' vessel that is broken in pieces; he shall not spare: so that there shall not be found in the bursting of it a sherd to take fire from the hearth* (Isaiah 30:14) — not even a usable shard left. And the risen Messiah inherits the rod and the vessel-judgment alike: *he shall rule them with a rod of iron; as the vessels of a potter shall they be broken to shivers: even as I received of my Father* (Revelation 2:27) — the Formed Son wielding the Father''s shattering authority. The vessel that would not be remade while it was soft is broken to shivers once it is hard.',
+       sv.verse_id, ev.verse_id, 'free', 34450
+  FROM _s309_jer19_lookup sv, _s309_jer19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=19 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not',
+       E'The blood of innocents — they burned their sons to Baal, which I commanded not',
+       E'The reason the bottle is shattered beyond mending is named without flinching: *Because they have forsaken me, and have estranged this place, and have burned incense in it unto other gods... and have filled this place with the blood of innocents; They have built also the high places of Baal, to burn their sons with fire for burnt offerings unto Baal, which I commanded not, nor spake it, neither came it into my mind* (19:4-5). Child-sacrifice in the valley of the son of Hinnom, at Tophet — and the triple denial hammers home that Yahuah is utterly clear of it: *which I commanded not, nor spake it, neither came it into my mind*. He never asked for it, never spoke it, never so much as conceived it; it is pure abomination borrowed from the nations. The same Tophet and the same denial sound earlier in the book: *And they have built the high places of Tophet, which is in the valley of the son of Hinnom, to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart* (Jeremiah 7:31). And the Torah had banned it from the first — there is no covenant cover for it: *thou shalt not let any of thy seed pass through the fire to Molech, neither shalt thou profane the name of thy Elohim (God): I am Yahuah (LORD)* (Leviticus 18:21); *Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods; for even their sons and their daughters they have burnt in the fire to their gods* (Deuteronomy 12:31). The Psalter records the same blood-guilt in Israel''s long apostasy: *Yea, they sacrificed their sons and their daughters unto devils, And shed innocent blood, even the blood of their sons and of their daughters, whom they sacrificed unto the idols of Canaan: and the land was polluted with blood* (Psalm 106:37-38). So the valley of the son of Hinnom becomes *The valley of slaughter* (19:6): the place where they shed the innocent blood of their own children becomes the place of the nation''s own slaughter, *and they shall bury them in Tophet, till there be no place to bury* (19:11). The cup filled with innocent blood is poured back out upon the city that filled it.',
+       sv.verse_id, ev.verse_id, 'free', 34453
+  FROM _s309_jer19_lookup sv, _s309_jer19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=19 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the vessel... was marred in the hand of the potter: so he made it again another vessel* (Jeremiah 18:4) — the CONTRAST: in ch18 the soft clay is REMADE; in ch19 the fired bottle is shattered beyond mending.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *as the clay is in the potter''s hand, so are ye in mine hand, O house of Yashar''el (Israel)* (Jeremiah 18:6) — one sovereign hand, to remake or to break; the hardening turns the remaking into the shattering.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *thou shalt dash them in pieces like a potter''s vessel* (Psalm 2:9) — the potter''s-vessel judgment given to the anointed King; what He does to the raging nations, Yahuah does to the city that would not hear.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *as the vessels of a potter shall they be broken to shivers: even as I received of my Father* (Revelation 2:27) — the risen Messiah inherits the rod of Psalm 2 and the potter''s-vessel judgment Jeremiah enacted.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=2 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *he shall break it as the breaking of the potters'' vessel... he shall not spare* (Isaiah 30:14) — the same unsparing shattering over those who *will not hear the law of Yahuah*; not a usable sherd left.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=11
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-broken-bottle-that-cannot-be-made-whole-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *to burn their sons and their daughters in the fire; which I commanded them not, neither came it into my heart* (Jeremiah 7:31) — the SAME Tophet and the SAME triple-denial; the one abomination named twice in the book.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thou shalt not let any of thy seed pass through the fire to Molech* (Leviticus 18:21) — the Torah banned it from the first; the high places of Baal were open defiance of the command, not a gap in it.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *their sons and their daughters they have burnt in the fire to their gods* (Deuteronomy 12:31) — the Torah named the child-burning a heathen abomination Yahuah HATES, never to be borrowed for his worship.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=5
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *they sacrificed their sons and their daughters unto devils* (Psalm 106:37) — the Psalter names the same horror: the blood of innocents (19:4) is the blood of their own children, offered unto devils.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *And shed innocent blood... and the land was polluted with blood* (Psalm 106:38) — the shed innocent blood is why the valley of Hinnom becomes *The valley of slaughter* (19:6); the polluted land vomits out its own.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=19 AND sv.verse_number=4
+  JOIN _s309_jer19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-19-the-blood-of-innocents-the-abomination-i-commanded-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_20.sql (Jeremiah 20) -----
+-- Chapter: Jeremiah 20 — Pashur smites Jeremiah and puts him in the stocks (Magor-missabib, "fear on
+-- every side"); the prophet's confession-lament: ★★★ the word of Yahuah (LORD) as a BURNING FIRE shut up
+-- in his bones — he could not stay it though he tried to be silent; ★★ the persecuted prophet's trust and
+-- praise amid the betrayal of all his familiars (Yahuah with me as a mighty terrible one; sing unto Yahuah,
+-- he hath delivered the soul of the poor); ★ the raw lament — *Cursed be the day wherein I was born* — the
+-- honest cry of the suffering servant. The irresistible word, the persecuted-yet-trusting prophet, the
+-- honest anguish — all carried FORWARD into the apostles who *cannot but speak* and the company of Job.
+-- Tag: jer20   Temp view: _s309_jer20_lookup
+-- Sort band: base 34475, step 3 -> threads at 34475, 34478, 34481 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',20,v
+--
+-- Jeremiah 20 coverage:
+--   v.1-6 (Pashur the priest smites Jeremiah, puts him in the stocks; Yahuah names him Magor-missabib,
+--          "fear on every side"; Yahudah (Judah) given into the hand of the king of Babylon; Pashur to die
+--          in Babylon, having prophesied lies)
+--        NT:     none warranted (the historical persecution and the Babylon-captivity oracle; the "fear on
+--                every side" / Magor-missabib motif carried into THREAD 2 via v.10)
+--        Extras: none warranted
+--        Tanakh: none separate (the framing narrative; the captivity-into-Babylon word stands; the smitten-
+--                prophet sets up the confession of v.7ff)
+--   ★★★ v.7-9 (O Yahuah, thou hast deceived me, and I was deceived... I am in derision daily... Then I said,
+--          I will not make mention of him... But his word was in mine heart as a burning fire shut up in my
+--          bones, and I was weary with forbearing, and I could not stay)
+--        NT:     ★★ 1 Corinthians 9:16 (woe is unto me, if I preach not the gospel!), ★★ Acts 4:20 (we can
+--                not but speak the things which we have seen and heard) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Amos 3:8 (the lion hath roared, who will not fear? Adonai Yahuah hath spoken, who can
+--                but prophesy?), ★ Job 32:18-19 (I am full of matter... my belly is as wine which hath no
+--                vent; it is ready to burst), ★ Psalm 39:3 (my heart was hot within me, while I was musing
+--                the fire burned: then spake I with my tongue) — THREAD 1
+--   ★★ v.10-13 (For I heard the defaming of many, fear on every side... all my familiars watched for my
+--          halting... But Yahuah is with me as a mighty terrible one: therefore my persecutors shall stumble...
+--          Sing unto Yahuah... for he hath delivered the soul of the poor from the hand of evildoers)
+--        NT:     ★★ Romans 8:31 (if Elohim (God) be for us, who can be against us?), ★★ 2 Timothy 4:17
+--                (Yahuah (Lord) stood with me, and strengthened me... I was delivered out of the mouth of the
+--                lion), ★ 2 Timothy 4:18 (Yahuah (Lord) shall deliver me from every evil work) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 31:13 (I have heard the slander of many: fear was on every side), ★ Psalm 56:9
+--                (this I know; for Elohim (God) is for me) — THREAD 2
+--   ★ v.14-18 (Cursed be the day wherein I was born... Wherefore came I forth out of the womb to see labour
+--          and sorrow, that my days should be consumed with shame?)
+--        NT:     none warranted (the raw lament has no NT quotation; it is answered in posture, not citation)
+--        Extras: none warranted
+--        Tanakh: ★★ Job 3:3 (Let the day perish wherein I was born), ★★ Job 3:11 (Why died I not from the
+--                womb?), ★ Job 10:18 (Wherefore then hast thou brought me forth out of the womb?), ★ Lamentations
+--                3:1 (I am the man that hath seen affliction by the rod of his wrath) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones — NT (1 Corinthians 9, Acts 4) + Tanakh (Amos 3, Job 32, Psalm 39) [free]
+--      (★★★ the irresistible word that burns until it is spoken; the prophet cannot stay it though he tries to be silent)
+--   2. jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one — NT (Romans 8, 2 Timothy 4) + Tanakh (Psalm 31, Psalm 56) [free]
+--      (★★ the persecuted prophet's trust and praise amid the betrayal of all his familiars; Yahuah with the persecuted)
+--   3. jeremiah-20-cursed-be-the-day-wherein-i-was-born — Tanakh (Job 3, Job 10, Lamentations 3) [free]
+--      (★ the honest cry of the suffering servant over his birth and burden; the lament Job and the man of Lamentations share)
+--
+-- Framing notes:
+--   ★★★ THE BURNING FIRE SHUT UP IN THE BONES (THREAD 1): smitten and mocked, Jeremiah resolves to be
+--      silent — *Then I said, I will not make mention of him, nor speak any more in his name* — yet the word
+--      will not be held: *But his word was in mine heart as a burning fire shut up in my bones, and I was
+--      weary with forbearing, and I could not stay* (20:9). The word of Yahuah (LORD) is irresistible; the
+--      prophet cannot keep it in. Amos says the same compulsion: *The lion hath roared, who will not fear?
+--      Adonai Yahuah (the Lord GOD) hath spoken, who can but prophesy?* (Amos 3:8). The apostles knew it:
+--      *necessity is laid upon me; yea, woe is unto me, if I preach not the gospel!* (1 Corinthians 9:16);
+--      *For we can not but speak the things which we have seen and heard* (Acts 4:20). Elihu and the psalmist
+--      know the same pressure: *I am full of matter... my belly is as wine which hath no vent; it is ready
+--      to burst* (Job 32:18-19); *My heart was hot within me, while I was musing the fire burned: then spake
+--      I with my tongue* (Psalm 39:3). The fire shut up in the bones must out.
+--   ★★ YAHUAH WITH THE PERSECUTED (THREAD 2): betrayed by his own — *all my familiars watched for my halting*
+--      (20:10), the very "fear on every side" (Magor-missabib) that named Pashur now closes on the prophet —
+--      Jeremiah turns to his Defender: *But Yahuah (LORD) is with me as a mighty terrible one: therefore my
+--      persecutors shall stumble, and they shall not prevail* (20:11), and breaks into praise: *Sing unto
+--      Yahuah (LORD), praise ye Yahuah (LORD): for he hath delivered the soul of the poor from the hand of
+--      evildoers* (20:13). David sang the same betrayal and the same trust: *For I have heard the slander of
+--      many: fear was on every side... But I trusted in thee, O Yahuah (LORD)* (Psalm 31:13-14); *this I know;
+--      for Elohim (God) is for me* (Psalm 56:9). Paul carries it forward: *If Elohim (God) be for us, who can
+--      be against us?* (Romans 8:31), and from his own prison — forsaken of men — *Notwithstanding Yahuah
+--      (Lord) stood with me, and strengthened me... and I was delivered out of the mouth of the lion* (2
+--      Timothy 4:17), *And Yahuah (Lord) shall deliver me from every evil work* (2 Timothy 4:18). Yahuah is
+--      with the persecuted prophet, and the persecutors shall stumble.
+--   ★ CURSED BE THE DAY (THREAD 3): the lowest cry of the chapter — *Cursed be the day wherein I was born...
+--      Wherefore came I forth out of the womb to see labour and sorrow, that my days should be consumed with
+--      shame?* (20:14,18). This is raw, honest anguish, not unbelief — the suffering servant of Yahuah pouring
+--      out the bitterness of his soul. Job spoke the very words: *Let the day perish wherein I was born* (Job
+--      3:3), *Why died I not from the womb?* (Job 3:11), *Wherefore then hast thou brought me forth out of the
+--      womb?* (Job 10:18). And the man of Lamentations — Jeremiah himself — owns the affliction: *I am the man
+--      that hath seen affliction by the rod of his wrath* (Lamentations 3:1), the same book that turns to hope:
+--      *It is of the LORD'S mercies that we are not consumed* (Lam 3:22). The honest lament is held within the
+--      covenant; Scripture gives the sufferer his own words for the dark.
+--   VERSES WITH NO SEPARATE ADD: v.1-6 (Pashur smites Jeremiah, the stocks, Magor-missabib, the Babylon-
+--      captivity oracle — the framing persecution narrative; the "fear on every side" naming is carried into
+--      THREAD 2 by v.10's same phrase). All blocks recorded above; every meaningful section carries or is
+--      bound to a thread.
+
+CREATE TEMP VIEW _s309_jer20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): his word was in mine heart as a burning fire shut up in my bones — the irresistible word
+    ('canon','jeremiah',20,9,'canon','amos',3,8,'free',
+      E'*The lion hath roared, who will not fear? Adonai Yahuah (the Lord GOD) hath spoken, who can but prophesy?* (Amos 3:8). Amos names the same compulsion Jeremiah felt — *his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing, and I could not stay* (Jeremiah 20:9). When Yahuah has spoken, the prophet cannot but prophesy; the word is a fire that will not be held back, as the lion''s roar leaves no choice but fear.'),
+    ('canon','jeremiah',20,9,'canon','1-corinthians',9,16,'free',
+      E'*For though I preach the gospel, I have nothing to glory of: for necessity is laid upon me; yea, woe is unto me, if I preach not the gospel!* (1 Corinthians 9:16). Paul knows Jeremiah''s burning fire — *I will not make mention of him, nor speak any more in his name. But his word was in mine heart as a burning fire shut up in my bones... and I could not stay* (Jeremiah 20:9). The word laid upon the messenger is a necessity, not a choice: *woe is unto me, if I preach not*. The fire shut up in the bones must out.'),
+    ('canon','jeremiah',20,9,'canon','acts',4,20,'free',
+      E'*For we can not but speak the things which we have seen and heard* (Acts 4:20). Threatened and forbidden to speak in the Name, Peter and John answer as Jeremiah confessed — *his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing, and I could not stay* (Jeremiah 20:9). The word cannot be silenced by threats or stocks; what Yahuah has given the messenger to speak, he *can not but speak*.'),
+    ('canon','jeremiah',20,9,'canon','job',32,18,'free',
+      E'*For I am full of matter, the spirit within me constraineth me. Behold, my belly is as wine which hath no vent; it is ready to burst like new bottles* (Job 32:18-19). Elihu feels the very pressure Jeremiah names — *his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing* (Jeremiah 20:9). The word within constrains; held in, it builds like unvented wine ready to burst. The messenger *could not stay*; he must speak that he may be refreshed.'),
+    ('canon','jeremiah',20,9,'canon','psalms',39,3,'free',
+      E'*My heart was hot within me, while I was musing the fire burned: then spake I with my tongue* (Psalm 39:3). David resolved to keep silence — *I will keep my mouth with a bridle* (Ps 39:1) — yet the fire forced speech, exactly as Jeremiah found: *his word was in mine heart as a burning fire shut up in my bones... I could not stay* (Jeremiah 20:9). The word kept in becomes a burning that the tongue must finally release.'),
+
+    -- THREAD 2 (★★): Yahuah is with me as a mighty terrible one — the persecuted prophet's trust and praise
+    ('canon','jeremiah',20,10,'canon','psalms',31,13,'free',
+      E'*For I have heard the slander of many: fear was on every side: while they took counsel together against me, they devised to take away my life* (Psalm 31:13). David''s words are Jeremiah''s — *For I heard the defaming of many, fear on every side... All my familiars watched for my halting* (Jeremiah 20:10). The very "fear on every side" (Magor-missabib) that names the chapter closes round the prophet; yet David''s next breath — *But I trusted in thee, O Yahuah (LORD)* (Ps 31:14) — is the turn Jeremiah makes too.'),
+    ('canon','jeremiah',20,11,'canon','romans',8,31,'free',
+      E'*What shall we then say to these things? If Elohim (God) be for us, who can be against us?* (Romans 8:31). Paul states the confidence Jeremiah seizes amid the betrayal — *But Yahuah (LORD) is with me as a mighty terrible one: therefore my persecutors shall stumble, and they shall not prevail* (Jeremiah 20:11). If Yahuah stands with his servant, no familiar''s plotting can prevail; the persecutors shall stumble, for Elohim is for him.'),
+    ('canon','jeremiah',20,11,'canon','2-timothy',4,17,'free',
+      E'*Notwithstanding Yahuah (Lord) stood with me, and strengthened me; that by me the preaching might be fully known... and I was delivered out of the mouth of the lion* (2 Timothy 4:17). Paul, forsaken of all men, knows what Jeremiah knew — *But Yahuah (LORD) is with me as a mighty terrible one* (Jeremiah 20:11). Though every familiar watched for his halting, Yahuah stood by the prophet as a mighty one, and delivered him out of the lion''s mouth.'),
+    ('canon','jeremiah',20,13,'canon','2-timothy',4,18,'free',
+      E'*And Yahuah (Lord) shall deliver me from every evil work, and will preserve me unto his heavenly kingdom: to whom be glory for ever and ever. Amen* (2 Timothy 4:18). Paul''s settled praise answers Jeremiah''s — *Sing unto Yahuah (LORD), praise ye Yahuah (LORD): for he hath delivered the soul of the poor from the hand of evildoers* (Jeremiah 20:13). The persecuted servant breaks into doxology, certain that Yahuah delivers his poor ones from the hand of evildoers, even unto the kingdom.'),
+    ('canon','jeremiah',20,13,'canon','psalms',56,9,'free',
+      E'*When I cry unto thee, then shall mine enemies turn back: this I know; for Elohim (God) is for me* (Psalm 56:9). David''s certainty is the ground of Jeremiah''s praise — *Sing unto Yahuah (LORD), praise ye Yahuah (LORD): for he hath delivered the soul of the poor from the hand of evildoers* (Jeremiah 20:13). *This I know; for Elohim (God) is for me* — the deliverance of the poor and persecuted is sure, and so the song rises even before the rescue is seen.'),
+
+    -- THREAD 3 (★): Cursed be the day wherein I was born — the honest lament of the suffering servant
+    ('canon','jeremiah',20,14,'canon','job',3,3,'free',
+      E'*Let the day perish wherein I was born, and the night in which it was said, There is a man child conceived* (Job 3:3). Job opens his mouth and curses his day in the very key of Jeremiah''s lament — *Cursed be the day wherein I was born: let not the day wherein my mother bare me be blessed* (Jeremiah 20:14). Two servants of Yahuah, crushed by sorrow, pour out the same raw cry over the day of their birth; the anguish is honest, not unbelieving.'),
+    ('canon','jeremiah',20,17,'canon','job',3,11,'free',
+      E'*Why died I not from the womb? why did I not give up the ghost when I came out of the belly?* (Job 3:11). Job''s question is Jeremiah''s — *Because he slew me not from the womb; or that my mother might have been my grave* (Jeremiah 20:17). The suffering servant wishes the womb had been his grave; the burden of his calling presses him to the same bitter wondering Job knew.'),
+    ('canon','jeremiah',20,18,'canon','job',10,18,'free',
+      E'*Wherefore then hast thou brought me forth out of the womb? Oh that I had given up the ghost, and no eye had seen me!* (Job 10:18). Job asks exactly what Jeremiah asks — *Wherefore came I forth out of the womb to see labour and sorrow, that my days should be consumed with shame?* (Jeremiah 20:18). The cry "why was I ever born to this" is the honest grief of the afflicted; Scripture gives the sufferer his own words for the dark.'),
+    ('canon','jeremiah',20,14,'canon','lamentations',3,1,'free',
+      E'*I am the man that hath seen affliction by the rod of his wrath* (Lamentations 3:1). The man of Lamentations — Jeremiah himself — owns the same affliction his confession voices: *Cursed be the day wherein I was born* (Jeremiah 20:14). Yet the very book that names the affliction turns to hope — *It is of the LORD''S mercies that we are not consumed, because his compassions fail not. They are new every morning* (Lam 3:22-23). The lament is real, and it is held within the mercy that does not fail.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones',
+       E'His word was in mine heart as a burning fire shut up in my bones — I could not stay',
+       E'Smitten by Pashur, put in the stocks, and mocked, Jeremiah pours out the bitterest of his confessions: *O Yahuah (LORD), thou hast deceived me, and I was deceived: thou art stronger than I, and hast prevailed: I am in derision daily, every one mocketh me. For since I spake, I cried out, I cried violence and spoil; because the word of Yahuah (LORD) was made a reproach unto me, and a derision, daily* (20:7-8). The shame of the calling drives him to a resolve: he will quit. *Then I said, I will not make mention of him, nor speak any more in his name* (20:9). But he cannot keep the vow — the word itself will not be silenced: *But his word was in mine heart as a burning fire shut up in my bones, and I was weary with forbearing, and I could not stay* (20:9). The word of Yahuah is a fire; held in, it burns until it must be spoken. Amos names the same compulsion — when Yahuah speaks, the prophet has no choice: *The lion hath roared, who will not fear? Adonai Yahuah (the Lord GOD) hath spoken, who can but prophesy?* (Amos 3:8). The apostles knew the same necessity: *necessity is laid upon me; yea, woe is unto me, if I preach not the gospel!* (1 Corinthians 9:16); and before the council that forbade them the Name, *we can not but speak the things which we have seen and heard* (Acts 4:20). Elihu feels the word within him as unvented wine — *I am full of matter, the spirit within me constraineth me. Behold, my belly is as wine which hath no vent; it is ready to burst like new bottles* (Job 32:18-19) — and David, who bridled his mouth, finds the fire forces speech at last: *My heart was hot within me, while I was musing the fire burned: then spake I with my tongue* (Psalm 39:3). The word shut up in the bones must out; the messenger cannot stay it.',
+       sv.verse_id, ev.verse_id, 'free', 34475
+  FROM _s309_jer20_lookup sv, _s309_jer20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=20 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one',
+       E'Yahuah is with me as a mighty terrible one — the persecuted prophet''s trust and praise',
+       E'The "fear on every side" that Yahuah hung on Pashur (Magor-missabib, 20:3) now closes round the prophet himself, and his own familiars turn on him: *For I heard the defaming of many, fear on every side. Report, say they, and we will report it. All my familiars watched for my halting, saying, Peradventure he will be enticed, and we shall prevail against him, and we shall take our revenge on him* (20:10). David knew that betrayal word for word: *For I have heard the slander of many: fear was on every side: while they took counsel together against me, they devised to take away my life* (Psalm 31:13). But Jeremiah turns from the plotters to his Defender, and the fear becomes confidence: *But Yahuah (LORD) is with me as a mighty terrible one: therefore my persecutors shall stumble, and they shall not prevail: they shall be greatly ashamed; for they shall not prosper* (20:11). This is the confidence Paul states plainly — *If Elohim (God) be for us, who can be against us?* (Romans 8:31) — and which he proved in his own trial when every man forsook him: *Notwithstanding Yahuah (Lord) stood with me, and strengthened me... and I was delivered out of the mouth of the lion* (2 Timothy 4:17). From confidence the prophet breaks into praise: *Sing unto Yahuah (LORD), praise ye Yahuah (LORD): for he hath delivered the soul of the poor from the hand of evildoers* (20:13) — a song answered by Paul''s own doxology, *And Yahuah (Lord) shall deliver me from every evil work, and will preserve me unto his heavenly kingdom* (2 Timothy 4:18), and grounded in David''s certainty, *this I know; for Elohim (God) is for me* (Psalm 56:9). Yahuah is with the persecuted; the persecutors shall stumble, and the soul of the poor is delivered.',
+       sv.verse_id, ev.verse_id, 'free', 34478
+  FROM _s309_jer20_lookup sv, _s309_jer20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=20 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-20-cursed-be-the-day-wherein-i-was-born',
+       E'Cursed be the day wherein I was born — the honest cry of the suffering servant',
+       E'The chapter ends at its lowest point, in raw and unguarded anguish: *Cursed be the day wherein I was born: let not the day wherein my mother bare me be blessed* (20:14); *Wherefore came I forth out of the womb to see labour and sorrow, that my days should be consumed with shame?* (20:18). This is not unbelief but honest grief — the suffering servant of Yahuah pouring out the bitterness of his soul, and Scripture gives him the words for it without rebuke. Job had opened his mouth in the very same key: *Let the day perish wherein I was born* (Job 3:3); *Why died I not from the womb? why did I not give up the ghost when I came out of the belly?* (Job 3:11); *Wherefore then hast thou brought me forth out of the womb? Oh that I had given up the ghost, and no eye had seen me!* (Job 10:18). And the man of Lamentations — Jeremiah himself — owns the affliction whole: *I am the man that hath seen affliction by the rod of his wrath* (Lamentations 3:1). Yet the same book that names the affliction is the book that turns to hope from the bottom of the pit: *It is of the LORD''S mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness* (Lam 3:22-23). The lament is real and it is permitted; the honest cry of the afflicted is held within the mercy that does not fail, and the dark word is not the last word.',
+       sv.verse_id, ev.verse_id, 'free', 34481
+  FROM _s309_jer20_lookup sv, _s309_jer20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=20 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Adonai Yahuah (the Lord GOD) hath spoken, who can but prophesy?* (Amos 3:8) — the same compulsion as Jeremiah 20:9; when Yahuah has spoken, the prophet cannot but prophesy.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *woe is unto me, if I preach not the gospel!* (1 Corinthians 9:16) — Paul knows Jeremiah 20:9''s burning fire; the word is a necessity laid on the messenger, not a choice.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *we can not but speak the things which we have seen and heard* (Acts 4:20) — forbidden the Name, the apostles answer as Jeremiah 20:9 confessed; the word cannot be silenced by threats or stocks.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *my belly is as wine which hath no vent; it is ready to burst* (Job 32:18-19) — Elihu feels the word within constrain him as Jeremiah 20:9 felt it; held in, it must burst forth.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=32 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *while I was musing the fire burned: then spake I with my tongue* (Psalm 39:3) — David bridled his mouth, but the fire forced speech, exactly as Jeremiah 20:9 found the word could not stay.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=39 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-his-word-was-in-mine-heart-as-a-burning-fire-shut-up-in-my-bones'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I have heard the slander of many: fear was on every side* (Psalm 31:13) — David''s betrayal is Jeremiah 20:10''s word for word; yet his next breath is *But I trusted in thee, O Yahuah (LORD)*.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=10
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=31 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *If Elohim (God) be for us, who can be against us?* (Romans 8:31) — Paul states the confidence of Jeremiah 20:11; if Yahuah stands with his servant, no plotting can prevail.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Yahuah (Lord) stood with me, and strengthened me... I was delivered out of the mouth of the lion* (2 Timothy 4:17) — forsaken of all men, Paul proves Jeremiah 20:11; Yahuah stood by him as a mighty one.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=11
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Yahuah (Lord) shall deliver me from every evil work* (2 Timothy 4:18) — Paul''s doxology answers Jeremiah 20:13''s song; the persecuted servant praises, certain of deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *this I know; for Elohim (God) is for me* (Psalm 56:9) — David''s certainty grounds Jeremiah 20:13''s praise; the deliverance of the poor and persecuted is sure.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=56 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-yahuah-is-with-me-as-a-mighty-terrible-one'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Let the day perish wherein I was born* (Job 3:3) — Job curses his day in the very key of Jeremiah 20:14; two servants of Yahuah pour out the same honest cry.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-cursed-be-the-day-wherein-i-was-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Why died I not from the womb?* (Job 3:11) — Job''s question is Jeremiah 20:17''s; the suffering servant wishes the womb had been his grave.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=17
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-cursed-be-the-day-wherein-i-was-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Wherefore then hast thou brought me forth out of the womb?* (Job 10:18) — Job asks exactly what Jeremiah 20:18 asks; the cry "why was I born to this" is the grief of the afflicted.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-cursed-be-the-day-wherein-i-was-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I am the man that hath seen affliction by the rod of his wrath* (Lamentations 3:1) — the man of Lamentations (Jeremiah himself) owns the affliction of 20:14, yet that same book turns to hope: his compassions fail not.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s309_jer20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-20-cursed-be-the-day-wherein-i-was-born'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_21.sql (Jeremiah 21) -----
+-- Chapter: Jeremiah 21 — Zedekiah sends to enquire of Yahuah as Nebuchadrezzar besieges the city; the
+-- answer is that Yahuah HIMSELF will fight against Jerusalem and give it to Babylon. Two framework
+-- passages stand out: ★★ vv.8-9 *Behold, I set before you the way of life, and the way of death* — the
+-- two ways set before the people, life by submitting to Yahuah's word (going out to the Chaldeans) and
+-- death by resisting it (abiding in the doomed city); and ★ v.12 *O house of David... Execute judgment
+-- in the morning, and deliver him that is spoiled out of the hand of the oppressor* — the royal house
+-- called to do justice lest wrath fall like unquenchable fire. Both are Torah/prophet-rooted: the choice
+-- of life or death is Deuteronomy 30's *therefore choose life*; the royal duty of justice is the
+-- prophets' steady measure of the throne of David.
+-- Tag: jer21   Temp view: _s309_jer21_lookup
+-- Sort band: base 34500, step 3 -> threads at 34500, 34503 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',21,v
+--
+-- Jeremiah 21 coverage:
+--   v.1-2 (Zedekiah sends Pashur and Zephaniah to enquire of Yahuah; Nebuchadrezzar maketh war)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the historical occasion; preface to the oracle of vv.3-7)
+--   v.3-7 (Yahuah will turn back their weapons, fight against them himself with outstretched hand and
+--          strong arm, smite the city with pestilence, deliver Zedekiah into Nebuchadrezzar's hand)
+--        NT:     none warranted distinct (Yahuah himself the besieger; the covenant-lawsuit judgment,
+--                woven in prose into THREAD 1 — the way of death is the city Yahuah has set his face against)
+--        Extras: none warranted
+--        Tanakh: held in prose — *I myself will fight against you* (21:5); the divine warrior turned against
+--                his own rebellious city; the ground of the two-ways choice in vv.8-9
+--   ★★ v.8-9 (Behold, I set before you the way of life, and the way of death; he that abideth in this city
+--          shall die... but he that goeth out, and falleth to the Chaldeans, he shall live)
+--        NT:     ★★ Matthew 7:13 (wide is the gate... that leadeth to destruction), ★★ Matthew 7:14
+--                (narrow is the way, which leadeth unto life) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★★ Deuteronomy 30:19 (I have set before you life and death... therefore choose life),
+--                ★★ Deuteronomy 30:15 (I have set before thee this day life and good, and death and evil),
+--                ★ Jeremiah 38:2 (he that goeth forth to the Chaldeans shall live — lateral, repeated),
+--                ★ Proverbs 14:12 (there is a way which seemeth right... the end thereof are the ways of
+--                death) — THREAD 1
+--   v.10 (I have set my face against this city for evil... it shall be given into the hand of the king of
+--          Babylon, and he shall burn it with fire)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the verdict that makes abiding in the city the way of death (THREAD 1)
+--   ★ v.11-12 (O house of David... Execute judgment in the morning, and deliver him that is spoiled out of
+--          the hand of the oppressor, lest my fury go out like fire)
+--        NT:     none warranted (the royal-justice duty held to the Tanakh witnesses; not forced forward)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 22:3 (Execute ye judgment and righteousness, and deliver the spoiled out of
+--                the hand of the oppressor — lateral, the same charge to the same house), ★★ Psalm 72:4
+--                (He shall judge the poor... and shall break in pieces the oppressor), ★ Psalm 72:12 (he
+--                shall deliver the needy when he crieth), ★ Isaiah 1:17 (relieve the oppressed, judge the
+--                fatherless, plead for the widow), ★ Zechariah 7:9 (Execute true judgment, and shew mercy),
+--                ★ Zechariah 7:10 (oppress not the widow, nor the fatherless) — THREAD 2
+--   v.13-14 (Behold, I am against thee, O inhabitant of the valley... I will kindle a fire in the forest
+--          thereof, and it shall devour all things round about it)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the fire of unquenched fury answering the unexecuted justice of v.12;
+--                woven into THREAD 2 prose — *lest my fury go out like fire*)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death — NT (Matthew 7) + Tanakh
+--      (Deuteronomy 30, Jeremiah 38, Proverbs 14) [free]
+--      (★★ the two ways set before the people; life by yielding to Yahuah's word, death by resisting it;
+--      THE Deuteronomy 30 choose-life decision pressed to the very streets of the besieged city)
+--   2. jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed — Tanakh (Jeremiah 22, Psalm 72,
+--      Isaiah 1, Zechariah 7) [free]
+--      (★ the royal house of David charged to do justice — deliver the spoiled, relieve the oppressed —
+--      lest wrath fall like unquenchable fire; the steady prophetic measure of the throne)
+--
+-- Framing notes:
+--   ★★ THE TWO WAYS — LIFE OR DEATH (THREAD 1): *And unto this people thou shalt say, Thus saith Yahuah
+--      (LORD); Behold, I set before you the way of life, and the way of death* (21:8). In the mouth of
+--      besieged Jerusalem this is not abstract: *He that abideth in this city shall die by the sword, and
+--      by the famine, and by the pestilence: but he that goeth out, and falleth to the Chaldeans that
+--      besiege you, he shall live* (21:9). Life is to submit to Yahuah's declared word — even the bitter
+--      word of surrender — and death is to resist it and cling to the doomed city Yahuah has set his face
+--      against (21:10). This is the ancient Deuteronomy decision pressed to the streets: *I have set before
+--      you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may
+--      live* (Deut 30:19); *See, I have set before thee this day life and good, and death and evil* (Deut
+--      30:15). Jeremiah repeats the very word at the next siege-crisis: *he that goeth forth to the
+--      Chaldeans shall live* (Jer 38:2). And the wisdom-warning stands behind it: the way that LOOKS like
+--      safety (staying behind the walls, trusting the city) is the way of death — *There is a way which
+--      seemeth right unto a man, but the end thereof are the ways of death* (Prov 14:12). The Messiah sets
+--      the same two ways: *wide is the gate, and broad is the way, that leadeth to destruction... narrow is
+--      the way, which leadeth unto life* (Matt 7:13-14). The two ways are always before Yashar'el (Israel),
+--      and life is always the way of obedience to Yahuah's word.
+--   ★ EXECUTE JUDGMENT IN THE MORNING (THREAD 2): to the royal house Yahuah's word is justice: *O house of
+--      David, thus saith Yahuah (LORD); Execute judgment in the morning, and deliver him that is spoiled out
+--      of the hand of the oppressor, lest my fury go out like fire, and burn that none can quench it* (21:12).
+--      The throne exists to do right by the oppressed; where it does not, the fire it was meant to avert
+--      falls on it. Jeremiah gives the same house the same charge in the next chapter: *Execute ye judgment
+--      and righteousness, and deliver the spoiled out of the hand of the oppressor* (Jer 22:3). The royal
+--      psalm prays exactly this office: *He shall judge the poor of the people, he shall save the children
+--      of the needy, and shall break in pieces the oppressor* (Ps 72:4), *For he shall deliver the needy
+--      when he crieth; the poor also, and him that hath no helper* (Ps 72:12). Isaiah presses it on the same
+--      rulers: *relieve the oppressed, judge the fatherless, plead for the widow* (Isa 1:17). And Zechariah,
+--      after the exile, names it the very word the fathers would not hear: *Execute true judgment, and shew
+--      mercy and compassions every man to his brother: And oppress not the widow, nor the fatherless, the
+--      stranger, nor the poor* (Zech 7:9-10). The duty of the throne of David is justice for the spoiled;
+--      the fire of v.12 is the wrath the unexecuted justice kindles.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the historical occasion — Zedekiah's enquiry), v.3-7 (Yahuah the
+--      divine warrior turned against his own city — *I myself will fight against you*, woven into THREAD 1
+--      as the ground of the way-of-death), v.10 (the verdict making the city the way of death — THREAD 1),
+--      v.13-14 (the unquenched fire devouring the forest — the wrath answering the unexecuted justice,
+--      woven into THREAD 2). All blocks recorded; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): I set before you the way of life, and the way of death
+    ('canon','jeremiah',21,8,'canon','deuteronomy',30,19,'free',
+      E'*I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). Jeremiah presses the ancient Deuteronomy decision to the streets of besieged Jerusalem — *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). The same two ways are always before Yashar''el (Israel): life is the way of obedience to Yahuah''s (LORD''s) word, and the charge is the same — *therefore choose life*.'),
+    ('canon','jeremiah',21,8,'canon','deuteronomy',30,15,'free',
+      E'*See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15). Moses set the very choice Jeremiah now sets — *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). The life is bound to *love Yahuah Elohayka (the LORD thy God), to walk in his ways, and to keep his commandments* (Deut 30:16); the death to turning away. The siege merely makes the Deuteronomy choice unavoidable: yield to Yahuah''s word and live.'),
+    ('canon','jeremiah',21,9,'canon','jeremiah',38,2,'free',
+      E'*Thus saith Yahuah (LORD), He that remaineth in this city shall die by the sword, by the famine, and by the pestilence: but he that goeth forth to the Chaldeans shall live; for he shall have his life for a prey, and shall live* (Jeremiah 38:2). At the next siege-crisis Jeremiah repeats this very word — *He that abideth in this city shall die by the sword... but he that goeth out, and falleth to the Chaldeans... he shall live* (Jeremiah 21:9). Life is to submit to Yahuah''s (LORD''s) declared word, even the bitter word of surrender; death is to resist it and cling to the doomed city.'),
+    ('canon','jeremiah',21,9,'canon','proverbs',14,12,'free',
+      E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). The wisdom-warning stands behind Jeremiah''s two ways: the path that LOOKS like safety — staying behind the walls, trusting the city — is the way of death, while the path that looks like ruin (going out to the Chaldeans) is the way of life. *He that abideth in this city shall die... but he that goeth out... he shall live* (Jeremiah 21:9): the end of the way that seemed right is death.'),
+    ('canon','jeremiah',21,8,'canon','matthew',7,13,'free',
+      E'*Enter ye in at the strait gate: for wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat* (Matthew 7:13). The Messiah sets the same two ways Jeremiah set — *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). The broad, easy way (the crowd clinging to the city) leads to destruction; the way of life is the narrow one entered by few. The choice of the besieged is the choice of every hearer.'),
+    ('canon','jeremiah',21,8,'canon','matthew',7,14,'free',
+      E'*Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14). The narrow way that *leadeth unto life* is the very way of life Jeremiah set before the people — *Behold, I set before you the way of life, and the way of death* (Jeremiah 21:8). Life is the harder, fewer-travelled way of obedience to Yahuah''s (LORD''s) word; the two ways the Messiah preaches are the two ways the prophet pressed on the besieged city.'),
+
+    -- THREAD 2 (★): O house of David, execute judgment in the morning — deliver the oppressed
+    ('canon','jeremiah',21,12,'canon','jeremiah',22,3,'free',
+      E'*Thus saith Yahuah (LORD); Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor: and do no wrong, do no violence to the stranger, the fatherless, nor the widow, neither shed innocent blood in this place* (Jeremiah 22:3). The next chapter lays the same charge on the same royal house Jeremiah addresses here — *O house of David... Execute judgment in the morning, and deliver him that is spoiled out of the hand of the oppressor* (Jeremiah 21:12). The throne of David exists to do justice for the spoiled; the word is doubled because the duty is the very condition of the kingdom''s standing.'),
+    ('canon','jeremiah',21,12,'canon','psalms',72,4,'free',
+      E'*He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor* (Psalm 72:4). The royal psalm prays exactly the office Jeremiah demands of the house of David — *Execute judgment in the morning, and deliver him that is spoiled out of the hand of the oppressor* (Jeremiah 21:12). The true king breaks in pieces the oppressor and saves the needy; this is the throne''s reason for being, the justice without which the fire of v.12 falls.'),
+    ('canon','jeremiah',21,12,'canon','psalms',72,12,'free',
+      E'*For he shall deliver the needy when he crieth; the poor also, and him that hath no helper* (Psalm 72:12). The psalm names the deliverance Jeremiah charges the royal house to perform — *deliver him that is spoiled out of the hand of the oppressor* (Jeremiah 21:12). The king is given to be the helper of the helpless; where he hears the cry of the needy and delivers him, the throne stands; where he does not, the unquenched fire goes out against it.'),
+    ('canon','jeremiah',21,12,'canon','isaiah',1,17,'free',
+      E'*Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow* (Isaiah 1:17). Isaiah presses the same justice on the same rulers Jeremiah addresses — *Execute judgment in the morning, and deliver him that is spoiled out of the hand of the oppressor* (Jeremiah 21:12). To relieve the oppressed and judge the fatherless is the doing-well Yahuah (LORD) requires of the throne; sacrifice without it is rejected (Isa 1:11-15), and the unexecuted justice kindles the fire.'),
+    ('canon','jeremiah',21,12,'canon','zechariah',7,9,'free',
+      E'*Thus speaketh Yahuah Tseva''ot (LORD of hosts), saying, Execute true judgment, and shew mercy and compassions every man to his brother* (Zechariah 7:9). After the exile Zechariah names this very charge as the word the fathers refused — the word Jeremiah pressed on the house of David: *Execute judgment in the morning, and deliver him that is spoiled out of the hand of the oppressor* (Jeremiah 21:12). Because *they made their hearts as an adamant stone, lest they should hear* (Zech 7:12), the great wrath came — the very fire Jeremiah warned would burn unquenched.'),
+    ('canon','jeremiah',21,12,'canon','zechariah',7,10,'free',
+      E'*And oppress not the widow, nor the fatherless, the stranger, nor the poor; and let none of you imagine evil against his brother in your heart* (Zechariah 7:10). Zechariah spells out the justice Jeremiah demanded of the throne — *deliver him that is spoiled out of the hand of the oppressor* (Jeremiah 21:12). The duty is not merely to refrain from oppression but to deliver the oppressed; the refusal of this word brought the scattering (Zech 7:14), the fulfilment of the fury Jeremiah said would *burn that none can quench it*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death',
+       E'I set before you the way of life, and the way of death — therefore choose life',
+       E'As Babylon besieges the city and Zedekiah enquires whether Yahuah (LORD) will yet save it, the answer is terrible: *I myself will fight against you with an outstretched hand and with a strong arm, even in anger, and in fury, and in great wrath* (21:5). The divine Warrior has turned against his own rebellious city. And so the word to the people is set as a stark choice: *And unto this people thou shalt say, Thus saith Yahuah (LORD); Behold, I set before you the way of life, and the way of death* (21:8). In the mouth of the besieged this is no abstraction: *He that abideth in this city shall die by the sword, and by the famine, and by the pestilence: but he that goeth out, and falleth to the Chaldeans that besiege you, he shall live, and his life shall be unto him for a prey* (21:9). Life is to yield to Yahuah''s declared word — even the bitter word of surrender — and death is to resist it and cling to the city Yahuah has set his face against: *it shall be given into the hand of the king of Babylon, and he shall burn it with fire* (21:10). This is the ancient Deuteronomy decision pressed to the streets. Moses set the same two ways: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15); *I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). Jeremiah repeats the very word at the next siege-crisis — *he that goeth forth to the Chaldeans shall live; for he shall have his life for a prey* (Jeremiah 38:2). And the wisdom-warning stands behind it: the way that LOOKS right — staying safe behind the walls, trusting the city — is the way of death: *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). The Messiah sets the same two ways before every hearer: *wide is the gate, and broad is the way, that leadeth to destruction, and many there be which go in thereat. Because strait is the gate, and narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:13-14). The two ways are always before Yashar''el (Israel), and life is always the way of obedience to Yahuah''s word — therefore choose life.',
+       sv.verse_id, ev.verse_id, 'free', 34500
+  FROM _s309_jer21_lookup sv, _s309_jer21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=21 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed',
+       E'O house of David, execute judgment in the morning — deliver him that is spoiled',
+       E'Turning from the doomed people to the doomed throne, Yahuah (LORD) lays on the royal house the one duty that could yet avert the fire: *And touching the house of the king of Yahudah (Judah), say, Hear ye the word of Yahuah (LORD); O house of David, thus saith Yahuah (LORD); Execute judgment in the morning, and deliver him that is spoiled out of the hand of the oppressor, lest my fury go out like fire, and burn that none can quench it, because of the evil of your doings* (21:11-12). The throne of David exists to do right by the oppressed; where it will not, the very fire it was meant to avert falls upon it — *I will kindle a fire in the forest thereof, and it shall devour all things round about it* (21:14). The charge is the steady prophetic measure of the throne. Jeremiah lays the same word on the same house in the next chapter: *Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor: and do no wrong, do no violence to the stranger, the fatherless, nor the widow* (Jeremiah 22:3). The royal psalm prays exactly this office: *He shall judge the poor of the people, he shall save the children of the needy, and shall break in pieces the oppressor* (Psalm 72:4); *For he shall deliver the needy when he crieth; the poor also, and him that hath no helper* (Psalm 72:12). Isaiah presses it on the rulers of Yahudah: *Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow* (Isaiah 1:17). And after the exile Zechariah names this very word as the one the fathers refused to hear: *Execute true judgment, and shew mercy and compassions every man to his brother: And oppress not the widow, nor the fatherless, the stranger, nor the poor* (Zechariah 7:9-10) — *but they refused to hearken... therefore came a great wrath* (Zech 7:11-12). The duty of the throne of David is justice for the spoiled; the unquenchable fire of v.12 is the wrath that the unexecuted justice kindles.',
+       sv.verse_id, ev.verse_id, 'free', 34503
+  FROM _s309_jer21_lookup sv, _s309_jer21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=21 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I have set before you life and death, blessing and cursing: therefore choose life* (Deuteronomy 30:19) — the Deuteronomy choose-life decision, the root of Jeremiah''s two ways.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15) — Moses set the very choice; life bound to loving Yahuah (LORD) and keeping his commandments.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he that goeth forth to the Chaldeans shall live; for he shall have his life for a prey* (Jeremiah 38:2) — Jeremiah repeats the same two-ways word at the next siege-crisis.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=38 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12) — the way that looks safe (staying in the city) is the way of death.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *wide is the gate, and broad is the way, that leadeth to destruction* (Matthew 7:13) — the Messiah sets the same broad way of death the besieged crowd clings to.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *narrow is the way, which leadeth unto life, and few there be that find it* (Matthew 7:14) — the narrow way of life is the way of obedience Jeremiah set before the city.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-i-set-before-you-the-way-of-life-and-the-way-of-death'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor* (Jeremiah 22:3) — the same charge to the same house of David, doubled.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *He shall judge the poor of the people... and shall break in pieces the oppressor* (Psalm 72:4) — the royal psalm prays the very office Jeremiah demands of the throne.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he shall deliver the needy when he crieth; the poor also, and him that hath no helper* (Psalm 72:12) — the king is given to be the helper of the helpless.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=72 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow* (Isaiah 1:17) — Isaiah presses the same justice on the same rulers.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Execute true judgment, and shew mercy and compassions every man to his brother* (Zechariah 7:9) — after the exile, the very word the fathers refused, that brought the wrath.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *oppress not the widow, nor the fatherless, the stranger, nor the poor* (Zechariah 7:10) — the duty is not merely to refrain from oppression but to deliver the oppressed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s309_jer21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-21-execute-judgment-in-the-morning-deliver-the-oppressed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_22.sql (Jeremiah 22) -----
+-- Chapter: Jeremiah 22 — the oracles against the kings of the house of Yahudah (Judah). The royal charge:
+-- *Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor* — and the
+-- measure of the good king Josiah: *He judged the cause of the poor and needy... was not this to know me?* —
+-- to do justice for the poor IS to know Yahuah. The woe on Jehoiakim who *buildeth his house by unrighteousness*
+-- and *useth his neighbour''s service without wages* — the oppressor''s withheld wages. And the curse on Coniah
+-- (Jeconiah): *Write ye this man childless... no man of his seed shall prosper, sitting upon the throne of David* —
+-- the legal royal line cut off, the Branch coming another way.
+-- Tag: jer22   Session: s309   Temp view: _s309_jer22_lookup
+-- Sort band: base 34525, step 3 -> 34525, 34528, 34531 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',22,v
+--
+-- Jeremiah 22 coverage:
+--   v.1-2 (Go down to the house of the king of Yahudah... O king of Yahudah, that sittest upon the throne of David)
+--        NT:     none warranted (the summons to the royal house; preface to the justice-charge of v.3)
+--        Extras: none warranted
+--        Tanakh: none separate (woven into THREAD 1 prose)
+--   ★★ v.3 (Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor:
+--          and do no wrong... to the stranger, the fatherless, nor the widow, neither shed innocent blood)
+--        NT:     ★★ Matthew 25:40 (Inasmuch as ye have done it unto one of the least of these my brethren),
+--                ★ 1 John 3:17-18 (whoso hath this world''s good... and shutteth up his bowels of compassion) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 9:24 (glory in this, that he... knoweth me... judgment, and righteousness),
+--                ★★ Micah 6:8 (what doth Yahuah require of thee, but to do justly, and to love mercy) — THREAD 1
+--   v.4-5 (if ye do this thing indeed, then shall there enter in... kings sitting upon the throne of David...
+--          but if ye will not hear... this house shall become a desolation)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the two-edged condition; woven into THREAD 1)
+--   v.6-9 (Thou art Gilead unto me... yet surely I will make thee a wilderness... Because they have forsaken
+--          the covenant of Yahuah their Elohim)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the covenant-lawsuit verdict; the desolation answers the refused charge of v.3-5)
+--   v.10-12 (Weep ye not for the dead... but weep sore for him that goeth away — Shallum, who shall return no more)
+--        NT:     none warranted (the lament for Shallum/Jehoahaz carried captive; historical, woven in prose)
+--        Extras: none warranted     Tanakh: none separate
+--   ★ v.13-14 (Woe unto him that buildeth his house by unrighteousness... that useth his neighbour''s service
+--          without wages, and giveth him not for his work)
+--        NT:     ★★ James 5:4 (the hire of the labourers... which is of you kept back by fraud, crieth),
+--                ★ James 5:1 (ye rich men, weep and howl for your miseries) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 19:13 (the wages of him that is hired shall not abide with thee all night),
+--                ★★ Deuteronomy 24:14-15 (thou shalt not oppress an hired servant... at his day thou shalt give
+--                him his hire), ★ Habakkuk 2:9-12 (woe to him that coveteth... buildeth a town with blood) — THREAD 2
+--   v.15-16 (did not thy father eat and drink, and do judgment and justice... He judged the cause of the poor and
+--          needy... was not this to know me? saith Yahuah)
+--        NT:     held in THREAD 1 (knowing Yahuah = doing justice; Matthew 25:40)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 9:24, ★★ Micah 6:8 — held in THREAD 1 (the anchor of the justice-thread extends to v.16)
+--   ★ v.17 (thine eyes and thine heart are not but for thy covetousness, and for to shed innocent blood, and for
+--          oppression, and for violence)
+--        NT:     held in THREAD 2 (the covetous oppressor''s heart)
+--        Extras: none warranted
+--        Tanakh: ★ Habakkuk 2:9 (woe to him that coveteth an evil covetousness) — held in THREAD 2
+--   v.18-19 (Jehoiakim... He shall be buried with the burial of an ass, drawn and cast forth beyond the gates)
+--        NT:     none warranted (the dishonoured death of the oppressor; the wage of the woe, woven into THREAD 2 prose)
+--        Extras: none warranted     Tanakh: none separate
+--   v.20-23 (Go up to Lebanon, and cry... all thy lovers are destroyed... how gracious shalt thou be when pangs come)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the lament over the doomed city/king; woven in prose)
+--   ★★ v.24 (though Coniah the son of Jehoiakim... were the signet upon my right hand, yet would I pluck thee thence)
+--        NT:     held in THREAD 3 (the plucked signet; the cut line)
+--        Extras: none warranted
+--        Tanakh: ★★ Haggai 2:23 (will I take thee, O Zerubbabel... and will make thee as a signet — the curse
+--                reversed in the chosen line) — THREAD 3
+--   v.25-27 (I will give thee into the hand of Nebuchadrezzar... cast thee out... to the land whereunto they
+--          desire to return, thither shall they not return)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the captivity of Coniah; woven into THREAD 3 prose)
+--   ★★ v.28-30 (Is this man Coniah a despised broken idol?... O earth, earth, earth, hear the word of Yahuah...
+--          Write ye this man childless... for no man of his seed shall prosper, sitting upon the throne of David)
+--        NT:     ★★ Matthew 1:11-12 (Josias begat Jechonias... Jechonias begat Salathiel — the LEGAL line through
+--                Jeconiah/Joseph), ★★ Matthew 1:16 (Jacob begat Joseph the husband of Mary), ★ Luke 3:31 (the line
+--                through Nathan, David''s other son — bypassing the curse) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Haggai 2:23 (the signet chosen in Zerubbabel), ★★ Jeremiah 23:5 (the righteous Branch — the
+--                true King the broken line points to) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-22-do-justice-for-the-poor-is-to-know-me — NT (Matthew 25, 1 John 3) + Tanakh (Jeremiah 9, Micah 6) [free]
+--      (★★ the royal charge: execute judgment and righteousness; the good king judged the cause of the poor —
+--      was not this to know me? To do justice for the poor and the oppressed IS to know Yahuah.)
+--   2. jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness — NT (James 5) + Tanakh (Leviticus 19, Deuteronomy 24, Habakkuk 2) [free]
+--      (★ Jehoiakim''s unjust gain and withheld wages; the labourer''s cry; the Torah of the hired servant''s hire;
+--      the woe on him that buildeth a town with blood. The oppressor''s woe.)
+--   3. jeremiah-22-write-ye-this-man-childless-the-cut-royal-line — NT (Matthew 1, Luke 3) + Tanakh (Haggai 2, Jeremiah 23) [free]
+--      (★★ the curse on Coniah/Jeconiah''s line — no descendant to sit on David''s throne; the legal line through
+--      Joseph cut, the seed coming another way; the signet plucked yet chosen again in Zerubbabel; the Branch.
+--      Framed modestly, Come-and-See.)
+--
+-- Framing notes:
+--   ★★ TO DO JUSTICE FOR THE POOR IS TO KNOW YAHUAH (THREAD 1): the charge to the throne is not ceremony but
+--      justice — *Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor:
+--      and do no wrong, do no violence to the stranger, the fatherless, nor the widow, neither shed innocent blood*
+--      (22:3). And the pattern is Josiah: *did not thy father eat and drink, and do judgment and justice, and then
+--      it was well with him? He judged the cause of the poor and needy; then it was well with him: was not this to
+--      know me? saith Yahuah (LORD)* (22:15-16). Jeremiah''s own banner says the same: the only true boast is *that
+--      he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and
+--      righteousness* (9:24); and Micah''s requirement: *to do justly, and to love mercy, and to walk humbly with
+--      thy Elohim (God)* (Micah 6:8). The King answers it forward: *Inasmuch as ye have done it unto one of the
+--      least of these my brethren, ye have done it unto me* (Matthew 25:40); and John: *whoso hath this world''s
+--      good, and seeth his brother have need, and shutteth up his bowels of compassion from him, how dwelleth the
+--      love of Elohim (God) in him?* (1 John 3:17). Knowing Yahuah is doing justice for the poor and the oppressed.
+--   ★ THE OPPRESSOR''S WOE (THREAD 2): *Woe unto him that buildeth his house by unrighteousness, and his chambers
+--      by wrong; that useth his neighbour''s service without wages, and giveth him not for his work* (22:13) —
+--      Jehoiakim builds his cedar palace on stolen labour, *thine eyes and thine heart are not but for thy
+--      covetousness, and for to shed innocent blood, and for oppression* (22:17). The Torah forbade it exactly:
+--      *the wages of him that is hired shall not abide with thee all night until the morning* (Lev 19:13); *at his
+--      day thou shalt give him his hire... lest he cry against thee unto Yahuah (LORD), and it be sin unto thee*
+--      (Deut 24:15). James cries the labourer''s cry forward: *the hire of the labourers who have reaped down your
+--      fields, which is of you kept back by fraud, crieth* (Jas 5:4). And Habakkuk''s woe is the same: *Woe to him
+--      that coveteth an evil covetousness... Woe to him that buildeth a town with blood* (Hab 2:9,12).
+--   ★★ WRITE YE THIS MAN CHILDLESS — THE CUT ROYAL LINE (THREAD 3, framed modestly): *though Coniah the son of
+--      Jehoiakim king of Yahudah (Judah) were the signet upon my right hand, yet would I pluck thee thence* (22:24);
+--      *Write ye this man childless, a man that shall not prosper in his days: for no man of his seed shall prosper,
+--      sitting upon the throne of David, and ruling any more in Yahudah (Judah)* (22:30). The legal royal line is
+--      cut: no descendant of Jeconiah shall sit on David''s throne. Matthew traces the LEGAL line of kings straight
+--      through him — *Josias begat Jechonias... Jechonias begat Salathiel... Jacob begat Joseph the husband of
+--      Mary* (Matt 1:11-12,16): the throne-right passes through Joseph, but the curse forbids any son of his body
+--      to reign. Luke traces a DIFFERENT line — through Nathan, David''s other son: *which was the son of Nathan,
+--      which was the son of David* (Luke 3:31) — the blood-line that bypasses the broken branch. The seed comes
+--      another way. And the signet plucked off Coniah is set again on the chosen: *will I take thee, O Zerubbabel,
+--      my servant... and will make thee as a signet: for I have chosen thee* (Hag 2:23) — the curse reversed in the
+--      elect line that leads to the Branch: *I will raise unto David a righteous Branch, and a King shall reign and
+--      prosper* (Jer 23:5). Framed carefully and modestly — the genealogy point is real, but held Come-and-See:
+--      the broken line points past itself to the true King.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the summons to the royal house — preface to v.3, THREAD 1), v.4-9 (the
+--      two-edged condition and the covenant-lawsuit desolation — woven into THREAD 1), v.10-12 (the lament for
+--      Shallum/Jehoahaz carried captive — historical, woven in prose), v.18-19 (Jehoiakim''s ass-burial — the wage
+--      of the woe, THREAD 2 prose), v.20-23 (the lament over the doomed city — woven in prose), v.25-27 (Coniah''s
+--      captivity into Babylon — THREAD 3 prose). All blocks recorded; every meaningful section carries or is bound
+--      to a thread.
+
+CREATE TEMP VIEW _s309_jer22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): execute judgment and righteousness — to do justice for the poor is to know me
+    ('canon','jeremiah',22,3,'canon','jeremiah',9,24,'free',
+      E'*But let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith Yahuah (LORD)* (Jeremiah 9:24). The charge to the throne — *Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor* (Jeremiah 22:3) — is the very thing Yahuah delights in and calls the knowing of him. To know Yahuah is not boast of wisdom or might or riches, but to do *judgment, and righteousness, in the earth*.'),
+    ('canon','jeremiah',22,16,'canon','jeremiah',9,24,'free',
+      E'*But let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness, in the earth: for in these things I delight, saith Yahuah (LORD)* (Jeremiah 9:24). When Jeremiah says of the just king *He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith Yahuah (LORD)* (Jeremiah 22:16), he speaks his own banner: knowing Yahuah is doing *judgment, and righteousness*. The cause of the poor pleaded is the knowledge of Yahuah enacted.'),
+    ('canon','jeremiah',22,3,'canon','micah',6,8,'free',
+      E'*He hath shewed thee, O man, what is good; and what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). Micah names what the throne is charged to do — *Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor* (Jeremiah 22:3): to do justly and love mercy. Not sacrifice nor cedar palaces, but justice for the oppressed, is what Yahuah requires.'),
+    ('canon','jeremiah',22,16,'canon','matthew',25,40,'free',
+      E'*And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40). Jeremiah''s test of the king — *He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith Yahuah (LORD)* (Jeremiah 22:16) — is the King''s own measure at the judgment: mercy done to the least is done to him. To do justice for the poor is to know Yahuah, and the King counts it done unto himself.'),
+    ('canon','jeremiah',22,3,'canon','1-john',3,17,'free',
+      E'*But whoso hath this world''s good, and seeth his brother have need, and shutteth up his bowels of compassion from him, how dwelleth the love of Elohim (God) in him?* (1 John 3:17). The royal charge to *deliver the spoiled out of the hand of the oppressor: and do no wrong, do no violence to the stranger, the fatherless, nor the widow* (Jeremiah 22:3) is the same heart John tests: the love of Elohim does not shut up compassion from the brother in need. *My little children, let us not love in word, neither in tongue; but in deed and in truth* (1 John 3:18) — justice done, not merely spoken.'),
+
+    -- THREAD 2 (★): woe to him that buildeth his house by unrighteousness — the withheld wages
+    ('canon','jeremiah',22,13,'canon','leviticus',19,13,'free',
+      E'*Thou shalt not defraud thy neighbour, neither rob him: the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13). Jehoiakim''s woe is for breaking exactly this Torah — he *useth his neighbour''s service without wages, and giveth him not for his work* (Jeremiah 22:13). The wages of the hired must not be held back even a night; the king who withholds them builds his house by unrighteousness.'),
+    ('canon','jeremiah',22,13,'canon','deuteronomy',24,15,'free',
+      E'*At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto Yahuah (LORD), and it be sin unto thee* (Deuteronomy 24:15). The Torah commands the hire be paid the same day — and Jehoiakim who *useth his neighbour''s service without wages* (Jeremiah 22:13) brings the very cry the Torah warns of down upon himself. *Thou shalt not oppress an hired servant that is poor and needy* (Deut 24:14); the withheld wage cries to Yahuah, and it is sin.'),
+    ('canon','jeremiah',22,13,'canon','deuteronomy',24,14,'free',
+      E'*Thou shalt not oppress an hired servant that is poor and needy, whether he be of thy brethren, or of thy strangers that are in thy land within thy gates* (Deuteronomy 24:14). The woe on him that *useth his neighbour''s service without wages, and giveth him not for his work* (Jeremiah 22:13) is the curse of this very commandment: the hired servant, poor and needy, must not be oppressed. The king made his chambers by the unpaid sweat of the oppressed.'),
+    ('canon','jeremiah',22,13,'canon','james',5,4,'free',
+      E'*Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). James cries the labourer''s cry forward into the last days — the wage *kept back by fraud, crieth* — the very sin of him who *useth his neighbour''s service without wages, and giveth him not for his work* (Jeremiah 22:13). The withheld wages do not fall silent; they enter the ears of Yahuah of hosts.'),
+    ('canon','jeremiah',22,13,'canon','james',5,1,'free',
+      E'*Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1). James opens the same woe Jeremiah pronounced on the unjust builder — *Woe unto him that buildeth his house by unrighteousness, and his chambers by wrong* (Jeremiah 22:13): the rich who heap gain by fraud weep and howl for the misery coming. The oppressor''s woe is one from Jeremiah to James.'),
+    ('canon','jeremiah',22,17,'canon','habakkuk',2,9,'free',
+      E'*Woe to him that coveteth an evil covetousness to his house, that he may set his nest on high, that he may be delivered from the power of evil!* (Habakkuk 2:9). Habakkuk''s woe matches Jeremiah''s charge against the king whose *eyes and thine heart are not but for thy covetousness, and for to shed innocent blood, and for oppression, and for violence* (Jeremiah 22:17). The covetous builder sets his nest on high by wrong; the woe is upon the house built by greed.'),
+    ('canon','jeremiah',22,13,'canon','habakkuk',2,12,'free',
+      E'*Woe to him that buildeth a town with blood, and stablisheth a city by iniquity!* (Habakkuk 2:12). The same woe falls on the king who *buildeth his house by unrighteousness, and his chambers by wrong* (Jeremiah 22:13). To build with blood and iniquity — by withheld wages and shed innocent blood — is to lay a house under the woe of Yahuah; what is built by wrong shall not stand.'),
+
+    -- THREAD 3 (★★): write ye this man childless — the cut royal line, the seed another way
+    ('canon','jeremiah',22,30,'canon','matthew',1,11,'free',
+      E'*And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon* (Matthew 1:11). Matthew traces the LEGAL line of David''s kings straight through Jeconiah — the very Coniah of whom Yahuah said *Write ye this man childless... for no man of his seed shall prosper, sitting upon the throne of David* (Jeremiah 22:30). The throne-right passes through him by law, yet the curse forbids any son of his body to reign; the legal line is carried, but it is a broken line.'),
+    ('canon','jeremiah',22,30,'canon','matthew',1,12,'free',
+      E'*And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12). The line of legal kingship runs on through Jeconiah''s descendants — but under the word *no man of his seed shall prosper, sitting upon the throne of David, and ruling any more in Yahudah (Judah)* (Jeremiah 22:30). Matthew names the legal succession through the cursed branch; the throne does not return to it by natural descent. The seed of promise must come another way.'),
+    ('canon','jeremiah',22,30,'canon','matthew',1,16,'free',
+      E'*And Jacob begat Joseph the husband of Mary, of whom was born Yahusha (Jesus), who is called Messiah (Christ)* (Matthew 1:16). Matthew''s royal genealogy ends not *Joseph begat Yahusha* but *Joseph the husband of Mary, of whom was born Yahusha* — for the curse on Coniah''s seed (Jeremiah 22:30) bars any natural son of Joseph''s line from the throne. The legal throne-right passes through Joseph; the One born is *of whom was born*, not begotten of that line — the Branch coming another way.'),
+    ('canon','jeremiah',22,30,'canon','luke',3,31,'free',
+      E'*Which was the son of Melea, which was the son of Menan, which was the son of Mattatha, which was the son of Nathan, which was the son of David* (Luke 3:31). Where Matthew traces the LEGAL line through Solomon and Jeconiah, Luke traces a DIFFERENT line — through Nathan, David''s other son — bypassing the cursed branch of *no man of his seed shall prosper, sitting upon the throne of David* (Jeremiah 22:30). The blood-line of the Messiah comes through David yet around the broken branch; the curse on Coniah does not touch it.'),
+    ('canon','jeremiah',22,24,'canon','haggai',2,23,'free',
+      E'*In that day, saith Yahuah Tseva''ot (LORD of hosts), will I take thee, O Zerubbabel, my servant, the son of Shealtiel, saith Yahuah (LORD), and will make thee as a signet: for I have chosen thee, saith Yahuah Tseva''ot (LORD of hosts)* (Haggai 2:23). The signet plucked off Coniah — *though Coniah... were the signet upon my right hand, yet would I pluck thee thence* (Jeremiah 22:24) — is set again, by grace, on the chosen Zerubbabel of the same house. The curse on the broken branch is reversed in the elect line; the signet rejected is the signet restored.'),
+    ('canon','jeremiah',22,30,'canon','jeremiah',23,5,'free',
+      E'*Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5). The very next breath after the curse — *a man that shall not prosper in his days... no man of his seed shall prosper, sitting upon the throne of David* (Jeremiah 22:30) — is the promise of One who WILL prosper and reign: the righteous Branch raised unto David. The broken line points past itself to the true King, who shall *execute judgment and justice* — the very charge the failed kings refused (Jeremiah 22:3,15-16).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-22-do-justice-for-the-poor-is-to-know-me',
+       E'Execute judgment and righteousness — to do justice for the poor is to know me',
+       E'The word of Yahuah goes down to the royal house, and the charge to the throne is justice, not ceremony: *Thus saith Yahuah (LORD); Execute ye judgment and righteousness, and deliver the spoiled out of the hand of the oppressor: and do no wrong, do no violence to the stranger, the fatherless, nor the widow, neither shed innocent blood in this place* (22:3). On this hangs the throne itself — *if ye do this thing indeed, then shall there enter in by the gates of this house kings sitting upon the throne of David* (22:4), but *if ye will not hear these words... this house shall become a desolation* (22:5). Then Jeremiah holds up the good king Josiah as the measure: *did not thy father eat and drink, and do judgment and justice, and then it was well with him? He judged the cause of the poor and needy; then it was well with him: was not this to know me? saith Yahuah (LORD)* (22:15-16). There is the heart of it — to plead the cause of the poor and the needy IS to know Yahuah. It is Jeremiah''s own banner: *let him that glorieth glory in this, that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise lovingkindness, judgment, and righteousness, in the earth* (9:24). And Micah''s requirement of the whole man: *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy, and to walk humbly with thy Elohim (God)?* (Micah 6:8). The King answers it forward at the great judgment, counting mercy to the least as mercy to himself: *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40). And John makes it the very test of the love of Elohim: *whoso hath this world''s good, and seeth his brother have need, and shutteth up his bowels of compassion from him, how dwelleth the love of Elohim (God) in him?* (1 John 3:17) — *let us not love in word, neither in tongue; but in deed and in truth* (1 John 3:18). Knowing Yahuah is not a feeling nor a creed; it is justice done for the poor, the stranger, the fatherless, the widow, and the spoiled in the hand of the oppressor.',
+       sv.verse_id, ev.verse_id, 'free', 34525
+  FROM _s309_jer22_lookup sv, _s309_jer22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=22 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness',
+       E'Woe to him that buildeth his house by unrighteousness — the withheld wages cry',
+       E'Against Jehoiakim, who built his cedar palace on stolen labour, Yahuah pronounces a woe: *Woe unto him that buildeth his house by unrighteousness, and his chambers by wrong; that useth his neighbour''s service without wages, and giveth him not for his work; That saith, I will build me a wide house and large chambers... and it is cieled with cedar, and painted with vermilion* (22:13-14). The king''s eye is only for gain — *thine eyes and thine heart are not but for thy covetousness, and for to shed innocent blood, and for oppression, and for violence, to do it* (22:17). But the withheld wage is no small thing: the Torah forbade it exactly. *The wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13); *Thou shalt not oppress an hired servant that is poor and needy... At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto Yahuah (LORD), and it be sin unto thee* (Deuteronomy 24:14-15). The withheld wage CRIES, and James hears that very cry rise into the last days: *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — *Go to now, ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1). And Habakkuk pronounces the same woe on the house built by greed and blood: *Woe to him that coveteth an evil covetousness to his house, that he may set his nest on high* (Habakkuk 2:9); *Woe to him that buildeth a town with blood, and stablisheth a city by iniquity!* (Habakkuk 2:12). The oppressor builds high and paints his chambers red — and Jehoiakim''s end is the burial of an ass, *drawn and cast forth beyond the gates of Jerusalem* (22:19). What is built by withheld wages and innocent blood stands under the woe of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 34528
+  FROM _s309_jer22_lookup sv, _s309_jer22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=22 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-22-write-ye-this-man-childless-the-cut-royal-line',
+       E'Write ye this man childless — the cut royal line, and the Branch another way',
+       E'The oracle climbs to its sharpest word, on Coniah (Jeconiah), the last of David''s reigning sons before the captivity: *As I live, saith Yahuah (LORD), though Coniah the son of Jehoiakim king of Yahudah (Judah) were the signet upon my right hand, yet would I pluck thee thence* (22:24). The signet — the king''s own seal-ring, the very token of authority — is plucked off and the man cast into Babylon (22:25-27). Then the threefold cry and the curse: *O earth, earth, earth, hear the word of Yahuah (LORD). Thus saith Yahuah (LORD), Write ye this man childless, a man that shall not prosper in his days: for no man of his seed shall prosper, sitting upon the throne of David, and ruling any more in Yahudah (Judah)* (22:29-30). The legal royal line is cut: no son of Jeconiah''s body shall sit on David''s throne. And here a quiet wonder waits — held modestly, Come-and-See. Matthew traces the LEGAL line of the kings straight through this cursed branch: *Josias begat Jechonias... Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:11-12), down to *Joseph the husband of Mary, of whom was born Yahusha (Jesus), who is called Messiah (Christ)* (Matthew 1:16). Mark how Matthew breaks his own pattern: not *Joseph begat Yahusha*, but *of whom was born* — the legal throne-right runs to Joseph, yet the curse forbids any natural son of that line to reign. Luke, meanwhile, traces a DIFFERENT descent, through Nathan, David''s other son: *which was the son of Nathan, which was the son of David* (Luke 3:31) — the line that bypasses the broken branch. The seed of David comes through David, yet around the curse. And the plucked signet is not Yahuah''s last word on the house: by grace it is set again on the chosen — *will I take thee, O Zerubbabel, my servant... and will make thee as a signet: for I have chosen thee* (Haggai 2:23). The very next breath after the curse on Coniah is the promise the broken line points to: *I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5) — the true King who does the justice the failed kings refused (22:3,15-16). The line of the kings is cut; the King comes another way.',
+       sv.verse_id, ev.verse_id, 'free', 34531
+  FROM _s309_jer22_lookup sv, _s309_jer22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=22 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *that he understandeth and knoweth me, that I am Yahuah (LORD) which exercise... judgment, and righteousness* (Jeremiah 9:24) — Jeremiah''s own banner: the charge of 22:3 is the knowing of Yahuah enacted.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=3
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-do-justice-for-the-poor-is-to-know-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *judgment, and righteousness, in the earth: for in these things I delight* (Jeremiah 9:24) — *He judged the cause of the poor and needy... was not this to know me?* (22:16); pleading the poor''s cause IS knowing Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-do-justice-for-the-poor-is-to-know-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *what doth Yahuah (LORD) require of thee, but to do justly, and to love mercy* (Micah 6:8) — Micah names what the throne is charged to do (22:3): justice for the oppressed, not sacrifice.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=3
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-do-justice-for-the-poor-is-to-know-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40) — the King''s judgment-measure answers *was not this to know me?* (22:16); mercy to the least is mercy to him.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=16
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-do-justice-for-the-poor-is-to-know-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *whoso hath this world''s good... and shutteth up his bowels of compassion from him, how dwelleth the love of Elohim (God) in him?* (1 John 3:17) — the charge of 22:3 is John''s test: love in deed, not word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=3
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-do-justice-for-the-poor-is-to-know-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13) — the Torah Jehoiakim breaks; *useth his neighbour''s service without wages* (22:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *At his day thou shalt give him his hire... lest he cry against thee unto Yahuah (LORD), and it be sin unto thee* (Deuteronomy 24:15) — the withheld wage cries; the very sin of 22:13.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Thou shalt not oppress an hired servant that is poor and needy* (Deuteronomy 24:14) — the king made his chambers by the unpaid sweat of the oppressed (22:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=24 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the hire of the labourers... which is of you kept back by fraud, crieth* (James 5:4) — James hears the withheld wage of 22:13 cry into the ears of Yahuah of sabaoth.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *ye rich men, weep and howl for your miseries that shall come upon you* (James 5:1) — James opens the same woe Jeremiah pronounced on the unjust builder (22:13).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Woe to him that coveteth an evil covetousness to his house, that he may set his nest on high* (Habakkuk 2:9) — Habakkuk''s woe matches the covetous heart of 22:17.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Woe to him that buildeth a town with blood, and stablisheth a city by iniquity!* (Habakkuk 2:12) — the same woe on the house *built by unrighteousness* (22:13); what is built by wrong shall not stand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-woe-to-him-that-buildeth-his-house-by-unrighteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Josias begat Jechonias and his brethren, about the time they were carried away to Babylon* (Matthew 1:11) — Matthew traces the LEGAL royal line through the cursed Coniah (22:30); the throne-right carried, but broken.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12) — the legal succession runs on through the cursed branch (22:30); the throne does not return to it by natural descent.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Joseph the husband of Mary, of whom was born Yahusha (Jesus)* (Matthew 1:16) — Matthew breaks his pattern: *of whom was born*, not *begat*; the legal line through Joseph cannot give the throne by blood (22:30).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *which was the son of Nathan, which was the son of David* (Luke 3:31) — Luke traces a DIFFERENT line, through Nathan, bypassing the cursed branch of 22:30; the blood-line comes around the curse.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=3 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *will I take thee, O Zerubbabel... and will make thee as a signet: for I have chosen thee* (Haggai 2:23) — the signet plucked off Coniah (22:24) set again on the chosen; the curse reversed in the elect line.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=24
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice* (Jeremiah 23:5) — the very next breath after the curse (22:30); the broken line points to the true King who does the justice the kings refused.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=22 AND sv.verse_number=30
+  JOIN _s309_jer22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-22-write-ye-this-man-childless-the-cut-royal-line'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
