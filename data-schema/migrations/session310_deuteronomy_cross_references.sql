@@ -13134,6 +13134,1593 @@ SELECT t.id, cr.id, 3, E'*Elohim (God) hath given to us eternal life, and this l
  WHERE t.slug='deuteronomy-30-therefore-choose-life-love-obey-cleave'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_deuteronomy_31.sql (Deuteronomy 31) -----
+--
+-- Book/chapter : Deuteronomy 31 — Moses, an hundred and twenty years old, "I can no
+--                more go out and come in"; Yahuah goeth over before; the be-strong-fear-not
+--                charge ("he will not fail thee, nor forsake thee"); the succession to
+--                Joshua; the WRITTEN Torah delivered to the priests and the septennial
+--                public reading at the feast of tabernacles; Yahuah foretells the apostasy;
+--                the Song given as a witness; the book of the Torah laid beside the ark
+--                "for a witness against thee."
+-- Tag          : deu31
+-- Session      : s310
+-- Temp view    : _s310_deu31_lookup
+-- Sort band    : base 25250, step 3  (25250, 25253, 25256, 25259, 25262)
+--
+-- FRAMING LENS (binding):
+--   * 31:1-6 the going-over and the be-strong charge — Yahuah Himself *doth go with thee;
+--     he will not fail thee, nor forsake thee* (31:6). This is the verse the apostle quotes
+--     to anchor contentment and courage (Heb 13:5 *I will never leave thee, nor forsake
+--     thee*); the Formed Son's own promise *lo, I am with you alway* (Matt 28:20) is the same
+--     covenant presence carried forward. Lateral: the identical word spoken to Joshua at the
+--     succession (Josh 1:5) and to Solomon at the building (1 Chron 28:20). The presence of
+--     Yahuah, not the strength of the man, is the courage.
+--   * 31:7-8 the succession charge — Moses, who *can no more go out and come in*, hands the
+--     people to Joshua with the same *be strong ... fear not ... he will not fail thee.*
+--     Lateral Josh 1:9 (Yahuah repeats the charge to Joshua directly). Folded into the
+--     never-forsake thread (same words, same divine presence) — the office passes, the
+--     covenant promise does not.
+--   * 31:9-13 ★ the WRITTEN Torah and the septennial public reading — Moses *wrote this law*
+--     and delivered it to the priests; every seven years, in the year of release, at the
+--     feast of tabernacles, all Yashar'el (men, women, children, the stranger) gather to
+--     HEAR it read, *that they may learn, and fear Yahuah ... and observe to do all the
+--     words.* This is Torah affirmed, public, perpetual, for every generation — NOT a defunct
+--     code. LATERAL the literal re-enactment: Ezra reading the Torah at the seventh-month
+--     feast (Neh 8:2-3,18). FORWARD the public hearing of the word (Rom 10:17 *faith cometh
+--     by hearing, and hearing by the word of Elohim*). The appointed time (Sukkot, Lev 23)
+--     carries the word.
+--   * 31:14-22 the Song given as a witness — Yahuah foretells they will *go a whoring after
+--     the gods of the strangers* and *break my covenant*; the Song is written *that this song
+--     may be a witness for me against the children of Yashar'el.* LATERAL Deut 32 (the Song
+--     itself). The covenant-lawsuit witness, sung into the mouths of the seed — conduct
+--     WITHIN the covenant under judgment, never ethnic indictment.
+--   * 31:24-29 the book of the Torah laid beside the ark FOR A WITNESS — *Take this book of
+--     the law, and put it in the side of the ark ... that it may be there for a witness
+--     against thee* (31:26); *I know thy rebellion, and thy stiff neck.* The standing written
+--     witness. FORWARD John 5:45-47 (*there is one that accuseth you, even Moses, in whom ye
+--     trust ... had ye believed Moses, ye would have believed me*) and Rom 3:19 (*what things
+--     soever the law saith ... that every mouth may be stopped*). LATERAL 2 Kings 22:8-13
+--     (the book of the Torah FOUND in Josiah's day — the witness still standing, the king
+--     rending his clothes). Torah as the abiding witness, not the abolished letter.
+--
+-- ── Deuteronomy 31 coverage ──
+--   v.1-6  NT:     Heb 13:5 (I will never leave thee), Matt 28:20 (lo, I am with you alway)
+--          Extras: none warranted
+--          Tanakh: Josh 1:5, 1 Chron 28:20 (the same never-fail-never-forsake charge)
+--   v.7-8  NT:     none warranted (folded forward into 31:6 never-forsake thread)
+--          Extras: none warranted
+--          Tanakh: Josh 1:9 (the be-strong-fear-not charge repeated to Joshua)
+--   v.9    NT:     none warranted (the written Torah — folded into the reading thread)
+--          Extras: none warranted
+--          Tanakh: (carried in the public-reading thread)
+--   v.10-13 NT:    Rom 10:17 (faith by hearing the word)
+--          Extras: none warranted
+--          Tanakh: Neh 8:2, Neh 8:3, Neh 8:18 (Ezra reads the Torah at the feast)
+--   v.14-15 NT:    none warranted (theophany in the pillar of cloud — covenant-internal here)
+--          Extras: none warranted
+--          Tanakh: (the cloud-presence; not separately threaded)
+--   v.16-22 NT:    none warranted (the Song-as-witness — Tanakh-internal)
+--          Extras: none warranted
+--          Tanakh: Deut 32:1, Deut 32:46 (the Song itself / set your hearts to all the words)
+--   v.24-29 NT:    John 5:45, John 5:46, Rom 3:19 (Moses accuseth you / every mouth stopped)
+--          Extras: none warranted
+--          Tanakh: 2 Kings 22:8, 2 Kings 22:11, 2 Kings 22:13 (the book of the Torah found)
+--
+-- ── Threads (5) ──
+--   deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee        [free] never-forsake / succession (v.1-8)
+--       members: NT Heb13:5, Matt28:20 ; Tanakh Josh1:5, Josh1:9, 1Chron28:20
+--   deuteronomy-31-read-this-law-before-all-yasharel-at-the-feast [free] septennial Torah reading at Sukkot (v.9-13)
+--       members: Tanakh Neh8:2, Neh8:3, Neh8:18 ; NT Rom10:17
+--   deuteronomy-31-this-song-a-witness-against-them              [free] the Song as covenant witness (v.16-22)
+--       members: Tanakh Deut32:1, Deut32:46
+--   deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee [free] Torah laid beside the ark as standing witness (v.24-29)
+--       members: NT John5:45, John5:46, Rom3:19 ; Tanakh 2Kings22:8, 2Kings22:11, 2Kings22:13
+--   deuteronomy-31-i-know-thy-rebellion-and-thy-stiff-neck       [free] Moses accuseth / every mouth stopped (v.27-29) — SUB-FOLDED? kept distinct: stiff-neck indictment
+--       (NOTE: to keep 5 curated threads, the rebellion indictment is carried inside the
+--        book-of-the-law witness thread above; this line is documentary only — see threads list = 4 effective)
+--
+-- All slugs prefixed deuteronomy-31- and checked against EXISTING_SLUGS.txt (0 hits for the
+-- deuteronomy-31- prefix; the two pre-existing references — hebrews-13-... and
+-- 1-corinthians-16-... — carry "deuteronomy-31" as a TAIL fragment, NOT the prefix, and do
+-- NOT collide).
+-- ───────────────────────────────────────────────────────────────────────────
+
+CREATE TEMP VIEW _s310_deu31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- ── 31:1-8 he will not fail thee, nor forsake thee (FORWARD NT) ──
+    ('canon','deuteronomy',31,6,'canon','hebrews',13,5,'free',
+      E'*Let your conversation be without covetousness; and be content with such things as ye have: for he hath said, I will never leave thee, nor forsake thee.* (Hebrews 13:5). The apostle anchors Messianic contentment in Moses'' own word: *Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6). The same covenant promise that steadied Yashar''el at the Jordan steadies the believer — the presence of Yahuah, not the abundance of goods, is the ground of courage.'),
+    ('canon','deuteronomy',31,6,'canon','matthew',28,20,'free',
+      E'*Teaching them to observe all things whatsoever I have commanded you: and, lo, I am with you alway, even unto the end of the world. Amen.* (Matthew 28:20). The Formed Son seals the great commission with the same never-forsaking presence Moses promised — *he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6). The One who went over Jordan before Yashar''el is the same who is *with you alway*; and the charge is still *to observe all things* commanded — the going-with is bound to the keeping.'),
+    -- ── 31:1-8 the never-forsake charge (LATERAL Tanakh — succession) ──
+    ('canon','deuteronomy',31,6,'canon','joshua',1,5,'free',
+      E'*There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee.* (Joshua 1:5). Yahuah speaks to Joshua the very words Moses spoke to the people — *I will not fail thee, nor forsake thee* — proving the promise of Deuteronomy 31:6 passes intact across the succession: the office of Moses ends, the covenant presence does not.'),
+    ('canon','deuteronomy',31,7,'canon','joshua',1,9,'free',
+      E'*Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for Yahuah Elohayka (the LORD thy God) is with thee whithersoever thou goest.* (Joshua 1:9). Moses charged Joshua *in the sight of all Yashar''el (Israel), Be strong and of a good courage* (Deuteronomy 31:7); now Yahuah Himself repeats the identical charge to Joshua — *be strong ... be not afraid ... for Yahuah Elohayka is with thee* — the human commission ratified by the divine voice.'),
+    ('canon','deuteronomy',31,6,'canon','1-chronicles',28,20,'free',
+      E'*And David said to Solomon his son, Be strong and of good courage, and do it: fear not, nor be dismayed: for Yahuah Elohim (the LORD God), even my Elohim (God), will be with thee; he will not fail thee, nor forsake thee, until thou hast finished all the work for the service of the house of Yahuah (LORD).* (1 Chronicles 28:20). David hands the temple-building to Solomon in Moses'' exact words — *be strong ... fear not ... he will not fail thee, nor forsake thee* (Deuteronomy 31:6) — the be-strong-fear-not formula carried down the generations at every covenant handover, always grounded in the going-with of Yahuah.'),
+    -- ── 31:9-13 read this law before all Yashar'el at the feast (LATERAL Tanakh — Ezra) ──
+    ('canon','deuteronomy',31,11,'canon','nehemiah',8,2,'free',
+      E'*And Ezra the priest brought the law before the congregation both of men and women, and all that could hear with understanding, upon the first day of the seventh month.* (Nehemiah 8:2). Moses commanded the public reading *before all Yashar''el (Israel) in their hearing* (Deuteronomy 31:11), gathering *men, and women, and children* (31:12); Ezra does exactly this in the seventh month — the law brought before *both of men and women, and all that could hear with understanding* — the Deut 31 ordinance kept centuries later.'),
+    ('canon','deuteronomy',31,12,'canon','nehemiah',8,3,'free',
+      E'*And he read therein before the street that was before the water gate from the morning until midday, before the men and the women, and those that could understand; and the ears of all the people were attentive unto the book of the law.* (Nehemiah 8:3). The purpose Moses gave — *that they may hear, and that they may learn, and fear Yahuah Elohaychem (the LORD your God)* (Deuteronomy 31:12) — is fulfilled to the letter: *the ears of all the people were attentive unto the book of the law.* The hearing-to-learn-to-fear is the Torah read aloud and received.'),
+    ('canon','deuteronomy',31,10,'canon','nehemiah',8,18,'free',
+      E'*Also day by day, from the first day unto the last day, he read in the book of the law of Elohim (God). And they kept the feast seven days; and on the eighth day was a solemn assembly, according unto the manner.* (Nehemiah 8:18). Moses set the reading *in the feast of tabernacles* (Deuteronomy 31:10); the returned remnant keep that very feast — seven days, the eighth-day solemn assembly — with the daily reading of the Torah. The appointed time (Sukkot) and the public word are joined exactly as Moses ordained.'),
+    -- ── 31:9-13 read this law (FORWARD NT — faith by hearing) ──
+    ('canon','deuteronomy',31,13,'canon','romans',10,17,'free',
+      E'*So then faith cometh by hearing, and hearing by the word of Elohim (God).* (Romans 10:17). Moses ordained the public reading so *that their children, which have not known any thing, may hear, and learn to fear Yahuah Elohaychem (the LORD your God)* (Deuteronomy 31:13); Paul names the principle Moses enacted — faith is born of HEARING the word. The septennial reading is the word of Elohim sounded into every generation, that they may believe and fear.'),
+    -- ── 31:16-22 this song a witness against them (LATERAL Tanakh — the Song) ──
+    ('canon','deuteronomy',31,19,'canon','deuteronomy',32,1,'free',
+      E'*Give ear, O ye heavens, and I will speak; and hear, O earth, the words of my mouth.* (Deuteronomy 32:1). Here the Song commanded in Deut 31 begins. Moses was told *write ye this song for you, and teach it the children of Yashar''el (Israel) ... that this song may be a witness for me against the children of Yashar''el* (Deuteronomy 31:19); the Song opens by calling heaven and earth to hear — the standing witnesses of the covenant-lawsuit Moses was instructed to summon.'),
+    ('canon','deuteronomy',31,21,'canon','deuteronomy',32,46,'free',
+      E'*And he said unto them, Set your hearts unto all the words which I testify among you this day, which ye shall command your children to observe to do, all the words of this law.* (Deuteronomy 32:46). The Song was given because *it shall not be forgotten out of the mouths of their seed* (Deuteronomy 31:21); Moses presses the same end after singing it — *set your hearts ... command your children to observe to do, all the words of this law.* The witness is not to condemn for its own sake but to call the seed back to doing.'),
+    -- ── 31:24-29 the book of the law for a witness against thee (FORWARD NT — Moses accuseth) ──
+    ('canon','deuteronomy',31,26,'canon','john',5,45,'free',
+      E'*Do not think that I will accuse you to the Father: there is one that accuseth you, even Moses, in whom ye trust.* (John 5:45). Moses commanded the book laid beside the ark *that it may be there for a witness against thee* (Deuteronomy 31:26); the Formed Son names that very witness — *there is one that accuseth you, even Moses* — the written Torah standing as the abiding accuser of covenant rebellion, exactly as Moses foretold.'),
+    ('canon','deuteronomy',31,26,'canon','john',5,46,'free',
+      E'*For had ye believed Moses, ye would have believed me: for he wrote of me.* (John 5:46). The book Moses *wrote* and laid beside the ark *for a witness* (Deuteronomy 31:24-26) testifies of the Formed Son — *he wrote of me.* To trust Moses is to believe the One Moses wrote of; the standing witness points forward, not merely backward in accusation.'),
+    ('canon','deuteronomy',31,27,'canon','romans',3,19,'free',
+      E'*Now we know that what things soever the law saith, it saith to them who are under the law: that every mouth may be stopped, and all the world may become guilty before Elohim (God).* (Romans 3:19). Moses laid the book *for a witness against thee*, knowing *thy rebellion, and thy stiff neck* (Deuteronomy 31:26-27); Paul states the witness''s effect — the law speaks *that every mouth may be stopped.* The Torah-as-witness exposes the rebellion Moses already named, leaving no defense.'),
+    -- ── 31:24-29 the book of the law (LATERAL Tanakh — the book FOUND, Josiah) ──
+    ('canon','deuteronomy',31,26,'canon','2-kings',22,8,'free',
+      E'*And Hilkiah the high priest said unto Shaphan the scribe, I have found the book of the law in the house of Yahuah (LORD). And Hilkiah gave the book to Shaphan, and he read it.* (2 Kings 22:8). The very book Moses laid up *in the side of the ark of the covenant of Yahuah (LORD)* (Deuteronomy 31:26) is found again in Josiah''s day — *the book of the law in the house of Yahuah* — the standing witness preserved through generations of rebellion, now read aloud once more.'),
+    ('canon','deuteronomy',31,27,'canon','2-kings',22,11,'free',
+      E'*And it came to pass, when the king had heard the words of the book of the law, that he rent his clothes.* (2 Kings 22:11). Moses laid the book *for a witness against thee*, foreseeing the *rebellion* and *stiff neck* (Deuteronomy 31:26-27); when Josiah hears its words the witness does its work — the king rends his clothes, convicted by the very Torah Moses laid beside the ark.'),
+    ('canon','deuteronomy',31,26,'canon','2-kings',22,13,'free',
+      E'*Go ye, enquire of Yahuah (LORD) for me, and for the people, and for all Yahudah (Judah), concerning the words of this book that is found: for great is the wrath of Yahuah (LORD) that is kindled against us, because our fathers have not hearkened unto the words of this book, to do according unto all that which is written concerning us.* (2 Kings 22:13). Josiah reads the found book exactly as Moses intended — *a witness against thee* (Deuteronomy 31:26) — confessing *our fathers have not hearkened unto the words of this book.* The standing Torah-witness convicts the nation and calls it back to doing all that is written.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+
+-- Thread 1: he will not fail thee, nor forsake thee (v.1-8)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee',
+       E'He will not fail thee, nor forsake thee',
+       E'Moses, *an hundred and twenty years old this day*, says *I can no more go out and come in* (Deuteronomy 31:2) — yet the courage he leaves the people does not rest on him: *Yahuah Elohayka (the LORD thy God), he it is that doth go with thee; he will not fail thee, nor forsake thee* (Deuteronomy 31:6). He charges Joshua before all Yashar''el in the same words — *Be strong and of a good courage ... Yahuah (LORD), he it is that doth go before thee ... fear not* (Deuteronomy 31:7-8).\n\nThe promise is so load-bearing it is spoken at every covenant handover. Yahuah repeats it to Joshua directly: *as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5), and again *be strong ... be not afraid ... for Yahuah Elohayka is with thee whithersoever thou goest* (Joshua 1:9). David hands the temple-work to Solomon the same way: *be strong ... fear not, nor be dismayed ... he will not fail thee, nor forsake thee* (1 Chronicles 28:20).\n\nThe apostolic word carries it forward unchanged. Hebrews anchors contentment in it: *for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5). And the Formed Son seals the commission with the same presence: *lo, I am with you alway, even unto the end of the world* (Matthew 28:20) — joined, as in Moses, to *teaching them to observe all things whatsoever I have commanded you.* The man passes; the going-with of Yahuah does not.',
+       sv.verse_id, ev.verse_id, 'free', 25250
+  FROM _s310_deu31_lookup sv, _s310_deu31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=31 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2: read this law before all Yashar'el at the feast (v.9-13)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-31-read-this-law-before-all-yasharel-at-the-feast',
+       E'Read this law before all Yashar''el at the feast',
+       E'*And Moses wrote this law, and delivered it unto the priests the sons of Levi* (Deuteronomy 31:9). The Torah is written, entrusted, and given a perpetual public hearing: *At the end of every seven years, in the solemnity of the year of release, in the feast of tabernacles ... thou shalt read this law before all Yashar''el (Israel) in their hearing* (Deuteronomy 31:10-11). The whole people is summoned — *men, and women, and children, and thy stranger that is within thy gates, that they may hear, and that they may learn, and fear Yahuah Elohaychem (the LORD your God), and observe to do all the words of this law* (Deuteronomy 31:12), and *their children, which have not known any thing, may hear, and learn to fear* (Deuteronomy 31:13). This is Torah affirmed and renewed for every generation, set into the appointed time of Sukkot — not a code laid aside.\n\nThe returned remnant keep this ordinance to the letter. Ezra *brought the law before the congregation both of men and women, and all that could hear with understanding, upon the first day of the seventh month* (Nehemiah 8:2), reading *from the morning until midday ... and the ears of all the people were attentive unto the book of the law* (Nehemiah 8:3). They kept the feast of tabernacles, and *day by day, from the first day unto the last day, he read in the book of the law of Elohim (God)* (Nehemiah 8:18) — the Deut 31 reading at the very feast Moses named.\n\nPaul names the principle Moses enacted: *faith cometh by hearing, and hearing by the word of Elohim (God)* (Romans 10:17). The septennial reading sounds the word into the ears of every generation — children, strangers, all — that they may hear, learn, fear, and do.',
+       sv.verse_id, ev.verse_id, 'free', 25253
+  FROM _s310_deu31_lookup sv, _s310_deu31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=31 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3: this song a witness against them (v.16-22)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-31-this-song-a-witness-against-them',
+       E'This song a witness against them',
+       E'Yahuah foretells the apostasy plainly: *this people will rise up, and go a whoring after the gods of the strangers of the land ... and will forsake me, and break my covenant which I have made with them* (Deuteronomy 31:16); when they are full and *waxen fat*, *then will they turn unto other gods* (Deuteronomy 31:20). So a Song is given as a standing witness: *write ye this song for you, and teach it the children of Yashar''el (Israel): put it in their mouths, that this song may be a witness for me against the children of Yashar''el* (Deuteronomy 31:19) — *for it shall not be forgotten out of the mouths of their seed* (Deuteronomy 31:21).\n\nThe Song itself follows in the next chapter, opening with the covenant-lawsuit summons of the standing witnesses: *Give ear, O ye heavens, and I will speak; and hear, O earth, the words of my mouth* (Deuteronomy 32:1). And its purpose is not bare condemnation but a call back to obedience — *Set your hearts unto all the words which I testify among you this day, which ye shall command your children to observe to do, all the words of this law* (Deuteronomy 32:46). This is covenant-lawsuit language against the conduct of the covenant people under judgment — sung into the mouths of the seed so the way home is never forgotten.',
+       sv.verse_id, ev.verse_id, 'free', 25256
+  FROM _s310_deu31_lookup sv, _s310_deu31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=31 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4: the book of the law for a witness against thee (v.24-29)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee',
+       E'The book of the law, for a witness against thee',
+       E'When Moses *had made an end of writing the words of this law in a book, until they were finished* (Deuteronomy 31:24), he commanded the Levites: *Take this book of the law, and put it in the side of the ark of the covenant of Yahuah Elohaychem (the LORD your God), that it may be there for a witness against thee* (Deuteronomy 31:26). He says why: *For I know thy rebellion, and thy stiff neck* (Deuteronomy 31:27). The written Torah is laid up as the abiding witness of the covenant — and the standing accuser of covenant-breaking.\n\nThis witness surfaces again in Josiah''s day. *I have found the book of the law in the house of Yahuah (LORD)* (2 Kings 22:8); when the king hears its words *he rent his clothes* (2 Kings 22:11), confessing *our fathers have not hearkened unto the words of this book, to do according unto all that which is written* (2 Kings 22:13). The book Moses laid beside the ark does exactly what he foretold — convicts, and calls back to doing.\n\nThe Formed Son names that very witness: *there is one that accuseth you, even Moses, in whom ye trust* (John 5:45) — yet the witness also points forward: *had ye believed Moses, ye would have believed me: for he wrote of me* (John 5:46). And Paul states its universal effect: the law speaks *that every mouth may be stopped, and all the world may become guilty before Elohim (God)* (Romans 3:19). The Torah-as-witness exposes the *rebellion* and *stiff neck* Moses already named — leaving no defense, and pointing to the One it was written about.',
+       sv.verse_id, ev.verse_id, 'free', 25259
+  FROM _s310_deu31_lookup sv, _s310_deu31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=31 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+
+-- ── Thread 1 members ──
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*for he hath said, I will never leave thee, nor forsake thee* (Hebrews 13:5) — the apostle anchors contentment in Moses'' *he will not fail thee, nor forsake thee* (Deuteronomy 31:6).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*lo, I am with you alway, even unto the end of the world* (Matthew 28:20) — the Formed Son''s never-forsaking presence, joined to observing all he commanded, fulfils *he it is that doth go with thee* (Deuteronomy 31:6).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=28 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5) — Yahuah speaks Moses'' word straight to Joshua; the promise passes across the succession.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*be strong and of a good courage; be not afraid ... for Yahuah Elohayka is with thee* (Joshua 1:9) — Yahuah ratifies Moses'' charge to Joshua (Deuteronomy 31:7) with His own voice.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=7
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*be strong ... fear not, nor be dismayed ... he will not fail thee, nor forsake thee* (1 Chronicles 28:20) — David hands the temple-work to Solomon in Moses'' exact formula (Deuteronomy 31:6).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=28 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-he-will-not-fail-thee-nor-forsake-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ── Thread 2 members ──
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Ezra the priest brought the law before the congregation both of men and women* (Nehemiah 8:2) — the Deut 31:11-12 public reading kept in the seventh month, men, women, all who could understand.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=11
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-read-this-law-before-all-yasharel-at-the-feast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the ears of all the people were attentive unto the book of the law* (Nehemiah 8:3) — fulfilling *that they may hear, and that they may learn, and fear Yahuah* (Deuteronomy 31:12).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=12
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-read-this-law-before-all-yasharel-at-the-feast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they kept the feast seven days ... day by day ... he read in the book of the law* (Nehemiah 8:18) — the reading set *in the feast of tabernacles* (Deuteronomy 31:10), the appointed time and the word joined.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=10
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-read-this-law-before-all-yasharel-at-the-feast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*faith cometh by hearing, and hearing by the word of Elohim* (Romans 10:17) — the principle Moses enacted, that the children *may hear, and learn to fear Yahuah* (Deuteronomy 31:13).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=13
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-read-this-law-before-all-yasharel-at-the-feast'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ── Thread 3 members ──
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Give ear, O ye heavens ... hear, O earth* (Deuteronomy 32:1) — the Song commanded in 31:19 begins, summoning the standing witnesses of the covenant-lawsuit.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=19
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-this-song-a-witness-against-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Set your hearts unto all the words ... command your children to observe to do, all the words of this law* (Deuteronomy 32:46) — the Song''s end: not bare condemnation but a call back to doing (Deuteronomy 31:21).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=21
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-this-song-a-witness-against-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ── Thread 4 members ──
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there is one that accuseth you, even Moses, in whom ye trust* (John 5:45) — the Formed Son names the very book laid beside the ark *for a witness against thee* (Deuteronomy 31:26).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=26
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*had ye believed Moses, ye would have believed me: for he wrote of me* (John 5:46) — the book Moses wrote and laid up testifies forward of the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=26
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that every mouth may be stopped, and all the world may become guilty before Elohim* (Romans 3:19) — the witness''s effect on the *rebellion ... and stiff neck* Moses named (Deuteronomy 31:27).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=27
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I have found the book of the law in the house of Yahuah* (2 Kings 22:8) — the very book Moses laid *in the side of the ark* (Deuteronomy 31:26) surfaces again in Josiah''s day.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=26
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=22 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*when the king had heard the words of the book of the law, that he rent his clothes* (2 Kings 22:11) — the witness convicts, exactly as Moses foretold of the *stiff neck* (Deuteronomy 31:27).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=27
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=22 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*our fathers have not hearkened unto the words of this book, to do according unto all that which is written* (2 Kings 22:13) — Josiah reads the found book as *a witness against thee* (Deuteronomy 31:26), and is called back to doing.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=31 AND sv.verse_number=26
+  JOIN _s310_deu31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=22 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-31-the-book-of-the-law-for-a-witness-against-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_32.sql (Deuteronomy 32) -----
+-- Deuteronomy 32 — the Song of Moses (the witness-song against apostasy and the
+--   covenant-lawsuit that nonetheless ends in mercy and the regathering of the nations
+--   WITH his people). Foundation-layer chapter, heavily quoted in the NT.
+-- Tag: deu32 | session prefix: s310 | temp view: _s310_deu32_lookup
+-- Sort band: 25275 step 3 -> 25275,25278,25281,25284,25287,25290,25293,25296 (8 threads)
+-- Binding lens: the Rock = the Formed Son (1Cor10:4); the Most High set the bounds and
+--   kept Yashar'el as his portion; the apostasy is sacrifice to DEVILS; the jealousy
+--   provoked through "no people" / "a foolish nation" is the two-house provocation unto
+--   the regathering (Rom10-11), NOT replacement; the one Elohim who kills and makes alive;
+--   the Torah is your life (anti-antinomian close).
+--
+-- Deuteronomy 32 coverage:
+--   v.1-4 (the Rock, perfect work, El of truth):
+--        NT:     1 Corinthians 10:4 (that Rock was Messiah), Matthew 7:24-25 (built on a rock),
+--                Revelation 15:3 (the song of Moses... just and true are thy ways)
+--        Extras: none warranted
+--        Tanakh: Psalm 18:2, Psalm 18:31, 2 Samuel 22:2-3 (Yahuah is my rock)
+--   v.5-7 (is not he thy father that hath bought thee / made thee):
+--        NT:     none warranted (kept in the Father-who-made Tanakh weave)
+--        Extras: none warranted
+--        Tanakh: Isaiah 64:8 (thou art our father... we the clay), Malachi 2:10 (one father, one Elohim created us)
+--   v.8-9 (Most High divided the nations; Yahuah's portion is his people):
+--        NT:     Acts 17:26 (made of one blood... determined the bounds of their habitation)
+--        Extras: none warranted (clean witness preferred)
+--        Tanakh: Deuteronomy 4:19-20 (divided the host to the nations; took you for inheritance)
+--   v.10-14 (apple of his eye; eagle stirreth her nest; Yahuah alone did lead):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 19:4 (bare you on eagles' wings), Psalm 17:8 (keep me as the apple of the eye)
+--   v.15-18 (Jeshurun kicked; sacrificed unto devils; forgot the Rock that begat thee):
+--        NT:     1 Corinthians 10:20 (the things the Gentiles sacrifice they sacrifice to devils)
+--        Extras: Jubilees 10:1 (unclean demons began to lead astray), 1 Enoch 99:7 (worship impure spirits and demons)
+--        Tanakh: Psalm 106:37 (sacrificed their sons and daughters unto devils)
+--   v.19-21 (I will move them to jealousy with those which are not a people):
+--        NT:     Romans 10:19 (provoke you to jealousy by them that are no people), Romans 11:11 (to provoke them to jealousy)
+--        Extras: Jubilees 1:19-20 (do not forsake Your people and Your inheritance; create a clean heart)
+--        Tanakh: (held within the NT/extras weave)
+--   v.34-43 (vengeance is mine; Yahuah shall judge his people; I kill and make alive; rejoice ye nations WITH his people):
+--        NT:     Romans 12:19 (Vengeance is mine, I will repay), Hebrews 10:30 (quotes both 32:35 and 32:36),
+--                Romans 15:10 (Rejoice ye Gentiles with his people), Revelation 6:10 / Revelation 19:2 (avenge the blood of his servants)
+--        Extras: none warranted
+--        Tanakh: Psalm 135:14 (Yahuah will judge his people), Isaiah 45:5-7 (I am Yahuah, none else; I kill/make alive parallel)
+--   v.44-47 (Set your hearts unto all the words... it is your life):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 30:19-20 (choose life; he is thy life), Proverbs 3:1-2 (forget not my law... length of days)
+--
+-- Threads (8):
+--   deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah   [free]  NT + Tanakh
+--   deuteronomy-32-is-not-he-thy-father-that-hath-bought-thee-and-made-thee    [free]  Tanakh
+--   deuteronomy-32-the-most-high-divided-the-nations-yahuahs-portion-is-his-people  [free]  NT + Tanakh
+--   deuteronomy-32-he-kept-him-as-the-apple-of-his-eye-as-an-eagle             [free]  Tanakh
+--   deuteronomy-32-they-sacrificed-unto-devils-not-to-elohim                   [extras] NT + Extras + Tanakh
+--   deuteronomy-32-i-will-move-them-to-jealousy-with-those-which-are-not-a-people  [extras] NT + Extras
+--   deuteronomy-32-to-me-belongeth-vengeance-yahuah-shall-judge-his-people     [free]  NT + Tanakh
+--   deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people [free]  NT + Tanakh
+
+CREATE TEMP VIEW _s310_deu32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Rock (32:4)
+    ('canon','deuteronomy',32,4,'canon','1-corinthians',10,4,'free',
+      E'*And did all drink the same spiritual drink: for they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4). Moses names him: *He is the Rock, his work is perfect: for all his ways are judgment* (Deuteronomy 32:4). Sha''ul reads that Rock who led Yashar''el (Israel) through the wilderness as the Formed Son himself — the Rock that begat thee (32:18) is the Messiah.'),
+    ('canon','deuteronomy',32,4,'canon','matthew',7,24,'free',
+      E'*Therefore whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock* (Matthew 7:24). The house that stands is built on the Rock whose *work is perfect... a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4) — and note: it stands by HEARING and DOING, the Torah-shaped obedience of the Song.'),
+    ('canon','deuteronomy',32,4,'canon','matthew',7,25,'free',
+      E'*And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell not: for it was founded upon a rock* (Matthew 7:25). The Rock of Deuteronomy 32:4 — *his work is perfect: for all his ways are judgment* — is the immovable foundation against which the flood breaks in vain.'),
+    ('canon','deuteronomy',32,4,'canon','revelation',15,3,'free',
+      E'*And they sing the song of Moses the servant of Elohim (God), and the song of the Lamb, saying, Great and marvellous are thy works, Yahuah Elohim (Lord God) Almighty; just and true are thy ways, thou King of saints* (Revelation 15:3). At the end the redeemed sing THIS very song — *just and true are thy ways* echoing *all his ways are judgment... just and right is he* (Deuteronomy 32:4). The Song of Moses is the consummation hymn.'),
+    ('canon','deuteronomy',32,4,'canon','psalms',18,2,'free',
+      E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower* (Psalm 18:2). David sings back the Rock of Moses'' song — *He is the Rock, his work is perfect* (Deuteronomy 32:4) — making the Rock his personal refuge.'),
+    ('canon','deuteronomy',32,4,'canon','psalms',18,31,'free',
+      E'*For who is Elohim (God) save Yahuah (LORD)? or who is a rock save our Elohim (God)?* (Psalm 18:31). The exclusive Rock of Deuteronomy 32:4 — over against the rock of the enemies (32:31, *their rock is not as our Rock*) — there is no other.'),
+    ('canon','deuteronomy',32,4,'canon','2-samuel',22,2,'free',
+      E'*And he said, Yahuah (LORD) is my rock, and my fortress, and my deliverer* (2 Samuel 22:2). David''s own song opens by confessing the Rock of the Song of Moses — *He is the Rock, his work is perfect* (Deuteronomy 32:4).'),
+    ('canon','deuteronomy',32,4,'canon','2-samuel',22,3,'free',
+      E'*The Elohim (God) of my rock; in him will I trust: he is my shield, and the horn of my salvation, my high tower, and my refuge, my saviour; thou savest me from violence* (2 Samuel 22:3). The Rock whose *work is perfect* (Deuteronomy 32:4) is the saviour in whom David trusts.'),
+
+    -- THREAD 2: the Father who bought/made (32:6)
+    ('canon','deuteronomy',32,6,'canon','isaiah',64,8,'free',
+      E'*But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8). Moses'' rebuke — *is not he thy father that hath bought thee? hath he not made thee, and established thee?* (Deuteronomy 32:6) — is what Isaiah turns into confession: the Father who MADE us is the potter over the clay.'),
+    ('canon','deuteronomy',32,6,'canon','malachi',2,10,'free',
+      E'*Have we not all one father? hath not one Elohim (God) created us? why do we deal treacherously every man against his brother, by profaning the covenant of our fathers?* (Malachi 2:10). Malachi presses the same logic as *is not he thy father that hath bought thee?* (Deuteronomy 32:6): one Father, one Maker — therefore treachery against the covenant is treachery against him.'),
+
+    -- THREAD 3: the Most High divided the nations (32:8-9)
+    ('canon','deuteronomy',32,8,'canon','acts',17,26,'free',
+      E'*And hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). Sha''ul on Mars'' hill preaches Deuteronomy 32:8 — *When the El Elyon (most High) divided to the nations their inheritance... he set the bounds of the people* — the Most High who fixed the borders of the nations.'),
+    ('canon','deuteronomy',32,8,'canon','deuteronomy',4,19,'free',
+      E'*And lest thou lift up thine eyes unto heaven, and when thou seest the sun, and the moon, and the stars, even all the host of heaven, shouldest be driven to worship them, and serve them, which Yahuah Elohayka (the LORD thy God) hath divided unto all nations under the whole heaven* (Deuteronomy 4:19). The host divided to the nations is the underside of *the El Elyon (most High) divided to the nations their inheritance* (Deuteronomy 32:8) — the nations got the host; Yashar''el got Yahuah himself.'),
+    ('canon','deuteronomy',32,9,'canon','deuteronomy',4,20,'free',
+      E'*But Yahuah (LORD) hath taken you, and brought you forth out of the iron furnace, even out of Egypt, to be unto him a people of inheritance, as ye are this day* (Deuteronomy 4:20). This IS *the LORD''S portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:9) — Yashar''el is Yahuah''s own allotted inheritance among the nations.'),
+
+    -- THREAD 4: apple of his eye / eagle (32:10-11)
+    ('canon','deuteronomy',32,11,'canon','exodus',19,4,'free',
+      E'*Ye have seen what I did unto the Egyptians, and how I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4). The Sinai word is the same image as the Song — *As an eagle stirreth up her nest, fluttereth over her young... beareth them on her wings* (Deuteronomy 32:11) — the fatherly eagle bearing Yashar''el out of bondage to himself.'),
+    ('canon','deuteronomy',32,10,'canon','psalms',17,8,'free',
+      E'*Keep me as the apple of the eye, hide me under the shadow of thy wings* (Psalm 17:8). David prays back the tenderness of the Song — *he kept him as the apple of his eye* (Deuteronomy 32:10) — and the wings of 32:11 become the shadow under which the servant hides.'),
+
+    -- THREAD 5: sacrificed unto devils (32:17)
+    ('canon','deuteronomy',32,17,'canon','1-corinthians',10,20,'extras',
+      E'*But I say, that the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God): and I would not that ye should have fellowship with devils* (1 Corinthians 10:20). Sha''ul quotes the Song''s diagnosis exactly — *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not* (Deuteronomy 32:17) — idolatry is communion with demons.'),
+    ('canon','deuteronomy',32,17,'canon','psalms',106,37,'free',
+      E'*Yea, they sacrificed their sons and their daughters unto devils* (Psalm 106:37). The Psalmist sings Yashar''el''s history into the Song''s charge — *They sacrificed unto devils, not to Elohim (God)* (Deuteronomy 32:17) — the apostasy reached even to the blood of children.'),
+    ('canon','deuteronomy',32,17,'jubilees','jubilees',10,1,'extras',
+      E'*And in the third week of this jubilee the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them* (Jubilees 10:1). The restored witness names the powers behind *they sacrificed unto devils* (Deuteronomy 32:17): the unclean demons (the spirits of the Watchers'' offspring) leading the nations astray into the very worship the Song condemns.'),
+    ('canon','deuteronomy',32,17,'enoch','1-enoch',99,7,'extras',
+      E'*And they who worship stones, and grave images of gold and silver and wood and clay, And those who worship impure spirits and demons, And all kinds of idols not according to knowledge, shall get no manner of help from them* (1 Enoch 99:7). Enoch puts idol-worship and demon-worship in one breath, just as the Song does — *to gods whom they knew not, to new gods that came newly up* (Deuteronomy 32:17) — *whom your fathers feared not*.'),
+
+    -- THREAD 6: jealousy with those which are not a people (32:21)
+    ('canon','deuteronomy',32,21,'canon','romans',10,19,'extras',
+      E'*But I say, Did not Yashar''el (Israel) know? First Moses saith, I will provoke you to jealousy by them that are no people, and by a foolish nation I will anger you* (Romans 10:19). Sha''ul quotes Deuteronomy 32:21 word for word — *I will move them to jealousy with those which are not a people; I will provoke them to anger with a foolish nation* — the jealousy that is meant to draw, not to discard.'),
+    ('canon','deuteronomy',32,21,'canon','romans',11,11,'extras',
+      E'*I say then, Have they stumbled that they should fall? Elohim (God) forbid: but rather through their fall salvation is come unto the Gentiles, for to provoke them to jealousy* (Romans 11:11). The whole two-house mechanism of Romans 11 hangs on the Song: the *not a people* and *foolish nation* of Deuteronomy 32:21 provoke Yashar''el to jealousy unto the regathering — provocation toward reunion, never replacement.'),
+    ('canon','deuteronomy',32,21,'jubilees','jubilees',1,19,'extras',
+      E'*And Moses fell on his face and prayed and said, "O Yahuah (God) my Elohim (God), do not forsake Your people and Your inheritance, so that they should wander in the error of their hearts..."* (Jubilees 1:19). The restored Mosaic prayer answers the Song''s threat of jealousy and scattering: Moses pleads against forsaking *Your people and Your inheritance* — the very portion of Deuteronomy 32:9, jealous over but never cast away.'),
+    ('canon','deuteronomy',32,21,'jubilees','jubilees',1,20,'extras',
+      E'*Let Your mercy, O Yahuah (God), be lifted up upon Your people... and create in them an upright spirit, and let not the spirit of Beliar rule over them... But they are Your people and Your inheritance...* (Jubilees 1:20). The jealousy of Deuteronomy 32:21 bends toward this: a clean heart created in the people who are still *Your inheritance*, the new-covenant cure for the apostasy the Song laments.'),
+
+    -- THREAD 7: vengeance / Yahuah shall judge his people (32:35-36)
+    ('canon','deuteronomy',32,35,'canon','romans',12,19,'free',
+      E'*Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). Sha''ul cites the Song to forbid private revenge — *To me belongeth vengeance, and recompence* (Deuteronomy 32:35) — judgment belongs to Yahuah alone.'),
+    ('canon','deuteronomy',32,35,'canon','hebrews',10,30,'free',
+      E'*For we know him that hath said, Vengeance belongeth unto me, I will recompense, saith Yahuah (Lord). And again, Yahuah (Lord) shall judge his people* (Hebrews 10:30). Hebrews quotes BOTH halves of this thread — Deuteronomy 32:35 (*vengeance, and recompence*) and 32:36 (*Yahuah (LORD) shall judge his people*) — binding them into one warning that the covenant Judge is living and active.'),
+    ('canon','deuteronomy',32,36,'canon','psalms',135,14,'free',
+      E'*For Yahuah (LORD) will judge his people, and he will repent himself concerning his servants* (Psalm 135:14). The Psalm sings Deuteronomy 32:36 almost verbatim — *For Yahuah (LORD) shall judge his people, and repent himself for his servants* — the judgment that turns to mercy when their strength is gone.'),
+
+    -- THREAD 8: I kill and make alive / rejoice ye nations with his people (32:39-43)
+    ('canon','deuteronomy',32,39,'canon','isaiah',45,5,'free',
+      E'*I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me: I girded thee, though thou hast not known me* (Isaiah 45:5). Isaiah''s monotheism is the Song''s — *See now that I, even I, am he, and there is no god with me* (Deuteronomy 32:39) — one Elohim, none beside, the Father who girds his own.'),
+    ('canon','deuteronomy',32,39,'canon','isaiah',45,7,'free',
+      E'*I form the light, and create darkness: I make peace, and create evil: I Yahuah (LORD) do all these things* (Isaiah 45:7). The sovereignty of *I kill, and I make alive; I wound, and I heal* (Deuteronomy 32:39) is the same — life and death, weal and woe, all in the one hand from which none can deliver.'),
+    ('canon','deuteronomy',32,43,'canon','romans',15,10,'free',
+      E'*And again he saith, Rejoice, ye Gentiles, with his people* (Romans 15:10). Sha''ul quotes the Song''s climax — *Rejoice, O ye nations, with his people* (Deuteronomy 32:43) — the nations are summoned to rejoice TOGETHER WITH Yashar''el, not in place of her: the two-house ingathering in one hymn.'),
+    ('canon','deuteronomy',32,43,'canon','revelation',6,10,'free',
+      E'*And they cried with a loud voice, saying, How long, O Yahuah (Lord), holy and true, dost thou not judge and avenge our blood on them that dwell on the earth?* (Revelation 6:10). The martyrs'' cry is the Song''s promise reaching for its day — *for he will avenge the blood of his servants* (Deuteronomy 32:43).'),
+    ('canon','deuteronomy',32,43,'canon','revelation',19,2,'free',
+      E'*For true and righteous are his judgments: for he hath judged the great whore, which did corrupt the earth with her fornication, and hath avenged the blood of his servants at her hand* (Revelation 19:2). Heaven''s hallelujah is the Song fulfilled — *he will avenge the blood of his servants, and will render vengeance to his adversaries* (Deuteronomy 32:43) — and *will be merciful unto his land, and to his people*.'),
+
+    -- THREAD bridge: the Torah is your life (32:46-47) -- placed in Thread 8's anchor span? -> own thread? kept in T8 close
+    ('canon','deuteronomy',32,47,'canon','deuteronomy',30,19,'free',
+      E'*I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The Song''s closing charge — *it is not a vain thing for you; because it is your life* (Deuteronomy 32:47) — is the same choose-life summons: the words of the Torah ARE life, not a dead letter.'),
+    ('canon','deuteronomy',32,47,'canon','proverbs',3,1,'free',
+      E'*My son, forget not my law; but let thine heart keep my commandments* (Proverbs 3:1). Wisdom echoes the Song''s last word — *Set your hearts unto all the words which I testify... because it is your life* (Deuteronomy 32:46-47) — the Torah kept in the heart is the path of long life (Proverbs 3:2, *length of days, and long life, and peace*).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah',
+       E'He is the Rock, his work is perfect — and that Rock was Messiah',
+       E'The Song of Moses opens by calling heaven and earth to witness and then names the foundation of everything: *He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). Sha''ul tells us plainly who that Rock is: *they drank of that spiritual Rock that followed them: and that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the Formed Son who led Yashar''el (Israel) through the wilderness. Build a house on him and it stands: *whosoever heareth these sayings of mine, and doeth them, I will liken him unto a wise man, which built his house upon a rock... and it fell not: for it was founded upon a rock* (Matthew 7:24-25) — and note that the house stands by hearing AND doing, the very obedience the Song demands. David sings the Rock back as his own refuge — *Yahuah (LORD) is my rock, and my fortress, and my deliverer* (Psalm 18:2; 2 Samuel 22:2-3) — and confesses there is no other: *who is a rock save our Elohim (God)?* (Psalm 18:31). And at the end the redeemed sing this very song: *they sing the song of Moses the servant of Elohim (God), and the song of the Lamb... just and true are thy ways, thou King of saints* (Revelation 15:3) — *just and true* echoing *all his ways are judgment... just and right is he*.',
+       sv.verse_id, ev.verse_id, 'free', 25275
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-is-not-he-thy-father-that-hath-bought-thee-and-made-thee',
+       E'Is not he thy father that hath bought thee? hath he not made thee?',
+       E'The Song''s rebuke turns on fatherhood and making: *Do ye thus requite Yahuah (LORD), O foolish people and unwise? is not he thy father that hath bought thee? hath he not made thee, and established thee?* (Deuteronomy 32:6). To despise the covenant is to despise the Father who formed the people from nothing. Isaiah turns the charge into a prayer: *But now, O Yahuah (LORD), thou art our father; we are the clay, and thou our potter; and we all are the work of thy hand* (Isaiah 64:8) — the Maker has every right over what he made. And Malachi presses the same logic against treachery between brothers: *Have we not all one father? hath not one Elohim (God) created us? why do we deal treacherously every man against his brother, by profaning the covenant of our fathers?* (Malachi 2:10). One Father, one Maker — therefore covenant-breaking is family betrayal.',
+       sv.verse_id, ev.verse_id, 'free', 25278
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-the-most-high-divided-the-nations-yahuahs-portion-is-his-people',
+       E'The Most High divided the nations — Yahuah''s portion is his people',
+       E'At the heart of the Song stands the map of the whole world: *When the El Elyon (most High) divided to the nations their inheritance, when he separated the sons of Adam, he set the bounds of the people according to the number of the children of Yashar''el (Israel). For the LORD''S portion is his people; Jacob is the lot of his inheritance* (Deuteronomy 32:8-9). The Most High fixed the borders of every nation — and kept one nation as his own allotted share. Sha''ul preaches exactly this on Mars'' hill: *and hath made of one blood all nations of men for to dwell on all the face of the earth, and hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26). The flip side is spelled out earlier in Deuteronomy: the host of heaven was *divided unto all nations under the whole heaven* (Deuteronomy 4:19), but *Yahuah (LORD) hath taken you... to be unto him a people of inheritance* (Deuteronomy 4:20). The nations received the host; Yashar''el received Yahuah himself.',
+       sv.verse_id, ev.verse_id, 'free', 25281
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-he-kept-him-as-the-apple-of-his-eye-as-an-eagle',
+       E'He kept him as the apple of his eye — as an eagle beareth her young',
+       E'Before the apostasy, the Song remembers tenderness: *He found him in a desert land, and in the waste howling wilderness; he led him about, he instructed him, he kept him as the apple of his eye* (Deuteronomy 32:10), *As an eagle stirreth up her nest, fluttereth over her young, spreadeth abroad her wings, taketh them, beareth them on her wings: so Yahuah (LORD) alone did lead him, and there was no strange god with him* (Deuteronomy 32:11-12). This is the same image Yahuah gave at Sinai: *how I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4) — the fatherly eagle carrying Yashar''el out of bondage to himself. David prays to be kept in that same nearness: *Keep me as the apple of the eye, hide me under the shadow of thy wings* (Psalm 17:8). The leading was Yahuah''s alone — no strange god shared it.',
+       sv.verse_id, ev.verse_id, 'free', 25284
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-they-sacrificed-unto-devils-not-to-elohim',
+       E'They sacrificed unto devils, not to Elohim — the Rock that begat thee forgotten',
+       E'Then comes the fall: *But Jeshurun waxed fat, and kicked... then he forsook Elohim (God) which made him, and lightly esteemed the Rock of his salvation* (Deuteronomy 32:15), and the Song names the true nature of the idolatry: *They sacrificed unto devils, not to Elohim (God); to gods whom they knew not, to new gods that came newly up, whom your fathers feared not* (Deuteronomy 32:17) — *Of the Rock that begat thee thou art unmindful, and hast forgotten Elohim (God) that formed thee* (Deuteronomy 32:18). Sha''ul quotes this exactly: *the things which the Gentiles sacrifice, they sacrifice to devils, and not to Elohim (God)* (1 Corinthians 10:20) — idolatry is communion with demons, not with nothing. The Psalmist sings the same history: *Yea, they sacrificed their sons and their daughters unto devils* (Psalm 106:37). The restored witnesses name the powers behind it: *the unclean demons began to lead astray the children of the sons of Noah; and to make to err and destroy them* (Jubilees 10:1), and Enoch puts idols and demons in one breath — *those who worship impure spirits and demons, And all kinds of idols not according to knowledge, shall get no manner of help from them* (1 Enoch 99:7). The new gods *that came newly up* are the spirits of the rebellion.',
+       sv.verse_id, ev.verse_id, 'extras', 25287
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-i-will-move-them-to-jealousy-with-those-which-are-not-a-people',
+       E'I will move them to jealousy with those which are not a people',
+       E'Yahuah''s response is measured to the crime: *They have moved me to jealousy with that which is not Elohim (God)... and I will move them to jealousy with those which are not a people; I will provoke them to anger with a foolish nation* (Deuteronomy 32:21). This is the engine of the whole two-house mystery. Sha''ul quotes it verbatim — *First Moses saith, I will provoke you to jealousy by them that are no people, and by a foolish nation I will anger you* (Romans 10:19) — and unfolds its purpose: *through their fall salvation is come unto the Gentiles, for to provoke them to jealousy* (Romans 11:11). The jealousy is meant to DRAW Yashar''el (Israel) back, not to cast her off; the *not a people* and the *foolish nation* are the provocation unto the regathering, never a replacement people. The restored Mosaic prayer guards exactly this hope: *do not forsake Your people and Your inheritance, so that they should wander in the error of their hearts* (Jubilees 1:19), *But they are Your people and Your inheritance... create in them a clean heart and a holy spirit* (Jubilees 1:20) — jealous over, never abandoned, and headed for the new-covenant cure.',
+       sv.verse_id, ev.verse_id, 'extras', 25290
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-to-me-belongeth-vengeance-yahuah-shall-judge-his-people',
+       E'To me belongeth vengeance — Yahuah shall judge his people',
+       E'Judgment is reserved to Yahuah alone: *Is not this laid up in store with me, and sealed up among my treasures? To me belongeth vengeance, and recompence... For Yahuah (LORD) shall judge his people, and repent himself for his servants, when he seeth that their power is gone* (Deuteronomy 32:34-36). Sha''ul cites it to forbid private revenge: *avenge not yourselves... for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). Hebrews quotes BOTH halves of this passage together: *Vengeance belongeth unto me, I will recompense, saith Yahuah (Lord). And again, Yahuah (Lord) shall judge his people* (Hebrews 10:30) — binding 32:35 and 32:36 into one solemn warning that the covenant Judge lives and acts. And the Psalm sings 32:36 back almost word for word: *For Yahuah (LORD) will judge his people, and he will repent himself concerning his servants* (Psalm 135:14) — the judgment that turns to mercy the moment their strength fails.',
+       sv.verse_id, ev.verse_id, 'free', 25293
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=36
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people',
+       E'I kill and I make alive — Rejoice, O ye nations, with his people',
+       E'The Song rises to its great monotheistic declaration: *See now that I, even I, am he, and there is no god with me: I kill, and I make alive; I wound, and I heal: neither is there any that can deliver out of my hand* (Deuteronomy 32:39), and *For I lift up my hand to heaven, and say, I live for ever* (32:40). This is Isaiah''s gospel of the one Elohim — *I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5), *I form the light, and create darkness: I make peace, and create evil* (Isaiah 45:7) — life and death, weal and woe, all in the one hand. And the Song ends not in wrath but in shared joy: *Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people* (Deuteronomy 32:43). Sha''ul quotes that climax as the warrant for the nations joining Yashar''el (Israel): *Rejoice, ye Gentiles, with his people* (Romans 15:10) — WITH, not instead of. The martyrs reach for its vengeance-promise — *How long... dost thou not judge and avenge our blood* (Revelation 6:10) — and heaven sings it fulfilled: *true and righteous are his judgments... and hath avenged the blood of his servants at her hand* (Revelation 19:2). And the Song''s final charge seals it as life, not law-as-death: *Set your hearts unto all the words which I testify among you this day... For it is not a vain thing for you; because it is your life* (Deuteronomy 32:46-47) — the same as *I have set before you life and death... therefore choose life* (Deuteronomy 30:19) and *forget not my law... For length of days, and long life, and peace, shall they add to thee* (Proverbs 3:1-2).',
+       sv.verse_id, ev.verse_id, 'free', 25296
+  FROM _s310_deu32_lookup sv, _s310_deu32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=39
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=32 AND ev.verse_number=47
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*that Rock was Messiah (Christ)* (1 Corinthians 10:4) — the Formed Son who led Yashar''el through the wilderness is the Rock of the Song.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*built his house upon a rock* (Matthew 7:24) — the house stands by hearing AND doing, founded on the perfect-working Rock.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*it fell not: for it was founded upon a rock* (Matthew 7:25) — the flood breaks in vain on the Rock whose ways are judgment.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they sing the song of Moses... just and true are thy ways* (Revelation 15:3) — the redeemed sing THIS song at the end.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer* (Psalm 18:2) — David makes the Rock of the Song his personal refuge.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*who is a rock save our Elohim (God)?* (Psalm 18:31) — the exclusive Rock, over against the enemies'' rock (32:31).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer* (2 Samuel 22:2) — David''s own song opens on the Song''s Rock.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*the horn of my salvation... my saviour* (2 Samuel 22:3) — the Rock whose work is perfect is the trusted saviour.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=4
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=22 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-is-the-rock-his-work-is-perfect-that-rock-was-messiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou art our father; we are the clay, and thou our potter* (Isaiah 64:8) — the Maker''s right over what he made.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=6
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=64 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-is-not-he-thy-father-that-hath-bought-thee-and-made-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Have we not all one father? hath not one Elohim (God) created us?* (Malachi 2:10) — covenant-breaking is betrayal of the one Father.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=6
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-is-not-he-thy-father-that-hath-bought-thee-and-made-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*hath determined the times before appointed, and the bounds of their habitation* (Acts 17:26) — Sha''ul preaches the Most High who fixed the nations'' borders.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=8
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=17 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-the-most-high-divided-the-nations-yahuahs-portion-is-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the host of heaven... Yahuah... hath divided unto all nations* (Deuteronomy 4:19) — the nations got the host; the underside of 32:8.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=8
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-the-most-high-divided-the-nations-yahuahs-portion-is-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*to be unto him a people of inheritance* (Deuteronomy 4:20) — this is *the LORD''S portion is his people* (32:9).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=9
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-the-most-high-divided-the-nations-yahuahs-portion-is-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*how I bare you on eagles'' wings, and brought you unto myself* (Exodus 19:4) — the Sinai image matches the eagle of 32:11.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=11
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-kept-him-as-the-apple-of-his-eye-as-an-eagle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Keep me as the apple of the eye, hide me under the shadow of thy wings* (Psalm 17:8) — David prays the tenderness of 32:10-11.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=10
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-he-kept-him-as-the-apple-of-his-eye-as-an-eagle'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the things which the Gentiles sacrifice, they sacrifice to devils* (1 Corinthians 10:20) — Sha''ul quotes the Song''s diagnosis.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-they-sacrificed-unto-devils-not-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they sacrificed their sons and their daughters unto devils* (Psalm 106:37) — the apostasy reached the blood of children.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-they-sacrificed-unto-devils-not-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the unclean demons began to lead astray the children of the sons of Noah* (Jubilees 10:1) — the powers behind the devils of 32:17.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-they-sacrificed-unto-devils-not-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*those who worship impure spirits and demons... all kinds of idols* (1 Enoch 99:7) — idols and demons named in one breath.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=99 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-they-sacrificed-unto-devils-not-to-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will provoke you to jealousy by them that are no people* (Romans 10:19) — Sha''ul quotes 32:21 verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=21
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-will-move-them-to-jealousy-with-those-which-are-not-a-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*for to provoke them to jealousy* (Romans 11:11) — the jealousy meant to draw Yashar''el back, unto the regathering, not replacement.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=21
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-will-move-them-to-jealousy-with-those-which-are-not-a-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*do not forsake Your people and Your inheritance* (Jubilees 1:19) — Moses pleads against abandoning the portion of 32:9.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=21
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-will-move-them-to-jealousy-with-those-which-are-not-a-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*But they are Your people and Your inheritance... create in them a clean heart* (Jubilees 1:20) — the new-covenant cure for the apostasy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=21
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-will-move-them-to-jealousy-with-those-which-are-not-a-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — Sha''ul cites 32:35 to forbid private revenge.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=35
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-to-me-belongeth-vengeance-yahuah-shall-judge-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Vengeance belongeth unto me... And again, Yahuah (Lord) shall judge his people* (Hebrews 10:30) — quotes BOTH 32:35 and 32:36.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=35
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-to-me-belongeth-vengeance-yahuah-shall-judge-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) will judge his people, and he will repent himself concerning his servants* (Psalm 135:14) — sings 32:36 almost verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=36
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-to-me-belongeth-vengeance-yahuah-shall-judge-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 8
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I am Yahuah (LORD), and there is none else, there is no Elohim (God) beside me* (Isaiah 45:5) — Isaiah''s monotheism is the Song''s *I, even I, am he* (32:39).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=39
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I form the light, and create darkness: I make peace, and create evil* (Isaiah 45:7) — life and death in one hand, as *I kill, and I make alive* (32:39).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=39
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=45 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Rejoice, ye Gentiles, with his people* (Romans 15:10) — the nations rejoice WITH Yashar''el, the two-house ingathering of 32:43.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=43
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*How long... dost thou not judge and avenge our blood* (Revelation 6:10) — the martyrs reach for *he will avenge the blood of his servants* (32:43).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=43
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*hath avenged the blood of his servants at her hand* (Revelation 19:2) — heaven sings the Song fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=43
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I have set before you life and death... therefore choose life* (Deuteronomy 30:19) — the Song''s close *it is your life* (32:47) is the choose-life summons.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=47
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*forget not my law... length of days, and long life, and peace* (Proverbs 3:1-2) — Wisdom echoes the Torah-is-your-life close of 32:46-47.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=32 AND sv.verse_number=47
+  JOIN _s310_deu32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-32-i-kill-and-i-make-alive-rejoice-o-ye-nations-with-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_33.sql (Deuteronomy 33) -----
+-- Book: Deuteronomy | Chapter 33 — the blessing of Moses on the tribes
+-- Tag: deu33 | session prefix: s310 | sort band base 25300 step 3
+-- Temp view: _s310_deu33_lookup
+--
+-- Deuteronomy 33 coverage:
+--   v.1     NT: none warranted   Extras: none warranted   Tanakh: none warranted (intro)
+--   v.2-5   NT:     Acts 7:53 / Galatians 3:19 (law ordained by angels) / Hebrews 12:18 (mount that burned)
+--           Extras: 1 Enoch 1:4 + 1:9 (the eternal Elohim treads on Sinai, comes with ten thousands)
+--           Tanakh: Exodus 19:18 (Sinai in fire) / Habakkuk 3:3 (came from Teman, Holy One from Paran) / Psalm 68:17 (chariots, thousands of angels, Sinai)
+--           --> THREAD 1 (extras tier): the Sinai theophany & the fiery Torah given as inheritance
+--   v.6     NT: none warranted   Extras: none warranted   Tanakh: none warranted (Reuben, brief)
+--   v.7     NT: none warranted   Extras: none warranted   Tanakh: Genesis 49:8 + 49:10 (Judah blessed, sceptre, gathering)
+--           --> THREAD 2 (free): Judah brought unto his people
+--   v.8-11  NT: none warranted   Extras: none warranted   Tanakh: Exodus 28:30 (Urim & Thummim) / Malachi 2:7 (priest's lips keep knowledge, seek the law at his mouth)
+--           --> THREAD 3 (free): Levi the teaching priest — Torah sought at his mouth
+--   v.12    NT: none warranted   Extras: none warranted   Tanakh: Psalm 91:1 + 91:4 (dwell in the secret place, cover with feathers)
+--           --> THREAD 4 (free): Benjamin the beloved kept all the day long
+--   v.13-17 NT:     Romans 11:25 (the fulness of the nations)
+--           Extras: none warranted
+--           Tanakh: Exodus 3:2 (him that dwelt in the bush) / Genesis 48:19 (his seed a multitude of nations) / Genesis 49:22 + 49:26 (Joseph the fruitful bough, separate from his brethren)
+--           --> THREAD 5 (free): Joseph the northern house — Ephraim & Manasseh, the fulness gathered
+--   v.18-25 NT: none warranted   Extras: none warranted   Tanakh: none warranted (Zebulun/Issachar/Gad/Dan/Naphtali/Asher — brief tribal lines)
+--   v.26-29 NT:     Romans 11:26 (and so all Yashar'el shall be saved)
+--           Extras: none warranted
+--           Tanakh: Psalm 68:33 + 68:34 (rideth upon the heavens, excellency over Israel)
+--           --> THREAD 6 (free): none like the El of Jeshurun — the everlasting arms, the saved people
+
+CREATE TEMP VIEW _s310_deu33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== CROSS_REFERENCES =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Sinai theophany / fiery Torah inheritance (v.2-5)
+    ('canon','deuteronomy',33,2,'canon','exodus',19,18,'free',
+      E'*And mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire: and the smoke thereof ascended as the smoke of a furnace, and the whole mount quaked greatly.* (Exodus 19:18) The blessing opens by remembering that day: *Yahuah (LORD) came from Sinai... from his right hand went a fiery law for them* (Deuteronomy 33:2). The fiery descent of Exodus is the very fire from which the Torah was given.'),
+    ('canon','deuteronomy',33,2,'canon','habakkuk',3,3,'free',
+      E'*Elohim (God) came from Teman, and the Holy One from mount Paran. Selah. His glory covered the heavens, and the earth was full of his praise.* (Habakkuk 3:3) Habakkuk reaches back to this same theophany — *he shined forth from mount Paran* (Deuteronomy 33:2) — singing the coming of the Formed One from the south, the glory that gave the Torah.'),
+    ('canon','deuteronomy',33,2,'canon','psalms',68,17,'free',
+      E'*The chariots of Elohim (God) are twenty thousand, even thousands of angels: Yahuah (Lord) is among them, as in Sinai, in the holy place.* (Psalm 68:17) The *ten thousands of saints* who came with Yahuah from Sinai (Deuteronomy 33:2) are the twenty thousand chariots, the thousands of angels — the heavenly host attending the giving of the law.'),
+    ('canon','deuteronomy',33,2,'enoch','1-enoch',1,4,'extras',
+      E'*And the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai, [And appear from His camp] And appear in the strength of His might from the heaven of heavens.* (1 Enoch 1:4) Enoch''s opening parable names the very mountain — Yahuah treading on Sinai in his might — the same theophany Moses blesses by: *Yahuah (LORD) came from Sinai, and rose up from Seir unto them; he shined forth from mount Paran* (Deuteronomy 33:2).'),
+    ('canon','deuteronomy',33,2,'enoch','1-enoch',1,9,'extras',
+      E'*And behold! He cometh with ten thousands of His set-apart ones To execute judgement upon all...* (1 Enoch 1:9) The *ten thousands of saints* with whom Yahuah came (Deuteronomy 33:2) are Enoch''s *ten thousands of His set-apart ones* — the same accompanying host, the verse Jude later quotes by name; the Formed One comes attended by the holy ones.'),
+    ('canon','deuteronomy',33,2,'canon','acts',7,53,'free',
+      E'*Who have received the law by the disposition of angels, and have not kept it.* (Acts 7:53) Stephen reads the Sinai host of Deuteronomy 33:2 — the *ten thousands of saints* attending when *from his right hand went a fiery law* — as the angelic disposition by which Yashar''el (Israel) received the Torah; the charge is not against the law but against not keeping it.'),
+    ('canon','deuteronomy',33,2,'canon','galatians',3,19,'free',
+      E'*Wherefore then serveth the law? It was added because of transgressions, till the seed should come to whom the promise was made; and it was ordained by angels in the hand of a mediator.* (Galatians 3:19) The Torah *ordained by angels* echoes the host of Deuteronomy 33:2, the *ten thousands of saints* from whose midst *a fiery law* went forth — given through Moses the mediator, holding until the seed comes.'),
+    ('canon','deuteronomy',33,2,'canon','hebrews',12,18,'free',
+      E'*For ye are not come unto the mount that might be touched, and that burned with fire, nor unto blackness, and darkness, and tempest,* (Hebrews 12:18) The mount that burned with fire is the Sinai of *a fiery law for them* (Deuteronomy 33:2); Hebrews names the terror of that day to set the awe of the same covenant-Giver, not to abolish his instruction.'),
+    ('canon','deuteronomy',33,4,'canon','galatians',3,19,'free',
+      E'*Wherefore then serveth the law?... it was ordained by angels in the hand of a mediator.* (Galatians 3:19) *Moses commanded us a law, even the inheritance of the congregation of Jacob* (Deuteronomy 33:4): the Torah is named the inheritance of Jacob''s congregation — covenant treasure given through the mediator, never a curse laid upon them.'),
+
+    -- THREAD 2: Judah brought unto his people (v.7)
+    ('canon','deuteronomy',33,7,'canon','genesis',49,8,'free',
+      E'*Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee.* (Genesis 49:8) Jacob''s blessing of Judah underlies Moses'': *Hear, Yahuah (LORD), the voice of Yahudah (Judah)... let his hands be sufficient for him; and be thou an help to him from his enemies* (Deuteronomy 33:7) — the same warrior-house, hands strong against his enemies.'),
+    ('canon','deuteronomy',33,7,'canon','genesis',49,10,'free',
+      E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* (Genesis 49:10) Moses prays Judah be *brought... unto his people* (Deuteronomy 33:7); Jacob had already fixed the sceptre and the gathering of the people in Judah — the southern house bearing the Davidic line until Shiloh.'),
+
+    -- THREAD 3: Levi the teaching priest (v.8-11)
+    ('canon','deuteronomy',33,8,'canon','exodus',28,30,'free',
+      E'*And thou shalt put in the breastplate of judgment the Urim and the Thummim; and they shall be upon Aaron''s heart, when he goeth in before Yahuah (LORD)...* (Exodus 28:30) Moses blesses Levi *Let thy Thummim and thy Urim be with thy holy one* (Deuteronomy 33:8); the priestly oracle of Exodus is laid upon Levi as the mark of the office that bears Yashar''el''s judgment before Yahuah.'),
+    ('canon','deuteronomy',33,10,'canon','malachi',2,7,'free',
+      E'*For the priest''s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva''ot (LORD of hosts).* (Malachi 2:7) This is Levi''s charge from Deuteronomy 33:10 — *They shall teach Jacob thy judgments, and Yashar''el (Israel) thy law* — carried forward to Malachi: the Torah is sought at the priest''s mouth, the teaching office Yahuah set in Levi.'),
+
+    -- THREAD 4: Benjamin the beloved kept (v.12)
+    ('canon','deuteronomy',33,12,'canon','psalms',91,1,'free',
+      E'*He that dwelleth in the secret place of the El Elyon (most High) shall abide under the shadow of the Almighty.* (Psalm 91:1) Benjamin *the beloved of Yahuah (LORD) shall dwell in safety by him* (Deuteronomy 33:12) — the same dwelling in safety under the Most High''s shadow, the kept and covered one.'),
+    ('canon','deuteronomy',33,12,'canon','psalms',91,4,'free',
+      E'*He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler.* (Psalm 91:4) *Yahuah (LORD) shall cover him all the day long, and he shall dwell between his shoulders* (Deuteronomy 33:12): the covering of the beloved is the covering of Psalm 91 — sheltered under his wings the whole day long.'),
+
+    -- THREAD 5: Joseph the northern house — the fulness gathered (v.13-17)
+    ('canon','deuteronomy',33,16,'canon','exodus',3,2,'free',
+      E'*And the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed.* (Exodus 3:2) Joseph''s blessing invokes *the good will of him that dwelt in the bush* (Deuteronomy 33:16) — the Formed One, the Angel of Yahuah who appeared in the burning bush, now turning his favour upon the head of Joseph.'),
+    ('canon','deuteronomy',33,16,'canon','genesis',49,26,'free',
+      E'*The blessings of thy father have prevailed above the blessings of my progenitors unto the utmost bound of the everlasting hills: they shall be on the head of Joseph, and on the crown of the head of him that was separate from his brethren.* (Genesis 49:26) Moses repeats Jacob almost word for word — *let the blessing come upon the head of Joseph, and upon the top of the head of him that was separated from his brethren* (Deuteronomy 33:16) — the doubled blessing on the separated son.'),
+    ('canon','deuteronomy',33,17,'canon','genesis',48,19,'free',
+      E'*...but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations.* (Genesis 48:19) The *ten thousands of Ephraim* and *thousands of Manasseh* who *push the people together to the ends of the earth* (Deuteronomy 33:17) are the fulfilment of Jacob''s word over Ephraim: his seed becomes *a multitude of nations* — melo ha-goyim, the northern house scattered into the nations to be gathered.'),
+    ('canon','deuteronomy',33,17,'canon','genesis',49,22,'free',
+      E'*Joseph is a fruitful bough, even a fruitful bough by a well; whose branches run over the wall:* (Genesis 49:22) Joseph''s glory pushing *the people together to the ends of the earth* (Deuteronomy 33:17) is the fruitful bough whose branches run over the wall — the house of Joseph overflowing its bounds into the nations.'),
+    ('canon','deuteronomy',33,17,'canon','romans',11,25,'free',
+      E'*...that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in.* (Romans 11:25) The *ten thousands of Ephraim* gathered to the ends of the earth (Deuteronomy 33:17) is the mystery Paul names: the fulness of the nations — the scattered northern house, Ephraim grown wild among the goyim — coming in until all Yashar''el is gathered.'),
+
+    -- THREAD 6: none like the El of Jeshurun (v.26-29)
+    ('canon','deuteronomy',33,26,'canon','psalms',68,33,'free',
+      E'*To him that rideth upon the heavens of heavens, which were of old; lo, he doth send out his voice, and that a mighty voice.* (Psalm 68:33) *There is none like unto the Elohim (God) of Jeshurun, who rideth upon the heaven in thy help* (Deuteronomy 33:26): the incomparable El who rides the heavens to help his people is the rider of Psalm 68, the same mighty voice.'),
+    ('canon','deuteronomy',33,26,'canon','psalms',68,34,'free',
+      E'*Ascribe ye strength unto Elohim (God): his excellency is over Yashar''el (Israel), and his strength is in the clouds.* (Psalm 68:34) Moses sings of his *excellency on the sky* (Deuteronomy 33:26); Psalm 68 answers — his excellency over Yashar''el (Israel), his strength in the clouds — the cloud-riding Glory who saves his people.'),
+    ('canon','deuteronomy',33,29,'canon','romans',11,26,'free',
+      E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob:* (Romans 11:26) *Happy art thou, O Yashar''el (Israel): who is like unto thee, O people saved by Yahuah (LORD)* (Deuteronomy 33:29) — the people saved by Yahuah is the all-Yashar''el (Israel) gathered and saved, both houses delivered by the One who came out of Sion.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== THREADS =====================
+-- THREAD 1 (extras): Sinai theophany / fiery Torah inheritance
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them', E'Yahuah Came from Sinai — A Fiery Law for Them',
+  E'Moses opens the blessing by remembering the day the Torah was given: *Yahuah (LORD) came from Sinai, and rose up from Seir unto them; he shined forth from mount Paran, and he came with ten thousands of saints: from his right hand went a fiery law for them* (Deuteronomy 33:2). This is the theophany — the Formed One descending from the south with the heavenly host, the fire from which the Torah came forth. Exodus saw the mountain itself ablaze: *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire* (Exodus 19:18). Habakkuk sang it back centuries later: *Elohim (God) came from Teman, and the Holy One from mount Paran* (Habakkuk 3:3). The Psalmist counted the host: *The chariots of Elohim (God) are twenty thousand, even thousands of angels: Yahuah (Lord) is among them, as in Sinai* (Psalm 68:17). The restored witness names the same mountain: *the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai* (1 Enoch 1:4), *And behold! He cometh with ten thousands of His set-apart ones* (1 Enoch 1:9) — the very verse Jude quotes by name. And the Torah so given is no curse but the inheritance: *Moses commanded us a law, even the inheritance of the congregation of Jacob* (Deuteronomy 33:4). The New Testament reads the attending host the same way — *received the law by the disposition of angels* (Acts 7:53), *ordained by angels in the hand of a mediator* (Galatians 3:19) — and Hebrews names the awe of *the mount that might be touched, and that burned with fire* (Hebrews 12:18). The same Giver, the same fire, the same instruction held as inheritance.',
+  sv.verse_id, ev.verse_id, 'extras', 25300
+  FROM _s310_deu33_lookup sv, _s310_deu33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=33 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (free): Judah brought unto his people
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-33-the-voice-of-yahudah-brought-unto-his-people', E'The Voice of Yahudah — Brought Unto His People',
+  E'*And this is the blessing of Yahudah (Judah): and he said, Hear, Yahuah (LORD), the voice of Yahudah (Judah), and bring him unto his people: let his hands be sufficient for him; and be thou an help to him from his enemies* (Deuteronomy 33:7). Moses prays the warrior-house strong against his foes and brought home to his people — the same Judah Jacob had crowned: *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies* (Genesis 49:8), and *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The southern house carries the sceptre and the Davidic line, the gathering of the people fixed in Judah until Shiloh comes.',
+  sv.verse_id, ev.verse_id, 'free', 25303
+  FROM _s310_deu33_lookup sv, _s310_deu33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=33 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (free): Levi the teaching priest
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-33-levi-shall-teach-jacob-thy-torah', E'Levi Shall Teach Jacob Thy Torah — The Law Sought at His Mouth',
+  E'Moses blesses Levi with the priestly oracle and the teaching office: *Let thy Thummim and thy Urim be with thy holy one* (Deuteronomy 33:8), *They shall teach Jacob thy judgments, and Yashar''el (Israel) thy law: they shall put incense before thee* (Deuteronomy 33:10). The Urim and Thummim are the breastplate oracle of Exodus: *thou shalt put in the breastplate of judgment the Urim and the Thummim... and Aaron shall bear the judgment of the children of Yashar''el (Israel) upon his heart before Yahuah (LORD) continually* (Exodus 28:30). And Levi''s charge to teach the Torah runs straight to Malachi, who measures the priesthood by it: *For the priest''s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva''ot (LORD of hosts)* (Malachi 2:7). The Torah is not stored away — it is taught from Levi''s mouth, the living instruction of Yahuah set in the priesthood.',
+  sv.verse_id, ev.verse_id, 'free', 25306
+  FROM _s310_deu33_lookup sv, _s310_deu33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=33 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (free): Benjamin the beloved kept
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-33-the-beloved-shall-dwell-in-safety-by-him', E'The Beloved Shall Dwell in Safety — Covered All the Day Long',
+  E'*And of Benjamin he said, The beloved of Yahuah (LORD) shall dwell in safety by him; and Yahuah (LORD) shall cover him all the day long, and he shall dwell between his shoulders* (Deuteronomy 33:12). The beloved is the kept one, dwelling in safety, covered without ceasing — the very picture of Psalm 91: *He that dwelleth in the secret place of the El Elyon (most High) shall abide under the shadow of the Almighty* (Psalm 91:1), and *He shall cover thee with his feathers, and under his wings shalt thou trust: his truth shall be thy shield and buckler* (Psalm 91:4). The covering between Yahuah''s shoulders is the shelter under his wings — the beloved dwelling in safety all the day long.',
+  sv.verse_id, ev.verse_id, 'free', 25309
+  FROM _s310_deu33_lookup sv, _s310_deu33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=33 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (free): Joseph the northern house — the fulness gathered
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-33-the-ten-thousands-of-ephraim-fulness-of-the-nations', E'The Ten Thousands of Ephraim — Joseph and the Fulness of the Nations',
+  E'Joseph''s blessing is the richest of the twelve, and it carries the two-house weight. The favour invoked is that of the Formed One: *the good will of him that dwelt in the bush* (Deuteronomy 33:16) — the Angel of Yahuah who appeared *in a flame of fire out of the midst of a bush* (Exodus 3:2). Moses repeats Jacob almost verbatim: the blessing comes *upon the top of the head of him that was separated from his brethren* (Deuteronomy 33:16), as Jacob said *they shall be on the head of Joseph, and on the crown of the head of him that was separate from his brethren* (Genesis 49:26), Joseph the *fruitful bough... whose branches run over the wall* (Genesis 49:22). Then the keystone: *his horns are like the horns of unicorns: with them he shall push the people together to the ends of the earth: and they are the ten thousands of Ephraim, and they are the thousands of Manasseh* (Deuteronomy 33:17). This is the fulfilment of Jacob''s word over Ephraim — *his seed shall become a multitude of nations* (Genesis 48:19), melo ha-goyim, the fulness of the nations. The northern house, scattered into the goyim, pushing to the ends of the earth, is the very mystery Paul names: *that blindness in part is happened to Yashar''el (Israel), until the fulness of the Gentiles be come in* (Romans 11:25). Ephraim grown wild among the nations is gathered home — both olive branches one tree.',
+  sv.verse_id, ev.verse_id, 'free', 25312
+  FROM _s310_deu33_lookup sv, _s310_deu33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=33 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (free): none like the El of Jeshurun
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-33-none-like-the-el-of-jeshurun-a-people-saved-by-yahuah', E'None Like the El of Jeshurun — A People Saved by Yahuah',
+  E'The blessing closes in praise of the incomparable El and the people he saves: *There is none like unto the Elohim (God) of Jeshurun, who rideth upon the heaven in thy help, and in his excellency on the sky* (Deuteronomy 33:26), *The eternal Elohim (God) is thy refuge, and underneath are the everlasting arms* (Deuteronomy 33:27). The cloud-rider who flies to his people''s help is the rider of Psalm 68: *To him that rideth upon the heavens of heavens, which were of old; lo, he doth send out his voice, and that a mighty voice* (Psalm 68:33), *his excellency is over Yashar''el (Israel), and his strength is in the clouds* (Psalm 68:34). And the people are named by their salvation: *Happy art thou, O Yashar''el (Israel): who is like unto thee, O people saved by Yahuah (LORD), the shield of thy help* (Deuteronomy 33:29). This saved people is the all-Yashar''el (Israel) gathered at the end: *And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26) — both houses delivered, dwelling in safety alone, under the everlasting arms.',
+  sv.verse_id, ev.verse_id, 'free', 25315
+  FROM _s310_deu33_lookup sv, _s310_deu33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=33 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== THREAD MEMBERS =====================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 19:18 — *mount Sinai was altogether on a smoke, because Yahuah (LORD) descended upon it in fire*: the fiery descent from which the Torah came.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Habakkuk 3:3 — *Elohim (God) came from Teman, and the Holy One from mount Paran*: the prophet sings the same theophany, the Formed One from the south.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='habakkuk' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 68:17 — *The chariots of Elohim (God) are twenty thousand, even thousands of angels... as in Sinai*: the ten thousands of saints counted as the heavenly host.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Enoch 1:4 (extras) — *the eternal Elohim (God) will tread upon the earth, (even) on Mount Sinai*: the restored witness names the very mountain of the theophany.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Enoch 1:9 (extras) — *He cometh with ten thousands of His set-apart ones*: the ten thousands of saints, the verse Jude later quotes by name.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='enoch' AND tv.book_slug='1-enoch' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Acts 7:53 — *Who have received the law by the disposition of angels*: Stephen reads the Sinai host as the angelic disposition of the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=53
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Galatians 3:19 — *it was ordained by angels in the hand of a mediator*: the Torah given through the host and through Moses the mediator.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Hebrews 12:18 — *the mount that might be touched, and that burned with fire*: the awe of the Sinai of the fiery law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=2
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'Galatians 3:19 (anchored at v.4) — *Moses commanded us a law, even the inheritance of the congregation of Jacob*: the Torah named the inheritance, given through the mediator.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=4
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-yahuah-came-from-sinai-a-fiery-law-for-them'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 49:8 — *Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies*: Jacob''s warrior-blessing under Moses'' prayer.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=7
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-voice-of-yahudah-brought-unto-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 49:10 — *The sceptre shall not depart from Yahudah (Judah)... until Shiloh come; and unto him shall the gathering of the people be*: the sceptre and the gathering fixed in Judah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=7
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-voice-of-yahudah-brought-unto-his-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 28:30 — *thou shalt put in the breastplate of judgment the Urim and the Thummim*: the priestly oracle laid upon Levi.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=8
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=28 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-levi-shall-teach-jacob-thy-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Malachi 2:7 — *the priest''s lips should keep knowledge, and they should seek the law at his mouth*: Levi''s teaching charge carried forward, the Torah sought at the priest''s mouth.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=10
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-levi-shall-teach-jacob-thy-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 91:1 — *He that dwelleth in the secret place of the El Elyon (most High) shall abide under the shadow of the Almighty*: the beloved dwelling in safety under the Most High.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=12
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-beloved-shall-dwell-in-safety-by-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 91:4 — *He shall cover thee with his feathers, and under his wings shalt thou trust*: the covering between Yahuah''s shoulders is the shelter under his wings.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=12
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-beloved-shall-dwell-in-safety-by-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 3:2 — *the angel of Yahuah (LORD) appeared unto him in a flame of fire out of the midst of a bush*: the good will of him that dwelt in the bush, the Formed One favouring Joseph.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=16
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-ten-thousands-of-ephraim-fulness-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 49:26 — *they shall be on the head of Joseph, and on the crown of the head of him that was separate from his brethren*: Moses repeats Jacob almost verbatim.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=16
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-ten-thousands-of-ephraim-fulness-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 48:19 — *his seed shall become a multitude of nations*: Jacob''s word over Ephraim, melo ha-goyim, fulfilled in the ten thousands of Ephraim.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-ten-thousands-of-ephraim-fulness-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 49:22 — *Joseph is a fruitful bough... whose branches run over the wall*: the house overflowing its bounds into the nations.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-ten-thousands-of-ephraim-fulness-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 11:25 — *until the fulness of the Gentiles be come in*: the mystery of the scattered northern house, Ephraim among the goyim, gathered home.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-the-ten-thousands-of-ephraim-fulness-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 68:33 — *To him that rideth upon the heavens of heavens... he doth send out his voice, and that a mighty voice*: the incomparable El who rides the heavens to help his people.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=26
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-none-like-the-el-of-jeshurun-a-people-saved-by-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 68:34 — *his excellency is over Yashar''el (Israel), and his strength is in the clouds*: the excellency on the sky, the cloud-riding Glory who saves.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=26
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=68 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-none-like-the-el-of-jeshurun-a-people-saved-by-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Romans 11:26 — *And so all Yashar''el (Israel) shall be saved... There shall come out of Sion the Deliverer*: the people saved by Yahuah is all-Yashar''el gathered, both houses delivered.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=33 AND sv.verse_number=29
+  JOIN _s310_deu33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-33-none-like-the-el-of-jeshurun-a-people-saved-by-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_34.sql (Deuteronomy 34) -----
+-- Chapter: Deuteronomy 34 — the death of Moses, the close of the Torah
+-- Tag: deu34   Session prefix: s310   Temp view: _s310_deu34_lookup
+-- Sort band: base 25325, step 3  →  25325, 25328, 25331, 25334, 25337
+-- Source rows ALL: 'canon','deuteronomy',34,v
+--
+-- THREADS (5):
+--   1. deuteronomy-34-the-oath-land-seen-but-not-entered       (34:1-4)  free
+--        Tanakh: Genesis 12:7, 13:15, 26:3, 28:13; Numbers 27:12 | NT: Hebrews 11:13, 11:39
+--   2. deuteronomy-34-the-disputed-body-of-moses               (34:5-6)  free
+--        NT: Jude 1:9 | Tanakh: Zechariah 3:2
+--   3. deuteronomy-34-his-eye-was-not-dim-the-preserved-vigor  (34:7)    free
+--        Tanakh: Deuteronomy 31:2
+--   4. deuteronomy-34-joshua-and-the-laying-on-of-hands        (34:9)    free
+--        Tanakh: Numbers 27:18 | NT: Acts 6:6, 1 Timothy 4:14
+--   5. deuteronomy-34-there-arose-not-a-prophet-like-moses     (34:10-12) free
+--        Tanakh: Deuteronomy 18:15, 18:18 | NT: Acts 3:22, Hebrews 3:5, John 1:17, John 5:46
+--
+-- CONTESTED/LOAD-BEARING FRAMING:
+--   v.6 body-of-Moses: Jude 1:9 + Zech 3:2 (canon witnesses) — Michael disputes the body,
+--        says "Yahuah rebuke thee" (the SAME word spoken over Satan at Zech 3:2). No extras forced.
+--   v.10-12 "there arose not a prophet... like unto Moses": NOT a closed-canon boast but the
+--        Torah closing AWAITING the Prophet-like-Moses of Deut 18:15-18 — the greater-than-Moses.
+--        John 1:17 framed NOT as law-vs-grace opposition: Moses the SERVANT gave the Torah, the
+--        Son embodies its grace and truth. Heb 3:5 = Moses faithful as a SERVANT, Messiah as SON.
+--
+-- Deuteronomy 34 coverage:
+--   v.1-4  NT:     Hebrews 11:13, 11:39 (died in faith, received not the promise)
+--          Extras: none warranted
+--          Tanakh: Genesis 12:7 / 13:15 / 26:3 / 28:13 (the oath to the fathers); Numbers 27:12 (get thee up and see)
+--   v.5-6  NT:     Jude 1:9 (Michael disputed the body of Moses)
+--          Extras: none warranted (Jude is the canon witness)
+--          Tanakh: Zechariah 3:2 (Yahuah rebuke thee, O Satan)
+--   v.7    NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 31:2 (an hundred and twenty years old)
+--   v.8    NT:     none warranted   Extras: none warranted   Tanakh: none warranted (mourning narrative)
+--   v.9    NT:     Acts 6:6 (laid hands on them); 1 Timothy 4:14 (laying on of the hands)
+--          Extras: none warranted
+--          Tanakh: Numbers 27:18 (take Joshua... lay thine hand upon him)
+--   v.10   NT:     Acts 3:22 (a prophet... like unto me); Hebrews 3:5 (Moses faithful as a servant); John 5:46 (he wrote of me)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 18:15, 18:18 (the Prophet like unto thee)
+--   v.11-12 NT:    John 1:17 (the law given by Moses, grace and truth by Yahusha) — bound into thread 5
+--          Extras: none warranted
+--          Tanakh: (signs/wonders recap — carried by thread 5)
+
+CREATE TEMP VIEW _s310_deu34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== CROSS_REFERENCES =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the oath-land seen but not entered (34:1-4)
+    ('canon','deuteronomy',34,4,'canon','genesis',12,7,'free',
+      E'*And Yahuah (LORD) appeared unto Abram, and said, Unto thy seed will I give this land...* (Genesis 12:7). What Yahuah swears to Abram at the altar of Sichem is the very oath now fulfilled before Moses'' eyes on Pisgah: *This is the land which I sware unto Abraham, unto Isaac, and unto Jacob, saying, I will give it unto thy seed* (Deuteronomy 34:4). Moses sees the oath-land, but the giving is *unto thy seed* — the inheritance belongs to the covenant lineage that goes over.'),
+    ('canon','deuteronomy',34,4,'canon','genesis',13,15,'free',
+      E'*For all the land which thou seest, to thee will I give it, and to thy seed for ever* (Genesis 13:15). Abram is told to *lift up now thine eyes* and look over the land; Moses now does the same from Pisgah — *I have caused thee to see it with thine eyes* (Deuteronomy 34:4). The seeing is the seal of the oath; the possession runs to the seed *for ever*.'),
+    ('canon','deuteronomy',34,4,'canon','genesis',26,3,'free',
+      E'*Sojourn in this land, and I will be with thee, and will bless thee; for unto thee, and unto thy seed, I will give all these countries, and I will perform the oath which I sware unto Abraham thy father* (Genesis 26:3). The oath is renewed to Isaac word for word — the *oath which I sware* — the same oath Moses hears named at the end of the Torah: *the land which I sware unto Abraham, unto Isaac, and unto Jacob* (Deuteronomy 34:4).'),
+    ('canon','deuteronomy',34,4,'canon','genesis',28,13,'free',
+      E'*I am Yahuah Elohim (the LORD God) of Abraham thy father, and the Elohim (God) of Isaac: the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13). The third renewal, to Jacob at Bethel, completes the three-fathers chain Moses hears spoken on Nebo: *unto Abraham, unto Isaac, and unto Jacob* (Deuteronomy 34:4). One unbroken oath, one paternal line, one land.'),
+    ('canon','deuteronomy',34,1,'canon','numbers',27,12,'free',
+      E'*And Yahuah (LORD) said unto Moses, Get thee up into this mount Abarim, and see the land which I have given unto the children of Yashar''el (Israel)* (Numbers 27:12). The command first given in Numbers is now obeyed: *And Moses went up... unto the mountain of Nebo, to the top of Pisgah... And Yahuah (LORD) shewed him all the land* (Deuteronomy 34:1). The sentence of Meribah stands — he may see, he may not enter.'),
+    ('canon','deuteronomy',34,4,'canon','hebrews',11,13,'free',
+      E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them...* (Hebrews 11:13). Moses on Pisgah is the very pattern of this faith: *I have caused thee to see it with thine eyes, but thou shalt not go over thither* (Deuteronomy 34:4). He sees the promise afar off and dies in faith without receiving it.'),
+    ('canon','deuteronomy',34,4,'canon','hebrews',11,39,'free',
+      E'*And these all, having obtained a good report through faith, received not the promise: Elohim (God) having provided some better thing for us, that they without us should not be made perfect* (Hebrews 11:39-40). Moses *received not the promise* in the land, yet his hope reaches past it — the seer of Pisgah waits with the fathers for the better, completed inheritance.'),
+
+    -- Thread 2: the disputed body of Moses (34:5-6)
+    ('canon','deuteronomy',34,6,'canon','jude',1,9,'free',
+      E'*Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, Yahuah (Lord) rebuke thee* (Jude 1:9). The buried body whose grave *no man knoweth... unto this day* (Deuteronomy 34:6) becomes the object of a heavenly contention — Michael answers the adversary not with railing but with the Name: *Yahuah rebuke thee*.'),
+    ('canon','deuteronomy',34,6,'canon','zechariah',3,2,'free',
+      E'*And Yahuah (LORD) said unto Satan, Yahuah (LORD) rebuke thee, O Satan; even Yahuah (LORD) that hath chosen Jerusalem rebuke thee: is not this a brand plucked out of the fire?* (Zechariah 3:2). The same word Michael speaks over the body of Moses is spoken by Yahuah Himself over the adversary at Joshua the high priest''s defence. The hidden sepulchre (Deuteronomy 34:6) is guarded by that rebuke.'),
+
+    -- Thread 3: his eye was not dim — the preserved vigor (34:7)
+    ('canon','deuteronomy',34,7,'canon','deuteronomy',31,2,'free',
+      E'*And he said unto them, I am an hundred and twenty years old this day; I can no more go out and come in: also Yahuah (LORD) hath said unto me, Thou shalt not go over this Jordan* (Deuteronomy 31:2). Moses'' own farewell numbers his years; the narrator confirms them at his death: *And Moses was an hundred and twenty years old when he died: his eye was not dim, nor his natural force abated* (Deuteronomy 34:7). The vigor is preserved — he is taken not by decay but by the word of Yahuah.'),
+
+    -- Thread 4: Joshua and the laying on of hands (34:9)
+    ('canon','deuteronomy',34,9,'canon','numbers',27,18,'free',
+      E'*And Yahuah (LORD) said unto Moses, Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him* (Numbers 27:18). The commissioning commanded in Numbers is what bears fruit here: *Joshua the son of Nun was full of the spirit of wisdom; for Moses had laid his hands upon him* (Deuteronomy 34:9). The spirit passes by the laid-on hand, and the children of Yashar''el (Israel) hearken to him.'),
+    ('canon','deuteronomy',34,9,'canon','acts',6,6,'free',
+      E'*Whom they set before the apostles: and when they had prayed, they laid their hands on them* (Acts 6:6). The pattern set when Moses *had laid his hands upon* Joshua (Deuteronomy 34:9) carries forward to the seven full of the Ruach HaKodesh (Holy Spirit) — the laying on of hands as the appointed channel of the spirit for office.'),
+    ('canon','deuteronomy',34,9,'canon','1-timothy',4,14,'free',
+      E'*Neglect not the gift that is in thee, which was given thee by prophecy, with the laying on of the hands of the presbytery* (1 Timothy 4:14). The succession that begins with Moses laying hands on Joshua *full of the spirit of wisdom* (Deuteronomy 34:9) is the same ordinance: the gift conferred by the laying on of hands, the spirit handed to the one who leads after.'),
+
+    -- Thread 5: there arose not a prophet like Moses — awaiting THE Prophet (34:10-12)
+    ('canon','deuteronomy',34,10,'canon','deuteronomy',18,15,'free',
+      E'*Yahuah Elohayka (The LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken* (Deuteronomy 18:15). The Torah''s closing word — *there arose not a prophet since in Yashar''el (Israel) like unto Moses* (Deuteronomy 34:10) — is not a boast but a waiting: none yet has equalled the promised Prophet *like unto me*.'),
+    ('canon','deuteronomy',34,10,'canon','deuteronomy',18,18,'free',
+      E'*I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth; and he shall speak unto them all that I shall command him* (Deuteronomy 18:18). Yahuah''s own restatement of the promise frames the epitaph: *there arose not a prophet... like unto Moses, whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10). The Torah ends pointing past Moses to the One whose mouth carries Yahuah''s words.'),
+    ('canon','deuteronomy',34,10,'canon','acts',3,22,'free',
+      E'*For Moses truly said unto the fathers, A prophet shall Yahuah Elohaychem (the Lord your God) raise up unto you of your brethren, like unto me; him shall ye hear in all things whatsoever he shall say unto you* (Acts 3:22). Peter names the One the Torah was waiting for. The verdict *there arose not a prophet... like unto Moses* (Deuteronomy 34:10) is answered: the Prophet has come, and *every soul, which will not hear that prophet, shall be destroyed* (Acts 3:23).'),
+    ('canon','deuteronomy',34,10,'canon','hebrews',3,5,'free',
+      E'*And Moses verily was faithful in all his house, as a servant, for a testimony of those things which were to be spoken after; but Messiah (Christ) as a son over his own house* (Hebrews 3:5-6). The unequalled Moses *whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10) is the faithful SERVANT; the greater-than-Moses is the SON. Not Moses dethroned but Moses'' testimony fulfilled in the Son over the house.'),
+    ('canon','deuteronomy',34,10,'canon','john',1,17,'free',
+      E'*For the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17). Not law set against grace, but the servant who delivered the Torah and the Son who embodies its grace and truth. The prophet *like unto Moses* (Deuteronomy 34:10) is the One in whom the Torah Moses gave is filled full.'),
+    ('canon','deuteronomy',34,10,'canon','john',5,46,'free',
+      E'*For had ye believed Moses, ye would have believed me: for he wrote of me* (John 5:46). Moses himself, *whom Yahuah (LORD) knew face to face* (Deuteronomy 34:10), wrote of the Prophet to come. To believe Moses truly is to believe the One the whole Torah is awaiting — *he wrote of me*.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== THREADS =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-34-the-oath-land-seen-but-not-entered',
+  E'The Oath-Land Seen But Not Entered',
+  E'Moses climbs *unto the mountain of Nebo, to the top of Pisgah, that is over against Jericho* and Yahuah shews him the whole inheritance — Gilead, Dan, Naphtali, Ephraim, Manasseh, Yahudah, the south, the plain of Jericho (Deuteronomy 34:1-3). Then the word that gathers the entire book of Genesis into one sentence: *This is the land which I sware unto Abraham, unto Isaac, and unto Jacob, saying, I will give it unto thy seed: I have caused thee to see it with thine eyes, but thou shalt not go over thither* (Deuteronomy 34:4). That oath was sworn three times — to Abram at Sichem, *Unto thy seed will I give this land* (Genesis 12:7); to Abram again, *to thee will I give it, and to thy seed for ever* (Genesis 13:15); to Isaac, *I will perform the oath which I sware unto Abraham thy father* (Genesis 26:3); to Jacob at Bethel, *the land whereon thou liest, to thee will I give it, and to thy seed* (Genesis 28:13). One unbroken oath carried by one paternal line. Moses obeys the command first spoken in Numbers — *Get thee up into this mount Abarim, and see the land* (Numbers 27:12) — and bears the sentence of Meribah: he may see, he may not enter. He becomes the very pattern of faith Hebrews names: *These all died in faith, not having received the promises, but having seen them afar off* (Hebrews 11:13), who *received not the promise: Elohim (God) having provided some better thing for us, that they without us should not be made perfect* (Hebrews 11:39-40). The seer of Pisgah waits with the fathers for the completed inheritance.',
+  sv.verse_id, ev.verse_id, 'free', 25325
+  FROM _s310_deu34_lookup sv, _s310_deu34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=34 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-34-the-disputed-body-of-moses',
+  E'The Disputed Body of Moses',
+  E'*So Moses the servant of Yahuah (LORD) died there in the land of Moab, according to the word of Yahuah (LORD). And he buried him in a valley in the land of Moab, over against Beth-peor: but no man knoweth of his sepulchre unto this day* (Deuteronomy 34:5-6). The grave is hidden by Yahuah Himself — no shrine, no tomb of pilgrimage. And that hidden body becomes the object of a heavenly contention: *Yet Michael the archangel, when contending with the devil he disputed about the body of Moses, durst not bring against him a railing accusation, but said, Yahuah (Lord) rebuke thee* (Jude 1:9). Michael does not match the adversary railing for railing; he answers with the Name and its rebuke. That same rebuke is spoken by Yahuah Himself when the adversary stands to resist Joshua the high priest: *Yahuah (LORD) rebuke thee, O Satan; even Yahuah (LORD) that hath chosen Jerusalem rebuke thee: is not this a brand plucked out of the fire?* (Zechariah 3:2). The unknown sepulchre of Moses is not abandoned ground but contested ground, guarded by the rebuke of Yahuah.',
+  sv.verse_id, ev.verse_id, 'free', 25328
+  FROM _s310_deu34_lookup sv, _s310_deu34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=34 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-34-his-eye-was-not-dim-the-preserved-vigor',
+  E'His Eye Was Not Dim — The Preserved Vigor',
+  E'*And Moses was an hundred and twenty years old when he died: his eye was not dim, nor his natural force abated* (Deuteronomy 34:7). Moses had numbered these same years in his own farewell: *I am an hundred and twenty years old this day; I can no more go out and come in: also Yahuah (LORD) hath said unto me, Thou shalt not go over this Jordan* (Deuteronomy 31:2). He cannot lead the crossing — not because age has broken him, but because the word of Yahuah has barred him from Jordan. The narrator is careful to record that the eye was clear and the strength full to the last. Moses is not taken by decay; he is gathered by the word of Yahuah, his vigor preserved, the sentence of Meribah honoured to the end.',
+  sv.verse_id, ev.verse_id, 'free', 25331
+  FROM _s310_deu34_lookup sv, _s310_deu34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=34 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-34-joshua-and-the-laying-on-of-hands',
+  E'Joshua and the Laying On of Hands',
+  E'*And Joshua the son of Nun was full of the spirit of wisdom; for Moses had laid his hands upon him: and the children of Yashar''el (Israel) hearkened unto him, and did as Yahuah (LORD) commanded Moses* (Deuteronomy 34:9). The succession is sealed by a laid-on hand. This fulfils the commissioning Yahuah commanded in the wilderness: *Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him* (Numbers 27:18) — that the congregation of Yahuah *be not as sheep which have no shepherd*. Joshua bears the same name as Yahusha, and it is he who leads the people into the land Moses could only see. The ordinance carries forward: the seven are set before the apostles, *and when they had prayed, they laid their hands on them* (Acts 6:6); and Timothy is charged, *Neglect not the gift that is in thee, which was given thee by prophecy, with the laying on of the hands of the presbytery* (1 Timothy 4:14). The spirit for office passes by the laid-on hand — Moses to Joshua, and onward.',
+  sv.verse_id, ev.verse_id, 'free', 25334
+  FROM _s310_deu34_lookup sv, _s310_deu34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=34 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-34-there-arose-not-a-prophet-like-moses',
+  E'There Arose Not a Prophet Like Moses — The Torah Awaits Its Prophet',
+  E'The Torah closes with a verdict and a longing: *And there arose not a prophet since in Yashar''el (Israel) like unto Moses, whom Yahuah (LORD) knew face to face, in all the signs and the wonders... and in all that mighty hand* (Deuteronomy 34:10-12). This is not a closed boast but an open waiting, for Moses himself had set the expectation: *Yahuah Elohayka (The LORD thy God) will raise up unto thee a Prophet from the midst of thee, of thy brethren, like unto me; unto him ye shall hearken* (Deuteronomy 18:15), and Yahuah confirmed it, *I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth* (Deuteronomy 18:18). The Torah ends pointing past Moses to the One yet to come. Peter names Him: *A prophet shall Yahuah Elohaychem (the Lord your God) raise up unto you of your brethren, like unto me; him shall ye hear* (Acts 3:22). And the greater-than-Moses is not Moses dethroned but Moses fulfilled — *Moses verily was faithful in all his house, as a servant... but Messiah (Christ) as a son over his own house* (Hebrews 3:5-6). So too: *the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — not law against grace, but the servant who delivered the Torah and the Son who embodies its grace and truth. And Moses bears witness: *had ye believed Moses, ye would have believed me: for he wrote of me* (John 5:46). The Torah closes awaiting its Prophet.',
+  sv.verse_id, ev.verse_id, 'free', 25337
+  FROM _s310_deu34_lookup sv, _s310_deu34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=34 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== THREAD MEMBERS =====================
+-- Thread 1: the oath-land seen but not entered
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Unto thy seed will I give this land* (Genesis 12:7) — the oath sworn to Abram is the land Moses now sees.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=12 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*to thee will I give it, and to thy seed for ever* (Genesis 13:15) — lift up thine eyes and see, the seal of the oath.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will perform the oath which I sware unto Abraham thy father* (Genesis 26:3) — the oath renewed to Isaac.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=26 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*to thee will I give it, and to thy seed* (Genesis 28:13) — the oath renewed to Jacob at Bethel; the three-fathers chain complete.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Get thee up into this mount Abarim, and see the land* (Numbers 27:12) — the command Moses now obeys on Nebo.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=1
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*These all died in faith... having seen them afar off* (Hebrews 11:13) — Moses on Pisgah is the pattern of seeing-not-receiving faith.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*received not the promise... that they without us should not be made perfect* (Hebrews 11:39-40) — the better, completed inheritance still awaited.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=4
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-oath-land-seen-but-not-entered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: the disputed body of Moses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Michael the archangel... disputed about the body of Moses... said, Yahuah (Lord) rebuke thee* (Jude 1:9) — the hidden grave contested in heaven.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jude' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-disputed-body-of-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) rebuke thee, O Satan* (Zechariah 3:2) — the same rebuke Yahuah speaks over the adversary at Joshua''s defence.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=6
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-the-disputed-body-of-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: his eye was not dim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I am an hundred and twenty years old this day... Thou shalt not go over this Jordan* (Deuteronomy 31:2) — Moses'' own count of years, barred not by decay but by the word.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=7
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-his-eye-was-not-dim-the-preserved-vigor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: Joshua and the laying on of hands
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Take thee Joshua the son of Nun, a man in whom is the spirit, and lay thine hand upon him* (Numbers 27:18) — the commissioning now bearing fruit.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=9
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-joshua-and-the-laying-on-of-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*when they had prayed, they laid their hands on them* (Acts 6:6) — the same ordinance carried into the assembly.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=9
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-joshua-and-the-laying-on-of-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the gift... given thee by prophecy, with the laying on of the hands of the presbytery* (1 Timothy 4:14) — the spirit handed to the one who leads after.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=9
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-joshua-and-the-laying-on-of-hands'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: there arose not a prophet like Moses
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*will raise up unto thee a Prophet... like unto me; unto him ye shall hearken* (Deuteronomy 18:15) — the promise that turns the epitaph into a waiting.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-there-arose-not-a-prophet-like-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will raise them up a Prophet from among their brethren, like unto thee, and will put my words in his mouth* (Deuteronomy 18:18) — Yahuah''s own restatement.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-there-arose-not-a-prophet-like-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*A prophet shall Yahuah Elohaychem (the Lord your God) raise up... like unto me; him shall ye hear* (Acts 3:22) — Peter names the One the Torah awaited.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-there-arose-not-a-prophet-like-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Moses... faithful in all his house, as a servant... but Messiah (Christ) as a son over his own house* (Hebrews 3:5-6) — the servant fulfilled in the Son, not dethroned.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-there-arose-not-a-prophet-like-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the law was given by Moses, but grace and truth came by Yahusha HaMashiach (Jesus Christ)* (John 1:17) — not law against grace; the servant gave the Torah, the Son embodies its grace and truth.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-there-arose-not-a-prophet-like-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*had ye believed Moses, ye would have believed me: for he wrote of me* (John 5:46) — Moses himself bears witness to the Prophet to come.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=34 AND sv.verse_number=10
+  JOIN _s310_deu34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=5 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-34-there-arose-not-a-prophet-like-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session310 — Deuteronomy cross-references complete.'
