@@ -10781,6 +10781,1791 @@ SELECT t.id, cr.id, 7, E'★ *behold, the hand of Yahuah (Lord) is upon thee, an
  WHERE t.slug='jeremiah-28-thou-makest-this-people-to-trust-in-a-lie-the-iron-yoke'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_29.sql (Jeremiah 29) -----
+-- Chapter: Jeremiah 29 — THE LETTER TO THE EXILES. Jeremiah writes to the captives in Babylon:
+-- Build ye houses, and dwell in them; and plant gardens... and seek the peace of the city whither I
+-- have caused you to be carried away captive (settle and seek the welfare of the city of exile —
+-- faithful living in a foreign land). At the heart: *after seventy years be accomplished at Babylon
+-- I will visit you... For I know the thoughts that I think toward you, saith Yahuah (LORD), thoughts
+-- of peace, and not of evil, to give you an expected end* — the seventy years and Yahuah''s thoughts
+-- of peace, the promise to those who seek with all the heart. And the false prophets in Babylon
+-- (Ahab, Zedekiah, Shemaiah) judged for the lie they made the people trust.
+-- Tag: jer29   Temp view: _s309_jer29_lookup   Session: s309
+-- Sort band: base 34700, step 3 -> threads at 34700, 34703, 34706 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',29,v
+--
+-- Jeremiah 29 coverage:
+--   v.1-4 (the words of the letter Jeremiah sent... unto all that are carried away captives, whom I
+--          have caused to be carried away from Jerusalem unto Babylon)
+--        NT:     none warranted (the historical superscription of the letter; preface to v.5-7)
+--        Extras: none warranted
+--        Tanakh: none separate (the captivity setting; woven into THREAD 1 prose)
+--   ★ v.5-7 (Build ye houses, and dwell in them; and plant gardens... And seek the peace of the city
+--          whither I have caused you to be carried away captives, and pray unto Yahuah (LORD) for it:
+--          for in the peace thereof shall ye have peace)
+--        NT:     ★ 1 Timothy 2:1-2 (pray... for kings, and for all that are in authority; that we may
+--                lead a quiet and peaceable life), ★ Romans 13:1 (be subject unto the higher powers),
+--                ★ 1 Peter 2:11,13 (as strangers and pilgrims... submit yourselves to every ordinance) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Daniel 6:10 (Daniel faithful in Babylon, kneeling toward Jerusalem) — THREAD 1
+--   v.8-9 (Let not your prophets and your diviners... deceive you... they prophesy falsely unto you in
+--          my name: I have not sent them)
+--        NT:     none warranted distinct (the false-prophet warning answered fully in THREAD 3)
+--        Extras: none warranted
+--        Tanakh: held in prose — the lying prophets named again in v.21-23,31-32 (THREAD 3)
+--   ★★★ v.10-14 (after seventy years be accomplished at Babylon I will visit you... For I know the
+--          thoughts that I think toward you... thoughts of peace, and not of evil, to give you an
+--          expected end. Then shall ye call upon me... ye shall seek me, and find me, when ye shall
+--          search for me with all your heart... and I will turn away your captivity)
+--        NT:     ★★ Matthew 7:7-8 (Ask... seek, and ye shall find), ★ Romans 8:28 (all things work
+--                together for good to them that love Elohim (God)) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 9:2 (the seventy years — lateral, Daniel reading Jeremiah''s books),
+--                ★★ Deuteronomy 4:29 (seek Yahuah... if thou seek him with all thy heart),
+--                ★ 2 Chronicles 7:14 (if my people... seek my face... then will I hear) — THREAD 2
+--   v.15-20 (Yahuah hath raised us up prophets in Babylon... I will send upon them the sword, the
+--          famine, and the pestilence... because they have not hearkened to my words)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the judgment on the rebellious who would not hear; preface to the
+--                false-prophet judgment of v.21-23 (THREAD 3)
+--   ★ v.21-23 (of Ahab... and of Zedekiah... which prophesy a lie unto you in my name; I will deliver
+--          them into the hand of... the king of Babylon; and he shall slay them... because they have
+--          committed villany in Yashar''el (Israel)... and have spoken lying words in my name)
+--        NT:     ★ 2 Peter 2:1,3 (false prophets... their damnation slumbereth not) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 28:15-17 (lateral, Hananiah — Yahuah hath not sent thee... this year thou
+--                shalt die), ★★ Deuteronomy 18:20 (the prophet that presumes to speak... shall die),
+--                ★ Ezekiel 13:9 (mine hand shall be upon the prophets that see vanity) — THREAD 3
+--   v.24-30 (Shemaiah the Nehelamite... Zephaniah the priest read this letter — the historical setup
+--          of the Shemaiah oracle)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the occasion of the v.31-32 judgment; woven into THREAD 3 prose)
+--   ★ v.31-32 (Shemaiah hath prophesied unto you, and I sent him not, and he caused you to trust in a
+--          lie... I will punish Shemaiah... because he hath taught rebellion against Yahuah (LORD))
+--        NT:     held in THREAD 3 (the lie judged — 2 Peter 2)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 28:16-17 (Hananiah taught rebellion... this year thou shalt die — the same
+--                verdict, lateral), ★★ Deuteronomy 18:20 (the presumptuous prophet shall die) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-29-build-houses-and-seek-the-peace-of-the-city — NT (1 Timothy 2, Romans 13, 1 Peter 2) + Tanakh (Daniel 6) [free]
+--      (★ settle and seek the welfare of the city of exile — faithful living in a foreign land; pray for it, submit, be a witness)
+--   2. jeremiah-29-thoughts-of-peace-and-an-expected-end — NT (Matthew 7, Romans 8) + Tanakh (Daniel 9, Deuteronomy 4, 2 Chronicles 7) [free]
+--      (★★★ the seventy years and Yahuah''s thoughts of peace; the promise to those who seek with all the heart and find)
+--   3. jeremiah-29-the-false-prophets-in-babylon-judged — NT (2 Peter 2) + Tanakh (Jeremiah 28, Deuteronomy 18, Ezekiel 13) [free]
+--      (★ the false prophets in Babylon — Ahab, Zedekiah, Shemaiah — judged for the lie they made the people trust)
+--
+-- Framing notes:
+--   ★ SEEK THE PEACE OF THE CITY (THREAD 1): *Build ye houses, and dwell in them; and plant gardens,
+--      and eat the fruit of them* (29:5); *And seek the peace of the city whither I have caused you to
+--      be carried away captives, and pray unto Yahuah (LORD) for it: for in the peace thereof shall ye
+--      have peace* (29:7). The exiles are not to rage against Babylon nor to pine for a quick return,
+--      but to settle, build, plant, marry, increase — and to SEEK the welfare of the very city of their
+--      captivity, praying for it. This is faithful living in a foreign land. The apostolic word echoes
+--      it: pray *For kings, and for all that are in authority; that we may lead a quiet and peaceable
+--      life in all godliness and honesty* (1 Tim 2:2); *Let every soul be subject unto the higher
+--      powers* (Rom 13:1); *as strangers and pilgrims... Submit yourselves to every ordinance of man
+--      for Yahuah''s (Lord''s) sake* (1 Pet 2:11,13). And Daniel lives it in Babylon itself, kneeling
+--      *toward Jerusalem... three times a day* (Dan 6:10) — faithful to Yahuah while seeking the city''s
+--      good. Exiles seeking the peace of the city, never assimilated, never in rebellion.
+--   ★★★ THOUGHTS OF PEACE, AN EXPECTED END (THREAD 2, the heart of the chapter): *That after seventy
+--      years be accomplished at Babylon I will visit you, and perform my good word toward you, in
+--      causing you to return to this place* (29:10); *For I know the thoughts that I think toward you,
+--      saith Yahuah (LORD), thoughts of peace, and not of evil, to give you an expected end* (29:11).
+--      The exile is fixed-term and purposed — seventy years, then visitation. Daniel reads this very
+--      word: *I Daniel understood by books the number of the years, whereof the word of Yahuah (LORD)
+--      came to Jeremiah the prophet, that he would accomplish seventy years* (Dan 9:2). And the promise
+--      is to the seeking heart: *And ye shall seek me, and find me, when ye shall search for me with
+--      all your heart* (29:13) — Moses said the same of the exile: *if from thence thou shalt seek
+--      Yahuah Elohayka (the LORD thy God), thou shalt find him, if thou seek him with all thy heart*
+--      (Deut 4:29); and Solomon: *If my people... shall humble themselves, and pray, and seek my face...
+--      then will I hear from heaven* (2 Chron 7:14). The Messiah seals the seeking-and-finding: *seek,
+--      and ye shall find* (Matt 7:7). And the *expected end* is the good Yahuah works for those who love
+--      him: *all things work together for good to them that love Elohim (God)* (Rom 8:28). The
+--      thoughts of peace, the seeking heart found, the captivity turned away.
+--   ★ THE LIE JUDGED (THREAD 3): against the prophets who *prophesy a lie unto you in my name* (29:21),
+--      Yahuah names Ahab and Zedekiah — *I will deliver them into the hand of Nebuchadrezzar king of
+--      Babylon; and he shall slay them before your eyes* (29:21); *Because they have committed villany
+--      in Yashar''el (Israel)... and have spoken lying words in my name, which I have not commanded them*
+--      (29:23) — and Shemaiah: *I sent him not, and he caused you to trust in a lie... because he hath
+--      taught rebellion against Yahuah (LORD)* (29:31-32). This is the same verdict Jeremiah pronounced
+--      on Hananiah: *Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie...
+--      this year thou shalt die* (Jer 28:15-16) — *So Hananiah the prophet died the same year* (Jer
+--      28:17). The Torah set the standard: *the prophet, which shall presume to speak a word in my name,
+--      which I have not commanded him to speak... even that prophet shall die* (Deut 18:20); and Ezekiel:
+--      *mine hand shall be upon the prophets that see vanity, and that divine lies* (Ezek 13:9). Peter
+--      carries it forward: *there were false prophets also among the people, even as there shall be
+--      false teachers among you... their damnation slumbereth not* (2 Pet 2:1,3). The lie, spoken in the
+--      Name that was never sent, is judged.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the letter''s superscription — the captivity setting, woven into
+--      THREAD 1), v.8-9 (the false-prophet warning — answered in THREAD 3), v.15-20 (the judgment on the
+--      rebellious who would not hear — preface to THREAD 3), v.24-30 (the Shemaiah occasion — woven into
+--      THREAD 3 prose). All blocks recorded; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): build houses and seek the peace of the city — faithful living in exile
+    ('canon','jeremiah',29,7,'canon','1-timothy',2,1,'free',
+      E'*I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men* (1 Timothy 2:1). Paul calls the scattered people to the very posture Jeremiah commanded the exiles — *pray unto Yahuah (LORD) for it: for in the peace thereof shall ye have peace* (Jeremiah 29:7). The captives are to intercede, not curse; prayer for the city of exile is the exile''s calling, that all men might be reached.'),
+    ('canon','jeremiah',29,7,'canon','1-timothy',2,2,'free',
+      E'*For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty* (1 Timothy 2:2). Jeremiah''s word to the exiles — *seek the peace of the city... and pray unto Yahuah (LORD) for it* (Jeremiah 29:7) — is exactly Paul''s: pray for kings and rulers, that the people of Yahuah may live quiet and godly in the land of their sojourn. The peace of the city and the quiet, peaceable life are one welfare sought through prayer.'),
+    ('canon','jeremiah',29,7,'canon','romans',13,1,'free',
+      E'*Let every soul be subject unto the higher powers. For there is no power but of Elohim (God): the powers that be are ordained of Elohim (God)* (Romans 13:1). To *seek the peace of the city whither I have caused you to be carried away captives* (Jeremiah 29:7) is to honour the authority under which Yahuah has placed his exiled people. The captives in Babylon and the saints in Rome alike live as a faithful witness under powers ordained of Elohim, seeking the welfare of the place of their sojourn.'),
+    ('canon','jeremiah',29,7,'canon','1-peter',2,11,'free',
+      E'*Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11). Peter names the people of Yahuah what the exiles of Jeremiah 29 were — *strangers and pilgrims* in the land of their dwelling, called to *seek the peace of the city* (Jeremiah 29:7) by living holy among the nations. The exile is not assimilation nor rebellion but faithful sojourn, the conversation honest among the Gentiles.'),
+    ('canon','jeremiah',29,7,'canon','1-peter',2,13,'free',
+      E'*Submit yourselves to every ordinance of man for Yahuah''s (Lord''s) sake: whether it be to the king, as supreme* (1 Peter 2:13). The exiles told to *seek the peace of the city* (Jeremiah 29:7) are to submit, for Yahuah''s sake, to the ordinances of the place of their captivity — not to assimilate, but to live as a faithful witness, glorifying Elohim by their good works in the day of visitation. Seeking the city''s peace IS this ordered, submitted sojourn.'),
+    ('canon','jeremiah',29,7,'canon','daniel',6,10,'free',
+      E'*Now when Daniel knew that the writing was signed, he went into his house; and his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed, and gave thanks before his Elohim (God), as he did aforetime* (Daniel 6:10). Daniel is Jeremiah 29 lived out: an exile in Babylon who served the king faithfully and sought the city''s good, yet *toward Jerusalem* kept his worship of Yahuah unbroken. *Seek the peace of the city... and pray unto Yahuah (LORD) for it* (Jeremiah 29:7) — Daniel did both, faithful to Yahuah while a true servant in the land of his captivity.'),
+
+    -- THREAD 2 (★★★): the seventy years; thoughts of peace; the seeking heart found
+    ('canon','jeremiah',29,10,'canon','daniel',9,2,'free',
+      E'*In the first year of his reign I Daniel understood by books the number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). Daniel reads Jeremiah''s own letter — *after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you* (Jeremiah 29:10) — and counts the years to their end. The exile is no open-ended abandonment but a fixed term written in the books; when the seventy years are full, Yahuah visits to restore.'),
+    ('canon','jeremiah',29,13,'canon','deuteronomy',4,29,'free',
+      E'*But if from thence thou shalt seek Yahuah Elohayka (the LORD thy God), thou shalt find him, if thou seek him with all thy heart and with all thy soul* (Deuteronomy 4:29). Moses foretold the exile and its remedy in the very words Jeremiah now speaks to the captives — *And ye shall seek me, and find me, when ye shall search for me with all your heart* (Jeremiah 29:13). From the land of scattering, the whole-hearted seeker finds Yahuah; the Torah''s promise and the prophet''s are one and the same.'),
+    ('canon','jeremiah',29,13,'canon','2-chronicles',7,14,'free',
+      E'*If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land* (2 Chronicles 7:14). Solomon at the temple''s dedication named the way home that Jeremiah names to the exiles — *And ye shall seek me, and find me, when ye shall search for me with all your heart* (Jeremiah 29:13). The seeking face, the humbled and praying people, the turning from sin: this is the path by which Yahuah hears and turns away the captivity.'),
+    ('canon','jeremiah',29,13,'canon','matthew',7,7,'free',
+      E'*Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7). The Messiah seals the promise Jeremiah gave the exiles — *ye shall seek me, and find me, when ye shall search for me with all your heart* (Jeremiah 29:13): *seek, and ye shall find*. The whole-hearted seeker is never turned away; the One who promised to be found of his scattered people stands behind the word.'),
+    ('canon','jeremiah',29,13,'canon','matthew',7,8,'free',
+      E'*For every one that asketh receiveth; and he that seeketh findeth; and to him that knocketh it shall be opened* (Matthew 7:8). Jeremiah''s pledge — *And I will be found of you, saith Yahuah (LORD)* (Jeremiah 29:14) — is the Messiah''s rule made universal: *he that seeketh findeth*. The seeking heart of the exile and the seeking heart of every disciple meet the same faithful answer: found.'),
+    ('canon','jeremiah',29,11,'canon','romans',8,28,'free',
+      E'*And we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). The *thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11) are the very good Paul names — even the exile bends toward good for those who love Yahuah and are called according to his purpose. The expected end is the good purpose of Elohim working through the captivity itself.'),
+
+    -- THREAD 3 (★): the false prophets in Babylon judged for the lie
+    ('canon','jeremiah',29,21,'canon','jeremiah',28,15,'free',
+      E'*Then said the prophet Jeremiah unto Hananiah the prophet, Hear now, Hananiah; Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie* (Jeremiah 28:15). The verdict Jeremiah pronounced on Hananiah is the verdict on Ahab and Zedekiah — *which prophesy a lie unto you in my name* (Jeremiah 29:21). The lie is the same: a word spoken in the Name that Yahuah never sent, making the people trust in falsehood.'),
+    ('canon','jeremiah',29,32,'canon','jeremiah',28,17,'free',
+      E'*So Hananiah the prophet died the same year in the seventh month* (Jeremiah 28:17). Hananiah''s end is the pattern of Shemaiah''s — *I will punish Shemaiah the Nehelamite, and his seed... because he hath taught rebellion against Yahuah (LORD)* (Jeremiah 29:32). The false prophet who *caused you to trust in a lie* (29:31) meets the same judgment Hananiah met: the lying word in the Name brings death and the cutting-off of the liar''s house.'),
+    ('canon','jeremiah',29,21,'canon','deuteronomy',18,20,'free',
+      E'*But the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak, or that shall speak in the name of other gods, even that prophet shall die* (Deuteronomy 18:20). The Torah set the sentence Jeremiah now carries out — Ahab and Zedekiah *prophesy a lie unto you in my name* (Jeremiah 29:21), the very presumption Moses said *that prophet shall die*. The standard is unchanged: to speak in the Name what Yahuah never commanded is a capital lie.'),
+    ('canon','jeremiah',29,23,'canon','ezekiel',13,9,'free',
+      E'*And mine hand shall be upon the prophets that see vanity, and that divine lies: they shall not be in the assembly of my people, neither shall they be written in the writing of the house of Yashar''el (Israel)* (Ezekiel 13:9). Ezekiel''s sentence on the lying prophets is Jeremiah''s — *they have spoken lying words in my name, which I have not commanded them; even I know, and am a witness, saith Yahuah (LORD)* (Jeremiah 29:23). The prophets who see vanity are cut off from the assembly and the writing of the house of Yashar''el; the lie in the Name is judged by the One who is its witness.'),
+    ('canon','jeremiah',29,21,'canon','2-peter',2,1,'free',
+      E'*But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying Yahuah (Lord) that bought them, and bring upon themselves swift destruction* (2 Peter 2:1). Peter names the lineage Jeremiah''s false prophets belong to — *which prophesy a lie unto you in my name* (Jeremiah 29:21): the false prophets among the people then are the false teachers among the people now, and both *bring upon themselves swift destruction*.'),
+    ('canon','jeremiah',29,32,'canon','2-peter',2,3,'free',
+      E'*And through covetousness shall they with feigned words make merchandise of you: whose judgment now of a long time lingereth not, and their damnation slumbereth not* (2 Peter 2:3). Shemaiah, who *caused you to trust in a lie* (Jeremiah 29:31), is judged — *I will punish Shemaiah the Nehelamite, and his seed* (Jeremiah 29:32) — exactly as Peter says of the false teachers with their feigned words: *their damnation slumbereth not*. The lie spoken in the Name does not escape; the judgment is sure, only delayed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-29-build-houses-and-seek-the-peace-of-the-city',
+       E'Build houses and seek the peace of the city — faithful living in exile',
+       E'Jeremiah''s letter to the captives overturns every expectation: not a quick return, not rage against Babylon, but settling and seeking the welfare of the very city of exile. *Build ye houses, and dwell in them; and plant gardens, and eat the fruit of them* (29:5); *Take ye wives, and beget sons and daughters... that ye may be increased there, and not diminished* (29:6); *And seek the peace of the city whither I have caused you to be carried away captives, and pray unto Yahuah (LORD) for it: for in the peace thereof shall ye have peace* (29:7). The exiles are to be a faithful, fruitful, praying people in a foreign land — never assimilated to its gods, never in rebellion against its order, but seeking its good and praying for it. The apostolic word lays the same charge on the scattered people of Yahuah: *I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men; For kings, and for all that are in authority; that we may lead a quiet and peaceable life in all godliness and honesty* (1 Timothy 2:1-2); *Let every soul be subject unto the higher powers* (Romans 13:1); *Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11), *Submit yourselves to every ordinance of man for Yahuah''s (Lord''s) sake: whether it be to the king, as supreme* (1 Peter 2:13). And the man who lived this letter to the full is Daniel — an exile in Babylon, a faithful servant of its kings, yet with *his windows being open in his chamber toward Jerusalem, he kneeled upon his knees three times a day, and prayed, and gave thanks before his Elohim (God), as he did aforetime* (Daniel 6:10). To seek the peace of the city while keeping faith with Yahuah: this is the exile''s calling, then and now.',
+       sv.verse_id, ev.verse_id, 'free', 34700
+  FROM _s309_jer29_lookup sv, _s309_jer29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=29 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-29-thoughts-of-peace-and-an-expected-end',
+       E'I know the thoughts I think toward you — thoughts of peace, and an expected end',
+       E'Here is the heart of the letter, and one of the great consolations of the whole prophets. The exile is not abandonment but a fixed, purposed term, with a good end already in the mind of Yahuah: *That after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place* (29:10); *For I know the thoughts that I think toward you, saith Yahuah (LORD), thoughts of peace, and not of evil, to give you an expected end* (29:11). Daniel later reads this very word and counts the years: *I Daniel understood by books the number of the years, whereof the word of Yahuah (LORD) came to Jeremiah the prophet, that he would accomplish seventy years in the desolations of Jerusalem* (Daniel 9:2). And the promise comes with a condition that is itself a mercy — the seeking heart: *Then shall ye call upon me, and ye shall go and pray unto me, and I will hearken unto you. And ye shall seek me, and find me, when ye shall search for me with all your heart. And I will be found of you, saith Yahuah (LORD): and I will turn away your captivity* (29:12-14). Moses spoke this promise over the exile before it came: *if from thence thou shalt seek Yahuah Elohayka (the LORD thy God), thou shalt find him, if thou seek him with all thy heart and with all thy soul* (Deuteronomy 4:29); and Solomon at the temple: *If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven... and will heal their land* (2 Chronicles 7:14). The Messiah makes the seeking-and-finding the rule of his kingdom: *Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you. For every one that asketh receiveth; and he that seeketh findeth* (Matthew 7:7-8). And the *expected end* is the good Yahuah works even through the captivity: *we know that all things work together for good to them that love Elohim (God), to them who are the called according to his purpose* (Romans 8:28). Thoughts of peace, not of evil; the seeking heart found; the captivity turned away.',
+       sv.verse_id, ev.verse_id, 'free', 34703
+  FROM _s309_jer29_lookup sv, _s309_jer29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=29 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-29-the-false-prophets-in-babylon-judged',
+       E'The false prophets in Babylon judged — they caused you to trust in a lie',
+       E'The letter that comforts the exiles also condemns the prophets who lied to them. Against the dreamers and diviners who *prophesy falsely unto you in my name* (29:9), Yahuah names three by name. Ahab and Zedekiah: *which prophesy a lie unto you in my name; Behold, I will deliver them into the hand of Nebuchadrezzar king of Babylon; and he shall slay them before your eyes* (29:21), *Because they have committed villany in Yashar''el (Israel)... and have spoken lying words in my name, which I have not commanded them; even I know, and am a witness, saith Yahuah (LORD)* (29:23). And Shemaiah the Nehelamite: *Because that Shemaiah hath prophesied unto you, and I sent him not, and he caused you to trust in a lie* (29:31); *Behold, I will punish Shemaiah the Nehelamite, and his seed... because he hath taught rebellion against Yahuah (LORD)* (29:32). This is the same verdict Jeremiah had just pronounced on Hananiah in the chapter before: *Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie* (Jeremiah 28:15) — *So Hananiah the prophet died the same year in the seventh month* (Jeremiah 28:17). The standard was set in the Torah: *the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak... even that prophet shall die* (Deuteronomy 18:20). Ezekiel speaks the same sentence: *mine hand shall be upon the prophets that see vanity, and that divine lies: they shall not be in the assembly of my people, neither shall they be written in the writing of the house of Yashar''el (Israel)* (Ezekiel 13:9). And Peter carries it into the apostolic age: *there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies... and bring upon themselves swift destruction* (2 Peter 2:1), *their damnation slumbereth not* (2 Peter 2:3). The lie spoken in the Name that was never sent is judged in every age; Yahuah himself is its witness.',
+       sv.verse_id, ev.verse_id, 'free', 34706
+  FROM _s309_jer29_lookup sv, _s309_jer29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=29 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *supplications, prayers, intercessions... be made for all men* (1 Timothy 2:1) — Paul calls the scattered to the exile''s posture of Jeremiah 29:7: pray for the city, not curse it.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-build-houses-and-seek-the-peace-of-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *For kings, and for all that are in authority; that we may lead a quiet and peaceable life* (1 Timothy 2:2) — the peace of the city (Jeremiah 29:7) and the quiet, peaceable life are one welfare sought through prayer.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-build-houses-and-seek-the-peace-of-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Let every soul be subject unto the higher powers... the powers that be are ordained of Elohim (God)* (Romans 13:1) — to seek the city''s peace (Jeremiah 29:7) is to honour the authority under which Yahuah has placed his exiles.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-build-houses-and-seek-the-peace-of-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*as strangers and pilgrims, abstain from fleshly lusts* (1 Peter 2:11) — the exiles of Jeremiah 29 are strangers and pilgrims, called to seek the city''s peace by living holy among the nations.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-build-houses-and-seek-the-peace-of-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Submit yourselves to every ordinance of man for Yahuah''s (Lord''s) sake: whether it be to the king, as supreme* (1 Peter 2:13) — seeking the city''s peace (Jeremiah 29:7) is the ordered, submitted sojourn, never assimilation nor rebellion.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-build-houses-and-seek-the-peace-of-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *his windows being open... toward Jerusalem, he kneeled... three times a day, and prayed* (Daniel 6:10) — Daniel is Jeremiah 29 lived out: faithful to Yahuah while a true servant in the land of his captivity.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=6 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-build-houses-and-seek-the-peace-of-the-city'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I Daniel understood by books the number of the years... seventy years in the desolations of Jerusalem* (Daniel 9:2) — Daniel reads Jeremiah 29:10''s seventy years and counts them to their end; the exile is a fixed term.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=10
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-thoughts-of-peace-and-an-expected-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thou shalt find him, if thou seek him with all thy heart and with all thy soul* (Deuteronomy 4:29) — Moses foretold the exile''s remedy in Jeremiah 29:13''s very words; the whole-hearted seeker finds Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-thoughts-of-peace-and-an-expected-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *if my people... shall humble themselves, and pray, and seek my face... then will I hear from heaven* (2 Chronicles 7:14) — Solomon named the way home that Jeremiah 29:13 names to the exiles: the seeking face.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-thoughts-of-peace-and-an-expected-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7) — the Messiah seals Jeremiah 29:13''s promise: the whole-hearted seeker is never turned away.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-thoughts-of-peace-and-an-expected-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*he that seeketh findeth* (Matthew 7:8) — Jeremiah 29:14''s *I will be found of you* made the universal rule of the kingdom; the seeking heart of the exile and of every disciple meet the same answer.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=13
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-thoughts-of-peace-and-an-expected-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *all things work together for good to them that love Elohim (God)... called according to his purpose* (Romans 8:28) — the *expected end* and the *thoughts of peace* of Jeremiah 29:11 are the good Yahuah works even through the captivity.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=11
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-thoughts-of-peace-and-an-expected-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Yahuah (LORD) hath not sent thee; but thou makest this people to trust in a lie* (Jeremiah 28:15) — the verdict on Hananiah is the verdict on Ahab and Zedekiah (Jeremiah 29:21): a word in the Name Yahuah never sent.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=21
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-the-false-prophets-in-babylon-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *So Hananiah the prophet died the same year in the seventh month* (Jeremiah 28:17) — Hananiah''s end is the pattern of Shemaiah''s judgment (Jeremiah 29:32); the lying word brings death and the cutting-off of the liar''s house.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=32
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=28 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-the-false-prophets-in-babylon-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the prophet, which shall presume to speak a word in my name, which I have not commanded him... even that prophet shall die* (Deuteronomy 18:20) — the Torah set the sentence Jeremiah 29:21 carries out on the false prophets.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=21
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-the-false-prophets-in-babylon-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *mine hand shall be upon the prophets that see vanity, and that divine lies* (Ezekiel 13:9) — Ezekiel''s sentence is Jeremiah 29:23''s: the prophets who speak lies in the Name are cut off from the assembly of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=23
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=13 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-the-false-prophets-in-babylon-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *there were false prophets also among the people, even as there shall be false teachers among you* (2 Peter 2:1) — Peter names the lineage Jeremiah 29:21''s liars belong to; both bring upon themselves swift destruction.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=21
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-the-false-prophets-in-babylon-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *their damnation slumbereth not* (2 Peter 2:3) — Shemaiah who *caused you to trust in a lie* (Jeremiah 29:31) is judged (29:32); the lie in the Name does not escape, the judgment is sure, only delayed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=29 AND sv.verse_number=32
+  JOIN _s309_jer29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-29-the-false-prophets-in-babylon-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_30.sql (Jeremiah 30) -----
+-- Chapter: Jeremiah 30 — ★★★ THE BOOK OF RESTORATION opens: bring again the captivity of my people Yashar''el
+-- AND Yahudah (both houses); the TIME OF JACOB''S TROUBLE out of which he shall be SAVED; the yoke broken and
+-- the people freed to SERVE YAHUAH THEIR ELOHIM, AND DAVID THEIR KING, whom I will raise up; I will RESTORE
+-- HEALTH unto thee and HEAL thee of thy wounds (the Outcast none seeketh after); and the covenant formula —
+-- AND YE SHALL BE MY PEOPLE, AND I WILL BE YOUR ELOHIM. The risen David-King, the trouble the remnant is saved
+-- out of, and the healed outcast made his people.
+-- Tag: jer30   Temp view: _s309_jer30_lookup
+-- Sort band: base 34725, step 3 -> threads at 34725, 34728, 34731 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',30,v
+--
+-- Jeremiah 30 coverage:
+--   v.1-4 (Write thee all the words in a book; bring again the captivity of my people Yashar''el and Yahudah;
+--          cause them to return to the land I gave their fathers)
+--        NT:     none warranted (the both-houses ingathering preface; held in prose, sealed by THREAD 3 my-people)
+--        Extras: none warranted
+--        Tanakh: held in prose — *the captivity of my people Yashar''el (Israel) and Yahudah (Judah)* (30:3) =
+--                the two-house regathering; bound to THREADs 1/3
+--   ★★ v.5-7 (a voice of trembling; every man with his hands on his loins, as a woman in travail; that day is
+--          great, so that none is like it: it is even the time of Jacob''s trouble; but he shall be saved out of it)
+--        NT:     ★★ Matthew 24:21 (then shall be great tribulation, such as was not since the beginning of the
+--                world), ★ Matthew 24:22 (except those days should be shortened... but for the elect''s sake) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 12:1 (a time of trouble, such as never was... and at that time thy people shall be
+--                delivered — lateral), ★ Joel 2:11 (the day of Yahuah is great and very terrible) — THREAD 2;
+--                + Revelation 7:14 (came out of great tribulation) — THREAD 2
+--   ★★★ v.8-9 (I will break his yoke from off thy neck... but they shall serve Yahuah their Elohim, and David
+--          their king, whom I will raise up unto them)
+--        NT:     ★★ Luke 1:32-33 (the throne of his father David... reign over the house of Jacob for ever),
+--                ★★ Acts 2:30 (Elohim had sworn... he would raise up Messiah to sit on his throne) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★★ Ezekiel 34:23-24 (I will set up one shepherd... my servant David — lateral), ★★★ Ezekiel
+--                37:24-25 (David my servant shall be king over them... prince for ever), ★★ Hosea 3:5 (the
+--                children of Yashar''el... shall seek Yahuah their Elohim, and David their king) — THREAD 1
+--   v.10-11 (fear thou not, O my servant Jacob; I will save thee from afar; I am with thee to save thee;
+--          though I make a full end of all nations, yet will I not make a full end of thee; correct in measure)
+--        NT:     none warranted (the fear-not / corrected-but-not-consumed; woven in prose, held to THREAD 2''s
+--                saved-out-of-it and THREAD 3''s healing)
+--        Extras: none warranted
+--        Tanakh: held in prose — the preservation of the remnant (*I will not make a full end of thee*, 30:11)
+--                undergirds the trouble-out-of-which-saved (THREAD 2) and the healing (THREAD 3)
+--   ★★ v.12-17 (thy bruise is incurable, thy wound is grievous; no healing medicines... yet FOR I WILL RESTORE
+--          HEALTH unto thee, and I will heal thee of thy wounds; because they called thee an Outcast, This is
+--          Zion, whom no man seeketh after)
+--        NT:     ★★ 1 Peter 2:24 (by whose stripes ye were healed), ★ Revelation 21:4 (no more pain) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: held with the covenant-formula of v.22 in THREAD 3 (the healed outcast made his people)
+--   v.18-21 (bring again the captivity of Jacob''s tents; the city builded upon her own heap; thanksgiving;
+--          their nobles of themselves; their governor from the midst of them; he shall draw near, approach unto me)
+--        NT:     none warranted distinct (the governor-from-the-midst who approaches resonates with the
+--                priest-king, but is held lightly to the David-King of THREAD 1; not forced)
+--        Extras: none warranted
+--        Tanakh: held in prose — the rebuilt city and the ruler from their own midst sealed by THREAD 1 (the
+--                raised-up David-King) and THREAD 3 (the restored people)
+--   ★★ v.22 (And ye shall be my people, and I will be your Elohim (God)) — the covenant formula
+--        NT:     ★★ Revelation 21:3 (they shall be his people, and Elohim himself shall be with them) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★★ Jeremiah 31:33 (lateral — I will be their Elohim, and they shall be my people), ★★ Ezekiel
+--                36:28 (ye shall be my people, and I will be your Elohim), ★★ Hosea 1:10 (where it was said, Ye
+--                are not my people, there... Ye are the sons of the living Elohim), ★★ Hosea 2:23 (I will say to
+--                them which were not my people, Thou art my people) — THREAD 3
+--   v.23-24 (the whirlwind of Yahuah goeth forth with fury... the fierce anger of Yahuah shall not return,
+--          until he have done it... in the latter days ye shall consider it)
+--        NT:     none warranted (the latter-day judgment on the wicked; woven in prose — the storm that falls
+--                on the head of the wicked is the obverse of the remnant saved out of Jacob''s trouble, THREAD 2)
+--        Extras: none warranted
+--        Tanakh: held in prose — *in the latter days ye shall consider it* (30:24) seals the whole oracle as
+--                end-time restoration (the David-King, the trouble-out-of-which-saved, the healed people)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king — NT (Luke 1, Acts 2) + Tanakh (Ezekiel 34, Ezekiel 37, Hosea 3) [free]
+--      (★★★ the yoke broken; the people freed to serve Yahuah and the raised-up Davidic King — the risen David-King)
+--   2. jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it — NT (Matthew 24, Revelation 7) + Tanakh (Daniel 12, Joel 2) [free]
+--      (★★ the great day of Jacob''s trouble — the tribulation — out of which the remnant is SAVED)
+--   3. jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people — NT (1 Peter 2, Revelation 21) + Tanakh (Jeremiah 31, Ezekiel 36, Hosea 1, Hosea 2) [free]
+--      (★★ the healing of the Outcast and the covenant formula — the healed outcast made his people)
+--
+-- Framing notes:
+--   ★★★ DAVID THEIR KING, WHOM I WILL RAISE UP (THREAD 1): *For it shall come to pass in that day, saith Yahuah
+--      Tseva''ot (LORD of hosts), that I will break his yoke from off thy neck, and will burst thy bonds, and
+--      strangers shall no more serve themselves of him: But they shall serve Yahuah (LORD) their Elohim (God),
+--      and David their king, whom I will raise up unto them* (30:8-9). The yoke broken so the people may SERVE —
+--      Yahuah their Elohim AND David their king, the raised-up Davidic ruler. Ezekiel names the same one
+--      Shepherd-King: *I will set up one shepherd over them... even my servant David... a prince among them*
+--      (Ezek 34:23-24), *David my servant shall be king over them... and my servant David shall be their prince
+--      for ever* (Ezek 37:24-25). Hosea: *the children of Yashar''el (Israel)... shall seek Yahuah (LORD) their
+--      Elohim (God), and David their king... in the latter days* (Hos 3:5). And Gabriel and Peter name the
+--      throne fulfilled: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And
+--      he shall reign over the house of Jacob for ever* (Luke 1:32-33); *Elohim (God) had sworn with an oath...
+--      that... he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). The risen David-King — the
+--      Formed Son, Yahuah who has a Father, raised up to reign over the house of Jacob for ever.
+--   ★★ THE TIME OF JACOB''S TROUBLE — SAVED OUT OF IT (THREAD 2): *Alas! for that day is great, so that none is
+--      like it: it is even the time of Jacob''s trouble; but he shall be saved out of it* (30:7). The great
+--      end-time distress, like a woman in travail (30:6) — yet the remnant is SAVED out of it, not destroyed in
+--      it. Daniel names the same incomparable trouble and the same deliverance: *there shall be a time of
+--      trouble, such as never was since there was a nation... and at that time thy people shall be delivered,
+--      every one that shall be found written in the book* (Dan 12:1). The Messiah: *then shall be great
+--      tribulation, such as was not since the beginning of the world... And except those days should be
+--      shortened, there should no flesh be saved: but for the elect''s sake those days shall be shortened* (Matt
+--      24:21-22). Joel: *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11).
+--      And the redeemed stand on the far side: *These are they which came out of great tribulation* (Rev 7:14).
+--      The trouble is real and unparalleled; the saving out of it is sure.
+--   ★★ I WILL RESTORE HEALTH — AND YE SHALL BE MY PEOPLE (THREAD 3): *For I will restore health unto thee, and I
+--      will heal thee of thy wounds, saith Yahuah (LORD); because they called thee an Outcast, saying, This is
+--      Zion, whom no man seeketh after* (30:17) — the wound is *incurable* by any medicine of men (30:12-13),
+--      yet Yahuah himself heals the cast-off. And the healing lands in the covenant formula: *And ye shall be my
+--      people, and I will be your Elohim (God)* (30:22). The healing the prophets and apostles know: *by whose
+--      stripes ye were healed* (1 Pet 2:24), and the end where *there shall be no more death, neither sorrow,
+--      nor crying, neither shall there be any more pain* (Rev 21:4). The covenant formula is the book''s refrain
+--      — *I will put my law in their inward parts... and will be their Elohim (God), and they shall be my people*
+--      (Jer 31:33); *ye shall be my people, and I will be your Elohim (God)* (Ezek 36:28); and the Lo-Ammi
+--      reversal — *in the place where it was said unto them, Ye are not my people, there it shall be said unto
+--      them, Ye are the sons of the living Elohim (God)* (Hos 1:10), *I will say to them which were not my
+--      people, Thou art my people* (Hos 2:23) — the two-house people made his again. The end: *they shall be his
+--      people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Rev 21:3). The Outcast
+--      none sought is healed and named his own people.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the both-houses ingathering preface — woven into THREADs 1/3 prose),
+--      v.10-11 (fear-not, corrected-in-measure-not-consumed — undergirds THREADs 2/3 in prose), v.18-21 (the
+--      rebuilt city and the governor from their own midst — held lightly to the David-King of THREAD 1, not
+--      forced), v.23-24 (the whirlwind on the head of the wicked; the latter-day verdict — the obverse of the
+--      remnant saved out of Jacob''s trouble, THREAD 2, woven in prose). All blocks recorded; every meaningful
+--      section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): the yoke broken — they shall serve Yahuah their Elohim, and David their king, raised up
+    ('canon','jeremiah',30,9,'canon','ezekiel',34,23,'free',
+      E'*And I will set up one shepherd over them, and he shall feed them, even my servant David; he shall feed them, and he shall be their shepherd* (Ezekiel 34:23). Jeremiah''s *David their king, whom I will raise up unto them* (Jeremiah 30:9) is Ezekiel''s one Shepherd raised over the flock — *my servant David*, set up to feed and shepherd the regathered people. One Davidic King-Shepherd, raised up to lead the freed and gathered house.'),
+    ('canon','jeremiah',30,9,'canon','ezekiel',34,24,'free',
+      E'*And I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them; I Yahuah (LORD) have spoken it* (Ezekiel 34:24). The double bond of Jeremiah 30:9 — *they shall serve Yahuah (LORD) their Elohim (God), and David their king* — is Ezekiel''s very pairing: *I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them*. Yahuah their Elohim and David their prince together, by the word of Yahuah himself.'),
+    ('canon','jeremiah',30,9,'canon','ezekiel',37,24,'free',
+      E'*And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24). Jeremiah''s raised-up *David their king* (Jeremiah 30:9) is Ezekiel''s *David my servant... king over them* — and mark that under this King the people *walk in my judgments, and observe my statutes, and do them*: the Davidic reign is not the end of the Torah but its keeping. The risen David-King leads a Torah-keeping people.'),
+    ('canon','jeremiah',30,9,'canon','ezekiel',37,25,'free',
+      E'*And they shall dwell in the land that I have given unto Jacob my servant... and my servant David shall be their prince for ever* (Ezekiel 37:25). Jeremiah''s *whom I will raise up unto them* (Jeremiah 30:9) reaches its term in Ezekiel''s *David shall be their prince for ever* — the raised-up King reigns without end over the people restored to the land of Jacob. The David-King is everlasting.'),
+    ('canon','jeremiah',30,9,'canon','hosea',3,5,'free',
+      E'*Afterward shall the children of Yashar''el (Israel) return, and seek Yahuah (LORD) their Elohim (God), and David their king; and shall fear Yahuah (LORD) and his goodness in the latter days* (Hosea 3:5). Hosea speaks Jeremiah''s very pairing — *they shall serve Yahuah (LORD) their Elohim (God), and David their king* (Jeremiah 30:9): the returning children seek *Yahuah (LORD) their Elohim (God), and David their king... in the latter days*. The latter-day return is a turning to Yahuah AND to the raised-up David-King.'),
+    ('canon','jeremiah',30,9,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The raised-up *David their king* (Jeremiah 30:9) is the One given *the throne of his father David* — Gabriel names the Davidic throne fulfilled in the Son of the Highest. The King Jeremiah promised to raise up is enthroned on David''s own throne.'),
+    ('canon','jeremiah',30,9,'canon','luke',1,33,'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). Jeremiah''s King is *raise[d] up unto them* (Jeremiah 30:9) to reign — and Gabriel names the reign endless: *he shall reign over the house of Jacob for ever*. The house of Jacob whose yoke is broken (30:8) is the house over which the David-King reigns without end.'),
+    ('canon','jeremiah',30,9,'canon','acts',2,30,'free',
+      E'*Therefore being a prophet, and knowing that Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). Peter names the resurrection-King exactly as Jeremiah named him — *David their king, whom I will raise up unto them* (Jeremiah 30:9): Elohim *would raise up Messiah (Christ) to sit on his throne*, the throne of David. The raised-up David-King is the risen Messiah, seated on David''s throne.'),
+
+    -- THREAD 2 (★★): the time of Jacob's trouble — but he shall be saved out of it
+    ('canon','jeremiah',30,7,'canon','daniel',12,1,'free',
+      E'*And at that time shall Michael stand up, the great prince which standeth for the children of thy people: and there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). Daniel names Jeremiah''s incomparable distress and its deliverance in one breath — *that day is great, so that none is like it: it is even the time of Jacob''s trouble; but he shall be saved out of it* (Jeremiah 30:7): *a time of trouble, such as never was... and at that time thy people shall be delivered*. The unequalled trouble is the very hour the remnant is saved out of.'),
+    ('canon','jeremiah',30,7,'canon','matthew',24,21,'free',
+      E'*For then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be* (Matthew 24:21). The Messiah names Jeremiah''s peerless day — *that day is great, so that none is like it* (Jeremiah 30:7) — as *great tribulation, such as was not since the beginning of the world... nor ever shall be*. The time of Jacob''s trouble is the great tribulation, the distress without parallel.'),
+    ('canon','jeremiah',30,7,'canon','matthew',24,22,'free',
+      E'*And except those days should be shortened, there should no flesh be saved: but for the elect''s sake those days shall be shortened* (Matthew 24:22). Jeremiah''s promise — *but he shall be saved out of it* (Jeremiah 30:7) — is the Messiah''s mercy: for the elect''s sake the days of tribulation are shortened, that they may be saved. Jacob is saved OUT OF the trouble because the days are cut short for the chosen.'),
+    ('canon','jeremiah',30,7,'canon','joel',2,11,'free',
+      E'*And Yahuah (LORD) shall utter his voice before his army: for his camp is very great: for he is strong that executeth his word: for the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11). Joel names the same dreadful greatness Jeremiah names — *that day is great, so that none is like it* (Jeremiah 30:7): *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* The time of Jacob''s trouble is the great and terrible day of Yahuah — yet Jacob shall be saved out of it.'),
+    ('canon','jeremiah',30,7,'canon','revelation',7,14,'free',
+      E'*And he said to me, These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). John sees the saved standing on the far side of Jeremiah''s trouble — *he shall be saved out of it* (Jeremiah 30:7): *these are they which came out of great tribulation*. The remnant does not escape the trouble but is brought through it and out of it, robes washed white.'),
+
+    -- THREAD 3 (★★): I will restore health and heal thee — and ye shall be my people, I your Elohim
+    ('canon','jeremiah',30,17,'canon','1-peter',2,24,'free',
+      E'*Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed* (1 Peter 2:24). Jeremiah''s wound is *incurable* by men (30:12), yet Yahuah pledges *I will restore health unto thee, and I will heal thee of thy wounds* (Jeremiah 30:17) — and Peter names the healing accomplished: *by whose stripes ye were healed*. The healing of the Outcast that no medicine could give is the healing won at the tree.'),
+    ('canon','jeremiah',30,17,'canon','revelation',21,4,'free',
+      E'*And Elohim (God) shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away* (Revelation 21:4). Jeremiah''s promise to heal the incurable wound — *I will restore health unto thee, and I will heal thee of thy wounds* (Jeremiah 30:17) — reaches its consummation where *there shall be... no more pain*. The grievous wound (30:12) is fully healed at the end, every tear wiped away.'),
+    ('canon','jeremiah',30,22,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel)... I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The covenant formula of *And ye shall be my people, and I will be your Elohim (God)* (Jeremiah 30:22) is sealed in the next chapter''s new-covenant oracle — the Torah written on the heart, *and will be their Elohim (God), and they shall be my people*. The restored people of chapter 30 are the heart-covenant people of chapter 31.'),
+    ('canon','jeremiah',30,22,'canon','ezekiel',36,28,'free',
+      E'*And ye shall dwell in the land that I gave to your fathers; and ye shall be my people, and I will be your Elohim (God)* (Ezekiel 36:28). Ezekiel speaks Jeremiah''s covenant formula word for word — *And ye shall be my people, and I will be your Elohim (God)* (Jeremiah 30:22) — joined to the return to the land of the fathers. The healed and regathered people are made his own: my people, your Elohim.'),
+    ('canon','jeremiah',30,22,'canon','hosea',1,10,'free',
+      E'*And it shall come to pass, that in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10). Jeremiah''s *ye shall be my people* (Jeremiah 30:22) is the reversal of Lo-Ammi (*not my people*) that Hosea promised: the scattered northern house, once *not my people*, named *the sons of the living Elohim (God)*. The covenant formula is the undoing of the divorce — the outcast made his people again.'),
+    ('canon','jeremiah',30,22,'canon','hosea',2,23,'free',
+      E'*And I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). Hosea names the exact exchange of Jeremiah''s formula — *ye shall be my people, and I will be your Elohim (God)* (Jeremiah 30:22): *Thou art my people... Thou art my Elohim (God)*. Those who were not his people are claimed as his people, and they answer with the covenant confession. The healed Outcast is made Ammi, my people.'),
+    ('canon','jeremiah',30,22,'canon','revelation',21,3,'free',
+      E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The covenant formula of *ye shall be my people, and I will be your Elohim (God)* (Jeremiah 30:22) reaches its end at the throne: *they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)*. The refrain of the restoration is consummated when Elohim dwells with his people for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king',
+       E'I will break his yoke — they shall serve Yahuah their Elohim, and David their king',
+       E'In the day of restoration the bondage is broken so that the freed people may serve their true King: *For it shall come to pass in that day, saith Yahuah Tseva''ot (LORD of hosts), that I will break his yoke from off thy neck, and will burst thy bonds, and strangers shall no more serve themselves of him: But they shall serve Yahuah (LORD) their Elohim (God), and David their king, whom I will raise up unto them* (30:8-9). Mark the pairing — they serve *Yahuah (LORD) their Elohim (God)* AND *David their king*, the Davidic ruler Yahuah will RAISE UP. Ezekiel names the same one Shepherd-Prince: *I will set up one shepherd over them... even my servant David; he shall feed them* (Ezekiel 34:23), *and I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them* (Ezekiel 34:24). And again: *David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24) — the David-King''s people are a Torah-keeping people, not a lawless one — *and my servant David shall be their prince for ever* (Ezekiel 37:25). Hosea sings the same latter-day turning: *Afterward shall the children of Yashar''el (Israel) return, and seek Yahuah (LORD) their Elohim (God), and David their king; and shall fear Yahuah (LORD) and his goodness in the latter days* (Hosea 3:5). And the New Testament names the throne fulfilled: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33); *Elohim (God) had sworn with an oath... that... he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). The raised-up David-King is the risen Messiah — the Formed Son, Yahuah who has a Father — enthroned on David''s throne to reign over the house of Jacob for ever.',
+       sv.verse_id, ev.verse_id, 'free', 34725
+  FROM _s309_jer30_lookup sv, _s309_jer30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=30 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it',
+       E'The time of Jacob''s trouble — but he shall be saved out of it',
+       E'Before the restoration is the distress, painted as the anguish of childbirth: *Ask ye now, and see whether a man doth travail with child? wherefore do I see every man with his hands on his loins, as a woman in travail, and all faces are turned into paleness? Alas! for that day is great, so that none is like it: it is even the time of Jacob''s trouble; but he shall be saved out of it* (30:6-7). The day is unequalled — *none is like it* — yet the promise is sure: Jacob *shall be saved out of it*. Daniel names the same incomparable trouble and the same deliverance in one breath: *there shall be a time of trouble, such as never was since there was a nation even to that same time: and at that time thy people shall be delivered, every one that shall be found written in the book* (Daniel 12:1). The Messiah names it the great tribulation: *then shall be great tribulation, such as was not since the beginning of the world to this time, no, nor ever shall be. And except those days should be shortened, there should no flesh be saved: but for the elect''s sake those days shall be shortened* (Matthew 24:21-22) — for the elect''s sake cut short, that Jacob may be saved out of it. Joel names its dread: *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11). And John sees the saved on the far side: *These are they which came out of great tribulation, and have washed their robes, and made them white in the blood of the Lamb* (Revelation 7:14). The trouble is real and without parallel; the remnant does not escape it but is brought THROUGH it and out of it. And the chapter underwrites the promise: *though I make a full end of all nations whither I have scattered thee, yet will I not make a full end of thee* (30:11) — Jacob shall be saved out of it.',
+       sv.verse_id, ev.verse_id, 'free', 34728
+  FROM _s309_jer30_lookup sv, _s309_jer30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=30 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people',
+       E'I will restore health and heal thy wounds — and ye shall be my people',
+       E'The wound is past the reach of any human cure: *For thus saith Yahuah (LORD), Thy bruise is incurable, and thy wound is grievous. There is none to plead thy cause, that thou mayest be bound up: thou hast no healing medicines* (30:12-13). No lover, no medicine, no physician can heal it — and then Yahuah himself speaks the turn: *For I will restore health unto thee, and I will heal thee of thy wounds, saith Yahuah (LORD); because they called thee an Outcast, saying, This is Zion, whom no man seeketh after* (30:17). The cast-off whom no man seeks is the one Yahuah heals. Peter names the healing accomplished: *Who his own self bare our sins in his own body on the tree... by whose stripes ye were healed* (1 Peter 2:24); and John names its consummation, where *there shall be... no more pain* (Revelation 21:4). And the healing lands in the covenant refrain of the whole book of restoration: *And ye shall be my people, and I will be your Elohim (God)* (30:22). That formula is sealed in the new-covenant oracle of the next chapter — *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33) — and echoed by Ezekiel: *ye shall be my people, and I will be your Elohim (God)* (Ezekiel 36:28). It is the undoing of the divorce, the reversal of Lo-Ammi: *in the place where it was said unto them, Ye are not my people, there it shall be said unto them, Ye are the sons of the living Elohim (God)* (Hosea 1:10); *I will say to them which were not my people, Thou art my people; and they shall say, Thou art my Elohim (God)* (Hosea 2:23). And the refrain reaches the throne at the end: *they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The Outcast none sought after is healed of the incurable wound and named — at last and for ever — his own people.',
+       sv.verse_id, ev.verse_id, 'free', 34731
+  FROM _s309_jer30_lookup sv, _s309_jer30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=30 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will set up one shepherd over them... even my servant David; he shall feed them* (Ezekiel 34:23) — the raised-up David their king (Jeremiah 30:9) is Ezekiel''s one Shepherd over the flock.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *I Yahuah (LORD) will be their Elohim (God), and my servant David a prince among them* (Ezekiel 34:24) — Ezekiel''s very pairing of Jeremiah 30:9: Yahuah their Elohim and David their prince together.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *David my servant shall be king over them... they shall also walk in my judgments, and observe my statutes, and do them* (Ezekiel 37:24) — the David-King''s people keep the Torah; the reign is not the end of the law.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *my servant David shall be their prince for ever* (Ezekiel 37:25) — Jeremiah''s *whom I will raise up* (30:9) reaches its term: the David-King reigns without end.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *seek Yahuah (LORD) their Elohim (God), and David their king... in the latter days* (Hosea 3:5) — Hosea speaks Jeremiah 30:9''s pairing; the latter-day return is to Yahuah AND the David-King.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — Gabriel names the throne Jeremiah''s raised-up David-King (30:9) is enthroned upon.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the David-King reigns endlessly over the house of Jacob whose yoke is broken (30:8).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30) — Peter names the resurrection-King exactly as Jeremiah did (*whom I will raise up*, 30:9); the risen Messiah on David''s throne.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=9
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-they-shall-serve-yahuah-their-elohim-and-david-their-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *a time of trouble, such as never was... and at that time thy people shall be delivered* (Daniel 12:1) — Daniel names Jeremiah''s incomparable trouble (30:7) and its deliverance in one breath.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=7
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *then shall be great tribulation, such as was not since the beginning of the world... nor ever shall be* (Matthew 24:21) — the Messiah names the time of Jacob''s trouble (30:7) the great tribulation, the day without parallel.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=7
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *for the elect''s sake those days shall be shortened* (Matthew 24:22) — Jeremiah''s *he shall be saved out of it* (30:7): the days cut short for the chosen, that Jacob may be saved.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=7
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the day of Yahuah (LORD) is great and very terrible; and who can abide it?* (Joel 2:11) — Joel names the same dreadful greatness as Jeremiah''s *that day is great, so that none is like it* (30:7).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=7
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *These are they which came out of great tribulation* (Revelation 7:14) — John sees the saved on the far side of Jeremiah''s trouble (30:7); brought through it and out of it, robes washed white.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=7
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-the-time-of-jacobs-trouble-but-he-shall-be-saved-out-of-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *by whose stripes ye were healed* (1 Peter 2:24) — the healing of the incurable wound (Jeremiah 30:12,17) accomplished at the tree; the Outcast healed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=17
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *there shall be... no more pain* (Revelation 21:4) — the grievous wound (30:12,17) fully healed at the end, every tear wiped away.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=17
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *I will put my law in their inward parts... and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33) — the covenant formula of 30:22 sealed in the next chapter''s new-covenant oracle.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *ye shall be my people, and I will be your Elohim (God)* (Ezekiel 36:28) — Ezekiel speaks Jeremiah 30:22''s formula word for word, joined to the return to the land of the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *where it was said... Ye are not my people, there... Ye are the sons of the living Elohim (God)* (Hosea 1:10) — Jeremiah''s *ye shall be my people* (30:22) is the reversal of Lo-Ammi, the scattered house reclaimed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *I will say to them which were not my people, Thou art my people* (Hosea 2:23) — Hosea names the exact exchange of Jeremiah 30:22; those who were not his people claimed as his own.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3) — the covenant refrain of 30:22 consummated at the throne, Elohim dwelling with his people for ever.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=30 AND sv.verse_number=22
+  JOIN _s309_jer30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-30-i-will-restore-health-and-ye-shall-be-my-people'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_32.sql (Jeremiah 32) -----
+-- Chapter: Jeremiah 32 — Jeremiah, shut up in the court of the prison while Babylon besieges the city,
+-- BUYS the field of Hanameel at Anathoth (the right of redemption his), subscribes and seals the
+-- evidence, puts it in an earthen vessel "that they may continue many days" — a sign that *Houses and
+-- fields and vineyards shall be possessed again in this land* (32:15). His prayer: *Ah Yahuah (Lord) GOD!
+-- behold, thou hast made the heaven and the earth by thy great power... and there is nothing too hard for
+-- thee* (32:17); and Yahuah answers: *Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there
+-- any thing too hard for me?* (32:27). The chapter closes on the EVERLASTING COVENANT — *they shall be my
+-- people, and I will be their Elohim (God)... one heart, and one way, that they may fear me for ever... I
+-- will put my fear in their hearts, that they shall not depart from me* (32:38-40): the new covenant said
+-- again (lateral to ch31), the fear of Yahuah written within, the kept heart.
+-- Tag: jer32   Session: s309   Temp view: _s309_jer32_lookup
+-- Sort band: base 34775, step 3 -> threads at 34775, 34778 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',32,v
+--
+-- Jeremiah 32 coverage:
+--   v.1-14 (Jeremiah shut up in the prison; Babylon besieging; buy the field at Anathoth, the right of
+--          redemption thine; subscribe, seal, take witnesses; the evidence in an earthen vessel)
+--        NT:     none warranted (the prophetic sign-act; the redemption-right/Goel woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the right of redemption (Lev 25:25 kinsman-redeemer pattern) woven into
+--                THREAD 1; the sign itself carried by v.15
+--   ★ v.15 (For thus saith Yahuah Tseva''ot... Houses and fields and vineyards shall be possessed again in
+--          this land) — the field bought as a SIGN that restoration is sure
+--        NT:     held in THREAD 1 (the surety of what Yahuah purposes; nothing too hard for the Maker)
+--        Extras: none warranted
+--        Tanakh: held in THREAD 1 prose (answered by v.42-44, the captivity returned, fields bought again)
+--   ★ v.16-25 (Jeremiah''s prayer: Ah Yahuah GOD, thou hast made the heaven and the earth... there is
+--          nothing too hard for thee; thou broughtest Yashar''el out of Egypt with a stretched out arm;
+--          and now the mounts come to take the city — yet thou saidst, Buy the field)
+--        NT:     ★ Luke 1:37 (for with Elohim nothing shall be impossible), ★ Matthew 19:26 (with Elohim
+--                all things are possible) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Genesis 18:14 (Is any thing too hard for Yahuah?) — THREAD 1; ★ Jeremiah 33:3 (great and
+--                mighty things, which thou knowest not) — THREAD 1
+--   ★ v.27 (Behold, I am Yahuah, the Elohim of all flesh: is there any thing too hard for me?) — Yahuah''s
+--          own answer to the prayer; the rhetorical question of the Maker
+--        NT:     ★ Luke 1:37, ★ Matthew 19:26 — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Genesis 18:14 — THREAD 1 (the SAME question that promised Isaac to the barren)
+--   v.28-35 (the city given to the Chaldeans, burned; the children of Yashar''el and Yahudah provoked me;
+--          the high places of Baal, sons passed through the fire to Molech) — the judgment-cause
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the covenant-lawsuit cause of the exile; the abominations, woven in prose
+--                as the dark backdrop to the restoration of v.37-41)
+--   ★★★ v.36-41 (I will gather them out of all countries... bring them again... cause them to dwell safely;
+--          they shall be my people, and I will be their Elohim; one heart, and one way; an everlasting
+--          covenant... I will put my fear in their hearts; I will plant them in this land with my whole heart)
+--        NT:     ★★ Hebrews 13:20-21 (the everlasting covenant... make you perfect in every good work to do
+--                his will), ★ Hebrews 8:10 (I will put my laws into their mind... my people) — THREAD 2
+--        Extras: none warranted (clean canon weave; the new-covenant spine carries no forced extra)
+--        Tanakh: ★★★ Jeremiah 31:33 (lateral — I will put my law in their inward parts), ★★ Ezekiel 36:26-27
+--                (a new heart... I will put my spirit within you), ★★ Ezekiel 11:19-20 (one heart... that
+--                they may walk in my statutes) — THREAD 2
+--   v.42-44 (Like as I have brought all this great evil... so will I bring all the good; fields shall be
+--          bought in this land; men shall buy fields, subscribe evidences, seal them, take witnesses; I will
+--          cause their captivity to return) — the sign of v.15 answered, fields bought again
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in THREAD 1 prose (the bought field of v.9-15 vindicated; the captivity returned)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign — NT (Luke 1, Matthew 19)
+--      + Tanakh (Genesis 18, Jeremiah 33) [free]
+--      (★ the field bought as a sign restoration is sure; nothing too hard for the Maker of heaven and earth,
+--       the Elohim of all flesh — the SAME question that gave Isaac to the barren)
+--   2. jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts — NT (Hebrews 13, Hebrews 8)
+--      + Tanakh (Jeremiah 31, Ezekiel 36, Ezekiel 11) [free]
+--      (★★★ the everlasting covenant: one heart, one way, the fear of Yahuah put within — the new covenant
+--       said again, the kept heart, lateral to ch31)
+--
+-- Framing notes:
+--   ★ NOTHING TOO HARD FOR THE MAKER (THREAD 1): with Babylon''s siege-mounts already against the city,
+--      Yahuah commands Jeremiah to BUY a field — and he does, sealing the deed in an earthen vessel *that
+--      they may continue many days* (32:14), *For thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim
+--      (God) of Yashar''el (Israel); Houses and fields and vineyards shall be possessed again in this land*
+--      (32:15). The purchase is a sign that the restoration is as sure as a sealed deed; the right of
+--      redemption (the kinsman''s right, Lev 25) is Jeremiah''s, and he redeems the field in faith of the
+--      return. His prayer rests on the Maker: *Ah Yahuah (Lord) GOD! behold, thou hast made the heaven and
+--      the earth by thy great power and stretched out arm, and there is nothing too hard for thee* (32:17);
+--      and Yahuah answers with his own name and his own question — *Behold, I am Yahuah (LORD), the Elohim
+--      (God) of all flesh: is there any thing too hard for me?* (32:27). It is the SAME question that gave
+--      Isaac to the barren — *Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14) — and that the angel
+--      speaks at the conception of the Messiah — *For with Elohim (God) nothing shall be impossible* (Luke
+--      1:37); *With men this is impossible; but with Elohim (God) all things are possible* (Matthew 19:26).
+--      And the very next chapter answers it: *Call unto me, and I will answer thee, and shew thee great and
+--      mighty things, which thou knowest not* (Jeremiah 33:3). The fields bought again (32:43-44) prove it.
+--   ★★★ THE EVERLASTING COVENANT — THE FEAR PUT WITHIN (THREAD 2): past the judgment, Yahuah gathers and
+--      remakes his people: *Behold, I will gather them out of all countries... and I will bring them again
+--      unto this place, and I will cause them to dwell safely: And they shall be my people, and I will be
+--      their Elohim (God): And I will give them one heart, and one way, that they may fear me for ever*
+--      (32:37-39). It is the new covenant said again — the SAME promise as ch31, lateral to it: *I will make
+--      an everlasting covenant with them, that I will not turn away from them, to do them good; but I will put
+--      my fear in their hearts, that they shall not depart from me* (32:40). Where ch31 wrote the Torah on
+--      the heart, ch32 writes the FEAR of Yahuah within — the kept heart, the people held by Yahuah''s own
+--      planting, *with my whole heart and with my whole soul* (32:41). Jeremiah 31:33 is the lateral twin:
+--      *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33). Ezekiel
+--      speaks the heart-and-spirit twin: *A new heart also will I give you... I will give you an heart of
+--      flesh* (Ezekiel 36:26), *And I will put my spirit within you, and cause you to walk in my statutes*
+--      (Ezekiel 36:27); and the one-heart word verbatim: *And I will give them one heart... That they may
+--      walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will
+--      be their Elohim (God)* (Ezekiel 11:19-20). Hebrews names it the *everlasting covenant* through which
+--      the great Shepherd is raised and the people made able to obey: *that great shepherd of the sheep,
+--      through the blood of the everlasting covenant, Make you perfect in every good work to do his will*
+--      (Hebrews 13:20-21); and quotes the both-houses heart-covenant: *I will put my laws into their mind,
+--      and write them in their hearts... and they shall be to me a people* (Hebrews 8:10). The everlasting
+--      covenant is the fear of Yahuah written within — the people that shall NOT depart, because he keeps them.
+--   VERSES WITH NO SEPARATE ADD: v.1-14 (the prison, the siege, the field-purchase mechanics — the sign
+--      carried by v.15, the redemption-right woven into THREAD 1 prose), v.28-35 (the judgment-cause: the
+--      Baal high places, the Molech fire — the dark backdrop to the restoration, woven in prose, not forced
+--      to a separate weave), v.42-44 (the fields bought again, captivity returned — the vindication of the
+--      sign, woven into THREAD 1 prose). All blocks recorded; every meaningful section carries or is bound
+--      to a thread.
+
+CREATE TEMP VIEW _s309_jer32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): is there any thing too hard for me? — the field bought as a sign
+    ('canon','jeremiah',32,17,'canon','genesis',18,14,'free',
+      E'*Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). Jeremiah''s prayer leans on the very truth Yahuah declared to the barren Sarah — *thou hast made the heaven and the earth by thy great power and stretched out arm, and there is nothing too hard for thee* (Jeremiah 32:17). The Maker who gave Isaac to the dead womb is the Maker who can give back houses and fields and vineyards in a land under siege; nothing is too hard for him.'),
+    ('canon','jeremiah',32,27,'canon','genesis',18,14,'free',
+      E'*Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). Yahuah answers Jeremiah''s prayer with the same question he asked at Mamre — *Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there any thing too hard for me?* (Jeremiah 32:27). The question that promised a son to the barren now promises a restored land to the exiled; the Elohim (God) of all flesh keeps both.'),
+    ('canon','jeremiah',32,27,'canon','luke',1,37,'free',
+      E'*For with Elohim (God) nothing shall be impossible* (Luke 1:37). The angel speaks at the conception of the Messiah the very word Yahuah speaks to Jeremiah — *Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there any thing too hard for me?* (Jeremiah 32:27). The Maker for whom nothing is too hard brings the virgin''s Son as surely as he brings back the bought field; with Elohim (God) nothing shall be impossible.'),
+    ('canon','jeremiah',32,17,'canon','luke',1,37,'free',
+      E'*For with Elohim (God) nothing shall be impossible* (Luke 1:37). Jeremiah confesses it of the Maker of heaven and earth — *there is nothing too hard for thee* (Jeremiah 32:17) — and the angel says it again at Bethlehem''s door. The same power that stretched out the heavens and brought Yashar''el (Israel) out of Egypt with a stretched out arm is the power that nothing can withstand.'),
+    ('canon','jeremiah',32,27,'canon','matthew',19,26,'free',
+      E'*But Yahusha (Jesus) beheld them, and said unto them, With men this is impossible; but with Elohim (God) all things are possible* (Matthew 19:26). The Messiah answers his own disciples with Jeremiah''s answer — *Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there any thing too hard for me?* (Jeremiah 32:27). What is impossible to men — a city saved, a captivity returned, a sinner saved — is possible with the Elohim (God) of all flesh; there is nothing too hard for him.'),
+    ('canon','jeremiah',32,17,'canon','jeremiah',33,3,'free',
+      E'*Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not* (Jeremiah 33:3). To the prophet who has just confessed *there is nothing too hard for thee* (Jeremiah 32:17), Yahuah answers in the very next chapter with an invitation to ask: the Maker who can do anything will SHOW great and mighty things to the one who calls. The bought field is the first of the great and mighty things Yahuah will yet unfold.')
+,
+    -- THREAD 2 (★★★): an everlasting covenant — I will put my fear in their hearts
+    ('canon','jeremiah',32,40,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel); After those days, saith Yahuah (LORD), I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). The everlasting covenant of ch32 is the new covenant of ch31 said again — where ch31 puts the Torah in the inward parts, ch32 puts the FEAR of Yahuah within: *I will make an everlasting covenant with them... but I will put my fear in their hearts, that they shall not depart from me* (Jeremiah 32:40). One covenant, the law and the fear of Yahuah written together on the heart.'),
+    ('canon','jeremiah',32,39,'canon','ezekiel',11,19,'free',
+      E'*And I will give them one heart, and I will put a new spirit within you; and I will take the stony heart out of their flesh, and will give them an heart of flesh* (Ezekiel 11:19). Ezekiel speaks Jeremiah''s very promise — *I will give them one heart, and one way, that they may fear me for ever* (Jeremiah 32:39): the ONE heart, the stony heart taken away, a heart of flesh given. The gathered people are remade with a single heart toward Yahuah.'),
+    ('canon','jeremiah',32,39,'canon','ezekiel',11,20,'free',
+      E'*That they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their Elohim (God)* (Ezekiel 11:20). The one heart Yahuah gives has a purpose — that the people may KEEP his statutes; Ezekiel names what Jeremiah''s *one heart, and one way, that they may fear me for ever* (Jeremiah 32:39) is for. *They shall be my people, and I will be their Elohim (God)* (Jeremiah 32:38) is the covenant formula word for word: the remade heart walks in the statutes.'),
+    ('canon','jeremiah',32,40,'canon','ezekiel',36,26,'free',
+      E'*A new heart also will I give you, and a new spirit will I put within you: and I will take away the stony heart out of your flesh, and I will give you an heart of flesh* (Ezekiel 36:26). The everlasting covenant that puts Yahuah''s fear within — *I will put my fear in their hearts, that they shall not depart from me* (Jeremiah 32:40) — requires the new heart Ezekiel promises: the stony heart removed, a heart of flesh given, able to hold the fear of Yahuah and not depart.'),
+    ('canon','jeremiah',32,40,'canon','ezekiel',36,27,'free',
+      E'*And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27). Jeremiah''s everlasting covenant keeps the people from departing — *I will put my fear in their hearts, that they shall not depart from me* (Jeremiah 32:40) — and Ezekiel names the means: the Spirit put within that CAUSES them to walk in the statutes. The fear within and the Spirit within are one work; the people are held to obedience by Yahuah himself.'),
+    ('canon','jeremiah',32,40,'canon','hebrews',13,20,'free',
+      E'*Now the Elohim (God) of peace, that brought again from the dead our Lord Yahusha (Lord Jesus), that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20). Hebrews names the very covenant Jeremiah promises — *I will make an everlasting covenant with them* (Jeremiah 32:40) — and grounds it in the blood that raised the great Shepherd. The everlasting covenant Yahuah swears never to turn from is sealed in the blood of the risen Shepherd of the sheep.'),
+    ('canon','jeremiah',32,40,'canon','hebrews',13,21,'free',
+      E'*Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight, through Yahusha HaMashiach (Jesus Christ); to whom be glory for ever and ever. Amen* (Hebrews 13:21). The everlasting covenant works in the people the will of Yahuah — exactly what Jeremiah promised: *I will put my fear in their hearts, that they shall not depart from me* (Jeremiah 32:40). Yahuah himself works the obedience in them, perfecting them in every good work; the kept heart is his doing, not theirs alone.'),
+    ('canon','jeremiah',32,38,'canon','hebrews',8,10,'free',
+      E'*For this is the covenant that I will make with the house of Yashar''el (Israel) after those days, saith Yahuah (Lord); I will put my laws into their mind, and write them in their hearts: and I will be to them a Elohim (God), and they shall be to me a people* (Hebrews 8:10). Hebrews quotes the heart-covenant whose formula Jeremiah names here — *And they shall be my people, and I will be their Elohim (God)* (Jeremiah 32:38). The everlasting covenant of ch32 and the new covenant of ch31 are one: Yahuah their Elohim (God), they his people, the law and the fear of Yahuah written within.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign',
+       E'Is there any thing too hard for me? — the field bought as a sign restoration is sure',
+       E'With Babylon''s siege-mounts already raised against Jerusalem, Yahuah commands Jeremiah, shut up in the prison, to do the most absurd thing: BUY a field. His cousin comes as foretold — *Buy thee my field that is in Anathoth: for the right of redemption is thine to buy it* (32:7) — and Jeremiah, the kinsman-redeemer, weighs out the silver, subscribes and seals the deed, takes witnesses, and gives the evidence to Baruch to seal in an earthen vessel *that they may continue many days* (32:14). The whole sign hangs on one word: *For thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); Houses and fields and vineyards shall be possessed again in this land* (32:15). A man buying land in a doomed city is a sign as sure as a sealed deed that the captivity will return. Then Jeremiah prays, and the prayer rests entirely on the Maker: *Ah Yahuah (Lord) GOD! behold, thou hast made the heaven and the earth by thy great power and stretched out arm, and there is nothing too hard for thee* (32:17). And Yahuah answers with his own name and his own question: *Behold, I am Yahuah (LORD), the Elohim (God) of all flesh: is there any thing too hard for me?* (32:27). It is the very question he asked at Mamre, when the barren Sarah laughed: *Is any thing too hard for Yahuah (LORD)? At the time appointed... Sarah shall have a son* (Genesis 18:14) — the Maker who gives a son to a dead womb gives back a land to an exiled people. The angel speaks it again at the conception of the Messiah — *For with Elohim (God) nothing shall be impossible* (Luke 1:37) — and the Messiah himself: *With men this is impossible; but with Elohim (God) all things are possible* (Matthew 19:26). And in the very next chapter Yahuah opens the door to ask: *Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not* (Jeremiah 33:3). The promise is vindicated at the chapter''s end — *Men shall buy fields for money, and subscribe evidences, and seal them, and take witnesses... for I will cause their captivity to return* (32:44). Nothing is too hard for the Maker of heaven and earth, the Elohim (God) of all flesh.',
+       sv.verse_id, ev.verse_id, 'free', 34775
+  FROM _s309_jer32_lookup sv, _s309_jer32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=32 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts',
+       E'An everlasting covenant — I will put my fear in their hearts',
+       E'Past the judgment-cause — the Baal high places, the sons passed through the fire to Molech (32:35) — Yahuah turns to the restoration, and it is the new covenant said again. He gathers and brings home and settles the people: *Behold, I will gather them out of all countries, whither I have driven them in mine anger... and I will bring them again unto this place, and I will cause them to dwell safely* (32:37). Then the covenant formula, the heart of it all: *And they shall be my people, and I will be their Elohim (God): And I will give them one heart, and one way, that they may fear me for ever, for the good of them, and of their children after them* (32:38-39). And the everlasting covenant itself: *And I will make an everlasting covenant with them, that I will not turn away from them, to do them good; but I will put my fear in their hearts, that they shall not depart from me* (32:40). Where ch31 wrote the Torah in the inward parts, ch32 writes the FEAR of Yahuah within — the kept heart, the people who shall NOT depart because Yahuah himself keeps them, planting them *with my whole heart and with my whole soul* (32:41). This is the lateral twin of ch31: *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). Ezekiel speaks the one-heart promise word for word: *And I will give them one heart, and I will put a new spirit within you; and I will take the stony heart out of their flesh, and will give them an heart of flesh: That they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people, and I will be their Elohim (God)* (Ezekiel 11:19-20) — the one heart is FOR the keeping of the statutes. And again: *A new heart also will I give you... I will give you an heart of flesh* (Ezekiel 36:26); *And I will put my spirit within you, and cause you to walk in my statutes, and ye shall keep my judgments, and do them* (Ezekiel 36:27) — the Spirit within and the fear within are one work, the obedience enabled, not abolished. Hebrews names this the *everlasting covenant* sealed in the blood of the risen Shepherd: *that great shepherd of the sheep, through the blood of the everlasting covenant, Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight* (Hebrews 13:20-21) — Yahuah works the obedience IN the people. And Hebrews quotes the both-houses heart-covenant whose formula Jeremiah uses here: *I will put my laws into their mind, and write them in their hearts... and they shall be to me a people* (Hebrews 8:10). The everlasting covenant is the fear of Yahuah written within — the kept heart that shall not depart, because he holds it.',
+       sv.verse_id, ev.verse_id, 'free', 34778
+  FROM _s309_jer32_lookup sv, _s309_jer32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=38
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=32 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Is any thing too hard for Yahuah (LORD)?... Sarah shall have a son* (Genesis 18:14) — the Maker''s question to the barren is the ground of Jeremiah''s prayer (32:17); nothing too hard for the Maker of heaven and earth.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14) — Yahuah answers Jeremiah with the SAME question he asked at Mamre (32:27): the Elohim (God) of all flesh who gave Isaac gives back the land.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=27
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *For with Elohim (God) nothing shall be impossible* (Luke 1:37) — the angel at the Messiah''s conception speaks Yahuah''s own answer (32:27); the Maker for whom nothing is too hard brings the virgin''s Son.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=27
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *For with Elohim (God) nothing shall be impossible* (Luke 1:37) — Jeremiah''s confession *there is nothing too hard for thee* (32:17) said again at Bethlehem''s door; the stretched-out-arm power nothing can withstand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *With men this is impossible; but with Elohim (God) all things are possible* (Matthew 19:26) — the Messiah answers with Jeremiah''s answer (32:27); what is impossible to men the Elohim (God) of all flesh can do.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=27
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not* (Jeremiah 33:3) — the very next chapter: the Maker who can do anything (32:17) will SHEW great things to the one who calls.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=17
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=33 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-is-there-any-thing-too-hard-for-me-the-field-bought-as-a-sign'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will put my law in their inward parts, and write it in their hearts* (Jeremiah 31:33) — the lateral twin: ch31 writes the Torah within, ch32 (32:40) writes the FEAR of Yahuah within; one covenant.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=40
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *And I will give them one heart... and will give them an heart of flesh* (Ezekiel 11:19) — Jeremiah''s *one heart, and one way* (32:39) word for word; the stony heart taken away.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=39
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=11 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *That they may walk in my statutes, and keep mine ordinances, and do them: and they shall be my people* (Ezekiel 11:20) — the one heart (32:39) is FOR keeping the statutes; the covenant formula word for word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=39
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=11 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *A new heart also will I give you... I will give you an heart of flesh* (Ezekiel 36:26) — the fear put within (32:40) needs the new heart; the stony heart removed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=40
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will put my spirit within you, and cause you to walk in my statutes* (Ezekiel 36:27) — the Spirit within and the fear within (32:40) are one work; the obedience ENABLED, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=40
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *that great shepherd of the sheep, through the blood of the everlasting covenant* (Hebrews 13:20) — Hebrews names Jeremiah''s *everlasting covenant* (32:40), sealed in the blood of the risen Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=40
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Make you perfect in every good work to do his will, working in you that which is wellpleasing in his sight* (Hebrews 13:21) — the everlasting covenant WORKS the obedience in them; the kept heart (32:40) is Yahuah''s doing.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=40
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *I will put my laws into their mind, and write them in their hearts... and they shall be to me a people* (Hebrews 8:10) — the heart-covenant whose formula Jeremiah uses (32:38: they shall be my people, I their Elohim); ch31 and ch32 are one.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=32 AND sv.verse_number=38
+  JOIN _s309_jer32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-32-an-everlasting-covenant-i-will-put-my-fear-in-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_33.sql (Jeremiah 33) -----
+-- Chapter: Jeremiah 33 — ★★★ from the court of the prison: *Call unto me, and I will answer thee, and
+-- shew thee great and mighty things, which thou knowest not* (33:3) — and the great thing shewn is the
+-- BRANCH OF RIGHTEOUSNESS grown up unto David, Yahuah (LORD) our righteousness, the Davidic Messiah
+-- saving BOTH houses (the house of Yashar''el AND the house of Yahudah); and the PERPETUAL covenant —
+-- David shall never want a man on the throne, neither shall the Levites want a man before me, unbreakable
+-- as the covenant of day and night, the seed of David multiplied as the host of heaven. The throne and
+-- the priesthood made sure in the One who is both King and everlasting Priest.
+-- Tag: jer33   Temp view: _s309_jer33_lookup
+-- Sort band: base 34800, step 3 -> threads at 34800, 34803, 34806 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',33,v
+--
+-- Jeremiah 33 coverage:
+--   v.1-2 (the word came the second time, shut up in the court of the prison; Yahuah the maker, that
+--          formed it, to establish it; Yahuah is his name)
+--        NT:     none warranted (the Former/Maker; the Name; woven into THREAD 1 prose as preface to v.3)
+--        Extras: none warranted
+--        Tanakh: none separate (Yahuah that formed it — the Former, prefaces the call of v.3)
+--   ★ v.3 (Call unto me, and I will answer thee, and shew thee great and mighty things, which thou
+--          knowest not)
+--        NT:     ★ Matthew 7:7 (Ask, and it shall be given you; seek, and ye shall find), ★ Ephesians 3:20
+--                (able to do exceeding abundantly above all that we ask or think), ★ 1 Corinthians 2:9
+--                (Eye hath not seen... the things which Elohim hath prepared), ★ 1 Corinthians 2:10
+--                (Elohim hath revealed them unto us by his Spirit) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 91:15 (He shall call upon me, and I will answer him) — THREAD 1
+--   v.4-13 (the houses thrown down; health and cure; the captivity of Yahudah and Yashar''el to return;
+--          cleanse and pardon; the voice of joy, of the bridegroom and bride; the habitation of shepherds;
+--          the flocks pass again under the hands of him that telleth them)
+--        NT:     none warranted distinct (the restoration of both houses; the cleansing leads into the
+--                Branch oracle of v.14-16; woven in prose of THREAD 2)
+--        Extras: none warranted
+--        Tanakh: held in prose — the return of the captivity of BOTH houses (33:7) is the both-houses
+--                frame the Branch saves (THREAD 2)
+--   ★★★ v.14-16 (I will perform that good thing which I have promised unto the house of Yashar''el and to
+--          the house of Yahudah; I will cause the Branch of righteousness to grow up unto David; he shall
+--          execute judgment and righteousness; Yahudah shall be saved, Jerusalem dwell safely; this is the
+--          name wherewith she shall be called, Yahuah our righteousness)
+--        NT:     ★★ Luke 1:32 (the throne of his father David), ★ 1 Corinthians 1:30 (Messiah... made unto
+--                us righteousness) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★★ Jeremiah 23:5 (I will raise unto David a righteous Branch), ★★★ Jeremiah 23:6 (Yahuah
+--                Tsidkenu — the lateral twin oracle), ★★ Zechariah 3:8 (my servant the BRANCH), ★★ Zechariah
+--                6:12 (the man whose name is The BRANCH), ★ Isaiah 11:1 (a Branch shall grow out of his
+--                roots) — THREAD 2
+--   ★★ v.17-22 (David shall never want a man to sit upon the throne of the house of Yashar''el; neither
+--          shall the priests the Levites want a man before me; if ye can break my covenant of the day and
+--          night; my covenant be broken with David; as the host of heaven cannot be numbered, so will I
+--          multiply the seed of David and the Levites)
+--        NT:     ★★ Luke 1:33 (of his kingdom there shall be no end), ★★ Hebrews 7:24 (an unchangeable
+--                priesthood), ★★ Hebrews 7:25 (able to save... seeing he ever liveth), ★ Revelation 22:16
+--                (the root and the offspring of David) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Samuel 7:13 (I will stablish the throne of his kingdom for ever), ★★ 2 Samuel 7:16
+--                (thy throne shall be established for ever), ★★ Psalm 89:3-4 (I have sworn unto David...
+--                build up thy throne to all generations), ★★ Psalm 89:34 (My covenant will I not break),
+--                ★★ Psalm 89:36-37 (his throne as the sun... established for ever as the moon) — THREAD 3
+--   v.23-26 (the two families Yahuah hath chosen, he hath cast them off? thus they despise my people; if
+--          my covenant be not with day and night... then will I cast away the seed of Jacob and David;
+--          for I will cause their captivity to return, and have mercy on them)
+--        NT:     none warranted distinct (the irrevocable election of the two families; the same
+--                day-and-night oath that seals the Davidic covenant — woven into THREAD 3 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — *The two families which Yahuah (LORD) hath chosen* (33:24) = the two
+--                houses, never cast off; the ordinances-of-heaven oath of v.25-26 is the v.20-21 oath again
+--                (THREAD 3)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things — NT (Matthew 7, Ephesians 3, 1 Corinthians 2) + Tanakh (Psalm 91) [free]
+--      (★ the invitation to call and receive revelation — the great and mighty things shewn, beyond asking or thinking, revealed by the Spirit)
+--   2. jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness — NT (Luke 1, 1 Corinthians 1) + Tanakh (Jeremiah 23, Zechariah 3, Zechariah 6, Isaiah 11) [free]
+--      (★★★ the Branch of righteousness = the Davidic Messiah, the Name Yahuah our righteousness, saving BOTH houses; the lateral twin of 23:5-6)
+--   3. jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi — NT (Luke 1, Hebrews 7, Revelation 22) + Tanakh (2 Samuel 7, Psalm 89) [free]
+--      (★★ the perpetual covenant with David and Levi — throne and priesthood unbreakable as day and night, made sure in the King who is the everlasting Priest)
+--
+-- Framing notes:
+--   ★ THE CALL AND THE GREAT THINGS SHEWN (THREAD 1): from the prison-court Yahuah names himself the
+--      Former and Maker — *Thus saith Yahuah (LORD) the maker thereof, Yahuah (LORD) that formed it, to
+--      establish it; Yahuah (LORD) is his name* (33:2) — and issues the invitation: *Call unto me, and I
+--      will answer thee, and shew thee great and mighty things, which thou knowest not* (33:3). The psalm
+--      voices the same pledge of answered prayer — *He shall call upon me, and I will answer him: I will be
+--      with him in trouble* (Psalm 91:15). The Messiah opens it to all who ask — *Ask, and it shall be
+--      given you; seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7). And the
+--      great and mighty things exceed all asking, revealed by the Spirit: *Now unto him that is able to do
+--      exceeding abundantly above all that we ask or think* (Ephesians 3:20); *Eye hath not seen, nor ear
+--      heard, neither have entered into the heart of man, the things which Elohim (God) hath prepared for
+--      them that love him* (1 Cor 2:9), *But Elohim (God) hath revealed them unto us by his Spirit* (1 Cor
+--      2:10). The very next things Yahuah shews Jeremiah are the Branch and the everlasting covenant (vv.14-22).
+--   ★★★ THE BRANCH OF RIGHTEOUSNESS / YAHUAH OUR RIGHTEOUSNESS (THREAD 2): *Behold, the days come, saith
+--      Yahuah (LORD), that I will perform that good thing which I have promised unto the house of Yashar''el
+--      (Israel) and to the house of Yahudah (Judah). In those days, and at that time, will I cause the Branch
+--      of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land*
+--      (33:14-15) — the promise is to BOTH houses, and the Branch is the Davidic Messiah. *In those days
+--      shall Yahudah (Judah) be saved, and Jerusalem shall dwell safely: and this is the name wherewith she
+--      shall be called, Yahuah (LORD) our righteousness* (33:16). This is the lateral twin of 23:5-6, almost
+--      word for word — *I will raise unto David a righteous Branch... and this is his name whereby he shall
+--      be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jer 23:5-6). The same BRANCH is Zechariah''s
+--      named servant — *behold, I will bring forth my servant the BRANCH* (Zech 3:8); *Behold the man whose
+--      name is The BRANCH; and he shall grow up out of his place... and he shall be a priest upon his throne*
+--      (Zech 6:12-13) — already KING and PRIEST in one. Isaiah''s rod of Jesse — *a Branch shall grow out of
+--      his roots* (Isa 11:1). The NT names the throne and the righteousness: *Yahuah Elohim (the Lord God)
+--      shall give unto him the throne of his father David* (Luke 1:32); *Messiah (Christ)... is made unto us
+--      wisdom, and righteousness, and sanctification, and redemption* (1 Cor 1:30) — Yahuah our righteousness
+--      made ours in him.
+--   ★★ THE PERPETUAL COVENANT WITH DAVID AND LEVI (THREAD 3): *David shall never want a man to sit upon the
+--      throne of the house of Yashar''el (Israel); Neither shall the priests the Levites want a man before me
+--      to offer burnt offerings* (33:17-18). The covenant is as unbreakable as the order of creation: *If ye
+--      can break my covenant of the day, and my covenant of the night... Then may also my covenant be broken
+--      with David my servant* (33:20-21); *As the host of heaven cannot be numbered, neither the sand of the
+--      sea measured: so will I multiply the seed of David my servant, and the Levites* (33:22). This is the
+--      Davidic covenant of 2 Samuel 7 — *I will stablish the throne of his kingdom for ever* (2 Sam 7:13),
+--      *thy throne shall be established for ever* (2 Sam 7:16) — sung in Psalm 89: *I have sworn unto David
+--      my servant, Thy seed will I establish for ever, and build up thy throne to all generations* (Ps
+--      89:3-4), *My covenant will I not break* (89:34), *his throne as the sun before me. It shall be
+--      established for ever as the moon* (89:36-37). The throne never ends — *he shall reign over the house
+--      of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — and the priesthood is made
+--      sure in the One who lives for ever: *this man, because he continueth ever, hath an unchangeable
+--      priesthood. Wherefore he is able also to save them to the uttermost* (Heb 7:24-25). The Branch is
+--      both the King on David''s throne and the everlasting Priest — *I am the root and the offspring of
+--      David* (Rev 22:16). The two families Yahuah chose (33:24) are never cast off; the throne and the
+--      altar stand as long as day and night.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the Former/Maker and the Name — preface to the call, woven in
+--      THREAD 1 prose), v.4-13 (the both-houses restoration, the voice of joy, the cleansing — leads into
+--      the Branch oracle, woven in THREAD 2 prose), v.23-26 (the two families never cast off; the
+--      ordinances-of-heaven oath again — woven in THREAD 3 prose). All blocks recorded above; every
+--      meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer33_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Call unto me, and I will answer thee, and shew thee great and mighty things
+    ('canon','jeremiah',33,3,'canon','psalms',91,15,'free',
+      E'*He shall call upon me, and I will answer him: I will be with him in trouble; I will deliver him, and honour him* (Psalm 91:15). The psalm voices the very pledge Yahuah gives from the prison-court — *Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not* (Jeremiah 33:3). The one who calls is answered; the call of the troubled is not unheard but met with deliverance and revelation.'),
+    ('canon','jeremiah',33,3,'canon','matthew',7,7,'free',
+      E'*Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7). The Messiah opens to all the invitation Jeremiah received — *Call unto me, and I will answer thee* (Jeremiah 33:3). The Father who answered the prophet answers every child who asks: *how much more shall your Father which is in heaven give good things to them that ask him?* (Matt 7:11).'),
+    ('canon','jeremiah',33,3,'canon','ephesians',3,20,'free',
+      E'*Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us* (Ephesians 3:20). The *great and mighty things, which thou knowest not* of Jeremiah 33:3 are the things that exceed all asking — Yahuah answers *above all that we ask or think*. The call is met not with the little we imagine but with the great things we did not know to ask.'),
+    ('canon','jeremiah',33,3,'canon','1-corinthians',2,9,'free',
+      E'*But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which Elohim (God) hath prepared for them that love him* (1 Corinthians 2:9). These are the *great and mighty things, which thou knowest not* (Jeremiah 33:3) — things unseen, unheard, never risen to the heart of man, which Yahuah shews to those who call. The call uncovers what the natural eye could never find.'),
+    ('canon','jeremiah',33,3,'canon','1-corinthians',2,10,'free',
+      E'*But Elohim (God) hath revealed them unto us by his Spirit: for the Spirit searcheth all things, yea, the deep things of Elohim (God)* (1 Corinthians 2:10). The great and mighty things Yahuah promised to shew — *which thou knowest not* (Jeremiah 33:3) — are revealed by his Spirit, who searches the deep things of Elohim (God). The call is answered by the Spirit unveiling what flesh could not know.'),
+
+    -- THREAD 2 (★★★): the Branch of righteousness grown up unto David — Yahuah our righteousness, both houses
+    ('canon','jeremiah',33,15,'canon','jeremiah',23,5,'free',
+      E'*Behold, the days come, saith Yahuah (LORD), that I will raise unto David a righteous Branch, and a King shall reign and prosper, and shall execute judgment and justice in the earth* (Jeremiah 23:5). This is the lateral twin of the present oracle — *will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land* (Jeremiah 33:15). The same righteous Branch, the same Davidic King executing judgment and righteousness; chapter 33 repeats chapter 23 almost word for word.'),
+    ('canon','jeremiah',33,16,'canon','jeremiah',23,6,'free',
+      E'*In his days Yahudah (Judah) shall be saved, and Yashar''el (Israel) shall dwell safely: and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6). The present verse echoes it — *In those days shall Yahudah (Judah) be saved, and Jerusalem shall dwell safely: and this is the name wherewith she shall be called, Yahuah (LORD) our righteousness* (Jeremiah 33:16). The Name borne by the Branch in 23:6 becomes the name set upon the saved city in 33:16: Yahuah is her righteousness, the Branch is her righteousness.'),
+    ('canon','jeremiah',33,15,'canon','zechariah',3,8,'free',
+      E'*Hear now, O Joshua the high priest, thou, and thy fellows that sit before thee: for they are men wondered at: for, behold, I will bring forth my servant the BRANCH* (Zechariah 3:8). Zechariah names the figure Jeremiah promises — *the Branch of righteousness to grow up unto David* (Jeremiah 33:15) is *my servant the BRANCH*, the coming Davidic One Yahuah himself brings forth. The prophets speak one Branch.'),
+    ('canon','jeremiah',33,15,'canon','zechariah',6,12,'free',
+      E'*And speak unto him, saying, Thus speaketh Yahuah Tseva''ot (LORD of hosts), saying, Behold the man whose name is The BRANCH; and he shall grow up out of his place, and he shall build the temple of Yahuah (LORD)* (Zechariah 6:12). The Branch that Jeremiah says shall *grow up unto David* (Jeremiah 33:15) is the man who shall *grow up out of his place* — and in the next breath Zechariah makes him KING and PRIEST in one: *he shall be a priest upon his throne* (Zech 6:13), exactly the throne-and-priesthood Jeremiah joins (33:17-18).'),
+    ('canon','jeremiah',33,15,'canon','isaiah',11,1,'free',
+      E'*And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). Isaiah''s Branch growing from Jesse''s root is Jeremiah''s Branch grown up unto David — *the Branch of righteousness to grow up unto David* (Jeremiah 33:15). The Davidic stock, cut low, sends up the righteous Shoot who reigns; the prophets watch the same Branch rise.'),
+    ('canon','jeremiah',33,15,'canon','luke',1,32,'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The Branch grown up *unto David* (Jeremiah 33:15) is the Son given *the throne of his father David*. Gabriel names the fulfillment: the righteous Branch who executes judgment and righteousness takes the very throne the oracle promised him.'),
+    ('canon','jeremiah',33,16,'canon','1-corinthians',1,30,'free',
+      E'*But of him are ye in HaMashiach Yahusha (Christ Jesus), who of Elohim (God) is made unto us wisdom, and righteousness, and sanctification, and redemption* (1 Corinthians 1:30). The Name set upon the saved city — *Yahuah (LORD) our righteousness* (Jeremiah 33:16) — is fulfilled where the Messiah is *made unto us... righteousness*: his righteousness becomes the believer''s own. The Branch named Yahuah our righteousness is righteousness for his people.'),
+
+    -- THREAD 3 (★★): David shall never want a man — the perpetual covenant with David and Levi
+    ('canon','jeremiah',33,17,'canon','2-samuel',7,13,'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The pledge Jeremiah renews — *David shall never want a man to sit upon the throne of the house of Yashar''el (Israel)* (Jeremiah 33:17) — is the Davidic covenant of Nathan''s oracle: the throne of David''s seed *stablished... for ever*. What was sworn to David, Jeremiah declares unbreakable.'),
+    ('canon','jeremiah',33,17,'canon','2-samuel',7,16,'free',
+      E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). Jeremiah''s word — *David shall never want a man to sit upon the throne* (Jeremiah 33:17) — is this same throne *established for ever*. The everlasting throne promised to David is the throne Jeremiah swears no exile can vacate.'),
+    ('canon','jeremiah',33,21,'canon','psalms',89,3,'free',
+      E'*I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations* (Psalm 89:3-4). The covenant Jeremiah names unbreakable — *Then may also my covenant be broken with David my servant, that he should not have a son to reign upon his throne* (Jeremiah 33:21) — is the sworn covenant of the psalm: David''s seed and throne established to all generations. The day-and-night oath cannot be broken, and neither can this.'),
+    ('canon','jeremiah',33,20,'canon','psalms',89,34,'free',
+      E'*My covenant will I not break, nor alter the thing that is gone out of my lips* (Psalm 89:34). Jeremiah stakes the Davidic covenant on the order of creation — *If ye can break my covenant of the day, and my covenant of the night... Then may also my covenant be broken with David* (Jeremiah 33:20-21) — and the psalm makes the same pledge: *My covenant will I not break*. Yahuah will not unsay what his lips have sworn to David.'),
+    ('canon','jeremiah',33,22,'canon','psalms',89,36,'free',
+      E'*His seed shall endure for ever, and his throne as the sun before me. It shall be established for ever as the moon, and as a faithful witness in heaven* (Psalm 89:36-37). Jeremiah multiplies the seed of David as the uncountable host of heaven — *so will I multiply the seed of David my servant, and the Levites* (Jeremiah 33:22) — and the psalm sets that throne among the heavenly lights: enduring as the sun, established as the moon. The Davidic line is as sure as the ordinances of heaven.'),
+    ('canon','jeremiah',33,17,'canon','luke',1,33,'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The throne Jeremiah swears David shall never lack — *David shall never want a man to sit upon the throne of the house of Yashar''el (Israel)* (Jeremiah 33:17) — finds the Man who reigns *for ever*, whose *kingdom there shall be no end*. The perpetual throne is filled in the Branch who never dies.'),
+    ('canon','jeremiah',33,18,'canon','hebrews',7,24,'free',
+      E'*But this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:24). Jeremiah swears the Levites shall never want a man before Yahuah — *Neither shall the priests the Levites want a man before me to offer burnt offerings* (Jeremiah 33:18) — and the perpetual priesthood is secured in the One who *continueth ever*, holding *an unchangeable priesthood*. The everlasting altar stands in the Priest who does not die.'),
+    ('canon','jeremiah',33,18,'canon','hebrews',7,25,'free',
+      E'*Wherefore he is able also to save them to the uttermost that come unto Elohim (God) by him, seeing he ever liveth to make intercession for them* (Hebrews 7:25). The perpetual priesthood Jeremiah promises — *Neither shall the priests the Levites want a man before me* (Jeremiah 33:18) — is fulfilled in the Priest who *ever liveth to make intercession*: the man before Yahuah who never fails, able to save to the uttermost. The Branch is both the King on the throne and the everlasting Priest at the altar.'),
+    ('canon','jeremiah',33,17,'canon','revelation',22,16,'free',
+      E'*I Yahusha (Jesus) have sent mine angel to testify unto you these things in the churches. I am the root and the offspring of David, and the bright and morning star* (Revelation 22:16). The throne David shall never lack — *David shall never want a man to sit upon the throne* (Jeremiah 33:17) — is filled by the One who is *the root and the offspring of David*: both the root from which David sprang and the offspring upon his throne. The perpetual Davidic covenant ends in him.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things',
+       E'Call unto me, and I will answer thee — and shew thee great and mighty things',
+       E'Jeremiah is shut up in the court of the prison, the city under siege, when the word comes a second time — and it opens with the Maker naming himself: *Thus saith Yahuah (LORD) the maker thereof, Yahuah (LORD) that formed it, to establish it; Yahuah (LORD) is his name* (33:2). Then the invitation: *Call unto me, and I will answer thee, and shew thee great and mighty things, which thou knowest not* (33:3). The One who formed and establishes bids the prisoner call — and promises an answer, and a revelation of things beyond his knowing. The psalm voices the same pledge to the one who cries from trouble: *He shall call upon me, and I will answer him: I will be with him in trouble; I will deliver him, and honour him* (Psalm 91:15). The Messiah opens the door to all: *Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7) — *how much more shall your Father which is in heaven give good things to them that ask him?* (Matt 7:11). And the great and mighty things exceed all that the asker could imagine: *Now unto him that is able to do exceeding abundantly above all that we ask or think* (Ephesians 3:20); *Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which Elohim (God) hath prepared for them that love him* (1 Corinthians 2:9), *But Elohim (God) hath revealed them unto us by his Spirit: for the Spirit searcheth all things, yea, the deep things of Elohim (God)* (1 Corinthians 2:10). The very great and mighty things Yahuah shews Jeremiah next are the Branch of righteousness and the unbreakable covenant of the throne and the altar (33:14-22) — the answer to the call is the Messiah himself.',
+       sv.verse_id, ev.verse_id, 'free', 34800
+  FROM _s309_jer33_lookup sv, _s309_jer33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=33 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness',
+       E'The Branch of righteousness grown up unto David — Yahuah our righteousness',
+       E'Here is the great and mighty thing shewn (33:3): the Branch. *Behold, the days come, saith Yahuah (LORD), that I will perform that good thing which I have promised unto the house of Yashar''el (Israel) and to the house of Yahudah (Judah)* (33:14) — mark it is to BOTH houses, the two-house people, the captivity of both having been promised to return (33:7). *In those days, and at that time, will I cause the Branch of righteousness to grow up unto David; and he shall execute judgment and righteousness in the land. In those days shall Yahudah (Judah) be saved, and Jerusalem shall dwell safely: and this is the name wherewith she shall be called, Yahuah (LORD) our righteousness* (33:15-16). This is the lateral twin of chapter 23, almost word for word: *I will raise unto David a righteous Branch, and a King shall reign and prosper... and this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:5-6). The same righteous Branch, the same Davidic King, the same Name — borne by the Branch in 23:6, set upon the saved city in 33:16: Yahuah himself is her righteousness. Zechariah names the figure twice: *behold, I will bring forth my servant the BRANCH* (Zechariah 3:8); *Behold the man whose name is The BRANCH; and he shall grow up out of his place... and he shall be a priest upon his throne* (Zechariah 6:12-13) — already KING and PRIEST in one, exactly the throne-and-altar Jeremiah joins in the next verses. Isaiah watches the same Shoot rise from the cut stock: *there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots* (Isaiah 11:1). And the NT names the throne and the righteousness: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32); *Messiah (Christ)... is made unto us wisdom, and righteousness, and sanctification, and redemption* (1 Corinthians 1:30) — the Branch named Yahuah our righteousness becomes the very righteousness of his people.',
+       sv.verse_id, ev.verse_id, 'free', 34803
+  FROM _s309_jer33_lookup sv, _s309_jer33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=33 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi',
+       E'David shall never want a man — the perpetual covenant with David and Levi',
+       E'The Branch oracle flows straight into the covenant that secures it — the throne and the altar made perpetual: *For thus saith Yahuah (LORD); David shall never want a man to sit upon the throne of the house of Yashar''el (Israel); Neither shall the priests the Levites want a man before me to offer burnt offerings, and to kindle meat offerings, and to do sacrifice continually* (33:17-18). And the covenant is staked on the unbreakable order of creation: *If ye can break my covenant of the day, and my covenant of the night, and that there should not be day and night in their season; Then may also my covenant be broken with David my servant, that he should not have a son to reign upon his throne; and with the Levites the priests, my ministers* (33:20-21); *As the host of heaven cannot be numbered, neither the sand of the sea measured: so will I multiply the seed of David my servant, and the Levites that minister unto me* (33:22). This is Nathan''s Davidic covenant renewed: *I will stablish the throne of his kingdom for ever* (2 Samuel 7:13), *thy throne shall be established for ever* (2 Samuel 7:16) — sung in the psalm, *I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations* (Psalm 89:3-4), *My covenant will I not break, nor alter the thing that is gone out of my lips* (Psalm 89:34), *His seed shall endure for ever, and his throne as the sun before me. It shall be established for ever as the moon* (Psalm 89:36-37). The throne is filled by the One who never dies — *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — and the altar by the Priest who never dies: *this man, because he continueth ever, hath an unchangeable priesthood. Wherefore he is able also to save them to the uttermost... seeing he ever liveth to make intercession for them* (Hebrews 7:24-25). The Branch is at once the King on David''s throne and the everlasting Priest before Yahuah, and the apparatus closes where it began: *I am the root and the offspring of David* (Revelation 22:16). The two families Yahuah chose (33:24) are never cast off; the throne and the priesthood stand as long as day and night.',
+       sv.verse_id, ev.verse_id, 'free', 34806
+  FROM _s309_jer33_lookup sv, _s309_jer33_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=33 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *He shall call upon me, and I will answer him: I will be with him in trouble* (Psalm 91:15) — the psalm voices Jeremiah 33:3''s pledge; the one who calls from trouble is answered and delivered.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=3
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Ask, and it shall be given you; seek, and ye shall find; knock, and it shall be opened unto you* (Matthew 7:7) — the Messiah opens to all the invitation of Jeremiah 33:3; the Father gives good things to them that ask.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=3
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *able to do exceeding abundantly above all that we ask or think* (Ephesians 3:20) — the great and mighty things of Jeremiah 33:3 exceed all asking; the answer is above what we know to ask.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=3
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=3 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Eye hath not seen, nor ear heard... the things which Elohim (God) hath prepared* (1 Corinthians 2:9) — the *great and mighty things, which thou knowest not* (Jeremiah 33:3); unseen, unheard, never risen to the heart of man.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=3
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Elohim (God) hath revealed them unto us by his Spirit... the deep things of Elohim (God)* (1 Corinthians 2:10) — the great things Yahuah shews (Jeremiah 33:3) are unveiled by the Spirit; the call answered by revelation.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=3
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=2 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-call-unto-me-and-i-will-shew-thee-great-and-mighty-things'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will raise unto David a righteous Branch... shall execute judgment and justice* (Jeremiah 23:5) — the lateral twin oracle; chapter 33 repeats chapter 23 almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *this is his name whereby he shall be called, Yahuah Tsidkenu (THE LORD OUR RIGHTEOUSNESS)* (Jeremiah 23:6) — the Name borne by the Branch is the name set on the saved city in 33:16; Yahuah our righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=16
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *behold, I will bring forth my servant the BRANCH* (Zechariah 3:8) — Zechariah names the figure of Jeremiah 33:15; my servant the BRANCH, the coming Davidic One.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Behold the man whose name is The BRANCH... he shall be a priest upon his throne* (Zechariah 6:12-13) — the Branch grown up out of his place, KING and PRIEST in one, exactly the throne-and-altar of 33:17-18.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *a Branch shall grow out of his roots* (Isaiah 11:1) — Isaiah''s rod of Jesse is Jeremiah''s Branch grown up unto David (33:15); the Davidic stock sends up the righteous Shoot.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — the Branch grown up unto David takes the throne of his father David; the oracle fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=15
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Messiah (Christ)... is made unto us... righteousness* (1 Corinthians 1:30) — the Name *Yahuah our righteousness* (33:16) fulfilled; the Branch''s righteousness becomes the believer''s own.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=16
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-the-branch-of-righteousness-grown-up-unto-david-yahuah-our-righteousness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — Nathan''s Davidic covenant; the throne Jeremiah swears David shall never lack (33:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thy throne shall be established for ever* (2 Samuel 7:16) — the everlasting throne promised to David is the throne no exile can vacate (33:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I have sworn unto David my servant, Thy seed will I establish for ever* (Psalm 89:3-4) — the sworn covenant Jeremiah names unbreakable (33:21); seed and throne to all generations.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=21
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *My covenant will I not break, nor alter the thing that is gone out of my lips* (Psalm 89:34) — the day-and-night oath of 33:20-21 cannot be broken; Yahuah will not unsay what he swore to David.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=20
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *his throne as the sun before me. It shall be established for ever as the moon* (Psalm 89:36-37) — the seed of David multiplied as the host of heaven (33:22); the line as sure as the ordinances of heaven.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=22
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the throne David shall never lack (33:17) filled by the Man who never dies.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *this man, because he continueth ever, hath an unchangeable priesthood* (Hebrews 7:24) — the Levites shall never want a man (33:18); the perpetual priesthood secured in the One who continueth ever.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=18
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *able... to save them to the uttermost... seeing he ever liveth to make intercession* (Hebrews 7:25) — the man before Yahuah who never fails (33:18); the Branch is both King and the everlasting Priest.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=18
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *I am the root and the offspring of David* (Revelation 22:16) — the perpetual Davidic throne (33:17) ends in him: both the root from which David sprang and the offspring upon his throne.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer33_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=33 AND sv.verse_number=17
+  JOIN _s309_jer33_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-33-david-shall-never-want-a-man-the-perpetual-covenant-with-david-and-levi'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_34.sql (Jeremiah 34) -----
+-- Chapter: Jeremiah 34 — Zedekiah warned (the city given into Babylon's hand, burned with fire; the king
+-- taken, yet to die in peace); then the covenant to PROCLAIM LIBERTY to the Hebrew servants — the release
+-- the Torah commanded (Lev 25 jubile, Deut 15 / Exod 21 the seventh-year freedom) — kept briefly, then
+-- TREACHEROUSLY BROKEN: they turned and brought the freed servants back into subjection. Measure-for-measure:
+-- *ye have not hearkened unto me, in proclaiming liberty... behold, I proclaim a liberty for you... to the
+-- sword, to the pestilence, and to the famine.* And the covenant itself was ratified by passing between the
+-- divided calf (the self-maledictory oath of Gen 15) — now transgressed, the curse falling on the breakers.
+-- Tag: jer34   Temp view: _s309_jer34_lookup
+-- Sort band: base 34825, step 3 -> threads at 34825, 34828 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',34,v
+--
+-- Jeremiah 34 coverage:
+--   v.1-7 (Nebuchadnezzar fights against Jerusalem; Behold, I will give this city into the hand of the king
+--          of Babylon, and he shall burn it with fire; Zedekiah taken, eyes shall behold the eyes of the king
+--          of Babylon, yet thou shalt die in peace; Lachish and Azekah)
+--        NT:     none warranted (the Babylonian-judgment oracle on Zedekiah; the historical fall of the city)
+--        Extras: none warranted
+--        Tanakh: held in prose — the judgment-frame that the broken release of v.8-22 brings down; the burning
+--                of the city (v.2) is sealed at v.22; bound in prose, not forced to a separate thread
+--   ★★ v.8-11 (Zedekiah made a covenant to PROCLAIM LIBERTY; that every man should let his manservant and
+--          maidservant, being an Hebrew or an Hebrewess, go free... then they obeyed, and let them go. But
+--          afterward they turned, and caused the servants and the handmaids... to return, and brought them
+--          into subjection)
+--        NT:     ★★ Luke 4:18-19 (to preach deliverance to the captives... the acceptable year of Yahuah —
+--                the TRUE release the Messiah proclaims) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 25:10 (proclaim liberty throughout all the land... it shall be a jubile),
+--                ★★ Deuteronomy 15:12 (in the seventh year thou shalt let him go free), ★ Exodus 21:2 (six
+--                years he shall serve: and in the seventh he shall go out free), ★★ Isaiah 61:1 (to proclaim
+--                liberty to the captives) — THREAD 1
+--   ★ v.13-16 (I made a covenant with your fathers in the day I brought them out of Egypt... at the end of
+--          seven years let ye go every man his brother an Hebrew... ye were now turned, and had done right...
+--          But ye turned and polluted my name, and caused every man his servant... to return)
+--        NT:     held in THREAD 1 prose (the seventh-year release commanded at the Exodus; the polluting of
+--                the Name by reversing the freedom)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 15:12 / ★ Exodus 21:2 (the seventh-year release Yahuah names as the old
+--                covenant-command) — held in THREAD 1
+--   ★★ v.17 (Ye have not hearkened unto me, in proclaiming liberty, every one to his brother... behold, I
+--          proclaim a liberty for you, saith Yahuah, to the sword, to the pestilence, and to the famine)
+--        NT:     held in THREAD 1 prose (the withheld release judged; the bitter liberty)
+--        Extras: none warranted
+--        Tanakh: bound to Lev 25 / Deut 15 in THREAD 1 — the measure-for-measure: you would not free, so I
+--                free you to the sword
+--   ★ v.18-20 (I will give the men that have transgressed my covenant... when they cut the calf in twain, and
+--          passed between the parts thereof... I will even give them into the hand of their enemies... their
+--          dead bodies shall be for meat unto the fowls)
+--        NT:     ★ Hebrews 6:13-18 (Elohim... confirmed it by an oath... two immutable things, in which it was
+--                impossible for Elohim to lie) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Genesis 15:9-10 (Take me an heifer... and divided them in the midst), ★★ Genesis 15:17-18
+--                (a smoking furnace, and a burning lamp that passed between those pieces... Yahuah made a
+--                covenant with Abram) — THREAD 2 (the self-maledictory oath of the divided pieces)
+--   v.21-22 (Zedekiah and his princes given into the hand of the king of Babylon's army; I will command...
+--          and cause them to return to this city; they shall... burn it with fire; the cities of Yahudah a
+--          desolation)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate — the sealing of the judgment opened at v.2-3; woven in prose (the burning of
+--                the city is the outworking of the broken release of THREAD 1)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword — NT (Luke 4) + Tanakh (Leviticus 25, Deuteronomy
+--      15, Exodus 21, Isaiah 61) [free]
+--      (★★ the release the Torah commanded — the jubile liberty, the seventh-year freeing of the Hebrew servant
+--      — proclaimed, kept briefly, then broken; measure-for-measure, the withheld liberty turned to the sword;
+--      the TRUE release the Messiah proclaims)
+--   2. jeremiah-34-they-passed-between-the-parts-of-the-calf — NT (Hebrews 6) + Tanakh (Genesis 15) [free]
+--      (★ the covenant ratified by passing between the divided calf — the self-maledictory oath of Abram's
+--      covenant — now transgressed; the curse of the divided pieces falls on the breakers; Yahuah binds himself
+--      by oath, two immutable things)
+--
+-- Framing notes:
+--   ★★ I PROCLAIM A LIBERTY FOR YOU, TO THE SWORD (THREAD 1): under the Babylonian siege Zedekiah cut a
+--      covenant *to proclaim liberty* (34:8) — *That every man should let his manservant, and every man his
+--      maidservant, being an Hebrew or an Hebrewess, go free* (34:9). This is no innovation: it is the Torah's
+--      own release. The jubile: *proclaim liberty throughout all the land unto all the inhabitants thereof: it
+--      shall be a jubile unto you* (Lev 25:10) — the very word *liberty* (deror) Jeremiah uses. The seventh-year
+--      freeing: *if thy brother, an Hebrew man, or an Hebrew woman, be sold unto thee, and serve thee six years;
+--      then in the seventh year thou shalt let him go free* (Deut 15:12); *If thou buy an Hebrew servant, six
+--      years he shall serve: and in the seventh he shall go out free for nothing* (Exod 21:2). Yahuah names it
+--      as the covenant He made at the Exodus: *At the end of seven years let ye go every man his brother an
+--      Hebrew... but your fathers hearkened not unto me* (34:14). They obeyed for a moment — *they obeyed, and
+--      let them go* (34:10) — *and had done right in my sight* (34:15) — then reversed it: *But afterward they
+--      turned, and caused the servants and the handmaids, whom they had let go free, to return, and brought them
+--      into subjection* (34:11), *and polluted my name* (34:16). So the sentence is measure-for-measure: *Ye
+--      have not hearkened unto me, in proclaiming liberty, every one to his brother... behold, I proclaim a
+--      liberty for you, saith Yahuah (LORD), to the sword, to the pestilence, and to the famine* (34:17). You
+--      withheld the release the Torah commanded, so I release YOU — to the sword. And against this broken,
+--      bitter liberty stands the TRUE release the Messiah proclaims: *to proclaim liberty to the captives, and
+--      the opening of the prison to them that are bound* (Isa 61:1), which He read in the synagogue and claimed
+--      — *to preach deliverance to the captives... To preach the acceptable year of Yahuah (Lord)* (Luke
+--      4:18-19). The jubile-liberty men would not keep, the Messiah brings to pass.
+--   ★ THEY PASSED BETWEEN THE PARTS OF THE CALF (THREAD 2): the covenant was ratified by the ancient rite of
+--      the divided animal — *I will give the men that have transgressed my covenant, which have not performed
+--      the words of the covenant which they had made before me, when they cut the calf in twain, and passed
+--      between the parts thereof* (34:18); *The princes of Yahudah (Judah), and the princes of Jerusalem, the
+--      eunuchs, and the priests, and all the people of the land, which passed between the parts of the calf*
+--      (34:19). To pass between the pieces is to invoke a self-maledictory oath: so be it done to me as to this
+--      divided beast if I break this word. That is the very rite of Abram's covenant: *Take me an heifer of
+--      three years old... and divided them in the midst* (Gen 15:9-10), and *when the sun went down... behold a
+--      smoking furnace, and a burning lamp that passed between those pieces. In the same day Yahuah (LORD) made
+--      a covenant with Abram* (Gen 15:17-18) — there it is YAHUAH who passes between, binding HIMSELF. Hebrews
+--      names the weight of that self-binding oath: *because he could swear by no greater, he sware by himself*
+--      (Heb 6:13), *confirmed it by an oath: That by two immutable things, in which it was impossible for Elohim
+--      (God) to lie, we might have a strong consolation* (Heb 6:17-18). The covenant-cutters of Jeremiah 34
+--      passed between the calf and then transgressed — so the self-curse falls: *I will even give them into the
+--      hand of their enemies... and their dead bodies shall be for meat unto the fowls of the heaven* (34:20),
+--      their own bodies become the divided beast.
+--   VERSES WITH NO SEPARATE ADD: v.1-7 (the Babylonian-judgment oracle on Zedekiah, the city burned, the king
+--      taken yet dying in peace — the judgment-frame, woven in prose, sealed at v.22), v.21-22 (Zedekiah and
+--      the city given to Babylon's army, burned, Yahudah a desolation — the outworking of the broken release;
+--      woven in THREAD 1 / 2 prose). All blocks recorded; both threads canon-NT-Tanakh, no extras warranted.
+
+CREATE TEMP VIEW _s309_jer34_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): I proclaim a liberty for you, to the sword — the Torah's release withheld and judged
+    ('canon','jeremiah',34,9,'canon','leviticus',25,10,'free',
+      E'*And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). Zedekiah''s covenant — *That every man should let his manservant, and every man his maidservant, being an Hebrew or an Hebrewess, go free* (Jeremiah 34:9) — is the very *liberty* the Torah commanded: the jubile release, when bondmen go free and every man returns to his own. The release was never a new mercy; it was the law''s standing word, briefly obeyed then betrayed.'),
+    ('canon','jeremiah',34,14,'canon','deuteronomy',15,12,'free',
+      E'*And if thy brother, an Hebrew man, or an Hebrew woman, be sold unto thee, and serve thee six years; then in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12). Yahuah names this very command as the covenant He made at the Exodus — *At the end of seven years let ye go every man his brother an Hebrew, which hath been sold unto thee; and when he hath served thee six years, thou shalt let him go free from thee: but your fathers hearkened not unto me* (Jeremiah 34:14). The seventh-year freeing of the Hebrew servant is the Torah''s own word; the men of Zedekiah''s day broke what their fathers had already broken.'),
+    ('canon','jeremiah',34,14,'canon','exodus',21,2,'free',
+      E'*If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2). The first word of the covenant-code is exactly the release Jeremiah recalls — *when he hath served thee six years, thou shalt let him go free from thee* (Jeremiah 34:14). The Hebrew servant goes out *free for nothing* in the seventh year: the liberty Zedekiah proclaimed and then revoked was written into the Torah from the beginning.'),
+    ('canon','jeremiah',34,8,'canon','isaiah',61,1,'free',
+      E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). Against the broken liberty of Jeremiah''s day — the covenant *to proclaim liberty unto them* (Jeremiah 34:8) kept only a moment — stands the TRUE release the Anointed proclaims: *to proclaim liberty to the captives*, the jubile-deror that no man will ever revoke. What Zedekiah''s covenant could not hold, the Messiah brings to pass.'),
+    ('canon','jeremiah',34,17,'canon','luke',4,18,'free',
+      E'*The Spirit of Yahuah (Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised* (Luke 4:18). The Messiah reads Isaiah''s liberty-oracle in the synagogue and claims it — *to preach deliverance to the captives... to set at liberty them that are bruised*. Where the men of Jeremiah 34 withheld the release and were given *a liberty... to the sword* (Jeremiah 34:17), the Anointed proclaims the release that truly frees; the bitter liberty of judgment is answered by the acceptable year of grace.'),
+    ('canon','jeremiah',34,17,'canon','luke',4,19,'free',
+      E'*To preach the acceptable year of Yahuah (Lord)* (Luke 4:19). The Messiah names His mission as the jubile itself — *the acceptable year of Yahuah*, the year of release and return. Jeremiah''s generation perverted the year of release, turning freed servants back into bondage, and earned *a liberty... to the sword, to the pestilence, and to the famine* (Jeremiah 34:17); the Son comes to keep the jubile they broke, proclaiming the true and lasting liberty.'),
+
+    -- THREAD 2 (★): they cut the calf in twain and passed between the parts — the self-maledictory oath
+    ('canon','jeremiah',34,18,'canon','genesis',15,10,'free',
+      E'*And he took unto him all these, and divided them in the midst, and laid each piece one against another: but the birds divided he not* (Genesis 15:10). The rite Jeremiah describes — *when they cut the calf in twain, and passed between the parts thereof* (Jeremiah 34:18) — is the rite of Abram''s covenant: the animals divided in the midst, the parts laid one against another, that the covenant-makers might pass between. To walk between the pieces is to swear a self-maledictory oath — so be it done to me as to this divided beast if I break the word.'),
+    ('canon','jeremiah',34,18,'canon','genesis',15,9,'free',
+      E'*And he said unto him, Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon* (Genesis 15:9). The beasts Abram took to cut the covenant are the pattern behind *they cut the calf in twain* (Jeremiah 34:18): the divided animal is the form of the binding oath. The princes and priests of Jerusalem cut the calf and passed between as Abram''s covenant was cut — and then transgressed the very word they had so sworn.'),
+    ('canon','jeremiah',34,18,'canon','genesis',15,17,'free',
+      E'*And it came to pass, that, when the sun went down, and it was dark, behold a smoking furnace, and a burning lamp that passed between those pieces* (Genesis 15:17). In Abram''s covenant it is YAHUAH Himself — the smoking furnace and the burning lamp — who passes between the divided pieces, binding HIMSELF by the self-maledictory oath. The covenant-breakers of Jeremiah 34, who *passed between the parts thereof* (Jeremiah 34:18) and then turned, stand in the starkest contrast: where Yahuah swears and keeps, they swore and broke.'),
+    ('canon','jeremiah',34,18,'canon','genesis',15,18,'free',
+      E'*In the same day Yahuah (LORD) made a covenant with Abram, saying, Unto thy seed have I given this land, from the river of Egypt unto the great river, the river Euphrates* (Genesis 15:18). The covenant cut by the divided pieces is the covenant of the seed and the land. The men who *passed between the parts of the calf* (Jeremiah 34:18-19) bound themselves by that same ancient rite to free their Hebrew brethren — and breaking it, they forfeit the land''s blessing, given over instead *into the hand of their enemies* (Jeremiah 34:20).'),
+    ('canon','jeremiah',34,18,'canon','hebrews',6,13,'free',
+      E'*For when Elohim (God) made promise to Abraham, because he could swear by no greater, he sware by himself* (Hebrews 6:13). Hebrews names the weight of the oath behind the divided pieces: Yahuah, having none greater to swear by, sware by Himself. The covenant *which they had made before me, when they cut the calf in twain, and passed between the parts thereof* (Jeremiah 34:18) invoked that same self-binding solemnity — and so its breaking is no light thing, but the breaking of a sworn, self-maledictory oath.'),
+    ('canon','jeremiah',34,18,'canon','hebrews',6,17,'free',
+      E'*Wherein Elohim (God), willing more abundantly to shew unto the heirs of promise the immutability of his counsel, confirmed it by an oath: That by two immutable things, in which it was impossible for Elohim (God) to lie, we might have a strong consolation* (Hebrews 6:17-18). The oath that passes between the pieces is meant to be IMMUTABLE — Yahuah confirms His own word by it, *impossible... to lie*. The covenant-cutters of Jeremiah 34 took that immutable form upon themselves — *passed between the parts thereof* (Jeremiah 34:18) — and then made it a lie; the curse of the divided beast falls on the breakers (Jeremiah 34:20).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword',
+       E'I proclaim a liberty for you, to the sword — the release commanded, kept, and broken',
+       E'Under the Babylonian siege, Zedekiah cut a covenant with all the people *to proclaim liberty unto them* (34:8) — *That every man should let his manservant, and every man his maidservant, being an Hebrew or an Hebrewess, go free; that none should serve himself of them, to wit, of a Yahudi (Jew) his brother* (34:9). This was no new mercy invented in the crisis; it was the Torah''s own standing word. The jubile commanded it: *proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession* (Leviticus 25:10) — the very word *liberty* Jeremiah uses. The seventh-year release commanded it: *if thy brother, an Hebrew man, or an Hebrew woman, be sold unto thee, and serve thee six years; then in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12); *If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2). Yahuah Himself names it the covenant of the Exodus: *At the end of seven years let ye go every man his brother an Hebrew... but your fathers hearkened not unto me* (34:14). And for one moment they obeyed — *then they obeyed, and let them go* (34:10), *and had done right in my sight, in proclaiming liberty every man to his neighbour* (34:15). Then they betrayed it: *But afterward they turned, and caused the servants and the handmaids, whom they had let go free, to return, and brought them into subjection* (34:11) — *and polluted my name* (34:16). So the sentence comes back upon them in their own coin, measure-for-measure: *Ye have not hearkened unto me, in proclaiming liberty, every one to his brother, and every man to his neighbour: behold, I proclaim a liberty for you, saith Yahuah (LORD), to the sword, to the pestilence, and to the famine; and I will make you to be removed into all the kingdoms of the earth* (34:17). You would not set your brothers free, so I set YOU free — to the sword. Yet the perverted liberty of judgment is not Yahuah''s last word on liberty. The true release stands in Isaiah''s oracle: *to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1) — and the Messiah read it in the synagogue and claimed it as His own mission: *he hath sent me... to preach deliverance to the captives... to set at liberty them that are bruised, To preach the acceptable year of Yahuah (Lord)* (Luke 4:18-19). The jubile-liberty that Zedekiah''s generation proclaimed and then revoked, the Anointed comes to keep — the acceptable year that no man will ever undo.',
+       sv.verse_id, ev.verse_id, 'free', 34825
+  FROM _s309_jer34_lookup sv, _s309_jer34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=34 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-34-they-passed-between-the-parts-of-the-calf',
+       E'They passed between the parts of the calf — the sworn covenant cut and broken',
+       E'The covenant the people transgressed was not a casual word but a covenant ratified by the most solemn ancient rite — the cutting of an animal in two and the walking between its parts: *And I will give the men that have transgressed my covenant, which have not performed the words of the covenant which they had made before me, when they cut the calf in twain, and passed between the parts thereof, The princes of Yahudah (Judah), and the princes of Jerusalem, the eunuchs, and the priests, and all the people of the land, which passed between the parts of the calf* (34:18-19). To pass between the divided pieces is to swear a self-maledictory oath: so be it done to me as to this divided beast if I break this word. That is precisely the rite of Abram''s covenant: *Take me an heifer of three years old, and a she goat of three years old, and a ram of three years old, and a turtledove, and a young pigeon* (Genesis 15:9), *And he took unto him all these, and divided them in the midst, and laid each piece one against another* (Genesis 15:10); and when the dark fell, *behold a smoking furnace, and a burning lamp that passed between those pieces. In the same day Yahuah (LORD) made a covenant with Abram* (Genesis 15:17-18) — there it is YAHUAH who passes between, binding HIMSELF by the oath of the divided pieces. Hebrews names the weight of such an oath: *because he could swear by no greater, he sware by himself* (Hebrews 6:13), *confirmed it by an oath: That by two immutable things, in which it was impossible for Elohim (God) to lie, we might have a strong consolation* (Hebrews 6:17-18). The princes and priests of Jerusalem took that immutable, self-maledictory form upon themselves, passed between the calf — and then turned and made it a lie. So the curse of the divided beast falls on the breakers: *I will even give them into the hand of their enemies, and into the hand of them that seek their life: and their dead bodies shall be for meat unto the fowls of the heaven, and to the beasts of the earth* (34:20). Their own bodies become the severed carcase they walked between; where Yahuah swears and keeps, they swore and broke, and the self-curse is exacted.',
+       sv.verse_id, ev.verse_id, 'free', 34828
+  FROM _s309_jer34_lookup sv, _s309_jer34_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=34 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *proclaim liberty throughout all the land... it shall be a jubile unto you* (Leviticus 25:10) — the jubile-liberty (deror) Zedekiah''s covenant proclaimed (Jeremiah 34:9); the Torah''s own standing word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=9
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12) — the seventh-year release Yahuah names as the Exodus-covenant (Jeremiah 34:14); the freeing of the Hebrew servant commanded.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=14
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=15 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2) — the first word of the covenant-code is the very release of Jeremiah 34:14; the Hebrew servant goes out free.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=14
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1) — the TRUE release the Anointed brings, against the broken liberty of Jeremiah 34:8.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=8
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *he hath sent me... to preach deliverance to the captives... to set at liberty them that are bruised* (Luke 4:18) — the Messiah claims Isaiah''s liberty; the release men withheld (Jeremiah 34:17) He brings to pass.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=17
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *To preach the acceptable year of Yahuah (Lord)* (Luke 4:19) — the Messiah''s mission IS the jubile; the year of release Jeremiah''s generation perverted (Jeremiah 34:17), the Son keeps.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=17
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-i-proclaim-a-liberty-for-you-to-the-sword'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *divided them in the midst, and laid each piece one against another* (Genesis 15:10) — the divided-animal rite behind *they cut the calf in twain* (Jeremiah 34:18); to pass between is to swear a self-maledictory oath.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Take me an heifer of three years old... and a turtledove, and a young pigeon* (Genesis 15:9) — the beasts of Abram''s covenant are the pattern of the cut calf (Jeremiah 34:18); the divided animal is the form of the binding oath.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *a smoking furnace, and a burning lamp that passed between those pieces* (Genesis 15:17) — in Abram''s covenant YAHUAH Himself passes between, binding HIMSELF; the breakers of Jeremiah 34:18 stand in starkest contrast.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (LORD) made a covenant with Abram... Unto thy seed have I given this land* (Genesis 15:18) — the covenant cut by the divided pieces is the seed-and-land covenant; the breakers forfeit the land (Jeremiah 34:20).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *because he could swear by no greater, he sware by himself* (Hebrews 6:13) — the weight of the oath behind the divided pieces; the broken covenant of Jeremiah 34:18 is a sworn, self-maledictory oath betrayed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *confirmed it by an oath: That by two immutable things, in which it was impossible for Elohim (God) to lie* (Hebrews 6:17-18) — the oath that passes between the pieces is meant to be immutable; the breakers of Jeremiah 34:18 made it a lie, and the curse falls (34:20).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer34_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=34 AND sv.verse_number=18
+  JOIN _s309_jer34_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
