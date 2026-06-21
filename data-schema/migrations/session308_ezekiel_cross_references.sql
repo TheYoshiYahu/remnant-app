@@ -6060,6 +6060,1399 @@ SELECT t.id, cr.id, 5, E'★ *that evil servant shall say in his heart, My lord 
  WHERE t.slug='ezekiel-12-the-days-are-at-hand-none-of-my-words-deferred'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_13.sql (Ezekiel 13) -----
+-- Chapter: Ezekiel 13 — ★★ AGAINST THE FALSE PROPHETS. Woe unto the foolish prophets that
+-- prophesy out of their own hearts and have seen nothing; they have seen vanity and lying
+-- divination, saying Yahuah saith — and Yahuah hath NOT sent them. They have seduced my people,
+-- saying Peace; and there was no peace; the whitewashed wall of false assurance daubed with
+-- untempered morter — Yahuah will break it down. And the women that sew pillows to all armholes
+-- to hunt souls, who make the heart of the righteous sad and strengthen the hands of the wicked.
+-- The measuring line of Isaiah 8:20 (to the Torah and to the testimony) tried against the prophet
+-- not sent; the anti-antinomian guard standing over false comfort and soul-hunting witchcraft.
+-- Tag: ezek13   Temp view: _s308_ezek13_lookup   Session: s308
+-- Sort band: base 32300, step 3 -> threads at 32300, 32303, 32306 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',13,v
+--
+-- Ezekiel 13 coverage:
+--   ★★ v.1-7 (prophesy against the prophets that prophesy OUT OF THEIR OWN HEARTS; Woe unto the
+--          foolish prophets that follow their own spirit, and have seen nothing; they have seen
+--          vanity and lying divination, saying, Yahuah saith: and Yahuah hath NOT sent them)
+--        NT:     ★★ Matthew 7:15 (Beware of false prophets... inwardly ravening wolves), ★★ 2 Peter
+--                2:1 (false prophets... false teachers who privily bring in damnable heresies) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh false-prophet weave)
+--        Tanakh: ★★ Jeremiah 23:16 (they speak a vision of their own heart, and not out of the mouth
+--                of Yahuah), ★★ Jeremiah 23:21 (I have not sent these prophets, yet they ran),
+--                ★★ Deuteronomy 18:20 (the prophet which shall presume to speak a word in my name...
+--                even that prophet shall die), ★ Deuteronomy 18:22 (if the thing follow not... the
+--                prophet hath spoken it presumptuously) — THREAD 1
+--   ★★ v.10-16 (they have seduced my people, saying, Peace; and there was no peace; one built up a
+--          wall, others daubed it with untempered morter; I will break down the wall... it shall fall;
+--          which see visions of peace for her, and there is no peace)
+--        NT:     ★★ 1 Thessalonians 5:3 (when they shall say, Peace and safety; then sudden
+--                destruction cometh upon them), ★★ Matthew 7:26 (the foolish man which built his house
+--                upon the sand), ★ Matthew 7:27 (the rain descended... and it fell: and great was the
+--                fall of it), ★ Acts 23:3 (thou whited wall) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 6:14 (saying, Peace, peace; when there is no peace), ★ Jeremiah 8:11
+--                (the same — they healed the hurt slightly, Peace, peace, no peace) — THREAD 2
+--   ★ v.17-23 (the daughters of thy people which prophesy out of their own heart; Woe to the women
+--          that sew pillows to all armholes... to hunt souls; Will ye hunt the souls of my people?;
+--          with lies ye have made the heart of the righteous sad... and strengthened the hands of the
+--          wicked, that he should not return... by promising him life)
+--        NT:     ★ 2 Timothy 4:3 (they heap to themselves teachers, having itching ears) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 23:14 (they strengthen also the hands of evildoers, that none doth
+--                return from his wickedness), ★ Micah 3:5 (the prophets... that cry, Peace; and he
+--                that putteth not into their mouths, they even prepare war against him) — THREAD 3
+--   v.8-9 (Because ye have spoken vanity, and seen lies, behold, I am against you... they shall not
+--          be in the assembly of my people, neither written in the writing of the house of Yashar''el)
+--          — the verdict on the false prophets of v.1-7; woven into THREAD 1 prose; no separate add
+--          (NT none warranted / Extras none / Tanakh held — the not-written-in-the-writing answered in
+--          the false-prophet weave).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit — NT (Matthew 7, 2 Peter 2) + Tanakh (Jeremiah 23, Deuteronomy 18) [free]
+--      (★★ the false prophets who speak from their own heart, NOT sent; the Torah test of the presumptuous prophet)
+--   2. ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall — NT (1 Thessalonians 5, Matthew 7, Acts 23) + Tanakh (Jeremiah 6, Jeremiah 8) [free]
+--      (★★ the whitewashed wall of false assurance; Peace when no peace; the house on sand; the whited wall that falls)
+--   3. ezekiel-13-the-women-that-hunt-souls-and-strengthen-the-wicked — NT (2 Timothy 4) + Tanakh (Jeremiah 23, Micah 3) [free]
+--      (★ the prophetesses'' soul-hunting; the heart of the righteous made sad, the hands of the wicked strengthened)
+--
+-- Framing notes:
+--   ★★ THE FOOLISH PROPHETS (THREAD 1): *prophesy against the prophets of Yashar''el (Israel) that
+--      prophesy, and say thou unto them that prophesy out of their own hearts* (13:2); *Woe unto the
+--      foolish prophets, that follow their own spirit, and have seen nothing!* (13:3); *They have seen
+--      vanity and lying divination, saying, Yahuah (LORD) saith: and Yahuah (LORD) hath not sent them*
+--      (13:6). The mark of the false prophet is the unsent word from the own heart. Jeremiah names the
+--      same — *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jer
+--      23:16); *I have not sent these prophets, yet they ran* (Jer 23:21). The Torah set the test: *the
+--      prophet, which shall presume to speak a word in my name, which I have not commanded him to speak...
+--      even that prophet shall die* (Deut 18:20), *if the thing follow not... the prophet hath spoken it
+--      presumptuously* (Deut 18:22). The Formed Son warns: *Beware of false prophets, which come to you
+--      in sheep''s clothing, but inwardly they are ravening wolves* (Matt 7:15); Peter foresees them
+--      among the people — *there were false prophets also among the people, even as there shall be false
+--      teachers among you* (2 Pet 2:1). The verdict: *they shall not be in the assembly of my people,
+--      neither shall they be written in the writing of the house of Yashar''el (Israel)* (13:9).
+--   ★★ PEACE WHEN THERE WAS NO PEACE (THREAD 2): *they have seduced my people, saying, Peace; and there
+--      was no peace; and one built up a wall, and, lo, others daubed it with untempered morter* (13:10) —
+--      the whitewashed wall of false assurance that cannot stand: *So will I break down the wall that ye
+--      have daubed with untempered morter, and bring it down to the ground... and it shall fall* (13:14);
+--      *which see visions of peace for her, and there is no peace* (13:16). Jeremiah cries the very words
+--      twice — *saying, Peace, peace; when there is no peace* (Jer 6:14; Jer 8:11). Paul names the sudden
+--      ruin of the false peace — *when they shall say, Peace and safety; then sudden destruction cometh
+--      upon them* (1 Thess 5:3). The Formed Son draws the same falling wall as the house on sand — *the
+--      rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell:
+--      and great was the fall of it* (Matt 7:26-27). And Paul names a daubed wall to its face — *Elohim
+--      (God) shall smite thee, thou whited wall* (Acts 23:3). Untempered morter, false peace, a wall
+--      built to fall.
+--   ★ THE WOMEN THAT HUNT SOULS (THREAD 3): *Woe to the women that sew pillows to all armholes... to
+--      hunt souls! Will ye hunt the souls of my people, and will ye save the souls alive that come unto
+--      you?* (13:18); *with lies ye have made the heart of the righteous sad, whom I have not made sad;
+--      and strengthened the hands of the wicked, that he should not return from his wicked way, by
+--      promising him life* (13:22). The false comfort that hunts souls inverts Yahuah''s own measure —
+--      grieving whom he has not grieved, comforting whom he has not comforted. Jeremiah names the same
+--      strengthening of the wicked — *they strengthen also the hands of evildoers, that none doth return
+--      from his wickedness* (Jer 23:14). Micah names the peace-criers who turn on whoever will not pay —
+--      *the prophets... that cry, Peace; and he that putteth not into their mouths, they even prepare war
+--      against him* (Micah 3:5). Paul foresees the itching-ears market for the same false comfort —
+--      *they heap to themselves teachers, having itching ears* (2 Tim 4:3). Yahuah''s answer: *I will
+--      deliver my people out of your hand* (13:23).
+--   VERSES WITH NO SEPARATE ADD: v.4-5 (thy prophets are like foxes; ye have not gone up into the gaps —
+--      the unfaithful watchman imagery; woven into THREAD 1 prose), v.8-9 (the verdict on the false
+--      prophets — not written in the writing of the house; THREAD 1 prose), v.11-13 (the overflowing
+--      shower, hailstones, stormy wind that rends the wall — THREAD 2 prose), v.19-21 (the handfuls of
+--      barley, the pillows torn, the souls let go — THREAD 3 prose). All recorded; every block carries a
+--      thread.
+
+CREATE TEMP VIEW _s308_ezek13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the foolish prophets that follow their own spirit — NOT sent
+    ('canon','ezekiel',13,2,'canon','jeremiah',23,16,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts), Hearken not unto the words of the prophets that prophesy unto you: they make you vain: they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16). Jeremiah names the very fault Ezekiel rebukes — those *that prophesy out of their own hearts* (Ezekiel 13:2). The false prophet''s word rises from his own heart, *not out of the mouth of Yahuah (LORD)*; it makes the people vain, never sent.'),
+    ('canon','ezekiel',13,6,'canon','jeremiah',23,21,'free',
+      E'*I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21). This is the exact charge of Ezekiel — *saying, Yahuah (LORD) saith: and Yahuah (LORD) hath not sent them* (Ezekiel 13:6). They ran unsent and spoke unbidden; the word in their mouth was never Yahuah''s. The unsent prophet is the heart of the false-prophet judgment in both books.'),
+    ('canon','ezekiel',13,6,'canon','deuteronomy',18,20,'free',
+      E'*But the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak, or that shall speak in the name of other gods, even that prophet shall die* (Deuteronomy 18:20). The Torah set the sentence Ezekiel now executes — those who say *Yahuah (LORD) saith: and Yahuah (LORD) hath not sent them* (Ezekiel 13:6) are the prophets who *presume to speak a word in my name, which I have not commanded*. To speak unsent in the Name is a capital offence against the covenant; the false prophet stands already condemned by the Torah.'),
+    ('canon','ezekiel',13,7,'canon','deuteronomy',18,22,'free',
+      E'*When a prophet speaketh in the name of Yahuah (LORD), if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously: thou shalt not be afraid of him* (Deuteronomy 18:22). The Torah''s test exposes Ezekiel''s liars — *Have ye not seen a vain vision, and have ye not spoken a lying divination, whereas ye say, Yahuah (LORD) saith it; albeit I have not spoken?* (Ezekiel 13:7). The vain vision is the word Yahuah never spoke; the test is whether the word stands — and theirs is *spoken presumptuously*.'),
+    ('canon','ezekiel',13,3,'canon','matthew',7,15,'free',
+      E'*Beware of false prophets, which come to you in sheep''s clothing, but inwardly they are ravening wolves* (Matthew 7:15). The Formed Son warns of the very figures Ezekiel names — *the foolish prophets, that follow their own spirit, and have seen nothing!* (Ezekiel 13:3). The sheep''s clothing is the borrowed *Yahuah (LORD) saith*; inwardly they are wolves who follow their own spirit and feed on the flock.'),
+    ('canon','ezekiel',13,3,'canon','2-peter',2,1,'free',
+      E'*But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying Yahuah (Lord) that bought them, and bring upon themselves swift destruction* (2 Peter 2:1). Peter reads the false prophets straight out of Ezekiel''s frame — *the foolish prophets, that follow their own spirit, and have seen nothing!* (Ezekiel 13:3) — and names their heirs, the false teachers who creep in. The unsent prophet of Ezekiel''s day is the false teacher of the last days; both bring swift destruction on themselves.'),
+
+    -- THREAD 2 (★★): Peace, and there was no peace — the untempered wall that falls
+    ('canon','ezekiel',13,10,'canon','jeremiah',6,14,'free',
+      E'*They have healed also the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (Jeremiah 6:14). Jeremiah cries the very seduction Ezekiel exposes — *they have seduced my people, saying, Peace; and there was no peace* (Ezekiel 13:10). The slight healing and the false *Peace, peace* are the untempered morter daubed over the breach; the wound is covered, never closed.'),
+    ('canon','ezekiel',13,10,'canon','jeremiah',8,11,'free',
+      E'*For they have healed the hurt of the daughter of my people slightly, saying, Peace, peace; when there is no peace* (Jeremiah 8:11). Jeremiah repeats the cry — the false prophets *saying, Peace, peace; when there is no peace* — the same lie Ezekiel calls the wall daubed *with untempered morter* (Ezekiel 13:10). Twice spoken because the deceit is the signature sin of the unsent prophet: a peace declared where Yahuah declares none.'),
+    ('canon','ezekiel',13,16,'canon','1-thessalonians',5,3,'free',
+      E'*For when they shall say, Peace and safety; then sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape* (1 Thessalonians 5:3). Paul names the end of the false peace Ezekiel''s prophets proclaim — those *which see visions of peace for her, and there is no peace* (Ezekiel 13:16). The cry of *Peace and safety* is the daubed wall standing tall the moment before the stormy wind rends it; sudden destruction follows the false assurance.'),
+    ('canon','ezekiel',13,14,'canon','matthew',7,26,'free',
+      E'*And every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand* (Matthew 7:26). The Formed Son draws Ezekiel''s falling wall as the house on sand — *So will I break down the wall that ye have daubed with untempered morter, and bring it down to the ground... and it shall fall* (Ezekiel 13:14). The wall daubed without foundation and the house built without rock are the same false security; both are built to fall.'),
+    ('canon','ezekiel',13,14,'canon','matthew',7,27,'free',
+      E'*And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell: and great was the fall of it* (Matthew 7:27). The storm that takes the sand-built house is the storm Yahuah sends against the daubed wall — *I will even rend it with a stormy wind in my fury; and there shall be an overflowing shower in mine anger, and great hailstones* (Ezekiel 13:13), *and it shall fall* (Ezekiel 13:14). Overflowing shower, stormy wind, hailstones, floods and rain and wind: the false wall and the false house meet the same fall, and great is the fall of it.'),
+    ('canon','ezekiel',13,10,'canon','acts',23,3,'free',
+      E'*Then said Paul unto him, Elohim (God) shall smite thee, thou whited wall: for sittest thou to judge me after the law, and commandest me to be smitten contrary to the law?* (Acts 23:3). Paul names a man to his face with Ezekiel''s very image — *thou whited wall* — the wall daubed fair on the outside, hollow within: *one built up a wall, and, lo, others daubed it with untempered morter* (Ezekiel 13:10). The whitewash hides corruption; Elohim smites the daubed wall whether it be a man or a false peace.'),
+
+    -- THREAD 3 (★): the women that hunt souls — sad the righteous, strengthen the wicked
+    ('canon','ezekiel',13,22,'canon','jeremiah',23,14,'free',
+      E'*I have seen also in the prophets of Jerusalem an horrible thing: they commit adultery, and walk in lies: they strengthen also the hands of evildoers, that none doth return from his wickedness* (Jeremiah 23:14). Jeremiah names the very crime of Ezekiel''s soul-hunters — *strengthened the hands of the wicked, that he should not return from his wicked way, by promising him life* (Ezekiel 13:22). The false comfort holds the wicked in his wickedness by promising him peace; it shuts the door of return that Yahuah opened.'),
+    ('canon','ezekiel',13,18,'canon','micah',3,5,'free',
+      E'*Thus saith Yahuah (LORD) concerning the prophets that make my people err, that bite with their teeth, and cry, Peace; and he that putteth not into their mouths, they even prepare war against him* (Micah 3:5). Micah names the same mercenary soul-hunting Ezekiel rebukes — the women who hunt souls *for handfuls of barley and for pieces of bread* (Ezekiel 13:19; 13:18). The prophet who cries *Peace* for pay and turns on whoever will not feed him is the soul-hunter who sells comfort and lies; the price is bread, the merchandise is souls.'),
+    ('canon','ezekiel',13,22,'canon','2-timothy',4,3,'free',
+      E'*For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears* (2 Timothy 4:3). Paul foresees the market for the false comfort Ezekiel exposes — the women who *made the heart of the righteous sad... and strengthened the hands of the wicked... by promising him life* (Ezekiel 13:22). Itching ears heap up teachers who will *promise life*, soothing the wicked and grieving none; the soul-hunters and their hearers deserve each other.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit',
+       E'Woe unto the foolish prophets that follow their own spirit — Yahuah hath not sent them',
+       E'The word comes against the men who speak for Yahuah without being sent: *Son of Adam, prophesy against the prophets of Yashar''el (Israel) that prophesy, and say thou unto them that prophesy out of their own hearts, Hear ye the word of Yahuah (LORD)* (13:2); *Thus saith Adonai Yahuah (the Lord GOD); Woe unto the foolish prophets, that follow their own spirit, and have seen nothing!* (13:3). They are watchmen who never manned the breach — *Ye have not gone up into the gaps, neither made up the hedge for the house of Yashar''el (Israel) to stand in the battle in the day of Yahuah (LORD)* (13:5) — and their oracle is fabricated: *They have seen vanity and lying divination, saying, Yahuah (LORD) saith: and Yahuah (LORD) hath not sent them* (13:6), *whereas ye say, Yahuah (LORD) saith it; albeit I have not spoken?* (13:7). The mark of the false prophet is the unsent word drawn from the own heart. Jeremiah names it in the same words: *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16); *I have not sent these prophets, yet they ran: I have not spoken to them, yet they prophesied* (Jeremiah 23:21). The Torah set the sentence long before: *the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak... even that prophet shall die* (Deuteronomy 18:20), and the test by which he is known — *if the thing follow not, nor come to pass, that is the thing which Yahuah (LORD) hath not spoken, but the prophet hath spoken it presumptuously* (Deuteronomy 18:22). The Formed Son carries the warning forward: *Beware of false prophets, which come to you in sheep''s clothing, but inwardly they are ravening wolves* (Matthew 7:15); and Peter names their heirs: *there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies* (2 Peter 2:1). The verdict on them all is the same — *they shall not be in the assembly of my people, neither shall they be written in the writing of the house of Yashar''el (Israel)* (13:9).',
+       sv.verse_id, ev.verse_id, 'free', 32300
+  FROM _s308_ezek13_lookup sv, _s308_ezek13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=13 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall',
+       E'Peace, and there was no peace — the wall daubed with untempered morter shall fall',
+       E'The lie of the false prophets takes a shape: a wall whitewashed to look sound. *Because, even because they have seduced my people, saying, Peace; and there was no peace; and one built up a wall, and, lo, others daubed it with untempered morter* (13:10). The daubing is the false comfort smeared over a breach that was never repaired. Yahuah will test it with the storm: *there shall be an overflowing shower; and ye, O great hailstones, shall fall; and a stormy wind shall rend it* (13:11), *So will I break down the wall that ye have daubed with untempered morter, and bring it down to the ground, so that the foundation thereof shall be discovered, and it shall fall* (13:14) — and the verdict on the peace-prophets: *the prophets of Yashar''el (Israel) which prophesy concerning Jerusalem, and which see visions of peace for her, and there is no peace* (13:16). Jeremiah cries the very lie twice — *saying, Peace, peace; when there is no peace* (Jeremiah 6:14; Jeremiah 8:11) — the slight healing that covers the wound without closing it. Paul names where the false peace ends: *when they shall say, Peace and safety; then sudden destruction cometh upon them, as travail upon a woman with child; and they shall not escape* (1 Thessalonians 5:3). The Formed Son draws the same collapsing structure as the house on sand: *every one that heareth these sayings of mine, and doeth them not, shall be likened unto a foolish man, which built his house upon the sand: And the rain descended, and the floods came, and the winds blew, and beat upon that house; and it fell: and great was the fall of it* (Matthew 7:26-27) — the storm that rends the daubed wall and the storm that beats down the sand-built house are one. And Paul names a man to his face with Ezekiel''s image: *Elohim (God) shall smite thee, thou whited wall* (Acts 23:3) — fair without, hollow within. Untempered morter and a false *Peace*: a wall built to fall.',
+       sv.verse_id, ev.verse_id, 'free', 32303
+  FROM _s308_ezek13_lookup sv, _s308_ezek13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=13 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-13-the-women-that-hunt-souls-and-strengthen-the-wicked',
+       E'The women that sew pillows to hunt souls — sad the righteous, strengthen the wicked',
+       E'The word turns to the prophetesses who deal the same false comfort. *Likewise, thou son of Adam, set thy face against the daughters of thy people, which prophesy out of their own heart* (13:17); *Woe to the women that sew pillows to all armholes, and make kerchiefs upon the head of every stature to hunt souls! Will ye hunt the souls of my people, and will ye save the souls alive that come unto you?* (13:18). Their trade is soul-hunting witchcraft sold for scraps — *will ye pollute me among my people for handfuls of barley and for pieces of bread, to slay the souls that should not die, and to save the souls alive that should not live, by your lying to my people that hear your lies?* (13:19). And the deepest charge is the inversion of Yahuah''s own measure: *with lies ye have made the heart of the righteous sad, whom I have not made sad; and strengthened the hands of the wicked, that he should not return from his wicked way, by promising him life* (13:22). They grieve whom Yahuah comforts and comfort whom Yahuah warns; by *promising him life* they shut the door of repentance the warning would have opened. Jeremiah names the same crime among the prophets of Jerusalem — *they strengthen also the hands of evildoers, that none doth return from his wickedness* (Jeremiah 23:14). Micah names the mercenary edge — *the prophets... that bite with their teeth, and cry, Peace; and he that putteth not into their mouths, they even prepare war against him* (Micah 3:5): comfort for pay, war on whoever will not feed them. Paul foresees the itching-ears market for the same false promise — *they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears* (2 Timothy 4:3). Yahuah''s answer breaks the snare: *I will tear them from your arms, and will let the souls go* (13:20), *and deliver my people out of your hand... and ye shall know that I am Yahuah (LORD)* (13:21,23).',
+       sv.verse_id, ev.verse_id, 'free', 32306
+  FROM _s308_ezek13_lookup sv, _s308_ezek13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=13 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they speak a vision of their own heart, and not out of the mouth of Yahuah (LORD)* (Jeremiah 23:16) — Jeremiah names the very fault of Ezekiel 13:2, the word from the own heart.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I have not sent these prophets, yet they ran* (Jeremiah 23:21) — the exact charge of Ezekiel 13:6: ran unsent, spoke unbidden.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the prophet, which shall presume to speak a word in my name, which I have not commanded him to speak... even that prophet shall die* (Deuteronomy 18:20) — the Torah''s sentence on the unsent prophet of Ezekiel 13:6.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *if the thing follow not... the prophet hath spoken it presumptuously* (Deuteronomy 18:22) — the Torah''s test exposes the vain vision of Ezekiel 13:7.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=7
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Beware of false prophets, which come to you in sheep''s clothing, but inwardly they are ravening wolves* (Matthew 7:15) — the Formed Son names the foolish prophets of Ezekiel 13:3; sheep''s clothing over a wolf.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *there were false prophets also among the people, even as there shall be false teachers among you* (2 Peter 2:1) — Peter names the heirs of Ezekiel 13:3''s unsent prophets.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-foolish-prophets-that-follow-their-own-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *saying, Peace, peace; when there is no peace* (Jeremiah 6:14) — Jeremiah cries the very seduction of Ezekiel 13:10; the slight healing daubed over the breach.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=10
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *saying, Peace, peace; when there is no peace* (Jeremiah 8:11) — Jeremiah repeats the lie; the same false peace Ezekiel 13:10 calls untempered morter.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=10
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=8 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *when they shall say, Peace and safety; then sudden destruction cometh upon them* (1 Thessalonians 5:3) — Paul names the end of the false peace of Ezekiel 13:16.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=16
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *a foolish man, which built his house upon the sand* (Matthew 7:26) — the Formed Son''s house on sand is Ezekiel 13:14''s wall daubed without foundation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the rain descended, and the floods came, and the winds blew... and it fell: and great was the fall of it* (Matthew 7:27) — the storm that takes the sand-house is the stormy wind and hail that rend the wall (Ezekiel 13:13-14).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Elohim (God) shall smite thee, thou whited wall* (Acts 23:3) — Paul names a man with Ezekiel 13:10''s image: fair without, hollow within, daubed with untempered morter.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=10
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-peace-when-there-was-no-peace-the-untempered-wall'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they strengthen also the hands of evildoers, that none doth return from his wickedness* (Jeremiah 23:14) — Jeremiah names the crime of Ezekiel 13:22: holding the wicked in his wickedness.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-women-that-hunt-souls-and-strengthen-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *the prophets... that cry, Peace; and he that putteth not into their mouths, they even prepare war against him* (Micah 3:5) — the mercenary soul-hunting of Ezekiel 13:18-19: comfort for pay.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-women-that-hunt-souls-and-strengthen-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they heap to themselves teachers, having itching ears* (2 Timothy 4:3) — Paul foresees the market for Ezekiel 13:22''s false comfort that promises the wicked life.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s308_ezek13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-13-the-women-that-hunt-souls-and-strengthen-the-wicked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_14.sql (Ezekiel 14) -----
+-- Chapter: Ezekiel 14 — the elders of Yashar''el (Israel) come to enquire while their idols are set up
+-- in their HEART and the stumblingblock of their iniquity is before their face; Yahuah (LORD) answers
+-- the double-minded ACCORDING to the multitude of their idols, to take the house in their own heart.
+-- THE THREE PARAGONS: *Though these three men, Noah, Daniel, and Job, were in it, they should deliver
+-- but their own souls by their righteousness* — righteousness is personal, never transferable; even the
+-- three could save only themselves (the one exception the whole canon points to is the Messiah, framed
+-- in prose, Isaiah 53). The FOUR SORE JUDGMENTS — sword, famine, noisome beast, pestilence — and the
+-- preserved REMNANT that justifies Yahuah''s dealings.
+-- Tag: ezek14   Temp view: _s308_ezek14_lookup
+-- Sort band: base 32325, step 3 -> threads at 32325, 32328, 32331 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',14,v
+--
+-- Ezekiel 14 coverage:
+--   ★★ v.1-8 (certain of the elders... sat before me; these men have set up their IDOLS IN THEIR HEART,
+--          and put the stumblingblock of their iniquity before their face; I Yahuah will ANSWER him that
+--          cometh according to the MULTITUDE of his idols; that I may take the house in their own heart)
+--        NT:     ★★ James 4:8 (purify your hearts, ye double minded), ★ Matthew 6:24 (no man can serve
+--                two masters... ye cannot serve Elohim and mammon), ★ 1 John 5:21 (little children, keep
+--                yourselves from idols) — THREAD 1
+--        Extras: none warranted (clean canon-NT weave; the idols-of-the-heart frame)
+--        Tanakh: ★ Isaiah 1:15 (when ye make many prayers, I will not hear: your hands are full of
+--                blood — prayer refused while the heart is defiled) — THREAD 1
+--   v.9-11 (if the prophet be deceived, I Yahuah have deceived that prophet... that the house may go no
+--          more astray, but that they may be my people, and I their Elohim) — the covenant-formula close
+--          to the idolatry oracle; woven into THREAD 1 prose; no separate add (NT none / Extras none /
+--          Tanakh none warranted distinct — the my-people/their-Elohim refrain held in the Ezek-37 weave).
+--   ★★★ v.12-20 (the land sinneth grievously; break the staff of bread, send famine; THOUGH THESE THREE
+--          MEN, NOAH, DANIEL, AND JOB, were in it, they should deliver but THEIR OWN SOULS by their
+--          righteousness; they shall deliver neither sons nor daughters; THEY ONLY shall be delivered)
+--        NT:     ★★ Romans 14:12 (every one of us shall give account of himself to Elohim), ★ Philippians
+--                2:12 (work out YOUR OWN salvation with fear and trembling) — THREAD 2
+--        Extras: none warranted (the three are canon witnesses — Noah Gen 7, Job Job 1; Daniel a
+--                contemporary; no extra-canonical member forced)
+--        Tanakh: ★★ Ezekiel 18:20 (the soul that sinneth, it shall die... the righteousness of the
+--                righteous shall be upon HIM), ★★ Jeremiah 15:1 (though Moses and Samuel stood before me,
+--                yet my mind could not be toward this people), ★ Genesis 7:23 (Noah only remained alive),
+--                ★ Job 1:1 (that man was perfect and upright, one that feared Elohim) — THREAD 2
+--   ★ v.21-23 (my FOUR SORE JUDGMENTS upon Jerusalem, the sword, and the famine, and the noisome beast,
+--          and the pestilence; YET, behold, therein shall be left a REMNANT... ye shall be comforted...
+--          ye shall know that I have not done without cause all that I have done)
+--        NT:     ★ Revelation 6:8 (power... to kill with sword, and with hunger, and with death, and with
+--                the beasts of the earth — the four) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 26:25-26 (I will bring a sword... I will send the pestilence... I have
+--                broken the staff of your bread), ★ Ezekiel 5:17 (famine and evil beasts... pestilence
+--                and blood... I will bring the sword upon thee) — THREAD 3
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-14-the-idols-set-up-in-their-heart — NT (James 4, Matthew 6, 1 John 5) + Tanakh (Isaiah 1) [free]
+--      (★★ the idols of the heart that defile worship; Yahuah answers the double-minded according to their idols)
+--   2. ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls — NT (Romans 14, Philippians 2) + Tanakh (Ezekiel 18, Jeremiah 15, Genesis 7, Job 1) [free]
+--      (★★★ righteousness is personal, never transferable; even the three paragons save only themselves; the one
+--       exception the whole canon points to — the Messiah''s righteousness given to others, Isaiah 53 — framed in prose)
+--   3. ezekiel-14-my-four-sore-judgments-and-the-remnant-left — NT (Revelation 6) + Tanakh (Leviticus 26, Ezekiel 5) [free]
+--      (★ the four sore judgments — sword, famine, noisome beast, pestilence — and the preserved remnant that justifies Yahuah)
+--
+-- Framing notes:
+--   ★★ THE IDOLS OF THE HEART (THREAD 1): the elders come to enquire of Yahuah while their hearts are full
+--      of idols — *these men have set up their idols in their heart, and put the stumblingblock of their
+--      iniquity before their face: should I be enquired of at all by them?* (14:3). Yahuah''s answer is
+--      terrible: *I Yahuah (LORD) will answer him that cometh according to the multitude of his idols; That
+--      I may take the house of Yashar''el (Israel) in their own heart* (14:4-5) — he answers the
+--      double-minded by their own idols, to expose and take them. James names the cure: *Cleanse your
+--      hands, ye sinners; and purify your hearts, ye double minded* (Jas 4:8); the Formed Son names the
+--      impossibility of the divided heart: *No man can serve two masters... Ye cannot serve Elohim (God)
+--      and mammon* (Matt 6:24); John''s last word: *Little children, keep yourselves from idols* (1 John
+--      5:21); and Isaiah — prayer refused while the heart is defiled: *when ye make many prayers, I will
+--      not hear: your hands are full of blood* (Isa 1:15). The enquiry of a heart full of idols is no
+--      worship at all.
+--   ★★★ NOAH, DANIEL, AND JOB — PERSONAL RIGHTEOUSNESS (THREAD 2): *Though these three men, Noah, Daniel,
+--      and Job, were in it, they should deliver but their own souls by their righteousness* (14:14); *they
+--      shall deliver neither sons nor daughters; they only shall be delivered* (14:16); *they shall but
+--      deliver their own souls by their righteousness* (14:20). The most righteous men the canon knows —
+--      Noah, the only one found righteous before the Flood (*Noah only remained alive*, Gen 7:23); Job,
+--      *perfect and upright, and one that feared Elohim (God)* (Job 1:1); Daniel, the faithful exile — could
+--      not transfer their righteousness even to their own children. The same prophet states the law of it:
+--      *The soul that sinneth, it shall die... the righteousness of the righteous shall be upon him* (Ezek
+--      18:20) — upon HIM, not lent out. Jeremiah hears the same verdict: *Though Moses and Samuel stood
+--      before me, yet my mind could not be toward this people* (Jer 15:1). And the New Testament keeps the
+--      personal frame: *every one of us shall give account of himself to Elohim (God)* (Rom 14:12); *work
+--      out your own salvation with fear and trembling* (Phil 2:12). THE ONE EXCEPTION the whole canon points
+--      to: only the Messiah''s righteousness is ever given to others — the righteous Servant who *shall
+--      justify many; for he shall bear their iniquities* (Isaiah 53:11). No paragon, only the Suffering
+--      Servant, can deliver a soul not his own.
+--   ★ THE FOUR SORE JUDGMENTS AND THE REMNANT (THREAD 3): *How much more when I send my four sore judgments
+--      upon Jerusalem, the sword, and the famine, and the noisome beast, and the pestilence, to cut off
+--      from it man and beast?* (14:21). The same four are the covenant-curses of Leviticus 26 — *I will
+--      bring a sword upon you... I will send the pestilence... I have broken the staff of your bread* (Lev
+--      26:25-26) — and the four Ezekiel already named: *famine and evil beasts... and pestilence and blood...
+--      and I will bring the sword upon thee* (Ezek 5:17). John sees the four ride out at the fourth seal:
+--      *power was given unto them over the fourth part of the earth, to kill with sword, and with hunger,
+--      and with death, and with the beasts of the earth* (Rev 6:8). Yet the chapter ends in mercy and
+--      vindication: *therein shall be left a remnant that shall be brought forth... and ye shall be
+--      comforted* (14:22), *ye shall know that I have not done without cause all that I have done* (14:23).
+--      The preserved remnant justifies Yahuah''s dealings — the judgment is not without cause, and a seed is
+--      always left.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the elders sit before the prophet; the setting — woven into THREAD
+--      1), v.9-11 (the deceived prophet and the covenant-formula close — *that they may be my people, and I
+--      may be their Elohim* — held in THREAD 1 prose; the my-people refrain belongs to the Ezekiel 37 weave),
+--      v.13,15,17,18,19 (the successive single-judgment scenarios — famine, beasts, sword, pestilence —
+--      carried under THREAD 2 with vv.14,16,20, and the four gathered in THREAD 3 at v.21). All recorded.
+
+CREATE TEMP VIEW _s308_ezek14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the idols set up in their heart — Yahuah answers the double-minded by their idols
+    ('canon','ezekiel',14,4,'canon','james',4,8,'free',
+      E'*Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8). The men of Ezekiel come to enquire of Yahuah while their hearts are full of idols, and Yahuah *will answer him that cometh according to the multitude of his idols* (Ezekiel 14:4) — the divided, double heart cannot draw nigh until it is purified. James names the cure for the very condition Ezekiel exposes: the double minded must cleanse their hands and purify their hearts before they can draw nigh.'),
+    ('canon','ezekiel',14,3,'canon','matthew',6,24,'free',
+      E'*No man can serve two masters: for either he will hate the one, and love the other; or else he will hold to the one, and despise the other. Ye cannot serve Elohim (God) and mammon* (Matthew 6:24). The men who *have set up their idols in their heart, and put the stumblingblock of their iniquity before their face* (Ezekiel 14:3) try to serve Yahuah and their idols at once. The Formed Son names the impossibility: the heart cannot hold two masters; the idol in the heart is already the chosen master.'),
+    ('canon','ezekiel',14,6,'canon','1-john',5,21,'free',
+      E'*Little children, keep yourselves from idols. Amen* (1 John 5:21). Yahuah''s call to the house is exactly this: *Repent, and turn yourselves from your idols; and turn away your faces from all your abominations* (Ezekiel 14:6). John''s final word to his little children seals the whole prophet''s plea — the idols are not only the carved images but the things set up in the heart; keep yourselves from them.'),
+    ('canon','ezekiel',14,3,'canon','isaiah',1,15,'free',
+      E'*And when ye spread forth your hands, I will hide mine eyes from you: yea, when ye make many prayers, I will not hear: your hands are full of blood* (Isaiah 1:15). Isaiah names the same refusal Ezekiel pronounces: the enquiry of a defiled heart is no worship. As Yahuah asks *should I be enquired of at all by them?* (Ezekiel 14:3) of men with idols in the heart, so he hides his eyes from prayers made with hands full of blood. Prayer is refused while the heart is full of idols.')
+,
+    -- THREAD 2 (★★★): Noah, Daniel, and Job — they should deliver but their own souls
+    ('canon','ezekiel',14,20,'canon','ezekiel',18,20,'free',
+      E'*The soul that sinneth, it shall die. The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son: the righteousness of the righteous shall be upon him, and the wickedness of the wicked shall be upon him* (Ezekiel 18:20). This is the law behind the three men: *they shall but deliver their own souls by their righteousness* (Ezekiel 14:20). The righteousness of the righteous is upon HIM — not lent to son or daughter. Even Noah, Daniel, and Job could deliver no soul but their own, for righteousness is personal and untransferable.'),
+    ('canon','ezekiel',14,14,'canon','jeremiah',15,1,'free',
+      E'*Then said Yahuah (LORD) unto me, Though Moses and Samuel stood before me, yet my mind could not be toward this people: cast them out of my sight, and let them go forth* (Jeremiah 15:1). Jeremiah hears the same verdict Ezekiel hears: as *Though these three men, Noah, Daniel, and Job, were in it, they should deliver but their own souls* (Ezekiel 14:14), so not even Moses and Samuel, the great intercessors, could turn Yahuah''s mind toward a people ripe for judgment. The presence of the righteous does not cancel the guilt of the unrepentant.'),
+    ('canon','ezekiel',14,14,'canon','genesis',7,23,'free',
+      E'*And every living substance was destroyed which was upon the face of the ground... and Noah only remained alive, and they that were with him in the ark* (Genesis 7:23). Noah is the first of the three named — and his story shows the very principle: in the world''s great judgment *Noah only remained alive*, delivered by the righteousness for which Yahuah had seen him righteous before him. As in Ezekiel, the righteous man is preserved through judgment, but the deliverance is his own.'),
+    ('canon','ezekiel',14,14,'canon','job',1,1,'free',
+      E'*There was a man in the land of Uz, whose name was Job; and that man was perfect and upright, and one that feared Elohim (God), and eschewed evil* (Job 1:1). Job is the third of the three — *perfect and upright, and one that feared Elohim* — the canon''s very picture of the righteous man. Yet Ezekiel''s word is that even such a man *should deliver but their own souls by their righteousness* (Ezekiel 14:14): the most upright cannot transfer his righteousness to another.'),
+    ('canon','ezekiel',14,20,'canon','romans',14,12,'free',
+      E'*So then every one of us shall give account of himself to Elohim (God)* (Romans 14:12). Paul keeps the personal frame Ezekiel sets: as Noah, Daniel, and Job *shall but deliver their own souls by their righteousness* (Ezekiel 14:20), so every one of us shall give account of HIMSELF. No man answers in another''s stead; each soul stands or falls on its own before Elohim.'),
+    ('canon','ezekiel',14,20,'canon','philippians',2,12,'free',
+      E'*Wherefore, my beloved, as ye have always obeyed, not as in my presence only, but now much more in my absence, work out your own salvation with fear and trembling* (Philippians 2:12). The charge to *work out your OWN salvation* echoes Ezekiel''s law that the three *shall but deliver their own souls by their righteousness* (Ezekiel 14:20). Salvation is not inherited from a righteous parent or borrowed from a righteous neighbour; it is worked out, each one, with fear and trembling.')
+,
+    -- THREAD 3 (★): my four sore judgments upon Jerusalem — and the remnant left
+    ('canon','ezekiel',14,21,'canon','revelation',6,8,'free',
+      E'*And I looked, and behold a pale horse: and his name that sat on him was Death, and Hell followed with him. And power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). John sees the same four judgments ride out at the fourth seal that Ezekiel names — *my four sore judgments upon Jerusalem, the sword, and the famine, and the noisome beast, and the pestilence* (Ezekiel 14:21). Sword, hunger, death (pestilence), and the beasts of the earth: the four sore judgments of the covenant unfold to the very end.'),
+    ('canon','ezekiel',14,21,'canon','leviticus',26,25,'free',
+      E'*And I will bring a sword upon you, that shall avenge the quarrel of my covenant... I will send the pestilence among you; and ye shall be delivered into the hand of the enemy* (Leviticus 26:25). Ezekiel''s *four sore judgments... the sword, and the famine, and the noisome beast, and the pestilence* (Ezekiel 14:21) are the covenant-curses of the Torah itself: the sword that avenges the quarrel of the covenant, the pestilence sent among them. These are not arbitrary disasters but the covenant''s own sanctions for grievous trespass.'),
+    ('canon','ezekiel',14,21,'canon','leviticus',26,26,'free',
+      E'*And when I have broken the staff of your bread, ten women shall bake your bread in one oven, and they shall deliver you your bread again by weight: and ye shall eat, and not be satisfied* (Leviticus 26:26). The famine of the four judgments is the Torah''s broken staff of bread — and Ezekiel uses the very phrase, *break the staff of the bread thereof, and will send famine upon it* (Ezekiel 14:13). The famine that cuts off man and beast is the covenant-curse foretold, the staff of bread broken.'),
+    ('canon','ezekiel',14,21,'canon','ezekiel',5,17,'free',
+      E'*So will I send upon you famine and evil beasts, and they shall bereave thee; and pestilence and blood shall pass through thee; and I will bring the sword upon thee. I Yahuah (LORD) have spoken it* (Ezekiel 5:17). Ezekiel had already gathered the same four — famine, evil beasts, pestilence, and the sword — before naming them *my four sore judgments upon Jerusalem* (Ezekiel 14:21). The prophet''s earlier word and this one are one verdict: the fourfold curse upon the city that has trespassed grievously.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-14-the-idols-set-up-in-their-heart',
+       E'The idols set up in their heart — Yahuah answers the double-minded according to their idols',
+       E'Certain of the elders of Yashar''el (Israel) come and sit before the prophet to enquire of Yahuah (LORD) — but their hearts are full of idols. Yahuah exposes them: *Son of Adam, these men have set up their idols in their heart, and put the stumblingblock of their iniquity before their face: should I be enquired of at all by them?* (14:3). The idolatry is not only carved images but the things enthroned in the heart, and it defiles the very enquiry. The answer is terrible and exact: *I Yahuah (LORD) will answer him that cometh according to the multitude of his idols; That I may take the house of Yashar''el (Israel) in their own heart, because they are all estranged from me through their idols* (14:4-5) — he answers the double-minded by their own idols, to expose and take them. Then the call to turn: *Repent, and turn yourselves from your idols; and turn away your faces from all your abominations* (14:6), that the house *may go no more astray from me... but that they may be my people, and I may be their Elohim (God)* (14:11). The New Testament names both the cure and the impossibility of the divided heart. James: *Draw nigh to Elohim (God), and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8). The Formed Son: *No man can serve two masters... Ye cannot serve Elohim (God) and mammon* (Matthew 6:24) — the idol in the heart is already the chosen master. John''s last word: *Little children, keep yourselves from idols* (1 John 5:21). And Isaiah names the refusal of defiled worship: *when ye make many prayers, I will not hear: your hands are full of blood* (Isaiah 1:15). The enquiry of a heart full of idols is no worship at all; the heart must be purified before it can draw nigh.',
+       sv.verse_id, ev.verse_id, 'free', 32325
+  FROM _s308_ezek14_lookup sv, _s308_ezek14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=14 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls',
+       E'Though Noah, Daniel, and Job were in it — they should deliver but their own souls',
+       E'When the land sins grievously and Yahuah stretches out his hand against it, he sets down a law that runs the whole canon: *Though these three men, Noah, Daniel, and Job, were in it, they should deliver but their own souls by their righteousness, saith Adonai Yahuah (the Lord GOD)* (14:14); and again, through each of the four judgments, *they shall deliver neither sons nor daughters; they only shall be delivered* (14:16), *they shall but deliver their own souls by their righteousness* (14:20). The three are the most righteous men the canon knows: Noah, the only one found righteous before the Flood — *Noah only remained alive, and they that were with him in the ark* (Genesis 7:23); Job, *perfect and upright, and one that feared Elohim (God), and eschewed evil* (Job 1:1); and Daniel, the faithful exile. Yet not one of them could transfer his righteousness — not even to his own son or daughter. The same prophet states the principle plainly: *The soul that sinneth, it shall die... the righteousness of the righteous shall be upon him, and the wickedness of the wicked shall be upon him* (Ezekiel 18:20) — upon HIM, never lent out. Jeremiah hears the identical verdict: *Though Moses and Samuel stood before me, yet my mind could not be toward this people* (Jeremiah 15:1) — not even the great intercessors avail for the unrepentant. And the New Testament keeps the personal frame to the end: *every one of us shall give account of himself to Elohim (God)* (Romans 14:12); *work out your own salvation with fear and trembling* (Philippians 2:12). Righteousness is personal; no man delivers a soul not his own. And here is the one exception the whole canon points to: only the righteous Servant''s righteousness is ever given to others — *by his knowledge shall my righteous servant justify many; for he shall bear their iniquities* (Isaiah 53:11). No paragon, only the Suffering Servant who took flesh, the Formed Son, can deliver souls beside his own.',
+       sv.verse_id, ev.verse_id, 'free', 32328
+  FROM _s308_ezek14_lookup sv, _s308_ezek14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=14 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-14-my-four-sore-judgments-and-the-remnant-left',
+       E'My four sore judgments upon Jerusalem — yet therein shall be left a remnant',
+       E'The single judgments of the chapter — famine, noisome beasts, the sword, pestilence — are gathered into one fourfold sentence: *For thus saith Adonai Yahuah (the Lord GOD); How much more when I send my four sore judgments upon Jerusalem, the sword, and the famine, and the noisome beast, and the pestilence, to cut off from it man and beast?* (14:21). These four are not arbitrary disasters but the covenant-curses of the Torah itself — *I will bring a sword upon you, that shall avenge the quarrel of my covenant... I will send the pestilence among you* (Leviticus 26:25), *And when I have broken the staff of your bread... ye shall eat, and not be satisfied* (Leviticus 26:26) — the famine that Ezekiel names as the *staff of the bread* broken (14:13). The prophet had already gathered the same four: *So will I send upon you famine and evil beasts... and pestilence and blood... and I will bring the sword upon thee* (Ezekiel 5:17). And the four ride out at the very end, at the opening of the fourth seal: *power was given unto them over the fourth part of the earth, to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8). Yet the chapter does not close in wrath but in mercy and vindication: *Yet, behold, therein shall be left a remnant that shall be brought forth, both sons and daughters... and ye shall be comforted concerning the evil that I have brought upon Jerusalem* (14:22), *and ye shall know that I have not done without cause all that I have done in it* (14:23). The preserved remnant justifies Yahuah''s dealings: the judgment is never without cause, and a seed is always left.',
+       sv.verse_id, ev.verse_id, 'free', 32331
+  FROM _s308_ezek14_lookup sv, _s308_ezek14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=14 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Cleanse your hands, ye sinners; and purify your hearts, ye double minded* (James 4:8) — the cure for the heart full of idols; the double-minded cannot draw nigh till purified (Ezekiel 14:4).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=4
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-the-idols-set-up-in-their-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Ye cannot serve Elohim (God) and mammon* (Matthew 6:24) — the heart with an idol set up in it (Ezekiel 14:3) cannot serve two masters; the idol is already the chosen master.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-the-idols-set-up-in-their-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Little children, keep yourselves from idols* (1 John 5:21) — John''s final word seals Yahuah''s call to *turn yourselves from your idols* (Ezekiel 14:6); the idols of the heart included.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=5 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-the-idols-set-up-in-their-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *when ye make many prayers, I will not hear: your hands are full of blood* (Isaiah 1:15) — prayer refused while the heart is defiled; the same verdict as *should I be enquired of at all by them?* (Ezekiel 14:3).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-the-idols-set-up-in-their-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the righteousness of the righteous shall be upon him* (Ezekiel 18:20) — the law behind the three men; righteousness is upon HIM, never lent to son or daughter (Ezekiel 14:20).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Though Moses and Samuel stood before me, yet my mind could not be toward this people* (Jeremiah 15:1) — even the great intercessors avail nothing; the same verdict as the three (Ezekiel 14:14).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Noah only remained alive, and they that were with him in the ark* (Genesis 7:23) — Noah the first of the three; preserved through judgment by his own righteousness (Ezekiel 14:14).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *that man was perfect and upright, and one that feared Elohim (God)* (Job 1:1) — Job the third of the three, the canon''s picture of the righteous man; yet he too delivers but his own soul (Ezekiel 14:14).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *every one of us shall give account of himself to Elohim (God)* (Romans 14:12) — the personal frame kept forward; each soul answers for itself, as the three deliver but their own (Ezekiel 14:20).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *work out your own salvation with fear and trembling* (Philippians 2:12) — salvation is not inherited nor borrowed; worked out each one, as the three deliver but their own souls (Ezekiel 14:20).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=20
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-noah-daniel-and-job-deliver-but-their-own-souls'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *to kill with sword, and with hunger, and with death, and with the beasts of the earth* (Revelation 6:8) — the same four ride at the fourth seal; the four sore judgments of Ezekiel 14:21 unfold to the end.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-my-four-sore-judgments-and-the-remnant-left'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will bring a sword upon you, that shall avenge the quarrel of my covenant... I will send the pestilence* (Leviticus 26:25) — the four are the Torah''s own covenant-curses (Ezekiel 14:21).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-my-four-sore-judgments-and-the-remnant-left'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *when I have broken the staff of your bread... ye shall eat, and not be satisfied* (Leviticus 26:26) — the famine = the Torah''s broken staff of bread, Ezekiel''s very phrase (14:13,21).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-my-four-sore-judgments-and-the-remnant-left'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *famine and evil beasts... and pestilence and blood... and I will bring the sword upon thee* (Ezekiel 5:17) — the prophet already gathered the same four before naming them (Ezekiel 14:21).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s308_ezek14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-14-my-four-sore-judgments-and-the-remnant-left'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_15.sql (Ezekiel 15) -----
+-- Chapter: Ezekiel 15 — ★★ THE PARABLE OF THE VINE WOOD. What is the vine tree more than any tree? — its
+-- wood is good for nothing but the fire; it makes no pin to hang a vessel, no work at all. Whole, it was
+-- meet for no work; burned at both ends, less still. So Yahuah gives the inhabitants of Jerusalem to the
+-- fire: they shall go out from one fire, and another fire shall devour them. The vine's ONLY worth is
+-- fruit; Yashar'el-the-vine bore none (Isaiah 5; Psalm 80), so the useless wood is given to the burning.
+-- The FORMED Son is the TRUE Vine that Israel-the-vine failed to be (John 15); the unfruitful branch is
+-- cast forth and burned. v.8 = the land made desolate for the trespass (covenant-breaking, Lev 26).
+-- Tag: ezek15   Temp view: _s308_ezek15_lookup
+-- Sort band: base 32350, step 3 -> threads at 32350, 32353 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',15,v
+--
+-- Ezekiel 15 coverage:
+--   v.1 (the word of Yahuah came unto me) — prophetic-formula preface; no add (NT/Extras/Tanakh none warranted)
+--   ★★ v.2-7 (What is the vine tree more than any tree?... Shall wood be taken thereof to do any work?...
+--          Behold, it is cast into the fire for fuel... I will set my face against them; they shall go out
+--          from one fire, and another fire shall devour them)
+--        NT:     ★★★ John 15:6 (If a man abide not in me, he is cast forth as a branch... cast them into the
+--                fire, and they are burned), ★★ John 15:1 (I am the true vine), ★★ John 15:5 (I am the vine,
+--                ye are the branches), ★ Matthew 3:10 (every tree which bringeth not forth good fruit is hewn
+--                down, and cast into the fire), ★ Hebrews 6:8 (that which beareth thorns and briers... whose
+--                end is to be burned) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh vine weave; no extras forced)
+--        Tanakh: ★★ Isaiah 5:1-2 (the vineyard that brought forth wild grapes), ★★ Isaiah 5:7 (the vineyard
+--                of Yahuah is the house of Yashar'el), ★★ Psalm 80:8 (a vine out of Egypt), ★ Psalm 80:16
+--                (it is burned with fire, it is cut down) — THREAD 1
+--   ★ v.8 (And I will make the land desolate, because they have committed a trespass)
+--        NT:     none warranted (the covenant-desolation; held in the Tanakh covenant-lawsuit)
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 26:33 (your land shall be desolate, and your cities waste), ★ Ezekiel 14:13
+--                (when the land sinneth against me by trespassing grievously... and will cut off man and
+--                beast) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire — NT (John 15, Matthew 3, Hebrews 6) + Tanakh (Isaiah 5, Psalm 80) [free]
+--      (★★ the unfruitful vine fit only for burning; the Formed Son is the TRUE Vine Israel-the-vine failed to be)
+--   2. ezekiel-15-the-land-made-desolate-for-the-trespass — Tanakh (Leviticus 26, Ezekiel 14) [free]
+--      (★ the covenant-desolation for the trespass; the curse is covenant-breaking, never the Torah itself)
+--
+-- Framing notes:
+--   ★★ THE VINE WOOD (THREAD 1): the parable turns on the vine's single worth. *What is the vine tree more
+--      than any tree, or than a branch which is among the trees of the forest? Shall wood be taken thereof to
+--      do any work? or will men take a pin of it to hang any vessel thereon?* (15:2-3) — no. A vine is not
+--      timber; its wood makes nothing. *Behold, it is cast into the fire for fuel; the fire devoureth both
+--      the ends of it, and the midst of it is burned* (15:4). Its only value is its fruit; bearing none, it
+--      is fit only for burning — *so will I give the inhabitants of Jerusalem... they shall go out from one
+--      fire, and another fire shall devour them* (15:6-7). Isaiah named the vine: *the vineyard of Yahuah
+--      Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isaiah 5:7), planted with the choicest
+--      vine yet bringing forth *wild grapes* (Isaiah 5:2). The psalmist sang it: *Thou hast brought a vine out
+--      of Egypt* (Psalm 80:8), now *burned with fire... cut down* (Psalm 80:16). Then the Formed Son speaks
+--      the answer the whole figure waited for: *I am the true vine* (John 15:1), *I am the vine, ye are the
+--      branches* (John 15:5) — HE is the true Vine that Israel-the-vine failed to be, and the unfruitful
+--      branch meets Ezekiel''s fire: *If a man abide not in me, he is cast forth as a branch, and is withered;
+--      and men gather them, and cast them into the fire, and they are burned* (John 15:6). John the Baptist:
+--      *every tree which bringeth not forth good fruit is hewn down, and cast into the fire* (Matthew 3:10);
+--      Hebrews: *that which beareth thorns and briers is rejected... whose end is to be burned* (Hebrews 6:8).
+--      The vine's worth is fruit; fruitless, it burns — and the only way to bear it is to abide in the Vine.
+--   ★ THE DESOLATION (THREAD 2): *And I will make the land desolate, because they have committed a trespass*
+--      (15:8). The fire ends in the desolation of the land — the Deuteronomy 28 / Leviticus 26 covenant-
+--      judgment for covenant-breaking, NEVER the Torah itself made a curse: *your land shall be desolate, and
+--      your cities waste* (Leviticus 26:33), the sworn consequence of trespass. Ezekiel had just framed it:
+--      *when the land sinneth against me by trespassing grievously, then will I stretch out mine hand upon it*
+--      (Ezekiel 14:13). The trespass is the covenant broken; the desolation is its sworn wage.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the word-of-Yahuah prophetic formula; no library warranted). v.5 (the
+--      whole/burned wood meet for no work) and v.7 (set my face against them) carried in THREAD 1 prose under
+--      the v.4/v.6 anchors. All verses recorded in the coverage checklist above; every block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the vine wood good for nothing but the fire — the unfruitful branch burned
+    ('canon','ezekiel',15,6,'canon','john',15,6,'free',
+      E'*If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned* (John 15:6). The Formed Son speaks Ezekiel''s verdict on the fruitless vine: as *the vine tree among the trees of the forest, which I have given to the fire for fuel, so will I give the inhabitants of Jerusalem* (Ezekiel 15:6), so the branch that will not abide is *cast forth* and *burned*. The vine''s only worth is fruit; the branch that bears none meets the fire.'),
+    ('canon','ezekiel',15,2,'canon','john',15,1,'free',
+      E'*I am the true vine, and my Father is the husbandman* (John 15:1). Ezekiel asks *What is the vine tree more than any tree* (Ezekiel 15:2) — the vine of Yashar''el (Israel) whose wood was good for nothing; the Formed Son answers as the *true vine* that Israel-the-vine failed to be. He is Yahuah and has a Father (*my Father is the husbandman*); in him alone the vine bears the fruit Jerusalem''s vine could not.'),
+    ('canon','ezekiel',15,2,'canon','john',15,5,'free',
+      E'*I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing* (John 15:5). The branch *among the trees of the forest* (Ezekiel 15:2) that bore no fruit is answered by the Vine in whom the branches bear *much fruit*. Apart from the true Vine the branch is the useless wood of Ezekiel''s parable — *without me ye can do nothing*; abiding in him is the one way it is not given to the fire.'),
+    ('canon','ezekiel',15,4,'canon','matthew',3,10,'free',
+      E'*And now also the axe is laid unto the root of the trees: therefore every tree which bringeth not forth good fruit is hewn down, and cast into the fire* (Matthew 3:10). John the Baptist preaches Ezekiel''s judgment on the fruitless wood — *Behold, it is cast into the fire for fuel; the fire devoureth both the ends of it* (Ezekiel 15:4): the tree that bears no good fruit is *hewn down, and cast into the fire*. The measure is fruit; what bears none is fuel.'),
+    ('canon','ezekiel',15,4,'canon','hebrews',6,8,'free',
+      E'*But that which beareth thorns and briers is rejected, and is nigh unto cursing; whose end is to be burned* (Hebrews 6:8). The wood *cast into the fire for fuel... and the midst of it is burned* (Ezekiel 15:4) is the same end Hebrews names for the fruitless ground — *whose end is to be burned*. The unfruitful is rejected and given to the fire; the parable of the vine wood and the warning of Hebrews are one verdict.'),
+    ('canon','ezekiel',15,2,'canon','isaiah',5,7,'free',
+      E'*For the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel), and the men of Yahudah (Judah) his pleasant plant: and he looked for judgment, but behold oppression* (Isaiah 5:7). Isaiah names the vine Ezekiel weighs — *What is the vine tree more than any tree* (Ezekiel 15:2): the vine IS *the house of Yashar''el*, planted to bear fruit. Looked-for judgment yielded oppression; the choicest vine bore wild grapes, and the fruitless wood is given to the fire.'),
+    ('canon','ezekiel',15,2,'canon','isaiah',5,2,'free',
+      E'*And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine... and he looked that it should bring forth grapes, and it brought forth wild grapes* (Isaiah 5:2). The vine *among the trees of the forest* (Ezekiel 15:2) was Yahuah''s own planting, *the choicest vine*, tended for fruit — yet it *brought forth wild grapes*. Bearing no true fruit, the vine''s wood is worth nothing but the burning of Ezekiel''s parable.'),
+    ('canon','ezekiel',15,6,'canon','psalms',80,8,'free',
+      E'*Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8). The psalm sings the same vine Ezekiel burns — Yahuah *brought a vine out of Egypt* and planted it, yet when it bore no fruit *so will I give the inhabitants of Jerusalem* to the fire (Ezekiel 15:6). The vine carried up out of Egypt is the house given to the burning when it failed to bear.'),
+    ('canon','ezekiel',15,4,'canon','psalms',80,16,'free',
+      E'*It is burned with fire, it is cut down: they perish at the rebuke of thy countenance* (Psalm 80:16). The psalmist already sees the vine in Ezekiel''s fire — *Behold, it is cast into the fire for fuel; the fire devoureth both the ends of it* (Ezekiel 15:4) is *burned with fire... cut down*. The vine that would not bear perishes at the rebuke of Yahuah''s countenance, given to the flame.'),
+
+    -- THREAD 2 (★): the land made desolate for the trespass — the covenant-judgment
+    ('canon','ezekiel',15,8,'canon','leviticus',26,33,'free',
+      E'*And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). The threat *And I will make the land desolate, because they have committed a trespass* (Ezekiel 15:8) is the sworn covenant-judgment of Leviticus — *your land shall be desolate, and your cities waste* — the wage of covenant-breaking, not the Torah made a curse. The desolation is the consequence the covenant itself named for trespass.'),
+    ('canon','ezekiel',15,8,'canon','ezekiel',14,13,'free',
+      E'*Son of Adam, when the land sinneth against me by trespassing grievously, then will I stretch out mine hand upon it, and will break the staff of the bread thereof, and will send famine upon it, and will cut off man and beast from it* (Ezekiel 14:13). Ezekiel had just framed the verdict the vine-parable seals — *I will make the land desolate, because they have committed a trespass* (Ezekiel 15:8): when *the land sinneth against me by trespassing grievously*, Yahuah''s hand stretches out to desolation. The trespass is the covenant broken; the desolation is its sworn answer.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire',
+       E'The vine wood good for nothing but the fire — the unfruitful vine given to the burning',
+       E'The parable turns on the vine''s single worth. Yahuah (LORD) asks: *Son of Adam, What is the vine tree more than any tree, or than a branch which is among the trees of the forest? Shall wood be taken thereof to do any work? or will men take a pin of it to hang any vessel thereon?* (15:2-3). The answer is no — a vine is not timber; its crooked wood makes nothing, not even a peg. *Behold, it is cast into the fire for fuel; the fire devoureth both the ends of it, and the midst of it is burned. Is it meet for any work?* (15:4). Whole it was useless; charred it is less than useless — *how much less shall it be meet yet for any work, when the fire hath devoured it* (15:5). So the verdict falls on the city: *As the vine tree among the trees of the forest, which I have given to the fire for fuel, so will I give the inhabitants of Jerusalem... they shall go out from one fire, and another fire shall devour them* (15:6-7). The vine''s ONLY value is its fruit; bearing none, it is fit for nothing but the flame. Isaiah names the vine outright: *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isaiah 5:7), planted *with the choicest vine* yet bringing forth *wild grapes* (Isaiah 5:2). The psalmist sang it: *Thou hast brought a vine out of Egypt: thou hast cast out the heathen, and planted it* (Psalm 80:8), now *burned with fire... cut down* (Psalm 80:16). Then the Formed Son speaks the word the whole figure waited for: *I am the true vine, and my Father is the husbandman* (John 15:1), *I am the vine, ye are the branches: He that abideth in me, and I in him, the same bringeth forth much fruit: for without me ye can do nothing* (John 15:5). HE is the TRUE Vine that Israel-the-vine failed to be — Yahuah who has a Father — and the unfruitful branch meets Ezekiel''s fire exactly: *If a man abide not in me, he is cast forth as a branch, and is withered; and men gather them, and cast them into the fire, and they are burned* (John 15:6). John the Baptist preaches the same measure: *every tree which bringeth not forth good fruit is hewn down, and cast into the fire* (Matthew 3:10); and Hebrews: *that which beareth thorns and briers is rejected, and is nigh unto cursing; whose end is to be burned* (Hebrews 6:8). The vine''s worth is fruit; fruitless, it burns — and the one way the branch is not given to the fire is to abide in the true Vine.',
+       sv.verse_id, ev.verse_id, 'free', 32350
+  FROM _s308_ezek15_lookup sv, _s308_ezek15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=15 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-15-the-land-made-desolate-for-the-trespass',
+       E'I will make the land desolate, because they have committed a trespass',
+       E'The fire of the parable ends in the desolation of the land: *And I will make the land desolate, because they have committed a trespass, saith Adonai Yahuah (the Lord GOD)* (15:8). This is the sworn covenant-judgment for covenant-breaking — the Leviticus 26 / Deuteronomy 28 curse — never the Torah itself made a curse. Yahuah swore the consequence at Sinai: *And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). The desolation is the wage the covenant named for trespass, not an arbitrary wrath. And Ezekiel had just framed the same verdict a chapter before: *when the land sinneth against me by trespassing grievously, then will I stretch out mine hand upon it, and will break the staff of the bread thereof, and will send famine upon it, and will cut off man and beast from it* (Ezekiel 14:13). The trespass is the covenant broken; the desolation is its sworn answer. The vine that would not bear fruit, and the land made waste for its trespass, are one judgment — the curse falling on covenant-breaking, while the covenant-instruction stands.',
+       sv.verse_id, ev.verse_id, 'free', 32353
+  FROM _s308_ezek15_lookup sv, _s308_ezek15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=15 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *If a man abide not in me, he is cast forth as a branch... and cast them into the fire, and they are burned* (John 15:6) — the Formed Son speaks Ezekiel 15:6 word for word; the fruitless branch given to the fire.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I am the true vine, and my Father is the husbandman* (John 15:1) — the Formed Son is the TRUE Vine that Yashar''el (Israel)-the-vine (Ezekiel 15:2) failed to be; Yahuah who has a Father.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I am the vine, ye are the branches... without me ye can do nothing* (John 15:5) — apart from the true Vine the branch is the useless wood of Ezekiel 15:2; abiding is the one way it is not burned.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *every tree which bringeth not forth good fruit is hewn down, and cast into the fire* (Matthew 3:10) — John the Baptist preaches Ezekiel 15:4''s verdict; the measure is fruit, the fruitless is fuel.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *that which beareth thorns and briers is rejected... whose end is to be burned* (Hebrews 6:8) — the same end as the wood burned at both ends (Ezekiel 15:4); the unfruitful is given to the fire.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *the vineyard of Yahuah Tseva''ot (LORD of hosts) is the house of Yashar''el (Israel)* (Isaiah 5:7) — Isaiah names the vine Ezekiel 15:2 weighs; planted for fruit, it bore oppression.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *planted it with the choicest vine... and it brought forth wild grapes* (Isaiah 5:2) — Yahuah''s own choicest planting bore no true fruit; the vine of Ezekiel 15:2 is worth nothing but the burning.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *Thou hast brought a vine out of Egypt... and planted it* (Psalm 80:8) — the psalm sings the same vine Ezekiel 15:6 burns; carried up out of Egypt, given to the fire when it failed to bear.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=6
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *It is burned with fire, it is cut down* (Psalm 80:16) — the psalmist already sees the vine in Ezekiel 15:4''s fire, devoured at both ends; it perishes at the rebuke of Yahuah''s countenance.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=4
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=80 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-vine-wood-good-for-nothing-but-the-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *your land shall be desolate, and your cities waste* (Leviticus 26:33) — the sworn covenant-judgment behind Ezekiel 15:8; the wage of covenant-breaking, not the Torah made a curse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=8
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-land-made-desolate-for-the-trespass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *when the land sinneth against me by trespassing grievously, then will I stretch out mine hand upon it* (Ezekiel 14:13) — Ezekiel just framed the verdict 15:8 seals; trespass draws the desolation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=15 AND sv.verse_number=8
+  JOIN _s308_ezek15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-15-the-land-made-desolate-for-the-trespass'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_16.sql (Ezekiel 16) -----
+-- Chapter: Ezekiel 16 — THE FOUNDLING JERUSALEM. The great covenant-marriage allegory: Yahuah finds the
+-- abandoned infant cast out in the open field, weltering in her blood; says LIVE; raises her, washes,
+-- clothes, decks, and WEDS her — *I sware unto thee, and entered into a covenant with thee... and thou
+-- becamest mine* (16:8). She trusts in her own beauty, plays the harlot with every passer-by, pours out
+-- her fornications on Egypt, Assyria, Chaldea, and is judged as women that break wedlock. She is more
+-- guilty than her sisters Samaria (the northern house) and Sodom because of her greater light. YET the
+-- chapter ends in unbreakable mercy: *Nevertheless I will remember my covenant with thee in the days of
+-- thy youth, and I will establish unto thee an everlasting covenant* (16:60). The harsh lawsuit language
+-- is conduct-WITHIN-the-covenant — the unfaithful wife is still the beloved, victims not enemies, NEVER
+-- ethnic accusation. The everlasting covenant = the restored two-house bride.
+-- Tag: ezek16   Temp view: _s308_ezek16_lookup
+-- Sort band: base 32375, step 3 -> 32375, 32378, 32381, 32384, 32387 (5 threads)
+-- Source of EVERY row: 'canon','ezekiel',16,v
+--
+-- Ezekiel 16 coverage:
+--   v.1-3 (cause Jerusalem to know her abominations; thy birth... of the land of Canaan; thy father an
+--          Amorite, thy mother an Hittite)
+--        NT:     none warranted (the pagan-origin indictment; preface to the foundling)
+--        Extras: none warranted
+--        Tanakh: none separate (origin-of-shame framing; woven into THREAD 1 prose)
+--   ★★ v.4-8 (none eye pitied thee... I said unto thee when thou wast in thy blood, Live... I sware unto
+--          thee, and entered into a covenant with thee... and thou becamest mine)
+--        NT:     ★★ Romans 9:25 (I will call them my people, which were not my people), ★ Titus 3:5 (not
+--                by works of righteousness... but according to his mercy he saved us) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 7:7-8 (not because ye were more in number... but because Yahuah loved
+--                you), ★ Exodus 19:5 (a peculiar treasure unto me) — THREAD 1
+--   ★ v.9-14 (I clothed thee... decked thee with ornaments... exceeding beautiful... prosper into a
+--          kingdom... thy renown went forth for thy beauty: for it was perfect through MY comeliness)
+--        NT:     ★ Revelation 19:7-8 (the bride... arrayed in fine linen... the righteousness of saints)
+--                — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 45:13-14 (the king's daughter is all glorious within), ★ Isaiah 61:10 (he hath
+--                clothed me with the garments of salvation... as a bride adorneth herself) — THREAD 2
+--   ★★ v.15-34 (thou didst trust in thine own beauty, and playedst the harlot... pouredst out thy
+--          fornications on every one that passed by)
+--        NT:     ★★ James 4:4 (ye adulterers and adulteresses, the friendship of the world is enmity
+--                with Elohim) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Hosea 2:5 (she... went after her lovers), ★ Hosea 2:13 (she... forgat me), ★ Hosea
+--                2:2 (she is not my wife), ★★ Jeremiah 3:1 (thou hast played the harlot with many
+--                lovers; yet return again to me), ★ Jeremiah 2:20 (playing the harlot) — THREAD 3
+--   v.35-43 (the harlot's judgment — I will gather all thy lovers against thee... as women that break
+--          wedlock... are judged) — the lawsuit verdict; woven into THREAD 3 prose
+--        NT:     none warranted (covenant-lawsuit verdict; held in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the wedlock-breaker judgment; THREAD 3 prose)
+--   v.44-45 (As is the mother, so is her daughter; your mother an Hittite, your father an Amorite) —
+--          the proverb introducing the sisters; woven into THREAD 4 prose
+--   ★ v.46-52 (thy elder sister is Samaria... thy younger sister is Sodom... thou hast justified thy
+--          sisters in all thine abominations)
+--        NT:     ★ Matthew 11:24 (it shall be more tolerable for the land of Sodom... than for thee),
+--                ★ Matthew 10:15 (more tolerable for Sodom and Gomorrha... than for that city), ★ Luke
+--                12:48 (unto whomsoever much is given, of him shall be much required) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: held in prose — Samaria the elder sister = the northern kingdom (two-house note)
+--   v.53-58 (when I shall bring again their captivity... of Sodom... and of Samaria... then thee) —
+--          the restoration of the sisters; the turn toward mercy; woven into THREAD 5 prose
+--   ★★★ v.59-63 (Nevertheless I will remember my covenant... I will establish unto thee an everlasting
+--          covenant... thou shalt know that I am Yahuah... when I am pacified toward thee)
+--        NT:     ★★ Ephesians 5:25-27 (Messiah loved the church and gave himself for it... a glorious
+--                bride without spot), ★★ Revelation 21:2 (new Jerusalem... prepared as a bride adorned
+--                for her husband), ★ Revelation 19:7 (the marriage of the Lamb), ★★ Romans 11:27-29 (this
+--                is my covenant... the gifts and calling are without repentance) — THREAD 5
+--        Extras: none warranted
+--        Tanakh: ★★★ Hosea 2:19-20 (I will betroth thee unto me for ever), ★★ Jeremiah 31:31,33 (the new
+--                covenant... I will write it in their hearts) — THREAD 5
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed — NT (Romans 9, Titus 3) + Tanakh (Deuteronomy 7, Exodus 19) [free]
+--      (★★ electing love on the helpless foundling; LIVE; the covenant-betrothal; loved not for merit but for mercy)
+--   2. ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness — NT (Revelation 19) + Tanakh (Psalm 45, Isaiah 61) [free]
+--      (★ the bride adorned by Yahuah's own glory; her beauty is HIS gift, not her merit)
+--   3. ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned — NT (James 4) + Tanakh (Hosea 2, Jeremiah 2, Jeremiah 3) [free]
+--      (★★ idolatry as spiritual adultery; the covenant-lawsuit against SIN, never ethnic accusation; the unfaithful wife still beloved)
+--   4. ezekiel-16-thy-elder-sister-samaria-thy-younger-sodom — NT (Matthew 11, Matthew 10, Luke 12) [free]
+--      (★ more guilty than Samaria the northern house and Sodom because of her greater light; to whom much is given)
+--   5. ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting — NT (Ephesians 5, Revelation 21, Revelation 19) + Tanakh (Hosea 2, Jeremiah 31) [free]
+--      (★★★ the unbreakable everlasting covenant despite her unfaithfulness; mercy triumphs; the marriage restored; the two-house bride)
+--
+-- Framing notes:
+--   ★★ THE FOUNDLING BETROTHED (THREAD 1): *None eye pitied thee... but thou wast cast out in the open
+--      field, to the lothing of thy person, in the day that thou wast born. And when I passed by thee...
+--      I said unto thee when thou wast in thy blood, Live* (16:5-6); *I sware unto thee, and entered into
+--      a covenant with thee, saith Adonai Yahuah (the Lord GOD), and thou becamest mine* (16:8). Electing
+--      love on the helpless — not for merit but mercy: *Yahuah (LORD) did not set his love upon you, nor
+--      choose you, because ye were more in number... But because Yahuah (LORD) loved you* (Deut 7:7-8); a
+--      *peculiar treasure unto me* (Exod 19:5); *I will call them my people, which were not my people*
+--      (Rom 9:25); *Not by works of righteousness which we have done, but according to his mercy he saved
+--      us* (Titus 3:5).
+--   ★ THE BRIDE ADORNED (THREAD 2): *I decked thee also with ornaments... thou wast exceeding beautiful,
+--      and thou didst prosper into a kingdom... it was perfect through MY comeliness, which I had put upon
+--      thee* (16:11-14). Her beauty is HIS gift: *The king's daughter is all glorious within* (Ps 45:13);
+--      *he hath clothed me with the garments of salvation... as a bride adorneth herself with her jewels*
+--      (Isa 61:10); *to her was granted that she should be arrayed in fine linen, clean and white: for the
+--      fine linen is the righteousness of saints* (Rev 19:8).
+--   ★★ THE HARLOT (THREAD 3): *But thou didst trust in thine own beauty, and playedst the harlot... and
+--      pouredst out thy fornications on every one that passed by* (16:15). Idolatry as adultery — *Ye
+--      adulterers and adulteresses, know ye not that the friendship of the world is enmity with Elohim
+--      (God)?* (Jas 4:4); *she is not my wife, neither am I her husband* (Hos 2:2); *she... went after her
+--      lovers* (Hos 2:5) and *forgat me* (Hos 2:13); *thou hast played the harlot with many lovers; yet
+--      return again to me* (Jer 3:1). The covenant-lawsuit is against SIN; the unfaithful wife is still the
+--      beloved Yahuah calls home — victims, not enemies.
+--   ★ THE SISTERS (THREAD 4): *thine elder sister is Samaria... thy younger sister... is Sodom... thou
+--      hast justified thy sisters in all thine abominations* (16:46,51). Jerusalem more guilty because of
+--      her greater light: *more tolerable for the land of Sodom in the day of judgment, than for thee*
+--      (Matt 11:24); *more tolerable for the land of Sodom and Gomorrha... than for that city* (Matt
+--      10:15); *unto whomsoever much is given, of him shall be much required* (Luke 12:48). Two-house note:
+--      Samaria the elder sister = the northern kingdom.
+--   ★★★ THE EVERLASTING COVENANT (THREAD 5): *Nevertheless I will remember my covenant with thee in the
+--      days of thy youth, and I will establish unto thee an everlasting covenant* (16:60); *when I am
+--      pacified toward thee for all that thou hast done* (16:63). Mercy triumphs; the marriage restored —
+--      *I will betroth thee unto me for ever* (Hos 2:19); *I will make a new covenant... I will write it in
+--      their hearts* (Jer 31:31,33); *Messiah (Christ) also loved the church, and gave himself for it...
+--      a glorious church, not having spot, or wrinkle* (Eph 5:25,27); *new Jerusalem... prepared as a bride
+--      adorned for her husband* (Rev 21:2); *the marriage of the Lamb is come* (Rev 19:7); *the gifts and
+--      calling of Elohim (God) are without repentance* (Rom 11:29). The everlasting covenant = the restored
+--      two-house bride.
+--   VERSES WITH NO SEPARATE ADD: v.1-3 (the pagan-origin indictment — preface to the foundling, THREAD 1
+--      prose), v.35-43 (the wedlock-breaker judgment — THREAD 3 prose), v.44-45 (the mother/daughter
+--      proverb — THREAD 4 prose), v.53-58 (the captivity of the sisters brought again — THREAD 5 prose).
+--      All blocks recorded; every meaningful block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): when thou wast in thy blood, Live — the foundling betrothed
+    ('canon','ezekiel',16,8,'canon','deuteronomy',7,7,'free',
+      E'*Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people* (Deuteronomy 7:7). When Yahuah passes the cast-out infant and *sware unto thee, and entered into a covenant with thee... and thou becamest mine* (Ezekiel 16:8), the choosing is not for worth — she had none, naked and weltering in blood — but for love alone. The foundling-bride is chosen as Yashar''el (Israel) was chosen: not for number or merit, but because Yahuah set his love.'),
+    ('canon','ezekiel',16,8,'canon','deuteronomy',7,8,'free',
+      E'*But because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers, hath Yahuah (LORD) brought you out with a mighty hand* (Deuteronomy 7:8). The covenant-oath of *I sware unto thee, and entered into a covenant with thee* (Ezekiel 16:8) is the very oath of Deuteronomy — Yahuah weds the helpless because *he loved you*, and because he keeps the oath sworn to the fathers. Electing love, not earned standing, raises the foundling into a bride.'),
+    ('canon','ezekiel',16,8,'canon','exodus',19,5,'free',
+      E'*Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine* (Exodus 19:5). The infant who *becamest mine* (Ezekiel 16:8) becomes the *peculiar treasure* of the covenant at Sinai — Yahuah''s own cherished possession, taken not for her beauty (she had none) but as his treasured people. The marriage of Ezekiel 16 and the betrothal at the mount are one covenant.'),
+    ('canon','ezekiel',16,6,'canon','romans',9,25,'free',
+      E'*As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25). The word *I said unto thee when thou wast in thy blood, Live* (Ezekiel 16:6) is the same electing mercy Paul names — the not-beloved called beloved, the not-people made *my people*. Yahuah speaks life over the one no eye pitied; the rejected foundling is made his own.'),
+    ('canon','ezekiel',16,6,'canon','titus',3,5,'free',
+      E'*Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration, and renewing of the Ruach HaKodesh (Holy Spirit)* (Titus 3:5). The naked infant *cast out in the open field* (16:5), over whom Yahuah says *Live* and whom he then *washed... with water* (16:9), is saved by mercy alone — *not by works of righteousness*. She brought nothing but her blood and helplessness; he brought the washing and the life.'),
+
+    -- THREAD 2 (★): I decked thee — the bride adorned by my comeliness
+    ('canon','ezekiel',16,13,'canon','psalms',45,13,'free',
+      E'*The king''s daughter is all glorious within: her clothing is of wrought gold* (Psalm 45:13). The bride decked *with gold and silver* whose *raiment was of fine linen, and silk, and broidered work* (Ezekiel 16:13) is the glorious king''s daughter of the wedding psalm — clothed in wrought gold, all her glory given her by the King. The adorned foundling and the king''s bride are the same: their splendour is the gift of the bridegroom.'),
+    ('canon','ezekiel',16,13,'canon','psalms',45,14,'free',
+      E'*She shall be brought unto the king in raiment of needlework: the virgins her companions that follow her shall be brought unto thee* (Psalm 45:14). The *broidered work* in which Yahuah clothes the bride (Ezekiel 16:13) is the *raiment of needlework* in which she is *brought unto the king*. The bride does not array herself; she is arrayed and brought — her beauty is wholly the King''s doing.'),
+    ('canon','ezekiel',16,14,'canon','isaiah',61,10,'free',
+      E'*I will greatly rejoice in Yahuah (LORD)... for he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness, as a bridegroom decketh himself with ornaments, and as a bride adorneth herself with her jewels* (Isaiah 61:10). The renown that *was perfect through my comeliness, which I had put upon thee* (Ezekiel 16:14) is the beauty Isaiah names — *he hath clothed me*, the garments of salvation, the bride adorned with the jewels her Husband gave. Her loveliness is borrowed glory: it was perfect through HIS comeliness.'),
+    ('canon','ezekiel',16,14,'canon','revelation',19,8,'free',
+      E'*And to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8). The bride whose *renown went forth among the heathen for thy beauty: for it was perfect through my comeliness* (Ezekiel 16:14) is the Lamb''s wife, whose fine linen *was granted* her — not earned but given. The righteousness she wears is conferred, the comeliness her Husband''s; her beauty is grace clothed.'),
+    ('canon','ezekiel',16,7,'canon','revelation',19,7,'free',
+      E'*Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). The foundling Yahuah *caused to multiply as the bud of the field... thy breasts are fashioned, and thine hair is grown* (Ezekiel 16:7) is grown up unto the marriage — the bride made ready for the Lamb. The raising of the helpless infant into a bride is the whole arc that ends at the marriage of the Lamb.'),
+
+    -- THREAD 3 (★★): thou playedst the harlot — the covenant-bride turned
+    ('canon','ezekiel',16,15,'canon','hosea',2,5,'free',
+      E'*For their mother hath played the harlot... for she said, I will go after my lovers, that give me my bread and my water, my wool and my flax, mine oil and my drink* (Hosea 2:5). The bride who *didst trust in thine own beauty, and playedst the harlot... and pouredst out thy fornications on every one that passed by* (Ezekiel 16:15) is the harlot-mother of Hosea, chasing lovers for the very gifts her Husband gave. The idolatry is adultery: she credits her lovers for the bread Yahuah provided.'),
+    ('canon','ezekiel',16,15,'canon','hosea',2,13,'free',
+      E'*And I will visit upon her the days of Baalim, wherein she burned incense to them, and she decked herself with her earrings and her jewels, and she went after her lovers, and forgat me, saith Yahuah (LORD)* (Hosea 2:13). The bride who took *my gold and... my silver, which I had given thee* and made idols (Ezekiel 16:17), decking her high places, is Hosea''s wife decking herself with her jewels for the Baalim — and *forgat me*. The ornaments Yahuah gave become the harlot''s adornment for her lovers.'),
+    ('canon','ezekiel',16,32,'canon','hosea',2,2,'free',
+      E'*Plead with your mother, plead: for she is not my wife, neither am I her husband: let her therefore put away her whoredoms out of her sight, and her adulteries from between her breasts* (Hosea 2:2). The bride who is *as a wife that committeth adultery, which taketh strangers instead of her husband* (Ezekiel 16:32) stands under Hosea''s same lawsuit — *she is not my wife*. Yet the very plea is a call to put away the whoredoms and return; the covenant-suit aims at restoration, not divorce final.'),
+    ('canon','ezekiel',16,15,'canon','jeremiah',3,1,'free',
+      E'*If a man put away his wife, and she go from him, and become another man''s, shall he return unto her again?... but thou hast played the harlot with many lovers; yet return again to me, saith Yahuah (LORD)* (Jeremiah 3:1). The harlotry of *playedst the harlot... on every one that passed by* (Ezekiel 16:15) is Jeremiah''s *thou hast played the harlot with many lovers* — and the same astonishing word follows: *yet return again to me*. The covenant-lawsuit against the bride''s SIN is never ethnic hatred; it ends in the offer of return.'),
+    ('canon','ezekiel',16,26,'canon','jeremiah',2,20,'free',
+      E'*For of old time I have broken thy yoke, and burst thy bands; and thou saidst, I will not transgress; when upon every high hill and under every green tree thou wanderest, playing the harlot* (Jeremiah 2:20). The fornication *with the Egyptians thy neighbours... to provoke me to anger* (Ezekiel 16:26) is Jeremiah''s harlotry *upon every high hill and under every green tree* — the same picture of the covenant-bride chasing other gods on the high places. The conduct is indicted, the people still beloved and called.'),
+
+    -- THREAD 4 (★): thy elder sister Samaria, thy younger Sodom
+    ('canon','ezekiel',16,48,'canon','matthew',11,24,'free',
+      E'*But I say unto you, That it shall be more tolerable for the land of Sodom in the day of judgment, than for thee* (Matthew 11:24). Yahuah''s verdict *Sodom thy sister hath not done... as thou hast done* (Ezekiel 16:48) is the Messiah''s word over Capernaum — *more tolerable for the land of Sodom... than for thee*. Greater light brings greater account: the city with more revelation is more guilty than Sodom, which had less.'),
+    ('canon','ezekiel',16,48,'canon','matthew',10,15,'free',
+      E'*Verily I say unto you, It shall be more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city* (Matthew 10:15). The measure of Ezekiel — *Sodom thy sister hath not done... as thou hast done, thou and thy daughters* (Ezekiel 16:48) — is the measure the Son gives the cities that reject his apostles. The one who heard and refused is judged more strictly than Sodom, who never heard.'),
+    ('canon','ezekiel',16,51,'canon','luke',12,48,'free',
+      E'*For unto whomsoever much is given, of him shall be much required: and to whom men have committed much, of him they will ask the more* (Luke 12:48). The charge *thou hast multiplied thine abominations more than they, and hast justified thy sisters* (Ezekiel 16:51) rests on this principle — Jerusalem, given the covenant, the Torah, the prophets, the temple, is held to more than Samaria or Sodom. To whom much is given, much is required: her greater light is her greater reckoning.'),
+
+    -- THREAD 5 (★★★): Nevertheless I will remember my covenant — the everlasting covenant
+    ('canon','ezekiel',16,60,'canon','hosea',2,19,'free',
+      E'*And I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19). The promise *I will remember my covenant with thee in the days of thy youth, and I will establish unto thee an everlasting covenant* (Ezekiel 16:60) is Hosea''s everlasting betrothal — the unfaithful wife re-wed *for ever*, in righteousness and mercy. The harlot-bride is not cast off but remarried, the marriage made unbreakable.'),
+    ('canon','ezekiel',16,60,'canon','hosea',2,20,'free',
+      E'*I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* (Hosea 2:20). The *everlasting covenant* of Ezekiel 16:60, sealed so that *thou shalt know that I am Yahuah (LORD)* (16:62), is Hosea''s betrothal *in faithfulness* whose end is the same: *and thou shalt know Yahuah*. The restored bride is bound to a faithful Husband and brought to know him.'),
+    ('canon','ezekiel',16,60,'canon','jeremiah',31,31,'free',
+      E'*Behold, the days come, saith Yahuah (LORD), that I will make a new covenant with the house of Yashar''el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31). The *everlasting covenant* Yahuah will *establish unto thee* (Ezekiel 16:60) is the new covenant Jeremiah names — made with BOTH houses, Yashar''el and Yahudah, the two-house bride re-betrothed. The everlasting covenant is not a covenant abolished but a covenant renewed and made unbreakable.'),
+    ('canon','ezekiel',16,62,'canon','jeremiah',31,33,'free',
+      E'*But this shall be the covenant that I will make with the house of Yashar''el (Israel)... I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33). When Yahuah says *I will establish my covenant with thee; and thou shalt know that I am Yahuah (LORD)* (Ezekiel 16:62), the new-covenant content is Jeremiah''s — the Torah written on the heart, the covenant-formula sealed: *they shall be my people*. The everlasting covenant is the instruction written within, not the instruction discarded.'),
+    ('canon','ezekiel',16,60,'canon','ephesians',5,25,'free',
+      E'*Husbands, love your wives, even as Messiah (Christ) also loved the church, and gave himself for it* (Ephesians 5:25). The Husband who, after all her harlotry, says *Nevertheless I will remember my covenant... and I will establish unto thee an everlasting covenant* (Ezekiel 16:60), is the One who *loved the church, and gave himself for it* — love that takes the unfaithful bride and gives himself to redeem her. The everlasting covenant is sealed by the Husband''s self-giving love.'),
+    ('canon','ezekiel',16,63,'canon','ephesians',5,27,'free',
+      E'*That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish* (Ephesians 5:27). The bride brought to *remember, and be confounded... when I am pacified toward thee for all that thou hast done* (Ezekiel 16:63) is the church the Husband cleanses and presents glorious — the spotted, harlot-bride washed and made *without blemish*. The shame remembered and the spotless bride presented are the two ends of the same redeeming mercy.'),
+    ('canon','ezekiel',16,60,'canon','revelation',21,2,'free',
+      E'*And I John saw the holy city, new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2). The Jerusalem of the foundling, the harlot, and the everlasting covenant (Ezekiel 16:60) reaches her consummation as the *new Jerusalem... prepared as a bride adorned for her husband*. The infant cast out in the field ends as the bride descending from heaven, fully adorned for her Husband at last.'),
+    ('canon','ezekiel',16,60,'canon','revelation',19,7,'free',
+      E'*Let us be glad and rejoice, and give honour to him: for the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). The everlasting covenant *I will establish unto thee* (Ezekiel 16:60) ends in *the marriage of the Lamb* — the once-faithless wife now made ready, the betrothal of the foundling fulfilled in the wedding-feast. The everlasting covenant of Ezekiel and the marriage of the Lamb are one promise consummated.'),
+    ('canon','ezekiel',16,60,'canon','romans',11,29,'free',
+      E'*For the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). The reason the covenant holds despite all her harlotry — *Nevertheless I will remember my covenant... and I will establish unto thee an everlasting covenant* (Ezekiel 16:60) — is the reason Paul names: the gifts and calling are *without repentance*, never recalled. Yahuah does not unmake the bride he chose; the everlasting covenant cannot be broken from his side.'),
+    ('canon','ezekiel',16,63,'canon','romans',11,27,'free',
+      E'*For this is my covenant unto them, when I shall take away their sins* (Romans 11:27). The pacifying *when I am pacified toward thee for all that thou hast done* (Ezekiel 16:63) is the covenant Paul cites — *my covenant... when I shall take away their sins*. The everlasting covenant rests on Yahuah taking away the sins he has just judged; the bride is reconciled because her sin is borne away.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed',
+       E'When thou wast in thy blood, Live — the foundling found, raised, and betrothed',
+       E'The allegory opens on the abandoned infant — Jerusalem''s own origin laid bare: *as for thy nativity, in the day thou wast born thy navel was not cut, neither wast thou washed in water to supple thee* (16:4), *None eye pitied thee, to do any of these unto thee, to have compassion upon thee; but thou wast cast out in the open field, to the lothing of thy person, in the day that thou wast born* (16:5). Into that helplessness Yahuah passes and speaks life: *And when I passed by thee, and saw thee polluted in thine own blood, I said unto thee when thou wast in thy blood, Live; yea, I said unto thee when thou wast in thy blood, Live* (16:6). He raises her, and when she is grown he betroths her: *Now when I passed by thee, and looked upon thee, behold, thy time was the time of love; and I spread my skirt over thee, and covered thy nakedness: yea, I sware unto thee, and entered into a covenant with thee, saith Adonai Yahuah (the Lord GOD), and thou becamest mine* (16:8). This is electing love on the helpless — chosen not for worth but for mercy, exactly as Yashar''el (Israel) was chosen: *Yahuah (LORD) did not set his love upon you, nor choose you, because ye were more in number than any people; for ye were the fewest of all people: But because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers* (Deuteronomy 7:7-8). The one who *becamest mine* is the *peculiar treasure unto me above all people* (Exodus 19:5), taken into covenant at the mount. The New Testament names the same mercy: *I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25) — the not-people made his own; and *Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration* (Titus 3:5) — for the foundling brought nothing but her blood, and he brought the washing (16:9) and the life. The covenant begins not in her beauty but in his love over a child no eye pitied.',
+       sv.verse_id, ev.verse_id, 'free', 32375
+  FROM _s308_ezek16_lookup sv, _s308_ezek16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=16 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness',
+       E'I decked thee with ornaments — the bride adorned by my comeliness',
+       E'Having betrothed the foundling, Yahuah clothes and crowns her with his own glory: *Then washed I thee with water; yea, I throughly washed away thy blood from thee, and I anointed thee with oil* (16:9); *I clothed thee also with broidered work... I girded thee about with fine linen, and I covered thee with silk* (16:10); *I decked thee also with ornaments, and I put bracelets upon thy hands, and a chain on thy neck* (16:11); *And I put a jewel on thy forehead, and earrings in thine ears, and a beautiful crown upon thine head* (16:12). The result is splendour — *thou wast exceeding beautiful, and thou didst prosper into a kingdom* (16:13) — but the key is the next word: *And thy renown went forth among the heathen for thy beauty: for it was perfect through my comeliness, which I had put upon thee, saith Adonai Yahuah (the Lord GOD)* (16:14). Her beauty is HIS gift, not her merit. So the wedding-psalm sings: *The king''s daughter is all glorious within: her clothing is of wrought gold. She shall be brought unto the king in raiment of needlework* (Psalm 45:13-14) — brought, not self-arrayed. So Isaiah: *he hath clothed me with the garments of salvation, he hath covered me with the robe of righteousness... as a bride adorneth herself with her jewels* (Isaiah 61:10). And so the Lamb''s wife: *to her was granted that she should be arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8) — granted, not earned; *the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7), the foundling Yahuah *caused to multiply as the bud of the field* (16:7) grown up unto her wedding. Every thread of her beauty was woven by her Husband: it was perfect through HIS comeliness.',
+       sv.verse_id, ev.verse_id, 'free', 32378
+  FROM _s308_ezek16_lookup sv, _s308_ezek16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=16 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned',
+       E'But thou didst trust in thine own beauty — the covenant-bride turned harlot',
+       E'The gift becomes the snare. The bride takes the beauty her Husband gave and turns it against him: *But thou didst trust in thine own beauty, and playedst the harlot because of thy renown, and pouredst out thy fornications on every one that passed by* (16:15). She takes *thy fair jewels of my gold and of my silver, which I had given thee, and madest to thyself images of men, and didst commit whoredom with them* (16:17), sets his oil and incense before idols (16:18-19), even sacrifices the children she bore him (16:20-21). She fornicates with Egypt (16:26), Assyria (16:28), Chaldea (16:29) — and worse than a harlot, *as a wife that committeth adultery, which taketh strangers instead of her husband* (16:32), she pays her lovers rather than taking hire (16:33-34). This is idolatry read as spiritual adultery, the covenant-lawsuit against SIN — and the prophets sing it in one voice. Hosea: *she is not my wife, neither am I her husband* (Hosea 2:2); *she... went after her lovers* (Hosea 2:5); *she decked herself with her earrings and her jewels, and she went after her lovers, and forgat me* (Hosea 2:13) — the very ornaments Yahuah gave, worn for the Baalim. Jeremiah: *upon every high hill and under every green tree thou wanderest, playing the harlot* (Jeremiah 2:20); *thou hast played the harlot with many lovers; yet return again to me, saith Yahuah (LORD)* (Jeremiah 3:1). The apostle gives the same charge to the worldly heart: *Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with Elohim (God)?* (James 4:4). Mark the frame: this is lawsuit against conduct WITHIN the covenant, never an ethnic accusation. The unfaithful wife is still the beloved — even the indictment ends, *yet return again to me*. The judgment that follows (the lovers gathered against her, 16:37; judged *as women that break wedlock*, 16:38) is the grief of a wronged Husband, not the hatred of an enemy.',
+       sv.verse_id, ev.verse_id, 'free', 32381
+  FROM _s308_ezek16_lookup sv, _s308_ezek16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=16 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-16-thy-elder-sister-samaria-thy-younger-sodom',
+       E'Thy elder sister is Samaria, thy younger Sodom — more guilty for her greater light',
+       E'Yahuah names the bride''s sisters and turns the verdict against her own pride: *And thine elder sister is Samaria, she and her daughters that dwell at thy left hand: and thy younger sister, that dwelleth at thy right hand, is Sodom and her daughters* (16:46). The shock is that Jerusalem is worse than both: *as if that were a very little thing, thou wast corrupted more than they in all thy ways* (16:47); *Sodom thy sister hath not done, she nor her daughters, as thou hast done* (16:48); *Neither hath Samaria committed half of thy sins; but thou hast multiplied thine abominations more than they, and hast justified thy sisters in all thine abominations which thou hast done* (16:51). She made Sodom and Samaria look righteous by comparison — *they are more righteous than thou* (16:52). The reason is greater light: Jerusalem had the covenant, the Torah, the temple, the prophets, and sinned against all of it. The Messiah lays down the same measure: *it shall be more tolerable for the land of Sodom in the day of judgment, than for thee* (Matthew 11:24); *more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city* (Matthew 10:15) — the city that hears and refuses is judged more strictly than the city that never heard. The principle is named outright: *unto whomsoever much is given, of him shall be much required* (Luke 12:48). And note the two-house weight: Samaria the elder sister is the northern kingdom, the house of Yashar''el (Israel) divided from Yahudah (Judah) — her sin already judged, named here as kin, set within the same family of the covenant. Greater revelation is greater reckoning; the bride with the most light bears the heaviest account.',
+       sv.verse_id, ev.verse_id, 'free', 32384
+  FROM _s308_ezek16_lookup sv, _s308_ezek16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=46
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=16 AND ev.verse_number=52
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting',
+       E'Nevertheless I will remember my covenant — an everlasting covenant, the bride restored',
+       E'After all the harlotry and all the judgment, the allegory turns on one word: *Nevertheless*. Though she *despised the oath in breaking the covenant* (16:59), Yahuah will not break it from his side: *Nevertheless I will remember my covenant with thee in the days of thy youth, and I will establish unto thee an everlasting covenant* (16:60); *And I will establish my covenant with thee; and thou shalt know that I am Yahuah (LORD)* (16:62); *That thou mayest remember, and be confounded, and never open thy mouth any more because of thy shame, when I am pacified toward thee for all that thou hast done, saith Adonai Yahuah (the Lord GOD)* (16:63). Mercy triumphs; the unfaithful wife is re-wed. Hosea names the same everlasting remarriage: *I will betroth thee unto me for ever; yea, I will betroth thee unto me in righteousness, and in judgment, and in lovingkindness, and in mercies* (Hosea 2:19), *I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* (Hosea 2:20) — the very end Ezekiel names, *thou shalt know that I am Yahuah*. The everlasting covenant is the new covenant Jeremiah foretells, made with BOTH houses: *I will make a new covenant with the house of Yashar''el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31), *I will put my law in their inward parts, and write it in their hearts; and will be their Elohim (God), and they shall be my people* (Jeremiah 31:33) — the Torah written within, not discarded. The Husband who re-establishes the covenant is the One who *loved the church, and gave himself for it* (Ephesians 5:25), *That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy and without blemish* (Ephesians 5:27) — the spotted harlot-bride washed and presented spotless. And the arc that began with the infant cast out in the field ends with the bride descending from heaven: *new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2); *the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7). Why does the covenant hold despite everything? *For the gifts and calling of Elohim (God) are without repentance* (Romans 11:29); *this is my covenant unto them, when I shall take away their sins* (Romans 11:27). The everlasting covenant cannot be broken from Yahuah''s side — it is the restored two-house bride, found as a foundling, faithless as a harlot, and re-wed forever.',
+       sv.verse_id, ev.verse_id, 'free', 32387
+  FROM _s308_ezek16_lookup sv, _s308_ezek16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=59
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=16 AND ev.verse_number=63
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *not because ye were more in number... But because Yahuah (LORD) loved you* (Deuteronomy 7:7-8) — the foundling is chosen as Yashar''el (Israel) was: not for merit but for love. (v.7)'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *because Yahuah (LORD) loved you, and because he would keep the oath which he had sworn unto your fathers* (Deuteronomy 7:8) — the covenant-oath of *I sware unto thee* (Ezekiel 16:8); electing love keeps the oath.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *then ye shall be a peculiar treasure unto me above all people* (Exodus 19:5) — the one who *becamest mine* (Ezekiel 16:8) is the treasured people taken into covenant at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=8
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I will call them my people, which were not my people; and her beloved, which was not beloved* (Romans 9:25) — *Live* (Ezekiel 16:6) is the electing mercy; the not-people made his own.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=6
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Not by works of righteousness which we have done, but according to his mercy he saved us, by the washing of regeneration* (Titus 3:5) — the foundling brought only her blood; he brought the washing (16:9) and the life.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=6
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-when-thou-wast-in-thy-blood-live-the-foundling-betrothed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *The king''s daughter is all glorious within: her clothing is of wrought gold* (Psalm 45:13) — the bride decked with gold (Ezekiel 16:13); her glory is the King''s gift.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=45 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*She shall be brought unto the king in raiment of needlework* (Psalm 45:14) — the broidered work of Ezekiel 16:13; she is arrayed and brought, not self-adorned.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=13
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=45 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he hath clothed me with the garments of salvation... as a bride adorneth herself with her jewels* (Isaiah 61:10) — the renown perfect through *my comeliness* (Ezekiel 16:14); borrowed glory.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *arrayed in fine linen, clean and white: for the fine linen is the righteousness of saints* (Revelation 19:8) — the Lamb''s wife; her beauty *was granted*, not earned, as it was *perfect through my comeliness* (Ezekiel 16:14).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=14
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7) — the foundling caused to grow *as the bud of the field* (Ezekiel 16:7) grown up unto her wedding.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=7
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-i-decked-thee-the-bride-adorned-by-my-comeliness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *she... went after her lovers, that give me my bread and my water* (Hosea 2:5) — the bride trusting her beauty and chasing lovers (Ezekiel 16:15); she credits her lovers for the gifts Yahuah gave.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *she decked herself with her earrings and her jewels, and she went after her lovers, and forgat me* (Hosea 2:13) — the ornaments Yahuah gave (Ezekiel 16:17) worn for the Baalim.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *she is not my wife, neither am I her husband: let her therefore put away her whoredoms* (Hosea 2:2) — the wife taking strangers (Ezekiel 16:32); the plea aims at return, not final divorce.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=32
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *thou hast played the harlot with many lovers; yet return again to me, saith Yahuah (LORD)* (Jeremiah 3:1) — the harlotry of Ezekiel 16:15; the lawsuit ends in the offer of return.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *upon every high hill and under every green tree thou wanderest, playing the harlot* (Jeremiah 2:20) — the fornication with Egypt (Ezekiel 16:26); the covenant-bride chasing other gods on the high places.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=26
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with Elohim (God)?* (James 4:4) — the apostolic echo; idolatry/worldliness as spiritual adultery against the covenant-Husband.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=15
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thou-playedst-the-harlot-the-covenant-bride-turned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *more tolerable for the land of Sodom in the day of judgment, than for thee* (Matthew 11:24) — the Messiah''s word echoes *Sodom thy sister hath not done... as thou hast done* (Ezekiel 16:48); greater light, greater account.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=48
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thy-elder-sister-samaria-thy-younger-sodom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *more tolerable for the land of Sodom and Gomorrha in the day of judgment, than for that city* (Matthew 10:15) — the same measure; the one who hears and refuses judged more strictly than Sodom.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=48
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thy-elder-sister-samaria-thy-younger-sodom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *unto whomsoever much is given, of him shall be much required* (Luke 12:48) — the principle behind *thou hast multiplied thine abominations more than they* (Ezekiel 16:51); Jerusalem''s greater light is her greater reckoning.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=51
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=12 AND tv.verse_number=48
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-thy-elder-sister-samaria-thy-younger-sodom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will betroth thee unto me for ever... in lovingkindness, and in mercies* (Hosea 2:19) — the everlasting covenant (Ezekiel 16:60); the unfaithful wife re-wed forever.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will even betroth thee unto me in faithfulness: and thou shalt know Yahuah (LORD)* (Hosea 2:20) — the same end as *thou shalt know that I am Yahuah* (Ezekiel 16:62); the restored bride brought to know him.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=2 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I will make a new covenant with the house of Yashar''el (Israel), and with the house of Yahudah (Judah)* (Jeremiah 31:31) — the everlasting covenant (Ezekiel 16:60) is the new covenant with BOTH houses; the two-house bride.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will put my law in their inward parts, and write it in their hearts... they shall be my people* (Jeremiah 31:33) — the everlasting covenant (Ezekiel 16:62) is the Torah written within, not discarded.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=62
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Messiah (Christ) also loved the church, and gave himself for it* (Ephesians 5:25) — the Husband''s self-giving love behind *Nevertheless I will remember my covenant* (Ezekiel 16:60).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=5 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *a glorious church, not having spot, or wrinkle... holy and without blemish* (Ephesians 5:27) — the spotted harlot-bride (Ezekiel 16:63) washed and presented spotless; shame remembered, blemish removed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=63
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=5 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *new Jerusalem, coming down from Elohim (God) out of heaven, prepared as a bride adorned for her husband* (Revelation 21:2) — the foundling''s arc consummated; the infant cast in the field is the bride descending from heaven (Ezekiel 16:60).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *the marriage of the Lamb is come, and his wife hath made herself ready* (Revelation 19:7) — the everlasting betrothal of Ezekiel 16:60 fulfilled in the wedding-feast of the Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★★ *the gifts and calling of Elohim (God) are without repentance* (Romans 11:29) — why the covenant holds despite all her harlotry (Ezekiel 16:60); Yahuah does not unmake the bride he chose.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=60
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★ *this is my covenant unto them, when I shall take away their sins* (Romans 11:27) — the pacifying of Ezekiel 16:63; the bride reconciled because her sin is borne away.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=16 AND sv.verse_number=63
+  JOIN _s308_ezek16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-16-nevertheless-i-will-remember-my-covenant-everlasting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
