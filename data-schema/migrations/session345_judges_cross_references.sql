@@ -4277,6 +4277,1387 @@ SELECT t.id, cr.id, 3, E'Exodus 17:6 — *smite the rock, and there shall come w
  WHERE t.slug='judges-15-the-cry-answered-en-hakkore-water-to-the-fainting'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_judges_16.sql (Judges 16) -----
+-- Judges 16 — Samson and Delilah; Samson's death. Tag jdg16. Sort band 36025–36037.
+-- The Nazarite secret (Num 6 / Judg 13:5) = the strength was Yahuah's presence, not Samson's own.
+-- The seduction that destroys (Prov 5 / 7, the strange woman) — "he wist not that Yahuah was departed."
+-- The fallen deliverer humbled (eyes put out, grinding in prison) — yet "the hair began to grow again" = restoration.
+-- The deliverer who in his DEATH wins the greater victory — a faint shadow of the One whose death
+--   overthrew the enemy (John 12:24 corn of wheat / Col 2:15 spoiled principalities; Heb 11:32,34 out of weakness made strong).
+--
+-- Judges 16 coverage:
+--   v.4-6 (Delilah of Sorek, the lords bribe her, the secret of his strength):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Proverbs 5:3-5, 7:21-27 (the strange woman whose end is death) — THREAD 2
+--   v.16-17 (his soul vexed unto death; he tells ALL — the Nazarite secret, no razor):
+--        NT:     none warranted (Num 6 / Judg 13 carry it)
+--        Extras: none warranted
+--        Tanakh: Numbers 6:2,5; Judges 13:5 (the Nazarite separation, the source) — THREAD 1
+--   v.19-20 (hair shaved, strength gone, "he wist not that Yahuah was departed from him"):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Proverbs 5:22-23, 7:26-27 (holden with the cords of his sins, many strong men slain) — THREAD 2
+--   v.21-22 (eyes put out, grinding in prison house; the hair began to grow again):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: (self-anchored — the fallen-deliverer/restoration thread bounds itself) — THREAD 3
+--   v.28-30 (cries to Yahuah only-this-once; let me die with the Philistines; dead at his death more than in his life):
+--        NT:     John 12:24 (corn of wheat dies, brings forth fruit); Colossians 2:15 (spoiled principalities,
+--                triumphing); Hebrews 11:32,34 (Samson in the roll of faith, out of weakness made strong) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: Judges 13:5 (he shall BEGIN to deliver Israel — finished here in death) — THREAD 3/4
+--
+-- THREADS:
+--   judges-16-a-nazarite-unto-elohim-from-the-womb-the-secret-of-his-strength  [Tanakh] free
+--   judges-16-the-strange-woman-and-he-wist-not-that-yahuah-was-departed       [Tanakh] free
+--   judges-16-the-fallen-deliverer-humbled-and-the-hair-began-to-grow-again    [Tanakh] free
+--   judges-16-let-me-die-with-the-philistines-the-death-that-wins-the-victory  [Tanakh+NT] free
+
+CREATE TEMP VIEW _s345_jdg16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the Nazarite secret (Num 6 / Judg 13:5)
+    ('canon','judges',16,17,'canon','numbers',6,2,'free',
+     E'*When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* (Numbers 6:2). Samson''s confession — *I have been a Nazarite unto Elohim (God) from my mother''s womb* (Judges 16:17) — names the separation of Numbers 6 as the ground of all his strength: the power was never in the hair but in the consecration *unto Yahuah* it signified.'),
+    ('canon','judges',16,17,'canon','numbers',6,5,'free',
+     E'*All the days of the vow of his separation there shall no razor come upon his head: until the days be fulfilled... he shall be holy, and shall let the locks of the hair of his head grow* (Numbers 6:5). This is the exact statute Samson betrays — *There hath not come a razor upon mine head... if I be shaven, then my strength will go from me* (Judges 16:17). The uncut hair was the visible token of an invisible holiness *unto Yahuah*; sever the token and the holiness is forfeit.'),
+    ('canon','judges',16,17,'canon','judges',13,5,'free',
+     E'The angel of Yahuah had spoken it before his birth: *no razor shall come on his head: for the child shall be a Nazarite unto Elohim (God) from the womb: and he shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5). Samson''s secret (16:17) is simply this commission remembered; his whole strength was the keeping of a vow Yahuah had laid on him *from the womb*.'),
+    -- THREAD 2: the strange woman / he wist not that Yahuah was departed (Prov 5, Prov 7)
+    ('canon','judges',16,5,'canon','proverbs',5,3,'free',
+     E'*For the lips of a strange woman drop as an honeycomb, and her mouth is smoother than oil: But her end is bitter as wormwood, sharp as a twoedged sword* (Proverbs 5:3-4). Delilah of the valley of Sorek, hired by the Philistine lords to *entice him, and see wherein his great strength lieth* (Judges 16:5), is the strange woman of Proverbs made flesh — sweet speech that ends in death.'),
+    ('canon','judges',16,16,'canon','proverbs',7,21,'free',
+     E'*With her much fair speech she caused him to yield, with the flattering of her lips she forced him* (Proverbs 7:21). So Delilah: *she pressed him daily with her words, and urged him, so that his soul was vexed unto death; That he told her all his heart* (Judges 16:16-17). The daily wearing-down of Proverbs 7 is the very method that breaks the strong man.'),
+    ('canon','judges',16,20,'canon','proverbs',5,22,'free',
+     E'*His own iniquities shall take the wicked himself, and he shall be holden with the cords of his sins* (Proverbs 5:22). The most sobering line in the chapter — *he wist not that Yahuah (LORD) was departed from him* (Judges 16:20) — is this proverb enacted: the strength was Yahuah''s presence all along, and the man bound by his own compromise does not even know the Spirit has gone.'),
+    ('canon','judges',16,20,'canon','proverbs',7,26,'free',
+     E'*For she hath cast down many wounded: yea, many strong men have been slain by her. Her house is the way to hell, going down to the chambers of death* (Proverbs 7:26-27). Samson is the chief of those *strong men* — shaven, afflicted, and not even aware that *Yahuah (LORD) was departed from him* (Judges 16:20). The strange woman''s house claims the mightiest judge of Yashar''el (Israel).'),
+    -- THREAD 3: the fallen deliverer humbled / the hair began to grow again
+    ('canon','judges',16,21,'canon','judges',13,5,'free',
+     E'The angel had promised *he shall begin to deliver Yashar''el (Israel)* (Judges 13:5) — only BEGIN. Here the deliverer is undone: *the Philistines took him, and put out his eyes... and he did grind in the prison house* (Judges 16:21). The blinded, fettered judge grinding like a beast is the deliverance left unfinished, awaiting the one act still to come.'),
+    -- THREAD 4: let me die with the Philistines / the death that wins the victory
+    ('canon','judges',16,30,'canon','john',12,24,'free',
+     E'*Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24). Samson''s prayer — *Let me die with the Philistines*... *so the dead which he slew at his death were more than they which he slew in his life* (Judges 16:30) — is a faint, broken shadow of this law: the deliverer accomplishes more in dying than in living. He is the seed that falls, not the harvest; the true Deliverer would die without sin and rise.'),
+    ('canon','judges',16,30,'canon','colossians',2,15,'free',
+     E'*And having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it* (Colossians 2:15). When the house of Dagon falls on the lords of the Philistines (Judges 16:30), the enemy''s gods and rulers are overthrown by the very death of the deliverer — a dim figure of the One whose death, not His escape, *spoiled principalities and powers*.'),
+    ('canon','judges',16,30,'canon','hebrews',11,32,'free',
+     E'*And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae* (Hebrews 11:32). Samson is named in the roll of faith — not for his failures but for the final cry of Judges 16:28-30, the death by which he *slew more than... in his life*. The witness of faith reaches even the broken deliverer who turned back to Yahuah at the last.'),
+    ('canon','judges',16,28,'canon','hebrews',11,34,'free',
+     E'*Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong, waxed valiant in fight* (Hebrews 11:34). Blind and bound, Samson cries *strengthen me, I pray thee, only this once, O Elohim (God)* (Judges 16:28) — and *out of weakness* he is *made strong*. The strength was never his; restored at the last, it is Yahuah''s answered once more.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-16-a-nazarite-unto-elohim-from-the-womb-the-secret-of-his-strength',
+       E'A Nazarite unto Elohim from the womb — the secret of his strength',
+       E'Pressed daily till his soul was *vexed unto death*, Samson at last *told her all his heart* — *There hath not come a razor upon mine head; for I have been a Nazarite unto Elohim (God) from my mother''s womb: if I be shaven, then my strength will go from me* (Judges 16:16-17). The secret is no charm in the hair; it is the vow of separation Yahuah laid on him before he was born. *When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* (Numbers 6:2), the statute runs: *there shall no razor come upon his head... he shall be holy, and shall let the locks of the hair of his head grow* (Numbers 6:5). The uncut hair is the token of a holiness *unto Yahuah* — and the angel of Yahuah had named that holiness before Samson''s birth: *no razor shall come on his head: for the child shall be a Nazarite unto Elohim (God) from the womb: and he shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5). His strength was the keeping of a vow; betray the vow, and the strength — which was never his own — is gone.',
+       sv.verse_id, ev.verse_id, 'free', 36025
+  FROM _s345_jdg16_lookup sv, _s345_jdg16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=16 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-16-the-strange-woman-and-he-wist-not-that-yahuah-was-departed',
+       E'The strange woman — and he wist not that Yahuah was departed',
+       E'*He loved a woman in the valley of Sorek, whose name was Delilah* (Judges 16:4), and the Philistine lords hired her to *entice him, and see wherein his great strength lieth* (16:5). She is the strange woman of the Proverbs made flesh: *For the lips of a strange woman drop as an honeycomb, and her mouth is smoother than oil: But her end is bitter as wormwood, sharp as a twoedged sword* (Proverbs 5:3-4). Her method is exactly the method that breaks him — *With her much fair speech she caused him to yield, with the flattering of her lips she forced him* (Proverbs 7:21); so *she pressed him daily with her words, and urged him, so that his soul was vexed unto death* (Judges 16:16). Then comes the most sobering line in all of Samson''s story: shaven and afflicted, *he awoke out of his sleep, and said, I will go out as at other times before, and shake myself. And he wist not that Yahuah (LORD) was departed from him* (16:20). *His own iniquities shall take the wicked himself, and he shall be holden with the cords of his sins* (Proverbs 5:22): the strength was Yahuah''s presence all along, and the man bound by his own compromise does not even know the Spirit has gone. *Many strong men have been slain by her. Her house is the way to hell* (Proverbs 7:26-27) — and Samson is the chief of them.',
+       sv.verse_id, ev.verse_id, 'free', 36028
+  FROM _s345_jdg16_lookup sv, _s345_jdg16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=16 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-16-the-fallen-deliverer-humbled-and-the-hair-began-to-grow-again',
+       E'The fallen deliverer humbled — and the hair began to grow again',
+       E'*The Philistines took him, and put out his eyes, and brought him down to Gaza, and bound him with fetters of brass; and he did grind in the prison house* (Judges 16:21). The mightiest judge of Yashar''el (Israel) is blinded, fettered, and set grinding like a beast — the deliverer humbled to the lowest place. Yet the angel''s word had promised only a beginning: *he shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5) — BEGIN; the work was never finished while he lived in his strength. And then the quiet hinge of grace: *Howbeit the hair of his head began to grow again after he was shaven* (16:22). The token of separation returns; the restoration begins in the prison house, unseen by his captors, preparing the one act still to come.',
+       sv.verse_id, ev.verse_id, 'free', 36031
+  FROM _s345_jdg16_lookup sv, _s345_jdg16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=16 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-16-let-me-die-with-the-philistines-the-death-that-wins-the-victory',
+       E'Let me die with the Philistines — the death that wins the greater victory',
+       E'At the feast to Dagon, blind Samson is set between the pillars, and he turns back to Yahuah at the last: *O Yahuah (Lord) GOD, remember me, I pray thee, and strengthen me, I pray thee, only this once, O Elohim (God), that I may be at once avenged of the Philistines for my two eyes* (Judges 16:28). *Quenched the violence of fire, escaped the edge of the sword, out of weakness were made strong* (Hebrews 11:34) — the strength that was never his is answered once more. Then *Samson said, Let me die with the Philistines. And he bowed himself with all his might; and the house fell upon the lords, and upon all the people... So the dead which he slew at his death were more than they which he slew in his life* (16:30). The deliverer accomplishes more in dying than in living — a faint, broken shadow of the law the true Deliverer would speak: *Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24). When the house of Dagon falls, the enemy''s gods and lords are overthrown by the death of the deliverer — dimly figuring the One who, *having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it* (Colossians 2:15). Samson is the seed that falls, not the harvest; named in the roll of faith — *of Samson, and of Jephthae* (Hebrews 11:32) — for this last cry. But where Samson dies in his sin and stays in the grave, the true Deliverer would die without sin and rise.',
+       sv.verse_id, ev.verse_id, 'free', 36034
+  FROM _s345_jdg16_lookup sv, _s345_jdg16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=16 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* (Numbers 6:2) — the separation that was the ground of his strength.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=17
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-a-nazarite-unto-elohim-from-the-womb-the-secret-of-his-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*There shall no razor come upon his head... he shall be holy, and shall let the locks of the hair of his head grow* (Numbers 6:5) — the exact statute Samson betrays.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=17
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-a-nazarite-unto-elohim-from-the-womb-the-secret-of-his-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The child shall be a Nazarite unto Elohim (God) from the womb: and he shall begin to deliver Yashar''el (Israel)* (Judges 13:5) — the commission Samson''s secret remembers.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=17
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-a-nazarite-unto-elohim-from-the-womb-the-secret-of-his-strength'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The lips of a strange woman drop as an honeycomb... But her end is bitter as wormwood* (Proverbs 5:3-4) — Delilah of Sorek is the strange woman made flesh.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-the-strange-woman-and-he-wist-not-that-yahuah-was-departed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*With her much fair speech she caused him to yield, with the flattering of her lips she forced him* (Proverbs 7:21) — the daily wearing-down that vexes his soul unto death.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=16
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=7 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-the-strange-woman-and-he-wist-not-that-yahuah-was-departed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*His own iniquities shall take the wicked himself, and he shall be holden with the cords of his sins* (Proverbs 5:22) — enacted in *he wist not that Yahuah was departed from him*.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=20
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=5 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-the-strange-woman-and-he-wist-not-that-yahuah-was-departed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Many strong men have been slain by her. Her house is the way to hell* (Proverbs 7:26-27) — Samson is the chief of those strong men.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=20
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-the-strange-woman-and-he-wist-not-that-yahuah-was-departed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He shall BEGIN to deliver Yashar''el (Israel)* (Judges 13:5) — only begin; the blinded judge grinding in prison is the deliverance left unfinished, awaiting the last act.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=21
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-the-fallen-deliverer-humbled-and-the-hair-began-to-grow-again'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24) — the law Samson''s death faintly shadows: more accomplished in dying than in living.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=30
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-let-me-die-with-the-philistines-the-death-that-wins-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Having spoiled principalities and powers, he made a shew of them openly, triumphing over them in it* (Colossians 2:15) — the house of Dagon falls; the enemy''s gods are overthrown by the deliverer''s death.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=30
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-let-me-die-with-the-philistines-the-death-that-wins-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The time would fail me to tell of... Samson* (Hebrews 11:32) — named in the roll of faith for the last cry by which he slew more than in his life.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=30
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-let-me-die-with-the-philistines-the-death-that-wins-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Out of weakness were made strong* (Hebrews 11:34) — blind and bound, he cries *strengthen me... only this once* (16:28), and the strength that was never his is answered.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=16 AND sv.verse_number=28
+  JOIN _s345_jdg16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-16-let-me-die-with-the-philistines-the-death-that-wins-the-victory'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_17.sql (Judges 17) -----
+-- Chapter: Judges 17  |  Tag: jdg17  |  Session: s345  |  Sort band: 36050, 36053, 36056
+--
+-- The dark appendix opens. Micah of mount Ephraim makes a house of gods from his
+-- mother's dedicated silver — a graven image and a molten image, an ephod and
+-- teraphim — and consecrates first his own son, then a wandering Levite, to be his
+-- priest. The do-it-yourself religion: worship invented by man's own design,
+-- breaking the second commandment and the one-place/one-priesthood ordinance, yet
+-- presuming on Yahuah's favour. The key refrain frames the whole appendix: in those
+-- days there was no king in Yashar'el, every man did that which was right in his
+-- own eyes.
+--
+-- Judges 17 coverage:
+--   v.1-5  (graven+molten image, house of gods, home-made priest)
+--          NT:     none warranted (the type is Torah-against-idolatry; no NT verse adds)
+--          Extras: none warranted
+--          Tanakh: Exodus 20:4 (no graven image), Exodus 20:23 (gods of silver),
+--                  Deuteronomy 12:8 (every man right in his own eyes / one place),
+--                  Deuteronomy 18:5 (Yahuah's chosen priesthood)
+--   v.6    (no king, every man right in his own eyes — THE REFRAIN)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 12:8 (the very phrase forbidden), Proverbs 14:12
+--                  (the way that seems right ends in death), Judges 18:1 + 21:25
+--                  (the refrain repeated, framing the appendix)
+--   v.7-13 (the hired Levite; "now know I that Yahuah will do me good")
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 18:1-2,5 (the lawful Levitical priesthood vs. a hired
+--                  priest), Proverbs 14:12 (the presumption that seems right)
+--
+-- Threads (slug — target libraries):
+--   judges-17-a-house-of-gods-the-graven-image-against-the-second-commandment  (Tanakh) free
+--   judges-17-no-king-every-man-right-in-his-own-eyes  (Tanakh) free
+--   judges-17-a-levite-to-my-priest-the-hired-presumption  (Tanakh) free
+--
+-- Contested/load-bearing framing: 17:5's house of gods + ephod + home-made priest,
+-- and 17:13's "now know I that Yahuah will do me good," are read as the corruption of
+-- true worship — man's design against Torah, the need for the true King — NOT a
+-- neutral folk-piety. The refrain 17:6 is bound to Deut 12:8 (the exact phrase Torah
+-- forbade) and Prov 14:12 (the way that seems right ends in death).
+
+CREATE TEMP VIEW _s345_jdg17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the house of gods / graven image against the second commandment
+    ('canon','judges',17,3,'canon','exodus',20,4,'free',E'*Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth* (Exodus 20:4). Micah''s mother dedicates her silver *unto Yahuah (LORD)... to make a graven image and a molten image* (Judges 17:3) — she names the right Name over the very thing the second word of the covenant forbids. The idol is built in Yahuah''s name; the design is man''s.'),
+    ('canon','judges',17,4,'canon','exodus',20,23,'free',E'*Ye shall not make with me gods of silver, neither shall ye make unto you gods of gold* (Exodus 20:23). The founder takes the silver and *made thereof a graven image and a molten image* (Judges 17:4) — the precise prohibition broken metal-for-metal, gods of silver fashioned to stand beside the worship of Yahuah.'),
+    ('canon','judges',17,5,'canon','deuteronomy',18,5,'free',E'*For Yahuah Elohayka (the LORD thy God) hath chosen him out of all thy tribes, to stand to minister in the name of Yahuah (LORD), him and his sons for ever* (Deuteronomy 18:5). Yahuah alone chooses His priesthood; yet Micah *made an ephod, and teraphim, and consecrated one of his sons, who became his priest* (Judges 17:5) — a man manufactures his own priest and his own oracle, the house of gods against the house Yahuah chose.'),
+    -- Thread 2: no king, every man right in his own eyes (the refrain)
+    ('canon','judges',17,6,'canon','deuteronomy',12,8,'free',E'*Ye shall not do after all the things that we do here this day, every man whatsoever is right in his own eyes* (Deuteronomy 12:8). The refrain *every man did that which was right in his own eyes* (Judges 17:6) is the exact thing Torah forbade — Deuteronomy commanded worship at the one place Yahuah would choose, not the design of each man''s own eyes; Judges shows the nation living out what Moses warned against.'),
+    ('canon','judges',17,6,'canon','proverbs',14,12,'free',E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). When *every man did that which was right in his own eyes* (Judges 17:6), self-authority replaces the way of Yahuah — and the wisdom of Proverbs names the end of that road: the way that seems right to a man ends in death.'),
+    ('canon','judges',17,6,'canon','judges',18,1,'free',E'*In those days there was no king in Yashar''el (Israel)* (Judges 18:1). The refrain that opens here — *In those days there was no king in Yashar''el (Israel)* (Judges 17:6) — is repeated at the head of the next chapter, framing the whole dark appendix as the anarchy of a people with no king, pointing to the need for the true King.'),
+    ('canon','judges',17,6,'canon','judges',21,25,'free',E'*In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The book closes on the very words it speaks here (Judges 17:6) — the refrain bookends the appendix; the moral and spiritual chaos of self-rule cries out for the King who will do that which is right in the sight of Yahuah.'),
+    -- Thread 3: a Levite to my priest — the hired presumption
+    ('canon','judges',17,10,'canon','deuteronomy',18,1,'free',E'*The priests the Levites, and all the tribe of Levi, shall have no part nor inheritance with Yashar''el (Israel): they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance* (Deuteronomy 18:1). Micah hires the wandering Levite — *be unto me a father and a priest, and I will give thee ten shekels of silver by the year* (Judges 17:10). The Levite''s portion was Yahuah Himself, the offerings made by fire; here he sells his ministry for wages at a man''s private shrine.'),
+    ('canon','judges',17,10,'canon','deuteronomy',18,2,'free',E'*Therefore shall they have no inheritance among their brethren: Yahuah (LORD) is their inheritance, as he hath said unto them* (Deuteronomy 18:2). The Levite was to have no inheritance because *Yahuah (LORD) is their inheritance*; Micah''s offer — *ten shekels of silver by the year, and a suit of apparel, and thy victuals* (Judges 17:10) — trades that inheritance for hire, the priesthood made a paid post.'),
+    ('canon','judges',17,13,'canon','proverbs',14,12,'free',E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). Micah''s confidence — *Now know I that Yahuah (LORD) will do me good, seeing I have a Levite to my priest* (Judges 17:13) — is the presumption that ritual secures favour while the commandments are broken; it seems right to him, but it is the way whose end is death.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-17-a-house-of-gods-the-graven-image-against-the-second-commandment',
+       E'A House of Gods: The Graven Image Against the Second Commandment',
+       E'Micah of mount Ephraim makes worship by his own design. His mother dedicates her silver *unto Yahuah (LORD)... to make a graven image and a molten image* (Judges 17:3) — the right Name spoken over the very thing the covenant forbids: *Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath* (Exodus 20:4). The founder casts it, *a graven image and a molten image* (Judges 17:4), breaking metal-for-metal the word *Ye shall not make with me gods of silver, neither shall ye make unto you gods of gold* (Exodus 20:23). Then *the man Micah had an house of gods, and made an ephod, and teraphim, and consecrated one of his sons, who became his priest* (Judges 17:5) — a home-made oracle and a home-made priesthood, when Yahuah alone chooses the one *to stand to minister in the name of Yahuah (LORD), him and his sons for ever* (Deuteronomy 18:5). This is the do-it-yourself religion: idolatry built in Yahuah''s name, the design of man set against the design of the covenant.',
+       sv.verse_id, ev.verse_id, 'free', 36050
+  FROM _s345_jdg17_lookup sv, _s345_jdg17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=17 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-17-no-king-every-man-right-in-his-own-eyes',
+       E'No King in Yashar''el: Every Man Right in His Own Eyes',
+       E'The key refrain that frames the whole dark appendix: *In those days there was no king in Yashar''el (Israel), but every man did that which was right in his own eyes* (Judges 17:6). It is the very thing Moses forbade — *Ye shall not do after all the things that we do here this day, every man whatsoever is right in his own eyes* (Deuteronomy 12:8) — for Yahuah had commanded worship at the one place He would choose, not the verdict of each man''s own eyes. And the way of self-authority has an end: *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). The refrain is no passing remark; it opens the next chapter — *In those days there was no king in Yashar''el (Israel)* (Judges 18:1) — and closes the book — *In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The anarchy of a people who are each their own authority cries out for the true King who does that which is right in the sight of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 36053
+  FROM _s345_jdg17_lookup sv, _s345_jdg17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=17 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-17-a-levite-to-my-priest-the-hired-presumption',
+       E'A Levite to My Priest: The Hired Presumption',
+       E'A wandering Levite of Beth-lehem-judah comes by, and Micah hires him: *Dwell with me, and be unto me a father and a priest, and I will give thee ten shekels of silver by the year, and a suit of apparel, and thy victuals* (Judges 17:10). But the Levite''s portion was never wages — *The priests the Levites, and all the tribe of Levi, shall have no part nor inheritance with Yashar''el (Israel): they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance* (Deuteronomy 18:1); *Yahuah (LORD) is their inheritance, as he hath said unto them* (Deuteronomy 18:2). The Levite sells the inheritance of Yahuah for a salary at a man''s private shrine. And Micah''s heart follows: *Now know I that Yahuah (LORD) will do me good, seeing I have a Levite to my priest* (Judges 17:13) — the presumption that the right ritual and a hired priest secure favour while the commandments are broken. It is *a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12).',
+       sv.verse_id, ev.verse_id, 'free', 36056
+  FROM _s345_jdg17_lookup sv, _s345_jdg17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=17 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not make unto thee any graven image* (Exodus 20:4) — the second word of the covenant, broken in Micah''s mother''s dedication of silver to make a graven and molten image.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=3
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-a-house-of-gods-the-graven-image-against-the-second-commandment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Ye shall not make with me gods of silver* (Exodus 20:23) — the founder casts the silver into a graven and molten image, the prohibition broken metal-for-metal.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-a-house-of-gods-the-graven-image-against-the-second-commandment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah... hath chosen him... to stand to minister in the name of Yahuah* (Deuteronomy 18:5) — Yahuah alone chooses His priesthood; Micah manufactures his own ephod, teraphim, and priest.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=5
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-a-house-of-gods-the-graven-image-against-the-second-commandment'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*every man whatsoever is right in his own eyes* (Deuteronomy 12:8) — the exact phrase Torah forbade; the refrain shows the nation living out what Moses warned against.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12) — the end of self-authority when every man is his own judge.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*In those days there was no king in Yashar''el* (Judges 18:1) — the refrain repeated to open the next chapter, framing the appendix.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*In those days there was no king in Yashar''el: every man did that which was right in his own eyes* (Judges 21:25) — the same words close the book; the refrain bookends the appendix and points to the need for the true King.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The priests the Levites... shall have no part nor inheritance... they shall eat the offerings of Yahuah made by fire* (Deuteronomy 18:1) — the Levite''s portion was Yahuah, not wages; here he is hired for ten shekels a year.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-a-levite-to-my-priest-the-hired-presumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah is their inheritance, as he hath said unto them* (Deuteronomy 18:2) — the Levite trades the inheritance of Yahuah for silver and apparel at a man''s private shrine.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=10
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-a-levite-to-my-priest-the-hired-presumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12) — Micah''s presumption that a hired Levite secures Yahuah''s favour while the commandments are broken.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s345_jdg17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-17-a-levite-to-my-priest-the-hired-presumption'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_18.sql (Judges 18) -----
+-- Chapter: Judges 18 — the tribe of Dan steals Micah's gods and his hireling Levite,
+--   smites quiet Laish, rebuilds it as Dan, and institutionalizes idolatry "until the captivity."
+-- Tag: jdg18    View: _s345_jdg18_lookup    Sort band: 36075, 36078, 36081
+--
+-- Judges 18 coverage:
+--   v.1  (no king in Yashar'el / Dan seeking inheritance)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Judges 17:6 + Judges 21:25 (refrain), Deuteronomy 12:8 (right in own eyes) — THREAD 3
+--   v.4  (Micah hath hired me, I am his priest)
+--        NT:     John 10:12-13 (the hireling) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: Judges 17:10 (hired for ten shekels) — THREAD 1
+--   v.19 (priest unto a tribe rather than one man — better pay)
+--        NT:     John 10:12-13 (the hireling who careth not) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: Judges 17:10-12 (the hire) — THREAD 1
+--   v.24 (ye have taken away my gods which I made)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 12:30-31 (snared by their gods, abomination) — THREAD 1
+--   v.27 (smote quiet, secure Laish with the edge of the sword)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Joshua 19:47 (the Dan-conquest of Leshem) — THREAD 2
+--   v.29 (called the city Dan)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Joshua 19:47 (Leshem renamed Dan) — THREAD 2
+--   v.30-31 (set up the graven image, priests until the captivity)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Kings 12:28-30 (Jeroboam's golden calf set in Dan), 2 Kings 17:6 + 17:23
+--                (the captivity it leads to), Deuteronomy 12:2-3 (utterly destroy graven images) — THREAD 2
+--
+-- Threads (slug + target libraries):
+--   judges-18-the-hireling-priest-and-the-stolen-gods            (Tanakh + NT)  — free
+--   judges-18-dan-sets-up-the-graven-image-until-the-captivity   (Tanakh only)  — free
+--   judges-18-in-those-days-there-was-no-king-in-yasharel        (Tanakh only)  — free
+--
+-- Framework-load-bearing framing: Dan = the very site of Jeroboam's golden calf (1 Kings 12:29),
+--   the false worship that becomes generational ("until the captivity," 18:30) and leads to the
+--   Assyrian scattering of the northern house (2 Kings 17:6, 23) — the two-house judgment-history.
+--   The hireling Levite (the priest who goes where the pay is better) read forward to John 10:12-13.
+
+CREATE TEMP VIEW _s345_jdg18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the hireling priest and the stolen gods
+    ('canon','judges',18,4,  'canon','judges',17,10, 'free',
+      E'*And Micah said unto him, Dwell with me, and be unto me a father and a priest, and I will give thee ten shekels of silver by the year, and a suit of apparel, and thy victuals. So the Levite went in.* (Judges 17:10) — the Levite serves for wages. When the Danites find him, *Micah... hath hired me, and I am his priest* (Judges 18:4): worship as merchandise, the priesthood for pay.'),
+    ('canon','judges',18,19, 'canon','judges',17,12, 'free',
+      E'*And Micah consecrated the Levite; and the young man became his priest, and was in the house of Micah.* (Judges 17:12) — the same hireling now lured to a better post. *Is it better for thee to be a priest unto the house of one man, or that thou be a priest unto a tribe and a family in Yashar''el (Israel)?* (Judges 18:19) — and *the priest''s heart was glad* (18:20): he goes where the pay is greater.'),
+    ('canon','judges',18,19, 'canon','john',10,12, 'free',
+      E'*But he that is an hireling, and not the shepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth: and the wolf catcheth them, and scattereth the sheep.* (John 10:12) — Yahusha (Jesus) names the type. The Levite who jumps to *a priest unto a tribe* (18:19) for the larger flock and the larger fee is the hireling, not the shepherd.'),
+    ('canon','judges',18,4,  'canon','john',10,13, 'free',
+      E'*The hireling fleeth, because he is an hireling, and careth not for the sheep.* (John 10:13) — the priest who says *hath hired me, and I am his priest* (Judges 18:4) cares for the wage, not the worship; he blesses whatever way the silver points (*Go in peace: before Yahuah (LORD) is your way*, 18:6).'),
+    ('canon','judges',18,24, 'canon','deuteronomy',12,30, 'free',
+      E'*Take heed to thyself that thou be not snared by following them, after that they be destroyed from before thee; and that thou enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise.* (Deuteronomy 12:30) — Micah cries *Ye have taken away my gods which I made* (Judges 18:24): hand-made gods, the very snare Torah warned of, treated as property to be stolen.'),
+    ('canon','judges',18,24, 'canon','deuteronomy',12,31, 'free',
+      E'*Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods...* (Deuteronomy 12:31) — *my gods which I made* (Judges 18:24) is exactly the abomination Yahuah (Yahuah) hates; the graven image and the molten image are no true worship but the thing forbidden.'),
+
+    -- THREAD 2: Dan sets up the graven image until the captivity
+    ('canon','judges',18,27, 'canon','joshua',19,47, 'free',
+      E'*And the coast of the children of Dan went out too little for them: therefore the children of Dan went up to fight against Leshem, and took it, and smote it with the edge of the sword, and possessed it, and dwelt therein, and called Leshem, Dan, after the name of Dan their father.* (Joshua 19:47) — the same conquest. *They smote them with the edge of the sword, and burnt the city with fire* (Judges 18:27): quiet Laish/Leshem taken, and the tribe renames it for itself.'),
+    ('canon','judges',18,30, 'canon','1-kings',12,28, 'free',
+      E'*Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt.* (1 Kings 12:28) — the idolatry of Judges 18 is no isolated lapse; *the children of Dan set up the graven image* (18:30), and on that very site Jeroboam will later raise one of his golden calves.'),
+    ('canon','judges',18,30, 'canon','1-kings',12,29, 'free',
+      E'*And he set the one in Beth-el, and the other put he in Dan.* (1 Kings 12:29) — Dan, made a centre of false worship here *until the day of the captivity of the land* (Judges 18:30), becomes the very place the divided northern kingdom plants its calf: the corruption seeded, then institutionalized by the crown.'),
+    ('canon','judges',18,30, 'canon','2-kings',17,6, 'free',
+      E'*In the ninth year of Hoshea the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria, and placed them in Halah and in Habor by the river of Gozan, and in the cities of the Medes.* (2 Kings 17:6) — *until the day of the captivity of the land* (Judges 18:30) names the end-point: the false worship that began at Dan ripens into the Assyrian scattering of the northern house.'),
+    ('canon','judges',18,30, 'canon','2-kings',17,23, 'free',
+      E'*Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day.* (2 Kings 17:23) — the calf of Dan and *all the sins of Jeroboam* (17:22) carry the ten tribes into exile; the generational idolatry of 18:30 is the road to the scattering Yahuah (Yahuah) will one day gather (Ezekiel 37).'),
+    ('canon','judges',18,31, 'canon','deuteronomy',12,2, 'free',
+      E'*Ye shall utterly destroy all the places, wherein the nations which ye shall possess served their gods, upon the high mountains, and upon the hills, and under every green tree:* (Deuteronomy 12:2) — Yashar''el (Israel) was commanded to tear idolatry DOWN; instead *they set them up Micah''s graven image, which he made* (Judges 18:31), building up the very thing Torah said to destroy.'),
+    ('canon','judges',18,31, 'canon','deuteronomy',12,3, 'free',
+      E'*And ye shall overthrow their altars, and break their pillars, and burn their groves with fire; and ye shall hew down the graven images of their gods, and destroy the names of them out of that place.* (Deuteronomy 12:3) — *hew down the graven images*; but Dan enshrines one *all the time that the house of Elohim (God) was in Shiloh* (Judges 18:31) — the rival worship standing beside the true.'),
+
+    -- THREAD 3: in those days there was no king in Yashar'el
+    ('canon','judges',18,1,  'canon','judges',17,6, 'free',
+      E'*In those days there was no king in Yashar''el (Israel), but every man did that which was right in his own eyes.* (Judges 17:6) — the refrain that frames the whole Micah account. *In those days there was no king in Yashar''el (Israel)* (Judges 18:1): with no true King, a man makes his own gods and a tribe steals them.'),
+    ('canon','judges',18,1,  'canon','judges',21,25, 'free',
+      E'*In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes.* (Judges 21:25) — the closing verse of the book repeats it. The whole descent — idol, hireling, theft, slaughter, generational idolatry — flows from *there was no king in Yashar''el (Israel)* (Judges 18:1): the need for the true King.'),
+    ('canon','judges',18,1,  'canon','deuteronomy',12,8, 'free',
+      E'*Ye shall not do after all the things that we do here this day, every man whatsoever is right in his own eyes.* (Deuteronomy 12:8) — Torah forbade the very anarchy the refrain laments. *No king in Yashar''el (Israel)* (Judges 18:1) is each man doing *right in his own eyes*, the exact disorder Yahuah (Yahuah) said not to do.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-18-the-hireling-priest-and-the-stolen-gods',
+       E'The Hireling Priest and the Stolen Gods',
+       E'Religion for hire, worship as merchandise. Micah''s Levite served for wages — *Micah... hath hired me, and I am his priest* (Judges 18:4), as Micah had set the terms: *I will give thee ten shekels of silver by the year, and a suit of apparel, and thy victuals* (Judges 17:10). When the Danites offer a larger flock, the Levite jumps: *Is it better for thee to be a priest unto the house of one man, or that thou be a priest unto a tribe and a family in Yashar''el (Israel)?* — and *the priest''s heart was glad* (18:19-20). Yahusha (Jesus) names the type: *he that is an hireling, and not the shepherd... seeth the wolf coming, and leaveth the sheep, and fleeth* (John 10:12); *the hireling fleeth, because he is an hireling, and careth not for the sheep* (John 10:13). And the gods themselves are hand-made plunder — *Ye have taken away my gods which I made* (18:24) — the very snare Torah forbade: *enquire not after their gods... for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods* (Deuteronomy 12:30-31).',
+       sv.verse_id, ev.verse_id, 'free', 36075
+  FROM _s345_jdg18_lookup sv, _s345_jdg18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=18 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-18-dan-sets-up-the-graven-image-until-the-captivity',
+       E'Dan Sets Up the Graven Image — Until the Captivity',
+       E'Idolatry institutionalized, and made generational. Dan smites quiet Laish — *they smote them with the edge of the sword, and burnt the city with fire* (Judges 18:27), the same conquest told in *they... took it, and smote it with the edge of the sword... and called Leshem, Dan* (Joshua 19:47) — and rebuilds it under its own name. Then *the children of Dan set up the graven image: and Jonathan... he and his sons were priests to the tribe of Dan until the day of the captivity of the land* (18:30); *they set them up Micah''s graven image, which he made* (18:31). This is no isolated lapse but a SITE of false worship — the very place Jeroboam will later plant a golden calf: *made two calves of gold... behold thy gods, O Yashar''el (Israel)* (1 Kings 12:28), *and he set the one in Beth-el, and the other put he in Dan* (12:29). And it ends where idolatry always ends — the scattering of the northern house: *the king of Assyria took Samaria, and carried Yashar''el (Israel) away into Assyria* (2 Kings 17:6); *so was Yashar''el (Israel) carried away out of their own land to Assyria* (17:23). Torah had commanded the opposite — not to enshrine but to *utterly destroy... and hew down the graven images of their gods* (Deuteronomy 12:2-3). The seed sown here ripens into the exile.',
+       sv.verse_id, ev.verse_id, 'free', 36078
+  FROM _s345_jdg18_lookup sv, _s345_jdg18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=18 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-18-in-those-days-there-was-no-king-in-yasharel',
+       E'In Those Days There Was No King in Yashar''el',
+       E'The refrain that frames the whole descent. *In those days there was no king in Yashar''el (Israel)* (Judges 18:1) — and with no true King, a man makes his own gods, a hireling sells his office, a tribe steals the gods and slaughters a quiet city. The refrain opened the Micah account — *In those days there was no king in Yashar''el (Israel), but every man did that which was right in his own eyes* (Judges 17:6) — and it closes the book: *every man did that which was right in his own eyes* (Judges 21:25). Torah had already named this very anarchy and forbidden it: *Ye shall not do after all the things that we do here this day, every man whatsoever is right in his own eyes* (Deuteronomy 12:8). The whole chaos cries out for the true King.',
+       sv.verse_id, ev.verse_id, 'free', 36081
+  FROM _s345_jdg18_lookup sv, _s345_jdg18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=18 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Micah... hath hired me, and I am his priest* (18:4) — the hire set in Judges 17:10: ten shekels, apparel, and victuals by the year.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=17 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-the-hireling-priest-and-the-stolen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the priest''s heart was glad* (18:20) — the hireling consecrated in Judges 17:12 jumps to the bigger flock and the bigger fee.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=19
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=17 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-the-hireling-priest-and-the-stolen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*he that is an hireling... leaveth the sheep, and fleeth* (John 10:12) — Yahusha (Jesus) names the type of the priest who serves a tribe for the larger pay.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=19
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-the-hireling-priest-and-the-stolen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the hireling... careth not for the sheep* (John 10:13) — the priest of 18:4 cares for the wage, blessing whatever way the silver points.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=4
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-the-hireling-priest-and-the-stolen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*be not snared by following them... enquire not after their gods* (Deuteronomy 12:30) — Micah''s *gods which I made* (18:24) are the very snare Torah forbade.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=24
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-the-hireling-priest-and-the-stolen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*every abomination to Yahuah (LORD), which he hateth, have they done unto their gods* (Deuteronomy 12:31) — *my gods which I made* (18:24) is precisely that abomination.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=24
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-the-hireling-priest-and-the-stolen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*took it, and smote it with the edge of the sword... and called Leshem, Dan* (Joshua 19:47) — the same conquest of quiet Laish/Leshem (18:27), the tribe renaming it for itself.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=27
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=19 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*made two calves of gold... behold thy gods, O Yashar''el (Israel)* (1 Kings 12:28) — the idolatry Dan sets up (18:30) is the same Jeroboam will later institutionalize with the crown.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the other put he in Dan* (1 Kings 12:29) — the calf is planted on the very site Dan made a centre of false worship here.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the king of Assyria... carried Yashar''el (Israel) away into Assyria* (2 Kings 17:6) — *until the day of the captivity of the land* (18:30) names this end.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*so was Yashar''el (Israel) carried away out of their own land to Assyria* (2 Kings 17:23) — the calf of Dan and the sins of Jeroboam carry the ten tribes into exile.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=30
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Ye shall utterly destroy all the places, wherein the nations... served their gods* (Deuteronomy 12:2) — Yashar''el was to tear idolatry down, not set it up (18:31).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=31
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*hew down the graven images of their gods, and destroy the names of them* (Deuteronomy 12:3) — but Dan enshrines one all the time the house of Elohim (God) stood in Shiloh (18:31).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=31
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-dan-sets-up-the-graven-image-until-the-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there was no king in Yashar''el (Israel), but every man did that which was right in his own eyes* (Judges 17:6) — the refrain that opens the Micah account.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-in-those-days-there-was-no-king-in-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*every man did that which was right in his own eyes* (Judges 21:25) — the book''s closing verse repeats it; the whole descent flows from no King.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-in-those-days-there-was-no-king-in-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Ye shall not do... every man whatsoever is right in his own eyes* (Deuteronomy 12:8) — Torah forbade the very anarchy the refrain laments.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s345_jdg18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-18-in-those-days-there-was-no-king-in-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_19.sql (Judges 19) -----
+-- Chapter: Judges 19 — the Levite and his concubine at Gibeah; the lowest point of the book.
+-- Tag: jdg19   View: _s345_jdg19_lookup   Sort band: 36100, 36103, 36106, 36109
+-- SOURCE every row: ('canon','judges',19,v).  Handled GRAVELY — the concubine is a VICTIM, never an enemy.
+--
+-- Judges 19 coverage:
+--   v.1   (no king / Levite + concubine)  NT: none warranted  Extras: none warranted  Tanakh: Judg 17:6, 21:25 (the refrain) — threaded under thread 3.
+--   v.15-21 (no man took them in / the old man)  NT: none warranted  Extras: none warranted  Tanakh: Gen 19:1-3 (Lot the lone host) — context for thread 1; not over-threaded.
+--   v.22  (sons of Belial beset the house, "that we may know him")  NT: none warranted  Extras: none warranted  Tanakh: Gen 19:4-5 (men of Sodom, "bring them out, that we may know them") — THREAD 1, the Sodom-inside-Yashar'el echo.
+--   v.23-24 (the old man's plea "do not so wickedly")  NT: none warranted  Extras: none warranted  Tanakh: Gen 19:6-8 (Lot's near-identical plea/offer) — THREAD 1.
+--   v.25  (concubine thrust out, abused all night)  NT: none warranted  Extras: none warranted  Tanakh: Gen 19:8 (the offered daughters) — THREAD 1 (Levite's failure) + THREAD 2 (the victim).
+--   v.26-28 (she falls dead on the threshold; "Up... but none answered")  NT: none warranted  Extras: none warranted  Tanakh: none direct — THREAD 2 carries the victim within ch (anchor 25→28).
+--   v.29  (cut into twelve pieces, sent through all Yashar'el)  NT: none warranted  Extras: none warranted  Tanakh: Judg 20:6-7 (the tribes' answer) — THREAD 3.
+--   v.30  ("no such deed... consider of it")  NT: none warranted  Extras: none warranted  Tanakh: Hosea 9:9, Hosea 10:9 (the byword "as in the days of Gibeah"); Judg 17:6, 21:25 (no king) — THREAD 3.
+--
+-- THREADS (3):
+--   judges-19-gibeah-become-sodom-the-sons-of-belial   [free; Tanakh: Genesis] — vv.22-25 → Gen 19:4-8: the same wickedness now INSIDE the covenant people, in a city of Benjamin.
+--   judges-19-the-concubine-the-victim-of-the-collapse  [free; Tanakh: Judges (self)] — vv.25-28: the innocent woman destroyed; victims-not-enemies, grave restraint.
+--   judges-19-as-in-the-days-of-gibeah-no-king-every-man-right  [free; Tanakh: Judges self + Hosea] — vv.29-30 → Hosea 9:9/10:9 + Judg 17:6/21:25: the byword of Yashar'el's lowest corruption, the fruit of "no king."
+
+CREATE TEMP VIEW _s345_jdg19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — Gibeah become Sodom: the sons of Belial
+    ('canon','judges',19,22,'canon','genesis',19,4,'free',E'*But before they lay down, the men of the city, even the men of Sodom, compassed the house round, both old and young, all the people from every quarter* (Genesis 19:4). The horror of Gibeah is Sodom returned almost verbatim — *behold, the men of the city, certain sons of Belial, beset the house round about, and beat at the door* (Judges 19:22). The wickedness that called down brimstone on the cities of the plain is now found INSIDE Yashar''el (Israel), in a city of the tribe of Benjamin.'),
+    ('canon','judges',19,22,'canon','genesis',19,5,'free',E'*And they called unto Lot, and said unto him, Where are the men which came in to thee this night? bring them out unto us, that we may know them* (Genesis 19:5). The sons of Belial at Gibeah demand the very same: *Bring forth the man that came into thine house, that we may know him* (Judges 19:22). The same depraved demand, word for word — but now it rises from within the covenant people, not from the heathen city.'),
+    ('canon','judges',19,23,'canon','genesis',19,6,'free',E'*And Lot went out at the door unto them, and shut the door after him, And said, I pray you, brethren, do not so wickedly* (Genesis 19:6-7). The old man of Gibeah pleads in the same words: *Nay, my brethren, nay, I pray you, do not so wickedly; seeing that this man is come into mine house, do not this folly* (Judges 19:23). The host''s cry against the city''s evil is identical — Gibeah has become Sodom.'),
+    ('canon','judges',19,24,'canon','genesis',19,8,'free',E'*Behold now, I have two daughters which have not known man; let me, I pray you, bring them out unto you, and do ye to them as is good in your eyes* (Genesis 19:8). The dreadful offer is repeated at Gibeah: *Behold, here is my daughter a maiden, and his concubine; them I will bring out now... but unto this man do not so vile a thing* (Judges 19:24). Even the desperate, failing attempt to appease the mob is the same — the collapse is total, women offered up to the city''s violence.'),
+    ('canon','judges',19,25,'canon','genesis',19,8,'free',E'*Behold now, I have two daughters which have not known man; let me, I pray you, bring them out unto you* (Genesis 19:8). At Sodom the angels struck the mob blind and the daughters were spared; at Gibeah there was no such deliverance — *so the man took his concubine, and brought her forth unto them; and they knew her, and abused her all the night* (Judges 19:25). Where heaven intervened for Lot, the men of Yashar''el (Israel) had sunk lower than Sodom, and the innocent was given over.'),
+    -- THREAD 2 — the concubine the victim of the collapse (self, within the chapter)
+    ('canon','judges',19,25,'canon','judges',19,28,'free',E'*And he said unto her, Up, and let us be going. But none answered* (Judges 19:28). She is the VICTIM, not the enemy — *they... abused her all the night until the morning... Then came the woman in the dawning of the day, and fell down at the door of the man''s house... and her hands were upon the threshold* (Judges 19:25-27). The innocent destroyed by the city''s depravity; her silent body becomes the witness against a people who have forgotten Yahuah (LORD).'),
+    -- THREAD 3 — as in the days of Gibeah; no king, every man right in his own eyes
+    ('canon','judges',19,29,'canon','judges',20,6,'free',E'*And I took my concubine, and cut her in pieces, and sent her throughout all the country of the inheritance of Yashar''el (Israel): for they have committed lewdness and folly in Yashar''el (Israel)* (Judges 20:6). The Levite''s appalling summons — *he took a knife, and laid hold on his concubine, and divided her... into twelve pieces, and sent her into all the coasts of Yashar''el (Israel)* (Judges 19:29) — calls all twelve tribes to reckon with the depth of the collapse.'),
+    ('canon','judges',19,30,'canon','hosea',9,9,'free',E'*They have deeply corrupted themselves, as in the days of Gibeah: therefore he will remember their iniquity, he will visit their sins* (Hosea 9:9). Centuries later the prophet names this night as the byword of Yashar''el''s lowest corruption — *There was no such deed done nor seen from the day that the children of Yashar''el (Israel) came up out of the land of Egypt unto this day* (Judges 19:30). Gibeah becomes the very measure of how deep the covenant people can fall.'),
+    ('canon','judges',19,30,'canon','hosea',10,9,'free',E'*O Yashar''el (Israel), thou hast sinned from the days of Gibeah: there they stood: the battle in Gibeah against the children of iniquity did not overtake them* (Hosea 10:9). Hosea reaches back again to this chapter as the root of Yashar''el''s sin — the appalling deed that demanded the tribes *consider of it, take advice, and speak your minds* (Judges 19:30) is the prophets'' standing emblem of national corruption.'),
+    ('canon','judges',19,1,'canon','judges',17,6,'free',E'*In those days there was no king in Yashar''el (Israel), but every man did that which was right in his own eyes* (Judges 17:6). The horror of chapter 19 opens with the same note: *And it came to pass in those days, when there was no king in Yashar''el (Israel)* (Judges 19:1). The refrain is the diagnosis — with no king to uphold the Torah of Yahuah (LORD), every man''s own eyes become the law, and this is the fruit.'),
+    ('canon','judges',19,1,'canon','judges',21,25,'free',E'*In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The book seals the whole Gibeah account with this verdict, the same word that framed it — *when there was no king in Yashar''el (Israel)* (Judges 19:1). The Levite, the concubine, the sons of Belial, the twelve severed pieces: all of it is what "every man right in his own eyes" finally comes to.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-19-gibeah-become-sodom-the-sons-of-belial',
+       E'Gibeah become Sodom — the sons of Belial',
+       E'The men of Gibeah, *certain sons of Belial, beset the house round about, and beat at the door* (Judges 19:22), and their demand is Sodom returned almost word for word. At Sodom: *the men of the city, even the men of Sodom, compassed the house round... and said unto him... bring them out unto us, that we may know them* (Genesis 19:4-5). At Gibeah: *Bring forth the man that came into thine house, that we may know him* (Judges 19:22). The host''s plea is the same — Lot''s *I pray you, brethren, do not so wickedly* (Genesis 19:7) is the old man''s *Nay, my brethren, nay, I pray you, do not so wickedly... do not this folly* (Judges 19:23) — and even the dreadful offer of the daughters is repeated (Genesis 19:8; Judges 19:24). But the difference is the whole point: at Sodom the angels struck the mob blind and the daughters were spared, and Yahuah (LORD) rained brimstone on the heathen city; at Gibeah there was no such deliverance — *they... abused her all the night* (Judges 19:25). The wickedness that judged the cities of the plain is now found INSIDE the covenant people, in a city of the tribe of Benjamin. This is not the world''s sin against Yashar''el (Israel); it is Yashar''el become Sodom.',
+       sv.verse_id, ev.verse_id, 'free', 36100
+  FROM _s345_jdg19_lookup sv, _s345_jdg19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=19 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-19-the-concubine-the-victim-of-the-collapse',
+       E'The concubine — the victim of the collapse',
+       E'The woman of this chapter is a VICTIM, never an enemy. Thrust out to the mob, *they... abused her all the night until the morning: and when the day began to spring, they let her go* (Judges 19:25). At dawn she crawls back: *Then came the woman in the dawning of the day, and fell down at the door of the man''s house where her lord was, till it was light* (Judges 19:26), *and her hands were upon the threshold* (Judges 19:27). And then the unbearable silence: *And he said unto her, Up, and let us be going. But none answered* (Judges 19:28). The innocent is destroyed by the city''s depravity and by every man who failed her — the men of Gibeah, and the Levite who handed her over. Her broken body on the threshold becomes the wordless witness against a people who have forgotten Yahuah (LORD). The framework dismantles the system that killed her; it never blames the slain. *There was no such deed done nor seen from the day that the children of Yashar''el (Israel) came up out of the land of Egypt* (Judges 19:30).',
+       sv.verse_id, ev.verse_id, 'free', 36103
+  FROM _s345_jdg19_lookup sv, _s345_jdg19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=19 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-19-as-in-the-days-of-gibeah-no-king-every-man-right',
+       E'As in the days of Gibeah — no king, every man right in his own eyes',
+       E'The Levite''s appalling summons — *he took a knife, and laid hold on his concubine, and divided her, together with her bones, into twelve pieces, and sent her into all the coasts of Yashar''el (Israel)* (Judges 19:29) — calls all twelve tribes to reckon: *consider of it, take advice, and speak your minds* (Judges 19:30). The tribes answer in the same terms (*they have committed lewdness and folly in Yashar''el (Israel)*, Judges 20:6). And this night becomes the prophets'' standing byword for the lowest depth of national corruption: *They have deeply corrupted themselves, as in the days of Gibeah* (Hosea 9:9); *O Yashar''el (Israel), thou hast sinned from the days of Gibeah* (Hosea 10:9). The book itself names the cause, framing the whole account front and back: *In those days there was no king in Yashar''el (Israel)* (Judges 19:1) — *In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25; cf. Judges 17:6). With no king to uphold the Torah of Yahuah (LORD), every man''s own eyes become the law — and Gibeah is what that finally comes to.',
+       sv.verse_id, ev.verse_id, 'free', 36106
+  FROM _s345_jdg19_lookup sv, _s345_jdg19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=19 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD 1 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the men of the city, even the men of Sodom, compassed the house round* (Genesis 19:4) — the sons of Belial beset the house at Gibeah, Sodom returned inside Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-gibeah-become-sodom-the-sons-of-belial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*bring them out unto us, that we may know them* (Genesis 19:5) — the identical demand of the mob, word for word, now from within the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=22
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-gibeah-become-sodom-the-sons-of-belial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I pray you, brethren, do not so wickedly* (Genesis 19:6-7) — the host''s plea against the city''s evil, identical at Gibeah (Judges 19:23).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=23
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-gibeah-become-sodom-the-sons-of-belial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I have two daughters... bring them out unto you* (Genesis 19:8) — the same dreadful offer to appease the mob, repeated at Gibeah (Judges 19:24).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=24
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-gibeah-become-sodom-the-sons-of-belial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*do ye to them as is good in your eyes* (Genesis 19:8) — at Sodom the daughters were spared by the angels; at Gibeah there was no such deliverance (Judges 19:25), the people sunk lower than Sodom.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-gibeah-become-sodom-the-sons-of-belial'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 2 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Up, and let us be going. But none answered* (Judges 19:28) — the abused woman, fallen on the threshold (Judges 19:25-27), the innocent VICTIM of the city''s depravity, never the enemy.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=25
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=19 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-the-concubine-the-victim-of-the-collapse'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 3 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*they have committed lewdness and folly in Yashar''el (Israel)* (Judges 20:6) — the tribes'' answer to the twelve severed pieces and the summons to consider (Judges 19:29).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=29
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=20 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-as-in-the-days-of-gibeah-no-king-every-man-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*They have deeply corrupted themselves, as in the days of Gibeah* (Hosea 9:9) — the prophet names this night the byword of Yashar''el''s lowest corruption.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=30
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-as-in-the-days-of-gibeah-no-king-every-man-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*O Yashar''el (Israel), thou hast sinned from the days of Gibeah* (Hosea 10:9) — Hosea reaches back again to this chapter as the root of the nation''s sin.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=30
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-as-in-the-days-of-gibeah-no-king-every-man-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*In those days there was no king in Yashar''el (Israel)... every man did that which was right in his own eyes* (Judges 17:6) — the refrain that opens the horror (Judges 19:1), the diagnosis of the collapse.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-as-in-the-days-of-gibeah-no-king-every-man-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25) — the book seals the whole Gibeah account with this verdict, the same word that framed it (Judges 19:1).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s345_jdg19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-19-as-in-the-days-of-gibeah-no-king-every-man-right'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_20.sql (Judges 20) -----
+-- Chapter: Judges 20  | tag: jdg20 | view: _s345_jdg20_lookup | sort band: 36125, 36128, 36131
+-- All Yashar'el gathers as one man to Mizpeh over the outrage at Gibeah; Benjamin
+-- defends the sons of Belial and goes to war for its guilty; Yashar'el inquires of
+-- Yahuah, is twice defeated, weeps and fasts; on the third day Yahuah delivers
+-- Benjamin and the tribe is all but exterminated — 600 men escape to the rock Rimmon.
+--
+-- Judges 20 coverage:
+--   v.1-11 (gathered as one man, the Levite's report, the resolve against Gibeah):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: woven into thread 1 frame (the congregation as one man); no standalone add
+--   v.12-14 (deliver the children of Belial that we may put away evil; Benjamin would not hearken, went to war):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deut 13:5 put-the-evil-away, Deut 13:13 children-of-Belial, Deut 13:6-8 no-pity-on-brother  -> THREAD 1
+--   v.15-17 (the numbering of the armies):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (census detail)
+--   v.18,23,26-28 (asked counsel of Elohim, Yahudah first; wept before Yahuah; fasted, enquired by the ark/Phinehas):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Judges 1:1-2 the same inquiry that opens the book (Yahudah up first), Numbers 27:21 the Urim-inquiry  -> THREAD 2
+--   v.19-45 (the three days of battle, the ambush, the rout):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: woven into thread 3 frame; no standalone add
+--   v.46-48 (25,000 of Benjamin fell, 600 fled to Rimmon, the cities burned):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Hosea 10:9 the days of Gibeah, Judges 21:6/21:17 one tribe cut off / a tribe not destroyed, Genesis 49:27 Benjamin the ravening wolf  -> THREAD 3
+--
+-- THREADS:
+--   judges-20-benjamin-defended-the-sons-of-belial-rather-than-put-the-evil-away (free) — Tanakh: Deut 13
+--   judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened (free) — Tanakh: Judges 1, Numbers 27
+--   judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah (free) — Tanakh: Hosea 10, Judges 21, Genesis 49
+
+CREATE TEMP VIEW _s345_jdg20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Benjamin defended the sons of Belial rather than put the evil away (Deut 13)
+    ('canon','judges',20,13,'canon','deuteronomy',13,5,'free',
+      E'*And that prophet, or that dreamer of dreams, shall be put to death... So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). Yashar''el (Israel) demands of Benjamin exactly what the Torah commanded: *Now therefore deliver us the men, the children of Belial, which are in Gibeah, that we may put them to death, and put away evil from Yashar''el (Israel)* (Judges 20:13). The very phrase of Deut 13 — *put the evil away* — is the lawful claim; the tribe''s refusal is the refusal of Torah.'),
+    ('canon','judges',20,13,'canon','deuteronomy',13,13,'free',
+      E'*Certain men, the children of Belial, are gone out from among you, and have withdrawn the inhabitants of their city* (Deuteronomy 13:13). The Torah names the very offenders Gibeah harbored — *the children of Belial, which are in Gibeah* (Judges 20:13) — and prescribes the inquiry and the purge; the men of Gibeah are the sons of Belial Deut 13 said to root out.'),
+    ('canon','judges',20,13,'canon','deuteronomy',13,6,'free',
+      E'*If thy brother, the son of thy mother, or thy son, or thy daughter, or the wife of thy bosom... entice thee secretly, saying, Let us go and serve other gods... thou shalt not consent unto him, nor hearken unto him; neither shall thine eye pity him* (Deuteronomy 13:6,8). Torah forbids sparing even the nearest kin who do evil; Benjamin does the opposite — it pities its own and *would not hearken to the voice of their brethren* (Judges 20:13), shielding the guilty that should have died.'),
+    -- THREAD 1 link verse: 20:14 Benjamin gathered to war
+    ('canon','judges',20,14,'canon','deuteronomy',13,5,'free',
+      E'*So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). Instead of surrendering the wicked, *the children of Benjamin gathered themselves together out of the cities unto Gibeah, to go out to battle against the children of Yashar''el (Israel)* (Judges 20:14) — the tribe takes up arms FOR the sons of Belial rather than purge them, inverting the very command that the evil be put away.'),
+
+    -- THREAD 2: they inquired of Yahuah and wept — the just cause still chastened (Judges 1, Numbers 27)
+    ('canon','judges',20,18,'canon','judges',1,1,'free',
+      E'*Now after the death of Joshua it came to pass, that the children of Yashar''el (Israel) asked Yahuah (LORD), saying, Who shall go up for us against the Canaanites first* (Judges 1:1). The book opened with this same inquiry; now it closes the cycle of judges with it — *they... asked counsel of Elohim (God), and said, Which of us shall go up first* (Judges 20:18) — but the enemy now is a brother-tribe, the same question turned inward upon Yashar''el.'),
+    ('canon','judges',20,18,'canon','judges',1,2,'free',
+      E'*And Yahuah (LORD) said, Yahudah (Judah) shall go up: behold, I have delivered the land into his hand* (Judges 1:2). The answer that began the book — Yahudah first — is the answer again: *And Yahuah (LORD) said, Yahudah (Judah) shall go up first* (Judges 20:18); the tribe of the sceptre leads, yet here goes up to weep and be defeated before the deliverance comes.'),
+    ('canon','judges',20,18,'canon','numbers',27,21,'free',
+      E'*And he shall stand before Eleazar the priest, who shall ask counsel for him after the judgment of Urim before Yahuah (LORD): at his word shall they go out, and at his word they shall come in* (Numbers 27:21). The inquiry *asked counsel of Elohim (God)* (Judges 20:18) is the appointed Urim-means of seeking Yahuah''s word — the same channel established for Joshua now sought by all the tribes at the house of Elohim.'),
+    ('canon','judges',20,23,'canon','judges',1,2,'free',
+      E'*And Yahuah (LORD) said, Yahudah (Judah) shall go up* (Judges 1:2). Even after the first slaughter the people return to the same inquiry, now in tears: *And the children of Yashar''el (Israel) went up and wept before Yahuah (LORD) until even, and asked counsel of Yahuah (LORD)... And Yahuah (LORD) said, Go up against him* (Judges 20:23). The just cause is granted yet not spared the chastening — the weeping and the going-up belong together.'),
+    ('canon','judges',20,28,'canon','numbers',27,21,'free',
+      E'*at his word shall they go out, and at his word they shall come in* (Numbers 27:21). The third inquiry is answered with the promise of deliverance: *And Yahuah (LORD) said, Go up; for to morrow I will deliver them into thine hand* (Judges 20:28) — the Urim-inquiry before the ark, with Phinehas the priest standing, finally brings the word that gives the victory, after the fasting and the tears.'),
+
+    -- THREAD 3: Benjamin near exterminated — brother against brother, the days of Gibeah (Hosea 10, Judges 21, Genesis 49)
+    ('canon','judges',20,46,'canon','hosea',10,9,'free',
+      E'*O Yashar''el (Israel), thou hast sinned from the days of Gibeah: there they stood: the battle in Gibeah against the children of iniquity did not overtake them* (Hosea 10:9). Centuries later the prophet makes Gibeah the byword for Yashar''el''s deepest wound — *So that all which fell that day of Benjamin were twenty and five thousand men that drew the sword* (Judges 20:46); the near-destruction of a tribe becomes the measure of how far the people had fallen.'),
+    ('canon','judges',20,46,'canon','judges',21,17,'free',
+      E'*And they said, There must be an inheritance for them that be escaped of Benjamin, that a tribe be not destroyed out of Yashar''el (Israel)* (Judges 21:17). The slaughter of *twenty and five thousand men* (Judges 20:46) brings Yashar''el to the brink the next chapter must repair — a whole tribe all but blotted out, the elders scrambling that *a tribe be not destroyed out of Yashar''el*.'),
+    ('canon','judges',20,48,'canon','hosea',10,9,'free',
+      E'*O Yashar''el (Israel), thou hast sinned from the days of Gibeah* (Hosea 10:9). The avenging turns total — *the men of Yashar''el (Israel) turned again upon the children of Benjamin, and smote them with the edge of the sword... also they set on fire all the cities* (Judges 20:48); brother destroying brother and burning his cities is the very sin the prophet recalls — Yashar''el wounding Yashar''el, the tragedy of a people turned upon itself.'),
+    ('canon','judges',20,48,'canon','judges',21,6,'free',
+      E'*And the children of Yashar''el (Israel) repented them for Benjamin their brother, and said, There is one tribe cut off from Yashar''el (Israel) this day* (Judges 21:6). The fire that consumed *all the cities* (Judges 20:48) leaves the nation grieving its own act — *one tribe cut off* — the avengers weeping over the brother they nearly erased.'),
+    ('canon','judges',20,48,'canon','genesis',49,27,'free',
+      E'*Benjamin shall ravin as a wolf: in the morning he shall devour the prey, and at night he shall divide the spoil* (Genesis 49:27). Jacob''s last-days word over Benjamin is darkened here: the ravening wolf has devoured within the fold, and now the fold devours the wolf — *they... smote them with the edge of the sword, as well the men of every city, as the beast* (Judges 20:48), the tribe of the prey itself made prey.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-20-benjamin-defended-the-sons-of-belial-rather-than-put-the-evil-away',
+       E'Benjamin defended the sons of Belial rather than put the evil away',
+       E'Yashar''el (Israel) comes to Benjamin with a lawful demand straight out of the Torah: *Now therefore deliver us the men, the children of Belial, which are in Gibeah, that we may put them to death, and put away evil from Yashar''el (Israel)* (Judges 20:13). The phrase is Deuteronomy''s own — *So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5) — and Deut 13 even names the offenders: *Certain men, the children of Belial, are gone out from among you* (Deuteronomy 13:13). The Torah is unsparing: *if thy brother... entice thee... neither shall thine eye pity him* (Deuteronomy 13:6,8). Benjamin does the exact opposite. It pities its own and *would not hearken to the voice of their brethren* (Judges 20:13); *the children of Benjamin gathered themselves together... to go out to battle against the children of Yashar''el (Israel)* (Judges 20:14). A tribe takes up arms FOR the sons of Belial rather than purge them — shielding the guilty the Torah said must die. This is the moral inversion at the root of the whole tragedy: the evil is not put away, the tribe defends its wicked, and Yashar''el is dragged into war against a brother.',
+       sv.verse_id, ev.verse_id, 'free', 36125
+  FROM _s345_jdg20_lookup sv, _s345_jdg20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=20 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened',
+       E'They inquired of Yahuah and wept — the just cause still chastened',
+       E'Three times Yashar''el (Israel) seeks Yahuah before the war is won, and the inquiry binds this chapter back to the book''s beginning. The book of Judges opened, *Now after the death of Joshua... the children of Yashar''el (Israel) asked Yahuah (LORD), saying, Who shall go up for us against the Canaanites first... And Yahuah (LORD) said, Yahudah (Judah) shall go up* (Judges 1:1-2); now the same question and the same answer return — *Which of us shall go up first to the battle against the children of Benjamin? And Yahuah (LORD) said, Yahudah (Judah) shall go up first* (Judges 20:18) — but the enemy is now a brother-tribe, the cycle turned inward. The seeking is the appointed Urim-inquiry given to Joshua: *he shall stand before Eleazar the priest, who shall ask counsel for him after the judgment of Urim before Yahuah (LORD)* (Numbers 27:21). Yet the just cause is not spared the chastening. After the first slaughter they *went up and wept before Yahuah (LORD) until even, and asked counsel of Yahuah (LORD)... Go up against him* (Judges 20:23); after the second they *wept, and sat there before Yahuah (LORD), and fasted that day until even* (Judges 20:26), and only then comes the word, *Go up; for to morrow I will deliver them into thine hand* (Judges 20:28). The inquiry, the tears, and the fasting belong together: even the cause that is right must be humbled before Yahuah before it is given the victory.',
+       sv.verse_id, ev.verse_id, 'free', 36128
+  FROM _s345_jdg20_lookup sv, _s345_jdg20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=20 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah',
+       E'Benjamin near exterminated — brother against brother, the days of Gibeah',
+       E'On the third day Yahuah delivers Benjamin into Yashar''el''s hand and the tribe is all but blotted out: *all which fell that day of Benjamin were twenty and five thousand men that drew the sword* (Judges 20:46), and *the men of Yashar''el (Israel) turned again upon the children of Benjamin, and smote them with the edge of the sword, as well the men of every city, as the beast... also they set on fire all the cities that they came to* (Judges 20:48). Only six hundred men escape to the rock Rimmon. This is brother destroying brother — Yashar''el wounding Yashar''el, a whole tribe of the twelve nearly erased. Centuries later the prophet makes it the byword for the people''s deepest fall: *O Yashar''el (Israel), thou hast sinned from the days of Gibeah* (Hosea 10:9). The next chapter recoils in grief — *There is one tribe cut off from Yashar''el (Israel) this day* (Judges 21:6) — and scrambles *that a tribe be not destroyed out of Yashar''el (Israel)* (Judges 21:17). And Jacob''s last-days word is darkened: *Benjamin shall ravin as a wolf: in the morning he shall devour the prey, and at night he shall divide the spoil* (Genesis 49:27) — the ravening wolf devoured within the fold, and the fold devoured the wolf. This is the wound the two-house framework grieves: a people turned upon itself, self-righteous and self-destroying, in the days when *there was no king in Yashar''el (Israel): every man did that which was right in his own eyes*.',
+       sv.verse_id, ev.verse_id, 'free', 36131
+  FROM _s345_jdg20_lookup sv, _s345_jdg20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=46
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=20 AND ev.verse_number=48
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5) — the very phrase Yashar''el invokes demanding the men of Gibeah; Benjamin refuses the command.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-defended-the-sons-of-belial-rather-than-put-the-evil-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Certain men, the children of Belial, are gone out from among you* (Deuteronomy 13:13) — the Torah names the very offenders Gibeah harbored.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-defended-the-sons-of-belial-rather-than-put-the-evil-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*neither shall thine eye pity him* (Deuteronomy 13:6,8) — Torah forbids sparing even the nearest kin who do evil; Benjamin pities its own instead.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=13
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-defended-the-sons-of-belial-rather-than-put-the-evil-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*So shalt thou put the evil away* (Deuteronomy 13:5) — Benjamin instead gathers to war FOR the sons of Belial (Judges 20:14), inverting the command.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=14
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-defended-the-sons-of-belial-rather-than-put-the-evil-away'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the children of Yashar''el (Israel) asked Yahuah (LORD), saying, Who shall go up... first* (Judges 1:1) — the book''s opening inquiry returns, now turned against a brother-tribe.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And Yahuah (LORD) said, Yahudah (Judah) shall go up* (Judges 1:2) — the same answer that began the book; the tribe of the sceptre leads again.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*who shall ask counsel for him after the judgment of Urim before Yahuah (LORD)* (Numbers 27:21) — the appointed Urim-means of seeking Yahuah''s word, sought now by all the tribes.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=18
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And Yahuah (LORD) said, Yahudah (Judah) shall go up* (Judges 1:2) — the same word renewed after the first defeat, the weeping cause sent up again (Judges 20:23).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=23
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*at his word shall they go out, and at his word they shall come in* (Numbers 27:21) — the third inquiry, before the ark with Phinehas standing, finally brings the word of deliverance (Judges 20:28).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=28
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-they-inquired-of-yahuah-and-wept-the-just-cause-still-chastened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou hast sinned from the days of Gibeah* (Hosea 10:9) — the prophet makes Gibeah the byword for Yashar''el''s deepest fall; the 25,000 fallen (Judges 20:46) are that wound.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=46
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that a tribe be not destroyed out of Yashar''el (Israel)* (Judges 21:17) — the slaughter brings the nation to the brink the next chapter must repair.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=46
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou hast sinned from the days of Gibeah* (Hosea 10:9) — brother burning brother''s cities (Judges 20:48) is the very sin the prophet recalls, Yashar''el wounding Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=48
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*There is one tribe cut off from Yashar''el (Israel) this day* (Judges 21:6) — the avengers weep over the brother they nearly erased.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=48
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Benjamin shall ravin as a wolf... he shall divide the spoil* (Genesis 49:27) — Jacob''s last-days word darkened: the ravening wolf is itself made prey (Judges 20:48).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=20 AND sv.verse_number=48
+  JOIN _s345_jdg20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-20-benjamin-near-exterminated-brother-against-brother-the-days-of-gibeah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_21.sql (Judges 21) -----
+--
+-- Chapter: Judges 21 (THE FINAL CHAPTER OF JUDGES) | tag: jdg21 | view: _s345_jdg21_lookup
+-- Sort band: 36150, 36153, 36156
+--
+-- Judges 21 coverage:
+--   v.1-7  (the rash oath; a tribe nearly cut off; how shall we do for wives)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 12:8 (every man right in his own eyes — the same diagnosis) [used in v.25 thread];
+--                  the man-made fix compounding the disorder is framed in the Jabesh-gilead thread
+--   v.8-14 (smite Jabesh-gilead, spare 400 virgins, give them to Benjamin)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 11:1-13 (Jabesh-gilead — Saul, the first king, RISES to save the very city
+--                  the lawless age slaughtered; the place that needed a king named again at the dawn of the
+--                  monarchy) — the Jabesh-gilead / man-made-fix thread
+--   v.15-23 (the elders' second scheme — seize the dancing daughters of Shiloh)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: rashness atop rashness, framed in the man-made-fix thread (anchored at the oath v.18)
+--   v.24-25 (every man to his inheritance; THE CLOSING REFRAIN: no king, every man right in his own eyes)
+--          NT:     Luke 1:32-33 (the throne of his father David; he shall reign for ever — the TRUE KING)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 12:8 (every man right in his own eyes — the Torah already named the disorder);
+--                  Proverbs 14:12 (the way that seemeth right ends in death); 1 Samuel 8:5-7 (the people demand
+--                  a king — rejecting Yahuah as King); 2 Samuel 7:12-16 (the righteous King of David's line,
+--                  the throne established for ever) — the closing-refrain / need-for-the-King thread
+--
+-- Threads (3):
+--   judges-21-the-man-made-fixes-compounding-the-disorder  [Tanakh] free
+--       v.6,7,11,18 -> Judges 21 self (the breach) + 1 Samuel 11 (Jabesh-gilead saved by the rising king)
+--   judges-21-no-king-every-man-right-in-his-own-eyes  [Tanakh + NT] free
+--       v.25,24 -> Deuteronomy 12:8 / Proverbs 14:12 / 1 Samuel 8:5,7 / 2 Samuel 7:12,13,16 / Luke 1:32,33
+--
+-- Framework-load-bearing verse: 21:25 — the closing refrain of the whole book. Framed as the
+-- DIAGNOSIS of the entire dark age (self-authority, every man his own law) and the aching NEED FOR
+-- THE TRUE KING — answered first in the demanded/failed monarchy (1 Sam 8, which itself REJECTS Yahuah
+-- as King), then truly in the righteous KING of David's line who does right in Yahuah's eyes
+-- (2 Sam 7 / Luke 1:32-33, the Messiah). The way that SEEMS right ends in death (Prov 14:12);
+-- the antidote is the King who reigns in righteousness. NOT a brief for monarchy-as-such, but for THE King.
+
+CREATE TEMP VIEW _s345_jdg21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the man-made fixes compounding the disorder
+    ('canon','judges',21,6,  'canon','judges',21,15, 'free',
+      E'*And the people repented them for Benjamin, because that Yahuah (LORD) had made a breach in the tribes of Yashar''el (Israel)* (Judges 21:15). The people who *repented them for Benjamin their brother, and said, There is one tribe cut off from Yashar''el (Israel) this day* (21:6) now name the wound for what it is — a *breach in the tribes*. Their own rash oath at Mizpeh tore the body of Yashar''el (Israel); the grief is real, but the remedy they reach for only deepens the disorder.'),
+    ('canon','judges',21,7,  'canon','judges',21,18, 'free',
+      E'*Howbeit we may not give them wives of our daughters: for the children of Yashar''el (Israel) have sworn, saying, Cursed be he that giveth a wife to Benjamin* (Judges 21:18). The cry *How shall we do for wives for them that remain, seeing we have sworn by Yahuah (LORD) that we will not give them of our daughters to wives?* (21:7) is answered not by repenting of the rash oath but by building a scheme around it — a man-made fix laid atop the man-made vow, rashness compounding rashness.'),
+    ('canon','judges',21,11, 'canon','1-samuel',11,1, 'free',
+      E'*Then Nahash the Ammonite came up, and encamped against Jabesh-gilead: and all the men of Jabesh said unto Nahash, Make a covenant with us, and we will serve thee* (1 Samuel 11:1). The men of Yashar''el (Israel) here *utterly destroy every male* of Jabesh-gilead (Judges 21:11) to harvest brides — a city slaughtered to patch the breach. The same Jabesh-gilead reappears at the dawn of the monarchy, besieged and helpless, until a KING rises to save it: the lawless age plunders Jabesh; the king delivers it.'),
+    ('canon','judges',21,11, 'canon','1-samuel',11,13, 'free',
+      E'*And Saul said, There shall not a man be put to death this day: for to day Yahuah (LORD) hath wrought salvation in Yashar''el (Israel)* (1 Samuel 11:13). Where the kingless tribes *utterly destroy* Jabesh-gilead to serve their own scheme (Judges 21:11), the first king delivers that very city and stays the sword — *Yahuah (LORD) hath wrought salvation*. The contrast aches for the King the book has not yet named.'),
+
+    -- THREAD 2: no king; every man right in his own eyes — the closing refrain, the need for the King
+    ('canon','judges',21,25, 'canon','deuteronomy',12,8, 'free',
+      E'*Ye shall not do after all the things that we do here this day, every man whatsoever is right in his own eyes* (Deuteronomy 12:8). The Torah had already named the very disorder Judges closes on. The book''s last verse — *every man did that which was right in his own eyes* (21:25) — is the exact phrase Moshe (Moses) forbade; the dark age of the Judges is Yashar''el (Israel) doing precisely what Yahuah (LORD) said not to do.'),
+    ('canon','judges',21,25, 'canon','proverbs',14,12, 'free',
+      E'*There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). When *every man did that which was right in his own eyes* (Judges 21:25), each one walks the way that merely SEEMS right — and the whole book has shown where that road ends: idolatry, civil war, a tribe nearly cut off. Self-authority is not freedom but the way of death; the antidote is not every man''s own eyes but the King who reigns in righteousness.'),
+    ('canon','judges',21,25, 'canon','1-samuel',8,5, 'free',
+      E'*And said unto him, Behold, thou art old, and thy sons walk not in thy ways: now make us a king to judge us like all the nations* (1 Samuel 8:5). Judges ends aching — *In those days there was no king in Yashar''el (Israel)* (21:25). The cry for a king will be answered, but wrongly: Yashar''el (Israel) demands a king *like all the nations*, a man-made remedy for a heart-deep sickness — the next rash fix in the long chain.'),
+    ('canon','judges',21,25, 'canon','1-samuel',8,7, 'free',
+      E'*And Yahuah (LORD) said unto Samuel, Hearken unto the voice of the people in all that they say unto thee: for they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7). The deepest answer to *there was no king in Yashar''el (Israel)* (Judges 21:25) is that Yahuah (LORD) Himself was meant to be King — and in demanding a human one *like all the nations* they reject His reign. The need is real; the King they choose is not the King they need.'),
+    ('canon','judges',21,25, 'canon','2-samuel',7,12, 'free',
+      E'*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). Against the kingless anarchy where *every man did that which was right in his own eyes* (Judges 21:25), Yahuah (LORD) promises David a SEED — the righteous King of the paternal bloodline who will reign in Yahuah''s eyes, not his own. The ache of Judges 21 is the empty throne this promise fills.'),
+    ('canon','judges',21,25, 'canon','2-samuel',7,13, 'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The book that ends *there was no king in Yashar''el (Israel)* (Judges 21:25) is answered by an EVERLASTING throne — *I will stablish the throne of his kingdom for ever*. Where the Judges-age throne was empty and every man his own law, the Davidic King''s throne stands for ever.'),
+    ('canon','judges',21,25, 'canon','2-samuel',7,16, 'free',
+      E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). The closing wound of Judges — *no king in Yashar''el (Israel)* (21:25) — is bound for ever by an everlasting throne. *Thy throne shall be established for ever*: the answer to the kingless dark age is not a man-made fix but the King whose kingdom has no end.'),
+    ('canon','judges',21,25, 'canon','luke',1,32, 'free',
+      E'*He shall be great, and shall be called the Son of the Highest: and Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32). The empty throne that closes Judges — *In those days there was no king in Yashar''el (Israel)* (21:25) — is filled at last in the Messiah, given *the throne of his father David*. The whole dark age aches forward to THIS King, the seed of David who does right in Yahuah''s eyes.'),
+    ('canon','judges',21,25, 'canon','luke',1,33, 'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). Judges ends with no king and every man his own law (21:25); the answer is the King who *shall reign over the house of Jacob for ever* — the gathered two-house people under one righteous throne, *of his kingdom there shall be no end*. The book that closes in anarchy points, across the canon, to the King who reigns without end.'),
+    ('canon','judges',21,24, 'canon','luke',1,33, 'free',
+      E'*And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33). The tribes scatter home — *they went out from thence every man to his inheritance* (Judges 21:24) — a people with no center, no throne, no king. The Messiah is the King who gathers *the house of Jacob* back under one everlasting reign, the antidote to the centerless dark age the book has chronicled.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-21-the-man-made-fixes-compounding-the-disorder',
+       E'The man-made fixes compounding the disorder — Jabesh-gilead and the breach',
+       E'Yashar''el (Israel) grieves that a whole tribe is nearly cut off: *And the children of Yashar''el (Israel) repented them for Benjamin their brother, and said, There is one tribe cut off from Yashar''el (Israel) this day* (Judges 21:6). The grief is real — *Yahuah (LORD) had made a breach in the tribes of Yashar''el (Israel)* (21:15) — but the wound was self-inflicted by their own rash oath at Mizpeh.\n\nRather than repent of the rashness, they pile fix upon fix. *How shall we do for wives for them that remain, seeing we have sworn by Yahuah (LORD) that we will not give them of our daughters to wives?* (21:7) is answered not by undoing the vow but by building schemes around it: *Cursed be he that giveth a wife to Benjamin* (21:18). So they *utterly destroy every male, and every woman that hath lain by man* of Jabesh-gilead to harvest brides (21:11), then lie in wait to seize the dancing daughters of Shiloh — rashness compounding rashness, more disorder atop disorder.\n\nThe slaughtered city itself testifies. *Then Nahash the Ammonite came up, and encamped against Jabesh-gilead* (1 Samuel 11:1) — the same Jabesh-gilead, besieged and helpless, until a KING rises to save it: *And Saul said, There shall not a man be put to death this day: for to day Yahuah (LORD) hath wrought salvation in Yashar''el (Israel)* (1 Samuel 11:13). Where the kingless tribes plunder Jabesh to serve their own scheme, the king delivers it. The contrast aches for the King the book has not yet named.',
+       sv.verse_id, ev.verse_id, 'free', 36150
+  FROM _s345_jdg21_lookup sv, _s345_jdg21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=21 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-21-no-king-every-man-right-in-his-own-eyes',
+       E'No king in Yashar''el — every man right in his own eyes: the aching need for the true King',
+       E'The whole dark age of the Judges closes on one verse — the diagnosis of everything that came before: *In those days there was no king in Yashar''el (Israel): every man did that which was right in his own eyes* (Judges 21:25). The tribes scatter home, *every man to his inheritance* (21:24): a people with no center, no throne, no King, each one his own law.\n\nThe Torah had already forbidden exactly this: *Ye shall not do after all the things that we do here this day, every man whatsoever is right in his own eyes* (Deuteronomy 12:8). The book''s last words are the very phrase Moshe (Moses) named as the disorder. And wisdom names where that road ends: *There is a way which seemeth right unto a man, but the end thereof are the ways of death* (Proverbs 14:12). Self-authority is not freedom; it is the way of death. The whole book has shown it — idolatry, civil war, a tribe nearly cut off.\n\nThe ache is for a King. But the first answer is a wrong one: *now make us a king to judge us like all the nations* (1 Samuel 8:5), and Yahuah (LORD) answers, *they have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7) — a man-made remedy for a heart-deep sickness, the next rash fix in the long chain. The true answer comes to David: *I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12); *I will stablish the throne of his kingdom for ever* (7:13); *thy throne shall be established for ever* (7:16).\n\nAnd the everlasting throne is filled at last in the Messiah: *Yahuah Elohim (the Lord God) shall give unto him the throne of his father David: And he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:32-33). The book that ends in anarchy — every man right in his own eyes — points across the whole canon to the King who does right in YAHUAH''s eyes, the seed of David who gathers the two-house people under one throne that has no end. Judges leaves us aching for Him.',
+       sv.verse_id, ev.verse_id, 'free', 36153
+  FROM _s345_jdg21_lookup sv, _s345_jdg21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=21 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1: the man-made fixes compounding the disorder
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Yahuah (LORD) had made a breach in the tribes of Yashar''el (Israel)* (Judges 21:15) — the self-inflicted wound named for what it is.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-the-man-made-fixes-compounding-the-disorder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Cursed be he that giveth a wife to Benjamin* (Judges 21:18) — a scheme built around the rash oath rather than repentance of it.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=21 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-the-man-made-fixes-compounding-the-disorder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Nahash the Ammonite came up, and encamped against Jabesh-gilead* (1 Samuel 11:1) — the city plundered here, besieged again at the dawn of the monarchy.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=11
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-the-man-made-fixes-compounding-the-disorder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (LORD) hath wrought salvation in Yashar''el (Israel)* (1 Samuel 11:13) — the king delivers the very city the kingless tribes destroyed.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=11
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-the-man-made-fixes-compounding-the-disorder'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: no king; every man right in his own eyes
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*every man whatsoever is right in his own eyes* (Deuteronomy 12:8) — the Torah named this disorder before Judges enacted it.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the end thereof are the ways of death* (Proverbs 14:12) — the way that SEEMS right to every man''s own eyes ends in death.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*make us a king to judge us like all the nations* (1 Samuel 8:5) — the ache for a king answered first by a wrong, man-made remedy.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*they have rejected me, that I should not reign over them* (1 Samuel 8:7) — Yahuah (LORD) Himself was the King they were meant to have.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*I will set up thy seed after thee... and I will establish his kingdom* (2 Samuel 7:12) — the righteous King of David''s bloodline, the true answer.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — an everlasting throne against the empty throne of Judges.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*thy throne shall be established for ever* (2 Samuel 7:16) — the kingless dark age answered by a throne without end.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Yahuah Elohim (the Lord God) shall give unto him the throne of his father David* (Luke 1:32) — the empty throne filled at last in the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*he shall reign over the house of Jacob for ever; and of his kingdom there shall be no end* (Luke 1:33) — the King who gathers the two-house people under one endless reign.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=25
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*he shall reign over the house of Jacob for ever* (Luke 1:33) — the tribes scattered home (Judges 21:24) gathered again under one throne.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=21 AND sv.verse_number=24
+  JOIN _s345_jdg21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-21-no-king-every-man-right-in-his-own-eyes'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session345 — Judges cross-references complete.'
