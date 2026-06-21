@@ -6513,6 +6513,1997 @@ SELECT t.id, cr.id, 8, E'Exodus 19:6 — *a kingdom of priests, and an holy nati
  WHERE t.slug='leviticus-20-separated-and-severed-unto-me'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_leviticus_21.sql (Leviticus 21) -----
+--
+-- BOOK: Leviticus  CHAPTER: 21   TAG: lev21   SESSION PREFIX: s311
+-- TEMP VIEW: _s311_lev21_lookup
+-- SORT BAND: base 23200, step 3  (23200, 23203, 23206)
+--
+-- FRAMING: The holiness of those who draw near. Chapter 21 carries the law of
+-- the priesthood's separation: the ordinary priests not to defile themselves
+-- for the dead nor mar the body (the priestly holiness), the HIGH PRIEST's
+-- higher consecration (the anointing oil upon him, never to leave the
+-- sanctuary, undefiled even for father or mother — the undefiled-high-priest
+-- type the NT fills in Yahusha/Hebrews 7), and the requirement that the one
+-- who offers the bread of his Elohim be WITHOUT BLEMISH (the wholeness of the
+-- servant who approaches; Malachi rebukes the blemished offering, Hebrews
+-- shows the high priest who needed no such repair). Torah AFFIRMED throughout
+-- — the holiness code stands; the priesthood is shown perfected in the Formed
+-- Son, not abolished. Lev 19 (the cuttings/corners law) and Lev 22 (the
+-- blemish law for offerings) are the lateral Torah witnesses; Ezekiel 44
+-- carries the same priestly statutes forward into the restored sanctuary.
+--
+-- Leviticus 21 coverage:
+--   v.1-9   NT:     none warranted (priestly holiness folded under high-priest type at 21:10-15)
+--           Extras: none warranted
+--           Tanakh: Leviticus 19:27-28 (corners/cuttings), Ezekiel 44:20,25 (restored priests, dead-defilement) — THREAD 1
+--   v.10-15 NT:     Hebrews 7:26, 7:28 (holy, harmless, undefiled, separate; the consecrated Son) — THREAD 2
+--           Extras: none warranted
+--           Tanakh: none warranted (the high-priest type carried forward to Hebrews)
+--   v.16-24 NT:     Hebrews 7:26, 7:27, 7:28 (the high priest without infirmity/blemish), Malachi 1:8 (the blemished offering rebuked) — THREAD 3
+--           Extras: none warranted
+--           Tanakh: Leviticus 22:19-25 (the unblemished-offering law, lateral) — THREAD 3
+--
+-- THREADS (all 'free' — every member is canon Tanakh/NT):
+--   1. leviticus-21-the-priests-shall-be-holy-unto-their-elohim   [Tanakh: Lev 19, Ezek 44]
+--   2. leviticus-21-the-high-priest-undefiled-the-crown-of-the-anointing-oil   [NT: Hebrews 7]
+--   3. leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim   [Tanakh: Lev 22; NT: Hebrews 7, Malachi 1]
+--
+-- ============================================================================
+
+CREATE TEMP VIEW _s311_lev21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ---------------------------------------------------------------------------
+-- B. cross_references
+-- ---------------------------------------------------------------------------
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the priests shall be holy (priestly separation) — lateral Torah + Ezekiel
+    ('canon','leviticus',21,5,'canon','leviticus',19,27,'free',
+      E'*Ye shall not round the corners of your heads, neither shalt thou mar the corners of thy beard.* (Leviticus 19:27) The same prohibition Yahuah lays on all Yashar''el in the holiness code He binds especially on the priests in *They shall not make baldness upon their head, neither shall they shave off the corner of their beard* (Leviticus 21:5) — the priest carries the whole congregation''s law of the marred body intensified, set apart in his own flesh.'),
+    ('canon','leviticus',21,5,'canon','leviticus',19,28,'free',
+      E'*Ye shall not make any cuttings in your flesh for the dead, nor print any marks upon you: I am Yahuah (LORD).* (Leviticus 19:28) The pagan mourning-rites of the nations — cuttings and baldness *for the dead* — are forbidden to all Yashar''el and most of all to the priests, whose *cuttings in his flesh* (Leviticus 21:5) would profane the very body that offers *the bread of their Elohim*. Holiness is written on the body.'),
+    ('canon','leviticus',21,1,'canon','ezekiel',44,25,'free',
+      E'*And they shall come at no dead person to defile themselves: but for father, or for mother, or for son, or for daughter, for brother, or for sister that hath had no husband, they may defile themselves.* (Ezekiel 44:25) Ezekiel''s vision of the restored sanctuary carries this same statute forward verbatim — *There shall none be defiled for the dead among his people* except *his kin, that is near unto him* (Leviticus 21:1-2). The priestly holiness code is not abolished but stands into the age of restoration.'),
+    ('canon','leviticus',21,5,'canon','ezekiel',44,20,'free',
+      E'*Neither shall they shave their heads, nor suffer their locks to grow long; they shall only poll their heads.* (Ezekiel 44:20) The law against marring the corners of the head — *They shall not make baldness upon their head* (Leviticus 21:5) — reappears in the restored priesthood Ezekiel sees, the sons of Zadok who *kept the charge of my sanctuary*. The Torah of priestly separation endures.'),
+
+    -- THREAD 2: the high priest undefiled — the crown of the anointing oil → Hebrews 7
+    ('canon','leviticus',21,12,'canon','hebrews',7,26,'free',
+      E'*For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens.* (Hebrews 7:26) The high priest who *shall not go out of the sanctuary* and on *whose head the anointing oil was poured* (Leviticus 21:10,12), undefiled even for father or mother, is the shadow whose substance is the Formed Son — the undefiled High Priest *separate from sinners*, the consecration of Leviticus answered in him.'),
+    ('canon','leviticus',21,10,'canon','hebrews',7,28,'free',
+      E'*For the law maketh men high priests which have infirmity; but the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore.* (Hebrews 7:28) *He that is the high priest among his brethren, upon whose head the anointing oil was poured, and that is consecrated* (Leviticus 21:10) — the Aaronic consecration is the type; the Son *consecrated for evermore* is the antitype. Not the law overthrown but the priesthood brought to its perfection in the One the oath appoints.'),
+
+    -- THREAD 3: no priest with a blemish — the unblemished servant → Lev 22, Hebrews 7, Malachi 1
+    ('canon','leviticus',21,17,'canon','leviticus',22,19,'free',
+      E'*Ye shall offer at your own will a male without blemish, of the beeves, of the sheep, or of the goats.* (Leviticus 22:19) The blemish-law cuts both ways: as no priest *that hath any blemish* may *approach to offer the bread of his Elohim* (Leviticus 21:17), so no offering with a blemish may be brought — the offerer and the offering alike must be whole, that the sanctuary not be profaned.'),
+    ('canon','leviticus',21,23,'canon','leviticus',22,20,'free',
+      E'*But whatsoever hath a blemish, that shall ye not offer: for it shall not be acceptable for you.* (Leviticus 22:20) *He shall not go in unto the vail, nor come nigh unto the altar, because he hath a blemish; that he profane not my sanctuaries* (Leviticus 21:23). The next chapter''s rule for the sacrifice mirrors this chapter''s rule for the priest — wholeness is the condition of drawing near at all.'),
+    ('canon','leviticus',21,21,'canon','malachi',1,8,'free',
+      E'*And if ye offer the blind for sacrifice, is it not evil? and if ye offer the lame and sick, is it not evil? offer it now unto thy governor; will he be pleased with thee, or accept thy person? saith Yahuah Tseva''ot (LORD of hosts).* (Malachi 1:8) Malachi indicts the priests for breaking this very law — bringing *the blind* and *the lame* — the categories Leviticus 21:18,21 names for the priest who *hath a blemish; he shall not come nigh to offer*. To despise wholeness is to despise the One served.'),
+    ('canon','leviticus',21,21,'canon','hebrews',7,26,'free',
+      E'*For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens.* (Hebrews 7:26) The priest of Aaron''s seed *that hath a blemish... shall not come nigh to offer the offerings of Yahuah* (Leviticus 21:21); the High Priest who *became us* is without blemish of any kind — *holy, harmless, undefiled* — the unblemished One the whole code anticipates.'),
+    ('canon','leviticus',21,17,'canon','hebrews',7,27,'free',
+      E'*Who needeth not daily, as those high priests, to offer up sacrifice, first for his own sins, and then for the people''s: for this he did once, when he offered up himself.* (Hebrews 7:27) Where Leviticus 21:17 bars the blemished priest from offering *the bread of his Elohim*, Hebrews shows the unblemished High Priest who *offered up himself* — the spotless servant who is at once the priest without blemish and the offering without blemish.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ---------------------------------------------------------------------------
+-- C. threads
+-- ---------------------------------------------------------------------------
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-21-the-priests-shall-be-holy-unto-their-elohim',
+       E'The priests shall be holy unto their Elohim',
+       E'The chapter opens with the law of the priest''s separation: *There shall none be defiled for the dead among his people* (Leviticus 21:1) — except for his nearest kin — and *They shall not make baldness upon their head, neither shall they shave off the corner of their beard, nor make any cuttings in their flesh* (Leviticus 21:5). The reason is given plainly: *They shall be holy unto their Elohim (God), and not profane the name of their Elohim (God): for the offerings of Yahuah (LORD) made by fire, and the bread of their Elohim (God), they do offer: therefore they shall be holy* (Leviticus 21:6). The body that offers must itself be undefiled; the pagan mourning-rites of the nations are forbidden in the flesh.\n\nThe same statutes are laid on all Yashar''el in the holiness code — *Ye shall not round the corners of your heads, neither shalt thou mar the corners of thy beard* and *Ye shall not make any cuttings in your flesh for the dead, nor print any marks upon you* (Leviticus 19:27-28) — and intensified upon the priests. And the Torah does not lapse: Ezekiel''s vision of the restored sanctuary carries it forward word for word — *they shall come at no dead person to defile themselves: but for father, or for mother, or for son, or for daughter, for brother, or for sister that hath had no husband* (Ezekiel 44:25), and *Neither shall they shave their heads, nor suffer their locks to grow long* (Ezekiel 44:20). The priestly holiness stands from Sinai to the age of restoration.',
+       sv.verse_id, ev.verse_id, 'free', 23200
+  FROM _s311_lev21_lookup sv, _s311_lev21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=21 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-21-the-high-priest-undefiled-the-crown-of-the-anointing-oil',
+       E'The high priest undefiled — the crown of the anointing oil',
+       E'The holiness rises to its height in the high priest. *And he that is the high priest among his brethren, upon whose head the anointing oil was poured, and that is consecrated to put on the garments, shall not uncover his head, nor rend his clothes* (Leviticus 21:10). He may not defile himself even for the dearest dead: *Neither shall he go in to any dead body, nor defile himself for his father, or for his mother* (Leviticus 21:11). And he may not leave the holy place: *Neither shall he go out of the sanctuary, nor profane the sanctuary of his Elohim (God); for the crown of the anointing oil of his Elohim (God) is upon him: I am Yahuah (LORD)* (Leviticus 21:12). This is the undefiled high priest, set wholly apart, marked by the anointing oil as a crown.\n\nThe shadow finds its substance in the Formed Son. *For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens* (Hebrews 7:26) — the very undefiledness Leviticus required, fulfilled in the One who is separate from sinners by his own holiness. And where Aaron''s line was *consecrated* by the oil, *the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore* (Hebrews 7:28). The Torah''s high-priestly type is not cancelled; it is brought to its perfection in the Son the oath appoints — Yahuah and having a Father, the expressed One drawn from the Formless.',
+       sv.verse_id, ev.verse_id, 'free', 23203
+  FROM _s311_lev21_lookup sv, _s311_lev21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=21 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim',
+       E'No priest with a blemish shall offer the bread of his Elohim',
+       E'The chapter closes with the law of the unblemished servant. *Whosoever he be of thy seed in their generations that hath any blemish, let him not approach to offer the bread of his Elohim (God)* (Leviticus 21:17) — and the catalogue follows: *a blind man, or a lame... brokenfooted, or brokenhanded... that hath a blemish in his eye* (Leviticus 21:18-20). *No man that hath a blemish of the seed of Aaron the priest shall come nigh to offer the offerings of Yahuah (LORD) made by fire: he hath a blemish; he shall not come nigh to offer the bread of his Elohim (God)* (Leviticus 21:21). He may eat of the holy bread, but *he shall not go in unto the vail, nor come nigh unto the altar, because he hath a blemish; that he profane not my sanctuaries* (Leviticus 21:23). Wholeness is the condition of drawing near.\n\nThe rule mirrors the next chapter''s rule for the offering — *Ye shall offer at your own will a male without blemish* and *whatsoever hath a blemish, that shall ye not offer: for it shall not be acceptable for you* (Leviticus 22:19-20). Offerer and offering alike must be whole. Malachi indicts the priests for breaking it: *if ye offer the blind for sacrifice, is it not evil? and if ye offer the lame and sick, is it not evil?* (Malachi 1:8) — to despise wholeness is to despise the One served. And the demand for an unblemished priest is answered at last in the High Priest *who is holy, harmless, undefiled, separate from sinners* (Hebrews 7:26), the One who *needeth not daily... to offer up sacrifice, first for his own sins... for this he did once, when he offered up himself* (Hebrews 7:27) — at once the priest without blemish and the offering without blemish.',
+       sv.verse_id, ev.verse_id, 'free', 23206
+  FROM _s311_lev21_lookup sv, _s311_lev21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=21 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- ---------------------------------------------------------------------------
+-- D. thread_members
+-- ---------------------------------------------------------------------------
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 19:27 — *Ye shall not round the corners of your heads, neither shalt thou mar the corners of thy beard.* The congregation''s law of the unmarred body, laid intensified on the priest.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=5
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-the-priests-shall-be-holy-unto-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 19:28 — *Ye shall not make any cuttings in your flesh for the dead, nor print any marks upon you.* The pagan mourning-rites forbidden; holiness written on the body the priest offers with.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=5
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-the-priests-shall-be-holy-unto-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ezekiel 44:25 — *And they shall come at no dead person to defile themselves: but for father, or for mother...* The dead-defilement statute carried verbatim into the restored sanctuary; Torah endures.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=1
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=44 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-the-priests-shall-be-holy-unto-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ezekiel 44:20 — *Neither shall they shave their heads, nor suffer their locks to grow long; they shall only poll their heads.* The corners-of-the-head law reborn in the sons of Zadok who keep the charge.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=5
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=44 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-the-priests-shall-be-holy-unto-their-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hebrews 7:26 — *For such an high priest became us, who is holy, harmless, undefiled, separate from sinners, and made higher than the heavens.* The undefiled high priest of Leviticus 21:12 fulfilled in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-the-high-priest-undefiled-the-crown-of-the-anointing-oil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 7:28 — *...the word of the oath, which was since the law, maketh the Son, who is consecrated for evermore.* Aaron''s oil-consecration (Leviticus 21:10) brought to perfection in the Son consecrated for ever.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=10
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-the-high-priest-undefiled-the-crown-of-the-anointing-oil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 22:19 — *Ye shall offer at your own will a male without blemish, of the beeves, of the sheep, or of the goats.* As the priest must be whole, so the offering; the lateral Torah witness.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=22 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 22:20 — *But whatsoever hath a blemish, that shall ye not offer: for it shall not be acceptable for you.* Mirrors the bar on the blemished priest approaching the altar (Leviticus 21:23).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=23
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=22 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Malachi 1:8 — *And if ye offer the blind for sacrifice, is it not evil? and if ye offer the lame and sick, is it not evil?* The priests indicted for breaking this very blemish-law; to despise wholeness is to despise the One served.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 7:26 — *...who is holy, harmless, undefiled, separate from sinners...* The unblemished requirement of Leviticus 21:21 answered in the High Priest without blemish of any kind.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 7:27 — *...for this he did once, when he offered up himself.* The unblemished High Priest who is at once the priest without blemish and the offering without blemish (Leviticus 21:17).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s311_lev21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-21-no-priest-with-a-blemish-shall-offer-the-bread-of-his-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_22.sql (Leviticus 22) -----
+-- Book: Leviticus  Chapter: 22  | session prefix s311 | tag lev22
+-- Temp view: _s311_lev22_lookup
+-- Sort band base 23225 step 3 -> 23225, 23228, 23231, 23234
+--
+-- Leviticus 22 coverage:
+--   v.1-16  NT:     none warranted (priestly-food holiness; fulfillment carried at 17-25/31-33)
+--           Extras: none warranted
+--           Tanakh: Leviticus 7:20-21 (uncleanness cut off from the peace-offering) [LATERAL]
+--   v.17-25 NT:     1 Peter 1:18-19 (lamb without blemish and without spot), Hebrews 9:14 (offered himself without spot) [FORWARD]
+--           Extras: none warranted (clean witness; Malachi carries the prophetic reach)
+--           Tanakh: Malachi 1:8 + 1:14 (the blind/lame offering is evil; cursed the corrupt sacrifice) [LATERAL]
+--   v.26-30 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Exodus 22:30 (seven days with dam, eighth day given) [LATERAL]
+--   v.31-33 NT:     Matthew 6:9 (Hallowed be thy name) [FORWARD]
+--           Extras: none warranted
+--           Tanakh: Leviticus 11:44-45 (be holy for I am holy), Ezekiel 36:23 (I will sanctify my great name) [LATERAL]
+--
+-- Threads (slug | target libraries):
+--   leviticus-22-the-holy-things-eaten-only-in-cleanness            | canon Tanakh (Lev 7)              [free]
+--   leviticus-22-perfect-without-blemish-to-be-accepted             | canon NT (1 Pet, Heb) + canon Tanakh (Mal)  [free]
+--   leviticus-22-the-mercy-in-the-offerings-the-eighth-day          | canon Tanakh (Exod 22)           [free]
+--   leviticus-22-i-will-be-hallowed-among-the-children-of-israel    | canon NT (Matt 6) + canon Tanakh (Lev 11, Ezek 36) [free]
+--
+-- Framework-load-bearing verse: 22:21 "it shall be perfect to be accepted; there shall be no blemish
+--   therein" -- the unblemished sacrifice is the type the Formed Son fills (1 Pet 1:19 / Heb 9:14),
+--   while Malachi rebukes the priests who profaned it. Framed as type-and-fulfillment, never Torah-abolished.
+
+CREATE TEMP VIEW _s311_lev22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: holy things eaten only in cleanness (lateral Lev 7)
+    ('canon','leviticus',22,3,'canon','leviticus',7,20,
+      E'*But the soul that eateth of the flesh of the sacrifice of peace offerings, that pertain unto Yahuah (LORD), having his uncleanness upon him, even that soul shall be cut off from his people.* (Leviticus 7:20). The earlier statute is exactly the warning of *having his uncleanness upon him, that soul shall be cut off from my presence* (Leviticus 22:3) -- the holy things may be touched only in cleanness, on pain of being cut off.', 'free'),
+    ('canon','leviticus',22,4,'canon','leviticus',7,21,
+      E'*Moreover the soul that shall touch any unclean thing, as the uncleanness of man, or any unclean beast, or any abominable unclean thing, and eat of the flesh of the sacrifice of peace offerings... even that soul shall be cut off from his people.* (Leviticus 7:21). This lateral lists the same defilements that bar the priest in *What man soever of the seed of Aaron is a leper, or hath a running issue... And whoso toucheth any thing that is unclean by the dead* (Leviticus 22:4).', 'free'),
+    -- Thread 2: perfect, without blemish, to be accepted (forward 1 Pet, Heb; lateral Mal)
+    ('canon','leviticus',22,19,'canon','1-peter',1,19,
+      E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot:* (1 Peter 1:19). The Torah''s demand for *a male without blemish, of the beeves, of the sheep, or of the goats* (Leviticus 22:19) is the type the Formed Son fills -- redemption not by silver and gold but by the unblemished Lamb.', 'free'),
+    ('canon','leviticus',22,21,'canon','1-peter',1,19,
+      E'*But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot:* (1 Peter 1:19). *It shall be perfect to be accepted; there shall be no blemish therein* (Leviticus 22:21) -- the perfection required of the peace offering is the very perfection of the Lamb without blemish and without spot.', 'free'),
+    ('canon','leviticus',22,21,'canon','hebrews',9,14,
+      E'*How much more shall the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God), purge your conscience from dead works to serve the living Elohim (God)?* (Hebrews 9:14). The unblemished offering of *it shall be perfect to be accepted; there shall be no blemish therein* (Leviticus 22:21) is answered in the Formed Son who *offered himself without spot*.', 'free'),
+    ('canon','leviticus',22,20,'canon','malachi',1,8,
+      E'*And if ye offer the blind for sacrifice, is it not evil? and if ye offer the lame and sick, is it not evil? offer it now unto thy governor; will he be pleased with thee, or accept thy person? saith Yahuah Tseva''ot (LORD of hosts).* (Malachi 1:8). The prophet reaches back to *whatsoever hath a blemish, that shall ye not offer: for it shall not be acceptable for you* (Leviticus 22:20) and indicts the priests who profaned the statute.', 'free'),
+    ('canon','leviticus',22,22,'canon','malachi',1,14,
+      E'*But cursed be the deceiver, which hath in his flock a male, and voweth, and sacrificeth unto Yahuah (Lord) a corrupt thing: for I am a great King, saith Yahuah Tseva''ot (LORD of hosts), and my name is dreadful among the heathen.* (Malachi 1:14). The corrupt sacrifice Malachi curses is the *Blind, or broken, or maimed... ye shall not offer these unto Yahuah (LORD)* (Leviticus 22:22) -- the great King will not be honoured with a blemished thing.', 'free'),
+    -- Thread 3: the mercy in the offerings, the eighth day (lateral Exod 22)
+    ('canon','leviticus',22,27,'canon','exodus',22,30,
+      E'*Likewise shalt thou do with thine oxen, and with thy sheep: seven days it shall be with his dam; on the eighth day thou shalt give it me.* (Exodus 22:30). The same mercy stands here -- *seven days under the dam; and from the eighth day and thenceforth it shall be accepted for an offering made by fire* (Leviticus 22:27) -- the young is not torn from its mother before its time.', 'free'),
+    -- Thread 4: I will be hallowed among the children of Israel (forward Matt 6; lateral Lev 11, Ezek 36)
+    ('canon','leviticus',22,32,'canon','matthew',6,9,
+      E'*After this manner therefore pray ye: Our Father which art in heaven, Hallowed be thy name.* (Matthew 6:9). The prayer the Formed Son taught opens with the very charge of *I will be hallowed among the children of Yashar''el (Israel)* (Leviticus 22:32) -- the holy Name set apart, not profaned.', 'free'),
+    ('canon','leviticus',22,32,'canon','leviticus',11,44,
+      E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy...* (Leviticus 11:44). The call *I am Yahuah (LORD) which hallow you* (Leviticus 22:32) is the same holiness-of-the-Holy-One that grounds the dietary law -- the people set apart because Yahuah is set apart.', 'free'),
+    ('canon','leviticus',22,33,'canon','leviticus',11,45,
+      E'*For I am Yahuah (LORD) that bringeth you up out of the land of Egypt, to be your Elohim (God): ye shall therefore be holy, for I am holy.* (Leviticus 11:45). The redemption-and-holiness pairing is identical to *That brought you out of the land of Egypt, to be your Elohim (God): I am Yahuah (LORD)* (Leviticus 22:33).', 'free'),
+    ('canon','leviticus',22,32,'canon','ezekiel',36,23,
+      E'*And I will sanctify my great name, which was profaned among the heathen, which ye have profaned in the midst of them; and the heathen shall know that I am Yahuah (LORD), saith Adonai Yahuah (the Lord GOD), when I shall be sanctified in you before their eyes.* (Ezekiel 36:23). The prophet takes up the charge *Neither shall ye profane my holy name; but I will be hallowed among the children of Yashar''el (Israel)* (Leviticus 22:32) -- the Name profaned in exile to be hallowed again in the two-house ingathering.', 'free')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,note,tier)
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. threads
+-- ============================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-22-the-holy-things-eaten-only-in-cleanness',
+       E'The holy things eaten only in cleanness',
+       E'The priests must separate themselves from the holy things in cleanness, *that they profane not my holy name in those things which they hallow unto me: I am Yahuah (LORD)* (Leviticus 22:2). A priest *having his uncleanness upon him, that soul shall be cut off from my presence* (Leviticus 22:3); leper, running issue, touching the dead all bar him until he wash and the sun go down (Leviticus 22:4-7). This is the same statute already given for the peace offering: *But the soul that eateth of the flesh of the sacrifice of peace offerings... having his uncleanness upon him, even that soul shall be cut off from his people* (Leviticus 7:20), and *Moreover the soul that shall touch any unclean thing... shall be cut off from his people* (Leviticus 7:21). The holy food of Yahuah is not common; it is eaten in holiness or not at all.',
+       sv.verse_id, ev.verse_id, 'free', 23225
+  FROM _s311_lev22_lookup sv, _s311_lev22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=22 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-22-perfect-without-blemish-to-be-accepted',
+       E'Perfect, without blemish, to be accepted -- the Lamb without spot',
+       E'The offering must be flawless to be received: *Ye shall offer at your own will a male without blemish, of the beeves, of the sheep, or of the goats* (Leviticus 22:19); *But whatsoever hath a blemish, that shall ye not offer: for it shall not be acceptable for you* (Leviticus 22:20). The heart of the chapter: *it shall be perfect to be accepted; there shall be no blemish therein* (Leviticus 22:21) -- the blind, broken, maimed, scurvy, bruised, crushed all refused (Leviticus 22:22-24). This is the type the Formed Son fills. Yashar''el (Israel) was *not redeemed with corruptible things... But with the precious blood of Messiah (Christ), as of a lamb without blemish and without spot* (1 Peter 1:18-19); and *the blood of Messiah (Christ), who through the eternal Spirit offered himself without spot to Elohim (God)* (Hebrews 9:14). When the priesthood later profaned this very law -- *if ye offer the blind for sacrifice, is it not evil?* (Malachi 1:8) -- Yahuah pronounced, *cursed be the deceiver... and sacrificeth unto Yahuah (Lord) a corrupt thing: for I am a great King* (Malachi 1:14). The unblemished sacrifice was never a discarded shadow; it is the measure of the perfect Offering himself.',
+       sv.verse_id, ev.verse_id, 'free', 23228
+  FROM _s311_lev22_lookup sv, _s311_lev22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=22 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-22-the-mercy-in-the-offerings-the-eighth-day',
+       E'The mercy in the offerings -- the eighth day, not with its dam',
+       E'Even in the sacrificial law there is mercy for the creature: *When a bullock, or a sheep, or a goat, is brought forth, then it shall be seven days under the dam; and from the eighth day and thenceforth it shall be accepted* (Leviticus 22:27); *whether it be cow or ewe, ye shall not kill it and her young both in one day* (Leviticus 22:28). The thanksgiving is eaten the same day, none left to the morrow (Leviticus 22:29-30). This is the same compassion already commanded: *Likewise shalt thou do with thine oxen, and with thy sheep: seven days it shall be with his dam; on the eighth day thou shalt give it me* (Exodus 22:30). The young is not torn from its mother before its time; the offering is bound up with mercy.',
+       sv.verse_id, ev.verse_id, 'free', 23231
+  FROM _s311_lev22_lookup sv, _s311_lev22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=22 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-22-i-will-be-hallowed-among-the-children-of-israel',
+       E'I will be hallowed among the children of Yashar''el -- the Name set apart',
+       E'The chapter closes with the covenant charge: *Therefore shall ye keep my commandments, and do them: I am Yahuah (LORD)* (Leviticus 22:31) -- the commandments kept, not abolished -- *Neither shall ye profane my holy name; but I will be hallowed among the children of Yashar''el (Israel): I am Yahuah (LORD) which hallow you* (Leviticus 22:32), grounded in the redemption *That brought you out of the land of Egypt, to be your Elohim (God): I am Yahuah (LORD)* (Leviticus 22:33). The hallowing of the Name is the same call that grounds the whole holiness code -- *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44), *for I am Yahuah (LORD) that bringeth you up out of the land of Egypt... ye shall therefore be holy, for I am holy* (Leviticus 11:45). The prophet carries it forward into the two-house ingathering: *And I will sanctify my great name, which was profaned among the heathen... the heathen shall know that I am Yahuah (LORD)... when I shall be sanctified in you before their eyes* (Ezekiel 36:23). And the Formed Son set this charge at the head of the prayer he taught: *Our Father which art in heaven, Hallowed be thy name* (Matthew 6:9).',
+       sv.verse_id, ev.verse_id, 'free', 23234
+  FROM _s311_lev22_lookup sv, _s311_lev22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=22 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. thread_members (SAFE VERBOSE -- one INSERT per member)
+-- ============================================================
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*having his uncleanness upon him, even that soul shall be cut off from his people* (Leviticus 7:20) -- the peace-offering statute behind the cutting-off of 22:3.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=3
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=7 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-the-holy-things-eaten-only-in-cleanness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the soul that shall touch any unclean thing... even that soul shall be cut off* (Leviticus 7:21) -- the same defilements that bar the priest in 22:4.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=4
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=7 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-the-holy-things-eaten-only-in-cleanness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*a lamb without blemish and without spot* (1 Peter 1:19) -- the male without blemish of 22:19 fulfilled in the Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-perfect-without-blemish-to-be-accepted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a lamb without blemish and without spot* (1 Peter 1:19) -- the perfection of 22:21 is the Lamb without spot.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-perfect-without-blemish-to-be-accepted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*who through the eternal Spirit offered himself without spot to Elohim (God)* (Hebrews 9:14) -- the no-blemish demand of 22:21 answered in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-perfect-without-blemish-to-be-accepted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*if ye offer the blind for sacrifice, is it not evil?* (Malachi 1:8) -- the priests indicted for breaking the no-blemish law of 22:20.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-perfect-without-blemish-to-be-accepted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*cursed be the deceiver... and sacrificeth unto Yahuah (Lord) a corrupt thing* (Malachi 1:14) -- the corrupt sacrifice answering the blind/broken/maimed of 22:22.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-perfect-without-blemish-to-be-accepted'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*seven days it shall be with his dam; on the eighth day thou shalt give it me* (Exodus 22:30) -- the same eighth-day mercy as 22:27.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=27
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-the-mercy-in-the-offerings-the-eighth-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Our Father which art in heaven, Hallowed be thy name* (Matthew 6:9) -- the Formed Son sets the hallowing of 22:32 at the head of the prayer.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=32
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-i-will-be-hallowed-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44) -- the same holiness that grounds the hallowing of 22:32.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=32
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-i-will-be-hallowed-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*that bringeth you up out of the land of Egypt... ye shall therefore be holy, for I am holy* (Leviticus 11:45) -- the redemption-and-holiness pairing of 22:33.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=33
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-i-will-be-hallowed-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*And I will sanctify my great name, which was profaned among the heathen... when I shall be sanctified in you* (Ezekiel 36:23) -- the profaned Name of 22:32 hallowed again in the ingathering.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=22 AND sv.verse_number=32
+  JOIN _s311_lev22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-22-i-will-be-hallowed-among-the-children-of-israel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_23.sql (Leviticus 23) -----
+-- Book: Leviticus | Chapter: 23 — THE FEASTS OF YAHUAH / THE APPOINTED TIMES (the moedim).
+-- THE SUPREME KEYSTONE of this Torah-positive ministry: Yahuah's own calendar, the prophetic
+-- architecture the whole library fills.
+-- Session prefix: s311 | Tag: lev23 | Temp view: _s311_lev23_lookup
+-- Sort band: base 23250, step 3 (23250, 23253, 23256, 23259, 23262, 23265, 23268, 23271, 23274)
+--
+-- FRAMING (lens applied): the appointed times are YAHUAH'S calendar — *these are my feasts*
+-- (23:2), *holy convocations, which ye shall proclaim in their seasons* (23:4). They are NOT a
+-- defunct "Jewish" rite abolished by grace; they are the living architecture of redemption,
+-- creation-rooted in the Sabbath, each prophetically illumined in the Formed Son and STILL kept.
+-- The seventh-day Sabbath leads (the first appointed time). The spring feasts — Passover,
+-- Unleavened Bread, Firstfruits, Shavuot — were filled at the first coming (Messiah our Passover;
+-- the firstfruits raised the morrow after the sabbath; the Spirit poured at Pentecost). The fall
+-- feasts — Trumpets, Atonement, Tabernacles — point to the ingathering, the great atonement, and
+-- Elohim tabernacling with men. Colossians 2:16-17 is the anchor against the abolition lie: the
+-- feasts *are a shadow of things to come; but the body is of Messiah* — a STANDING shadow whose
+-- substance is the Formed Son, NOT a cancelled ordinance. The extra-canonical witnesses (Jubilees)
+-- testify the feasts are written on the heavenly tables, kept from creation, a statute for ever.
+--
+-- Leviticus 23 coverage:
+--   v.1-3   NT:     Mark 2:27 (sabbath made for man); Mark 2:28 (Son of Adam Lord of the sabbath); Hebrews 4:9 (there remaineth a rest)
+--           Extras: none warranted (creation-rest carried by Genesis 2 lateral)
+--           Tanakh: Genesis 2:2-3 (rested/blessed/sanctified the seventh day); Exodus 20:8-11 (remember the sabbath); Isaiah 58:13-14 (call the sabbath a delight)
+--   v.4-8   NT:     1 Corinthians 5:7 (Messiah our passover); 1 Corinthians 5:8 (keep the feast with unleavened bread); Luke 22:15 (eat this passover); John 19:14 (preparation of the passover); John 19:36 (a bone not broken)
+--           Extras: none warranted (Exodus 12 lateral carries the institution)
+--           Tanakh: Exodus 12:11 (it is the LORD'S passover); Exodus 12:13 (the blood a token, I will pass over)
+--   v.9-14  NT:     1 Corinthians 15:20 (firstfruits of them that slept); 1 Corinthians 15:23 (Messiah the firstfruits); Romans 11:16 (if the firstfruit be holy)
+--           Extras: none warranted
+--           Tanakh: Exodus 23:19 (the first of the firstfruits brought to the house of Yahuah)
+--   v.15-22 NT:     Acts 2:1 (day of Pentecost fully come); Acts 2:4 (filled with the Ruach HaKodesh)
+--           Extras: Jubilees 6:21 (feast of weeks AND firstfruits, twofold, written on heavenly tables)
+--           Tanakh: Exodus 34:22 (the feast of weeks, firstfruits of wheat harvest); Deuteronomy 16:10 (keep the feast of weeks); Deuteronomy 16:11 (rejoice — son, daughter, Levite, stranger, fatherless, widow)
+--   v.22    NT:     none warranted (gleaning carried within Shavuot thread)
+--           Extras: none warranted
+--           Tanakh: Deuteronomy 16:11 (the stranger, the fatherless, the widow at the feast) — folded into Shavuot thread
+--   v.23-25 NT:     1 Thessalonians 4:16 (the trump of Elohim, the dead rise); 1 Corinthians 15:52 (the last trump); Matthew 24:31 (great sound of a trumpet, gather his elect)
+--           Extras: none warranted
+--           Tanakh: Numbers 29:1 (day of blowing the trumpets); Joel 2:1 (blow the trumpet in Zion)
+--   v.26-32 NT:     Hebrews 9:11 (high priest of good things); Hebrews 9:12 (by his own blood once); Hebrews 10:19 (boldness to enter the holiest); Hebrews 10:22 (draw near, hearts sprinkled)
+--           Extras: none warranted
+--           Tanakh: Leviticus 16:29 (tenth day seventh month, afflict your souls); Leviticus 16:30 (atonement to cleanse you)
+--   v.33-43 NT:     John 7:2 (the feast of tabernacles); John 7:37 (if any man thirst, come and drink); John 7:38 (rivers of living water); Revelation 21:3 (the tabernacle of Elohim is with men)
+--           Extras: Jubilees 16:21 (Abraham first to keep tabernacles); Jubilees 16:29 (statute for ever, heavenly tables)
+--           Tanakh: Zechariah 14:16 (all nations keep the feast of tabernacles); Nehemiah 8:14 (found written, dwell in booths)
+--   v.4,37,44 NT:   Colossians 2:16 (let no man judge you); Colossians 2:17 (a shadow; the body is of Messiah)
+--           Extras: none warranted
+--           Tanakh: (the frame verses gather all the feasts — bound in the appointed-times thread)
+--
+-- Threads (9), one per appointed time + the binding frame:
+--   leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times   [free]  Tanakh(Gen2:2-3, Ex20:8/11, Isa58:13-14) + NT(Mark2:27-28, Heb4:9)
+--   leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover [free]  Tanakh(Ex12:11, Ex12:13) + NT(1Cor5:7-8, Luke22:15, John19:14/36)
+--   leviticus-23-the-wave-sheaf-of-the-firstfruits-the-morrow-after-the-sabbath [free] Tanakh(Ex23:19) + NT(1Cor15:20/23, Rom11:16)
+--   leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot        [extras] Tanakh(Ex34:22, Deut16:10/11) + NT(Acts2:1/4) + Extras(Jub6:21)
+--   leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering [free] Tanakh(Num29:1, Joel2:1) + NT(1Thess4:16, 1Cor15:52, Matt24:31)
+--   leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest [free] Tanakh(Lev16:29/30) + NT(Heb9:11-12, Heb10:19/22)
+--   leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men      [extras] Tanakh(Zech14:16, Neh8:14) + NT(John7:2/37/38, Rev21:3) + Extras(Jub16:21/29)
+--   leviticus-23-these-are-the-feasts-of-yahuah-a-shadow-still-standing [free]  NT(Col2:16-17)
+--
+-- Note: v.5 quotes "the LORD'S passover" from the parse (apostrophe-S as a typographic right-quote,
+-- not an ASCII apostrophe) — quoted exactly as dump_canon returns it.
+
+-- =========================================================================================
+-- A. Temp view
+-- =========================================================================================
+CREATE TEMP VIEW _s311_lev23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =========================================================================================
+-- B. cross_references INSERT
+-- =========================================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the Sabbath, the first of the appointed times
+    ('canon','leviticus',23,3,'canon','genesis',2,2,'free',
+     E'*And on the seventh day Elohim (God) ended his work which he had made; and he rested on the seventh day from all his work which he had made* (Genesis 2:2). The Sabbath that opens the appointed times — *the seventh day is the sabbath of rest, an holy convocation* (Leviticus 23:3) — is not first a sign for Yashar''el (Israel) only but a creation ordinance: Yahuah rested on the seventh day before there was a nation, and the feast simply keeps what was woven into the world.'),
+    ('canon','leviticus',23,3,'canon','genesis',2,3,'free',
+     E'*And Elohim (God) blessed the seventh day, and sanctified it: because that in it he had rested from all his work which Elohim (God) created and made* (Genesis 2:3). The day is *blessed* and *sanctified* at creation; the command of Leviticus 23:3 — *it is the sabbath of Yahuah (LORD) in all your dwellings* — only proclaims the holiness already set into the seventh day from the beginning.'),
+    ('canon','leviticus',23,3,'canon','exodus',20,8,'free',
+     E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The Sabbath stands first among the feasts of Leviticus 23 because it is engraven in the Ten Words on the stone — *Remember the sabbath day* — the perpetual sign that is never set aside.'),
+    ('canon','leviticus',23,3,'canon','exodus',20,11,'free',
+     E'*For in six days Yahuah (LORD) made heaven and earth, the sea, and all that in them is, and rested the seventh day: wherefore Yahuah (LORD) blessed the sabbath day, and hallowed it* (Exodus 20:11). The reason for *six days shall work be done: but the seventh day is the sabbath of rest* (Leviticus 23:3) is the creation pattern itself — the Sabbath rooted in what Yahuah did at the founding of the world.'),
+    ('canon','leviticus',23,3,'canon','isaiah',58,13,'free',
+     E'*If thou turn away thy foot from the sabbath, from doing thy pleasure on my holy day; and call the sabbath a delight, the holy of Yahuah (LORD), honourable...* (Isaiah 58:13). The prophet calls the same *holy convocation* of Leviticus 23:3 *a delight, the holy of Yahuah* — far future from Sinai, the Sabbath still binding, still honoured, with blessing promised to those who keep it.'),
+    ('canon','leviticus',23,3,'canon','isaiah',58,14,'free',
+     E'*Then shalt thou delight thyself in Yahuah (LORD); and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of Yahuah (LORD) hath spoken it* (Isaiah 58:14). The Sabbath of Leviticus 23:3 carries promise, not burden — those who delight in it inherit the *heritage of Jacob*, the two-house portion.'),
+    ('canon','leviticus',23,3,'canon','mark',2,27,'free',
+     E'*And he said unto them, The sabbath was made for man, and not man for the sabbath* (Mark 2:27). The Formed Son does not abolish the Sabbath of Leviticus 23:3; he restores its purpose — *made for man*, a gift of rest, an *holy convocation* given for the good of His people.'),
+    ('canon','leviticus',23,3,'canon','mark',2,28,'free',
+     E'*Therefore the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:28). The One who is *Lord... of the sabbath* is the same Formed Son who gave it — *the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3); he claims it as his own, never cancels it.'),
+    ('canon','leviticus',23,3,'canon','hebrews',4,9,'free',
+     E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The word is *sabbatismos*, a Sabbath-keeping; the appointed seventh-day rest of Leviticus 23:3 still *remaineth* for the people of Elohim — the rest not abolished but reaching forward to its consummation.'),
+
+    -- Thread 2: Passover and Unleavened Bread — Messiah our Passover
+    ('canon','leviticus',23,5,'canon','exodus',12,11,'free',
+     E'*And thus shall ye eat it; with your loins girded, your shoes on your feet, and your staff in your hand; and ye shall eat it in haste: it is the LORD''S passover* (Exodus 12:11). The appointed time of Leviticus 23:5 — *In the fourteenth day of the first month at even is the LORD''S passover* — keeps the night of the Exodus, the lamb slain, the deliverance from Egypt, set into the standing calendar.'),
+    ('canon','leviticus',23,5,'canon','exodus',12,13,'free',
+     E'*And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt* (Exodus 12:13). The *passover* of Leviticus 23:5 is named for this: *I will pass over you* — the blood-token that spared the firstborn, the pattern the Formed Son fills.'),
+    ('canon','leviticus',23,5,'canon','1-corinthians',5,7,'free',
+     E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The apostle names the fulfilment plainly: the lamb of *the LORD''S passover* (Leviticus 23:5) is *Messiah (Christ) our passover* — the spring feast filled in the Formed Son slain.'),
+    ('canon','leviticus',23,6,'canon','1-corinthians',5,8,'free',
+     E'*Therefore let us keep the feast, not with old leaven, neither with the leaven of malice and wickedness; but with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). Far from abolishing it, the apostle says *let us keep the feast* — the *feast of unleavened bread* of Leviticus 23:6 *seven days* — its substance now lived out in *sincerity and truth*.'),
+    ('canon','leviticus',23,5,'canon','luke',22,15,'free',
+     E'*And he said unto them, With desire I have desired to eat this passover with you before I suffer* (Luke 22:15). The Formed Son keeps the very feast of Leviticus 23:5 — *this passover* — on the night he is betrayed, fulfilling it as the Lamb on the day the lamb is slain.'),
+    ('canon','leviticus',23,5,'canon','john',19,14,'free',
+     E'*And it was the preparation of the passover, and about the sixth hour: and he saith unto the Yahudim (Jews), Behold your King!* (John 19:14). He is condemned on *the preparation of the passover*, dying at the very hour the Passover lambs of Leviticus 23:5 are made ready — the timing testifying he is the true Lamb.'),
+    ('canon','leviticus',23,5,'canon','john',19,36,'free',
+     E'*For these things were done, that the scripture should be fulfilled, A bone of him shall not be broken* (John 19:36). The Passover ordinance — that no bone of the lamb be broken — is fulfilled in the Formed Son on the cross; the lamb of *the LORD''S passover* (Leviticus 23:5) is the unbroken Lamb.'),
+
+    -- Thread 3: the wave sheaf of the firstfruits, the morrow after the sabbath
+    ('canon','leviticus',23,10,'canon','exodus',23,19,'free',
+     E'*The first of the firstfruits of thy land thou shalt bring into the house of Yahuah Elohayka (the LORD thy God)* (Exodus 23:19). The wave sheaf of Leviticus 23:10 — *ye shall bring a sheaf of the firstfruits of your harvest unto the priest* — keeps the law of the firstfruits: the first of the harvest given to Yahuah before any is eaten.'),
+    ('canon','leviticus',23,11,'canon','1-corinthians',15,20,'free',
+     E'*But now is Messiah (Christ) risen from the dead, and become the firstfruits of them that slept* (1 Corinthians 15:20). The sheaf waved *on the morrow after the sabbath* (Leviticus 23:11) is the Formed Son risen the first day of the week — *the firstfruits of them that slept*, the first of the resurrection harvest presented before Yahuah.'),
+    ('canon','leviticus',23,11,'canon','1-corinthians',15,23,'free',
+     E'*But every man in his own order: Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming* (1 Corinthians 15:23). The waved firstfruit guarantees the whole harvest; *Messiah (Christ) the firstfruits* (Leviticus 23:11''s sheaf) is followed by *they that are Messiah''s... at his coming* — the rest of the harvest in its order.'),
+    ('canon','leviticus',23,14,'canon','romans',11,16,'free',
+     E'*For if the firstfruit be holy, the lump is also holy: and if the root be holy, so are the branches* (Romans 11:16). The principle of the firstfruits — that until the sheaf is offered *ye shall eat neither bread, nor parched corn, nor green ears* (Leviticus 23:14) — is the apostle''s ground for the two-house olive tree: the holy firstfruit sanctifies the whole lump, the holy root the branches.'),
+
+    -- Thread 4: the Feast of Weeks — the Spirit poured at Shavuot  [extras]
+    ('canon','leviticus',23,16,'canon','exodus',34,22,'free',
+     E'*And thou shalt observe the feast of weeks, of the firstfruits of wheat harvest, and the feast of ingathering at the year''s end* (Exodus 34:22). The fifty-day count of Leviticus 23:16 — *unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering* — is *the feast of weeks, of the firstfruits of wheat harvest*, an appointed time commanded again in the Torah.'),
+    ('canon','leviticus',23,16,'canon','deuteronomy',16,10,'free',
+     E'*And thou shalt keep the feast of weeks unto Yahuah Elohayka (the LORD thy God) with a tribute of a freewill offering of thine hand, which thou shalt give unto Yahuah Elohayka (the LORD thy God), according as Yahuah Elohayka (the LORD thy God) hath blessed thee* (Deuteronomy 16:10). The Feast of Weeks numbered in Leviticus 23:16 is commanded for all generations — *keep the feast of weeks unto Yahuah* — a freewill response to His harvest blessing.'),
+    ('canon','leviticus',23,22,'canon','deuteronomy',16,11,'free',
+     E'*And thou shalt rejoice before Yahuah Elohayka (the LORD thy God), thou, and thy son, and thy daughter... and the Levite that is within thy gates, and the stranger, and the fatherless, and the widow, that are among you* (Deuteronomy 16:11). The gleaning law fixed to this feast — *thou shalt leave them unto the poor, and to the stranger* (Leviticus 23:22) — is the same heart: the harvest joy includes *the stranger, and the fatherless, and the widow*, the open hand at Shavuot.'),
+    ('canon','leviticus',23,17,'canon','acts',2,1,'free',
+     E'*And when the day of Pentecost was fully come, they were all with one accord in one place* (Acts 2:1). Pentecost is the fiftieth day, the Feast of Weeks of Leviticus 23:16-17 *fully come*; on this appointed time the two leavened wave loaves — *baken with leaven... the firstfruits unto Yahuah (LORD)* (Leviticus 23:17) — find their substance, a harvest of people gathered.'),
+    ('canon','leviticus',23,17,'canon','acts',2,4,'free',
+     E'*And they were all filled with the Ruach HaKodesh (Holy Spirit), and began to speak with other tongues, as the Spirit gave them utterance* (Acts 2:4). The two wave loaves *baken with leaven* (Leviticus 23:17) — the only leavened firstfruit offering — are the gathered firstfruits of redeemed people, still bearing the leaven of their flesh, into whom the Ruach HaKodesh is poured at Shavuot.'),
+    ('canon','leviticus',23,17,'jubilees','jubilees',6,21,'extras',
+     E'*For it is the feast of weeks and the feast of first-fruits: this feast is twofold and of a double nature: according to what is written and engraven concerning it celebrate it* (Jubilees 6:21). Jubilees confirms the very fusion of Leviticus 23 — the count of weeks (23:15-16) and the wave loaves of *the firstfruits unto Yahuah (LORD)* (23:17) — naming Shavuot *twofold*, the feast of weeks and of firstfruits, written and engraven on the heavenly tables, a standing commandment.'),
+
+    -- Thread 5: the Feast of Trumpets — the last trump and the ingathering
+    ('canon','leviticus',23,24,'canon','numbers',29,1,'free',
+     E'*And in the seventh month, on the first day of the month, ye shall have an holy convocation; ye shall do no servile work: it is a day of blowing the trumpets unto you* (Numbers 29:1). The appointed time of Leviticus 23:24 — *in the seventh month, in the first day of the month... a memorial of blowing of trumpets* — is set again in the order of offerings, *a day of blowing the trumpets*, the alarm sounded over the people.'),
+    ('canon','leviticus',23,24,'canon','joel',2,1,'free',
+     E'*Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of Yahuah (LORD) cometh, for it is nigh at hand* (Joel 2:1). The *blowing of trumpets* of Leviticus 23:24 becomes the prophet''s summons — the trumpet of Zion heralding *the day of Yahuah*, the appointed time pointing to the day of reckoning.'),
+    ('canon','leviticus',23,24,'canon','1-thessalonians',4,16,'free',
+     E'*For Yahuah (Lord) himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16). The *memorial of blowing of trumpets* (Leviticus 23:24) reaches forward to *the trump of Elohim* at which the dead rise — the Feast of Trumpets fulfilled in the resurrection-gathering.'),
+    ('canon','leviticus',23,24,'canon','1-corinthians',15,52,'free',
+     E'*In a moment, in the twinkling of an eye, at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible, and we shall be changed* (1 Corinthians 15:52). *At the last trump* the dead are raised — the appointed *blowing of trumpets* of Leviticus 23:24 filled in the one ingathering, the trumpet that wakes the sleeping.'),
+    ('canon','leviticus',23,24,'canon','matthew',24,31,'free',
+     E'*And he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds, from one end of heaven to the other* (Matthew 24:31). The trumpet-feast of Leviticus 23:24 is the great trumpet that *gather[s] together his elect from the four winds* — the scattered two-house people regathered, the ingathering the Day of Trumpets foretells.'),
+
+    -- Thread 6: the Day of Atonement — afflict your souls, a sabbath of rest
+    ('canon','leviticus',23,27,'canon','leviticus',16,29,'free',
+     E'*And this shall be a statute for ever unto you: that in the seventh month, on the tenth day of the month, ye shall afflict your souls, and do no work at all, whether it be one of your own country, or a stranger that sojourneth among you* (Leviticus 16:29). The Day of Atonement set in the feast calendar — *the tenth day of this seventh month... ye shall afflict your souls* (Leviticus 23:27) — is the same *statute for ever* given in the atonement rite of Leviticus 16: the one annual day of affliction and cleansing.'),
+    ('canon','leviticus',23,27,'canon','leviticus',16,30,'free',
+     E'*For on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins before Yahuah (LORD)* (Leviticus 16:30). The appointed *day of atonement* of Leviticus 23:27 is the day *the priest [makes] an atonement for you, to cleanse you* — the feast naming the cleansing the Formed Son fulfils.'),
+    ('canon','leviticus',23,28,'canon','hebrews',9,11,'free',
+     E'*But Messiah (Christ) being come an high priest of good things to come, by a greater and more perfect tabernacle, not made with hands, that is to say, not of this building* (Hebrews 9:11). The Day of Atonement of Leviticus 23:28 — *a day of atonement, to make an atonement for you before Yahuah Elohaychem (the LORD your God)* — is filled by the Formed Son, the great High Priest of the greater tabernacle.'),
+    ('canon','leviticus',23,28,'canon','hebrews',9,12,'free',
+     E'*Neither by the blood of goats and calves, but by his own blood he entered in once into the holy place, having obtained eternal redemption for us* (Hebrews 9:12). The annual atonement of Leviticus 23:28 is fulfilled in the Formed Son entering *once* with *his own blood* — the eternal redemption the yearly Day of Atonement only foreshadowed.'),
+    ('canon','leviticus',23,29,'canon','hebrews',10,19,'free',
+     E'*Having therefore, brethren, boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19). On the Day of Atonement *whatsoever soul... that shall not be afflicted... shall be cut off* (Leviticus 23:29) — the people stood outside while the high priest alone entered; now *boldness to enter into the holiest by the blood of Yahusha* is opened, the affliction answered.'),
+    ('canon','leviticus',23,32,'canon','hebrews',10,22,'free',
+     E'*Let us draw near with a true heart in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water* (Hebrews 10:22). The high sabbath of Leviticus 23:32 — *a sabbath of rest, and ye shall afflict your souls... from even unto even* — is the day of cleansing now lived as the *true heart* drawn near, *hearts sprinkled* by the blood of the Formed Son.'),
+
+    -- Thread 7: the Feast of Tabernacles — Elohim dwelling with men  [extras]
+    ('canon','leviticus',23,34,'canon','zechariah',14,16,'free',
+     E'*And it shall come to pass, that every one that is left of all the nations which came against Jerusalem shall even go up from year to year to worship the King, Yahuah Tseva''ot (LORD of hosts), and to keep the feast of tabernacles* (Zechariah 14:16). Far future from Sinai, the prophet sees *all the nations* still keeping the very feast of Leviticus 23:34 — *the feast of tabernacles* — proof the appointed time stands into the age to come, not abolished.'),
+    ('canon','leviticus',23,42,'canon','nehemiah',8,14,'free',
+     E'*And they found written in the law which Yahuah (LORD) had commanded by Moses, that the children of Yashar''el (Israel) should dwell in booths in the feast of the seventh month* (Nehemiah 8:14). The returned remnant *found written* the command of Leviticus 23:42 — *ye shall dwell in booths seven days* — and kept it with *very great gladness*; the feast recovered, not retired.'),
+    ('canon','leviticus',23,34,'canon','john',7,2,'free',
+     E'*Now the Yahudim''s (Jews'') feast of tabernacles was at hand* (John 7:2). The Formed Son goes up to keep the very feast of Leviticus 23:34 — *the feast of tabernacles* — and on its great day reveals himself as its substance.'),
+    ('canon','leviticus',23,36,'canon','john',7,37,'free',
+     E'*In the last day, that great day of the feast, Yahusha (Jesus) stood and cried, saying, If any man thirst, let him come unto me, and drink* (John 7:37). On *the eighth day... a solemn assembly* of Leviticus 23:36 — the great day of Tabernacles, when water was poured at the altar — the Formed Son cries *if any man thirst, let him come unto me, and drink*, naming himself the living water the feast foreshadows.'),
+    ('canon','leviticus',23,36,'canon','john',7,38,'free',
+     E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water* (John 7:38). At the eighth-day assembly of Leviticus 23:36 the Formed Son promises *rivers of living water* — the Spirit poured out, the ingathering joy of Tabernacles filled.'),
+    ('canon','leviticus',23,43,'canon','revelation',21,3,'free',
+     E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The dwelling in booths of Leviticus 23:43 — a memorial that Yahuah *made the children of Yashar''el (Israel) to dwell in booths* — reaches its consummation when *the tabernacle of Elohim is with men*: Elohim tabernacling among His people for ever.'),
+    ('canon','leviticus',23,34,'jubilees','jubilees',16,21,'extras',
+     E'*And he built booths for himself and for his servants on this festival, and he was the first to celebrate the feast of tabernacles on the earth* (Jubilees 16:21). Jubilees traces the feast of Leviticus 23:34 back beyond Sinai to Abraham — *the first to celebrate the feast of tabernacles on the earth* — the appointed time rooted in the fathers, kept by the seed of promise.'),
+    ('canon','leviticus',23,41,'jubilees','jubilees',16,29,'extras',
+     E'*For this reason it is ordained on the heavenly tables concerning Yashar''el (Israel), that they shall celebrate the feast of tabernacles seven days with joy, in the seventh month, acceptable before Yahuah (God)–a statute for ever throughout their generations every year* (Jubilees 16:29). The same *statute for ever* of Leviticus 23:41 — *ye shall keep it a feast unto Yahuah (LORD) seven days... a statute for ever in your generations* — is written *on the heavenly tables*, the feast of tabernacles ordained for ever, never abolished.'),
+
+    -- Thread 8: these are the feasts of Yahuah — a shadow still standing
+    ('canon','leviticus',23,37,'canon','colossians',2,16,'free',
+     E'*Let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days* (Colossians 2:16). The summary of Leviticus 23:37 — *these are the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations* — is what the apostle defends: let no man condemn you for keeping the holyday, the new moon, the sabbath; the feasts are not the problem but the practice.'),
+    ('canon','leviticus',23,4,'canon','colossians',2,17,'free',
+     E'*Which are a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:17). *These are the feasts of Yahuah (LORD)... which ye shall proclaim in their seasons* (Leviticus 23:4) are *a shadow of things to come* — a present-tense, STANDING shadow whose substance, whose *body*, is the Formed Son; a shadow cast by a real body is not abolished, it is fulfilled and still kept.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =========================================================================================
+-- C. cross_reference_threads INSERT
+-- =========================================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times', E'The Sabbath of Rest — the First of the Appointed Times', E'Leviticus 23 opens the feasts of Yahuah with the Sabbath: *Six days shall work be done: but the seventh day is the sabbath of rest, an holy convocation; ye shall do no work therein: it is the sabbath of Yahuah (LORD) in all your dwellings* (Leviticus 23:3). It heads the list because it is the oldest appointment of all — *and on the seventh day Elohim (God) ended his work... and he rested* (Genesis 2:2), and *Elohim (God) blessed the seventh day, and sanctified it* (Genesis 2:3): a creation ordinance, woven into the world before there was a nation. The Ten Words engrave it on stone — *Remember the sabbath day, to keep it holy* (Exodus 20:8) — grounded in creation: *for in six days Yahuah (LORD) made heaven and earth... and rested the seventh day* (Exodus 20:11). The prophet calls it *a delight, the holy of Yahuah (LORD), honourable* (Isaiah 58:13), with the *heritage of Jacob* promised to those who keep it (Isaiah 58:14). The Formed Son does not abolish it but restores it — *the sabbath was made for man, and not man for the sabbath* (Mark 2:27) — and claims it: *the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:28). And it still stands: *there remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9), a Sabbath-keeping that reaches forward to its rest.',
+       sv.verse_id, ev.verse_id, 'free', 23250
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover', E'The Passover and Unleavened Bread — Messiah Our Passover', E'*In the fourteenth day of the first month at even is the LORD''S passover* (Leviticus 23:5), *and on the fifteenth day of the same month is the feast of unleavened bread unto Yahuah (LORD): seven days ye must eat unleavened bread* (Leviticus 23:6). The feast keeps the night of the Exodus — *it is the LORD''S passover* (Exodus 12:11), the night Yahuah said *I will pass over you* by the blood-token (Exodus 12:13). The apostle names the substance: *even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7); and rather than ending the feast, he commands it — *therefore let us keep the feast... with the unleavened bread of sincerity and truth* (1 Corinthians 5:8). The Formed Son kept it — *with desire I have desired to eat this passover with you before I suffer* (Luke 22:15) — and died on its day: *it was the preparation of the passover* (John 19:14), the unbroken Lamb, *a bone of him shall not be broken* (John 19:36). Messiah our Passover, the spring feast filled.',
+       sv.verse_id, ev.verse_id, 'free', 23253
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-wave-sheaf-of-the-firstfruits-the-morrow-after-the-sabbath', E'The Wave Sheaf of the Firstfruits — the Morrow After the Sabbath', E'*When ye be come into the land which I give unto you, and shall reap the harvest thereof, then ye shall bring a sheaf of the firstfruits of your harvest unto the priest* (Leviticus 23:10), and *he shall wave the sheaf before Yahuah (LORD)... on the morrow after the sabbath the priest shall wave it* (Leviticus 23:11). None eat of the harvest until this offering — *ye shall eat neither bread, nor parched corn, nor green ears, until the selfsame day that ye have brought an offering* (Leviticus 23:14). The law of *the first of the firstfruits of thy land* (Exodus 23:19) is fulfilled in the Formed Son raised on the first day of the week: *now is Messiah (Christ) risen from the dead, and become the firstfruits of them that slept* (1 Corinthians 15:20) — *Messiah (Christ) the firstfruits; afterward they that are Messiah''s (Christ''s) at his coming* (1 Corinthians 15:23). The waved firstfruit sanctifies the whole harvest: *if the firstfruit be holy, the lump is also holy: and if the root be holy, so are the branches* (Romans 11:16) — the ground of the two-house olive tree.',
+       sv.verse_id, ev.verse_id, 'free', 23256
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot', E'The Feast of Weeks — the Spirit Poured at Shavuot', E'*And ye shall count unto you from the morrow after the sabbath... seven sabbaths shall be complete: even unto the morrow after the seventh sabbath shall ye number fifty days; and ye shall offer a new meat offering unto Yahuah (LORD)* (Leviticus 23:15-16). The new offering is unique — *two wave loaves... they shall be baken with leaven; they are the firstfruits unto Yahuah (LORD)* (Leviticus 23:17), the only leavened firstfruit, a figure of a harvest of redeemed people still bearing the leaven of flesh. This is *the feast of weeks, of the firstfruits of wheat harvest* (Exodus 34:22), to be kept with rejoicing that gathers *the stranger, and the fatherless, and the widow* (Deuteronomy 16:11) — the same heart as the gleaning law fixed to it: *thou shalt leave them unto the poor, and to the stranger* (Leviticus 23:22). On the fiftieth day it is filled: *when the day of Pentecost was fully come* (Acts 2:1), *they were all filled with the Ruach HaKodesh (Holy Spirit)* (Acts 2:4) — the Spirit poured at Shavuot, the two loaves gathered as the firstfruits of people. Jubilees confirms the fusion: *it is the feast of weeks and the feast of first-fruits: this feast is twofold and of a double nature* (Jubilees 6:21), written on the heavenly tables, a standing commandment.',
+       sv.verse_id, ev.verse_id, 'extras', 23259
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering', E'The Feast of Trumpets — the Last Trump and the Ingathering', E'*In the seventh month, in the first day of the month, shall ye have a sabbath, a memorial of blowing of trumpets, an holy convocation* (Leviticus 23:24). The feast is set again in the Torah — *a day of blowing the trumpets unto you* (Numbers 29:1) — and becomes the prophet''s summons: *blow ye the trumpet in Zion, and sound an alarm in my holy mountain... for the day of Yahuah (LORD) cometh* (Joel 2:1). It reaches forward to the great gathering: *Yahuah (Lord) himself shall descend from heaven with a shout... and with the trump of Elohim (God): and the dead in Messiah (Christ) shall rise first* (1 Thessalonians 4:16); *at the last trump: for the trumpet shall sound, and the dead shall be raised incorruptible* (1 Corinthians 15:52); *he shall send his angels with a great sound of a trumpet, and they shall gather together his elect from the four winds* (Matthew 24:31). The Day of Trumpets foretells the one ingathering — the scattered two-house people regathered at the sound of the trumpet.',
+       sv.verse_id, ev.verse_id, 'free', 23262
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest', E'The Day of Atonement — Afflict Your Souls, a Sabbath of Rest', E'*Also on the tenth day of this seventh month there shall be a day of atonement: it shall be an holy convocation unto you; and ye shall afflict your souls* (Leviticus 23:27); *it shall be unto you a sabbath of rest, and ye shall afflict your souls... from even unto even, shall ye celebrate your sabbath* (Leviticus 23:32), and whoever is not afflicted *shall be cut off from among his people* (Leviticus 23:29). This is the appointed day of the great atonement rite — *a statute for ever... ye shall afflict your souls* (Leviticus 16:29), *for on that day shall the priest make an atonement for you, to cleanse you, that ye may be clean from all your sins* (Leviticus 16:30). The Formed Son fills it: *Messiah (Christ) being come an high priest of good things to come, by a greater and more perfect tabernacle* (Hebrews 9:11), who *by his own blood... entered in once into the holy place, having obtained eternal redemption* (Hebrews 9:12). What the people could only stand outside of is now opened — *boldness to enter into the holiest by the blood of Yahusha (Jesus)* (Hebrews 10:19) — that we *draw near with a true heart... having our hearts sprinkled* (Hebrews 10:22). Yom Kippur, the day of cleansing, fulfilled and still its high sabbath.',
+       sv.verse_id, ev.verse_id, 'free', 23265
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men', E'The Feast of Tabernacles — Elohim Dwelling With Men', E'*The fifteenth day of this seventh month shall be the feast of tabernacles for seven days unto Yahuah (LORD)* (Leviticus 23:34), with the eighth-day *solemn assembly* (Leviticus 23:36); *ye shall dwell in booths seven days... that your generations may know that I made the children of Yashar''el (Israel) to dwell in booths, when I brought them out of the land of Egypt* (Leviticus 23:42-43), rejoicing before Yahuah seven days. The prophet sees it kept into the age to come — *all the nations... shall even go up from year to year... to keep the feast of tabernacles* (Zechariah 14:16); the returned remnant recovered it when they *found written in the law... that the children of Yashar''el (Israel) should dwell in booths* (Nehemiah 8:14). The Formed Son keeps it (*the feast of tabernacles was at hand*, John 7:2) and on its great day reveals himself as its substance: *if any man thirst, let him come unto me, and drink* (John 7:37), *out of his belly shall flow rivers of living water* (John 7:38). And it reaches its consummation: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — the ingathering, Elohim tabernacling with His people for ever. Jubilees roots it in the fathers — Abraham *was the first to celebrate the feast of tabernacles on the earth* (Jubilees 16:21), *ordained on the heavenly tables... a statute for ever* (Jubilees 16:29).',
+       sv.verse_id, ev.verse_id, 'extras', 23268
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=33
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=43
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-23-these-are-the-feasts-of-yahuah-a-shadow-still-standing', E'These Are the Feasts of Yahuah — a Shadow Still Standing', E'The chapter frames the whole list as Yahuah''s own: *these are the feasts of Yahuah (LORD), even holy convocations, which ye shall proclaim in their seasons* (Leviticus 23:4); *these are the feasts of Yahuah (LORD), which ye shall proclaim to be holy convocations* (Leviticus 23:37); *and Moses declared unto the children of Yashar''el (Israel) the feasts of Yahuah (LORD)* (Leviticus 23:44). These are not human invention nor a defunct rite but Yahuah''s appointed times, *my feasts* (Leviticus 23:2). The apostle defends exactly this: *let no man therefore judge you in meat, or in drink, or in respect of an holyday, or of the new moon, or of the sabbath days* (Colossians 2:16) — the keeping is not the error, the condemning is. And he names what they are: *which are a shadow of things to come; but the body is of Messiah (Christ)* (Colossians 2:17) — a present-tense, standing shadow whose substance is the Formed Son. A shadow cast by a real body is not abolished; it is fulfilled and still kept, the calendar of redemption pointing always to him.',
+       sv.verse_id, ev.verse_id, 'free', 23271
+  FROM _s311_lev23_lookup sv, _s311_lev23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=23 AND ev.verse_number=44
+ON CONFLICT (slug) DO NOTHING;
+
+-- =========================================================================================
+-- D. cross_reference_thread_members INSERT (SAFE VERBOSE — one INSERT per member)
+-- =========================================================================================
+
+-- Thread 1: the Sabbath
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 2:2 — *he rested on the seventh day* — the Sabbath rooted in creation, before there was a nation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 2:3 — *blessed the seventh day, and sanctified it* — the holiness already set into the day.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 20:8 — *Remember the sabbath day* — engraven in the Ten Words on stone.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Exodus 20:11 — *in six days Yahuah (LORD) made heaven and earth... and rested the seventh day* — the creation ground of the command.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Isaiah 58:13 — *call the sabbath a delight, the holy of Yahuah (LORD)* — the Sabbath still binding and honoured through the prophets.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Isaiah 58:14 — *feed thee with the heritage of Jacob* — blessing and the two-house portion for those who keep it.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=58 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Mark 2:27 — *the sabbath was made for man* — the Formed Son restores its purpose, not abolishes it.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Mark 2:28 — *the Son of Adam is Yahuah (Lord) also of the sabbath* — he claims the day he gave.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'Hebrews 4:9 — *there remaineth therefore a rest [sabbatismos] to the people of Elohim (God)* — the Sabbath still remaining, reaching to its consummation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-sabbath-of-rest-the-first-of-the-appointed-times'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Passover and Unleavened Bread
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 12:11 — *it is the LORD''S passover* — the night of the Exodus the feast keeps.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 12:13 — *when I see the blood, I will pass over you* — the blood-token that names the feast.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 5:7 — *Messiah (Christ) our passover is sacrificed for us* — the Lamb of the feast named.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 5:8 — *let us keep the feast... with the unleavened bread of sincerity and truth* — kept, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Luke 22:15 — *with desire I have desired to eat this passover with you* — the Formed Son keeps the very feast.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'John 19:14 — *the preparation of the passover* — he dies at the hour the lambs are made ready.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'John 19:36 — *A bone of him shall not be broken* — the Passover ordinance fulfilled in the unbroken Lamb.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-passover-and-unleavened-bread-messiah-our-passover'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the wave sheaf of the firstfruits
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 23:19 — *the first of the firstfruits of thy land thou shalt bring into the house of Yahuah* — the firstfruits law the wave sheaf keeps.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=10
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-wave-sheaf-of-the-firstfruits-the-morrow-after-the-sabbath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Corinthians 15:20 — *the firstfruits of them that slept* — the Formed Son raised the morrow after the sabbath.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-wave-sheaf-of-the-firstfruits-the-morrow-after-the-sabbath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 15:23 — *Messiah (Christ) the firstfruits; afterward they that are Messiah''s* — the harvest order.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=11
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-wave-sheaf-of-the-firstfruits-the-morrow-after-the-sabbath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 11:16 — *if the firstfruit be holy, the lump is also holy* — the firstfruit sanctifying the two-house olive tree.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-wave-sheaf-of-the-firstfruits-the-morrow-after-the-sabbath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: the Feast of Weeks (Shavuot)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 34:22 — *the feast of weeks, of the firstfruits of wheat harvest* — Shavuot commanded again in the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 16:10 — *keep the feast of weeks unto Yahuah* — a freewill response to His harvest blessing.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 16:11 — *the stranger, and the fatherless, and the widow* — the open hand the gleaning law of 23:22 enacts.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=22
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 2:1 — *when the day of Pentecost was fully come* — the fiftieth day, Shavuot, fully come.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Acts 2:4 — *filled with the Ruach HaKodesh (Holy Spirit)* — the two leavened loaves = the harvest of people, the Spirit poured at Shavuot.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Jubilees 6:21 — *the feast of weeks and the feast of first-fruits... twofold* — the same fusion, written on the heavenly tables.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=6 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-weeks-the-spirit-poured-at-shavuot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: the Feast of Trumpets
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 29:1 — *a day of blowing the trumpets unto you* — the feast set again in the order of offerings.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=24
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=29 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joel 2:1 — *blow ye the trumpet in Zion... for the day of Yahuah cometh* — the trumpet heralding the day of reckoning.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=24
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Thessalonians 4:16 — *the trump of Elohim (God): and the dead in Messiah shall rise first* — the Day of Trumpets fulfilled in resurrection.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=24
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 15:52 — *at the last trump... the dead shall be raised incorruptible* — the trumpet that wakes the sleeping.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=24
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Matthew 24:31 — *a great sound of a trumpet... gather together his elect* — the scattered two-house people regathered.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=24
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-trumpets-the-last-trump-and-the-ingathering'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: the Day of Atonement
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 16:29 — *the tenth day of the month, ye shall afflict your souls* — the atonement rite the feast names.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=27
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 16:30 — *the priest make an atonement for you, to cleanse you* — the cleansing the day accomplishes.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=27
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=16 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 9:11 — *Messiah (Christ)... an high priest of good things to come* — the great High Priest who fills the day.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=28
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 9:12 — *by his own blood he entered in once* — the eternal redemption the yearly day foreshadowed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=28
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 10:19 — *boldness to enter into the holiest by the blood of Yahusha (Jesus)* — the affliction answered, the way opened.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=29
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Hebrews 10:22 — *draw near with a true heart... having our hearts sprinkled* — the day of cleansing now lived.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=32
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-day-of-atonement-afflict-your-souls-a-sabbath-of-rest'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 7: the Feast of Tabernacles
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Zechariah 14:16 — *all the nations... go up... to keep the feast of tabernacles* — the feast kept into the age to come.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=34
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Nehemiah 8:14 — *found written in the law... should dwell in booths* — the remnant recovers, not retires, the feast.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=42
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'John 7:2 — *the feast of tabernacles was at hand* — the Formed Son goes up to keep the very feast.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=34
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'John 7:37 — *if any man thirst, let him come unto me, and drink* — the great day of the feast, he names himself its substance.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=36
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'John 7:38 — *out of his belly shall flow rivers of living water* — the Spirit poured, the ingathering joy of Sukkot.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=36
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Revelation 21:3 — *the tabernacle of Elohim (God) is with men, and he will dwell with them* — the consummation of the dwelling in booths.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=43
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Jubilees 16:21 — Abraham *was the first to celebrate the feast of tabernacles on the earth* — the feast rooted in the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=34
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Jubilees 16:29 — *ordained on the heavenly tables... a statute for ever* — the feast of tabernacles ordained for ever, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=41
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=16 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-the-feast-of-tabernacles-elohim-dwelling-with-men'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 8: these are the feasts of Yahuah — a shadow still standing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Colossians 2:16 — *let no man therefore judge you... of the sabbath days* — the keeping is not the error, the condemning is.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=37
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-these-are-the-feasts-of-yahuah-a-shadow-still-standing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Colossians 2:17 — *a shadow of things to come; but the body is of Messiah (Christ)* — a standing shadow whose substance is the Formed Son, fulfilled and still kept.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s311_lev23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=2 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-23-these-are-the-feasts-of-yahuah-a-shadow-still-standing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_24.sql (Leviticus 24) -----
+-- Book: Leviticus  Chapter: 24  Tag: lev24  Session prefix: s311
+-- Sort band base: 23275, step 3  (threads at 23275, 23278, 23281, 23284)
+-- Temp view: _s311_lev24_lookup
+--
+-- FRAMING: Leviticus 24 sets two perpetual ministries before Yahuah (the continual
+--   lamp on the pure candlestick, the twelve loaves of shewbread on the pure table),
+--   then turns to the holiness of the NAME (the blasphemer stoned) and the one
+--   measured law of proportionate justice for stranger and homeborn alike. Lens:
+--   the continual light foreshadows the Formed Son, the light of the world; the
+--   twelve loaves ARE the twelve tribes set before Yahuah by an everlasting covenant
+--   (the two-house people held continually before His face); the Name is holy and
+--   guarded; the proportionate judicial measure (eye for eye) is the courtroom rule
+--   of equity that Yahusha (Jesus) reframes for PERSONAL non-retaliation, never
+--   abolishing — and the ONE manner of law for stranger and homeborn is the one-law
+--   inclusion of the covenant, not a separate gospel-law.
+--
+-- Leviticus 24 coverage:
+--   v.1-4 pure oil / lamps burn continually / pure candlestick before Yahuah:
+--        NT:     John 8:12, Revelation 1:12, 1:13, 1:20  -> thread 1
+--        Extras: none warranted (clean canon witnesses chosen)
+--        Tanakh: Exodus 27:20, 27:21  -> thread 1
+--   v.5-9 twelve cakes / two rows / pure table / shewbread / everlasting covenant:
+--        NT:     Matthew 12:3, 12:4  -> thread 2
+--        Extras: none warranted
+--        Tanakh: Exodus 25:30  -> thread 2
+--   v.10-16,23 the blasphemer / blasphemeth the name of Yahuah / stoned:
+--        NT:     Matthew 26:65, 26:66, John 10:33  -> thread 3
+--        Extras: none warranted
+--        Tanakh: Exodus 20:7  -> thread 3
+--   v.17-22 life for life / eye for eye / one manner of law for stranger and homeborn:
+--        NT:     Matthew 5:38, 5:39  -> thread 4
+--        Extras: none warranted
+--        Tanakh: Exodus 21:23, 21:24, Deuteronomy 19:21  -> thread 4
+--
+-- THREADS (slug -> target libraries):
+--   1. leviticus-24-the-lamp-that-burns-continually-before-yahuah   (Tanakh + NT)   free
+--   2. leviticus-24-the-shewbread-twelve-loaves-before-yahuah       (Tanakh + NT)   free
+--   3. leviticus-24-he-that-blasphemeth-the-name-of-yahuah          (Tanakh + NT)   free
+--   4. leviticus-24-one-manner-of-law-for-stranger-and-homeborn     (Tanakh + NT)   free
+--
+-- CONTESTED VERSE FRAMING: v.20 (eye for eye) — quoted by Yahusha in Matthew 5:38-39.
+--   Framed as Yahusha reframing the courtroom measure of proportionate justice for
+--   PERSONAL non-retaliation ("resist not evil"), NOT abolishing the judicial
+--   proportion that restrains private vengeance. v.22 (one manner of law) framed as
+--   the one-law inclusion: stranger and homeborn under the SAME covenant Torah.
+--
+-- All members canon (Tanakh + NT) -> every thread tier_required = 'free'.
+
+CREATE TEMP VIEW _s311_lev24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the lamp that burns continually before Yahuah (v.2-4)
+    ('canon','leviticus',24,2,'canon','exodus',27,20,'free',
+      E'*And thou shalt command the children of Yashar''el (Israel), that they bring thee pure oil olive beaten for the light, to cause the lamp to burn always.* (Exodus 27:20) — the original charge of the continual light, repeated word for word in *that they bring unto thee pure oil olive beaten for the light, to cause the lamps to burn continually* (Leviticus 24:2). The same pure oil, the same unbroken flame before the face of Yahuah.'),
+    ('canon','leviticus',24,3,'canon','exodus',27,21,'free',
+      E'*In the tabernacle of the congregation without the vail, which is before the testimony, Aaron and his sons shall order it from evening to morning before Yahuah (LORD): it shall be a statute for ever unto their generations on the behalf of the children of Yashar''el (Israel).* (Exodus 27:21) — the lateral twin to *Without the vail of the testimony... shall Aaron order it from the evening unto the morning before Yahuah (LORD) continually: it shall be a statute for ever in your generations* (Leviticus 24:3). The light is tended perpetually, a statute for ever.'),
+    ('canon','leviticus',24,2,'canon','john',8,12,'free',
+      E'*Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life.* (John 8:12) — the perpetual lamp foreshadows the Formed Son, the light of the world. As the priest causes *the lamps to burn continually* (Leviticus 24:2) before Yahuah, so Yahusha (Jesus) is the unfailing light by which the covenant people walk and are not in darkness.'),
+    ('canon','leviticus',24,4,'canon','revelation',1,12,'free',
+      E'*And I turned to see the voice that spake with me. And being turned, I saw seven golden candlesticks* (Revelation 1:12) — the pure candlestick of Leviticus 24:4, *He shall order the lamps upon the pure candlestick before Yahuah (LORD) continually*, blossoms into the seven golden candlesticks among which the Son of Adam stands. The tabernacle lamp is the type; the lamps among the assemblies the fulfilment.'),
+    ('canon','leviticus',24,4,'canon','revelation',1,13,'free',
+      E'*And in the midst of the seven candlesticks one like unto the Son of Adam, clothed with a garment down to the foot, and girt about the paps with a golden girdle.* (Revelation 1:13) — the Formed Son stands in the midst of the lamps. The pure candlestick that Aaron orders *before Yahuah (LORD) continually* (Leviticus 24:4) reaches its end in the one like the Son of Adam walking among the lampstands, Himself the light the oil only figured.'),
+    ('canon','leviticus',24,4,'canon','revelation',1,20,'free',
+      E'*The mystery of the seven stars which thou sawest in my right hand, and the seven golden candlesticks. The seven stars are the angels of the seven churches: and the seven candlesticks which thou sawest are the seven churches.* (Revelation 1:20) — the lampstand is interpreted: the candlesticks are the gathered assemblies. The single pure candlestick of Leviticus 24:4 standing *before Yahuah (LORD) continually* opens into the many lamps of the covenant people kept burning before His face.'),
+
+    -- THREAD 2: the shewbread, twelve loaves before Yahuah (v.5-9)
+    ('canon','leviticus',24,6,'canon','exodus',25,30,'free',
+      E'*And thou shalt set upon the table shewbread before me alway.* (Exodus 25:30) — the founding command of the bread of the Presence, set out in detail here: *And thou shalt set them in two rows, six on a row, upon the pure table before Yahuah (LORD)* (Leviticus 24:6). Twelve loaves, the twelve tribes, held continually before the face of Yahuah.'),
+    ('canon','leviticus',24,8,'canon','matthew',12,3,'free',
+      E'*But he said unto them, Have ye not read what David did, when he was an hungred, and they that were with him* (Matthew 12:3) — Yahusha (Jesus) appeals to the shewbread of *an everlasting covenant* (Leviticus 24:8) to teach mercy over rigid ritual, sending the accusers back to the very Torah text. The bread set in order *Every sabbath... before Yahuah (LORD) continually* (Leviticus 24:8) is the case He reasons from.'),
+    ('canon','leviticus',24,9,'canon','matthew',12,4,'free',
+      E'*How he entered into the house of Elohim (God), and did eat the shewbread, which was not lawful for him to eat, neither for them which were with him, but only for the priests?* (Matthew 12:4) — Yahusha names exactly what Leviticus 24:9 ordains, *And it shall be Aaron''s and his sons''; and they shall eat it in the holy place: for it is most holy unto him*. The bread reserved for the priests is the very loaf David ate, the Torah''s own witness that mercy does not break the law but fulfils its heart.'),
+
+    -- THREAD 3: he that blasphemeth the name of Yahuah (v.11-16,23)
+    ('canon','leviticus',24,16,'canon','exodus',20,7,'free',
+      E'*Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain; for Yahuah (LORD) will not hold him guiltless that taketh his name in vain.* (Exodus 20:7) — the third word of the covenant, guarding the holiness of the Name, given its gravest sanction here: *And he that blasphemeth the name of Yahuah (LORD), he shall surely be put to death* (Leviticus 24:16). The Name is holy, and to profane it is no light thing.'),
+    ('canon','leviticus',24,16,'canon','matthew',26,65,'free',
+      E'*Then the high priest rent his clothes, saying, He hath spoken blasphemy; what further need have we of witnesses? behold, now ye have heard his blasphemy.* (Matthew 26:65) — the charge laid against Yahusha (Jesus) at His trial is the very crime of Leviticus 24:16, *he that blasphemeth the name of Yahuah (LORD), he shall surely be put to death*. The court invokes the Torah''s capital word, though falsely, against the One who bears the Name without sin.'),
+    ('canon','leviticus',24,16,'canon','matthew',26,66,'free',
+      E'*What think ye? They answered and said, He is guilty of death.* (Matthew 26:66) — the sentence pronounced is precisely the penalty Leviticus 24:16 prescribes for blasphemy, *he shall surely be put to death... shall be put to death*. The accusers measure Him by the Torah''s own law for profaning the Name, condemning the innocent by the statute meant to honour Yahuah.'),
+    ('canon','leviticus',24,16,'canon','john',10,33,'free',
+      E'*The Yahudim (Jews) answered him, saying, For a good work we stone thee not; but for blasphemy; and because that thou, being a man, makest thyself Elohim (God).* (John 10:33) — they reach for the stones Leviticus 24:16 commands, *all the congregation shall certainly stone him... when he blasphemeth the name of Yahuah (LORD)*. They name His claim blasphemy, not seeing the Formed Son who truly bears the Name He is accused of profaning.'),
+
+    -- THREAD 4: one manner of law for stranger and homeborn (v.17-22)
+    ('canon','leviticus',24,20,'canon','exodus',21,23,'free',
+      E'*And if any mischief follow, then thou shalt give life for life* (Exodus 21:23) — the measure of proportionate justice given at Sinai, restated here: *Breach for breach, eye for eye, tooth for tooth* (Leviticus 24:20). The penalty matches the harm exactly, the courtroom rule of equity that restrains both excess and private vengeance.'),
+    ('canon','leviticus',24,20,'canon','exodus',21,24,'free',
+      E'*Eye for eye, tooth for tooth, hand for hand, foot for foot* (Exodus 21:24) — the same measured equity Leviticus 24:20 commands, *eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him again*. One covenant law of proportion, binding the judges to a just and exact recompense.'),
+    ('canon','leviticus',24,20,'canon','deuteronomy',19,21,'free',
+      E'*And thine eye shall not pity; but life shall go for life, eye for eye, tooth for tooth, hand for hand, foot for foot.* (Deuteronomy 19:21) — Moses repeats the proportionate measure a third time as the rule for the courts against the false witness. *Eye for eye, tooth for tooth* (Leviticus 24:20): the standard of judicial equity stands unbroken across the Torah.'),
+    ('canon','leviticus',24,20,'canon','matthew',5,38,'free',
+      E'*Ye have heard that it hath been said, An eye for an eye, and a tooth for a tooth* (Matthew 5:38) — Yahusha (Jesus) cites Leviticus 24:20 itself, *eye for eye, tooth for tooth*. He does not abolish the courtroom measure but takes up the principle that men had stretched into a license for private revenge.'),
+    ('canon','leviticus',24,20,'canon','matthew',5,39,'free',
+      E'*But I say unto you, That ye resist not evil: but whosoever shall smite thee on thy right cheek, turn to him the other also.* (Matthew 5:39) — Yahusha reframes the measure of *eye for eye, tooth for tooth* (Leviticus 24:20) for the PERSONAL realm: the judicial proportion that the judges must keep is not a warrant for personal retaliation. The court still measures justly; the disciple does not avenge himself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-24-the-lamp-that-burns-continually-before-yahuah',
+       E'The lamp that burns continually before Yahuah',
+       E'Leviticus 24 opens with the perpetual light: *Command the children of Yashar''el (Israel), that they bring unto thee pure oil olive beaten for the light, to cause the lamps to burn continually* (Leviticus 24:2), tended *from the evening unto the morning before Yahuah (LORD) continually* upon *the pure candlestick* (Leviticus 24:3-4). This is the same charge given at Exodus 27:20-21, *pure oil olive beaten for the light, to cause the lamp to burn always... a statute for ever*. The continual flame foreshadows the Formed Son: *I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). And in the unveiling, the lampstand opens into *seven golden candlesticks* (Revelation 1:12) with *one like unto the Son of Adam* in their midst (Revelation 1:13), interpreted as the gathered assemblies kept burning before His face (Revelation 1:20). The single pure candlestick becomes the many lamps of the covenant people.',
+       sv.verse_id, ev.verse_id, 'free', 23275
+  FROM _s311_lev24_lookup sv, _s311_lev24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=24 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-24-the-shewbread-twelve-loaves-before-yahuah',
+       E'The shewbread — twelve loaves before Yahuah',
+       E'On the pure table stand *twelve cakes* in *two rows, six on a row, upon the pure table before Yahuah (LORD)* (Leviticus 24:5-6), set in order *Every sabbath... before Yahuah (LORD) continually, being taken from the children of Yashar''el (Israel) by an everlasting covenant* (Leviticus 24:8). The twelve loaves are the twelve tribes — the whole two-house people held continually before the face of Yahuah — the bread of the Presence first commanded at *And thou shalt set upon the table shewbread before me alway* (Exodus 25:30). It is *most holy*, reserved for the priests: *they shall eat it in the holy place* (Leviticus 24:9). Yahusha (Jesus) reaches for this very ordinance to teach mercy over rigid ritual: *Have ye not read what David did, when he was an hungred* (Matthew 12:3), *and did eat the shewbread, which was not lawful for him to eat... but only for the priests?* (Matthew 12:4). The Torah''s own bread becomes His witness that mercy fulfils the law''s heart.',
+       sv.verse_id, ev.verse_id, 'free', 23278
+  FROM _s311_lev24_lookup sv, _s311_lev24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=24 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-24-he-that-blasphemeth-the-name-of-yahuah',
+       E'He that blasphemeth the name of Yahuah',
+       E'The son of the Israelitish woman *blasphemed the name of Yahuah (LORD), and cursed* (Leviticus 24:11), and the judgment is set: *he that blasphemeth the name of Yahuah (LORD), he shall surely be put to death, and all the congregation shall certainly stone him* (Leviticus 24:16). This guards the third word of the covenant, *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain* (Exodus 20:7) — the Name is holy, and to profane it is a capital breach. The deepest irony is at the trial of Yahusha (Jesus): *He hath spoken blasphemy... ye have heard his blasphemy* (Matthew 26:65), and *He is guilty of death* (Matthew 26:66). They reach for the stones Leviticus commands — *because that thou, being a man, makest thyself Elohim (God)* (John 10:33) — measuring the Formed Son who truly bears the Name by the very law meant to honour it, condemning the innocent.',
+       sv.verse_id, ev.verse_id, 'free', 23281
+  FROM _s311_lev24_lookup sv, _s311_lev24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=24 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-24-one-manner-of-law-for-stranger-and-homeborn',
+       E'One manner of law for stranger and homeborn',
+       E'Leviticus 24 closes with the law of proportionate justice: *Breach for breach, eye for eye, tooth for tooth: as he hath caused a blemish in a man, so shall it be done to him again* (Leviticus 24:20) — and the one-law charge, *Ye shall have one manner of law, as well for the stranger, as for one of your own country: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 24:22). The measured equity is the standing rule of the courts, given at Sinai (*life for life... eye for eye, tooth for tooth* — Exodus 21:23-24) and again to Moses (*eye for eye, tooth for tooth, hand for hand, foot for foot* — Deuteronomy 19:21). Yahusha (Jesus) cites it exactly, *Ye have heard that it hath been said, An eye for an eye, and a tooth for a tooth* (Matthew 5:38), then reframes it for the PERSONAL realm: *But I say unto you, That ye resist not evil... turn to him the other also* (Matthew 5:39). He does not abolish the courtroom measure; He forbids the disciple from making that judicial proportion a license for private revenge. And the one manner of law for stranger and homeborn is the one-law inclusion of the covenant — the same Torah binding all who join the people.',
+       sv.verse_id, ev.verse_id, 'free', 23284
+  FROM _s311_lev24_lookup sv, _s311_lev24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=24 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1: the lamp that burns continually before Yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 27:20 — the original charge of the continual light: *pure oil olive beaten for the light, to cause the lamp to burn always*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=27 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-lamp-that-burns-continually-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 27:21 — the lamp tended *from evening to morning before Yahuah (LORD): a statute for ever*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=27 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-lamp-that-burns-continually-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'John 8:12 — the Formed Son, *I am the light of the world*, the unfailing light the continual lamp foreshadowed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-lamp-that-burns-continually-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Revelation 1:12 — the pure candlestick blossoms into *seven golden candlesticks*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-lamp-that-burns-continually-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Revelation 1:13 — *one like unto the Son of Adam* standing in the midst of the lamps, the light the oil only figured.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-lamp-that-burns-continually-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Revelation 1:20 — the candlesticks interpreted as the gathered assemblies kept burning before His face.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-lamp-that-burns-continually-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the shewbread, twelve loaves before Yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 25:30 — the founding command of the bread of the Presence: *set upon the table shewbread before me alway*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-shewbread-twelve-loaves-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 12:3 — Yahusha (Jesus) appeals to *what David did, when he was an hungred*, reasoning from the shewbread of the everlasting covenant.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=8
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-shewbread-twelve-loaves-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 12:4 — *did eat the shewbread... but only for the priests*, the loaf reserved by Leviticus 24:9, witness that mercy fulfils the law''s heart.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-the-shewbread-twelve-loaves-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: he that blasphemeth the name of Yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 20:7 — the third word: *Thou shalt not take the name of Yahuah Elohayka (the LORD thy God) in vain*, guarded here by the capital penalty.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-he-that-blasphemeth-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 26:65 — the charge at His trial: *He hath spoken blasphemy*, the very crime Leviticus 24:16 makes capital.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=65
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-he-that-blasphemeth-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 26:66 — *He is guilty of death*, the penalty Leviticus 24:16 prescribes, pronounced falsely against the innocent.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=66
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-he-that-blasphemeth-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'John 10:33 — they reach for the stones Leviticus commands, *for blasphemy*, not seeing the Formed Son who truly bears the Name.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-he-that-blasphemeth-the-name-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: one manner of law for stranger and homeborn
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 21:23 — the proportionate measure given at Sinai: *thou shalt give life for life*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-one-manner-of-law-for-stranger-and-homeborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 21:24 — *eye for eye, tooth for tooth, hand for hand, foot for foot*, the measured equity binding the judges.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-one-manner-of-law-for-stranger-and-homeborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 19:21 — the measure repeated a third time as the rule against the false witness: *life shall go for life, eye for eye*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-one-manner-of-law-for-stranger-and-homeborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 5:38 — Yahusha (Jesus) cites the measure exactly, *An eye for an eye, and a tooth for a tooth*.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-one-manner-of-law-for-stranger-and-homeborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Matthew 5:39 — *resist not evil... turn to him the other also*: the judicial proportion is no license for personal revenge, the law not abolished but rightly placed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s311_lev24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-24-one-manner-of-law-for-stranger-and-homeborn'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_25.sql (Leviticus 25) -----
+-- Book: Leviticus  Chapter: 25  (the sabbath of the land and the Jubilee — KEYSTONE)
+-- Tag: lev25   Session prefix: s311   Temp view: _s311_lev25_lookup
+-- Sort band base: 23300  step 3  (23300, 23303, 23306, 23309, 23312, 23315, 23318)
+--
+-- THREADS (7):
+--   leviticus-25-the-sabbath-of-the-land                        v1-7   [Tanakh+extras] tier extras
+--        Exod23:10-11, Lev26:34-35, 2Chr36:21, Jubilees50:2-3
+--   leviticus-25-proclaim-liberty-the-jubilee                   v8-17  [Tanakh+NT] tier free
+--        Num36:4, Isa61:1-2, Luke4:18-19
+--   leviticus-25-what-shall-we-eat-the-seventh-year             v18-22 [NT] tier free
+--        Matt6:26, Matt6:31, Matt6:33
+--   leviticus-25-the-land-is-mine-strangers-and-sojourners      v23    [Tanakh+NT] tier free
+--        Ps39:12, 1Chr29:15, Heb11:13, 1Pet2:11
+--   leviticus-25-the-kinsman-redeemer-of-the-inheritance        v24-34 [Tanakh+NT] tier free
+--        Ruth4:4, Ruth4:6, Jer32:7, Jer32:8, Gal4:5, Eph1:14
+--   leviticus-25-take-no-usury-of-thy-poor-brother              v35-38 [Tanakh+NT] tier free
+--        Deut23:19, Deut23:20, Ps15:5, Ezek18:8, Luke6:35
+--   leviticus-25-they-are-my-servants-not-bondmen               v39-55 [Tanakh+NT] tier free
+--        Exod21:2, 1Cor7:22, 1Cor7:23, Rom6:22
+--
+-- FRAMEWORK NOTES:
+--   v9-10 the jubilee trumpet sounds on the DAY OF ATONEMENT (Lev23) — the appointed-times
+--         architecture; the liberty is proclaimed from the very day of national cleansing.
+--   v10 "proclaim liberty... return every man unto his possession... unto his family" is the
+--         text Yahusha reads (Isa61) in the synagogue at Luke4 = the acceptable year of Yahuah
+--         fulfilled in Messiah — the two-house regathering ("return unto his family/possession").
+--   v23 "the land is mine; ye are strangers and sojourners with me" = the land is Yahuah's
+--         covenant inheritance held in trust, NOT a defunct old-covenant relic; Heb11/1Pet2
+--         carry the same sojourner posture forward without abolishing the inheritance.
+--   v35-38 usury-free care of the poor brother is Torah AFFIRMED, not abolished (Luke6:35 forward).
+--   v55 "unto me the children of Yashar'el are servants" = the redeemed belong to Yahuah —
+--         1Cor7:23 "be not ye the servants of men" carries the SAME claim, not a new one.
+--
+-- Leviticus 25 coverage:
+--   v.1-7  (sabbath of the land)
+--        NT:     none warranted (the rest principle threads laterally + extras; Matt6 lands on v18-22)
+--        Extras: Jubilees 50:2-3 (the sabbaths of the land + jubilee years named) — WARRANTED
+--        Tanakh: Exod23:10-11, Lev26:34-35, 2Chr36:21 — WARRANTED
+--   v.8-17 (the jubilee / proclaim liberty)
+--        NT:     Luke4:18-19 (Yahusha reads it) — WARRANTED
+--        Extras: Jubilees 50:2 (jubilee years) — folded into v1-7 thread; not duplicated here
+--        Tanakh: Isa61:1-2, Num36:4 — WARRANTED
+--   v.18-22 (provision in the sixth year / triple harvest)
+--        NT:     Matt6:26,31,33 (take no thought / seek first the kingdom) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: (Lev26:3-5 provision-for-obedience candidate; covered by the broader Lev26 weave) — none added
+--   v.23 (the land is mine; strangers and sojourners)
+--        NT:     Heb11:13, 1Pet2:11 — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Ps39:12, 1Chr29:15 — WARRANTED
+--   v.24-34 (redemption of the land / kinsman-redeemer)
+--        NT:     Gal4:5, Eph1:14 — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Ruth4:4,6, Jer32:7-8 — WARRANTED
+--   v.35-38 (no usury to the poor brother)
+--        NT:     Luke6:35 — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Deut23:19-20, Ps15:5, Ezek18:8 — WARRANTED
+--   v.39-55 (poor brother as hired servant, freed at jubilee; my servants not bondmen)
+--        NT:     1Cor7:22-23, Rom6:22 — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Exod21:2 — WARRANTED
+
+CREATE TEMP VIEW _s311_lev25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the sabbath of the land (v1-7)
+    ('canon','leviticus',25,4,'canon','exodus',23,11,'free',
+     E'*But the seventh year thou shalt let it rest and lie still; that the poor of thy people may eat: and what they leave the beasts of the field shall eat. In like manner thou shalt deal with thy vineyard, and with thy oliveyard* (Exodus 23:11). The same shemittah Yahuah gives here — *in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD)* (Leviticus 25:4) — is first set down at Sinai, the land''s own seventh-year rest mirroring the seventh-day Sabbath of creation.'),
+    ('canon','leviticus',25,4,'canon','leviticus',26,34,'free',
+     E'*Then shall the land enjoy her sabbaths, as long as it lieth desolate, and ye be in your enemies'' land; even then shall the land rest, and enjoy her sabbaths* (Leviticus 26:34). When the sabbath of the land — *a sabbath for Yahuah (LORD)* (Leviticus 25:4) — is despised, the land collects her unkept rests in the exile; the very next chapter foretells it.'),
+    ('canon','leviticus',25,4,'canon','2-chronicles',36,21,'free',
+     E'*To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). The seventy years of Babylon are reckoned as the land finally taking the sabbaths of rest withheld from her — the unkept *sabbath of rest unto the land, a sabbath for Yahuah (LORD)* (Leviticus 25:4) paid back to the day.'),
+    ('canon','leviticus',25,2,'jubilees','jubilees',50,2,'extras',
+     E'*And I told you of the Sabbaths of the land on Mount Sinai, and I told you of the jubilee years in the sabbaths of years: but the year thereof have I not told you till you enter the land which you are to possess* (Jubilees 50:2). The restored witness names this very institution given *in mount Sinai* (Leviticus 25:1) — *then shall the land keep a sabbath unto Yahuah (LORD)* (Leviticus 25:2) — binding the land''s sabbath and the jubilee together as one calendar of rest.'),
+    ('canon','leviticus',25,2,'jubilees','jubilees',50,3,'extras',
+     E'*And the land also will keep its sabbaths while they dwell upon it, and they will know the jubilee year* (Jubilees 50:3). The book named for this ordinance echoes Moses'' word — *then shall the land keep a sabbath unto Yahuah (LORD)* (Leviticus 25:2) — the land herself a covenant keeper of the appointed rest.'),
+
+    -- THREAD 2: proclaim liberty / the jubilee (v8-17)
+    ('canon','leviticus',25,10,'canon','numbers',36,4,'free',
+     E'*And when the jubile of the children of Yashar''el (Israel) shall be, then shall their inheritance be put unto the inheritance of the tribe whereunto they are received* (Numbers 36:4). The jubilee that returns *every man unto his possession, and... every man unto his family* (Leviticus 25:10) is the very reckoning by which the daughters of Zelophehad''s inheritance is guarded within its tribe — the jubilee anchoring the tribal inheritance.'),
+    ('canon','leviticus',25,10,'canon','isaiah',61,1,'free',
+     E'*The Spirit of Adonai Yahuah (the Lord GOD) is upon me; because Yahuah (LORD) hath anointed me to preach good tidings unto the meek; he hath sent me to bind up the brokenhearted, to proclaim liberty to the captives, and the opening of the prison to them that are bound* (Isaiah 61:1). Isaiah takes up the jubilee word — *proclaim liberty throughout all the land unto all the inhabitants thereof* (Leviticus 25:10) — and makes it the anointed One''s very commission: the liberty of the fiftieth year become the liberty of the Messiah.'),
+    ('canon','leviticus',25,10,'canon','isaiah',61,2,'free',
+     E'*To proclaim the acceptable year of Yahuah (LORD), and the day of vengeance of our Elohim (God); to comfort all that mourn* (Isaiah 61:2). The *acceptable year* is the jubilee year itself — *it shall be a jubile unto you; and ye shall return every man unto his possession* (Leviticus 25:10) — the great release the Anointed proclaims.'),
+    ('canon','leviticus',25,10,'canon','luke',4,18,'free',
+     E'*The Spirit of Yahuah (Lord) is upon me, because he hath anointed me to preach the gospel to the poor; he hath sent me to heal the brokenhearted, to preach deliverance to the captives, and recovering of sight to the blind, to set at liberty them that are bruised* (Luke 4:18). Yahusha (Jesus) stands in the synagogue and reads Isaiah''s jubilee text — *proclaim liberty throughout all the land* (Leviticus 25:10) — over himself; the trumpet of the fiftieth year sounds in him.'),
+    ('canon','leviticus',25,10,'canon','luke',4,19,'free',
+     E'*To preach the acceptable year of Yahuah (Lord)* (Luke 4:19) — *And he... said unto them, This day is this scripture fulfilled in your ears* (Luke 4:21). The acceptable year is the jubilee, and the One who proclaims *liberty throughout all the land unto all the inhabitants thereof* (Leviticus 25:10) declares it fulfilled in himself: the great release, the return to possession and family, embodied.'),
+
+    -- THREAD 3: what shall we eat the seventh year? (v18-22)
+    ('canon','leviticus',25,20,'canon','matthew',6,31,'free',
+     E'*Therefore take no thought, saying, What shall we eat? or, What shall we drink? or, Wherewithal shall we be clothed?* (Matthew 6:31). The very anxiety Yahuah anticipates — *if ye shall say, What shall we eat the seventh year? behold, we shall not sow, nor gather in our increase* (Leviticus 25:20) — Yahusha (Jesus) names and forbids; the sabbath of the land is kept in trust, not fear.'),
+    ('canon','leviticus',25,21,'canon','matthew',6,26,'free',
+     E'*Behold the fowls of the air: for they sow not, neither do they reap, nor gather into barns; yet your heavenly Father feedeth them. Are ye not much better than they?* (Matthew 6:26). The triple harvest promised the sabbath-keeper — *I will command my blessing upon you in the sixth year, and it shall bring forth fruit for three years* (Leviticus 25:21) — is the same providence: the Father who feeds the unsowing birds commands the blessing on the resting field.'),
+    ('canon','leviticus',25,21,'canon','matthew',6,33,'free',
+     E'*But seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33). To leave the field unsown the seventh year and trust the sixth-year blessing — *I will command my blessing upon you in the sixth year, and it shall bring forth fruit for three years* (Leviticus 25:21) — is to seek the kingdom first and find provision added.'),
+
+    -- THREAD 4: the land is mine; strangers and sojourners (v23)
+    ('canon','leviticus',25,23,'canon','psalms',39,12,'free',
+     E'*Hear my prayer, O Yahuah (LORD), and give ear unto my cry; hold not thy peace at my tears: for I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12). David sings the very title the Torah gives — *for the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23) — the worshipper a guest in Yahuah''s land, holding nothing for ever.'),
+    ('canon','leviticus',25,23,'canon','1-chronicles',29,15,'free',
+     E'*For we are strangers before thee, and sojourners, as were all our fathers: our days on the earth are as a shadow, and there is none abiding* (1 Chronicles 29:15). David before the whole congregation confesses the Torah''s word — *ye are strangers and sojourners with me* (Leviticus 25:23) — even Yashar''el''s king owns nothing of the land but as a tenant of Yahuah.'),
+    ('canon','leviticus',25,23,'canon','hebrews',11,13,'free',
+     E'*These all died in faith, not having received the promises, but having seen them afar off, and were persuaded of them, and embraced them, and confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13). The faithful carry forward the confession the land-law required — *ye are strangers and sojourners with me* (Leviticus 25:23) — seeking the city that has foundations, the inheritance held in trust.'),
+    ('canon','leviticus',25,23,'canon','1-peter',2,11,'free',
+     E'*Dearly beloved, I beseech you as strangers and pilgrims, abstain from fleshly lusts, which war against the soul* (1 Peter 2:11). The same posture Yahuah set in the land-law — *for the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23) — Peter lays on the scattered people: tenants of Yahuah, not owners of the world.'),
+
+    -- THREAD 5: the kinsman-redeemer of the inheritance (v24-34)
+    ('canon','leviticus',25,25,'canon','ruth',4,4,'free',
+     E'*If thou wilt redeem it, redeem it: but if thou wilt not redeem it, then tell me, that I may know: for there is none to redeem it beside thee; and I am after thee. And he said, I will redeem it* (Ruth 4:4). Boaz at the gate enacts the very statute — *if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25) — the goel buying back the lost field, the redeemer of the inheritance in the flesh.'),
+    ('canon','leviticus',25,25,'canon','ruth',4,6,'free',
+     E'*And the kinsman said, I cannot redeem it for myself, lest I mar mine own inheritance: redeem thou my right to thyself; for I cannot redeem it* (Ruth 4:6). When the nearer kinsman defaults, Boaz the willing goel redeems — the office the Torah names, *if any of his kin come to redeem it* (Leviticus 25:25), foreshadowing the kinsman-Redeemer who would not refuse the cost.'),
+    ('canon','leviticus',25,25,'canon','jeremiah',32,7,'free',
+     E'*Behold, Hanameel the son of Shallum thine uncle shall come unto thee, saying, Buy thee my field that is in Anathoth: for the right of redemption is thine to buy it* (Jeremiah 32:7). Even with Babylon at the gate Jeremiah obeys the redemption law — *if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25) — buying the family field as a sign the land would be possessed again.'),
+    ('canon','leviticus',25,24,'canon','jeremiah',32,8,'free',
+     E'*So Hanameel mine uncle''s son came to me... Buy my field, I pray thee, that is in Anathoth, which is in the country of Benjamin: for the right of inheritance is thine, and the redemption is thine; buy it for thyself. Then I knew that this was the word of Yahuah (LORD)* (Jeremiah 32:8). The grant the Torah commanded — *in all the land of your possession ye shall grant a redemption for the land* (Leviticus 25:24) — Jeremiah keeps as prophecy: the inheritance is never finally lost.'),
+    ('canon','leviticus',25,25,'canon','galatians',4,5,'free',
+     E'*To redeem them that were under the law, that we might receive the adoption of sons* (Galatians 4:5). The kinsman who *redeem that which his brother sold* (Leviticus 25:25) is the type filled when the Son, made of a woman, redeems his kin to restore them to the inheritance of sons — the goel pattern carried to its fulness.'),
+    ('canon','leviticus',25,28,'canon','ephesians',1,14,'free',
+     E'*Which is the earnest of our inheritance until the redemption of the purchased possession, unto the praise of his glory* (Ephesians 1:14). As at the jubilee *it shall go out, and he shall return unto his possession* (Leviticus 25:28), so the Spirit is the earnest until the great jubilee — the redemption of the purchased possession and the return to the inheritance.'),
+
+    -- THREAD 6: take no usury of thy poor brother (v35-38)
+    ('canon','leviticus',25,36,'canon','deuteronomy',23,19,'free',
+     E'*Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury* (Deuteronomy 23:19). The same command guards the poor brother in both books — *Take thou no usury of him, or increase: but fear thy Elohim (God)* (Leviticus 25:36) — the brother''s need is not a creditor''s opportunity.'),
+    ('canon','leviticus',25,37,'canon','deuteronomy',23,20,'free',
+     E'*Unto a stranger thou mayest lend upon usury; but unto thy brother thou shalt not lend upon usury: that Yahuah Elohayka (the LORD thy God) may bless thee in all that thou settest thine hand to* (Deuteronomy 23:20). The Torah twice forbids interest on the brother''s loan — *Thou shalt not give him thy money upon usury, nor lend him thy victuals for increase* (Leviticus 25:37) — and ties the blessing to keeping it.'),
+    ('canon','leviticus',25,36,'canon','psalms',15,5,'free',
+     E'*He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved* (Psalm 15:5). The one who may abide in Yahuah''s tabernacle is marked by the very law of the poor brother — *Take thou no usury of him, or increase: but fear thy Elohim (God)* (Leviticus 25:36) — usury-free dealing made a test of dwelling with Yahuah.'),
+    ('canon','leviticus',25,36,'canon','ezekiel',18,8,'free',
+     E'*He that hath not given forth upon usury, neither hath taken any increase, that hath withdrawn his hand from iniquity, hath executed true judgment between man and man* (Ezekiel 18:8). The just man who *shall surely live* keeps this Torah word — *Take thou no usury of him, or increase* (Leviticus 25:36) — the prophet treating it as living righteousness, not an abolished rule.'),
+    ('canon','leviticus',25,35,'canon','luke',6,35,'free',
+     E'*But love ye your enemies, and do good, and lend, hoping for nothing again; and your reward shall be great, and ye shall be the children of the Highest: for he is kind unto the unthankful and to the evil* (Luke 6:35). Yahusha (Jesus) presses the Torah''s mercy further still — beyond *if thy brother be waxen poor... then thou shalt relieve him* (Leviticus 25:35) to lending without expectation of return — the law of the poor brother deepened, never dissolved.'),
+
+    -- THREAD 7: they are my servants, not bondmen (v39-55)
+    ('canon','leviticus',25,40,'canon','exodus',21,2,'free',
+     E'*If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2). The release given the impoverished brother — *as an hired servant... he shall be with thee, and shall serve thee unto the year of jubile: and then shall he depart from thee* (Leviticus 25:40-41) — keeps the same Torah principle: a brother''s servitude has a fixed end, never perpetual bondage.'),
+    ('canon','leviticus',25,42,'canon','1-corinthians',7,23,'free',
+     E'*Ye are bought with a price; be not ye the servants of men* (1 Corinthians 7:23). The ground is the same claim Yahuah lays here — *For they are my servants, which I brought forth out of the land of Egypt: they shall not be sold as bondmen* (Leviticus 25:42) — the redeemed belong to Yahuah, and so may not be made the slaves of men.'),
+    ('canon','leviticus',25,55,'canon','1-corinthians',7,22,'free',
+     E'*For he that is called in Yahuah (Lord), being a servant, is Yahuah''s (Lord''s) freeman: likewise also he that is called, being free, is Messiah''s (Christ''s) servant* (1 Corinthians 7:22). The whole law of release rests on the closing claim — *For unto me the children of Yashar''el (Israel) are servants; they are my servants whom I brought forth out of the land of Egypt* (Leviticus 25:55) — those who are Yahuah''s servants are free of every other master.'),
+    ('canon','leviticus',25,42,'canon','romans',6,22,'free',
+     E'*But now being made free from sin, and become servants to Elohim (God), ye have your fruit unto holiness, and the end everlasting life* (Romans 6:22). The jubilee freedom is not freedom into no master but freedom unto Yahuah — *they are my servants whom I brought forth out of the land of Egypt: they shall not be sold as bondmen* (Leviticus 25:42) — released from bondage to belong wholly to Elohim.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-the-sabbath-of-the-land',
+       E'The Sabbath of the Land',
+       E'Yahuah gives the land herself a Sabbath: *Six years thou shalt sow thy field... But in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD)* (Leviticus 25:3-4). The seventh-year shemittah mirrors the seventh-day rest of creation; it is first set down at Sinai — *the seventh year thou shalt let it rest and lie still; that the poor of thy people may eat* (Exodus 23:11). When Yashar''el despises this rest, the land collects it in exile: *Then shall the land enjoy her sabbaths, as long as it lieth desolate* (Leviticus 26:34), and the Chronicler reckons the seventy years of Babylon as exactly that — *until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). The restored witness named for this very ordinance binds the land''s sabbath and the jubilee as one calendar: *I told you of the Sabbaths of the land on Mount Sinai, and I told you of the jubilee years in the sabbaths of years* (Jubilees 50:2); *the land also will keep its sabbaths while they dwell upon it, and they will know the jubilee year* (Jubilees 50:3). The land is a covenant keeper of the appointed rest — not a defunct rule but the living architecture of Yahuah''s calendar.',
+       sv.verse_id, ev.verse_id, 'extras', 23300
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-proclaim-liberty-the-jubilee',
+       E'Proclaim Liberty — the Jubilee',
+       E'After seven sabbaths of years — *seven times seven years... forty and nine years* (Leviticus 25:8) — the trumpet of the fiftieth year sounds, and it sounds *on the tenth day of the seventh month, in the day of atonement* (Leviticus 25:9): the liberty is proclaimed from the very day of national cleansing, the appointed-times calendar (Leviticus 23) holding the jubilee in its arms. *And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). The jubilee anchors the tribal inheritance — *when the jubile of the children of Yashar''el (Israel) shall be, then shall their inheritance be put unto the inheritance of the tribe* (Numbers 36:4). Isaiah takes up the word and makes it the Anointed One''s commission: *the Spirit of Adonai Yahuah (the Lord GOD) is upon me... to proclaim liberty to the captives* (Isaiah 61:1), *to proclaim the acceptable year of Yahuah (LORD)* (Isaiah 61:2). Then Yahusha (Jesus) stands in the synagogue, reads that very text — *to set at liberty them that are bruised, to preach the acceptable year of Yahuah (Lord)* (Luke 4:18-19) — and declares, *This day is this scripture fulfilled in your ears* (Luke 4:21). The trumpet of the fiftieth year sounds in him: the great release, the return of every man to his possession and his family, the two-house regathering embodied in the Messiah.',
+       sv.verse_id, ev.verse_id, 'free', 23303
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-what-shall-we-eat-the-seventh-year',
+       E'What Shall We Eat the Seventh Year?',
+       E'Yahuah anticipates the fear the land-sabbath provokes: *And if ye shall say, What shall we eat the seventh year? behold, we shall not sow, nor gather in our increase* (Leviticus 25:20). His answer is a triple harvest for the obedient: *Then I will command my blessing upon you in the sixth year, and it shall bring forth fruit for three years* (Leviticus 25:21). The sabbath of the land is kept in trust, not in anxiety. Yahusha (Jesus) names that very anxiety and forbids it: *Therefore take no thought, saying, What shall we eat? or, What shall we drink?* (Matthew 6:31); *Behold the fowls of the air: for they sow not, neither do they reap, nor gather into barns; yet your heavenly Father feedeth them* (Matthew 6:26). The same providence that feeds the unsowing birds commands the blessing on the resting field. To leave it unsown the seventh year is to *seek ye first the kingdom of Elohim (God), and his righteousness; and all these things shall be added unto you* (Matthew 6:33) — the kingdom sought first, provision added.',
+       sv.verse_id, ev.verse_id, 'free', 23306
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-the-land-is-mine-strangers-and-sojourners',
+       E'The Land Is Mine — Strangers and Sojourners',
+       E'The whole jubilee economy rests on one declaration: *The land shall not be sold for ever: for the land is mine; for ye are strangers and sojourners with me* (Leviticus 25:23). The land is Yahuah''s covenant inheritance, held in trust; no man owns it outright, and so no sale is ever final. David sings the same title: *for I am a stranger with thee, and a sojourner, as all my fathers were* (Psalm 39:12), and confesses it before the whole congregation — *For we are strangers before thee, and sojourners, as were all our fathers: our days on the earth are as a shadow* (1 Chronicles 29:15). Even Yashar''el''s king holds the land only as Yahuah''s tenant. The faithful carry the confession forward: they *confessed that they were strangers and pilgrims on the earth* (Hebrews 11:13), seeking the city that has foundations; and Peter lays the posture on the scattered people — *I beseech you as strangers and pilgrims, abstain from fleshly lusts* (1 Peter 2:11). The sojourner stance never abolishes the inheritance; it holds it rightly, as a gift from the Owner of the land.',
+       sv.verse_id, ev.verse_id, 'free', 23309
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-the-kinsman-redeemer-of-the-inheritance',
+       E'The Kinsman-Redeemer of the Inheritance',
+       E'Because the land is Yahuah''s and may not be sold for ever, Yahuah builds in a way back: *in all the land of your possession ye shall grant a redemption for the land* (Leviticus 25:24). *If thy brother be waxen poor, and hath sold away some of his possession, and if any of his kin come to redeem it, then shall he redeem that which his brother sold* (Leviticus 25:25) — the goel, the kinsman-redeemer, buys back the lost field; and failing that, *in the jubile it shall go out, and he shall return unto his possession* (Leviticus 25:28). Boaz at the gate enacts the statute in the flesh — *If thou wilt redeem it, redeem it... And he said, I will redeem it* (Ruth 4:4) — stepping in as the willing goel when the nearer kinsman defaults: *I cannot redeem it for myself, lest I mar mine own inheritance: redeem thou my right to thyself* (Ruth 4:6). Jeremiah keeps the same law as prophecy even with Babylon at the gate: *Buy thee my field that is in Anathoth: for the right of redemption is thine to buy it* (Jeremiah 32:7), *the right of inheritance is thine, and the redemption is thine... Then I knew that this was the word of Yahuah (LORD)* (Jeremiah 32:8) — a sign the inheritance is never finally lost. The pattern is filled when the Son comes *to redeem them that were under the law, that we might receive the adoption of sons* (Galatians 4:5), and the Spirit is given as *the earnest of our inheritance until the redemption of the purchased possession* (Ephesians 1:14): the great jubilee, the return to the possession, secured by the Kinsman-Redeemer.',
+       sv.verse_id, ev.verse_id, 'free', 23312
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-take-no-usury-of-thy-poor-brother',
+       E'Take No Usury of Thy Poor Brother',
+       E'*And if thy brother be waxen poor, and fallen in decay with thee; then thou shalt relieve him... Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:35-36). The brother''s need is never the creditor''s opportunity; the ground is the Exodus — *I am Yahuah Elohaychem (the LORD your God), which brought you forth out of the land of Egypt* (Leviticus 25:38). The Torah twice forbids interest on the brother''s loan: *Thou shalt not lend upon usury to thy brother... unto thy brother thou shalt not lend upon usury: that Yahuah Elohayka (the LORD thy God) may bless thee* (Deuteronomy 23:19-20). The Psalm makes it a test of who may dwell with Yahuah — *He that putteth not out his money to usury... shall never be moved* (Psalm 15:5) — and Ezekiel counts it among the deeds of the man who *shall surely live*: *He that hath not given forth upon usury, neither hath taken any increase* (Ezekiel 18:8). Far from abolishing this mercy, Yahusha (Jesus) presses it further: *love ye your enemies, and do good, and lend, hoping for nothing again; and your reward shall be great* (Luke 6:35) — the law of the poor brother deepened, never dissolved.',
+       sv.verse_id, ev.verse_id, 'free', 23315
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=35
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=38
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-25-they-are-my-servants-not-bondmen',
+       E'They Are My Servants — Not Bondmen',
+       E'The poor brother sold for debt is not to be ground down as a slave: *thou shalt not compel him to serve as a bondservant: But as an hired servant, and as a sojourner, he shall be with thee, and shall serve thee unto the year of jubile* (Leviticus 25:39-40), and then *he shall return unto his own family, and unto the possession of his fathers* (Leviticus 25:41). This keeps the Torah''s fixed-term release first given at Sinai — *six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2). The reason is the great covenant claim, stated twice as a frame: *For they are my servants, which I brought forth out of the land of Egypt: they shall not be sold as bondmen* (Leviticus 25:42), and at the chapter''s close, *For unto me the children of Yashar''el (Israel) are servants; they are my servants whom I brought forth out of the land of Egypt* (Leviticus 25:55). The redeemed belong to Yahuah, and so may not be the slaves of men. Paul carries the same claim: *Ye are bought with a price; be not ye the servants of men* (1 Corinthians 7:23); *he that is called in Yahuah (Lord), being a servant, is Yahuah''s (Lord''s) freeman* (1 Corinthians 7:22). The jubilee freedom is not freedom into no master but freedom unto Yahuah — *being made free from sin, and become servants to Elohim (God), ye have your fruit unto holiness, and the end everlasting life* (Romans 6:22).',
+       sv.verse_id, ev.verse_id, 'free', 23318
+  FROM _s311_lev25_lookup sv, _s311_lev25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=39
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=25 AND ev.verse_number=55
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1: the sabbath of the land
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 23:11 — *the seventh year thou shalt let it rest and lie still; that the poor of thy people may eat* — the shemittah first set at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-sabbath-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 26:34 — *Then shall the land enjoy her sabbaths, as long as it lieth desolate* — the unkept sabbaths collected in exile.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-sabbath-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Chronicles 36:21 — *until the land had enjoyed her sabbaths... to fulfil threescore and ten years* — the seventy years reckoned as the land''s repaid rest.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-sabbath-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jubilees 50:2 — *I told you of the Sabbaths of the land on Mount Sinai, and... the jubilee years* — the restored witness binding land-sabbath and jubilee as one calendar.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=2
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=50 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-sabbath-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Jubilees 50:3 — *the land also will keep its sabbaths while they dwell upon it, and they will know the jubilee year* — the land herself a covenant keeper of the rest.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=2
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='jubilees' AND tv.book_slug='jubilees' AND tv.chapter_number=50 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-sabbath-of-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: proclaim liberty / the jubilee
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 36:4 — *when the jubile of the children of Yashar''el (Israel) shall be, then shall their inheritance be put unto the inheritance of the tribe* — the jubilee anchoring tribal inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=10
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=36 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-proclaim-liberty-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 61:1 — *to proclaim liberty to the captives, and the opening of the prison to them that are bound* — the jubilee word become the Anointed One''s commission.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=10
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-proclaim-liberty-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 61:2 — *to proclaim the acceptable year of Yahuah (LORD)* — the acceptable year is the jubilee year itself.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=10
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=61 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-proclaim-liberty-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Luke 4:18 — *he hath sent me... to set at liberty them that are bruised* — Yahusha reads the jubilee text over himself.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=10
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-proclaim-liberty-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Luke 4:19 — *To preach the acceptable year of Yahuah (Lord)* — and *This day is this scripture fulfilled in your ears*: the jubilee embodied in Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=10
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-proclaim-liberty-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: what shall we eat the seventh year
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Matthew 6:31 — *Therefore take no thought, saying, What shall we eat?* — Yahusha names and forbids the very anxiety of v20.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=20
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-what-shall-we-eat-the-seventh-year'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 6:26 — *your heavenly Father feedeth them* — the same providence that commands the sixth-year triple harvest.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-what-shall-we-eat-the-seventh-year'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 6:33 — *seek ye first the kingdom of Elohim (God)... and all these things shall be added* — the resting field as kingdom-first trust.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=6 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-what-shall-we-eat-the-seventh-year'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the land is mine; strangers and sojourners
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 39:12 — *for I am a stranger with thee, and a sojourner, as all my fathers were* — David sings the land-law''s title.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=23
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=39 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-land-is-mine-strangers-and-sojourners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Chronicles 29:15 — *we are strangers before thee, and sojourners, as were all our fathers* — the king confesses he holds the land only as Yahuah''s tenant.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=23
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=29 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-land-is-mine-strangers-and-sojourners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 11:13 — *confessed that they were strangers and pilgrims on the earth* — the faithful carry the sojourner confession forward.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=23
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-land-is-mine-strangers-and-sojourners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Peter 2:11 — *I beseech you as strangers and pilgrims* — the sojourner posture laid on the scattered people.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=23
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-land-is-mine-strangers-and-sojourners'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: the kinsman-redeemer of the inheritance
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Ruth 4:4 — *If thou wilt redeem it, redeem it... I will redeem it* — Boaz enacts the goel statute at the gate.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=25
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-kinsman-redeemer-of-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Ruth 4:6 — *redeem thou my right to thyself; for I cannot redeem it* — Boaz the willing goel where the nearer kinsman defaults.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=25
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-kinsman-redeemer-of-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 32:7 — *Buy thee my field that is in Anathoth: for the right of redemption is thine to buy it* — the redemption law kept with Babylon at the gate.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=25
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-kinsman-redeemer-of-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jeremiah 32:8 — *the right of inheritance is thine, and the redemption is thine... this was the word of Yahuah (LORD)* — the grant for a redemption (v24) kept as prophecy.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=24
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-kinsman-redeemer-of-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Galatians 4:5 — *To redeem them that were under the law, that we might receive the adoption of sons* — the goel pattern filled in the Son.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=25
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=4 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-kinsman-redeemer-of-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Ephesians 1:14 — *the earnest of our inheritance until the redemption of the purchased possession* — the great jubilee, the return to the possession (v28).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-the-kinsman-redeemer-of-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6: take no usury of thy poor brother
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 23:19 — *Thou shalt not lend upon usury to thy brother* — the same command in both books.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=36
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-take-no-usury-of-thy-poor-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 23:20 — *unto thy brother thou shalt not lend upon usury: that Yahuah Elohayka (the LORD thy God) may bless thee* — blessing tied to keeping it.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=37
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-take-no-usury-of-thy-poor-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 15:5 — *He that putteth not out his money to usury... shall never be moved* — usury-free dealing a test of dwelling with Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=36
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-take-no-usury-of-thy-poor-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ezekiel 18:8 — *He that hath not given forth upon usury... he is just, he shall surely live* — the prophet treats it as living righteousness.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=36
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-take-no-usury-of-thy-poor-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Luke 6:35 — *lend, hoping for nothing again; and your reward shall be great* — Yahusha deepens the law of the poor brother, never dissolves it.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=35
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-take-no-usury-of-thy-poor-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7: they are my servants, not bondmen
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 21:2 — *six years he shall serve: and in the seventh he shall go out free for nothing* — the Torah''s fixed-term release for the Hebrew servant.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=40
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-they-are-my-servants-not-bondmen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Corinthians 7:23 — *Ye are bought with a price; be not ye the servants of men* — the same claim that grounds v42: the redeemed belong to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=42
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=7 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-they-are-my-servants-not-bondmen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 7:22 — *he that is called in Yahuah (Lord), being a servant, is Yahuah''s (Lord''s) freeman* — Yahuah''s servants are free of every other master (v55).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=55
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=7 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-they-are-my-servants-not-bondmen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 6:22 — *being made free from sin, and become servants to Elohim (God), ye have your fruit unto holiness* — jubilee freedom is freedom unto Yahuah, not into no master.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=25 AND sv.verse_number=42
+  JOIN _s311_lev25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=6 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-25-they-are-my-servants-not-bondmen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session311 — Leviticus cross-references complete.'
