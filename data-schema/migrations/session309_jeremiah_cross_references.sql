@@ -14002,6 +14002,1240 @@ SELECT t.id, cr.id, 7, E'★ *I believe that Yahusha HaMashiach (Jesus Christ) i
  WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_40.sql (Jeremiah 40) -----
+-- Chapter: Jeremiah 40 — Jeremiah freed at Ramah by Nebuzar-adan; the pagan captain of the guard
+-- CONFESSES that Yahuah''s word against Jerusalem is fulfilled (*because ye have sinned against
+-- Yahuah... therefore this thing is come upon you*) and shows the prophet kindness (*I will look well
+-- unto thee*); Jeremiah chooses to stay with Gedaliah and the remnant left in the land; the scattered
+-- Yahudim in Moab, Ammon, and Edom hear of the remnant and GATHER BACK to Gedaliah at Mizpah, gathering
+-- wine and summer fruits very much; Johanan warns of Baalis/Ishmael''s murder-plot, which Gedaliah
+-- disbelieves. Largely historical/narrative — curated to 2 framework threads, NOT forced.
+-- Tag: jer40   Temp view: _s309_jer40_lookup
+-- Sort band: base 34975, step 3 -> threads at 34975, 34978 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',40,v
+--
+-- Jeremiah 40 coverage:
+--   v.1 (Jeremiah let go from Ramah, having been taken bound in chains among the captives of Jerusalem)
+--        NT:     none warranted (the historical release; woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the lateral to Jeremiah 39:11-14 (the charge to look well to Jeremiah) is THREAD 1
+--   ★ v.2-4 (the captain of the guard: *Yahuah Elohayka (The LORD thy God) hath pronounced this evil...
+--          because ye have sinned against Yahuah... I will look well unto thee*)
+--        NT:     none warranted (no NT quotation of this scene; the enemy-confesses-the-Word motif held in Tanakh)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 39:11-12 (the king of Babylon''s charge: *look well to him* — lateral, same kindness),
+--                ★ Proverbs 16:7 (when a man''s ways please Yahuah, he maketh even his enemies to be at peace
+--                with him), ★ Psalm 105:14-15 (he reproved kings for their sakes; Touch not mine anointed),
+--                ★ Daniel 2:47 (Nebuchadnezzar confessing the Elohim of Daniel) — THREAD 1
+--   v.5-6 (go back to Gedaliah... made governor over the cities of Yahudah; victuals and a reward;
+--          Jeremiah dwelt with Gedaliah at Mizpah among the people left in the land)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — Jeremiah chooses the remnant over Babylon''s comfort; leads into THREAD 2
+--   v.7-10 (the captains in the fields hear of Gedaliah; Gedaliah swears, Fear not to serve the Chaldeans;
+--          gather wine and summer fruits and oil, dwell in your cities)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the settling of the remnant under Gedaliah; preface to the gathering of v.11-12)
+--   ★ v.11-12 (all the Yahudim in Moab, Ammon, Edom and all countries heard the king of Babylon had left
+--          a remnant of Yahudah; even all the Yahudim returned out of all places whither they were driven...
+--          and gathered wine and summer fruits very much)
+--        NT:     none warranted (the great regathering held to the prophets; not forced to an NT verse here)
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 23:3 (I will gather the remnant of my flock out of all countries — lateral),
+--                ★ Isaiah 11:11-12 (Yahuah shall set his hand the second time to recover the remnant... gather
+--                the dispersed of Yahudah), ★ Micah 2:12 (I will surely gather the remnant of Yashar''el) — THREAD 2
+--   v.13-16 (Johanan warns Gedaliah of Baalis/Ishmael''s plot to slay him; Gedaliah believes them not,
+--          Thou speakest falsely of Ishmael)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none warranted distinct (the murder-plot disbelieved — the tragedy completed in Jeremiah 41;
+--                held there, not forced here; woven in THREAD 2 prose as the shadow over the brief gathering)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word — Tanakh (Jeremiah 39, Proverbs 16, Psalm 105, Daniel 2) [free]
+--      (★ the pagan officer confesses Yahuah''s word fulfilled and shows the prophet kindness — the Word
+--       vindicated even by the enemy''s mouth; the enemy made to be at peace with the man whose ways please Yahuah)
+--   2. jeremiah-40-the-scattered-gather-back-to-a-remnant — Tanakh (Jeremiah 23, Isaiah 11, Micah 2) [free]
+--      (★ the scattered Yahudim gather back out of all places to the remnant — a small foretaste of the
+--       great regathering the prophets promise; the second-time recovery of the remnant, the gathered flock)
+--
+-- Framing notes:
+--   ★ THE ENEMY CONFESSES THE WORD (THREAD 1): the captain of the guard, a Babylonian officer, speaks
+--      Yahuah''s own verdict over Jerusalem: *Yahuah Elohayka (The LORD thy God) hath pronounced this evil
+--      upon this place. Now Yahuah (LORD) hath brought it, and done according as he hath said: because ye
+--      have sinned against Yahuah (LORD), and have not obeyed his voice, therefore this thing is come upon
+--      you* (40:2-3) — and then shows the prophet kindness, *I will loose thee this day from the chains...
+--      I will look well unto thee* (40:4). The Word is vindicated even by the enemy''s mouth. This kindness
+--      is the king of Babylon''s own charge fulfilled (lateral, Jer 39:11-12: *Take him, and look well to
+--      him*); it is Proverbs'' promise (*When a man''s ways please Yahuah (LORD), he maketh even his enemies
+--      to be at peace with him*, Prov 16:7); it is the psalm of the patriarchs (*he reproved kings for their
+--      sakes; Saying, Touch not mine anointed, and do my prophets no harm*, Ps 105:14-15); and it is the
+--      same confession a pagan king made of Daniel''s Elohim (*Of a truth it is, that your Elohim (God) is a
+--      Elohim (God) of gods*, Dan 2:47). The prophet is preserved and his Elohim owned by the very power
+--      sent to judge — no ethnic enemy, but an officer made witness to the Word. (Victims, not enemies.)
+--   ★ THE SCATTERED GATHER BACK (THREAD 2): a small, real foretaste of the great regathering: *when all the
+--      Yahudim (Jews) that were in Moab, and among the Ammonites, and in Edom, and that were in all the
+--      countries, heard that the king of Babylon had left a remnant of Yahudah (Judah)... Even all the
+--      Yahudim (Jews) returned out of all places whither they were driven, and came to the land of Yahudah
+--      (Judah)... and gathered wine and summer fruits very much* (40:11-12). The dispersed hear there is a
+--      remnant and come HOME to it. This is the prophets'' regathering in miniature — *I will gather the
+--      remnant of my flock out of all countries whither I have driven them* (Jer 23:3); *Yahuah (Lord)
+--      shall set his hand again the second time to recover the remnant of his people... and gather together
+--      the dispersed of Yahudah (Judah) from the four corners of the earth* (Isa 11:11-12); *I will surely
+--      gather the remnant of Yashar''el (Israel)... as the flock in the midst of their fold* (Mic 2:12). The
+--      gathering here is brief — Ishmael''s plot (40:13-16) will shatter it in the next chapter — yet it
+--      stands as a sign: Yahuah keeps a remnant, and the scattered are drawn back to it.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the release at Ramah — woven into THREAD 1 prose), v.5-6 (Jeremiah''s
+--      choice to stay with the remnant — narrative, leads into THREAD 2), v.7-10 (the captains settled under
+--      Gedaliah; Fear not to serve the Chaldeans — historical settlement, preface to v.11-12), v.13-16 (the
+--      Baalis/Ishmael murder-plot disbelieved — the tragedy completed in Jeremiah 41, held there; woven in
+--      THREAD 2 prose as the shadow over the brief gathering). Every meaningful block weighed; the chapter
+--      is largely narrative and deliberately curated to 2 framework threads, not forced.
+
+CREATE TEMP VIEW _s309_jer40_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the captain of the guard confesses Yahuah's word fulfilled, and shows kindness
+    ('canon','jeremiah',40,4,'canon','jeremiah',39,12,'free',
+      E'*Take him, and look well to him, and do him no harm; but do unto him even as he shall say unto thee* (Jeremiah 39:12). The captain''s kindness — *I will loose thee this day from the chains... and I will look well unto thee* (Jeremiah 40:4) — is the king of Babylon''s own charge fulfilled to the letter. The enemy''s ruler commanded the prophet be looked well to, and the enemy''s officer does it: Yahuah (LORD) preserves Jeremiah through the very power sent to judge.'),
+    ('canon','jeremiah',40,3,'canon','proverbs',16,7,'free',
+      E'*When a man''s ways please Yahuah (LORD), he maketh even his enemies to be at peace with him* (Proverbs 16:7). The Babylonian captain confesses Yahuah''s verdict — *because ye have sinned against Yahuah (LORD)... therefore this thing is come upon you* (Jeremiah 40:3) — and turns to the prophet in kindness. The proverb is fulfilled before our eyes: the man whose ways please Yahuah finds even the conquering enemy made to be at peace with him.'),
+    ('canon','jeremiah',40,2,'canon','psalms',105,14,'free',
+      E'*He suffered no man to do them wrong: yea, he reproved kings for their sakes* (Psalm 105:14). The psalm sings what Jeremiah 40 shows: the prophet, like the patriarchs, is shielded among the nations. The captain of the guard, owning that *Yahuah Elohayka (The LORD thy God) hath pronounced this evil* (Jeremiah 40:2), is restrained from doing him wrong — Yahuah (LORD) reproves and bends even the powers of Babylon for his servant''s sake.'),
+    ('canon','jeremiah',40,2,'canon','psalms',105,15,'free',
+      E'*Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:15). Yahuah''s charge over his prophets stands even in the mouth of a pagan officer: the captain who confesses *Yahuah Elohayka (The LORD thy God) hath pronounced this evil upon this place* (Jeremiah 40:2) does the prophet no harm but looses his chains. The Word that struck Jerusalem also covers the man who spoke it; do my prophets no harm.'),
+    ('canon','jeremiah',40,2,'canon','daniel',2,47,'free',
+      E'*The king answered unto Daniel, and said, Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets* (Daniel 2:47). As Nebuchadnezzar owned the Elohim of Daniel in Babylon, so his captain of the guard owns the Word of Yahuah at Jerusalem: *Yahuah Elohayka (The LORD thy God) hath pronounced this evil... and done according as he hath said* (Jeremiah 40:2-3). The enemy''s own mouth confesses that Yahuah (LORD) spoke and Yahuah brought it to pass.'),
+
+    -- THREAD 2 (★): the scattered Yahudim gather back to a remnant — a foretaste of the regathering
+    ('canon','jeremiah',40,12,'canon','jeremiah',23,3,'free',
+      E'*And I will gather the remnant of my flock out of all countries whither I have driven them, and will bring them again to their folds; and they shall be fruitful and increase* (Jeremiah 23:3). Earlier in the book Yahuah promised exactly the motion now seen in small: *all the Yahudim (Jews) returned out of all places whither they were driven, and came to the land of Yahudah (Judah)* (Jeremiah 40:12). The scattered are drawn back out of all countries to the remnant left in the land — a first, fragile pledge of the gathering Yahuah swore.'),
+    ('canon','jeremiah',40,11,'canon','isaiah',11,11,'free',
+      E'*And it shall come to pass in that day, that Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea* (Isaiah 11:11). The Yahudim hearing in Moab, Ammon, and Edom that *the king of Babylon had left a remnant of Yahudah (Judah)* (Jeremiah 40:11) is a foretaste of the great recovery Isaiah names — Yahuah setting his hand to gather the remnant left, out of all the lands of their scattering.'),
+    ('canon','jeremiah',40,12,'canon','isaiah',11,12,'free',
+      E'*And he shall set up an ensign for the nations, and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). The return of *all the Yahudim (Jews)... out of all places whither they were driven* (Jeremiah 40:12) is a small picture of the full ingathering: the dispersed of Yahudah and the outcasts of Yashar''el gathered from the four corners of the earth. The remnant drawn home to Mizpah is a seed of the both-houses regathering.'),
+    ('canon','jeremiah',40,12,'canon','micah',2,12,'free',
+      E'*I will surely assemble, O Jacob, all of thee; I will surely gather the remnant of Yashar''el (Israel); I will put them together as the sheep of Bozrah, as the flock in the midst of their fold* (Micah 2:12). Micah''s flock-gathered-to-the-fold is what the scattered Yahudim enact in small when they *came to the land of Yahudah (Judah), to Gedaliah, unto Mizpah* (Jeremiah 40:12). The remnant gathered as sheep to a fold — Yahuah surely gathers, and the dispersed are drawn back to the place he keeps for them.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word',
+       E'The captain of the guard confesses Yahuah''s word — the enemy''s mouth vindicates the prophet',
+       E'When Jerusalem falls, it is a Babylonian officer — the captain of the guard who carried the city away — who speaks Yahuah''s own verdict over it: *And the captain of the guard took Jeremiah, and said unto him, Yahuah Elohayka (The LORD thy God) hath pronounced this evil upon this place. Now Yahuah (LORD) hath brought it, and done according as he hath said: because ye have sinned against Yahuah (LORD), and have not obeyed his voice, therefore this thing is come upon you* (40:2-3). The pagan conqueror confesses that Yahuah spoke and Yahuah did it; the Word is vindicated even by the enemy''s mouth. And the same officer shows the prophet kindness: *behold, I loose thee this day from the chains which were upon thine hand... I will look well unto thee* (40:4). This is no accident. It is the king of Babylon''s own charge being kept — *Take him, and look well to him, and do him no harm; but do unto him even as he shall say unto thee* (Jeremiah 39:12). It is the proverb made flesh — *When a man''s ways please Yahuah (LORD), he maketh even his enemies to be at peace with him* (Proverbs 16:7). It is the psalm of the wandering patriarchs, whom Yahuah shielded among the nations — *He suffered no man to do them wrong: yea, he reproved kings for their sakes; Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:14-15). And it is the same confession a greater Babylonian king made of another prophet''s Elohim — *Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings, and a revealer of secrets* (Daniel 2:47). The man sent to destroy becomes a witness to the Word; the Word that struck the city covers the man who spoke it. The enemy is not hated here but made a mouthpiece of the truth — victims and instruments, not foes to be cursed.',
+       sv.verse_id, ev.verse_id, 'free', 34975
+  FROM _s309_jer40_lookup sv, _s309_jer40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=40 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-40-the-scattered-gather-back-to-a-remnant',
+       E'The scattered gather back to a remnant — a foretaste of the great regathering',
+       E'Even in the wreckage of the exile a sign is given: the One who scattered keeps a remnant, and the dispersed are drawn back to it. *Likewise when all the Yahudim (Jews) that were in Moab, and among the Ammonites, and in Edom, and that were in all the countries, heard that the king of Babylon had left a remnant of Yahudah (Judah), and that he had set over them Gedaliah... Even all the Yahudim (Jews) returned out of all places whither they were driven, and came to the land of Yahudah (Judah), to Gedaliah, unto Mizpah, and gathered wine and summer fruits very much* (40:11-12). Those who had fled into the surrounding nations hear there is a remnant, and they come HOME to it; the empty land begins to bear fruit again. This is the prophets'' regathering in miniature. Yahuah had promised it: *I will gather the remnant of my flock out of all countries whither I have driven them, and will bring them again to their folds; and they shall be fruitful and increase* (Jeremiah 23:3). Isaiah saw it on the largest scale: *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people, which shall be left* (Isaiah 11:11), *and shall assemble the outcasts of Yashar''el (Israel), and gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12). And Micah sang it as a flock brought to the fold: *I will surely gather the remnant of Yashar''el (Israel); I will put them together as the sheep of Bozrah, as the flock in the midst of their fold* (Micah 2:12). The gathering at Mizpah is brief — Ishmael''s plot (40:13-16) will scatter it again in the next chapter — yet it stands as a pledge: Yahuah preserves a remnant, and to that remnant the scattered are drawn back, a small and fragile foretaste of the full ingathering still to come.',
+       sv.verse_id, ev.verse_id, 'free', 34978
+  FROM _s309_jer40_lookup sv, _s309_jer40_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=40 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *Take him, and look well to him, and do him no harm* (Jeremiah 39:12) — the king of Babylon''s own charge fulfilled in the captain''s kindness: *I will look well unto thee* (Jeremiah 40:4).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=4
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *When a man''s ways please Yahuah (LORD), he maketh even his enemies to be at peace with him* (Proverbs 16:7) — the proverb fulfilled: the conquering officer turns to the prophet in kindness.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=3
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *he reproved kings for their sakes* (Psalm 105:14) — Yahuah shields his prophet among the nations, restraining the powers of Babylon from doing him wrong.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Touch not mine anointed, and do my prophets no harm* (Psalm 105:15) — Yahuah''s charge over his prophets kept even in a pagan officer''s hand: the chains loosed, no harm done.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Of a truth it is, that your Elohim (God) is a Elohim (God) of gods, and a Yahuah (Lord) of kings* (Daniel 2:47) — as Nebuchadnezzar owned Daniel''s Elohim, so his captain owns the Word fulfilled at Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=2
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-captain-of-the-guard-confesses-yahuahs-word'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *I will gather the remnant of my flock out of all countries whither I have driven them* (Jeremiah 23:3) — the promise earlier in the book, now seen in small as the scattered Yahudim return to the remnant.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=12
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-scattered-gather-back-to-a-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Yahuah (Lord) shall set his hand again the second time to recover the remnant of his people* (Isaiah 11:11) — the great recovery the brief return to Gedaliah foreshadows.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=11
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-scattered-gather-back-to-a-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *gather together the dispersed of Yahudah (Judah) from the four corners of the earth* (Isaiah 11:12) — the both-houses ingathering the remnant at Mizpah is a seed of.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=12
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-scattered-gather-back-to-a-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will surely gather the remnant of Yashar''el (Israel)... as the flock in the midst of their fold* (Micah 2:12) — the flock gathered to the fold, what the scattered enact coming home to Gedaliah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer40_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=40 AND sv.verse_number=12
+  JOIN _s309_jer40_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-40-the-scattered-gather-back-to-a-remnant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_41.sql (Jeremiah 41) -----
+-- Chapter: Jeremiah 41 — Ishmael the son of Nethaniah, of the seed royal, murders Gedaliah and the men
+-- with him by treachery (they had eaten bread together), then slaughters fourscore innocent pilgrims
+-- coming to the house of Yahuah, casts them into the pit, and carries the remnant captive; Johanan
+-- pursues and rescues the captives. LARGELY NARRATIVE — curated to 2 framework threads, not forced.
+-- Tag: jer41   Temp view: _s309_jer41_lookup   Session: s309
+-- Sort band: base 35000, step 3 -> threads at 35000, 35003 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',41,v
+--
+-- Jeremiah 41 coverage:
+--   ★ v.1-3 (Ishmael... of the seed royal... even ten men with him, came unto Gedaliah... and there they
+--          did eat bread together... smote Gedaliah... and slew him... Ishmael also slew all the Yahudim)
+--        NT:     ★ John 13:18 (he that eateth bread with me hath lifted up his heel against me — Messiah
+--                quotes Psalm 41 of Judas) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 41:9 (mine own familiar friend... which did eat of my bread, hath lifted up his
+--                heel against me), ★ 2 Samuel 20:9-10 (Joab takes Amasa by the beard to kiss him, then
+--                smites him in the fifth rib), ★ Proverbs 27:6 (the kisses of an enemy are deceitful) — THREAD 1
+--   ★ v.4-9 (the second day... no man knew it... fourscore men... beards shaven, clothes rent... to bring
+--          them to the house of Yahuah... Ishmael slew them, and cast them into the midst of the pit)
+--        NT:     ★ Matthew 23:35 (all the righteous blood shed upon the earth, from the blood of righteous
+--                Abel) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Genesis 4:10 (the voice of thy brother''s blood crieth unto me from the ground),
+--                ★ Jeremiah 22:17 (thine eyes and thine heart are... for to shed innocent blood — lateral) — THREAD 2
+--   v.10 (Ishmael carried away captive all the residue... the king''s daughters... departed to go over to
+--          the Ammonites) — the captivity of the remnant
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the seizing of the captives; answered by Johanan''s rescue in prose of THREAD 2)
+--   v.11-18 (Johanan the son of Kareah... heard of all the evil Ishmael had done... took all the men, and
+--          went to fight... all the people... returned, and went unto Johanan... Ishmael escaped... with eight
+--          men... they departed, and dwelt in the habitation of Chimham, which is by Beth-lehem, to go to
+--          enter into Egypt) — the rescue of the captives; the flight toward Egypt
+--        NT:     none warranted (the rescue is narrative; the Egypt-flight against Yahuah''s word belongs to
+--                Jeremiah 42-43, held there)
+--        Extras: none warranted
+--        Tanakh: held in prose — the recovered remnant turning back toward Egypt (the reverse of the exodus)
+--                woven into THREAD 2; not forced into a separate thread
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-41-they-did-eat-bread-together-and-he-smote-him — NT (John 13) + Tanakh (Psalm 41, 2 Samuel 20, Proverbs 27) [free]
+--      (★ the bread of fellowship betrayed — the treacherous murder of the one who ate bread with him; the
+--       broken table; Psalm 41:9 the Messiah quotes of Judas; Joab''s kiss-and-stab of Amasa)
+--   2. jeremiah-41-innocent-blood-cast-into-the-pit — NT (Matthew 23) + Tanakh (Genesis 4, Jeremiah 22) [free]
+--      (★ the innocent worshippers slaughtered — fourscore pilgrims coming to the house of Yahuah, cast into
+--       the pit; the innocent blood that cries from the ground; the righteous blood shed upon the earth)
+--
+-- Framing notes:
+--   ★ THE BREAD OF FELLOWSHIP BETRAYED (THREAD 1): *Now it came to pass in the seventh month, that Ishmael
+--      the son of Nethaniah the son of Elishama, of the seed royal... even ten men with him, came unto
+--      Gedaliah the son of Ahikam to Mizpah; and there they did eat bread together in Mizpah* (41:1). The
+--      sharing of bread was the bond of covenant fellowship, the table of trust — and Ishmael breaks it in
+--      the very next breath: *Then arose Ishmael... and smote Gedaliah... with the sword, and slew him*
+--      (41:2), *Ishmael also slew all the Yahudim (Jews) that were with him* (41:3). This is the oldest and
+--      bitterest treachery in Scripture: the friend who eats your bread and lifts his heel against you.
+--      David sang it — *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath
+--      lifted up his heel against me* (Psalm 41:9) — and the Messiah took that very verse on his lips of
+--      Judas at the last supper: *He that eateth bread with me hath lifted up his heel against me* (John
+--      13:18). The same shape appears in Joab''s kiss: *Joab took Amasa by the beard with the right hand to
+--      kiss him. But Amasa took no heed to the sword... so he smote him therewith in the fifth rib* (2 Samuel
+--      20:9-10). And Proverbs names the lie of it — *Faithful are the wounds of a friend; but the kisses of
+--      an enemy are deceitful* (Proverbs 27:6). The broken bread of fellowship betrayed.
+--   ★ THE INNOCENT BLOOD CAST INTO THE PIT (THREAD 2): *And it came to pass the second day after he had slain
+--      Gedaliah, and no man knew it, That there came certain from Shechem, from Shiloh, and from Samaria, even
+--      fourscore men, having their beards shaven, and their clothes rent, and having cut themselves, with
+--      offerings and incense in their hand, to bring them to the house of Yahuah (LORD)* (41:4-5) — mourning
+--      pilgrims, worshippers on their way to the place of Yahuah''s house. Ishmael lures them and slaughters
+--      them: *Ishmael the son of Nethaniah slew them, and cast them into the midst of the pit* (41:7). This is
+--      the shedding of innocent blood — the very crime Jeremiah charged against the wicked king: *thine eyes
+--      and thine heart are not but for thy covetousness, and for to shed innocent blood, and for oppression,
+--      and for violence* (Jeremiah 22:17). Innocent blood is never silent: *the voice of thy brother''s blood
+--      crieth unto me from the ground* (Genesis 4:10), Abel''s blood the first of the long cry. And the Messiah
+--      gathers the whole reckoning into one: *all the righteous blood shed upon the earth, from the blood of
+--      righteous Abel* (Matthew 23:35). The fourscore worshippers cast into the pit join that cry.
+--   VERSES WITH NO SEPARATE ADD: v.10 (the captivity of the remnant and the king''s daughters — woven into
+--      THREAD 2 prose, the rescue answers it), v.11-18 (Johanan''s pursuit and rescue of the captives, and the
+--      flight toward Egypt — narrative; the Egypt-flight against Yahuah''s word held to Jeremiah 42-43, woven in
+--      prose). All blocks recorded above; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer41_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): they did eat bread together — and he smote him; the bread of fellowship betrayed
+    ('canon','jeremiah',41,1,'canon','psalms',41,9,'free',
+      E'*Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9). David names the bitterest treachery — the trusted friend who shares your bread and turns on you — and Jeremiah records its very shape at Mizpah: Ishmael and his ten men *did eat bread together* with Gedaliah (Jeremiah 41:1) and then rose and slew him. The table of fellowship made the murder all the blacker; the one who ate the bread lifted up his heel.'),
+    ('canon','jeremiah',41,2,'canon','john',13,18,'free',
+      E'*I speak not of you all: I know whom I have chosen: but that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18). The Messiah takes Psalm 41:9 on his own lips at the last supper, naming the betrayer who shared his bread. It is the same evil Jeremiah records: they *did eat bread together in Mizpah* (41:1), then *Ishmael... smote Gedaliah... with the sword, and slew him* (Jeremiah 41:2). The broken bread of fellowship is the mark of the betrayer in every age.'),
+    ('canon','jeremiah',41,2,'canon','2-samuel',20,9,'free',
+      E'*And Joab said to Amasa, Art thou in health, my brother? And Joab took Amasa by the beard with the right hand to kiss him* (2 Samuel 20:9). Joab feigns the kiss of a brother to bring Amasa within reach of the sword — the same treacherous nearness by which Ishmael *smote Gedaliah... and slew him* (Jeremiah 41:2) after eating bread with him. The embrace of friendship is turned into the cover for the blade.'),
+    ('canon','jeremiah',41,2,'canon','2-samuel',20,10,'free',
+      E'*But Amasa took no heed to the sword that was in Joab''s hand: so he smote him therewith in the fifth rib, and shed out his bowels to the ground, and struck him not again; and he died* (2 Samuel 20:10). Joab''s kiss-and-stab is the very pattern of Ishmael''s deed — the trusted guest who *smote Gedaliah the son of Ahikam... with the sword, and slew him* (Jeremiah 41:2). The one disarmed by friendship takes no heed of the hidden sword.'),
+    ('canon','jeremiah',41,1,'canon','proverbs',27,6,'free',
+      E'*Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:6). Proverbs names the lie that Ishmael acted: the show of fellowship — eating bread together, the kiss, the embrace — masking the enemy''s blow. They *did eat bread together in Mizpah* (Jeremiah 41:1); the kiss of that table was deceitful, the wound it covered was murder.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): the innocent worshippers slaughtered and cast into the pit; the innocent blood that cries
+    ('canon','jeremiah',41,7,'canon','genesis',4,10,'free',
+      E'*And he said, What hast thou done? the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10). Abel''s blood is the first cry of innocent blood, and it never falls silent. When Ishmael *slew them, and cast them into the midst of the pit* (Jeremiah 41:7) — fourscore unarmed worshippers — their blood joins that same cry from the ground; the pit does not bury the voice that rises to Yahuah.'),
+    ('canon','jeremiah',41,7,'canon','matthew',23,35,'free',
+      E'*That upon you may come all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35). The Messiah gathers the whole long reckoning of innocent blood into one — from Abel onward. The fourscore pilgrims Ishmael *slew... and cast... into the midst of the pit* (Jeremiah 41:7) belong to that reckoning: righteous blood shed upon the earth, every drop remembered and required.'),
+    ('canon','jeremiah',41,5,'canon','jeremiah',22,17,'free',
+      E'*But thine eyes and thine heart are not but for thy covetousness, and for to shed innocent blood, and for oppression, and for violence, to do it* (Jeremiah 22:17). Jeremiah charged the wicked king with the shedding of innocent blood; now the prophet records that very sin done to the mourning pilgrims who came *with offerings and incense in their hand, to bring them to the house of Yahuah (LORD)* (Jeremiah 41:5). The land already cursed for innocent blood is stained again — worshippers murdered on their way to Yahuah''s house.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-41-they-did-eat-bread-together-and-he-smote-him',
+       E'They did eat bread together — and he smote him: the bread of fellowship betrayed',
+       E'The murder at Mizpah is wrapped in the rite of fellowship. *Now it came to pass in the seventh month, that Ishmael the son of Nethaniah the son of Elishama, of the seed royal, and the princes of the king, even ten men with him, came unto Gedaliah the son of Ahikam to Mizpah; and there they did eat bread together in Mizpah* (41:1). To eat bread together was to sit at the table of trust, to bind oneself in covenant fellowship — and Ishmael breaks that bond in the same breath: *Then arose Ishmael the son of Nethaniah, and the ten men that were with him, and smote Gedaliah the son of Ahikam the son of Shaphan with the sword, and slew him, whom the king of Babylon had made governor over the land* (41:2); *Ishmael also slew all the Yahudim (Jews) that were with him* (41:3). This is the oldest and bitterest treachery — the friend who eats your bread and turns on you. David sang it of his own betrayer: *Yea, mine own familiar friend, in whom I trusted, which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9). And the Messiah took that very verse upon his lips of Judas at the last supper, the night he was betrayed: *that the scripture may be fulfilled, He that eateth bread with me hath lifted up his heel against me* (John 13:18). The same shape runs through Joab''s feigned kiss of Amasa: *Joab took Amasa by the beard with the right hand to kiss him. But Amasa took no heed to the sword that was in Joab''s hand: so he smote him therewith in the fifth rib... and he died* (2 Samuel 20:9-10) — the embrace of a brother made the cover for the blade. And Proverbs names the lie of it plainly: *Faithful are the wounds of a friend; but the kisses of an enemy are deceitful* (Proverbs 27:6). The broken bread of fellowship betrayed — Mizpah, the kiss of Joab, the heel of Judas: one treachery in many ages.',
+       sv.verse_id, ev.verse_id, 'free', 35000
+  FROM _s309_jer41_lookup sv, _s309_jer41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=41 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-41-innocent-blood-cast-into-the-pit',
+       E'The innocent blood cast into the pit — the worshippers slain on their way to the house of Yahuah',
+       E'On the second day, before the first murder was even known, a second and more dreadful crime is done. *And it came to pass the second day after he had slain Gedaliah, and no man knew it, That there came certain from Shechem, from Shiloh, and from Samaria, even fourscore men, having their beards shaven, and their clothes rent, and having cut themselves, with offerings and incense in their hand, to bring them to the house of Yahuah (LORD)* (41:4-5) — mourning pilgrims, worshippers carrying their offerings toward the place of Yahuah''s house. Ishmael goes out to meet them with false tears, *weeping all along as he went* (41:6), lures them into the city, and slaughters them: *Ishmael the son of Nethaniah slew them, and cast them into the midst of the pit, he, and the men that were with him* (41:7). This is the shedding of innocent blood — the very sin the prophet had charged against the wicked: *thine eyes and thine heart are not but for thy covetousness, and for to shed innocent blood, and for oppression, and for violence, to do it* (Jeremiah 22:17). And innocent blood is never silent before Yahuah. From the very first murder the ground itself cried out: *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — Abel''s blood the head of the long cry. The Messiah gathers the whole reckoning into one sentence: *all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35). The fourscore worshippers cast into the pit at Mizpah join that cry — righteous blood shed upon the land, remembered and required. Even after Johanan recovers the captives Ishmael had carried away (41:11-16), the blood in the pit is not undone; it cries still.',
+       sv.verse_id, ev.verse_id, 'free', 35003
+  FROM _s309_jer41_lookup sv, _s309_jer41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=41 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *which did eat of my bread, hath lifted up his heel against me* (Psalm 41:9) — David''s betrayer, the very shape of Mizpah: the trusted friend who shared bread and turned to murder.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=1
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=41 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-they-did-eat-bread-together-and-he-smote-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *He that eateth bread with me hath lifted up his heel against me* (John 13:18) — the Messiah quotes Psalm 41 of Judas at the last supper; the bread of fellowship betrayed, as at Mizpah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=2
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=13 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-they-did-eat-bread-together-and-he-smote-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Joab took Amasa by the beard with the right hand to kiss him* (2 Samuel 20:9) — the feigned kiss of a brother to bring the victim within reach of the sword, as Ishmael''s shared bread.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=2
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=20 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-they-did-eat-bread-together-and-he-smote-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*so he smote him therewith in the fifth rib... and he died* (2 Samuel 20:10) — Joab''s kiss-and-stab, the very pattern of the trusted guest who smote Gedaliah with the sword.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=2
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=20 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-they-did-eat-bread-together-and-he-smote-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *the kisses of an enemy are deceitful* (Proverbs 27:6) — Proverbs names the lie of the shared table: the show of fellowship masking the enemy''s blow.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=1
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=27 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-they-did-eat-bread-together-and-he-smote-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the voice of thy brother''s blood crieth unto me from the ground* (Genesis 4:10) — Abel''s blood, the first cry of innocent blood; the pilgrims cast into the pit join that same cry.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=7
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-innocent-blood-cast-into-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *all the righteous blood shed upon the earth, from the blood of righteous Abel* (Matthew 23:35) — the Messiah gathers the whole reckoning of innocent blood into one; the fourscore worshippers belong to it.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=7
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-innocent-blood-cast-into-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *for to shed innocent blood, and for oppression, and for violence* (Jeremiah 22:17) — the prophet''s own charge of innocent blood, now done to the worshippers bound for the house of Yahuah (lateral).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=41 AND sv.verse_number=5
+  JOIN _s309_jer41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-41-innocent-blood-cast-into-the-pit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_42.sql (Jeremiah 42) -----
+-- Chapter: Jeremiah 42 — the remnant of Yahudah (Judah), left but a few, beg Jeremiah to pray and VOW to
+-- obey *whether it be good, or whether it be evil*. After ten days the word comes: STAY in the land and be
+-- BUILT (I will build you, and not pull you down; be not afraid of the king of Babylon, for I am with you to
+-- save you); go NOT into Egypt, or the sword and famine ye feared will overtake you there. But Jeremiah
+-- knows their hearts already: *ye dissembled in your hearts... ye have not obeyed.* The chapter is the
+-- BLESSING OF OBEDIENCE (stay and be built) set against the HALF-HEARTED VOW EXPOSED (a people who ask the
+-- way with hearts already set to disobey). Two ★★ threads.
+-- Tag: jer42   Temp view: _s309_jer42_lookup   Session: s309
+-- Sort band: base 35025, step 3 -> threads at 35025, 35028 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',42,v
+--
+-- Jeremiah 42 coverage:
+--   v.1-4 (all the captains and the people came near... pray for us unto Yahuah Elohayka, even for all this
+--          remnant; that Yahuah may shew us the way wherein we may walk... I will keep nothing back from you)
+--        NT:     none warranted (the petition; Jeremiah''s answer-promise; held in prose, leads into THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (the remnant''s request for guidance; the dissembling behind it surfaces v.20)
+--   ★★ v.5-6 (Yahuah be a true and faithful witness between us, if we do not even according to all things...
+--          whether it be good, or whether it be evil, we will obey the voice of Yahuah our Elohim)
+--        NT:     held in THREAD 1 (the vow of obedience whose blessing is promised in v.10-12)
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Samuel 12:14-15 (if ye will fear Yahuah, and obey his voice... ye shall continue
+--                following Yahuah), ★ Isaiah 1:19 (if ye be willing and obedient, ye shall eat the good of
+--                the land) — THREAD 1; the obedience-vow weighed against the dissembling heart of THREAD 2
+--   v.7-9 (after ten days the word of Yahuah came... Thus saith Yahuah, the Elohim of Yashar''el, unto whom
+--          ye sent me to present your supplication)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the prophetic answer arrives; the substance is v.10-12, THREAD 1)
+--   ★★ v.10-12 (If ye will still abide in this land, then will I build you, and not pull you down... Be not
+--          afraid of the king of Babylon... for I am with you to save you... I will shew mercies unto you)
+--        NT:     none warranted (the blessing of covenant obedience; clean Tanakh weave, no NT forced here)
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 24:6 (I will build them, and not pull them down... and not pluck them up —
+--                lateral, the SAME build-and-plant pledge over the good figs of Yahudah), ★★ Deuteronomy
+--                28:1-2 (if thou shalt hearken... all these blessings shall come on thee), ★★ 1 Samuel
+--                12:14 (continue following Yahuah), ★ Isaiah 1:19 (ye shall eat the good of the land) — THREAD 1
+--   v.13-18 (But if ye say, We will not dwell in this land... we will go into the land of Egypt... the sword,
+--          which ye feared, shall overtake you there... ye shall die... an execration, and an astonishment,
+--          and a curse, and a reproach)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the counter-curse for disobedience — the very evils they flee to Egypt to
+--                escape overtake them there; the Deuteronomy-28 curse-side, woven in THREAD 1/THREAD 2 prose)
+--   ★★ v.19-22 (Yahuah hath said... O ye remnant of Yahudah; Go ye not into Egypt: know certainly that I
+--          have admonished you... For ye dissembled in your hearts, when ye sent me... saying, Pray for us...
+--          and we will do it... but ye have not obeyed the voice of Yahuah)
+--        NT:     ★★ James 1:22 (be ye doers of the word, and not hearers only, deceiving your own selves),
+--                ★★ Matthew 15:8 (this people draweth nigh unto me with their mouth... but their heart is far
+--                from me) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 33:31 (they hear thy words, but they will not do them: for with their mouth they
+--                shew much love, but their heart goeth after their covetousness), ★★ Proverbs 28:9 (he that
+--                turneth away his ear from hearing the law, even his prayer shall be abomination) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you — Tanakh (Jeremiah 24, Deuteronomy 28, 1 Samuel 12, Isaiah 1) [free]
+--      (★★ the blessing of obedience: stay and be built, not pulled down; fear not Babylon, for I am with you to save you)
+--   2. jeremiah-42-ye-dissembled-in-your-hearts-but-ye-have-not-obeyed — NT (James 1, Matthew 15) + Tanakh (Ezekiel 33, Proverbs 28) [free]
+--      (★★ the half-hearted vow exposed: a people who ask the way with hearts already set, who hear and will not do)
+--
+-- Framing notes:
+--   ★★ THE BLESSING OF OBEDIENCE (THREAD 1): the remnant vows, *Yahuah (LORD) be a true and faithful witness
+--      between us, if we do not even according to all things... whether it be good, or whether it be evil, we
+--      will obey the voice of Yahuah Eloheinu (the LORD our God)* (42:5-6). And the answer is the covenant
+--      blessing for hearkening: *If ye will still abide in this land, then will I build you, and not pull you
+--      down, and I will plant you, and not pluck you up* (42:10), *Be not afraid of the king of Babylon...
+--      for I am with you to save you* (42:11). This is the same build-and-plant pledge Yahuah spoke over the
+--      good figs of Yahudah — *I will build them, and not pull them down; and I will plant them, and not
+--      pluck them up* (Jeremiah 24:6) — and it stands on the Torah''s own if-then: *if thou shalt hearken
+--      diligently unto the voice of Yahuah Elohayka (the LORD thy God)... all these blessings shall come on
+--      thee* (Deuteronomy 28:1-2). Samuel set the same terms: *If ye will fear Yahuah (LORD), and... obey his
+--      voice... then shall both ye and also the king that reigneth over you continue following Yahuah* (1 Sam
+--      12:14); and Isaiah: *If ye be willing and obedient, ye shall eat the good of the land* (Isaiah 1:19).
+--      The blessing is not earned merit but the fruit of hearkening — stay, obey, and be built.
+--   ★★ THE DISSEMBLING HEART (THREAD 2): Jeremiah names what the vow concealed: *Go ye not into Egypt: know
+--      certainly that I have admonished you this day. For ye dissembled in your hearts, when ye sent me unto
+--      Yahuah... saying, Pray for us... and we will do it... but ye have not obeyed the voice of Yahuah* (42:
+--      19-21). They asked the way with hearts already set to go their own way — a hearing that will not do.
+--      James gives the New-Covenant word for it: *be ye doers of the word, and not hearers only, deceiving
+--      your own selves* (James 1:22). Ezekiel saw the same congregation: *they hear thy words, but they will
+--      not do them: for with their mouth they shew much love, but their heart goeth after their covetousness*
+--      (Ezekiel 33:31). The Messiah names it of the same people: *This people draweth nigh unto me with their
+--      mouth... but their heart is far from me* (Matthew 15:8). And the proverb pronounces the verdict on
+--      such a prayer: *He that turneth away his ear from hearing the law, even his prayer shall be
+--      abomination* (Proverbs 28:9) — the very prayer the remnant begged for, made abomination by the heart
+--      that would not obey. The dissembling heart turns petition into self-deceit.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the petition and Jeremiah''s answer-promise — held in prose, leads
+--      into THREAD 1), v.7-9 (the word arrives after ten days — the substance is v.10-12), v.13-18 (the
+--      counter-curse for going to Egypt: the sword and famine they fear overtake them there — the
+--      Deuteronomy-28 curse-side, woven into THREAD 1/THREAD 2 prose, not forced to a separate add). All
+--      meaningful blocks recorded; both threads carry the chapter''s two movements.
+
+CREATE TEMP VIEW _s309_jer42_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): if ye will still abide in this land, then will I build you — the blessing of obedience
+    ('canon','jeremiah',42,10,'canon','jeremiah',24,6,'free',
+      E'*For I will set mine eyes upon them for good, and I will bring them again to this land: and I will build them, and not pull them down; and I will plant them, and not pluck them up* (Jeremiah 24:6). The promise to the remnant who stay — *If ye will still abide in this land, then will I build you, and not pull you down, and I will plant you, and not pluck you up* (Jeremiah 42:10) — is word for word the build-and-plant pledge Yahuah (LORD) spoke over the good figs of Yahudah (Judah). The same Yahuah who plants the captive remnant for good will build, not pull down, those who hearken and stay.'),
+    ('canon','jeremiah',42,6,'canon','deuteronomy',28,1,'free',
+      E'*And it shall come to pass, if thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God), to observe and to do all his commandments which I command thee this day, that Yahuah Elohayka (the LORD thy God) will set thee on high above all nations of the earth* (Deuteronomy 28:1). The remnant''s vow — *we will obey the voice of Yahuah Eloheinu (the LORD our God)... that it may be well with us* (Jeremiah 42:6) — is the very if-then of the Torah: blessing follows hearkening. To obey the voice is the condition of being set on high and built up.'),
+    ('canon','jeremiah',42,10,'canon','deuteronomy',28,2,'free',
+      E'*And all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (Deuteronomy 28:2). The build-and-plant blessing — *then will I build you, and not pull you down, and I will plant you, and not pluck you up* (Jeremiah 42:10) — is the Torah''s blessing that overtakes the obedient. The same condition stands: hearken to the voice, and the blessings come and overtake; the building of the remnant is the Deuteronomy promise made plain.'),
+    ('canon','jeremiah',42,6,'canon','1-samuel',12,14,'free',
+      E'*If ye will fear Yahuah (LORD), and serve him, and obey his voice, and not rebel against the commandment of Yahuah (LORD), then shall both ye and also the king that reigneth over you continue following Yahuah Elohaychem (the LORD your God)* (1 Samuel 12:14). Samuel set the remnant''s very terms: to *obey the voice of Yahuah Eloheinu (the LORD our God)* (Jeremiah 42:6) is to fear him and not rebel, and the fruit is to continue following him. The vow they swear is the covenant condition Samuel named — obedience that they may stand, not fall.'),
+    ('canon','jeremiah',42,10,'canon','1-samuel',12,15,'free',
+      E'*But if ye will not obey the voice of Yahuah (LORD), but rebel against the commandment of Yahuah (LORD), then shall the hand of Yahuah (LORD) be against you, as it was against your fathers* (1 Samuel 12:15). The other side of the build-and-plant pledge — *If ye will still abide in this land, then will I build you* (Jeremiah 42:10) — is the hand against the disobedient. Samuel sets the same fork: obey and continue, or rebel and be opposed. The remnant stands before exactly this choice: abide and be built, or refuse and fall (Jeremiah 42:13-18).'),
+    ('canon','jeremiah',42,6,'canon','isaiah',1,19,'free',
+      E'*If ye be willing and obedient, ye shall eat the good of the land* (Isaiah 1:19). Isaiah names the same promise the remnant''s vow reaches for — *we will obey the voice of Yahuah Eloheinu (the LORD our God), to whom we send thee; that it may be well with us* (Jeremiah 42:6): willingness and obedience are the way to eat the good of the land. To stay and obey is to keep the land''s good; to refuse it (Isaiah 1:20) is the sword. The blessing the remnant seeks is the blessing of the willing and obedient heart.'),
+
+    -- THREAD 2 (★★): ye dissembled in your hearts, but ye have not obeyed — the half-hearted vow exposed
+    ('canon','jeremiah',42,20,'canon','james',1,22,'free',
+      E'*But be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22). Jeremiah exposes the remnant as hearers who will not do — *ye dissembled in your hearts, when ye sent me unto Yahuah... saying, Pray for us... and we will do it* (Jeremiah 42:20) — yet *ye have not obeyed the voice of Yahuah* (42:21). James names the self-deceit exactly: to hear and not do is to deceive your own selves. The remnant''s vow to do was a hearing-only that deceived them.'),
+    ('canon','jeremiah',42,20,'canon','matthew',15,8,'free',
+      E'*This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me* (Matthew 15:8). The Messiah names the very fault Jeremiah lays bare: *ye dissembled in your hearts, when ye sent me unto Yahuah* (Jeremiah 42:20) — the mouth says *Pray for us... and we will do it*, while the heart is already set on Egypt. Lips near, heart far; a worship of words the heart will not obey.'),
+    ('canon','jeremiah',42,20,'canon','ezekiel',33,31,'free',
+      E'*And they come unto thee as the people cometh, and they sit before thee as my people, and they hear thy words, but they will not do them: for with their mouth they shew much love, but their heart goeth after their covetousness* (Ezekiel 33:31). Ezekiel describes Jeremiah''s own congregation: a people who come and hear and *shew much love* with the mouth, *but they will not do them*. So with the remnant — *we will do it... but ye have not obeyed* (Jeremiah 42:20-21). The dissembling heart hears the word and goes its own way.'),
+    ('canon','jeremiah',42,21,'canon','proverbs',28,9,'free',
+      E'*He that turneth away his ear from hearing the law, even his prayer shall be abomination* (Proverbs 28:9). The remnant begged for prayer — *Pray for us unto Yahuah Eloheinu (the LORD our God)* (Jeremiah 42:20) — yet *ye have not obeyed the voice of Yahuah* (42:21): the ear turned away from the word while the mouth asked for intercession. The proverb pronounces the verdict: the prayer of a heart that will not hear and obey is itself abomination. Their very petition is undone by their disobedience.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you',
+       E'If ye will still abide in this land, then will I build you — the blessing of obedience',
+       E'The remnant of Yahudah (Judah), *left but a few of many* (42:2), come to Jeremiah and swear a great vow: *Yahuah (LORD) be a true and faithful witness between us, if we do not even according to all things for the which Yahuah Elohayka (the LORD thy God) shall send thee to us. Whether it be good, or whether it be evil, we will obey the voice of Yahuah Eloheinu (the LORD our God), to whom we send thee; that it may be well with us, when we obey the voice of Yahuah Eloheinu (the LORD our God)* (42:5-6). After ten days the word comes, and it is the covenant blessing for hearkening: *If ye will still abide in this land, then will I build you, and not pull you down, and I will plant you, and not pluck you up: for I repent me of the evil that I have done unto you* (42:10), *Be not afraid of the king of Babylon, of whom ye are afraid... for I am with you to save you, and to deliver you from his hand. And I will shew mercies unto you* (42:11-12). This is word for word the build-and-plant pledge Yahuah spoke over the good figs carried to Babylon — *I will build them, and not pull them down; and I will plant them, and not pluck them up* (Jeremiah 24:6) — and it rests on the Torah''s own if-then: *if thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God)... all these blessings shall come on thee, and overtake thee* (Deuteronomy 28:1-2). Samuel set the same terms to the same people: *If ye will fear Yahuah (LORD), and serve him, and obey his voice, and not rebel against the commandment of Yahuah (LORD), then shall both ye and also the king that reigneth over you continue following Yahuah* (1 Samuel 12:14) — and the other fork stands beside it, *But if ye will not obey the voice of Yahuah (LORD)... then shall the hand of Yahuah (LORD) be against you* (1 Samuel 12:15). Isaiah names the promise plainest of all: *If ye be willing and obedient, ye shall eat the good of the land* (Isaiah 1:19). The blessing is no earned merit; it is the fruit of hearkening to the voice. Stay, obey, and be built — or refuse, and the sword they flee to Egypt to escape will overtake them there (42:16-18).',
+       sv.verse_id, ev.verse_id, 'free', 35025
+  FROM _s309_jer42_lookup sv, _s309_jer42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=42 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-42-ye-dissembled-in-your-hearts-but-ye-have-not-obeyed',
+       E'Ye dissembled in your hearts — they asked the way with hearts already set',
+       E'For all the weight of the vow — *whether it be good, or whether it be evil, we will obey* (42:6) — Jeremiah knows the heart behind it, and he names it plainly: *Yahuah (LORD) hath said concerning you, O ye remnant of Yahudah (Judah); Go ye not into Egypt: know certainly that I have admonished you this day. For ye dissembled in your hearts, when ye sent me unto Yahuah Elohaychem (the LORD your God), saying, Pray for us unto Yahuah Eloheinu (the LORD our God); and according unto all that Yahuah... shall say, so declare unto us, and we will do it. And now I have this day declared it to you; but ye have not obeyed the voice of Yahuah Elohaychem (the LORD your God), nor any thing for the which he hath sent me unto you* (42:19-21). They asked the way with hearts already set to go their own way — a hearing that will not do, a prayer offered in bad faith. James gives the New-Covenant word for it: *But be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22) — the hearer-only deceives himself, as the remnant deceived themselves with a vow they never meant to keep. Ezekiel had already drawn this very congregation: *they hear thy words, but they will not do them: for with their mouth they shew much love, but their heart goeth after their covetousness* (Ezekiel 33:31). And the Messiah names it of the same kind of worship: *This people draweth nigh unto me with their mouth, and honoureth me with their lips; but their heart is far from me* (Matthew 15:8). The proverb pronounces the verdict on the remnant''s very petition: *He that turneth away his ear from hearing the law, even his prayer shall be abomination* (Proverbs 28:9) — the prayer they begged Jeremiah to pray, made abomination by the heart that would not obey. The dissembling heart turns petition into self-deceit, and the way they desire to go is the way of death (42:22).',
+       sv.verse_id, ev.verse_id, 'free', 35028
+  FROM _s309_jer42_lookup sv, _s309_jer42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=42 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will build them, and not pull them down; and I will plant them, and not pluck them up* (Jeremiah 24:6) — the SAME build-and-plant pledge, spoken over the good figs of Yahudah; the remnant who stay are built, not pulled down.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=24 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *if thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God)... that Yahuah... will set thee on high* (Deuteronomy 28:1) — the Torah''s if-then; the remnant''s vow to obey the voice is the very condition of blessing.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice* (Deuteronomy 28:2) — the build-and-plant blessing of Jeremiah 42:10 is the Torah''s blessing that overtakes the obedient.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *If ye will fear Yahuah (LORD)... and obey his voice... then shall... ye... continue following Yahuah* (1 Samuel 12:14) — Samuel set the remnant''s very terms: obey the voice and stand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *But if ye will not obey the voice of Yahuah (LORD)... then shall the hand of Yahuah (LORD) be against you* (1 Samuel 12:15) — the other fork: refuse to obey and fall, as the remnant refusing (Jeremiah 42:13-18) meet the sword.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=10
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *If ye be willing and obedient, ye shall eat the good of the land* (Isaiah 1:19) — the plainest naming of the promise the vow reaches for: obey and keep the land''s good, that it may be well with us (Jeremiah 42:6).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=6
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-if-ye-will-still-abide-in-this-land-then-will-i-build-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22) — the remnant''s *we will do it* (Jeremiah 42:20) was hearing-only; to hear and not do is to deceive oneself.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=20
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-ye-dissembled-in-your-hearts-but-ye-have-not-obeyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *This people draweth nigh unto me with their mouth... but their heart is far from me* (Matthew 15:8) — the Messiah names the dissembling of Jeremiah 42:20: lips that say *we will do it*, a heart already set on Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=20
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-ye-dissembled-in-your-hearts-but-ye-have-not-obeyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they hear thy words, but they will not do them: for... their heart goeth after their covetousness* (Ezekiel 33:31) — Jeremiah''s own congregation, who hear and will not do, as the remnant *will do it... but ye have not obeyed* (Jeremiah 42:20-21).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=20
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=33 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-ye-dissembled-in-your-hearts-but-ye-have-not-obeyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *He that turneth away his ear from hearing the law, even his prayer shall be abomination* (Proverbs 28:9) — the verdict on the very prayer the remnant begged for (Jeremiah 42:20-21): an ear turned from the word makes the petition abomination.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=42 AND sv.verse_number=21
+  JOIN _s309_jer42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=28 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-42-ye-dissembled-in-your-hearts-but-ye-have-not-obeyed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_43.sql (Jeremiah 43) -----
+-- Chapter: Jeremiah 43 — Largely NARRATIVE. The remnant of Yahudah, just delivered Yahuah's plain
+-- answer through Jeremiah (do NOT go down into Egypt, dwell in the land), accuse the prophet of lying:
+-- *Thou speakest falsely: Yahuah Eloheinu (the LORD our God) hath not sent thee* (43:2). They obey not
+-- the voice of Yahuah, take the whole remnant — and Jeremiah and Baruch with them — down into Egypt to
+-- Tahpanhes. There Yahuah gives the SIGN of the great stones hidden in the clay at the entry of Pharaoh's
+-- house: Nebuchadrezzar his servant will come even there, set his throne on those very stones, and smite
+-- Egypt. The two framework movements: (1) the truth called a lie, the will of man preferred to the word
+-- of Yahuah, the forbidden return to Egypt; (2) there is no refuge from the appointed judgment — flee to
+-- Egypt and Babylon comes even there.
+-- Tag: jer43   Temp view: _s309_jer43_lookup
+-- Sort band: base 35050, step 3 -> threads at 35050, 35053 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',43,v
+--
+-- Jeremiah 43 coverage:
+--   v.1 (Jeremiah had made an end of speaking all the words of Yahuah their Elohim, for which Yahuah had
+--        sent him) — the faithful delivery of the whole word; preface to the rejection of v.2-4
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the prophet's faithfulness; bound to THREAD 1 prose)
+--   ★ v.2-4 (Thou speakest falsely: Yahuah Eloheinu hath not sent thee to say, Go not into Egypt... So
+--          Johanan... and all the people, obeyed not the voice of Yahuah, to dwell in the land of Yahudah)
+--        NT:     ★ 2 Timothy 4:3-4 (they will not endure sound doctrine... shall turn away their ears from
+--                the truth, and shall be turned unto fables) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 42:6 (whether good or evil, we will obey the voice of Yahuah Eloheinu — lateral,
+--                the broken vow), ★★ Isaiah 30:1-3 (woe to the rebellious children... that walk to go down
+--                into Egypt, and have not asked at my mouth), ★★ Deuteronomy 17:16 (he shall not cause the
+--                people to return to Egypt... Ye shall henceforth return no more that way) — THREAD 1
+--   v.5-6 (took all the remnant of Yahudah... men, women, children, the king's daughters... and Jeremiah
+--          the prophet, and Baruch) — the prophet carried off with the disobedient remnant
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — the whole remnant, the prophet with them, into Egypt (THREAD 1)
+--   ★ v.7 (So they came into the land of Egypt: for they obeyed not the voice of Yahuah: thus came they
+--          even to Tahpanhes) — the act consummated; the return to Egypt completed
+--        NT:     held in THREAD 1 (the turning from the truth)
+--        Extras: none warranted
+--        Tanakh: held with v.2-4 — *they obeyed not the voice of Yahuah* (THREAD 1)
+--   v.8 (Then came the word of Yahuah unto Jeremiah in Tahpanhes) — the word follows them even into Egypt
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the prophetic word reaches them in the place of their flight; THREAD 2)
+--   ★ v.9-13 (Take great stones... hide them in the clay... at the entry of Pharaoh's house in Tahpanhes...
+--          Behold, I will send and take Nebuchadrezzar the king of Babylon, my servant, and will set his
+--          throne upon these stones... And when he cometh, he shall smite the land of Egypt)
+--        NT:     none warranted (clean canon weave; the no-refuge judgment is a Tanakh motif)
+--        Extras: none warranted
+--        Tanakh: ★★ Amos 9:2-3 (though they dig into hell... though they hide in the top of Carmel, I will
+--                search and take them out thence), ★ Jeremiah 25:9 (Nebuchadrezzar my servant — lateral, the
+--                rod of judgment over the nations), ★★ Psalm 139:7-10 (whither shall I flee from thy
+--                presence?... if I make my bed in hell, behold, thou art there), ★ Jeremiah 44:13 (I will
+--                punish them that dwell in the land of Egypt, as I have punished Jerusalem) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt — NT (2 Timothy 4)
+--      + Tanakh (Jeremiah 42, Isaiah 30, Deuteronomy 17) [free]
+--      (★ the true word rejected as a lie, the will of man preferred to the voice of Yahuah, the forbidden
+--       return to Egypt — the broken vow of Jeremiah 42:6)
+--   2. jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt — Tanakh (Amos 9, Jeremiah 25,
+--      Psalm 139, Jeremiah 44) [free]
+--      (★ the sign of the hidden stones — there is no fleeing the appointed judgment; Babylon comes even to
+--       Egypt, for whither shall a man flee from the presence of Yahuah?)
+--
+-- Framing notes:
+--   ★ THE TRUTH CALLED A LIE / THE RETURN TO EGYPT (THREAD 1): Jeremiah had just delivered the plain word of
+--      Yahuah — abide in the land, go not into Egypt — and the proud men answer: *Thou speakest falsely:
+--      Yahuah Eloheinu (the LORD our God) hath not sent thee to say, Go not into Egypt to sojourn there*
+--      (43:2). They had sworn the opposite ten days before: *Whether it be good, or whether it be evil, we
+--      will obey the voice of Yahuah Eloheinu (the LORD our God)* (Jeremiah 42:6) — the broken vow. So *they
+--      obeyed not the voice of Yahuah (LORD)... thus came they even to Tahpanhes* (43:4,7). This is the will
+--      of man preferred to the word of Yahuah, the truth rejected as falsehood. Isaiah named the same sin a
+--      century before: *Woe to the rebellious children, saith Yahuah (LORD)... That walk to go down into
+--      Egypt, and have not asked at my mouth; to strengthen themselves in the strength of Pharaoh, and to
+--      trust in the shadow of Egypt!* (Isaiah 30:1-2). And the Torah forbade the return to Egypt outright:
+--      *he shall not... cause the people to return to Egypt... forasmuch as Yahuah (LORD) hath said unto you,
+--      Ye shall henceforth return no more that way* (Deuteronomy 17:16). Paul names the timeless pattern —
+--      ears that will not endure the true word: *they shall turn away their ears from the truth, and shall be
+--      turned unto fables* (2 Timothy 4:4). Egypt is the house of bondage Yahuah brought them OUT of; to call
+--      his word a lie and go back is to undo the redemption.
+--   ★ NO REFUGE FROM THE JUDGMENT (THREAD 2): the word of Yahuah follows them into Egypt itself — *Then came
+--      the word of Yahuah (LORD) unto Jeremiah in Tahpanhes* (43:8) — and gives the sign of the hidden stones:
+--      *Take great stones in thine hand, and hide them in the clay in the brickkiln, which is at the entry of
+--      Pharaoh's house in Tahpanhes... Behold, I will send and take Nebuchadrezzar the king of Babylon, my
+--      servant, and will set his throne upon these stones that I have hid... And when he cometh, he shall smite
+--      the land of Egypt* (43:9-11). They fled to Egypt to escape Babylon; Babylon comes even there, his throne
+--      set on the very stones, in Pharaoh's own dooryard. Amos sang this no-escape: *Though they dig into hell,
+--      thence shall mine hand take them; though they climb up to heaven, thence will I bring them down: And
+--      though they hide themselves in the top of Carmel, I will search and take them out thence* (Amos 9:2-3).
+--      Nebuchadrezzar is the named rod: *Behold, I will send and take... Nebuchadrezzar the king of Babylon, my
+--      servant* (Jeremiah 25:9) — the same servant-of-judgment word. And the psalm asks the question this
+--      chapter answers: *Whither shall I go from thy spirit? or whither shall I flee from thy presence?... if I
+--      make my bed in hell, behold, thou art there* (Psalm 139:7-8). The next chapter seals it: *For I will
+--      punish them that dwell in the land of Egypt, as I have punished Jerusalem* (Jeremiah 44:13). There is no
+--      fleeing the appointed judgment of Yahuah.
+--   VERSES WITH NO SEPARATE ADD: v.1 (Jeremiah's faithful delivery of the whole word — preface, woven into
+--      THREAD 1 prose), v.5-6 (the whole remnant, Jeremiah and Baruch carried with them — narrative, woven
+--      into THREAD 1), v.8 (the word of Yahuah reaching them in Tahpanhes — woven into THREAD 2), v.12-13
+--      (the burning of the houses of the gods of Egypt and the images of Beth-shemesh — the judgment of v.9-11
+--      carried out, woven into THREAD 2 prose). All blocks recorded; both framework movements carry a thread.
+
+CREATE TEMP VIEW _s309_jer43_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): Thou speakest falsely — the truth called a lie, the return to Egypt
+    ('canon','jeremiah',43,2,'canon','jeremiah',42,6,'free',
+      E'*Whether it be good, or whether it be evil, we will obey the voice of Yahuah Eloheinu (the LORD our God), to whom we send thee; that it may be well with us, when we obey the voice of Yahuah Eloheinu (the LORD our God)* (Jeremiah 42:6). Ten days before, the very same men had sworn this vow — to obey whatever Yahuah answered, good or evil. Now that the answer is *Go not into Egypt*, they break it to his face: *Thou speakest falsely: Yahuah Eloheinu (the LORD our God) hath not sent thee* (Jeremiah 43:2). They wanted a word to ratify their will, not the word of Yahuah; when it crossed them, they called the prophet a liar.'),
+    ('canon','jeremiah',43,2,'canon','isaiah',30,1,'free',
+      E'*Woe to the rebellious children, saith Yahuah (LORD), that take counsel, but not of me; and that cover with a covering, but not of my spirit, that they may add sin to sin* (Isaiah 30:1). A century earlier Isaiah named the very sin of these proud men — counsel taken *but not of me*, the word of Yahuah set aside for their own design. To say *Yahuah Eloheinu (the LORD our God) hath not sent thee* (Jeremiah 43:2) is to take counsel that is not of him and add sin to sin.'),
+    ('canon','jeremiah',43,2,'canon','isaiah',30,2,'free',
+      E'*That walk to go down into Egypt, and have not asked at my mouth; to strengthen themselves in the strength of Pharaoh, and to trust in the shadow of Egypt!* (Isaiah 30:2). Isaiah''s woe is this chapter''s very deed: men who *walk to go down into Egypt* trusting Pharaoh, *and have not asked at my mouth*. The remnant had asked — and then refused the answer (Jeremiah 43:2-4), which is worse than never asking: the shadow of Egypt is no refuge, only shame.'),
+    ('canon','jeremiah',43,4,'canon','deuteronomy',17,16,'free',
+      E'*But he shall not multiply horses to himself, nor cause the people to return to Egypt, to the end that he should multiply horses: forasmuch as Yahuah (LORD) hath said unto you, Ye shall henceforth return no more that way* (Deuteronomy 17:16). The Torah forbade the return to Egypt outright — *Ye shall henceforth return no more that way*. So when *Johanan... and all the people, obeyed not the voice of Yahuah (LORD), to dwell in the land of Yahudah (Judah)* (Jeremiah 43:4) and went down to Egypt, they undid the redemption Yahuah wrought when he brought them OUT, turning back to the house of bondage he had charged them never to seek again.'),
+    ('canon','jeremiah',43,2,'canon','2-timothy',4,4,'free',
+      E'*And they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4). Paul names the timeless pattern these proud men display: ears that *will not endure sound doctrine* (2 Tim 4:3) and *turn away their ears from the truth*. To answer Yahuah''s plain word with *Thou speakest falsely... Yahuah Eloheinu (the LORD our God) hath not sent thee* (Jeremiah 43:2) is to call the truth a lie and turn aside to the fable that flatters the will.'),
+
+    -- THREAD 2 (★): the sign of the hidden stones — no refuge from the judgment, Babylon comes even to Egypt
+    ('canon','jeremiah',43,10,'canon','amos',9,2,'free',
+      E'*Though they dig into hell, thence shall mine hand take them; though they climb up to heaven, thence will I bring them down* (Amos 9:2). Amos sings the no-escape that this sign enacts: there is no depth nor height that hides from Yahuah''s hand. The remnant fled to Egypt to escape Babylon, but Yahuah declares *I will send and take Nebuchadrezzar the king of Babylon, my servant, and will set his throne upon these stones* (Jeremiah 43:10) — his judgment reaches the place of flight.'),
+    ('canon','jeremiah',43,10,'canon','amos',9,3,'free',
+      E'*And though they hide themselves in the top of Carmel, I will search and take them out thence; and though they be hid from my sight in the bottom of the sea, thence will I command the serpent, and he shall bite them* (Amos 9:3). What Amos promised — *I will search and take them out thence* — is the very point of the hidden stones in Pharaoh''s dooryard: there is no hiding-place from the appointed judgment. Babylon''s throne set *upon these stones that I have hid* (Jeremiah 43:10) says the judgment will find them even in Egypt.'),
+    ('canon','jeremiah',43,10,'canon','jeremiah',25,9,'free',
+      E'*Behold, I will send and take all the families of the north, saith Yahuah (LORD), and Nebuchadrezzar the king of Babylon, my servant, and will bring them against this land* (Jeremiah 25:9). The same servant-of-judgment word is spoken over Egypt as over Jerusalem: *Behold, I will send and take Nebuchadrezzar the king of Babylon, my servant* (Jeremiah 43:10). Babylon is Yahuah''s appointed rod — *my servant* — and the rod that smote the land follows the fugitives into Egypt; the king they fled is the king Yahuah sends after them.'),
+    ('canon','jeremiah',43,9,'canon','psalms',139,7,'free',
+      E'*Whither shall I go from thy spirit? or whither shall I flee from thy presence?* (Psalm 139:7). The psalm asks the question this whole chapter answers. The remnant fled to Egypt to flee the judgment of Yahuah; but the word of Yahuah came to Jeremiah *in Tahpanhes* (Jeremiah 43:8), and the sign of the hidden stones (Jeremiah 43:9) declares that there is no border beyond his reach. There is no fleeing the presence of Yahuah.'),
+    ('canon','jeremiah',43,9,'canon','psalms',139,8,'free',
+      E'*If I ascend up into heaven, thou art there: if I make my bed in hell, behold, thou art there* (Psalm 139:8). The flight to Egypt is the same vain attempt the psalm dismisses — there is no place, height nor depth, where Yahuah is not. The stones hidden *at the entry of Pharaoh''s house in Tahpanhes* (Jeremiah 43:9) become the throne-seat of his judgment; even in Pharaoh''s own dooryard, *behold, thou art there*.'),
+    ('canon','jeremiah',43,11,'canon','jeremiah',44,13,'free',
+      E'*For I will punish them that dwell in the land of Egypt, as I have punished Jerusalem, by the sword, by the famine, and by the pestilence* (Jeremiah 44:13). The next chapter seals the sign: the judgment that fell on Jerusalem will fall on the fugitives in Egypt too. *And when he cometh, he shall smite the land of Egypt, and deliver such as are for death to death; and such as are for captivity to captivity* (Jeremiah 43:11) — Egypt is no shelter; the same sword, famine, and pestilence pursue them there.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt',
+       E'Thou speakest falsely — the truth called a lie, and the forbidden return to Egypt',
+       E'Jeremiah had just finished delivering the whole, plain word of Yahuah (LORD) — abide in the land of Yahudah (Judah), go not down into Egypt — *when Jeremiah had made an end of speaking unto all the people all the words of Yahuah (LORD) their Elohim (God), for which Yahuah (LORD) their Elohim (God) had sent him to them* (43:1). And the proud men answer to his face: *Then spake Azariah the son of Hoshaiah, and Johanan the son of Kareah, and all the proud men, saying unto Jeremiah, Thou speakest falsely: Yahuah Eloheinu (the LORD our God) hath not sent thee to say, Go not into Egypt to sojourn there* (43:2). Mark the audacity: the true word is rejected as a lie because it crosses the will. Only ten days before, these same men had sworn the opposite — *Whether it be good, or whether it be evil, we will obey the voice of Yahuah Eloheinu (the LORD our God), to whom we send thee* (Jeremiah 42:6) — but they wanted a word to ratify their plan, not the word of Yahuah, and when it forbade their flight they called the prophet a liar and broke the vow: *So Johanan the son of Kareah, and all the captains of the forces, and all the people, obeyed not the voice of Yahuah (LORD), to dwell in the land of Yahudah (Judah)... So they came into the land of Egypt: for they obeyed not the voice of Yahuah (LORD): thus came they even to Tahpanhes* (43:4,7). They carried the prophet and Baruch with them into the very land Yahuah had charged them never to seek again. Isaiah had named this sin a century before: *Woe to the rebellious children, saith Yahuah (LORD), that take counsel, but not of me... That walk to go down into Egypt, and have not asked at my mouth; to strengthen themselves in the strength of Pharaoh, and to trust in the shadow of Egypt!* (Isaiah 30:1-2). And the Torah forbade the return outright: *he shall not... cause the people to return to Egypt... forasmuch as Yahuah (LORD) hath said unto you, Ye shall henceforth return no more that way* (Deuteronomy 17:16). Egypt is the house of bondage Yahuah brought them OUT of; to call his word a lie and go back is to undo the redemption itself. And the pattern is timeless — Paul names it: *they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4). The truth had been spoken; they would not endure it, and so they called it a lie and walked into Egypt.',
+       sv.verse_id, ev.verse_id, 'free', 35050
+  FROM _s309_jer43_lookup sv, _s309_jer43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=43 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt',
+       E'The sign of the hidden stones — no refuge from the judgment, Babylon comes even to Egypt',
+       E'The remnant fled to Egypt to escape the judgment that had fallen on Jerusalem — but the word of Yahuah (LORD) follows them even there: *Then came the word of Yahuah (LORD) unto Jeremiah in Tahpanhes, saying* (43:8). And Yahuah gives a sign acted out in Pharaoh''s own dooryard: *Take great stones in thine hand, and hide them in the clay in the brickkiln, which is at the entry of Pharaoh''s house in Tahpanhes, in the sight of the men of Yahudah (Judah); And say unto them, Thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); Behold, I will send and take Nebuchadrezzar the king of Babylon, my servant, and will set his throne upon these stones that I have hid... And when he cometh, he shall smite the land of Egypt* (43:9-11). They fled the king of Babylon; the king of Babylon comes even to Egypt, his throne set on the very stones the prophet hid, and burns the houses of the gods of Egypt (43:12-13). There is no refuge from the appointed judgment of Yahuah. Amos sang it: *Though they dig into hell, thence shall mine hand take them; though they climb up to heaven, thence will I bring them down: And though they hide themselves in the top of Carmel, I will search and take them out thence* (Amos 9:2-3). Nebuchadrezzar is the named rod over the nations, the same servant-word spoken over Jerusalem now spoken over Egypt: *Behold, I will send and take... Nebuchadrezzar the king of Babylon, my servant* (Jeremiah 25:9). And the psalm asks the question this chapter answers: *Whither shall I go from thy spirit? or whither shall I flee from thy presence? If I ascend up into heaven, thou art there: if I make my bed in hell, behold, thou art there* (Psalm 139:7-8). The next chapter seals it: *For I will punish them that dwell in the land of Egypt, as I have punished Jerusalem, by the sword, by the famine, and by the pestilence* (Jeremiah 44:13). Egypt is no shelter; the judgment of Yahuah finds them where they fled.',
+       sv.verse_id, ev.verse_id, 'free', 35053
+  FROM _s309_jer43_lookup sv, _s309_jer43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=43 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *whether good, or whether evil, we will obey the voice of Yahuah Eloheinu (the LORD our God)* (Jeremiah 42:6) — the broken vow; ten days later they called the answer a lie.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=42 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Woe to the rebellious children... that take counsel, but not of me* (Isaiah 30:1) — counsel not of Yahuah, adding sin to sin; the very sin of the proud men.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *that walk to go down into Egypt... and have not asked at my mouth* (Isaiah 30:2) — trusting the shadow of Egypt; the remnant asked, then refused the answer.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *he shall not... cause the people to return to Egypt... Ye shall henceforth return no more that way* (Deuteronomy 17:16) — the Torah forbade the return; going back undoes the redemption.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=4
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4) — the timeless pattern: the true word not endured, called a lie, the fable preferred.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-thou-speakest-falsely-the-truth-called-a-lie-and-the-return-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Though they dig into hell, thence shall mine hand take them; though they climb up to heaven, thence will I bring them down* (Amos 9:2) — no depth nor height hides from Yahuah''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=10
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *though they hide themselves in the top of Carmel, I will search and take them out thence* (Amos 9:3) — the no-hiding-place the hidden stones enact; the judgment finds them in Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=10
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Nebuchadrezzar the king of Babylon, my servant* (Jeremiah 25:9) — the same servant-of-judgment rod over the nations, now sent after the fugitives into Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=10
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *whither shall I flee from thy presence?* (Psalm 139:7) — the question this chapter answers; the word of Yahuah came to them in Tahpanhes.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *if I make my bed in hell, behold, thou art there* (Psalm 139:8) — no place Yahuah is not; even in Pharaoh''s dooryard the throne of judgment is set.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=139 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *I will punish them that dwell in the land of Egypt, as I have punished Jerusalem* (Jeremiah 44:13) — the next chapter seals the sign; Egypt is no shelter from sword, famine, pestilence.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=43 AND sv.verse_number=11
+  JOIN _s309_jer43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=44 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-43-no-refuge-from-the-judgment-babylon-comes-even-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_44.sql (Jeremiah 44) -----
+-- Chapter: Jeremiah 44 — against the remnant in Egypt who burn incense to the QUEEN OF HEAVEN;
+-- their open, defiant rejection of the word — *we will not hearken unto thee* — and their stubborn
+-- idolatry, preferring the days of plenty under idols (*then had we plenty of victuals... and saw no
+-- evil*). Yahuah will watch over them for evil; the obstinate consumed by sword and famine — *yet a
+-- SMALL NUMBER that escape* shall return to Yahudah. Two threads: the hardened, defiant heart that
+-- refuses the word; and the judgment on the obstinate with the small remnant preserved.
+-- Tag: jer44   Temp view: _s309_jer44_lookup   Session: s309
+-- Sort band: base 35075, step 3 -> threads at 35075, 35078 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',44,v
+--
+-- Jeremiah 44 coverage:
+--   v.1-6 (the Yahudim in Egypt; ye have seen all the evil brought on Jerusalem; they went to burn
+--          incense and serve other gods; they hearkened not; my fury was poured forth)
+--        NT:     none warranted (the historical indictment; the defiance answered in THREAD 1)
+--        Extras: none warranted
+--        Tanakh: held in prose — the same hardened refusal sealed in THREAD 1 (Zechariah 7:11-12)
+--   v.7-14 (wherefore commit ye this great evil; ye provoke me... burning incense unto other gods in
+--          Egypt; they walked not in my law; I will set my face against you for evil; the remnant of
+--          Yahudah consumed by sword and famine; none shall escape but such as shall escape)
+--        NT:     none warranted distinct (the consuming-judgment-yet-small-escape answered in THREAD 2,
+--                anchored at the sharper vv.27-28)
+--        Extras: none warranted
+--        Tanakh: held in prose — *nor walked in my law, nor in my statutes* (44:10) = the covenant
+--                broken (Torah affirmed, not abolished); the escape-clause of v.14 prefaces THREAD 2
+--   ★★ v.15-19 (As for the word that thou hast spoken unto us in the name of Yahuah (LORD), we will
+--          not hearken; we will certainly do whatsoever goeth forth out of our own mouth, to burn
+--          incense unto the queen of heaven... for then had we plenty of victuals, and saw no evil; the
+--          cakes to the queen of heaven)
+--        NT:     ★★ Romans 1:25 (worshipped and served the creature more than the Creator), ★ 2 Timothy
+--                4:3-4 (they shall turn away their ears from the truth, turned unto fables) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 7:18 (lateral — the cakes to the queen of heaven), ★★ Zechariah 7:11-12
+--                (they refused to hearken... made their hearts as an adamant stone), ★ Isaiah 30:9-10
+--                (a rebellious people... speak unto us smooth things) — THREAD 1
+--   v.20-26 (Jeremiah's reply; the incense ye burned, did not Yahuah remember it; your land a
+--          desolation; ye have not walked in his law, statutes, testimonies; I have sworn by my great
+--          name; my name no more named in the mouth of any man of Yahudah in Egypt)
+--        NT:     none warranted (the lawsuit verdict; *nor walked in his law* woven in THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the prophet's rejoinder seals the refusal of vv.16-18 (THREAD 1)
+--   ★ v.27-28 (Behold, I will watch over them for evil, and not for good; all the men of Yahudah in
+--          Egypt consumed by sword and famine, until there be an end of them; YET A SMALL NUMBER that
+--          escape the sword shall return out of Egypt into the land of Yahudah... shall know whose
+--          words shall stand)
+--        NT:     ★★ Romans 9:27-29 (though the number be as the sand of the sea, a remnant shall be
+--                saved; except Yahuah of Sabaoth had left us a seed, we had been as Sodoma) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 1:9 (except Yahuah had left unto us a very small remnant), ★ Jeremiah 23:3
+--                (lateral — I will gather the remnant of my flock), ★ Amos 5:15 (gracious unto the
+--                remnant of Joseph) — THREAD 2
+--   v.29-30 (this shall be a sign; I will give Pharaoh-hophra into the hand of his enemies, as I gave
+--          Zedekiah into the hand of Nebuchadrezzar) — the confirming sign on Egypt's king
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the sign that the word shall stand; bound to THREAD 2 prose — *whose
+--                words shall stand, mine, or theirs*)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-44-we-will-not-hearken-the-queen-of-heaven — NT (Romans 1, 2 Timothy 4) + Tanakh
+--      (Jeremiah 7, Zechariah 7, Isaiah 30) [free]
+--      (★★ the open, defiant rejection of the word and stubborn idolatry — the hardened heart that
+--      prefers the days of plenty under idols, the adamant stone that will not hear)
+--   2. jeremiah-44-a-small-number-that-escape-shall-return — NT (Romans 9) + Tanakh (Isaiah 1,
+--      Jeremiah 23, Amos 5) [free]
+--      (★ the judgment on the obstinate — consumed until there be an end — yet a small remnant
+--      preserved, that they may know whose words shall stand)
+--
+-- Framing notes:
+--   ★★ WE WILL NOT HEARKEN — THE QUEEN OF HEAVEN (THREAD 1): the people answer the word to its face:
+--      *As for the word that thou hast spoken unto us in the name of Yahuah (LORD), we will not hearken
+--      unto thee. But we will certainly do whatsoever thing goeth forth out of our own mouth, to burn
+--      incense unto the queen of heaven... for then had we plenty of victuals, and were well, and saw
+--      no evil* (44:16-17). Open, defiant rejection — and idolatry chosen for its days of plenty, the
+--      creature preferred to the Creator. Paul names the very exchange: *worshipped and served the
+--      creature more than the Creator* (Rom 1:25). The itching-ear refusal of sound doctrine: *they
+--      shall turn away their ears from the truth, and shall be turned unto fables* (2 Tim 4:3-4).
+--      Jeremiah had already named the cakes to the queen of heaven (Jer 7:18, lateral). Zechariah seals
+--      the hardened heart: *they refused to hearken, and pulled away the shoulder, and stopped their
+--      ears... made their hearts as an adamant stone, lest they should hear the law* (Zech 7:11-12).
+--      Isaiah names the smooth-words rebellion: *a rebellious people... which say to the seers, See not;
+--      and to the prophets... speak unto us smooth things* (Isa 30:9-10). The adamant, defiant heart.
+--   ★ A SMALL NUMBER THAT ESCAPE SHALL RETURN (THREAD 2): the judgment is heavy — *I will watch over
+--      them for evil, and not for good: and all the men of Yahudah (Judah) that are in the land of Egypt
+--      shall be consumed by the sword and by the famine, until there be an end of them* (44:27) — yet
+--      grace preserves a remnant: *Yet a small number that escape the sword shall return out of the land
+--      of Egypt into the land of Yahudah (Judah)* (44:28), that they may *know whose words shall stand*.
+--      Paul gathers the remnant-doctrine: *Though the number of the children of Yashar''el (Israel) be as
+--      the sand of the sea, a remnant shall be saved... Except Yahuah (Lord) of Sabaoth had left us a
+--      seed, we had been as Sodoma* (Rom 9:27-29). Isaiah is the root: *Except Yahuah Tseva''ot (LORD of
+--      hosts) had left unto us a very small remnant, we should have been as Sodom* (Isa 1:9). Jeremiah''s
+--      own gathering-word (Jer 23:3, lateral) and Amos''s plea — *it may be that Yahuah Elohim (the LORD
+--      God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15). The small remnant escapes.
+--   VERSES WITH NO SEPARATE ADD: v.1-6 (the historical indictment — the same refusal sealed in THREAD
+--      1), v.7-14 (the consuming judgment and the escape-clause — anchored at the sharper vv.27-28,
+--      THREAD 2), v.20-26 (Jeremiah''s rejoinder and the oath by the great name — the lawsuit verdict
+--      that seals THREAD 1), v.29-30 (the sign on Pharaoh-hophra — *whose words shall stand*, woven in
+--      THREAD 2 prose). All blocks recorded; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer44_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): we will not hearken — the queen of heaven, the defiant, hardened heart
+    ('canon','jeremiah',44,17,'canon','romans',1,25,'free',
+      E'*Who changed the truth of Elohim (God) into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen* (Romans 1:25). Paul names the very exchange the remnant in Egypt make: *we will certainly do whatsoever thing goeth forth out of our own mouth, to burn incense unto the queen of heaven* (Jeremiah 44:17). They serve the creature — a star of heaven made a goddess — more than the Creator who made it, choosing the lie for its days of plenty: *for then had we plenty of victuals, and were well, and saw no evil*.'),
+    ('canon','jeremiah',44,16,'canon','2-timothy',4,3,'free',
+      E'*For the time will come when they will not endure sound doctrine; but after their own lusts shall they heap to themselves teachers, having itching ears* (2 Timothy 4:3). The people''s flat refusal — *As for the word that thou hast spoken unto us in the name of Yahuah (LORD), we will not hearken unto thee* (Jeremiah 44:16) — is the same itching-eared rejection of sound doctrine: the word endured no longer, the prophet''s warning cast off for what the heart prefers.'),
+    ('canon','jeremiah',44,16,'canon','2-timothy',4,4,'free',
+      E'*And they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4). When the remnant say *we will not hearken unto thee* (Jeremiah 44:16) and turn instead to the queen of heaven, they do exactly what Paul foretells: ears turned away from the truth, turned unto a fable — the creature worshipped, the days of plenty under idols believed over the word of Yahuah (LORD).'),
+    ('canon','jeremiah',44,17,'canon','jeremiah',7,18,'free',
+      E'*The children gather wood, and the fathers kindle the fire, and the women knead their dough, to make cakes to the queen of heaven, and to pour out drink offerings unto other gods, that they may provoke me to anger* (Jeremiah 7:18). Jeremiah had named this idolatry long before, in Jerusalem; now the same households carry it into Egypt — *to burn incense unto the queen of heaven, and to pour out drink offerings unto her* (Jeremiah 44:17). The cakes to the queen of heaven follow them into exile; the heart that would not turn at home will not turn abroad.'),
+    ('canon','jeremiah',44,16,'canon','zechariah',7,11,'free',
+      E'*But they refused to hearken, and pulled away the shoulder, and stopped their ears, that they should not hear* (Zechariah 7:11). Zechariah names the very refusal Egypt''s remnant speak aloud — *we will not hearken unto thee* (Jeremiah 44:16): ears stopped, the shoulder pulled away, the word shut out. The defiance is not new; it is the settled posture of the hardened heart toward the prophets.'),
+    ('canon','jeremiah',44,16,'canon','zechariah',7,12,'free',
+      E'*Yea, they made their hearts as an adamant stone, lest they should hear the law, and the words which Yahuah Tseva''ot (LORD of hosts) hath sent in his spirit by the former prophets: therefore came a great wrath from Yahuah Tseva''ot (LORD of hosts)* (Zechariah 7:12). The flat *we will not hearken unto thee* (Jeremiah 44:16) is the heart made an adamant stone — hardened against the Torah and the prophets'' words on purpose. And the same end follows: a great wrath, the fury poured forth that Jeremiah 44 records.'),
+    ('canon','jeremiah',44,16,'canon','isaiah',30,9,'free',
+      E'*That this is a rebellious people, lying children, children that will not hear the law of Yahuah (LORD)* (Isaiah 30:9). Isaiah names the people Egypt''s remnant prove themselves to be — those who *will not hear the law of Yahuah*: when they say *we will not hearken unto thee* (Jeremiah 44:16), they are the rebellious children who refuse the very Torah they would not walk in (44:10, 44:23).'),
+    ('canon','jeremiah',44,17,'canon','isaiah',30,10,'free',
+      E'*Which say to the seers, See not; and to the prophets, Prophesy not unto us right things, speak unto us smooth things, prophesy deceits* (Isaiah 30:10). The defiant resolve *we will certainly do whatsoever thing goeth forth out of our own mouth* (Jeremiah 44:17) is the same demand Isaiah records: silence the true word, speak only smooth things. The remnant in Egypt will hear no right thing; they will do their own will and call the idol''s days of plenty their proof.'),
+
+    -- THREAD 2 (★): a small number that escape shall return — judgment on the obstinate, the remnant preserved
+    ('canon','jeremiah',44,28,'canon','romans',9,27,'free',
+      E'*Esaias also crieth concerning Yashar''el (Israel), Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved* (Romans 9:27). Paul gathers the remnant-doctrine that Jeremiah''s word enacts — *Yet a small number that escape the sword shall return out of the land of Egypt* (Jeremiah 44:28): out of the multitude consumed, only a remnant is saved. The mass goes down in judgment; the small number escapes, that the saving purpose of Yahuah (LORD) stand.'),
+    ('canon','jeremiah',44,27,'canon','romans',9,29,'free',
+      E'*And as Esaias said before, Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma, and been made like unto Gomorrha* (Romans 9:29). The sentence *I will watch over them for evil... until there be an end of them* (Jeremiah 44:27) would leave none at all but for the remnant Yahuah spares — as Paul says, but for the *seed* left, they had been as Sodom. The small number that escapes (44:28) is that left seed; mercy alone keeps an end from being utter.'),
+    ('canon','jeremiah',44,28,'canon','isaiah',1,9,'free',
+      E'*Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9). Isaiah is the root of Jeremiah''s promise — *Yet a small number that escape the sword shall return* (Jeremiah 44:28): a VERY SMALL remnant left, and that only by the hand of Yahuah. Without it the obstinate house would be wholly consumed, as Sodom; the small number preserved is the measure of mercy in the midst of judgment.'),
+    ('canon','jeremiah',44,28,'canon','jeremiah',23,3,'free',
+      E'*And I will gather the remnant of my flock out of all countries whither I have driven them, and will bring them again to their folds; and they shall be fruitful and increase* (Jeremiah 23:3). The same prophet who promises the small number shall *return out of the land of Egypt into the land of Yahudah (Judah)* (Jeremiah 44:28) promises Yahuah will gather the remnant of his flock from every land of their driving. The escape from Egypt is one small token of the larger gathering — the Scatterer become the Gatherer of his preserved flock.'),
+    ('canon','jeremiah',44,28,'canon','amos',5,15,'free',
+      E'*Hate the evil, and love the good, and establish judgment in the gate: it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15). Amos holds out the same hope Jeremiah''s word secures — grace *unto the remnant*: *Yet a small number that escape the sword shall return* (Jeremiah 44:28). Even when the body of the people goes down in judgment, Yahuah is gracious to a remnant; the small number that returns is the *it may be* made sure.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-44-we-will-not-hearken-the-queen-of-heaven',
+       E'We will not hearken — the queen of heaven and the adamant heart',
+       E'Here is open, defiant rejection of the word of Yahuah (LORD), spoken to the prophet''s face. The remnant in Egypt answer: *As for the word that thou hast spoken unto us in the name of Yahuah (LORD), we will not hearken unto thee. But we will certainly do whatsoever thing goeth forth out of our own mouth, to burn incense unto the queen of heaven, and to pour out drink offerings unto her, as we have done, we, and our fathers, our kings, and our princes, in the cities of Yahudah (Judah), and in the streets of Jerusalem: for then had we plenty of victuals, and were well, and saw no evil* (44:16-17). Mark the logic of the hardened heart: they prefer the idol for its days of plenty, reasoning that since they left off her worship *we have wanted all things, and have been consumed by the sword and by the famine* (44:18) — reading prosperity as proof and judgment as bad luck, the creature served above the Creator. Paul names the exchange exactly: *worshipped and served the creature more than the Creator, who is blessed for ever* (Romans 1:25). It is the itching-eared refusal of sound doctrine — *they will not endure sound doctrine... and they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:3-4). This idolatry was not new; Jeremiah had named the cakes to the queen of heaven long before in Jerusalem — *the women knead their dough, to make cakes to the queen of heaven, and to pour out drink offerings unto other gods, that they may provoke me to anger* (Jeremiah 7:18) — and the heart that would not turn at home will not turn in exile. Zechariah names the settled posture: *they refused to hearken, and pulled away the shoulder, and stopped their ears, that they should not hear. Yea, they made their hearts as an adamant stone, lest they should hear the law* (Zechariah 7:11-12) — the heart hardened on purpose against the Torah and the prophets, and *therefore came a great wrath*. And Isaiah names the smooth-words rebellion behind it: *a rebellious people, lying children, children that will not hear the law of Yahuah (LORD): which say to the seers, See not... speak unto us smooth things, prophesy deceits* (Isaiah 30:9-10). This is the heart that walked not in his law (44:23): the adamant, defiant heart that hears the word, knows it for the word, and will not hearken.',
+       sv.verse_id, ev.verse_id, 'free', 35075
+  FROM _s309_jer44_lookup sv, _s309_jer44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=44 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-44-a-small-number-that-escape-shall-return',
+       E'A small number that escape the sword shall return — the remnant preserved',
+       E'The judgment on the obstinate is heavy and near-total: *Behold, I will watch over them for evil, and not for good: and all the men of Yahudah (Judah) that are in the land of Egypt shall be consumed by the sword and by the famine, until there be an end of them* (44:27). The face of Yahuah (LORD) is set against them for evil; the body of the people goes down. And yet — this is the mercy that runs through the whole canon — grace preserves a remnant: *Yet a small number that escape the sword shall return out of the land of Egypt into the land of Yahudah (Judah), and all the remnant of Yahudah (Judah), that are gone into the land of Egypt to sojourn there, shall know whose words shall stand, mine, or theirs* (44:28). A SMALL number escapes — that the word of Yahuah be vindicated and the saving purpose stand. Paul gathers this remnant-doctrine: *Though the number of the children of Yashar''el (Israel) be as the sand of the sea, a remnant shall be saved... Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma, and been made like unto Gomorrha* (Romans 9:27-29). Isaiah is its root: *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah* (Isaiah 1:9) — without the small remnant left, the obstinate house would be utterly consumed. And the gathering does not end in Egypt: the same prophet promises *I will gather the remnant of my flock out of all countries whither I have driven them, and will bring them again to their folds* (Jeremiah 23:3); and Amos holds out the hope — *it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15). The small number that escapes Egypt is the token of that larger mercy: judgment on the defiant, yet a remnant preserved, that all may know whose words shall stand.',
+       sv.verse_id, ev.verse_id, 'free', 35078
+  FROM _s309_jer44_lookup sv, _s309_jer44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=44 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *worshipped and served the creature more than the Creator* (Romans 1:25) — Paul names the exchange of Jeremiah 44:17; the queen of heaven served above the Creator for her days of plenty.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=17
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *they will not endure sound doctrine... having itching ears* (2 Timothy 4:3) — the same refusal as *we will not hearken unto thee* (Jeremiah 44:16); the word cast off for what the heart prefers.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they shall turn away their ears from the truth, and shall be turned unto fables* (2 Timothy 4:4) — ears turned from the truth to the queen of heaven, a fable believed over the word of Yahuah (Jeremiah 44:16).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *to make cakes to the queen of heaven... that they may provoke me to anger* (Jeremiah 7:18) — lateral; the same idolatry named in Jerusalem now carried into Egypt (Jeremiah 44:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=17
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *they refused to hearken, and pulled away the shoulder, and stopped their ears* (Zechariah 7:11) — the settled refusal behind *we will not hearken* (Jeremiah 44:16); the word shut out.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *they made their hearts as an adamant stone, lest they should hear the law* (Zechariah 7:12) — the defiance of Jeremiah 44:16 is the heart hardened on purpose against the Torah; therefore a great wrath.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *children that will not hear the law of Yahuah (LORD)* (Isaiah 30:9) — Egypt''s remnant prove the rebellious people who will not hear the Torah they would not walk in (Jeremiah 44:16).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *speak unto us smooth things, prophesy deceits* (Isaiah 30:10) — the demand behind *we will certainly do whatsoever goeth forth out of our own mouth* (Jeremiah 44:17); silence the true word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=17
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=30 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-we-will-not-hearken-the-queen-of-heaven'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Though the number... be as the sand of the sea, a remnant shall be saved* (Romans 9:27) — Paul''s remnant-doctrine enacted in *a small number that escape... shall return* (Jeremiah 44:28).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=28
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-a-small-number-that-escape-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Except Yahuah (Lord) of Sabaoth had left us a seed, we had been as Sodoma* (Romans 9:29) — but for the left seed the sentence *until there be an end of them* (Jeremiah 44:27) would be utter; the small number is that seed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=27
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=9 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-a-small-number-that-escape-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Except Yahuah Tseva''ot (LORD of hosts) had left unto us a very small remnant, we should have been as Sodom* (Isaiah 1:9) — the root of Jeremiah 44:28; a VERY small remnant left, the measure of mercy.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=28
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-a-small-number-that-escape-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will gather the remnant of my flock out of all countries whither I have driven them* (Jeremiah 23:3) — lateral; the escape from Egypt (Jeremiah 44:28) one token of the larger gathering of the preserved flock.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=28
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-a-small-number-that-escape-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *it may be that Yahuah Elohim (the LORD God) of hosts will be gracious unto the remnant of Joseph* (Amos 5:15) — the same hope Jeremiah 44:28 makes sure; grace to a remnant in the midst of judgment.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=44 AND sv.verse_number=28
+  JOIN _s309_jer44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-44-a-small-number-that-escape-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
