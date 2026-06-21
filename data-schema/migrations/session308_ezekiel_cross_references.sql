@@ -14143,6 +14143,1251 @@ SELECT t.id, cr.id, 6, E'★ *the city lieth foursquare... and he measured the c
  WHERE t.slug='ezekiel-40-the-house-measured-exactly-the-god-given-pattern'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_41.sql (Ezekiel 41) -----
+-- Chapter: Ezekiel 41 — the measuring of the temple proper: the holy place and the most holy; the
+-- side chambers winding upward; the separate place and the building; and ★★ THE CARVINGS — cherubims
+-- and palm trees wrought through all the house round about, on the walls and the doors (vv.18-20,25-26),
+-- so that the face of a man and the face of a young lion looked toward the palm tree on either side;
+-- and ★ the altar of wood, three cubits high — *This is the table that is before Yahuah (LORD)* (v.22).
+-- This is mostly an architectural measurement-catalogue; it is NOT threaded verse-by-verse. Two
+-- framework threads carry it: the Edenic/garden motif of the cherubim-and-palm-tree carvings (the
+-- sanctuary as Eden restored), and the table before Yahuah (the bread of the Presence / communion).
+-- Tag: ezek41   Temp view: _s308_ezek41_lookup
+-- Sort band: base 33000, step 3 -> threads at 33000, 33003 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',41,v
+--
+-- Ezekiel 41 coverage:
+--   v.1-4 (the posts, the door, the holy place; *This is the most holy place*) — the measuring of the
+--        temple proper, the holy place and the most holy
+--        NT:     none warranted (architectural measurement; the most-holy-place forward-weave belongs to
+--                Hebrews 9, held there — not forced onto a measurement verse)
+--        Extras: none warranted
+--        Tanakh: none separate (the measured sanctuary; woven in prose)
+--   v.5-11 (the wall of the house; the side chambers, three one over another, thirty in order, winding
+--        upward; the doors of the side chambers north and south) — the side-chamber measurements
+--        NT:     none warranted    Extras: none warranted    Tanakh: none warranted (measurement-catalogue)
+--   v.12-15 (the building before the separate place toward the west; he measured the house, an hundred
+--        cubits; the galleries, the inner temple, the porches of the court) — overall dimensions
+--        NT:     none warranted    Extras: none warranted    Tanakh: none warranted (measurement-catalogue)
+--   v.16-17 (the door posts, the narrow windows, the galleries cieled with wood round about, by measure)
+--        NT:     none warranted    Extras: none warranted    Tanakh: none warranted (cieling/measure detail;
+--                preface to the carvings of v.18)
+--   ★★ v.18-20 (it was made with cherubims and palm trees, a palm tree between cherub and cherub; every
+--        cherub had two faces — the face of a man toward the palm tree on one side, the face of a young
+--        lion toward the palm tree on the other; made through all the house round about, from the ground
+--        unto above the door, and on the wall of the temple)
+--        NT:     ★★ Revelation 22:1-2 (a pure river of water of life... the tree of life... the leaves
+--                for the healing of the nations — the paradise restored) — THREAD 1
+--        Extras: none warranted (clean canon Eden/sanctuary weave; no extras forced)
+--        Tanakh: ★★★ Genesis 3:24 (he placed at the east of the garden of Eden Cherubims... to keep the
+--                way of the tree of life), ★ Exodus 26:1 (the tabernacle... with cherubims of cunning
+--                work), ★ Exodus 26:31 (a vail... with cherubims shall it be made), ★★ 1 Kings 6:29
+--                (carved all the walls... with cherubims and palm trees and open flowers) — THREAD 1
+--   v.21 (the posts of the temple were squared, and the face of the sanctuary) — measurement detail; no add
+--        NT/Extras/Tanakh: none warranted (woven in prose)
+--   ★ v.22 (the altar of wood, three cubits high... *This is the table that is before Yahuah (LORD)*) —
+--        the wooden altar/table before Yahuah; the bread of the Presence / communion before him
+--        NT:     none warranted distinct (the table-of-the-Lord motif; held in prose — 1 Cor 10:21 not
+--                forced onto a sanctuary-furniture verse)
+--        Extras: none warranted
+--        Tanakh: ★★ Exodus 25:30 (thou shalt set upon the table shewbread before me alway), ★★ Malachi
+--                1:7 (the table of Yahuah is contemptible), ★ Malachi 1:12 (the table of Yahuah is
+--                polluted) — THREAD 2
+--   v.23-24 (the temple and the sanctuary had two doors; two leaves apiece, two turning leaves) — the
+--        doors; measurement detail leading into v.25 carvings; woven into THREAD 1 prose (the doors carved)
+--        NT/Extras: none warranted    Tanakh: ★ 1 Kings 6:34 (the two doors... folding) noted in prose only
+--   ★★ v.25-26 (there were made on them, on the doors of the temple, cherubims and palm trees, like as
+--        were made upon the walls; narrow windows and palm trees on the sides of the porch) — the carvings
+--        repeated on the doors and porch; the Edenic motif through the whole house
+--        NT:     ★★ Revelation 22:1-2 (carried in THREAD 1; the tree-of-life paradise restored)
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Kings 6:32 (the two doors of olive tree; he carved upon them cherubims and palm
+--                trees and open flowers, and overlaid them with gold) — THREAD 1 (the carved doors)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-41-cherubims-and-palm-trees-through-all-the-house — Tanakh (Genesis 3, Exodus 26, 1 Kings 6) + NT (Revelation 22) [free]
+--      (★★ the Edenic/garden motif — cherubim guarding, palms of paradise — wrought through the whole house;
+--       the sanctuary as Eden, the dwelling restored, the tree of life reached again)
+--   2. ezekiel-41-this-is-the-table-that-is-before-yahuah — Tanakh (Exodus 25, Malachi 1) [free]
+--      (★ the wooden altar/table before Yahuah; the bread of the Presence; the table of Yahuah honored or despised)
+--
+-- Framing notes:
+--   ★★ THE CHERUBIM AND PALM TREES (THREAD 1): *And it was made with cherubims and palm trees, so that a
+--      palm tree was between a cherub and a cherub; and every cherub had two faces; So that the face of a
+--      man was toward the palm tree on the one side, and the face of a young lion toward the palm tree on
+--      the other side: it was made through all the house round about* (41:18-19), *From the ground unto
+--      above the door were cherubims and palm trees made, and on the wall of the temple* (41:20), and again
+--      on the doors (41:25). The carving is the GARDEN: cherubim guarding, palms of paradise — the same
+--      cherubim Yahuah Elohim set at Eden''s east *to keep the way of the tree of life* (Genesis 3:24).
+--      The tabernacle bore them (*with cherubims of cunning work*, Exodus 26:1; *with cherubims shall it
+--      be made*, Exodus 26:31), and Solomon''s house bore them with the palms (*carved all the walls... with
+--      cherubims and palm trees and open flowers*, 1 Kings 6:29; *carved upon them carvings of cherubims and
+--      palm trees and open flowers*, 1 Kings 6:32). The sanctuary IS Eden in miniature — the way to the tree
+--      of life reopened in the dwelling of Yahuah — and it reaches its end where the tree itself returns:
+--      *a pure river of water of life... the tree of life, which bare twelve manner of fruits... and the
+--      leaves of the tree were for the healing of the nations* (Revelation 22:1-2). Eden lost, Eden carved
+--      into the house, Eden restored.
+--   ★ THE TABLE BEFORE YAHUAH (THREAD 2): *The altar of wood was three cubits high... and he said unto me,
+--      This is the table that is before Yahuah (LORD)* (41:22). The wooden altar is named a TABLE — the
+--      table of the Presence, the bread set before Yahuah continually: *thou shalt set upon the table
+--      shewbread before me alway* (Exodus 25:30). To despise that table is to despise Yahuah himself, as
+--      Malachi charges the priests — *The table of Yahuah (LORD) is contemptible* (Malachi 1:7), *The table
+--      of Yahuah (LORD) is polluted* (Malachi 1:12). The bread before his face is communion with him; the
+--      table before Yahuah is the place of his honored Presence.
+--   VERSES WITH NO SEPARATE ADD: v.1-17, v.21, v.23-24 — the architectural measurement-catalogue (the holy
+--      place and most holy, the side chambers, the separate place and building, the galleries, the doors)
+--      is deliberately NOT threaded verse-by-verse; the measured house is the frame, the carvings (v.18-20,
+--      25-26) and the table (v.22) are the two framework-bearing weaves. All blocks recorded above.
+
+CREATE TEMP VIEW _s308_ezek41_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): cherubims and palm trees through all the house — the Edenic motif
+    ('canon','ezekiel',41,18,'canon','genesis',3,24,'free',
+      E'*So he drove out the man; and he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). The cherubim wrought through all the house — *it was made with cherubims and palm trees, so that a palm tree was between a cherub and a cherub* (Ezekiel 41:18) — are the very cherubim set at Eden''s gate to guard the way to the tree of life. The sanctuary carves Eden into its walls: the guardians of paradise stand again where Yahuah (LORD) dwells, and the way once barred is reopened in his house.'),
+    ('canon','ezekiel',41,18,'canon','exodus',26,1,'free',
+      E'*Moreover thou shalt make the tabernacle with ten curtains of fine twined linen, and blue, and purple, and scarlet: with cherubims of cunning work shalt thou make them* (Exodus 26:1). The cherubim Ezekiel sees carved through the house — *it was made with cherubims and palm trees* (Ezekiel 41:18) — were woven into the tabernacle from the first: *with cherubims of cunning work shalt thou make them*. Every dwelling of Yahuah (LORD) bears the guardians of Eden upon it; the pattern of the garden runs from the tent in the wilderness to the temple Ezekiel measures.'),
+    ('canon','ezekiel',41,18,'canon','exodus',26,31,'free',
+      E'*And thou shalt make a vail of blue, and purple, and scarlet, and fine twined linen of cunning work: with cherubims shall it be made* (Exodus 26:31). The vail before the most holy place bore the cherubim — *with cherubims shall it be made* — as Ezekiel''s walls do: *it was made with cherubims and palm trees... it was made through all the house round about* (Ezekiel 41:18-19). The cherubim guard the way into the Presence, woven into the very screen of the holiest place.'),
+    ('canon','ezekiel',41,19,'canon','1-kings',6,29,'free',
+      E'*And he carved all the walls of the house round about with carved figures of cherubims and palm trees and open flowers, within and without* (1 Kings 6:29). Solomon''s house is carved exactly as Ezekiel''s vision shows — *carved figures of cherubims and palm trees* answers *the face of a man was toward the palm tree on the one side, and the face of a young lion toward the palm tree on the other side: it was made through all the house round about* (Ezekiel 41:19). The same garden-motif — cherubim and palms, the guardians and the trees of paradise — is wrought through all the walls of the dwelling of Yahuah (LORD).'),
+    ('canon','ezekiel',41,25,'canon','1-kings',6,32,'free',
+      E'*The two doors also were of olive tree; and he carved upon them carvings of cherubims and palm trees and open flowers, and overlaid them with gold, and spread gold upon the cherubims, and upon the palm trees* (1 Kings 6:32). As the carvings cover Solomon''s doors, so they cover Ezekiel''s: *And there were made on them, on the doors of the temple, cherubims and palm trees, like as were made upon the walls* (Ezekiel 41:25). The Edenic guardians and the palms of paradise are wrought not only on the walls but on the very doors of entrance — the way into the house is the way back into the garden.'),
+    ('canon','ezekiel',41,20,'canon','revelation',22,1,'free',
+      E'*And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1). The cherubim and palms carved *from the ground unto above the door... and on the wall of the temple* (Ezekiel 41:20) are the garden remembered in the sanctuary; John sees the garden itself restored — the river of life from the throne. The Eden carved into Ezekiel''s walls becomes the Eden made real at the consummation.'),
+    ('canon','ezekiel',41,20,'canon','revelation',22,2,'free',
+      E'*In the midst of the street of it, and on either side of the river, was there the tree of life, which bare twelve manner of fruits, and yielded her fruit every month: and the leaves of the tree were for the healing of the nations* (Revelation 22:2). The cherubim who once kept *the way of the tree of life* (Genesis 3:24) are carved through Ezekiel''s house — *cherubims and palm trees made, and on the wall of the temple* (Ezekiel 41:20) — and at the end the tree itself is reached again, its leaves for the healing of the nations. The guarded way of paradise, carved into the sanctuary, is opened at last in the New Jerusalem.'),
+
+    -- THREAD 2 (★): the altar of wood — This is the table that is before Yahuah
+    ('canon','ezekiel',41,22,'canon','exodus',25,30,'free',
+      E'*And thou shalt set upon the table shewbread before me alway* (Exodus 25:30). The wooden altar Ezekiel''s guide names a table — *This is the table that is before Yahuah (LORD)* (Ezekiel 41:22) — is the table of the Presence, where the shewbread is set *before me alway*. The bread before Yahuah''s face is continual communion with him; the table before Yahuah is the place of his Presence in the house.'),
+    ('canon','ezekiel',41,22,'canon','malachi',1,7,'free',
+      E'*Ye offer polluted bread upon mine altar; and ye say, Wherein have we polluted thee? In that ye say, The table of Yahuah (LORD) is contemptible* (Malachi 1:7). The honored table of Ezekiel''s temple — *This is the table that is before Yahuah (LORD)* (Ezekiel 41:22) — is the very table Malachi''s priests despised. To call *the table of Yahuah (LORD)... contemptible* is to despise his Presence; the table before Yahuah is to be honored, not profaned.'),
+    ('canon','ezekiel',41,22,'canon','malachi',1,12,'free',
+      E'*But ye have profaned it, in that ye say, The table of Yahuah (LORD) is polluted; and the fruit thereof, even his meat, is contemptible* (Malachi 1:12). Malachi names the same table Ezekiel measures — *This is the table that is before Yahuah (LORD)* (Ezekiel 41:22) — and charges the priests with profaning it. The table before Yahuah is his board, his bread, his Presence; to count it polluted is to profane the One who sits enthroned in the house.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-41-cherubims-and-palm-trees-through-all-the-house',
+       E'Cherubims and palm trees through all the house — the sanctuary as Eden restored',
+       E'When the measuring of the temple turns from dimension to ornament, the garden appears upon the walls: *And it was made with cherubims and palm trees, so that a palm tree was between a cherub and a cherub; and every cherub had two faces; So that the face of a man was toward the palm tree on the one side, and the face of a young lion toward the palm tree on the other side: it was made through all the house round about* (41:18-19), *From the ground unto above the door were cherubims and palm trees made, and on the wall of the temple* (41:20). And the same upon the doors: *And there were made on them, on the doors of the temple, cherubims and palm trees, like as were made upon the walls* (41:25). The carving is Eden. The cherubim are the guardians Yahuah Elohim (the LORD God) set at the garden''s gate: *he placed at the east of the garden of Eden Cherubims, and a flaming sword which turned every way, to keep the way of the tree of life* (Genesis 3:24). The palms are the trees of paradise. From the first dwelling these guardians were woven in — *Moreover thou shalt make the tabernacle... with cherubims of cunning work shalt thou make them* (Exodus 26:1), and the vail before the holiest, *with cherubims shall it be made* (Exodus 26:31) — and Solomon''s house bore them with the palms: *And he carved all the walls of the house round about with carved figures of cherubims and palm trees and open flowers, within and without* (1 Kings 6:29), *and he carved upon them carvings of cherubims and palm trees and open flowers, and overlaid them with gold* (1 Kings 6:32). The sanctuary is Eden in miniature — the way to the tree of life, once guarded and barred, carved back into the very house where Yahuah (LORD) dwells. And it reaches its end where the garden itself returns: *And he shewed me a pure river of water of life, clear as crystal, proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1), *and on either side of the river, was there the tree of life... and the leaves of the tree were for the healing of the nations* (Revelation 22:2). Eden lost, Eden carved into the house, Eden restored — the dwelling of Yahuah among his people is paradise regained.',
+       sv.verse_id, ev.verse_id, 'free', 33000
+  FROM _s308_ezek41_lookup sv, _s308_ezek41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=41 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-41-this-is-the-table-that-is-before-yahuah',
+       E'The altar of wood — This is the table that is before Yahuah',
+       E'In the midst of the measured house stands a wooden altar that the guide names not an altar but a table: *The altar of wood was three cubits high, and the length thereof two cubits; and the corners thereof, and the length thereof, and the walls thereof, were of wood: and he said unto me, This is the table that is before Yahuah (LORD)* (41:22). This is the table of the Presence — the board on which the bread is set continually before his face: *And thou shalt set upon the table shewbread before me alway* (Exodus 25:30). The bread before Yahuah is communion with him, the sign of his people fed and kept in his house. And because the table is his, to despise it is to despise him — the charge Malachi lays against the priests: *Ye offer polluted bread upon mine altar; and ye say, Wherein have we polluted thee? In that ye say, The table of Yahuah (LORD) is contemptible* (Malachi 1:7), *But ye have profaned it, in that ye say, The table of Yahuah (LORD) is polluted; and the fruit thereof, even his meat, is contemptible* (Malachi 1:12). The table before Yahuah is the place of his honored Presence — his board, his bread, his communion with his people — to be hallowed, never profaned.',
+       sv.verse_id, ev.verse_id, 'free', 33003
+  FROM _s308_ezek41_lookup sv, _s308_ezek41_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=41 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *he placed at the east of the garden of Eden Cherubims... to keep the way of the tree of life* (Genesis 3:24) — the carved cherubim of Ezekiel 41:18 are Eden''s guardians; the sanctuary carves the garden into its walls.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=18
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=3 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *with cherubims of cunning work shalt thou make them* (Exodus 26:1) — the tabernacle bore the cherubim from the first, as Ezekiel 41:18''s walls do; every dwelling of Yahuah bears Eden''s guardians.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=18
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=26 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *a vail... with cherubims shall it be made* (Exodus 26:31) — the cherubim guard the screen before the holiest, as they guard all through Ezekiel 41:18-19''s house; the way into the Presence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=18
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=26 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *carved all the walls of the house round about with carved figures of cherubims and palm trees and open flowers* (1 Kings 6:29) — Solomon''s house is carved exactly as Ezekiel 41:19''s; cherubim and palms, the guardians and trees of paradise.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=19
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=6 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *carved upon them carvings of cherubims and palm trees and open flowers, and overlaid them with gold* (1 Kings 6:32) — the carvings cover Solomon''s doors as they cover Ezekiel 41:25''s; the way of entrance is the way back into the garden.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=25
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=6 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *a pure river of water of life... proceeding out of the throne of Elohim (God) and of the Lamb* (Revelation 22:1) — the Eden carved into Ezekiel 41:20''s walls becomes the Eden made real; the garden restored at the consummation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=20
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *the tree of life... and the leaves of the tree were for the healing of the nations* (Revelation 22:2) — the way of the tree of life (Genesis 3:24), carved through Ezekiel 41:20''s house, is reached again; paradise regained.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=20
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-cherubims-and-palm-trees-through-all-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou shalt set upon the table shewbread before me alway* (Exodus 25:30) — the table Ezekiel 41:22 names *before Yahuah* is the table of the Presence; the bread set before his face continually.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=22
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-this-is-the-table-that-is-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *The table of Yahuah (LORD) is contemptible* (Malachi 1:7) — the honored table of Ezekiel 41:22 is the very table the priests despised; to despise his table is to despise his Presence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=22
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-this-is-the-table-that-is-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The table of Yahuah (LORD) is polluted; and the fruit thereof, even his meat, is contemptible* (Malachi 1:12) — Malachi names the same table Ezekiel 41:22 measures; the table before Yahuah is to be hallowed, never profaned.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek41_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=41 AND sv.verse_number=22
+  JOIN _s308_ezek41_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-41-this-is-the-table-that-is-before-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_42.sql (Ezekiel 42) -----
+-- Chapter: Ezekiel 42 — the priests'' chambers of the restored temple, where they EAT the most holy
+-- things and LAY UP their garments wherein they minister; the careful SEPARATION between the holy and
+-- the profane (the priestly garments not worn out into the common court); and the outer measurement of
+-- the house — five hundred reeds foursquare, a WALL round about to make a separation between the
+-- sanctuary and the profane place. Most of this chapter is architectural measurement (the catalogue of
+-- chambers, cubits, galleries, stories) — curated to 2 framework threads, NOT a measurement dump. The
+-- load-bearing weight is the holiness-distinction the Torah commands, kept in the restored temple — the
+-- difference between holy and profane, clean and unclean — never abolished.
+-- Tag: ezek42   Temp view: _s308_ezek42_lookup
+-- Sort band: base 33025, step 3 -> threads at 33025, 33028 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',42,v
+--
+-- Ezekiel 42 coverage:
+--   v.1-12 (the utter court chambers; the separate place; an hundred cubits; gallery against gallery in
+--          three stories; the walk of ten cubits; the wall over against the chambers; doors and goings out)
+--        NT:     none warranted (architectural measurement — the catalogue of chambers, cubits, stories;
+--                woven in prose as the setting of the holy chambers of v.13-14)
+--        Extras: none warranted
+--        Tanakh: none warranted (the measured chambers; not threaded — see Ezek 40-41 measuring frame)
+--   ★★ v.13-14 (these be HOLY chambers, where the priests shall EAT the most holy things... there shall
+--          they lay the most holy things, and the meat offering, and the sin offering, and the trespass
+--          offering; for the place is holy. When the priests enter therein, they shall NOT go out of the
+--          holy place into the utter court, but there they shall LAY THEIR GARMENTS wherein they minister;
+--          for they are holy; and shall put on OTHER garments, and approach to those things for the people)
+--        NT:     ★★ 1 Peter 1:15 (be ye holy in all manner of conversation), ★★ 1 Peter 1:16 (it is
+--                written, Be ye holy; for I am holy) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Torah holiness weave)
+--        Tanakh: ★★★ Leviticus 10:10 (that ye may put difference between holy and unholy, and between
+--                unclean and clean), ★★ Ezekiel 44:23 (they shall teach my people the difference between
+--                the holy and profane), ★★ Ezekiel 22:26 (her priests have... put no difference between
+--                the holy and profane), ★ Exodus 28:2 (holy garments for glory and for beauty) — THREAD 1
+--   ★ v.15-20 (he measured it by the four sides: it had a WALL round about, five hundred reeds long, and
+--          five hundred broad, to make a SEPARATION between the sanctuary and the profane place)
+--        NT:     ★ Revelation 21:16 (the city lieth foursquare... the length and the breadth and the height
+--                of it are equal), ★ Revelation 21:27 (there shall in no wise enter into it any thing that
+--                defileth) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Isaiah 35:8 (an highway... The way of holiness; the unclean shall not pass over it) —
+--                THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-42-the-separation-between-the-holy-and-the-profane — Tanakh (Leviticus 10, Ezekiel 44, Ezekiel 22, Exodus 28) + NT (1 Peter 1) [free]
+--      (★★ the holy chambers; the priests eat the most holy things; the garments of ministry laid up, not
+--       worn into the common court; the difference between holy and profane the Torah commands, kept)
+--   2. ezekiel-42-a-wall-round-about-foursquare-to-separate-the-holy — NT (Revelation 21) + Tanakh (Isaiah 35) [free]
+--      (★ the foursquare measured boundary; a wall round about to make a separation between the sanctuary
+--       and the profane place; the foursquare city no defiled thing enters; the way of holiness)
+--
+-- Framing notes:
+--   ★★ THE SEPARATION BETWEEN HOLY AND PROFANE (THREAD 1): *they be holy chambers, where the priests that
+--      approach unto Yahuah (LORD) shall eat the most holy things... for the place is holy. When the priests
+--      enter therein, then shall they not go out of the holy place into the utter court, but there they shall
+--      lay their garments wherein they minister; for they are holy* (42:13-14). The restored temple keeps the
+--      most careful distinction — the garments of ministry are not worn out into the common court; the holy
+--      is not mingled with the profane. This is the Torah''s own charge to the priest: *that ye may put
+--      difference between holy and unholy, and between unclean and clean* (Leviticus 10:10). Ezekiel''s own
+--      restored priesthood is given the same task: *they shall teach my people the difference between the
+--      holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23) — the
+--      very charge the corrupt priests of the bloody city had abandoned: *her priests have violated my law...
+--      they have put no difference between the holy and profane* (Ezekiel 22:26). The holy garments
+--      themselves are *for glory and for beauty* (Exodus 28:2). And the apostolic word carries the SAME
+--      Torah-holiness forward, quoting Leviticus directly: *as he which hath called you is holy, so be ye
+--      holy in all manner of conversation; Because it is written, Be ye holy; for I am holy* (1 Peter
+--      1:15-16). The holiness-distinction the Torah commands is not abolished — it is kept in the restored
+--      house and pressed on the called.
+--   ★ A WALL ROUND ABOUT, FOURSQUARE (THREAD 2): *He measured it by the four sides: it had a wall round
+--      about, five hundred reeds long, and five hundred broad, to make a separation between the sanctuary
+--      and the profane place* (42:20). The whole house is walled foursquare for one stated purpose — *to
+--      make a separation between the sanctuary and the profane place* (the same separation as the garments
+--      of v.14). The New Jerusalem is the same foursquare measured holiness consummated: *the city lieth
+--      foursquare, and the length is as large as the breadth... The length and the breadth and the height
+--      of it are equal* (Revelation 21:16), and into it *there shall in no wise enter into it any thing
+--      that defileth, neither whatsoever worketh abomination, or maketh a lie* (Revelation 21:27) — the
+--      wall''s separation made absolute. Isaiah names the same separated way: *an highway shall be there...
+--      it shall be called The way of holiness; the unclean shall not pass over it* (Isaiah 35:8). The wall
+--      that separates the holy from the profane is no temporary measure — it stands to the New Jerusalem.
+--   VERSES WITH NO SEPARATE ADD: v.1-12 (the architectural catalogue — the chambers, the separate place,
+--      the galleries in three stories, the cubits and doors; the measured setting of the holy chambers,
+--      woven into THREAD 1 prose, NT/Extras/Tanakh none warranted); v.15-19 (the four measuring sides,
+--      five hundred reeds each, woven into THREAD 2 prose — the measurement that issues in the wall of
+--      v.20). All verses recorded in the coverage checklist above; both framework blocks carry a thread.
+
+CREATE TEMP VIEW _s308_ezek42_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the separation between the holy and the profane — the priests, the most holy things, the garments
+    ('canon','ezekiel',42,13,'canon','leviticus',10,10,'free',
+      E'*And that ye may put difference between holy and unholy, and between unclean and clean* (Leviticus 10:10). The holy chambers where *the priests that approach unto Yahuah (LORD) shall eat the most holy things... for the place is holy* (Ezekiel 42:13) keep the Torah''s own charge to the priesthood — to put difference between the holy and the unholy. The most holy things eaten in a holy place is that difference made visible; the restored temple does not abolish the distinction but guards it.'),
+    ('canon','ezekiel',42,14,'canon','ezekiel',44,23,'free',
+      E'*And they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23). The priests who *shall not go out of the holy place into the utter court, but there they shall lay their garments wherein they minister; for they are holy* (Ezekiel 42:14) are the same priests charged to teach the difference between holy and profane. They live the separation in their own garments before they teach it; the holiness-distinction is kept in the restored house.'),
+    ('canon','ezekiel',42,14,'canon','ezekiel',22,26,'free',
+      E'*Her priests have violated my law, and have profaned mine holy things: they have put no difference between the holy and profane, neither have they shewed difference between the unclean and the clean, and have hid their eyes from my sabbaths, and I am profaned among them* (Ezekiel 22:26). The careful separation of the restored priests — who *lay their garments wherein they minister; for they are holy; and shall put on other garments, and shall approach to those things which are for the people* (Ezekiel 42:14) — answers and reverses the sin of the bloody city, whose priests *put no difference between the holy and profane*. The restored temple does rightly what the old priesthood profaned.'),
+    ('canon','ezekiel',42,14,'canon','exodus',28,2,'free',
+      E'*And thou shalt make holy garments for Aaron thy brother for glory and for beauty* (Exodus 28:2). The garments the restored priests *lay* in the holy chambers, *wherein they minister; for they are holy* (Ezekiel 42:14), are the holy garments first commanded for Aaron — set apart *for glory and for beauty* and never worn out into the common court. The garments of ministry are holy because the ministry is holy; they are not mingled with the profane.'),
+    ('canon','ezekiel',42,13,'canon','1-peter',1,16,'free',
+      E'*Because it is written, Be ye holy; for I am holy* (1 Peter 1:16). The chambers where the most holy things are eaten and laid up *for the place is holy* (Ezekiel 42:13) carry the same holiness Peter presses on the called — quoting the Torah directly (Leviticus 11:44): *Be ye holy; for I am holy*. The holiness of the place, the offering, and the priest is the holiness of Yahuah himself, pressed forward onto his people.'),
+    ('canon','ezekiel',42,14,'canon','1-peter',1,15,'free',
+      E'*But as he which hath called you is holy, so be ye holy in all manner of conversation* (1 Peter 1:15). The priest who must not carry the holy garments *into the utter court* but keep the holy and the common apart (Ezekiel 42:14) is the pattern of *holy in all manner of conversation* — the whole walk separated unto Yahuah, the holy not mingled with the profane. The Torah''s separation of holy and common is carried forward into the called life, not abolished.'),
+
+    -- THREAD 2 (★): a wall round about, foursquare, to make a separation between the sanctuary and the profane place
+    ('canon','ezekiel',42,20,'canon','revelation',21,16,'free',
+      E'*And the city lieth foursquare, and the length is as large as the breadth: and he measured the city with the reed, twelve thousand furlongs. The length and the breadth and the height of it are equal* (Revelation 21:16). The house *measured... by the four sides... five hundred reeds long, and five hundred broad* (Ezekiel 42:20) is the same measured, foursquare holiness consummated in the New Jerusalem — a city measured with the reed, foursquare, its dimensions equal. The measuring reed that walls off the holy in Ezekiel measures the holy city at the end.'),
+    ('canon','ezekiel',42,20,'canon','revelation',21,27,'free',
+      E'*And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). The wall *round about... to make a separation between the sanctuary and the profane place* (Ezekiel 42:20) reaches its absolute in the city no defiled thing may enter. The separation Ezekiel''s wall enacts — the holy kept from the profane — is made final: nothing that defiles passes within.'),
+    ('canon','ezekiel',42,20,'canon','isaiah',35,8,'free',
+      E'*And an highway shall be there, and a way, and it shall be called The way of holiness; the unclean shall not pass over it; but it shall be for those: the wayfaring men, though fools, shall not err therein* (Isaiah 35:8). The wall built *to make a separation between the sanctuary and the profane place* (Ezekiel 42:20) is the same holiness Isaiah names a highway — *The way of holiness; the unclean shall not pass over it*. Whether a wall round the sanctuary or a way through the wilderness, the holy is kept separate; the unclean does not pass over.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-42-the-separation-between-the-holy-and-the-profane',
+       E'The holy chambers — the priests lay their garments, for they are holy: the difference between holy and profane',
+       E'When the measuring is done, the angel names the chambers and what they are for: *The north chambers and the south chambers, which are before the separate place, they be holy chambers, where the priests that approach unto Yahuah (LORD) shall eat the most holy things: there shall they lay the most holy things, and the meat offering, and the sin offering, and the trespass offering; for the place is holy* (42:13). And then the careful rule of separation: *When the priests enter therein, then shall they not go out of the holy place into the utter court, but there they shall lay their garments wherein they minister; for they are holy; and shall put on other garments, and shall approach to those things which are for the people* (42:14). The garments of ministry are holy and stay with the holy; they are not worn out into the common court. This is the Torah''s own charge to the priesthood, spoken to Aaron after the strange fire of his sons: *that ye may put difference between holy and unholy, and between unclean and clean* (Leviticus 10:10). Ezekiel''s restored priests are given exactly this teaching office: *And they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23) — the very task the priests of the bloody city had betrayed: *Her priests have violated my law, and have profaned mine holy things: they have put no difference between the holy and profane* (Ezekiel 22:26). The holy garments themselves were commanded from the beginning *for glory and for beauty* (Exodus 28:2), set apart for the ministry and never mingled with the common. And the apostolic word presses the SAME Torah-holiness onto the called, quoting Leviticus word for word: *But as he which hath called you is holy, so be ye holy in all manner of conversation; Because it is written, Be ye holy; for I am holy* (1 Peter 1:15-16). The distinction between holy and profane, clean and unclean, is not abolished — it is guarded in the restored house and carried forward into the whole walk of the called.',
+       sv.verse_id, ev.verse_id, 'free', 33025
+  FROM _s308_ezek42_lookup sv, _s308_ezek42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=42 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-42-a-wall-round-about-foursquare-to-separate-the-holy',
+       E'He measured it by the four sides — a wall round about, to make a separation between the sanctuary and the profane place',
+       E'The chapter closes with the outer measurement of the whole house. The angel turns to the four sides: *He measured the east side with the measuring reed, five hundred reeds... the north side, five hundred reeds... the south side, five hundred reeds... the west side... five hundred reeds* (42:16-19), and then the sum and its purpose: *He measured it by the four sides: it had a wall round about, five hundred reeds long, and five hundred broad, to make a separation between the sanctuary and the profane place* (42:20). The house is walled foursquare for one stated reason — *to make a separation between the sanctuary and the profane place*, the same separation the priests'' garments keep in verse 14. This measured, foursquare holiness is consummated in the New Jerusalem: *And the city lieth foursquare, and the length is as large as the breadth: and he measured the city with the reed, twelve thousand furlongs. The length and the breadth and the height of it are equal* (Revelation 21:16) — measured with the reed, foursquare, equal on every side. And the wall''s purpose is made absolute there: *And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). Isaiah names the same separated holiness as a road through the wilderness: *And an highway shall be there, and a way, and it shall be called The way of holiness; the unclean shall not pass over it* (Isaiah 35:8). Whether a wall round the sanctuary, a foursquare city, or a highway of holiness, the holy is kept apart from the profane — the unclean does not pass over. The wall that separates is no temporary measure; it stands to the city that has no end.',
+       sv.verse_id, ev.verse_id, 'free', 33028
+  FROM _s308_ezek42_lookup sv, _s308_ezek42_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=42 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *that ye may put difference between holy and unholy, and between unclean and clean* (Leviticus 10:10) — the Torah''s own charge to the priesthood; the holy chambers (Ezekiel 42:13) keep this difference.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=13
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-the-separation-between-the-holy-and-the-profane'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they shall teach my people the difference between the holy and profane* (Ezekiel 44:23) — the restored priests who lay their holy garments apart (Ezekiel 42:14) are charged to teach the same difference.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=14
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=44 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-the-separation-between-the-holy-and-the-profane'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *her priests have... put no difference between the holy and profane* (Ezekiel 22:26) — the sin of the bloody city''s priests; the restored separation (Ezekiel 42:14) reverses it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=14
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=22 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-the-separation-between-the-holy-and-the-profane'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *holy garments for Aaron thy brother for glory and for beauty* (Exodus 28:2) — the garments the priests lay in the holy chambers (Ezekiel 42:14) are holy, set apart, never worn into the common court.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=14
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-the-separation-between-the-holy-and-the-profane'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *as he which hath called you is holy, so be ye holy in all manner of conversation* (1 Peter 1:15) — the priestly separation (Ezekiel 42:14) carried forward into the whole walk of the called.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=14
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-the-separation-between-the-holy-and-the-profane'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *it is written, Be ye holy; for I am holy* (1 Peter 1:16) — Peter quotes the Torah (Leviticus 11:44); the holiness of the place and the offering (Ezekiel 42:13) is the holiness of Yahuah himself.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=13
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-the-separation-between-the-holy-and-the-profane'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the city lieth foursquare... The length and the breadth and the height of it are equal* (Revelation 21:16) — the foursquare measured house (Ezekiel 42:20) consummated in the New Jerusalem, measured with the reed.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=20
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-a-wall-round-about-foursquare-to-separate-the-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *there shall in no wise enter into it any thing that defileth* (Revelation 21:27) — the wall''s separation (Ezekiel 42:20) made absolute; no defiled thing enters the holy city.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=20
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-a-wall-round-about-foursquare-to-separate-the-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *The way of holiness; the unclean shall not pass over it* (Isaiah 35:8) — the same separated holiness as Ezekiel 42:20''s wall; whether wall or highway, the unclean does not pass over.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek42_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=42 AND sv.verse_number=20
+  JOIN _s308_ezek42_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=35 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-42-a-wall-round-about-foursquare-to-separate-the-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_43.sql (Ezekiel 43) -----
+-- Chapter: Ezekiel 43 — ★★★ KEYSTONE: THE GLORY OF YAHUAH RETURNS to the temple by the EAST gate,
+-- answering the departing Glory of ch10-11. The glory of the Elohim (God) of Yashar''el comes from the
+-- way of the east, his voice like a noise of many waters, the earth shines with his glory, and the glory
+-- of Yahuah (LORD) FILLS the house — the visible Glory = the FORMED Son returning to dwell. *The place of
+-- my throne, and the place of the soles of my feet, where I will dwell in the midst of the children of
+-- Yashar''el for ever.* The house is shown to provoke shame/repentance; *this is the law (torah) of the
+-- house*; the whole mountain MOST HOLY. The altar is consecrated, atonement made, *and I will accept you.*
+-- Tag: ezek43   Temp view: _s308_ezek43_lookup
+-- Sort band: base 33050, step 3 -> 33050, 33053, 33056, 33059 (4 threads)
+-- Source of EVERY row: 'canon','ezekiel',43,v
+--
+-- Ezekiel 43 coverage:
+--   ★★★ v.1-5 (the glory of the Elohim of Yashar''el came from the way of the EAST; his voice like a noise
+--          of many waters; the earth shined with his glory; the glory of Yahuah came into the house by the
+--          east gate; the glory of Yahuah FILLED the house)
+--        NT:     ★★★ Revelation 1:15 (his voice as the sound of many waters), ★★ Revelation 21:23 (the glory
+--                of Elohim did lighten it), ★★ Matthew 24:27 (as the lightning cometh out of the east... so
+--                shall the coming of the Son of Adam be) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh theophany weave)
+--        Tanakh: ★★★ Ezekiel 10:18-19 (the glory departed and stood at the door of the east gate),
+--                ★★★ Ezekiel 11:23 (the glory went up and stood upon the mountain on the EAST side of the
+--                city), ★★ Ezekiel 1:28 (the appearance of the brightness... the glory of Yahuah; I fell
+--                upon my face), ★ Ezekiel 1:24 (the noise of their wings like the noise of great waters) — THREAD 1
+--   ★★★ v.7,9 (Son of Adam, the place of my throne, and the place of the soles of my feet, where I will
+--          dwell in the midst of the children of Yashar''el for ever... and I will dwell in the midst of
+--          them for ever)
+--        NT:     ★★★ Revelation 21:3 (the tabernacle of Elohim is with men, and he will dwell with them),
+--                ★★ Revelation 22:3 (the throne of Elohim and of the Lamb shall be in it) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 37:26-27 (I will set my sanctuary... my tabernacle also shall be with them for
+--                evermore), ★★ Isaiah 66:1 (the heaven is my throne, and the earth is my footstool) — THREAD 2
+--        NT also: ★ 2 Corinthians 6:16 (I will dwell in them, and walk in them) — THREAD 2
+--   ★★ v.10-12 (shew the house to the house of Yashar''el, that they may be ashamed of their iniquities;
+--          let them measure the pattern... This is the law of the house; upon the top of the mountain the
+--          whole limit thereof round about shall be MOST HOLY. Behold, this is the law of the house)
+--        NT:     ★ Revelation 21:27 (there shall in no wise enter into it any thing that defileth) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 36:31 (then shall ye remember your own evil ways... and shall lothe yourselves),
+--                ★★ Zechariah 14:20-21 (HOLINESS UNTO YAHUAH upon the bells of the horses; every pot in
+--                Jerusalem shall be holiness) — THREAD 3
+--   ★ v.13-27 (these are the measures of the altar... thou shalt cleanse and purge it... seven days shall
+--          they purge the altar and purify it and consecrate themselves... upon the eighth day the priests
+--          shall make your burnt offerings... and I will accept you, saith Adonai Yahuah)
+--        NT:     ★ Hebrews 13:10 (we have an altar) + Hebrews 13:12 (Yahusha suffered without the gate to
+--                sanctify the people with his own blood) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: ★★ Exodus 29:36-37 (cleanse the altar... it shall be an altar most holy), ★ Leviticus 8:33-35
+--                (seven days of consecration) — THREAD 4
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate — NT (Revelation 1, Revelation 21, Matthew 24) + Tanakh (Ezekiel 10, Ezekiel 11, Ezekiel 1) [free]
+--      (★★★ the RETURN of the departed Glory by the east gate; the voice of many waters; the FORMED Son returning to dwell)
+--   2. ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever — NT (Revelation 21, Revelation 22, 2 Corinthians 6) + Tanakh (Ezekiel 37, Isaiah 66) [free]
+--      (★★★ Yahuah''s throne and everlasting dwelling in the midst of his people; the consummated Presence)
+--   3. ezekiel-43-this-is-the-law-of-the-house-most-holy — NT (Revelation 21) + Tanakh (Ezekiel 36, Zechariah 14) [free]
+--      (★★ the house shown to provoke shame/repentance; the whole mountain most holy; the Torah of the house stands)
+--   4. ezekiel-43-the-altar-consecrated-and-i-will-accept-you — NT (Hebrews 13) + Tanakh (Exodus 29, Leviticus 8) [free]
+--      (★ the altar cleansed/purged seven days, atonement made, and Yahuah''s acceptance; we have an altar)
+--
+-- Framing notes:
+--   ★★★ THE GLORY RETURNS BY THE EAST (THREAD 1): the keystone. In ch10-11 the Glory had DEPARTED eastward —
+--      *the glory of Yahuah (LORD) departed from off the threshold of the house, and stood over the cherubims*
+--      (10:18), and stood *at the door of the east gate of the LORD''S house* (10:19), then *went up from the
+--      midst of the city, and stood upon the mountain which is on the east side of the city* (11:23). Now it
+--      RETURNS by the very same gate: *the glory of the Elohim (God) of Yashar''el (Israel) came from the way
+--      of the east: and his voice was like a noise of many waters: and the earth shined with his glory*
+--      (43:2), *And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is
+--      toward the east* (43:4), *and, behold, the glory of Yahuah (LORD) filled the house* (43:5). The voice
+--      of many waters is the inaugural-vision sound (1:24) and the appearance of the brightness that felled
+--      the prophet on his face (1:28). Forward: the Formed Son''s *voice as the sound of many waters*
+--      (Revelation 1:15), the city *lightened* by the glory of Elohim (Revelation 21:23), and the coming
+--      *as the lightning cometh out of the east* (Matthew 24:27). The visible Glory = the FORMED Son, Yahuah
+--      who has a Father, returning to dwell.
+--   ★★★ THE PLACE OF MY THRONE (THREAD 2): *Son of Adam, the place of my throne, and the place of the soles
+--      of my feet, where I will dwell in the midst of the children of Yashar''el (Israel) for ever* (43:7),
+--      *and I will dwell in the midst of them for ever* (43:9). The everlasting Presence — answered forward
+--      in *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) and
+--      *the throne of Elohim (God) and of the Lamb shall be in it* (Revelation 22:3); claimed by Paul,
+--      *I will dwell in them, and walk in them* (2 Corinthians 6:16); already sworn in Ezekiel 37:26-27
+--      (*I will set my sanctuary in the midst of them for evermore. My tabernacle also shall be with them*);
+--      and the throne/footstool language is Isaiah 66:1 (*the heaven is my throne, and the earth is my
+--      footstool*) — the One enthroned over heaven sets the soles of his feet in the midst of his people.
+--   ★★ THE LAW OF THE HOUSE (THREAD 3): the vision is shown to provoke repentance — *shew the house to the
+--      house of Yashar''el (Israel), that they may be ashamed of their iniquities* (43:10) — the same shame
+--      Ezekiel 36:31 names (*shall lothe yourselves in your own sight for your iniquities*). And the verdict
+--      on the place: *This is the law of the house; Upon the top of the mountain the whole limit thereof
+--      round about shall be most holy. Behold, this is the law of the house* (43:12). The *law (torah) of
+--      the house* — the Torah-order of the sanctuary, kept, not abolished; the WHOLE mountain most holy, as
+--      in the day when *HOLINESS UNTO THE Yahuah (LORD)* is on the bells of the horses and *every pot in
+--      Jerusalem... shall be holiness* (Zechariah 14:20-21), and *there shall in no wise enter into it any
+--      thing that defileth* (Revelation 21:27).
+--   ★ THE ALTAR CONSECRATED (THREAD 4): *thus shalt thou cleanse and purge it* (43:20); *Seven days shall
+--      they purge the altar and purify it; and they shall consecrate themselves* (43:26); *upon the eighth
+--      day... the priests shall make your burnt offerings upon the altar, and your peace offerings; and I
+--      will accept you, saith Adonai Yahuah (the Lord GOD)* (43:27). This is the Sinai consecration-pattern:
+--      *thou shalt cleanse the altar... and it shall be an altar most holy* (Exodus 29:36-37); *seven days
+--      shall he consecrate you* (Leviticus 8:33). And we have the greater altar — *We have an altar, whereof
+--      they have no right to eat which serve the tabernacle* (Hebrews 13:10); *Yahusha (Jesus) also, that he
+--      might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12).
+--   VERSES WITH NO SEPARATE ADD: v.3 (the appearance of the vision by Chebar — the inaugural-vision
+--      back-reference; woven into THREAD 1 prose), v.6 (the man stood by me — the angel-guide framing;
+--      woven in prose), v.8 (their threshold by my thresholds, defiling my holy name — the indictment that
+--      v.7,9 answer; woven into THREAD 2/3 prose), v.11 (the form/ordinances/laws of the house written for
+--      them to keep — woven into THREAD 3 prose with the *law of the house* of v.12), v.13-19,21-25 (the
+--      detailed measures and offerings of the altar — woven into THREAD 4 prose; the load-bearing cleansing
+--      and acceptance carried at v.20,26,27). All blocks recorded; every block carries at least one thread.
+
+CREATE TEMP VIEW _s308_ezek43_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): the glory of Yahuah returns by the east gate — the voice of many waters
+    ('canon','ezekiel',43,2,'canon','ezekiel',10,18,'free',
+      E'*Then the glory of Yahuah (LORD) departed from off the threshold of the house, and stood over the cherubims* (Ezekiel 10:18). This is the departure that Ezekiel 43 reverses: the Glory that here *departed from off the threshold of the house* is the very Glory that now *came from the way of the east... and the earth shined with his glory* (Ezekiel 43:2). The Presence that left the polluted house returns to fill the restored one.'),
+    ('canon','ezekiel',43,4,'canon','ezekiel',10,19,'free',
+      E'*And the cherubims lifted up their wings, and mounted up from the earth in my sight: when they went out, the wheels also were beside them, and every one stood at the door of the east gate of the LORD''S house; and the glory of the Elohim (God) of Yashar''el (Israel) was over them above* (Ezekiel 10:19). The Glory had stood and gone out *at the door of the east gate*; now *the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4). It returns by the same east gate it departed through — the departure answered, the breach healed.'),
+    ('canon','ezekiel',43,2,'canon','ezekiel',11,23,'free',
+      E'*And the glory of Yahuah (LORD) went up from the midst of the city, and stood upon the mountain which is on the east side of the city* (Ezekiel 11:23). The Glory withdrew eastward, up to the mountain on the east side; and from that same way of the east it returns — *the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east* (Ezekiel 43:2). The eastward departure of ch11 and the eastward return of ch43 are the two halves of one promise: the Presence that left will come again.'),
+    ('canon','ezekiel',43,2,'canon','ezekiel',1,24,'free',
+      E'*And when they went, I heard the noise of their wings, like the noise of great waters, as the voice of the Almighty, the voice of speech, as the noise of an host* (Ezekiel 1:24). The sound of the returning Glory — *his voice was like a noise of many waters* (Ezekiel 43:2) — is the same sound Ezekiel heard at the inaugural vision by Chebar: *the noise of great waters, as the voice of the Almighty*. The voice of many waters marks the one and same Glory, departing and returning.'),
+    ('canon','ezekiel',43,3,'canon','ezekiel',1,28,'free',
+      E'*As the appearance of the bow that is in the cloud in the day of rain, so was the appearance of the brightness round about. This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face, and I heard a voice of one that spake* (Ezekiel 1:28). Ezekiel says the returning vision was *according to the vision that I saw by the river Chebar; and I fell upon my face* (Ezekiel 43:3) — the very rainbow-brightness glory of the first vision, before which he *fell upon my face*. The same likeness of the glory of Yahuah is seen at the call and at the return.'),
+    ('canon','ezekiel',43,2,'canon','revelation',1,15,'free',
+      E'*And his feet like unto fine brass, as if they burned in a furnace; and his voice as the sound of many waters* (Revelation 1:15). The returning Glory whose *voice was like a noise of many waters* (Ezekiel 43:2) is the One John beholds — *one like unto the Son of Adam* (Revelation 1:13) whose *voice as the sound of many waters*. The visible Glory of Ezekiel is the FORMED Son, Yahuah who has a Father, made flesh; the voice of many waters is his.'),
+    ('canon','ezekiel',43,2,'canon','revelation',21,23,'free',
+      E'*And the city had no need of the sun, neither of the moon, to shine in it: for the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23). As *the earth shined with his glory* (Ezekiel 43:2) when the Presence returned to the house, so in the consummation *the glory of Elohim (God) did lighten* the holy city. The same Glory that fills the temple lightens the New Jerusalem — Yahuah himself, in the Lamb, the light thereof.'),
+    ('canon','ezekiel',43,2,'canon','matthew',24,27,'free',
+      E'*For as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of Adam be* (Matthew 24:27). The Glory comes *from the way of the east* (Ezekiel 43:2), the earth shining with it; and the coming of the Son of Adam is likened to lightning *out of the east* shining to the west. The eastward return of the Glory and the eastward-flashing advent of the Son of Adam are one and the same coming of the Formed Son.'),
+
+    -- THREAD 2 (★★★): the place of my throne, where I will dwell for ever
+    ('canon','ezekiel',43,7,'canon','revelation',21,3,'free',
+      E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The promise *the place of my throne... where I will dwell in the midst of the children of Yashar''el (Israel) for ever* (Ezekiel 43:7) reaches its end here — *the tabernacle of Elohim (God) is with men, and he will dwell with them*. The throne set in the midst of his people for ever is Yahuah dwelling with men in the New Jerusalem.'),
+    ('canon','ezekiel',43,9,'canon','revelation',21,3,'free',
+      E'*Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3). Yahuah''s word *I will dwell in the midst of them for ever* (Ezekiel 43:9) — spoken once the whoredom and the carcases of kings are put far away — is the everlasting dwelling John hears proclaimed: *he will dwell with them, and they shall be his people*. The cleansed people become the dwelling of Yahuah for ever.'),
+    ('canon','ezekiel',43,7,'canon','revelation',22,3,'free',
+      E'*And there shall be no more curse: but the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). *The place of my throne, and the place of the soles of my feet* (Ezekiel 43:7) is fulfilled where *the throne of Elohim (God) and of the Lamb shall be in it*. The throne whose footstool is set in the midst of Yashar''el (Israel) is the throne of Elohim and of the Lamb in the city without curse.'),
+    ('canon','ezekiel',43,7,'canon','isaiah',66,1,'free',
+      E'*Thus saith Yahuah (LORD), The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me? and where is the place of my rest?* (Isaiah 66:1). The One who says *the place of my throne, and the place of the soles of my feet* (Ezekiel 43:7) is the One whose throne is heaven and whose footstool is the earth (Isaiah 66:1) — yet who deigns to set the soles of his feet in the midst of his people. The Most High who fills heaven chooses to dwell in the house in the midst of Yashar''el (Israel) for ever.'),
+    ('canon','ezekiel',43,9,'canon','ezekiel',37,26,'free',
+      E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26). The promise *I will dwell in the midst of them for ever* (Ezekiel 43:9) is the everlasting covenant of the two-stick chapter — *I will set my sanctuary in the midst of them for evermore*. The reunited house of Ezekiel 37 is the people in whose midst the throne of Ezekiel 43 is set for ever.'),
+    ('canon','ezekiel',43,9,'canon','ezekiel',37,27,'free',
+      E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The dwelling *in the midst of them for ever* (Ezekiel 43:9) is the same tabernacle-with-them of the everlasting covenant — *My tabernacle also shall be with them*. Yahuah''s sanctuary in the midst and his tabernacle with them are one promise: the everlasting Presence among a cleansed people.'),
+    ('canon','ezekiel',43,9,'canon','2-corinthians',6,16,'free',
+      E'*And what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). Paul claims the dwelling-formula Ezekiel speaks — *I will dwell in the midst of them for ever* (Ezekiel 43:9) — and bends it to the indwelling: *I will dwell in them, and walk in them*. And the condition is the same as Ezekiel''s: the idols and whoredom put far away (43:9), the temple having no agreement with idols.'),
+
+    -- THREAD 3 (★★): this is the law of the house — the whole mountain most holy
+    ('canon','ezekiel',43,10,'canon','ezekiel',36,31,'free',
+      E'*Then shall ye remember your own evil ways, and your doings that were not good, and shall lothe yourselves in your own sight for your iniquities and for your abominations* (Ezekiel 36:31). The house is shown *that they may be ashamed of their iniquities* (Ezekiel 43:10) — the very shame of the cleansing chapter, where the people *shall lothe yourselves... for your iniquities*. The vision of the holy house provokes the repentance Yahuah works in the restored heart.'),
+    ('canon','ezekiel',43,12,'canon','zechariah',14,20,'free',
+      E'*In that day shall there be upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD); and the pots in the LORD''S house shall be like the bowls before the altar* (Zechariah 14:20). The verdict *Upon the top of the mountain the whole limit thereof round about shall be most holy* (Ezekiel 43:12) is the day Zechariah sees, when even *the bells of the horses* bear *HOLINESS UNTO THE Yahuah (LORD)*. The whole place is made holy — the holiness of the sanctuary spread over all.'),
+    ('canon','ezekiel',43,12,'canon','zechariah',14,21,'free',
+      E'*Yea, every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva''ot (LORD of hosts): and all they that sacrifice shall come and take of them, and seethe therein: and in that day there shall be no more the Canaanite in the house of Yahuah Tseva''ot (LORD of hosts)* (Zechariah 14:21). When *the whole limit thereof round about shall be most holy* (Ezekiel 43:12), even *every pot in Jerusalem... shall be holiness*, and nothing unclean — *no more the Canaanite in the house* — remains. The law of the house makes the whole mountain holy ground.'),
+    ('canon','ezekiel',43,12,'canon','revelation',21,27,'free',
+      E'*And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie: but they which are written in the Lamb''s book of life* (Revelation 21:27). The most-holy mountain — *the whole limit thereof round about shall be most holy* (Ezekiel 43:12) — is the city into which *there shall in no wise enter... any thing that defileth*. The Torah of the house, the place wholly holy, becomes the city no defilement enters.'),
+
+    -- THREAD 4 (★): the altar consecrated, atonement made — and I will accept you
+    ('canon','ezekiel',43,20,'canon','exodus',29,36,'free',
+      E'*And thou shalt offer every day a bullock for a sin offering for atonement: and thou shalt cleanse the altar, when thou hast made an atonement for it, and thou shalt anoint it, to sanctify it* (Exodus 29:36). The command *thus shalt thou cleanse and purge it* (Ezekiel 43:20) follows the Sinai pattern exactly: the altar cleansed by the blood of the sin offering, atonement made for it. The altar of the restored house is consecrated as the altar of the tabernacle was.'),
+    ('canon','ezekiel',43,20,'canon','exodus',29,37,'free',
+      E'*Seven days thou shalt make an atonement for the altar, and sanctify it; and it shall be an altar most holy: whatsoever toucheth the altar shall be holy* (Exodus 29:37). The blood put on the horns and corners and border *to cleanse and purge it* (Ezekiel 43:20) — over the seven days of v.25-26 — is the seven-day atonement that makes *an altar most holy*. The most-holy altar of Sinai is the pattern for the altar Ezekiel sees consecrated.'),
+    ('canon','ezekiel',43,26,'canon','leviticus',8,33,'free',
+      E'*And ye shall not go out of the door of the tabernacle of the congregation in seven days, until the days of your consecration be at an end: for seven days shall he consecrate you* (Leviticus 8:33). *Seven days shall they purge the altar and purify it; and they shall consecrate themselves* (Ezekiel 43:26) repeats the Mosaic seven-day consecration — *for seven days shall he consecrate you*. The restored priesthood and altar are set apart by the same seven-day rite Aaron knew.'),
+    ('canon','ezekiel',43,27,'canon','hebrews',13,10,'free',
+      E'*We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10). The altar made ready so that *the priests shall make your burnt offerings upon the altar, and your peace offerings; and I will accept you* (Ezekiel 43:27) opens toward the greater altar — *We have an altar*. The acceptance Yahuah grants at the consecrated altar is fulfilled in the altar of the Formed Son, whose offering is accepted for the people.'),
+    ('canon','ezekiel',43,27,'canon','hebrews',13,12,'free',
+      E'*Wherefore Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The promise *and I will accept you, saith Adonai Yahuah (the Lord GOD)* (Ezekiel 43:27), made when the altar is purged with blood, is answered in the blood by which *Yahusha (Jesus)... sanctify the people*. The acceptance at the cleansed altar is sealed by the blood of the Formed Son, who suffered without the gate to sanctify his people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate',
+       E'The glory of Yahuah returns by the east gate — his voice like a noise of many waters',
+       E'This is the answer to the great grief of the book. In ch10-11 the Glory of Yahuah had abandoned the polluted temple, withdrawing eastward stage by stage: *the glory of Yahuah (LORD) departed from off the threshold of the house, and stood over the cherubims* (Ezekiel 10:18), and stood *at the door of the east gate of the LORD''S house* (10:19), and at last *the glory of Yahuah (LORD) went up from the midst of the city, and stood upon the mountain which is on the east side of the city* (Ezekiel 11:23). Now, by the very same way, the Presence RETURNS: *behold, the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory* (43:2), *And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (43:4), *So the spirit took me up, and brought me into the inner court; and, behold, the glory of Yahuah (LORD) filled the house* (43:5). The prophet knows this Glory — *the visions were like the vision that I saw by the river Chebar; and I fell upon my face* (43:3): the rainbow-brightness of the call, *the appearance of the likeness of the glory of Yahuah (LORD)... and I fell upon my face* (Ezekiel 1:28), the sound *like the noise of great waters, as the voice of the Almighty* (Ezekiel 1:24). And the New Testament shows whose voice this is: *one like unto the Son of Adam... and his voice as the sound of many waters* (Revelation 1:13,15) — the FORMED Son, Yahuah who has a Father, the visible Glory drawn from the Formless. As *the earth shined with his glory* (43:2), so in the end *the glory of Elohim (God) did lighten* the holy city (Revelation 21:23); and his coming is *as the lightning cometh out of the east, and shineth even unto the west; so shall also the coming of the Son of Adam be* (Matthew 24:27). The Glory departed eastward; the Glory returns from the east; and the East from which he comes is the dawning of the Formed Son to dwell.',
+       sv.verse_id, ev.verse_id, 'free', 33050
+  FROM _s308_ezek43_lookup sv, _s308_ezek43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=43 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever',
+       E'The place of my throne, the place of the soles of my feet — where I will dwell for ever',
+       E'When the Glory has filled the house, Yahuah speaks the purpose of the whole vision: *Son of Adam, the place of my throne, and the place of the soles of my feet, where I will dwell in the midst of the children of Yashar''el (Israel) for ever, and my holy name, shall the house of Yashar''el (Israel) no more defile* (43:7); and once the whoredom and the carcases of their kings are put far away, *I will dwell in the midst of them for ever* (43:9). This is the everlasting Presence — the throne and the footstool of Yahuah set down among his people, never again to be defiled or to depart. The One who speaks is the Most High whose reach is beyond all houses: *The heaven is my throne, and the earth is my footstool: where is the house that ye build unto me?* (Isaiah 66:1) — yet he stoops to set the soles of his feet in the midst of Yashar''el (Israel). It is the everlasting covenant already sworn in the two-stick chapter: *I will set my sanctuary in the midst of them for evermore. My tabernacle also shall be with them* (Ezekiel 37:26-27). And it reaches its consummation in the New Jerusalem: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3); *the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3). Paul claims the same indwelling for the cleansed temple-people: *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) — on the same terms Ezekiel names, the idols and whoredom put far away. The throne whose footstool rests in the midst of his people is the dwelling of Yahuah for ever.',
+       sv.verse_id, ev.verse_id, 'free', 33053
+  FROM _s308_ezek43_lookup sv, _s308_ezek43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=43 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-43-this-is-the-law-of-the-house-most-holy',
+       E'This is the law of the house — the whole mountain most holy',
+       E'The vision is given not as architecture but as a summons to repentance and holiness. *Thou son of Adam, shew the house to the house of Yashar''el (Israel), that they may be ashamed of their iniquities: and let them measure the pattern* (43:10) — the holy house held up before them works the very shame Yahuah promised in the cleansing chapter: *shall lothe yourselves in your own sight for your iniquities and for your abominations* (Ezekiel 36:31). And if they are ashamed, they are to *keep the whole form thereof, and all the ordinances thereof, and do them* (43:11). Then comes the verdict on the place itself: *This is the law of the house; Upon the top of the mountain the whole limit thereof round about shall be most holy. Behold, this is the law of the house* (43:12). The *law (torah) of the house* — the Torah-order of the sanctuary, twice repeated for emphasis, kept and binding, never abolished. And not the inner shrine only but the WHOLE mountain, the whole limit round about, is *most holy* — the day Zechariah foresaw, when *upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD)* (Zechariah 14:20), and *every pot in Jerusalem and in Yahudah (Judah) shall be holiness unto Yahuah Tseva''ot (LORD of hosts)... and in that day there shall be no more the Canaanite in the house* (Zechariah 14:21). What was once confined to the sanctuary spreads over all the ground; and the city it becomes is the one *there shall in no wise enter into it any thing that defileth* (Revelation 21:27). The law of the house stands; the whole place is holy.',
+       sv.verse_id, ev.verse_id, 'free', 33056
+  FROM _s308_ezek43_lookup sv, _s308_ezek43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=43 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-43-the-altar-consecrated-and-i-will-accept-you',
+       E'The altar cleansed and purged seven days — and I will accept you',
+       E'The chapter closes with the consecration of the altar, the place where the renewed worship begins. The measures are given (43:13-17), then the rite: *thou shalt take of the blood thereof, and put it on the four horns of it, and on the four corners of the settle, and upon the border round about: thus shalt thou cleanse and purge it* (43:20); the seven days run their course — *Seven days shall they purge the altar and purify it; and they shall consecrate themselves* (43:26); and the acceptance is declared — *and when these days are expired, it shall be, that upon the eighth day, and so forward, the priests shall make your burnt offerings upon the altar, and your peace offerings; and I will accept you, saith Adonai Yahuah (the Lord GOD)* (43:27). This is the Sinai consecration-pattern carried into the restored house: *thou shalt cleanse the altar, when thou hast made an atonement for it, and thou shalt anoint it, to sanctify it. Seven days thou shalt make an atonement for the altar, and sanctify it; and it shall be an altar most holy* (Exodus 29:36-37); *for seven days shall he consecrate you* (Leviticus 8:33). The Torah of the offerings stands, the altar cleansed by blood, atonement made, the people accepted. And the consecrated altar opens toward the greater one: *We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10), for *Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12). The acceptance Yahuah grants at the purged altar is sealed in the blood of the Formed Son.',
+       sv.verse_id, ev.verse_id, 'free', 33059
+  FROM _s308_ezek43_lookup sv, _s308_ezek43_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=43 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the glory of Yahuah (LORD) departed from off the threshold of the house, and stood over the cherubims* (Ezekiel 10:18) — the departure Ezekiel 43 reverses; the Glory that left now returns from the east.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *every one stood at the door of the east gate of the LORD''S house; and the glory of the Elohim (God) of Yashar''el (Israel) was over them above* (Ezekiel 10:19) — the Glory left by the east gate; it returns *by the way of the gate whose prospect is toward the east* (Ezekiel 43:4).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=4
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=10 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *the glory of Yahuah (LORD) went up from the midst of the city, and stood upon the mountain which is on the east side of the city* (Ezekiel 11:23) — the eastward withdrawal answered by the eastward return of Ezekiel 43:2.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=11 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I heard the noise of their wings, like the noise of great waters, as the voice of the Almighty* (Ezekiel 1:24) — the *noise of many waters* of the returning Glory (43:2) is the inaugural-vision sound.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *This was the appearance of the likeness of the glory of Yahuah (LORD). And when I saw it, I fell upon my face* (Ezekiel 1:28) — the returning vision is *like the vision... by the river Chebar; and I fell upon my face* (Ezekiel 43:3); the same glory at call and return.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=3
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★★ *one like unto the Son of Adam... and his voice as the sound of many waters* (Revelation 1:13,15) — the returning Glory whose *voice was like a noise of many waters* (43:2) is the FORMED Son.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *the glory of Elohim (God) did lighten it, and the Lamb is the light thereof* (Revelation 21:23) — as *the earth shined with his glory* (43:2), so the New Jerusalem is lit by that same Glory.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *as the lightning cometh out of the east... so shall also the coming of the Son of Adam be* (Matthew 24:27) — the Glory comes *from the way of the east* (43:2); the advent of the Son of Adam flashes from the east.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=2
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-glory-of-yahuah-returns-by-the-east-gate'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3) — *the place of my throne... where I will dwell in the midst of the children of Yashar''el (Israel) for ever* (43:7) reaches its consummation.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=7
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3) — *I will dwell in the midst of them for ever* (43:9), the cleansed people made his dwelling.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the throne of Elohim (God) and of the Lamb shall be in it; and his servants shall serve him* (Revelation 22:3) — *the place of my throne, and the place of the soles of my feet* (43:7) fulfilled in the city without curse.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=7
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *The heaven is my throne, and the earth is my footstool* (Isaiah 66:1) — the Most High who fills heaven sets *the soles of my feet* (43:7) in the midst of Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=7
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *I will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26) — the everlasting covenant of the two-stick chapter is the *I will dwell in the midst of them for ever* (43:9).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — the same tabernacle-with-them as the dwelling for ever of 43:9.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) — Paul claims the dwelling-formula of 43:9 on the same terms: idols put far away.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=9
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-place-of-my-throne-where-i-will-dwell-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *shall lothe yourselves in your own sight for your iniquities and for your abominations* (Ezekiel 36:31) — the house is shown *that they may be ashamed of their iniquities* (43:10); the same repentance Yahuah works.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=10
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=36 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-this-is-the-law-of-the-house-most-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *upon the bells of the horses, HOLINESS UNTO THE Yahuah (LORD)* (Zechariah 14:20) — the day *the whole limit thereof round about shall be most holy* (43:12); holiness spread over all.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=12
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-this-is-the-law-of-the-house-most-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *every pot in Jerusalem and in Yahudah (Judah) shall be holiness... no more the Canaanite in the house* (Zechariah 14:21) — the whole place most holy (43:12), nothing unclean remaining.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=12
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=14 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-this-is-the-law-of-the-house-most-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *there shall in no wise enter into it any thing that defileth* (Revelation 21:27) — the most-holy mountain (43:12) becomes the city no defilement enters.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=12
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-this-is-the-law-of-the-house-most-holy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou shalt cleanse the altar, when thou hast made an atonement for it, and thou shalt anoint it, to sanctify it* (Exodus 29:36) — the Sinai pattern behind *thus shalt thou cleanse and purge it* (43:20).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=20
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=29 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-altar-consecrated-and-i-will-accept-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Seven days thou shalt make an atonement for the altar, and sanctify it; and it shall be an altar most holy* (Exodus 29:37) — the seven-day atonement (43:25-26) that makes the altar most holy.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=20
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=29 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-altar-consecrated-and-i-will-accept-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *for seven days shall he consecrate you* (Leviticus 8:33) — the Mosaic seven-day consecration repeated in *Seven days shall they purge the altar and purify it; and they shall consecrate themselves* (43:26).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=26
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-altar-consecrated-and-i-will-accept-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *We have an altar, whereof they have no right to eat which serve the tabernacle* (Hebrews 13:10) — the consecrated altar where *I will accept you* (43:27) opens toward the greater altar.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=27
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-altar-consecrated-and-i-will-accept-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Yahusha (Jesus) also, that he might sanctify the people with his own blood, suffered without the gate* (Hebrews 13:12) — the acceptance at the purged altar (43:27) sealed in the blood of the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek43_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=43 AND sv.verse_number=27
+  JOIN _s308_ezek43_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-43-the-altar-consecrated-and-i-will-accept-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_44.sql (Ezekiel 44) -----
+-- Chapter: Ezekiel 44 — ★★ THE EAST GATE KEPT SHUT because Yahuah (LORD), the Elohim (God) of
+-- Yashar''el (Israel), entered in by it; the gate consecrated by the entering of the Glory (continuing
+-- ch43), reserved for the prince to eat bread before Yahuah. ★ THE SONS OF ZADOK — the faithful priests
+-- who kept the charge of the sanctuary WHEN the children of Yashar''el went astray, rewarded with nearness
+-- to minister (faithfulness honored, the remnant-priesthood). ★★ THE PRIESTS TEACH THE DIFFERENCE between
+-- holy and profane, between unclean and clean, keep the laws and statutes in all the assemblies, and hallow
+-- the sabbaths — the Torah-order UPHELD in the restored temple, NOT abolished; the clean/unclean and sabbath
+-- distinctions STAND.
+-- Tag: ezek44   Temp view: _s308_ezek44_lookup
+-- Sort band: base 33075, step 3 -> threads at 33075, 33078, 33081 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',44,v
+--
+-- Ezekiel 44 coverage:
+--   ★★ v.1-3 (the east gate SHUT, no man shall enter, because Yahuah the Elohim of Yashar''el hath entered
+--          in by it; it is for the prince, to eat bread before Yahuah)
+--        NT:     none warranted distinct (the prince eating bread before Yahuah = communion reserved; the
+--                Glory-entered gate is a Tanakh/theophany weave, not a forced NT type)
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 43:1-4 (the glory of the Elohim of Yashar''el came from the way of the east...
+--                came into the house by the way of the gate whose prospect is toward the east), ★ Exodus
+--                3:5 (the place whereon thou standest is holy ground — what Yahuah''s Presence enters is
+--                consecrated) — THREAD 1
+--   v.4-14 (the glory filled the house; the rebellious house brought strangers uncircumcised in heart into
+--          the sanctuary; the Levites that went astray after idols shall bear their iniquity, demoted to
+--          keepers of the charge of the house) — the charge against the apostate Levites; woven in prose of
+--          THREADS 1 & 2 (the contrast that sets up the sons of Zadok).
+--        NT:     none warranted   Extras: none warranted   Tanakh: held in prose (the foil to v.15-16)
+--   ★ v.15-16 (BUT the priests the Levites, the sons of Zadok, that KEPT THE CHARGE of my sanctuary when
+--          the children of Yashar''el went astray, they shall come near to me to minister... they shall keep
+--          my charge)
+--        NT:     ★ Revelation 3:21 (to him that overcometh will I grant to sit with me in my throne) — the
+--                faithful-when-others-fell rewarded with nearness — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Samuel 2:35 (I will raise me up a faithful priest, that shall do according to that
+--                which is in mine heart), ★★ Numbers 25:11-13 (Phinehas... the covenant of an everlasting
+--                priesthood — the Zadokite zeal), ★ Malachi 2:6 (the law of truth was in his mouth) — THREAD 2
+--   v.17-22 (linen garments, no wool/sweat, poll the head, no wine in the inner court, marriage to maidens
+--          of the seed of Yashar''el) — the priestly ordinances of holiness; woven in prose (the holiness
+--          order continued); no separate add (NT none / Extras none / Tanakh-Lev sumptuary held in prose).
+--   ★★ v.23-24 (they shall TEACH my people the difference between the holy and profane, and discern between
+--          the unclean and the clean... and they shall keep my laws and my statutes in all mine assemblies;
+--          and they shall hallow my sabbaths)
+--        NT:     ★ Matthew 5:19 (whosoever shall do and teach them, the same shall be called great in the
+--                kingdom of heaven) — the do-AND-teach of the commandments honored — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Leviticus 10:10-11 (put difference between holy and unholy... and that ye may teach the
+--                children of Yashar''el all the statutes), ★ Malachi 2:7 (the priest''s lips should keep
+--                knowledge, and they should seek the law at his mouth), ★ Ezekiel 22:26 (lateral foil — the
+--                priests who put NO difference and hid their eyes from the sabbaths), ★ Haggai 2:11-13 (the
+--                priestly torah-ruling on holy/clean) — THREAD 3
+--   v.25-31 (no defiling by the dead except near kin; the inheritance — I am their inheritance and
+--          possession; they eat the meat/sin/trespass offering and the firstfruits; eat nothing dead of
+--          itself or torn) — the priestly maintenance and the standing clean/dietary rule; woven in THREAD 3
+--          prose (the dead-of-itself/torn ban = Lev 11/Deut 14 still binding); no separate add.
+--        NT:     none warranted   Extras: none warranted   Tanakh: held in prose (priests'' inheritance/diet)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-44-the-east-gate-shut-because-yahuah-hath-entered-in — Tanakh (Ezekiel 43, Exodus 3) [free]
+--      (★★ the east gate sealed because the Glory of Yahuah entered through it; consecrated by his entering;
+--       reserved for the prince to eat bread before Yahuah — the place of communion)
+--   2. ezekiel-44-the-sons-of-zadok-that-kept-the-charge — NT (Revelation 3) + Tanakh (1 Samuel 2, Numbers 25, Malachi 2) [free]
+--      (★ the faithful priests who kept the charge when others apostatized, rewarded with nearness; the
+--       faithful-priest line, the Phinehas/Zadokite zeal, the overcomer''s reward — the remnant-priesthood)
+--   3. ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths — NT (Matthew 5) + Tanakh (Leviticus 10, Malachi 2, Ezekiel 22, Haggai 2) [free]
+--      (★★ the priests teach the holy/profane and unclean/clean distinctions, keep the laws and statutes,
+--       and hallow the sabbaths — the Torah-order UPHELD in the restored temple, NOT abolished)
+--
+-- Framing notes:
+--   ★★ THE EAST GATE SHUT (THREAD 1): *Then said Yahuah (LORD) unto me; This gate shall be shut, it shall
+--      not be opened, and no man shall enter in by it; because Yahuah (LORD), the Elohim (God) of Yashar''el
+--      (Israel), hath entered in by it, therefore it shall be shut* (44:2). The gate is sealed not by neglect
+--      but by consecration — the Glory of Yahuah came through it (continuing ch43): *the glory of the Elohim
+--      (God) of Yashar''el (Israel) came from the way of the east... And the glory of Yahuah (LORD) came into
+--      the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:2,4). What the
+--      Presence enters is holy ground — *put off thy shoes from off thy feet, for the place whereon thou
+--      standest is holy ground* (Exodus 3:5). And the gate is reserved for the prince: *It is for the prince;
+--      the prince, he shall sit in it to eat bread before Yahuah (LORD)* (44:3) — the place of communion kept
+--      for the one who eats bread in the Presence.
+--   ★ THE SONS OF ZADOK (THREAD 2): *But the priests the Levites, the sons of Zadok, that kept the charge of
+--      my sanctuary when the children of Yashar''el (Israel) went astray from me, they shall come near to me
+--      to minister unto me... and they shall keep my charge* (44:15-16). Faithfulness when others apostatized
+--      is honored with nearness — the very pattern of the faithful priest Yahuah swore to raise: *I will
+--      raise me up a faithful priest, that shall do according to that which is in mine heart and in my mind*
+--      (1 Samuel 2:35); the Zadokite line descends from the zeal of Phinehas, *the covenant of an everlasting
+--      priesthood; because he was zealous for his Elohim (God)* (Numbers 25:13); the priest whose mouth held
+--      *the law of truth* (Malachi 2:6); and the overcomer''s reward seals it forward — *To him that
+--      overcometh will I grant to sit with me in my throne, even as I also overcame* (Revelation 3:21). The
+--      faithful remnant-priesthood, near to Yahuah because it kept the charge when the rest fell.
+--   ★★ TEACH THE DIFFERENCE, HALLOW MY SABBATHS (THREAD 3): *And they shall teach my people the difference
+--      between the holy and profane, and cause them to discern between the unclean and the clean... and they
+--      shall keep my laws and my statutes in all mine assemblies; and they shall hallow my sabbaths*
+--      (44:23-24). In the RESTORED temple the Torah-order STANDS: the holy/profane and unclean/clean
+--      distinctions taught, the laws and statutes kept, the sabbaths hallowed — never abolished. This is the
+--      priestly charge of the Torah itself: *that ye may put difference between holy and unholy, and between
+--      unclean and clean; And that ye may teach the children of Yashar''el (Israel) all the statutes*
+--      (Leviticus 10:10-11); *the priest''s lips should keep knowledge, and they should seek the law at his
+--      mouth* (Malachi 2:7); and the indictment of the priests who FAILED this is the dark foil — *they have
+--      put no difference between the holy and profane... and have hid their eyes from my sabbaths* (Ezekiel
+--      22:26), exactly the charge the sons of Zadok now fulfill. Haggai shows the priests ruling such
+--      holy/clean questions (Haggai 2:11-13). And the Formed Son sets the same standard: *whosoever shall do
+--      and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19) — the
+--      commandments done AND taught, exactly as the restored priesthood does and teaches them.
+--   VERSES WITH NO SEPARATE ADD: v.4-14 (the glory filling the house; the rebellious house and the demoted
+--      idolatrous Levites — the foil to the sons of Zadok, woven in THREADS 1 & 2 prose), v.17-22 (the linen
+--      garments / no-wine / marriage ordinances of priestly holiness — the holiness order, woven in prose),
+--      v.25-31 (the priests'' inheritance — *I am their inheritance* — their portions, and the standing ban
+--      *The priests shall not eat of any thing that is dead of itself, or torn* = Lev 11/Deut 14 still
+--      binding, woven in THREAD 3 prose). All verses recorded; every block carries or feeds a thread.
+
+CREATE TEMP VIEW _s308_ezek44_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the east gate shut because Yahuah hath entered in by it
+    ('canon','ezekiel',44,2,'canon','ezekiel',43,2,'free',
+      E'*And, behold, the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory* (Ezekiel 43:2). The gate is shut for one reason: *because Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), hath entered in by it* (Ezekiel 44:2). The chapter before names the entering — the Glory of the Elohim of Yashar''el came from the east; the east gate is sealed because the Presence passed through it.'),
+    ('canon','ezekiel',44,2,'canon','ezekiel',43,4,'free',
+      E'*And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4). This is the entering that seals the gate — *This gate shall be shut... because Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), hath entered in by it* (Ezekiel 44:2). The Glory of Yahuah came in by the east gate; therefore no man enters by it after him. The gate is consecrated by the One who passed through it.'),
+    ('canon','ezekiel',44,2,'canon','exodus',3,5,'free',
+      E'*And he said, Draw not nigh hither: put off thy shoes from off thy feet, for the place whereon thou standest is holy ground* (Exodus 3:5). What the Presence of Yahuah enters is made holy and set apart — as the ground at the bush was holy because Yahuah was there, so the east gate is shut and may not be entered *because Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), hath entered in by it* (Ezekiel 44:2). The entering of the Presence consecrates the place.'),
+    ('canon','ezekiel',44,3,'canon','ezekiel',43,4,'free',
+      E'*And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4). The same east gate the Glory entered is now reserved for the prince — *It is for the prince; the prince, he shall sit in it to eat bread before Yahuah (LORD)* (Ezekiel 44:3). The gate the Presence consecrated by entering becomes the place where the prince eats bread before Yahuah — the place of communion reserved.'),
+
+    -- THREAD 2 (★): the sons of Zadok that kept the charge when Yashar'el went astray
+    ('canon','ezekiel',44,15,'canon','1-samuel',2,35,'free',
+      E'*And I will raise me up a faithful priest, that shall do according to that which is in mine heart and in my mind: and I will build him a sure house; and he shall walk before mine anointed for ever* (1 Samuel 2:35). The sons of Zadok *that kept the charge of my sanctuary when the children of Yashar''el (Israel) went astray from me* (Ezekiel 44:15) are that faithful priestly line — those who *do according to that which is in mine heart* — given a sure house and standing nearness while the unfaithful are put away.'),
+    ('canon','ezekiel',44,15,'canon','numbers',25,13,'free',
+      E'*And he shall have it, and his seed after him, even the covenant of an everlasting priesthood; because he was zealous for his Elohim (God), and made an atonement for the children of Yashar''el (Israel)* (Numbers 25:13). The faithful priesthood of the sons of Zadok — *that kept the charge of my sanctuary when the children of Yashar''el (Israel) went astray* (Ezekiel 44:15) — descends from the zeal of Phinehas, to whom Yahuah gave *the covenant of an everlasting priesthood*. Zeal for Yahuah when others apostatize is the mark of the priesthood that draws near.'),
+    ('canon','ezekiel',44,15,'canon','numbers',25,11,'free',
+      E'*Phinehas, the son of Eleazar, the son of Aaron the priest, hath turned my wrath away from the children of Yashar''el (Israel), while he was zealous for my sake among them* (Numbers 25:11). The sons of Zadok who *kept the charge of my sanctuary when the children of Yashar''el (Israel) went astray from me* (Ezekiel 44:15) walk in the footsteps of Phinehas — *zealous for my sake* when the people fell. The faithful priest is the one whose zeal holds when the nation goes astray.'),
+    ('canon','ezekiel',44,15,'canon','malachi',2,6,'free',
+      E'*The law of truth was in his mouth, and iniquity was not found in his lips: he walked with me in peace and equity, and did turn many away from iniquity* (Malachi 2:6). Malachi names the true priest by the Torah of truth in his mouth — and the sons of Zadok *that kept the charge of my sanctuary when the children of Yashar''el (Israel) went astray* (Ezekiel 44:15) are that faithful priesthood: the law of truth in their mouth, kept when iniquity surrounded them, brought near to minister.'),
+    ('canon','ezekiel',44,16,'canon','revelation',3,21,'free',
+      E'*To him that overcometh will I grant to sit with me in my throne, even as I also overcame, and am set down with my Father in his throne* (Revelation 3:21). The reward of faithfulness-when-others-fell runs the same course: the sons of Zadok who kept the charge *shall enter into my sanctuary, and they shall come near to my table, to minister unto me* (Ezekiel 44:16); the overcomer is granted nearness to the throne itself. Those who keep the charge when others apostatize are drawn near.'),
+
+    -- THREAD 3 (★★): they shall teach the difference and hallow my sabbaths
+    ('canon','ezekiel',44,23,'canon','leviticus',10,10,'free',
+      E'*And that ye may put difference between holy and unholy, and between unclean and clean* (Leviticus 10:10). The charge of the restored priesthood — *they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23) — is the very priestly charge of the Torah, word for word. The holy/profane and unclean/clean distinctions are not abolished in the restored temple; they are taught.'),
+    ('canon','ezekiel',44,23,'canon','leviticus',10,11,'free',
+      E'*And that ye may teach the children of Yashar''el (Israel) all the statutes which Yahuah (LORD) hath spoken unto them by the hand of Moses* (Leviticus 10:11). The priests'' duty to *teach my people the difference between the holy and profane* (Ezekiel 44:23) is the duty Leviticus laid on them — to TEACH the children of Yashar''el all the statutes. The instruction Moses received is the instruction the restored priesthood still teaches.'),
+    ('canon','ezekiel',44,23,'canon','ezekiel',22,26,'free',
+      E'*Her priests have violated my law, and have profaned mine holy things: they have put no difference between the holy and profane, neither have they shewed difference between the unclean and the clean, and have hid their eyes from my sabbaths, and I am profaned among them* (Ezekiel 22:26). This is the dark foil: the priests who FAILED the charge the sons of Zadok now keep — *they shall teach my people the difference between the holy and profane... and they shall hallow my sabbaths* (Ezekiel 44:23-24). The faithful priesthood does exactly what the apostate priesthood would not.'),
+    ('canon','ezekiel',44,24,'canon','malachi',2,7,'free',
+      E'*For the priest''s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva''ot (LORD of hosts)* (Malachi 2:7). The restored priests who *keep my laws and my statutes in all mine assemblies* (Ezekiel 44:24) fulfill Malachi''s standard — the priest''s lips keeping knowledge, the people seeking the Torah at his mouth. The priest is the keeper and teacher of the law, not a relic of an abolished order.'),
+    ('canon','ezekiel',44,24,'canon','matthew',5,19,'free',
+      E'*Whosoever therefore shall break one of these least commandments, and shall teach men so, he shall be called the least in the kingdom of heaven: but whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19). The Formed Son sets the very standard the restored priesthood meets — *they shall keep my laws and my statutes in all mine assemblies; and they shall hallow my sabbaths* (Ezekiel 44:24): the commandments DONE and TAUGHT. The do-and-teach of the priests is the greatness of the kingdom, the Torah honored, not abolished.'),
+    ('canon','ezekiel',44,23,'canon','haggai',2,11,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts); Ask now the priests concerning the law, saying* (Haggai 2:11). The priestly office to rule on holy and clean — *they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (Ezekiel 44:23) — is the office Haggai exercises: the people ask the priests concerning the Torah, and the priests judge holy from common, clean from unclean (Haggai 2:12-13). The priest is the living teacher of the distinctions.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-44-the-east-gate-shut-because-yahuah-hath-entered-in',
+       E'This gate shall be shut — because Yahuah hath entered in by it',
+       E'The prophet is brought back to the east gate of the outward sanctuary, *and it was shut* (44:1), and Yahuah names the reason: *This gate shall be shut, it shall not be opened, and no man shall enter in by it; because Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), hath entered in by it, therefore it shall be shut* (44:2). The gate is sealed not by neglect but by consecration — because the Presence passed through it. The chapter before tells the entering: *the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east: and his voice was like a noise of many waters: and the earth shined with his glory* (Ezekiel 43:2), *And the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4). What the Presence of Yahuah enters is made holy and may not be trodden after him — as Yahuah told Moses at the bush, *put off thy shoes from off thy feet, for the place whereon thou standest is holy ground* (Exodus 3:5). The east gate is holy ground because the Glory came in by it. And the gate is reserved — *It is for the prince; the prince, he shall sit in it to eat bread before Yahuah (LORD); he shall enter by the way of the porch of that gate, and shall go out by the way of the same* (44:3): the gate the Presence consecrated becomes the place where the prince eats bread before Yahuah, the place of communion kept apart for the one who feasts in the Presence.',
+       sv.verse_id, ev.verse_id, 'free', 33075
+  FROM _s308_ezek44_lookup sv, _s308_ezek44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=44 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-44-the-sons-of-zadok-that-kept-the-charge',
+       E'The sons of Zadok that kept the charge when Yashar''el went astray',
+       E'Against the Levites who *are gone away far from me, when Yashar''el (Israel) went astray... after their idols* (44:10) and are demoted to *keepers of the charge of the house* (44:14), Yahuah lifts up the faithful: *But the priests the Levites, the sons of Zadok, that kept the charge of my sanctuary when the children of Yashar''el (Israel) went astray from me, they shall come near to me to minister unto me, and they shall stand before me to offer unto me the fat and the blood* (44:15); *They shall enter into my sanctuary, and they shall come near to my table, to minister unto me, and they shall keep my charge* (44:16). Faithfulness held WHEN OTHERS FELL is the whole reward — nearness to Yahuah for those who kept the charge while the nation apostatized. This is the faithful priest Yahuah swore to raise: *I will raise me up a faithful priest, that shall do according to that which is in mine heart and in my mind: and I will build him a sure house; and he shall walk before mine anointed for ever* (1 Samuel 2:35). The Zadokite line descends from the zeal of Phinehas — *Phinehas... while he was zealous for my sake among them* (Numbers 25:11) — to whom Yahuah gave *the covenant of an everlasting priesthood; because he was zealous for his Elohim (God)* (Numbers 25:13). It is the priest of whom Malachi says *The law of truth was in his mouth, and iniquity was not found in his lips* (Malachi 2:6). And the reward of faithfulness-when-others-fall runs all the way forward: *To him that overcometh will I grant to sit with me in my throne, even as I also overcame, and am set down with my Father in his throne* (Revelation 3:21). The faithful remnant-priesthood is brought near because it kept the charge when the rest went astray.',
+       sv.verse_id, ev.verse_id, 'free', 33078
+  FROM _s308_ezek44_lookup sv, _s308_ezek44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=44 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths',
+       E'They shall teach the difference between holy and profane — and hallow my sabbaths',
+       E'In the RESTORED temple the Torah-order stands whole. The charge laid on the faithful priesthood is to teach and to keep: *And they shall teach my people the difference between the holy and profane, and cause them to discern between the unclean and the clean* (44:23); *and they shall judge it according to my judgments: and they shall keep my laws and my statutes in all mine assemblies; and they shall hallow my sabbaths* (44:24). The holy/profane and unclean/clean distinctions taught, the laws and statutes kept, the sabbaths hallowed — never abolished in the temple of the age to come, but taught and guarded. This is the priestly charge of the Torah itself, word for word: *that ye may put difference between holy and unholy, and between unclean and clean; And that ye may teach the children of Yashar''el (Israel) all the statutes which Yahuah (LORD) hath spoken unto them by the hand of Moses* (Leviticus 10:10-11). It is Malachi''s standard: *the priest''s lips should keep knowledge, and they should seek the law at his mouth: for he is the messenger of Yahuah Tseva''ot (LORD of hosts)* (Malachi 2:7). The dark foil is the apostate priesthood who would not do it: *they have put no difference between the holy and profane, neither have they shewed difference between the unclean and the clean, and have hid their eyes from my sabbaths* (Ezekiel 22:26) — precisely what the sons of Zadok now reverse. Haggai shows the priests ruling such questions of holy and clean (Haggai 2:11-13). And the Formed Son sets the very same standard: *whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19) — the commandments DONE and TAUGHT, exactly as the restored priesthood does and teaches them. The clean/unclean and the sabbath stand; even the priests'' diet keeps the old measure — *The priests shall not eat of any thing that is dead of itself, or torn* (44:31) — the ban of Leviticus 11 and Deuteronomy 14 still binding.',
+       sv.verse_id, ev.verse_id, 'free', 33081
+  FROM _s308_ezek44_lookup sv, _s308_ezek44_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=44 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the glory of the Elohim (God) of Yashar''el (Israel) came from the way of the east* (Ezekiel 43:2) — the Glory entered by the east; therefore the gate is shut (44:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=2
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=43 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-east-gate-shut-because-yahuah-hath-entered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the glory of Yahuah (LORD) came into the house by the way of the gate whose prospect is toward the east* (Ezekiel 43:4) — the entering that seals the gate (44:2); no man enters after the Presence.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=2
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=43 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-east-gate-shut-because-yahuah-hath-entered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *put off thy shoes from off thy feet, for the place whereon thou standest is holy ground* (Exodus 3:5) — what Yahuah''s Presence enters is consecrated; the gate is holy ground because he entered by it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=2
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-east-gate-shut-because-yahuah-hath-entered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the glory of Yahuah (LORD) came into the house by the way of the gate... toward the east* (Ezekiel 43:4) — the gate the Glory entered is reserved for the prince to eat bread before Yahuah (44:3); the place of communion.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=3
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=43 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-east-gate-shut-because-yahuah-hath-entered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *I will raise me up a faithful priest, that shall do according to that which is in mine heart* (1 Samuel 2:35) — the sons of Zadok who kept the charge (44:15) are that faithful priestly line, given a sure house.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=15
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-sons-of-zadok-that-kept-the-charge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the covenant of an everlasting priesthood; because he was zealous for his Elohim (God)* (Numbers 25:13) — the Zadokite faithfulness descends from the Phinehas-zeal honored when Yashar''el went astray (44:15).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=15
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-sons-of-zadok-that-kept-the-charge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Phinehas... while he was zealous for my sake among them* (Numbers 25:11) — zeal for Yahuah when the people fell is the mark of the priesthood the sons of Zadok keep (44:15).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=15
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=25 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-sons-of-zadok-that-kept-the-charge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The law of truth was in his mouth, and iniquity was not found in his lips* (Malachi 2:6) — the true priest is known by the Torah of truth in his mouth, kept when iniquity surrounded him (44:15).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=15
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-sons-of-zadok-that-kept-the-charge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *To him that overcometh will I grant to sit with me in my throne* (Revelation 3:21) — the overcomer''s reward; the faithful who keep the charge come near to the table, near to the throne (44:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=16
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-the-sons-of-zadok-that-kept-the-charge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *that ye may put difference between holy and unholy, and between unclean and clean* (Leviticus 10:10) — the priestly charge of the Torah word for word; the distinctions taught, not abolished (44:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=23
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=10 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *that ye may teach the children of Yashar''el (Israel) all the statutes which Yahuah (LORD) hath spoken* (Leviticus 10:11) — the priests'' duty to TEACH all the statutes; the restored priesthood still teaches them (44:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=23
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *they have put no difference between the holy and profane... and have hid their eyes from my sabbaths* (Ezekiel 22:26) — the dark foil; the apostate priests who would not do what the sons of Zadok now do (44:23-24).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=23
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=22 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *the priest''s lips should keep knowledge, and they should seek the law at his mouth* (Malachi 2:7) — Malachi''s standard met; the restored priests keep the laws and statutes in all the assemblies (44:24).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=24
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *whosoever shall do and teach them, the same shall be called great in the kingdom of heaven* (Matthew 5:19) — the Formed Son sets the same standard; commandments done AND taught, the Torah honored (44:24).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=24
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*Ask now the priests concerning the law* (Haggai 2:11) — the priests rule on holy and clean; the living teaching office of the distinctions (44:23).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek44_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=44 AND sv.verse_number=23
+  JOIN _s308_ezek44_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='haggai' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-44-they-shall-teach-the-difference-and-hallow-my-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
