@@ -12566,6 +12566,1442 @@ SELECT t.id, cr.id, 6, E'★ *confirmed it by an oath: That by two immutable thi
  WHERE t.slug='jeremiah-34-they-passed-between-the-parts-of-the-calf'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_35.sql (Jeremiah 35) -----
+-- Chapter: Jeremiah 35 — THE RECHABITES. Jeremiah sets pots of wine before the house of the
+-- Rechabites, and they refuse it: *We will drink no wine: for Jonadab the son of Rechab our
+-- father commanded us* (35:6). Their two-century-old obedience to a HUMAN father''s word becomes
+-- Yahuah''s (LORD''s) living rebuke to Yahudah (Judah): *The words of Jonadab... are performed...
+-- but this people hath not hearkened unto me* (35:14,16). And the reward: *Jonadab the son of
+-- Rechab shall not want a man to stand before me for ever* (35:19). Two threads — obedience
+-- shaming the disobedient, and the faithful rewarded with a perpetual standing.
+-- Tag: jer35   Temp view: _s309_jer35_lookup   Session: s309
+-- Sort band: base 34850, step 3 -> threads at 34850, 34853 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',35,v
+--
+-- Jeremiah 35 coverage:
+--   v.1-5 (Go unto the house of the Rechabites... give them wine to drink; I set before them pots
+--          full of wine, and said, Drink ye wine) — the sign-test set up
+--        NT:     none warranted (the narrative setup; the test itself; held to THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the historical framing of Jehoiakim''s day; leads into v.6)
+--   ★★ v.6-10 (We will drink no wine: for Jonadab the son of Rechab our father commanded us...
+--          neither ye, nor your sons for ever... Thus have we obeyed the voice of Jonadab our
+--          father in all that he hath charged us)
+--        NT:     ★★ Matthew 21:28 (a certain man had two sons; Son, go work to day in my vineyard),
+--                ★★ Matthew 21:31 (Whether of them twain did the will of his father?), ★ Luke 6:46
+--                (why call ye me, Lord, Lord, and do not the things which I say?) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Malachi 1:6 (a son honoureth his father... if then I be a father, where is mine
+--                honour?), ★ Exodus 20:12 (honour thy father and thy mother) — THREAD 1
+--   v.11 (when Nebuchadrezzar came up... we said, Come, let us go to Jerusalem) — the Rechabites''
+--          prudence; held in THREAD 1 prose (they kept the vow even when forced into the city)
+--        NT:     none warranted     Extras: none warranted     Tanakh: none separate
+--   v.12-13 (Will ye not receive instruction to hearken to my words?) — the LORD''s question to Yahudah
+--        NT:     held in THREAD 1 (the unheeded word)     Extras: none warranted     Tanakh: held in prose
+--   ★★ v.14-17 (The words of Jonadab... are performed... but ye hearkened not unto me; I have sent
+--          unto you all my servants the prophets... but ye have not inclined your ear... this people
+--          hath not hearkened unto me; therefore... all the evil that I have pronounced)
+--        NT:     ★★ Matthew 21:31 (the will of the father done by deed, not word — the two sons),
+--                ★ Luke 6:46 (Lord, Lord, and do not) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Malachi 1:6 (where is mine honour?) — THREAD 1 (the Father dishonoured by his own
+--                people while strangers'' sons honour a human father)
+--   ★ v.18-19 (Because ye have obeyed the commandment of Jonadab your father, and kept all his
+--          precepts... Jonadab the son of Rechab shall not want a man to stand before me for ever)
+--        NT:     ★ Matthew 25:21 (Well done, thou good and faithful servant... I will make thee ruler
+--                over many things), ★ Revelation 3:21 (To him that overcometh will I grant to sit with
+--                me in my throne) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ 1 Samuel 2:30 (them that honour me I will honour), ★ Proverbs 20:7 (the just man
+--                walketh in his integrity: his children are blessed after him) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience — NT (Matthew 21, Luke 6) + Tanakh (Malachi 1, Exodus 20) [free]
+--      (★★ a human father''s word kept for two centuries shames Yahudah''s disobedience to Yahuah — obedience by deed, not word)
+--   2. jeremiah-35-jonadab-shall-not-want-a-man-to-stand-before-me-for-ever — NT (Matthew 25, Revelation 3) + Tanakh (1 Samuel 2, Proverbs 20) [free]
+--      (★ the reward of faithfulness — them that honour me I will honour; a perpetual standing, children blessed after)
+--
+-- Framing notes:
+--   ★★ OBEDIENCE SHAMES THE DISOBEDIENT (THREAD 1): The Rechabites refuse the wine — *We will drink
+--      no wine: for Jonadab the son of Rechab our father commanded us, saying, Ye shall drink no wine,
+--      neither ye, nor your sons for ever* (35:6) — and Yahuah (LORD) turns their fidelity into a
+--      lawsuit against Yahudah (Judah): *The words of Jonadab the son of Rechab... are performed; for
+--      unto this day they drink none, but obey their father''s commandment: notwithstanding I have
+--      spoken unto you... but ye hearkened not unto me* (35:14); *the sons of Jonadab... have performed
+--      the commandment of their father... but this people hath not hearkened unto me* (35:16). A HUMAN
+--      father''s word kept two centuries shames Yahuah''s own people who will not keep his. Malachi
+--      states the principle: *A son honoureth his father, and a servant his master: if then I be a
+--      father, where is mine honour?* (Mal 1:6). The Torah commands the honour the Rechabites paid —
+--      *Honour thy father and thy mother* (Exod 20:12) — and they kept it; Yahudah broke the greater.
+--      Messiah frames it as the two sons: which did the will of the father — the one who SAID and went
+--      not, or the one whose deed answered (Matt 21:28-31)? And the filter: *why call ye me, Lord,
+--      Lord, and do not the things which I say?* (Luke 6:46). Obedience is by DEED, not profession.
+--   ★ THE FAITHFUL REWARDED (THREAD 2): *Because ye have obeyed the commandment of Jonadab your
+--      father, and kept all his precepts... Jonadab the son of Rechab shall not want a man to stand
+--      before me for ever* (35:18-19). The reward of faithfulness is a perpetual standing before
+--      Yahuah. It is the very principle Yahuah spoke to Eli''s house: *them that honour me I will
+--      honour, and they that despise me shall be lightly esteemed* (1 Sam 2:30) — the despisers cut
+--      off, the honourers given a sure house. Proverbs: *The just man walketh in his integrity: his
+--      children are blessed after him* (Prov 20:7) — the Rechabites'' integrity blesses their seed
+--      *for ever*. And forward: *Well done, thou good and faithful servant... I will make thee ruler
+--      over many things* (Matt 25:21), *To him that overcometh will I grant to sit with me in my
+--      throne* (Rev 3:21). The faithful stand before him for ever.
+--   VERSES WITH NO SEPARATE ADD: v.1-5 (the narrative setup of the wine-test), v.11 (the Rechabites''
+--      flight to Jerusalem — the vow kept even under duress), v.12-13 (the LORD''s opening question to
+--      Yahudah, *Will ye not receive instruction to hearken to my words?*) — all woven into THREAD 1
+--      prose; v.17 (the sentence of evil on Yahudah) is the verdict of the rebuke, woven in THREAD 1.
+
+CREATE TEMP VIEW _s309_jer35_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the Rechabites'' obedience to a human father shames Yahudah''s disobedience to Yahuah
+    ('canon','jeremiah',35,6,'canon','malachi',1,6,'free',
+      E'*A son honoureth his father, and a servant his master: if then I be a father, where is mine honour? and if I be a master, where is my fear? saith Yahuah Tseva''ot (LORD of hosts) unto you, O priests, that despise my name* (Malachi 1:6). The Rechabites'' answer — *We will drink no wine: for Jonadab the son of Rechab our father commanded us* (Jeremiah 35:6) — is exactly the honour Malachi demands: a son honours his father. They paid a human father that honour for generations; Yahuah (LORD), the true Father, asks where his own honour is from a people who will not obey.'),
+    ('canon','jeremiah',35,6,'canon','exodus',20,12,'free',
+      E'*Honour thy father and thy mother: that thy days may be long upon the land which Yahuah Elohayka (the LORD thy God) giveth thee* (Exodus 20:12). The Rechabites keep the fifth word of the Torah to the letter — *for Jonadab the son of Rechab our father commanded us* (Jeremiah 35:6), and *that ye may live many days in the land* (35:7) is the very promise of the commandment. Honouring the father, they inherit the long life Yahuah attached to it; Yahudah (Judah), dishonouring the heavenly Father, forfeits the land.'),
+    ('canon','jeremiah',35,14,'canon','matthew',21,28,'free',
+      E'*But what think ye? A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard* (Matthew 21:28). Messiah''s parable of the two sons turns on the very contrast of Jeremiah 35: the Rechabites are the son who DID the father''s will, while *I have spoken unto you, rising early and speaking; but ye hearkened not unto me* (Jeremiah 35:14) is Yahudah, the son who said and did not. The vineyard-father asks which son truly obeyed.'),
+    ('canon','jeremiah',35,16,'canon','matthew',21,31,'free',
+      E'*Whether of them twain did the will of his father? They say unto him, The first. Yahusha (Jesus) saith unto them, Verily I say unto you, That the publicans and the harlots go into the kingdom of Elohim (God) before you* (Matthew 21:31). Doing the father''s will is what counts, not professing it — *the sons of Jonadab... have performed the commandment of their father... but this people hath not hearkened unto me* (Jeremiah 35:16). The outsiders who obey enter before the insiders who only say; the Rechabites'' deed shames Yahudah''s empty word.'),
+    ('canon','jeremiah',35,16,'canon','luke',6,46,'free',
+      E'*And why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I say?* (Luke 6:46). This is the heart of Jeremiah''s rebuke: *this people hath not hearkened unto me* (Jeremiah 35:16) — they name Yahuah (LORD) their Father yet do not the things he says, while the Rechabites obey a human father''s word in everything. Calling him Lord is nothing without doing; obedience is measured by deed.'),
+
+    -- THREAD 2 (★): Jonadab shall not want a man to stand before me for ever — the faithful rewarded
+    ('canon','jeremiah',35,19,'canon','1-samuel',2,30,'free',
+      E'*Wherefore Yahuah Elohim (the LORD God) of Yashar''el (Israel) saith, I said indeed that thy house, and the house of thy father, should walk before me for ever: but now Yahuah (LORD) saith, Be it far from me; for them that honour me I will honour, and they that despise me shall be lightly esteemed* (1 Samuel 2:30). The principle behind the Rechabites'' reward — *Jonadab the son of Rechab shall not want a man to stand before me for ever* (Jeremiah 35:19) — is here in its purest form: them that honour me I will honour. Eli''s house, despising Yahuah (LORD), is cut off; the Rechabites, honouring him, are given a perpetual standing before him.'),
+    ('canon','jeremiah',35,19,'canon','proverbs',20,7,'free',
+      E'*The just man walketh in his integrity: his children are blessed after him* (Proverbs 20:7). The Rechabites'' integrity reaches their seed exactly as Proverbs promises — *Jonadab the son of Rechab shall not want a man to stand before me for ever* (Jeremiah 35:19). The father walked in integrity, keeping the vow he charged his sons, and the blessing runs down to the children after him: a man to stand before Yahuah (LORD) for ever.'),
+    ('canon','jeremiah',35,18,'canon','matthew',25,21,'free',
+      E'*His lord said unto him, Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord* (Matthew 25:21). The commendation of the Rechabites — *Because ye have obeyed the commandment of Jonadab your father, and kept all his precepts* (Jeremiah 35:18) — is the Well done of the faithful servant. Faithfulness in a small charge, the keeping of a father''s precept, opens into a great reward: ruler over many things, a standing before the Master.'),
+    ('canon','jeremiah',35,19,'canon','revelation',3,21,'free',
+      E'*To him that overcometh will I grant to sit with me in my throne, even as I also overcame, and am set down with my Father in his throne* (Revelation 3:21). The reward promised the Rechabites — *Jonadab the son of Rechab shall not want a man to stand before me for ever* (Jeremiah 35:19) — reaches its end in the overcomer who stands, and sits, with the Messiah before the Father for ever. The perpetual standing before Yahuah (LORD) is the place of the faithful who endure.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience',
+       E'We will drink no wine — the Rechabites'' obedience shames Yahudah''s disobedience',
+       E'Yahuah (LORD) tells Jeremiah to bring the house of the Rechabites into the temple and offer them wine — and they refuse: *But they said, We will drink no wine: for Jonadab the son of Rechab our father commanded us, saying, Ye shall drink no wine, neither ye, nor your sons for ever* (35:6). For some two hundred years this clan had kept a single command of a long-dead human father — *Thus have we obeyed the voice of Jonadab the son of Rechab our father in all that he hath charged us* (35:8) — even keeping it under duress, fleeing into Jerusalem before the army of Babylon (35:11). Yahuah turns their fidelity into a lawsuit against his own people: *The words of Jonadab the son of Rechab, that he commanded his sons not to drink wine, are performed; for unto this day they drink none, but obey their father''s commandment: notwithstanding I have spoken unto you, rising early and speaking; but ye hearkened not unto me* (35:14); *Because the sons of Jonadab the son of Rechab have performed the commandment of their father, which he commanded them; but this people hath not hearkened unto me* (35:16). The sting is the contrast: a HUMAN father''s word kept for centuries, against the heavenly Father''s word — spoken by *all my servants the prophets* (35:15) — refused. Malachi names the principle exactly: *A son honoureth his father, and a servant his master: if then I be a father, where is mine honour?* (Malachi 1:6). The Torah commanded the honour the Rechabites paid — *Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12) — and the promise of long life in the land was theirs (35:7), while Yahudah (Judah), dishonouring the greater Father, forfeits it. Messiah frames the whole matter as the two sons: *A certain man had two sons; and he came to the first, and said, Son, go work to day in my vineyard* (Matthew 21:28) — one says no and goes, one says yes and goes not; *Whether of them twain did the will of his father?* (Matthew 21:31). The Rechabites are the son who DID the will; Yahudah the son who only said. And the filter is plain: *And why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I say?* (Luke 6:46). Obedience is by deed, not by profession; the strangers'' faithfulness shames the covenant people''s words.',
+       sv.verse_id, ev.verse_id, 'free', 34850
+  FROM _s309_jer35_lookup sv, _s309_jer35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=35 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-35-jonadab-shall-not-want-a-man-to-stand-before-me-for-ever',
+       E'Jonadab shall not want a man to stand before me for ever — the faithful rewarded',
+       E'The rebuke of Yahudah (Judah) ends in a blessing on the obedient: *And Jeremiah said unto the house of the Rechabites... Because ye have obeyed the commandment of Jonadab your father, and kept all his precepts, and done according unto all that he hath commanded you: Therefore... Jonadab the son of Rechab shall not want a man to stand before me for ever* (35:18-19). The reward of faithfulness is a perpetual standing before Yahuah (LORD) — a sure seed who endure. This is the very principle Yahuah spoke over Eli''s house, where the despisers were cut off and the honourers established: *for them that honour me I will honour, and they that despise me shall be lightly esteemed* (1 Samuel 2:30). Proverbs sings the same blessing-down-the-generations: *The just man walketh in his integrity: his children are blessed after him* (Proverbs 20:7) — the father''s integrity reaches the children, as Jonadab''s faithfulness reaches his sons *for ever*. And the reward opens forward: *Well done, thou good and faithful servant: thou hast been faithful over a few things, I will make thee ruler over many things: enter thou into the joy of thy lord* (Matthew 25:21) — faithfulness in a small charge, the keeping of a father''s precept, opens into a great inheritance. And the standing-before-him reaches its end in the overcomer: *To him that overcometh will I grant to sit with me in my throne, even as I also overcame, and am set down with my Father in his throne* (Revelation 3:21). The Rechabites who kept a father''s word *for ever* are the figure of all the faithful who shall stand, and sit, before Yahuah for ever.',
+       sv.verse_id, ev.verse_id, 'free', 34853
+  FROM _s309_jer35_lookup sv, _s309_jer35_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=35 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *A son honoureth his father... if then I be a father, where is mine honour?* (Malachi 1:6) — the Rechabites pay a human father the honour Yahuah (LORD) asks of his own people in vain.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=6
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=1 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Honour thy father and thy mother: that thy days may be long upon the land* (Exodus 20:12) — the Torah word the Rechabites keep; the long-life-in-the-land promise (Jeremiah 35:7) is the commandment''s own.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=6
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *A certain man had two sons... Son, go work to day in my vineyard* (Matthew 21:28) — Messiah''s two-sons parable: the Rechabites are the son who DID the will, Yahudah (Judah) the son who said and did not.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=14
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Whether of them twain did the will of his father?* (Matthew 21:31) — doing, not professing, is what counts; the outsiders who obey enter before the insiders who only say.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=16
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=21 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *why call ye me, Yahuah (Lord), Yahuah (Lord), and do not the things which I say?* (Luke 6:46) — Yahudah names Yahuah (LORD) their Father yet will not do; obedience is measured by deed, not by calling him Lord.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=16
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-the-rechabites-obedience-shames-yahudahs-disobedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *them that honour me I will honour, and they that despise me shall be lightly esteemed* (1 Samuel 2:30) — the principle behind the reward: the honourers given a perpetual standing, the despisers cut off.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=19
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-jonadab-shall-not-want-a-man-to-stand-before-me-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *The just man walketh in his integrity: his children are blessed after him* (Proverbs 20:7) — Jonadab''s integrity reaches his sons *for ever*; the blessing runs down to the children after.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=19
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-jonadab-shall-not-want-a-man-to-stand-before-me-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Well done, thou good and faithful servant... I will make thee ruler over many things* (Matthew 25:21) — faithfulness in a small charge, keeping a father''s precept, opens into a great reward.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=18
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-jonadab-shall-not-want-a-man-to-stand-before-me-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *To him that overcometh will I grant to sit with me in my throne* (Revelation 3:21) — the perpetual standing before Yahuah (LORD) reaches its end in the overcomer who endures.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer35_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=35 AND sv.verse_number=19
+  JOIN _s309_jer35_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=3 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-35-jonadab-shall-not-want-a-man-to-stand-before-me-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_36.sql (Jeremiah 36) -----
+-- Chapter: Jeremiah 36 — ★★★ THE INDESTRUCTIBLE WORD. Baruch writes the roll from Jeremiah's mouth; it is
+-- read in the temple on the fasting day; the princes hear and tremble; the king sits in the winterhouse and,
+-- as Jehudi reads three or four leaves, cuts the roll with the penknife and casts it into the fire on the
+-- hearth until all is consumed. Yet they were not afraid, nor rent their garments. Then the word of Yahuah
+-- comes again: TAKE THEE AGAIN ANOTHER ROLL, and write in it all the former words — and there were added
+-- besides unto them many like words. The word burned but not destroyed; rewritten and INCREASED. Around it:
+-- the word was sent that the house of Yahudah might HEAR, return, and be forgiven (vv.3,7); and the contrast
+-- of the unrent heart of Jehoiakim against the tender heart of Josiah (v.24).
+-- Tag: jer36   Temp view: _s309_jer36_lookup   Session: s309
+-- Sort band: base 34875, step 3 -> threads at 34875, 34878, 34881 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',36,v
+--
+-- Jeremiah 36 coverage:
+--   v.1-2 (the fourth year of Jehoiakim; Take thee a roll of a book, and write therein all the words... against
+--          Yashar''el, and against Yahudah, and against all the nations)
+--        NT:     none warranted (the command to write the roll; woven in prose of THREAD 1)
+--        Extras: none warranted
+--        Tanakh: none separate (preface — the roll commanded)
+--   ★ v.3 (It may be that the house of Yahudah will hear all the evil... that they may return every man from his
+--          evil way; that I may forgive their iniquity and their sin)
+--        NT:     ★ 2 Peter 3:9 (not willing that any should perish, but that all should come to repentance),
+--                ★ Acts 3:19 (repent... that your sins may be blotted out) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 18:23 (have I any pleasure that the wicked should die?... not that he should
+--                return?), ★ Ezekiel 18:32 (I have no pleasure in the death of him that dieth) — THREAD 2
+--   v.4-6 (Baruch wrote from the mouth of Jeremiah... I am shut up; read in the roll... upon the fasting day)
+--        NT:     none warranted     Extras: none warranted     Tanakh: none separate (the writing/reading; prose)
+--   ★ v.7 (It may be they will present their supplication before Yahuah, and will return every one from his evil
+--          way: for great is the anger and the fury that Yahuah hath pronounced against this people)
+--        NT:     ★ Acts 3:19 (repent... be converted, that your sins may be blotted out) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Ezekiel 18:32 (turn yourselves, and live ye) — THREAD 2
+--   v.8-19 (Baruch reads in the LORD''S house; Michaiah tells the princes; the princes send for Baruch, hear,
+--          and are afraid both one and other; bid Baruch and Jeremiah hide)
+--        NT:     none warranted (the princes who DO tremble — foil to the king of v.24, woven in THREAD 3 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the fear of the princes vs. the unrent king
+--   v.20-22 (the king sent Jehudi to fetch the roll; the king sat in the winterhouse; a fire on the hearth)
+--        NT:     none warranted     Extras: none warranted     Tanakh: none separate (the scene set for the burning)
+--   ★★★ v.23 (when Jehudi had read three or four leaves, he cut it with the penknife, and cast it into the fire
+--          that was on the hearth, until all the roll was consumed in the fire)
+--        NT:     ★★★ Matthew 24:35 (heaven and earth shall pass away, but my words shall not pass away),
+--                ★★ 1 Peter 1:25 (the word of Yahuah endureth for ever), ★ Revelation 22:19 (if any man shall
+--                take away from the words of the book) — THREAD 1
+--        Extras: none warranted (clean canon-NT-Tanakh weave; no extra forced)
+--        Tanakh: ★★★ Isaiah 40:8 (the word of our Elohim shall stand for ever), ★★ Psalm 119:89 (for ever,
+--                O Yahuah, thy word is settled in heaven) — THREAD 1
+--   ★ v.24 (Yet they were not afraid, nor rent their garments, neither the king, nor any of his servants that
+--          heard all these words)
+--        NT:     ★ Hebrews 3:7-8 (To day if ye will hear his voice, harden not your hearts), ★ Acts 7:51
+--                (ye stiffnecked... ye do always resist the Ruach HaKodesh) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 22:11 (when the king had heard the words of the book of the law... he rent his
+--                clothes), ★★ 2 Kings 22:19 (because thine heart was tender) — THREAD 3
+--   v.25-26 (Elnathan, Delaiah, Gemariah made intercession not to burn the roll; the king commanded to take
+--          Baruch and Jeremiah, but Yahuah hid them)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: held in prose — Yahuah hides his servants (THREAD 1 — the word and its bearers preserved)
+--   ★★★ v.27-28 (Then the word of Yahuah came to Jeremiah, after that the king had burned the roll... Take thee
+--          again another roll, and write in it all the former words that were in the first roll, which Jehoiakim
+--          king of Yahudah hath burned)
+--        NT:     held with v.23 (the word that cannot be destroyed) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: held with v.23 (Isaiah 40:8 / Psalm 119:89) — THREAD 1
+--   v.29-31 (thou shalt say to Jehoiakim... He shall have none to sit upon the throne of David; his dead body
+--          cast out; I will punish him and his seed... but they hearkened not)
+--        NT:     none warranted (the judgment on the word-burner; woven in THREAD 1 prose)
+--        Extras: none warranted     Tanakh: none separate (the throne-of-David sentence; prose)
+--   ★★★ v.32 (Then took Jeremiah another roll... who wrote therein... all the words of the book which Jehoiakim
+--          king of Yahudah had burned in the fire: and there were added besides unto them many like words)
+--        NT:     held with v.23,27-28 (the word rewritten and INCREASED) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: held with v.23 — THREAD 1
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased — NT (Matthew 24, 1 Peter 1,
+--      Revelation 22) + Tanakh (Isaiah 40, Psalm 119) [free]
+--      (★★★ THE central thread: the roll cut and burned, yet rewritten with MORE added — the word that cannot
+--       be burned, settled in heaven for ever, passing not away though heaven and earth pass)
+--   2. jeremiah-36-it-may-be-they-will-return-that-i-may-forgive — NT (2 Peter 3, Acts 3) + Tanakh (Ezekiel 18) [free]
+--      (★ the word sent to bring repentance and forgiveness — IT MAY BE the house of Yahudah will hear and
+--       return; Yahuah has no pleasure in the death of the wicked, but that he return and live)
+--   3. jeremiah-36-they-were-not-afraid-nor-rent-their-garments — NT (Hebrews 3, Acts 7) + Tanakh (2 Kings 22) [free]
+--      (★ the unrent heart — Jehoiakim and his servants hear the word and are NOT afraid, contrast Josiah who
+--       rent his clothes at the book of the law; harden not your hearts)
+--
+-- Framing notes:
+--   ★★★ THE WORD BURNED BUT NOT DESTROYED (THREAD 1): the king takes the penknife to the very word of Yahuah —
+--      *when Jehudi had read three or four leaves, he cut it with the penknife, and cast it into the fire that
+--      was on the hearth, until all the roll was consumed in the fire that was on the hearth* (36:23). The
+--      parchment is ash. But the word is not the parchment: *Then the word of Yahuah (LORD) came to Jeremiah,
+--      after that the king had burned the roll... Take thee again another roll, and write in it all the former
+--      words that were in the first roll, which Jehoiakim the king of Yahudah (Judah) hath burned* (36:27-28),
+--      and so it is rewritten — and MORE: *there were added besides unto them many like words* (36:32). Burned,
+--      and not lessened but increased. This is the word Isaiah named: *The grass withereth, the flower fadeth:
+--      but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8); the word the psalmist saw fixed
+--      beyond reach of fire: *For ever, O Yahuah (LORD), thy word is settled in heaven* (Psalm 119:89). The
+--      Messiah says it of his own words: *Heaven and earth shall pass away, but my words shall not pass away*
+--      (Matthew 24:35); Peter seals it: *the word of Yahuah (Lord) endureth for ever* (1 Peter 1:25). And the
+--      last book pronounces the curse on the man who would do to the word what Jehoiakim did — *if any man
+--      shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out
+--      of the book of life* (Revelation 22:19). The word-burner is the one cut off, not the word.
+--   ★ IT MAY BE THEY WILL RETURN (THREAD 2): the whole purpose of the roll is mercy — *It may be that the house
+--      of Yahudah (Judah) will hear all the evil which I purpose to do unto them; that they may return every man
+--      from his evil way; that I may forgive their iniquity and their sin* (36:3); *It may be they will present
+--      their supplication before Yahuah (LORD), and will return every one from his evil way* (36:7). The word of
+--      judgment is sent FOR repentance, not destruction. Ezekiel names the heart of Yahuah behind it: *Have I
+--      any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he
+--      should return from his ways, and live?* (Ezekiel 18:23); *wherefore turn yourselves, and live ye*
+--      (Ezekiel 18:32). Peter says the same of the long-delayed judgment: *not willing that any should perish,
+--      but that all should come to repentance* (2 Peter 3:9); and Acts names the offered remedy: *Repent ye
+--      therefore, and be converted, that your sins may be blotted out* (Acts 3:19). The *it may be* is Yahuah''s
+--      open door — the warning is the mercy.
+--   ★ THEY WERE NOT AFRAID, NOR RENT THEIR GARMENTS (THREAD 3): the verdict on the hearers — *Yet they were not
+--      afraid, nor rent their garments, neither the king, nor any of his servants that heard all these words*
+--      (36:24). The unrent heart. Set it beside Josiah, Jehoiakim''s own father, hearing the rediscovered book
+--      of the law: *when the king had heard the words of the book of the law, that he rent his clothes* (2 Kings
+--      22:11), and Yahuah''s answer — *Because thine heart was tender, and thou hast humbled thyself before
+--      Yahuah (LORD)... and hast rent thy clothes, and wept before me; I also have heard thee* (2 Kings 22:19).
+--      The tender heart rends; the hard heart burns. The apostles name the same hardening: *To day if ye will
+--      hear his voice, Harden not your hearts* (Hebrews 3:7-8); *Ye stiffnecked and uncircumcised in heart and
+--      ears, ye do always resist the Ruach HaKodesh (Holy Spirit)* (Acts 7:51). Note the princes DID tremble
+--      (36:16) — the foil is the king and his servants, who heard all these words and would not be moved.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the roll commanded — woven into THREAD 1), v.4-6 (Baruch writes and is
+--      sent to read — prose), v.8-19 (the reading and the princes'' fear — THREAD 3 prose, the foil to the king),
+--      v.20-22 (the scene set for the burning — THREAD 1), v.25-26 (the intercession refused, Yahuah hides his
+--      servants — THREAD 1, the word and its bearers preserved), v.29-31 (the throne-of-David sentence on
+--      Jehoiakim — THREAD 1 prose, the word-burner cut off). All blocks recorded; every meaningful section
+--      carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer36_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): the word burned but not destroyed — rewritten and increased
+    ('canon','jeremiah',36,23,'canon','isaiah',40,8,'free',
+      E'*The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8). Jehoiakim cut the roll with the penknife and *cast it into the fire that was on the hearth, until all the roll was consumed* (Jeremiah 36:23) — but the word is not the parchment. The grass withers and the flame consumes the leaves, yet *the word of our Elohim (God) shall stand for ever*: the burned roll is rewritten the next breath, and stands.'),
+    ('canon','jeremiah',36,23,'canon','psalms',119,89,'free',
+      E'*For ever, O Yahuah (LORD), thy word is settled in heaven* (Psalm 119:89). What Jehoiakim burned on the hearth (Jeremiah 36:23) he could not reach: the word he cast into the fire was already *settled in heaven*, beyond the penknife and the flame. The copy on earth turns to ash; the word itself is fixed for ever in the heavens, and so it returns to the prophet to be written again.'),
+    ('canon','jeremiah',36,23,'canon','matthew',24,35,'free',
+      E'*Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35). The Messiah says of his word what Jeremiah 36 proves of Yahuah''s: the king consumed the roll *in the fire that was on the hearth* (Jeremiah 36:23), yet the words did not pass away — they were spoken again and written again. Heaven and earth themselves shall pass, but not one word; the fire that ate the parchment could not touch the word.'),
+    ('canon','jeremiah',36,32,'canon','1-peter',1,25,'free',
+      E'*But the word of Yahuah (Lord) endureth for ever. And this is the word which by the gospel is preached unto you* (1 Peter 1:25). Jeremiah took another roll *and there were added besides unto them many like words* (Jeremiah 36:32) — the burned word not lessened but increased. Peter names the law of it: *the word of Yahuah (Lord) endureth for ever*. What the fire was meant to end, the enduring word multiplied.'),
+    ('canon','jeremiah',36,23,'canon','revelation',22,19,'free',
+      E'*And if any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life, and out of the holy city, and from the things which are written in this book* (Revelation 22:19). Jehoiakim did exactly this — he took the penknife to the words and burned them (Jeremiah 36:23) — and the sentence fell on HIM: *He shall have none to sit upon the throne of David* (Jeremiah 36:30). The word-burner is the one cut off; the word stands and is rewritten.'),
+
+    -- THREAD 2 (★): it may be they will return — that I may forgive their iniquity and their sin
+    ('canon','jeremiah',36,3,'canon','ezekiel',18,23,'free',
+      E'*Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (Ezekiel 18:23). This is the heart behind Jeremiah''s roll — *It may be that the house of Yahudah (Judah) will hear... that they may return every man from his evil way; that I may forgive their iniquity and their sin* (Jeremiah 36:3). The word of judgment is sent FOR the return: Yahuah takes no pleasure in the death of the wicked, but that he turn and live.'),
+    ('canon','jeremiah',36,7,'canon','ezekiel',18,32,'free',
+      E'*For I have no pleasure in the death of him that dieth, saith Adonai Yahuah (the Lord GOD): wherefore turn yourselves, and live ye* (Ezekiel 18:32). Jeremiah hopes for exactly this turning — *It may be they will present their supplication before Yahuah (LORD), and will return every one from his evil way* (Jeremiah 36:7). The roll read on the fasting day is Yahuah''s *turn yourselves, and live ye*: the warning is the open door to life.'),
+    ('canon','jeremiah',36,3,'canon','2-peter',3,9,'free',
+      E'*Yahuah (Lord) is not slack concerning his promise, as some men count slackness; but is longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9). Peter names the patience that wrote the roll — *It may be that the house of Yahudah (Judah) will hear... that they may return* (Jeremiah 36:3). The threatened evil is held back in longsuffering: Yahuah is *not willing that any should perish, but that all should come to repentance*, and so he sends the word first.'),
+    ('canon','jeremiah',36,7,'canon','acts',3,19,'free',
+      E'*Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of Yahuah (Lord)* (Acts 3:19). The supplication Jeremiah hoped Yahudah would present — *and will return every one from his evil way* (Jeremiah 36:7) — is the very turning the apostle preaches: *Repent ye therefore, and be converted, that your sins may be blotted out*. The roll offered Yahudah the blotting-out that Jeremiah 36:3 names — forgiveness for the returning.'),
+
+    -- THREAD 3 (★): they were not afraid, nor rent their garments — the unrent heart
+    ('canon','jeremiah',36,24,'canon','2-kings',22,11,'free',
+      E'*And it came to pass, when the king had heard the words of the book of the law, that he rent his clothes* (2 Kings 22:11). Set Josiah beside his son Jehoiakim: where the father rent his clothes at the words of the book, the son and his servants *were not afraid, nor rent their garments* (Jeremiah 36:24) — they burned the book instead. The tender heart rends; the hard heart burns the very same word of Yahuah.'),
+    ('canon','jeremiah',36,24,'canon','2-kings',22,19,'free',
+      E'*Because thine heart was tender, and thou hast humbled thyself before Yahuah (LORD)... and hast rent thy clothes, and wept before me; I also have heard thee, saith Yahuah (LORD)* (2 Kings 22:19). Yahuah honoured Josiah''s tender, rending heart. Jehoiakim shows the opposite — hearing all these words, *they were not afraid, nor rent their garments* (Jeremiah 36:24). The unrent heart is the unheard heart: the father wept and was heard; the son burned and was punished.'),
+    ('canon','jeremiah',36,24,'canon','hebrews',3,7,'free',
+      E'*Wherefore (as the Ruach HaKodesh (Holy Spirit) saith, To day if ye will hear his voice* (Hebrews 3:7). The warning of Jehoiakim''s hearth is the warning of Hebrews: the king heard the voice and would not bend — *they were not afraid, nor rent their garments* (Jeremiah 36:24). To hear the word and harden is the provocation; *To day if ye will hear his voice* is the very chance Jehoiakim threw into the fire.'),
+    ('canon','jeremiah',36,24,'canon','hebrews',3,8,'free',
+      E'*Harden not your hearts, as in the provocation, in the day of temptation in the wilderness* (Hebrews 3:8). Jehoiakim is the warning made flesh: he heard all the words and *was not afraid, nor rent his garments* (Jeremiah 36:24) — the hardened heart that will not tremble at the voice. *Harden not your hearts* is spoken against exactly this: the man who hears and burns rather than humbles.'),
+    ('canon','jeremiah',36,24,'canon','acts',7,51,'free',
+      E'*Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye* (Acts 7:51). Stephen names the long line of the unrent heart; Jehoiakim stands in it — hearing the word of Yahuah and *not afraid, nor rent* (Jeremiah 36:24), resisting the Spirit who spoke it. The stiff neck that will not bow is the heart that burns the roll instead of rending the garment.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased',
+       E'The word burned but not destroyed — rewritten, and increased',
+       E'The king of Yahudah (Judah) takes the penknife to the very word of Yahuah (LORD). As Jehudi reads the roll aloud, *when Jehudi had read three or four leaves, he cut it with the penknife, and cast it into the fire that was on the hearth, until all the roll was consumed in the fire that was on the hearth* (36:23). The parchment is ash; Jehoiakim thinks he has ended the prophecy. But the word is not the parchment. *Then the word of Yahuah (LORD) came to Jeremiah, after that the king had burned the roll, and the words which Baruch wrote at the mouth of Jeremiah, saying, Take thee again another roll, and write in it all the former words that were in the first roll, which Jehoiakim the king of Yahudah (Judah) hath burned* (36:27-28). And the burned word comes back not diminished but multiplied: *Then took Jeremiah another roll, and gave it to Baruch the scribe... who wrote therein from the mouth of Jeremiah all the words of the book which Jehoiakim king of Yahudah (Judah) had burned in the fire: and there were added besides unto them many like words* (36:32). Burned — and increased. This is the word Isaiah named when all flesh is grass: *The grass withereth, the flower fadeth: but the word of our Elohim (God) shall stand for ever* (Isaiah 40:8); the word the psalmist saw fixed beyond the reach of any fire: *For ever, O Yahuah (LORD), thy word is settled in heaven* (Psalm 119:89). The copy on earth turned to ash, but the word was already settled in the heavens, past the penknife and the flame. The Messiah says it of his own word: *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35); and Peter seals it: *the word of Yahuah (Lord) endureth for ever* (1 Peter 1:25). And the last book of the library pronounces the very judgment Jehoiakim earned — *if any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life* (Revelation 22:19). The sentence on the word-burner falls on HIM: *He shall have none to sit upon the throne of David: and his dead body shall be cast out* (36:30). The man is cut off; the word stands and is written again. The roll can be burned; the word cannot.',
+       sv.verse_id, ev.verse_id, 'free', 34875
+  FROM _s309_jer36_lookup sv, _s309_jer36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=36 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-36-it-may-be-they-will-return-that-i-may-forgive',
+       E'It may be they will return — that I may forgive their iniquity and their sin',
+       E'The whole purpose of the roll is not destruction but mercy. Yahuah (LORD) sends the word of coming evil precisely so that the people might hear it and turn before it falls: *It may be that the house of Yahudah (Judah) will hear all the evil which I purpose to do unto them; that they may return every man from his evil way; that I may forgive their iniquity and their sin* (36:3). Jeremiah sends Baruch to read it on the fasting day with the same hope: *It may be they will present their supplication before Yahuah (LORD), and will return every one from his evil way: for great is the anger and the fury that Yahuah (LORD) hath pronounced against this people* (36:7). The warning IS the mercy — the open door before the judgment. Ezekiel names the heart of Yahuah that wrote it: *Have I any pleasure at all that the wicked should die? saith Adonai Yahuah (the Lord GOD): and not that he should return from his ways, and live?* (Ezekiel 18:23); *For I have no pleasure in the death of him that dieth... wherefore turn yourselves, and live ye* (Ezekiel 18:32). Peter says the same of every delayed judgment: Yahuah is *longsuffering to us-ward, not willing that any should perish, but that all should come to repentance* (2 Peter 3:9); and the apostolic call offers the very blotting-out that Jeremiah 36:3 promised: *Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of Yahuah (Lord)* (Acts 3:19). The roll was Yahuah''s *it may be* — the offered return, and the forgiveness waiting for the man who turns.',
+       sv.verse_id, ev.verse_id, 'free', 34878
+  FROM _s309_jer36_lookup sv, _s309_jer36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=36 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-36-they-were-not-afraid-nor-rent-their-garments',
+       E'They were not afraid, nor rent their garments — the unrent heart',
+       E'When the princes first heard Baruch read the roll, they trembled: *when they had heard all the words, they were afraid both one and other* (36:16). But the king is another matter. Jehoiakim hears the same words, and the verdict on him and his court is one of the most damning lines in the book: *Yet they were not afraid, nor rent their garments, neither the king, nor any of his servants that heard all these words* (36:24). The unrent heart. To feel the weight of it, set Jehoiakim beside his own father Josiah, who heard the rediscovered book of the law and tore his clothes in grief: *And it came to pass, when the king had heard the words of the book of the law, that he rent his clothes* (2 Kings 22:11) — and Yahuah (LORD) answered that tenderness: *Because thine heart was tender, and thou hast humbled thyself before Yahuah (LORD)... and hast rent thy clothes, and wept before me; I also have heard thee, saith Yahuah (LORD)* (2 Kings 22:19). The father rent his garment and was heard; the son rent nothing and burned the scroll. The tender heart rends; the hard heart burns. The apostolic word names the same hardening as the great peril: *To day if ye will hear his voice, Harden not your hearts, as in the provocation* (Hebrews 3:7-8); and Stephen sets Jehoiakim''s kind in the long line of resistance: *Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit): as your fathers did, so do ye* (Acts 7:51). To hear all these words and not tremble, not rend, not turn — that is the heart that burns the word of Yahuah rather than bow to it.',
+       sv.verse_id, ev.verse_id, 'free', 34881
+  FROM _s309_jer36_lookup sv, _s309_jer36_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=36 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the word of our Elohim (God) shall stand for ever* (Isaiah 40:8) — the grass withers and the roll burns, but the word stands; the burned scroll of 36:23 is rewritten and stands.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=23
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=40 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *For ever, O Yahuah (LORD), thy word is settled in heaven* (Psalm 119:89) — what Jehoiakim burned on the hearth (36:23) was already fixed beyond the fire, settled in heaven.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=23
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=89
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *Heaven and earth shall pass away, but my words shall not pass away* (Matthew 24:35) — the Messiah says of his word what Jeremiah 36 proves: the fire consumed the roll (36:23) but not the word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=23
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *the word of Yahuah (Lord) endureth for ever* (1 Peter 1:25) — Peter names the law of it; the burned word came back with *many like words* added (36:32), not lessened but increased.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=32
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *if any man shall take away from the words of the book... Elohim (God) shall take away his part out of the book of life* (Revelation 22:19) — Jehoiakim did exactly this (36:23) and the sentence fell on HIM (36:30), not the word.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=23
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-the-word-burned-but-not-destroyed-rewritten-and-increased'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Have I any pleasure at all that the wicked should die?... not that he should return from his ways, and live?* (Ezekiel 18:23) — the heart behind the roll; Yahuah purposes evil so the house of Yahudah may return (36:3).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=3
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-it-may-be-they-will-return-that-i-may-forgive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I have no pleasure in the death of him that dieth... wherefore turn yourselves, and live ye* (Ezekiel 18:32) — the roll read on the fasting day is this *turn yourselves, and live*; Jeremiah hopes they will return (36:7).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=7
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-it-may-be-they-will-return-that-i-may-forgive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *not willing that any should perish, but that all should come to repentance* (2 Peter 3:9) — Peter names the longsuffering that wrote the roll; the threatened evil held back so Yahudah may return (36:3).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=3
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-it-may-be-they-will-return-that-i-may-forgive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Repent ye therefore, and be converted, that your sins may be blotted out* (Acts 3:19) — the blotting-out the roll offered (36:3, *that I may forgive their iniquity*); the apostolic call to the same return Jeremiah hoped for (36:7).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=7
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-it-may-be-they-will-return-that-i-may-forgive'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *when the king had heard the words of the book of the law... he rent his clothes* (2 Kings 22:11) — Josiah the father rent his garment; Jehoiakim the son rent nothing and burned the book (36:24).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=24
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=22 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-they-were-not-afraid-nor-rent-their-garments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Because thine heart was tender... and hast rent thy clothes, and wept before me; I also have heard thee* (2 Kings 22:19) — the tender heart was heard; the unrent heart of 36:24 was not.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=24
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=22 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-they-were-not-afraid-nor-rent-their-garments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *To day if ye will hear his voice* (Hebrews 3:7) — the chance Jehoiakim threw into the fire; he heard the voice and would not bend (36:24).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=24
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-they-were-not-afraid-nor-rent-their-garments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Harden not your hearts, as in the provocation* (Hebrews 3:8) — Jehoiakim is the warning made flesh: the hardened heart that hears all the words and will not tremble (36:24).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=24
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-they-were-not-afraid-nor-rent-their-garments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Ye stiffnecked and uncircumcised in heart and ears, ye do always resist the Ruach HaKodesh (Holy Spirit)* (Acts 7:51) — Stephen names the long line of the unrent heart; Jehoiakim stands in it (36:24).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer36_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=36 AND sv.verse_number=24
+  JOIN _s309_jer36_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=7 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-36-they-were-not-afraid-nor-rent-their-garments'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_37.sql (Jeremiah 37) -----
+-- Chapter: Jeremiah 37 — Zedekiah secretly inquires of Yahuah; Pharaoh's army draws the Chaldeans off,
+-- but only for a season; Jeremiah speaks the unwelcome truth (the Chaldeans shall surely return and burn
+-- the city) even before the king who could free him; accused of desertion at the gate of Benjamin, beaten
+-- by the wroth princes, and shut in the dungeon many days. Two threads: ★ the UNFLINCHING WORD — the
+-- prophet faithful to Yahuah's word over his own self-interest; ★ the IMPRISONED RIGHTEOUS ONE — the
+-- faithful witness suffering bonds for the truth.
+-- Tag: jer37   Temp view: _s309_jer37_lookup   Session: s309
+-- Sort band: base 34900, step 3 -> threads at 34900, 34903 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',37,v
+--
+-- Jeremiah 37 coverage:
+--   v.1-4 (Zedekiah reigned instead of Coniah; neither he nor his servants hearkened unto the words of
+--          Yahuah; sent to enquire — Pray now unto Yahuah Eloheinu for us; Jeremiah not yet in prison)
+--        NT:     none warranted (the historical setting; the king's half-hearted inquiry; woven in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (preface to the oracle of v.7-10)
+--   ★ v.5-10 (Pharaoh's army came forth, the Chaldeans departed; Thus saith Yahuah... Pharaoh's army shall
+--          return to Egypt; the Chaldeans shall come again and burn this city; Deceive not yourselves...
+--          they shall not depart)
+--        NT:     ★ Galatians 1:10 (do I seek to please men? — the word over men's favour) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Jeremiah 1:17 (speak unto them all that I command thee; be not dismayed) — THREAD 1
+--   v.11-14 (the army broken up; Jeremiah went forth toward Benjamin; Irijah took him — Thou fallest away
+--          to the Chaldeans; It is false; brought to the princes)
+--        NT:     none warranted distinct (the false accusation; the desertion charge; woven into THREAD 2)
+--        Extras: none warranted
+--        Tanakh: none separate (the seizure at the gate; preface to the beating of v.15)
+--   ★ v.15-16 (the princes were wroth, smote him, put him in prison in the house of Jonathan; Jeremiah
+--          entered into the dungeon and into the cabins, and remained there many days)
+--        NT:     ★★ Hebrews 11:36-38 (trial of bonds and imprisonment... of whom the world was not worthy),
+--                ★ 2 Corinthians 11:23 (in prisons more frequent), ★ Acts 5:18 (put them in the common
+--                prison) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: none separate (the imprisoned prophet; the suffering held in THREAD 2)
+--   ★ v.17 (Zedekiah asked secretly: Is there any word from Yahuah? And Jeremiah said, There is: thou
+--          shalt be delivered into the hand of the king of Babylon)
+--        NT:     ★ Acts 4:19-20 (whether it be right to hearken unto you more than unto Elohim, judge ye;
+--                we cannot but speak the things we have seen), ★ 2 Timothy 4:2-3 (preach the word, in
+--                season, out of season... they will not endure sound doctrine) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: held in THREAD 1 prose (the unwelcome word spoken even to the king who could free him)
+--   ★ v.18-21 (What have I offended... that ye have put me in prison? Where are now your prophets...?
+--          let my supplication be accepted, that I die not in the house of Jonathan; committed to the
+--          court of the prison, given daily a piece of bread)
+--        NT:     ★ Matthew 5:11-12 (blessed are ye when men persecute you... so persecuted they the
+--                prophets) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: held in THREAD 2 prose (the righteous one wronged, appealing for his life)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-37-the-unflinching-word-spoken-even-before-the-king — NT (Galatians 1, Acts 4, 2 Timothy 4) + Tanakh (Jeremiah 1) [free]
+--      (★ the prophet faithful to Yahuah's word over his own self-interest — the unwelcome truth before the king who could free him)
+--   2. jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth — NT (Hebrews 11, Matthew 5, 2 Corinthians 11, Acts 5) [free]
+--      (★ the faithful witness beaten and shut in the dungeon for the truth — of whom the world was not worthy)
+--
+-- Framing notes:
+--   ★ THE UNFLINCHING WORD (THREAD 1): when Pharaoh's army drew the Chaldeans off and the city dreamed of
+--      reprieve, Jeremiah did not flatter the hope: *Thus saith Yahuah (LORD)... Behold, Pharaoh's army,
+--      which is come forth to help you, shall return to Egypt... And the Chaldeans shall come again, and
+--      fight against this city, and take it, and burn it with fire. Thus saith Yahuah (LORD); Deceive not
+--      yourselves, saying, The Chaldeans shall surely depart from us: for they shall not depart* (37:7-9).
+--      And later, in the dungeon, when the king who held his freedom asked secretly, *Is there any word
+--      from Yahuah (LORD)?*, he gave the same unwelcome word that could cost him his life: *There is: for...
+--      thou shalt be delivered into the hand of the king of Babylon* (37:17). This is faithfulness to the
+--      word over self-interest. It is the charge of Jeremiah's own calling — *speak unto them all that I
+--      command thee: be not dismayed at their faces* (Jeremiah 1:17). It is the apostles' answer — *Whether
+--      it be right in the sight of Elohim (God) to hearken unto you more than unto Elohim (God), judge ye*
+--      (Acts 4:19); Paul's measure — *do I seek to please men? for if I yet pleased men, I should not be the
+--      servant of Messiah (Christ)* (Galatians 1:10); and his charge to Timothy — *Preach the word; be
+--      instant in season, out of season* even when *they will not endure sound doctrine* (2 Timothy 4:2-3).
+--      The unflinching word, spoken to the very king who could free him.
+--   ★ THE IMPRISONED RIGHTEOUS ONE (THREAD 2): seized at the gate of Benjamin on a false charge of desertion
+--      — *It is false; I fall not away to the Chaldeans* (37:14) — the righteous prophet is beaten and shut
+--      away: *the princes were wroth with Jeremiah, and smote him, and put him in prison... When Jeremiah was
+--      entered into the dungeon, and into the cabins, and Jeremiah had remained there many days* (37:15-16).
+--      He pleads his innocence — *What have I offended against thee... that ye have put me in prison?*
+--      (37:18). This is the suffering of the faithful witness. Hebrews names the whole company — *others had
+--      trial of cruel mockings and scourgings, yea, moreover of bonds and imprisonment... of whom the world
+--      was not worthy* (Hebrews 11:36-38). The Messiah pronounces them blessed — *Blessed are ye, when men
+--      shall... persecute you... for so persecuted they the prophets which were before you* (Matthew 5:11-12).
+--      Paul carries the same marks — *in prisons more frequent* (2 Corinthians 11:23); and the apostles are
+--      shut in the common prison after him — *laid their hands on the apostles, and put them in the common
+--      prison* (Acts 5:18). The imprisoned righteous one, of whom the world was not worthy.
+--   VERSES WITH NO SEPARATE ADD: v.1-4 (the historical setting — Zedekiah's reign, the half-hearted inquiry,
+--      the people not hearkening; woven in prose), v.11-14 (the seizure and false desertion-charge at the
+--      gate — woven into THREAD 2), v.19-21 (the rebuke of the false prophets, the plea for his life, the
+--      daily bread in the court of the prison — held in THREAD 2 prose). All blocks recorded; every
+--      meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer37_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the unflinching word — faithfulness to Yahuah's word over self-interest
+    ('canon','jeremiah',37,9,'canon','jeremiah',1,17,'free',
+      E'*Thou therefore gird up thy loins, and arise, and speak unto them all that I command thee: be not dismayed at their faces, lest I confound thee before them* (Jeremiah 1:17). This is the prophet''s own commissioning, and Jeremiah keeps it to the letter: when the city dreams of reprieve he speaks the whole unwelcome word — *Deceive not yourselves, saying, The Chaldeans shall surely depart from us: for they shall not depart* (Jeremiah 37:9). He is not dismayed at their faces; he speaks all that Yahuah (LORD) commanded him, not the comfortable lie they wished to hear.'),
+    ('canon','jeremiah',37,9,'canon','galatians',1,10,'free',
+      E'*For do I now persuade men, or Elohim (God)? or do I seek to please men? for if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10). Paul names the measure Jeremiah lived: the servant of Yahuah does not soften the word to please men. Against the wish for an easy reprieve, the prophet says plainly *they shall not depart* (Jeremiah 37:9) — he sought to please Yahuah (LORD), not the king nor the people, and so spoke the truth that men did not want.'),
+    ('canon','jeremiah',37,17,'canon','acts',4,19,'free',
+      E'*But Peter and John answered and said unto them, Whether it be right in the sight of Elohim (God) to hearken unto you more than unto Elohim (God), judge ye* (Acts 4:19). When the king who held his freedom asked secretly, *Is there any word from Yahuah (LORD)?*, Jeremiah did not bend the word to win release — *There is: for... thou shalt be delivered into the hand of the king of Babylon* (Jeremiah 37:17). The apostles answer their rulers in the same spirit: the word of Elohim (God) is to be obeyed above the men who could punish them.'),
+    ('canon','jeremiah',37,17,'canon','acts',4,20,'free',
+      E'*For we can not but speak the things which we have seen and heard* (Acts 4:20). The apostles, forbidden to speak, cannot keep silent — and neither can Jeremiah before the king who could free him: asked *Is there any word from Yahuah (LORD)?*, he must give the very word that condemns his hope of release — *thou shalt be delivered into the hand of the king of Babylon* (Jeremiah 37:17). The true witness cannot but speak what Yahuah (LORD) has given him, whatever it costs.'),
+    ('canon','jeremiah',37,17,'canon','2-timothy',4,2,'free',
+      E'*Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine* (2 Timothy 4:2). Paul''s charge is Jeremiah''s practice: the word is to be preached out of season — when it is unwelcome, when it costs. Asked *Is there any word from Yahuah (LORD)?* by the king who could free him, Jeremiah speaks the out-of-season word — *thou shalt be delivered into the hand of the king of Babylon* (Jeremiah 37:17) — refusing the favour that flattery would buy.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★): the righteous prophet imprisoned for the truth — the suffering faithful witness
+    ('canon','jeremiah',37,15,'canon','hebrews',11,36,'free',
+      E'*And others had trial of cruel mockings and scourgings, yea, moreover of bonds and imprisonment* (Hebrews 11:36). The roll of faith names Jeremiah''s very ordeal: *the princes were wroth with Jeremiah, and smote him, and put him in prison* (Jeremiah 37:15). The scourging and the bonds he bore are the trial of the faithful witness — the same that ran through the whole company of the prophets who would not soften the word.'),
+    ('canon','jeremiah',37,16,'canon','hebrews',11,38,'free',
+      E'*(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth* (Hebrews 11:38). Jeremiah shut *into the dungeon, and into the cabins*, where he *had remained there many days* (Jeremiah 37:16) is one of those of whom the world was not worthy — the righteous driven into pits and dungeons by the very people they were sent to save. The world that imprisoned the prophet was not worthy of him.'),
+    ('canon','jeremiah',37,18,'canon','matthew',5,11,'free',
+      E'*Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake* (Matthew 5:11). Jeremiah, falsely charged with desertion and imprisoned, pleads his innocence — *What have I offended against thee, or against thy servants, or against this people, that ye have put me in prison?* (Jeremiah 37:18). The Messiah pronounces such a one blessed: persecuted falsely, suffering for the word, his is the blessing of the wronged righteous.'),
+    ('canon','jeremiah',37,18,'canon','matthew',5,12,'free',
+      E'*Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you* (Matthew 5:12). The Messiah names the very pattern Jeremiah lived — *so persecuted they the prophets*. Beaten and imprisoned though innocent — *What have I offended... that ye have put me in prison?* (Jeremiah 37:18) — Jeremiah stands in the line of the persecuted prophets whose reward is great, the suffering witness vindicated at the last.'),
+    ('canon','jeremiah',37,15,'canon','2-corinthians',11,23,'free',
+      E'*Are they ministers of Messiah (Christ)? (I speak as a fool) I am more; in labours more abundant, in stripes above measure, in prisons more frequent, in deaths oft* (2 Corinthians 11:23). Paul''s marks of a true minister are the marks Jeremiah bore: *smote him, and put him in prison* (Jeremiah 37:15). The stripes and the prison are not signs of a false word but of a faithful one; the servant of Yahuah (LORD) is known by what he suffers for the truth.'),
+    ('canon','jeremiah',37,15,'canon','acts',5,18,'free',
+      E'*And laid their hands on the apostles, and put them in the common prison* (Acts 5:18). What was done to Jeremiah — *the princes were wroth... and put him in prison* (Jeremiah 37:15) — is done again to the apostles: hands laid on the faithful, the witnesses shut in prison for the word they would not silence. The imprisonment of the righteous runs from the prophet to the apostle, one suffering for one truth.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-37-the-unflinching-word-spoken-even-before-the-king',
+       E'The unflinching word — Jeremiah speaks the truth even before the king who could free him',
+       E'When Pharaoh''s army marched out of Egypt and the Chaldeans lifted the siege, Jerusalem dared to hope the danger had passed. Jeremiah would not flatter the hope. Asked to enquire of Yahuah (LORD) for the king, he gave the whole unwelcome word: *Thus saith Yahuah (LORD)... Behold, Pharaoh''s army, which is come forth to help you, shall return to Egypt into their own land. And the Chaldeans shall come again, and fight against this city, and take it, and burn it with fire. Thus saith Yahuah (LORD); Deceive not yourselves, saying, The Chaldeans shall surely depart from us: for they shall not depart* (37:7-9). And later, shut in the dungeon, when the very king who held his freedom sent and asked him secretly, *Is there any word from Yahuah (LORD)?*, Jeremiah did not soften a syllable to buy his release: *And Jeremiah said, There is: for, said he, thou shalt be delivered into the hand of the king of Babylon* (37:17). This is faithfulness to the word over self-interest — the word spoken even to the man who could have set him free. It is the keeping of his own commissioning: *Thou therefore gird up thy loins, and arise, and speak unto them all that I command thee: be not dismayed at their faces* (Jeremiah 1:17). The same Spirit answers in the apostles before the rulers who forbade them: *Whether it be right in the sight of Elohim (God) to hearken unto you more than unto Elohim (God), judge ye* (Acts 4:19), *For we can not but speak the things which we have seen and heard* (Acts 4:20). Paul names the measure: *do I seek to please men? for if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10); and charges Timothy to keep it: *Preach the word; be instant in season, out of season; reprove, rebuke, exhort with all longsuffering and doctrine* (2 Timothy 4:2) — even when *they will not endure sound doctrine* (2 Timothy 4:3). The servant of Yahuah does not trade the truth for a king''s favour.',
+       sv.verse_id, ev.verse_id, 'free', 34900
+  FROM _s309_jer37_lookup sv, _s309_jer37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=37 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth',
+       E'The righteous prophet imprisoned for the truth — of whom the world was not worthy',
+       E'Going out toward the land of Benjamin, Jeremiah was seized at the gate on a false charge — *Thou fallest away to the Chaldeans* — and answered plainly, *It is false; I fall not away to the Chaldeans* (37:13-14). It availed nothing. *Wherefore the princes were wroth with Jeremiah, and smote him, and put him in prison in the house of Jonathan the scribe... When Jeremiah was entered into the dungeon, and into the cabins, and Jeremiah had remained there many days* (37:15-16). The righteous prophet, faithful with the word, is beaten and buried in a pit for the truth he would not soften. He pleads his innocence to the king: *What have I offended against thee, or against thy servants, or against this people, that ye have put me in prison?* (37:18). This is the suffering of the faithful witness, and the canon names the whole company that bore it: *And others had trial of cruel mockings and scourgings, yea, moreover of bonds and imprisonment... they wandered about in sheepskins and goatskins; being destitute, afflicted, tormented; (Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth* (Hebrews 11:36-38). The world that shut the prophet in the dungeon was not worthy of him. The Messiah pronounces such a one blessed: *Blessed are ye, when men shall revile you, and persecute you, and shall say all manner of evil against you falsely, for my sake. Rejoice, and be exceeding glad: for great is your reward in heaven: for so persecuted they the prophets which were before you* (Matthew 5:11-12). Paul carries the same marks as a true minister — *in prisons more frequent* (2 Corinthians 11:23); and the apostles are shut away after the prophet — *And laid their hands on the apostles, and put them in the common prison* (Acts 5:18). From Jeremiah in the dungeon to the apostles in the common prison, the righteous suffer one persecution for one truth — and of them the world was not worthy.',
+       sv.verse_id, ev.verse_id, 'free', 34903
+  FROM _s309_jer37_lookup sv, _s309_jer37_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=37 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *speak unto them all that I command thee: be not dismayed at their faces* (Jeremiah 1:17) — Jeremiah keeps his own commissioning, speaking the whole unwelcome word *they shall not depart* (37:9).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=9
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=1 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-unflinching-word-spoken-even-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *if I yet pleased men, I should not be the servant of Messiah (Christ)* (Galatians 1:10) — Paul names the measure Jeremiah lived: the truth not softened to please men.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=9
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-unflinching-word-spoken-even-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Whether it be right... to hearken unto you more than unto Elohim (God), judge ye* (Acts 4:19) — the apostles answer their rulers as Jeremiah answered the king: obey the word above the men who could punish.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=17
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-unflinching-word-spoken-even-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *we can not but speak the things which we have seen and heard* (Acts 4:20) — the true witness cannot keep silent; Jeremiah must give the word that condemns his own hope of release (37:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=17
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-unflinching-word-spoken-even-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *Preach the word; be instant in season, out of season* (2 Timothy 4:2) — Paul''s charge is Jeremiah''s practice: the out-of-season word spoken even to the king who could free him (37:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=17
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-unflinching-word-spoken-even-before-the-king'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *others had trial of cruel mockings and scourgings, yea, moreover of bonds and imprisonment* (Hebrews 11:36) — the roll of faith names Jeremiah''s very ordeal: smitten and imprisoned (37:15).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=15
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *(Of whom the world was not worthy:) they wandered... in dens and caves of the earth* (Hebrews 11:38) — Jeremiah in the dungeon many days (37:16) is one of those the world was not worthy of.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=16
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Blessed are ye, when men shall... persecute you... falsely, for my sake* (Matthew 5:11) — falsely charged and imprisoned (37:18), Jeremiah is the wronged righteous the Messiah pronounces blessed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=18
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *so persecuted they the prophets which were before you* (Matthew 5:12) — Jeremiah stands in the line of the persecuted prophets whose reward is great; the suffering witness vindicated.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=18
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *in stripes above measure, in prisons more frequent* (2 Corinthians 11:23) — Paul''s marks of a true minister are the marks Jeremiah bore: smitten and put in prison (37:15).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=15
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=11 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *laid their hands on the apostles, and put them in the common prison* (Acts 5:18) — the apostles are shut away after the prophet; the imprisonment of the righteous runs from Jeremiah (37:15) to the apostle.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer37_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=37 AND sv.verse_number=15
+  JOIN _s309_jer37_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-37-the-righteous-prophet-imprisoned-for-the-truth'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_38.sql (Jeremiah 38) -----
+-- Chapter: Jeremiah 38 — Jeremiah cast into the miry pit/dungeon of Malchiah, sinking in the mire;
+-- Ebed-melech the Ethiopian eunuch hears, pleads boldly before the king, and draws the prophet out
+-- with cords and old rotten rags; Zedekiah's secret consultation. Two framework-bearing threads:
+-- (1) the suffering righteous one cast into the miry pit and crying from the depths (the Messianic
+-- suffering psalms answer it); (2) the foreign eunuch who fears Yahuah and does mercy — the Gentile
+-- brought near, who acts to deliver the prophet and is himself delivered for his trust.
+-- Tag: jer38   Temp view: _s309_jer38_lookup
+-- Sort band: base 34925, step 3 -> threads at 34925, 34928 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',38,v
+--
+-- Jeremiah 38 coverage:
+--   v.1-5 (Shephatiah, Gedaliah, Jucal, Pashur hear Jeremiah; the princes seek his death; Zedekiah:
+--          Behold, he is in your hand) — the plot against the prophet's life
+--        NT:     none warranted distinct (the prophet hated for the true word; woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: held in prose — the princes seeking the righteous man's life prefaces the pit of v.6
+--   ★★ v.6 (Then took they Jeremiah, and cast him into the dungeon of Malchiah... let down with cords...
+--          no water, but mire: so Jeremiah sunk in the mire) — the righteous one cast into the miry pit
+--        NT:     none warranted distinct (the Messianic-suffering weave is via the Psalms; held there)
+--        Extras: none warranted (clean canon weave; no extra forced)
+--        Tanakh: ★★ Psalm 69:1-2 (the waters are come in unto my soul; I sink in deep mire), ★★ Psalm
+--                69:14-15 (Deliver me out of the mire... out of the deep waters), ★★ Psalm 40:1-2 (he
+--                brought me up... out of the miry clay, and set my feet upon a rock), ★★ Lamentations
+--                3:53-55 (cut off my life in the dungeon... I called upon thy name... out of the low
+--                dungeon) — THREAD 1
+--   ★★ v.7-13 (Ebed-melech the Ethiopian, one of the eunuchs in the king's house, hears; goes forth and
+--          pleads, These men have done evil... whom they have cast into the dungeon; the king commands
+--          him to take thirty men; he lets down old cast clouts and rotten rags by cords; they draw up
+--          Jeremiah out of the dungeon) — the foreign eunuch who fears Yahuah and delivers the prophet
+--        NT:     ★★ Acts 8:27 (a man of Ethiopia, an eunuch... had come to Jerusalem for to worship),
+--                ★★ Acts 8:39 (the eunuch... went on his way rejoicing — the foreigner brought near and
+--                baptized), ★ Matthew 25:40 (Inasmuch as ye have done it unto one of the least of these
+--                my brethren) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 39:16-18 (lateral — Ebed-melech delivered, thou shalt not fall by the sword,
+--                because thou hast put thy trust in me), ★★ Isaiah 56:3-5 (neither let the eunuch say, I
+--                am a dry tree... a name better than of sons) — THREAD 2
+--   v.14-23 (Zedekiah's secret consultation in the third entry; if thou wilt assuredly go forth... thy
+--          soul shall live; the king afraid of the Yahudim; thy feet are sunk in the mire) — the king's
+--          fearful evasion; note v.22 *thy feet are sunk in the mire* ironically echoes v.6's pit
+--        NT:     none warranted (the obey-the-voice-and-live word; woven in prose, not forced)
+--        Extras: none warranted
+--        Tanakh: none separate (the secret oracle to Zedekiah; the king who will not obey; woven in prose)
+--   v.24-28 (Let no man know of these words; Jeremiah's careful answer to the princes; he abode in the
+--          court of the prison until the day Jerusalem was taken) — the prophet preserved to the end
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the prophet kept safe through the siege; woven into THREAD 1 closing)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire — Tanakh (Psalm 69, Psalm 40, Lamentations 3) [free]
+--      (★★ the suffering righteous one cast into the dungeon, sinking in the mire, crying from the depths
+--       — the Messianic-suffering psalms answer it; brought up out of the miry clay, feet set upon a rock)
+--   2. jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah — NT (Acts 8, Matthew 25) + Tanakh (Jeremiah 39, Isaiah 56) [free]
+--      (★★ the foreign eunuch who fears Yahuah and acts boldly to deliver the prophet — the Gentile brought
+--       near, delivered for his trust; the Ethiopian eunuch baptized; the dry tree given a name better than sons)
+--
+-- Framing notes:
+--   ★★ THE MIRY PIT (THREAD 1): *Then took they Jeremiah, and cast him into the dungeon of Malchiah the son
+--      of Hammelech, that was in the court of the prison: and they let down Jeremiah with cords. And in the
+--      dungeon there was no water, but mire: so Jeremiah sunk in the mire* (38:6). The true prophet, hated
+--      for the word of Yahuah, is let down into a pit of mud to sink and die. The suffering-righteous
+--      psalms sing the very scene: *Save me, O Elohim (God); for the waters are come in unto my soul. I sink
+--      in deep mire, where there is no standing* (Psalm 69:1-2), *Deliver me out of the mire, and let me not
+--      sink... and out of the deep waters* (Psalm 69:14) — the Messianic suffering psalm, the cry of the
+--      righteous one in the pit. And the answer is the rescue of Psalm 40: *He brought me up also out of an
+--      horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings* (Psalm
+--      40:2). Lamentations — Jeremiah's own — sings the dungeon-cry: *They have cut off my life in the
+--      dungeon, and cast a stone upon me... I called upon thy name, O Yahuah (LORD), out of the low dungeon*
+--      (Lamentations 3:53-55). The sinking in the pit and the cry from the depths; the prophet drawn up
+--      foreshadows the greater Righteous One brought up out of death. (The same pit-irony returns on the
+--      king who would not obey: *thy feet are sunk in the mire* (38:22) — Zedekiah ends where he left the
+--      prophet to die.)
+--   ★★ EBED-MELECH THE ETHIOPIAN EUNUCH (THREAD 2): *Now when Ebed-melech the Ethiopian, one of the eunuchs
+--      which was in the king's house, heard that they had put Jeremiah in the dungeon... Ebed-melech went
+--      forth out of the king's house, and spake to the king, saying, My lord the king, these men have done
+--      evil in all that they have done to Jeremiah the prophet, whom they have cast into the dungeon* (38:7-9).
+--      A foreigner — an Ethiopian eunuch — fears Yahuah, sees the evil, and acts boldly where the princes of
+--      Yahudah and the king himself failed, drawing the prophet up with cords and old rags (38:11-13). And he
+--      is rewarded for his trust: *I will deliver thee in that day... because thou hast put thy trust in me,
+--      saith Yahuah (LORD)* (Jeremiah 39:16-18). This is the Gentile brought near who fears Yahuah and does
+--      mercy. Isaiah promises exactly such a one a name in Yahuah's house: *neither let the eunuch say, Behold,
+--      I am a dry tree... a place and a name better than of sons and of daughters... an everlasting name*
+--      (Isaiah 56:3-5). Luke shows another Ethiopian eunuch, come to worship, brought all the way in —
+--      baptized and going on his way rejoicing (Acts 8:27,39). And the King's word seals the mercy shown the
+--      least of the prophets: *Inasmuch as ye have done it unto one of the least of these my brethren, ye have
+--      done it unto me* (Matthew 25:40). The foreigner who fears Yahuah and delivers the prophet is himself
+--      delivered; the dry tree is given a name better than sons.
+--   VERSES WITH NO SEPARATE ADD: v.1-5 (the princes plotting the prophet's death — prefaces the pit, woven
+--      into THREAD 1 prose), v.14-23 (Zedekiah's secret consultation and fearful evasion; the obey-and-live
+--      word; v.22's *thy feet are sunk in the mire* noted in THREAD 1 prose as the pit-irony on the king),
+--      v.24-28 (the prophet's careful answer and his preservation in the court of the prison until Jerusalem
+--      was taken — woven into THREAD 1 closing). All meaningful blocks recorded; no library silently skipped.
+
+CREATE TEMP VIEW _s309_jer38_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): cast into the miry pit — I sink in deep mire, the cry from the depths
+    ('canon','jeremiah',38,6,'canon','psalms',69,1,'free',
+      E'*Save me, O Elohim (God); for the waters are come in unto my soul* (Psalm 69:1). The cry of the suffering righteous one is the very plight of Jeremiah let down into the pit — *they let down Jeremiah with cords. And in the dungeon there was no water, but mire: so Jeremiah sunk in the mire* (Jeremiah 38:6). The Messianic suffering psalm sings from the same sinking depths: the waters come in unto the soul, the righteous one swallowed up unless Yahuah save.'),
+    ('canon','jeremiah',38,6,'canon','psalms',69,2,'free',
+      E'*I sink in deep mire, where there is no standing: I am come into deep waters, where the floods overflow me* (Psalm 69:2). Word for word the psalm names Jeremiah''s pit — *so Jeremiah sunk in the mire* (Jeremiah 38:6): the mire where there is no standing, the deep that would swallow the righteous one. The prophet in the dungeon of Malchiah is the figure the suffering psalm sings, and the figure of the greater Righteous One brought low.'),
+    ('canon','jeremiah',38,6,'canon','psalms',69,14,'free',
+      E'*Deliver me out of the mire, and let me not sink: let me be delivered from them that hate me, and out of the deep waters* (Psalm 69:14). The prayer of the psalm is the prayer of Jeremiah in the mire — *and they let down Jeremiah with cords... so Jeremiah sunk in the mire* (Jeremiah 38:6). Hated by the princes who sought his life (38:4), sinking in the pit, the righteous one cries to be drawn out of the mire and the deep waters — and Yahuah answers by the hand of the Ethiopian.'),
+    ('canon','jeremiah',38,6,'canon','psalms',40,2,'free',
+      E'*He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings* (Psalm 40:2). This is the answer to the pit: the righteous one cast into *the dungeon... no water, but mire* (Jeremiah 38:6) is brought up *out of the miry clay* and set upon a rock. As Jeremiah is drawn up out of the dungeon, the psalm sings the deliverance — the horrible pit exchanged for the firm rock, the figure of resurrection.'),
+    ('canon','jeremiah',38,6,'canon','lamentations',3,53,'free',
+      E'*They have cut off my life in the dungeon, and cast a stone upon me* (Lamentations 3:53). Jeremiah''s own lament sings his dungeon-suffering — *they let down Jeremiah with cords... so Jeremiah sunk in the mire* (Jeremiah 38:6): the life cut off in the pit, the prophet left to die. The book of weeping and the historical account are one voice: the righteous one shut into the low dungeon.'),
+    ('canon','jeremiah',38,6,'canon','lamentations',3,55,'free',
+      E'*I called upon thy name, O Yahuah (LORD), out of the low dungeon* (Lamentations 3:55). Out of the pit of mire — *in the dungeon there was no water, but mire: so Jeremiah sunk in the mire* (Jeremiah 38:6) — the prophet calls on the Name. *Waters flowed over mine head; then I said, I am cut off* (Lamentations 3:54); yet the cry from the low dungeon is heard, and the One who hears draws him up.'),
+
+    -- THREAD 2 (★★): Ebed-melech the Ethiopian eunuch who feared Yahuah and delivered the prophet
+    ('canon','jeremiah',38,7,'canon','jeremiah',39,18,'free',
+      E'*For I will surely deliver thee, and thou shalt not fall by the sword, but thy life shall be for a prey unto thee: because thou hast put thy trust in me, saith Yahuah (LORD)* (Jeremiah 39:18). The reward of the foreign eunuch who feared Yahuah and acted — *Ebed-melech the Ethiopian, one of the eunuchs which was in the king''s house, heard that they had put Jeremiah in the dungeon* (Jeremiah 38:7), and went and delivered the prophet. Yahuah delivers the deliverer: *because thou hast put thy trust in me*. The Gentile who feared Yahuah and did mercy is himself spared the sword.'),
+    ('canon','jeremiah',38,9,'canon','jeremiah',39,16,'free',
+      E'*Go and speak to Ebed-melech the Ethiopian, saying, Thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); Behold, I will bring my words upon this city for evil, and not for good* (Jeremiah 39:16). Yahuah names Ebed-melech by name and saves him — the same Ethiopian who said to the king, *these men have done evil in all that they have done to Jeremiah the prophet, whom they have cast into the dungeon* (Jeremiah 38:9). The foreigner who called the evil evil and pleaded for the prophet is remembered and delivered in the day the city falls.'),
+    ('canon','jeremiah',38,7,'canon','isaiah',56,3,'free',
+      E'*Neither let the son of the stranger, that hath joined himself to Yahuah (LORD), speak, saying, Yahuah (LORD) hath utterly separated me from his people: neither let the eunuch say, Behold, I am a dry tree* (Isaiah 56:3). Ebed-melech is exactly this one — *one of the eunuchs which was in the king''s house* (Jeremiah 38:7), a foreigner and a eunuch, yet he fears Yahuah and does mercy. Isaiah says the stranger and the eunuch who join themselves to Yahuah are not cut off but brought near; the Ethiopian who delivered the prophet is no dry tree.'),
+    ('canon','jeremiah',38,10,'canon','isaiah',56,5,'free',
+      E'*Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off* (Isaiah 56:5). The eunuch who feared Yahuah and drew up the prophet — *take up Jeremiah the prophet out of the dungeon, before he die* (Jeremiah 38:10) — is the very one Isaiah promises an everlasting name. Childless by his estate, the faithful eunuch is given in Yahuah''s house a name better than sons; Ebed-melech''s mercy is written for ever.'),
+    ('canon','jeremiah',38,7,'canon','acts',8,27,'free',
+      E'*And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship* (Acts 8:27). Luke shows another Ethiopian eunuch who feared Yahuah — come to worship, brought all the way in — the same kind as Ebed-melech, *the Ethiopian, one of the eunuchs which was in the king''s house* (Jeremiah 38:7). The foreigner who fears Yahuah is no stranger to him; the Ethiopian eunuch is gathered in.'),
+    ('canon','jeremiah',38,13,'canon','acts',8,39,'free',
+      E'*And when they were come up out of the water, the Spirit of Yahuah (Lord) caught away Philip, that the eunuch saw him no more: and he went on his way rejoicing* (Acts 8:39). As Jeremiah was *drew up... out of the dungeon* (Jeremiah 38:13), so the Ethiopian eunuch is brought up out of the water rejoicing — the foreigner brought near, baptized, gathered into the people of Yahuah. The Ethiopian who delivered the prophet finds his counterpart in the Ethiopian delivered and made glad.'),
+    ('canon','jeremiah',38,9,'canon','matthew',25,40,'free',
+      E'*And the King shall answer and say unto them, Verily I say unto you, Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40). Ebed-melech did mercy to the prophet in the pit — *these men have done evil... to Jeremiah the prophet, whom they have cast into the dungeon* (Jeremiah 38:9) — and went and delivered him. The mercy shown the imprisoned, hungering prophet is mercy shown to Yahuah himself; the foreigner who fed and freed the least is counted to have done it unto the King.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire',
+       E'Cast into the miry pit — I sink in deep mire, the cry from the depths',
+       E'The true prophet, hated by the princes for the word of Yahuah (LORD), is sentenced not to the sword but to a slow death in the mud: *Then took they Jeremiah, and cast him into the dungeon of Malchiah the son of Hammelech, that was in the court of the prison: and they let down Jeremiah with cords. And in the dungeon there was no water, but mire: so Jeremiah sunk in the mire* (38:6). The princes had begged for his life — *let this man be put to death* (38:4) — and the king gave him into their hand (38:5). Now he sinks, helpless, in the pit. The suffering-righteous psalms sing this very scene. *Save me, O Elohim (God); for the waters are come in unto my soul. I sink in deep mire, where there is no standing: I am come into deep waters, where the floods overflow me* (Psalm 69:1-2) — the Messianic suffering psalm, the cry of the righteous one swallowed up unless Yahuah save; and the plea, *Deliver me out of the mire, and let me not sink: let me be delivered from them that hate me, and out of the deep waters* (Psalm 69:14). The answer is the rescue Psalm 40 sings: *He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock, and established my goings* (Psalm 40:2) — the pit exchanged for the rock, the figure of resurrection. And Jeremiah''s own book of weeping sounds the dungeon-cry: *They have cut off my life in the dungeon, and cast a stone upon me. Waters flowed over mine head; then I said, I am cut off. I called upon thy name, O Yahuah (LORD), out of the low dungeon* (Lamentations 3:53-55). The righteous one in the miry pit, crying from the depths and drawn up, foreshadows the greater Righteous One brought low and raised. (Mark too the pit-irony that returns upon the king who would not obey the word: *thy feet are sunk in the mire* (38:22) — Zedekiah ends in the very mire where he left the prophet to die.) And Yahuah keeps his prophet to the end: *So Jeremiah abode in the court of the prison until the day that Jerusalem was taken* (38:28).',
+       sv.verse_id, ev.verse_id, 'free', 34925
+  FROM _s309_jer38_lookup sv, _s309_jer38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=38 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah',
+       E'Ebed-melech the Ethiopian eunuch — the foreigner who feared Yahuah and drew the prophet out',
+       E'Where the princes of Yahudah (Judah) plotted the prophet''s death and the king himself dared not resist them (38:4-5), it is a foreigner who fears Yahuah (LORD) and acts: *Now when Ebed-melech the Ethiopian, one of the eunuchs which was in the king''s house, heard that they had put Jeremiah in the dungeon... Ebed-melech went forth out of the king''s house, and spake to the king, saying, My lord the king, these men have done evil in all that they have done to Jeremiah the prophet, whom they have cast into the dungeon; and he is like to die for hunger in the place where he is* (38:7-9). The Ethiopian eunuch names the evil evil, pleads boldly, and — given thirty men by the king — tenderly lets down *old cast clouts and old rotten rags* under the prophet''s armholes lest the cords cut him, and draws him up alive: *So they drew up Jeremiah with cords, and took him up out of the dungeon* (38:11-13). This is the Gentile brought near — the stranger who fears Yahuah and does mercy. And Yahuah delivers the deliverer, naming him in the day the city falls: *Go and speak to Ebed-melech the Ethiopian... I will deliver thee in that day, saith Yahuah (LORD)... For I will surely deliver thee, and thou shalt not fall by the sword... because thou hast put thy trust in me* (Jeremiah 39:16-18). Isaiah promises exactly such a one a name in Yahuah''s house: *neither let the eunuch say, Behold, I am a dry tree... Even unto them will I give in mine house and within my walls a place and a name better than of sons and of daughters: I will give them an everlasting name, that shall not be cut off* (Isaiah 56:3-5) — the childless eunuch given a name better than sons. Luke shows the pattern brought home: another *man of Ethiopia, an eunuch... had come to Jerusalem for to worship* (Acts 8:27), who believes and is baptized and *went on his way rejoicing* (Acts 8:39) — the foreigner who fears Yahuah gathered all the way in. And the King''s own word seals the mercy shown the prophet in the pit: *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40). The foreign eunuch who feared Yahuah and delivered the prophet is himself delivered, and his mercy written for ever.',
+       sv.verse_id, ev.verse_id, 'free', 34928
+  FROM _s309_jer38_lookup sv, _s309_jer38_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=38 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the waters are come in unto my soul* (Psalm 69:1) — the Messianic suffering psalm sings Jeremiah''s sinking in the pit (38:6); the righteous one swallowed up unless Yahuah save.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I sink in deep mire, where there is no standing* (Psalm 69:2) — word for word Jeremiah''s pit (38:6); the mire where there is no standing, the deep that would swallow the righteous.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Deliver me out of the mire, and let me not sink... out of the deep waters* (Psalm 69:14) — the prayer of the righteous one in the pit; hated by them that sought his life (38:4), he cries to be drawn out.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=69 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *He brought me up also out of an horrible pit, out of the miry clay, and set my feet upon a rock* (Psalm 40:2) — the answer to the pit: as Jeremiah is drawn up out of the dungeon, the miry clay is exchanged for the rock, the figure of resurrection.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *They have cut off my life in the dungeon, and cast a stone upon me* (Lamentations 3:53) — Jeremiah''s own lament sings his dungeon-suffering (38:6); the life cut off in the pit.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=53
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *I called upon thy name, O Yahuah (LORD), out of the low dungeon* (Lamentations 3:55) — out of the pit of mire the prophet calls on the Name, and is heard and drawn up.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=6
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=3 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-cast-into-the-miry-pit-i-sink-in-deep-mire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *because thou hast put thy trust in me, saith Yahuah (LORD)* (Jeremiah 39:18) — the reward of the eunuch who heard and acted (38:7); Yahuah delivers the deliverer, spared the sword for his trust.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=7
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Go and speak to Ebed-melech the Ethiopian... Behold, I will bring my words upon this city for evil* (Jeremiah 39:16) — Yahuah names the Ethiopian who called the evil evil (38:9) and remembers him in the day the city falls.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=9
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *neither let the eunuch say, Behold, I am a dry tree* (Isaiah 56:3) — Ebed-melech, the foreign eunuch in the king''s house (38:7), is the stranger who joins himself to Yahuah and is not cut off.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=7
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *a place and a name better than of sons and of daughters... an everlasting name, that shall not be cut off* (Isaiah 56:5) — the eunuch who drew up the prophet (38:10) is given in Yahuah''s house a name better than sons.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=10
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *a man of Ethiopia, an eunuch... had come to Jerusalem for to worship* (Acts 8:27) — another Ethiopian eunuch who feared Yahuah, the same kind as Ebed-melech (38:7); the foreigner gathered in.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=7
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *they were come up out of the water... and he went on his way rejoicing* (Acts 8:39) — as Jeremiah was drawn up out of the dungeon (38:13), the Ethiopian eunuch is brought up rejoicing, baptized and gathered in.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=13
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *Inasmuch as ye have done it unto one of the least of these my brethren, ye have done it unto me* (Matthew 25:40) — the mercy Ebed-melech showed the imprisoned prophet (38:9) is mercy shown to the King himself.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer38_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=38 AND sv.verse_number=9
+  JOIN _s309_jer38_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=25 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-38-ebed-melech-the-ethiopian-eunuch-who-feared-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_39.sql (Jeremiah 39) -----
+-- Chapter: Jeremiah 39 — ★★ THE FALL OF JERUSALEM: the city broken up; Zedekiah''s flight, his sons slain
+-- before his eyes, his own eyes put out, bound in chains and carried to Babylon; the king''s house and the
+-- people''s houses burned, the walls broken down; the people carried captive. The word Jeremiah preached for
+-- forty years FULFILLED in the city''s fall — and Ezekiel''s riddle answered (brought to Babylon, yet not
+-- seeing it). Then the counter-note: Jeremiah freed and given into kind keeping; and ★★ Ebed-melech the
+-- Ethiopian — the foreigner who drew the prophet from the pit — DELIVERED in the day of judgment *because
+-- thou hast put thy trust in me*. The trusting Gentile preserved when the city falls.
+-- Tag: jer39   Temp view: _s309_jer39_lookup
+-- Sort band: base 34950, step 3 -> threads at 34950, 34953 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',39,v
+--
+-- Jeremiah 39 coverage:
+--   ★★ v.1-2 (the ninth year of Zedekiah... the city was broken up)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:1-4 (the parallel account — the siege, the city broken up) — THREAD 1
+--   v.3 (the princes of Babylon sat in the middle gate)
+--        NT:     none warranted   Extras: none warranted   Tanakh: held in prose (THREAD 1)
+--   ★★ v.4-5 (Zedekiah fled by night... the Chaldeans overtook him in the plains of Jericho... Riblah)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:4-6 (parallel), ★★ Jeremiah 32:4-5 (Zedekiah surely delivered, his eyes shall
+--                behold his eyes), ★★ Jeremiah 34:3 (thine eyes shall behold the eyes of the king of Babylon) — THREAD 1
+--   ★★ v.6-7 (slew the sons of Zedekiah before his eyes; put out Zedekiah''s eyes; bound him to carry to Babylon)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:7 (parallel — put out the eyes, bound with fetters of brass), ★★★ Ezekiel 12:13
+--                (I will bring him to Babylon... yet shall he not see it — the blinded king, the riddle answered) — THREAD 1
+--   ★★ v.8 (the Chaldeans burned the king''s house and the houses of the people; brake down the walls)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:9-10 (burnt the house of Yahuah and the king''s house... brake down the walls),
+--                ★★ Lamentations 1:1-5 (how doth the city sit solitary... her adversaries are the chief) — THREAD 1
+--   v.9-10 (Nebuzar-adan carried captive the remnant; left the poor in the land, gave them vineyards)
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: ★ 2 Kings 25:11-12 (parallel — carried away the rest, left the poor) — woven in THREAD 1 prose
+--   v.11-14 (Nebuchadrezzar gave charge concerning Jeremiah... took him out of the court of the prison;
+--          committed to Gedaliah; he dwelt among the people)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: held in prose — the prophet who foretold the fall is preserved through it; preface to the
+--                Ebed-melech word (Gedaliah son of Ahikam — Ahikam had shielded Jeremiah, 26:24); bound to THREAD 2
+--   v.15 (the word of Yahuah came unto Jeremiah while shut up in the court of the prison)
+--        NT:     none warranted   Extras: none warranted   Tanakh: held in prose (THREAD 2 frame)
+--   ★★ v.16-18 (Go and speak to Ebed-melech the Ethiopian... I will deliver thee in that day... thou shalt
+--          not be given into the hand of the men of whom thou art afraid... because thou hast put thy trust in me)
+--        NT:     ★★ Romans 10:11 (whosoever believeth on him shall not be ashamed), ★★ Acts 8:27-39 (the
+--                Ethiopian eunuch who feared Elohim, came to worship, believed and was baptized) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Jeremiah 38:7-13 (lateral — Ebed-melech drew Jeremiah from the pit), ★★ Psalm 37:39-40
+--                (he shall deliver them... because they trust in him), ★★ Psalm 91:14-15 (because he hath set
+--                his love upon me... I will deliver him) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out — Tanakh (2 Kings 25, Ezekiel 12, Jeremiah 32, Jeremiah 34, Lamentations 1) [free]
+--      (★★ the fall of Jerusalem; the word fulfilled; Ezekiel''s riddle answered — brought to Babylon yet not seeing it)
+--   2. jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah — NT (Romans 10, Acts 8) + Tanakh (Jeremiah 38, Psalm 37, Psalm 91) [free]
+--      (★★ the foreigner delivered in the day of judgment because he trusted Yahuah — the trusting Gentile preserved)
+--
+-- Framing notes:
+--   ★★ THE FALL OF JERUSALEM — THE WORD FULFILLED (THREAD 1): *And in the eleventh year of Zedekiah... the
+--      city was broken up* (39:2); *Then the king of Babylon slew the sons of Zedekiah in Riblah before his
+--      eyes... Moreover he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon*
+--      (39:6-7); *And the Chaldeans burned the king''s house, and the houses of the people, with fire, and
+--      brake down the walls of Jerusalem* (39:8). The judgment Jeremiah had cried for forty years comes to
+--      pass to the letter. 2 Kings tells the same: *And they slew the sons of Zedekiah before his eyes, and
+--      put out the eyes of Zedekiah... and carried him to Babylon* (2 Kings 25:7); *he burnt the house of
+--      Yahuah (LORD), and the king''s house... and brake down the walls of Jerusalem* (2 Kings 25:9-10).
+--      Jeremiah''s own earlier word stands fulfilled — *his eyes shall behold his eyes... he shall lead
+--      Zedekiah to Babylon* (32:4-5); *thine eyes shall behold the eyes of the king of Babylon... and thou
+--      shalt go to Babylon* (34:3). And Ezekiel''s riddle is answered: the king IS brought to Babylon, yet
+--      he never SEES it, for his eyes are put out at Riblah — *I will bring him to Babylon... yet shall he
+--      not see it, though he shall die there* (Ezek 12:13). Lamentations mourns the broken city: *How doth
+--      the city sit solitary... Her adversaries are the chief... for Yahuah (LORD) hath afflicted her for
+--      the multitude of her transgressions* (Lam 1:1,5). This is the Deuteronomy-28 covenant-curse of exile
+--      for covenant-breaking — never the Torah as curse, but the judgment for breaking it; and even here the
+--      poor are left in the land and the prophet is kept alive (39:10-14), the seed not wholly cut off.
+--   ★★ EBED-MELECH DELIVERED BECAUSE HE TRUSTED (THREAD 2): in the same chapter where the city falls, one man
+--      is singled out for deliverance — *Go and speak to Ebed-melech the Ethiopian... But I will deliver thee
+--      in that day, saith Yahuah (LORD): and thou shalt not be given into the hand of the men of whom thou
+--      art afraid. For I will surely deliver thee... because thou hast put thy trust in me, saith Yahuah
+--      (LORD)* (39:16-18). Ebed-melech is the foreigner — the Ethiopian — who had drawn the prophet up out
+--      of the miry pit: *Ebed-melech took the men with him... and let them down by cords into the dungeon to
+--      Jeremiah... So they drew up Jeremiah with cords* (38:11-13). His deliverance rests not on lineage but
+--      on TRUST — *because thou hast put thy trust in me*. The Psalms sing the same ground of rescue: *the
+--      salvation of the righteous is of Yahuah (LORD)... he shall deliver them from the wicked, and save
+--      them, because they trust in him* (Ps 37:39-40); *Because he hath set his love upon me, therefore will
+--      I deliver him... I will be with him in trouble; I will deliver him* (Ps 91:14-15). And the New
+--      Testament carries the promise forward to the believing one: *Whosoever believeth on him shall not be
+--      ashamed* (Rom 10:11) — Jew and Greek alike. The pattern reaches its sign in another Ethiopian who
+--      feared Elohim, came to Jerusalem to worship, and believed: *a man of Ethiopia, an eunuch... had come
+--      to Jerusalem for to worship* (Acts 8:27), who confessed *I believe that Yahusha HaMashiach (Jesus
+--      Christ) is the Son of Elohim (God)* and *went on his way rejoicing* (Acts 8:37-39). The trusting
+--      foreigner is delivered in the day of wrath — not by blood alone, but by trust in Yahuah.
+--   VERSES WITH NO SEPARATE ADD: v.3 (the princes in the middle gate — historical detail, woven into THREAD 1
+--      prose), v.9-10 (the captivity of the remnant and the poor left in the land — the parallel 2 Kings 25:11-12
+--      held in THREAD 1 prose), v.11-15 (Jeremiah preserved and committed to Gedaliah; the word coming to him in
+--      the prison — the frame of THREAD 2, the prophet kept through the judgment he foretold). All blocks recorded.
+
+CREATE TEMP VIEW _s309_jer39_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the city was broken up — Zedekiah''s eyes put out, the temple and walls burned
+    ('canon','jeremiah',39,2,'canon','2-kings',25,4,'free',
+      E'*And the city was broken up, and all the men of war fled by night by the way of the gate between two walls, which is by the king''s garden: (now the Chaldees were against the city round about:) and the king went the way toward the plain* (2 Kings 25:4). The Kings account is the twin of Jeremiah''s — *the city was broken up* (Jeremiah 39:2), and Zedekiah *fled, and went forth out of the city by night... by the gate betwixt the two walls* (Jeremiah 39:4). Two witnesses to one fall: the besieged city breached in the eleventh year, the king fleeing by the very same gate.'),
+    ('canon','jeremiah',39,5,'canon','2-kings',25,6,'free',
+      E'*So they took the king, and brought him up to the king of Babylon to Riblah; and they gave judgment upon him* (2 Kings 25:6). Kings and Jeremiah tell the same overtaking — *the Chaldeans'' army pursued after them, and overtook Zedekiah in the plains of Jericho... they brought him up to Nebuchadnezzar king of Babylon to Riblah... where he gave judgment upon him* (Jeremiah 39:5). The fleeing king is caught in the plains of Jericho and brought to Riblah for sentence; the word Jeremiah preached is fulfilled to the place.'),
+    ('canon','jeremiah',39,7,'canon','2-kings',25,7,'free',
+      E'*And they slew the sons of Zedekiah before his eyes, and put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* (2 Kings 25:7). This is Jeremiah''s very scene confirmed — *Then the king of Babylon slew the sons of Zedekiah in Riblah before his eyes... Moreover he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (Jeremiah 39:6-7). The last thing the king sees is the death of his sons; then his eyes are put out and he is led blind to Babylon — the prophesied word made flesh.'),
+    ('canon','jeremiah',39,7,'canon','ezekiel',12,13,'free',
+      E'*My net also will I spread upon him, and he shall be taken in my snare: and I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there* (Ezekiel 12:13). Ezekiel''s riddle is answered exactly here: Zedekiah IS brought to Babylon, yet he never SEES it — *he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (Jeremiah 39:7). Blinded at Riblah, he is led to the city he will die in but never behold; the two prophets, far apart, speak one fulfilled word.'),
+    ('canon','jeremiah',39,8,'canon','2-kings',25,9,'free',
+      E'*And he burnt the house of Yahuah (LORD), and the king''s house, and all the houses of Jerusalem, and every great man''s house burnt he with fire* (2 Kings 25:9). Kings names the temple by name where Jeremiah says *the king''s house, and the houses of the people* — *And the Chaldeans burned the king''s house, and the houses of the people, with fire* (Jeremiah 39:8). The house of Yahuah, the palace, and the dwellings of the people all go up together; the glory departs in flame.'),
+    ('canon','jeremiah',39,8,'canon','2-kings',25,10,'free',
+      E'*And all the army of the Chaldees, that were with the captain of the guard, brake down the walls of Jerusalem round about* (2 Kings 25:10). The same demolition Jeremiah records — *and brake down the walls of Jerusalem* (Jeremiah 39:8). The defences that the people had trusted in are pulled down on every side; the city is left open and broken, the judgment complete.'),
+    ('canon','jeremiah',39,8,'canon','lamentations',1,1,'free',
+      E'*How doth the city sit solitary, that was full of people! how is she become as a widow! she that was great among the nations, and princess among the provinces, how is she become tributary!* (Lamentations 1:1). Lamentations weeps over the very city Jeremiah 39 sees burned and broken — *the king''s house, and the houses of the people, with fire... brake down the walls of Jerusalem* (Jeremiah 39:8). The princess among provinces sits solitary as a widow; the fall of the city becomes the book of tears.'),
+    ('canon','jeremiah',39,8,'canon','lamentations',1,5,'free',
+      E'*Her adversaries are the chief, her enemies prosper; for Yahuah (LORD) hath afflicted her for the multitude of her transgressions: her children are gone into captivity before the enemy* (Lamentations 1:5). Lamentations names the cause Jeremiah 39 enacts: the city burned and its people carried off is Yahuah''s affliction *for the multitude of her transgressions* — the Deuteronomy-28 covenant-curse of exile for covenant-breaking, never the Torah as curse but the judgment for breaking it. *Her children are gone into captivity*, as *the remnant of the people that remained in the city* are carried to Babylon (Jeremiah 39:9).'),
+    ('canon','jeremiah',39,4,'canon','jeremiah',32,4,'free',
+      E'*And Zedekiah king of Yahudah (Judah) shall not escape out of the hand of the Chaldeans, but shall surely be delivered into the hand of the king of Babylon, and shall speak with him mouth to mouth, and his eyes shall behold his eyes* (Jeremiah 32:4). Jeremiah''s own earlier oracle is fulfilled when *Zedekiah the king of Yahudah (Judah)... fled, and went forth out of the city by night* (Jeremiah 39:4) only to be overtaken: he does not escape the hand of the Chaldeans, but is brought before the king of Babylon, his eyes beholding his eyes at Riblah before they are put out.'),
+    ('canon','jeremiah',39,7,'canon','jeremiah',34,3,'free',
+      E'*And thou shalt not escape out of his hand, but shalt surely be taken, and delivered into his hand; and thine eyes shall behold the eyes of the king of Babylon, and he shall speak with thee mouth to mouth, and thou shalt go to Babylon* (Jeremiah 34:3). The word Jeremiah spoke to Zedekiah''s face stands fulfilled — *he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (Jeremiah 39:7). The king''s eyes do behold the eyes of the king of Babylon (at Riblah); then, blinded, he is carried to Babylon exactly as foretold.'),
+
+    -- THREAD 2 (★★): Ebed-melech the Ethiopian delivered — because thou hast put thy trust in me
+    ('canon','jeremiah',39,18,'canon','jeremiah',38,13,'free',
+      E'*So they drew up Jeremiah with cords, and took him up out of the dungeon: and Jeremiah remained in the court of the prison* (Jeremiah 38:13). This is the deed for which Ebed-melech is now delivered: he had drawn the prophet from the miry pit — *Ebed-melech took the men with him... and let them down by cords into the dungeon to Jeremiah* (38:11) — and so Yahuah promises *I will surely deliver thee... because thou hast put thy trust in me* (Jeremiah 39:18). The foreigner who saved the prophet''s life is himself preserved in the day the city falls.'),
+    ('canon','jeremiah',39,18,'canon','psalms',37,40,'free',
+      E'*And Yahuah (LORD) shall help them, and deliver them: he shall deliver them from the wicked, and save them, because they trust in him* (Psalm 37:40). The psalm names the very ground of Ebed-melech''s rescue — *I will surely deliver thee, and thou shalt not fall by the sword... because thou hast put thy trust in me, saith Yahuah (LORD)* (Jeremiah 39:18). Deliverance from the wicked rests on trust; the Ethiopian is saved in the day of wrath not by lineage but *because they trust in him*.'),
+    ('canon','jeremiah',39,18,'canon','psalms',91,14,'free',
+      E'*Because he hath set his love upon me, therefore will I deliver him: I will set him on high, because he hath known my name* (Psalm 91:14). The psalm sings what Yahuah pledges to Ebed-melech — *I will deliver thee in that day... because thou hast put thy trust in me* (Jeremiah 39:17-18). The one who sets his love and trust upon Yahuah is delivered and set on high; the trusting foreigner is sheltered when the city around him is burned.'),
+    ('canon','jeremiah',39,17,'canon','psalms',91,15,'free',
+      E'*He shall call upon me, and I will answer him: I will be with him in trouble; I will deliver him, and honour him* (Psalm 91:15). The deliverance promised Ebed-melech *in that day* — *thou shalt not be given into the hand of the men of whom thou art afraid* (Jeremiah 39:17) — is the very promise of the ninety-first psalm: Yahuah with the trusting one in trouble, delivering and honouring him. The Ethiopian is kept safe in the midst of the city''s fall.'),
+    ('canon','jeremiah',39,18,'canon','romans',10,11,'free',
+      E'*For the scripture saith, Whosoever believeth on him shall not be ashamed* (Romans 10:11). Paul names the principle that delivered Ebed-melech and runs through the whole canon — *because thou hast put thy trust in me, saith Yahuah (LORD)* (Jeremiah 39:18). The trusting one is never put to shame; the Ethiopian foreigner who trusted is delivered, a foretaste of the *whosoever* — Jew and Greek alike — who believes and is not ashamed.'),
+    ('canon','jeremiah',39,16,'canon','acts',8,27,'free',
+      E'*And he arose and went: and, behold, a man of Ethiopia, an eunuch of great authority under Candace queen of the Ethiopians, who had the charge of all her treasure, and had come to Jerusalem for to worship* (Acts 8:27). Another Ethiopian who feared the Elohim (God) of Yashar''el (Israel) — *the Elohim (God) of Yashar''el* whom Ebed-melech served (Jeremiah 39:16) — comes to Jerusalem to worship and believes. The pattern of Jeremiah 39 reaches its sign: the trusting foreigner, drawn in to the people of promise, made an heir of the deliverance.'),
+    ('canon','jeremiah',39,18,'canon','acts',8,37,'free',
+      E'*And Philip said, If thou believest with all thine heart, thou mayest. And he answered and said, I believe that Yahusha HaMashiach (Jesus Christ) is the Son of Elohim (God)* (Acts 8:37). The Ethiopian eunuch''s confession is the trust Ebed-melech showed long before — *because thou hast put thy trust in me, saith Yahuah (LORD)* (Jeremiah 39:18). The first Ethiopian is delivered from the falling city; the second believes and *went on his way rejoicing* (Acts 8:39) — the trusting Gentile preserved and brought home.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out',
+       E'The city was broken up — Zedekiah''s eyes put out, the word fulfilled',
+       E'The judgment Jeremiah cried for forty years comes to pass to the letter: *And in the eleventh year of Zedekiah, in the fourth month, the ninth day of the month, the city was broken up* (39:2). Zedekiah flees by night *by the gate betwixt the two walls* (39:4), but is overtaken — *the Chaldeans'' army pursued after them, and overtook Zedekiah in the plains of Jericho... they brought him up to Nebuchadnezzar king of Babylon to Riblah... where he gave judgment upon him* (39:5). Then comes the dreadful sentence: *Then the king of Babylon slew the sons of Zedekiah in Riblah before his eyes... Moreover he put out Zedekiah''s eyes, and bound him with chains, to carry him to Babylon* (39:6-7). The last sight the king is given is the death of his sons; then he is blinded and led away. And the city itself is given to the fire: *And the Chaldeans burned the king''s house, and the houses of the people, with fire, and brake down the walls of Jerusalem* (39:8). The book of Kings is the twin witness — *And they slew the sons of Zedekiah before his eyes, and put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* (2 Kings 25:7); *he burnt the house of Yahuah (LORD), and the king''s house... and brake down the walls of Jerusalem round about* (2 Kings 25:9-10). Jeremiah''s own earlier oracles stand fulfilled to the syllable: *his eyes shall behold his eyes... he shall lead Zedekiah to Babylon* (32:4-5); *thine eyes shall behold the eyes of the king of Babylon... and thou shalt go to Babylon* (34:3). And Ezekiel''s riddle is answered: the king IS brought to Babylon yet never SEES it, for he is blinded at Riblah — *I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there* (Ezekiel 12:13). Two prophets far apart speak one fulfilled word. Lamentations gathers up the grief and names the cause: *How doth the city sit solitary, that was full of people! how is she become as a widow!* (Lamentations 1:1); *Her adversaries are the chief... for Yahuah (LORD) hath afflicted her for the multitude of her transgressions: her children are gone into captivity before the enemy* (Lamentations 1:5). This is the Deuteronomy-28 covenant-curse of exile — the judgment for breaking the covenant, never the Torah itself made a curse. Yet even here mercy is not wholly withdrawn: the poor of the people are left in the land and given vineyards (39:10), and the prophet who foretold it all is preserved alive (39:11-14). The seed is not cut off.',
+       sv.verse_id, ev.verse_id, 'free', 34950
+  FROM _s309_jer39_lookup sv, _s309_jer39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=39 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah',
+       E'Ebed-melech the Ethiopian delivered — because thou hast put thy trust in me',
+       E'In the very chapter where the city falls, one man is singled out for deliverance — and he is a foreigner. The word of Yahuah comes to the imprisoned prophet: *Go and speak to Ebed-melech the Ethiopian, saying, Thus saith Yahuah Tseva''ot (LORD of hosts), the Elohim (God) of Yashar''el (Israel); Behold, I will bring my words upon this city for evil, and not for good... But I will deliver thee in that day, saith Yahuah (LORD): and thou shalt not be given into the hand of the men of whom thou art afraid. For I will surely deliver thee, and thou shalt not fall by the sword, but thy life shall be for a prey unto thee: because thou hast put thy trust in me, saith Yahuah (LORD)* (39:16-18). Ebed-melech is the Ethiopian eunuch who, while everyone else abandoned the prophet, had drawn him up out of the miry dungeon: *Ebed-melech took the men with him... and let them down by cords into the dungeon to Jeremiah... So they drew up Jeremiah with cords, and took him up out of the dungeon* (38:11-13). His rescue does not rest on lineage — he is no son of Jacob — but on TRUST: *because thou hast put thy trust in me*. The Psalms sing this very ground of deliverance: *the salvation of the righteous is of Yahuah (LORD)... he shall deliver them from the wicked, and save them, because they trust in him* (Psalm 37:39-40); *Because he hath set his love upon me, therefore will I deliver him... He shall call upon me, and I will answer him: I will be with him in trouble; I will deliver him, and honour him* (Psalm 91:14-15). And the New Testament carries the promise to its fulness — *Whosoever believeth on him shall not be ashamed* (Romans 10:11) — and shows the pattern again in another Ethiopian who feared the Elohim (God) of Yashar''el (Israel): *a man of Ethiopia, an eunuch of great authority... had come to Jerusalem for to worship* (Acts 8:27), who confessed *I believe that Yahusha HaMashiach (Jesus Christ) is the Son of Elohim (God)* and *went on his way rejoicing* (Acts 8:37-39). The trusting foreigner is delivered in the day of wrath. This is no false inclusion by mere confession — Ebed-melech proved his trust in deed, risking himself for the prophet of Yahuah — but it is the seed-promise opening to the one who truly trusts: the Gentile who sets his love upon Yahuah is sheltered when the city burns.',
+       sv.verse_id, ev.verse_id, 'free', 34953
+  FROM _s309_jer39_lookup sv, _s309_jer39_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=39 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the city was broken up, and all the men of war fled by night... by the king''s garden* (2 Kings 25:4) — the twin account of Jeremiah 39:2,4; the breached city, the king fleeing by the same gate.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=2
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *they took the king, and brought him up to the king of Babylon to Riblah; and they gave judgment upon him* (2 Kings 25:6) — Jeremiah 39:5 confirmed; the fleeing king overtaken and brought to Riblah for sentence.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=5
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *they slew the sons of Zedekiah before his eyes, and put out the eyes of Zedekiah... and carried him to Babylon* (2 Kings 25:7) — Jeremiah 39:6-7 word for word; the last sight the king is given, then blindness.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=7
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★★ *I will bring him to Babylon... yet shall he not see it, though he shall die there* (Ezekiel 12:13) — Ezekiel''s riddle answered: brought to Babylon, yet blinded at Riblah (Jeremiah 39:7), he never beholds the city he dies in.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=7
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *he burnt the house of Yahuah (LORD), and the king''s house, and all the houses of Jerusalem* (2 Kings 25:9) — Kings names the temple where Jeremiah 39:8 says the king''s house and the houses of the people; all burned together.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=8
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *brake down the walls of Jerusalem round about* (2 Kings 25:10) — the same demolition as Jeremiah 39:8; the defences the people trusted in pulled down on every side.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=8
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *How doth the city sit solitary... how is she become as a widow!* (Lamentations 1:1) — the dirge over the very city Jeremiah 39:8 sees burned; the princess among provinces left solitary.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=8
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★★ *Yahuah (LORD) hath afflicted her for the multitude of her transgressions: her children are gone into captivity* (Lamentations 1:5) — names the cause Jeremiah 39 enacts: the Deuteronomy-28 covenant-curse of exile, never the Torah as curse but the judgment for breaking it.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=8
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'★ *his eyes shall behold his eyes... he shall lead Zedekiah to Babylon* (Jeremiah 32:4-5) — Jeremiah''s own earlier oracle fulfilled at the king''s flight and capture (Jeremiah 39:4-5).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=4
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'★ *thine eyes shall behold the eyes of the king of Babylon... and thou shalt go to Babylon* (Jeremiah 34:3) — the word Jeremiah spoke to Zedekiah''s face, fulfilled in 39:7 before his eyes are put out.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=7
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=34 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-the-city-was-broken-up-zedekiahs-eyes-put-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they drew up Jeremiah with cords, and took him up out of the dungeon* (Jeremiah 38:13) — the deed for which Ebed-melech is now delivered (39:18); the foreigner who saved the prophet from the miry pit.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=18
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=38 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he shall deliver them from the wicked, and save them, because they trust in him* (Psalm 37:40) — the very ground of Ebed-melech''s rescue (39:18): deliverance rests on trust, not lineage.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=18
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Because he hath set his love upon me, therefore will I deliver him* (Psalm 91:14) — the trusting one set on high; what Yahuah pledges Ebed-melech *in that day* (39:17-18).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=18
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I will be with him in trouble; I will deliver him, and honour him* (Psalm 91:15) — the deliverance promised Ebed-melech *thou shalt not be given into the hand of the men of whom thou art afraid* (39:17).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=17
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=91 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Whosoever believeth on him shall not be ashamed* (Romans 10:11) — the principle that delivered the trusting Ebed-melech (39:18), now opened to the *whosoever*, Jew and Greek alike.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=18
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *a man of Ethiopia, an eunuch... had come to Jerusalem for to worship* (Acts 8:27) — another Ethiopian who feared the Elohim (God) of Yashar''el (Israel) whom Ebed-melech served (39:16); the pattern reaching its sign.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=16
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *I believe that Yahusha HaMashiach (Jesus Christ) is the Son of Elohim (God)* (Acts 8:37) — the eunuch''s confession is the trust Ebed-melech showed long before (39:18); the trusting Gentile going on his way rejoicing.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer39_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=39 AND sv.verse_number=18
+  JOIN _s309_jer39_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-39-ebed-melech-delivered-because-he-trusted-in-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
