@@ -5568,6 +5568,1468 @@ SELECT t.id, cr.id, 3, E'*thou shalt be king over Yashar''el (Israel), and I sha
  WHERE t.slug='1-samuel-20-jonathan-loved-him-and-laid-down-his-own-crown'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_1-samuel_21.sql (1 Samuel 21) -----
+--
+-- Book/chapter: 1 Samuel 21    Tag: 1sa21    View: _s340_1sa21_lookup
+-- Sort band: base 36900, step 3  ->  36900, 36903, 36906, 36909
+--
+-- 1 Samuel 21 coverage:
+--   v.4  (There is no common bread under mine hand, but there is hallowed bread) -> THREAD 1 source
+--        NT:     Matthew 12:3-4; Mark 2:25-26; Luke 6:3-4 (Have ye not read what David did... did eat the shewbread)
+--        Extras: none warranted
+--        Tanakh: Leviticus 24:9 (it shall be Aaron's and his sons'; they shall eat it in the holy place); Exodus 25:30 -> THREAD 1
+--   v.6  (the priest gave him hallowed bread: for there was no bread there but the shewbread) -> THREAD 1 source
+--        NT:     Matthew 12:4; Mark 2:26; Luke 6:4 (which was not lawful for him to eat... but only for the priests)
+--        Extras: none warranted
+--        Tanakh: Leviticus 24:9; Exodus 25:30 (thou shalt set upon the table shewbread before me alway); Matthew 12:7->Hosea 6:6 -> THREAD 1
+--   v.7  (a certain man of the servants of Saul was there that day... Doeg, an Edomite) -> THREAD 4 source
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 22:9 (Then answered Doeg the Edomite... I saw the son of Jesse coming to Nob);
+--                1 Samuel 22:18 (Doeg the Edomite turned, and he fell upon the priests... fourscore and five) -> THREAD 4
+--   v.9  (The sword of Goliath... there is none like that; give it me) -> THREAD 2 source
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 17:50 (David prevailed... but there was no sword in the hand of David);
+--                1 Samuel 17:51 (David... took his sword... and cut off his head therewith) -> THREAD 2
+--   v.10-11 (fled... to Achish the king of Gath; Saul hath slain his thousands, and David his ten thousands) -> narrative, framed in prose under THREAD 3
+--   v.12 (David laid up these words in his heart, and was sore afraid of Achish) -> THREAD 3 source
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 34:4 (I sought Yahuah, and he... delivered me from all my fears) -> THREAD 3
+--   v.13 (he changed his behaviour before them, and feigned himself mad in their hands) -> THREAD 3 source
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 34:6 (This poor man cried, and Yahuah heard him, and saved him);
+--                Psalm 34:19 (Many are the afflictions of the righteous: but Yahuah delivereth him out of them all) -> THREAD 3
+--                (Psalm 34 superscription is precisely *when he changed his behaviour before Abimelech* — this very escape from Gath)
+--   v.1-3,5,8,14-15 -> narrative connective (Ahimelech's fear, the errand, Achish's dismissal); carried in prose, no separate add warranted
+--
+-- THREADS:
+--   1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice (free) -> Tanakh (Leviticus 24 x2, Exodus 25 x2, Hosea 6) + NT (Matthew 12 x3, Mark 2, Luke 6 x2)
+--   1-samuel-21-the-sword-of-goliath-there-is-none-like-that (free) -> Tanakh (1 Samuel 17 x2)
+--   1-samuel-21-he-feigned-himself-mad-and-yahuah-delivered-him (free) -> Tanakh (Psalm 34 x3)
+--   1-samuel-21-doeg-the-edomite-was-there-that-day (free) -> Tanakh (1 Samuel 22 x2)
+--
+-- Framework-load-bearing framing:
+--   * 21:4-6 — THE KEYSTONE. David eats the hallowed shewbread, lawful by Torah only for the priests
+--     (*it shall be Aaron's and his sons'; and they shall eat it in the holy place*, Leviticus 24:9;
+--     *thou shalt set upon the table shewbread before me alway*, Exodus 25:30). The Formed Son cites this very
+--     act THREE times (Matthew 12:3-4; Mark 2:25-26; Luke 6:3-4) to vindicate mercy and necessity as the HEART
+--     of the Torah, sealing it *I will have mercy, and not sacrifice* (Matthew 12:7, quoting Hosea 6:6) and
+--     *the Son of Adam is Yahuah even of the sabbath* (Matthew 12:8). This is NOT the Torah abolished — the bread,
+--     the priesthood, the Sabbath all stand; it is the weightier matter of the Torah (mercy, the preserving of life)
+--     honoured ABOVE ritual rigor, the Lawgiver Himself reading His own Law rightly. Framed as Torah upheld at its heart,
+--     never as Torah set aside.
+--   * 21:9 — David takes the sword of Goliath, the trophy of the day *there was no sword in the hand of David*
+--     (1 Samuel 17:50); the giant-slayer's own weapon, *there is none like that*, returns to his hand in his exile.
+--   * 21:12-13 — David feigns madness before Achish; Psalm 34's superscription names this very deliverance, and the
+--     Psalm sings it: *I sought Yahuah (LORD)... and delivered me from all my fears* (34:4), *Many are the afflictions
+--     of the righteous: but Yahuah (LORD) delivereth him out of them all* (34:19) — the fugitive's fear answered by the
+--     Deliverer; bound LATERALLY to the Psalm that grew out of this hour.
+--   * 21:7 — Doeg the Edomite stands by; the seed of Esau watching, who will become the informer and the slaughterer
+--     of the priests of Yahuah at Nob (1 Samuel 22:9,18). The quiet menace set here is bound forward to the bloodshed
+--     it births in the next chapter — narrative-lateral, victims (the priests) marked, the system of Saul's murderous
+--     rage named, never a people condemned.
+
+CREATE TEMP VIEW _s340_1sa21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: David ate the shewbread — mercy, and not sacrifice
+    ('canon','1-samuel',21,4,'canon','leviticus',24,9,'free',
+      E'*And it shall be Aaron''s and his sons''; and they shall eat it in the holy place: for it is most holy unto him of the offerings of Yahuah (LORD) made by fire by a perpetual statute* (Leviticus 24:9). The priest''s answer — *there is no common bread under mine hand, but there is hallowed bread* (1 Samuel 21:4) — points straight at this bread, the twelve loaves set in order *by an everlasting covenant* (Leviticus 24:8) and reserved by Torah to Aaron''s sons alone; David, no priest, is about to be given it.'),
+    ('canon','1-samuel',21,4,'canon','exodus',25,30,'free',
+      E'*And thou shalt set upon the table shewbread before me alway* (Exodus 25:30). The *hallowed bread* (1 Samuel 21:4) is the shewbread of the sanctuary table, the bread of the Presence set before Yahuah continually; the priest weighs whether the fugitive may eat what stands in the holy place before the face of Elohim.'),
+    ('canon','1-samuel',21,4,'canon','matthew',12,3,'free',
+      E'*But he said unto them, Have ye not read what David did, when he was an hungred, and they that were with him* (Matthew 12:3). The Formed Son Himself recalls this hour — the hungry David at Nob — to teach His accusers the heart of the Torah; *what David did* (1 Samuel 21) becomes His proof that necessity and mercy are no breach of the Law but its very weight.'),
+    ('canon','1-samuel',21,6,'canon','leviticus',24,9,'free',
+      E'*And it shall be Aaron''s and his sons''; and they shall eat it in the holy place: for it is most holy unto him of the offerings of Yahuah (LORD) made by fire by a perpetual statute* (Leviticus 24:9). *So the priest gave him hallowed bread: for there was no bread there but the shewbread* (1 Samuel 21:6) — the very loaves Torah reserves to the priesthood are handed to David in his need; the statute stands, yet life is preserved, and the priest does not sin in the giving.'),
+    ('canon','1-samuel',21,6,'canon','exodus',25,30,'free',
+      E'*And thou shalt set upon the table shewbread before me alway* (Exodus 25:30). The bread the priest gives — *the shewbread, that was taken from before Yahuah (LORD), to put hot bread in the day when it was taken away* (1 Samuel 21:6) — is the Presence-bread of Exodus''s table, removed on the Sabbath for fresh loaves; the loaves come down from before Yahuah to feed the hungry anointed.'),
+    ('canon','1-samuel',21,6,'canon','matthew',12,4,'free',
+      E'*How he entered into the house of Elohim (God), and did eat the shewbread, which was not lawful for him to eat, neither for them which were with him, but only for the priests?* (Matthew 12:4). The Formed Son names this scene exactly — David eating *the shewbread* in *the house of Elohim* — and grants it was *not lawful... but only for the priests*, yet vindicates it; the heart of the Torah, mercy and necessity, is honoured, not the Torah broken.'),
+    ('canon','1-samuel',21,6,'canon','matthew',12,7,'free',
+      E'*But if ye had known what this meaneth, I will have mercy, and not sacrifice, ye would not have condemned the guiltless* (Matthew 12:7). Sealing His appeal to David''s eating of *the shewbread* (1 Samuel 21:6), the Formed Son quotes Hosea — *I desired mercy, and not sacrifice* (Hosea 6:6) — the very principle by which the hungry are fed from the holy bread: the weightier matter of the Torah is mercy, and *the Son of Adam is Yahuah (Lord) even of the sabbath day* (Matthew 12:8).'),
+    ('canon','1-samuel',21,6,'canon','mark',2,25,'free',
+      E'*And he said unto them, Have ye never read what David did, when he had need, and was an hungred, he, and they that were with him?* (Mark 2:25). Pressed about His disciples plucking corn on the Sabbath, the Formed Son turns to *what David did* at Nob — *when he had need* — to show that need and mercy are no violation of Yahuah''s day or Yahuah''s Law, but its right reading.'),
+    ('canon','1-samuel',21,6,'canon','mark',2,26,'free',
+      E'*How he went into the house of Elohim (God) in the days of Abiathar the high priest, and did eat the shewbread, which is not lawful to eat but for the priests, and gave also to them which were with him?* (Mark 2:26). The Son recounts the whole act — David eating *the shewbread* and sharing it — granting it *not lawful... but for the priests*, yet just; *The sabbath was made for man, and not man for the sabbath* (Mark 2:27), and *the Son of Adam is Yahuah (Lord) also of the sabbath* (Mark 2:28).'),
+    ('canon','1-samuel',21,6,'canon','luke',6,3,'free',
+      E'*And Yahusha (Jesus) answering them said, Have ye not read so much as this, what David did, when himself was an hungred, and they which were with him* (Luke 6:3). A third Gospel preserves the appeal — *what David did, when himself was an hungred* — the hungry king at Nob the standing precedent by which the Lawgiver Himself defends mercy over rigor.'),
+    ('canon','1-samuel',21,6,'canon','luke',6,4,'free',
+      E'*How he went into the house of Elohim (God), and did take and eat the shewbread, and gave also to them that were with him; which it is not lawful to eat but for the priests alone?* (Luke 6:4). David *did take and eat the shewbread* and *gave also to them that were with him* — the very deed of 1 Samuel 21:6; the Formed Son closes *the Son of Adam is Yahuah (Lord) also of the sabbath* (Luke 6:5), the Lord of the Law reading His own Torah by its heart.'),
+
+    -- THREAD 2: The sword of Goliath — there is none like that
+    ('canon','1-samuel',21,9,'canon','1-samuel',17,50,'free',
+      E'*So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David* (1 Samuel 17:50). The blade the priest now offers — *The sword of Goliath the Philistine, whom thou slewest in the valley of Elah* (1 Samuel 21:9) — is the giant''s own; on the day of the duel David had no sword, and now in exile that very trophy comes back to his hand.'),
+    ('canon','1-samuel',21,9,'canon','1-samuel',17,51,'free',
+      E'*Therefore David ran, and stood upon the Philistine, and took his sword, and drew it out of the sheath thereof, and slew him, and cut off his head therewith* (1 Samuel 17:51). David finished Goliath with Goliath''s own sword; *behold, it is here wrapped in a cloth behind the ephod... There is none like that; give it me* (1 Samuel 21:9) — the same blade, kept in the sanctuary as a memorial of Yahuah''s deliverance, taken up again by the fugitive king.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3: he feigned himself mad, and Yahuah delivered him (Psalm 34)
+    ('canon','1-samuel',21,12,'canon','psalms',34,4,'free',
+      E'*I sought Yahuah (LORD), and he heard me, and delivered me from all my fears* (Psalm 34:4). This Psalm''s own title names the very scene — David''s changed behaviour before the king of Gath; *David laid up these words in his heart, and was sore afraid of Achish the king of Gath* (1 Samuel 21:12), and out of that fear comes the song: he sought Yahuah, and was *delivered from all my fears*.'),
+    ('canon','1-samuel',21,13,'canon','psalms',34,6,'free',
+      E'*This poor man cried, and Yahuah (LORD) heard him, and saved him out of all his troubles* (Psalm 34:6). When David *changed his behaviour before them, and feigned himself mad in their hands* (1 Samuel 21:13), it was the cry of *this poor man* — the cornered fugitive — that Yahuah heard and answered, bringing him out of Gath alive; the trick of madness was the cover, but the deliverance was Yahuah''s.'),
+    ('canon','1-samuel',21,13,'canon','psalms',34,19,'free',
+      E'*Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19). David''s flight from Saul into the hand of the Philistine, the feigned madness *in their hands* (1 Samuel 21:13), is one affliction among many; the Psalm born of this hour confesses the rule of his whole life — *out of them all* the righteous one is delivered, and *none of them that trust in him shall be desolate* (Psalm 34:22).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 4: Doeg the Edomite was there that day
+    ('canon','1-samuel',21,7,'canon','1-samuel',22,9,'free',
+      E'*Then answered Doeg the Edomite, which was set over the servants of Saul, and said, I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub* (1 Samuel 22:9). The man marked here — *a certain man of the servants of Saul was there that day... and his name was Doeg, an Edomite* (1 Samuel 21:7) — becomes the informer; what he *saw* standing by at Nob he carries to Saul, and the watching seed of Esau turns witness against the priest who fed David.'),
+    ('canon','1-samuel',21,7,'canon','1-samuel',22,18,'free',
+      E'*And Doeg the Edomite turned, and he fell upon the priests, and slew on that day fourscore and five persons that did wear a linen ephod* (1 Samuel 22:18). The quiet menace of *Doeg, an Edomite, the chiefest of the herdmen* (1 Samuel 21:7) ripens into slaughter: when Saul''s own footmen *would not put forth their hand to fall upon the priests of Yahuah (LORD)* (1 Samuel 22:17), the Edomite does — eighty-five priests of Yahuah cut down, the victims of Saul''s murderous rage and the informer who served it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice', E'David ate the shewbread — mercy, and not sacrifice', E'Fleeing Saul and hungry, David comes to Ahimelech the priest at Nob, and the priest answers, *There is no common bread under mine hand, but there is hallowed bread* (1 Samuel 21:4). So *the priest gave him hallowed bread: for there was no bread there but the shewbread, that was taken from before Yahuah (LORD)* (1 Samuel 21:6). This is the bread of the Presence — twelve loaves set in order on the pure table, *thou shalt set upon the table shewbread before me alway* (Exodus 25:30), reserved by Torah to the priesthood: *it shall be Aaron''s and his sons''; and they shall eat it in the holy place: for it is most holy* (Leviticus 24:9), set *by an everlasting covenant* (Leviticus 24:8). By the letter David, no priest, may not eat it. And yet the priest gives, and David eats, and no sin is charged.\n\nThe Formed Son Himself takes up this very hour to teach the heart of His own Torah. Pressed about His hungry disciples, He says, *Have ye not read what David did, when he was an hungred... How he entered into the house of Elohim (God), and did eat the shewbread, which was not lawful for him to eat, neither for them which were with him, but only for the priests?* (Matthew 12:3-4). Mark and Luke preserve it too — *when he had need, and was an hungred* (Mark 2:25), *did take and eat the shewbread, and gave also to them that were with him* (Luke 6:4). The Son grants it was *not lawful... but only for the priests* — and still vindicates it, because mercy and the preserving of life are the weightier matter of the Law, not its breach: *I will have mercy, and not sacrifice* (Matthew 12:7, after Hosea 6:6, *I desired mercy, and not sacrifice*). This is not the Torah abolished — the bread, the priesthood, the holy place, the Sabbath all stand. It is the Lawgiver reading His own Law by its heart, and sealing it, *the Son of Adam is Yahuah (Lord) even of the sabbath day* (Matthew 12:8; Mark 2:28; Luke 6:5). The hungry are fed from the holy bread, and the Torah is upheld in the deepest place it means to be kept.',
+       sv.verse_id, ev.verse_id, 'free', 36900
+  FROM _s340_1sa21_lookup sv, _s340_1sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=21 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-21-the-sword-of-goliath-there-is-none-like-that', E'The sword of Goliath — there is none like that', E'David asks for a weapon, *for I have neither brought my sword nor my weapons with me, because the king''s business required haste* (1 Samuel 21:8). The priest answers with the one blade kept at Nob: *The sword of Goliath the Philistine, whom thou slewest in the valley of Elah, behold, it is here wrapped in a cloth behind the ephod... And David said, There is none like that; give it me* (1 Samuel 21:9). The sword had been laid up in the holy place as a memorial of Yahuah''s deliverance, and now it returns to the hand of the man who first won it.\n\nFor in the valley of Elah David faced the giant with no sword at all: *So David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David* (1 Samuel 17:50). It was Goliath''s own blade that finished him: *Therefore David ran, and stood upon the Philistine, and took his sword, and drew it out of the sheath thereof, and slew him, and cut off his head therewith* (1 Samuel 17:51). *There is none like that* — the trophy of the day Yahuah delivered Yashar''el (Israel) by the hand of a shepherd boy now arms the fugitive king; the memorial of an old salvation taken up for the road ahead.',
+       sv.verse_id, ev.verse_id, 'free', 36903
+  FROM _s340_1sa21_lookup sv, _s340_1sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=21 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-21-he-feigned-himself-mad-and-yahuah-delivered-him', E'He feigned himself mad, and Yahuah delivered him', E'Driven from Saul, David flees to the very city of Goliath, and the danger closes in: *the servants of Achish said unto him, Is not this David the king of the land?* (1 Samuel 21:11). *And David laid up these words in his heart, and was sore afraid of Achish the king of Gath. And he changed his behaviour before them, and feigned himself mad in their hands, and scrabbled on the doors of the gate, and let his spittle fall down upon his beard* (1 Samuel 21:12-13). The escape is by a desperate ruse — yet the song that grew out of this hour gives the deliverance to Yahuah, not to David''s wit.\n\nThe thirty-fourth Psalm bears the very title of this scene — *when he changed his behaviour before Abimelech; who drove him away, and he departed* — and it sings: *I sought Yahuah (LORD), and he heard me, and delivered me from all my fears* (Psalm 34:4); *This poor man cried, and Yahuah (LORD) heard him, and saved him out of all his troubles* (Psalm 34:6). The cornered fugitive is *this poor man*, and his deliverance from Gath is the proof of the rule he then lays down for all the righteous: *Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19), and *none of them that trust in him shall be desolate* (Psalm 34:22). The feigned madness was the cover; the hand that brought him out alive was Yahuah''s.',
+       sv.verse_id, ev.verse_id, 'free', 36906
+  FROM _s340_1sa21_lookup sv, _s340_1sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=21 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-21-doeg-the-edomite-was-there-that-day', E'Doeg the Edomite was there that day', E'In the midst of the mercy at Nob, a watching eye is marked: *Now a certain man of the servants of Saul was there that day, detained before Yahuah (LORD); and his name was Doeg, an Edomite, the chiefest of the herdmen that belonged to Saul* (1 Samuel 21:7). The text pauses to name him and his lineage — an Edomite, of the seed of Esau — standing by while Ahimelech feeds and arms David. Nothing is said of him yet; the menace is only that he *was there that day*.\n\nThe next chapter shows why he was named. *Then answered Doeg the Edomite, which was set over the servants of Saul, and said, I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub* (1 Samuel 22:9) — what he saw he reports, and his word brings Saul''s wrath down on the priests. And when Saul''s own footmen *would not put forth their hand to fall upon the priests of Yahuah (LORD)* (1 Samuel 22:17), the Edomite does: *And Doeg the Edomite turned, and he fell upon the priests, and slew on that day fourscore and five persons that did wear a linen ephod* (1 Samuel 22:18). The quiet figure of 21:7 becomes the slaughterer of the priests of Yahuah — the bloodshed of Nob born of Saul''s murderous rage and the informer who served it; the priests its victims, the system of that rage the thing condemned.',
+       sv.verse_id, ev.verse_id, 'free', 36909
+  FROM _s340_1sa21_lookup sv, _s340_1sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=21 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1: David ate the shewbread — mercy, and not sacrifice
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*it shall be Aaron''s and his sons''; and they shall eat it in the holy place: for it is most holy* (Leviticus 24:9) — the *hallowed bread* reserved by Torah to the priesthood alone.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=24 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt set upon the table shewbread before me alway* (Exodus 25:30) — the *hallowed bread* is the bread of the Presence, set before Yahuah continually.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Have ye not read what David did, when he was an hungred, and they that were with him* (Matthew 12:3) — the Formed Son recalls this hungry hour at Nob to teach the heart of the Torah.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*it shall be Aaron''s and his sons''... it is most holy* (Leviticus 24:9) — the priest gives the very loaves Torah reserves; the statute stands, yet life is preserved.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=24 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*thou shalt set upon the table shewbread before me alway* (Exodus 25:30) — the loaves *taken from before Yahuah* come down from the table to feed the hungry anointed.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=25 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*did eat the shewbread, which was not lawful for him to eat... but only for the priests* (Matthew 12:4) — the Son names the scene and vindicates it; the heart of the Torah honoured, not broken.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*I will have mercy, and not sacrifice, ye would not have condemned the guiltless* (Matthew 12:7, after Hosea 6:6) — the principle by which the hungry are fed from the holy bread; *the Son of Adam is Yahuah even of the sabbath day* (12:8).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Have ye never read what David did, when he had need, and was an hungred* (Mark 2:25) — *when he had need*: necessity no breach of Yahuah''s day or Yahuah''s Law.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*did eat the shewbread, which is not lawful to eat but for the priests, and gave also to them which were with him* (Mark 2:26) — *The sabbath was made for man* (2:27); *the Son of Adam is Yahuah also of the sabbath* (2:28).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*Have ye not read so much as this, what David did, when himself was an hungred* (Luke 6:3) — a third Gospel keeps the hungry king at Nob as the standing precedent for mercy over rigor.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*did take and eat the shewbread, and gave also to them that were with him; which it is not lawful to eat but for the priests alone* (Luke 6:4) — the very deed of 21:6; *the Son of Adam is Yahuah also of the sabbath* (6:5).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-david-ate-the-shewbread-mercy-and-not-sacrifice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: The sword of Goliath — there is none like that
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*David prevailed over the Philistine with a sling and with a stone... but there was no sword in the hand of David* (1 Samuel 17:50) — on the day of the duel David had no blade; now the giant''s own returns to his hand.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=50
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-the-sword-of-goliath-there-is-none-like-that'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*took his sword, and drew it out of the sheath thereof, and slew him, and cut off his head therewith* (1 Samuel 17:51) — *there is none like that*: the very blade that finished Goliath, kept in the sanctuary, taken up again.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=17 AND tv.verse_number=51
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-the-sword-of-goliath-there-is-none-like-that'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: he feigned himself mad, and Yahuah delivered him (Psalm 34)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I sought Yahuah (LORD), and he heard me, and delivered me from all my fears* (Psalm 34:4) — this Psalm''s title names the very scene; out of being *sore afraid of Achish* comes the song of deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=12
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-he-feigned-himself-mad-and-yahuah-delivered-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*This poor man cried, and Yahuah (LORD) heard him, and saved him out of all his troubles* (Psalm 34:6) — the feigned madness was the cover, but the cry of *this poor man* was heard and the deliverance was Yahuah''s.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-he-feigned-himself-mad-and-yahuah-delivered-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Many are the afflictions of the righteous: but Yahuah (LORD) delivereth him out of them all* (Psalm 34:19) — the rule of David''s whole life, confessed out of this very hour of flight.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=34 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-he-feigned-himself-mad-and-yahuah-delivered-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: Doeg the Edomite was there that day
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Then answered Doeg the Edomite... I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub* (1 Samuel 22:9) — the man *there that day* becomes the informer; what he saw he carries to Saul.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=22 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-doeg-the-edomite-was-there-that-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Doeg the Edomite turned, and he fell upon the priests, and slew on that day fourscore and five persons* (1 Samuel 22:18) — the quiet menace ripens into slaughter; eighty-five priests of Yahuah the victims of Saul''s rage.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s340_1sa21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-21-doeg-the-edomite-was-there-that-day'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_22.sql (1 Samuel 22) -----
+--
+-- 1 Samuel 22 — full-library cross-references.  Tag: 1sa22.  View: _s340_1sa22_lookup.
+-- Sort band: base 36925, step 3 (36925, 36928, 36931, 36934).
+--
+-- FRAME: The rejected anointed gathers the outcasts in the cave of Adullam — the captain of
+-- the distressed, the debtor, the discontented — the Son of David who calls Come unto me, all
+-- ye that labour.  Doeg the Edomite (the Esau-seed again) informs, and Saul commands the
+-- slaughter of the priests of Nob — fourscore and five who wore the linen ephod, and the whole
+-- city — fulfilling the judgment spoken on Eli's house (1 Sam 2:31-33).  Victims, not enemies:
+-- innocent priests massacred; the boastful informer's tongue judged (Ps 52).  Abiathar alone
+-- escapes to David, the one not cut off finding safeguard with the anointed.
+--
+-- 1 Samuel 22 coverage:
+--   v.1-2 (cave of Adullam; captain of the distressed/in-debt/discontented):
+--        NT:     Matthew 11:28 (Come unto me, all ye that labour) — WOVEN
+--        Extras: none warranted
+--        Tanakh: Psalm 142 (the cave-cry, refuge in the land of the living),
+--                Psalm 57 (cave psalm, shadow of thy wings), Hebrews 11:38 (dens and caves) — WOVEN
+--   v.3-5 (parents to Moab; Gad: get thee into Yahudah):
+--        NT/Extras/Tanakh: none warranted (carried in cave-thread prose)
+--   v.6-8 (Saul under the tree, spear in hand, conspiracy charge):
+--        none warranted (carried in Doeg-thread prose)
+--   v.9-10,18,22 (Doeg the Edomite, the informer, his tongue):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 52 (boastest thou thyself in mischief; the deceitful tongue),
+--                1 Samuel 21:7 (Doeg detained before Yahuah) — WOVEN
+--   v.11-19 (slaughter of the priests of Nob; the linen ephod; the whole city):
+--        NT:     Hebrews 11:37 (slain with the sword; the martyred faithful) — WOVEN
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 2:31-33 (the judgment on Eli's house fulfilled) — WOVEN
+--   v.20-23 (Abiathar alone escapes; safeguard with David):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 2:33 (the one not cut off from mine altar) — WOVEN
+--
+-- THREADS (4):
+--   1sa22-the-captain-of-the-distressed-in-the-cave-of-adullam  [free]  tgt: canon NT + canon Tanakh
+--   1sa22-doeg-the-edomite-and-the-boastful-tongue-judged        [free]  tgt: canon Tanakh
+--   1sa22-the-slaughter-of-the-priests-of-nob-elis-house-cut-off [free]  tgt: canon NT + canon Tanakh
+--   1sa22-abiathar-alone-escaped-the-one-not-cut-off             [free]  tgt: canon Tanakh
+--
+-- All targets canon (NT + Tanakh) => every thread tier_required 'free'.
+
+-- A. Temp view -------------------------------------------------------------------------------
+CREATE TEMP VIEW _s340_1sa22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- B. cross_references ------------------------------------------------------------------------
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the captain of the distressed in the cave of Adullam
+    ('canon','1-samuel',22,2,'canon','matthew',11,28,'free',
+     E'*Come unto me, all ye that labour and are heavy laden, and I will give you rest* (Matthew 11:28). The rejected anointed in the cave becomes the magnet of the broken: *every one that was in distress, and every one that was in debt, and every one that was discontented, gathered themselves unto him; and he became a captain over them* (1 Samuel 22:2). The Son of David, not yet on the throne, gathers the labouring and heavy-laden the same way — the outcasts of Yashar''el (Israel) are exactly the ones the true King calls and forms.'),
+    ('canon','1-samuel',22,1,'canon','psalms',142,5,'free',
+     E'*I cried unto thee, O Yahuah (LORD): I said, Thou art my refuge and my portion in the land of the living* (Psalm 142:5) — the psalm whose superscription names it David''s prayer *when he was in the cave*. As *David therefore departed thence, and escaped to the cave Adullam* (1 Samuel 22:1), the hunted anointed makes Yahuah his hold; the cave is not a tomb but a refuge in the land of the living.'),
+    ('canon','1-samuel',22,1,'canon','psalms',57,1,'free',
+     E'*Be merciful unto me, O Elohim (God), be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1) — the psalm headed David''s *when he fled from Saul in the cave*. The same flight that drives him *to the cave Adullam* (1 Samuel 22:1) drives him under the wings of Yahuah; the outer cave and the inner shelter are one.'),
+    ('canon','1-samuel',22,2,'canon','hebrews',11,38,'free',
+     E'*(Of whom the world was not worthy:) they wandered in deserts, and in mountains, and in dens and caves of the earth* (Hebrews 11:38). The roll of the faithful ends among the very dens that shelter David and his four hundred; *there were with him about four hundred men* (1 Samuel 22:2), the distressed and discontented, counted by faith with the company the world was not worthy of.'),
+    -- Thread 2: Doeg the Edomite and the boastful tongue judged
+    ('canon','1-samuel',22,9,'canon','psalms',52,1,'free',
+     E'*Why boastest thou thyself in mischief, O mighty man? the goodness of Elohim (God) endureth continually* (Psalm 52:1) — the psalm''s superscription names it *when Doeg the Edomite came and told Saul*. *Then answered Doeg the Edomite, which was set over the servants of Saul, and said, I saw the son of Jesse coming to Nob* (1 Samuel 22:9): the informer''s report is the boast in mischief the psalm indicts.'),
+    ('canon','1-samuel',22,22,'canon','psalms',52,2,'free',
+     E'*Thy tongue deviseth mischiefs; like a sharp razor, working deceitfully* (Psalm 52:2). David names the tongue that did the killing: *I knew it that day, when Doeg the Edomite was there, that he would surely tell Saul* (1 Samuel 22:22). The Edomite''s informing tongue is the razor; Esau''s seed once more turns its weapon against the seed of promise, and Yahuah marks it for judgment.'),
+    ('canon','1-samuel',22,9,'canon','1-samuel',21,7,'free',
+     E'*Now a certain man of the servants of Saul was there that day, detained before Yahuah (LORD); and his name was Doeg, an Edomite, the chiefest of the herdmen that belonged to Saul* (1 Samuel 21:7). The man who merely *was there* when David came to Nob now turns informer: *I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub* (1 Samuel 22:9). What he silently witnessed he now wields, and the priests will pay for it.'),
+    -- Thread 3: the slaughter of the priests of Nob — Eli's house cut off
+    ('canon','1-samuel',22,18,'canon','1-samuel',2,31,'free',
+     E'*Behold, the days come, that I will cut off thine arm, and the arm of thy father''s house, that there shall not be an old man in thine house* (1 Samuel 2:31) — the word spoken against Eli''s house. It falls in Nob: *Doeg the Edomite turned, and he fell upon the priests, and slew on that day fourscore and five persons that did wear a linen ephod* (1 Samuel 22:18). The eighty-five in the linen ephod are the arm cut off; the long-spoken judgment lands by a cruel hand, yet stands as Yahuah''s righteous word.'),
+    ('canon','1-samuel',22,19,'canon','1-samuel',2,33,'free',
+     E'*And the man of thine, whom I shall not cut off from mine altar, shall be to consume thine eyes, and to grieve thine heart: and all the increase of thine house shall die in the flower of their age* (1 Samuel 2:33). *And Nob, the city of the priests, smote he with the edge of the sword, both men and women, children and sucklings* (1 Samuel 22:19): the whole increase of the house dying in the flower of their age, exactly as foretold over Eli''s line.'),
+    ('canon','1-samuel',22,18,'canon','hebrews',11,37,'free',
+     E'*They were stoned, they were sawn asunder, were tempted, were slain with the sword* (Hebrews 11:37). The priests of Nob are among the innocent slain with the sword — *fourscore and five persons that did wear a linen ephod* (1 Samuel 22:18). Victims, not enemies: the faithful servants of Yahuah cut down by a wicked king and an Edomite''s blade, the world not worthy of them.'),
+    -- Thread 4: Abiathar alone escaped — the one not cut off
+    ('canon','1-samuel',22,20,'canon','1-samuel',2,33,'free',
+     E'*And the man of thine, whom I shall not cut off from mine altar, shall be to consume thine eyes, and to grieve thine heart* (1 Samuel 2:33). One son is spared: *And one of the sons of Ahimelech the son of Ahitub, named Abiathar, escaped, and fled after David* (1 Samuel 22:20). The single survivor of Eli''s line flees to the true anointed; the remnant of the cut-off house finds its place beside the rising king.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- C. threads ---------------------------------------------------------------------------------
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-22-the-captain-of-the-distressed-in-the-cave-of-adullam',
+       E'The captain of the distressed in the cave of Adullam',
+       E'The rejected anointed goes underground, and the broken of Yashar''el (Israel) come to him: *David therefore departed thence, and escaped to the cave Adullam* (1 Samuel 22:1), and *every one that was in distress, and every one that was in debt, and every one that was discontented, gathered themselves unto him; and he became a captain over them: and there were with him about four hundred men* (1 Samuel 22:2). The throne-anointed of Yahuah is not gathering the strong but the labouring — the same company the Son of David calls: *Come unto me, all ye that labour and are heavy laden, and I will give you rest* (Matthew 11:28).\n\nThe cave is no defeat. David''s own cave-psalms make it a refuge: *I cried unto thee, O Yahuah (LORD): I said, Thou art my refuge and my portion in the land of the living* (Psalm 142:5), and *in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1). And the roll of faith counts such hiding-places holy ground: *they wandered in deserts, and in mountains, and in dens and caves of the earth* — *(Of whom the world was not worthy:)* (Hebrews 11:38). The captain of the four hundred outcasts is the figure of the King who forms his people out of the rejected.',
+       sv.verse_id, ev.verse_id, 'free', 36925
+  FROM _s340_1sa22_lookup sv, _s340_1sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=22 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-22-doeg-the-edomite-and-the-boastful-tongue-judged',
+       E'Doeg the Edomite and the boastful tongue judged',
+       E'The Edomite — Esau''s seed again set against the seed of promise — does with his tongue what no Israelite footman would do with his hand. *Then answered Doeg the Edomite, which was set over the servants of Saul, and said, I saw the son of Jesse coming to Nob, to Ahimelech the son of Ahitub* (1 Samuel 22:9). He had only *been there* the day David came (*his name was Doeg, an Edomite, the chiefest of the herdmen that belonged to Saul*, 1 Samuel 21:7); now what he silently witnessed he wields to kill.\n\nDavid names the weapon afterward: *I knew it that day, when Doeg the Edomite was there, that he would surely tell Saul* (1 Samuel 22:22). The psalm headed *when Doeg the Edomite came and told Saul* indicts exactly this informing tongue: *Why boastest thou thyself in mischief, O mighty man? the goodness of Elohim (God) endureth continually* (Psalm 52:1); *Thy tongue deviseth mischiefs; like a sharp razor, working deceitfully* (Psalm 52:2). The boastful informer is not destroyed by David''s hand but left to the judgment of Yahuah, whose goodness *endureth continually* over against the razor-tongue.',
+       sv.verse_id, ev.verse_id, 'free', 36928
+  FROM _s340_1sa22_lookup sv, _s340_1sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=22 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-22-the-slaughter-of-the-priests-of-nob-elis-house-cut-off',
+       E'The slaughter of the priests of Nob — Eli''s house cut off',
+       E'Saul commands what the word of Yahuah long ago appointed, and an Edomite''s blade carries it out: *Doeg the Edomite turned, and he fell upon the priests, and slew on that day fourscore and five persons that did wear a linen ephod* (1 Samuel 22:18); *And Nob, the city of the priests, smote he with the edge of the sword, both men and women, children and sucklings, and oxen, and asses, and sheep, with the edge of the sword* (1 Samuel 22:19).\n\nThis is the judgment spoken over Eli''s house come to pass: *Behold, the days come, that I will cut off thine arm, and the arm of thy father''s house, that there shall not be an old man in thine house* (1 Samuel 2:31), and *all the increase of thine house shall die in the flower of their age* (1 Samuel 2:33). Yet the verdict on Eli''s line is no warrant for the cruelty; the priests die innocent. They take their place in the roll of the faithful who *were slain with the sword* (Hebrews 11:37) — victims, not enemies, the world not worthy of them, while Yahuah''s long-spoken word still stands true.',
+       sv.verse_id, ev.verse_id, 'free', 36931
+  FROM _s340_1sa22_lookup sv, _s340_1sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=22 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-22-abiathar-alone-escaped-the-one-not-cut-off',
+       E'Abiathar alone escaped — the one not cut off',
+       E'Out of the massacre one survivor flees to the true anointed: *And one of the sons of Ahimelech the son of Ahitub, named Abiathar, escaped, and fled after David* (1 Samuel 22:20). The word over Eli''s house had reserved exactly such a remnant: *And the man of thine, whom I shall not cut off from mine altar, shall be to consume thine eyes, and to grieve thine heart* (1 Samuel 2:33). Abiathar is that man — not cut off, but bearing the grief of his slaughtered house.\n\nDavid takes the blood-guilt upon his own grief and gives the survivor sanctuary: *Abide thou with me, fear not: for he that seeketh my life seeketh thy life: but with me thou shalt be in safeguard* (1 Samuel 22:23). The remnant of the cut-off priesthood finds its safeguard not with the reigning Saul but with the rejected anointed — the pattern of the whole gathering, where the broken and the bereaved are kept safe beside the rising king.',
+       sv.verse_id, ev.verse_id, 'free', 36934
+  FROM _s340_1sa22_lookup sv, _s340_1sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=22 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- D. thread_members --------------------------------------------------------------------------
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Matthew 11:28 — *Come unto me, all ye that labour and are heavy laden, and I will give you rest*: the Son of David gathers the labouring as David gathers the distressed (1 Samuel 22:2).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=2
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=11 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-captain-of-the-distressed-in-the-cave-of-adullam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 142:5 — *Thou art my refuge and my portion in the land of the living*: the cave-prayer makes the hiding-place (1 Samuel 22:1) a refuge in Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=142 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-captain-of-the-distressed-in-the-cave-of-adullam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 57:1 — *in the shadow of thy wings will I make my refuge*: the psalm of David''s flight to the cave (1 Samuel 22:1), the inner shelter beneath the outer.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=57 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-captain-of-the-distressed-in-the-cave-of-adullam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 11:38 — *they wandered ... in dens and caves of the earth*: David''s four hundred (1 Samuel 22:2) counted with the faithful the world was not worthy of.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=2
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-captain-of-the-distressed-in-the-cave-of-adullam'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 52:1 — *Why boastest thou thyself in mischief, O mighty man?*: the psalm headed *when Doeg the Edomite came and told Saul*, indicting the informer (1 Samuel 22:9).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=9
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=52 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-doeg-the-edomite-and-the-boastful-tongue-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 52:2 — *Thy tongue deviseth mischiefs; like a sharp razor*: the Edomite''s informing tongue that David names (1 Samuel 22:22) as the killing weapon.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=52 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-doeg-the-edomite-and-the-boastful-tongue-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 21:7 — *his name was Doeg, an Edomite ... detained before Yahuah*: the silent witness at Nob who now turns informer (1 Samuel 22:9).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=9
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=21 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-doeg-the-edomite-and-the-boastful-tongue-judged'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 2:31 — *I will cut off thine arm, and the arm of thy father''s house*: the judgment on Eli''s house falling on the priests of Nob (1 Samuel 22:18).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-slaughter-of-the-priests-of-nob-elis-house-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 2:33 — *all the increase of thine house shall die in the flower of their age*: the whole city of Nob smitten, men women and sucklings (1 Samuel 22:19).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-slaughter-of-the-priests-of-nob-elis-house-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 11:37 — *they were ... slain with the sword*: the fourscore and five priests in the linen ephod (1 Samuel 22:18), innocent martyrs the world was not worthy of.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-the-slaughter-of-the-priests-of-nob-elis-house-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 2:33 — *the man of thine, whom I shall not cut off from mine altar*: Abiathar, the spared survivor who flees to David (1 Samuel 22:20).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s340_1sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-22-abiathar-alone-escaped-the-one-not-cut-off'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_23.sql (1 Samuel 23) -----
+--
+-- Chapter: 1 Samuel 23   Tag: 1sa23   View: _s340_1sa23_lookup
+-- Sort band: base 36950, step 3 -> 36950, 36953, 36956
+-- Session prefix: s340 (Tanakh full-library xref)
+--
+-- FRAME: the anointed who ENQUIRES of Yahuah by the ephod (the Formed Son answering
+--   his servant, NOT co-equal-trinity, NOT Arian) and obeys, saving Keilah while Saul
+--   presumes "Elohim hath delivered him into mine hand"; the friend Jonathan who
+--   strengthens David's hand IN ELOHIM and confirms the king-promise both-houses; the
+--   hunted anointed preserved until the appointed time -- "Elohim delivered him not
+--   into his hand" -- the Rock of escape (Sela-hammahlekoth).
+--
+-- 1 Samuel 23 coverage:
+--   v.2-5  enquired of Yahuah / saved Keilah:
+--          NT:     none warranted (Tanakh David-enquiring pattern is the weight)
+--          Extras: none warranted
+--          Tanakh: 2-samuel 5:19 (enquired again, deliver into hand); psalms 27:4 (enquire in his temple) -> THREAD 1
+--   v.6,9  the ephod brought (Abiathar): folded into THREAD 1 as the instrument of the asking
+--   v.7    Saul: "Elohim hath delivered him into mine hand" (presumption): contrast surfaced in prose THREAD 3
+--   v.11-12 Yahuah forewarns: men of Keilah will deliver thee up (ingratitude): folded into THREAD 1 prose
+--   v.14   "Elohim delivered him not into his hand":
+--          NT: none warranted  Extras: none warranted
+--          Tanakh: psalms 37:32-33 (Yahuah will not leave him in his hand); psalms 54 (Ziphites) -> THREAD 3
+--   v.16-18 Jonathan strengthened his hand in Elohim / king-promise / covenant before Yahuah:
+--          NT:     hebrews 10:24-25 (provoke unto love and good works, exhorting one another); 1-thessalonians 5:11 (comfort/edify one another)
+--          Extras: none warranted
+--          Tanakh: 1-samuel 18:1,3 (soul knit, covenant); 1-samuel 20:42 (covenant before Yahuah, seed); 2-samuel 5:2-3 (anointed king both houses) -> THREAD 2
+--   v.19-24 Ziphites betray: psalms 54 superscription content -> THREAD 3
+--   v.26-28 compassed about / Rock of escape / Sela-hammahlekoth:
+--          NT: none warranted  Extras: none warranted
+--          Tanakh: psalms 18:2 (rock, fortress, deliverer); psalms 31:20 (hide in secret of presence) -> THREAD 3
+--   v.29   En-gedi (sets up ch24): no add (narrative bridge)
+--
+-- THREADS:
+--   1-samuel-23-david-enquired-of-yahuah-and-saved-keilah        [Tanakh]  free
+--   1-samuel-23-jonathan-strengthened-his-hand-in-elohim         [Tanakh + NT]  free
+--   1-samuel-23-but-elohim-delivered-him-not-into-his-hand       [Tanakh]  free
+--
+
+CREATE TEMP VIEW _s340_1sa23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: David enquired of Yahuah and saved Keilah (vv.2,4 -> Tanakh)
+    ('canon','1-samuel',23,2,'canon','2-samuel',5,19,'free',
+     E'*And David enquired of Yahuah (LORD), saying, Shall I go up to the Philistines? wilt thou deliver them into mine hand? And Yahuah (LORD) said unto David, Go up: for I will doubtless deliver the Philistines into thine hand.* (2 Samuel 5:19). The very pattern of the anointed is set here: *Therefore David enquired of Yahuah (LORD), saying, Shall I go and smite these Philistines?* (1 Samuel 23:2) -- David asks and is answered, and the answer is the same Formed Voice that later directs the throned king. He does not move until Yahuah speaks; the One who answers by the ephod is the expressed Word of the Father, not a co-equal second person.'),
+    ('canon','1-samuel',23,4,'canon','2-samuel',5,19,'free',
+     E'*And David enquired of Yahuah (LORD)... And Yahuah (LORD) said unto David, Go up: for I will doubtless deliver the Philistines into thine hand.* (2 Samuel 5:19). When David *enquired of Yahuah (LORD) yet again* and heard *Arise, go down to Keilah; for I will deliver the Philistines into thine hand* (1 Samuel 23:4), the promise *I will deliver... into thine hand* is the Formed Son binding himself to the obedient asker -- the same word, the same deliverance, twice over.'),
+    ('canon','1-samuel',23,2,'canon','psalms',27,4,'free',
+     E'*One thing have I desired of Yahuah (LORD), that will I seek after; that I may dwell in the house of Yahuah (LORD) all the days of my life, to behold the beauty of Yahuah (LORD), and to enquire in his temple.* (Psalm 27:4). David sings the very posture he lives in this chapter -- *David enquired of Yahuah (LORD)* (1 Samuel 23:2). To *enquire* of Yahuah is the heartbeat of the anointed; he seeks the Face and waits for the Voice before he draws the sword.'),
+
+    -- THREAD 2: Jonathan strengthened his hand in Elohim (vv.16,17,18)
+    ('canon','1-samuel',23,16,'canon','1-samuel',18,1,'free',
+     E'*And it came to pass... that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul.* (1 Samuel 18:1). The love that was knit at the start now bears its fruit in the wilderness: *And Jonathan Saul''s son arose, and went to David into the wood, and strengthened his hand in Elohim (God)* (1 Samuel 23:16). True friendship is covenant-friendship -- it walks into the danger and strengthens the hand in Elohim, not in flattery.'),
+    ('canon','1-samuel',23,18,'canon','1-samuel',18,3,'free',
+     E'*Then Jonathan and David made a covenant, because he loved him as his own soul.* (1 Samuel 18:3). The covenant first cut between them is here renewed before the Face: *And they two made a covenant before Yahuah (LORD)* (1 Samuel 23:18). The bond is not sentiment but a sworn thing before Yahuah, binding Jonathan to David''s house even against his own father''s throne.'),
+    ('canon','1-samuel',23,18,'canon','1-samuel',20,42,'free',
+     E'*And Jonathan said to David, Go in peace, forasmuch as we have sworn both of us in the name of Yahuah (LORD), saying, Yahuah (LORD) be between me and thee, and between my seed and thy seed for ever.* (1 Samuel 20:42). The covenant *before Yahuah (LORD)* of 1 Samuel 23:18 carries forward this oath sworn *in the name of Yahuah* -- a seed-bond, *between my seed and thy seed for ever*, that outlives both men and is kept when David spares Mephibosheth.'),
+    ('canon','1-samuel',23,17,'canon','2-samuel',5,2,'free',
+     E'*and Yahuah (LORD) said to thee, Thou shalt feed my people Yashar''el (Israel), and thou shalt be a captain over Yashar''el (Israel).* (2 Samuel 5:2). Jonathan''s wilderness word -- *thou shalt be king over Yashar''el (Israel), and I shall be next unto thee* (1 Samuel 23:17) -- is fulfilled when all the tribes come to Hebron and anoint David shepherd-king over the whole house. The friend prophesies the throne he himself will never sit on, and rejoices in it.'),
+    ('canon','1-samuel',23,17,'canon','2-samuel',5,3,'free',
+     E'*So all the elders of Yashar''el (Israel) came to the king to Hebron; and king David made a league with them in Hebron before Yahuah (LORD): and they anointed David king over Yashar''el (Israel).* (2 Samuel 5:3). What Jonathan spoke in the wood -- *thou shalt be king over Yashar''el (Israel)* (1 Samuel 23:17) -- comes to pass over the gathered tribes, the king who feeds both houses, Yashar''el and Yahudah, made one under one shepherd.'),
+    ('canon','1-samuel',23,16,'canon','hebrews',10,24,'free',
+     E'*And let us consider one another to provoke unto love and to good works: Not forsaking the assembling of ourselves together... but exhorting one another: and so much the more, as ye see the day approaching.* (Hebrews 10:24-25). This is Jonathan''s ministry given as a command: he *strengthened his hand in Elohim (God)* (1 Samuel 23:16). The body of Messiah is to do for one another exactly what Jonathan did in the wood -- come to the hunted brother and strengthen his hand in Elohim.'),
+    ('canon','1-samuel',23,16,'canon','1-thessalonians',5,11,'free',
+     E'*Wherefore comfort yourselves together, and edify one another, even as also ye do.* (1 Thessalonians 5:11). To *strengthen his hand in Elohim (God)* (1 Samuel 23:16) is to edify -- to build up the wearied faith of a brother. Jonathan is the living portrait of the comfort the assembly is charged to give: not to fix the circumstance, but to set the hand back into the grip of Elohim.'),
+
+    -- THREAD 3: but Elohim delivered him not into his hand (vv.14,26,28)
+    ('canon','1-samuel',23,14,'canon','psalms',54,3,'free',
+     E'*For strangers are risen up against me, and oppressors seek after my soul: they have not set Elohim (God) before them. Selah.* (Psalm 54:3). The superscription of Psalm 54 names this very hour -- when the Ziphites came and said to Saul, Doth not David hide himself with us. As *Saul sought him every day, but Elohim (God) delivered him not into his hand* (1 Samuel 23:14), David turns the betrayal into prayer: the hunted anointed answers the snare with the Name.'),
+    ('canon','1-samuel',23,14,'canon','psalms',54,4,'free',
+     E'*Behold, Elohim (God) is mine helper: Yahuah (Lord) is with them that uphold my soul.* (Psalm 54:4). This is the confession underneath the narrative line *Elohim (God) delivered him not into his hand* (1 Samuel 23:14). Saul sought David every day, yet Elohim was the helper who would not let the soul be taken -- the preservation of the anointed seed until the appointed time.'),
+    ('canon','1-samuel',23,14,'canon','psalms',37,33,'free',
+     E'*Yahuah (LORD) will not leave him in his hand, nor condemn him when he is judged.* (Psalm 37:33). David''s own psalm states the law of his deliverance: *The wicked watcheth the righteous, and seeketh to slay him* (Psalm 37:32) -- exactly *Saul sought him every day* -- *but Elohim (God) delivered him not into his hand* (1 Samuel 23:14). Yahuah will not leave the righteous in the hand of the wicked.'),
+    ('canon','1-samuel',23,26,'canon','psalms',18,2,'free',
+     E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower.* (Psalm 18:2). When *Saul and his men compassed David and his men round about to take them* (1 Samuel 23:26), and a Philistine raid pulled Saul away, the place was named Sela-hammahlekoth, the rock of escape -- a living parable of David''s confession that Yahuah himself is *my rock... my deliverer*.'),
+    ('canon','1-samuel',23,26,'canon','psalms',31,20,'free',
+     E'*Thou shalt hide them in the secret of thy presence from the pride of man: thou shalt keep them secretly in a pavilion from the strife of tongues.* (Psalm 31:20). Compassed round about with no way out (1 Samuel 23:26), David is hidden by the One who keeps his own *in the secret of thy presence* -- the messenger that recalled Saul was Yahuah''s hiding, the appointed-time deliverance of the seed of promise.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-23-david-enquired-of-yahuah-and-saved-keilah',
+       E'David Enquired of Yahuah and Saved Keilah',
+       E'When word comes that the Philistines fight against Keilah, the anointed does not act on instinct -- *Therefore David enquired of Yahuah (LORD), saying, Shall I go and smite these Philistines? And Yahuah (LORD) said unto David, Go, and smite the Philistines, and save Keilah* (1 Samuel 23:2). His men are afraid, so he *enquired of Yahuah (LORD) yet again* and hears *Arise, go down to Keilah; for I will deliver the Philistines into thine hand* (1 Samuel 23:4). This is the heartbeat of the rightful king: he asks, he waits for the Voice, and only then he draws the sword -- and *David saved the inhabitants of Keilah* (1 Samuel 23:5). The One who answers him is the Formed Son, the expressed Word of the Father speaking through Abiathar''s ephod (1 Samuel 23:6,9), not a second co-equal person and not a created angel.\n\nThis is the whole David-pattern. *And David enquired of Yahuah (LORD)... And Yahuah (LORD) said unto David, Go up: for I will doubtless deliver the Philistines into thine hand* (2 Samuel 5:19) -- the throned king still asks, and still hears the same promise, *I will deliver... into thine hand*. It is the posture David sings: *One thing have I desired of Yahuah (LORD), that will I seek after... to enquire in his temple* (Psalm 27:4). The contrast with Saul is total: where David asks Yahuah, Saul presumes upon him -- *Elohim (God) hath delivered him into mine hand* (1 Samuel 23:7) -- and is proven wrong. Even when Yahuah forewarns David that the men he saved would deliver him up (1 Samuel 23:11-12), the lesson holds: the anointed who enquires is led, and the One who leads is faithful.',
+       sv.verse_id, ev.verse_id, 'free', 36950
+  FROM _s340_1sa23_lookup sv, _s340_1sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=23 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-23-jonathan-strengthened-his-hand-in-elohim',
+       E'Jonathan Strengthened His Hand in Elohim',
+       E'In the wilderness of Ziph, hunted every day, David is met by the one friend who walks toward the danger: *And Jonathan Saul''s son arose, and went to David into the wood, and strengthened his hand in Elohim (God)* (1 Samuel 23:16). He does not bring an army; he brings faith. *And he said unto him, Fear not: for the hand of Saul my father shall not find thee; and thou shalt be king over Yashar''el (Israel), and I shall be next unto thee* (1 Samuel 23:17). The friend prophesies the very throne he himself will never sit on -- and rejoices in it. *And they two made a covenant before Yahuah (LORD)* (1 Samuel 23:18).\n\nThis is the ripening of a bond cut long before: *the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul* (1 Samuel 18:1); *Then Jonathan and David made a covenant, because he loved him as his own soul* (1 Samuel 18:3); and the oath sworn *in the name of Yahuah (LORD), saying, Yahuah (LORD) be between me and thee, and between my seed and thy seed for ever* (1 Samuel 20:42). It is covenant-friendship -- a sworn, seed-deep thing before the Face, not sentiment. Jonathan''s word came to pass: *Thou shalt feed my people Yashar''el (Israel)... and they anointed David king over Yashar''el (Israel)* (2 Samuel 5:2-3) -- the shepherd-king over both houses, Yashar''el and Yahudah made one.\n\nAnd Jonathan''s ministry is laid on the whole body of Messiah as a charge: *let us consider one another to provoke unto love and to good works... exhorting one another* (Hebrews 10:24-25); *comfort yourselves together, and edify one another* (1 Thessalonians 5:11). To strengthen a brother''s hand in Elohim is not to fix his circumstance but to set his hand back into the grip of the Most High.',
+       sv.verse_id, ev.verse_id, 'free', 36953
+  FROM _s340_1sa23_lookup sv, _s340_1sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=23 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-23-but-elohim-delivered-him-not-into-his-hand',
+       E'But Elohim Delivered Him Not Into His Hand',
+       E'The narrative speaks the whole doctrine of preservation in one line: *And Saul sought him every day, but Elohim (God) delivered him not into his hand* (1 Samuel 23:14). The seed of promise is hunted, but it cannot be taken before the appointed time. When the Ziphites betray his hiding place to Saul (1 Samuel 23:19), David answers the snare with prayer -- the very hour named in the superscription of his psalm: *For strangers are risen up against me, and oppressors seek after my soul: they have not set Elohim (God) before them* (Psalm 54:3); *Behold, Elohim (God) is mine helper: Yahuah (Lord) is with them that uphold my soul* (Psalm 54:4). The men of Keilah he had saved would have delivered him up (1 Samuel 23:12); these are victims of fear and ingratitude, not enemies to be hated -- and David takes none of it into his own hand.\n\nDavid''s own song states the law of his deliverance: *The wicked watcheth the righteous, and seeketh to slay him* -- exactly *Saul sought him every day* -- *Yahuah (LORD) will not leave him in his hand, nor condemn him when he is judged* (Psalm 37:32-33). And when the trap finally closes -- *Saul and his men compassed David and his men round about to take them* (1 Samuel 23:26) -- a messenger calls Saul away to a Philistine raid, and the place is named Sela-hammahlekoth, the rock of escape (1 Samuel 23:28). It is a living parable of the One David trusts: *Yahuah (LORD) is my rock, and my fortress, and my deliverer... my high tower* (Psalm 18:2); *Thou shalt hide them in the secret of thy presence from the pride of man* (Psalm 31:20). The anointed seed is kept until the throne Yahuah promised.',
+       sv.verse_id, ev.verse_id, 'free', 36956
+  FROM _s340_1sa23_lookup sv, _s340_1sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=23 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- THREAD 1: david-enquired-of-yahuah-and-saved-keilah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And David enquired of Yahuah (LORD)... Go up: for I will doubtless deliver the Philistines into thine hand* (2 Samuel 5:19) -- the throned king still asks before he fights, the same Voice answering the same way.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-david-enquired-of-yahuah-and-saved-keilah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will deliver the Philistines into thine hand* (2 Samuel 5:19) -- the Formed Son binds himself to the asker; the same promise given to David at Keilah, twice over.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=5 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-david-enquired-of-yahuah-and-saved-keilah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*One thing have I desired... to enquire in his temple* (Psalm 27:4) -- David sings the posture he lives: the anointed who seeks the Face before the sword.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=27 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-david-enquired-of-yahuah-and-saved-keilah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: jonathan-strengthened-his-hand-in-elohim
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the soul of Jonathan was knit with the soul of David* (1 Samuel 18:1) -- the love knit at the start now walks into the wood to strengthen the hunted brother.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Then Jonathan and David made a covenant* (1 Samuel 18:3) -- the covenant first cut is here renewed *before Yahuah (LORD)*, a sworn thing, not sentiment.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=18 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*we have sworn both of us in the name of Yahuah (LORD)... between my seed and thy seed for ever* (1 Samuel 20:42) -- a seed-bond that outlives both men.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=20 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Thou shalt feed my people Yashar''el (Israel)* (2 Samuel 5:2) -- Jonathan''s wilderness prophecy of the throne comes to pass over the gathered tribes.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they anointed David king over Yashar''el (Israel)* (2 Samuel 5:3) -- the shepherd-king over both houses, Yashar''el and Yahudah made one, exactly as Jonathan said.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=5 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*consider one another to provoke unto love and to good works... exhorting one another* (Hebrews 10:24-25) -- Jonathan''s ministry laid on the whole body as a charge.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*comfort yourselves together, and edify one another* (1 Thessalonians 5:11) -- to strengthen the hand in Elohim is to build up wearied faith.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-jonathan-strengthened-his-hand-in-elohim'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: but-elohim-delivered-him-not-into-his-hand
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*strangers are risen up against me... they have not set Elohim (God) before them* (Psalm 54:3) -- the Ziphite betrayal turned into prayer, the very hour of this psalm''s superscription.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=54 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-but-elohim-delivered-him-not-into-his-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Behold, Elohim (God) is mine helper* (Psalm 54:4) -- the confession underneath *Elohim delivered him not into his hand*; the helper who keeps the seed of promise.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=54 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-but-elohim-delivered-him-not-into-his-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) will not leave him in his hand, nor condemn him when he is judged* (Psalm 37:33) -- David''s own psalm states the law of his deliverance, the wicked watching but never prevailing.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-but-elohim-delivered-him-not-into-his-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer* (Psalm 18:2) -- Sela-hammahlekoth, the rock of escape, made flesh of David''s confession.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=26
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-but-elohim-delivered-him-not-into-his-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Thou shalt hide them in the secret of thy presence from the pride of man* (Psalm 31:20) -- compassed round about, David is hidden by the One who keeps his own until the appointed time.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=23 AND sv.verse_number=26
+  JOIN _s340_1sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=31 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-23-but-elohim-delivered-him-not-into-his-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_24.sql (1 Samuel 24) -----
+--
+-- 1 Samuel 24 — David spares Saul in the cave at En-gedi.
+-- TAG: 1sa24   VIEW: _s340_1sa24_lookup
+-- SORT BAND: base 36975, step 3 -> 36975, 36978, 36981, 36984
+--
+-- FRAMEWORK: David, the anointed-but-not-yet-enthroned king, has Saul (Yahuah's
+-- reigning anointed, gone wicked) delivered into his hand in the cave, and will
+-- not lift his hand against him. He leaves vengeance to Yahuah, honours the
+-- anointed office even under a wicked man, and returns good for evil — the
+-- David/Messiah type, the persecuted who does not retaliate but commits himself
+-- to him that judgeth righteously.
+--
+-- COVERAGE CHECKLIST:
+--   v.4-6 (cut the skirt; heart smote him; LORD forbid I stretch forth mine hand
+--          against the LORD'S anointed):
+--        NT:     none warranted (the office-honour weave is best carried laterally)
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 26:9,11 (same refusal, the second sparing); Psalm 105:15
+--                (Touch not mine anointed) -> THREAD 1
+--   v.10 (LORD delivered thee into mine hand... I will not put forth mine hand
+--         against my lord; for he is the LORD'S anointed):
+--        NT:     none warranted   Extras: none warranted
+--        Tanakh: 1 Samuel 26:9 -> THREAD 1
+--   v.12,15 (Yahuah judge between me and thee, and Yahuah avenge me of thee: but
+--            mine hand shall not be upon thee; the LORD be judge, plead my cause):
+--        NT:     Romans 12:19 (avenge not yourselves... Vengeance is mine, I will
+--                repay, saith Yahuah) -> THREAD 2
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 32:35 (To me belongeth vengeance and recompence);
+--                Psalm 7:8 (the LORD shall judge the people: judge me, O LORD);
+--                Proverbs 20:22 (Say not, I will recompense evil; wait on the LORD)
+--                -> THREADS 2 (and Prov 20:22 also THREAD 3)
+--   v.17-19 (Thou art more righteous than I... thou hast rewarded me good, whereas
+--            I have rewarded thee evil; wherefore the LORD reward thee good):
+--        NT:     Matthew 5:44 (Love your enemies, bless them that curse you);
+--                Romans 12:21 (overcome evil with good); 1 Peter 2:23 (when he was
+--                reviled, reviled not again, but committed himself to him that
+--                judgeth righteously) -> THREAD 3
+--        Extras: none warranted
+--        Tanakh: Proverbs 20:22 (wait on the LORD, and he shall save thee) -> THREAD 3
+--   v.15 / the cave setting (deliver me out of thine hand — David hunted, hidden):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 57:1 (in the shadow of thy wings will I make my refuge, until
+--                these calamities be overpast — superscript "when he fled from Saul
+--                in the cave"); Psalm 7:1 (save me from all them that persecute me)
+--                -> THREAD 4
+--   v.21-22 (swear thou wilt not cut off my seed... David sware): name/seed
+--            preservation; covenant oath — recorded, none warranted (narrative close).
+--
+-- THREADS:
+--   1. 1-samuel-24-the-lords-anointed-i-will-not-stretch-forth-mine-hand
+--        targets: canon Tanakh (1 Samuel 26; Psalm 105)        tier free
+--   2. 1-samuel-24-yahuah-judge-between-me-and-thee-vengeance-is-his
+--        targets: NT (Romans 12) + canon Tanakh (Deut 32; Psalm 7; Proverbs 20)  tier free
+--   3. 1-samuel-24-thou-art-more-righteous-than-i-good-for-evil
+--        targets: NT (Matthew 5; Romans 12; 1 Peter 2) + canon Tanakh (Proverbs 20)  tier free
+--   4. 1-samuel-24-in-the-shadow-of-thy-wings-david-hidden-in-the-cave
+--        targets: canon Tanakh (Psalm 57; Psalm 7)              tier free
+--
+
+CREATE TEMP VIEW _s340_1sa24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the LORD'S anointed — I will not stretch forth mine hand
+    ('canon','1-samuel',24,6,'canon','1-samuel',26,9,'free',
+     E'When the same chance comes a second time, in the camp of Ziph, David gives the identical verdict: *And David said to Abishai, Destroy him not: for who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (1 Samuel 26:9). Here in the cave David first lays the law down for himself — *Yahuah (LORD) forbid that I should do this thing unto my master, the LORD''S anointed, to stretch forth mine hand against him* (24:6) — honouring the anointed office even over a wicked man who hunts his life.'),
+    ('canon','1-samuel',24,6,'canon','1-samuel',26,11,'free',
+     E'David repeats the refusal as an oath in the night camp: *Yahuah (LORD) forbid that I should stretch forth mine hand against the LORD''S anointed* (1 Samuel 26:11) — the very words of the cave, *Yahuah (LORD) forbid that I should do this thing unto my master, the LORD''S anointed* (24:6). Twice the kingdom is set in his hand by chance, and twice he will not seize it by his own blood-guilt.'),
+    ('canon','1-samuel',24,6,'canon','psalms',105,15,'free',
+     E'The song of the fathers names the protection David honours: *Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:15). David, himself already anointed, will not be the hand that touches Yahuah''s standing anointed — *seeing he is the anointed of Yahuah (LORD)* (24:6) — leaving the office in the hand of the One who set it there.'),
+    ('canon','1-samuel',24,10,'canon','1-samuel',26,9,'free',
+     E'David tells Saul plainly what restrained him: *I said, I will not put forth mine hand against my lord; for he is the LORD''S anointed* (24:10). It is the same guiltlessness he later presses on Abishai — *who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (1 Samuel 26:9). The deliverance into his hand is no warrant; the anointing is Yahuah''s to give and to remove.'),
+    -- THREAD 2: Yahuah judge between us — vengeance is his
+    ('canon','1-samuel',24,12,'canon','romans',12,19,'free',
+     E'David lays the whole quarrel before the Judge and stays his own hand: *Yahuah (LORD) judge between me and thee, and Yahuah (LORD) avenge me of thee: but mine hand shall not be upon thee* (24:12). Sha''ul (Paul) draws the same line from the same Torah: *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The avenging is left to Yahuah, never seized by the wronged.'),
+    ('canon','1-samuel',24,12,'canon','deuteronomy',32,35,'free',
+     E'The reservation David honours is written in the Song of Moses: *To me belongeth vengeance, and recompence; their foot shall slide in due time* (Deuteronomy 32:35). So David: *Yahuah (LORD) avenge me of thee: but mine hand shall not be upon thee* (24:12) — he will not take into his own hand what belongs to Yahuah''s.'),
+    ('canon','1-samuel',24,15,'canon','psalms',7,8,'free',
+     E'David asks Yahuah to plead his cause rather than plead it with the sword: *Yahuah (LORD) therefore be judge, and judge between me and thee, and see, and plead my cause, and deliver me out of thine hand* (24:15). The psalm of the hunted man prays the same court: *Yahuah (LORD) shall judge the people: judge me, O Yahuah (LORD), according to my righteousness, and according to mine integrity that is in me* (Psalm 7:8). The clean hand appeals to the Judge, not to revenge.'),
+    ('canon','1-samuel',24,12,'canon','proverbs',20,22,'free',
+     E'Wisdom states the rule David lives in the cave: *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22). David''s own word — *Yahuah (LORD) avenge me of thee: but mine hand shall not be upon thee* (24:12) — is exactly this waiting: the recompense refused, the salvation left to Yahuah.'),
+    -- THREAD 3: thou art more righteous than I — good for evil
+    ('canon','1-samuel',24,17,'canon','matthew',5,44,'free',
+     E'Saul confesses the thing David has just done: *Thou art more righteous than I: for thou hast rewarded me good, whereas I have rewarded thee evil* (24:17). The Formed Son names this very righteousness on the mount: *But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you* (Matthew 5:44). David, hunted, has rewarded his persecutor good — the kingdom-righteousness made flesh ahead of time.'),
+    ('canon','1-samuel',24,19,'canon','romans',12,21,'free',
+     E'Saul marvels that an enemy was let go alive: *For if a man find his enemy, will he let him go well away? wherefore Yahuah (LORD) reward thee good for that thou hast done unto me this day* (24:19). This is the very victory Sha''ul (Paul) commands: *Be not overcome of evil, but overcome evil with good* (Romans 12:21). David overcomes Saul not by the spear but by the good he renders.'),
+    ('canon','1-samuel',24,17,'canon','1-peter',2,23,'free',
+     E'David, reviled and hunted, returns good and commits the cause to Yahuah — the pattern Kepha (Peter) sets in the Messiah: *Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). Saul''s confession — *thou hast rewarded me good, whereas I have rewarded thee evil* (24:17) — measures the man who would not strike back; David is the suffering, non-retaliating type the Anointed One fills.'),
+    ('canon','1-samuel',24,19,'canon','proverbs',20,22,'free',
+     E'Saul foresees the reward of the man who would not avenge himself: *wherefore Yahuah (LORD) reward thee good for that thou hast done unto me this day* (24:19) — the very promise to the one who refuses recompense, *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22). The good rendered to the enemy returns as Yahuah''s own saving reward.'),
+    -- THREAD 4: in the shadow of thy wings — David hidden in the cave
+    ('canon','1-samuel',24,15,'canon','psalms',57,1,'free',
+     E'David asks to be delivered out of Saul''s hand: *and see, and plead my cause, and deliver me out of thine hand* (24:15). The psalm sung in this very cave answers where his refuge lies: *Be merciful unto me, O Elohim (God), be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1). The hunted king hides not in his own strength but under Yahuah''s wing.'),
+    ('canon','1-samuel',24,15,'canon','psalms',7,1,'free',
+     E'David''s plea — *deliver me out of thine hand* (24:15) — is the cry of the persecuted man set to song: *O Yahuah (LORD) my Elohim (God), in thee do I put my trust: save me from all them that persecute me, and deliver me* (Psalm 7:1). The deliverance he will not take by his own hand he asks of Yahuah''s.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-24-the-lords-anointed-i-will-not-stretch-forth-mine-hand',
+       E'The LORD''S Anointed — I Will Not Stretch Forth Mine Hand',
+       E'Saul, who hunts David''s life with three thousand men, walks alone into the very cave where David hides. David''s men read it as Yahuah''s gift: *Behold the day of which Yahuah (LORD) said unto thee, Behold, I will deliver thine enemy into thine hand, that thou mayest do to him as it shall seem good unto thee* (24:4). David cuts only the skirt of the robe — and even that pricks him: *And it came to pass afterward, that David''s heart smote him, because he had cut off Saul''s skirt* (24:5). His verdict is fixed: *Yahuah (LORD) forbid that I should do this thing unto my master, the LORD''S anointed, to stretch forth mine hand against him, seeing he is the anointed of Yahuah (LORD)* (24:6); and to Saul, *I will not put forth mine hand against my lord; for he is the LORD''S anointed* (24:10). The anointing is Yahuah''s to give and to take, never David''s to seize by blood. When the same trial comes again in the camp at Ziph he answers identically — *who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (1 Samuel 26:9), *Yahuah (LORD) forbid that I should stretch forth mine hand against the LORD''S anointed* (1 Samuel 26:11). The song of the fathers had set the hedge David honours: *Saying, Touch not mine anointed, and do my prophets no harm* (Psalm 105:15). The man already anointed king will not be the hand that touches the anointed he is to replace.',
+       sv.verse_id, ev.verse_id, 'free', 36975
+  FROM _s340_1sa24_lookup sv, _s340_1sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=24 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-24-yahuah-judge-between-me-and-thee-vengeance-is-his',
+       E'Yahuah Judge Between Me and Thee — Vengeance Is His',
+       E'David could have ended his ordeal with one stroke; instead he hands the whole case to the Judge and stays his own hand: *Yahuah (LORD) judge between me and thee, and Yahuah (LORD) avenge me of thee: but mine hand shall not be upon thee* (24:12); *Yahuah (LORD) therefore be judge, and judge between me and thee, and see, and plead my cause, and deliver me out of thine hand* (24:15). This is no weakness — it is obedience to a reservation written into the Song of Moses: *To me belongeth vengeance, and recompence; their foot shall slide in due time* (Deuteronomy 32:35). Wisdom states the same rule for the wronged man: *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22). The psalm of the hunted appeals to that same court rather than to the sword: *Yahuah (LORD) shall judge the people: judge me, O Yahuah (LORD), according to my righteousness, and according to mine integrity that is in me* (Psalm 7:8). And Sha''ul (Paul) draws the line straight out of the Torah for every wronged believer: *Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The avenging belongs to Yahuah; the clean hand waits.',
+       sv.verse_id, ev.verse_id, 'free', 36978
+  FROM _s340_1sa24_lookup sv, _s340_1sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=24 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-24-thou-art-more-righteous-than-i-good-for-evil',
+       E'Thou Art More Righteous Than I — Good for Evil',
+       E'When David lifts his voice from the cave-mouth and shows the severed skirt, even Saul cannot deny what he has seen: *Thou art more righteous than I: for thou hast rewarded me good, whereas I have rewarded thee evil* (24:17); *For if a man find his enemy, will he let him go well away? wherefore Yahuah (LORD) reward thee good for that thou hast done unto me this day* (24:19). David, hunted and reviled, has answered his persecutor with mercy — the very righteousness the Formed Son names on the mount: *But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you* (Matthew 5:44). It is the victory Sha''ul (Paul) commands: *Be not overcome of evil, but overcome evil with good* (Romans 12:21); and the promise of wisdom to the one who will not recompense: *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22). David is the suffering, non-retaliating type the Anointed One fills: *Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed himself to him that judgeth righteously* (1 Peter 2:23). The persecuted who returns good for evil and leaves the verdict to Yahuah — David in the cave, and David''s greater Son.',
+       sv.verse_id, ev.verse_id, 'free', 36981
+  FROM _s340_1sa24_lookup sv, _s340_1sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=24 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-24-in-the-shadow-of-thy-wings-david-hidden-in-the-cave',
+       E'In the Shadow of Thy Wings — David Hidden in the Cave',
+       E'David, the king already anointed but driven into the rocks of the wild goats, asks Yahuah to be his deliverer rather than taking deliverance by his own spear: *and see, and plead my cause, and deliver me out of thine hand* (24:15). The psalm whose superscription places it in this very cave shows where the hunted man takes shelter: *Be merciful unto me, O Elohim (God), be merciful unto me: for my soul trusteth in thee: yea, in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1). And the song of the persecuted prays the same trust: *O Yahuah (LORD) my Elohim (God), in thee do I put my trust: save me from all them that persecute me, and deliver me* (Psalm 7:1). The deliverance David will not seize with his hand he asks of Yahuah''s — hidden in the cave, hidden under the wing.',
+       sv.verse_id, ev.verse_id, 'free', 36984
+  FROM _s340_1sa24_lookup sv, _s340_1sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=24 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (1 Samuel 26:9) — the same refusal at the second sparing, in the camp of Ziph.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=26 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-the-lords-anointed-i-will-not-stretch-forth-mine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) forbid that I should stretch forth mine hand against the LORD''S anointed* (1 Samuel 26:11) — the cave-oath repeated in the night camp.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=26 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-the-lords-anointed-i-will-not-stretch-forth-mine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Touch not mine anointed, and do my prophets no harm* (Psalm 105:15) — the hedge of the fathers David honours.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=6
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=105 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-the-lords-anointed-i-will-not-stretch-forth-mine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*who can stretch forth his hand against the LORD''S anointed, and be guiltless?* (1 Samuel 26:9) — David''s plea to Saul (24:10) is the guiltlessness he later presses on Abishai.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=10
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=26 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-the-lords-anointed-i-will-not-stretch-forth-mine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — Sha''ul (Paul) draws the same line from the Torah David lives.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-yahuah-judge-between-me-and-thee-vengeance-is-his'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*To me belongeth vengeance, and recompence* (Deuteronomy 32:35) — the reservation in the Song of Moses David will not trespass.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-yahuah-judge-between-me-and-thee-vengeance-is-his'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Yahuah (LORD) shall judge the people: judge me, O Yahuah (LORD)* (Psalm 7:8) — the hunted man appeals to the court, not to revenge.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-yahuah-judge-between-me-and-thee-vengeance-is-his'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22) — the wisdom-rule David enacts in the cave.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-yahuah-judge-between-me-and-thee-vengeance-is-his'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44) — the kingdom-righteousness David lives ahead of time.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-thou-art-more-righteous-than-i-good-for-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Be not overcome of evil, but overcome evil with good* (Romans 12:21) — David overcomes Saul by the good he renders, not the spear.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-thou-art-more-righteous-than-i-good-for-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*when he was reviled, reviled not again... but committed himself to him that judgeth righteously* (1 Peter 2:23) — David the non-retaliating type the Anointed One fills.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-thou-art-more-righteous-than-i-good-for-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22) — Saul foresees the saving reward of the man who would not avenge himself.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-thou-art-more-righteous-than-i-good-for-evil'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*in the shadow of thy wings will I make my refuge, until these calamities be overpast* (Psalm 57:1) — the psalm sung in this very cave.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=57 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-in-the-shadow-of-thy-wings-david-hidden-in-the-cave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*in thee do I put my trust: save me from all them that persecute me, and deliver me* (Psalm 7:1) — the deliverance David asks of Yahuah''s hand, not his own.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s340_1sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-24-in-the-shadow-of-thy-wings-david-hidden-in-the-cave'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_1-samuel_25.sql (1 Samuel 25) -----
+--
+-- Book/chapter: 1 Samuel 25    Tag: 1sa25    View: _s340_1sa25_lookup
+-- Sort band: base 37000, step 3  ->  37000, 37003, 37006, 37009, 37012
+--
+-- 1 Samuel 25 coverage:
+--   v.1  (Samuel died; all the Israelites... lamented him, and buried him) -> THREAD 1 source/anchor-start
+--        NT:     none warranted (the prophet's death; no NT abrogation)
+--        Extras: none warranted
+--        Tanakh: 1 Samuel 28:3 (Samuel was dead, and all Yashar'el had lamented him, and buried him in Ramah) -> THREAD 1
+--   v.3  (the name of his wife Abigail: a woman of good understanding... but the man was churlish and evil) -> THREAD 5 source
+--        NT:     none warranted
+--        Extras: Ecclesiasticus 26:1-3,13 (a virtuous wife... her discretion will fatten his bones) -> THREAD 5
+--        Tanakh: Proverbs 31:26,30 (she openeth her mouth with wisdom... a woman that feareth Yahuah) -> THREAD 5
+--   v.21 (he hath requited me evil for good) -> THREAD 3 source
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Proverbs 17:13 (Whoso rewardeth evil for good, evil shall not depart from his house) -> THREAD 3
+--   v.26 (Yahuah hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand) -> THREAD 2 source/anchor
+--        NT:     Romans 12:19 (avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah);
+--                1 Thessalonians 5:15 (See that none render evil for evil unto any man) -> THREAD 2
+--        Extras: Ecclesiasticus 28:1-2 (He that revengeth shall find vengeance from Yahuah... Forgive your neighbour) -> THREAD 2
+--        Tanakh: Deuteronomy 32:35 (To me belongeth vengeance, and recompence); Proverbs 20:22 (Say not... I will
+--                recompense evil; but wait on Yahuah); 1 Samuel 26:10 (As Yahuah liveth, Yahuah shall smite him) -> THREAD 2
+--   v.28 (Yahuah will certainly make my lord a sure house... evil hath not been found in thee) -> THREAD 4 source
+--        NT:     none warranted (the sure house kept LATERALLY in 2 Samuel 7)
+--        Extras: none warranted
+--        Tanakh: 2 Samuel 7:11,13,16 (Yahuah... will make thee an house... thy throne established for ever) -> THREAD 4
+--   v.29 (the soul of my lord shall be bound in the bundle of life with Yahuah Elohayka) -> THREAD 4 source/anchor-end
+--   v.31 (this shall be no grief... that thou hast shed blood causeless, or that my lord hath avenged himself) -> THREAD 2 source
+--   v.32-33 (Blessed be Yahuah... blessed be thy advice, which hast kept me this day from... avenging myself) -> THREAD 2 + THREAD 5 source
+--   v.39 (Yahuah hath returned the wickedness of Nabal upon his own head) -> THREAD 3 source/anchor-end
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 37:7-9 (Rest in Yahuah... Cease from anger... evildoers shall be cut off);
+--                Proverbs 17:13 (evil shall not depart from his house) -> THREAD 3
+--   vv.2,4-20,22-25,27,30,34-38,40-44 -> narrative connective (Nabal's churlishness, David's vow, Abigail's gift,
+--        the marriage); framed in the thread prose, no separate add warranted.
+--
+-- THREADS:
+--   1-samuel-25-samuel-died-and-all-yasharel-lamented-the-prophet (free) -> Tanakh (1 Samuel 28)
+--   1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand (extras) -> NT (Romans, 1 Thessalonians) + Tanakh (Deuteronomy, Proverbs, 1 Samuel 26) + Extras (Ecclesiasticus)
+--   1-samuel-25-yahuah-returned-the-wickedness-of-nabal-upon-his-own-head (free) -> Tanakh (Proverbs 17, Psalm 37)
+--   1-samuel-25-yahuah-will-make-my-lord-a-sure-house-bound-in-the-bundle-of-life (free) -> Tanakh (2 Samuel 7 x3)
+--   1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife (extras) -> Tanakh (Proverbs 31 x2) + Extras (Ecclesiasticus 26 x2)
+--
+-- Framework-load-bearing framing:
+--   * 25:26,31,32-33 — the keystone of the chapter (and the twin of ch24/26): Abigail intercepts David's vow of slaughter,
+--     and David BLESSES the restraint. Vengeance is not his to take; it belongs to Yahuah (Deuteronomy 32:35, *To me belongeth
+--     vengeance*), the very text Romans 12:19 quotes (*avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah*).
+--     The Torah-lesson and the apostolic word are ONE; 1 Thessalonians 5:15 and Proverbs 20:22 carry the same. The restrained
+--     hand here is the same hand that spared Saul (1 Samuel 26:10, *Yahuah shall smite him*).
+--   * 25:28-29 — *a sure house* is the Davidic covenant in seed-form, kept LATERALLY in 2 Samuel 7:11-16 (*Yahuah... will make
+--     thee an house... thy throne shall be established for ever*); *the bundle of life with Yahuah* — the righteous soul bound up
+--     with the living Elohim, the enemies slung out. Seed-of-promise / the sure house of David.
+--   * 25:39 — Yahuah Himself, not David's sword, repays Nabal (*Yahuah hath returned the wickedness of Nabal upon his own head*);
+--     Proverbs 17:13 (*evil shall not depart from his house*) and Psalm 37:7-9 (*Cease from anger... evildoers shall be cut off*)
+--     name the principle. The avenger is Yahuah.
+--   * 25:3,33 — Abigail, *a woman of good understanding*, the wise wife whose counsel saves; Proverbs 31 (*she openeth her mouth
+--     with wisdom... a woman that feareth Yahuah*) and Sirach 26 (*a virtuous wife... her discretion will fatten his bones*)
+--     are the wisdom-portrait she fills.
+
+CREATE TEMP VIEW _s340_1sa25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Samuel died, and all Yashar'el lamented the prophet
+    ('canon','1-samuel',25,1,'canon','1-samuel',28,3,'free',
+      E'*Now Samuel was dead, and all Yashar''el (Israel) had lamented him, and buried him in Ramah, even in his own city. And Saul had put away those that had familiar spirits, and the wizards, out of the land* (1 Samuel 28:3). The chapter opens with the prophet''s death — *And Samuel died; and all the Israelites were gathered together, and lamented him, and buried him in his house at Ramah* (1 Samuel 25:1) — and the narrator re-marks it when Saul, bereft of the seer, turns to the witch of Endor (1 Samuel 28:3). The man who anointed both kings is gone; the lamp of prophecy laid in the ground at Ramah, and the land left to its own folly.'),
+
+    -- THREAD 2: Yahuah hath withholden thee from avenging thyself with thine own hand
+    ('canon','1-samuel',25,26,'canon','deuteronomy',32,35,'free',
+      E'*To me belongeth vengeance, and recompence; their foot shall slide in due time: for the day of their calamity is at hand, and the things that shall come upon them make haste* (Deuteronomy 32:35). Abigail names the very Torah-principle: *seeing Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand* (1 Samuel 25:26). Recompence is Yahuah''s portion, not David''s sword — the wise woman bends the future king back to the Song of Moses.'),
+    ('canon','1-samuel',25,26,'canon','romans',12,19,'free',
+      E'*Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The apostle quotes the very word Abigail lives — *Yahuah (LORD) hath withholden thee from... avenging thyself with thine own hand* (1 Samuel 25:26). The restrained hand of David in the wilderness is the same lesson Paul writes to Rome; the Torah and the apostle speak with one mouth: the wronged man gives place to wrath, and lets Yahuah repay.'),
+    ('canon','1-samuel',25,26,'canon','proverbs',20,22,'free',
+      E'*Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22). This is Abigail''s counsel in a proverb: do not seize the recompence — *avenging thyself with thine own hand* (1 Samuel 25:26) — but wait for the One who saves. The man who waits is delivered; the man who repays himself forfeits the deliverance Yahuah would have wrought.'),
+    ('canon','1-samuel',25,26,'canon','1-samuel',26,10,'free',
+      E'*David said furthermore, As Yahuah (LORD) liveth, Yahuah (LORD) shall smite him; or his day shall come to die; or he shall descend into battle, and perish* (1 Samuel 26:10). The lesson Abigail teaches in chapter 25 David himself speaks over Saul in chapter 26: he will not stretch out his hand against the anointed, for *Yahuah (LORD) shall smite him*. The withheld hand of 25:26 becomes David''s own settled creed — vengeance left wholly with Yahuah.'),
+    ('canon','1-samuel',25,26,'apocrypha','ecclesiasticus',28,1,'extras',
+      E'*He that revengeth shall find vengeance from Yahuah (God), and he will surely keep his sins in remembrance* (Ecclesiasticus 28:1). The sage of Sirach echoes Abigail''s plea word for word in substance — the one who takes his own vengeance is himself overtaken by it. Abigail spares David from that snare: *Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand* (1 Samuel 25:26).'),
+    ('canon','1-samuel',25,33,'canon','1-thessalonians',5,15,'free',
+      E'*See that none render evil for evil unto any man; but ever follow that which is good, both among yourselves, and to all men* (1 Thessalonians 5:15). David blesses Abigail precisely for keeping him from rendering evil for evil — *blessed be thy advice, and blessed be thou, which hast kept me this day from coming to shed blood, and from avenging myself with mine own hand* (1 Samuel 25:33). The counsel the apostle gives Thessalonica is the counsel that stayed David''s sword in the wilderness.'),
+    ('canon','1-samuel',25,33,'apocrypha','ecclesiasticus',28,2,'extras',
+      E'*Forgive your neighbour the hurt that he has done to you, so shall your sins also be forgiven when you prayest* (Ecclesiasticus 28:2). The advice David blesses — *which hast kept me this day from coming to shed blood, and from avenging myself with mine own hand* (1 Samuel 25:33) — is the wisdom of Sirach made flesh: release the wrong, and you are released. Abigail''s counsel is mercy that frees the giver no less than the spared.'),
+
+    -- THREAD 3: Yahuah hath returned the wickedness of Nabal upon his own head
+    ('canon','1-samuel',25,39,'canon','proverbs',17,13,'free',
+      E'*Whoso rewardeth evil for good, evil shall not depart from his house* (Proverbs 17:13). Nabal rewarded David''s kindness with scorn — *he hath requited me evil for good* (1 Samuel 25:21) — and the proverb''s sentence falls upon him: *Yahuah (LORD) hath returned the wickedness of Nabal upon his own head* (1 Samuel 25:39). The evil he sent out did not depart from his house; it came home and slew him.'),
+    ('canon','1-samuel',25,39,'canon','psalms',37,9,'free',
+      E'*For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9). David did not cut Nabal off; he waited, and Yahuah did it — *Yahuah (LORD) hath returned the wickedness of Nabal upon his own head* (1 Samuel 25:39). The Psalm''s whole counsel governs the scene: *Rest in Yahuah (LORD)... Cease from anger, and forsake wrath* (Psalm 37:7-8), and watch the evildoer cut off by the hand of Yahuah, not your own.'),
+    ('canon','1-samuel',25,21,'canon','proverbs',17,13,'free',
+      E'*Whoso rewardeth evil for good, evil shall not depart from his house* (Proverbs 17:13). David''s complaint names exactly what Nabal did — *and he hath requited me evil for good* (1 Samuel 25:21). The proverb foretells the churl''s end before it comes: the evil he returned for good will not leave his house, but lodge there until it strikes him down (1 Samuel 25:38).'),
+
+    -- THREAD 4: Yahuah will make my lord a sure house — bound in the bundle of life
+    ('canon','1-samuel',25,28,'canon','2-samuel',7,11,'free',
+      E'*And as since the time that I commanded judges to be over my people Yashar''el (Israel), and have caused thee to rest from all thine enemies. Also Yahuah (LORD) telleth thee that he will make thee an house* (2 Samuel 7:11). Abigail prophesies in seed-form what Nathan will later declare in full — *for Yahuah (LORD) will certainly make my lord a sure house; because my lord fighteth the battles of Yahuah (LORD)* (1 Samuel 25:28). The sure house the wise woman names is the Davidic covenant itself.'),
+    ('canon','1-samuel',25,28,'canon','2-samuel',7,13,'free',
+      E'*He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13). The *sure house* Abigail foresees — *Yahuah (LORD) will certainly make my lord a sure house* (1 Samuel 25:28) — is the house whose throne Yahuah Himself establishes for ever, the everlasting kingdom of the seed of David, carrying the promise forward to the Branch.'),
+    ('canon','1-samuel',25,28,'canon','2-samuel',7,16,'free',
+      E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). What Abigail calls *a sure house* (1 Samuel 25:28) Yahuah seals as a house *established for ever* — the unbroken Davidic line, the throne that does not fail, the covenant-word standing over David long before he sits a king.'),
+
+    -- THREAD 5: Abigail, a woman of good understanding — the wise wife
+    ('canon','1-samuel',25,3,'canon','proverbs',31,26,'free',
+      E'*She openeth her mouth with wisdom; and in her tongue is the law of kindness* (Proverbs 31:26). The portrait of *a woman of good understanding* (1 Samuel 25:3) is filled out in the virtuous woman of Proverbs: Abigail opens her mouth with wisdom, and her tongue carries the law of kindness that turns David from blood. The wise wife''s speech is the saving of a house.'),
+    ('canon','1-samuel',25,3,'canon','proverbs',31,30,'free',
+      E'*Favour is deceitful, and beauty is vain: but a woman that feareth Yahuah (LORD), she shall be praised* (Proverbs 31:30). Abigail is *of a beautiful countenance* (1 Samuel 25:3), yet it is not her beauty but her fear of Yahuah — her plea *as Yahuah (LORD) liveth* (1 Samuel 25:26) — that makes her praised. The proverb weighs the two and crowns the woman who fears Yahuah, as David crowns Abigail''s counsel.'),
+    ('canon','1-samuel',25,3,'apocrypha','ecclesiasticus',26,1,'extras',
+      E'*Blessed is the man that has a virtuous wife, for the number of his days shall be double* (Ecclesiasticus 26:1). Nabal had *a woman of good understanding* (1 Samuel 25:3) and squandered her; David received her and was blessed. Sirach names the gift the churl despised: the virtuous wife who lengthens her husband''s days — the very life Nabal forfeited and David gained.'),
+    ('canon','1-samuel',25,3,'apocrypha','ecclesiasticus',26,13,'extras',
+      E'*The grace of a wife delighteth her husband, and her discretion will fatten his bones* (Ecclesiasticus 26:13). Abigail''s discretion is the whole engine of the chapter — *a woman of good understanding* (1 Samuel 25:3) whose quiet wisdom *kept me this day from coming to shed blood* (1 Samuel 25:33). Sirach names the grace she carried: the discreet wife whose understanding is the strength of the house.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. threads =====
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-25-samuel-died-and-all-yasharel-lamented-the-prophet',
+       E'Samuel died, and all Yashar''el lamented the prophet',
+       E'The chapter opens with a death: *And Samuel died; and all the Israelites were gathered together, and lamented him, and buried him in his house at Ramah* (1 Samuel 25:1). The seer who anointed Saul and then David is gone, mourned by the whole people and laid in the ground at Ramah. The narrator marks it once more when Saul, stripped of the prophet, goes seeking the witch of Endor: *Now Samuel was dead, and all Yashar''el (Israel) had lamented him, and buried him in Ramah, even in his own city* (1 Samuel 28:3). With the prophet gone, the land is left to test whether it will walk in the wisdom he taught — and in this very chapter the test comes through Abigail''s counsel and Nabal''s folly.',
+       sv.verse_id, ev.verse_id, 'free', 37000
+  FROM _s340_1sa25_lookup sv, _s340_1sa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=25 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand',
+       E'Yahuah hath withholden thee from avenging thyself with thine own hand',
+       E'David rides out to slaughter every male of Nabal''s house in his own vengeance — *So and more also do Elohim (God) unto the enemies of David, if I leave... any that pisseth against the wall* (1 Samuel 25:22). Abigail intercepts him with the deepest word of the chapter: *seeing Yahuah (LORD) hath withholden thee from coming to shed blood, and from avenging thyself with thine own hand* (1 Samuel 25:26). This is the Song of Moses lived out — *To me belongeth vengeance, and recompence* (Deuteronomy 32:35) — the very text the apostle quotes: *avenge not yourselves... Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19). The proverb says it plainly: *Say not thou, I will recompense evil; but wait on Yahuah (LORD), and he shall save thee* (Proverbs 20:22), and the apostle to Thessalonica: *See that none render evil for evil unto any man* (1 Thessalonians 5:15). David BLESSES the restraint — *blessed be thy advice... which hast kept me this day from coming to shed blood, and from avenging myself with mine own hand* (1 Samuel 25:32-33) — and carries the lesson into the next chapter, refusing again to lift his hand against Saul: *As Yahuah (LORD) liveth, Yahuah (LORD) shall smite him* (1 Samuel 26:10). The sage of Sirach seals it: *He that revengeth shall find vengeance from Yahuah (God)... Forgive your neighbour the hurt that he has done to you* (Ecclesiasticus 28:1-2). The wronged man gives place to wrath and lets Yahuah be the avenger.',
+       sv.verse_id, ev.verse_id, 'extras', 37003
+  FROM _s340_1sa25_lookup sv, _s340_1sa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=25 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-25-yahuah-returned-the-wickedness-of-nabal-upon-his-own-head',
+       E'Yahuah returned the wickedness of Nabal upon his own head',
+       E'Nabal — whose name means folly — returned scorn for David''s kindness: *Surely in vain have I kept all that this fellow hath in the wilderness... and he hath requited me evil for good* (1 Samuel 25:21). Because David''s hand was withheld, the repaying fell to Yahuah Himself: ten days after, *Yahuah (LORD) smote Nabal, that he died* (1 Samuel 25:38), and David confessed it: *Blessed be Yahuah (LORD)... for Yahuah (LORD) hath returned the wickedness of Nabal upon his own head* (1 Samuel 25:39). The proverb had already sentenced him: *Whoso rewardeth evil for good, evil shall not depart from his house* (Proverbs 17:13) — the evil Nabal sent out did not leave his house but lodged there until it struck him down. And the Psalm sets the whole pattern: *Rest in Yahuah (LORD), and wait patiently for him... Cease from anger, and forsake wrath* (Psalm 37:7-8), *for evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9). David waited; Yahuah cut off the fool.',
+       sv.verse_id, ev.verse_id, 'free', 37006
+  FROM _s340_1sa25_lookup sv, _s340_1sa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=25 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-25-yahuah-will-make-my-lord-a-sure-house-bound-in-the-bundle-of-life',
+       E'Yahuah will make my lord a sure house — bound in the bundle of life',
+       E'Abigail prophesies the Davidic covenant in seed-form, long before Nathan declares it: *for Yahuah (LORD) will certainly make my lord a sure house; because my lord fighteth the battles of Yahuah (LORD), and evil hath not been found in thee all thy days* (1 Samuel 25:28). What she calls *a sure house* Yahuah will seal through Nathan: *Also Yahuah (LORD) telleth thee that he will make thee an house* (2 Samuel 7:11); *He shall build an house for my name, and I will stablish the throne of his kingdom for ever* (2 Samuel 7:13); *And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). The wise woman sees it before the throne is ever sat — the unbroken house of David, the seed of promise carried to the Branch. And she names the safety of the soul itself: *the soul of my lord shall be bound in the bundle of life with Yahuah Elohayka (the LORD thy God); and the souls of thine enemies, them shall he sling out, as out of the middle of a sling* (1 Samuel 25:29) — the righteous bound up with the living Elohim, the wicked flung away.',
+       sv.verse_id, ev.verse_id, 'free', 37009
+  FROM _s340_1sa25_lookup sv, _s340_1sa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=25 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife',
+       E'Abigail, a woman of good understanding — the wise wife',
+       E'*And the name of his wife Abigail: and she was a woman of good understanding, and of a beautiful countenance: but the man was churlish and evil in his doings* (1 Samuel 25:3). The whole rescue turns on her wisdom — she *openeth her mouth with wisdom; and in her tongue is the law of kindness* (Proverbs 31:26), and David blesses her for it: *blessed be thy advice, and blessed be thou, which hast kept me this day from coming to shed blood* (1 Samuel 25:33). It is not her beauty that saves but her fear of Yahuah — *as Yahuah (LORD) liveth* (1 Samuel 25:26) — exactly as the proverb weighs it: *Favour is deceitful, and beauty is vain: but a woman that feareth Yahuah (LORD), she shall be praised* (Proverbs 31:30). The wisdom of Sirach names the gift Nabal squandered and David received: *Blessed is the man that has a virtuous wife, for the number of his days shall be double* (Ecclesiasticus 26:1), and *the grace of a wife delighteth her husband, and her discretion will fatten his bones* (Ecclesiasticus 26:13). The churl despised the wise wife and died; the man after Yahuah''s heart took her, and lived.',
+       sv.verse_id, ev.verse_id, 'extras', 37012
+  FROM _s340_1sa25_lookup sv, _s340_1sa25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='1-samuel' AND ev.chapter_number=25 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Now Samuel was dead, and all Yashar''el (Israel) had lamented him, and buried him in Ramah, even in his own city* (1 Samuel 28:3) — the prophet''s death re-marked as Saul turns to the witch of Endor, sealing the lament of 1 Samuel 25:1.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=1
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=28 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-samuel-died-and-all-yasharel-lamented-the-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*To me belongeth vengeance, and recompence* (Deuteronomy 32:35) — the Song of Moses that grounds Abigail''s plea; recompence is Yahuah''s portion, not David''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=26
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Vengeance is mine; I will repay, saith Yahuah (Lord)* (Romans 12:19) — the apostle quotes the same word Abigail lives; the Torah and the apostle speak with one mouth.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=26
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Say not thou, I will recompense evil; but wait on Yahuah (LORD)* (Proverbs 20:22) — Abigail''s counsel in a proverb; wait, and Yahuah saves.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=26
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*As Yahuah (LORD) liveth, Yahuah (LORD) shall smite him* (1 Samuel 26:10) — David carries the withheld-hand lesson into the next chapter, sparing Saul on the same ground.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=26
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=26 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He that revengeth shall find vengeance from Yahuah (God)* (Ecclesiasticus 28:1) — Sirach''s sage warns the avenger is overtaken by his own vengeance; the snare Abigail spares David.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=26
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*See that none render evil for evil unto any man* (1 Thessalonians 5:15) — the apostolic counsel that stayed David''s sword; the very thing David blesses Abigail for in 1 Samuel 25:33.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=33
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Forgive your neighbour the hurt that he has done to you* (Ecclesiasticus 28:2) — Sirach''s mercy that frees the giver; the wisdom David blesses in 1 Samuel 25:33.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=33
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-hath-withholden-thee-from-avenging-thyself-with-thine-own-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Whoso rewardeth evil for good, evil shall not depart from his house* (Proverbs 17:13) — the proverb sentencing Nabal, who requited David evil for good; the evil came home and slew him (1 Samuel 25:39).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=39
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-returned-the-wickedness-of-nabal-upon-his-own-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*For evildoers shall be cut off: but those that wait upon Yahuah (LORD), they shall inherit the earth* (Psalm 37:9) — the pattern David kept: he waited, and Yahuah cut off the fool.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=39
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=37 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-returned-the-wickedness-of-nabal-upon-his-own-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Whoso rewardeth evil for good, evil shall not depart from his house* (Proverbs 17:13) — foretelling the churl''s end from David''s very complaint, *he hath requited me evil for good* (1 Samuel 25:21).'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-returned-the-wickedness-of-nabal-upon-his-own-head'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Also Yahuah (LORD) telleth thee that he will make thee an house* (2 Samuel 7:11) — Nathan declares in full what Abigail prophesied in seed-form: the sure house of David.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-will-make-my-lord-a-sure-house-bound-in-the-bundle-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will stablish the throne of his kingdom for ever* (2 Samuel 7:13) — the sure house whose throne Yahuah establishes for ever, the seed of David carried to the Branch.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-will-make-my-lord-a-sure-house-bound-in-the-bundle-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And thine house and thy kingdom shall be established for ever* (2 Samuel 7:16) — what Abigail calls a sure house, Yahuah seals as established for ever, the unbroken Davidic line.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-yahuah-will-make-my-lord-a-sure-house-bound-in-the-bundle-of-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*She openeth her mouth with wisdom; and in her tongue is the law of kindness* (Proverbs 31:26) — the virtuous woman Abigail fills; her wise speech is the saving of a house.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=31 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*a woman that feareth Yahuah (LORD), she shall be praised* (Proverbs 31:30) — not her beauty but her fear of Yahuah makes Abigail praised, as David crowns her counsel.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=31 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Blessed is the man that has a virtuous wife, for the number of his days shall be double* (Ecclesiasticus 26:1) — the gift Nabal squandered and David received.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=26 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the grace of a wife delighteth her husband, and her discretion will fatten his bones* (Ecclesiasticus 26:13) — the discreet wife whose understanding is the strength of the house; Abigail''s discretion is the whole engine of the rescue.'
+  FROM cross_reference_threads t
+  JOIN _s340_1sa25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='1-samuel' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s340_1sa25_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=26 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='1-samuel-25-abigail-a-woman-of-good-understanding-the-wise-wife'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session340 — 1 Samuel cross-references complete.'
