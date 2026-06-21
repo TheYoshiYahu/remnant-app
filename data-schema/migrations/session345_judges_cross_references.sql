@@ -1561,6 +1561,1380 @@ SELECT t.id, cr.id, 4, E'Psalms 68:2 — *as wax melteth before the fire, so let
  WHERE t.slug='judges-5-let-them-that-love-him-be-as-the-sun-the-perishing-and-the-shining'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_judges_6.sql (Judges 6) -----
+-- Chapter: Judges 6 — GIDEON CALLED BY THE ANGEL OF YAHUAH (the cycle — Midian oppresses seven
+--          years, Yashar'el cries, a prophet rebukes; ★★ the Angel of Yahuah sits under the oak and
+--          commissions Gideon threshing in the winepress — *thou mighty man of valour... have not I
+--          sent thee?*; the least chosen; ★ the fire-sign out of the rock; ★ seen face to face yet
+--          not die — Yahuah-shalom; Baal's altar thrown down — Jerubbaal; ★★ the Spirit of Yahuah
+--          clothed Gideon; ★ the fleece — Yahuah condescends to confirm weak faith)
+-- Tag: jdg06   View: _s345_jdg06_lookup   Sort band: 35775, 35778, 35781, 35784, 35787
+--
+-- Judges 6 coverage:
+--   v.1-10 (the cycle — *delivered them into the hand of Midian seven years*; *the children of
+--           Yashar'el cried unto Yahuah*; a prophet rebukes, *I brought you up from Egypt... ye have
+--           not obeyed my voice*) — THE OPPRESSION/CRY/REBUKE
+--          NT:     none warranted at the verse
+--          Extras: none warranted
+--          Tanakh: Judges 2:1-3,11-16 (the angel of Yahuah's covenant lawsuit; the judges-cycle —
+--                  Yahuah raised up judges, delivered them), Exodus 3:7-9 (I have seen the affliction
+--                  of my people... heard their cry)
+--   v.11-16 (the Angel of Yahuah under the oak calls Gideon — *Yahuah is with thee, thou mighty man
+--            of valour*; *Go in this thy might... have not I sent thee?*; *I am the least in my
+--            father's house*; *Surely I will be with thee*) — THE COMMISSIONING OF THE LEAST
+--          NT:     1 Corinthians 1:27-28 (Elohim hath chosen the weak things... base things... things
+--                  which are not, to bring to nought things that are)
+--          Extras: none warranted
+--          Tanakh: Exodus 3:10-12 (Come now... I will send thee unto Pharaoh; Who am I... Certainly I
+--                  will be with thee), Exodus 3:7 (the cry heard — woven into thread 1)
+--   v.17-24 (the sign — the offering, the staff, *there rose up fire out of the rock, and consumed*;
+--            *I have seen an angel of Yahuah face to face*; *Peace be unto thee; fear not: thou shalt
+--            not die*; the altar Yahuah-shalom) — THE FIRE-SIGN / SEEN FACE TO FACE
+--          NT:     none warranted (the Tanakh theophany cluster carries the Formed-Son weight)
+--          Extras: none warranted
+--          Tanakh: Judges 13:15-22 (Manoah's angel — the kid offered, fire/flame ascends, *we shall
+--                  surely die, because we have seen Elohim*), Exodus 33:20 (Thou canst not see my face:
+--                  for there shall no man see me, and live), Exodus 3:6 (Moses hid his face; afraid to
+--                  look upon Elohim)
+--   v.25-34 (Baal's altar thrown down — Jerubbaal, *Let Baal plead*; ★★ *the Spirit of Yahuah came
+--            upon Gideon*) — THE SPIRIT CLOTHED THE JUDGE
+--          NT:     none warranted at the verse
+--          Extras: none warranted
+--          Tanakh: Judges 13:25 (the Spirit of Yahuah began to move him — Samson), Numbers 11:25 (the
+--                  spirit rested upon them, and they prophesied — the Spirit put upon the deliverers)
+--   v.36-40 (the fleece — the double sign, dew on the fleece/ground dry, then the reverse; *let me
+--            prove, I pray thee, but this once*) — YAHUAH CONFIRMS WEAK FAITH
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 4:1-9 (the signs given to the doubting deliverer — the rod, the leprous
+--                  hand — *that they may believe*; *if they will not believe... the latter sign*)
+--
+-- Threads:
+--   judges-6-the-cycle-midian-oppressed-and-yashar-el-cried-the-prophet-rebuked  [Tanakh: Judges, Exodus] (free)
+--   judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee [Tanakh: Exodus | NT: 1 Corinthians] (free)
+--   judges-6-fire-out-of-the-rock-i-have-seen-the-angel-of-yahuah-face-to-face   [Tanakh: Judges, Exodus] (free)
+--   judges-6-the-spirit-of-yahuah-came-upon-gideon-the-spirit-clothed-the-judge  [Tanakh: Judges, Numbers] (free)
+--   judges-6-the-fleece-yahuah-condescends-to-confirm-the-weak-faith             [Tanakh: Exodus] (free)
+--
+-- Framework notes: ★ The cycle (6:1-10) is the Judges pattern named in chapter 2 — Yashar'el does evil,
+-- is delivered into an oppressor's hand, *cried unto Yahuah*, and Yahuah raises a deliverer (Judg 2:16);
+-- the prophet's rebuke *I brought you up from Egypt... ye have not obeyed my voice* (6:8-10) is the same
+-- covenant lawsuit the angel of Yahuah brought at Bochim (Judg 2:1-3), and the cry-heard answers Exodus
+-- 3:7 where Yahuah *heard their cry*. ★★ The Angel of Yahuah (6:11-16) is the Formed Son — He bears the
+-- Name, He is called *Yahuah* outright at v.14,16, and He commissions the reluctant Gideon exactly as He
+-- commissioned Moses at the bush: *Go in this thy might... have not I sent thee?* (6:14) answers *I will
+-- send thee unto Pharaoh* (Exod 3:10); Gideon's *I am the least in my father's house* (6:15) answers
+-- Moses' *Who am I?* (Exod 3:11); and both get the same promise, *Surely I will be with thee* (6:16) /
+-- *Certainly I will be with thee* (Exod 3:12). The least is chosen — Paul names the principle: *Elohim
+-- hath chosen the weak things of the world to confound the things which are mighty* (1 Cor 1:27). ★ The
+-- fire-sign and face-to-face (6:17-24) is the theophany: the Angel touches the offering with His staff
+-- and *there rose up fire out of the rock, and consumed* it (6:21), and Gideon fears for his life having
+-- *seen an angel of Yahuah face to face* (6:22) — the exact terror of Manoah, *we shall surely die,
+-- because we have seen Elohim* (Judg 13:22, the same angel, the same kid offered, the same fire ascending),
+-- and the terror behind *there shall no man see me, and live* (Exod 33:20) and Moses hiding his face
+-- (Exod 3:6). Yet the One who is Yahuah speaks peace: *Peace be unto thee; fear not: thou shalt not die*
+-- (6:23) — the Formed Son seen, who spares. ★★ *The Spirit of Yahuah came upon Gideon* (6:34) — the Hebrew
+-- says the Spirit *clothed itself with* Gideon; the Spirit-empowered judge, the same Spirit that *began to
+-- move* Samson (Judg 13:25) and that Yahuah *took... and gave it unto the seventy elders... and they
+-- prophesied* (Num 11:25). The Spirit and the deliverance are inseparable. ★ The fleece (6:36-40) is
+-- Yahuah's condescension to confirm a weak faith — the same grace He showed the doubting Moses, giving him
+-- sign upon sign *that they may believe* (Exod 4:5), *if they will not believe... the voice of the latter
+-- sign* (Exod 4:8). Yahuah meets the trembling deliverer where he is. All members canon → every thread
+-- tier_required 'free'.
+
+CREATE TEMP VIEW _s345_jdg06_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the cycle — Midian oppressed and Yashar'el cried, the prophet rebuked (Judges / Exodus)
+    ('canon','judges',6,6,'canon','judges',2,16,'free',E'*Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them* (Judges 2:16). Chapter 2 lays down the whole pattern Gideon''s story now repeats: Yashar''el does evil, is sold into an oppressor''s hand, and *the children of Yashar''el (Israel) cried unto Yahuah (LORD)* (6:6) — and at the cry Yahuah raises a deliverer. The Midian-oppression and the cry are the cycle''s opening move, and the Angel''s call of Gideon is Yahuah raising the judge.'),
+    ('canon','judges',6,8,'canon','judges',2,1,'free',E'*And an angel of Yahuah (LORD) came up from Gilgal to Bochim, and said, I made you to go up out of Egypt, and have brought you unto the land which I sware unto your fathers; and I said, I will never break my covenant with you* (Judges 2:1). The prophet sent in 6:8 brings the very same covenant lawsuit the angel of Yahuah brought at Bochim — *Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), I brought you up from Egypt, and brought you forth out of the house of bondage* (6:8). The complaint is identical: I kept covenant, *but ye have not obeyed my voice* (6:10 / Judg 2:2).'),
+    ('canon','judges',6,6,'canon','exodus',3,7,'free',E'*And Yahuah (LORD) said, I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows* (Exodus 3:7). The cry of impoverished Yashar''el — *the children of Yashar''el (Israel) cried unto Yahuah (LORD)* (6:6) — is the same cry Yahuah heard from Egypt; and as the cry from Egypt brought the Angel of the bush, the cry under Midian brings the Angel under the oak. The Deliverer comes to the cry of His afflicted people.'),
+    ('canon','judges',6,10,'canon','judges',2,11,'free',E'*And the children of Yashar''el (Israel) did evil in the sight of Yahuah (LORD), and served Baalim* (Judges 2:11). The prophet''s charge *fear not the gods of the Amorites, in whose land ye dwell: but ye have not obeyed my voice* (6:10) names the sin chapter 2 named — Yashar''el forsook Yahuah and served the Baalim. The very Baal-altar Gideon must throw down (6:25) is the cycle''s root, the broken first commandment that brought Midian upon them.')
+    ,
+    -- THREAD 2: the Angel of Yahuah commissioned Gideon the least — have not I sent thee? (Exodus / 1 Corinthians)
+    ('canon','judges',6,14,'canon','exodus',3,10,'free',E'*Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Yashar''el (Israel) out of Egypt* (Exodus 3:10). The Angel of Yahuah commissions Gideon in the very words He used at the bush: *Go in this thy might, and thou shalt save Yashar''el (Israel) from the hand of the Midianites: have not I sent thee?* (6:14). The same Formed One who sent Moses to Pharaoh now sends Gideon against Midian — the Deliverer who appears, bears the Name, and raises up the deliverer.'),
+    ('canon','judges',6,15,'canon','exodus',3,11,'free',E'*And Moses said unto Elohim (God), Who am I, that I should go unto Pharaoh, and that I should bring forth the children of Yashar''el (Israel) out of Egypt?* (Exodus 3:11). Gideon answers his call exactly as Moses answered his: *Oh my Lord, wherewith shall I save Yashar''el (Israel)? behold, my family is poor in Manasseh, and I am the least in my father''s house* (6:15). The chosen deliverer protests his own nothingness — *Who am I* and *I am the least* are the same shrinking before a calling too great.'),
+    ('canon','judges',6,16,'canon','exodus',3,12,'free',E'*And he said, Certainly I will be with thee; and this shall be a token unto thee, that I have sent thee* (Exodus 3:12). To the protesting least Yahuah gives the same single answer He gave Moses: *Surely I will be with thee, and thou shalt smite the Midianites as one man* (6:16). The deliverer''s weakness is met not with a better deliverer but with the promise of presence — *I will be with thee* — and a sign to seal that He has sent.'),
+    ('canon','judges',6,15,'canon','1-corinthians',1,27,'free',E'*But Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty* (1 Corinthians 1:27). Gideon — *poor in Manasseh... the least in my father''s house* (6:15) — is the very principle Paul names: Yahuah chooses the weak to shame the mighty, so the victory is plainly His. The least man threshing in a winepress is sent to break the camels-without-number of Midian.'),
+    ('canon','judges',6,15,'canon','1-corinthians',1,28,'free',E'*And base things of the world, and things which are despised, hath Elohim (God) chosen, yea, and things which are not, to bring to nought things that are: That no flesh should glory in his presence* (1 Corinthians 1:28). Gideon counts himself among the *things which are not* — *I am the least* (6:15) — and that is precisely whom Yahuah chooses, *that no flesh should glory in his presence*. The deliverance of Yashar''el will be by Yahuah''s hand through the least, never by the strength of the deliverer.')
+    ,
+    -- THREAD 3: fire out of the rock — I have seen the angel of Yahuah face to face (Judges / Exodus)
+    ('canon','judges',6,21,'canon','judges',13,20,'free',E'*For it came to pass, when the flame went up toward heaven from off the altar, that the angel of Yahuah (LORD) ascended in the flame of the altar. And Manoah and his wife looked on it, and fell on their faces to the ground* (Judges 13:20). The same Angel of Yahuah, the same offered kid, the same ascending fire: as fire rose and the Angel departed for Gideon — *there rose up fire out of the rock, and consumed the flesh and the unleavened cakes* (6:21) — so the flame ascends and the Angel ascends in it for Manoah. The Formed One receives the offering and is made known in the fire.'),
+    ('canon','judges',6,22,'canon','judges',13,22,'free',E'*And Manoah said unto his wife, We shall surely die, because we have seen Elohim (God)* (Judges 13:22). Gideon''s terror is word for word Manoah''s: *Alas, O Yahuah (Lord) GOD! for because I have seen an angel of Yahuah (LORD) face to face* (6:22). To have seen the Angel of Yahuah is to have seen Elohim — both men brace for death, for the One they saw is Yahuah Himself in the form that appears.'),
+    ('canon','judges',6,22,'canon','exodus',33,20,'free',E'*And he said, Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20). Gideon''s dread — *I have seen an angel of Yahuah (LORD) face to face* (6:22) — rests on this very law spoken to Moses: no man sees Yahuah and lives. Yet Gideon has seen the Angel of Yahuah and is told *thou shalt not die* (6:23): the Formed Son is the One who may be seen, the visible Glory of the unseen Father, who shows His face to His servants and spares them.'),
+    ('canon','judges',6,22,'canon','exodus',3,6,'free',E'*Moreover he said, I am the Elohim (God) of thy father, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob. And Moses hid his face; for he was afraid to look upon Elohim (God)* (Exodus 3:6). At the bush the Angel of Yahuah is named Elohim, and Moses hides his face in fear; under the oak Gideon, *when he perceived that he was an angel of Yahuah (LORD)* (6:22), is gripped by the same fear of having looked upon the One who is Yahuah. The Angel who calls the deliverer is the Elohim of the fathers, seen and feared.')
+    ,
+    -- THREAD 4: the Spirit of Yahuah came upon Gideon — the Spirit clothed the judge (Judges / Numbers)
+    ('canon','judges',6,34,'canon','judges',13,25,'free',E'*And the Spirit of Yahuah (LORD) began to move him at times in the camp of Dan between Zorah and Eshtaol* (Judges 13:25). As the Spirit of Yahuah began to move Samson for his deliverance, so *the Spirit of Yahuah (LORD) came upon Gideon, and he blew a trumpet* (6:34) — the same Spirit that empowers the judge to act. The deliverers of Yashar''el move not by their own strength but as the Spirit of Yahuah comes upon them.'),
+    ('canon','judges',6,34,'canon','numbers',11,25,'free',E'*And Yahuah (LORD) came down in a cloud, and spake unto him, and took of the spirit that was upon him, and gave it unto the seventy elders: and it came to pass, that, when the spirit rested upon them, they prophesied, and did not cease* (Numbers 11:25). The Spirit put upon the seventy to bear the burden of the people is the same Spirit that *came upon Gideon* (6:34) to gather and lead them. The Spirit clothing the chosen man is how Yahuah equips every deliverer He raises — Moses'' elders, Gideon, the judges — for the work too heavy for flesh.')
+    ,
+    -- THREAD 5: the fleece — Yahuah condescends to confirm the weak faith (Exodus)
+    ('canon','judges',6,37,'canon','exodus',4,8,'free',E'*And it shall come to pass, if they will not believe thee, neither hearken to the voice of the first sign, that they will believe the voice of the latter sign* (Exodus 4:8). Yahuah gave the doubting Moses a first sign and a latter sign to confirm him; He gives the doubting Gideon the same doubled mercy — dew on the fleece and the ground dry, then dew on the ground and the fleece dry (6:37-40), *let me prove, I pray thee, but this once* (6:39). The Deliverer condescends to the trembling faith of the man He sends.'),
+    ('canon','judges',6,36,'canon','exodus',4,5,'free',E'*That they may believe that Yahuah Elohim (the LORD God) of their fathers, the Elohim (God) of Abraham, the Elohim (God) of Isaac, and the Elohim (God) of Jacob, hath appeared unto thee* (Exodus 4:5). The signs to Moses were given *that they may believe*; Gideon asks his sign for the same reason — *If thou wilt save Yashar''el (Israel) by mine hand, as thou hast said... then shall I know that thou wilt save Yashar''el (Israel) by mine hand* (6:36-37). Yahuah does not despise the weak faith that asks to know; He meets it with the confirming sign.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-6-the-cycle-midian-oppressed-and-yashar-el-cried-the-prophet-rebuked',
+       E'The Cycle — Midian Oppressed, and Yashar''el Cried; the Prophet Rebuked',
+       E'Judges 6 opens with the cycle the whole book turns on, laid out plainly back in chapter 2. Yashar''el does evil, and Yahuah sells them into an oppressor''s hand — this time Midian, seven years of such terror that they make dens in the mountains and the Midianites *destroyed the increase of the earth... left no sustenance for Yashar''el (Israel), neither sheep, nor ox, nor ass* (Judges 6:4), coming *as grasshoppers for multitude; for both they and their camels were without number* (6:5). Then comes the turn: *And Yashar''el (Israel) was greatly impoverished because of the Midianites; and the children of Yashar''el (Israel) cried unto Yahuah (LORD)* (6:6). This is the cycle''s heart — *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them* (Judges 2:16). At the cry, Yahuah moves to raise a deliverer. But first He sends a prophet with a covenant lawsuit: *Thus saith Yahuah Elohim (the LORD God) of Yashar''el (Israel), I brought you up from Egypt, and brought you forth out of the house of bondage... fear not the gods of the Amorites, in whose land ye dwell: but ye have not obeyed my voice* (6:8-10). It is the very charge the angel of Yahuah brought at Bochim — *I made you to go up out of Egypt... I will never break my covenant with you. And ye shall make no league with the inhabitants of this land; ye shall throw down their altars: but ye have not obeyed my voice* (Judges 2:1-2). The sin is the broken first commandment — *the children of Yashar''el (Israel) did evil in the sight of Yahuah (LORD), and served Baalim* (Judges 2:11) — the same Baal-altar Gideon will be told to throw down. And the cry is the cry Yahuah always hears: *I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows* (Exodus 3:7). As the cry from Egypt drew the Angel of the bush, the cry under Midian draws the Angel under the oak. Yahuah keeps covenant even with covenant-breakers; the curse of Deuteronomy is the discipline that drives His people back to His mercy.',
+       sv.verse_id, ev.verse_id, 'free', 35775
+  FROM _s345_jdg06_lookup sv, _s345_jdg06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=6 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee',
+       E'The Angel of Yahuah Commissioned Gideon the Least — Have Not I Sent Thee?',
+       E'*And there came an angel of Yahuah (LORD), and sat under an oak which was in Ophrah... and his son Gideon threshed wheat by the winepress, to hide it from the Midianites* (Judges 6:11). The Angel who appears here is the Formed Son — He bears the Name, and the text plainly calls Him *Yahuah* as He speaks: *And Yahuah (LORD) looked upon him, and said, Go in this thy might, and thou shalt save Yashar''el (Israel) from the hand of the Midianites: have not I sent thee?* (6:14). It is the bush all over again. To Moses the same One said, *Come now therefore, and I will send thee unto Pharaoh, that thou mayest bring forth my people the children of Yashar''el (Israel) out of Egypt* (Exodus 3:10). And the reluctant deliverer answers the same way both times. Moses: *Who am I, that I should go unto Pharaoh?* (Exodus 3:11). Gideon: *Oh my Lord, wherewith shall I save Yashar''el (Israel)? behold, my family is poor in Manasseh, and I am the least in my father''s house* (6:15). To both protests Yahuah gives the one sufficient answer — not a better man, but His own presence: *Certainly I will be with thee* (Exodus 3:12); *Surely I will be with thee, and thou shalt smite the Midianites as one man* (6:16). This is the deliberate way of Yahuah. Paul names the principle exactly: *Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty* (1 Corinthians 1:27); *and base things of the world, and things which are despised, hath Elohim (God) chosen, yea, and things which are not, to bring to nought things that are: That no flesh should glory in his presence* (1 Corinthians 1:28). Gideon reckons himself among the *things which are not* — *I am the least* — and that is precisely whom the Angel of Yahuah chooses, that the camels-without-number of Midian might fall, and no flesh glory. The Deliverer who appeared, spoke, and led Yashar''el calls the least man in the threshing-floor and makes him a mighty man of valour.',
+       sv.verse_id, ev.verse_id, 'free', 35778
+  FROM _s345_jdg06_lookup sv, _s345_jdg06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=6 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-6-fire-out-of-the-rock-i-have-seen-the-angel-of-yahuah-face-to-face',
+       E'Fire Out of the Rock — I Have Seen the Angel of Yahuah Face to Face',
+       E'Gideon asks for a sign and brings an offering — a kid and unleavened cakes — and sets it before the Angel under the oak. *Then the angel of Yahuah (LORD) put forth the end of the staff that was in his hand, and touched the flesh and the unleavened cakes; and there rose up fire out of the rock, and consumed the flesh and the unleavened cakes. Then the angel of Yahuah (LORD) departed out of his sight* (Judges 6:21). The Formed One receives the offering and is made known in the fire — and the very same scene plays out for Manoah a few chapters on, the same Angel, the same kid, the same ascending flame: *when the flame went up toward heaven from off the altar, that the angel of Yahuah (LORD) ascended in the flame of the altar. And Manoah and his wife looked on it, and fell on their faces to the ground* (Judges 13:20). Then comes the terror. *And when Gideon perceived that he was an angel of Yahuah (LORD), Gideon said, Alas, O Yahuah (Lord) GOD! for because I have seen an angel of Yahuah (LORD) face to face* (6:22) — word for word Manoah''s dread, *We shall surely die, because we have seen Elohim (God)* (Judges 13:22). Both men know the ancient law: *Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20); it was why *Moses hid his face; for he was afraid to look upon Elohim (God)* (Exodus 3:6). To see the Angel of Yahuah is to see Elohim — for the Angel who bears the Name is the visible Glory of the unseen Father, the Formed Son. And yet — this is the wonder — the One seen speaks peace and spares: *And Yahuah (LORD) said unto him, Peace be unto thee; fear not: thou shalt not die* (6:23). So Gideon builds an altar and names it *Yahuah Shalom (Jehovah-shalom)* (6:24). The face that no man may see and live is the face the Formed Son turns toward His servant — and instead of death, He gives peace.',
+       sv.verse_id, ev.verse_id, 'free', 35781
+  FROM _s345_jdg06_lookup sv, _s345_jdg06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=6 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-6-the-spirit-of-yahuah-came-upon-gideon-the-spirit-clothed-the-judge',
+       E'The Spirit of Yahuah Came Upon Gideon — the Spirit Clothed the Judge',
+       E'Before Gideon can lead, he must tear down the idol in his own father''s house. By night he throws down *the altar of Baal that thy father hath* and cuts down the grove beside it (6:25-28), and when the men of the city demand his death his father answers, *Will ye plead for Baal? will ye save him?... if he be a god, let him plead for himself, because one hath cast down his altar* (6:31) — and so Gideon is named *Jerubbaal*, Let Baal plead (6:32). The cycle''s root sin is dealt with first; the deliverer of Yashar''el must himself be clean of the Baalim. Then the host of Midian and Amalek and the children of the east gather in the valley of Jezreel, and the word comes: *But the Spirit of Yahuah (LORD) came upon Gideon, and he blew a trumpet; and Abi-ezer was gathered after him* (6:34). The Hebrew is vivid — the Spirit of Yahuah *clothed itself with* Gideon, put him on like a garment. This is how Yahuah equips every deliverer He raises. The same Spirit *began to move* Samson — *And the Spirit of Yahuah (LORD) began to move him at times in the camp of Dan between Zorah and Eshtaol* (Judges 13:25). The same Spirit Yahuah took from Moses and spread to the seventy elders to bear the burden of the people — *and it came to pass, that, when the spirit rested upon them, they prophesied, and did not cease* (Numbers 11:25). The judge does not deliver by his own arm; the Spirit clothes the chosen man and the trumpet sounds. The Spirit and the deliverance are inseparable, as the Spirit and the Torah written on the heart are inseparable — Yahuah Himself acting through the man He has put on.',
+       sv.verse_id, ev.verse_id, 'free', 35784
+  FROM _s345_jdg06_lookup sv, _s345_jdg06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=25
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=6 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-6-the-fleece-yahuah-condescends-to-confirm-the-weak-faith',
+       E'The Fleece — Yahuah Condescends to Confirm the Weak Faith',
+       E'Even Spirit-clothed and named Jerubbaal, Gideon is still afraid, and he asks Yahuah for one more confirming sign — twice. *Behold, I will put a fleece of wool in the floor; and if the dew be on the fleece only, and it be dry upon all the earth beside, then shall I know that thou wilt save Yashar''el (Israel) by mine hand, as thou hast said* (Judges 6:37). It is so. Then, almost ashamed, he asks the reverse: *Let not thine anger be hot against me, and I will speak but this once: let me prove, I pray thee, but this once with the fleece; let it now be dry only upon the fleece, and upon all the ground let there be dew* (6:39) — and Yahuah does that also, *for it was dry upon the fleece only, and there was dew on all the ground* (6:40). This is not unbelief rebuked but weak faith met with mercy. It is the very grace Yahuah showed the doubting Moses, who said *they will not believe me*: Yahuah gave him a first sign and a second, *if they will not believe thee, neither hearken to the voice of the first sign, that they will believe the voice of the latter sign* (Exodus 4:8), all *that they may believe that Yahuah Elohim (the LORD God) of their fathers... hath appeared unto thee* (Exodus 4:5). Gideon asks his fleece for the same reason — *then shall I know that thou wilt save Yashar''el (Israel) by mine hand* (6:37). The Deliverer who chose the least does not despise the trembling of the least; He condescends, He gives sign upon sign, He meets His servant where his faith is small and steadies him for the work. Yahuah is gentle with the weak hand He intends to use.',
+       sv.verse_id, ev.verse_id, 'free', 35787
+  FROM _s345_jdg06_lookup sv, _s345_jdg06_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=36
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=6 AND ev.verse_number=40
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 2:16 — *Yahuah raised up judges, which delivered them*: the cycle Gideon repeats — at the cry of 6:6, Yahuah raises a deliverer.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-cycle-midian-oppressed-and-yashar-el-cried-the-prophet-rebuked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 2:1 — *I made you to go up out of Egypt... I will never break my covenant*: the angel of Yahuah''s lawsuit at Bochim, the same charge the prophet brings in 6:8.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=8
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-cycle-midian-oppressed-and-yashar-el-cried-the-prophet-rebuked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 3:7 — *I have... heard their cry by reason of their taskmasters*: the cry under Midian (6:6) is the cry Yahuah heard from Egypt; the Deliverer comes to it.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=6
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-cycle-midian-oppressed-and-yashar-el-cried-the-prophet-rebuked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Judges 2:11 — *did evil... and served Baalim*: the root sin the prophet names (6:10), the Baal-altar Gideon must throw down (6:25).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=10
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-cycle-midian-oppressed-and-yashar-el-cried-the-prophet-rebuked'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 3:10 — *I will send thee unto Pharaoh*: the Angel of Yahuah sends Gideon in the bush-words — *have not I sent thee?* (6:14).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=14
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 3:11 — *Who am I, that I should go unto Pharaoh?*: Moses'' shrinking is Gideon''s *I am the least in my father''s house* (6:15).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=15
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 3:12 — *Certainly I will be with thee*: the same one answer to the protesting least — *Surely I will be with thee* (6:16).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=16
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 1:27 — *Elohim hath chosen the weak things of the world to confound the things which are mighty*: Gideon the least (6:15) is the principle named.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=15
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Corinthians 1:28 — *things which are not, to bring to nought things that are... That no flesh should glory*: Gideon counts himself nothing (6:15), and that is whom Yahuah chooses.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=15
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-angel-of-yahuah-commissioned-gideon-the-least-have-not-i-sent-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 13:20 — *the angel of Yahuah ascended in the flame of the altar*: the same Angel, kid, and ascending fire as Gideon''s *fire out of the rock* (6:21).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=21
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-fire-out-of-the-rock-i-have-seen-the-angel-of-yahuah-face-to-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 13:22 — *We shall surely die, because we have seen Elohim*: Manoah''s terror is Gideon''s *I have seen an angel of Yahuah face to face* (6:22).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-fire-out-of-the-rock-i-have-seen-the-angel-of-yahuah-face-to-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 33:20 — *there shall no man see me, and live*: the law behind Gideon''s dread; yet the Formed Son, the visible Glory, is the One who may be seen and spares.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-fire-out-of-the-rock-i-have-seen-the-angel-of-yahuah-face-to-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Exodus 3:6 — *Moses hid his face; for he was afraid to look upon Elohim*: the Angel of the bush is named Elohim; Gideon fears the same, having looked on the One who is Yahuah (6:22).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=22
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-fire-out-of-the-rock-i-have-seen-the-angel-of-yahuah-face-to-face'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 13:25 — *the Spirit of Yahuah began to move him*: the same Spirit that moved Samson came upon Gideon (6:34) — the Spirit-empowered judge.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=34
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-spirit-of-yahuah-came-upon-gideon-the-spirit-clothed-the-judge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 11:25 — *the spirit rested upon them, and they prophesied*: the Spirit put upon the seventy to bear the people is the Spirit that came upon Gideon (6:34) to lead them.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=34
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=11 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-spirit-of-yahuah-came-upon-gideon-the-spirit-clothed-the-judge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 4:8 — *if they will not believe... the voice of the latter sign*: Yahuah''s doubled sign to doubting Moses is the doubled fleece-sign to doubting Gideon (6:37-40).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=37
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-fleece-yahuah-condescends-to-confirm-the-weak-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 4:5 — *that they may believe... hath appeared unto thee*: the signs to Moses were given to confirm; Gideon asks his fleece *that I may know* (6:36-37).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg06_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=6 AND sv.verse_number=36
+  JOIN _s345_jdg06_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=4 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-6-the-fleece-yahuah-condescends-to-confirm-the-weak-faith'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_7.sql (Judges 7) -----
+-- Chapter: Judges 7 — GIDEON'S THREE HUNDRED (the army reduced lest Yashar'el boast "mine own
+--          hand hath saved me"; the fearful sent home and the lapping-test; the Midianite's dream
+--          of the barley cake; the 300 with trumpets, empty pitchers and lamps; the light out of
+--          the broken vessels; "the sword of Yahuah, and of Gideon"; Yahuah sets every man's
+--          sword against his fellow and the host flees) — A KEYSTONE: salvation by Yahuah, not by might.
+-- Tag: jdg07   View: _s345_jdg07_lookup   Sort band: 35800, 35803, 35806, 35809
+--
+-- Judges 7 coverage:
+--   v.2  (*The people that are with thee are too many for me to give the Midianites into their
+--         hands, lest Yashar'el vaunt themselves against me, saying, Mine own hand hath saved me*)
+--         — THE KEYSTONE: the army cut down precisely so the glory is Yahuah's alone
+--          NT:     1 Corinthians 1:29 (that no flesh should glory in his presence); 1:27 (the weak things to confound the mighty)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 8:17 (My power and the might of mine hand hath gotten me this wealth),
+--                  Zechariah 4:6 (Not by might, nor by power, but by my spirit), Psalms 33:16 (no king saved by the multitude of an host)
+--   v.3,7 (the fearful sent home — 22,000 depart, 10,000 remain; *By the three hundred men that
+--          lapped will I save you*) — THE FEW, NOT THE MANY
+--          NT:     none warranted at the verse (woven via the keystone/1 Cor)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 20:8 (What man is there that is fearful and fainthearted? let him return),
+--                  1 Samuel 14:6 (there is no restraint to Yahuah to save by many or by few), Psalms 33:17 (an horse is a vain thing for safety)
+--   v.4-6 (the lapping-test — the 300 who lapped chosen)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: woven into the "fearful sent home / by the three hundred" thread (the means Yahuah used to make the army small)
+--   v.13-15 (the Midianite's dream of the barley cake; Gideon worships)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: woven into the prose (the assurance given to the weak instrument; framed under the sword-of-Yahuah thread)
+--   v.16,18,20 (the 300 with trumpets, empty pitchers and lamps within; they brake the pitchers,
+--          blew the trumpets, held the lamps, and cried *The sword of Yahuah, and of Gideon*)
+--          — THE LIGHT OUT OF THE BROKEN VESSELS
+--          NT:     2 Corinthians 4:7 (this treasure in earthen vessels, that the excellency of the power may be of Elohim, and not of us);
+--                  4:6 (Elohim, who commanded the light to shine out of darkness, hath shined in our hearts)
+--          Extras: none warranted
+--          Tanakh: 1 Corinthians 1:27 noted in the boasting thread (the weak things chosen)
+--   v.18,20,22 (*The sword of Yahuah, and of Gideon*; Yahuah set every man's sword against his
+--          fellow throughout all the host, and the host fled) — YAHUAH THE TRUE VICTOR
+--          NT:     none warranted at the verse
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 14:20 (every man's sword was against his fellow), 2 Chronicles 20:15 (the battle
+--                  is not yours, but Elohim's), 2 Chronicles 20:22 (when they began to sing... Yahuah set ambushments)
+--   v.8-12,17,19,21,23-25 (the camp scene; the rout; Ephraim called; Oreb and Zeeb taken)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: woven into the rout/sword-of-Yahuah thread (the host routed by Yahuah, the weak the means)
+--
+-- Threads:
+--   judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me     [Tanakh: Deuteronomy, Zechariah, Psalms | NT: 1 Corinthians] (free)
+--   judges-7-the-fearful-sent-home-by-the-three-hundred-will-i-save-you  [Tanakh: Deuteronomy, 1 Samuel, Psalms]                       (free)
+--   judges-7-the-treasure-in-earthen-vessels-the-light-from-the-broken-pitchers [NT: 2 Corinthians, 1 Corinthians]                     (free)
+--   judges-7-the-sword-of-yahuah-and-of-gideon-yahuah-the-true-victor    [Tanakh: 1 Samuel, 2 Chronicles]                              (free)
+--
+-- Framework notes: ★★★ The chapter's whole architecture is the Yoshi lens made narrative — salvation
+-- is by Yahuah, never by might or numbers. Yahuah cuts the army down on purpose: *The people that are
+-- with thee are too many for me to give the Midianites into their hands, lest Yashar'el (Israel) vaunt
+-- themselves against me, saying, Mine own hand hath saved me* (7:2). That is exactly the lie Moses
+-- warned of — *thou say in thine heart, My power and the might of mine hand hath gotten me this wealth*
+-- (Deut 8:17) — and exactly the principle Zechariah declares — *Not by might, nor by power, but by my
+-- spirit, saith Yahuah Tseva'ot* (Zech 4:6) — and the Psalm sings — *There is no king saved by the
+-- multitude of an host* (Ps 33:16). Paul names the same divine strategy: Yahuah *hath chosen the weak
+-- things of the world to confound the things which are mighty... That no flesh should glory in his
+-- presence* (1 Cor 1:27,29). ★ So the fearful are sent home per the Torah's own war-law (*What man is
+-- there that is fearful and fainthearted? let him go and return*, Deut 20:8), then the 300 are sifted
+-- by the lapping, until Yahuah says *By the three hundred men that lapped will I save you* (7:7) — the
+-- few, not the many, as Jonathan knew: *there is no restraint to Yahuah to save by many or by few*
+-- (1 Sam 14:6). ★★ The instrument of victory is weakness itself: trumpets, *empty pitchers, and lamps
+-- within the pitchers* (7:16) — and when the pitchers are broken the light blazes out and the host
+-- panics. Paul reads the figure exactly: *we have this treasure in earthen vessels, that the excellency
+-- of the power may be of Elohim (God), and not of us* (2 Cor 4:7); the same Elohim *who commanded the
+-- light to shine out of darkness, hath shined in our hearts* (2 Cor 4:6). ★ And the victory is openly
+-- credited to Yahuah — the cry is *The sword of Yahuah (LORD), and of Gideon* (7:18,20), and *Yahuah
+-- (LORD) set every man's sword against his fellow* (7:22), the enemy routing itself as at Michmash
+-- (*every man's sword was against his fellow*, 1 Sam 14:20) and in Jehoshaphat's valley (*the battle is
+-- not yours, but Elohim's*, 2 Chron 20:15; *when they began to sing... Yahuah set ambushments*, 2 Chron
+-- 20:22). Gideon's name leads the cry, but the sword is Yahuah's; the weak man is only the means. All
+-- members canon → every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s345_jdg07_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: too many, lest they say "mine own hand hath saved me" (Deuteronomy / Zechariah / Psalms / 1 Corinthians)
+    ('canon','judges',7,2,'canon','deuteronomy',8,17,'free',E'*And thou say in thine heart, My power and the might of mine hand hath gotten me this wealth* (Deuteronomy 8:17). This is the very boast Yahuah moves to forestall when He thins Gideon''s army: *The people that are with thee are too many for me to give the Midianites into their hands, lest Yashar''el (Israel) vaunt themselves against me, saying, Mine own hand hath saved me* (7:2). Moses warned the heart would credit its own hand for what Yahuah gave; so Yahuah cuts the army down until no hand but His can claim the victory.'),
+    ('canon','judges',7,2,'canon','zechariah',4,6,'free',E'*Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6). Zechariah states the principle that Judges 7 dramatizes: the work is done not by Yashar''el''s strength of numbers but by Yahuah''s own Spirit. Yahuah declares *the people... are too many... lest Yashar''el (Israel) vaunt themselves against me* (7:2) for the same reason the headstone is brought forth not by might nor power — so that all glory returns to Yahuah alone.'),
+    ('canon','judges',7,2,'canon','psalms',33,16,'free',E'*There is no king saved by the multitude of an host: a mighty man is not delivered by much strength* (Psalms 33:16). The Psalm sings the truth Gideon''s thinned army proves on the field: salvation never comes by the size of the host. Yahuah sends the multitude home *lest Yashar''el (Israel) vaunt themselves against me, saying, Mine own hand hath saved me* (7:2) — for no king and no army is ever saved by its own multitude, only by Yahuah.'),
+    ('canon','judges',7,2,'canon','1-corinthians',1,29,'free',E'*That no flesh should glory in his presence* (1 Corinthians 1:29). Paul names the exact end Yahuah pursues in reducing the army — that no flesh may boast before Him. Yahuah will not give the Midianites into so many hands *lest Yashar''el (Israel) vaunt themselves against me, saying, Mine own hand hath saved me* (7:2); the deliverance is arranged so the only possible glory is Yahuah''s.'),
+    ('canon','judges',7,2,'canon','1-corinthians',1,27,'free',E'*But Elohim (God) hath chosen the foolish things of the world to confound the wise; and Elohim (God) hath chosen the weak things of the world to confound the things which are mighty* (1 Corinthians 1:27). The same divine strategy runs through Gideon''s 300: Yahuah deliberately keeps the weak and the few so the mighty host of Midian is confounded by them. The army is *too many for me* (7:2) until it is small enough that the power must plainly be Yahuah''s.')
+    ,
+    -- THREAD 2: the fearful sent home / by the three hundred will I save you (Deuteronomy / 1 Samuel / Psalms)
+    ('canon','judges',7,3,'canon','deuteronomy',20,8,'free',E'*And the officers shall speak further unto the people, and they shall say, What man is there that is fearful and fainthearted? let him go and return unto his house, lest his brethren''s heart faint as well as his heart* (Deuteronomy 20:8). Gideon obeys the Torah''s own war-law to the letter: *Whosoever is fearful and afraid, let him return and depart early from mount Gilead. And there returned of the people twenty and two thousand* (7:3). The Law that sent the fearful home is the very means Yahuah uses to make the army small.'),
+    ('canon','judges',7,7,'canon','1-samuel',14,6,'free',E'*Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). Jonathan and his armourbearer act on the same faith that shrinks Gideon''s army: Yahuah is not bound to the size of the host. Yahuah says *By the three hundred men that lapped will I save you, and deliver the Midianites into thine hand* (7:7) — the few are enough, for there is no restraint to Yahuah to save by many or by few.'),
+    ('canon','judges',7,7,'canon','psalms',33,17,'free',E'*An horse is a vain thing for safety: neither shall he deliver any by his great strength* (Psalms 33:17). If even the warhorse cannot save, then numbers cannot. The Psalm''s confession stands behind Yahuah''s word *By the three hundred men that lapped will I save you* (7:7): the deliverance rests not on strength or multitude but on Yahuah, who saves by three hundred as surely as by ten thousand.')
+    ,
+    -- THREAD 3: the treasure in earthen vessels — the light from the broken pitchers (2 Corinthians / 1 Corinthians)
+    ('canon','judges',7,16,'canon','2-corinthians',4,7,'free',E'*But we have this treasure in earthen vessels, that the excellency of the power may be of Elohim (God), and not of us* (2 Corinthians 4:7). Paul reads Gideon''s very stratagem: the 300 carry *a trumpet in every man''s hand, with empty pitchers, and lamps within the pitchers* (7:16) — the light hidden inside fragile clay. The vessel must be broken for the light to blaze out, that the excellency of the power may plainly be Yahuah''s and not the man''s.'),
+    ('canon','judges',7,20,'canon','2-corinthians',4,7,'free',E'*But we have this treasure in earthen vessels, that the excellency of the power may be of Elohim (God), and not of us* (2 Corinthians 4:7). When *they blew the trumpets, and brake the pitchers, and held the lamps in their left hands* (7:20), the breaking is the point: the clay shatters and the light shines, and the host of Midian flees. So Paul: the treasure of light shines out of broken earthen vessels precisely so the power is known to be of Elohim and not of us.'),
+    ('canon','judges',7,20,'canon','2-corinthians',4,6,'free',E'*For Elohim (God), who commanded the light to shine out of darkness, hath shined in our hearts, to give the light of the knowledge of the glory of Elohim (God) in the face of Yahusha HaMashiach (Jesus Christ)* (2 Corinthians 4:6). The lamps hidden in the pitchers blaze into the midnight camp the moment the clay is broken — *they brake the pitchers, and held the lamps* (7:20). The same Elohim who commands light to shine out of darkness makes the hidden light flash forth from the broken vessels, and the darkness of Midian dissolves before it.'),
+    ('canon','judges',7,16,'canon','1-corinthians',1,27,'free',E'*And Elohim (God) hath chosen the weak things of the world to confound the things which are mighty* (1 Corinthians 1:27). A trumpet, a clay jar, and a torch are the weakest of weapons — yet by them the mighty host of Midian is confounded. Gideon arms the 300 with *empty pitchers, and lamps within the pitchers* (7:16): the weak things of the world, chosen by Yahuah to overthrow the strong.')
+    ,
+    -- THREAD 4: the sword of Yahuah and of Gideon — Yahuah the true victor (1 Samuel / 2 Chronicles)
+    ('canon','judges',7,22,'canon','1-samuel',14,20,'free',E'*And Saul and all the people that were with him assembled themselves, and they came to the battle: and, behold, every man''s sword was against his fellow, and there was a very great discomfiture* (1 Samuel 14:20). At Michmash as at Midian, Yahuah turns the enemy''s blades upon itself: *the three hundred blew the trumpets, and Yahuah (LORD) set every man''s sword against his fellow, even throughout all the host* (7:22). The victory needs no slaughter by Yashar''el — Yahuah routs the host by its own panic, every man''s sword against his fellow.'),
+    ('canon','judges',7,18,'canon','2-chronicles',20,15,'free',E'*Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God''s)* (2 Chronicles 20:15). The cry of the 300 confesses the same truth — *The sword of Yahuah (LORD), and of Gideon* (7:18) — Gideon''s name leads, but the sword is Yahuah''s. As Jehoshaphat is told the battle belongs to Elohim, so Gideon''s three hundred go to war owning that the victory is Yahuah''s alone.'),
+    ('canon','judges',7,22,'canon','2-chronicles',20,22,'free',E'*And when they began to sing and to praise, Yahuah (LORD) set ambushments against the children of Ammon, Moab, and mount Seir, which were come against Yahudah (Judah); and they were smitten* (2 Chronicles 20:22). In Jehoshaphat''s valley the enemy is set against itself the moment Yahudah praises; at Midian the same hand acts the moment the trumpets sound: *Yahuah (LORD) set every man''s sword against his fellow, even throughout all the host* (7:22). Yahuah is the true victor in both — the people only lift the trumpet and the song, and Yahuah turns the foe against itself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me',
+       E'Too Many — Lest Yashar''el Say "Mine Own Hand Hath Saved Me"',
+       E'This is the hinge of the whole chapter, and the lens of the whole library: Yahuah will not save Yashar''el by a great army, lest the army take the credit. *And Yahuah (LORD) said unto Gideon, The people that are with thee are too many for me to give the Midianites into their hands, lest Yashar''el (Israel) vaunt themselves against me, saying, Mine own hand hath saved me* (Judges 7:2). The danger is not a small army but a proud heart — the very boast Moses warned the land against: *And thou say in thine heart, My power and the might of mine hand hath gotten me this wealth* (Deuteronomy 8:17). So Yahuah reduces the host until no hand but His can claim the deliverance. This is the principle Zechariah will state to Zerubbabel — *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot (LORD of hosts)* (Zechariah 4:6) — and the Psalm sings it as settled law: *There is no king saved by the multitude of an host: a mighty man is not delivered by much strength* (Psalms 33:16). Paul gathers the whole pattern into a sentence: Elohim *hath chosen the weak things of the world to confound the things which are mighty* (1 Corinthians 1:27) — *That no flesh should glory in his presence* (1 Corinthians 1:29). Gideon''s 300 are the weak things of the world, kept small on purpose so that when Midian falls, no flesh can glory, and the glory returns whole to Yahuah. Salvation is not by might, not by numbers, not by the hand of man — it is Yahuah''s alone.',
+       sv.verse_id, ev.verse_id, 'free', 35800
+  FROM _s345_jdg07_lookup sv, _s345_jdg07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=7 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-7-the-fearful-sent-home-by-the-three-hundred-will-i-save-you',
+       E'The Fearful Sent Home — By the Three Hundred Will I Save You',
+       E'Having said the army is too many, Yahuah shows Gideon how to make it small — and the first cut is the Torah''s own war-law. *Now therefore go to, proclaim in the ears of the people, saying, Whosoever is fearful and afraid, let him return and depart early from mount Gilead. And there returned of the people twenty and two thousand; and there remained ten thousand* (Judges 7:3). That is Moses'' command kept to the letter: *And the officers shall speak further unto the people, and they shall say, What man is there that is fearful and fainthearted? let him go and return unto his house, lest his brethren''s heart faint as well as his heart* (Deuteronomy 20:8). Then ten thousand are sifted by the water to three hundred, until Yahuah declares the verdict: *By the three hundred men that lapped will I save you, and deliver the Midianites into thine hand* (7:7). The few are enough, for the deliverance never rested on the many — exactly the faith Jonathan carried to the Philistine garrison: *there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). And the Psalm names what numbers and warhorses cannot do: *An horse is a vain thing for safety: neither shall he deliver any by his great strength* (Psalms 33:17). Three hundred men with no horses and no host — and Yahuah saves Yashar''el by them, that it might be plain who the Saviour is.',
+       sv.verse_id, ev.verse_id, 'free', 35803
+  FROM _s345_jdg07_lookup sv, _s345_jdg07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=7 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-7-the-treasure-in-earthen-vessels-the-light-from-the-broken-pitchers',
+       E'The Treasure in Earthen Vessels — the Light from the Broken Pitchers',
+       E'The weapons Gideon hands the 300 are the weakest imaginable — and that is the sermon. *And he divided the three hundred men into three companies, and he put a trumpet in every man''s hand, with empty pitchers, and lamps within the pitchers* (Judges 7:16): a horn, a clay jar, and a torch hidden inside the jar. The light is sealed in fragile earthenware until the appointed moment, when *they blew the trumpets, and brake the pitchers, and held the lamps in their left hands... and they cried, The sword of Yahuah (LORD), and of Gideon* (7:20). The vessel must shatter for the light to blaze into the midnight camp — and at that flash the whole host of Midian panics and flees. Paul reads the figure exactly: *But we have this treasure in earthen vessels, that the excellency of the power may be of Elohim (God), and not of us* (2 Corinthians 4:7). The clay is meant to break; the breaking is where the glory shines, so the power is plainly Yahuah''s. And the light itself is Yahuah''s gift: *For Elohim (God), who commanded the light to shine out of darkness, hath shined in our hearts, to give the light of the knowledge of the glory of Elohim (God)* (2 Corinthians 4:6) — the same Elohim who commands light out of darkness makes the hidden lamp flash out of the broken pitcher. These are the weak things Yahuah chooses on purpose: *Elohim (God) hath chosen the weak things of the world to confound the things which are mighty* (1 Corinthians 1:27) — empty pitchers and torches routing a numberless army, that the excellency of the power may be of Elohim, and not of us.',
+       sv.verse_id, ev.verse_id, 'free', 35806
+  FROM _s345_jdg07_lookup sv, _s345_jdg07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=7 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-7-the-sword-of-yahuah-and-of-gideon-yahuah-the-true-victor',
+       E'The Sword of Yahuah and of Gideon — Yahuah the True Victor',
+       E'When the 300 break their pitchers, the cry that goes up names the real order of the battle: *When I blow with a trumpet, I and all that are with me, then blow ye the trumpets also on every side of all the camp, and say, The sword of Yahuah (LORD), and of Gideon* (Judges 7:18); and again, *they cried, The sword of Yahuah (LORD), and of Gideon* (7:20). Gideon''s name leads the cry, but the sword is Yahuah''s — and so is the victory, for no Israelite blade does the killing: *And the three hundred blew the trumpets, and Yahuah (LORD) set every man''s sword against his fellow, even throughout all the host: and the host fled* (7:22). Yahuah turns the enemy upon itself, exactly as at Michmash, where *behold, every man''s sword was against his fellow, and there was a very great discomfiture* (1 Samuel 14:20). It is the same deliverance Jehoshaphat is promised when a great multitude comes against Yahudah: *Be not afraid nor dismayed by reason of this great multitude; for the battle is not yours, but Elohim''s (God''s)* (2 Chronicles 20:15) — and the same hand that acts the instant the people worship: *And when they began to sing and to praise, Yahuah (LORD) set ambushments against the children of Ammon, Moab, and mount Seir... and they were smitten* (2 Chronicles 20:22). The pattern is fixed across the canon: Yahuah''s people lift the trumpet and the praise, and Yahuah Himself routs the foe, every man''s sword against his fellow. The weak instrument is only the means; the sword is Yahuah''s, and so is the glory.',
+       sv.verse_id, ev.verse_id, 'free', 35809
+  FROM _s345_jdg07_lookup sv, _s345_jdg07_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=7 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 8:17 — *My power and the might of mine hand hath gotten me this wealth*: the exact boast Yahuah forestalls by thinning the army, *lest... Mine own hand hath saved me* (7:2).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Zechariah 4:6 — *Not by might, nor by power, but by my spirit, saith Yahuah Tseva''ot*: the very principle Gideon''s thinned army dramatizes; the glory is Yahuah''s, not Yashar''el''s (7:2).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalms 33:16 — *There is no king saved by the multitude of an host*: settled law behind Yahuah sending the multitude home (7:2) — no army is saved by its own numbers.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 1:29 — *That no flesh should glory in his presence*: the exact end Yahuah pursues — the army cut down so no flesh can boast *Mine own hand hath saved me* (7:2).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Corinthians 1:27 — *the weak things of the world to confound the things which are mighty*: the same strategy — the few kept small to confound numberless Midian (7:2).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=2
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-too-many-lest-yashar-el-say-mine-own-hand-hath-saved-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 20:8 — *What man is there that is fearful and fainthearted? let him go and return*: the Torah war-law Gideon keeps when *Whosoever is fearful... let him return* (7:3).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=3
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-fearful-sent-home-by-the-three-hundred-will-i-save-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 14:6 — *there is no restraint to Yahuah to save by many or by few*: Jonathan''s faith behind Yahuah''s word *By the three hundred men that lapped will I save you* (7:7).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-fearful-sent-home-by-the-three-hundred-will-i-save-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalms 33:17 — *An horse is a vain thing for safety*: if even the warhorse cannot save, numbers cannot; Yahuah saves by three hundred (7:7).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=7
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=33 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-fearful-sent-home-by-the-three-hundred-will-i-save-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Corinthians 4:7 — *this treasure in earthen vessels, that the excellency of the power may be of Elohim, and not of us*: Gideon''s *lamps within the pitchers* (7:16), the light hidden in fragile clay.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=16
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-treasure-in-earthen-vessels-the-light-from-the-broken-pitchers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Corinthians 4:7 — *the excellency of the power... of Elohim, and not of us*: the breaking is the point — *they brake the pitchers, and held the lamps* (7:20), and Midian flees.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=20
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-treasure-in-earthen-vessels-the-light-from-the-broken-pitchers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Corinthians 4:6 — *Elohim, who commanded the light to shine out of darkness, hath shined in our hearts*: the hidden lamps blaze into the midnight camp the moment the clay breaks (7:20).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=20
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-treasure-in-earthen-vessels-the-light-from-the-broken-pitchers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 1:27 — *the weak things of the world to confound the things which are mighty*: a trumpet, a clay jar, and a torch — the *empty pitchers, and lamps* (7:16) that rout a numberless host.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=16
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-treasure-in-earthen-vessels-the-light-from-the-broken-pitchers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 14:20 — *every man''s sword was against his fellow*: at Michmash as at Midian, Yahuah turns the enemy''s blades on itself — *Yahuah set every man''s sword against his fellow* (7:22).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=22
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-sword-of-yahuah-and-of-gideon-yahuah-the-true-victor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 20:15 — *the battle is not yours, but Elohim''s*: the cry *The sword of Yahuah, and of Gideon* (7:18) confesses the same — Gideon''s name leads, the sword is Yahuah''s.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=18
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-sword-of-yahuah-and-of-gideon-yahuah-the-true-victor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Chronicles 20:22 — *when they began to sing and to praise, Yahuah set ambushments... and they were smitten*: the foe set against itself the moment the people worship, as the host *fled* when the trumpets sound (7:22).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg07_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=7 AND sv.verse_number=22
+  JOIN _s345_jdg07_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=20 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-7-the-sword-of-yahuah-and-of-gideon-yahuah-the-true-victor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_8.sql (Judges 8) -----
+-- Judges 8 — Gideon beyond Jordan: the soft answer, the kings of Midian slain,
+--   the refusal of the crown ("Yahuah shall rule over you"), and the ephod-snare.
+-- TAG: jdg08   VIEW: _s345_jdg08_lookup   SORT BAND: 35825, 35828, 35831, 35834
+--
+-- Judges 8 coverage:
+--   v.1-3 (the soft answer turning away Ephraim's wrath)
+--        NT:     none warranted (Prov 15 carries the wisdom-weight directly)
+--        Extras: none warranted
+--        Tanakh: Proverbs 15:1 (a soft answer turneth away wrath), Proverbs 15:18 (slow to anger appeaseth strife)  [USED]
+--   v.4-21 (Succoth/Penuel refuse bread; the two kings slain; the brethren avenged)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: none warranted (narrative; the avenging of brethren self-contained)
+--   v.22-23 (the men of Yashar'el ask Gideon to be king; he refuses — Yahuah shall rule)
+--        NT:     none warranted (the theocracy-rejection arc is wholly Tanakh)
+--        Extras: none warranted
+--        Tanakh: Deut 17:14-15 (the king Yahuah shall choose — the Torah frame), 1 Sam 8:7 (they have rejected me from reigning), 1 Sam 12:12 (Yahuah was your king)  [USED]
+--   v.24-27, 33-34 (the golden earrings; the ephod made a snare; after Gideon, Baal-berith)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exod 32:2-4 (Aaron's golden earrings → the calf), Judges 2:3 (their gods a snare), Psalms 106:36 (their idols a snare), Psalms 106:39 (went a whoring with their own inventions)  [USED]
+--
+-- THREADS:
+--   1. judges-8-the-soft-answer-that-turneth-away-wrath (8:1-3)  [Tanakh only; tier free]
+--        → Proverbs 15:1, Proverbs 15:18
+--   2. judges-8-yahuah-shall-rule-over-you-gideon-refuses-the-crown (8:22-23)  [Tanakh only; tier free]
+--        → Deut 17:14, Deut 17:15, 1 Samuel 8:7, 1 Samuel 12:12
+--   3. judges-8-the-ephod-became-a-snare (8:24-33)  [Tanakh only; tier free]
+--        → Exodus 32:2, Exodus 32:4, Judges 2:3, Psalms 106:36, Psalms 106:39
+--
+-- Framework-load-bearing verse: 8:23 — Gideon's refusal "Yahuah shall rule over you" is
+--   the theocracy keystone (Yahuah the true King), framed FORWARD to 1 Sam 8:7 where the
+--   nation forsakes exactly this truth ("they have rejected me, that I should not reign over
+--   them"). The crown belongs to Yahuah; the Torah king (Deut 17) is the one HE chooses, never
+--   a dynasty seized. 8:27 — the ephod as snare framed by Exod 32 (gold devotion misdirected,
+--   the good deliverer's misstep), Judg 2:3, and Ps 106's snare/whoring refrain.
+
+CREATE TEMP VIEW _s345_jdg08_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the soft answer (8:1-3)
+    ('canon','judges',8,2,  'canon','proverbs',15,1, 'free',
+     E'*A soft answer turneth away wrath: but grievous words stir up anger.* (Proverbs 15:1). When the men of Ephraim *did chide with him sharply* (Judges 8:1), Gideon does not return grievous words; he gives the soft answer — *Is not the gleaning of the grapes of Ephraim better than the vintage of Abi-ezer?* (Judges 8:2) — exalting his brethren above himself, and the wisdom of the Proverb is proven in the field.'),
+    ('canon','judges',8,3,  'canon','proverbs',15,1, 'free',
+     E'*A soft answer turneth away wrath: but grievous words stir up anger.* (Proverbs 15:1). The fruit is recorded plainly: *Then their anger was abated toward him, when he had said that* (Judges 8:3) — the very turning-away of wrath the Proverb promises to the one who answers softly.'),
+    ('canon','judges',8,3,  'canon','proverbs',15,18, 'free',
+     E'*A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife.* (Proverbs 15:18). Gideon, slow to anger, *appeaseth strife* with Ephraim — giving Elohim (God) the glory, *Elohim (God) hath delivered into your hands the princes of Midian* (Judges 8:3) — and the kindled quarrel that could have split Yashar''el (Israel) is quieted.'),
+    -- Thread 2: Yahuah shall rule over you (8:22-23)
+    ('canon','judges',8,23,  'canon','deuteronomy',17,14, 'free',
+     E'*When thou art come unto the land which Yahuah Elohayka (the LORD thy God) giveth thee... and shalt say, I will set a king over me, like as all the nations that are about me;* (Deuteronomy 17:14). The men of Yashar''el (Israel) crave a dynasty *like all the nations* — *Rule thou over us, both thou, and thy son, and thy son''s son also* (Judges 8:22) — but Gideon will not seize what Torah reserves to Yahuah''s own choosing.'),
+    ('canon','judges',8,23,  'canon','deuteronomy',17,15, 'free',
+     E'*Thou shalt in any wise set him king over thee, whom Yahuah Elohayka (the LORD thy God) shall choose: one from among thy brethren shalt thou set king over thee* (Deuteronomy 17:15). The crown is never grasped by the deliverer''s hand; it is GIVEN by Yahuah''s choice. So Gideon refuses the offered dynasty — *I will not rule over you, neither shall my son rule over you: Yahuah (LORD) shall rule over you* (Judges 8:23) — leaving the throne to the One whose it is.'),
+    ('canon','judges',8,23,  'canon','1-samuel',8,7, 'free',
+     E'*And Yahuah (LORD) said unto Samuel... they have not rejected thee, but they have rejected me, that I should not reign over them.* (1 Samuel 8:7). Gideon confessed the truth Yashar''el (Israel) would later forsake — *Yahuah (LORD) shall rule over you* (Judges 8:23) — for in demanding a king like the nations they cast off Yahuah Himself as King. The refusal here is the very kingship rejected there.'),
+    ('canon','judges',8,23,  'canon','1-samuel',12,12, 'free',
+     E'*And when ye saw that Nahash the king of the children of Ammon came against you, ye said unto me, Nay; but a king shall reign over us: when Yahuah Elohaychem (the LORD your God) was your king.* (1 Samuel 12:12). Samuel names the very throne Gideon had guarded — *Yahuah (LORD) shall rule over you* (Judges 8:23) — Yahuah Himself was their King, and to demand another was to depose the true One.'),
+    -- Thread 3: the ephod became a snare (8:24-33)
+    ('canon','judges',8,24,  'canon','exodus',32,2, 'free',
+     E'*And Aaron said unto them, Break off the golden earrings, which are in the ears of your wives, of your sons, and of your daughters, and bring them unto me.* (Exodus 32:2). Gideon, like Aaron, gathers golden earrings of the spoil — *I would desire a request of you, that ye would give me every man the earrings of his prey* (Judges 8:24) — and the same gold that became Aaron''s calf will become Gideon''s snare.'),
+    ('canon','judges',8,27,  'canon','exodus',32,4, 'free',
+     E'*And he received them at their hand, and fashioned it with a graving tool, after he had made it a molten calf: and they said, These be thy gods, O Yashar''el (Israel)* (Exodus 32:4). As Aaron''s gold became an object of whoring devotion, so *Gideon made an ephod thereof... and all Yashar''el (Israel) went thither a whoring after it: which thing became a snare unto Gideon, and to his house* (Judges 8:27) — even the good deliverer''s gift, set up apart from Yahuah, turns to idolatry.'),
+    ('canon','judges',8,27,  'canon','judges',2,3, 'free',
+     E'*Wherefore I also said, I will not drive them out from before you; but they shall be as thorns in your sides, and their gods shall be a snare unto you.* (Judges 2:3). The angel''s word at Bochim names the recurring trap of the book — *their gods shall be a snare* — and Gideon''s ephod proves it from within: *which thing became a snare unto Gideon, and to his house* (Judges 8:27).'),
+    ('canon','judges',8,27,  'canon','psalms',106,36, 'free',
+     E'*And they served their idols: which were a snare unto them.* (Psalms 106:36). The Psalm''s history of Yashar''el (Israel) names the very pattern Gideon falls into — the object of devotion become *a snare* — for *all Yashar''el (Israel) went thither a whoring after it: which thing became a snare unto Gideon, and to his house* (Judges 8:27).'),
+    ('canon','judges',8,33,  'canon','psalms',106,39, 'free',
+     E'*Thus were they defiled with their own works, and went a whoring with their own inventions.* (Psalms 106:39). When *Gideon was dead... the children of Yashar''el (Israel) turned again, and went a whoring after Baalim, and made Baal-berith their god* (Judges 8:33) — the same whoring after their own inventions the Psalm laments, the cycle of forsaking Yahuah resuming the moment the deliverer is gone.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-8-the-soft-answer-that-turneth-away-wrath',
+       E'The Soft Answer That Turneth Away Wrath',
+       E'The men of Ephraim *did chide with him sharply* — *Why hast thou served us thus, that thou calledst us not, when thou wentest to fight with the Midianites?* (Judges 8:1). A lesser man returns grievous words and splits the tribes; Gideon gives the soft answer. *Is not the gleaning of the grapes of Ephraim better than the vintage of Abi-ezer? Elohim (God) hath delivered into your hands the princes of Midian, Oreb and Zeeb* (Judges 8:2-3) — he exalts his brethren above himself and gives Elohim (God) the glory. And the wisdom of the Proverb is proven in the field: *Then their anger was abated toward him, when he had said that* (Judges 8:3). This is the very promise: *A soft answer turneth away wrath: but grievous words stir up anger* (Proverbs 15:1), and *A wrathful man stirreth up strife: but he that is slow to anger appeaseth strife* (Proverbs 15:18). The peacemaker''s tongue keeps Yashar''el (Israel) one.',
+       sv.verse_id, ev.verse_id, 'free', 35825
+  FROM _s345_jdg08_lookup sv, _s345_jdg08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=8 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-8-yahuah-shall-rule-over-you-gideon-refuses-the-crown',
+       E'Yahuah Shall Rule Over You — Gideon Refuses the Crown',
+       E'Flush with victory, *the men of Yashar''el (Israel) said unto Gideon, Rule thou over us, both thou, and thy son, and thy son''s son also: for thou hast delivered us from the hand of Midian* (Judges 8:22). They offer him a dynasty — a throne held by blood-succession, a king *like all the nations* (Deuteronomy 17:14). Gideon will not take it. *I will not rule over you, neither shall my son rule over you: Yahuah (LORD) shall rule over you* (Judges 8:23). This is the heart of the theocracy: Yahuah is the true King, and the crown is never seized by the deliverer''s hand. Even the king Torah permits is the one *whom Yahuah Elohayka (the LORD thy God) shall choose: one from among thy brethren* (Deuteronomy 17:15) — given by Yahuah, never grasped. The tragedy is that Yashar''el (Israel) would later forsake the very truth Gideon guarded. *They have not rejected thee, but they have rejected me, that I should not reign over them* (1 Samuel 8:7); *ye said unto me, Nay; but a king shall reign over us: when Yahuah Elohaychem (the LORD your God) was your king* (1 Samuel 12:12). To demand a king like the nations was to depose the King who already reigned.',
+       sv.verse_id, ev.verse_id, 'free', 35828
+  FROM _s345_jdg08_lookup sv, _s345_jdg08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=8 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-8-the-ephod-became-a-snare',
+       E'The Ephod Became a Snare',
+       E'Having refused the crown, Gideon asks instead for the gold of the spoil: *I would desire a request of you, that ye would give me every man the earrings of his prey* (Judges 8:24). The echo of Sinai is exact — *And Aaron said unto them, Break off the golden earrings, which are in the ears of your wives, of your sons, and of your daughters, and bring them unto me* (Exodus 32:2) — and the same gold that became Aaron''s calf, *fashioned it with a graving tool, after he had made it a molten calf* (Exodus 32:4), becomes Gideon''s downfall. *And Gideon made an ephod thereof, and put it in his city, even in Ophrah: and all Yashar''el (Israel) went thither a whoring after it: which thing became a snare unto Gideon, and to his house* (Judges 8:27). Even the good deliverer''s gift, set up apart from Yahuah, turns to idolatry. The angel had warned of exactly this trap: *their gods shall be a snare unto you* (Judges 2:3); and the Psalm names the pattern — *And they served their idols: which were a snare unto them* (Psalms 106:36), *Thus were they defiled with their own works, and went a whoring with their own inventions* (Psalms 106:39). So when *Gideon was dead... the children of Yashar''el (Israel) turned again, and went a whoring after Baalim, and made Baal-berith their god* (Judges 8:33) — the snare he planted bore its bitter fruit, and the cycle resumed.',
+       sv.verse_id, ev.verse_id, 'free', 35831
+  FROM _s345_jdg08_lookup sv, _s345_jdg08_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=8 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: the soft answer
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*A soft answer turneth away wrath* (Proverbs 15:1) — Gideon''s answer to Ephraim (Judges 8:2) exalts his brethren and gives Elohim (God) the glory.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=2
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-soft-answer-that-turneth-away-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*A soft answer turneth away wrath* (Proverbs 15:1) — the fruit recorded: *their anger was abated* (Judges 8:3).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-soft-answer-that-turneth-away-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He that is slow to anger appeaseth strife* (Proverbs 15:18) — Gideon quiets the quarrel that could have split Yashar''el (Israel) (Judges 8:3).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=3
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-soft-answer-that-turneth-away-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Yahuah shall rule over you
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will set a king over me, like as all the nations* (Deuteronomy 17:14) — the dynastic craving Gideon is offered (Judges 8:22) and refuses.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=23
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-yahuah-shall-rule-over-you-gideon-refuses-the-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Whom Yahuah Elohayka (the LORD thy God) shall choose* (Deuteronomy 17:15) — the king is given by Yahuah''s choice, never grasped; so Gideon leaves the throne to its Owner (Judges 8:23).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=23
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-yahuah-shall-rule-over-you-gideon-refuses-the-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*They have rejected me, that I should not reign over them* (1 Samuel 8:7) — the very kingship Gideon guarded (Judges 8:23), later cast off.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=23
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=8 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-yahuah-shall-rule-over-you-gideon-refuses-the-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*When Yahuah Elohaychem (the LORD your God) was your king* (1 Samuel 12:12) — Yahuah Himself reigned, the throne Gideon refused to usurp (Judges 8:23).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=23
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-yahuah-shall-rule-over-you-gideon-refuses-the-crown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the ephod became a snare
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Break off the golden earrings* (Exodus 32:2) — the same gathered gold of devotion Gideon requests (Judges 8:24).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=24
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-ephod-became-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He had made it a molten calf* (Exodus 32:4) — Aaron''s gold became an idol; so Gideon''s ephod *became a snare unto Gideon, and to his house* (Judges 8:27).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-ephod-became-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Their gods shall be a snare unto you* (Judges 2:3) — the angel''s warning at Bochim proven from within by Gideon''s ephod (Judges 8:27).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-ephod-became-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*They served their idols: which were a snare unto them* (Psalms 106:36) — the Psalm names Gideon''s very pattern (Judges 8:27).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=27
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-ephod-became-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Went a whoring with their own inventions* (Psalms 106:39) — after Gideon died, Yashar''el (Israel) *went a whoring after Baalim* (Judges 8:33), the cycle resuming.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg08_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=8 AND sv.verse_number=33
+  JOIN _s345_jdg08_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-8-the-ephod-became-a-snare'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_9.sql (Judges 9) -----
+-- Chapter: Judges 9 — ABIMELECH THE BLOODY USURPER (Gideon's son by his Shechem concubine persuades
+--          Shechem to crown him; he murders his SEVENTY brethren on one stone, only Jotham escaping;
+--          JOTHAM'S PARABLE of the trees — olive, fig, vine all refuse the crown, the worthless BRAMBLE
+--          accepts and threatens fire; Elohim sends an evil spirit so the innocent blood returns;
+--          a woman casts a millstone on Abimelech's head at Thebez — Elohim renders his wickedness on his own head)
+-- Tag: jdg09   View: _s345_jdg09_lookup   Sort band: 35850, 35853, 35856
+--
+-- Judges 9 coverage:
+--   v.1-6  (Abimelech bribed from the house of Baal-berith hires vain men and slays the seventy sons of
+--           Jerubbaal upon one stone, only Jotham the youngest hid; Shechem makes him king)
+--          NT:     none warranted at the verse (the seed-war / innocent-blood weave carries it)
+--          Extras: none warranted
+--          Tanakh: Judges 8:22-23 (Gideon refused — *I will not rule over you... Yahuah shall rule over you*),
+--                  Judges 8:30-31 (the threescore and ten sons of his body; the Shechem concubine bare Abimelech),
+--                  Judges 8:33-35 (they made Baal-berith their god; shewed no kindness to the house of Jerubbaal)
+--   v.7-15 (Jotham's parable — the trees seek a king; olive, fig, vine refuse; the bramble accepts and
+--           threatens *let fire come out of the bramble, and devour the cedars of Lebanon*) — THE BRAMBLE-KING KEYSTONE
+--          NT:     none warranted (the worthless-ruler fable is self-contained Tanakh wisdom)
+--          Extras: none warranted
+--          Tanakh: 2 Kings 14:9 (the thistle in Lebanon sent to the cedar... a wild beast trode down the thistle —
+--                  the worthless/presumptuous leader, the same fable-form)
+--   v.16-21 (Jotham's curse — if you dealt not truly, let fire come out from Abimelech and from Shechem and
+--            devour one another; Jotham flees to Beer)
+--          NT:     none warranted (folded into the bramble-fire thread; the curse is the fable applied)
+--          Extras: none warranted
+--          Tanakh: woven into the bramble thread (9:15 fire answered by 9:20 fire; fulfilled 9:45,49,57)
+--   v.22-24,45,49 (after three years Elohim sends an evil spirit between Abimelech and Shechem *that the
+--            cruelty done to the threescore and ten sons... might come, and their blood be laid upon Abimelech*;
+--            he burns the tower of Shechem, a thousand men and women)
+--          NT:     Galatians 6:7 (*whatsoever a man soweth, that shall he also reap*) — the sowing-and-reaping fill
+--          Extras: none warranted
+--          Tanakh: woven into the requiting-blood thread (the blood-guilt returning)
+--   v.50-57 (at Thebez a woman casts a piece of a millstone on Abimelech's head; he bids his armourbearer
+--            slay him lest men say a woman slew him; *thus Elohim rendered the wickedness of Abimelech...
+--            and all the evil of the men of Shechem did Elohim render upon their heads*) — THE MISCHIEF-RETURNS KEYSTONE
+--          NT:     Galatians 6:7 (Elohim is not mocked — a man reaps what he sows)
+--          Extras: none warranted
+--          Tanakh: Psalms 7:16 (*His mischief shall return upon his own head, and his violent dealing shall
+--                  come down upon his own pate*), Proverbs 26:27 (*Whoso diggeth a pit shall fall therein:
+--                  and he that rolleth a stone, it will return upon him*), 2 Samuel 11:21 (*did not a woman
+--                  cast a piece of a millstone upon him from the wall, that he died in Thebez?* — the death
+--                  remembered as a byword in Yashar'el)
+--
+-- Threads:
+--   judges-9-abimelech-the-bloody-usurper-the-seventy-slain-the-king-who-refused-kingship  [Tanakh: Judges 8] (free)
+--   judges-9-jothams-parable-the-bramble-king-let-fire-come-out-of-the-bramble             [Tanakh: 2 Kings]   (free)
+--   judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood [Tanakh: Psalms, Proverbs, 2 Samuel | NT: Galatians] (free)
+--
+-- Framework notes: ★ Abimelech is the ANTI-GIDEON. His father, when all Yashar'el begged him to found a
+-- dynasty, refused outright — *I will not rule over you, neither shall my son rule over you: Yahuah (LORD)
+-- shall rule over you* (Judg 8:23) — for the kingship belongs to Yahuah, not to a man grasping for it. The
+-- concubine's son grasps the very crown his father laid down, and to seize it he murders the seventy true
+-- sons *upon one stone* (9:5,18), bought with seventy pieces of silver out of the house of Baal-berith
+-- (9:4), the idol Yashar'el had made their god when Gideon died (8:33). Victims, not enemies: the seventy
+-- slain are the innocent blood the chapter will require — the bloody usurper against the lawful house, the
+-- seed-war within the covenant people. ★★ Jotham, the one who escaped, climbs Gerizim and tells the oldest
+-- political fable in Scripture: the trees go to anoint a king (9:8). The olive, the fig, and the vine — the
+-- fruitful and useful — all refuse, for each has better fruit to give than to wave over other trees (*Should
+-- I leave my fatness... my sweetness... my wine, which cheereth Elohim and man*, 9:9,11,13). Only the worthless
+-- BRAMBLE, that bears nothing and gives no shade, accepts — and instantly threatens fire: *if not, let fire
+-- come out of the bramble, and devour the cedars of Lebanon* (9:15). The unfit ruler is the one who grasps
+-- power; the bramble king gives no shelter but burns. The same fable-form answers Amaziah's pride generations
+-- later — *The thistle that was in Lebanon sent to the cedar... and there passed by a wild beast... and trode
+-- down the thistle* (2 Kings 14:9): the worthless thing that exalts itself against the cedar is trodden down.
+-- ★ The curse runs its course exactly as the fable warned. Elohim sends an evil spirit between Abimelech and
+-- Shechem *that the cruelty done to the threescore and ten sons of Jerubbaal might come, and their blood be
+-- laid upon Abimelech* (9:23-24); the bramble's fire devours the cedars and the cedars' fire devours the
+-- bramble (9:20,45,49). And at Thebez a woman drops a millstone on the usurper's skull (9:53), and the chapter
+-- closes naming the law of the harvest plainly: *Thus Elohim rendered the wickedness of Abimelech... and all
+-- the evil of the men of Shechem did Elohim render upon their heads* (9:56-57). This is Psalm 7 — *His
+-- mischief shall return upon his own head* (Ps 7:16); Proverbs 26 — *Whoso diggeth a pit shall fall therein:
+-- and he that rolleth a stone, it will return upon him* (Prov 26:27); the death so famous it became a byword,
+-- *did not a woman cast a piece of a millstone upon him from the wall, that he died in Thebez?* (2 Sam 11:21);
+-- and the gospel's plain word, *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that
+-- shall he also reap* (Gal 6:7). The innocent blood is required; the mischief comes home. All members canon →
+-- every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s345_jdg09_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: Abimelech the bloody usurper — the seventy slain vs the king who refused kingship (Judges 8)
+    ('canon','judges',9,5,'canon','judges',8,23,'free',E'*And Gideon said unto them, I will not rule over you, neither shall my son rule over you: Yahuah (LORD) shall rule over you* (Judges 8:23). Abimelech is the very son Gideon swore would not rule — and he seizes the crown his father laid down by slaying the rest of that house: *he went unto his father''s house at Ophrah, and slew his brethren the sons of Jerubbaal, being threescore and ten persons, upon one stone* (9:5). The father refused kingship for Yahuah''s sake; the concubine''s son murders his way to it.'),
+    ('canon','judges',9,5,'canon','judges',8,30,'free',E'*And Gideon had threescore and ten sons of his body begotten: for he had many wives* (Judges 8:30). The threescore and ten sons named here are the very brethren Abimelech kills *upon one stone* (9:5) — the whole lawful house of Jerubbaal wiped out in a single morning so that one usurper might reign. The innocent blood the chapter will require begins as a roll of Gideon''s own sons.'),
+    ('canon','judges',9,1,'canon','judges',8,31,'free',E'*And his concubine that was in Shechem, she also bare him a son, whose name he called Abimelech* (Judges 8:31). This is the man who now *went to Shechem unto his mother''s brethren... saying... remember also that I am your bone and your flesh* (9:1-2). The concubine''s son works his mother''s kin and the city of his birth to make himself king — claiming by blood what his father refused for Yahuah''s honour.'),
+    ('canon','judges',9,4,'canon','judges',8,33,'free',E'*And it came to pass, as soon as Gideon was dead, that the children of Yashar''el (Israel) turned again, and went a whoring after Baalim, and made Baal-berith their god* (Judges 8:33). The very idol Yashar''el had set up after Gideon died now funds the murder: *they gave him threescore and ten pieces of silver out of the house of Baal-berith, wherewith Abimelech hired vain and light persons* (9:4). The apostasy bankrolls the bloodshed — seventy pieces of silver from the false god to slay the seventy true sons.')
+    ,
+    -- THREAD 2: Jotham's parable — the bramble king, let fire come out of the bramble (2 Kings)
+    ('canon','judges',9,15,'canon','2-kings',14,9,'free',E'*And Jehoash the king of Yashar''el (Israel) sent to Amaziah king of Yahudah (Judah), saying, The thistle that was in Lebanon sent to the cedar that was in Lebanon, saying, Give thy daughter to my son to wife: and there passed by a wild beast that was in Lebanon, and trode down the thistle* (2 Kings 14:9). Jehoash answers Amaziah''s pride with the same fable Jotham told — the worthless thorn presuming against the cedar. Jotham''s bramble that threatens *let fire come out of the bramble, and devour the cedars of Lebanon* (9:15) is the thistle trodden down: the unfit ruler who exalts himself over the mighty is brought to nothing.')
+    ,
+    -- THREAD 3: the mischief returns upon his own head — the millstone, Elohim rendered the blood (Psalms / Proverbs / 2 Samuel / Galatians)
+    ('canon','judges',9,56,'canon','psalms',7,16,'free',E'*His mischief shall return upon his own head, and his violent dealing shall come down upon his own pate* (Psalms 7:16). This is the law the chapter closes on: *Thus Elohim (God) rendered the wickedness of Abimelech, which he did unto his father, in slaying his seventy brethren* (9:56). The violent dealing of the man who slew seventy upon one stone comes down on his own pate — a millstone on his skull at Thebez — exactly as the Psalm sings the wicked falling into his own pit.'),
+    ('canon','judges',9,53,'canon','proverbs',26,27,'free',E'*Whoso diggeth a pit shall fall therein: and he that rolleth a stone, it will return upon him* (Proverbs 26:27). Abimelech slew his brethren *upon one stone* (9:5) and burned the tower of Shechem with fire — and the stone returns: *a certain woman cast a piece of a millstone upon Abimelech''s head, and all to brake his skull* (9:53). The stone he rolled against others comes back upon him; the proverb is fulfilled to the letter.'),
+    ('canon','judges',9,53,'canon','2-samuel',11,21,'free',E'*Who smote Abimelech the son of Jerubbesheth? did not a woman cast a piece of a millstone upon him from the wall, that he died in Thebez?* (2 Samuel 11:21). Generations later Abimelech''s death is a byword in Yashar''el — the very moment recorded here: *a certain woman cast a piece of a millstone upon Abimelech''s head* (9:53). His shameful end, the usurper felled by a woman''s millstone, is remembered as the proverb of the reckless death.'),
+    ('canon','judges',9,24,'canon','galatians',6,7,'free',E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The chapter names the same law in advance: Elohim sent the evil spirit *That the cruelty done to the threescore and ten sons of Jerubbaal might come, and their blood be laid upon Abimelech their brother, which slew them* (9:24). The blood he sowed is the harvest he reaps — Elohim is not mocked, and the cruelty done to the seventy returns upon the head that ordered it.'),
+    ('canon','judges',9,57,'canon','galatians',6,7,'free',E'*Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). Shechem''s share of the harvest closes the chapter: *And all the evil of the men of Shechem did Elohim (God) render upon their heads: and upon them came the curse of Jotham the son of Jerubbaal* (9:57). The men who bankrolled and aided the slaughter reap what they sowed — the curse of Jotham coming home, Elohim rendering their evil upon their own heads.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-9-abimelech-the-bloody-usurper-the-seventy-slain-the-king-who-refused-kingship',
+       E'Abimelech the Bloody Usurper — the Seventy Slain vs the King Who Refused Kingship',
+       E'Gideon had ended his life with the one refusal that defines the whole book of Judges. When all Yashar''el begged him to found a dynasty, he would not — *And Gideon said unto them, I will not rule over you, neither shall my son rule over you: Yahuah (LORD) shall rule over you* (Judges 8:23). The kingship belongs to Yahuah; no man may grasp it. But Gideon *had threescore and ten sons of his body begotten: for he had many wives* (Judges 8:30), and one more — *his concubine that was in Shechem, she also bare him a son, whose name he called Abimelech* (Judges 8:31). The concubine''s son is the man who now seizes the very crown his father laid down. He goes to Shechem, to his mother''s kin, and works the city: *remember also that I am your bone and your flesh* (9:2). And when Yashar''el after Gideon''s death *went a whoring after Baalim, and made Baal-berith their god* (Judges 8:33), the apostasy itself bankrolls the murder: *they gave him threescore and ten pieces of silver out of the house of Baal-berith, wherewith Abimelech hired vain and light persons* (9:4) — seventy pieces of silver from the false god to slay the seventy true sons. *And he went unto his father''s house at Ophrah, and slew his brethren the sons of Jerubbaal, being threescore and ten persons, upon one stone: notwithstanding yet Jotham the youngest son of Jerubbaal was left; for he hid himself* (9:5). The whole lawful house wiped out in one morning so that one usurper might reign. Abimelech is the anti-Gideon — the son who grasped what his father refused, who shed his brothers'' blood to wear a crown that belonged to Yahuah. The seventy slain are the innocent blood this chapter will require.',
+       sv.verse_id, ev.verse_id, 'free', 35850
+  FROM _s345_jdg09_lookup sv, _s345_jdg09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=9 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-9-jothams-parable-the-bramble-king-let-fire-come-out-of-the-bramble',
+       E'Jotham''s Parable — the Bramble King, Let Fire Come Out of the Bramble',
+       E'Jotham, the one son who escaped the slaughter, climbs to the top of mount Gerizim and tells the oldest political fable in Scripture. *The trees went forth on a time to anoint a king over them; and they said unto the olive tree, Reign thou over us* (9:8). But the fruitful and the useful all refuse — each has better fruit to give than to wave over other trees. The olive: *Should I leave my fatness, wherewith by me they honour Elohim (God) and man, and go to be promoted over the trees?* (9:9). The fig: *Should I forsake my sweetness, and my good fruit?* (9:11). The vine: *Should I leave my wine, which cheereth Elohim (God) and man?* (9:13). The good trees will not abandon their calling to grasp at rule. *Then said all the trees unto the bramble, Come thou, and reign over us* (9:14) — and only the worthless bramble, that bears no fruit and gives no shade, accepts. And it accepts with a threat: *And the bramble said unto the trees, If in truth ye anoint me king over you, then come and put your trust in my shadow: and if not, let fire come out of the bramble, and devour the cedars of Lebanon* (9:15). The bramble has no shadow worth trusting; what it offers is fire. The unfit ruler is precisely the one who grasps for power — and what he gives his people is not shelter but burning. The fable is no isolated tale; it is the shape of the whole canon''s warning against the grasping king. Generations later King Jehoash answers Amaziah''s pride with the very same fable-form: *The thistle that was in Lebanon sent to the cedar that was in Lebanon, saying, Give thy daughter to my son to wife: and there passed by a wild beast that was in Lebanon, and trode down the thistle* (2 Kings 14:9). The worthless thorn that presumes against the cedar is trodden down. So Jotham''s curse follows the fable to its end — *let fire come out from Abimelech, and devour the men of Shechem... and let fire come out from the men of Shechem... and devour Abimelech* (9:20) — and the chapter watches it burn.',
+       sv.verse_id, ev.verse_id, 'free', 35853
+  FROM _s345_jdg09_lookup sv, _s345_jdg09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=9 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood',
+       E'The Mischief Returns Upon His Own Head — the Millstone, Elohim Rendered the Blood',
+       E'The curse runs its course exactly as Jotham''s fable warned. After three years *Elohim (God) sent an evil spirit between Abimelech and the men of Shechem* (9:23), and the reason is stated plainly: *That the cruelty done to the threescore and ten sons of Jerubbaal might come, and their blood be laid upon Abimelech their brother, which slew them; and upon the men of Shechem, which aided him in the killing of his brethren* (9:24). The innocent blood is being required. The bramble''s fire devours the cedars and the cedars'' fire devours the bramble — Abimelech burns the tower of Shechem, *about a thousand men and women* (9:49) — and then comes Thebez. *And a certain woman cast a piece of a millstone upon Abimelech''s head, and all to brake his skull* (9:53); he begs his armourbearer to run him through *that men say not of me, A woman slew him* (9:54), but the shame is already fixed forever. The chapter closes naming the law of the harvest twice over: *Thus Elohim (God) rendered the wickedness of Abimelech, which he did unto his father, in slaying his seventy brethren: And all the evil of the men of Shechem did Elohim (God) render upon their heads: and upon them came the curse of Jotham the son of Jerubbaal* (9:56-57). This is the Psalm of the wicked man falling into his own pit: *His mischief shall return upon his own head, and his violent dealing shall come down upon his own pate* (Psalms 7:16) — and his pate is precisely where the millstone lands. It is the proverb to the letter: *Whoso diggeth a pit shall fall therein: and he that rolleth a stone, it will return upon him* (Proverbs 26:27) — the man who slew upon a stone is broken by a stone. So famous is the reckoning that it becomes a byword in Yashar''el; Joab cites it generations later: *Who smote Abimelech the son of Jerubbesheth? did not a woman cast a piece of a millstone upon him from the wall, that he died in Thebez?* (2 Samuel 11:21). And the gospel names the unchanging principle: *Be not deceived; Elohim (God) is not mocked: for whatsoever a man soweth, that shall he also reap* (Galatians 6:7). The blood Abimelech sowed is the harvest he reaped; the evil the men of Shechem sowed Elohim rendered upon their own heads. Yahuah is not mocked, and the innocent blood always comes home.',
+       sv.verse_id, ev.verse_id, 'free', 35856
+  FROM _s345_jdg09_lookup sv, _s345_jdg09_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=23
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=9 AND ev.verse_number=57
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 8:23 — *I will not rule over you... Yahuah shall rule over you*: Abimelech seizes the very crown his father refused, slaying the rest of the house to do it (9:5).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-abimelech-the-bloody-usurper-the-seventy-slain-the-king-who-refused-kingship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 8:30 — *Gideon had threescore and ten sons of his body begotten*: the seventy named here are the very brethren Abimelech kills *upon one stone* (9:5).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=5
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=8 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-abimelech-the-bloody-usurper-the-seventy-slain-the-king-who-refused-kingship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Judges 8:31 — *his concubine that was in Shechem... bare him a son, whose name he called Abimelech*: the concubine''s son works his mother''s city, *I am your bone and your flesh* (9:1-2).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=1
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=8 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-abimelech-the-bloody-usurper-the-seventy-slain-the-king-who-refused-kingship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Judges 8:33 — *made Baal-berith their god*: the apostasy bankrolls the murder — seventy pieces of silver from the false god''s house to hire the killers (9:4).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=4
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-abimelech-the-bloody-usurper-the-seventy-slain-the-king-who-refused-kingship'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 14:9 — *The thistle that was in Lebanon sent to the cedar... a wild beast... trode down the thistle*: the same worthless-ruler fable; Jotham''s bramble that threatens *fire... devour the cedars of Lebanon* (9:15) is the thistle trodden down.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=15
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=14 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-jothams-parable-the-bramble-king-let-fire-come-out-of-the-bramble'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalms 7:16 — *His mischief shall return upon his own head... come down upon his own pate*: the violent dealing of Abimelech comes down on his own pate, *Elohim rendered the wickedness of Abimelech* (9:56).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=56
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 26:27 — *he that rolleth a stone, it will return upon him*: the man who slew his brethren *upon one stone* (9:5) is broken by a stone, the millstone on his skull (9:53).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=53
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=26 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Samuel 11:21 — *did not a woman cast a piece of a millstone upon him... that he died in Thebez?*: Abimelech''s shameful end becomes a byword in Yashar''el, the very moment of 9:53.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=53
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=11 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Galatians 6:7 — *whatsoever a man soweth, that shall he also reap*: the blood he sowed is the harvest, *the cruelty done to the threescore and ten sons... might come, and their blood be laid upon Abimelech* (9:24).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=24
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Galatians 6:7 — *Elohim is not mocked*: Shechem''s harvest closes the chapter, *all the evil of the men of Shechem did Elohim render upon their heads... the curse of Jotham* (9:57).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg09_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=9 AND sv.verse_number=57
+  JOIN _s345_jdg09_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-9-the-mischief-returns-upon-his-own-head-the-millstone-elohim-rendered-the-blood'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_10.sql (Judges 10) -----
+-- Chapter: Judges 10 — THE CYCLE DEEPENS, AND THE GRIEVED MERCY OF YAHUAH: Tola and Jair judge
+--          Yashar'el (the minor judges, the rest between); ★ the apostasy worse than ever —
+--          Yashar'el serves the gods of SEVEN nations (Baalim, Ashtaroth, Syria, Zidon, Moab,
+--          Ammon, Philistines) and *forsook Yahuah, and served not him* (10:6); sold to the
+--          Philistines and Ammon, 18 years of oppression; ★★ they cry and CONFESS *We have
+--          sinned* (10:10,15); ★★ Yahuah's wearied rebuke — *I will deliver you no more. Go and
+--          cry unto the gods which ye have chosen* (10:11-14); ★★★ but when they put away the
+--          strange gods and serve Yahuah, *his soul was grieved for the misery of Yashar'el*
+--          (10:16) — the divine compassion that relents at true repentance, the heart that cannot
+--          finally give His people up.
+-- Tag: jdg10   View: _s345_jdg10_lookup   Sort band: 35875, 35878, 35881
+--
+-- Judges 10 coverage:
+--   v.1-5  (Tola of Issachar judges 23 years; Jair the Gileadite judges 22 years, thirty sons on
+--           thirty ass colts, thirty cities Havoth-jair)
+--          NT/Extras/Tanakh: none warranted — the minor-judge rest-notices frame the turn into
+--                  the relapse; carried into the surrounding threads
+--   v.6-10 (★ did evil AGAIN, served the gods of SEVEN nations, *forsook Yahuah, and served not
+--           him*; sold into the hands of the Philistines and Ammon, 18 years' oppression; the cry
+--           and the confession *We have sinned... we have forsaken our Elohim, and also served
+--           Baalim*)
+--          NT:     none warranted at the verse (the cycle's lateral weight is in the Tanakh; the
+--                  Deliverer who ends the cycle is named in the Thread-3 NT capstone)
+--          Extras: none warranted
+--          Tanakh: Judges 2:11-13 (did evil, served Baalim, forsook Yahuah, served Baal and
+--                  Ashtaroth), 1 Samuel 12:9-10 (sold into the hand of the Philistines and Moab...
+--                  We have sinned, we have forsaken Yahuah, served Baalim and Ashtaroth), Psalm
+--                  106:36 (served their idols, which were a snare unto them)
+--   v.11-14 (★★ Yahuah's wearied rebuke: *Did not I deliver you from the Egyptians... yet ye have
+--            forsaken me, and served other gods: wherefore I will deliver you no more. Go and cry
+--            unto the gods which ye have chosen; let them deliver you*)
+--          NT:     none warranted at the verse
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 32:37-38 (Where are their gods, their rock in whom they trusted?...
+--                  let them rise up and help you), Jeremiah 2:28 (let them arise, if they can save
+--                  thee in the time of thy trouble), Nehemiah 9:28 (after rest they did evil
+--                  again... yet when they returned and cried, thou heardest them)
+--   v.15-16 (★★★ the renewed confession *We have sinned: do thou unto us whatsoever seemeth good...
+--            deliver us only*; they PUT AWAY the strange gods and served Yahuah; *his soul was
+--            grieved for the misery of Yashar'el*)
+--          NT:     Romans 11:1-2 (Hath Elohim cast away his people? Elohim forbid... hath not cast
+--                  away his people which he foreknew) — the anti-replacement seal: the grieved heart
+--                  of Judges 10 is the same heart that has NOT cast off Yashar'el
+--          Extras: none warranted
+--          Tanakh: Hosea 11:8 (How shall I give thee up, Ephraim?... mine heart is turned within
+--                  me, my repentings are kindled together), Isaiah 63:9 (In all their affliction he
+--                  was afflicted... in his love and in his pity he redeemed them), Nehemiah 9:31
+--                  (for thy great mercies' sake thou didst not utterly consume them, nor forsake
+--                  them)
+--   v.17-18 (Ammon gathers in Gilead, Yashar'el encamps at Mizpeh; the princes seek a head —
+--            setting up Jephthah)
+--          NT/Extras/Tanakh: none warranted — narrative bridge into chapter 11
+--
+-- Threads:
+--   judges-10-the-deepening-apostasy-and-the-cry-of-confession        [Tanakh: Judges, 1 Samuel, Psalm]              (free)
+--   judges-10-i-will-deliver-you-no-more-cry-to-your-chosen-gods       [Tanakh: Deuteronomy, Jeremiah, Nehemiah]      (free)
+--   judges-10-his-soul-was-grieved-for-the-misery-of-yasharel          [Tanakh: Hosea, Isaiah, Nehemiah | NT: Romans] (free)
+--
+-- Framework notes: ★ The cycle of Judges 2 returns deeper: the people serve the gods of SEVEN
+-- nations at once and *forsook Yahuah, and served not him* (10:6) — the same evil, the same
+-- Baalim and Ashtaroth (Judges 2:11-13), the same selling-into-the-hand (1 Sam 12:9), the idols
+-- that are a snare (Ps 106:36). ★★ The wearied rebuke *I will deliver you no more. Go and cry
+-- unto the gods which ye have chosen* (10:13-14) is the bitter irony Moses sang (Deut 32:37-38,
+-- *Where are their gods... let them rise up and help you*) and Jeremiah pressed (Jer 2:28, *let
+-- them arise, if they can save thee*) — the chosen gods who cannot save, the patience tested to
+-- its edge; yet Nehemiah confesses the cry was still heard (Neh 9:28). ★★★ The keystone is 10:16
+-- — they PUT AWAY the strange gods (true repentance, not mere words) and *his soul was grieved
+-- for the misery of Yashar'el*. This is the very heart of Yahuah: *How shall I give thee up,
+-- Ephraim?... mine heart is turned within me, my repentings are kindled together* (Hos 11:8);
+-- *In all their affliction he was afflicted... in his love and in his pity he redeemed them* (Isa
+-- 63:9 — the Angel of His presence, the Formed Son who bears the affliction with His people);
+-- *for thy great mercies' sake thou didst not utterly consume them, nor forsake them* (Neh 9:31).
+-- And the NT seals it against the replacement reading: *Hath Elohim cast away his people? Elohim
+-- forbid... Elohim hath not cast away his people which he foreknew* (Rom 11:1-2). The grieved soul
+-- of Judges 10 is the same heart that never finally gives His covenant people up. All members
+-- canon → every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s345_jdg10_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the deepening apostasy and the cry of confession (Judges / 1 Samuel / Psalm)
+    ('canon','judges',10,6,'canon','judges',2,11,'free',E'*And the children of Yashar''el (Israel) did evil in the sight of Yahuah (LORD), and served Baalim* (Judges 2:11). The cycle laid down at the book''s opening returns here word for word, only deeper: *And the children of Yashar''el (Israel) did evil again in the sight of Yahuah (LORD), and served Baalim, and Ashtaroth, and the gods of Syria, and the gods of Zidon, and the gods of Moab, and the gods of the children of Ammon, and the gods of the Philistines* (10:6). The same evil, the same Baalim — now multiplied to the gods of seven nations.'),
+    ('canon','judges',10,6,'canon','judges',2,12,'free',E'*And they forsook Yahuah Elohim (the LORD God) of their fathers, which brought them out of the land of Egypt, and followed other gods, of the gods of the people that were round about them* (Judges 2:12). The forsaking of Judges 2 is the forsaking of Judges 10: *and forsook Yahuah (LORD), and served not him* (10:6). The very thing the Angel rebuked at Bochim — following the gods of the people round about — is now the settled practice; the cycle has not been broken, only worn deeper.'),
+    ('canon','judges',10,6,'canon','judges',2,13,'free',E'*And they forsook Yahuah (LORD), and served Baal and Ashtaroth* (Judges 2:13). Baal and Ashtaroth head the list again — *served Baalim, and Ashtaroth* (10:6) — the same two idols that opened the book''s descent now open this one. The relapse is not a new sin but the old one returned, *did evil again*, the wheel turning once more.'),
+    ('canon','judges',10,7,'canon','1-samuel',12,9,'free',E'*And when they forgat Yahuah (LORD) their Elohim (God), he sold them into the hand of Sisera, captain of the host of Hazor, and into the hand of the Philistines, and into the hand of the king of Moab, and they fought against them* (1 Samuel 12:9). Samuel rehearses the very pattern of Judges 10: *And the anger of Yahuah (LORD) was hot against Yashar''el (Israel), and he sold them into the hands of the Philistines, and into the hands of the children of Ammon* (10:7). To forget Yahuah is to be sold into the hand of the oppressor — the servitude that follows the sin in every turn of the wheel.'),
+    ('canon','judges',10,10,'canon','1-samuel',12,10,'free',E'*And they cried unto Yahuah (LORD), and said, We have sinned, because we have forsaken Yahuah (LORD), and have served Baalim and Ashtaroth: but now deliver us out of the hand of our enemies, and we will serve thee* (1 Samuel 12:10). This is the confession of Judges 10 almost to the word: *And the children of Yashar''el (Israel) cried unto Yahuah (LORD), saying, We have sinned against thee, both because we have forsaken our Elohim (God), and also served Baalim* (10:10). Samuel names this same cry as the supplication-step of the cycle — sin confessed, deliverance begged, the wheel turning toward mercy.'),
+    ('canon','judges',10,6,'canon','psalms',106,36,'free',E'*And they served their idols: which were a snare unto them* (Psalm 106:36). The Psalm names the trap that the seven-fold idolatry of Judges 10 sprang: *and served not him* (10:6). To serve Baalim, Ashtaroth, and the gods of Syria, Zidon, Moab, Ammon, and the Philistines is to be caught in the snare the Psalm sings — the idols of the nations round about become the chains of those who bow to them.'),
+    -- THREAD 2: ★★ "I will deliver you no more — go cry to your chosen gods" (Deuteronomy / Jeremiah / Nehemiah)
+    ('canon','judges',10,14,'canon','deuteronomy',32,37,'free',E'*And he shall say, Where are their gods, their rock in whom they trusted* (Deuteronomy 32:37). Moses foresang the very taunt Yahuah now speaks: *Go and cry unto the gods which ye have chosen; let them deliver you in the time of your tribulation* (10:14). The chosen gods are summoned to do what only Yahuah can do — and Moses already knew the answer: they are no rock, they cannot stand.'),
+    ('canon','judges',10,14,'canon','deuteronomy',32,38,'free',E'*Which did eat the fat of their sacrifices, and drank the wine of their drink offerings? let them rise up and help you, and be your protection* (Deuteronomy 32:38). This is Yahuah''s rebuke in Judges 10 set to song a generation earlier — *let them deliver you in the time of your tribulation* (10:14). The bitter irony is the same: the gods who received the sacrifices are told to provide the salvation, and they cannot. The patience of Yahuah is tested to its edge — *I will deliver you no more* (10:13).'),
+    ('canon','judges',10,14,'canon','jeremiah',2,28,'free',E'*But where are thy gods that thou hast made thee? let them arise, if they can save thee in the time of thy trouble: for according to the number of thy cities are thy gods, O Yahudah (Judah)* (Jeremiah 2:28). Jeremiah presses the same charge Yahuah lays in Judges 10: *Go and cry unto the gods which ye have chosen; let them deliver you in the time of your tribulation* (10:14). The chosen gods are challenged to save in the hour of trouble — and the prophet knows, as Yahuah knows, that they cannot rise.'),
+    ('canon','judges',10,13,'canon','nehemiah',9,28,'free',E'*But after they had rest, they did evil again before thee: therefore leftest thou them in the hand of their enemies, so that they had the dominion over them: yet when they returned, and cried unto thee, thou heardest them from heaven; and many times didst thou deliver them according to thy mercies* (Nehemiah 9:28). Yahuah''s *I will deliver you no more* (10:13) is the wearied edge of the very wheel Nehemiah confesses — rest, then evil again, then the cry. The rebuke is real, the patience worn; yet the cycle Nehemiah names ends not in abandonment but in *many times didst thou deliver them* — the mercy that keeps answering the cry.'),
+    -- THREAD 3: ★★★ "his soul was grieved for the misery of Yashar'el" (Hosea / Isaiah / Nehemiah / Romans)
+    ('canon','judges',10,16,'canon','hosea',11,8,'free',E'*How shall I give thee up, Ephraim? how shall I deliver thee, Yashar''el (Israel)? how shall I make thee as Admah? how shall I set thee as Zeboim? mine heart is turned within me, my repentings are kindled together* (Hosea 11:8). This is the inner life of the line *his soul was grieved for the misery of Yashar''el (Israel)* (10:16). When the people put away the strange gods, Yahuah''s heart turns within Him — the same divine compassion Hosea voices: the God who cannot finally give His people up, whose repentings kindle together at their return.'),
+    ('canon','judges',10,16,'canon','isaiah',63,9,'free',E'*In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old* (Isaiah 63:9). The *grieved* soul of 10:16 is this very mystery — *in all their affliction he was afflicted*. Yahuah does not stand apart from the *misery of Yashar''el (Israel)*; the Angel of His presence (the Formed Son who bears the Name) bears it with them, in love and in pity, and that shared affliction is the ground of His relenting.'),
+    ('canon','judges',10,16,'canon','nehemiah',9,31,'free',E'*Nevertheless for thy great mercies'' sake thou didst not utterly consume them, nor forsake them; for thou art a gracious and merciful Elohim (God)* (Nehemiah 9:31). The grieved soul of Judges 10 is the gracious and merciful Elohim Nehemiah confesses — the God who, though His patience is worn to *I will deliver you no more* (10:13), still *didst not utterly consume them, nor forsake them*. The misery that grieves Him (10:16) is met not with abandonment but with the great mercies that never let His people be wholly lost.'),
+    ('canon','judges',10,16,'canon','romans',11,1,'free',E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). The heart that was *grieved for the misery of Yashar''el (Israel)* (10:16) is the heart Paul declares has never cast His people off. The grief of Judges 10 is the standing answer to every replacement reading — the God whose soul is moved at His people''s misery does not, will not, cast them away.'),
+    ('canon','judges',10,16,'canon','romans',11,2,'free',E'*Elohim (God) hath not cast away his people which he foreknew. Wot ye not what the scripture saith of Elias? how he maketh intercession to Elohim (God) against Yashar''el (Israel)* (Romans 11:2). The relenting soul of 10:16 — grieved at His people''s misery the moment they put away their idols — is the very proof of this: *Elohim hath not cast away his people which he foreknew*. The mercy that turns at true repentance in Judges is the same foreknowing love that holds Yashar''el (Israel) for ever; both olive branches are His.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-10-the-deepening-apostasy-and-the-cry-of-confession',
+       E'The Deepening Apostasy and the Cry of Confession',
+       E'After the quiet rest of Tola and Jair (10:1-5), the wheel turns again — and turns deeper. *And the children of Yashar''el (Israel) did evil again in the sight of Yahuah (LORD), and served Baalim, and Ashtaroth, and the gods of Syria, and the gods of Zidon, and the gods of Moab, and the gods of the children of Ammon, and the gods of the Philistines, and forsook Yahuah (LORD), and served not him* (10:6). This is the cycle of the book''s opening returned word for word, only multiplied — where Judges 2 named one apostasy, *the children of Yashar''el (Israel) did evil in the sight of Yahuah (LORD), and served Baalim* (Judges 2:11), here it is the gods of seven nations at once. The same forsaking, *they forsook Yahuah Elohim (the LORD God) of their fathers... and followed other gods, of the gods of the people that were round about them* (Judges 2:12); the same two idols heading the list, *served Baal and Ashtaroth* (Judges 2:13). And the idols are a trap, exactly as the Psalm sings: *they served their idols: which were a snare unto them* (Psalm 106:36). The servitude follows as it always does: *and he sold them into the hands of the Philistines, and into the hands of the children of Ammon* (10:7) — the very selling Samuel rehearses, *when they forgat Yahuah (LORD) their Elohim (God), he sold them into the hand... of the Philistines* (1 Samuel 12:9). Eighteen years of oppression, *Yashar''el (Israel) was sore distressed* (10:9), and then the cry: *We have sinned against thee, both because we have forsaken our Elohim (God), and also served Baalim* (10:10) — the confession Samuel names as the supplication-step of the cycle, *We have sinned, because we have forsaken Yahuah (LORD), and have served Baalim and Ashtaroth* (1 Samuel 12:10). Sin, servitude, the cry — the wheel of the whole book, worn deeper, turning once more toward mercy.',
+       sv.verse_id, ev.verse_id, 'free', 35875
+  FROM _s345_jdg10_lookup sv, _s345_jdg10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=10 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-10-i-will-deliver-you-no-more-cry-to-your-chosen-gods',
+       E'I Will Deliver You No More — Cry to Your Chosen Gods',
+       E'For the first time in the book, Yahuah answers the cry not with a deliverer but with a rebuke — the long-suffering tested to its edge. *Did not I deliver you from the Egyptians, and from the Amorites, from the children of Ammon, and from the Philistines? The Zidonians also, and the Amalekites, and the Maonites, did oppress you; and ye cried to me, and I delivered you out of their hand. Yet ye have forsaken me, and served other gods: wherefore I will deliver you no more. Go and cry unto the gods which ye have chosen; let them deliver you in the time of your tribulation* (10:11-14). The taunt is bitter and ancient — Moses sang it a generation before: *Where are their gods, their rock in whom they trusted, which did eat the fat of their sacrifices, and drank the wine of their drink offerings? let them rise up and help you, and be your protection* (Deuteronomy 32:37-38). The gods who received the worship are summoned to provide the rescue — and they cannot. Jeremiah would press the same charge: *where are thy gods that thou hast made thee? let them arise, if they can save thee in the time of thy trouble* (Jeremiah 2:28). The chosen gods are no rock; they cannot stand. Yet even *I will deliver you no more* (10:13) is the wearied edge of the wheel, not its end — for Nehemiah confesses this very pattern and names where it lands: *after they had rest, they did evil again before thee... yet when they returned, and cried unto thee, thou heardest them from heaven; and many times didst thou deliver them according to thy mercies* (Nehemiah 9:28). The rebuke is real, the patience worn thin — but it is the rebuke of a Father who will be moved again, not the verdict of a God who has cast His people off.',
+       sv.verse_id, ev.verse_id, 'free', 35878
+  FROM _s345_jdg10_lookup sv, _s345_jdg10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=10 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-10-his-soul-was-grieved-for-the-misery-of-yasharel',
+       E'His Soul Was Grieved for the Misery of Yashar''el',
+       E'The rebuke was not the last word, because the repentance was real. *And the children of Yashar''el (Israel) said unto Yahuah (LORD), We have sinned: do thou unto us whatsoever seemeth good unto thee; deliver us only, we pray thee, this day* (10:15) — and then, not words alone but the act: *And they put away the strange gods from among them, and served Yahuah (LORD)* (10:16a). The strange gods of the seven nations were cast out; they turned and served Him. And then the line that opens the very heart of Yahuah: *and his soul was grieved for the misery of Yashar''el (Israel)* (10:16b). The God who had just said *I will deliver you no more* cannot hold to it — His soul is moved at His people''s misery. This is the inner life Hosea would later voice: *How shall I give thee up, Ephraim? how shall I deliver thee, Yashar''el (Israel)? how shall I make thee as Admah? how shall I set thee as Zeboim? mine heart is turned within me, my repentings are kindled together* (Hosea 11:8) — the God who cannot finally give His people up. It is the mystery Isaiah names: *In all their affliction he was afflicted, and the angel of his presence saved them: in his love and in his pity he redeemed them; and he bare them, and carried them all the days of old* (Isaiah 63:9) — Yahuah does not watch the misery from afar; the Angel of His presence, the Formed Son who bears the Name, bears the affliction with His people, and that shared grief is the ground of His relenting. Nehemiah confesses the same heart in one line: *for thy great mercies'' sake thou didst not utterly consume them, nor forsake them; for thou art a gracious and merciful Elohim (God)* (Nehemiah 9:31). And the New Testament seals it against every reading that would write Yashar''el out: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The soul grieved at the misery of His people in Judges 10 is the same heart that, foreknowing them, has never cast them off and never will — the mercy that relents at true repentance, the love that cannot let His covenant people be wholly lost.',
+       sv.verse_id, ev.verse_id, 'free', 35881
+  FROM _s345_jdg10_lookup sv, _s345_jdg10_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=10 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 2:11 — *did evil in the sight of Yahuah, and served Baalim*: the cycle of the book''s opening returns word for word in 10:6, only multiplied to the gods of seven nations.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-the-deepening-apostasy-and-the-cry-of-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 2:12 — *forsook Yahuah Elohim... followed other gods, of the gods of the people round about*: the forsaking the Angel rebuked at Bochim is now the settled practice (10:6, *served not him*).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-the-deepening-apostasy-and-the-cry-of-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Judges 2:13 — *forsook Yahuah, and served Baal and Ashtaroth*: the same two idols head the list again (10:6) — the relapse is the old sin returned, *did evil again*.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-the-deepening-apostasy-and-the-cry-of-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Samuel 12:9 — *when they forgat Yahuah... he sold them into the hand of the Philistines*: Samuel rehearses the very servitude of 10:7 — to forget Yahuah is to be sold into the oppressor''s hand.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=7
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-the-deepening-apostasy-and-the-cry-of-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Samuel 12:10 — *We have sinned, because we have forsaken Yahuah, and have served Baalim and Ashtaroth*: the confession of 10:10 almost word for word — the supplication-step of the cycle.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=10
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-the-deepening-apostasy-and-the-cry-of-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Psalm 106:36 — *served their idols: which were a snare unto them*: the seven-fold idolatry of 10:6 sprang the very trap the Psalm sings — the idols of the nations round about become the chains.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=6
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=106 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-the-deepening-apostasy-and-the-cry-of-confession'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 32:37 — *Where are their gods, their rock in whom they trusted*: Moses foresang the very taunt of 10:14 — the chosen gods summoned, who are no rock and cannot stand.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-i-will-deliver-you-no-more-cry-to-your-chosen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 32:38 — *let them rise up and help you, and be your protection*: the gods who ate the sacrifices are told to give the salvation (10:14) — and cannot; the patience worn to *I will deliver you no more* (10:13).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-i-will-deliver-you-no-more-cry-to-your-chosen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 2:28 — *let them arise, if they can save thee in the time of thy trouble*: Jeremiah presses the same charge as 10:14 — the chosen gods challenged to save, who cannot rise.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=14
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=2 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-i-will-deliver-you-no-more-cry-to-your-chosen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Nehemiah 9:28 — *yet when they returned, and cried unto thee... many times didst thou deliver them*: *I will deliver you no more* (10:13) is the wearied edge of the wheel Nehemiah confesses — rebuke, not abandonment; the mercy that keeps answering.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=13
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-i-will-deliver-you-no-more-cry-to-your-chosen-gods'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Hosea 11:8 — *How shall I give thee up, Ephraim?... mine heart is turned within me, my repentings are kindled together*: the inner life of *his soul was grieved* (10:16) — the God who cannot finally give His people up.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=11 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-his-soul-was-grieved-for-the-misery-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 63:9 — *In all their affliction he was afflicted, and the angel of his presence saved them*: Yahuah does not watch the *misery* from afar (10:16) — the Angel of His presence, the Formed Son, bears it with them.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=63 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-his-soul-was-grieved-for-the-misery-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Nehemiah 9:31 — *thou didst not utterly consume them, nor forsake them; for thou art a gracious and merciful Elohim*: the grieved heart of 10:16, though worn to *deliver you no more*, still does not forsake.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-his-soul-was-grieved-for-the-misery-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 11:1 — *Hath Elohim cast away his people? Elohim forbid*: the heart grieved for Yashar''el''s misery (10:16) is the standing answer to every replacement reading.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-his-soul-was-grieved-for-the-misery-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 11:2 — *Elohim hath not cast away his people which he foreknew*: the mercy that relents at true repentance in Judges is the same foreknowing love that holds Yashar''el for ever — both olive branches His.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg10_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=10 AND sv.verse_number=16
+  JOIN _s345_jdg10_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-10-his-soul-was-grieved-for-the-misery-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session345 — Judges cross-references complete.'
