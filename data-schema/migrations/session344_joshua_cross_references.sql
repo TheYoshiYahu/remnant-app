@@ -4125,6 +4125,1046 @@ SELECT t.id, cr.id, 3, E'*Even an heritage unto Yashar''el (Israel) his servant:
  WHERE t.slug='joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_joshua_16.sql (Joshua 16) -----
+-- Joshua 16 — the inheritance of the children of JOSEPH: Manasseh and Ephraim.
+-- Tag: jos16   View: _s344_jos16_lookup   Sort band: 35375, 35378
+-- LEAN allotment chapter — exactly 2 framework-bearing threads (boundary verses NOT authored).
+--
+-- Joshua 16 coverage:
+--   v.1,4,5  (the lot/inheritance of Joseph = Ephraim the northern house)
+--        NT:     none warranted (Tanakh two-house spine carries the weight here)
+--        Extras: none warranted
+--        Tanakh: Genesis 48:19 (Ephraim's seed a MULTITUDE OF NATIONS), Ezekiel 37:16,19 (the
+--                stick of Joseph in the hand of Ephraim, the two sticks made one), 1 Kings 12:20
+--                (the ten tribes under Jeroboam of Ephraim become "Yashar'el" the northern house)
+--   v.6,7,8  (boundary verses — Michmethah, Taanath-shiloh, Tappuah, river Kanah)
+--        NT/Extras/Tanakh: none warranted (pure geography — LEAN chapter, not authored)
+--   v.9      (separate cities of Ephraim among Manasseh)
+--        none warranted (administrative detail)
+--   v.10     (★ they DRAVE NOT OUT the Canaanites in Gezer — incomplete obedience, the snare)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Judges 1:29 (the SAME failure restated — Ephraim drave not out the Canaanites
+--                in Gezer), 1 Kings 12:28 (the un-driven snare ripening into the golden calves of
+--                Beth-el in Ephraim's own land — the leaven of compromise becomes idolatry)
+--
+-- Thread 1 (free):  joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house
+--                   targets: Tanakh only (Genesis, Ezekiel, 1 Kings)
+-- Thread 2 (free):  joshua-16-they-drave-not-out-the-canaanites-the-snare-of-incomplete-obedience
+--                   targets: Tanakh only (Judges, 1 Kings)
+
+CREATE TEMP VIEW _s344_jos16_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Joseph/Ephraim = the northern house
+    ('canon','joshua',16,1,'canon','genesis',48,19,'free',E'*And his father refused, and said, I know it, my son, I know it: he also shall become a people, and he also shall be great: but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19). Joshua opens with *the lot of the children of Joseph* (Joshua 16:1); the land now measured to Ephraim is the inheritance Yashar''el (Israel) promised over the younger lad''s head — Ephraim''s seed becomes the *multitude of nations*, the melo ha-goyim, the northern house that will be scattered into the nations and gathered home.'),
+    ('canon','joshua',16,4,'canon','genesis',48,19,'free',E'*And his father refused, and said, I know it, my son, I know it: he also shall become a people, and he also shall be great: but truly his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19). *So the children of Joseph, Manasseh and Ephraim, took their inheritance* (Joshua 16:4) — the order Yashar''el (Israel) set when he crossed his hands, putting Ephraim before Manasseh, is the order the land itself now honours: the *multitude of nations* takes its portion.'),
+    ('canon','joshua',16,5,'canon','ezekiel',37,16,'free',E'*Moreover, thou son of Adam, take thee one stick, and write upon it, For Yahudah (Judah), and for the children of Yashar''el (Israel) his companions: then take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16). *The border of the children of Ephraim* (Joshua 16:5) is the inheritance of the very tribe whose name Ezekiel writes on the second stick — Ephraim stands for *all the house of Yashar''el (Israel)*, the northern house that will one day be rejoined to Yahudah (Judah).'),
+    ('canon','joshua',16,4,'canon','ezekiel',37,19,'free',E'*Say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the stick of Joseph, which is in the hand of Ephraim, and the tribes of Yashar''el (Israel) his fellows, and will put them with him, even with the stick of Yahudah (Judah), and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The inheritance *Manasseh and Ephraim took* (Joshua 16:4) is the stick of Joseph itself — the regathering Ezekiel foresees is not a new people grafted in, but these same sons of Joseph made one again with Yahudah (Judah).'),
+    ('canon','joshua',16,5,'canon','1-kings',12,20,'free',E'*And it came to pass, when all Yashar''el (Israel) heard that Jeroboam was come again, that they sent and called him unto the congregation, and made him king over all Yashar''el (Israel): there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20). *The border of the children of Ephraim* (Joshua 16:5) measures the heartland of the ten tribes that, under Jeroboam of Ephraim, will split off and carry the name "Yashar''el (Israel)" as the northern house — the two-house division foreshadowed in the very allotment.'),
+    -- Thread 2: they drave not out the Canaanites — the snare
+    ('canon','joshua',16,10,'canon','judges',1,29,'free',E'*Neither did Ephraim drive out the Canaanites that dwelt in Gezer; but the Canaanites dwelt in Gezer among them* (Judges 1:29). This is Joshua''s same indictment restated word for word: *they drave not out the Canaanites that dwelt in Gezer: but the Canaanites dwell among the Ephraimites unto this day, and serve under tribute* (Joshua 16:10). The un-driven-out remnant is incomplete obedience — the leaven left in the lump that becomes a snare to the northern house.'),
+    ('canon','joshua',16,10,'canon','1-kings',12,28,'free',E'*Whereupon the king took counsel, and made two calves of gold, and said unto them, It is too much for you to go up to Jerusalem: behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28). The compromise that began as *the Canaanites dwell among the Ephraimites* (Joshua 16:10) ripens here in Ephraim''s own land under Jeroboam: the Canaanite leaven left un-driven becomes the golden calves of Beth-el, the snare that finally scatters the northern house.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house',
+       E'The Inheritance of Joseph: Ephraim the Northern House',
+       E'Joshua 16 measures out *the lot of the children of Joseph* (Joshua 16:1), and *So the children of Joseph, Manasseh and Ephraim, took their inheritance* (Joshua 16:4). This is no ordinary allotment — it is the land promised over a younger lad''s head when Yashar''el (Israel) crossed his hands: *truly his younger brother shall be greater than he, and his seed shall become a multitude of nations* (Genesis 48:19). Ephraim is the *multitude of nations*, the melo ha-goyim, the leading tribe of the ten that will carry the name "Yashar''el (Israel)" as the northern house.\n\nEzekiel writes that name on the second of two sticks: *take another stick, and write upon it, For Joseph, the stick of Ephraim, and for all the house of Yashar''el (Israel) his companions* (Ezekiel 37:16) — and promises, *I will take the stick of Joseph, which is in the hand of Ephraim... and make them one stick, and they shall be one in mine hand* (Ezekiel 37:19). The very tribe receiving its border here is the stick that will be scattered into the nations and one day rejoined to Yahudah (Judah).\n\nThe split is already in view: *they... made him king over all Yashar''el (Israel): there was none that followed the house of David, but the tribe of Yahudah (Judah) only* (1 Kings 12:20) — the ten tribes under Jeroboam of Ephraim become the northern house. This is two-house, not replacement: both sticks are Yashar''el (Israel), to be made one again in the hand of Yahuah (the LORD).',
+       sv.verse_id, ev.verse_id, 'free', 35375
+  FROM _s344_jos16_lookup sv, _s344_jos16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=16 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-16-they-drave-not-out-the-canaanites-the-snare-of-incomplete-obedience',
+       E'They Drave Not Out the Canaanites: the Snare of Incomplete Obedience',
+       E'The chapter that measures Ephraim''s inheritance ends with a confession of failure: *And they drave not out the Canaanites that dwelt in Gezer: but the Canaanites dwell among the Ephraimites unto this day, and serve under tribute* (Joshua 16:10). The land was given whole, but the obedience was partial — the leaven left in the lump.\n\nJudges restates the same indictment word for word: *Neither did Ephraim drive out the Canaanites that dwelt in Gezer; but the Canaanites dwelt in Gezer among them* (Judges 1:29). What was not driven out does not stay quiet; it becomes a snare. The compromise ripens generations later in Ephraim''s own heartland, when Jeroboam *made two calves of gold, and said unto them... behold thy gods, O Yashar''el (Israel), which brought thee up out of the land of Egypt* (1 Kings 12:28) — the Canaanite worship left un-driven becomes the golden calves of Beth-el, the very sin that finally scatters the northern house into the nations.\n\nThe lesson is the framework''s warning against half-kept covenant: incomplete obedience is not neutral. What you tolerate today rules over your children tomorrow.',
+       sv.verse_id, ev.verse_id, 'free', 35378
+  FROM _s344_jos16_lookup sv, _s344_jos16_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=16 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*his seed shall become a multitude of nations* (Genesis 48:19) — the lot of Joseph (Joshua 16:1) is the land promised to the melo ha-goyim, the northern house.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=1
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Manasseh and Ephraim, took their inheritance* (Joshua 16:4) honours the crossed-hands order set in *his seed shall become a multitude of nations* (Genesis 48:19).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=48 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the stick of Ephraim, and for all the house of Yashar''el (Israel)* (Ezekiel 37:16) — the border of Ephraim (Joshua 16:5) is the tribe written on the second stick.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the stick of Joseph, which is in the hand of Ephraim... make them one stick* (Ezekiel 37:19) — the inheritance Joseph took (Joshua 16:4) is the stick to be rejoined to Yahudah (Judah).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=4
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*made him king over all Yashar''el (Israel)... but the tribe of Yahudah (Judah) only* (1 Kings 12:20) — Ephraim''s border (Joshua 16:5) is the heartland of the ten tribes that become the northern house.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=5
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-the-inheritance-of-joseph-ephraim-the-northern-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Neither did Ephraim drive out the Canaanites that dwelt in Gezer* (Judges 1:29) — the same indictment restated; *they drave not out the Canaanites* (Joshua 16:10) is incomplete obedience.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-they-drave-not-out-the-canaanites-the-snare-of-incomplete-obedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*made two calves of gold... behold thy gods, O Yashar''el (Israel)* (1 Kings 12:28) — the un-driven Canaanite leaven (Joshua 16:10) ripens into the golden calves of Beth-el, the snare that scatters the north.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos16_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=16 AND sv.verse_number=10
+  JOIN _s344_jos16_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-16-they-drave-not-out-the-canaanites-the-snare-of-incomplete-obedience'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_17.sql (Joshua 17) -----
+-- Joshua 17 — the inheritance of MANASSEH, the other half of Joseph west of Jordan;
+--   ★ the DAUGHTERS OF ZELOPHEHAD (Mahlah, Noah, Hoglah, Milcah, Tirzah) come near and
+--   receive an inheritance among their father's brethren *according to the commandment of
+--   Yahuah* (17:3-4,6 — the Num 27/36 case-law kept); ★ the children of Joseph complain of
+--   one lot and are answered *thou art a great people... get thee up to the wood country, and
+--   cut down for thyself there... thou shalt drive out the Canaanites, though they have iron
+--   chariots* (17:14-18 — the inheritance possessed by faith/effort, no passivity); ★ but
+--   Manasseh *could not drive out* the Canaanites who *would dwell in that land* (17:12-13 —
+--   the incomplete possession, Judges 1:27-28).
+--   Tag jos17; view _s344_jos17_lookup. Sort band 35400, 35403, 35406.
+--
+-- Joshua 17 coverage:
+--   v.3-4  (daughters of Zelophehad come near; inheritance among their brethren per Yahuah's command)
+--          NT:     Galatians 3:28-29 (neither male nor female; heirs according to the promise) — THREAD 1
+--          Extras: none warranted
+--          Tanakh: Numbers 27:1,4,7,8; Numbers 36:2,10 (the case-law of daughters' inheritance) — THREAD 1
+--   v.6    (the daughters of Manasseh had an inheritance among his sons)
+--          NT:     none warranted (carried by THREAD 1)
+--          Extras: none warranted
+--          Tanakh: Numbers 27:7; Numbers 36:10 — THREAD 1
+--   v.12-13 (could not drive out; Canaanites would dwell; put to tribute, did not utterly drive out)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Judges 1:27, Judges 1:28 (the same Manasseh cities un-driven-out) — THREAD 3
+--   v.14-15 (children of Joseph: one lot, I am a great people; Joshua: get up, cut down the wood)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: carried within THREAD 2 (intra-chapter answer)
+--   v.16-18 (chariots of iron; thou shalt drive out the Canaanites though they have iron chariots)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Judges 1:19 (could not drive out the valley for chariots of iron) — THREAD 2
+--
+-- THREADS:
+--   THREAD 1 joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah (free):
+--            NT (Galatians 3:28-29) + Tanakh (Numbers 27, Numbers 36)
+--   THREAD 2 joshua-17-a-great-people-cut-down-the-wood-and-drive-out-the-iron-chariots (free):
+--            Tanakh only (Judges 1:19)
+--   THREAD 3 joshua-17-the-canaanites-that-could-not-be-driven-out (free):
+--            Tanakh only (Judges 1:27, Judges 1:28)
+--
+-- Framework-load-bearing notes:
+--   * 17:3-4 the daughters inherit *according to the commandment of Yahuah* — the Numbers 27/36
+--     statute of judgment kept to the letter: Yahuah's justice does not leave the name of a man
+--     without sons cut off, nor the daughters portionless. The forward weave to Galatians
+--     3:28-29 is FAINT and DELIBERATE: *neither male nor female... heirs according to the
+--     promise* names an inheritance not bounded by the expected — but the membership is still
+--     the SEED (*Abraham's seed*), the covenant lineage, NOT a replacement-by-confession. The
+--     daughters are not an exception to the seed but its inclusion within Manasseh; the frame
+--     honors Torah's own justice, not its abolition. The marriage-restriction of Num 36 (they
+--     marry within the tribe so the inheritance stays in Joseph) guards the paternal portion.
+--   * 17:14-18 the inheritance is possessed by faith and effort, never passivity: *get thee up
+--     to the wood country, and cut down for thyself there... thou shalt drive out the
+--     Canaanites, though they have iron chariots*. Joseph is a *great people* and must clear
+--     his own portion; the blessing is given but must be taken.
+--   * 17:12-13 *could not drive out... the Canaanites would dwell in that land* — the incomplete
+--     obedience, the un-driven-out remnant, the same cities listed again as Manasseh's failure
+--     in Judges 1:27-28. The promise was full; the possession was partial because the work was
+--     left half-done.
+
+CREATE TEMP VIEW _s344_jos17_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the daughters of Zelophehad inherit according to the commandment of Yahuah (17:3, 17:4, 17:6)
+    ('canon','joshua',17,3,'canon','numbers',27,1,'free',E'*Then came the daughters of Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, of the families of Manasseh the son of Joseph: and these are the names of his daughters; Mahlah, Noah, and Hoglah, and Milcah, and Tirzah* (Numbers 27:1). The very names and the very lineage stand again in *But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters: and these are the names of his daughters, Mahlah, and Noah, Hoglah, Milcah, and Tirzah* (Joshua 17:3). What was a case brought before Moses in the wilderness is here a portion received in the land — the statute kept.'),
+    ('canon','joshua',17,3,'canon','numbers',27,4,'free',E'*Why should the name of our father be done away from among his family, because he hath no son? Give unto us therefore a possession among the brethren of our father* (Numbers 27:4). This is the plea behind Joshua 17:3''s *had no sons, but daughters* — Yahuah''s justice will not let the name of a man without sons be cut off from his family. The inheritance is given so the name is not done away.'),
+    ('canon','joshua',17,4,'canon','numbers',27,7,'free',E'*The daughters of Zelophehad speak right: thou shalt surely give them a possession of an inheritance among their father''s brethren; and thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7). Joshua 17:4 keeps this word to the letter: *Yahuah (LORD) commanded Moses to give us an inheritance among our brethren. Therefore according to the commandment of Yahuah (LORD) he gave them an inheritance among the brethren of their father*. The judgment Yahuah spoke is the judgment Joshua executes.'),
+    ('canon','joshua',17,4,'canon','numbers',27,8,'free',E'*And thou shalt speak unto the children of Yashar''el (Israel), saying, If a man die, and have no son, then ye shall cause his inheritance to pass unto his daughter* (Numbers 27:8). The daughters'' claim in Joshua 17:4 — *according to the commandment of Yahuah (LORD) he gave them an inheritance* — rests on this standing statute of judgment: the inheritance passes to the daughter when there is no son, Yahuah''s own provision in the Torah.'),
+    ('canon','joshua',17,4,'canon','galatians',3,28,'free',E'*There is neither Yahudi (Jew) nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in HaMashiach Yahusha (Christ Jesus)* (Galatians 3:28). When the daughters receive *an inheritance among the brethren of their father* (Joshua 17:4), the inheritance is not bounded by the expected — *neither male nor female* in the matter of the promised portion. Yet the membership remains the seed of Manasseh, the covenant lineage; the daughters are gathered IN, not a stranger grafted by confession.'),
+    ('canon','joshua',17,4,'canon','galatians',3,29,'free',E'*And if ye be Messiah''s (Christ''s), then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:29). The daughters of Zelophehad inherit *according to the commandment of Yahuah (LORD)* (Joshua 17:4) as *heirs according to the promise* — the inheritance flows from Yahuah''s word, not from the accident of having sons. The seed of Abraham inherits by the promise, and Yahuah''s justice reaches even the daughters within the seed.'),
+    ('canon','joshua',17,6,'canon','numbers',27,7,'free',E'*The daughters of Zelophehad speak right: thou shalt surely give them a possession of an inheritance among their father''s brethren; and thou shalt cause the inheritance of their father to pass unto them* (Numbers 27:7). Joshua 17:6 reports the statute fulfilled in the land: *Because the daughters of Manasseh had an inheritance among his sons*. The possession Yahuah ordered to pass unto them has now passed — they hold a portion among the sons of Manasseh.'),
+    ('canon','joshua',17,6,'canon','numbers',36,10,'free',E'*Even as Yahuah (LORD) commanded Moses, so did the daughters of Zelophehad* (Numbers 36:10). The marriage-statute of Numbers 36 guarded the daughters'' inheritance so it would not pass from tribe to tribe — and Joshua 17:6, *the daughters of Manasseh had an inheritance among his sons*, shows the portion kept within Joseph exactly as commanded, the paternal inheritance preserved in the tribe of their father.'),
+    -- THREAD 2 — a great people; cut down the wood and drive out the iron chariots (17:16, 17:18)
+    ('canon','joshua',17,16,'canon','judges',1,19,'free',E'*And Yahuah (LORD) was with Yahudah (Judah); and he drave out the inhabitants of the mountain; but could not drive out the inhabitants of the valley, because they had chariots of iron* (Judges 1:19). The children of Joseph plead the same obstacle: *all the Canaanites that dwell in the land of the valley have chariots of iron* (Joshua 17:16). The iron chariots are the test of faith — Yahudah faltered before them in the valley, and Joseph fears them; but the word to Joseph is that they SHALL be driven out.'),
+    ('canon','joshua',17,18,'canon','judges',1,19,'free',E'*And Yahuah (LORD) was with Yahudah (Judah); and he drave out the inhabitants of the mountain; but could not drive out the inhabitants of the valley, because they had chariots of iron* (Judges 1:19). Against that very failure stands Joshua''s charge: *thou shalt drive out the Canaanites, though they have iron chariots, and though they be strong* (Joshua 17:18). The inheritance is no passive gift — the great people must go up, cut down the wood, and take it by faith and effort, the iron chariots notwithstanding.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 — the Canaanites that could not be driven out (17:12, 17:13)
+    ('canon','joshua',17,12,'canon','judges',1,27,'free',E'*Neither did Manasseh drive out the inhabitants of Beth-shean and her towns, nor Taanach and her towns, nor the inhabitants of Dor and her towns, nor the inhabitants of Ibleam and her towns, nor the inhabitants of Megiddo and her towns: but the Canaanites would dwell in that land* (Judges 1:27). The same un-driven-out cities are named here: *Yet the children of Manasseh could not drive out the inhabitants of those cities; but the Canaanites would dwell in that land* (Joshua 17:12). The book of Judges opens by repeating Joshua''s unfinished work — the incomplete possession.'),
+    ('canon','joshua',17,13,'canon','judges',1,28,'free',E'*And it came to pass, when Yashar''el (Israel) was strong, that they put the Canaanites to tribute, and did not utterly drive them out* (Judges 1:28). Joshua 17:13 says the very same: *when the children of Yashar''el (Israel) were waxen strong, that they put the Canaanites to tribute; but did not utterly drive them out*. Strength came, but the obedience stopped short of fully driving out — the half-done work that becomes a snare in the land.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 — the daughters of Zelophehad inherit according to the commandment of Yahuah (free; NT member)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah',
+       E'Joshua 17 — The Daughters of Zelophehad Inherit According to the Commandment of Yahuah',
+       E'In the wilderness five sisters had brought a cause before Moses; in the land they receive their portion. *But Zelophehad, the son of Hepher, the son of Gilead, the son of Machir, the son of Manasseh, had no sons, but daughters: and these are the names of his daughters, Mahlah, and Noah, Hoglah, Milcah, and Tirzah. And they came near before Eleazar the priest, and before Joshua the son of Nun, and before the princes, saying, Yahuah (LORD) commanded Moses to give us an inheritance among our brethren. Therefore according to the commandment of Yahuah (LORD) he gave them an inheritance among the brethren of their father* (Joshua 17:3-4). The plea behind it was Yahuah''s own justice: *Why should the name of our father be done away from among his family, because he hath no son? Give unto us therefore a possession among the brethren of our father* (Numbers 27:4), and Yahuah answered, *The daughters of Zelophehad speak right: thou shalt surely give them a possession of an inheritance among their father''s brethren... If a man die, and have no son, then ye shall cause his inheritance to pass unto his daughter* (Numbers 27:7-8) — a standing statute of judgment in the Torah. The marriage-law of Numbers 36 then guarded the portion so it would not pass out of Joseph, *Even as Yahuah (LORD) commanded Moses, so did the daughters of Zelophehad* (Numbers 36:10), and Joshua 17:6 reports it kept: *Because the daughters of Manasseh had an inheritance among his sons*. This is the faint, deliberate foreshadow the apostle names: *There is neither Yahudi (Jew) nor Greek, there is neither bond nor free, there is neither male nor female: for ye are all one in HaMashiach Yahusha (Christ Jesus)... And if ye be Messiah''s (Christ''s), then are ye Abraham''s seed, and heirs according to the promise* (Galatians 3:28-29). The inheritance is not bounded by the expected — but the heirs are still *Abraham''s seed*, the covenant lineage, the daughters gathered IN within Manasseh, not a stranger grafted by bare confession. Yahuah''s justice reaches even the daughters within the seed.',
+       sv.verse_id, ev.verse_id, 'free', 35400
+  FROM _s344_jos17_lookup sv, _s344_jos17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=17 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 — a great people; cut down the wood and drive out the iron chariots (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-17-a-great-people-cut-down-the-wood-and-drive-out-the-iron-chariots',
+       E'Joshua 17 — A Great People: Cut Down the Wood and Drive Out the Iron Chariots',
+       E'The inheritance is given, but it must be taken — no portion falls to the passive. The children of Joseph complain, *Why hast thou given me but one lot and one portion to inherit, seeing I am a great people, forasmuch as Yahuah (LORD) hath blessed me hitherto?* (Joshua 17:14), and Joshua throws the greatness back on them as a call to labor: *If thou be a great people, then get thee up to the wood country, and cut down for thyself there in the land of the Perizzites and of the giants* (Joshua 17:15). They protest the obstacle — *all the Canaanites that dwell in the land of the valley have chariots of iron* (Joshua 17:16) — the very thing that later defeats Yahudah in the valley: *And Yahuah (LORD) was with Yahudah (Judah); and he drave out the inhabitants of the mountain; but could not drive out the inhabitants of the valley, because they had chariots of iron* (Judges 1:19). But the word to the house of Joseph is a charge of faith, not a concession to fear: *Thou art a great people, and hast great power... But the mountain shall be thine; for it is a wood, and thou shalt cut it down: and the outgoings of it shall be thine: for thou shalt drive out the Canaanites, though they have iron chariots, and though they be strong* (Joshua 17:17-18). The blessing is real and the enemy is strong — and the great people must go up, cut down, and drive out. The inheritance is possessed by faith and effort, the iron chariots notwithstanding.',
+       sv.verse_id, ev.verse_id, 'free', 35403
+  FROM _s344_jos17_lookup sv, _s344_jos17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=17 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 — the Canaanites that could not be driven out (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-17-the-canaanites-that-could-not-be-driven-out',
+       E'Joshua 17 — The Canaanites That Could Not Be Driven Out: the Half-Done Work',
+       E'For all the promise, the possession is left incomplete. *Yet the children of Manasseh could not drive out the inhabitants of those cities; but the Canaanites would dwell in that land. Yet it came to pass, when the children of Yashar''el (Israel) were waxen strong, that they put the Canaanites to tribute; but did not utterly drive them out* (Joshua 17:12-13). The book of Judges opens by repeating the very failure, city for city: *Neither did Manasseh drive out the inhabitants of Beth-shean and her towns, nor Taanach and her towns, nor the inhabitants of Dor and her towns, nor the inhabitants of Ibleam and her towns, nor the inhabitants of Megiddo and her towns: but the Canaanites would dwell in that land* (Judges 1:27), and again the same half-measure: *And it came to pass, when Yashar''el (Israel) was strong, that they put the Canaanites to tribute, and did not utterly drive them out* (Judges 1:28). Strength came, and with strength the option of tribute instead of obedience — the Canaanites taxed but not removed. The promise was full; the possession was partial, because the work was left half-done. The un-driven-out remnant becomes the snare that the book of Judges will turn upon again and again.',
+       sv.verse_id, ev.verse_id, 'free', 35406
+  FROM _s344_jos17_lookup sv, _s344_jos17_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=17 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD 1 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 27:1 (to 17:3) — the same names and lineage: *the daughters of Zelophehad... Mahlah, Noah, and Hoglah, and Milcah, and Tirzah*; the wilderness case now a land-portion.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=3
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 27:4 (to 17:3) — *Why should the name of our father be done away... because he hath no son?*; Yahuah''s justice will not cut off the name.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=3
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 27:7 (to 17:4) — *The daughters of Zelophehad speak right... cause the inheritance of their father to pass unto them*; the judgment Joshua executes.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Numbers 27:8 (to 17:4) — *If a man die, and have no son... cause his inheritance to pass unto his daughter*; the standing statute behind the daughters'' claim.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Galatians 3:28 (to 17:4) — *neither male nor female... all one in HaMashiach Yahusha*; the inheritance not bounded by the expected, the daughters gathered in.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Galatians 3:29 (to 17:4) — *Abraham''s seed, and heirs according to the promise*; the daughters inherit by Yahuah''s word, the seed inheriting by promise.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=4
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Numbers 27:7 (to 17:6) — the possession ordered to pass now passed: *the daughters of Manasseh had an inheritance among his sons*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=27 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Numbers 36:10 (to 17:6) — *Even as Yahuah commanded Moses, so did the daughters*; the marriage-statute keeps the portion within Joseph, the paternal inheritance preserved.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=6
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=36 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-daughters-of-zelophehad-inherit-according-to-the-commandment-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 2 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 1:19 (to 17:16) — Yahudah *could not drive out the inhabitants of the valley, because they had chariots of iron*; the very obstacle Joseph fears.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=16
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-a-great-people-cut-down-the-wood-and-drive-out-the-iron-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 1:19 (to 17:18) — against that failure stands the charge: *thou shalt drive out the Canaanites, though they have iron chariots*; the inheritance taken by faith and effort.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=18
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-a-great-people-cut-down-the-wood-and-drive-out-the-iron-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 3 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 1:27 (to 17:12) — the same un-driven-out cities (Beth-shean, Taanach, Dor, Ibleam, Megiddo): *the Canaanites would dwell in that land*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=12
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-canaanites-that-could-not-be-driven-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 1:28 (to 17:13) — *when Yashar''el was strong... put the Canaanites to tribute, and did not utterly drive them out*; tribute chosen over obedience.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos17_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=17 AND sv.verse_number=13
+  JOIN _s344_jos17_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-17-the-canaanites-that-could-not-be-driven-out'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_18.sql (Joshua 18) -----
+-- Joshua 18 — the whole congregation assembles at SHILOH and sets up the tabernacle
+--   of the congregation; Joshua rebukes the seven slack tribes; the remaining land is
+--   surveyed in a book and divided by LOT before Yahuah at Shiloh; Benjamin's lot
+--   comes up between Yahudah and the house of Joseph.
+--   Tag jos18; view _s344_jos18_lookup. Sort band 35425, step 3 (35425, 35428, 35431).
+--   LEAN allotment chapter — 3 framework-bearing threads (do NOT author boundary verses).
+--
+-- Joshua 18 coverage:
+--   v.1  (the tabernacle of the congregation set up at Shiloh; the land subdued)
+--        NT:     none warranted (the central-sanctuary motif stays Tanakh here)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 12:5, Deuteronomy 12:11 (the place Yahuah chooses to put His
+--                name); 1 Samuel 1:3 (Shiloh the sanctuary to Samuel's day); Psalm 78:60
+--                (He forsook the tabernacle of Shiloh); Jeremiah 7:12 (go ye now unto my
+--                place which was in Shiloh) — THREAD 1
+--   v.3  (How long are ye SLACK to go to possess the land Yahuah hath given you?)
+--        NT:     none warranted (carried by the inheritance frame)
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 12:9, Deuteronomy 12:10 (the rest and the inheritance);
+--                Psalm 78:55 (cast out the heathen, divided them an inheritance) — THREAD 2
+--   v.8-10 (the land described in a book; Joshua casts lots before Yahuah in Shiloh)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: folded into THREAD 1 (cast lots BEFORE YAHUAH IN SHILOH = the chosen place)
+--   v.11 (Benjamin's lot between the children of Yahudah and the children of Joseph)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 78:67, Psalm 78:68 (refused Joseph/Ephraim, chose Yahudah) — THREAD 3
+--   v.12-28 (Benjamin's borders and cities)
+--        NT/Extras/Tanakh: none warranted — boundary verses, intentionally not authored (lean)
+--
+-- THREADS:
+--   THREAD 1 joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name (free):
+--            Tanakh only (Deuteronomy 12, 1 Samuel 1, Psalm 78, Jeremiah 7)
+--   THREAD 2 joshua-18-how-long-are-ye-slack-to-possess-the-inheritance (free):
+--            Tanakh only (Deuteronomy 12, Psalm 78)
+--   THREAD 3 joshua-18-benjamin-the-lot-between-yahudah-and-joseph (free):
+--            Tanakh only (Psalm 78) — the two houses
+--
+-- Framework-load-bearing notes:
+--   * 18:1 *set up the tabernacle of the congregation there* (at Shiloh) — the central
+--     sanctuary, the dwelling of Yahuah, the place He chose out of all the tribes to put
+--     His name (Deut 12:5,11). Shiloh remains the sanctuary through the Judges and to
+--     Samuel (1 Sam 1:3) until its ruin for the wickedness of the people — *he forsook
+--     the tabernacle of Shiloh* (Ps 78:60); *go ye now unto my place which was in Shiloh*
+--     (Jer 7:12). The appointed-times architecture: the tent of meeting / the dwelling of
+--     His Name established before the temple. NOT a defunct shadow — the living centre.
+--   * 18:3 *How long are ye slack to go to possess the land?* — the promise possessed only
+--     by GOING UP. Deut 12:9-10 names the goal: *the rest and the inheritance*. The land is
+--     given by oath yet still must be claimed; the slackness forfeits the gift not yet taken.
+--   * 18:11 Benjamin's lot falls *between the children of Yahudah (Judah) and the children
+--     of Joseph* — the small seam-tribe set between the two houses (Yahudah south, Joseph
+--     north), the very fault-line Psalm 78 names: *he refused the tabernacle of Joseph...
+--     But chose the tribe of Yahudah* (Ps 78:67-68). The two-house frame already in the lot.
+
+CREATE TEMP VIEW _s344_jos18_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the tabernacle set up at Shiloh, the place of His name (18:1, 18:8, 18:10)
+    ('canon','joshua',18,1,'canon','deuteronomy',12,5,'free',E'*But unto the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there, even unto his habitation shall ye seek, and thither thou shalt come* (Deuteronomy 12:5). When *the whole congregation of the children of Yashar''el (Israel) assembled together at Shiloh, and set up the tabernacle of the congregation there* (Joshua 18:1), the command is kept — Shiloh is the place chosen out of all the tribes to put His name, His habitation sought out at last in the land.'),
+    ('canon','joshua',18,1,'canon','deuteronomy',12,11,'free',E'*Then there shall be a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there; thither shall ye bring all that I command you* (Deuteronomy 12:11). The promise of one chosen place where the Name would dwell now rests at Shiloh, where they *set up the tabernacle of the congregation* (Joshua 18:1) — the central sanctuary of the appointed times, the dwelling of Yahuah established in the midst of His people.'),
+    ('canon','joshua',18,1,'canon','1-samuel',1,3,'free',E'*And this man went up out of his city yearly to worship and to sacrifice unto Yahuah Tseva''ot (LORD of hosts) in Shiloh* (1 Samuel 1:3). The tabernacle *set up* at Shiloh in Joshua 18:1 is still the sanctuary generations later, the place the faithful go up yearly to worship in the days of Eli and Samuel — Shiloh the standing centre of Yahuah''s house through all the Judges.'),
+    ('canon','joshua',18,1,'canon','psalms',78,60,'free',E'*So that he forsook the tabernacle of Shiloh, the tent which he placed among men* (Psalm 78:60). The tent *set up* at Shiloh (Joshua 18:1) is *the tent which he placed among men* — the dwelling of Yahuah that would one day be forsaken for the wickedness of His people, His strength delivered into captivity and His glory into the enemy''s hand.'),
+    ('canon','joshua',18,1,'canon','jeremiah',7,12,'free',E'*But go ye now unto my place which was in Shiloh, where I set my name at the first, and see what I did to it for the wickedness of my people Yashar''el (Israel)* (Jeremiah 7:12). Yahuah Himself calls Shiloh *my place... where I set my name at the first* — the very sanctuary *set up* in Joshua 18:1; its later ruin becomes the warning to Yahudah''s temple, that the chosen place is no charm against covenant-breaking.'),
+    ('canon','joshua',18,10,'canon','deuteronomy',12,5,'free',E'*But unto the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there... thither thou shalt come* (Deuteronomy 12:5). *And Joshua cast lots for them in Shiloh before Yahuah (LORD): and there Joshua divided the land unto the children of Yashar''el (Israel)* (Joshua 18:10). The inheritance is apportioned not at any place but *before Yahuah in Shiloh* — at the chosen sanctuary where His name dwells, the lot cast in His presence.'),
+    ('canon','joshua',18,8,'canon','jeremiah',7,12,'free',E'*But go ye now unto my place which was in Shiloh, where I set my name at the first* (Jeremiah 7:12). Joshua charges the surveyors to come again *that I may here cast lots for you before Yahuah (LORD) in Shiloh* (Joshua 18:8) — the place where Yahuah *set my name at the first*; the whole work of dividing the inheritance is done at the sanctuary of His Name.'),
+    -- THREAD 2 — how long are ye slack to possess the inheritance (18:3)
+    ('canon','joshua',18,3,'canon','deuteronomy',12,9,'free',E'*For ye are not as yet come to the rest and to the inheritance, which Yahuah Elohaychem (the LORD your God) giveth you* (Deuteronomy 12:9). Moses had named the goal — *the rest and the inheritance* — and now Joshua rebukes the slackness toward it: *How long are ye slack to go to possess the land, which Yahuah Elohim (the LORD God) of your fathers hath given you?* (Joshua 18:3). The rest is given, yet still must be entered; the inheritance is a gift claimed only by going up.'),
+    ('canon','joshua',18,3,'canon','deuteronomy',12,10,'free',E'*But when ye go over Jordan, and dwell in the land which Yahuah Elohaychem (the LORD your God) giveth you to inherit, and when he giveth you rest from all your enemies round about, so that ye dwell in safety* (Deuteronomy 12:10). The promised dwelling *in the land which Yahuah giveth you to inherit* is the very thing the seven tribes are *slack to go to possess* (Joshua 18:3) — the land *given* by oath, yet possessed only by those who rise and take it.'),
+    ('canon','joshua',18,3,'canon','psalms',78,55,'free',E'*He cast out the heathen also before them, and divided them an inheritance by line, and made the tribes of Yashar''el (Israel) to dwell in their tents* (Psalm 78:55). The Psalm sings the gift the slack tribes neglect: Yahuah Himself *divided them an inheritance by line*. The land *which Yahuah Elohim (the LORD God) of your fathers hath given you* (Joshua 18:3) is His doing — to be slack to possess it is to slight the hand that cast out the heathen and gave the line.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 3 — Benjamin's lot between Yahudah and Joseph (18:11) — separate INSERT so the
+--   Psalm 78:67/68 targets that only this thread uses are added (already covered above is none)
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','joshua',18,11,'canon','psalms',78,67,'free',E'*Moreover he refused the tabernacle of Joseph, and chose not the tribe of Ephraim* (Psalm 78:67). Benjamin''s lot *came forth between the children of Yahudah (Judah) and the children of Joseph* (Joshua 18:11) — the small seam-tribe set on the very fault-line between the two houses, the line where Yahuah would later *refuse the tabernacle of Joseph* (the northern house) and keep Yahudah.'),
+    ('canon','joshua',18,11,'canon','psalms',78,68,'free',E'*But chose the tribe of Yahudah (Judah), the mount Zion which he loved* (Psalm 78:68). Benjamin''s border falls *between the children of Yahudah (Judah) and the children of Joseph* (Joshua 18:11), and into Benjamin''s portion would come Jebusi *which is Jerusalem* (Joshua 18:28) — the very ground of *the mount Zion which he loved*, where Yahuah *chose the tribe of Yahudah*; the two-house frame is already drawn in the lot.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 — the tabernacle set up at Shiloh, the place of His name (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name',
+       E'Joshua 18 — The Tabernacle Set Up at Shiloh: the Place Yahuah Chose for His Name',
+       E'With the land subdued, the whole nation gathers and the dwelling of Yahuah is planted at its centre. *And the whole congregation of the children of Yashar''el (Israel) assembled together at Shiloh, and set up the tabernacle of the congregation there. And the land was subdued before them* (Joshua 18:1). This is the keeping of Moses'' word about the one chosen place: *But unto the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there, even unto his habitation shall ye seek, and thither thou shalt come* (Deuteronomy 12:5); *Then there shall be a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there* (Deuteronomy 12:11). Shiloh becomes that place — the central sanctuary of the appointed times, the tent of meeting where the lot is cast: *And Joshua cast lots for them in Shiloh before Yahuah (LORD): and there Joshua divided the land unto the children of Yashar''el (Israel)* (Joshua 18:10). It stands as the house of Yahuah through all the Judges and down to Samuel: *And this man went up out of his city yearly to worship and to sacrifice unto Yahuah Tseva''ot (LORD of hosts) in Shiloh* (1 Samuel 1:3). And because the chosen place is no charm against covenant-breaking, it would one day be forsaken — *So that he forsook the tabernacle of Shiloh, the tent which he placed among men* (Psalm 78:60) — its ruin made the prophet''s warning to Yahudah''s temple: *But go ye now unto my place which was in Shiloh, where I set my name at the first, and see what I did to it for the wickedness of my people Yashar''el (Israel)* (Jeremiah 7:12). The dwelling of His Name, established here, lived and was forsaken — the living centre, never a defunct shadow.',
+       sv.verse_id, ev.verse_id, 'free', 35425
+  FROM _s344_jos18_lookup sv, _s344_jos18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=18 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 — how long are ye slack to possess the inheritance (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-18-how-long-are-ye-slack-to-possess-the-inheritance',
+       E'Joshua 18 — How Long Are Ye Slack? The Inheritance Claimed Only by Going Up',
+       E'Seven tribes still have no inheritance, and Joshua names the cause — not lack of promise but slackness to take it. *And there remained among the children of Yashar''el (Israel) seven tribes, which had not yet received their inheritance. And Joshua said unto the children of Yashar''el (Israel), How long are ye slack to go to possess the land, which Yahuah Elohim (the LORD God) of your fathers hath given you?* (Joshua 18:2-3). Moses had set *the rest and the inheritance* as the very goal of the crossing: *For ye are not as yet come to the rest and to the inheritance, which Yahuah Elohaychem (the LORD your God) giveth you* (Deuteronomy 12:9); *But when ye go over Jordan, and dwell in the land which Yahuah Elohaychem (the LORD your God) giveth you to inherit, and when he giveth you rest from all your enemies round about, so that ye dwell in safety* (Deuteronomy 12:10). The land is *given* by oath, yet it is possessed only by those who rise and go up — and to be slack toward it is to slight the hand that won it: *He cast out the heathen also before them, and divided them an inheritance by line, and made the tribes of Yashar''el (Israel) to dwell in their tents* (Psalm 78:55). The promise is sure; the inheritance is a gift that must still be claimed.',
+       sv.verse_id, ev.verse_id, 'free', 35428
+  FROM _s344_jos18_lookup sv, _s344_jos18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=18 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 — Benjamin's lot between Yahudah and Joseph (free) — the two houses
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-18-benjamin-the-lot-between-yahudah-and-joseph',
+       E'Joshua 18 — Benjamin''s Lot: the Seam Between the Two Houses',
+       E'The first lot cast at Shiloh falls on Benjamin, and it falls on the very seam of the divided kingdom to come. *And the lot of the tribe of the children of Benjamin came up according to their families: and the coast of their lot came forth between the children of Yahudah (Judah) and the children of Joseph* (Joshua 18:11). Benjamin, the small seam-tribe, is set between the two houses — Yahudah in the south and Joseph in the north — the very fault-line along which the people would one day be torn, and along which Yahuah would make His choice: *Moreover he refused the tabernacle of Joseph, and chose not the tribe of Ephraim: But chose the tribe of Yahudah (Judah), the mount Zion which he loved* (Psalm 78:67-68). Into Benjamin''s portion came *Jebusi, which is Jerusalem* (Joshua 18:28) — the ground of *the mount Zion which he loved*. The two-house frame is already drawn in the casting of the lot before Yahuah at Shiloh.',
+       sv.verse_id, ev.verse_id, 'free', 35431
+  FROM _s344_jos18_lookup sv, _s344_jos18_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=18 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD 1 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 12:5 (to 18:1) — *the place which Yahuah... shall choose... to put his name there*; Shiloh is that chosen place.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 12:11 (to 18:1) — *a place... to cause his name to dwell there*; the Name dwells at Shiloh.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 1:3 (to 18:1) — *to worship and to sacrifice unto Yahuah Tseva''ot in Shiloh*; the standing sanctuary to Samuel''s day.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 78:60 (to 18:1) — *he forsook the tabernacle of Shiloh, the tent which he placed among men*; the chosen tent later forsaken.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=60
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Jeremiah 7:12 (to 18:1) — *go ye now unto my place which was in Shiloh, where I set my name at the first*; its ruin warns Yahudah''s temple.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=1
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Deuteronomy 12:5 (to 18:10) — the lot is cast *before Yahuah in Shiloh*, at the chosen place where His name is put.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=10
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Jeremiah 7:12 (to 18:8) — Joshua casts lots *before Yahuah in Shiloh*, the place *where I set my name at the first*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=8
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-the-tabernacle-set-up-at-shiloh-the-place-of-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 2 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 12:9 (to 18:3) — *the rest and the inheritance, which Yahuah... giveth you*; the goal the slack tribes neglect.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-how-long-are-ye-slack-to-possess-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 12:10 (to 18:3) — *the land which Yahuah... giveth you to inherit*; given by oath, possessed only by going up.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-how-long-are-ye-slack-to-possess-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 78:55 (to 18:3) — *divided them an inheritance by line*; to be slack is to slight the hand that gave the land.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=3
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-how-long-are-ye-slack-to-possess-the-inheritance'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 3 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 78:67 (to 18:11) — *he refused the tabernacle of Joseph*; Benjamin''s lot falls on the seam between Joseph and Yahudah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=67
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-benjamin-the-lot-between-yahudah-and-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 78:68 (to 18:11) — *chose the tribe of Yahudah, the mount Zion which he loved*; Jerusalem falls in Benjamin''s portion.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos18_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=18 AND sv.verse_number=11
+  JOIN _s344_jos18_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=78 AND tv.verse_number=68
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-18-benjamin-the-lot-between-yahudah-and-joseph'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_19.sql (Joshua 19) -----
+--
+-- Chapter: Joshua 19 — the inheritance of the remaining tribes (Simeon, Zebulun,
+--   Issachar, Asher, Naphtali, Dan), then Joshua's own portion last, divided by lot
+--   at Shiloh before Yahuah.
+-- Tag: jos19   View: _s344_jos19_lookup   Sort band: 35450, 35453
+--
+-- Joshua 19 coverage:
+--   v.1,9 (Simeon's inheritance WITHIN Yahudah's portion):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Genesis 49:5,7 (Simeon scattered/divided in Yashar'el) — THREADED (thread 1)
+--   v.10,16 (Zebulun's border) + v.32,39 (Naphtali's border) = the land of Galilee:
+--        NT:     Matthew 4:13,15,16 (Messiah dwells in Zabulon/Nephthalim, the light) — THREADED (thread 2)
+--        Extras: none warranted
+--        Tanakh: Isaiah 9:1,2 (Galilee of the nations, the great light) — THREADED (thread 2)
+--   v.17-23 (Issachar), v.24-31 (Asher), v.40-48 (Dan) boundary lists:
+--        NT/Extras/Tanakh: none warranted (boundary verses, kept lean per chapter guidance)
+--   v.49-50 (Joshua receives Timnath-serah LAST, the servant-leader):
+--        NT/Extras/Tanakh: none warranted as a SEPARATE thread — chapter capped at 2 threads
+--        (lean allotment chapter); recorded weighed, deliberately not threaded.
+--   v.51 (divided by lot at Shiloh before Yahuah):
+--        none warranted (procedural close)
+--
+-- Threads:
+--   1. joshua-19-simeon-scattered-within-yahudah-the-patriarchs-word-fulfilled  [Tanakh]  (free)
+--        Jos 19:1,9 -> Gen 49:5,7
+--   2. joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns       [Tanakh+NT]  (free)
+--        Jos 19:10,32 -> Isa 9:1,2 ; Matt 4:13,15,16
+--
+
+CREATE TEMP VIEW _s344_jos19_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Simeon scattered within Yahudah — Jacob's word fulfilled
+    ('canon','joshua',19,1,'canon','genesis',49,5,'free',E'*Simeon and Levi are brethren; instruments of cruelty are in their habitations.* (Genesis 49:5). Jacob names the brothers whose fierce anger he will judge; here in Joshua *the second lot came forth to Simeon... and their inheritance was within the inheritance of the children of Yahudah (Judah)* (Joshua 19:1) — Simeon receives no separate land but is absorbed into Yahudah''s portion, the first motion of the dividing the patriarch foretold.'),
+    ('canon','joshua',19,1,'canon','genesis',49,7,'free',E'*Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* (Genesis 49:7). The patriarch''s *I will divide... and scatter* lands precisely here: *the second lot came forth to Simeon... and their inheritance was within the inheritance of the children of Yahudah (Judah)* (Joshua 19:1) — Simeon is given no land of his own but scattered among Yahudah, the word made allotment.'),
+    ('canon','joshua',19,9,'canon','genesis',49,7,'free',E'*Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel).* (Genesis 49:7). Joshua records the reason: *Out of the portion of the children of Yahudah (Judah) was the inheritance of the children of Simeon: for the part of the children of Yahudah (Judah) was too much for them: therefore the children of Simeon had their inheritance within the inheritance of them* (Joshua 19:9) — Simeon dwelling inside another tribe''s land is the patriarchal *scatter them in Yashar''el (Israel)* coming to pass.'),
+    -- Thread 2: Zebulun and Naphtali — Galilee, where the great light dawns
+    ('canon','joshua',19,10,'canon','isaiah',9,1,'free',E'*Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zebulun and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Jordan, in Galilee of the nations.* (Isaiah 9:1). The territory measured out here — *the third lot came up for the children of Zebulun... and the border of their inheritance was unto Sarid* (Joshua 19:10) — is the very *land of Zebulun* Isaiah marks as the place where the dawn will break.'),
+    ('canon','joshua',19,10,'canon','isaiah',9,2,'free',E'*The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.* (Isaiah 9:2). The inheritance of Zebulun apportioned here (Joshua 19:10) becomes the ground of the *great light* — the tribal allotment is the stage on which the Messiah''s light would later shine.'),
+    ('canon','joshua',19,10,'canon','matthew',4,13,'free',E'*And leaving Nazareth, he came and dwelt in Capernaum, which is upon the sea coast, in the borders of Zabulon and Nephthalim* (Matthew 4:13). The Messiah takes up residence in the very *borders of Zabulon* whose boundary *unto Sarid* (Joshua 19:10) was drawn here at the conquest — the inheritance prepared the place where he would dwell and minister.'),
+    ('canon','joshua',19,10,'canon','matthew',4,15,'free',E'*The land of Zabulon, and the land of Nephthalim, by the way of the sea, beyond Jordan, Galilee of the Gentiles* (Matthew 4:15). Matthew quotes Isaiah back over this allotment: the *children of Zebulun* whose border is set in Joshua 19:10 are the *land of Zabulon* whose deliverance the gospel proclaims fulfilled.'),
+    ('canon','joshua',19,32,'canon','isaiah',9,1,'free',E'*Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zebulun and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Jordan, in Galilee of the nations.* (Isaiah 9:1). *The sixth lot came out to the children of Naphtali* (Joshua 19:32); this *land of Naphtali*, named beside Zebulun, is the second half of the Galilee where Isaiah promises the dimness will be undone.'),
+    ('canon','joshua',19,32,'canon','matthew',4,15,'free',E'*The land of Zabulon, and the land of Nephthalim, by the way of the sea, beyond Jordan, Galilee of the Gentiles* (Matthew 4:15). The portion measured to Naphtali — *the sixth lot came out to the children of Naphtali, even for the children of Naphtali according to their families* (Joshua 19:32) — is the *land of Nephthalim* the evangelist names as the ground where the prophecy of the light was fulfilled.'),
+    ('canon','joshua',19,32,'canon','matthew',4,16,'free',E'*The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up.* (Matthew 4:16). On the inheritance of Naphtali set down in Joshua 19:32 the *great light* sprang up; the tribal allotment is fulfilled when the Messiah walks its borders.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-19-simeon-scattered-within-yahudah-the-patriarchs-word-fulfilled',
+       E'Simeon scattered within Yahudah — the patriarch''s word fulfilled',
+       E'When Jacob blessed his sons he passed sentence on Simeon: *Simeon and Levi are brethren; instruments of cruelty are in their habitations* (Genesis 49:5), and *Cursed be their anger, for it was fierce; and their wrath, for it was cruel: I will divide them in Jacob, and scatter them in Yashar''el (Israel)* (Genesis 49:7). Here that word becomes a land-survey. *And the second lot came forth to Simeon, even for the tribe of the children of Simeon according to their families: and their inheritance was within the inheritance of the children of Yahudah (Judah)* (Joshua 19:1) — Simeon receives no border of his own. Joshua states the reason plainly: *Out of the portion of the children of Yahudah (Judah) was the inheritance of the children of Simeon: for the part of the children of Yahudah (Judah) was too much for them: therefore the children of Simeon had their inheritance within the inheritance of them* (Joshua 19:9). Simeon is divided in Jacob and scattered in Yashar''el, dwelling inside his brother''s portion. The patriarchal blessing is not poetry only — it is covenant decree, and the allotment of the land is its fulfillment, the same Yahuah who spoke through the father dividing the inheritance through Joshua.',
+       sv.verse_id, ev.verse_id, 'free', 35450
+  FROM _s344_jos19_lookup sv, _s344_jos19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=19 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns',
+       E'Zebulun and Naphtali — Galilee, where the great light dawns',
+       E'Two of the lots in this chapter map out the region the prophets would call Galilee. *And the third lot came up for the children of Zebulun according to their families: and the border of their inheritance was unto Sarid* (Joshua 19:10); *The sixth lot came out to the children of Naphtali, even for the children of Naphtali according to their families* (Joshua 19:32). Centuries later Isaiah laid his finger on that same ground: *Nevertheless the dimness shall not be such as was in her vexation, when at the first he lightly afflicted the land of Zebulun and the land of Naphtali, and afterward did more grievously afflict her by the way of the sea, beyond Jordan, in Galilee of the nations* (Isaiah 9:1) — and promised, *The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined* (Isaiah 9:2). The northern tribes, first to be afflicted and carried off in the Assyrian exile, are marked as the first to see the dawn. The evangelist closes the circle: *And leaving Nazareth, he came and dwelt in Capernaum, which is upon the sea coast, in the borders of Zabulon and Nephthalim* (Matthew 4:13), *That it might be fulfilled which was spoken by Esaias the prophet... The land of Zabulon, and the land of Nephthalim, by the way of the sea, beyond Jordan, Galilee of the Gentiles; The people which sat in darkness saw great light; and to them which sat in the region and shadow of death light is sprung up* (Matthew 4:15-16). The Formed Son chose the inheritance of Zebulun and Naphtali — the very borders surveyed here at the conquest — to begin his ministry. The tribal allotment was never incidental; it prepared the land on which the light would shine, the scattered house of Yashar''el meeting its salvation on its own ground.',
+       sv.verse_id, ev.verse_id, 'free', 35453
+  FROM _s344_jos19_lookup sv, _s344_jos19_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=19 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: Simeon scattered within Yahudah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 49:5 — *Simeon and Levi are brethren; instruments of cruelty are in their habitations.* The brothers Jacob marks for judgment; Simeon''s landless inheritance begins to fulfill it.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-simeon-scattered-within-yahudah-the-patriarchs-word-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 49:7 — *I will divide them in Jacob, and scatter them in Yashar''el (Israel).* The decree; Simeon''s lot *within the inheritance of... Yahudah* (Joshua 19:1) is the scattering enacted.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=1
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-simeon-scattered-within-yahudah-the-patriarchs-word-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 49:7 — *I will... scatter them in Yashar''el (Israel).* Joshua 19:9 gives the reason: Yahudah''s part *was too much for them*, so Simeon dwells inside it — the word made allotment.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=9
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-simeon-scattered-within-yahudah-the-patriarchs-word-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Zebulun and Naphtali — Galilee, where the great light dawns
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 9:1 — *...when at the first he lightly afflicted the land of Zebulun and the land of Naphtali... in Galilee of the nations.* The lot of Zebulun (Joshua 19:10) is the land Isaiah marks for the coming dawn.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Isaiah 9:2 — *The people that walked in darkness have seen a great light.* Zebulun''s inheritance (Joshua 19:10) becomes the ground of the great light.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 4:13 — *...he came and dwelt in Capernaum... in the borders of Zabulon and Nephthalim.* The Messiah dwells in the very borders of Zebulun set in Joshua 19:10.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 4:15 — *The land of Zabulon, and the land of Nephthalim... Galilee of the Gentiles.* The gospel names Zebulun''s allotment (Joshua 19:10) as the prophecy fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=10
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=4 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Isaiah 9:1 — *...the land of Naphtali... in Galilee of the nations.* The sixth lot to Naphtali (Joshua 19:32) is the second half of the Galilee Isaiah names.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=32
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Matthew 4:15 — *The land of... Nephthalim, by the way of the sea... Galilee of the Gentiles.* Naphtali''s lot (Joshua 19:32) is the land of Nephthalim the evangelist names.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=32
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=4 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Matthew 4:16 — *The people which sat in darkness saw great light.* On Naphtali''s inheritance (Joshua 19:32) the great light sprang up.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos19_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=19 AND sv.verse_number=32
+  JOIN _s344_jos19_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=4 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-19-zebulun-and-naphtali-galilee-where-the-great-light-dawns'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_20.sql (Joshua 20) -----
+-- Chapter: Joshua 20 — THE CITIES OF REFUGE (Kedesh, Shechem, Hebron west; Bezer, Ramoth, Golan east)
+-- Tag: jos20   View: _s344_jos20_lookup   Sort band: 35475, 35478, 35481, 35484
+--
+-- Joshua 20 coverage:
+--   v.1-3  (appoint cities of refuge, the slayer that killeth unawares may flee, refuge from the avenger of blood)
+--          NT:     none warranted at the verse (the Torah-mercy weave is Tanakh-lateral)
+--          Extras: none warranted
+--          Tanakh: Numbers 35:9-15,22-25 (the original statute), Deuteronomy 19:1-6 (three cities, the slayer
+--                  that hated him not), Exodus 21:13-14 (Elohim deliver him into his hand → a place to flee /
+--                  the presumptuous slayer taken from the altar) — Torah's own provision of mercy & due process
+--   v.4-5  (stand at the gate, declare his cause to the elders, not delivered to the avenger, smote unwittingly)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 35:12,24-25 (congregation judges, slayer not die until he stand for judgment),
+--                  Deuteronomy 19:11-13 (the murderer fetched out — due process distinguishes intent)
+--   v.6    (dwell until the death of the HIGH PRIEST, then the slayer return) — the keystone type
+--          NT:     Hebrews 6:18 (fled for refuge to lay hold upon the hope), Hebrews 9:15 (mediator, by means
+--                  of death the redemption of transgressions) — the great High Priest whose death sets free
+--          Extras: none warranted
+--          Tanakh: Numbers 35:25,28,32 (abide unto the death of the high priest, then return to possession)
+--   v.7-9  (Kedesh, Shechem, Hebron, Bezer, Ramoth, Golan; for Yashar'el AND the stranger that sojourneth)
+--          NT:     Romans 8:1 (no condemnation to them in Messiah) — the refuge from the avenger/condemnation
+--          Extras: none warranted
+--          Tanakh: Psalm 46:1 (Elohim is our refuge and strength), Numbers 35:15 (refuge for Israel and the
+--                  stranger and the sojourner) — Yahuah Himself the refuge, mercy reaching the sojourner
+--
+-- Threads (all members canon → tier_required 'free'):
+--   joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares   [Tanakh: Numbers, Deuteronomy, Exodus]
+--   joshua-20-until-the-death-of-the-high-priest-then-the-slayer-shall-return [Tanakh: Numbers | NT: Hebrews]
+--   joshua-20-a-refuge-from-the-avenger-yahuah-himself-the-refuge             [Tanakh: Psalms, Numbers | NT: Romans]
+--
+-- Framework notes: the cities of refuge are the Torah's OWN provision of mercy and due process — the curse is
+-- never the Torah; here the Torah shelters the innocent-of-intent from the avenger of blood (Num 35/Deut 19),
+-- distinguishing the manslayer from the murderer. The death of the high priest that frees the refugee (20:6) is
+-- a faint Messianic type read FORWARD to the great High Priest whose death opens the way (Heb 6:18/9:15) — a
+-- foreshadow, NOT co-equal-trinity grammar; the Formed Son after the order of Melek Tsadiq. Refuge for Israel
+-- AND the stranger/sojourner (20:9, Num 35:15) — mercy reaching beyond the native-born.
+
+CREATE TEMP VIEW _s344_jos20_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the cities of refuge = Torah's mercy for the slayer unawares (Numbers / Deuteronomy / Exodus)
+    ('canon','joshua',20,2,'canon','numbers',35,11,'free',E'*Then ye shall appoint you cities to be cities of refuge for you; that the slayer may flee thither, which killeth any person at unawares* (Numbers 35:11). Joshua does what Yahuah commanded *by the hand of Moses* (20:2) — *Appoint out for you cities of refuge*. The provision is no new mercy invented at the conquest; it is the Torah''s own statute now planted in the land. The Torah is never the curse — here it is the very shelter of the innocent-of-intent.'),
+    ('canon','joshua',20,3,'canon','numbers',35,15,'free',E'*These six cities shall be a refuge, both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner among them: that every one that killeth any person unawares may flee thither* (Numbers 35:15). The Joshua statute — *That the slayer that killeth any person unawares and unwittingly may flee thither: and they shall be your refuge from the avenger of blood* (20:3) — quotes Moses word for word; the same mercy, and it reaches the stranger, not the native-born alone.'),
+    ('canon','joshua',20,3,'canon','deuteronomy',19,4,'free',E'*And this is the case of the slayer, which shall flee thither, that he may live: Whoso killeth his neighbour ignorantly, whom he hated not in time past* (Deuteronomy 19:4). Joshua''s *unawares and unwittingly* (20:3) is Moses'' *ignorantly... hated not in time past* — the Torah carefully distinguishes the accidental death from murder, sheltering the one whose heart held no malice.'),
+    ('canon','joshua',20,3,'canon','exodus',21,13,'free',E'*And if a man lie not in wait, but Elohim (God) deliver him into his hand; then I will appoint thee a place whither he shall flee* (Exodus 21:13). The seed of the whole refuge law: where there was no lying-in-wait, Yahuah Himself appoints *a place whither he shall flee* — the cities of Joshua 20 are that appointed place made real, the Torah''s mercy from the first giving of the judgments.'),
+    ('canon','joshua',20,5,'canon','exodus',21,14,'free',E'*But if a man come presumptuously upon his neighbour, to slay him with guile; thou shalt take him from mine altar, that he may die* (Exodus 21:14). The refuge shelters only the unwitting: *because he smote his neighbour unwittingly, and hated him not beforetime* (20:5). The presumptuous murderer finds no sanctuary — torn even from the altar — but the slayer who hated not is *not delivered up into his hand*. Mercy and justice in one statute.'),
+    ('canon','joshua',20,5,'canon','deuteronomy',19,6,'free',E'*Lest the avenger of the blood pursue the slayer, while his heart is hot, and overtake him, because the way is long, and slay him; whereas he was not worthy of death, inasmuch as he hated him not in time past* (Deuteronomy 19:6). The refuge stands precisely against the hot-hearted avenger of 20:5 — *if the avenger of blood pursue after him, then they shall not deliver the slayer up into his hand*. The Torah cools the blood-feud and guards the one *not worthy of death*.'),
+    -- THREAD 1: due process at the gate (Numbers 35:24, Deuteronomy 19:11-12)
+    ('canon','joshua',20,4,'canon','numbers',35,24,'free',E'*Then the congregation shall judge between the slayer and the revenger of blood according to these judgments* (Numbers 35:24). The manslayer of Joshua 20 *shall stand at the entering of the gate of the city, and shall declare his cause in the ears of the elders* (20:4) — open due process, the congregation weighing intent, no man condemned unheard. The Torah''s justice is deliberate, not vengeful.'),
+    ('canon','joshua',20,6,'canon','deuteronomy',19,12,'free',E'*Then the elders of his city shall send and fetch him thence, and deliver him into the hand of the avenger of blood, that he may die* (Deuteronomy 19:12). The refuge is no blanket pardon: *he shall dwell in that city, until he stand before the congregation for judgment* (20:6). A true murderer who flees there is fetched out to die — the city shelters the innocent of intent, never the guilty.'),
+    -- THREAD 2: until the death of the high priest, then the slayer shall return (Numbers 35 / Hebrews 6 & 9)
+    ('canon','joshua',20,6,'canon','numbers',35,25,'free',E'*And the congregation shall deliver the slayer out of the hand of the revenger of blood... and he shall abide in it unto the death of the high priest, which was anointed with the holy oil* (Numbers 35:25). Joshua''s statute is Moses'' exactly — the slayer dwells *until the death of the high priest that shall be in those days: then shall the slayer return* (20:6). The death of the anointed priest, not the slayer''s own merit, releases him to his possession.'),
+    ('canon','joshua',20,6,'canon','numbers',35,28,'free',E'*Because he should have remained in the city of his refuge until the death of the high priest: but after the death of the high priest the slayer shall return into the land of his possession* (Numbers 35:28). The clock of the refuge runs by the life of the high priest — *then shall the slayer return, and come unto his own city, and unto his own house* (20:6). A death sets the sheltered one free to go home.'),
+    ('canon','joshua',20,6,'canon','hebrews',6,18,'free',E'*That by two immutable things, in which it was impossible for Elohim (God) to lie, we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us* (Hebrews 6:18). The refugee flees to the city; the believer has *fled for refuge to lay hold upon the hope*. Joshua''s manslayer waits *until the death of the high priest* (20:6); the next breath of Hebrews names *Yahusha (Jesus), made an high priest for ever after the order of Melek Tsadiq* (Heb 6:20) — the type read forward to the great High Priest who is the refuge.'),
+    ('canon','joshua',20,6,'canon','hebrews',9,15,'free',E'*And for this cause he is the mediator of the new testament, that by means of death, for the redemption of the transgressions that were under the first testament, they which are called might receive the promise of eternal inheritance* (Hebrews 9:15). As the high priest''s death freed the refugee to *return... unto his own house* (20:6), so *by means of death* the great High Priest opens the way to the *eternal inheritance* — a faint foreshadow filled, the Formed Son who has a Father, not a co-equal person.'),
+    -- THREAD 3: a refuge from the avenger — Yahuah Himself the refuge (Psalm 46 / Romans 8 / Numbers 35:15)
+    ('canon','joshua',20,3,'canon','psalms',46,1,'free',E'*Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1). The six cities are *your refuge from the avenger of blood* (20:3) — and the stone walls only picture the deeper truth the Psalmist sings: Yahuah Himself is the refuge to whom His people flee. *The Elohim (God) of Jacob is our refuge* (Ps 46:7,11).'),
+    ('canon','joshua',20,3,'canon','romans',8,1,'free',E'*There is therefore now no condemnation to them which are in HaMashiach Yahusha (Christ Jesus), who walk not after the flesh, but after the Spirit* (Romans 8:1). The slayer inside the gate is safe from the avenger — *they shall not deliver the slayer up into his hand* (20:5). So *no condemnation* shelters those who have fled to Messiah from the pursuit of death; the refuge of Joshua 20 read forward to the refuge that swallows condemnation itself.'),
+    ('canon','joshua',20,9,'canon','numbers',35,15,'free',E'*These six cities shall be a refuge, both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner among them* (Numbers 35:15). Joshua''s closing word is the same mercy: *These were the cities appointed for all the children of Yashar''el (Israel), and for the stranger that sojourneth among them* (20:9). The refuge of Yahuah is wide — it covers the sojourner, not the native-born alone.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares',
+       E'The Cities of Refuge — the Torah''s Mercy for the Slayer Unawares',
+       E'Joshua appoints the cities of refuge *as Yahuah (LORD) commanded by the hand of Moses* — *That the slayer that killeth any person unawares and unwittingly may flee thither: and they shall be your refuge from the avenger of blood* (Joshua 20:2-3). This is no new mercy invented at the conquest; it is the Torah''s own statute now planted in the land. Moses had given it twice: *Then ye shall appoint you cities to be cities of refuge for you; that the slayer may flee thither, which killeth any person at unawares* (Numbers 35:11), and *These six cities shall be a refuge, both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner among them* (Numbers 35:15); and *And this is the case of the slayer, which shall flee thither, that he may live: Whoso killeth his neighbour ignorantly, whom he hated not in time past* (Deuteronomy 19:4). The Torah is never the curse — here it is the very shelter of the innocent-of-intent. The whole law turns on intent: *And if a man lie not in wait, but Elohim (God) deliver him into his hand; then I will appoint thee a place whither he shall flee* (Exodus 21:13), but *if a man come presumptuously upon his neighbour, to slay him with guile; thou shalt take him from mine altar, that he may die* (Exodus 21:14). So in Joshua the slayer is sheltered *because he smote his neighbour unwittingly, and hated him not beforetime* (20:5), guarded against the avenger whose *heart is hot* (Deuteronomy 19:6). And it is no blanket pardon: the manslayer must *stand at the entering of the gate... and declare his cause in the ears of the elders* (20:4), for *the congregation shall judge between the slayer and the revenger of blood according to these judgments* (Numbers 35:24) — and a true murderer who flees there *shall the elders of his city... fetch him thence, and deliver him into the hand of the avenger of blood, that he may die* (Deuteronomy 19:12). Mercy and justice held in one statute: the Torah cools the blood-feud and shelters the one *not worthy of death*.',
+       sv.verse_id, ev.verse_id, 'free', 35475
+  FROM _s344_jos20_lookup sv, _s344_jos20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=20 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-20-until-the-death-of-the-high-priest-then-the-slayer-shall-return',
+       E'Until the Death of the High Priest — Then the Slayer Shall Return',
+       E'The refugee''s release is fixed not to his own merit but to a death: *he shall dwell in that city, until he stand before the congregation for judgment, and until the death of the high priest that shall be in those days: then shall the slayer return, and come unto his own city, and unto his own house, unto the city from whence he fled* (Joshua 20:6). Moses had set the same clock: *and he shall abide in it unto the death of the high priest, which was anointed with the holy oil* (Numbers 35:25), for *after the death of the high priest the slayer shall return into the land of his possession* (Numbers 35:28). One death — the anointed priest''s — sets the sheltered one free to go home. It is a faint and striking type, read forward to the great High Priest. Hebrews names the refugees: *we might have a strong consolation, who have fled for refuge to lay hold upon the hope set before us* (Hebrews 6:18), and the very next breath calls Him *Yahusha (Jesus), made an high priest for ever after the order of Melek Tsadiq (Melchizedek)* (Hebrews 6:20). His death is the release: *for this cause he is the mediator of the new testament, that by means of death... they which are called might receive the promise of eternal inheritance* (Hebrews 9:15). As the high priest''s death freed the manslayer to his own house, so *by means of death* the Formed Son — who is Yahuah and has a Father, no co-equal person — opens the way home to the eternal inheritance.',
+       sv.verse_id, ev.verse_id, 'free', 35478
+  FROM _s344_jos20_lookup sv, _s344_jos20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=20 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-20-a-refuge-from-the-avenger-yahuah-himself-the-refuge',
+       E'A Refuge from the Avenger — Yahuah Himself the Refuge',
+       E'The six cities are *your refuge from the avenger of blood* (Joshua 20:3), and inside the gate *they shall not deliver the slayer up into his hand* (20:5). The stone walls only picture a deeper refuge the Psalmist sings: *Elohim (God) is our refuge and strength, a very present help in trouble* (Psalm 46:1) — *the Elohim (God) of Jacob is our refuge* (Psalm 46:7,11). What the city is to the manslayer, Yahuah Himself is to His people. Read forward, the refuge swallows condemnation itself: *There is therefore now no condemnation to them which are in HaMashiach Yahusha (Christ Jesus), who walk not after the flesh, but after the Spirit* (Romans 8:1) — the pursuing avenger of death finds no opening against the one sheltered in Messiah. And the mercy is wide: Joshua closes, *These were the cities appointed for all the children of Yashar''el (Israel), and for the stranger that sojourneth among them* (20:9), exactly as Moses gave it — *a refuge, both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner among them* (Numbers 35:15). The refuge of Yahuah covers the sojourner, not the native-born alone.',
+       sv.verse_id, ev.verse_id, 'free', 35481
+  FROM _s344_jos20_lookup sv, _s344_jos20_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=20 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 35:11 — *cities of refuge... that the slayer may flee thither, which killeth any person at unawares*: Joshua does what was commanded by the hand of Moses.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=2
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 35:15 — *a refuge, both for the children of Yashar''el (Israel), and for the stranger, and for the sojourner*: Joshua 20:3 quotes the statute, mercy reaching the stranger.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 19:4 — *Whoso killeth his neighbour ignorantly, whom he hated not in time past*: the Torah distinguishes the accidental death from murder.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Exodus 21:13 — *Elohim (God) deliver him into his hand; then I will appoint thee a place whither he shall flee*: the seed of the whole refuge law.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Exodus 21:14 — *if a man come presumptuously... thou shalt take him from mine altar, that he may die*: no sanctuary for the murderer, only for the unwitting.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Deuteronomy 19:6 — *Lest the avenger of the blood pursue the slayer, while his heart is hot*: the refuge stands against the hot-hearted avenger of Joshua 20:5.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=5
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Numbers 35:24 — *the congregation shall judge between the slayer and the revenger of blood*: open due process at the gate (Joshua 20:4).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=4
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Deuteronomy 19:12 — *the elders... shall fetch him thence, and deliver him into the hand of the avenger of blood, that he may die*: no shelter for the true murderer.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=19 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-the-cities-of-refuge-the-torahs-mercy-for-the-slayer-unawares'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 35:25 — *he shall abide in it unto the death of the high priest, which was anointed with the holy oil*: Joshua 20:6 is Moses exactly, the priest''s death the release.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-until-the-death-of-the-high-priest-then-the-slayer-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 35:28 — *after the death of the high priest the slayer shall return into the land of his possession*: one death sets the sheltered one free to go home.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-until-the-death-of-the-high-priest-then-the-slayer-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 6:18 — *who have fled for refuge to lay hold upon the hope set before us*: the type read forward; the next verse names the High Priest after Melek Tsadiq.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-until-the-death-of-the-high-priest-then-the-slayer-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 9:15 — *by means of death... they which are called might receive the promise of eternal inheritance*: the great High Priest''s death opens the way home.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=6
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=9 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-until-the-death-of-the-high-priest-then-the-slayer-shall-return'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 46:1 — *Elohim (God) is our refuge and strength, a very present help in trouble*: the city walls picture Yahuah Himself the refuge.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=46 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-a-refuge-from-the-avenger-yahuah-himself-the-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Romans 8:1 — *no condemnation to them which are in HaMashiach Yahusha (Christ Jesus)*: the refuge that swallows condemnation, the avenger of death finds no opening.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=3
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=8 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-a-refuge-from-the-avenger-yahuah-himself-the-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 35:15 — *a refuge... for the stranger, and for the sojourner among them*: Joshua 20:9 closes with the same wide mercy, covering the sojourner.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos20_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=20 AND sv.verse_number=9
+  JOIN _s344_jos20_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-20-a-refuge-from-the-avenger-yahuah-himself-the-refuge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session344 — Joshua cross-references complete.'
