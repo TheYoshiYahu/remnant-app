@@ -2828,6 +2828,1303 @@ SELECT t.id, cr.id, 4, E'Deuteronomy 1:21 (to 10:25) — the Kadesh charge made 
  WHERE t.slug='joshua-10-fear-not-thus-shall-yahuah-do'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_joshua_11.sql (Joshua 11) -----
+-- Book/chapter: Joshua 11   Tag: jos11   View: _s344_jos11_lookup
+-- Sort band: base 35250, step 3 -> 35250, 35253, 35256, 35259
+--
+-- Joshua 11 coverage:
+--   v.4 (sand-of-the-sea host, horses+chariots very many)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 17:16 (king not multiply horses), Psalm 20:7 (some trust in chariots) — bound in thread 1
+--   v.6 (Be not afraid... hough their horses, burn their chariots)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 17:16, Psalm 20:7 — bound in thread 1
+--   v.9 (he houghed their horses and burnt their chariots)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Psalm 20:7 — bound in thread 1
+--   v.12 (utterly destroyed them, as Moses the servant of Yahuah commanded)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Joshua 1:7 (observe to do all the law) — bound in thread 2
+--   v.15 (he left nothing undone of all that Yahuah commanded Moses) ★★ keystone
+--        NT:     none warranted (Heb 11:30-31 is Jericho/Rahab, not this summary)
+--        Extras: none warranted
+--        Tanakh: Joshua 1:7, Joshua 1:8 (this book of the law shall not depart) — bound in thread 2
+--   v.20 (it was of Yahuah to harden their hearts) ★ judicial hardening
+--        NT:     none warranted (Rom 9:18 not in this curated set)
+--        Extras: none warranted
+--        Tanakh: Exodus 14:4, Exodus 14:17 (Pharaoh hardened), Genesis 15:16 (iniquity of Amorites not yet full) — bound in thread 3
+--   v.21-22 (cut off the Anakims, none left in the land)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 13:32, Numbers 13:33 (giants, sons of Anak) — bound in thread 4
+--   v.23 (Joshua took the whole land... and the land rested from war) ★ the rest
+--        NT:     Hebrews 4:8, Hebrews 4:9 (a rest remaineth) — bound in thread 4
+--        Extras: none warranted
+--        Tanakh: Numbers 13 (seed-war remnant cleared) — bound in thread 4
+--
+-- Threads:
+--   1. joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots  [free]  (Tanakh: Deut, Psalm)
+--   2. joshua-11-he-left-nothing-undone-of-all-that-yahuah-commanded-moses  [free]  (Tanakh: Joshua 1)
+--   3. joshua-11-it-was-of-yahuah-to-harden-their-hearts  [free]  (Tanakh: Exodus, Genesis)
+--   4. joshua-11-the-anakims-cut-off-and-the-land-rested-from-war  [free]  (Tanakh: Numbers; NT: Hebrews)
+
+CREATE TEMP VIEW _s344_jos11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: not trusting in chariots
+    ('canon','joshua',11,4,'canon','deuteronomy',17,16,'free',E'*But he shall not multiply horses to himself, nor cause the people to return to Egypt, to the end that he should multiply horses: forasmuch as Yahuah (LORD) hath said unto you, Ye shall henceforth return no more that way.* (Deuteronomy 17:16). The northern coalition comes *with horses and chariots very many* (Joshua 11:4), the strength Torah forbade Yashar''el''s own king to trust — the enemy''s confidence is the very thing the covenant teaches the redeemed to refuse.'),
+    ('canon','joshua',11,4,'canon','psalms',20,7,'free',E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God).* (Psalm 20:7). The host gathered *as the sand that is upon the sea shore in multitude, with horses and chariots very many* (Joshua 11:4) — and Joshua''s answer is not a greater army but the Name; the Psalm sings the lesson the battle teaches.'),
+    ('canon','joshua',11,6,'canon','deuteronomy',17,16,'free',E'*But he shall not multiply horses to himself... forasmuch as Yahuah (LORD) hath said unto you, Ye shall henceforth return no more that way.* (Deuteronomy 17:16). Yahuah commands Joshua, *thou shalt hough their horses, and burn their chariots with fire* (Joshua 11:6) — the captured war-machine is destroyed, not absorbed; obedience refuses the strength Torah told the king never to gather.'),
+    ('canon','joshua',11,6,'canon','psalms',20,7,'free',E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God).* (Psalm 20:7). *Be not afraid because of them: for to morrow about this time will I deliver them up all slain... thou shalt hough their horses, and burn their chariots with fire* (Joshua 11:6) — Yahuah delivers, then has the horses crippled and the chariots burned, so that no man may afterward boast in them.'),
+    ('canon','joshua',11,9,'canon','psalms',20,7,'free',E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God).* (Psalm 20:7). *And Joshua did unto them as Yahuah (LORD) bade him: he houghed their horses, and burnt their chariots with fire* (Joshua 11:9) — the obedient deed enacts the Psalm: the chariots are ash, the victory is credited to the Name alone.'),
+    -- Thread 2: he left nothing undone of all that Yahuah commanded Moses
+    ('canon','joshua',11,12,'canon','joshua',1,7,'free',E'*Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left, that thou mayest prosper whithersoever thou goest.* (Joshua 1:7). Joshua smites the kings *as Moses the servant of Yahuah (LORD) commanded* (Joshua 11:12) — the conquest is Torah obeyed, *all the law... turn not from it,* the charge of chapter one carried out to the letter.'),
+    ('canon','joshua',11,15,'canon','joshua',1,7,'free',E'*Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left.* (Joshua 1:7). The summary of the whole campaign — *he left nothing undone of all that Yahuah (LORD) commanded Moses* (Joshua 11:15) — is the answer to the opening charge: not a hand''s breadth turned aside, the full Torah-obedience the covenant requires, never the Torah as a curse but the inheritance done whole.'),
+    ('canon','joshua',11,15,'canon','joshua',1,8,'free',E'*This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein: for then thou shalt make thy way prosperous, and then thou shalt have good success.* (Joshua 1:8). *As Yahuah (LORD) commanded Moses his servant, so did Moses command Joshua, and so did Joshua; he left nothing undone of all that Yahuah (LORD) commanded Moses* (Joshua 11:15) — the man who meditated in the book did *all that is written therein;* the promised prosperity is the land taken and rested.'),
+    -- Thread 3: it was of Yahuah to harden their hearts
+    ('canon','joshua',11,20,'canon','exodus',14,4,'free',E'*And I will harden Pharaoh’s heart, that he shall follow after them; and I will be honoured upon Pharaoh, and upon all his host; that the Egyptians may know that I am Yahuah (LORD). And they did so.* (Exodus 14:4). *For it was of Yahuah (LORD) to harden their hearts, that they should come against Yashar''el (Israel) in battle, that he might destroy them utterly* (Joshua 11:20) — the same judicial hand that hardened Pharaoh to draw him to the sea now draws the Amorite kings to the slaughter; the long-suffering ended, the judgment is His.'),
+    ('canon','joshua',11,20,'canon','exodus',14,17,'free',E'*And I, behold, I will harden the hearts of the Egyptians, and they shall follow them: and I will get me honour upon Pharaoh, and upon all his host, upon his chariots, and upon his horsemen.* (Exodus 14:17). The hardening that brought Egypt''s chariots into the sea is the pattern of *it was of Yahuah (LORD) to harden their hearts, that they should come against Yashar''el (Israel) in battle* (Joshua 11:20) — Yahuah gives the obstinate over to the battle that ends them.'),
+    ('canon','joshua',11,20,'canon','genesis',15,16,'free',E'*But in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full.* (Genesis 15:16). The hardening of Joshua 11:20 — *that he might destroy them utterly... as Yahuah (LORD) commanded Moses* — falls when the long-promised measure has run out: the Amorite''s iniquity, *not yet full* in Abram''s day, is full now, and the patient delay of four generations closes in judgment.'),
+    -- Thread 4: the Anakims cut off and the land rested from war
+    ('canon','joshua',11,21,'canon','numbers',13,33,'free',E'*And there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers, and so we were in their sight.* (Numbers 13:33). The very giants whose report turned a generation back from the land — *the sons of Anak* — are now *cut off from the mountains, from Hebron, from Debir, from Anab* (Joshua 11:21); the seed-war remnant that terrified the spies is cleared out by the obedient who went up.'),
+    ('canon','joshua',11,22,'canon','numbers',13,32,'free',E'*And they brought up an evil report of the land which they had searched unto the children of Yashar''el (Israel), saying, The land, through which we have gone to search it, is a land that eateth up the inhabitants thereof; and all the people that we saw in it are men of a great stature.* (Numbers 13:32). The *evil report* of men *of a great stature* is undone by *There was none of the Anakims left in the land of the children of Yashar''el (Israel)* (Joshua 11:22) — what unbelief called unconquerable, obedience under Yahuah utterly removed.'),
+    ('canon','joshua',11,23,'canon','hebrews',4,8,'free',E'*For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day.* (Hebrews 4:8). *So Joshua took the whole land... and the land rested from war* (Joshua 11:23) — yet the writer to the Hebrews reads even this rest as a shadow pointing past Joshua to a greater rest still spoken of, the rest the Formed Son brings to the people of Elohim.'),
+    ('canon','joshua',11,23,'canon','hebrews',4,9,'free',E'*There remaineth therefore a rest to the people of Elohim (God).* (Hebrews 4:9). The land that *rested from war* (Joshua 11:23) is the firstfruits of the promise; *there remaineth therefore a rest to the people of Elohim (God)* — the Sabbath-rest of the inheritance, given by tribes and divisions, opening forward to the consummate rest of the redeemed two-house people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== THREADS =====
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots',
+       E'Be not afraid — hough their horses, burn their chariots',
+       E'The northern coalition under Jabin king of Hazor gathers a host *as the sand that is upon the sea shore in multitude, with horses and chariots very many* (Joshua 11:4). Against that strength Yahuah (LORD) says, *Be not afraid because of them: for to morrow about this time will I deliver them up all slain before Yashar''el (Israel): thou shalt hough their horses, and burn their chariots with fire* (Joshua 11:6) — and Joshua does it: *he houghed their horses, and burnt their chariots with fire* (Joshua 11:9). The captured war-machine is not absorbed but destroyed, because the covenant forbids trust in it: *he shall not multiply horses to himself... forasmuch as Yahuah (LORD) hath said unto you, Ye shall henceforth return no more that way* (Deuteronomy 17:16). The Psalm sings the very lesson of the battle: *Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu (the LORD our God)* (Psalm 20:7).',
+       sv.verse_id, ev.verse_id, 'free', 35250
+  FROM _s344_jos11_lookup sv, _s344_jos11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=11 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-11-he-left-nothing-undone-of-all-that-yahuah-commanded-moses',
+       E'He left nothing undone of all that Yahuah commanded Moses',
+       E'Joshua smites the kings *as Moses the servant of Yahuah (LORD) commanded* (Joshua 11:12), and the campaign is summed in one line of total obedience: *As Yahuah (LORD) commanded Moses his servant, so did Moses command Joshua, and so did Joshua; he left nothing undone of all that Yahuah (LORD) commanded Moses* (Joshua 11:15). This is the answer to the opening charge of the book — *Only be thou strong and very courageous, that thou mayest observe to do according to all the law, which Moses my servant commanded thee: turn not from it to the right hand or to the left* (Joshua 1:7) — and to the meditating heart that holds it: *This book of the law shall not depart out of thy mouth; but thou shalt meditate therein day and night, that thou mayest observe to do according to all that is written therein* (Joshua 1:8). The Torah is never the curse here; it is the inheritance done whole, not a hand''s breadth turned aside, and the promised good success is the land taken.',
+       sv.verse_id, ev.verse_id, 'free', 35253
+  FROM _s344_jos11_lookup sv, _s344_jos11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=11 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-11-it-was-of-yahuah-to-harden-their-hearts',
+       E'It was of Yahuah to harden their hearts — the Amorite''s iniquity full',
+       E'*For it was of Yahuah (LORD) to harden their hearts, that they should come against Yashar''el (Israel) in battle, that he might destroy them utterly, and that they might have no favour, but that he might destroy them, as Yahuah (LORD) commanded Moses* (Joshua 11:20). This is the same judicial hand that drew Egypt to the sea: *And I will harden Pharaoh’s heart, that he shall follow after them; and I will be honoured upon Pharaoh* (Exodus 14:4); *I will harden the hearts of the Egyptians, and they shall follow them... upon his chariots, and upon his horsemen* (Exodus 14:17). Yahuah gives the obstinate over to the battle that ends them — and the timing is not arbitrary. Long before, He told Abram the delay had a measure: *in the fourth generation they shall come hither again: for the iniquity of the Amorites is not yet full* (Genesis 15:16). Now it is full; the long-suffering is ended, and the judgment is His own, not Yashar''el''s vengeance.',
+       sv.verse_id, ev.verse_id, 'free', 35256
+  FROM _s344_jos11_lookup sv, _s344_jos11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=11 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-11-the-anakims-cut-off-and-the-land-rested-from-war',
+       E'The Anakims cut off — and the land rested from war',
+       E'The giants whose report once turned a whole generation back from the land are now cleared out: *And at that time came Joshua, and cut off the Anakims from the mountains, from Hebron, from Debir, from Anab, and from all the mountains of Yahudah (Judah), and from all the mountains of Yashar''el (Israel)* (Joshua 11:21); *There was none of the Anakims left in the land of the children of Yashar''el (Israel)* (Joshua 11:22). At Kadesh the spies had *brought up an evil report... a land that eateth up the inhabitants thereof; and all the people that we saw in it are men of a great stature* (Numbers 13:32), wailing, *there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers* (Numbers 13:33). What unbelief called unconquerable, obedience under Yahuah utterly removed. And the chapter closes in rest: *So Joshua took the whole land, according to all that Yahuah (LORD) said unto Moses; and Joshua gave it for an inheritance unto Yashar''el (Israel) according to their divisions by their tribes. And the land rested from war* (Joshua 11:23). Yet the writer to the Hebrews reads even this rest as a shadow: *For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8) — *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9), the consummate Sabbath-rest the inheritance only foretells.',
+       sv.verse_id, ev.verse_id, 'free', 35259
+  FROM _s344_jos11_lookup sv, _s344_jos11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=11 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He shall not multiply horses to himself... Ye shall henceforth return no more that way* (Deuteronomy 17:16) — the enemy''s *horses and chariots very many* are the strength Torah forbade the king to trust.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Some trust in chariots, and some in horses: but we will remember the name of Yahuah Eloheinu* (Psalm 20:7) — the Psalm sings the lesson of the sand-of-the-sea host.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=4
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*He shall not multiply horses to himself* (Deuteronomy 17:16) — Yahuah''s command to *hough their horses, and burn their chariots with fire* refuses the very strength the king was forbidden to gather.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Some trust in chariots... but we will remember the name of Yahuah Eloheinu* (Psalm 20:7) — *Be not afraid... thou shalt hough their horses, and burn their chariots with fire* leaves no chariot to boast in.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Some trust in chariots, and some in horses* (Psalm 20:7) — *Joshua did unto them as Yahuah (LORD) bade him: he houghed their horses, and burnt their chariots with fire* enacts the Psalm in deed.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=9
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=20 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-be-not-afraid-hough-their-horses-burn-their-chariots'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Observe to do according to all the law... turn not from it to the right hand or to the left* (Joshua 1:7) — Joshua smites the kings *as Moses the servant of Yahuah commanded.*'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=12
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-he-left-nothing-undone-of-all-that-yahuah-commanded-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Observe to do according to all the law... turn not from it to the right hand or to the left* (Joshua 1:7) — the keystone summary *he left nothing undone of all that Yahuah commanded Moses* is the charge fulfilled to the letter.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=15
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-he-left-nothing-undone-of-all-that-yahuah-commanded-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*This book of the law shall not depart out of thy mouth... that thou mayest observe to do according to all that is written therein* (Joshua 1:8) — the man who meditated did *all,* leaving *nothing undone.*'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=15
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-he-left-nothing-undone-of-all-that-yahuah-commanded-moses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will harden Pharaoh’s heart, that he shall follow after them; and I will be honoured upon Pharaoh* (Exodus 14:4) — the same hand draws the Amorite kings to the battle that ends them.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-it-was-of-yahuah-to-harden-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I will harden the hearts of the Egyptians... upon his chariots, and upon his horsemen* (Exodus 14:17) — the hardening that brought Egypt''s chariots into the sea is the pattern at Merom.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=14 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-it-was-of-yahuah-to-harden-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The iniquity of the Amorites is not yet full* (Genesis 15:16) — the long-suffering foretold to Abram is ended; the measure full, the judgment falls.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=15 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-it-was-of-yahuah-to-harden-their-hearts'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*There we saw the giants, the sons of Anak... we were in our own sight as grasshoppers* (Numbers 13:33) — the giants that terrified the spies are *cut off* by Joshua.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=21
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-the-anakims-cut-off-and-the-land-rested-from-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*An evil report... a land that eateth up the inhabitants thereof... men of a great stature* (Numbers 13:32) — undone by *There was none of the Anakims left in the land.*'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=22
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-the-anakims-cut-off-and-the-land-rested-from-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8) — *the land rested from war* is a shadow pointing past Joshua to a greater rest.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-the-anakims-cut-off-and-the-land-rested-from-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9) — the inheritance that rested from war foretells the consummate Sabbath-rest of the redeemed.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s344_jos11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-11-the-anakims-cut-off-and-the-land-rested-from-war'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_13.sql (Joshua 13) -----
+-- Joshua 13 — Joshua is old, and there remaineth yet very much land to be possessed;
+--   the land divided among the tribes; LEVI receives no land — Yahuah Himself is his inheritance;
+--   the east-of-Jordan portion of Reuben, Gad, half-Manasseh which Moses gave.
+--   Tag jos13; view _s344_jos13_lookup.
+-- Sort band base 35300, step 3 (35300, 35303, 35306).
+--
+-- Joshua 13 coverage:
+--   v.1  (Joshua old; there remaineth yet very much land to be possessed)
+--        NT:     Hebrews 4:8-9 (there remaineth a rest — the promise not yet fully entered) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: Joshua 23:4, 23:5 (the nations that remain, yet to be possessed) — THREAD 2
+--   v.6  (only divide thou it by lot... for an inheritance, as I have commanded)
+--        NT:     none warranted (carried by the much-land-remaining thread)
+--        Extras: none warranted
+--        Tanakh: carried by THREAD 2
+--   v.8  (Reuben, Gad received their inheritance which Moses gave, beyond Jordan eastward)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 32:33 (Moses gave the kingdom of Sihon and Og east of Jordan) — THREAD 3
+--   v.14 (★★ unto Levi he gave none inheritance; the sacrifices made by fire are their inheritance)
+--        NT:     none warranted (the priestly-portion motif stays Tanakh+Psalms here)
+--        Extras: none warranted
+--        Tanakh: Numbers 18:20; Deuteronomy 10:9; Deuteronomy 18:1, 18:2; Psalm 16:5; Psalm 73:26 — THREAD 1
+--   v.33 (★★ unto Levi Moses gave not any inheritance: YAHUAH ELOHIM of Yashar'el was their inheritance)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 18:20; Deuteronomy 10:9; Psalm 16:5; Psalm 73:26 — THREAD 1
+--   vv.2-5,9-13,15-32 (the boundary lists / coast descriptions)
+--        NT/Extras/Tanakh: none warranted — boundary-list verses, not threaded (brief instruction: keep lean)
+--
+-- THREADS:
+--   THREAD 1 joshua-13-levi-s-inheritance-is-yahuah-himself (free): Tanakh (Numbers, Deuteronomy, Psalms) — THE KEYSTONE
+--   THREAD 2 joshua-13-there-remaineth-yet-very-much-land (free): Tanakh (Joshua 23) + NT (Hebrews 4)
+--   THREAD 3 joshua-13-the-inheritance-which-moses-gave-beyond-jordan (free): Tanakh (Numbers 32)
+--
+-- Framework-load-bearing notes:
+--   * 13:14,33 ★★ Levi's portion is YAHUAH HIMSELF, not land. The priestly tribe receives no
+--     territory because *I am thy part and thine inheritance* (Num 18:20); *Yahuah (LORD) is his
+--     inheritance* (Deut 10:9; Deut 18:2). The Psalms deepen it from the priesthood to every
+--     believer whose portion is Yahuah: *Yahuah (LORD) is the portion of mine inheritance* (Ps 16:5),
+--     *Elohim... is the strength of my heart, and my portion for ever* (Ps 73:26). The deepest
+--     inheritance is the Giver, not the gift.
+--   * 13:1 the land not yet fully entered = the promise still to be claimed; Joshua 23 names the
+--     nations that remain, and Hebrews 4 reads the unfinished entering forward — *There remaineth
+--     therefore a rest to the people of Elohim* — Torah's rest never abolished, only not yet fully
+--     possessed.
+--   * 13:8 the east-Jordan inheritance Moses gave Reuben/Gad/half-Manasseh = Numbers 32 kept; the
+--     two-and-a-half tribes' portion, the same twelve-tribe inheritance reaching across Jordan.
+
+CREATE TEMP VIEW _s344_jos13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — Levi's inheritance is Yahuah Himself (13:14, 13:33)
+    ('canon','joshua',13,14,'canon','numbers',18,20,'free',E'*And Yahuah (LORD) spake unto Aaron, Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). This is the law Joshua now keeps: *Only unto the tribe of Levi he gave none inheritance; the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance* (Joshua 13:14). The priestly tribe receives no land because Yahuah Himself said *I am thy part* — the Giver is the portion, not the gift.'),
+    ('canon','joshua',13,14,'canon','deuteronomy',10,9,'free',E'*Wherefore Levi hath no part nor inheritance with his brethren; Yahuah (LORD) is his inheritance, according as Yahuah Elohayka (the LORD thy God) promised him* (Deuteronomy 10:9). Moses'' word stands fulfilled in the land: *unto the tribe of Levi he gave none inheritance; the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance* (Joshua 13:14). The tribe set apart to bear the ark and minister has the deepest portion of all — *Yahuah (LORD) is his inheritance*.'),
+    ('canon','joshua',13,14,'canon','deuteronomy',18,1,'free',E'*The priests the Levites, and all the tribe of Levi, shall have no part nor inheritance with Yashar''el (Israel): they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance* (Deuteronomy 18:1). Joshua 13:14 echoes the very phrase — *the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance*. The offerings made by fire are Levi''s bread, for Yahuah''s own portion is theirs to share.'),
+    ('canon','joshua',13,14,'canon','deuteronomy',18,2,'free',E'*Therefore shall they have no inheritance among their brethren: Yahuah (LORD) is their inheritance, as he hath said unto them* (Deuteronomy 18:2). The same *as he hath said unto them* closes Joshua''s record: *the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance, as he said unto them* (Joshua 13:14). Land withheld is no loss when Yahuah is the inheritance.'),
+    ('canon','joshua',13,14,'canon','psalms',16,5,'free',E'*Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot* (Psalm 16:5). What was Levi''s alone — *the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance* (Joshua 13:14) — David sings as his own deepest possession. *Yahuah (LORD) is the portion of mine inheritance*: the priestly portion opens to every heart that takes the Giver as its lot.'),
+    ('canon','joshua',13,33,'canon','numbers',18,20,'free',E'*And Yahuah (LORD) spake unto Aaron, Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). Joshua repeats the law as the climax of the whole allotment: *But unto the tribe of Levi Moses gave not any inheritance: Yahuah Elohim (the LORD God) of Yashar''el (Israel) was their inheritance, as he said unto them* (Joshua 13:33). What Yahuah declared to Aaron — *I am thy part* — is now graven into the land: Yahuah Himself, not territory, is Levi''s portion.'),
+    ('canon','joshua',13,33,'canon','deuteronomy',10,9,'free',E'*Wherefore Levi hath no part nor inheritance with his brethren; Yahuah (LORD) is his inheritance, according as Yahuah Elohayka (the LORD thy God) promised him* (Deuteronomy 10:9). Joshua 13:33 seals the promise in fact: *Yahuah Elohim (the LORD God) of Yashar''el (Israel) was their inheritance, as he said unto them*. The tribe that stands before Yahuah to minister holds Yahuah Himself as its everlasting heritage.'),
+    ('canon','joshua',13,33,'canon','psalms',16,5,'free',E'*Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot* (Psalm 16:5). The climactic word of the chapter — *Yahuah Elohim (the LORD God) of Yashar''el (Israel) was their inheritance, as he said unto them* (Joshua 13:33) — is the very confession David makes his own. The Levite''s portion becomes the song of every soul whose lot Yahuah maintains.'),
+    ('canon','joshua',13,33,'canon','psalms',73,26,'free',E'*My flesh and my heart faileth: but Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26). Asaph reaches the same bottom Joshua records of Levi: *Yahuah Elohim (the LORD God) of Yashar''el (Israel) was their inheritance, as he said unto them* (Joshua 13:33). When all else fails, the portion that cannot fail is Yahuah Himself — *my portion for ever*.'),
+    -- THREAD 2 — there remaineth yet very much land to be possessed (13:1)
+    ('canon','joshua',13,1,'canon','joshua',23,4,'free',E'*Behold, I have divided unto you by lot these nations that remain, to be an inheritance for your tribes, from Jordan, with all the nations that I have cut off, even unto the great sea westward* (Joshua 23:4). Joshua''s farewell answers the charge of his old age: *there remaineth yet very much land to be possessed* (Joshua 13:1). The land is given by promise and divided by lot, yet *these nations that remain* are still to be entered — the inheritance is sure but not yet wholly claimed.'),
+    ('canon','joshua',13,1,'canon','joshua',23,5,'free',E'*And Yahuah Elohaychem (the LORD your God), he shall expel them from before you, and drive them from out of your sight; and ye shall possess their land, as Yahuah Elohaychem (the LORD your God) hath promised unto you* (Joshua 23:5). The much land that *yet remaineth* (Joshua 13:1) is Yahuah''s to give: *he shall expel them from before you... as Yahuah Elohaychem (the LORD your God) hath promised*. The promise stands; the possessing is still to come.'),
+    ('canon','joshua',13,1,'canon','hebrews',4,8,'free',E'*For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8). Even after Joshua led them in, *there remaineth yet very much land to be possessed* (Joshua 13:1) — the entering was never finished. Hebrews reads it forward: the rest Joshua gave was a figure, not the full possession, for Yahuah spoke of *another day* still to be entered.'),
+    ('canon','joshua',13,1,'canon','hebrews',4,9,'free',E'*There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The very word of Joshua 13:1 — *there remaineth yet very much land to be possessed* — is the figure Hebrews carries to its end: *there remaineth therefore a rest*. The land not yet fully entered pictures the promised rest still to be claimed; the inheritance is held out, the possessing yet ahead.'),
+    -- THREAD 3 — the inheritance which Moses gave beyond Jordan eastward (13:8)
+    ('canon','joshua',13,8,'canon','numbers',32,33,'free',E'*And Moses gave unto them, even to the children of Gad, and to the children of Reuben, and unto half the tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan, the land, with the cities thereof* (Numbers 32:33). Joshua records this same grant: *the Reubenites and the Gadites have received their inheritance, which Moses gave them, beyond Jordan eastward* (Joshua 13:8). The two-and-a-half tribes'' portion east of Jordan was Moses'' deed, now honoured in the dividing of the land; the twelve-tribe inheritance reaches across the river.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 — Levi's inheritance is Yahuah Himself (free) — THE KEYSTONE
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-13-levi-s-inheritance-is-yahuah-himself',
+       E'Joshua 13 — Levi''s Inheritance Is Yahuah Himself: the Portion That Is the Giver',
+       E'When the land was divided, one tribe received no field, no border, no city of its own — and that tribe held the richest portion of all. *Only unto the tribe of Levi he gave none inheritance; the sacrifices of Yahuah Elohim (the LORD God) of Yashar''el (Israel) made by fire are their inheritance, as he said unto them* (Joshua 13:14); and again, as the climax of the whole allotment, *But unto the tribe of Levi Moses gave not any inheritance: Yahuah Elohim (the LORD God) of Yashar''el (Israel) was their inheritance, as he said unto them* (Joshua 13:33). This keeps the word Yahuah spoke to Aaron: *Thou shalt have no inheritance in their land, neither shalt thou have any part among them: I am thy part and thine inheritance among the children of Yashar''el (Israel)* (Numbers 18:20). Moses had said it twice over — *Wherefore Levi hath no part nor inheritance with his brethren; Yahuah (LORD) is his inheritance* (Deuteronomy 10:9); *The priests the Levites... shall have no part nor inheritance with Yashar''el (Israel): they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance... Yahuah (LORD) is their inheritance, as he hath said unto them* (Deuteronomy 18:1-2). The tribe set apart to bear the ark and stand before Yahuah is given Yahuah Himself. And what was Levi''s alone the Psalms open to every heart: *Yahuah (LORD) is the portion of mine inheritance and of my cup: thou maintainest my lot* (Psalm 16:5); *My flesh and my heart faileth: but Elohim (God) is the strength of my heart, and my portion for ever* (Psalm 73:26). This is the deepest inheritance the covenant offers — not the land, but the One who gave it; not the gift, but the Giver, the portion that fails not for ever.',
+       sv.verse_id, ev.verse_id, 'free', 35300
+  FROM _s344_jos13_lookup sv, _s344_jos13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=13 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 — there remaineth yet very much land to be possessed (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-13-there-remaineth-yet-very-much-land',
+       E'Joshua 13 — There Remaineth Yet Very Much Land: the Promise Not Yet Fully Entered',
+       E'*Now Joshua was old and stricken in years; and Yahuah (LORD) said unto him, Thou art old and stricken in years, and there remaineth yet very much land to be possessed* (Joshua 13:1). The conqueror is aged, the land is divided by lot, and still the inheritance is not wholly claimed. Joshua''s own farewell names the same unfinished work: *Behold, I have divided unto you by lot these nations that remain, to be an inheritance for your tribes* (Joshua 23:4); *And Yahuah Elohaychem (the LORD your God), he shall expel them from before you... and ye shall possess their land, as Yahuah Elohaychem (the LORD your God) hath promised unto you* (Joshua 23:5). The promise is certain — Yahuah will drive them out — yet the possessing is still ahead. Hebrews carries the figure to its end: *For if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day* (Hebrews 4:8); *There remaineth therefore a rest to the people of Elohim (God)* (Hebrews 4:9). The rest Joshua led them into was real but not yet full — a picture of the inheritance held out and the rest still to be entered. Much land remaineth; the promise stands; the people of Yahuah press on to possess it.',
+       sv.verse_id, ev.verse_id, 'free', 35303
+  FROM _s344_jos13_lookup sv, _s344_jos13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=13 AND ev.verse_number=1
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 — the inheritance which Moses gave beyond Jordan eastward (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-13-the-inheritance-which-moses-gave-beyond-jordan',
+       E'Joshua 13 — The Inheritance Which Moses Gave Beyond Jordan Eastward',
+       E'Before the lot fell west of Jordan, two tribes and a half had already received their portion to the east — and Joshua honours that earlier grant: *With whom the Reubenites and the Gadites have received their inheritance, which Moses gave them, beyond Jordan eastward, even as Moses the servant of Yahuah (LORD) gave them* (Joshua 13:8). This keeps the deed of Numbers 32: *And Moses gave unto them, even to the children of Gad, and to the children of Reuben, and unto half the tribe of Manasseh the son of Joseph, the kingdom of Sihon king of the Amorites, and the kingdom of Og king of Bashan, the land, with the cities thereof* (Numbers 32:33). The cattle-rich tribes asked for Gilead and Bashan, vowed to cross armed before their brethren until all Yashar''el inherited, and Moses gave them their place east of the river. The twelve-tribe inheritance reaches across Jordan; what Moses the servant of Yahuah granted, Joshua confirms as the land is parted among the tribes.',
+       sv.verse_id, ev.verse_id, 'free', 35306
+  FROM _s344_jos13_lookup sv, _s344_jos13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=13 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD 1 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 18:20 — *I am thy part and thine inheritance among the children of Yashar''el (Israel)*; the law Joshua 13:14 keeps — Yahuah Himself is Levi''s portion.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 10:9 — *Yahuah (LORD) is his inheritance*; Moses'' word kept in the land — Levi''s portion is Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 18:1 — *they shall eat the offerings of Yahuah (LORD) made by fire, and his inheritance*; the same offerings-made-by-fire are Levi''s bread (Joshua 13:14).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 18:2 — *Yahuah (LORD) is their inheritance, as he hath said unto them*; the very phrase Joshua 13:14 echoes — *as he said unto them*.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Psalm 16:5 — *Yahuah (LORD) is the portion of mine inheritance and of my cup*; the priestly portion opens to every heart that takes the Giver as its lot.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Numbers 18:20 — *I am thy part and thine inheritance*; the climactic word of the chapter (Joshua 13:33) is the law fulfilled — Yahuah Himself, not land.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=33
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Deuteronomy 10:9 — *Yahuah (LORD) is his inheritance*; the promise sealed in fact (Joshua 13:33) — the ministering tribe holds Yahuah as its heritage.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=33
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Psalm 16:5 — *Yahuah (LORD) is the portion of mine inheritance*; David sings the Levite''s climax (Joshua 13:33) as his own confession.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=33
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=16 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'Psalm 73:26 — *Elohim (God) is the strength of my heart, and my portion for ever*; when all else fails, the portion that cannot fail is Yahuah Himself (Joshua 13:33).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=33
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=73 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-levi-s-inheritance-is-yahuah-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 2 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 23:4 — *these nations that remain, to be an inheritance for your tribes*; the same unfinished work Joshua 13:1 names — divided by lot, not yet wholly entered.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-there-remaineth-yet-very-much-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joshua 23:5 — *he shall expel them from before you... as Yahuah Elohaychem (the LORD your God) hath promised*; the much land yet remaining (Joshua 13:1) is Yahuah''s to give.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-there-remaineth-yet-very-much-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 4:8 — *if Yahusha (Jesus) had given them rest, then would he not afterward have spoken of another day*; Joshua''s rest was a figure, the entering never finished (Joshua 13:1).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-there-remaineth-yet-very-much-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 4:9 — *There remaineth therefore a rest to the people of Elohim (God)*; the very word of Joshua 13:1 — the land not yet possessed pictures the promised rest still to be claimed.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-there-remaineth-yet-very-much-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 3 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 32:33 — *Moses gave... the kingdom of Sihon... and the kingdom of Og... the land*; the east-Jordan grant Joshua 13:8 confirms for Reuben, Gad, half-Manasseh.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=13 AND sv.verse_number=8
+  JOIN _s344_jos13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=32 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-13-the-inheritance-which-moses-gave-beyond-jordan'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_14.sql (Joshua 14) -----
+-- Joshua 14 — the land divided by lot; Caleb the son of Jephunneh, who WHOLLY
+--   FOLLOWED Yahuah, comes to Joshua at Gilgal, recalls the faithful spy-report and
+--   Moses' oath, and at eighty-five asks for his mountain Hebron where the Anakim are.
+--   Tag jos14; view _s344_jos14_lookup. Sort band base 35325, step 3 (35325, 35328, 35331, 35334).
+--
+-- SEED-LINE NOTE (framework): Caleb is twice called "the Kenezite/Kenizzite" (14:6,14) and
+--   elsewhere mocked as of foreign-origin stock — but he is here reckoned of YAHUDAH (Judah):
+--   *Then the children of Yahudah (Judah) came unto Joshua in Gilgal: and Caleb the son of
+--   Jephunneh the Kenezite said unto him* (14:6); Numbers 13:6 names him *Of the tribe of
+--   Yahudah (Judah), Caleb the son of Jephunneh*. He stands in the seed by PATERNAL lineage
+--   AND covenant (the foreign mother absorbed by the marriage-covenant) — NOT a Gentile grafted
+--   in by faith-confession. The frame honors the seed-line; do not Christianize him into a
+--   replacement-theology proof-text.
+--
+-- Joshua 14 coverage:
+--   v.1-2  (the inheritance by LOT, as Yahuah commanded by Moses)
+--          NT:     none warranted (the apportioning motif stays Tanakh)
+--          Extras: none warranted
+--          Tanakh: Numbers 26:55, Numbers 33:54 (divide by lot) — THREAD 4
+--   v.6    (Caleb of Yahudah comes; what Yahuah said at Kadesh-barnea)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 13:6 (Caleb of the tribe of Yahudah) — THREAD 1 (seed-line)
+--   v.7-9  (the faithful report; Moses' oath of the inheritance because he wholly followed)
+--          NT:     none warranted (carried by the inheritance/faith threads)
+--          Extras: none warranted
+--          Tanakh: Numbers 13:30; Numbers 14:24; Deuteronomy 1:36 — THREAD 1
+--   v.10-12 (kept alive 45 yrs; fourscore-and-five; strength undimmed; GIVE ME THIS MOUNTAIN)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Psalm 92:13, Psalm 92:14 (planted, bring forth fruit in old age) — THREAD 2
+--   v.13-14 (Joshua blesses; Hebron the inheritance because he wholly followed Yahuah)
+--          NT:     Hebrews 3:18, 3:19 (the unbelieving could not enter for unbelief);
+--                  Hebrews 6:12 (faith and patience inherit the promises) — THREAD 3
+--          Extras: none warranted
+--          Tanakh: Numbers 14:24, Deuteronomy 1:36 (the faithful inherit) — THREAD 1 & 3
+--
+-- THREADS:
+--   THREAD 1 joshua-14-caleb-wholly-followed-yahuah-another-spirit (free): Tanakh only (Numbers 13, Numbers 14, Deuteronomy 1)
+--   THREAD 2 joshua-14-give-me-this-mountain-fruit-in-old-age (free): Tanakh only (Psalm 92)
+--   THREAD 3 joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell (free): NT (Hebrews 3, Hebrews 6) + Tanakh (Numbers, Deuteronomy)
+--   THREAD 4 joshua-14-the-inheritance-by-lot-as-yahuah-commanded (free): Tanakh only (Numbers 26, Numbers 33)
+--
+-- Framework-load-bearing notes:
+--   * 14:8,9,14 *I wholly followed Yahuah Elohai* — the keystone. Numbers 14:24 names WHY:
+--     *because he had ANOTHER SPIRIT with him, and hath followed me fully*. The faithful spy
+--     (Num 13:30) over against the ten who made the heart of the people melt. The seed inherits
+--     by following Yahuah fully, the paternal line of Yahudah (Num 13:6) + covenant-faith.
+--   * 14:10-12 *I am this day fourscore and five years old... as yet I am as strong this day* —
+--     the undimmed faith and strength of the man who wholly followed; Psalm 92:14 *They shall
+--     still bring forth fruit in old age* sings the same: the righteous planted in Yahuah's house.
+--   * 14:13-14 Hebron given *because that he wholly followed Yahuah* — the inheritance of the
+--     faithful, set AGAINST the unbelieving generation whose carcases fell and who could NOT
+--     enter the rest for unbelief (Heb 3:18-19); *followers of them who through faith and
+--     patience inherit the promises* (Heb 6:12). Faith that inherits is Torah-faithful following,
+--     not a bare confession — Caleb FOLLOWED Yahuah fully.
+
+CREATE TEMP VIEW _s344_jos14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — Caleb wholly followed Yahuah; another spirit (14:6, 14:8, 14:9, 14:14)
+    ('canon','joshua',14,6,'canon','numbers',13,6,'free',E'*Of the tribe of Yahudah (Judah), Caleb the son of Jephunneh* (Numbers 13:6). When *the children of Yahudah (Judah) came unto Joshua in Gilgal: and Caleb the son of Jephunneh the Kenezite said unto him* (Joshua 14:6), Caleb comes reckoned in the seed of Yahudah — the paternal line that the spy-list itself records. The "Kenezite" name marks his foreign-origin stock, but he stands in the covenant by his Yahudite lineage, not grafted in by confession alone.'),
+    ('canon','joshua',14,8,'canon','numbers',13,30,'free',E'*And Caleb stilled the people before Moses, and said, Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30). This is the faithful report Caleb recalls: *Nevertheless my brethren that went up with me made the heart of the people melt: but I wholly followed Yahuah Elohai (the LORD my God)* (Joshua 14:8). While ten made the heart melt, Caleb stilled the people — the one who wholly followed against the many who feared.'),
+    ('canon','joshua',14,8,'canon','numbers',14,24,'free',E'*But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). Yahuah Himself names why Caleb *wholly followed* (Joshua 14:8): *another spirit* was with him — and *his seed shall possess it*. The inheritance is promised to the man who followed Yahuah fully, and to his seed after him.'),
+    ('canon','joshua',14,9,'canon','numbers',14,24,'free',E'*But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). *And Moses sware on that day, saying, Surely the land whereon thy feet have trodden shall be thine inheritance, and thy children''s for ever, because thou hast wholly followed Yahuah Elohai (the LORD my God)* (Joshua 14:9) — the oath rests on the very ground Yahuah named: the *another spirit*, the full following, the seed possessing the land.'),
+    ('canon','joshua',14,9,'canon','deuteronomy',1,36,'free',E'*Save Caleb the son of Jephunneh; he shall see it, and to him will I give the land that he hath trodden upon, and to his children, because he hath wholly followed Yahuah (LORD)* (Deuteronomy 1:36). Moses'' oath in Joshua 14:9 — *the land whereon thy feet have trodden shall be thine inheritance, and thy children''s for ever, because thou hast wholly followed* — is the word Yahuah spoke through Moses at Kadesh, now claimed at Gilgal: the land Caleb''s foot trod, given because he followed fully.'),
+    ('canon','joshua',14,14,'canon','numbers',14,24,'free',E'*But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 14:14). The promise of the *another spirit* who *followed me fully* is kept to the letter: the seed possesses the very land.'),
+    -- THREAD 2 — give me this mountain; fruit in old age (14:10, 14:11, 14:12)
+    ('canon','joshua',14,11,'canon','psalms',92,14,'free',E'*They shall still bring forth fruit in old age; they shall be fat and flourishing* (Psalm 92:14). At fourscore and five Caleb says *As yet I am as strong this day as I was in the day that Moses sent me: as my strength was then, even so is my strength now, for war* (Joshua 14:11) — the undimmed strength of the man who wholly followed Yahuah, the righteous who *still bring forth fruit in old age*, flourishing because they are planted in Him.'),
+    ('canon','joshua',14,12,'canon','psalms',92,13,'free',E'*Those that be planted in the house of Yahuah (LORD) shall flourish in the courts of our Elohim (God)* (Psalm 92:13). *Now therefore give me this mountain, whereof Yahuah (LORD) spake in that day... if so be Yahuah (LORD) will be with me, then I shall be able to drive them out, as Yahuah (LORD) said* (Joshua 14:12). The planted man flourishes — Caleb asks not for ease but for the mountain of the Anakim, his faith as green at eighty-five as the day Moses sent him.'),
+    ('canon','joshua',14,10,'canon','psalms',92,14,'free',E'*They shall still bring forth fruit in old age; they shall be fat and flourishing* (Psalm 92:14). *And now, behold, Yahuah (LORD) hath kept me alive, as he said, these forty and five years... and now, lo, I am this day fourscore and five years old* (Joshua 14:10). The Psalm sings what Caleb embodies: Yahuah keeps the faithful alive and fruitful into old age, the preserved strength of the man who followed Him fully.'),
+    -- THREAD 3 — the inheritance of the faithful while the unbelieving fell (14:9, 14:13, 14:14)
+    ('canon','joshua',14,14,'canon','hebrews',3,18,'free',E'*And to whom sware he that they should not enter into his rest, but to them that believed not?* (Hebrews 3:18). Set against the generation barred from the rest stands Caleb: *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 14:14). The unbelieving fell in the wilderness; the man who wholly followed inherited his mountain.'),
+    ('canon','joshua',14,14,'canon','hebrews',3,19,'free',E'*So we see that they could not enter in because of unbelief* (Hebrews 3:19). The contrast is the whole point of Joshua 14:14: while the unbelieving *could not enter in*, *Hebron... became the inheritance of Caleb... because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)*. Unbelief forfeits the rest; following Yahuah fully inherits it.'),
+    ('canon','joshua',14,13,'canon','hebrews',6,12,'free',E'*That ye be not slothful, but followers of them who through faith and patience inherit the promises* (Hebrews 6:12). *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance* (Joshua 14:13). Caleb is the very pattern Hebrews holds up — the man who *through faith and patience* (forty-five years of waiting) *inherited the promise*, the mountain Moses sware to him.'),
+    ('canon','joshua',14,9,'canon','hebrews',6,12,'free',E'*That ye be not slothful, but followers of them who through faith and patience inherit the promises* (Hebrews 6:12). Moses sware *the land whereon thy feet have trodden shall be thine inheritance... because thou hast wholly followed Yahuah Elohai (the LORD my God)* (Joshua 14:9), and Caleb waited forty-five years to claim it — *faith and patience* inheriting the promise. The faith that inherits is the full following of Yahuah, not a bare confession.'),
+    ('canon','joshua',14,14,'canon','numbers',14,24,'free',E'*But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). The whole wilderness generation murmured and fell, but Caleb *wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 14:14) and inherited — the faithful spy with *another spirit*, set against the carcases that fell for unbelief.'),
+    -- THREAD 4 — the inheritance by lot, as Yahuah commanded (14:1, 14:2)
+    ('canon','joshua',14,2,'canon','numbers',26,55,'free',E'*Notwithstanding the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* (Numbers 26:55). *By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses, for the nine tribes, and for the half tribe* (Joshua 14:2). The apportioning is no man''s scheme — the lot is Yahuah''s choice, the inheritance falling by His hand exactly as He commanded through Moses.'),
+    ('canon','joshua',14,2,'canon','numbers',33,54,'free',E'*And ye shall divide the land by lot for an inheritance among your families... every man''s inheritance shall be in the place where his lot falleth; according to the tribes of your fathers ye shall inherit* (Numbers 33:54). *By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses* (Joshua 14:2) — the commandment given before the Jordan is now kept beyond it, the tribes inheriting where Yahuah''s lot falls, by the tribes of their fathers.'),
+    ('canon','joshua',14,1,'canon','numbers',26,55,'free',E'*Notwithstanding the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* (Numbers 26:55). *And these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes... distributed for inheritance to them* (Joshua 14:1). Eleazar and Joshua distribute exactly as commanded — *according to the names of the tribes of their fathers* — the seed inheriting by the paternal tribes.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 — Caleb wholly followed Yahuah; another spirit (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-14-caleb-wholly-followed-yahuah-another-spirit',
+       E'Joshua 14 — Caleb Wholly Followed Yahuah: the Man with Another Spirit',
+       E'Caleb comes to Joshua at Gilgal and rests his whole claim on one thing — that he followed Yahuah fully. *Then the children of Yahudah (Judah) came unto Joshua in Gilgal: and Caleb the son of Jephunneh the Kenezite said unto him... Forty years old was I when Moses the servant of Yahuah (LORD) sent me from Kadesh-barnea to espy out the land; and I brought him word again as it was in mine heart. Nevertheless my brethren that went up with me made the heart of the people melt: but I wholly followed Yahuah Elohai (the LORD my God)* (Joshua 14:6-8). He is reckoned of the seed of Yahudah by his father''s line — *Of the tribe of Yahudah (Judah), Caleb the son of Jephunneh* (Numbers 13:6) — and the "Kenezite" name marks only his foreign-origin stock, absorbed by covenant, not a Gentile grafted in by confession. While the ten made the heart of the people melt, Caleb stilled them: *Let us go up at once, and possess it; for we are well able to overcome it* (Numbers 13:30). And Yahuah Himself named the reason the land would be his: *But my servant Caleb, because he had another spirit with him, and hath followed me fully, him will I bring into the land whereinto he went; and his seed shall possess it* (Numbers 14:24). Moses sware on it — *Save Caleb the son of Jephunneh; he shall see it... because he hath wholly followed Yahuah (LORD)* (Deuteronomy 1:36) — and the chapter seals it: *Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 14:14). The seed inherits by following Yahuah fully — paternal line and covenant-faith together, never one without the other.',
+       sv.verse_id, ev.verse_id, 'free', 35325
+  FROM _s344_jos14_lookup sv, _s344_jos14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=14 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 — give me this mountain; fruit in old age (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-14-give-me-this-mountain-fruit-in-old-age',
+       E'Joshua 14 — Give Me This Mountain: the Undimmed Strength of the Faithful',
+       E'Forty-five years of wilderness have not aged Caleb''s faith. *And now, behold, Yahuah (LORD) hath kept me alive, as he said, these forty and five years... and now, lo, I am this day fourscore and five years old. As yet I am as strong this day as I was in the day that Moses sent me: as my strength was then, even so is my strength now, for war, both to go out, and to come in* (Joshua 14:10-11). And he asks not for the easy valley but the mountain of the giants: *Now therefore give me this mountain, whereof Yahuah (LORD) spake in that day; for thou heardest in that day how the Anakims were there, and that the cities were great and fenced: if so be Yahuah (LORD) will be with me, then I shall be able to drive them out, as Yahuah (LORD) said* (Joshua 14:12). This is the Psalm made flesh: *Those that be planted in the house of Yahuah (LORD) shall flourish in the courts of our Elohim (God). They shall still bring forth fruit in old age; they shall be fat and flourishing* (Psalm 92:13-14). The man planted in Yahuah does not wither — at eighty-five his strength is undimmed, his faith green, because the same Yahuah who preserved him is with him still against the Anakim.',
+       sv.verse_id, ev.verse_id, 'free', 35328
+  FROM _s344_jos14_lookup sv, _s344_jos14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=14 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 — the inheritance of the faithful while the unbelieving fell (free; NT members)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell',
+       E'Joshua 14 — The Inheritance of the Faithful: Caleb Entered, the Unbelieving Fell',
+       E'Caleb''s mountain is the answer to the wilderness''s grave. *And Joshua blessed him, and gave unto Caleb the son of Jephunneh Hebron for an inheritance. Hebron therefore became the inheritance of Caleb the son of Jephunneh the Kenezite unto this day, because that he wholly followed Yahuah Elohim (the LORD God) of Yashar''el (Israel)* (Joshua 14:13-14). The whole evil generation murmured and was barred — *But my servant Caleb, because he had another spirit with him, and hath followed me fully... his seed shall possess it* (Numbers 14:24) — and the New Testament reads exactly this contrast into the rest of Yahuah: *And to whom sware he that they should not enter into his rest, but to them that believed not? So we see that they could not enter in because of unbelief* (Hebrews 3:18-19). The unbelieving forfeited the rest; the man who wholly followed inherited it. And Caleb waited forty-five years for the promise — the very pattern held up to imitate: *That ye be not slothful, but followers of them who through faith and patience inherit the promises* (Hebrews 6:12). The faith that inherits is no bare assent — it is Caleb''s full following of Yahuah, faith and patience together, the seed possessing the land Moses sware.',
+       sv.verse_id, ev.verse_id, 'free', 35331
+  FROM _s344_jos14_lookup sv, _s344_jos14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=14 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 — the inheritance by lot, as Yahuah commanded (free)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-14-the-inheritance-by-lot-as-yahuah-commanded',
+       E'Joshua 14 — The Inheritance by Lot: Yahuah''s Choice, the Tribes of the Fathers',
+       E'The land is not seized by the strong nor parcelled by men''s favor — it falls by the lot of Yahuah. *And these are the countries which the children of Yashar''el (Israel) inherited in the land of Canaan, which Eleazar the priest, and Joshua the son of Nun, and the heads of the fathers of the tribes of the children of Yashar''el (Israel), distributed for inheritance to them. By lot was their inheritance, as Yahuah (LORD) commanded by the hand of Moses, for the nine tribes, and for the half tribe* (Joshua 14:1-2). This keeps the commandment given before the Jordan: *Notwithstanding the land shall be divided by lot: according to the names of the tribes of their fathers they shall inherit* (Numbers 26:55); *every man''s inheritance shall be in the place where his lot falleth; according to the tribes of your fathers ye shall inherit* (Numbers 33:54). The apportioning is Yahuah''s sovereign choice, and it runs along the paternal tribes — the seed inheriting by the houses of their fathers, exactly as He commanded by the hand of Moses.',
+       sv.verse_id, ev.verse_id, 'free', 35334
+  FROM _s344_jos14_lookup sv, _s344_jos14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=14 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD 1 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 13:6 — *Of the tribe of Yahudah (Judah), Caleb the son of Jephunneh*; the seed-line, reckoned in Yahudah by his father.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-caleb-wholly-followed-yahuah-another-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 13:30 — *Let us go up at once, and possess it*; Caleb stilled the people while the ten made the heart melt.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-caleb-wholly-followed-yahuah-another-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 14:24 (to 14:8) — *another spirit with him, and hath followed me fully... his seed shall possess it*; Yahuah names the reason.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-caleb-wholly-followed-yahuah-another-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Numbers 14:24 (to 14:9) — the *another spirit* who *followed me fully* underwrites Moses'' oath of the inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-caleb-wholly-followed-yahuah-another-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Deuteronomy 1:36 — *to him will I give the land... because he hath wholly followed Yahuah*; Moses'' oath, the word of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=1 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-caleb-wholly-followed-yahuah-another-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Numbers 14:24 (to 14:14) — the promise kept: the seed possesses Hebron because he followed Yahuah fully.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-caleb-wholly-followed-yahuah-another-spirit'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 2 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 92:14 (to 14:10) — *They shall still bring forth fruit in old age*; Yahuah keeps the faithful alive and fruitful.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=10
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=92 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-give-me-this-mountain-fruit-in-old-age'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 92:14 (to 14:11) — at eighty-five Caleb is *as strong this day*; the righteous *fat and flourishing* in old age.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=11
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=92 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-give-me-this-mountain-fruit-in-old-age'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 92:13 (to 14:12) — *planted in the house of Yahuah... shall flourish*; the planted man asks for the mountain of the Anakim.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=12
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=92 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-give-me-this-mountain-fruit-in-old-age'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 3 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 14:24 (to 14:14) — *another spirit... his seed shall possess it*; Caleb inherits while the murmurers fall.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=14 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Hebrews 3:18 — *to whom sware he that they should not enter into his rest, but to them that believed not?*; the unbelieving barred.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 3:19 — *they could not enter in because of unbelief*; the contrast that crowns Caleb''s inheritance.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=3 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hebrews 6:12 (to 14:13) — *followers of them who through faith and patience inherit the promises*; Caleb blessed with Hebron.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=13
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 6:12 (to 14:9) — forty-five years'' waiting = *faith and patience* inheriting Moses'' sworn promise.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-of-the-faithful-while-the-unbelieving-fell'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ===== THREAD 4 members =====
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 26:55 (to 14:1) — *divided by lot: according to the names of the tribes of their fathers*; Eleazar and Joshua distribute so.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-by-lot-as-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 26:55 (to 14:2) — the lot is Yahuah''s choice; the inheritance falls by His hand, by the tribes of the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=26 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-by-lot-as-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 33:54 (to 14:2) — *where his lot falleth... according to the tribes of your fathers*; the pre-Jordan command kept beyond it.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s344_jos14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=33 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-14-the-inheritance-by-lot-as-yahuah-commanded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_15.sql (Joshua 15) -----
+-- Chapter: Joshua 15 — the inheritance of the tribe of YAHUDAH (Judah), the royal/Messianic tribe
+-- Tag: jos15   View: _s344_jos15_lookup   Sort band: 35350, step 3 (35350, 35353, 35356)
+-- Frame: Yahudah's lot is the inheritance of the royal tribe (Gen 49:10 the sceptre, the lion's
+--   whelp, until Shiloh come) — the line of the Messiah, the Lion of Juda / Root of David (Rev 5:5),
+--   out of which our Lord sprang (Heb 7:14). Caleb's faith of ch14 enacted: he drives the three
+--   sons of Anak (the giants) out of Hebron (15:13-14), the un-driven-out remnant of Num 13's giants
+--   now cut off. Achsah the daughter asks her father for the springs of water and receives the upper
+--   and the nether springs (15:18-19; Judges 1:14-15) — the bold request to the Father for the
+--   living water that makes the dry south land fruitful (Matt 7:11 the Father gives good gifts;
+--   John 4:14 / 7:38 the living water springing up). But Yahudah could NOT drive out the Jebusites
+--   (15:63) — the incomplete possession, the un-driven-out stronghold that waits for David to take
+--   Zion (2 Sam 5:7 / 1 Chron 11:5). The place-name lists (vv.21-62) are NOT threaded.
+--
+-- Joshua 15 coverage:
+--   v.1/v.20 (Yahudah's lot/inheritance):
+--        NT:     Revelation 5:5 (Lion of Juda, Root of David); Hebrews 7:14 (our Lord sprang out of Juda)
+--        Extras: none warranted
+--        Tanakh: Genesis 49:8,9,10 (the sceptre, the lion's whelp, until Shiloh come)
+--   v.13-14 (Caleb drives out the three sons of Anak from Hebron):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Numbers 13:28,33 (the sons of Anak, the giants, grasshoppers); Joshua 14:12 (give me this mountain)
+--   v.15-19 (Achsah asks her father for the springs of water):
+--        NT:     Matthew 7:11 (the Father gives good gifts); John 4:14 (well springing up); John 7:38 (rivers of living water)
+--        Extras: none warranted
+--        Tanakh: Judges 1:14,15 (the same account, the upper and nether springs)
+--   v.63 (the Jebusites Yahudah could not drive out, dwell at Jerusalem unto this day):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Judges 1:21 (the un-driven-out Jebusites); 2 Samuel 5:7 (David took the strong hold of Zion); 1 Chronicles 11:5 (David took the castle of Zion)
+--   vv.2-12, vv.21-62 (border / place-name / city lists): NOT threaded by design (boundary survey).
+--
+-- Threads (3):
+--   joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah   [free] — Tanakh + NT (Gen 49; Rev 5; Heb 7)
+--   joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs [free] — Tanakh + NT (Num 13; Josh 14; Judg 1; Matt 7; John 4; John 7)
+--   joshua-15-the-jebusites-yahudah-could-not-drive-out-zion-waits-for-david [free] — Tanakh (Judg 1; 2 Sam 5; 1 Chr 11)
+
+CREATE TEMP VIEW _s344_jos15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Yahudah's inheritance — the sceptre and the Lion of Judah
+    ('canon','joshua',15,1,'canon','genesis',49,8,'free',E'*Yahudah (Judah), thou art he whom thy brethren shall praise: thy hand shall be in the neck of thine enemies; thy father''s children shall bow down before thee.* (Genesis 49:8). The lot that *was the lot of the tribe of the children of Yahudah (Judah)* (Joshua 15:1) is the inheritance of the tribe Jacob set first among his brethren — the royal portion, the one before whom the others bow.'),
+    ('canon','joshua',15,1,'canon','genesis',49,9,'free',E'*Yahudah (Judah) is a lion''s whelp: from the prey, my son, thou art gone up: he stooped down, he couched as a lion, and as an old lion; who shall rouse him up?* (Genesis 49:9). Yahudah''s land-portion is the den of the lion''s whelp — the tribe blessed as the lion, the one that goes up first to the prey.'),
+    ('canon','joshua',15,1,'canon','genesis',49,10,'free',E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* (Genesis 49:10). This is why Yahudah''s inheritance carries the framework weight: the sceptre — the kingly line of the Messiah — is lodged in this tribe, *until Shiloh come*, and *unto him shall the gathering of the people be*, the two-house ingathering.'),
+    ('canon','joshua',15,20,'canon','genesis',49,10,'free',E'*The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be.* (Genesis 49:10). *This is the inheritance of the tribe of the children of Yahudah (Judah)* (Joshua 15:20) — the territory of the sceptre-bearing tribe, the cradle of the Davidic throne and of Shiloh who comes from it.'),
+    ('canon','joshua',15,20,'canon','revelation',5,5,'free',E'*And one of the elders saith unto me, Weep not: behold, the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book, and to loose the seven seals thereof.* (Revelation 5:5). The inheritance of Yahudah (Joshua 15:20) is the soil of the *Lion of the tribe of Juda, the Root of David* — the lion''s whelp of Genesis 49:9 grown to the Messiah who alone prevails.'),
+    ('canon','joshua',15,20,'canon','hebrews',7,14,'free',E'*For it is evident that our Lord sprang out of Juda; of which tribe Moses spake nothing concerning priesthood.* (Hebrews 7:14). The land surveyed in *the inheritance of the tribe of the children of Yahudah (Judah)* (Joshua 15:20) is the lineage-ground from which *our Lord sprang out of Juda* — the Formed Son taking flesh in the royal tribe.'),
+    -- Thread 2: Caleb cuts off the Anakim; Achsah asks for the springs
+    ('canon','joshua',15,13,'canon','joshua',14,12,'free',E'*Now therefore give me this mountain, whereof Yahuah (LORD) spake in that day; for thou heardest in that day how the Anakims were there, and that the cities were great and fenced: if so be Yahuah (LORD) will be with me, then I shall be able to drive them out, as Yahuah (LORD) said.* (Joshua 14:12). Caleb''s request of the chapter before is now granted: *unto Caleb the son of Jephunneh he gave a part... even the city of Arba the father of Anak, which city is Hebron* (Joshua 15:13) — the mountain asked in faith, now in hand.'),
+    ('canon','joshua',15,14,'canon','numbers',13,33,'free',E'*And there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers, and so we were in their sight.* (Numbers 13:33). The very giants that made the ten spies feel as grasshoppers, Caleb now drives out: *and Caleb drove thence the three sons of Anak, Sheshai, and Ahiman, and Talmai, the children of Anak* (Joshua 15:14) — the faith that said "we are well able" enacted forty-five years on, the Anakim cut off.'),
+    ('canon','joshua',15,14,'canon','numbers',13,28,'free',E'*Nevertheless the people be strong that dwell in the land, and the cities are walled, and very great: and moreover we saw the children of Anak there.* (Numbers 13:28). The walled-city dread of the evil report is undone by Caleb''s sword: *and Caleb drove thence the three sons of Anak* (Joshua 15:14) — the children of Anak the spies feared, now expelled by the one who wholly followed Yahuah.'),
+    ('canon','joshua',15,15,'canon','judges',1,14,'free',E'*And it came to pass, when she came to him, that she moved him to ask of her father a field: and she lighted from off her ass; and Caleb said unto her, What wilt thou?* (Judges 1:14). Judges retells this same account of Caleb at Debir/Kirjath-sepher and Achsah''s asking — *he went up thence to the inhabitants of Debir: and the name of Debir before was Kirjath-sepher* (Joshua 15:15) — the two witnesses to the daughter''s bold request.'),
+    ('canon','joshua',15,19,'canon','judges',1,15,'free',E'*And she said unto him, Give me a blessing: for thou hast given me a south land; give me also springs of water. And Caleb gave her the upper springs and the nether springs.* (Judges 1:15). The same scene Joshua records — *Give me a blessing; for thou hast given me a south land; give me also springs of water. And he gave her the upper springs, and the nether springs* (Joshua 15:19) — the daughter who asks her father for the water that makes the dry south land fruitful, and receives it doubled.'),
+    ('canon','joshua',15,19,'canon','matthew',7,11,'free',E'*If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?* (Matthew 7:11). Achsah''s asking is the pattern Yahusha names: a father who gives his daughter not the dry land only but *the upper springs, and the nether springs* (Joshua 15:19) — how much more the Father in heaven to the child who asks.'),
+    ('canon','joshua',15,19,'canon','john',4,14,'free',E'*But whosoever drinketh of the water that I shall give him shall never thirst; but the water that I shall give him shall be in him a well of water springing up into everlasting life.* (John 4:14). The *springs of water* Achsah asks and receives (Joshua 15:19) foreshadow the living water the Formed Son gives — *a well of water springing up into everlasting life* — the bold request for the water that never runs dry.'),
+    ('canon','joshua',15,19,'canon','john',7,38,'free',E'*He that believeth on me, as the scripture hath said, out of his belly shall flow rivers of living water.* (John 7:38). The daughter who asks for *the upper springs, and the nether springs* (Joshua 15:19) is answered fully in the *rivers of living water* the Spirit pours — the dry inheritance made a fountain in the one who asks.'),
+    -- Thread 3: the un-driven-out Jebusites — Zion waits for David
+    ('canon','joshua',15,63,'canon','judges',1,21,'free',E'*And the children of Benjamin did not drive out the Jebusites that inhabited Jerusalem; but the Jebusites dwell with the children of Benjamin in Jerusalem unto this day.* (Judges 1:21). Judges echoes the same un-driven-out remnant Joshua records — *the Jebusites dwell with the children of Yahudah (Judah) at Jerusalem unto this day* (Joshua 15:63) — the stronghold not taken, the snare of compromise left standing in the midst of the inheritance.'),
+    ('canon','joshua',15,63,'canon','2-samuel',5,7,'free',E'*Nevertheless David took the strong hold of Zion: the same is the city of David.* (2 Samuel 5:7). What Yahudah *could not drive them out* (Joshua 15:63) waits generations until *David took the strong hold of Zion* — the Jebusite fortress finally claimed, the city of the king, the seat of the throne of Yahudah.'),
+    ('canon','joshua',15,63,'canon','1-chronicles',11,5,'free',E'*And the inhabitants of Jebus said to David, Thou shalt not come hither. Nevertheless David took the castle of Zion, which is the city of David.* (1 Chronicles 11:5). The Jebusites who *dwell with the children of Yahudah (Judah) at Jerusalem unto this day* (Joshua 15:63) are the same who taunt David — *Thou shalt not come hither* — until the king of Yahudah takes the castle of Zion that the inheritance left unclaimed.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah',
+       E'Yahudah''s inheritance — the sceptre and the Lion of Judah',
+       E'The chapter opens, *This then was the lot of the tribe of the children of Yahudah (Judah)* (Joshua 15:1), and closes the survey, *This is the inheritance of the tribe of the children of Yahudah (Judah)* (Joshua 15:20). This is no ordinary allotment: it is the territory of the royal tribe, the line of the Messiah. Jacob had set Yahudah above his brethren — *Yahudah (Judah), thou art he whom thy brethren shall praise... thy father''s children shall bow down before thee* (Genesis 49:8), *Yahudah (Judah) is a lion''s whelp* (Genesis 49:9) — and lodged the throne in him forever: *The sceptre shall not depart from Yahudah (Judah), nor a lawgiver from between his feet, until Shiloh come; and unto him shall the gathering of the people be* (Genesis 49:10). The land mapped here is the cradle of that sceptre. The lion''s whelp grows to *the Lion of the tribe of Juda, the Root of David, hath prevailed to open the book* (Revelation 5:5); and out of this very lineage-ground the Formed Son takes flesh — *it is evident that our Lord sprang out of Juda* (Hebrews 7:14). Yahudah''s inheritance is the soil of the throne and of Shiloh, and *unto him shall the gathering* — the two-house ingathering — *be.*',
+       sv.verse_id, ev.verse_id, 'free', 35350
+  FROM _s344_jos15_lookup sv, _s344_jos15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=15 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs',
+       E'Caleb cuts off the Anakim, and Achsah asks for the springs',
+       E'The faith of the chapter before is now enacted. Caleb had asked, *Now therefore give me this mountain, whereof Yahuah (LORD) spake in that day; for thou heardest in that day how the Anakims were there... if so be Yahuah (LORD) will be with me, then I shall be able to drive them out* (Joshua 14:12) — and here it is granted: *unto Caleb the son of Jephunneh he gave a part... even the city of Arba the father of Anak, which city is Hebron. And Caleb drove thence the three sons of Anak, Sheshai, and Ahiman, and Talmai* (Joshua 15:13-14). These are the very giants that made the ten spies despair — *there we saw the giants, the sons of Anak... and we were in our own sight as grasshoppers* (Numbers 13:33), *the cities are walled, and very great: and moreover we saw the children of Anak there* (Numbers 13:28). The man who said "we are well able" cuts them off forty-five years on. Then his daughter Achsah enacts the same faith in a tender key: *Give me a blessing; for thou hast given me a south land; give me also springs of water. And he gave her the upper springs, and the nether springs* (Joshua 15:19; the same scene retold, *Caleb gave her the upper springs and the nether springs* — Judges 1:14-15). She is the daughter who boldly asks her father for the water that makes the dry south land fruitful, and receives it doubled — the pattern Yahusha names: *If ye then, being evil, know how to give good gifts unto your children, how much more shall your Father which is in heaven give good things to them that ask him?* (Matthew 7:11). The springs she asks for foreshadow the living water of the Formed Son — *a well of water springing up into everlasting life* (John 4:14), *out of his belly shall flow rivers of living water* (John 7:38). Ask the Father for the springs; He gives the upper and the nether.',
+       sv.verse_id, ev.verse_id, 'free', 35353
+  FROM _s344_jos15_lookup sv, _s344_jos15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=15 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-15-the-jebusites-yahudah-could-not-drive-out-zion-waits-for-david',
+       E'The Jebusites Yahudah could not drive out — Zion waits for David',
+       E'The catalogue of cities ends on a confession of failure: *As for the Jebusites the inhabitants of Jerusalem, the children of Yahudah (Judah) could not drive them out: but the Jebusites dwell with the children of Yahudah (Judah) at Jerusalem unto this day* (Joshua 15:63). The inheritance is mapped but not fully possessed — the Jebusite stronghold left standing in its very heart, the snare of compromise. Judges records the same un-driven-out remnant on Benjamin''s side of the line: *the Jebusites dwell with the children of Benjamin in Jerusalem unto this day* (Judges 1:21). The fortress waits generations until the king of the royal tribe comes: *Nevertheless David took the strong hold of Zion: the same is the city of David* (2 Samuel 5:7), *Nevertheless David took the castle of Zion, which is the city of David* (1 Chronicles 11:5). What Yahudah *could not drive out* becomes, in David''s hand, the city of the king — the seat of the throne the sceptre of Genesis 49 promised. The incomplete possession of Joshua''s day is completed by the son of Yahudah who takes Zion.',
+       sv.verse_id, ev.verse_id, 'free', 35356
+  FROM _s344_jos15_lookup sv, _s344_jos15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=63
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=15 AND ev.verse_number=63
+ON CONFLICT (slug) DO NOTHING;
+
+-- Members: Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 49:8 — *thy father''s children shall bow down before thee*: Yahudah''s lot is the portion of the tribe set first among the brethren.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 49:9 — *Yahudah is a lion''s whelp*: the land-portion is the den of the lion''s whelp, the tribe blessed as the lion.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 49:10 — *the sceptre shall not depart from Yahudah... until Shiloh come*: the throne and the ingathering lodged in this tribe (against v.1).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 49:10 — *until Shiloh come; and unto him shall the gathering of the people be*: the inheritance summary (v.20) is the cradle of the Davidic throne and of Shiloh.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=20
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Revelation 5:5 — *the Lion of the tribe of Juda, the Root of David, hath prevailed*: the lion''s whelp grown to the Messiah whose tribal soil this is.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=20
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Hebrews 7:14 — *our Lord sprang out of Juda*: the inheritance of Yahudah is the lineage-ground from which the Formed Son took flesh.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=20
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-yahudahs-inheritance-the-sceptre-and-the-lion-of-judah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 14:12 — *give me this mountain... I shall be able to drive them out*: Caleb''s faith-request of the chapter before, now granted in Hebron (v.13).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=14 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 13:33 — *the giants, the sons of Anak... we were in our own sight as grasshoppers*: the giants the spies feared, now driven out by Caleb (v.14).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 13:28 — *the cities are walled, and very great... the children of Anak there*: the walled-city dread undone by Caleb''s sword (v.14).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=13 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Judges 1:14 — *she moved him to ask of her father a field*: the second witness to the same Debir/Kirjath-sepher account (v.15).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=15
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Judges 1:15 — *give me also springs of water... the upper springs and the nether springs*: the same scene, the daughter''s request and the doubled gift (v.19).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Matthew 7:11 — *how much more shall your Father which is in heaven give good things to them that ask him*: Achsah''s asking is the pattern of the Father''s giving (v.19).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=7 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'John 4:14 — *a well of water springing up into everlasting life*: the springs Achsah asks foreshadow the living water the Formed Son gives (v.19).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'John 7:38 — *out of his belly shall flow rivers of living water*: the daughter''s request answered fully in the Spirit poured (v.19).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=7 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-caleb-cuts-off-the-anakim-and-achsah-asks-for-the-springs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members: Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 1:21 — *the Jebusites dwell with the children of Benjamin in Jerusalem unto this day*: the same un-driven-out remnant echoed in Judges (v.63).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=63
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=1 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-the-jebusites-yahudah-could-not-drive-out-zion-waits-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Samuel 5:7 — *David took the strong hold of Zion: the same is the city of David*: what Yahudah could not drive out, the king of the royal tribe takes (v.63).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=63
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-the-jebusites-yahudah-could-not-drive-out-zion-waits-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Chronicles 11:5 — *David took the castle of Zion, which is the city of David*: the Jebusite taunt overturned, the incomplete possession completed (v.63).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=15 AND sv.verse_number=63
+  JOIN _s344_jos15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=11 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-15-the-jebusites-yahudah-could-not-drive-out-zion-waits-for-david'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_joshua_12.sql (Joshua 12) -----
+-- Book: Joshua  Chapter: 12  Tag: _s344_jos12_lookup  Sort band: 35275, 35278, 35281
+-- The catalogue of the kings Yashar'el (Israel) smote — the two great kings east of
+-- Jordan (Sihon and Og, by Moses' hand, Num 21 / Deut 2-3) and the thirty and one kings
+-- west of Jordan (by Joshua's hand). A LEAN memorial chapter: exactly 3 framework-bearing
+-- threads. All members canon (all tier 'free').
+--
+-- Joshua 12 coverage:
+--   v.1  (these are the kings Yashar'el smote, possessed their land east of Jordan)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Ps 136:17-18 (smote great kings / slew famous kings, mercy endureth);
+--                Ps 135:10-11 (smote great nations, Sihon and Og); Neh 9:24 (gavest
+--                them into their hands, with their kings) — thread 1
+--   v.2  (Sihon king of the Amorites in Heshbon)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Num 21:24 (smote him with the sword, possessed his land from Arnon to
+--                Jabbok); Deut 2:33 (Yahuah delivered him, we smote him) — thread 2
+--   v.3  (the bounds of Sihon's land) — gathered under v.2, none added separately
+--   v.4  (Og king of Bashan, of the remnant of the giants)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Num 21:33 (Og went out against them at Edrei); Num 21:35 (smote him,
+--                his sons, none left, possessed his land); Deut 3:3 (delivered Og, smote
+--                him until none was left remaining) — thread 2
+--   v.5  (Og's reign in Bashan) — gathered under v.4
+--   v.6  (Moses gave it for a possession to Reuben, Gad, half Manasseh)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deut 3:12 (this land we possessed... gave I unto the Reubenites and the
+--                Gadites) — thread 3
+--   v.7  (Joshua gave the western land unto the tribes of Yashar'el for a possession)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Ps 136:21-22 (gave their land for an heritage... unto Yashar'el his
+--                servant) — thread 3
+--   v.8-24 (the geographic catalogue + the thirty and one kings, one by one)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: the roll itself; weight carried into thread 1 (the memorial) from v.1
+--
+-- Threads:
+--   1. joshua-12-the-memorial-of-the-kings-yahuah-smote          [Tanakh] — the catalogue
+--      = the memorial the psalms rehearse: Yahuah is the one who smote the kings.
+--   2. joshua-12-sihon-and-og-the-two-great-kings-overthrown     [Tanakh] — the two
+--      great kings east of Jordan overthrown by Moses' hand (Num 21 / Deut 2-3).
+--   3. joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers
+--      [Tanakh] — the land given for an heritage to Yashar'el his servant, as sworn to
+--      the fathers (Deut 3:12 east; Ps 136:21-22 the sung confession).
+
+CREATE TEMP VIEW _s344_jos12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the memorial of the kings Yahuah smote (source v.1)
+    ('canon','joshua',12,1,'canon','psalms',136,17,'free',E'*To him which smote great kings: for his mercy endureth for ever* (Psalm 136:17). The roll of Joshua 12 opens, *Now these are the kings of the land, which the children of Yashar''el (Israel) smote* (Joshua 12:1) — and the psalm of the everlasting mercy gathers that whole catalogue into one refrain: it was Yahuah (LORD) who smote the kings, His mercy that delivered them into Yashar''el''s (Israel''s) hand. The memorial list is a hymn of His covenant faithfulness.'),
+    ('canon','joshua',12,1,'canon','psalms',136,18,'free',E'*And slew famous kings: for his mercy endureth for ever* (Psalm 136:18). The thirty and one kings of Joshua 12 — Jericho, Ai, Jerusalem, Hebron, every one named *one* — are the *famous kings* the psalm rehearses. *These are the kings of the land, which the children of Yashar''el (Israel) smote* (Joshua 12:1): the slaying is recounted not as Yashar''el''s (Israel''s) might but as Yahuah''s (LORD''s) mercy enduring for ever.'),
+    ('canon','joshua',12,1,'canon','psalms',135,10,'free',E'*Who smote great nations, and slew mighty kings* (Psalm 135:10). The catalogue, *the kings of the land, which the children of Yashar''el (Israel) smote* (Joshua 12:1), is the same victory Psalm 135 sings of Jacob, His *peculiar treasure* — the smiting of the great nations is the act of the Yahuah (LORD) who chose Yashar''el (Israel) unto Himself.'),
+    ('canon','joshua',12,1,'canon','psalms',135,11,'free',E'*Sihon king of the Amorites, and Og king of Bashan, and all the kingdoms of Canaan* (Psalm 135:11). The psalm names the very two heads of the Joshua 12 list — Sihon (Joshua 12:2) and Og (Joshua 12:4) — and folds *all the kingdoms of Canaan*, the thirty and one west of Jordan, into the one memorial. *These are the kings of the land, which the children of Yashar''el (Israel) smote* (Joshua 12:1).'),
+    ('canon','joshua',12,1,'canon','nehemiah',9,24,'free',E'*So the children went in and possessed the land, and thou subduedst before them the inhabitants of the land, the Canaanites, and gavest them into their hands, with their kings* (Nehemiah 9:24). The Levites'' confession reads the Joshua 12 roll back as Yahuah''s (LORD''s) own work: He *subduedst* the inhabitants and gave them *with their kings* into Yashar''el''s (Israel''s) hand. *These are the kings of the land, which the children of Yashar''el (Israel) smote, and possessed their land* (Joshua 12:1).'),
+    -- Thread 2: Sihon and Og the two great kings overthrown (source v.2 Sihon, v.4 Og)
+    ('canon','joshua',12,2,'canon','numbers',21,24,'free',E'*And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon* (Numbers 21:24). Joshua 12 records *Sihon king of the Amorites, who dwelt in Heshbon, and ruled from Aroer... even unto the river Jabbok* (Joshua 12:2) — the very bounds of the conquest first told in Numbers 21, the first of the two great kings overthrown east of Jordan.'),
+    ('canon','joshua',12,2,'canon','deuteronomy',2,33,'free',E'*And Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33). Moses rehearses the fall of *Sihon king of the Amorites, who dwelt in Heshbon* (Joshua 12:2): it was Yahuah (LORD) who *delivered him before us*. The Joshua 12 memorial names Sihon as conquered; Deuteronomy 2 names the One who conquered him.'),
+    ('canon','joshua',12,4,'canon','numbers',21,33,'free',E'*And they turned and went up by the way of Bashan: and Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei* (Numbers 21:33). Joshua 12 records *the coast of Og king of Bashan... that dwelt at Ashtaroth and at Edrei* (Joshua 12:4) — the second great king, met in battle at the very Edrei Numbers 21 names.'),
+    ('canon','joshua',12,4,'canon','numbers',21,35,'free',E'*So they smote him, and his sons, and all his people, until there was none left him alive: and they possessed his land* (Numbers 21:35). *Og king of Bashan, which was of the remnant of the giants* (Joshua 12:4) is the *remnant of the giants* overthrown until *none left him alive* — the second of the two great kings the Joshua 12 catalogue memorializes.'),
+    ('canon','joshua',12,4,'canon','deuteronomy',3,3,'free',E'*So Yahuah Eloheinu (the LORD our God) delivered into our hands Og also, the king of Bashan, and all his people: and we smote him until none was left to him remaining* (Deuteronomy 3:3). Moses names *Og king of Bashan, which was of the remnant of the giants* (Joshua 12:4) as delivered by Yahuah''s (LORD''s) own hand. The Joshua 12 list names the giant-king conquered; Deuteronomy 3 names the deliverance.'),
+    -- Thread 3: the land given for an heritage as Yahuah promised the fathers (source v.6 east, v.7 west)
+    ('canon','joshua',12,6,'canon','deuteronomy',3,12,'free',E'*And this land, which we possessed at that time, from Aroer, which is by the river Arnon, and half mount Gilead, and the cities thereof, gave I unto the Reubenites and to the Gadites* (Deuteronomy 3:12). Joshua 12 records that *Moses the servant of Yahuah (LORD) gave it for a possession unto the Reubenites, and the Gadites, and the half tribe of Manasseh* (Joshua 12:6) — the eastern heritage apportioned exactly as Moses recounts in Deuteronomy 3.'),
+    ('canon','joshua',12,7,'canon','psalms',136,21,'free',E'*And gave their land for an heritage: for his mercy endureth for ever* (Psalm 136:21). Where Joshua 12 says *Joshua gave unto the tribes of Yashar''el (Israel) for a possession according to their divisions* (Joshua 12:7), the psalm names the deeper Giver: the land is an *heritage* of His enduring mercy, not merely a spoil of war.'),
+    ('canon','joshua',12,7,'canon','psalms',136,22,'free',E'*Even an heritage unto Yashar''el (Israel) his servant: for his mercy endureth for ever* (Psalm 136:22). The western land *Joshua gave unto the tribes of Yashar''el (Israel) for a possession* (Joshua 12:7) is the *heritage unto Yashar''el (Israel) his servant* — the inheritance sworn to the fathers, given by the mercy that endureth for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-12-the-memorial-of-the-kings-yahuah-smote',
+       E'The Memorial of the Kings Yahuah Smote',
+       E'Joshua 12 opens, *Now these are the kings of the land, which the children of Yashar''el (Israel) smote, and possessed their land* (Joshua 12:1), and closes with the count, *all the kings thirty and one* (Joshua 12:24). It reads like a war-memorial — every king named *one*. But the Psalms read it as a hymn. *Who smote great kings: for his mercy endureth for ever: And slew famous kings: for his mercy endureth for ever* (Psalm 136:17-18) — the catalogue is not Yashar''el''s (Israel''s) boast but Yahuah''s (LORD''s) mercy enduring for ever. *Who smote great nations, and slew mighty kings* (Psalm 135:10) sings the same of Jacob His peculiar treasure. And the Levites'' confession seals it: *thou subduedst before them the inhabitants of the land... and gavest them into their hands, with their kings* (Nehemiah 9:24). The roll of conquered kings is a memorial of who fought the battle — Yahuah (LORD), whose mercy endureth for ever.',
+       sv.verse_id, ev.verse_id, 'free', 35275
+  FROM _s344_jos12_lookup sv, _s344_jos12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=12 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-12-sihon-and-og-the-two-great-kings-overthrown',
+       E'Sihon and Og — the Two Great Kings Overthrown',
+       E'Before the thirty and one kings of the west, the Joshua 12 roll names two heads east of Jordan: *Sihon king of the Amorites, who dwelt in Heshbon* (Joshua 12:2) and *Og king of Bashan, which was of the remnant of the giants* (Joshua 12:4). These two are the great kings Moses overthrew. Of Sihon: *And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok* (Numbers 21:24); Moses rehearses, *Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33). Of Og the giant-king: *Og the king of Bashan went out against them... to the battle at Edrei* (Numbers 21:33), *and they possessed his land* (Numbers 21:35), for *Yahuah Eloheinu (the LORD our God) delivered into our hands Og also... and we smote him until none was left to him remaining* (Deuteronomy 3:3). The Joshua 12 catalogue places these two giant-kings first because they are the firstfruits of the conquest — and in both tellings the victory is Yahuah''s (LORD''s) deliverance, not Yashar''el''s (Israel''s) strength.',
+       sv.verse_id, ev.verse_id, 'free', 35278
+  FROM _s344_jos12_lookup sv, _s344_jos12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=12 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers',
+       E'The Land Given for an Heritage, as Yahuah Promised the Fathers',
+       E'The Joshua 12 roll is not merely a list of the defeated — it is a deed of inheritance. East of Jordan, *Moses the servant of Yahuah (LORD) gave it for a possession unto the Reubenites, and the Gadites, and the half tribe of Manasseh* (Joshua 12:6), exactly as Moses recounts: *this land, which we possessed at that time... gave I unto the Reubenites and to the Gadites* (Deuteronomy 3:12). West of Jordan, *Joshua gave unto the tribes of Yashar''el (Israel) for a possession according to their divisions* (Joshua 12:7). And the psalm names the true Giver and the everlasting reason: *And gave their land for an heritage: for his mercy endureth for ever: Even an heritage unto Yashar''el (Israel) his servant: for his mercy endureth for ever* (Psalm 136:21-22). The conquered kings become the measured-out *heritage* of Yashar''el (Israel) His servant — the land sworn to the fathers, given by the mercy that endureth for ever.',
+       sv.verse_id, ev.verse_id, 'free', 35281
+  FROM _s344_jos12_lookup sv, _s344_jos12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='joshua' AND ev.chapter_number=12 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- Thread 1: joshua-12-the-memorial-of-the-kings-yahuah-smote
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*To him which smote great kings: for his mercy endureth for ever* (Psalm 136:17) — the catalogue of *the kings of the land, which the children of Yashar''el (Israel) smote* (Joshua 12:1) gathered into the refrain of enduring mercy.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-memorial-of-the-kings-yahuah-smote'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And slew famous kings: for his mercy endureth for ever* (Psalm 136:18) — the thirty and one kings, each named *one*, are the famous kings the psalm rehearses as Yahuah''s (LORD''s) mercy.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-memorial-of-the-kings-yahuah-smote'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Who smote great nations, and slew mighty kings* (Psalm 135:10) — the conquest of *the kings of the land* (Joshua 12:1) is the act of the Yahuah (LORD) who chose Jacob unto Himself.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-memorial-of-the-kings-yahuah-smote'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Sihon king of the Amorites, and Og king of Bashan, and all the kingdoms of Canaan* (Psalm 135:11) — the psalm names the two heads of the Joshua 12 list and folds in the thirty and one of Canaan.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=135 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-memorial-of-the-kings-yahuah-smote'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*thou subduedst before them the inhabitants of the land... and gavest them into their hands, with their kings* (Nehemiah 9:24) — the Levites read the Joshua 12 roll back as Yahuah''s (LORD''s) own subduing of the kings.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=9 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-memorial-of-the-kings-yahuah-smote'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: joshua-12-sihon-and-og-the-two-great-kings-overthrown
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok* (Numbers 21:24) — the fall of *Sihon king of the Amorites, who dwelt in Heshbon* (Joshua 12:2), the first great king east of Jordan.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-sihon-and-og-the-two-great-kings-overthrown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah Eloheinu (the LORD our God) delivered him before us; and we smote him, and his sons, and all his people* (Deuteronomy 2:33) — Moses names the One who overthrew Sihon (Joshua 12:2): Yahuah (LORD) delivered him.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=2 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-sihon-and-og-the-two-great-kings-overthrown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Og the king of Bashan went out against them, he, and all his people, to the battle at Edrei* (Numbers 21:33) — the second great king, *Og king of Bashan... that dwelt at Ashtaroth and at Edrei* (Joshua 12:4), met in battle at Edrei.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-sihon-and-og-the-two-great-kings-overthrown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*So they smote him, and his sons, and all his people, until there was none left him alive: and they possessed his land* (Numbers 21:35) — *Og king of Bashan, which was of the remnant of the giants* (Joshua 12:4) overthrown until none remained.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-sihon-and-og-the-two-great-kings-overthrown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yahuah Eloheinu (the LORD our God) delivered into our hands Og also, the king of Bashan... and we smote him until none was left to him remaining* (Deuteronomy 3:3) — Moses names Yahuah''s (LORD''s) deliverance of the giant-king Og (Joshua 12:4).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=3 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-sihon-and-og-the-two-great-kings-overthrown'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*this land, which we possessed at that time, from Aroer... gave I unto the Reubenites and to the Gadites* (Deuteronomy 3:12) — the eastern heritage *Moses the servant of Yahuah (LORD) gave... unto the Reubenites, and the Gadites, and the half tribe of Manasseh* (Joshua 12:6).'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=3 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And gave their land for an heritage: for his mercy endureth for ever* (Psalm 136:21) — where *Joshua gave unto the tribes of Yashar''el (Israel) for a possession* (Joshua 12:7), the psalm names the deeper Giver and His enduring mercy.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Even an heritage unto Yashar''el (Israel) his servant: for his mercy endureth for ever* (Psalm 136:22) — the land *Joshua gave unto the tribes of Yashar''el (Israel) for a possession* (Joshua 12:7) is the heritage of Yashar''el (Israel) His servant, sworn to the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s344_jos12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='joshua' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s344_jos12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=136 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='joshua-12-the-land-given-for-an-heritage-as-yahuah-promised-the-fathers'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session344 — Joshua cross-references complete.'
