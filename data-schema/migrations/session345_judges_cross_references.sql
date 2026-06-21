@@ -2935,6 +2935,1348 @@ SELECT t.id, cr.id, 5, E'Romans 11:2 — *Elohim hath not cast away his people w
  WHERE t.slug='judges-10-his-soul-was-grieved-for-the-misery-of-yasharel'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_judges_11.sql (Judges 11) -----
+-- Judges 11 — full-library cross-references. Tag jdg11. Session prefix s345.
+-- Sort band 35900, step 3: 35900, 35903, 35906, 35909.
+-- View: _s345_jdg11_lookup
+--
+-- FRAME: JEPHTHAH the Gileadite — son of a harlot, THRUST OUT by his brethren
+-- (thou shalt not inherit), who then come begging him to be their captain and HEAD
+-- when Ammon makes war (11:1-11): ★ the REJECTED-then-exalted deliverer, the stone
+-- the builders refused become the head of the corner (Ps 118:22). ★ The Spirit of
+-- Yahuah comes upon him (11:29), the Spirit-empowered judge in the Othniel/Gideon
+-- line. ★★ The RASH VOW (11:30-31, 34-39) — whatsoever cometh forth of the doors of
+-- my house... I will offer it up for a burnt offering — and his ONLY CHILD, his
+-- daughter, comes out with timbrels; he keeps the vow at terrible cost. The tragedy
+-- of the unconsidered word: Eccl 5:2-6 (be not rash with thy mouth... better not
+-- vow than vow and not pay), Num 30:2 (the vow binding, he shall not break his
+-- word), and Lev 27:1-8 (the Torah's REDEMPTION-provision for persons devoted — the
+-- vow need not have ended so; the rashness, not the keeping, the tragedy). ★ And yet
+-- Jephthah stands in the roll of FAITH, the imperfect deliverer commended (Heb 11:32).
+--
+-- Judges 11 coverage:
+--   v.1-11 (Jephthah the son of an harlot, thrust out by his brethren, fetched back and made head and captain)
+--        NT:     none warranted (the rejected-then-exalted pattern carried by the Tanakh keystone Ps 118:22; the NT names that stone of Messiah elsewhere, the Tanakh root is the weave here)
+--        Extras: none warranted
+--        Tanakh: Ps 118:22 (the stone which the builders refused is become the head stone of the corner — KEYSTONE) — THREAD 1
+--   v.12-28 (the diplomatic recital: Yahuah Elohim dispossessed the Amorites/Sihon, not Ammon's land)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Num 21:21-24 (Sihon would not suffer Yashar'el to pass; Yashar'el smote him and possessed his land from Arnon unto Jabbok) — the history Jephthah recites, folded into THREAD 1's anchor and into a v.21/v.23 link
+--   v.29 (the Spirit of Yahuah came upon Jephthah)
+--        NT:     none warranted (Spirit-on-the-deliverer carried by the Tanakh witnesses)
+--        Extras: none warranted
+--        Tanakh: Judg 3:10 (the Spirit of Yahuah came upon Othniel), Judg 6:34 (the Spirit came upon Gideon) — THREAD 2
+--   v.30-31, 34-39 (the rash vow; his only daughter comes out; he keeps it)
+--        NT:     none warranted (the warning is Tanakh wisdom; Eccl/Num the binding voices)
+--        Extras: none warranted
+--        Tanakh: Eccl 5:2,4,5 (be not rash with thy mouth; defer not to pay; better not vow than vow and not pay), Num 30:2 (he shall not break his word, he shall do according to all that proceedeth out of his mouth), Lev 27:2 / 27:8 (the singular vow of persons; redemption by the priest's estimation — the provision unheeded) — THREAD 3
+--   v.32 (Jephthah commended for faith — the imperfect deliverer in the roll)
+--        NT:     Heb 11:32 (the time would fail me to tell... of Jephthae) — THREAD 4
+--        Extras: none warranted
+--        Tanakh: 1 Sam 12:11 (Yahuah sent Jephthah... and delivered you, and ye dwelled safe) — the deliverance remembered, folded into THREAD 4
+--
+-- THREADS:
+--   jdg11: judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused (canon Tanakh) [free]
+--   jdg11: judges-11-the-spirit-of-yahuah-came-upon-jephthah-the-spirit-empowered-judge (canon Tanakh) [free]
+--   jdg11: judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded (canon Tanakh) [free]
+--   jdg11: judges-11-jephthah-in-the-roll-of-faith-the-imperfect-deliverer-commended (canon NT) [free]
+--
+-- Contested/load-bearing framing: (1) The REJECTED deliverer made HEAD (11:2,8,11)
+-- is read through Ps 118:22, the stone the builders refused become the head of the
+-- corner — the unlikely, cast-out man exalted by Yahuah to save His people; the
+-- shadow of the rejected-then-exalted Deliverer, the type read from the Tanakh root.
+-- (2) The RASH VOW is framed as TRAGEDY, not as a model of piety: the keeping of the
+-- vow honoured the binding word (Num 30:2), but the rashness was the sin Eccl 5
+-- warns against, and the Torah itself gave a way out — Lev 27 set a priest's
+-- estimation for persons singularly vowed, redemption that Jephthah in his haste
+-- never sought. The cost was the daughter's; the lesson is the weight of the
+-- unconsidered word, never that Yahuah delights in such an offering. (3) Jephthah is
+-- nonetheless commended for FAITH (Heb 11:32) — the imperfect deliverer, flawed and
+-- yet a vessel of Yahuah's salvation, named in the roll with Gideon, Barak, Samson.
+
+CREATE TEMP VIEW _s345_jdg11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: thrust out by his brethren, made head — the stone the builders refused
+    ('canon','judges',11,2,'canon','psalms',118,22,'free',E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). Jephthah''s brethren *thrust out Jephthah, and said unto him, Thou shalt not inherit in our father''s house; for thou art the son of a strange woman* (Judges 11:2) — the very man rejected as worthless by the builders of the house is the one Yahuah will set at the head; the stone refused become the chief corner.'),
+    ('canon','judges',11,7,'canon','psalms',118,22,'free',E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). *Did not ye hate me, and expel me out of my father''s house? and why are ye come unto me now when ye are in distress?* (Judges 11:7) — the rejected man names the rejection even as the distressed builders return to set him at the corner they once cast away.'),
+    ('canon','judges',11,8,'canon','psalms',118,22,'free',E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). The elders answer the expelled son: *Therefore we turn again to thee now... and be our head over all the inhabitants of Gilead* (Judges 11:8) — the stone refused is lifted to be the head; the cast-out becomes the chief.'),
+    ('canon','judges',11,11,'canon','psalms',118,22,'free',E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22). *Then Jephthah went with the elders of Gilead, and the people made him head and captain over them* (Judges 11:11) — the exaltation is accomplished: the son of the harlot thrust from the inheritance is set as head over all, the rejected-then-exalted deliverer Yahuah raises to save.'),
+    ('canon','judges',11,21,'canon','numbers',21,24,'free',E'*And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon* (Numbers 21:24). Jephthah recites this very history to the king of Ammon: *Yahuah Elohim (the LORD God) of Yashar''el (Israel) delivered Sihon and all his people into the hand of Yashar''el (Israel)... so Yashar''el (Israel) possessed all the land of the Amorites* (Judges 11:21) — the land was taken from Sihon the Amorite, not from Ammon, just as Numbers records.'),
+    ('canon','judges',11,23,'canon','numbers',21,24,'free',E'*And Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok, even unto the children of Ammon* (Numbers 21:24). *So now Yahuah Elohim (the LORD God) of Yashar''el (Israel) hath dispossessed the Amorites from before his people Yashar''el (Israel), and shouldest thou possess it?* (Judges 11:23) — Jephthah''s diplomacy rests on the Numbers record: it was the Amorite, not Ammon, whom Yahuah dispossessed.'),
+    -- THREAD 2: the Spirit of Yahuah came upon Jephthah
+    ('canon','judges',11,29,'canon','judges',3,10,'free',E'*And the Spirit of Yahuah (LORD) came upon him, and he judged Yashar''el (Israel), and went out to war* (Judges 3:10). The same Spirit that clothed Othniel the first judge clothes Jephthah: *Then the Spirit of Yahuah (LORD) came upon Jephthah, and he passed over Gilead, and Manasseh* (Judges 11:29) — the deliverer is no self-made captain but a vessel empowered from above to save His people.'),
+    ('canon','judges',11,29,'canon','judges',6,34,'free',E'*But the Spirit of Yahuah (LORD) came upon Gideon, and he blew a trumpet; and Abi-ezer was gathered after him* (Judges 6:34). As the Spirit fell on Gideon to gather and to fight, so *the Spirit of Yahuah (LORD) came upon Jephthah* (Judges 11:29) before he passed over against Ammon — the recurring sign that the salvation is Yahuah''s own, worked through the man His Spirit takes up.'),
+    -- THREAD 3: the rash vow — be not rash with thy mouth; the redemption unheeded
+    ('canon','judges',11,30,'canon','ecclesiastes',5,4,'free',E'*When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4). Jephthah''s vow — *If thou shalt without fail deliver the children of Ammon into mine hands* (Judges 11:30) — binds him to pay; but the wisdom of Ecclesiastes warns that the vow once made cannot be undone, the very snare Jephthah walks into.'),
+    ('canon','judges',11,31,'canon','ecclesiastes',5,2,'free',E'*Be not rash with thy mouth, and let not thine heart be hasty to utter any thing before Elohim (God): for Elohim (God) is in heaven, and thou upon earth: therefore let thy words be few* (Ecclesiastes 5:2). Jephthah''s rash word — *whatsoever cometh forth of the doors of my house to meet me... shall surely be the LORD''S, and I will offer it up for a burnt offering* (Judges 11:31) — is exactly the hasty utterance the Preacher warns against: the unconsidered vow that will cost him his only child.'),
+    ('canon','judges',11,31,'canon','ecclesiastes',5,5,'free',E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The terrible weight of Jephthah''s words — *I will offer it up for a burnt offering* (Judges 11:31) — proves the Preacher''s wisdom: the vow rashly made becomes a snare, and far better had it never been spoken than spoken to such a cost.'),
+    ('canon','judges',11,31,'canon','numbers',30,2,'free',E'*If a man vow a vow unto Yahuah (LORD), or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2). The Torah''s law of vows is the iron that binds Jephthah: *whatsoever cometh forth... I will offer it up for a burnt offering* (Judges 11:31) — *he shall not break his word*; the rashness is his, but the binding word is real, and this is the law he will not go back from.'),
+    ('canon','judges',11,35,'canon','numbers',30,2,'free',E'*He shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2). Jephthah''s anguish — *I have opened my mouth unto Yahuah (LORD), and I cannot go back* (Judges 11:35) — is the very law of Numbers spoken in his own grief: the word that proceedeth out of the mouth binds the soul, and he holds it to be unbreakable.'),
+    ('canon','judges',11,39,'canon','leviticus',27,2,'free',E'*Speak unto the children of Yashar''el (Israel), and say unto them, When a man shall make a singular vow, the persons shall be for Yahuah (LORD) by thy estimation* (Leviticus 27:2). The Torah had foreseen the very case — a person singularly vowed to Yahuah — and set not death but a priest''s *estimation*; yet *he did with her according to his vow which he had vowed* (Judges 11:39), the redemption-provision unsought, the rashness the tragedy and not the law.'),
+    ('canon','judges',11,39,'canon','leviticus',27,8,'free',E'*But if he be poorer than thy estimation, then he shall present himself before the priest, and the priest shall value him; according to his ability that vowed shall the priest value him* (Leviticus 27:8). The Torah made a way for every vowed person to be redeemed by estimation before the priest — a door Jephthah, who *did with her according to his vow* (Judges 11:39), never went to; the law of redemption stood open and unheeded.'),
+    -- THREAD 4: Jephthah in the roll of faith — the imperfect deliverer commended
+    ('canon','judges',11,32,'canon','hebrews',11,32,'free',E'*And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets* (Hebrews 11:32). Flawed as he was, the deliverer who *passed over unto the children of Ammon to fight against them; and Yahuah (LORD) delivered them into his hands* (Judges 11:32) is named in the roll of faith — the imperfect vessel commended, who *through faith subdued kingdoms, wrought righteousness, obtained promises* (Hebrews 11:33).'),
+    ('canon','judges',11,32,'canon','1-samuel',12,11,'free',E'*And Yahuah (LORD) sent Jerubbaal, and Bedan, and Jephthah, and Samuel, and delivered you out of the hand of your enemies on every side, and ye dwelled safe* (1 Samuel 12:11). Samuel sets Jephthah among the saviours Yahuah sent: the man Yahuah used to deliver, of whom it is written *Yahuah (LORD) delivered them into his hands* (Judges 11:32) — the deliverance was real, and remembered, the imperfect judge a true instrument of salvation.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused',
+       E'Jephthah thrust out by his brethren, made head — the stone the builders refused',
+       E'The deliverer of Gilead enters under a stain and a rejection: *Now Jephthah the Gileadite was a mighty man of valour, and he was the son of an harlot* (Judges 11:1), and his half-brethren *thrust out Jephthah, and said unto him, Thou shalt not inherit in our father''s house; for thou art the son of a strange woman* (Judges 11:2). Cast from the inheritance, he flees to the land of Tob. But when Ammon makes war, the builders who refused him come begging: *Come, and be our captain, that we may fight with the children of Ammon* (Judges 11:6). He names their rejection to their faces — *Did not ye hate me, and expel me out of my father''s house? and why are ye come unto me now when ye are in distress?* (Judges 11:7) — and they raise him higher than they had cast him down: *Therefore we turn again to thee now... and be our head over all the inhabitants of Gilead* (Judges 11:8). So it is done: *the people made him head and captain over them* (Judges 11:11). This is the pattern the Psalm sings — *The stone which the builders refused is become the head stone of the corner* (Psalm 118:22): the man rejected as worthless by the builders of the house is the very one Yahuah lifts to be the head of the corner, the unlikely cast-out deliverer raised to save His people. Jephthah''s wisdom in office is to recite the covenant history rightly: the land was taken from Sihon the Amorite, not from Ammon — *Yashar''el (Israel) smote him with the edge of the sword, and possessed his land from Arnon unto Jabbok* (Numbers 21:24) — *Yahuah Elohim (the LORD God) of Yashar''el (Israel) hath dispossessed the Amorites from before his people Yashar''el (Israel), and shouldest thou possess it?* (Judges 11:23). The rejected stone, set at the corner, judges rightly.',
+       sv.verse_id, ev.verse_id, 'free', 35900
+  FROM _s345_jdg11_lookup sv, _s345_jdg11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=11 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-11-the-spirit-of-yahuah-came-upon-jephthah-the-spirit-empowered-judge',
+       E'The Spirit of Yahuah came upon Jephthah — the Spirit-empowered judge',
+       E'Before the rejected man can save, he must be clothed from above. The diplomacy fails — *the king of the children of Ammon hearkened not unto the words of Jephthah* (Judges 11:28) — and then comes the sign the whole book marks on every true deliverer: *Then the Spirit of Yahuah (LORD) came upon Jephthah, and he passed over Gilead, and Manasseh, and passed over Mizpeh of Gilead, and from Mizpeh of Gilead he passed over unto the children of Ammon* (Judges 11:29). This is the same Spirit that clothed the first judge — *the Spirit of Yahuah (LORD) came upon him, and he judged Yashar''el (Israel), and went out to war* (Judges 3:10) — and the same that fell on Gideon — *the Spirit of Yahuah (LORD) came upon Gideon, and he blew a trumpet* (Judges 6:34). The deliverer is never a self-made captain; he is a vessel taken up by the Spirit of Yahuah, that the salvation might plainly be Yahuah''s own work through the man He empowers. The cast-out son of the harlot goes out against Ammon not in his own strength but in the Spirit that came upon him.',
+       sv.verse_id, ev.verse_id, 'free', 35903
+  FROM _s345_jdg11_lookup sv, _s345_jdg11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=11 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded',
+       E'The rash vow — be not rash with thy mouth, and the redemption unheeded',
+       E'Here is the tragedy at the heart of the chapter, and it is a tragedy of the unconsidered word. On the eve of battle Jephthah binds himself with a vow: *If thou shalt without fail deliver the children of Ammon into mine hands, then it shall be, that whatsoever cometh forth of the doors of my house to meet me, when I return in peace from the children of Ammon, shall surely be the LORD''S, and I will offer it up for a burnt offering* (Judges 11:30-31). Yahuah gives the victory; and when he comes home, *behold, his daughter came out to meet him with timbrels and with dances: and she was his only child* (Judges 11:34). He rends his clothes: *I have opened my mouth unto Yahuah (LORD), and I cannot go back* (Judges 11:35), and at the end of two months *did with her according to his vow which he had vowed* (Judges 11:39). The wisdom of the Preacher had warned against exactly this rashness: *Be not rash with thy mouth, and let not thine heart be hasty to utter any thing before Elohim (God): for Elohim (God) is in heaven, and thou upon earth: therefore let thy words be few* (Ecclesiastes 5:2), and *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The vow once made was binding — *If a man vow a vow unto Yahuah (LORD)... he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2) — and Jephthah honoured the binding word. But the Torah itself had set a door of mercy that his haste never sought: for persons singularly vowed there was redemption by estimation — *When a man shall make a singular vow, the persons shall be for Yahuah (LORD) by thy estimation* (Leviticus 27:2), and even the poorest *shall present himself before the priest, and the priest shall value him* (Leviticus 27:8). The vow need not have ended so. The lesson is not that Yahuah delights in such an offering — He does not — but the terrible weight of the rash and unconsidered word, and the redemption that stood open and unheeded.',
+       sv.verse_id, ev.verse_id, 'free', 35906
+  FROM _s345_jdg11_lookup sv, _s345_jdg11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=11 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-11-jephthah-in-the-roll-of-faith-the-imperfect-deliverer-commended',
+       E'Jephthah in the roll of faith — the imperfect deliverer commended',
+       E'For all his flaws — the rash vow, the terrible cost — Jephthah is not cast out of the testimony of faith. *So Jephthah passed over unto the children of Ammon to fight against them; and Yahuah (LORD) delivered them into his hands* (Judges 11:32), and the deliverance was real and remembered. Samuel names him among the saviours Yahuah sent: *And Yahuah (LORD) sent Jerubbaal, and Bedan, and Jephthah, and Samuel, and delivered you out of the hand of your enemies on every side, and ye dwelled safe* (1 Samuel 12:11). And the roll of faith sets him with the great deliverers: *And what shall I more say? for the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae; of David also, and Samuel, and of the prophets: Who through faith subdued kingdoms, wrought righteousness, obtained promises* (Hebrews 11:32-33). The imperfect vessel is commended — not for the rashness of his vow, but for the faith by which he trusted Yahuah for the victory and was made an instrument of His salvation. The stone the builders refused, on whom the Spirit came, who erred grievously with his mouth, is yet numbered among the faithful.',
+       sv.verse_id, ev.verse_id, 'free', 35909
+  FROM _s345_jdg11_lookup sv, _s345_jdg11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=11 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22) — the son thrust out (Judg 11:2) is the very stone the builders rejected.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=2
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The stone which the builders refused is become the head stone of the corner* (Psalm 118:22) — Jephthah names the rejection (Judg 11:7) as the distressed builders return.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=7
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...become the head stone of the corner* (Psalm 118:22) — the elders raise the cast-out man to be their head (Judg 11:8).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=8
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...is become the head stone of the corner* (Psalm 118:22) — the exaltation done: made head and captain over all (Judg 11:11).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=11
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Yashar''el (Israel)... possessed his land from Arnon unto Jabbok* (Numbers 21:24) — the history Jephthah recites: Yahuah delivered Sihon, not Ammon''s land (Judg 11:21).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=21
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*...possessed his land from Arnon unto Jabbok* (Numbers 21:24) — Jephthah''s argument: Yahuah dispossessed the Amorite, not Ammon (Judg 11:23).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=23
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-thrust-out-by-his-brethren-made-head-the-stone-the-builders-refused'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The Spirit of Yahuah (LORD) came upon him* (Judges 3:10) — the same Spirit that clothed Othniel the first judge clothes Jephthah (Judg 11:29).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-spirit-of-yahuah-came-upon-jephthah-the-spirit-empowered-judge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The Spirit of Yahuah (LORD) came upon Gideon, and he blew a trumpet* (Judges 6:34) — the recurring sign on every true deliverer, now on Jephthah (Judg 11:29).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=6 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-spirit-of-yahuah-came-upon-jephthah-the-spirit-empowered-judge'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*When thou vowest a vow unto Elohim (God), defer not to pay it... pay that which thou hast vowed* (Ecclesiastes 5:4) — the vow once made binds Jephthah (Judg 11:30).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=30
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Be not rash with thy mouth... therefore let thy words be few* (Ecclesiastes 5:2) — the hasty utterance the Preacher warns against, spoken by Jephthah (Judg 11:31).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5) — the snare of the rash vow at terrible cost (Judg 11:31).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2) — the Torah law of vows that binds the rash word (Judg 11:31).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=31
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*He shall not break his word... he shall do according to all that proceedeth out of his mouth* (Numbers 30:2) — Jephthah''s anguish, I cannot go back (Judg 11:35), is this law in his grief.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=35
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*When a man shall make a singular vow, the persons shall be for Yahuah (LORD) by thy estimation* (Leviticus 27:2) — the Torah''s redemption for vowed persons, unsought (Judg 11:39).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=39
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*He shall present himself before the priest, and the priest shall value him* (Leviticus 27:8) — the door of redemption that stood open and unheeded (Judg 11:39).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=39
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-the-rash-vow-be-not-rash-with-thy-mouth-and-the-redemption-unheeded'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...the time would fail me to tell of Gedeon, and of Barak, and of Samson, and of Jephthae* (Hebrews 11:32) — the imperfect deliverer named in the roll of faith (Judg 11:32).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=32
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-in-the-roll-of-faith-the-imperfect-deliverer-commended'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Yahuah (LORD) sent Jerubbaal, and Bedan, and Jephthah, and Samuel, and delivered you* (1 Samuel 12:11) — Jephthah among the saviours Yahuah sent (Judg 11:32).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=11 AND sv.verse_number=32
+  JOIN _s345_jdg11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=12 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-11-jephthah-in-the-roll-of-faith-the-imperfect-deliverer-commended'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_12.sql (Judges 12) -----
+--
+-- Chapter: Judges 12 — Ephraim's proud strife with Jephthah; the Shibboleth test
+--   at the fords of Jordan; 42,000 of Ephraim fall (brother against brother); the
+--   minor judges Ibzan, Elon, Abdon (the rest between).
+-- Tag: jdg12   View: _s345_jdg12_lookup   Sort band: 35925, 35928, 35931
+--
+-- Judges 12 coverage:
+--   v.1   (Ephraim threatens to burn Jephthah's house, angry they were not called)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Judges 8:1 (Ephraim's identical chiding of Gideon) — T1
+--   v.2-3 (Jephthah's answer — I called you and ye delivered me not)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: none warranted (answered in the thread prose)
+--   v.4   (Gilead smites Ephraim — civil war begins; the taunt "fugitives of Ephraim")
+--         NT:     Matthew 12:25 (house/kingdom divided against itself cannot stand) — T2
+--                 James 4:1 (whence come wars and fightings — of the lusts that war) — T2
+--         Extras: none warranted
+--         Tanakh: Judges 8:2 (Gideon's soft answer abated Ephraim's wrath) — T1;
+--                 Proverbs 15:1 (soft answer turneth away wrath) — T1;
+--                 Proverbs 17:14 (leave off contention before it be meddled with) — T1;
+--                 Genesis 13:8 (let there be no strife, for we be brethren) — T2;
+--                 1 Kings 12:24 (fight not against your brethren the children of Israel) — T2
+--   v.5-6 (the Shibboleth test at the fords; 42,000 Ephraimites slain)
+--         NT:     Matthew 12:25 (divided house — anchor of T2)
+--         Extras: none warranted
+--         Tanakh: 1 Kings 12:24 (the LATER fratricide forbidden — T2)
+--   v.7   (Jephthah judged Israel six years, then died, buried in Gilead)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Judges 2:16 (Yahuah raised up judges who delivered them) — T3
+--   v.8-15 (Ibzan, Elon, Abdon — the minor judges, the rest between)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Judges 10:1 (the minor-judge formula — arose to defend Israel) — T3
+--
+-- Threads:
+--   T1 judges-12-the-proud-strife-of-ephraim-the-soft-answer-they-would-not-give
+--      (free) — Tanakh: Judges 8; Proverbs 15, 17
+--   T2 judges-12-shibboleth-and-the-forty-two-thousand-brother-against-brother
+--      (free) — Tanakh: Genesis 13, 1 Kings 12; NT: Matthew 12, James 4
+--   T3 judges-12-ibzan-elon-and-abdon-the-rest-between
+--      (free) — Tanakh: Judges 2, 10
+--
+-- Framework-load-bearing framing: Ephraim is the proud northern tribe (the stick of
+-- Joseph). Twice they quarrel over not being "called" — once with Gideon (Judg 8),
+-- where a soft answer abates the wrath; here with Jephthah, where the same pride runs
+-- to slaughter. The Shibboleth that cannot be framed and the 42,000 of a brother-tribe
+-- fallen are the wound of the divided house — the two-house framework grieves it, and
+-- it foreshadows the formal tearing of Ephraim from Judah (1 Kings 12), where Yahuah
+-- HIMSELF forbids the brothers to fight (1 Kings 12:24). The healing is Ezekiel 37 —
+-- the two sticks made one again.
+--
+
+CREATE TEMP VIEW _s345_jdg12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- T1: Ephraim's proud strife — the soft answer they would not give
+    ('canon','judges',12,1,'canon','judges',8,1,'free',E'*And the men of Ephraim said unto him, Why hast thou served us thus, that thou calledst us not, when thou wentest to fight with the Midianites? And they did chide with him sharply* (Judges 8:1). The same proud tribe, the same grievance, a generation before: Ephraim quarrels with Gideon over not being *called* to the battle, exactly as here they confront Jephthah — *Wherefore passedst thou over to fight against the children of Ammon... and didst not call us to go with thee? we will burn thine house upon thee with fire* (Judges 12:1). The recurring pride of the stick of Joseph, twice offended that the victory came without them.'),
+    ('canon','judges',12,4,'canon','judges',8,2,'free',E'*And he said unto them, What have I done now in comparison of you? Is not the gleaning of the grapes of Ephraim better than the vintage of Abi-ezer?... Then their anger was abated toward him, when he had said that* (Judges 8:2-3). Gideon answered the same proud wrath with a soft word that exalted Ephraim above himself — and the quarrel died. Jephthah answers in kind — *I and my people were at great strife with the children of Ammon; and when I called you, ye delivered me not* — but here no soft word turns the wrath; instead *the men of Gilead smote Ephraim* (Judges 12:4). The contrast of the two answers is the whole tragedy.'),
+    ('canon','judges',12,4,'canon','proverbs',15,1,'free',E'*A soft answer turneth away wrath: but grievous words stir up anger* (Proverbs 15:1). Gideon''s soft answer turned away Ephraim''s wrath (Judges 8:3); at the fords of Jordan the grievous words on both sides stir it to slaughter. *The men of Gilead smote Ephraim* (Judges 12:4) — the proverb read backward, the wrath not turned but loosed.'),
+    ('canon','judges',12,4,'canon','proverbs',17,14,'free',E'*The beginning of strife is as when one letteth out water: therefore leave off contention, before it be meddled with* (Proverbs 17:14). The strife between Gilead and Ephraim is the let-out water that cannot be gathered again — *the men of Gilead smote Ephraim* (Judges 12:4), and forty-two thousand fell before the contention was left off. The wisdom Ephraim would not heed.'),
+    -- T2: Shibboleth and the forty-two thousand — brother against brother
+    ('canon','judges',12,4,'canon','genesis',13,8,'free',E'*And Abram said unto Lot, Let there be no strife, I pray thee, between me and thee, and between my herdmen and thy herdmen; for we be brethren* (Genesis 13:8). Abram disarms strife by naming the bond — *we be brethren*. At the fords of Jordan that naming is forgotten: Gilead and Ephraim, brothers within Yashar''el (Israel), fight (Judges 12:4), and the very word a man cannot frame becomes his death-sentence. The father''s wisdom unmade.'),
+    ('canon','judges',12,6,'canon','matthew',12,25,'free',E'*And Yahusha (Jesus) knew their thoughts, and said unto them, Every kingdom divided against itself is brought to desolation; and every city or house divided against itself shall not stand* (Matthew 12:25). The Shibboleth slaughter — *there fell at that time of the Ephraimites forty and two thousand* (Judges 12:6) — is the house of Yashar''el (Israel) divided against itself, the doctrine of the divided kingdom written in blood before the kingdom is even formally torn. A house so divided cannot stand; it must be made one again (Ezekiel 37).'),
+    ('canon','judges',12,6,'canon','1-kings',12,24,'free',E'*Thus saith Yahuah (LORD), Ye shall not go up, nor fight against your brethren the children of Yashar''el (Israel): return every man to his house; for this thing is from me* (1 Kings 12:24). When the kingdom is finally torn and Yahudah (Judah) musters to fight the northern tribes, Yahuah HIMSELF forbids the fratricide — *ye shall not... fight against your brethren*. The very thing Yahuah will forbid at the splitting of the houses is what already happened at the fords: *there fell... forty and two thousand* (Judges 12:6) of Ephraim, brother slain by brother for a word he could not say.'),
+    ('canon','judges',12,4,'canon','james',4,1,'free',E'*From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members?* (James 4:1). Jephthah''s war with Ephraim springs not from Ammon but from wounded pride within the camp — *the men of Gilead smote Ephraim, because they said, Ye Gileadites are fugitives of Ephraim* (Judges 12:4). The fighting comes from the lusts that war within the house, brother contending with brother over honour.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- T3 members reuse the cross_references rows below
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    ('canon','judges',12,7,'canon','judges',2,16,'free',E'*Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them* (Judges 2:16). The book''s own summary of the whole pattern: Jephthah is one such raised-up deliverer — *And Jephthah judged Yashar''el (Israel) six years* (Judges 12:7) — and after him the line continues, Ibzan, Elon, Abdon, each raised up for a season of rest.'),
+    ('canon','judges',12,8,'canon','judges',10,1,'free',E'*And after Abimelech there arose to defend Yashar''el (Israel) Tola the son of Puah... and he dwelt in Shamir in mount Ephraim* (Judges 10:1). The minor-judge formula — arose, judged, died, buried — repeated for the quieter deliverers. So *after him Ibzan of Beth-lehem judged Yashar''el (Israel)* (Judges 12:8), and Elon, and Abdon: the rest between the great battles, the years of peace recorded as plainly as the wars.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-12-the-proud-strife-of-ephraim-the-soft-answer-they-would-not-give', E'The proud strife of Ephraim — the soft answer they would not give', E'Twice the proud tribe of Ephraim, the stick of Joseph, quarrels over not being *called* to the battle. To Gideon they came first: *Why hast thou served us thus, that thou calledst us not, when thou wentest to fight with the Midianites? And they did chide with him sharply* (Judges 8:1). Gideon turned the wrath with a soft word that set Ephraim above himself — *Is not the gleaning of the grapes of Ephraim better than the vintage of Abi-ezer?... Then their anger was abated toward him* (Judges 8:2-3). That is *a soft answer turneth away wrath* (Proverbs 15:1) lived out. Here to Jephthah they come with the same grievance and a worse threat — *Wherefore passedst thou over to fight against the children of Ammon... and didst not call us to go with thee? we will burn thine house upon thee with fire* (Judges 12:1). But no soft word turns this wrath; *the men of Gilead smote Ephraim* (Judges 12:4). *The beginning of strife is as when one letteth out water: therefore leave off contention, before it be meddled with* (Proverbs 17:14) — and the contention was not left off until forty-two thousand had fallen. The recurring pride of the proud tribe, and the soft answer they would not give.',
+       sv.verse_id, ev.verse_id, 'free', 35925
+  FROM _s345_jdg12_lookup sv, _s345_jdg12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=12 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-12-shibboleth-and-the-forty-two-thousand-brother-against-brother', E'Shibboleth, and the forty-two thousand — brother against brother', E'At the fords of Jordan the strife runs to slaughter. *And the men of Gilead smote Ephraim* (Judges 12:4) — brothers within Yashar''el (Israel) at war — and at the passages of Jordan the test of a single word: *Then said they unto him, Say now Shibboleth: and he said Sibboleth: for he could not frame to pronounce it right. Then they took him, and slew him at the passages of Jordan: and there fell at that time of the Ephraimites forty and two thousand* (Judges 12:6). A man slain by his brother for a word he could not say. Long before, Abram had disarmed strife by naming the bond: *Let there be no strife, I pray thee, between me and thee... for we be brethren* (Genesis 13:8) — the wisdom here forgotten. This is the house of Yashar''el (Israel) divided against itself, and *every... house divided against itself shall not stand* (Matthew 12:25); *from whence come wars and fightings among you? come they not hence, even of your lusts that war in your members?* (James 4:1). It is the wound of the divided house written in blood before the kingdom is even formally torn — and when it IS torn, and Yahudah (Judah) musters to fight the north, Yahuah Himself forbids the fratricide: *Thus saith Yahuah (LORD), Ye shall not go up, nor fight against your brethren the children of Yashar''el (Israel)... for this thing is from me* (1 Kings 12:24). The two-house framework grieves this slaughter of a brother-tribe; the healing is the two sticks made one stick again (Ezekiel 37).',
+       sv.verse_id, ev.verse_id, 'free', 35928
+  FROM _s345_jdg12_lookup sv, _s345_jdg12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=12 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-12-ibzan-elon-and-abdon-the-rest-between', E'Ibzan, Elon, and Abdon — the rest between', E'*And Jephthah judged Yashar''el (Israel) six years. Then died Jephthah the Gileadite* (Judges 12:7), and after him three quieter deliverers: *Ibzan of Beth-lehem... Elon, a Zebulonite... Abdon the son of Hillel, a Pirathonite* (Judges 12:8,11,13). The book has already named the pattern they fulfil: *Nevertheless Yahuah (LORD) raised up judges, which delivered them out of the hand of those that spoiled them* (Judges 2:16). Each is recorded in the same plain minor-judge formula as Tola before them — *after Abimelech there arose to defend Yashar''el (Israel) Tola the son of Puah... and he judged Yashar''el (Israel) twenty and three years, and died, and was buried* (Judges 10:1-2) — arose, judged, died, buried. These are the years of rest between the great battles, the peace recorded as faithfully as the wars, Yahuah''s mercy in raising up a deliverer for each generation.',
+       sv.verse_id, ev.verse_id, 'free', 35931
+  FROM _s345_jdg12_lookup sv, _s345_jdg12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=12 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== thread_members =====
+-- T1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 8:1 — *Why hast thou served us thus, that thou calledst us not* — Ephraim''s identical grievance against Gideon a generation before.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=1
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=8 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-the-proud-strife-of-ephraim-the-soft-answer-they-would-not-give'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 8:2-3 — Gideon''s soft answer *abated* Ephraim''s anger; the word that turned the wrath Jephthah''s strife would not turn.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=8 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-the-proud-strife-of-ephraim-the-soft-answer-they-would-not-give'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Proverbs 15:1 — *A soft answer turneth away wrath: but grievous words stir up anger* — the proverb Gideon kept and the fords broke.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=15 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-the-proud-strife-of-ephraim-the-soft-answer-they-would-not-give'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Proverbs 17:14 — *leave off contention, before it be meddled with* — the let-out water that ran to forty-two thousand fallen.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-the-proud-strife-of-ephraim-the-soft-answer-they-would-not-give'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 13:8 — *Let there be no strife... for we be brethren* — Abram disarms strife by naming the bond the fords forgot.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=13 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-shibboleth-and-the-forty-two-thousand-brother-against-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'James 4:1 — *from whence come wars and fightings among you?* — the war that springs from wounded pride within the camp.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-shibboleth-and-the-forty-two-thousand-brother-against-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 12:25 — *every... house divided against itself shall not stand* — the divided house of Yashar''el (Israel) written in blood at the fords.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-shibboleth-and-the-forty-two-thousand-brother-against-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Kings 12:24 — *Ye shall not... fight against your brethren the children of Yashar''el (Israel)* — the fratricide Yahuah will forbid at the splitting of the houses, already done here.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=6
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-shibboleth-and-the-forty-two-thousand-brother-against-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- T3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 2:16 — *Yahuah (LORD) raised up judges, which delivered them* — the book''s own naming of the pattern Jephthah and his successors fulfil.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-ibzan-elon-and-abdon-the-rest-between'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 10:1 — *there arose to defend Yashar''el (Israel) Tola* — the same minor-judge formula (arose, judged, died, buried) that frames Ibzan, Elon, Abdon.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=12 AND sv.verse_number=8
+  JOIN _s345_jdg12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=10 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-12-ibzan-elon-and-abdon-the-rest-between'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_13.sql (Judges 13) -----
+--
+-- Chapter: Judges 13 (the birth of Samson; the angel of Yahuah whose name is Wonderful)
+-- Tag: jdg13   View: _s345_jdg13_lookup   Sort band: 35950,35953,35956,35959,35962
+--
+-- Judges 13 coverage:
+--   v.1   (cycle: Yashar'el delivered to the Philistines forty years; the deliverer-sent)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Exodus 3:7-8 (I am come down to deliver); Judges 6:11-12 (the angel sent to raise a deliverer) -> THREAD 5
+--   v.2-3 (Manoah's wife BARREN; the angel of Yahuah: thou shalt conceive and bear a son)
+--         NT:     Luke 1:7,13 (Elisabeth barren, the son promised); Hebrews 11:11 (Sara received strength to conceive by faith) -> THREAD 1
+--         Extras: none warranted
+--         Tanakh: Genesis 18:10-14 (Sarah shall have a son); 1 Samuel 1:11,20 (Hannah's shut womb opened) -> THREAD 1
+--   v.4-5 (the Nazarite unto Elohim from the womb -- no wine, no razor, no unclean -- shall BEGIN to deliver)
+--         NT:     Luke 1:15 (John great, drink no wine nor strong drink, filled with the Spirit from the womb) -> THREAD 2
+--         Extras: none warranted
+--         Tanakh: Numbers 6:2-5,8 (the law of the Nazarite -- separated, no wine, no razor, holy unto Yahuah) -> THREAD 2
+--   v.6-7 (a man of Elohim, his countenance like an angel of Elohim, very terrible; the Nazarite repeated) -> woven into THREAD 2/4
+--   v.8-16 (Manoah intreats; the angel returns; offer the burnt offering unto Yahuah) -> woven into THREAD 4
+--   v.17-18 (What is thy name? ... seeing it is SECRET = WONDERFUL/PELI)
+--         NT:     none warranted (Isaiah 9:6 Wonderful itself is the NT-bearing fulfilment)
+--         Extras: none warranted
+--         Tanakh: Isaiah 9:6 (his name shall be called Wonderful); Genesis 32:29 (Jacob's wrestler: wherefore dost ask after my name?) -> THREAD 3
+--   v.19-22 (the angel ascends in the flame of the altar; We shall surely die, we have SEEN ELOHIM)
+--         NT:     none warranted
+--         Extras: none warranted
+--         Tanakh: Judges 6:22-23 (Gideon: I have seen an angel of Yahuah face to face); Exodus 33:20 (no man see me and live); Genesis 18:1-2 (Yahuah appeared, three men stood by him) -> THREAD 4
+--   v.23   (his wife reasons: Yahuah would not have received the offering if to kill us) -> woven into THREAD 4
+--   v.24-25 (Samson born, Yahuah blessed him; the Spirit of Yahuah BEGAN to move him) -> the barren womb opened (THREAD 1) + the deliverer begun (THREAD 5)
+--
+-- Threads (5):
+--   judges-13-the-barren-womb-opened-thou-shalt-bear-a-son       [canon: Genesis, 1 Samuel, Luke, Hebrews]  free
+--   judges-13-the-nazarite-from-the-womb-to-begin-to-deliver     [canon: Numbers, Luke]                      free
+--   judges-13-the-angel-whose-name-is-wonderful-secret           [canon: Isaiah, Genesis]                    free
+--   judges-13-we-have-seen-elohim-the-theophany-received         [canon: Judges, Exodus, Genesis]            free
+--   judges-13-he-shall-begin-to-deliver-the-deliverer-sent       [canon: Exodus, Judges]                     free
+--
+-- Framework note on the angel "Wonderful": the angel of Yahuah of v.13-18 is NOT a created
+-- angel and NOT a co-equal-trinity person -- he is the Formed Son who bears the Name. He receives
+-- the burnt offering that must be offered "unto Yahuah" (v.16), he ascends IN the flame of the
+-- altar (v.20), and Manoah confesses "we have seen ELOHIM" (v.22). When asked his name he answers
+-- it is "secret" -- KJV for the Hebrew PELI, the very root of Isaiah 9:6's "Wonderful." The One
+-- whose name is Wonderful is the same One who wrestled Jacob and would not tell his name
+-- (Genesis 32:29), the visible Yahuah who later took on flesh -- Yahuah, and yet having a Father.
+
+CREATE TEMP VIEW _s345_jdg13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+  -- THREAD 1: the barren womb opened
+  ('canon','judges',13,3,'canon','genesis',18,10,'free',E'*And he said, I will certainly return unto thee according to the time of life; and, lo, Sarah thy wife shall have a son* (Genesis 18:10). The angel of Yahuah comes to the barren wife of Manoah and says *thou shalt conceive, and bear a son* -- the same word of promise spoken to Sarah in her old age. The barren womb opened is Yahuah''s signature on the child of promise.'),
+  ('canon','judges',13,3,'canon','genesis',18,14,'free',E'*Is any thing too hard for Yahuah (LORD)? At the time appointed I will return unto thee, according to the time of life, and Sarah shall have a son* (Genesis 18:14). Manoah''s wife *was barren, and bare not* -- yet *thou shalt conceive, and bear a son*. Nothing is too hard for Yahuah; the closed womb is His to open.'),
+  ('canon','judges',13,3,'canon','1-samuel',1,11,'free',E'*O Yahuah Tseva''ot (LORD of hosts), if thou wilt indeed look on the affliction of thine handmaid... but wilt give unto thine handmaid a man child, then I will give him unto Yahuah (LORD) all the days of his life, and there shall no razor come upon his head* (1 Samuel 1:11). Hannah''s shut womb and her vowed Nazarite son are the very pattern of Manoah''s barren wife and her Nazarite child -- *no razor shall come on his head* (Judges 13:5).'),
+  ('canon','judges',13,24,'canon','1-samuel',1,20,'free',E'*Wherefore it came to pass, when the time was come about after Hannah had conceived, that she bare a son, and called his name Samuel, saying, Because I have asked him of Yahuah (LORD)* (1 Samuel 1:20). As Hannah''s barren womb bore Samuel, so *the woman bare a son, and called his name Samson* (Judges 13:24) -- the child asked of Yahuah, set apart from the womb.'),
+  ('canon','judges',13,2,'canon','luke',1,7,'free',E'*And they had no child, because that Elisabeth was barren, and they both were now well stricken in years* (Luke 1:7). Manoah''s *wife was barren, and bare not* (Judges 13:2) -- the same closed womb the angel will open. The barren-womb pattern runs from Sarah to Hannah to Elisabeth, every time the prelude to a child given for deliverance.'),
+  ('canon','judges',13,3,'canon','luke',1,13,'free',E'*Fear not, Zacharias: for thy prayer is heard; and thy wife Elisabeth shall bear thee a son, and thou shalt call his name John* (Luke 1:13). As the angel of Yahuah tells Manoah''s barren wife *thou shalt conceive, and bear a son* (Judges 13:3), the angel tells Zacharias the same -- a son promised to a barren womb, set apart to prepare a people.'),
+  ('canon','judges',13,3,'canon','hebrews',11,11,'free',E'*Through faith also Sara herself received strength to conceive seed, and was delivered of a child when she was past age, because she judged him faithful who had promised* (Hebrews 11:11). The barren womb that bears Samson stands in the same faith-roll: the One who promised is faithful, and the dead womb conceives because He spoke -- *thou shalt conceive, and bear a son* (Judges 13:3).'),
+
+  -- THREAD 2: the Nazarite from the womb to begin to deliver
+  ('canon','judges',13,5,'canon','numbers',6,2,'free',E'*When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* (Numbers 6:2). Samson is *a Nazarite unto Elohim (God) from the womb* (Judges 13:5) -- not by his own later vow but set apart by Yahuah from conception, the law of the Nazarite written upon his life before his first breath.'),
+  ('canon','judges',13,5,'canon','numbers',6,5,'free',E'*All the days of the vow of his separation there shall no razor come upon his head... he shall be holy, and shall let the locks of the hair of his head grow* (Numbers 6:5). *No razor shall come on his head* (Judges 13:5) -- the uncut hair is the visible sign of the Nazarite''s separation, the consecration of his Elohim upon his head.'),
+  ('canon','judges',13,4,'canon','numbers',6,3,'free',E'*He shall separate himself from wine and strong drink, and shall drink no vinegar of wine... neither shall he drink any liquor of grapes, nor eat moist grapes, or dried* (Numbers 6:3). The angel charges the mother *drink not wine nor strong drink, and eat not any unclean thing* (Judges 13:4) -- the Nazarite separation begins in the womb, the mother keeping it for the child she carries.'),
+  ('canon','judges',13,7,'canon','numbers',6,8,'free',E'*All the days of his separation he is holy unto Yahuah (LORD)* (Numbers 6:8). *The child shall be a Nazarite to Elohim (God) from the womb to the day of his death* (Judges 13:7) -- a lifelong, womb-to-grave separation, holy unto Yahuah every day.'),
+  ('canon','judges',13,5,'canon','luke',1,15,'free',E'*For he shall be great in the sight of Yahuah (Lord), and shall drink neither wine nor strong drink; and he shall be filled with the Ruach HaKodesh (Holy Spirit), even from his mother''s womb* (Luke 1:15). John the Baptist is the Nazarite-deliverer answering Samson''s pattern -- set apart from the womb, no wine, the Spirit upon him -- a child given to *begin to deliver Yashar''el (Israel)* (Judges 13:5) by turning the hearts of the people.'),
+
+  -- THREAD 3: the angel whose name is Wonderful / secret
+  ('canon','judges',13,18,'canon','isaiah',9,6,'free',E'*For unto us a child is born, unto us a son is given... and his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace)* (Isaiah 9:6). When Manoah asks the angel his name, the answer is *Why askest thou thus after my name, seeing it is secret?* (Judges 13:18) -- KJV "secret" is PELI, the very word Isaiah renders "Wonderful." The angel of Yahuah whose name is Wonderful is the Formed Son who bears the Name.'),
+  ('canon','judges',13,17,'canon','genesis',32,29,'free',E'*And Jacob asked him, and said, Tell me, I pray thee, thy name. And he said, Wherefore is it that thou dost ask after my name? And he blessed him there* (Genesis 32:29). Manoah asks *What is thy name?* (Judges 13:17) and the angel answers exactly as the One who wrestled Jacob did -- *Wherefore... dost ask after my name?* The same visible Yahuah, the Formed Son, who will not surrender His Name to a man but blesses him.'),
+  ('canon','judges',13,22,'canon','genesis',32,29,'free',E'*And Jacob asked him, and said, Tell me, I pray thee, thy name. And he said, Wherefore is it that thou dost ask after my name? And he blessed him there* (Genesis 32:29). Jacob called that place Peniel, *for I have seen Elohim (God) face to face, and my life is preserved* -- the same confession Manoah makes, *we have seen Elohim (God)* (Judges 13:22). The wrestler and the angel of the flame are the one Formed Son seen face to face.'),
+
+  -- THREAD 4: we have seen Elohim -- the theophany received
+  ('canon','judges',13,22,'canon','judges',6,22,'free',E'*And when Gideon perceived that he was an angel of Yahuah (LORD), Gideon said, Alas, O Yahuah (Lord) GOD! for because I have seen an angel of Yahuah (LORD) face to face* (Judges 6:22). Manoah''s dread, *We shall surely die, because we have seen Elohim (God)* (Judges 13:22), is Gideon''s dread -- to see the angel of Yahuah, the visible Elohim, was thought to be death for a man.'),
+  ('canon','judges',13,22,'canon','judges',6,23,'free',E'*And Yahuah (LORD) said unto him, Peace be unto thee; fear not: thou shalt not die* (Judges 6:23). Where Yahuah Himself reassures Gideon, Manoah''s wife reasons the same comfort: *If Yahuah (LORD) were pleased to kill us, he would not have received a burnt offering and a meat offering at our hands* (Judges 13:23) -- the offering received is the pledge they shall not die.'),
+  ('canon','judges',13,22,'canon','exodus',33,20,'free',E'*And he said, Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20). Manoah''s fear -- *We shall surely die, because we have seen Elohim (God)* (Judges 13:22) -- rests on this very word; yet the angel of Yahuah, the Formed Son, may be seen and his witnesses live, the Face of the Father veiled in the One who bears the Name.'),
+  ('canon','judges',13,20,'canon','genesis',18,1,'free',E'*And Yahuah (LORD) appeared unto him in the plains of Mamre: and he sat in the tent door in the heat of the day* (Genesis 18:1). As Yahuah appeared to Abraham as a man who ate at his table, the angel of Yahuah appears to Manoah, receives the offering, and *ascended in the flame of the altar* (Judges 13:20) -- the visible Yahuah received, the theophany of the Formed Son.'),
+
+  -- THREAD 5: he shall begin to deliver -- the deliverer sent in the cycle
+  ('canon','judges',13,1,'canon','exodus',3,7,'free',E'*And Yahuah (LORD) said, I have surely seen the affliction of my people which are in Egypt, and have heard their cry... for I know their sorrows* (Exodus 3:7). *Yahuah (LORD) delivered them into the hand of the Philistines forty years* (Judges 13:1) -- the same covenant pattern: the people in bondage, Yahuah moving to raise up a deliverer, the angel of Yahuah appearing to call him forth.'),
+  ('canon','judges',13,5,'canon','exodus',3,8,'free',E'*And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large* (Exodus 3:8). The angel promises the child *shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5) -- Yahuah coming down to deliver, here through a Nazarite raised up from a barren womb.'),
+  ('canon','judges',13,5,'canon','judges',6,12,'free',E'*And the angel of Yahuah (LORD) appeared unto him, and said unto him, Yahuah (LORD) is with thee, thou mighty man of valour* (Judges 6:12). As the angel of Yahuah came to Gideon to raise a deliverer against Midian, the same angel comes to Manoah''s house to set apart Samson, who *shall begin to deliver Yashar''el (Israel)* (Judges 13:5) -- one Sender, one pattern of rescue.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-13-the-barren-womb-opened-thou-shalt-bear-a-son',
+       E'The barren womb opened: thou shalt conceive, and bear a son',
+       E'Manoah''s *wife was barren, and bare not* (Judges 13:2) -- and the angel of Yahuah comes to her with the oldest promise in the canon: *Behold now, thou art barren, and bearest not: but thou shalt conceive, and bear a son* (Judges 13:3). This is the signature of Yahuah on the child of promise: the closed womb that He alone opens.\n\nIt is Sarah''s word exactly -- *lo, Sarah thy wife shall have a son* (Genesis 18:10) -- for *Is any thing too hard for Yahuah (LORD)?* (Genesis 18:14). And the New Testament reads Sarah''s barren womb as faith: *Through faith also Sara herself received strength to conceive seed... because she judged him faithful who had promised* (Hebrews 11:11).\n\nIt is Hannah''s word, who vowed her son a Nazarite from a shut womb -- *give unto thine handmaid a man child... and there shall no razor come upon his head* (1 Samuel 1:11) -- and *bare a son, and called his name Samuel, saying, Because I have asked him of Yahuah (LORD)* (1 Samuel 1:20). So *the woman bare a son, and called his name Samson* (Judges 13:24).\n\nAnd it is Elisabeth''s word: she *was barren, and they both were now well stricken in years* (Luke 1:7), until the angel said *thy wife Elisabeth shall bear thee a son, and thou shalt call his name John* (Luke 1:13). Every time the barren womb is opened, the child given is a deliverer set apart -- Isaac, Samuel, Samson, John -- the pattern Yahuah keeps until the Seed Himself is born.',
+       sv.verse_id, ev.verse_id, 'free', 35950
+  FROM _s345_jdg13_lookup sv, _s345_jdg13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=13 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-13-the-nazarite-from-the-womb-to-begin-to-deliver',
+       E'The Nazarite from the womb to begin to deliver Yashar''el',
+       E'The child is consecrated before he is conceived: *no razor shall come on his head: for the child shall be a Nazarite unto Elohim (God) from the womb: and he shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5). Even the mother must keep the separation for him -- *drink not wine nor strong drink, and eat not any unclean thing* (Judges 13:4) -- *from the womb to the day of his death* (Judges 13:7).\n\nThis is the law of the Nazarite of Numbers 6, but reversed: not a vow a man takes upon himself, but a separation Yahuah lays upon a life from the womb. *When either man or woman shall separate themselves to vow a vow of a Nazarite, to separate themselves unto Yahuah (LORD)* (Numbers 6:2); *He shall separate himself from wine and strong drink... neither shall he drink any liquor of grapes* (Numbers 6:3); *there shall no razor come upon his head... he shall be holy, and shall let the locks of the hair of his head grow* (Numbers 6:5); *all the days of his separation he is holy unto Yahuah (LORD)* (Numbers 6:8).\n\nSamson is to *begin* to deliver -- the first stroke of a rescue finished by another. The Nazarite-deliverer set apart from the womb finds his clearest echo in John the Baptist: *he shall be great in the sight of Yahuah (Lord), and shall drink neither wine nor strong drink; and he shall be filled with the Ruach HaKodesh (Holy Spirit), even from his mother''s womb* (Luke 1:15) -- the forerunner who begins to turn the people, that the Greater Deliverer may finish.',
+       sv.verse_id, ev.verse_id, 'free', 35953
+  FROM _s345_jdg13_lookup sv, _s345_jdg13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=13 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-13-the-angel-whose-name-is-wonderful-secret',
+       E'The angel whose name is Wonderful: why askest thou after my name, seeing it is secret?',
+       E'Manoah asks the angel of Yahuah, *What is thy name, that when thy sayings come to pass we may do thee honour?* (Judges 13:17). The answer carries the whole Christology of the chapter: *Why askest thou thus after my name, seeing it is secret?* (Judges 13:18). The KJV "secret" renders the Hebrew PELI -- the very root of the name Isaiah gives the coming child: *For unto us a child is born, unto us a son is given... and his name shall be called Wonderful, Counsellor, El Gibbor (The mighty God), Avi-ad (The everlasting Father), Sar Shalom (The Prince of Peace)* (Isaiah 9:6).\n\nThe angel of Yahuah whose name is Wonderful is no created messenger and no co-equal second person -- he is the Formed Son who bears the Name, the visible Yahuah who has a Father. He answers Manoah word for word as he answered Jacob at the Jabbok: *Tell me, I pray thee, thy name. And he said, Wherefore is it that thou dost ask after my name? And he blessed him there* (Genesis 32:29). The One who wrestled the patriarch and would not surrender His Name, the One Jacob said he had seen *face to face*, is the One who ascends in Manoah''s altar-flame. The Name is withheld because it is the Name itself -- *Wonderful* -- borne by the Formed Son who will one day take on flesh.',
+       sv.verse_id, ev.verse_id, 'free', 35956
+  FROM _s345_jdg13_lookup sv, _s345_jdg13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=13 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-13-we-have-seen-elohim-the-theophany-received',
+       E'We have seen Elohim: the angel ascends in the flame, the theophany received',
+       E'When Manoah offers the kid upon the rock, *the angel did wondrously; and Manoah and his wife looked on* (Judges 13:19), and *when the flame went up toward heaven from off the altar... the angel of Yahuah (LORD) ascended in the flame of the altar* (Judges 13:20). They fall on their faces, and Manoah says, *We shall surely die, because we have seen Elohim (God)* (Judges 13:22).\n\nThis is the dread every man feels who sees the angel of Yahuah. Gideon said it in the chapter before: *Alas, O Yahuah (Lord) GOD! for because I have seen an angel of Yahuah (LORD) face to face* (Judges 6:22) -- and Yahuah answered, *Peace be unto thee; fear not: thou shalt not die* (Judges 6:23). It rests on the word given to Moses: *Thou canst not see my face: for there shall no man see me, and live* (Exodus 33:20). Yet the angel of Yahuah, the Formed Son, may be seen and his witnesses live, as Yahuah was seen by Abraham at the oaks -- *And Yahuah (LORD) appeared unto him in the plains of Mamre* (Genesis 18:1) -- and ate at his table.\n\nManoah''s wife reasons the comfort rightly: *If Yahuah (LORD) were pleased to kill us, he would not have received a burnt offering and a meat offering at our hands, neither would he have shewed us all these things* (Judges 13:23). The offering received, the angel ascending in its flame -- the visible Yahuah received their worship, the theophany of the One who bears the Name.',
+       sv.verse_id, ev.verse_id, 'free', 35959
+  FROM _s345_jdg13_lookup sv, _s345_jdg13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=20
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=13 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-13-he-shall-begin-to-deliver-the-deliverer-sent',
+       E'He shall begin to deliver: the deliverer sent in the cycle of bondage',
+       E'The chapter opens in the well-worn cycle of the Judges: *And the children of Yashar''el (Israel) did evil again in the sight of Yahuah (LORD); and Yahuah (LORD) delivered them into the hand of the Philistines forty years* (Judges 13:1). Yet even before the people cry out, Yahuah is already moving to raise a deliverer -- the angel of Yahuah appears to a barren woman to call forth a child who *shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5).\n\nThis is the same covenant pattern Yahuah set at the bush: *I have surely seen the affliction of my people which are in Egypt, and have heard their cry by reason of their taskmasters; for I know their sorrows* (Exodus 3:7); *And I am come down to deliver them out of the hand of the Egyptians, and to bring them up out of that land unto a good land and a large* (Exodus 3:8). Yahuah comes down to deliver -- by a Moses, by a Nazarite raised from a closed womb.\n\nAnd it is the very work the same angel of Yahuah did one chapter before, raising Gideon against Midian: *And the angel of Yahuah (LORD) appeared unto him, and said unto him, Yahuah (LORD) is with thee, thou mighty man of valour* (Judges 6:12). One Sender, one pattern of rescue -- the angel of Yahuah appearing to call the deliverer forth, until the Spirit of Yahuah *began to move* the child He had set apart (Judges 13:25).',
+       sv.verse_id, ev.verse_id, 'free', 35962
+  FROM _s345_jdg13_lookup sv, _s345_jdg13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=13 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 18:10 -- *lo, Sarah thy wife shall have a son*: the same word the angel speaks to Manoah''s barren wife.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 18:14 -- *Is any thing too hard for Yahuah?*: the closed womb is His to open.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 1:11 -- Hannah''s shut womb, her vowed Nazarite son *there shall no razor come upon his head*: the Samson pattern.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Samuel 1:20 -- Hannah *bare a son, and called his name Samuel*: as the woman *bare a son, and called his name Samson*.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=24
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=1 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Luke 1:7 -- *Elisabeth was barren*: the same closed womb the angel will open, prelude to a deliverer.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=2
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Luke 1:13 -- *thy wife Elisabeth shall bear thee a son*: the angel''s promise of a son to a barren womb.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Hebrews 11:11 -- *Sara herself received strength to conceive... because she judged him faithful who had promised*: the barren womb is faith.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=11 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-barren-womb-opened-thou-shalt-bear-a-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 6:2 -- the law of the Nazarite, *to separate themselves unto Yahuah*: Samson set apart from the womb, not by his own vow.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-nazarite-from-the-womb-to-begin-to-deliver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 6:5 -- *there shall no razor come upon his head*: the uncut hair, the visible sign of separation.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-nazarite-from-the-womb-to-begin-to-deliver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 6:3 -- *separate himself from wine and strong drink*: the charge the angel lays on the mother for the child she carries.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=4
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-nazarite-from-the-womb-to-begin-to-deliver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Numbers 6:8 -- *all the days of his separation he is holy unto Yahuah*: from the womb to the day of his death.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=7
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-nazarite-from-the-womb-to-begin-to-deliver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Luke 1:15 -- John great, *drink neither wine nor strong drink... filled with the Spirit from his mother''s womb*: the Nazarite-deliverer who begins the turning.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-nazarite-from-the-womb-to-begin-to-deliver'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Isaiah 9:6 -- *his name shall be called Wonderful*: the same PELI the KJV renders "secret" in the angel''s answer; the Formed Son who bears the Name.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=18
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-angel-whose-name-is-wonderful-secret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 32:29 -- *Wherefore is it that thou dost ask after my name?*: the wrestler answers Manoah''s question word for word; one Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=17
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-angel-whose-name-is-wonderful-secret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 32:29 -- Jacob saw Elohim *face to face* at Peniel, the same confession as *we have seen Elohim*: the visible Yahuah seen and the witness preserved.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=32 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-the-angel-whose-name-is-wonderful-secret'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 6:22 -- Gideon: *I have seen an angel of Yahuah face to face*: the same dread as Manoah''s *we have seen Elohim*.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=6 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-we-have-seen-elohim-the-theophany-received'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 6:23 -- *fear not: thou shalt not die*: Yahuah''s comfort to Gideon, the comfort Manoah''s wife reasons from the offering received.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=6 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-we-have-seen-elohim-the-theophany-received'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 33:20 -- *there shall no man see me, and live*: the word Manoah''s fear rests on; yet the Formed Son may be seen.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=22
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=33 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-we-have-seen-elohim-the-theophany-received'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 18:1 -- *Yahuah appeared unto him in the plains of Mamre*: the visible Yahuah received at Abraham''s table, as the angel ascends in Manoah''s altar-flame.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=20
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=18 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-we-have-seen-elohim-the-theophany-received'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 3:7 -- *I have surely seen the affliction of my people... I know their sorrows*: the covenant pattern behind the forty-year bondage.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=1
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-he-shall-begin-to-deliver-the-deliverer-sent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 3:8 -- *I am come down to deliver them*: Yahuah coming down to deliver, here through a Nazarite raised from a barren womb.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-he-shall-begin-to-deliver-the-deliverer-sent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Judges 6:12 -- the angel of Yahuah appears to Gideon to raise a deliverer: the same Sender comes to Manoah''s house for Samson.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s345_jdg13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=6 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-13-he-shall-begin-to-deliver-the-deliverer-sent'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_14.sql (Judges 14) -----
+-- Chapter: Judges 14 — THE HIDDEN PROVIDENCE AND THE RIDDLE OF SWEETNESS: Samson desires a
+--          PHILISTINE woman of Timnath — *get her for me; for she pleaseth me well* (14:3); ★ but
+--          *his father and his mother knew not that it was of Yahuah, that he sought an occasion
+--          against the Philistines* (14:4) — the secret providence working even through Samson's
+--          flawed desire to begin Yashar'el's deliverance; ★ on the way the SPIRIT OF YAHUAH comes
+--          mightily upon him and he RENDS a young LION as a kid, *nothing in his hand* (14:5-6);
+--          later he finds HONEY in the lion's carcase and eats (14:8-9); ★★ the RIDDLE at the
+--          feast — *Out of the eater came forth meat, and out of the strong came forth sweetness*
+--          (14:14) — the faint type readers feel: life and sweetness brought forth out of the
+--          slain strong one, the devourer overcome; the Philistines threaten the wife, she weeps
+--          out the answer (14:15-18); ★ the Spirit comes again and he slays thirty at Ashkelon
+--          (14:19) — the occasion against the Philistines begun.
+-- Tag: jdg14   View: _s345_jdg14_lookup   Sort band: 35975, 35978, 35981
+--
+-- Judges 14 coverage:
+--   v.1-4  (Samson desires a Philistine of Timnath; his parents object — *the uncircumcised
+--           Philistines*; ★ *his father and his mother knew not that it was of Yahuah, that he
+--           sought an occasion against the Philistines: for at that time the Philistines had
+--           dominion over Yashar'el*)
+--          NT:     Romans 11:33 (*O the depth of the riches both of the wisdom and knowledge of
+--                  Elohim! how unsearchable are his judgments, and his ways past finding out!*) —
+--                  the hidden providence working His purpose even through a flawed desire
+--          Extras: none warranted
+--          Tanakh: Judges 13:5 (*he shall begin to deliver Yashar'el out of the hand of the
+--                  Philistines*) — the providence of 14:4 is the appointed deliverance begun;
+--                  Genesis 50:20 (*ye thought evil against me; but Elohim meant it unto good*) —
+--                  the same secret over-ruling
+--   v.5-6  (★ the SPIRIT OF YAHUAH came mightily upon him; he RENT the young lion as a kid,
+--           *nothing in his hand*)
+--          NT:     none warranted at the verse (the Spirit-empowerment is a Tanakh weave)
+--          Extras: none warranted
+--          Tanakh: Judges 13:25 (*the Spirit of Yahuah began to move him*), Judges 15:14 (*the
+--                  Spirit of Yahuah came mightily upon him* — the same word, the bands as burnt
+--                  flax), 1 Samuel 11:6 (*the Spirit of Elohim came upon Saul... and his anger was
+--                  kindled*), Proverbs 30:30 (*A lion which is strongest among beasts*)
+--   v.8-9, 14, 18  (★★ honey in the lion's carcase; the riddle *Out of the eater came forth meat,
+--           and out of the strong came forth sweetness*; *What is sweeter than honey? and what is
+--           stronger than a lion?*)
+--          NT:     John 12:24 (*Except a corn of wheat fall into the ground and die, it abideth
+--                  alone: but if it die, it bringeth forth much fruit*), 1 Corinthians 15:54
+--                  (*Death is swallowed up in victory*), 1 Corinthians 15:55 (*O death, where is
+--                  thy sting? O grave, where is thy victory?*)
+--          Extras: none warranted (no clean witness; the type is carried by the NT weave)
+--          Tanakh: Proverbs 30:30 (*A lion which is strongest among beasts, and turneth not away
+--                  for any*) — the strong one out of whom the sweetness came
+--   v.10-13, 15-17, 20  (the feast, the wager, the wife enticed and weeping, the answer given)
+--          NT/Extras/Tanakh: none warranted — narrative carried inside the riddle thread
+--   v.19   (★ the Spirit came again; he slew thirty at Ashkelon, took their spoil, paid the wager)
+--          NT:     none warranted at the verse
+--          Extras: none warranted
+--          Tanakh: Judges 13:5 (*he shall begin to deliver Yashar'el*) — the occasion against the
+--                  Philistines (14:4) now begun in deed; carried in Thread 1 and Thread 2
+--
+-- Threads:
+--   judges-14-it-was-of-yahuah-the-hidden-occasion-against-the-philistines   [Tanakh: Judges, Genesis | NT: Romans]   (free)
+--   judges-14-the-spirit-came-mightily-and-he-rent-the-lion                  [Tanakh: Judges, 1 Samuel, Proverbs]      (free)
+--   judges-14-out-of-the-strong-came-forth-sweetness                         [Tanakh: Proverbs | NT: John, 1 Corinthians] (free)
+--
+-- Framework notes: ★ The keystone of the chapter is 14:4 — *his father and his mother knew not
+-- that it was of Yahuah, that he sought an occasion against the Philistines*. Samson's desire for
+-- the Timnite is flawed (his parents rightly object — *the uncircumcised Philistines*, 14:3), yet
+-- Yahuah is secretly over-ruling it to begin the deliverance the Angel promised at his birth, *he
+-- shall begin to deliver Yashar'el out of the hand of the Philistines* (Judges 13:5). This is the
+-- same hidden providence Yoseph named — *ye thought evil against me; but Elohim meant it unto good*
+-- (Genesis 50:20) — and the depth Paul adored, *how unsearchable are his judgments, and his ways
+-- past finding out* (Romans 11:33). ★ The Spirit-empowered strength: *the Spirit of Yahuah came
+-- mightily upon him, and he rent him as he would have rent a kid, and he had nothing in his hand*
+-- (14:6) — the same Spirit that began to move him (13:25), that comes mightily again at Lehi
+-- (15:14), the same Spirit that came on Saul (1 Sam 11:6); the lion is the strongest among beasts
+-- (Prov 30:30), and it is rent bare-handed. ★★ The riddle is the faint type readers feel: out of
+-- the slain strong one — the lion, the eater, the devourer — comes meat and sweetness; *Out of the
+-- eater came forth meat, and out of the strong came forth sweetness* (14:14). The corn of wheat
+-- must die to bring forth fruit (John 12:24); death itself is swallowed up in victory, its sting
+-- and the grave's victory undone (1 Cor 15:54-55). Life and sweetness brought forth out of death,
+-- the devourer overcome — the pattern the whole library carries to its consummation. All members
+-- canon → every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s345_jdg14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: ★ "it was of Yahuah" — the hidden occasion against the Philistines (Judges / Genesis / Romans)
+    ('canon','judges',14,4,'canon','judges',13,5,'free',E'*For, lo, thou shalt conceive, and bear a son; and no razor shall come on his head: for the child shall be a Nazarite unto Elohim (God) from the womb: and he shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5). The Angel''s word at Samson''s birth is the key to the secret of 14:4 — *it was of Yahuah (LORD), that he sought an occasion against the Philistines*. The flawed desire for the Timnite is the very hinge Yahuah uses to begin the deliverance He appointed before the boy was born.'),
+    ('canon','judges',14,4,'canon','genesis',50,20,'free',E'*But as for you, ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). Yoseph names the same hidden over-ruling that runs beneath 14:4 — *his father and his mother knew not that it was of Yahuah (LORD)*. What looks like Samson''s own wayward want is Yahuah secretly meaning it unto good: the occasion against the Philistines, the saving of His people, worked through a thing the actors themselves did not understand.'),
+    ('canon','judges',14,4,'canon','romans',11,33,'free',E'*O the depth of the riches both of the wisdom and knowledge of Elohim (God)! how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33). Paul''s cry is the only fit response to 14:4 — *his father and his mother knew not that it was of Yahuah (LORD), that he sought an occasion against the Philistines*. The providence that bends even a flawed desire to begin His people''s deliverance is past finding out; the parents did not know, and could not, that Yahuah was at work in it.'),
+    -- THREAD 2: ★ the Spirit came mightily and he rent the lion (Judges / 1 Samuel / Proverbs)
+    ('canon','judges',14,6,'canon','judges',13,25,'free',E'*And the Spirit of Yahuah (LORD) began to move him at times in the camp of Dan between Zorah and Eshtaol* (Judges 13:25). The stirring that began in the camp of Dan now breaks out in full strength: *And the Spirit of Yahuah (LORD) came mightily upon him, and he rent him as he would have rent a kid* (14:6). The same Spirit that first moved him is the Spirit that rends the lion — the gift, not the man, is the strength.'),
+    ('canon','judges',14,6,'canon','judges',15,14,'free',E'*And when he came unto Lehi, the Philistines shouted against him: and the Spirit of Yahuah (LORD) came mightily upon him, and the cords that were upon his arms became as flax that was burnt with fire, and his bands loosed from off his hands* (Judges 15:14). The same words return at Lehi as here at Timnath — *the Spirit of Yahuah (LORD) came mightily upon him* (14:6). What rends the lion bare-handed is what burns the new cords like flax: the strength is always the Spirit coming mightily, never Samson''s arm alone.'),
+    ('canon','judges',14,6,'canon','1-samuel',11,6,'free',E'*And the Spirit of Elohim (God) came upon Saul when he heard those tidings, and his anger was kindled greatly* (1 Samuel 11:6). The Spirit that came mightily on Samson to rend the lion (14:6) is the same Spirit that came upon Saul to deliver Jabesh-gilead — the deliverer-stirring that raised up Yashar''el''s saviours, the empowering for the work that no man could do of himself.'),
+    ('canon','judges',14,6,'canon','proverbs',30,30,'free',E'*A lion which is strongest among beasts, and turneth not away for any* (Proverbs 30:30). The proverb names exactly what Samson faced — the strongest among beasts, that turns away for nothing — and the wonder of 14:6 is that he *rent him as he would have rent a kid, and he had nothing in his hand*. The strongest of beasts is torn like a young goat, bare-handed, because the Spirit of Yahuah came mightily upon him.'),
+    -- THREAD 3: ★★ out of the strong came forth sweetness (Proverbs / John / 1 Corinthians)
+    ('canon','judges',14,14,'canon','proverbs',30,30,'free',E'*A lion which is strongest among beasts, and turneth not away for any* (Proverbs 30:30). The riddle turns on this very strength: *Out of the eater came forth meat, and out of the strong came forth sweetness* (14:14) — and the men answer *what is stronger than a lion?* (14:18). The strongest among beasts is the *strong* of the riddle, the slain devourer out of whose carcase the honey came.'),
+    ('canon','judges',14,14,'canon','john',12,24,'free',E'*Verily, verily, I say unto you, Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24). Samson''s riddle carries the faint shape of this law: *Out of the eater came forth meat, and out of the strong came forth sweetness* (14:14). Out of death comes food; out of the slain strong one comes the sweetness — the corn of wheat that must die to bring forth fruit, life drawn out of the very place of death.'),
+    ('canon','judges',14,14,'canon','1-corinthians',15,54,'free',E'*So when this corruptible shall have put on incorruption, and this mortal shall have put on immortality, then shall be brought to pass the saying that is written, Death is swallowed up in victory* (1 Corinthians 15:54). The riddle''s sweetness out of the strong (14:14) is a far-off whisper of this: the eater devoured, the devourer overcome, *death... swallowed up in victory*. Out of the slain lion comes honey; out of death itself comes the swallowing-up of death.'),
+    ('canon','judges',14,14,'canon','1-corinthians',15,55,'free',E'*O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55). The faint type readers feel in 14:14 — *out of the strong came forth sweetness* — opens here in full: the strong one, the eater, the grave, is itself robbed of its victory and its sting. The honey in the lion''s carcase is the smallest seed of this great undoing, life and sweetness brought forth out of the conquered devourer.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-14-it-was-of-yahuah-the-hidden-occasion-against-the-philistines',
+       E'It Was of Yahuah — The Hidden Occasion Against the Philistines',
+       E'Samson goes down to Timnath, sees a daughter of the Philistines, and tells his father and mother, *now therefore get her for me to wife* (14:2). His parents object rightly — *Is there never a woman among the daughters of thy brethren, or among all my people, that thou goest to take a wife of the uncircumcised Philistines?* (14:3) — and Samson presses on regardless: *Get her for me; for she pleaseth me well* (14:3). The desire is flawed, the parents are not wrong to grieve it. And yet the verse that follows opens the secret of the whole chapter: *But his father and his mother knew not that it was of Yahuah (LORD), that he sought an occasion against the Philistines: for at that time the Philistines had dominion over Yashar''el (Israel)* (14:4). Beneath Samson''s own wayward want, Yahuah is working — bending even this to begin the deliverance the Angel had promised at his birth: *he shall begin to deliver Yashar''el (Israel) out of the hand of the Philistines* (Judges 13:5). This is the very hidden over-ruling Yoseph named to his brothers: *ye thought evil against me; but Elohim (God) meant it unto good, to bring to pass, as it is this day, to save much people alive* (Genesis 50:20). What the actors do not understand, Yahuah is secretly meaning unto good — the occasion against the oppressor, the saving of His people. There is only one fit response, and Paul gives it: *O the depth of the riches both of the wisdom and knowledge of Elohim (God)! how unsearchable are his judgments, and his ways past finding out!* (Romans 11:33). The parents did not know, and could not; the providence that turns a flawed desire into the first stroke of deliverance is past finding out.',
+       sv.verse_id, ev.verse_id, 'free', 35975
+  FROM _s345_jdg14_lookup sv, _s345_jdg14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=14 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-14-the-spirit-came-mightily-and-he-rent-the-lion',
+       E'The Spirit Came Mightily and He Rent the Lion',
+       E'On the way down to Timnath a young lion roars against Samson — and then the line that is the heart of his strength: *And the Spirit of Yahuah (LORD) came mightily upon him, and he rent him as he would have rent a kid, and he had nothing in his hand* (14:6). The strongest of beasts is torn like a young goat, bare-handed. The phrase is no accident; it is the refrain of Samson''s whole life. It began as a stirring: *And the Spirit of Yahuah (LORD) began to move him at times in the camp of Dan between Zorah and Eshtaol* (Judges 13:25). It breaks out here in full at the lion. And it returns word for word at Lehi: *the Spirit of Yahuah (LORD) came mightily upon him, and the cords that were upon his arms became as flax that was burnt with fire* (Judges 15:14). The strength is always the Spirit coming mightily, never the arm of the man — the same deliverer-Spirit that came upon Saul to rescue Jabesh-gilead: *And the Spirit of Elohim (God) came upon Saul when he heard those tidings, and his anger was kindled greatly* (1 Samuel 11:6). And the wonder of the lion is measured by the proverb: *A lion which is strongest among beasts, and turneth not away for any* (Proverbs 30:30). The beast that turns away for nothing is rent like a kid, because the Spirit of Yahuah came mightily — the gift, not the man, doing the work no man could do of himself.',
+       sv.verse_id, ev.verse_id, 'free', 35978
+  FROM _s345_jdg14_lookup sv, _s345_jdg14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=14 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-14-out-of-the-strong-came-forth-sweetness',
+       E'Out of the Strong Came Forth Sweetness',
+       E'After a time Samson returns and turns aside to the carcase of the lion — *and, behold, there was a swarm of bees and honey in the carcase of the lion* (14:8). He takes the honey in his hands and eats, and at his wedding feast he frames it into a riddle for the thirty Philistine companions: *Out of the eater came forth meat, and out of the strong came forth sweetness* (14:14). They cannot expound it; they threaten his wife with fire, she weeps it out of him through the seven days, and on the seventh they answer — *What is sweeter than honey? and what is stronger than a lion?* (14:18). The riddle turns on the *strong*, the lion that is *strongest among beasts, and turneth not away for any* (Proverbs 30:30), the eater out of whose slain carcase the sweetness came. And here readers feel a faint, far-off shape — life and sweetness brought forth out of death, the devourer itself overcome. It is the law the Formed Son would speak: *Except a corn of wheat fall into the ground and die, it abideth alone: but if it die, it bringeth forth much fruit* (John 12:24) — out of death, food; out of the slain strong one, the sweetness. It opens at last into the great undoing Paul sings: *Death is swallowed up in victory* (1 Corinthians 15:54); *O death, where is thy sting? O grave, where is thy victory?* (1 Corinthians 15:55). The eater is devoured, the devourer overcome. The honey in the lion''s carcase is the smallest seed of that whole pattern — sweetness drawn out of the conquered strong one, life out of the very place of death.',
+       sv.verse_id, ev.verse_id, 'free', 35981
+  FROM _s345_jdg14_lookup sv, _s345_jdg14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=14 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 13:5 — *he shall begin to deliver Yashar''el out of the hand of the Philistines*: the Angel''s word at Samson''s birth is the key to *it was of Yahuah* (14:4) — the flawed desire is the hinge of the appointed deliverance.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=4
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-it-was-of-yahuah-the-hidden-occasion-against-the-philistines'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 50:20 — *ye thought evil against me; but Elohim meant it unto good*: Yoseph names the same hidden over-ruling that runs beneath 14:4 — the wayward want secretly meant unto good, to save His people.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=4
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=50 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-it-was-of-yahuah-the-hidden-occasion-against-the-philistines'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Romans 11:33 — *how unsearchable are his judgments, and his ways past finding out*: the only fit response to 14:4 — the providence that bends a flawed desire to begin His people''s deliverance is past finding out; the parents could not know.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=4
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-it-was-of-yahuah-the-hidden-occasion-against-the-philistines'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Judges 13:25 — *the Spirit of Yahuah began to move him*: the stirring that began in the camp of Dan breaks out in full at the lion (14:6) — the gift, not the man, is the strength.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=13 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-the-spirit-came-mightily-and-he-rent-the-lion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Judges 15:14 — *the Spirit of Yahuah came mightily upon him, and the cords... became as flax*: the same words return at Lehi — what rends the lion bare-handed (14:6) is what burns the new cords like flax.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='judges' AND tv.chapter_number=15 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-the-spirit-came-mightily-and-he-rent-the-lion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Samuel 11:6 — *the Spirit of Elohim came upon Saul... and his anger was kindled*: the same deliverer-Spirit that came mightily on Samson (14:6) raised up Yashar''el''s saviours for the work no man could do of himself.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=11 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-the-spirit-came-mightily-and-he-rent-the-lion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Proverbs 30:30 — *A lion which is strongest among beasts, and turneth not away for any*: the wonder of 14:6 measured — the strongest of beasts is rent *as he would have rent a kid*, bare-handed, by the Spirit.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-the-spirit-came-mightily-and-he-rent-the-lion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Proverbs 30:30 — *A lion which is strongest among beasts*: the *strong* of the riddle (14:14) and the answer *what is stronger than a lion?* (14:18) — the slain devourer out of whose carcase the honey came.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-out-of-the-strong-came-forth-sweetness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'John 12:24 — *Except a corn of wheat fall into the ground and die... it bringeth forth much fruit*: the faint shape of the riddle (14:14) — out of death, food; out of the slain strong one, the sweetness.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-out-of-the-strong-came-forth-sweetness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 15:54 — *Death is swallowed up in victory*: the sweetness out of the strong (14:14) opens here — the eater devoured, the devourer overcome.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-out-of-the-strong-came-forth-sweetness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 15:55 — *O death, where is thy sting? O grave, where is thy victory?*: the type readers feel in 14:14 opens in full — the strong one, the grave, robbed of its victory; honey from the lion''s carcase the smallest seed of it.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=14 AND sv.verse_number=14
+  JOIN _s345_jdg14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=15 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-14-out-of-the-strong-came-forth-sweetness'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_judges_15.sql (Judges 15) -----
+-- Chapter: Judges 15 — SAMSON AVENGED, BOUND, AND REVIVED: his wife given to another, the 300
+--          FOXES with firebrands burning the Philistines' standing corn, vineyards, and olives
+--          (15:4-5); the Philistines burn his wife and her father; Samson smites them hip and
+--          thigh; ★ the men of Yahudah, fearing the Philistines, BIND the deliverer and deliver
+--          him up to the enemy (15:9-13 — the deliverer rejected and handed over by his own
+--          people he came to save, a faint *his own received him not* pattern); ★ the SPIRIT OF
+--          YAHUAH comes mightily on him, the cords break like burnt flax, and with the JAWBONE of
+--          an ass he slays a THOUSAND men (15:14-16 — Spirit-empowered deliverance by the humble
+--          instrument, salvation by the weak thing, no restraint to save by many or by few); ★★
+--          Samson, exhausted and athirst, CRIES to Yahuah and Elohim CLEAVES a hollow place so
+--          WATER comes out and he revives — *En-hakkore*, the well of him that cried (15:18-19 —
+--          Yahuah giving water to the fainting deliverer, the answered cry, the water from the
+--          rock); Samson judges Yashar'el twenty years.
+-- Tag: jdg15   View: _s345_jdg15_lookup   Sort band: 36000, 36003, 36006
+--
+-- Judges 15 coverage:
+--   v.1-8  (★ Samson's wife given to his companion; the 300 foxes and firebrands burn the
+--           standing corn, vineyards, olives; the Philistines burn his wife and her father;
+--           Samson smites them hip and thigh and dwells in the rock Etam)
+--          NT:     none warranted (the revenge-cycle frames the betrayal that brings Yahudah's
+--                  binding; carried into Thread 1)
+--          Extras: none warranted
+--          Tanakh: none warranted — the standing-corn/fire imagery is local; the framework weight
+--                  is in the binding (v.9-13), the Spirit (v.14-16), and the cry (v.18-19)
+--   v.9-13 (★ the Philistines pitch in Yahudah; the men of Yahudah, fearing their rulers, BIND
+--           Samson with two new cords and deliver him up to the enemy — the deliverer handed over
+--           by his own people)
+--          NT:     John 1:10 (the world was made by him, and the world knew him not), John 1:11
+--                  (He came unto his own, and his own received him not) — the faint pattern: the
+--                  one who came to save Yashar'el is bound and handed over by Yashar'el
+--          Extras: none warranted
+--          Tanakh: Genesis 37:27-28 (Joseph's brethren sell him into the hand of strangers) — the
+--                  deliverer-to-be rejected and handed over by his own kin, the same Yoseph pattern
+--   v.14-17 (★ the Spirit of Yahuah comes mightily on him, the cords become as burnt flax and
+--            loose from his hands; with a new jawbone of an ass he slays a thousand men; Ramath-lehi)
+--          NT:     none warranted at the verse (the salvation-by-the-weak motif's lateral weight
+--                  is in the Tanakh; carried into Thread 2)
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 14:6 (no restraint to Yahuah to save by many or by few), Psalm 18:32
+--                  (it is Elohim that girdeth me with strength), Psalm 18:39 (thou hast girded me
+--                  with strength unto the battle) — the Spirit-given strength, deliverance by the
+--                  weak thing and the humble instrument
+--   v.18-19 (★★ Samson sore athirst CRIES to Yahuah; Elohim cleaves a hollow place and water comes
+--            out; he drinks, his spirit comes again, he revives; En-hakkore, the well of him that
+--            cried)
+--          NT:     none warranted at the verse (the giving-water-to-the-fainting type's apostolic
+--                  weight sits with the rock of Exodus 17, threaded elsewhere; here the lateral
+--                  Tanakh witnesses carry it)
+--          Extras: none warranted
+--          Tanakh: Exodus 17:6 (smite the rock, and there shall come water out of it, that the
+--                  people may drink), Psalm 3:4 (I cried unto Yahuah... and he heard me out of his
+--                  holy hill), Psalm 18:6 (in my distress I called upon Yahuah... he heard my voice)
+--                  — the answered cry, Yahuah reviving the fainting servant with water from the rock
+--   v.20  (Samson judged Yashar'el twenty years in the days of the Philistines)
+--          NT/Extras/Tanakh: none warranted — the judgeship summary closes the chapter
+--
+-- Threads:
+--   judges-15-the-deliverer-bound-and-delivered-up-by-his-own       [Tanakh: Genesis | NT: John]          (free)
+--   judges-15-the-spirit-came-mightily-and-salvation-by-the-weak    [Tanakh: 1 Samuel, Psalm]             (free)
+--   judges-15-the-cry-answered-en-hakkore-water-to-the-fainting     [Tanakh: Exodus, Psalm]               (free)
+--
+-- Framework notes: ★ When the Philistines come up to bind Samson, the men of Yahudah — fearing
+-- their oppressors — bind their own deliverer with two new cords and hand him over: *We are come
+-- down to bind thee, that we may deliver thee into the hand of the Philistines* (15:12). The one
+-- raised up to begin to save Yashar'el is rejected and delivered up by the very people he came to
+-- save — the faint foreshadow of *He came unto his own, and his own received him not* (John 1:11),
+-- and of Yoseph whose brethren sold him into strangers' hands (Genesis 37:27-28). ★ But the cords
+-- cannot hold the Spirit-bearer: *the Spirit of Yahuah (LORD) came mightily upon him, and the cords
+-- that were upon his arms became as flax that was burnt with fire* (15:14), and with a humble
+-- jawbone he slays a thousand — *there is no restraint to Yahuah (LORD) to save by many or by few*
+-- (1 Samuel 14:6), the strength girded by Elohim (Psalm 18:32,39), salvation by the weak thing.
+-- ★★ And when the deliverer faints and cries, Yahuah answers with water: *Elohim (God) clave an
+-- hollow place... and there came water thereout; and when he had drunk, his spirit came again, and
+-- he revived* (15:19) — the same Yahuah who clave the rock at Horeb so *there shall come water out
+-- of it, that the people may drink* (Exodus 17:6), the God who hears the cry (Psalm 3:4; 18:6) and
+-- revives the fainting servant. He named the place *En-hakkore* — the well of him that cried. All
+-- members canon → every thread tier_required 'free'.
+
+CREATE TEMP VIEW _s345_jdg15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the deliverer bound and delivered up by his own (Genesis / John)
+    ('canon','judges',15,12,'canon','john',1,11,'free',E'*He came unto his own, and his own received him not* (John 1:11). When the Philistines come up to bind Samson, the men of Yahudah (Judah) come not to defend their deliverer but to surrender him: *We are come down to bind thee, that we may deliver thee into the hand of the Philistines* (15:12). The one Yahuah raised up to begin to save Yashar''el (Israel) is bound and handed over by the very people he came to save — the faint, early shadow of the Deliverer rejected by His own.'),
+    ('canon','judges',15,13,'canon','john',1,10,'free',E'*He was in the world, and the world was made by him, and the world knew him not* (John 1:10). The men of Yahudah (Judah) bind their own deliverer and deliver him up — *they bound him with two new cords, and brought him up from the rock* (15:13) — fearing their Philistine rulers more than they trust the one sent to free them. The pattern is faint here and full in the Gospel: the deliverer is in the midst of his people, and his people know him not.'),
+    ('canon','judges',15,12,'canon','genesis',37,27,'free',E'*Come, and let us sell him to the Ishmeelites, and let not our hand be upon him; for he is our brother and our flesh. And his brethren were content* (Genesis 37:27). Yoseph''s own brethren delivered him into the hand of strangers — the same shape as Yahudah binding Samson to deliver him *into the hand of the Philistines* (15:12). The deliverer-to-be is handed over by his own kin; what they mean for harm, Yahuah bends toward salvation.'),
+    ('canon','judges',15,13,'canon','genesis',37,28,'free',E'*Then there passed by Midianites merchantmen; and they drew and lifted up Joseph out of the pit, and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt* (Genesis 37:28). Yoseph bound and sold into strangers'' hands by his brethren foreshadows the deliverer *bound with two new cords* (15:13) and handed to the Philistines by the men of Yahudah (Judah). In both, the one his people reject becomes the very one through whom Yahuah works deliverance.'),
+    -- THREAD 2: ★ the Spirit came mightily, and salvation by the weak thing (1 Samuel / Psalm)
+    ('canon','judges',15,14,'canon','1-samuel',14,6,'free',E'*Come, and let us go over unto the garrison of these uncircumcised: it may be that Yahuah (LORD) will work for us: for there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). When *the Spirit of Yahuah (LORD) came mightily upon him, and the cords that were upon his arms became as flax that was burnt with fire* (15:14), Yahuah saved by one man against a host — the very truth Jonathan would speak: there is no restraint to Yahuah to save by many or by few. The deliverance is not in the numbers nor the weapon but in the Spirit that empowers.'),
+    ('canon','judges',15,15,'canon','1-samuel',14,6,'free',E'*there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). With a cast-off jawbone the Spirit-filled man overturns a thousand — *he found a new jawbone of an ass, and put forth his hand, and took it, and slew a thousand men therewith* (15:15). Salvation by the weak and despised thing, the humble instrument in the hand of the empowered servant: this is Yahuah''s signature, saving by the few against the many.'),
+    ('canon','judges',15,14,'canon','psalms',18,32,'free',E'*It is Elohim (God) that girdeth me with strength, and maketh my way perfect* (Psalm 18:32). When *the Spirit of Yahuah (LORD) came mightily upon him* (15:14) and the cords fell like burnt flax, it was no native power of Samson''s but the strength Elohim girds upon His servant — the very confession of the Psalm. The strength that breaks the bands is given, not owned.'),
+    ('canon','judges',15,16,'canon','psalms',18,39,'free',E'*For thou hast girded me with strength unto the battle: thou hast subdued under me those that rose up against me* (Psalm 18:39). Samson''s boast — *With the jawbone of an ass, heaps upon heaps... have I slain a thousand men* (15:16) — is the deed the Psalm ascribes to Yahuah''s gift: the strength unto the battle, the enemies subdued, is girded on by Elohim. The empowered servant prevails because the One who girds him prevails through him.'),
+    -- THREAD 3: ★★ the cry answered — En-hakkore, water to the fainting (Exodus / Psalm)
+    ('canon','judges',15,18,'canon','psalms',3,4,'free',E'*I cried unto Yahuah (LORD) with my voice, and he heard me out of his holy hill. Selah* (Psalm 3:4). Spent and athirst, the deliverer turns the same way: *he was sore athirst, and called on Yahuah (LORD), and said, Thou hast given this great deliverance into the hand of thy servant: and now shall I die for thirst* (15:18). The cry of the fainting servant is heard — the Psalm sings the answer Samson received: the One who hears out of His holy hill.'),
+    ('canon','judges',15,18,'canon','psalms',18,6,'free',E'*In my distress I called upon Yahuah (LORD), and cried unto my Elohim (God): he heard my voice out of his temple, and my cry came before him, even into his ears* (Psalm 18:6). Samson''s distress-cry — *now shall I die for thirst, and fall into the hand of the uncircumcised?* (15:18) — is met as the Psalm describes every such cry: heard, the cry coming before Yahuah into His ears. The deliverer who delivered Yashar''el is himself delivered when he calls.'),
+    ('canon','judges',15,19,'canon','exodus',17,6,'free',E'*Behold, I will stand before thee there upon the rock in Horeb; and thou shalt smite the rock, and there shall come water out of it, that the people may drink* (Exodus 17:6). The God who clave the rock at Horeb is the God who answers Samson: *Elohim (God) clave an hollow place that was in the jaw, and there came water thereout; and when he had drunk, his spirit came again, and he revived* (15:19). The same Yahuah brings water out of the dry place to revive the fainting — at Horeb for the whole congregation, at En-hakkore for the one who cried.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-15-the-deliverer-bound-and-delivered-up-by-his-own',
+       E'The Deliverer Bound and Delivered Up by His Own',
+       E'Samson was raised up to *begin to deliver Yashar''el (Israel) out of the hand of the Philistines* — and here the bitter irony of that calling shows. When the Philistines pitch in Yahudah (Judah) seeking him, the men of Yahudah do not rally to their deliverer; fearing their oppressors, they come to bind him: *Knowest thou not that the Philistines are rulers over us? what is this that thou hast done unto us?* (15:11). They say it plainly — *We are come down to bind thee, that we may deliver thee into the hand of the Philistines* (15:12) — and they do it: *they bound him with two new cords, and brought him up from the rock* (15:13). The one sent to save them is bound and handed over by the very people he came to save. It is the faint, early shadow of the Deliverer rejected by His own: *He was in the world, and the world was made by him, and the world knew him not* (John 1:10); *He came unto his own, and his own received him not* (John 1:11). It is the shape, too, of Yoseph, whose brethren delivered him into strangers'' hands — *let us sell him to the Ishmeelites... for he is our brother and our flesh* (Genesis 37:27); *and sold Joseph to the Ishmeelites for twenty pieces of silver: and they brought Joseph into Egypt* (Genesis 37:28). In Yoseph, in Samson, in the Messiah the pattern holds: the one his own people reject and hand over becomes the very one through whom Yahuah works the deliverance. What they mean to silence, Yahuah turns to salvation.',
+       sv.verse_id, ev.verse_id, 'free', 36000
+  FROM _s345_jdg15_lookup sv, _s345_jdg15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=15 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-15-the-spirit-came-mightily-and-salvation-by-the-weak',
+       E'The Spirit Came Mightily — Salvation by the Weak Thing',
+       E'The two new cords cannot hold the Spirit-bearer. *And when he came unto Lehi, the Philistines shouted against him: and the Spirit of Yahuah (LORD) came mightily upon him, and the cords that were upon his arms became as flax that was burnt with fire, and his bands loosed from off his hands* (15:14). What snaps the bands is not Samson''s sinew but the Spirit of Yahuah falling on him — the strength is given, not owned: *It is Elohim (God) that girdeth me with strength, and maketh my way perfect* (Psalm 18:32). And the instrument matches the lesson. Free, he takes up the most despised thing at hand: *he found a new jawbone of an ass, and put forth his hand, and took it, and slew a thousand men therewith* (15:15) — and boasts, *With the jawbone of an ass, heaps upon heaps, with the jaw of an ass have I slain a thousand men* (15:16). One empowered man, one cast-off bone, a thousand fallen: this is Yahuah''s signature, the truth Jonathan would later speak before his own lone assault — *there is no restraint to Yahuah (LORD) to save by many or by few* (1 Samuel 14:6). The victory is the Psalm''s confession: *thou hast girded me with strength unto the battle: thou hast subdued under me those that rose up against me* (Psalm 18:39). Salvation comes not by the host nor the fine weapon but by the Spirit who empowers the servant and the weak thing in his hand — so that the deliverance is plainly Yahuah''s, and not man''s.',
+       sv.verse_id, ev.verse_id, 'free', 36003
+  FROM _s345_jdg15_lookup sv, _s345_jdg15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=15 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'judges-15-the-cry-answered-en-hakkore-water-to-the-fainting',
+       E'The Cry Answered — En-hakkore, Water to the Fainting',
+       E'The deliverer who delivered Yashar''el (Israel) now needs delivering himself. Spent from the slaughter and parched, Samson does the one thing that saves: he cries out. *And he was sore athirst, and called on Yahuah (LORD), and said, Thou hast given this great deliverance into the hand of thy servant: and now shall I die for thirst, and fall into the hand of the uncircumcised?* (15:18). It is the cry the Psalms put words to: *I cried unto Yahuah (LORD) with my voice, and he heard me out of his holy hill* (Psalm 3:4); *In my distress I called upon Yahuah (LORD), and cried unto my Elohim (God): he heard my voice out of his temple, and my cry came before him, even into his ears* (Psalm 18:6). And Yahuah answers with water from the dry place: *But Elohim (God) clave an hollow place that was in the jaw, and there came water thereout; and when he had drunk, his spirit came again, and he revived* (15:19). It is the same God, the same gift, as at Horeb, where He stood upon the rock and said, *thou shalt smite the rock, and there shall come water out of it, that the people may drink* (Exodus 17:6) — there for the whole fainting congregation, here for the one fainting servant. Samson named the place for what it was: *En-hakkore* — the well of him that cried. The God who empowers the deliverance is the God who hears the deliverer''s cry and revives him; the same hand that broke the cords brings the water that brings his spirit again.',
+       sv.verse_id, ev.verse_id, 'free', 36006
+  FROM _s345_jdg15_lookup sv, _s345_jdg15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='judges' AND ev.chapter_number=15 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'John 1:11 — *He came unto his own, and his own received him not*: the men of Yahudah bind their own deliverer to hand him over (15:12) — the faint shadow of the Deliverer rejected by His own.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=12
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-deliverer-bound-and-delivered-up-by-his-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'John 1:10 — *the world was made by him, and the world knew him not*: Yahudah binds him with two new cords (15:13), fearing their rulers more than trusting the one sent to free them — his people know him not.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-deliverer-bound-and-delivered-up-by-his-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 37:27 — *let us sell him to the Ishmeelites... he is our brother and our flesh*: Yoseph delivered into strangers'' hands by his own kin, the same shape as Yahudah delivering Samson to the Philistines (15:12).'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=12
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-deliverer-bound-and-delivered-up-by-his-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 37:28 — *sold Joseph to the Ishmeelites for twenty pieces of silver*: Yoseph bound and sold by his brethren foreshadows the deliverer *bound with two new cords* (15:13) and handed to the enemy — the one rejected becomes the one through whom Yahuah saves.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=13
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=37 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-deliverer-bound-and-delivered-up-by-his-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Samuel 14:6 — *no restraint to Yahuah to save by many or by few*: the Spirit comes mightily and the cords fall like burnt flax (15:14) — Yahuah saves by one man against a host, not by numbers.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-spirit-came-mightily-and-salvation-by-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 14:6 — *to save by many or by few*: with a cast-off jawbone the Spirit-filled man slays a thousand (15:15) — salvation by the weak and despised thing, Yahuah''s signature.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=15
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-spirit-came-mightily-and-salvation-by-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:32 — *It is Elohim that girdeth me with strength*: when the Spirit came mightily and the cords fell like burnt flax (15:14), the strength was given, not owned.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-spirit-came-mightily-and-salvation-by-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 18:39 — *thou hast girded me with strength unto the battle... subdued under me those that rose up against me*: Samson''s boast of the thousand slain (15:16) is the deed the Psalm ascribes to Yahuah''s gift.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-spirit-came-mightily-and-salvation-by-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 3:4 — *I cried unto Yahuah with my voice, and he heard me out of his holy hill*: spent and athirst, the deliverer cries (15:18) — the Psalm sings the answer he received.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=18
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=3 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-cry-answered-en-hakkore-water-to-the-fainting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:6 — *In my distress I called upon Yahuah... he heard my voice out of his temple*: Samson''s distress-cry (15:18) is met as the Psalm describes — heard, the cry coming before Yahuah into His ears.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=18
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-cry-answered-en-hakkore-water-to-the-fainting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 17:6 — *smite the rock, and there shall come water out of it, that the people may drink*: the God who clave the rock at Horeb cleaves the hollow place so water comes and Samson revives (15:19) — En-hakkore, the well of him that cried.'
+  FROM cross_reference_threads t
+  JOIN _s345_jdg15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='judges' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s345_jdg15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='judges-15-the-cry-answered-en-hakkore-water-to-the-fainting'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session345 — Judges cross-references complete.'
