@@ -16597,6 +16597,976 @@ SELECT t.id, cr.id, 5, E'★ *Elohim (God) hath concluded them all in unbelief, 
  WHERE t.slug='jeremiah-49-the-latter-day-mercy-reaching-the-nations'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_jeremiah_50.sql (Jeremiah 50) -----
+-- Chapter: Jeremiah 50 — THE FALL OF BABYLON and the TWO-HOUSE RETURN. *Babylon is taken, Bel is
+-- confounded, Merodach is broken in pieces; her idols are confounded* (v.2); *Remove out of the midst
+-- of Babylon, and go forth out of the land of the Chaldeans* (v.8) — the fall and the exodus, woven
+-- FORWARD to Babylon-the-great-fallen and *Come out of her, my people* (Revelation 18). In the same
+-- oracle the children of Yashar''el (Israel) and the children of Yahudah (Judah) come TOGETHER, asking
+-- the way to Zion in a perpetual covenant, their iniquity sought-for and found none, pardoned (vv.4-5,
+-- 19-20) — the reunited, pardoned two-house people. And the scattered flock devoured by the empires —
+-- Assyria the north, Babylon the south — to be gathered (vv.6,17).
+-- Tag: jer50   Temp view: _s309_jer50_lookup
+-- Sort band: base 35225, step 3 -> threads at 35225, 35228, 35231 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',50,v
+--
+-- Jeremiah 50 coverage:
+--   v.1 (the word against Babylon and the land of the Chaldeans)
+--        NT/Extras/Tanakh: none warranted (the superscription; prefaces THREAD 1)
+--   ★★ v.2-3 (Babylon is taken, Bel is confounded, Merodach is broken; her idols confounded; out of the
+--          north a nation against her, her land desolate)
+--        NT:     ★★ Revelation 18:2 (Babylon the great is fallen... the habitation of devils) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 21:9 (Babylon is fallen, is fallen; and all the graven images of her gods he
+--                hath broken) — THREAD 1
+--   ★★★ v.4-5 (the children of Yashar''el and the children of Yahudah TOGETHER... ask the way to Zion...
+--          join ourselves to Yahuah in a perpetual covenant)
+--        NT:     held in THREAD 2 (the perpetual covenant — new-covenant pardon)
+--        Extras: none warranted
+--        Tanakh: ★★★ Ezekiel 37:21-22 (gather... make them one nation), ★★ Hosea 1:11 (children of
+--                Yahudah and children of Yashar''el gathered together), ★ Zechariah 8:23 — THREAD 2
+--   v.6 (my people hath been lost sheep; their shepherds caused them to go astray)
+--        NT:     ★ Matthew 9:36 (as sheep having no shepherd) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 34:5-6 (scattered, no shepherd), ★ Jeremiah 23:1-2 (woe to the pastors) — THREAD 3
+--   v.7 (all that found them devoured them; the habitation of justice, the hope of their fathers)
+--        NT/Extras: none warranted     Tanakh: held in prose (the devouring of the flock — THREAD 3)
+--   ★★ v.8 (Remove out of the midst of Babylon, and go forth out of the land of the Chaldeans)
+--        NT:     ★★★ Revelation 18:4 (Come out of her, my people, that ye be not partakers of her sins) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 48:20 (Go ye forth of Babylon, flee ye from the Chaldeans) — THREAD 1
+--   v.9-16 (the assembly of nations from the north; Chaldea a spoil; put yourselves in array; her
+--          foundations fallen, walls thrown down; the vengeance of Yahuah)
+--        NT/Extras: none warranted     Tanakh: held in prose (the executed judgment — THREAD 1)
+--   ★ v.17 (Yashar''el is a scattered sheep; the lions have driven him away: first the king of Assyria...
+--          and last this Nebuchadrezzar king of Babylon hath broken his bones)
+--        NT:     ★ Matthew 10:6 / 15:24 (the lost sheep of the house of Yashar''el), ★ 1 Peter 2:25
+--                (ye were as sheep going astray; but are now returned) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: ★★ Ezekiel 34:12 (so will I seek out my sheep, and deliver them) — THREAD 3
+--   v.18-19 (I will punish the king of Babylon... and I will bring Yashar''el again to his habitation...
+--          mount Ephraim and Gilead) — the northern house restored
+--        NT:     held in THREAD 2 (the regathered, restored people)
+--        Extras: none warranted
+--        Tanakh: held in prose (the restoration to Carmel, Bashan, Ephraim — THREAD 2 / 3)
+--   ★★★ v.20 (the iniquity of Yashar''el shall be sought for, and there shall be none; and the sins of
+--          Yahudah... shall not be found: for I will pardon them whom I reserve)
+--        NT:     ★★ Hebrews 8:12 (their sins and their iniquities will I remember no more) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★★ Jeremiah 31:34 (I will forgive their iniquity, and remember their sin no more), ★★
+--                Micah 7:18-19 (pardoneth iniquity... cast all their sins into the depths of the sea) — THREAD 2
+--   v.21-32 (Merathaim and Pekod; the hammer of the whole earth cut asunder; I have laid a snare; the
+--          weapons of his indignation; the most proud shall stumble and fall)
+--        NT/Extras: none warranted     Tanakh: held in prose (the continued judgment — THREAD 1)
+--   v.33-34 (the children of Yashar''el and Yahudah oppressed together; their Redeemer is strong; he shall
+--          throughly plead their cause)
+--        NT/Extras: none warranted
+--        Tanakh: held in prose — the both-houses captivity and the strong Redeemer (Goel) who pleads their
+--                cause; bound to THREAD 2 (the regathered, pardoned people) in prose
+--   v.35-46 (a sword upon the Chaldeans; drought upon her waters; as Sodom and Gomorrah overthrown; a
+--          people from the north; the daughter of Babylon; the least of the flock shall draw them out)
+--        NT/Extras: none warranted     Tanakh: held in prose (the desolation, Sodom-pattern — THREAD 1)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-50-babylon-is-fallen-come-out-of-the-midst-of-her — NT (Revelation 18) + Tanakh (Isaiah 48, Isaiah 21) [free]
+--      (★★ Babylon taken, her idols confounded, the call to come out — woven forward to Babylon-the-great fallen and *Come out of her, my people*)
+--   2. jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned — NT (Hebrews 8) + Tanakh (Ezekiel 37, Hosea 1, Zechariah 8, Jeremiah 31, Micah 7) [free]
+--      (★★★ both houses together seeking Zion in a perpetual covenant, their sins sought-for and found none, pardoned — the reunited two-house people)
+--   3. jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered — NT (Matthew 9, Matthew 10, Matthew 15, 1 Peter 2) + Tanakh (Ezekiel 34, Jeremiah 23) [free]
+--      (★ the scattered flock devoured by the empires — Assyria the north, Babylon the south — sought out and gathered)
+--
+-- Framing notes:
+--   ★★ BABYLON IS FALLEN — COME OUT OF HER (THREAD 1): *Babylon is taken, Bel is confounded, Merodach
+--      is broken in pieces; her idols are confounded, her images are broken in pieces* (50:2); *For out
+--      of the north there cometh up a nation against her, which shall make her land desolate* (50:3); and
+--      the call: *Remove out of the midst of Babylon, and go forth out of the land of the Chaldeans*
+--      (50:8). Babylon is the world-system judged — and the same fall, the same exodus, rings forward in
+--      Revelation: *Babylon the great is fallen, is fallen, and is become the habitation of devils*
+--      (Rev 18:2), *Come out of her, my people, that ye be not partakers of her sins* (Rev 18:4). Isaiah
+--      sang both halves first: *Babylon is fallen, is fallen; and all the graven images of her gods he
+--      hath broken unto the ground* (Isa 21:9), and *Go ye forth of Babylon, flee ye from the Chaldeans*
+--      (Isa 48:20). The fall of the city and the flight of the people are one oracle, from Jeremiah to
+--      the Apocalypse.
+--   ★★★ THE TWO HOUSES TOGETHER — PARDONED (THREAD 2): *In those days, and in that time, saith Yahuah
+--      (LORD), the children of Yashar''el (Israel) shall come, they and the children of Yahudah (Judah)
+--      together, going and weeping... They shall ask the way to Zion with their faces thitherward, saying,
+--      Come, and let us join ourselves to Yahuah (LORD) in a perpetual covenant that shall not be
+--      forgotten* (50:4-5). BOTH houses, together — the two-house regathering, seeking Zion in a perpetual
+--      covenant. And the covenant carries full pardon: *the iniquity of Yashar''el (Israel) shall be
+--      sought for, and there shall be none; and the sins of Yahudah (Judah), and they shall not be found:
+--      for I will pardon them whom I reserve* (50:20). Ezekiel makes them one nation: *I will... make them
+--      one nation in the land... and they shall be no more two nations* (Ezek 37:21-22). Hosea: *Then
+--      shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together*
+--      (Hos 1:11). The pardon is the new-covenant pardon of Jeremiah 31:34 — *I will forgive their
+--      iniquity, and I will remember their sin no more* — sealed in Hebrews 8:12, *their sins and their
+--      iniquities will I remember no more*; and Micah''s wonder, *thou wilt cast all their sins into the
+--      depths of the sea* (Mic 7:19). The reunited two-house people, pardoned, in a perpetual covenant.
+--   ★ YASHAR''EL A SCATTERED SHEEP (THREAD 3): *My people hath been lost sheep: their shepherds have
+--      caused them to go astray* (50:6); *Yashar''el (Israel) is a scattered sheep; the lions have driven
+--      him away: first the king of Assyria hath devoured him; and last this Nebuchadrezzar king of Babylon
+--      hath broken his bones* (50:17). The flock scattered and devoured by the empires — Assyria the
+--      north, Babylon the south. Ezekiel names the same scattering and the Shepherd who answers it: *they
+--      were scattered, because there is no shepherd* (Ezek 34:5), *so will I seek out my sheep, and will
+--      deliver them out of all places where they have been scattered* (Ezek 34:12). Jeremiah''s own woe:
+--      *Woe be unto the pastors that destroy and scatter the sheep of my pasture!* (Jer 23:1). The Messiah
+--      sees the scattered flock — *as sheep having no shepherd* (Matt 9:36) — and is sent to them: *the
+--      lost sheep of the house of Yashar''el (Israel)* (Matt 10:6; 15:24). And Peter names the return:
+--      *ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls*
+--      (1 Pet 2:25). The scattered sheep regathered.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the superscription), v.7 (the devouring — held in THREAD 3 prose),
+--      v.9-16 (the executed judgment from the north — held in THREAD 1 prose), v.18-19 (Yashar''el brought
+--      again to Carmel/Bashan/Ephraim — held in THREADs 2/3 prose), v.21-32 (Merathaim/Pekod, the hammer
+--      cut asunder, the snare — held in THREAD 1 prose), v.33-34 (both houses oppressed together, the
+--      strong Redeemer who pleads their cause — held in THREAD 2 prose), v.35-46 (the sword, the drought,
+--      the Sodom-pattern desolation, the people from the north — held in THREAD 1 prose). All recorded;
+--      every meaningful block carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer50_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): Babylon is fallen, her idols confounded; come out of the midst of her
+    ('canon','jeremiah',50,2,'canon','revelation',18,2,'free',
+      E'*And he cried mightily with a strong voice, saying, Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit, and a cage of every unclean and hateful bird* (Revelation 18:2). Jeremiah''s word over the historical city — *Babylon is taken, Bel is confounded, Merodach is broken in pieces; her idols are confounded* (Jeremiah 50:2) — rings forward to Babylon the great, the whole world-system fallen. The idols confounded at the Chaldean fall are the foul spirits driven from the fallen city at the end.'),
+    ('canon','jeremiah',50,2,'canon','isaiah',21,9,'free',
+      E'*And, behold, here cometh a chariot of men, with a couple of horsemen. And he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9). Isaiah cries the very fall Jeremiah declares — *Babylon is taken... her idols are confounded, her images are broken in pieces* (Jeremiah 50:2): the city fallen and her gods broken to the ground. The double cry *is fallen, is fallen* is taken up again in Revelation 18:2 over Babylon the great.'),
+    ('canon','jeremiah',50,8,'canon','revelation',18,4,'free',
+      E'*And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). The call to flee the doomed city — *Remove out of the midst of Babylon, and go forth out of the land of the Chaldeans* (Jeremiah 50:8) — is the very voice heard from heaven over Babylon the great: *Come out of her, my people*. Yahuah''s people are not to share in her sins nor in her plagues; the exodus from Babylon runs from Jeremiah to the Apocalypse.'),
+    ('canon','jeremiah',50,8,'canon','isaiah',48,20,'free',
+      E'*Go ye forth of Babylon, flee ye from the Chaldeans, with a voice of singing declare ye, tell this, utter it even to the end of the earth; say ye, Yahuah (LORD) hath redeemed his servant Jacob* (Isaiah 48:20). Isaiah commands the same flight Jeremiah does — *Remove out of the midst of Babylon, and go forth out of the land of the Chaldeans* (Jeremiah 50:8): go forth, flee, and declare the redemption with singing. The leaving of Babylon is itself the proclamation that Yahuah has redeemed his servant.'),
+
+    -- THREAD 2 (★★★): the two houses together ask the way to Zion — pardoned in a perpetual covenant
+    ('canon','jeremiah',50,4,'canon','ezekiel',37,21,'free',
+      E'*And say unto them, Thus saith Adonai Yahuah (the Lord GOD); Behold, I will take the children of Yashar''el (Israel) from among the heathen, whither they be gone, and will gather them on every side, and bring them into their own land* (Ezekiel 37:21). Jeremiah''s vision — *the children of Yashar''el (Israel) shall come, they and the children of Yahudah (Judah) together... and seek Yahuah (LORD) their Elohim (God)* (Jeremiah 50:4) — is Ezekiel''s two-sticks regathering: the scattered children taken from the heathen and brought home. Both houses gathered on every side into their own land.'),
+    ('canon','jeremiah',50,4,'canon','ezekiel',37,22,'free',
+      E'*And I will make them one nation in the land upon the mountains of Yashar''el (Israel); and one king shall be king to them all: and they shall be no more two nations, neither shall they be divided into two kingdoms any more at all* (Ezekiel 37:22). The two houses who come *together* in Jeremiah 50:4 are made ONE: *they shall be no more two nations*. The going-and-weeping return of Yashar''el (Israel) and Yahudah (Judah) toward Zion is the joining of the two sticks into one nation under one King.'),
+    ('canon','jeremiah',50,4,'canon','hosea',1,11,'free',
+      E'*Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head, and they shall come up out of the land: for great shall be the day of Jezreel* (Hosea 1:11). Hosea names the same both-houses gathering Jeremiah sees — *the children of Yashar''el (Israel)... and the children of Yahudah (Judah) together* (Jeremiah 50:4): Yahudah and Yashar''el gathered, one head appointed, coming up together. The divorced northern house and the southern house made one people again.'),
+    ('canon','jeremiah',50,5,'canon','zechariah',8,23,'free',
+      E'*Thus saith Yahuah Tseva''ot (LORD of hosts); In those days it shall come to pass, that ten men shall take hold out of all languages of the nations, even shall take hold of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have heard that Elohim (God) is with you* (Zechariah 8:23). The faces-toward-Zion turning of Jeremiah 50:5 — *They shall ask the way to Zion with their faces thitherward* — is the in-gathering Zechariah foresees: the nations laying hold to go up with the covenant people. The way to Zion is sought by all who hear that Elohim (God) is with his people.'),
+    ('canon','jeremiah',50,20,'canon','jeremiah',31,34,'free',
+      E'*For they shall all know me, from the least of them unto the greatest of them, saith Yahuah (LORD): for I will forgive their iniquity, and I will remember their sin no more* (Jeremiah 31:34). The pardon of Jeremiah 50:20 — *the iniquity of Yashar''el (Israel) shall be sought for, and there shall be none; and the sins of Yahudah (Judah)... shall not be found* — is the new-covenant forgiveness of Jeremiah 31:34: sin not merely covered but remembered no more. The perpetual covenant the two houses join (50:5) is the heart-covenant of chapter 31, with iniquity blotted out.'),
+    ('canon','jeremiah',50,20,'canon','hebrews',8,12,'free',
+      E'*For I will be merciful to their unrighteousness, and their sins and their iniquities will I remember no more* (Hebrews 8:12). The pardon Jeremiah promises — *I will pardon them whom I reserve* (Jeremiah 50:20), the iniquity sought-for and found none — is sealed in the new covenant Hebrews quotes: *their sins and their iniquities will I remember no more*. The reserved remnant of both houses is the people whose sins are not found, forgiven in the perpetual covenant.'),
+    ('canon','jeremiah',50,20,'canon','micah',7,19,'free',
+      E'*He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19). Micah sings the wonder of the very pardon Jeremiah names — *the iniquity of Yashar''el (Israel) shall be sought for, and there shall be none... for I will pardon them whom I reserve* (Jeremiah 50:20): the sins sought-for are not found because they are cast into the depths of the sea. The pardoning Elohim (God) subdues the iniquities of his reserved remnant.'),
+
+    -- THREAD 3 (★): Yashar'el a scattered sheep — the lost flock devoured and gathered
+    ('canon','jeremiah',50,6,'canon','ezekiel',34,5,'free',
+      E'*And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field, when they were scattered* (Ezekiel 34:5). Jeremiah''s charge — *My people hath been lost sheep: their shepherds have caused them to go astray* (Jeremiah 50:6) — is Ezekiel''s indictment of the false shepherds: the flock scattered for want of a shepherd, made meat to the beasts. The lost sheep wander because those who should have fed them drove them away.'),
+    ('canon','jeremiah',50,6,'canon','jeremiah',23,1,'free',
+      E'*Woe be unto the pastors that destroy and scatter the sheep of my pasture! saith Yahuah (LORD)* (Jeremiah 23:1). The shepherds who *caused them to go astray* (Jeremiah 50:6) are the very pastors Jeremiah pronounces woe upon — those who destroy and scatter the sheep of Yahuah''s pasture. The lost flock of 50:6 is scattered by the unfaithful shepherds Yahuah will visit with judgment.'),
+    ('canon','jeremiah',50,6,'canon','matthew',9,36,'free',
+      E'*But when he saw the multitudes, he was moved with compassion on them, because they fainted, and were scattered abroad, as sheep having no shepherd* (Matthew 9:36). The lost sheep of Jeremiah 50:6 — *My people hath been lost sheep: their shepherds have caused them to go astray* — are the scattered multitudes the Messiah sees and pities, *as sheep having no shepherd*. The compassion of the true Shepherd answers the failure of the false ones.'),
+    ('canon','jeremiah',50,17,'canon','ezekiel',34,12,'free',
+      E'*As a shepherd seeketh out his flock in the day that he is among his sheep that are scattered; so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day* (Ezekiel 34:12). Yashar''el (Israel) the *scattered sheep* driven away by the lions of Assyria and Babylon (Jeremiah 50:17) is the flock Yahuah himself promises to seek: *so will I seek out my sheep, and will deliver them*. The Scatterer''s judgment on the empires is the prelude to the Shepherd''s gathering.'),
+    ('canon','jeremiah',50,17,'canon','matthew',15,24,'free',
+      E'*But he answered and said, I am not sent but unto the lost sheep of the house of Yashar''el (Israel)* (Matthew 15:24). The *scattered sheep* of Jeremiah 50:17, driven away first by Assyria and last by Babylon, are the *lost sheep of the house of Yashar''el (Israel)* the Messiah is sent to gather. He comes to the very flock the empires devoured and scattered.'),
+    ('canon','jeremiah',50,17,'canon','matthew',10,6,'free',
+      E'*But go rather to the lost sheep of the house of Yashar''el (Israel)* (Matthew 10:6). The flock Jeremiah calls a *scattered sheep* driven away by the lions (Jeremiah 50:17) is the same *lost sheep of the house of Yashar''el (Israel)* to whom the twelve are sent. The gathering of the scattered house begins where the scattering struck — the lost sheep of Yashar''el.'),
+    ('canon','jeremiah',50,17,'canon','1-peter',2,25,'free',
+      E'*For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). Yashar''el (Israel) the *scattered sheep* driven from his fold (Jeremiah 50:17) is the straying flock Peter names — *ye were as sheep going astray* — now returned to the Shepherd. The scattering of the empires ends in the return to the true Shepherd of souls.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-50-babylon-is-fallen-come-out-of-the-midst-of-her',
+       E'Babylon is fallen — come out of the midst of her, go forth from the Chaldeans',
+       E'The oracle opens with the word against the great oppressor: *Declare ye among the nations, and publish, and set up a standard; publish, and conceal not: say, Babylon is taken, Bel is confounded, Merodach is broken in pieces; her idols are confounded, her images are broken in pieces* (50:2). The city of empire and its gods are broken together; the judgment comes from the north: *For out of the north there cometh up a nation against her, which shall make her land desolate, and none shall dwell therein* (50:3). And to Yahuah''s (LORD''s) own people in her midst comes the command to flee: *Remove out of the midst of Babylon, and go forth out of the land of the Chaldeans, and be as the he goats before the flocks* (50:8). Isaiah had cried both the fall and the flight first — *Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9), and *Go ye forth of Babylon, flee ye from the Chaldeans, with a voice of singing declare ye... say ye, Yahuah (LORD) hath redeemed his servant Jacob* (Isaiah 48:20). And Babylon is more than one city: it is the world-system, the habitation of every idolatry, judged at the last. So the same double cry and the same call ring forward in the Apocalypse: *Babylon the great is fallen, is fallen, and is become the habitation of devils, and the hold of every foul spirit* (Revelation 18:2), and the voice from heaven — *Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). The fall of the city and the exodus of the people are one oracle, from Jeremiah to the end: Babylon is fallen; come out of the midst of her.',
+       sv.verse_id, ev.verse_id, 'free', 35225
+  FROM _s309_jer50_lookup sv, _s309_jer50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=50 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned',
+       E'Yashar''el and Yahudah together ask the way to Zion — pardoned in a perpetual covenant',
+       E'In the midst of Babylon''s fall comes the heart of the oracle — the two-house return: *In those days, and in that time, saith Yahuah (LORD), the children of Yashar''el (Israel) shall come, they and the children of Yahudah (Judah) together, going and weeping: they shall go, and seek Yahuah (LORD) their Elohim (God). They shall ask the way to Zion with their faces thitherward, saying, Come, and let us join ourselves to Yahuah (LORD) in a perpetual covenant that shall not be forgotten* (50:4-5). Mark it well: BOTH houses, together — the divided people, north and south, coming weeping and seeking, their faces toward Zion, binding themselves to Yahuah in a covenant that shall not be forgotten. And the covenant carries full pardon: *In those days, and in that time, saith Yahuah (LORD), the iniquity of Yashar''el (Israel) shall be sought for, and there shall be none; and the sins of Yahudah (Judah), and they shall not be found: for I will pardon them whom I reserve* (50:20). The iniquity is sought and not found — blotted out. Ezekiel makes the two one: *I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land* (Ezekiel 37:21), *and I will make them one nation in the land... and they shall be no more two nations* (Ezekiel 37:22). Hosea: *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together, and appoint themselves one head* (Hosea 1:11). And the nations come too — *ten men shall take hold... of the skirt of him that is a Yahudi (Jew), saying, We will go with you: for we have heard that Elohim (God) is with you* (Zechariah 8:23). The perpetual covenant they join is the new covenant of Jeremiah 31:34 — *I will forgive their iniquity, and I will remember their sin no more* — sealed in Hebrews 8:12, *their sins and their iniquities will I remember no more*; the wonder Micah sings, *thou wilt cast all their sins into the depths of the sea* (Micah 7:19). The reunited, pardoned two-house people, asking the way to Zion.',
+       sv.verse_id, ev.verse_id, 'free', 35228
+  FROM _s309_jer50_lookup sv, _s309_jer50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=50 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered',
+       E'Yashar''el is a scattered sheep — the lost flock devoured by the empires, to be gathered',
+       E'Yahuah (LORD) names his people a lost and scattered flock, ruined by their shepherds and devoured by the empires: *My people hath been lost sheep: their shepherds have caused them to go astray, they have turned them away on the mountains: they have gone from mountain to hill, they have forgotten their restingplace* (50:6). And again, plainly: *Yashar''el (Israel) is a scattered sheep; the lions have driven him away: first the king of Assyria hath devoured him; and last this Nebuchadrezzar king of Babylon hath broken his bones* (50:17) — Assyria the lion of the north that swallowed the ten tribes, Babylon the lion of the south that broke Yahudah''s (Judah''s) bones. Ezekiel indicts the same false shepherds and the same scattering: *And they were scattered, because there is no shepherd: and they became meat to all the beasts of the field* (Ezekiel 34:5), and Jeremiah''s own woe stands over them — *Woe be unto the pastors that destroy and scatter the sheep of my pasture!* (Jeremiah 23:1). But the scattering is not the end: the true Shepherd seeks the flock — *so will I seek out my sheep, and will deliver them out of all places where they have been scattered in the cloudy and dark day* (Ezekiel 34:12). The Messiah sees the same scattered multitudes — *as sheep having no shepherd* (Matthew 9:36) — and is sent to them: *I am not sent but unto the lost sheep of the house of Yashar''el (Israel)* (Matthew 15:24), *go rather to the lost sheep of the house of Yashar''el (Israel)* (Matthew 10:6). And Peter names the return: *ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25). The flock the empires drove away is the flock the Shepherd gathers home.',
+       sv.verse_id, ev.verse_id, 'free', 35231
+  FROM _s309_jer50_lookup sv, _s309_jer50_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=50 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Babylon the great is fallen, is fallen, and is become the habitation of devils* (Revelation 18:2) — Jeremiah 50:2''s fallen city and confounded idols rung forward to Babylon the great, the world-system judged.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=2
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-babylon-is-fallen-come-out-of-the-midst-of-her'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground* (Isaiah 21:9) — Isaiah cries the same fall as Jeremiah 50:2, the city down and her gods broken.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=2
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=21 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-babylon-is-fallen-come-out-of-the-midst-of-her'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *Come out of her, my people, that ye be not partakers of her sins* (Revelation 18:4) — the voice from heaven echoes *Remove out of the midst of Babylon* (Jeremiah 50:8); the exodus from Babylon runs to the Apocalypse.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=8
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-babylon-is-fallen-come-out-of-the-midst-of-her'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Go ye forth of Babylon, flee ye from the Chaldeans... say ye, Yahuah (LORD) hath redeemed his servant Jacob* (Isaiah 48:20) — Isaiah commands the same flight as Jeremiah 50:8; the leaving is the proclamation of redemption.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=8
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=48 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-babylon-is-fallen-come-out-of-the-midst-of-her'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *I will take the children of Yashar''el (Israel) from among the heathen... and bring them into their own land* (Ezekiel 37:21) — Jeremiah 50:4''s both-houses return is Ezekiel''s two-sticks regathering.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=4
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *I will make them one nation... they shall be no more two nations* (Ezekiel 37:22) — the two houses who come *together* (Jeremiah 50:4) are made ONE, the two sticks joined under one King.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=4
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Then shall the children of Yahudah (Judah) and the children of Yashar''el (Israel) be gathered together* (Hosea 1:11) — Hosea names the same both-houses gathering as Jeremiah 50:4, one head appointed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=4
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *ten men shall take hold... of the skirt of him that is a Yahudi (Jew)... We will go with you* (Zechariah 8:23) — the faces-toward-Zion turning of Jeremiah 50:5; the nations seek the way up with the covenant people.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=5
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zechariah' AND tv.chapter_number=8 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★★ *I will forgive their iniquity, and I will remember their sin no more* (Jeremiah 31:34) — the pardon of Jeremiah 50:20 (iniquity sought-for and found none) is the new-covenant forgiveness, the perpetual covenant of 50:5.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *their sins and their iniquities will I remember no more* (Hebrews 8:12) — the new covenant seals Jeremiah 50:20''s pardon; the reserved remnant of both houses whose sins are not found.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea* (Micah 7:19) — Micah sings the wonder of Jeremiah 50:20''s pardon: the sins sought-for are not found, cast into the sea.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=20
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=7 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-the-two-houses-together-ask-the-way-to-zion-pardoned'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *they were scattered, because there is no shepherd: and they became meat to all the beasts of the field* (Ezekiel 34:5) — Jeremiah 50:6''s lost sheep ruined by false shepherds, scattered for want of a true one.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *Woe be unto the pastors that destroy and scatter the sheep of my pasture!* (Jeremiah 23:1) — the shepherds who *caused them to go astray* (Jeremiah 50:6) are the pastors Yahuah pronounces woe upon.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=23 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *because they fainted, and were scattered abroad, as sheep having no shepherd* (Matthew 9:36) — the Messiah pities the lost sheep of Jeremiah 50:6; the true Shepherd''s compassion answers the false shepherds.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=6
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *so will I seek out my sheep, and will deliver them out of all places where they have been scattered* (Ezekiel 34:12) — Yashar''el the scattered sheep of Jeremiah 50:17 is the flock the true Shepherd promises to seek and gather.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=17
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=34 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *I am not sent but unto the lost sheep of the house of Yashar''el (Israel)* (Matthew 15:24) — the scattered sheep of Jeremiah 50:17, driven by Assyria and Babylon, are the lost sheep the Messiah is sent to.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=17
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *go rather to the lost sheep of the house of Yashar''el (Israel)* (Matthew 10:6) — the gathering of the scattered house begins where the scattering struck; the twelve sent to the lost sheep.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=17
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls* (1 Peter 2:25) — the scattered sheep of Jeremiah 50:17 returned at last to the true Shepherd.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer50_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=50 AND sv.verse_number=17
+  JOIN _s309_jer50_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-50-yasharel-a-scattered-sheep-the-lost-flock-gathered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_51.sql (Jeremiah 51) -----
+-- Chapter: Jeremiah 51 — THE CONTINUED FALL OF BABYLON. Babylon a golden cup in Yahuah''s hand that made
+-- all the earth drunken (the world-system intoxicating the nations); FLEE OUT of the midst of Babylon,
+-- My people, go ye out of the midst of her (the urgent separation from the doomed system); the heaven and
+-- the earth sing over her fall, and the book is bound to a stone and sunk in the Euphrates as the sign that
+-- Babylon shall sink and not rise. The Tanakh root of Revelation 17-18: Babylon = the world-system, the
+-- great whore with the golden cup, found no more at all.
+-- Tag: jer51   Temp view: _s309_jer51_lookup
+-- Sort band: base 35250, step 3 -> threads at 35250, 35253, 35256 (3 threads)
+-- Source of EVERY row: 'canon','jeremiah',51,v
+--
+-- Jeremiah 51 coverage:
+--   v.1-5 (a destroying wind against Babylon; the slain in the land of the Chaldeans; for Yashar''el hath
+--          not been forsaken, nor Yahudah of his Elohim)
+--        NT:     none warranted (the muster against Babylon; the not-forsaken remnant woven in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the preface to the golden-cup and flee-out oracles)
+--   ★★ v.6 (Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her
+--          iniquity; for this is the time of the LORD''S vengeance)
+--        NT:     ★★★ Revelation 18:4 (Come out of her, my people, that ye be not partakers of her sins) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Isaiah 52:11 (Depart ye, depart ye, go ye out from thence, touch no unclean thing) — THREAD 2
+--   ★★★ v.7 (Babylon hath been a golden cup in the LORD''S hand, that made all the earth drunken: the
+--          nations have drunken of her wine; therefore the nations are mad)
+--        NT:     ★★★ Revelation 17:4 (a golden cup in her hand full of abominations), ★★★ Revelation 17:2
+--                (the inhabitants of the earth have been made drunk with the wine of her fornication),
+--                ★★★ Revelation 18:3 (all nations have drunk of the wine of the wrath of her fornication),
+--                ★★ Revelation 14:8 (Babylon... made all nations drink of the wine of the wrath of her
+--                fornication) — THREAD 1
+--        Extras: none warranted (clean canon-NT weave; the golden cup is the library''s world-system spine)
+--        Tanakh: none separate (the golden cup is unique to this oracle; held canon-NT)
+--   v.8-12 (Babylon is suddenly fallen; her judgment reacheth unto heaven; the spirit of the kings of the
+--          Medes; the vengeance of his temple; set the watchmen)
+--        NT:     ★ Revelation 18:5 (her sins have reached unto heaven) noted in THREAD 1 prose
+--        Extras: none warranted
+--        Tanakh: held in prose — the sudden fall (v.8) leads the fall-of-Babylon weave of THREAD 1
+--   v.13-19 (O thou that dwellest upon many waters... thine end is come; He hath made the earth by his
+--          power; the portion of Jacob is not like them; Yashar''el is the rod of his inheritance)
+--        NT:     ★ Revelation 17:1,15 (the great whore that sitteth upon many waters... peoples and nations)
+--                noted in THREAD 1 prose (the many-waters phrase)
+--        Extras: none warranted
+--        Tanakh: none separate (the Creator-vs-idols contrast; the many-waters dwelling woven in prose)
+--   v.20-26 (Thou art my battle axe... I will render unto Babylon all their evil done in Zion; O destroying
+--          mountain; thou shalt be desolate for ever)
+--        NT:     none warranted (the recompense for Zion''s wrong; held in THREAD 1 / 3 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the desolate-for-ever verdict prefigures the found-no-more of THREAD 3)
+--   v.27-44 (set up a standard; the kingdoms of Ararat, Minni, Ashchenaz; the daughter of Babylon a
+--          threshingfloor; Nebuchadrezzar the dragon; I will punish Bel; the wall of Babylon shall fall)
+--        NT:     none warranted distinct (the muster and the fall; the dragon-devourer Bel woven in prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the long judgment-catalogue; bound to THREAD 1 / 3)
+--   ★★ v.45 (My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce
+--          anger of Yahuah)
+--        NT:     ★★★ Revelation 18:4 (Come out of her, my people) — THREAD 2 (the twin of v.6)
+--        Extras: none warranted
+--        Tanakh: ★ 2 Corinthians 6:17 (come out from among them, and be ye separate) — THREAD 2
+--   v.46-47 (lest your heart faint... a rumour shall come; I will do judgment upon the graven images of
+--          Babylon)
+--        NT:     none warranted     Extras: none warranted
+--        Tanakh: none separate (the steadying word before the heavens'' song of v.48; woven in THREAD 3)
+--   ★★ v.48 (Then the heaven and the earth, and all that is therein, shall sing for Babylon: for the
+--          spoilers shall come unto her from the north, saith Yahuah)
+--        NT:     ★★ Revelation 18:20 (Rejoice over her, thou heaven, and ye holy apostles and prophets;
+--                for God hath avenged you on her) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: none separate (the heavens'' song over the fall; the apostolic echo holds it)
+--   v.49-62 (Babylon shall fall for the slain of Yashar''el; ye that have escaped, go away; strangers in
+--          the LORD''S house; though Babylon mount up to heaven, spoilers come; Seraiah carries the book)
+--        NT:     none warranted distinct (the escaped remnant overlaps THREAD 2; the book-errand sets up v.63-64)
+--        Extras: none warranted
+--        Tanakh: held in prose — the escaped remnant (v.50) bound to THREAD 2; the book-errand to THREAD 3
+--   ★★ v.63-64 (when thou hast made an end of reading this book, that thou shalt bind a stone to it, and
+--          cast it into the midst of Euphrates: And thou shalt say, Thus shall Babylon sink, and shall not
+--          rise from the evil that I will bring upon her)
+--        NT:     ★★★ Revelation 18:21 (a mighty angel took up a stone like a great millstone, and cast it
+--                into the sea... Thus with violence shall that great city Babylon be thrown down, and shall
+--                be found no more at all — John draws Jeremiah''s sign directly) — THREAD 3
+--        Extras: none warranted
+--        Tanakh: none separate (the stone-sign is unique; Revelation answers it directly)
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-51-babylon-a-golden-cup-that-made-all-the-earth-drunken — NT (Revelation 17, Revelation 18, Revelation 14) [free]
+--      (★★★ the golden cup intoxicating the nations; the world-system whore of Revelation 17-18, found here at its root)
+--   2. jeremiah-51-come-out-of-her-my-people-flee-the-midst-of-babylon — NT (Revelation 18) + Tanakh (Isaiah 52, 2 Corinthians 6) [free]
+--      (★★ the urgent call to come out of the doomed system; the separation from Babylon, twice spoken, v.6 and v.45)
+--   3. jeremiah-51-the-stone-cast-down-babylon-shall-sink-and-not-rise — NT (Revelation 18) [free]
+--      (★★ the heavens sing over her fall; the book bound to a stone and sunk in Euphrates = Babylon found no more at all)
+--
+-- Framing notes:
+--   ★★★ THE GOLDEN CUP (THREAD 1): *Babylon hath been a golden cup in the LORD''S hand, that made all the
+--      earth drunken: the nations have drunken of her wine; therefore the nations are mad* (51:7). Babylon is
+--      the world-system in Yahuah''s hand — a golden cup that intoxicates and maddens the nations. John takes
+--      the very image for the great whore: she has *a golden cup in her hand full of abominations and
+--      filthiness of her fornication* (Rev 17:4), and *the inhabitants of the earth have been made drunk with
+--      the wine of her fornication* (Rev 17:2); *all nations have drunk of the wine of the wrath of her
+--      fornication* (Rev 18:3); *Babylon... because she made all nations drink of the wine of the wrath of her
+--      fornication* (Rev 14:8). Jeremiah''s Babylon is the root of Revelation''s — the world-system that
+--      intoxicates the nations and is doomed to fall.
+--   ★★ COME OUT OF HER (THREAD 2): *Flee out of the midst of Babylon, and deliver every man his soul: be not
+--      cut off in her iniquity* (51:6), and again *My people, go ye out of the midst of her, and deliver ye
+--      every man his soul from the fierce anger of Yahuah (LORD)* (51:45). The urgent separation from the
+--      doomed system, twice spoken. John hears the same voice: *Come out of her, my people, that ye be not
+--      partakers of her sins, and that ye receive not of her plagues* (Rev 18:4). Isaiah commands it of the
+--      first Babylon: *Depart ye, depart ye, go ye out from thence, touch no unclean thing* (Isa 52:11); and
+--      Paul presses it on the assembly: *come out from among them, and be ye separate, saith Yahuah (Lord),
+--      and touch not the unclean thing* (2 Cor 6:17). One call across the library: come out, be separate,
+--      escape the iniquity of the doomed system.
+--   ★★ THE STONE CAST DOWN (THREAD 3): *Then the heaven and the earth, and all that is therein, shall sing
+--      for Babylon: for the spoilers shall come unto her from the north* (51:48); and the sign-act —
+--      *when thou hast made an end of reading this book, that thou shalt bind a stone to it, and cast it into
+--      the midst of Euphrates: And thou shalt say, Thus shall Babylon sink, and shall not rise from the evil
+--      that I will bring upon her* (51:63-64). The heavens rejoice over Babylon''s fall, and the book sunk
+--      with a stone is the sign she will not rise. John draws Jeremiah''s sign directly: *Rejoice over her,
+--      thou heaven, and ye holy apostles and prophets; for Elohim (God) hath avenged you on her* (Rev 18:20),
+--      and *a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with
+--      violence shall that great city Babylon be thrown down, and shall be found no more at all* (Rev 18:21).
+--      The stone cast down, Babylon found no more.
+--   VERSES WITH NO SEPARATE ADD: v.1-5 (the muster against Babylon; the not-forsaken remnant — woven in
+--      prose), v.8-12 (the sudden fall, the Medes, the temple''s vengeance — bound to THREAD 1, with Rev 18:5
+--      noted in prose), v.13-19 (the many-waters dwelling and the Creator-vs-idols contrast — Rev 17:1,15
+--      noted in THREAD 1 prose), v.20-26 (the battle-axe and the destroying mountain desolate for ever —
+--      prefigures the found-no-more of THREAD 3), v.27-44 (the long judgment-catalogue; Bel the dragon —
+--      bound to THREADs 1/3), v.46-47 (the steadying word before the heavens'' song — woven in THREAD 3),
+--      v.49-62 (the escaped remnant — bound to THREAD 2; the Seraiah book-errand — sets up v.63-64). All
+--      blocks recorded; every meaningful section carries or is bound to a thread.
+
+CREATE TEMP VIEW _s309_jer51_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★★): Babylon a golden cup that made all the earth drunken — the world-system whore
+    ('canon','jeremiah',51,7,'canon','revelation',17,4,'free',
+      E'*And the woman was arrayed in purple and scarlet colour, and decked with gold and precious stones and pearls, having a golden cup in her hand full of abominations and filthiness of her fornication* (Revelation 17:4). John takes Jeremiah''s very image for the great whore: as *Babylon hath been a golden cup in the LORD''S hand, that made all the earth drunken* (Jeremiah 51:7), so the world-system whore holds *a golden cup in her hand full of abominations*. The golden cup that maddens the nations is the same from Jeremiah to the Revelation — the intoxicating world-system, doomed to fall.'),
+    ('canon','jeremiah',51,7,'canon','revelation',17,2,'free',
+      E'*With whom the kings of the earth have committed fornication, and the inhabitants of the earth have been made drunk with the wine of her fornication* (Revelation 17:2). Jeremiah''s Babylon *made all the earth drunken: the nations have drunken of her wine* (Jeremiah 51:7); John''s whore makes *the inhabitants of the earth... drunk with the wine of her fornication*. The drunkenness of the nations on Babylon''s wine runs from the prophet to the apocalypse — the world-system intoxicating those who drink of her.'),
+    ('canon','jeremiah',51,7,'canon','revelation',18,3,'free',
+      E'*For all nations have drunk of the wine of the wrath of her fornication, and the kings of the earth have committed fornication with her, and the merchants of the earth are waxed rich through the abundance of her delicacies* (Revelation 18:3). The maddening wine of Jeremiah''s golden cup — *the nations have drunken of her wine; therefore the nations are mad* (Jeremiah 51:7) — is the *wine of the wrath of her fornication* that *all nations have drunk*. Babylon the world-system makes every nation drink, and the drinking is itself the madness that ends in her fall.'),
+    ('canon','jeremiah',51,7,'canon','revelation',14,8,'free',
+      E'*And there followed another angel, saying, Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8). The angel announces Babylon''s fall in Jeremiah''s own terms: she *made all nations drink* — as the golden cup *made all the earth drunken* (Jeremiah 51:7). The cause of her fall is the very intoxication she spread; the cup that maddened the nations is the cup of her own judgment.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 2 (★★): Flee out of the midst of Babylon — come out of her, my people
+    ('canon','jeremiah',51,6,'canon','revelation',18,4,'free',
+      E'*And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). John hears the same voice Jeremiah spoke: *Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity* (Jeremiah 51:6). To flee Babylon is to come out of her — to refuse partnership in her sins and so escape her plagues. The call to deliver every man his soul is one across the library.'),
+    ('canon','jeremiah',51,45,'canon','revelation',18,4,'free',
+      E'*And I heard another voice from heaven, saying, Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4). Jeremiah speaks it a second time, in Yahuah''s own voice to his people: *My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* (Jeremiah 51:45). John quotes the very phrase — *Come out of her, my people* — naming the separation that delivers the soul from the wrath that falls on the doomed system.'),
+    ('canon','jeremiah',51,6,'canon','isaiah',52,11,'free',
+      E'*Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD)* (Isaiah 52:11). Isaiah commands the same exodus from Babylon that Jeremiah urges — *Flee out of the midst of Babylon... be not cut off in her iniquity* (Jeremiah 51:6). *Go ye out of the midst of her* is word for word the call: depart, touch no unclean thing, be clean. The separation from the doomed system is the prophets'' one command.'),
+    ('canon','jeremiah',51,45,'canon','2-corinthians',6,17,'free',
+      E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). Paul presses on the assembly the very call of *My people, go ye out of the midst of her* (Jeremiah 51:45): *come out from among them, and be ye separate*. The going-out of Babylon is the separation unto Yahuah — come out, touch not the unclean thing, and be received as his people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 3 (★★): the heavens sing over her fall; the stone cast down, Babylon found no more
+    ('canon','jeremiah',51,48,'canon','revelation',18,20,'free',
+      E'*Rejoice over her, thou heaven, and ye holy apostles and prophets; for Elohim (God) hath avenged you on her* (Revelation 18:20). Jeremiah''s heavens sing over Babylon''s fall — *Then the heaven and the earth, and all that is therein, shall sing for Babylon: for the spoilers shall come unto her from the north* (Jeremiah 51:48); John''s heaven rejoices over the same fall, the apostles and prophets avenged. The song of the heavens over the doomed system is one from the prophet to the apocalypse.'),
+    ('canon','jeremiah',51,63,'canon','revelation',18,21,'free',
+      E'*And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21). John draws Jeremiah''s sign directly: as Seraiah is told *thou shalt bind a stone to it, and cast it into the midst of Euphrates* (Jeremiah 51:63), so the angel casts a great millstone into the sea. The sunk stone is the sign of a city that will not rise — thrown down, found no more at all.'),
+    ('canon','jeremiah',51,64,'canon','revelation',18,21,'free',
+      E'*And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21). Jeremiah''s word over the sunk book — *Thus shall Babylon sink, and shall not rise from the evil that I will bring upon her* (Jeremiah 51:64) — is the very word the angel speaks: Babylon *thrown down, and... found no more at all*. The sunk stone says she shall not rise; the millstone in the sea says she is found no more.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-51-babylon-a-golden-cup-that-made-all-the-earth-drunken',
+       E'Babylon a golden cup in Yahuah''s hand — that made all the earth drunken',
+       E'At the heart of the oracle stands the image the whole library will carry forward: *Babylon hath been a golden cup in the LORD''S hand, that made all the earth drunken: the nations have drunken of her wine; therefore the nations are mad* (51:7). Babylon is not merely a city but the world-system — a golden cup held in Yahuah''s own hand, intoxicating and maddening the nations who drink of her wine. And the cup that maddens is the cup that dooms: *Babylon is suddenly fallen and destroyed* (51:8), *for her judgment reacheth unto heaven, and is lifted up even to the skies* (51:9). John takes the image whole for the great whore who *sitteth upon many waters* (Rev 17:1) — the very dwelling Jeremiah names, *O thou that dwellest upon many waters, abundant in treasures* (51:13). She is *arrayed in purple and scarlet colour, and decked with gold and precious stones and pearls, having a golden cup in her hand full of abominations and filthiness of her fornication* (Revelation 17:4); *the inhabitants of the earth have been made drunk with the wine of her fornication* (Revelation 17:2). The angel announces her fall in Jeremiah''s terms — *Babylon is fallen, is fallen, that great city, because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8) — and again, *all nations have drunk of the wine of the wrath of her fornication* (Revelation 18:3), *for her sins have reached unto heaven, and Elohim (God) hath remembered her iniquities* (Rev 18:5), exactly as Jeremiah said her judgment reached unto heaven. The golden cup that maddened the nations is the root of Revelation''s Babylon: the world-system that intoxicates the earth and is doomed to fall.',
+       sv.verse_id, ev.verse_id, 'free', 35250
+  FROM _s309_jer51_lookup sv, _s309_jer51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=51 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-51-come-out-of-her-my-people-flee-the-midst-of-babylon',
+       E'Flee out of the midst of Babylon — My people, go ye out of her',
+       E'Twice in this oracle the call goes up to escape the doomed system before it falls. First: *Flee out of the midst of Babylon, and deliver every man his soul: be not cut off in her iniquity; for this is the time of the LORD''S vengeance; he will render unto her a recompence* (51:6). And again, in Yahuah''s own voice to his people: *My people, go ye out of the midst of her, and deliver ye every man his soul from the fierce anger of Yahuah (LORD)* (51:45). The separation is urgent and personal — every man his own soul, lest he be cut off in her iniquity and share her plagues. The escaped are told, *Ye that have escaped the sword, go away, stand not still: remember Yahuah (LORD) afar off* (51:50). John hears the same voice from heaven over the final Babylon: *Come out of her, my people, that ye be not partakers of her sins, and that ye receive not of her plagues* (Revelation 18:4) — the very phrase, *Come out of her, my people*. Isaiah commands the same exodus: *Depart ye, depart ye, go ye out from thence, touch no unclean thing; go ye out of the midst of her; be ye clean, that bear the vessels of Yahuah (LORD)* (Isaiah 52:11). And Paul presses it on the assembly: *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). One call across the library — flee, come out, be separate — the deliverance of the soul from the system under judgment.',
+       sv.verse_id, ev.verse_id, 'free', 35253
+  FROM _s309_jer51_lookup sv, _s309_jer51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=51 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-51-the-stone-cast-down-babylon-shall-sink-and-not-rise',
+       E'The heavens sing — the stone cast down, Babylon shall sink and not rise',
+       E'When Babylon falls, the heavens themselves rejoice: *Then the heaven and the earth, and all that is therein, shall sing for Babylon: for the spoilers shall come unto her from the north, saith Yahuah (LORD)* (51:48). And the oracle ends with a sign-act sealing the certainty of her end. Jeremiah commands Seraiah, carrying the book of all the evil written against Babylon: *And it shall be, when thou hast made an end of reading this book, that thou shalt bind a stone to it, and cast it into the midst of Euphrates: And thou shalt say, Thus shall Babylon sink, and shall not rise from the evil that I will bring upon her* (51:63-64). The book sunk with a stone is the prophetic sign: as the stone goes down and does not rise, so Babylon shall sink and not rise. John draws the sign directly. First the heavens'' song: *Rejoice over her, thou heaven, and ye holy apostles and prophets; for Elohim (God) hath avenged you on her* (Revelation 18:20). Then the stone itself: *And a mighty angel took up a stone like a great millstone, and cast it into the sea, saying, Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21). The stone bound to Jeremiah''s book and the millstone cast into John''s sea are one sign — the great city thrown down, sunk, and *found no more at all*. The world-system that maddened the nations does not rise again.',
+       sv.verse_id, ev.verse_id, 'free', 35256
+  FROM _s309_jer51_lookup sv, _s309_jer51_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=48
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=51 AND ev.verse_number=64
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *having a golden cup in her hand full of abominations and filthiness of her fornication* (Revelation 17:4) — John takes Jeremiah 51:7''s golden cup whole for the great whore; the world-system in hand.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=17 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-babylon-a-golden-cup-that-made-all-the-earth-drunken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *the inhabitants of the earth have been made drunk with the wine of her fornication* (Revelation 17:2) — the nations drunk on Babylon''s wine (Jeremiah 51:7) made into the world-system''s drunkenness.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=17 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-babylon-a-golden-cup-that-made-all-the-earth-drunken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *all nations have drunk of the wine of the wrath of her fornication* (Revelation 18:3) — Jeremiah 51:7''s maddening wine is the wine of wrath all nations drink before her fall.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-babylon-a-golden-cup-that-made-all-the-earth-drunken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *Babylon is fallen... because she made all nations drink of the wine of the wrath of her fornication* (Revelation 14:8) — her fall announced in Jeremiah 51:7''s own terms; the cup of intoxication becomes the cup of judgment.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=7
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=14 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-babylon-a-golden-cup-that-made-all-the-earth-drunken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *Come out of her, my people, that ye be not partakers of her sins* (Revelation 18:4) — John hears Jeremiah 51:6''s call; to flee Babylon is to come out and escape her plagues.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=6
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-come-out-of-her-my-people-flee-the-midst-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Depart ye, depart ye, go ye out from thence, touch no unclean thing* (Isaiah 52:11) — Isaiah commands the same exodus from Babylon as Jeremiah 51:6; go ye out of the midst of her.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=6
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=52 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-come-out-of-her-my-people-flee-the-midst-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *Come out of her, my people* (Revelation 18:4) — the twin call, now in Yahuah''s own voice at Jeremiah 51:45: My people, go ye out of the midst of her.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=45
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-come-out-of-her-my-people-flee-the-midst-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing* (2 Corinthians 6:17) — Paul presses Jeremiah 51:45''s call on the assembly; come out and be received as his people.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=45
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-come-out-of-her-my-people-flee-the-midst-of-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Rejoice over her, thou heaven, and ye holy apostles and prophets; for Elohim (God) hath avenged you on her* (Revelation 18:20) — John''s heaven rejoices over the fall that Jeremiah 51:48''s heaven sings.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=48
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-the-stone-cast-down-babylon-shall-sink-and-not-rise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *a mighty angel took up a stone like a great millstone, and cast it into the sea... found no more at all* (Revelation 18:21) — John draws Jeremiah 51:63''s stone-sign directly; the stone goes down and Babylon does not rise.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=63
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-the-stone-cast-down-babylon-shall-sink-and-not-rise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★★ *Thus with violence shall that great city Babylon be thrown down, and shall be found no more at all* (Revelation 18:21) — the angel''s word answers Jeremiah 51:64: Babylon shall sink and shall not rise.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer51_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=51 AND sv.verse_number=64
+  JOIN _s309_jer51_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-51-the-stone-cast-down-babylon-shall-sink-and-not-rise'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_jeremiah_52.sql (Jeremiah 52) -----
+-- Chapter: Jeremiah 52 — THE HISTORICAL APPENDIX. The fall of Jerusalem and Zedekiah''s fate recapped
+-- (his rebellion, the siege, the famine, the breach, his capture at Jericho, his sons slain and his eyes
+-- put out); then *burned the house of Yahuah (LORD), and the king''s house... brake down all the walls of
+-- Jerusalem* (vv.12-14) and *the pillars of brass that were in the house of Yahuah (LORD)... the Chaldeans
+-- brake, and carried all the brass of them to Babylon* (v.17) — the temple burned and its sacred
+-- furnishings carried away, the word fulfilled to the letter. And at the very end, a glimmer: *Evil-merodach
+-- king of Babylon... lifted up the head of Jehoiachin king of Yahudah (Judah), and brought him forth out of
+-- prison* (v.31) — the Davidic king raised from prison and honored, the line preserved through the captivity.
+-- A largely historical recap; curated to 2 framework threads.
+-- Tag: jer52   Temp view: _s309_jer52_lookup
+-- Sort band: base 35275, step 3 -> threads at 35275, 35278 (2 threads)
+-- Source of EVERY row: 'canon','jeremiah',52,v
+--
+-- Jeremiah 52 coverage:
+--   v.1-3 (Zedekiah''s evil reign, his rebellion against Babylon through the anger of Yahuah)
+--        NT/Extras: none warranted
+--        Tanakh: parallel 2 Kings 24:18-20 — held in prose (the recap of the historical narrative)
+--   v.4-11 (the siege, the famine, the breach, Zedekiah taken at Jericho, his sons slain, his eyes put out,
+--          carried to Babylon in chains)
+--        NT/Extras: none warranted
+--        Tanakh: parallel 2 Kings 25:1-7 — held in prose (the fall of the city and the king''s fate)
+--   ★★ v.12-14 (burned the house of Yahuah, and the king''s house, and all the houses of Jerusalem; brake
+--          down all the walls of Jerusalem round about)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:9 (he burnt the house of Yahuah... and every great man''s house) — THREAD 1;
+--                ★ Lamentations 2:7 (Yahuah hath cast off his altar, he hath abhorred his sanctuary) — THREAD 1
+--   v.15-16 (the residue of the people carried away captive; the poor left for vinedressers)
+--        NT/Extras/Tanakh: none warranted (parallel 2 Kings 25:11-12, held in prose)
+--   ★★ v.17 (the pillars of brass... the brasen sea... the Chaldeans brake, and carried all the brass of
+--          them to Babylon)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:13 (the pillars of brass... the Chaldees break in pieces, and carried the
+--                brass to Babylon) — THREAD 1; ★★ Jeremiah 27:22 (the vessels... shall be carried to Babylon...
+--                then will I bring them up, and restore them) — THREAD 1; ★ Daniel 1:2 (part of the vessels...
+--                he carried into the land of Shinar) — THREAD 1; ★ Daniel 5:2 (Belshazzar... commanded to
+--                bring the golden vessels which his father had taken out of the temple) — THREAD 1
+--   v.18-23 (the caldrons, shovels, snuffers, bowls, spoons, the two pillars, the chapiters and pomegranates
+--          — the inventory of the carried-away vessels)
+--        NT/Extras/Tanakh: none warranted (the inventory; held in THREAD 1 prose)
+--   v.24-27 (Seraiah the chief priest and the officers taken to Riblah and put to death; Yahudah carried away)
+--        NT/Extras/Tanakh: none warranted (parallel 2 Kings 25:18-21, held in prose)
+--   v.28-30 (the count of the captives carried away — three deportations, four thousand and six hundred)
+--        NT/Extras/Tanakh: none warranted (the captivity tally)
+--   ★★ v.31-34 (Evil-merodach lifted up the head of Jehoiachin, brought him forth out of prison, spake
+--          kindly, set his throne above the kings; he did continually eat bread before him all his days)
+--        NT:     ★★ Matthew 1:12 (Jechonias begat Salathiel — the line continued to the Messiah) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 25:27 (Evil-merodach did lift up the head of Jehoiachin out of prison) — THREAD 2;
+--                ★ 2 Kings 25:30 (a continual allowance given him... all the days of his life) — THREAD 2;
+--                ★★ Genesis 40:13 (Pharaoh shall lift up thine head, and restore thee — the lift-up-the-head
+--                pattern) — THREAD 2; ★ Psalm 113:7 (he raiseth up the poor out of the dust) — THREAD 2;
+--                ★ Psalm 113:8 (that he may set him with princes) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon — Tanakh (2 Kings 25, Jeremiah 27, Lamentations 2, Daniel 1, Daniel 5) [free]
+--      (★★ the temple burned and its sacred furnishings carried away — the word fulfilled to the letter; the
+--      vessels foretold to go and to be brought back, profaned by Belshazzar who fell that night)
+--   2. jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved — NT (Matthew 1) + Tanakh (2 Kings 25, Genesis 40, Psalm 113) [free]
+--      (★★ the closing glimmer: the Davidic king lifted from prison and honored — the line preserved through
+--      the captivity, the lift-up-the-head pattern, the seed continued to the Messiah)
+--
+-- Framing notes:
+--   ★★ THE HOUSE BURNED, THE VESSELS CARRIED AWAY (THREAD 1): the appendix records the judgment fulfilled to
+--      the letter — *And burned the house of Yahuah (LORD), and the king''s house; and all the houses of
+--      Jerusalem... burned he with fire: And all the army of the Chaldeans... brake down all the walls of
+--      Jerusalem round about* (52:13-14); *Also the pillars of brass that were in the house of Yahuah (LORD)...
+--      the Chaldeans brake, and carried all the brass of them to Babylon* (52:17). The parallel in Kings tells
+--      the same — *he burnt the house of Yahuah (LORD)... the pillars of brass... did the Chaldees break in
+--      pieces, and carried the brass... to Babylon* (2 Kings 25:9,13). Lamentations grieves the meaning of it:
+--      *Yahuah (Lord) hath cast off his altar, he hath abhorred his sanctuary* (Lam 2:7). The vessels carried
+--      off were the very ones Jeremiah had foretold would go — and be brought back: *They shall be carried to
+--      Babylon, and there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring
+--      them up, and restore them to this place* (Jer 27:22). Daniel watches them arrive — *part of the vessels
+--      of the house of Elohim (God): which he carried into the land of Shinar to the house of his god* (Dan
+--      1:2) — and watches Belshazzar profane them and fall that same night — *commanded to bring the golden and
+--      silver vessels which his father Nebuchadnezzar had taken out of the temple* (Dan 5:2). The fulfilled
+--      judgment on the house.
+--   ★★ JEHOIACHIN LIFTED UP — THE DAVIDIC LINE PRESERVED (THREAD 2): the book ends not in ash but on a seed of
+--      hope — *Evil-merodach king of Babylon... lifted up the head of Jehoiachin king of Yahudah (Judah), and
+--      brought him forth out of prison, And spake kindly unto him, and set his throne above the throne of the
+--      kings that were with him in Babylon... and he did continually eat bread before him all the days of his
+--      life* (52:31-33). The Davidic king is raised from prison and honored. Kings closes the same way (2 Kings
+--      25:27,30). The phrase *lifted up the head... out of prison* is Yoseph''s (Joseph''s) very pattern —
+--      *Yet within three days shall Pharaoh lift up thine head, and restore thee unto thy place* (Gen 40:13):
+--      the prisoner raised and restored. The Psalm sings the same lifting: *He raiseth up the poor out of the
+--      dust, and lifteth the needy out of the dunghill; That he may set him with princes* (Ps 113:7-8). And the
+--      line is not cut off — *Jechonias begat Salathiel* (Matt 1:12): the captive king is a link in the
+--      generations that run to the Messiah. The Davidic line preserved through the judgment — hope after the
+--      fall.
+--   VERSES WITH NO SEPARATE ADD: v.1-11 (Zedekiah''s reign, rebellion, the siege and his capture — the
+--      historical recap parallel to 2 Kings 24-25, held in prose), v.15-16 (the captivity and the poor left
+--      behind), v.18-23 (the inventory of vessels — held in THREAD 1 prose), v.24-27 (Seraiah and the officers
+--      put to death at Riblah), v.28-30 (the deportation tally). All recorded; the two framework blocks carry
+--      the chapter.
+
+CREATE TEMP VIEW _s309_jer52_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the house burned, the brass pillars and vessels carried to Babylon
+    ('canon','jeremiah',52,13,'canon','2-kings',25,9,'free',
+      E'*And he burnt the house of Yahuah (LORD), and the king''s house, and all the houses of Jerusalem, and every great man''s house burnt he with fire* (2 Kings 25:9). The parallel account records the very burning Jeremiah''s appendix sets down — *And burned the house of Yahuah (LORD), and the king''s house; and all the houses of Jerusalem... burned he with fire* (Jeremiah 52:13). Two witnesses to one judgment: the temple and the city given to the flames, the word of Yahuah (LORD) fulfilled to the letter.'),
+    ('canon','jeremiah',52,17,'canon','2-kings',25,13,'free',
+      E'*And the pillars of brass that were in the house of Yahuah (LORD), and the bases, and the brasen sea that was in the house of Yahuah (LORD), did the Chaldees break in pieces, and carried the brass of them to Babylon* (2 Kings 25:13). The Kings account names the same spoil as Jeremiah''s appendix — *the pillars of brass that were in the house of Yahuah (LORD)... the Chaldeans brake, and carried all the brass of them to Babylon* (Jeremiah 52:17). The sacred furnishings of the house, Solomon''s own work, broken up and hauled away to the conqueror''s land.'),
+    ('canon','jeremiah',52,17,'canon','jeremiah',27,22,'free',
+      E'*They shall be carried to Babylon, and there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring them up, and restore them to this place* (Jeremiah 27:22). The vessels broken and carried off in the appendix — *the pillars of brass... the Chaldeans brake, and carried all the brass of them to Babylon* (Jeremiah 52:17) — are the very vessels Jeremiah had foretold would go to Babylon, and one day be brought back. The carrying-away is no accident of war but the appointed word; the restoring is appointed too.'),
+    ('canon','jeremiah',52,17,'canon','daniel',1,2,'free',
+      E'*And Yahuah (Lord) gave Jehoiakim king of Yahudah (Judah) into his hand, with part of the vessels of the house of Elohim (God): which he carried into the land of Shinar to the house of his god; and he brought the vessels into the treasure house of his god* (Daniel 1:2). The vessels of the house that the Chaldeans *carried all the brass of them to Babylon* (Jeremiah 52:17) are the vessels Daniel watches arrive in Shinar, set in the treasure house of an idol. The holy things of Yahuah (LORD) lodged among the gods of Babylon — the judgment of the house carried into the captive''s land.'),
+    ('canon','jeremiah',52,17,'canon','daniel',5,2,'free',
+      E'*Belshazzar, whiles he tasted the wine, commanded to bring the golden and silver vessels which his father Nebuchadnezzar had taken out of the temple which was in Jerusalem; that the king, and his princes, his wives, and his concubines, might drink therein* (Daniel 5:2). The vessels carried to Babylon in Jeremiah 52:17 are the same vessels Belshazzar profanes at his feast — and *In that night was Belshazzar the king of the Chaldeans slain* (Daniel 5:30). The spoils of the house become the cup of Babylon''s own judgment; what was taken in pride is the measure of its fall.'),
+    ('canon','jeremiah',52,13,'canon','lamentations',2,7,'free',
+      E'*Yahuah (Lord) hath cast off his altar, he hath abhorred his sanctuary, he hath given up into the hand of the enemy the walls of her palaces; they have made a noise in the house of Yahuah (LORD), as in the day of a solemn feast* (Lamentations 2:7). Lamentations grieves the meaning of the burning Jeremiah 52:13 records — *burned the house of Yahuah (LORD), and the king''s house*: the sanctuary cast off, the altar abhorred, the enemy roaring where the feasts were once kept. The fire that took the house was Yahuah (LORD) himself giving it up to the hand of the enemy.'),
+
+    -- THREAD 2 (★★): Jehoiachin lifted up out of prison — the Davidic line preserved
+    ('canon','jeremiah',52,31,'canon','2-kings',25,27,'free',
+      E'*And it came to pass in the seven and thirtieth year of the captivity of Jehoiachin king of Yahudah (Judah)... that Evil-merodach king of Babylon in the year that he began to reign did lift up the head of Jehoiachin king of Yahudah (Judah) out of prison* (2 Kings 25:27). The parallel ending tells the same closing mercy as Jeremiah''s appendix — *Evil-merodach king of Babylon... lifted up the head of Jehoiachin king of Yahudah (Judah), and brought him forth out of prison* (Jeremiah 52:31). Both books end the long judgment on a Davidic king raised from prison — a seed of hope after the fall.'),
+    ('canon','jeremiah',52,34,'canon','2-kings',25,30,'free',
+      E'*And his allowance was a continual allowance given him of the king, a daily rate for every day, all the days of his life* (2 Kings 25:30). Kings closes exactly as Jeremiah''s appendix does — *for his diet, there was a continual diet given him of the king of Babylon, every day a portion until the day of his death, all the days of his life* (Jeremiah 52:34). The captive king sustained at the conqueror''s table to the end: the Davidic line not merely spared but kept and honored in the land of exile.'),
+    ('canon','jeremiah',52,31,'canon','genesis',40,13,'free',
+      E'*Yet within three days shall Pharaoh lift up thine head, and restore thee unto thy place: and thou shalt deliver Pharaoh''s cup into his hand, after the former manner when thou wast his butler* (Genesis 40:13). Yoseph''s (Joseph''s) word to the butler is the very pattern of Jehoiachin''s release — *Evil-merodach... lifted up the head of Jehoiachin... and brought him forth out of prison* (Jeremiah 52:31). The prisoner whose head is lifted up and who is restored to favor: the same merciful turn, the captive raised, that runs from Yoseph (Joseph) to the last king of Yahudah (Judah).'),
+    ('canon','jeremiah',52,31,'canon','psalms',113,7,'free',
+      E'*He raiseth up the poor out of the dust, and lifteth the needy out of the dunghill* (Psalm 113:7). The lifting of Jehoiachin from the prison — *brought him forth out of prison* (Jeremiah 52:31) — is the very work the Psalm sings of Yahuah (LORD): raising the abased out of the dust. The hand that brought the Davidic king out of his captive''s pit is the hand that lifts the needy from the low place.'),
+    ('canon','jeremiah',52,32,'canon','psalms',113,8,'free',
+      E'*That he may set him with princes, even with the princes of his people* (Psalm 113:8). The raising of Jehoiachin to honor — *set his throne above the throne of the kings that were with him in Babylon* (Jeremiah 52:32) — is the very setting the Psalm declares: the lifted-up one seated among princes. The Davidic king, lately a prisoner, given a throne above the captive kings: the poor raised from the dust and set with princes.'),
+    ('canon','jeremiah',52,31,'canon','matthew',1,12,'free',
+      E'*And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12). The captive king lifted out of prison in Jeremiah 52:31 — Jeconiah/Jehoiachin — is no dead end: *Jechonias begat Salathiel*, a link in the generations that run to the Messiah. The Davidic line preserved through the captivity is the line by which the promised Seed comes; the book''s last glimmer is the thread the Gospel picks up.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon',
+       E'Burned the house of Yahuah — the brass pillars and vessels carried to Babylon',
+       E'The historical appendix records the judgment fulfilled to the very letter. The fire takes the temple, the palace, the city: *And burned the house of Yahuah (LORD), and the king''s house; and all the houses of Jerusalem, and all the houses of the great men, burned he with fire: And all the army of the Chaldeans, that were with the captain of the guard, brake down all the walls of Jerusalem round about* (52:13-14). And the sacred furnishings — Solomon''s own work — are broken up and hauled off: *Also the pillars of brass that were in the house of Yahuah (LORD), and the bases, and the brasen sea that was in the house of Yahuah (LORD), the Chaldeans brake, and carried all the brass of them to Babylon* (52:17). The parallel account in Kings is a second witness to the same day: *And he burnt the house of Yahuah (LORD)... And the pillars of brass that were in the house of Yahuah (LORD)... did the Chaldees break in pieces, and carried the brass of them to Babylon* (2 Kings 25:9,13). Lamentations grieves what the burning meant: *Yahuah (Lord) hath cast off his altar, he hath abhorred his sanctuary, he hath given up into the hand of the enemy the walls of her palaces* (Lamentations 2:7) — the fire was Yahuah (LORD) himself giving up the house. And the vessels carried off were the very ones Jeremiah had foretold would go — and be brought back: *They shall be carried to Babylon, and there shall they be until the day that I visit them, saith Yahuah (LORD); then will I bring them up, and restore them to this place* (Jeremiah 27:22). Daniel watches them arrive in the captive''s land — *part of the vessels of the house of Elohim (God): which he carried into the land of Shinar to the house of his god* (Daniel 1:2) — and watches Belshazzar profane them and fall that same night: *commanded to bring the golden and silver vessels which his father Nebuchadnezzar had taken out of the temple which was in Jerusalem* (Daniel 5:2), and *In that night was Belshazzar the king of the Chaldeans slain* (Daniel 5:30). The spoils of the house become the cup of Babylon''s own judgment. The word fulfilled to the letter — and the vessels, like the people, marked for return.',
+       sv.verse_id, ev.verse_id, 'free', 35275
+  FROM _s309_jer52_lookup sv, _s309_jer52_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=52 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved',
+       E'Jehoiachin lifted up out of prison — the Davidic line preserved through the captivity',
+       E'The long book of judgment does not end in ash; it ends on a seed of hope. After the fall of the city, the burning of the house, and the carrying-away, the final scene lifts a Davidic king from prison: *And it came to pass in the seven and thirtieth year of the captivity of Jehoiachin king of Yahudah (Judah)... that Evil-merodach king of Babylon in the first year of his reign lifted up the head of Jehoiachin king of Yahudah (Judah), and brought him forth out of prison, And spake kindly unto him, and set his throne above the throne of the kings that were with him in Babylon... and he did continually eat bread before him all the days of his life* (52:31-33). The captive king is raised, honored, seated above the other captive kings, and sustained at the conqueror''s table to the end (52:34). Kings closes the very same way (2 Kings 25:27,30). And the phrase is freighted: *lifted up the head... out of prison* is Yoseph''s (Joseph''s) own pattern — *Yet within three days shall Pharaoh lift up thine head, and restore thee unto thy place* (Genesis 40:13): the prisoner raised and restored to favor. The Psalm sings the same turn: *He raiseth up the poor out of the dust, and lifteth the needy out of the dunghill; That he may set him with princes, even with the princes of his people* (Psalm 113:7-8). And the line is not cut off — the captive king is a link in the generations that run to the promised Seed: *And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12). Through famine, sword, and seventy years of exile, the paternal line of David is preserved — the lamp not put out. The book ends where the covenant always ends: on the seed kept through the judgment, hope after the fall.',
+       sv.verse_id, ev.verse_id, 'free', 35278
+  FROM _s309_jer52_lookup sv, _s309_jer52_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='jeremiah' AND ev.chapter_number=52 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he burnt the house of Yahuah (LORD)... and every great man''s house burnt he with fire* (2 Kings 25:9) — the parallel witness to the burning of Jeremiah 52:13; one judgment, two records.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=13
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the pillars of brass... did the Chaldees break in pieces, and carried the brass of them to Babylon* (2 Kings 25:13) — the same spoil as Jeremiah 52:17; Solomon''s furnishings broken and hauled away.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=17
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *They shall be carried to Babylon... then will I bring them up, and restore them to this place* (Jeremiah 27:22) — the vessels of 52:17 were foretold to go AND to be brought back; carrying-away and restoring both appointed.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=17
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=27 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *part of the vessels of the house of Elohim (God): which he carried into the land of Shinar to the house of his god* (Daniel 1:2) — the vessels of 52:17 arrive in Babylon, lodged among the idols.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=17
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *commanded to bring the golden and silver vessels which his father Nebuchadnezzar had taken out of the temple* (Daniel 5:2) — the vessels of 52:17 profaned by Belshazzar, who fell that same night (Daniel 5:30).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=17
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *Yahuah (Lord) hath cast off his altar, he hath abhorred his sanctuary* (Lamentations 2:7) — Lamentations names the meaning of the burning of 52:13: the house given up to the enemy by Yahuah (LORD) himself.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=13
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-burned-the-house-of-yahuah-the-vessels-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Evil-merodach... did lift up the head of Jehoiachin king of Yahudah (Judah) out of prison* (2 Kings 25:27) — the parallel ending to Jeremiah 52:31; both books close on the Davidic king raised from prison.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=31
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *a continual allowance given him of the king, a daily rate for every day, all the days of his life* (2 Kings 25:30) — Kings closes as 52:34 does; the captive king sustained and honored to the end.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=34
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=25 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Pharaoh shall lift up thine head, and restore thee unto thy place* (Genesis 40:13) — Yoseph''s (Joseph''s) lift-up-the-head pattern; the prisoner raised and restored, as Jehoiachin in 52:31.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=31
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=40 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *He raiseth up the poor out of the dust, and lifteth the needy out of the dunghill* (Psalm 113:7) — the lifting of Jehoiachin from prison (52:31) is the Psalm''s very work of Yahuah (LORD).'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=31
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=113 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *That he may set him with princes, even with the princes of his people* (Psalm 113:8) — the throne set above the captive kings (52:32) is the Psalm''s setting of the raised one among princes.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=32
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=113 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12) — the captive king lifted up in 52:31 is no dead end; the Davidic line runs through him to the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s309_jer52_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='jeremiah' AND sv.chapter_number=52 AND sv.verse_number=31
+  JOIN _s309_jer52_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='jeremiah-52-jehoiachin-lifted-up-out-of-prison-the-davidic-line-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session309 — Jeremiah cross-references complete.'
