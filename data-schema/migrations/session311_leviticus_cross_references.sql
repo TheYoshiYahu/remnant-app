@@ -8504,6 +8504,885 @@ SELECT t.id, cr.id, 4, E'Romans 6:22 — *being made free from sin, and become s
  WHERE t.slug='leviticus-25-they-are-my-servants-not-bondmen'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_leviticus_26.sql (Leviticus 26) -----
+-- Book: Leviticus  Chapter: 26  (the blessings and curses / the covenant lawsuit — KEYSTONE)
+-- Tag: lev26   Session prefix: s311   Temp view: _s311_lev26_lookup
+-- Sort band base: 23325  step 3  (23325, 23328, 23331, 23334, 23337, 23340, 23343, 23346)
+--
+-- THREADS (8):
+--   leviticus-26-keep-my-sabbaths-and-make-no-idols              v1-2   [Tanakh] tier free
+--        Exod20:3, Exod20:4, Exod20:8
+--   leviticus-26-i-will-walk-among-you-the-blessings            v3-13  [Tanakh+NT] tier free
+--        Deut28:1, Deut28:12, Ezek37:26, Ezek37:27, 2Cor6:16, Rev21:3
+--   leviticus-26-i-will-walk-contrary-unto-you-the-curses       v14-26 [Tanakh] tier free
+--        Deut28:15, Deut28:23, Deut28:25
+--   leviticus-26-i-will-scatter-you-among-the-heathen           v27-33 [Tanakh+NT] tier free
+--        Deut28:53, Deut28:64, Luke21:24
+--   leviticus-26-then-shall-the-land-enjoy-her-sabbaths         v34-39 [Tanakh] tier free
+--        2Chr36:21
+--   leviticus-26-if-they-confess-and-i-remember-my-covenant     v40-42 [Tanakh+NT] tier free
+--        Deut30:2, Deut30:6, Neh1:9, Luke1:72, Rom11:26, Rom11:27
+--   leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken v43-45 [Tanakh+NT] tier free
+--        Deut4:31, Jer31:36, Jer31:37, Rom11:1, Rom11:2, Rom11:29
+--   leviticus-26-these-are-the-statutes-in-mount-sinai          v46    [Tanakh] tier free
+--        Lev27:34
+--
+-- FRAMEWORK NOTES (the lens):
+--   CRITICAL FRAME: the curse is the covenant-BREAKING judgment (exile) for despising the
+--     statutes (v15) — NEVER the Torah itself a curse. The blessings (v3-13) are FOR walking
+--     in the statutes; the curses (v14-39) are FOR breaking the covenant; and v40-45 hold the
+--     return: the covenant is REMEMBERED on repentance and is NEVER broken even in exile.
+--   v11-12 "I will set my tabernacle among you... And I will walk among you, and will be your
+--     Elohim, and ye shall be my people" is the DWELLING covenant Paul quotes verbatim at
+--     2 Cor 6:16 (I will dwell in them, and walk in them; and I will be their Elohim, and they
+--     shall be my people) and John sees consummated at Rev 21:3 (the tabernacle of Elohim is
+--     with men). The same Indwelling Presence runs Torah → epistle → New Jerusalem.
+--   v33 "I will scatter you among the heathen" = the TWO-HOUSE dispersion; forward Luke 21:24
+--     (led away captive into all nations) — the scattering Yahusha foretells over Jerusalem.
+--   v34-35 the land's sabbaths repaid in the desolation; lateral 2 Chr 36:21 (Jeremiah's 70
+--     years reckoned as exactly the land taking her withheld sabbaths).
+--   v40-42 the REMEMBERED covenant on confession — "I will remember my covenant with Jacob,
+--     and also... Isaac, and also... Abraham" — the patriarchal seed-promise carried by
+--     bloodline AND covenant-word; forward Rom 11:26-27 (so all Israel shall be saved... this
+--     is my covenant unto them) and Luke 1:72 (to remember his holy covenant); lateral the
+--     return texts Deut 30:1-6 and Neh 1:8-9.
+--   v44-45 THE ANTI-REPLACEMENT ANCHOR: "I will not cast them away... neither will I abhor
+--     them... nor break my covenant with them: for I am Yahuah their Elohim." Forward Rom 11:1-2
+--     (hath Elohim cast away his people? Elohim forbid) and Rom 11:29 (the gifts and calling of
+--     Elohim are without repentance); lateral Jer 31:35-37 (Israel shall not cease being a
+--     nation) and Deut 4:31 (he will not forsake thee, nor forget the covenant). Never replaced.
+--
+-- Leviticus 26 coverage:
+--   v.1-2  (no idols, keep my sabbaths, reverence my sanctuary)
+--        NT:     none warranted (the decalogue echo lands laterally on Exod 20)
+--        Extras: none warranted
+--        Tanakh: Exod 20:3,4,8 (no other gods / no graven image / remember the sabbath) — WARRANTED
+--   v.3-13 (the blessings for walking in the statutes; I will walk among you)
+--        NT:     2 Cor 6:16, Rev 21:3 (the indwelling/dwelling covenant quoted + consummated) — WARRANTED
+--        Extras: none warranted (Jub feast/sabbath material lands on Lev 23/25, not the lawsuit)
+--        Tanakh: Deut 28:1,12 (the parallel blessings), Ezek 37:26,27 (my tabernacle with them) — WARRANTED
+--   v.14-26 (the curses for disobedience; the heaven as iron, the earth as brass)
+--        NT:     none warranted (NT scattering lands on v27-33 / Luke 21:24)
+--        Extras: none warranted
+--        Tanakh: Deut 28:15,23,25 (the parallel curses) — WARRANTED
+--   v.27-33 (the severest judgment; eat the flesh of sons; scatter among the heathen)
+--        NT:     Luke 21:24 (led away captive into all nations) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Deut 28:53 (eat the fruit of thine own body), Deut 28:64 (scatter among all people) — WARRANTED
+--   v.34-39 (then shall the land enjoy her sabbaths)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: 2 Chr 36:21 (the 70 years = the land's withheld sabbaths) — WARRANTED
+--   v.40-42 (if they confess... then will I remember my covenant with Jacob, Isaac, Abraham)
+--        NT:     Luke 1:72 (to remember his holy covenant), Rom 11:26,27 (all Israel saved / my covenant) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Deut 30:2,6 (return + circumcise the heart), Neh 1:9 (if ye turn... I will gather) — WARRANTED
+--   v.43-45 (I will not cast them away... nor break my covenant: the covenant unbroken in exile)
+--        NT:     Rom 11:1,2 (hath Elohim cast away his people? forbid), Rom 11:29 (gifts/calling without repentance) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Jer 31:36,37 (Israel shall not cease as a nation), Deut 4:31 (he will not forsake thee) — WARRANTED
+--   v.46  (the colophon: these are the statutes... in mount Sinai by the hand of Moses)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Lev 27:34 (the companion colophon: the commandments... in mount Sinai) — WARRANTED
+
+CREATE TEMP VIEW _s311_lev26_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: keep my sabbaths and make no idols (v1-2)
+    ('canon','leviticus',26,1,'canon','exodus',20,3,'free',
+     E'*Thou shalt have no other gods before me* (Exodus 20:3). The chapter opens with the first word of the covenant — *Ye shall make you no idols nor graven image... to bow down unto it: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 26:1) — the same exclusive claim of Yahuah that heads the ten words at Sinai.'),
+    ('canon','leviticus',26,1,'canon','exodus',20,4,'free',
+     E'*Thou shalt not make unto thee any graven image, or any likeness of any thing that is in heaven above, or that is in the earth beneath, or that is in the water under the earth* (Exodus 20:4). The opening charge repeats the second word verbatim in substance — *Ye shall make you no idols nor graven image, neither rear you up a standing image, neither shall ye set up any image of stone in your land* (Leviticus 26:1) — the blessings-and-curses lawsuit grounded first on the prohibition of images.'),
+    ('canon','leviticus',26,2,'canon','exodus',20,8,'free',
+     E'*Remember the sabbath day, to keep it holy* (Exodus 20:8). The second half of the opening charge — *Ye shall keep my sabbaths, and reverence my sanctuary: I am Yahuah (LORD)* (Leviticus 26:2) — sets the Sabbath at the head of the covenant terms; the very rest whose neglect, by chapter''s end, the land herself will reclaim in the exile (Leviticus 26:34).'),
+
+    -- THREAD 2: I will walk among you / the blessings (v3-13)
+    ('canon','leviticus',26,3,'canon','deuteronomy',28,1,'free',
+     E'*And it shall come to pass, if thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God), to observe and to do all his commandments which I command thee this day, that Yahuah Elohayka (the LORD thy God) will set thee on high above all nations of the earth* (Deuteronomy 28:1). The blessings here turn on the same condition — *If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3) — the two great covenant-lawsuit passages set side by side, blessing for obedience.'),
+    ('canon','leviticus',26,4,'canon','deuteronomy',28,12,'free',
+     E'*Yahuah (LORD) shall open unto thee his good treasure, the heaven to give the rain unto thy land in his season, and to bless all the work of thine hand* (Deuteronomy 28:12). The first blessing for walking in the statutes is the same rain in its season — *Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4) — the heaven opened over the obedient land.'),
+    ('canon','leviticus',26,11,'canon','ezekiel',37,26,'free',
+     E'*Moreover I will make a covenant of peace with them; it shall be an everlasting covenant with them: and I will place them, and multiply them, and will set my sanctuary in the midst of them for evermore* (Ezekiel 37:26). The promise of the Presence here — *And I will set my tabernacle among you: and my soul shall not abhor you* (Leviticus 26:11) — Ezekiel carries to the regathered two-house people: the same sanctuary set in their midst, now for evermore.'),
+    ('canon','leviticus',26,12,'canon','ezekiel',37,27,'free',
+     E'*My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27). The covenant formula spoken here — *And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12) — is repeated word for word over the dry-bones nation made one again: the dwelling of Yahuah with his restored people.'),
+    ('canon','leviticus',26,12,'canon','2-corinthians',6,16,'free',
+     E'*And what agreement hath the temple of Elohim (God) with idols? for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). Paul quotes THIS verse — *And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12) — naming the indwelling Presence of Yahuah as the covenant ground for the people being a holy, separated temple; the Torah promise carried forward unbroken.'),
+    ('canon','leviticus',26,11,'canon','revelation',21,3,'free',
+     E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God)* (Revelation 21:3). The tabernacle promised here — *And I will set my tabernacle among you* (Leviticus 26:11) — reaches its consummation in the New Jerusalem: the dwelling of Yahuah with his people made eternal, the covenant formula of Leviticus 26:12 fulfilled in full.'),
+
+    -- THREAD 3: I will walk contrary unto you / the curses (v14-26)
+    ('canon','leviticus',26,14,'canon','deuteronomy',28,15,'free',
+     E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). The curse here turns on the identical hinge — *But if ye will not hearken unto me, and will not do all these commandments* (Leviticus 26:14) — the covenant-breaking judgment, never the Torah itself a curse, set out in both lawsuit chapters.'),
+    ('canon','leviticus',26,19,'canon','deuteronomy',28,23,'free',
+     E'*And thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron* (Deuteronomy 28:23). The same shut heaven and barren ground answer disobedience in both books — *I will make your heaven as iron, and your earth as brass* (Leviticus 26:19) — the figures merely transposed; the rain of Leviticus 26:4 withheld from the covenant-breaker.'),
+    ('canon','leviticus',26,17,'canon','deuteronomy',28,25,'free',
+     E'*Yahuah (LORD) shall cause thee to be smitten before thine enemies: thou shalt go out one way against them, and flee seven ways before them: and shalt be removed into all the kingdoms of the earth* (Deuteronomy 28:25). The defeat threatened here — *ye shall be slain before your enemies: they that hate you shall reign over you; and ye shall flee when none pursueth you* (Leviticus 26:17) — is the exact reversal of the blessing that five should chase a hundred (Leviticus 26:8), spelled out again at Deuteronomy.'),
+
+    -- THREAD 4: I will scatter you among the heathen (v27-33)
+    ('canon','leviticus',26,29,'canon','deuteronomy',28,53,'free',
+     E'*And thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters, which Yahuah Elohayka (the LORD thy God) hath given thee, in the siege, and in the straitness, wherewith thine enemies shall distress thee* (Deuteronomy 28:53). The severest horror of the siege is named in both lawsuit chapters — *And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29) — the covenant-breaking judgment carried to its uttermost extremity.'),
+    ('canon','leviticus',26,33,'canon','deuteronomy',28,64,'free',
+     E'*And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone* (Deuteronomy 28:64). The scattering decreed here — *And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate* (Leviticus 26:33) — is the two-house dispersion, named identically in the Deuteronomy lawsuit.'),
+    ('canon','leviticus',26,33,'canon','luke',21,24,'free',
+     E'*And they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles, until the times of the Gentiles be fulfilled* (Luke 21:24). Yahusha (Jesus) foretells over Jerusalem the very sentence of the Torah lawsuit — *And I will scatter you among the heathen, and will draw out a sword after you* (Leviticus 26:33) — the sword drawn out and the captivity into all nations, the covenant judgment falling once more.'),
+
+    -- THREAD 5: then shall the land enjoy her sabbaths (v34-39)
+    ('canon','leviticus',26,34,'canon','2-chronicles',36,21,'free',
+     E'*To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). The Chronicler reckons the seventy years of Babylon as exactly this — *Then shall the land enjoy her sabbaths, as long as it lieth desolate... even then shall the land rest, and enjoy her sabbaths* (Leviticus 26:34) — the land taking back the sabbaths withheld from her, paid to the day.'),
+
+    -- THREAD 6: if they confess and I remember my covenant (v40-42)
+    ('canon','leviticus',26,40,'canon','deuteronomy',30,2,'free',
+     E'*And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day, thou and thy children, with all thine heart, and with all thy soul* (Deuteronomy 30:2). The confession that opens the door of return — *If they shall confess their iniquity, and the iniquity of their fathers... and that also they have walked contrary unto me* (Leviticus 26:40) — is the same turning of heart Moses sets before the scattered nation, the way back from the curse.'),
+    ('canon','leviticus',26,41,'canon','deuteronomy',30,6,'free',
+     E'*And Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed, to love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, that thou mayest live* (Deuteronomy 30:6). The humbling of the uncircumcised heart sought here — *if then their uncircumcised hearts be humbled, and they then accept of the punishment of their iniquity* (Leviticus 26:41) — is answered by Yahuah''s own act in Deuteronomy: he circumcises the heart he calls humbled, the new-heart promise already in the Torah.'),
+    ('canon','leviticus',26,40,'canon','nehemiah',1,9,'free',
+     E'*But if ye turn unto me, and keep my commandments, and do them; though there were of you cast out unto the uttermost part of the heaven, yet will I gather them from thence, and will bring them unto the place that I have chosen to set my name there* (Nehemiah 1:9). Nehemiah pleads this very Levitical promise back to Yahuah — the confession of iniquity (Leviticus 26:40) met by the gathering of the cast-out — praying the covenant terms of return as living, binding scripture.'),
+    ('canon','leviticus',26,42,'canon','luke',1,72,'free',
+     E'*To perform the mercy promised to our fathers, and to remember his holy covenant* (Luke 1:72). Zacharias blesses Yahuah for doing the very thing this verse promises — *Then will I remember my covenant with Jacob, and also my covenant with Isaac, and also my covenant with Abraham will I remember; and I will remember the land* (Leviticus 26:42) — the patriarchal covenant remembered, now visited and redeemed in the raising up of the horn of salvation.'),
+    ('canon','leviticus',26,42,'canon','romans',11,26,'free',
+     E'*And so all Yashar''el (Israel) shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob* (Romans 11:26). The covenant Yahuah swears to remember — *my covenant with Jacob, and also my covenant with Isaac, and also my covenant with Abraham* (Leviticus 26:42) — is the ground of Paul''s assurance that all Israel shall yet be saved: the patriarchal promise to the fathers never annulled.'),
+    ('canon','leviticus',26,42,'canon','romans',11,27,'free',
+     E'*For this is my covenant unto them, when I shall take away their sins* (Romans 11:27). The remembered covenant of the patriarchs — *Then will I remember my covenant with Jacob... Isaac... Abraham; and I will remember the land* (Leviticus 26:42) — is the same covenant Paul names as Yahuah''s pledge to take away their sins: the lawsuit ends not in casting-off but in remembrance and cleansing.'),
+
+    -- THREAD 7: I will not cast them away / the covenant unbroken (v43-45)
+    ('canon','leviticus',26,44,'canon','deuteronomy',4,31,'free',
+     E'*(For Yahuah Elohayka (the LORD thy God) is a merciful Elohim (God);) he will not forsake thee, neither destroy thee, nor forget the covenant of thy fathers which he sware unto them* (Deuteronomy 4:31). The same unbreakable mercy is sworn here — *when they be in the land of their enemies, I will not cast them away, neither will I abhor them, to destroy them utterly, and to break my covenant with them: for I am Yahuah (LORD) their Elohim (God)* (Leviticus 26:44) — Yahuah binding himself never to forsake or forget the covenant even under judgment.'),
+    ('canon','leviticus',26,44,'canon','jeremiah',31,36,'free',
+     E'*If those ordinances depart from before me, saith Yahuah (LORD), then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever* (Jeremiah 31:36). The pledge that the covenant cannot be broken — *I will not cast them away... nor break my covenant with them: for I am Yahuah (LORD) their Elohim (God)* (Leviticus 26:44) — Jeremiah ties to the fixed ordinances of sun and moon: sooner would creation fail than Yashar''el cease to be Yahuah''s nation.'),
+    ('canon','leviticus',26,44,'canon','jeremiah',31,37,'free',
+     E'*Thus saith Yahuah (LORD); If heaven above can be measured, and the foundations of the earth searched out beneath, I will also cast off all the seed of Yashar''el (Israel) for all that they have done, saith Yahuah (LORD)* (Jeremiah 31:37). The very thing Yahuah here refuses to do — *I will not cast them away, neither will I abhor them, to destroy them utterly* (Leviticus 26:44) — Jeremiah makes as impossible as measuring the heavens: the seed is never finally cast off, the anti-replacement word of the prophets.'),
+    ('canon','leviticus',26,44,'canon','romans',11,1,'free',
+     E'*I say then, Hath Elohim (God) cast away his people? Elohim (God) forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin* (Romans 11:1). Paul''s thunderous denial rests on this very oath — *I will not cast them away, neither will I abhor them, to destroy them utterly, and to break my covenant with them* (Leviticus 26:44) — Yahuah has not cast away the people he bound himself never to abhor; the covenant stands.'),
+    ('canon','leviticus',26,44,'canon','romans',11,2,'free',
+     E'*Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2). The flat refusal of the Torah — *I will not cast them away* (Leviticus 26:44) — Paul restates as settled fact: Yahuah has not, and will not, cast away the people he foreknew and to whom he swore the covenant of their ancestors (Leviticus 26:45).'),
+    ('canon','leviticus',26,45,'canon','romans',11,29,'free',
+     E'*For the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). The covenant of the fathers Yahuah swears to remember for their sakes — *But I will for their sakes remember the covenant of their ancestors, whom I brought forth out of the land of Egypt... I am Yahuah (LORD)* (Leviticus 26:45) — is exactly what Paul means: the calling Yahuah gave the fathers he never revokes, the irrevocable covenant.'),
+
+    -- THREAD 8: these are the statutes in mount Sinai (v46)
+    ('canon','leviticus',26,46,'canon','leviticus',27,34,'free',
+     E'*These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai* (Leviticus 27:34). The colophon here — *These are the statutes and judgments and laws, which Yahuah (LORD) made between him and the children of Yashar''el (Israel) in mount Sinai by the hand of Moses* (Leviticus 26:46) — is matched almost word for word by the seal of the following chapter: the whole body of covenant instruction stamped as given at Sinai, the inheritance of the people.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-keep-my-sabbaths-and-make-no-idols',
+       E'Keep My Sabbaths and Make No Idols',
+       E'The covenant-lawsuit chapter opens with the heart of the ten words: *Ye shall make you no idols nor graven image, neither rear you up a standing image, neither shall ye set up any image of stone in your land, to bow down unto it: for I am Yahuah Elohaychem (the LORD your God)* (Leviticus 26:1), and *Ye shall keep my sabbaths, and reverence my sanctuary: I am Yahuah (LORD)* (Leviticus 26:2). These are the first and the fourth words of Sinai set as the head of the terms — *Thou shalt have no other gods before me* (Exodus 20:3), *Thou shalt not make unto thee any graven image* (Exodus 20:4), *Remember the sabbath day, to keep it holy* (Exodus 20:8). The whole blessing-and-curse that follows hangs on these: exclusive loyalty to Yahuah, no images, and the keeping of his sabbaths — the very rest whose neglect, by the chapter''s end, the land herself will reclaim in the exile (Leviticus 26:34).',
+       sv.verse_id, ev.verse_id, 'free', 23325
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-i-will-walk-among-you-the-blessings',
+       E'I Will Walk Among You — the Blessings',
+       E'For walking in the statutes Yahuah promises the whole order of life restored: *If ye walk in my statutes, and keep my commandments, and do them; Then I will give you rain in due season, and the land shall yield her increase* (Leviticus 26:3-4), peace in the land, none to make afraid, the sword turned away. The same condition and the same opened heaven head the parallel blessings of Moses: *if thou shalt hearken diligently unto the voice of Yahuah Elohayka (the LORD thy God)... Yahuah (LORD) shall open unto thee his good treasure, the heaven to give the rain unto thy land in his season* (Deuteronomy 28:1,12). But the crown of the blessing is the Presence: *And I will set my tabernacle among you: and my soul shall not abhor you. And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:11-12). Ezekiel carries this covenant formula word for word to the regathered two-house nation — *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* (Ezekiel 37:27) — set in their midst *for evermore* (Ezekiel 37:26). Paul quotes the verse itself over the people as a holy temple — *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) — and John sees it consummated in the New Jerusalem: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3). The Indwelling Presence runs unbroken from Torah to the eternal city: Yahuah walking among his people, their Elohim, and they his people.',
+       sv.verse_id, ev.verse_id, 'free', 23328
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-i-will-walk-contrary-unto-you-the-curses',
+       E'I Will Walk Contrary Unto You — the Curses',
+       E'The curse is the covenant-BREAKING judgment, never the Torah a curse: *But if ye will not hearken unto me, and will not do all these commandments... but that ye break my covenant* (Leviticus 26:14-15), then the escalating chastisement comes — terror, the wasting sickness, defeat before enemies, and the shut heaven: *I will make your heaven as iron, and your earth as brass* (Leviticus 26:19), the rain of verse 4 withheld. *And if ye walk contrary unto me... Then will I also walk contrary unto you* (Leviticus 26:23-24), seven times for sins, with the sword that avenges the quarrel of the covenant and the broken staff of bread. The same judgments answer the same disobedience in the parallel lawsuit of Moses: *if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God)... that all these curses shall come upon thee* (Deuteronomy 28:15), *thy heaven that is over thy head shall be brass, and the earth that is under thee shall be iron* (Deuteronomy 28:23), *Yahuah (LORD) shall cause thee to be smitten before thine enemies... and flee seven ways before them* (Deuteronomy 28:25). This is the reversal of the blessing — where five had chased a hundred (Leviticus 26:8), now they flee when none pursueth — the consequence of breaking the covenant, not the covenant itself.',
+       sv.verse_id, ev.verse_id, 'free', 23331
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-i-will-scatter-you-among-the-heathen',
+       E'I Will Scatter You Among the Heathen',
+       E'The judgment reaches its uttermost extremity: *And ye shall eat the flesh of your sons, and the flesh of your daughters shall ye eat* (Leviticus 26:29), the high places destroyed, the cities laid waste, the sanctuaries desolate. Then the sentence that defines the whole later history of the people: *And I will scatter you among the heathen, and will draw out a sword after you: and your land shall be desolate, and your cities waste* (Leviticus 26:33). The same horrors and the same scattering are named in the parallel lawsuit: *thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters... in the siege* (Deuteronomy 28:53), *And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64). This scattering IS the two-house dispersion — the people driven into all nations. And Yahusha (Jesus) foretells it falling once more over Jerusalem: *they shall fall by the edge of the sword, and shall be led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles* (Luke 21:24) — the sword drawn out after them, exactly as the Torah lawsuit warned.',
+       sv.verse_id, ev.verse_id, 'free', 23334
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-then-shall-the-land-enjoy-her-sabbaths',
+       E'Then Shall the Land Enjoy Her Sabbaths',
+       E'In the desolation the land takes back the rest withheld from her: *Then shall the land enjoy her sabbaths, as long as it lieth desolate, and ye be in your enemies'' land; even then shall the land rest, and enjoy her sabbaths* (Leviticus 26:34), *because it did not rest in your sabbaths, when ye dwelt upon it* (Leviticus 26:35). The neglect of the sabbath of the land (Leviticus 25) and of the sanctuary (Leviticus 26:2) is repaid to the day. The Chronicler reckons the seventy years of Babylon as exactly this — *To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21). The very figure Moses gives — the land collecting her unkept rests in the exile — becomes the measure of the captivity: the appointed rest of Yahuah is not mocked, but paid in full.',
+       sv.verse_id, ev.verse_id, 'free', 23337
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=39
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-if-they-confess-and-i-remember-my-covenant',
+       E'If They Confess, and I Remember My Covenant',
+       E'The lawsuit does not end in the curse but turns on the hinge of repentance: *If they shall confess their iniquity, and the iniquity of their fathers, with their trespass which they trespassed against me, and that also they have walked contrary unto me... if then their uncircumcised hearts be humbled, and they then accept of the punishment of their iniquity* (Leviticus 26:40-41). This is the way back Moses sets before the scattered nation — *And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice* (Deuteronomy 30:2) — and the humbled, uncircumcised heart is answered by Yahuah''s own act: *Yahuah Elohayka (the LORD thy God) will circumcise thine heart, and the heart of thy seed* (Deuteronomy 30:6). Nehemiah prays this very promise back to Yahuah: *if ye turn unto me, and keep my commandments... yet will I gather them from thence* (Nehemiah 1:9). Then the great pledge: *Then will I remember my covenant with Jacob, and also my covenant with Isaac, and also my covenant with Abraham will I remember; and I will remember the land* (Leviticus 26:42) — the patriarchal seed-promise, carried by bloodline and covenant-word together, never forgotten. Zacharias blesses Yahuah for performing it — *the mercy promised to our fathers, and to remember his holy covenant* (Luke 1:72) — and Paul rests the salvation of all Israel upon it: *And so all Yashar''el (Israel) shall be saved... For this is my covenant unto them, when I shall take away their sins* (Romans 11:26-27). The remembered covenant is the covenant of the fathers, brought to its fulfilment in the taking away of sin.',
+       sv.verse_id, ev.verse_id, 'free', 23340
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=40
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=42
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken',
+       E'I Will Not Cast Them Away — the Covenant Unbroken',
+       E'Here is the anti-replacement anchor of the whole Torah: *And yet for all that, when they be in the land of their enemies, I will not cast them away, neither will I abhor them, to destroy them utterly, and to break my covenant with them: for I am Yahuah (LORD) their Elohim (God). But I will for their sakes remember the covenant of their ancestors, whom I brought forth out of the land of Egypt in the sight of the heathen, that I might be their Elohim (God): I am Yahuah (LORD)* (Leviticus 26:44-45). Even in the depth of the exile-curse the covenant is NOT broken. Moses swears the same unbreakable mercy: *he will not forsake thee, neither destroy thee, nor forget the covenant of thy fathers which he sware unto them* (Deuteronomy 4:31). Jeremiah makes it as impossible as un-creating the world — *If those ordinances depart from before me... then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever* (Jeremiah 31:36); *If heaven above can be measured... I will also cast off all the seed of Yashar''el (Israel)* (Jeremiah 31:37). And Paul thunders the same word over the question of his own people: *Hath Elohim (God) cast away his people? Elohim (God) forbid* (Romans 11:1); *Elohim (God) hath not cast away his people which he foreknew* (Romans 11:2); *For the gifts and calling of Elohim (God) are without repentance* (Romans 11:29). The covenant Yahuah bound himself to never break is never broken — never replaced, never cast off.',
+       sv.verse_id, ev.verse_id, 'free', 23343
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=43
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=45
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-26-these-are-the-statutes-in-mount-sinai',
+       E'These Are the Statutes — in Mount Sinai',
+       E'The covenant-lawsuit closes with its seal: *These are the statutes and judgments and laws, which Yahuah (LORD) made between him and the children of Yashar''el (Israel) in mount Sinai by the hand of Moses* (Leviticus 26:46). The whole body of covenant instruction is stamped as given at Sinai, the inheritance of the people. The colophon of the following chapter matches it almost word for word: *These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai* (Leviticus 27:34). Twin seals, the same place, the same mediator — the statutes, judgments, laws, and commandments together bound to the mountain where Yahuah met his people.',
+       sv.verse_id, ev.verse_id, 'free', 23346
+  FROM _s311_lev26_lookup sv, _s311_lev26_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=46
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=26 AND ev.verse_number=46
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD MEMBERS ============================
+-- THREAD 1: keep my sabbaths and make no idols (v1-2)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 20:3 — *Thou shalt have no other gods before me* — the first word of Sinai heads the lawsuit''s opening charge.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-keep-my-sabbaths-and-make-no-idols'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 20:4 — *Thou shalt not make unto thee any graven image* — the second word, repeated in substance in Leviticus 26:1.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=1
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-keep-my-sabbaths-and-make-no-idols'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 20:8 — *Remember the sabbath day, to keep it holy* — the fourth word; the sabbaths whose neglect the land later reclaims.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=2
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=20 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-keep-my-sabbaths-and-make-no-idols'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: I will walk among you / the blessings (v3-13)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 28:1 — *if thou shalt hearken diligently... Yahuah Elohayka (the LORD thy God) will set thee on high above all nations* — the parallel blessing on the same condition.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=3
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-among-you-the-blessings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 28:12 — *Yahuah (LORD) shall open unto thee his good treasure, the heaven to give the rain unto thy land in his season* — the same opened heaven as Leviticus 26:4.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=4
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-among-you-the-blessings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ezekiel 37:26 — *I will... set my sanctuary in the midst of them for evermore* — the tabernacle of Leviticus 26:11 set among the regathered nation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-among-you-the-blessings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ezekiel 37:27 — *My tabernacle also shall be with them: yea, I will be their Elohim (God), and they shall be my people* — the covenant formula of Leviticus 26:12 word for word.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-among-you-the-blessings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Corinthians 6:16 — *I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* — Paul quotes Leviticus 26:12 directly: the indwelling Presence.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=12
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-among-you-the-blessings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Revelation 21:3 — *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them* — the tabernacle of Leviticus 26:11 consummated in the New Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=11
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-among-you-the-blessings'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: I will walk contrary unto you / the curses (v14-26)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 28:15 — *if thou wilt not hearken... that all these curses shall come upon thee* — the same covenant-breaking hinge as Leviticus 26:14.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=14
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-contrary-unto-you-the-curses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 28:23 — *thy heaven... shall be brass, and the earth... iron* — the same shut heaven and barren ground as Leviticus 26:19, figures transposed.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=19
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-contrary-unto-you-the-curses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 28:25 — *smitten before thine enemies... flee seven ways before them* — the reversal of the blessing, matching Leviticus 26:17.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=17
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-walk-contrary-unto-you-the-curses'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: I will scatter you among the heathen (v27-33)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 28:53 — *thou shalt eat the fruit of thine own body, the flesh of thy sons and of thy daughters... in the siege* — the same uttermost horror as Leviticus 26:29.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=29
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=53
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-scatter-you-among-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 28:64 — *Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* — the two-house dispersion, matching Leviticus 26:33.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-scatter-you-among-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Luke 21:24 — *led away captive into all nations: and Jerusalem shall be trodden down of the Gentiles* — Yahusha foretells the scattering of Leviticus 26:33 falling again.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=33
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-scatter-you-among-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: then shall the land enjoy her sabbaths (v34-39)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Chronicles 36:21 — *until the land had enjoyed her sabbaths... to fulfil threescore and ten years* — the 70 years reckoned as the land''s withheld sabbaths repaid (Leviticus 26:34).'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=34
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-then-shall-the-land-enjoy-her-sabbaths'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6: if they confess and I remember my covenant (v40-42)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 30:2 — *And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice* — the same turning of heart as the confession of Leviticus 26:40.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=40
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-if-they-confess-and-i-remember-my-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 30:6 — *Yahuah Elohayka (the LORD thy God) will circumcise thine heart* — Yahuah''s answer to the humbled uncircumcised heart of Leviticus 26:41.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=41
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-if-they-confess-and-i-remember-my-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Nehemiah 1:9 — *if ye turn unto me, and keep my commandments... yet will I gather them from thence* — Nehemiah prays the return-promise of Leviticus 26:40 back to Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=40
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=1 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-if-they-confess-and-i-remember-my-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Luke 1:72 — *the mercy promised to our fathers, and to remember his holy covenant* — Zacharias blesses Yahuah for doing what Leviticus 26:42 promises.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=42
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=72
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-if-they-confess-and-i-remember-my-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 11:26 — *And so all Yashar''el (Israel) shall be saved* — the remembered patriarchal covenant of Leviticus 26:42 is Paul''s ground for Israel''s salvation.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=42
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-if-they-confess-and-i-remember-my-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Romans 11:27 — *For this is my covenant unto them, when I shall take away their sins* — the same remembered covenant of Leviticus 26:42, brought to its fulfilment.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=42
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-if-they-confess-and-i-remember-my-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7: I will not cast them away / the covenant unbroken (v43-45)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 4:31 — *he will not forsake thee, neither destroy thee, nor forget the covenant of thy fathers* — the same unbreakable mercy as Leviticus 26:44.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=44
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 31:36 — *then the seed of Yashar''el (Israel) also shall cease from being a nation before me for ever* — the covenant of Leviticus 26:44 as fixed as sun and moon.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=44
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 31:37 — *If heaven above can be measured... I will also cast off all the seed of Yashar''el (Israel)* — the casting-off Leviticus 26:44 refuses, made as impossible as measuring the heavens.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=44
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Romans 11:1 — *Hath Elohim (God) cast away his people? Elohim (God) forbid* — Paul''s denial rests on the oath of Leviticus 26:44.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=44
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Romans 11:2 — *Elohim (God) hath not cast away his people which he foreknew* — the flat refusal of Leviticus 26:44 restated as settled fact.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=44
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Romans 11:29 — *For the gifts and calling of Elohim (God) are without repentance* — the covenant of the fathers Yahuah remembers for their sakes (Leviticus 26:45), irrevocable.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=45
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=11 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-i-will-not-cast-them-away-the-covenant-unbroken'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 8: these are the statutes in mount Sinai (v46)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 27:34 — *These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai* — the twin colophon to Leviticus 26:46, same place, same mediator.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev26_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=26 AND sv.verse_number=46
+  JOIN _s311_lev26_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=27 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-26-these-are-the-statutes-in-mount-sinai'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_leviticus_27.sql (Leviticus 27) -----
+-- Book: Leviticus  Chapter: 27  (vows, valuations, the firstling, and the TITHE — the closing chapter)
+-- Tag: lev27   Session prefix: s311   Temp view: _s311_lev27_lookup
+-- Sort band base: 23350  step 3  (23350, 23353, 23356, 23359, 23362)
+--
+-- THREADS (5):
+--   leviticus-27-the-singular-vow-binding                         v1-8   [Tanakh+NT] tier free
+--        Num30:2, Deut23:21, Deut23:23, Eccl5:4, Eccl5:5, Acts5:4
+--   leviticus-27-the-vowed-field-returns-at-the-jubilee           v16-24 [Tanakh] tier free
+--        Lev25:10, Lev25:13, Lev25:15
+--   leviticus-27-the-firstling-is-already-yahuahs                 v26-29 [Tanakh+NT] tier free
+--        Exod13:2, Exod13:12, Num18:17, Luke2:23
+--   leviticus-27-all-the-tithe-is-holy-unto-yahuah                v30-33 [Tanakh+NT] tier free
+--        Gen14:20, Gen28:22, Mal3:8, Mal3:10, Matt23:23, Heb7:5, Heb7:8
+--   leviticus-27-these-are-the-commandments-the-colophon          v34    [Tanakh] tier free
+--        Lev26:46
+--
+-- FRAMEWORK NOTES:
+--   v2-8 the singular vow is BINDING and graded to ability ("according to his ability that
+--         vowed shall the priest value him", v8). The whole lateral Tanakh weave (Num30:2 "he
+--         shall not break his word"; Deut23:21-23 "thou shalt not slack to pay it... it would
+--         be sin in thee"; Eccl5:4-5 "defer not to pay it... better not vow than vow and not
+--         pay") treats the vowed thing as a debt to Yahuah. Acts5:4 (Ananias) carries it
+--         FORWARD: the thing once vowed/devoted was no longer his own to lie about — "thou hast
+--         not lied unto men, but unto Elohim (God)". Vows taken seriously; not abolished.
+--   v16-24 the vowed FIELD returns at the jubilee — the valuation is reckoned by the years to
+--         the jubilee (v17-18, v23-24); this is the same jubilee reckoning of Lev25:10,13,15.
+--   v26-29 ★ the FIRSTLING is ALREADY Yahuah's and so cannot be vowed ("which should be the
+--         LORD'S firstling... it is the LORD'S", v26) — the firstborn-belongs-to-Yahuah claim
+--         of Exod13:2,12 and Num18:17, carried forward to Luke2:23 (Yahusha presented "as it is
+--         written in the law of Yahuah, Every male that openeth the womb shall be called holy").
+--         The cherem/devoted thing is "most holy unto Yahuah" (v28), not redeemed.
+--   v30-33 ★★ "all the TITHE of the land... is the LORD'S: it is holy unto Yahuah" (v30). The
+--         tithe BELONGS to Yahuah. Lateral roots: Abraham tithes to Melek Tsadiq (Gen14:20),
+--         Jacob's vow of the tenth (Gen28:22). Forward: Mal3:8-10 (rob Elohim in tithes... bring
+--         ye all the tithes), Matt23:23 (tithe AFFIRMED — "these ought ye to have done" — while
+--         the weightier matters are not left undone), Heb7:5-9 (Levites take tithes by the law;
+--         Abraham tithed to Melchizedek). The tithe stands; it is holy, not a defunct ordinance.
+--   v34 the closing COLOPHON of Leviticus — "These are the commandments, which Yahuah commanded
+--         Moses for the children of Yashar'el in mount Sinai" — twin of Lev26:46. The book seals
+--         itself: these are the binding commandments, given at Sinai by the hand of Moses.
+--
+-- Leviticus 27 coverage:
+--   v.1-8  (the singular vow of persons by valuation, graded to ability)
+--        NT:     Acts5:4 (Ananias — the vowed/devoted thing no longer his own) — WARRANTED
+--        Extras: none warranted (Sirach has vow material but no clean single witness pulled)
+--        Tanakh: Num30:2, Deut23:21,23, Eccl5:4,5 — WARRANTED
+--   v.9-15 (valuation/redemption of animals and houses vowed)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: (the redeem-and-add-a-fifth principle recurs at v19,27,31 — kept within their threads) — none added
+--   v.16-25 (valuation/redemption of fields; the field returning at the jubilee)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Lev25:10,13,15 (the jubilee reckoning) — WARRANTED
+--   v.26-29 (the firstling already Yahuah's; the devoted thing most holy)
+--        NT:     Luke2:23 (every male that openeth the womb holy to Yahuah) — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Exod13:2,12, Num18:17 — WARRANTED
+--   v.30-33 (all the tithe is Yahuah's; it is holy)
+--        NT:     Mal... [Tanakh], Matt23:23, Heb7:5,8 — WARRANTED
+--        Extras: none warranted
+--        Tanakh: Gen14:20, Gen28:22, Mal3:8, Mal3:10 — WARRANTED
+--   v.34 (the closing colophon)
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Lev26:46 — WARRANTED
+
+CREATE TEMP VIEW _s311_lev27_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the singular vow is binding (v1-8)
+    ('canon','leviticus',27,2,'canon','numbers',30,2,'free',
+     E'*If a man vow a vow unto Yahuah (LORD), or swear an oath to bind his soul with a bond; he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2). The *singular vow* by which *the persons shall be for Yahuah (LORD) by thy estimation* (Leviticus 27:2) is no light thing — what proceeds out of the mouth unto Yahuah binds the soul and may not be broken.'),
+    ('canon','leviticus',27,2,'canon','deuteronomy',23,21,'free',
+     E'*When thou shalt vow a vow unto Yahuah Elohayka (the LORD thy God), thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee* (Deuteronomy 23:21). The vow that puts *the persons... for Yahuah (LORD) by thy estimation* (Leviticus 27:2) creates a debt Yahuah will surely require; to slack in paying it is sin.'),
+    ('canon','leviticus',27,2,'canon','deuteronomy',23,23,'free',
+     E'*That which is gone out of thy lips thou shalt keep and perform; even a freewill offering, according as thou hast vowed unto Yahuah Elohayka (the LORD thy God), which thou hast promised with thy mouth* (Deuteronomy 23:23). The freewill *singular vow* of Leviticus 27:2 is exactly this — promised with the mouth, and so to be kept and performed without fail.'),
+    ('canon','leviticus',27,2,'canon','ecclesiastes',5,4,'free',
+     E'*When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4). The wisdom-writer presses the same Torah: the *singular vow* (Leviticus 27:2) must be paid, not deferred — Yahuah has no pleasure in the fool who promises and lingers.'),
+    ('canon','leviticus',27,2,'canon','ecclesiastes',5,5,'free',
+     E'*Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The valuation laws of Leviticus 27 take vows so seriously that the Preacher warns it is safer never to make the *singular vow* (Leviticus 27:2) than to make it and leave the estimation unpaid.'),
+    ('canon','leviticus',27,8,'canon','acts',5,4,'free',
+     E'*Whiles it remained, was it not thine own? and after it was sold, was it not in thine own power? why hast thou conceived this thing in thine heart? thou hast not lied unto men, but unto Elohim (God)* (Acts 5:4). Where the priest values even the poor *according to his ability that vowed* (Leviticus 27:8), the thing once devoted is Yahuah''s; Ananias''s sin was holding back what had been pledged — lying *not unto men, but unto Elohim (God)*. The vow is still binding.'),
+    -- THREAD 2: the vowed field returns at the jubilee (v16-24)
+    ('canon','leviticus',27,17,'canon','leviticus',25,10,'free',
+     E'*And ye shall hallow the fiftieth year, and proclaim liberty throughout all the land unto all the inhabitants thereof: it shall be a jubile unto you; and ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10). The vowed field is reckoned *from the year of jubile* (Leviticus 27:17) — its whole valuation hangs on the jubilee proclaimed one chapter before, when every possession returns.'),
+    ('canon','leviticus',27,24,'canon','leviticus',25,13,'free',
+     E'*In the year of this jubile ye shall return every man unto his possession* (Leviticus 25:13). So the bought field goes back: *In the year of the jubile the field shall return unto him of whom it was bought, even to him to whom the possession of the land did belong* (Leviticus 27:24) — the vow cannot override the jubilee return of the inheritance.'),
+    ('canon','leviticus',27,18,'canon','leviticus',25,15,'free',
+     E'*According to the number of years after the jubile thou shalt buy of thy neighbour, and according unto the number of years of the fruits he shall sell unto thee* (Leviticus 25:15). The priest reckons the vowed field the very same way — *according to the years that remain, even unto the year of the jubile* (Leviticus 27:18); the years-to-jubilee are the measure of all value in the land.'),
+    -- THREAD 3: the firstling is already Yahuah's (v26-29)
+    ('canon','leviticus',27,26,'canon','exodus',13,2,'free',
+     E'*Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel), both of man and of beast: it is mine* (Exodus 13:2). This is why *the firstling of the beasts, which should be the LORD''S firstling, no man shall sanctify it... it is the LORD''S* (Leviticus 27:26) — you cannot vow what is already his; the firstborn was claimed at the exodus.'),
+    ('canon','leviticus',27,26,'canon','exodus',13,12,'free',
+     E'*That thou shalt set apart unto Yahuah (LORD) all that openeth the matrix, and every firstling that cometh of a beast which thou hast; the males shall be the LORD''S* (Exodus 13:12). The firstling already belongs to Yahuah, so it cannot be made the object of a fresh vow — *it is the LORD''S* (Leviticus 27:26) before any man''s estimation touches it.'),
+    ('canon','leviticus',27,26,'canon','numbers',18,17,'free',
+     E'*But the firstling of a cow, or the firstling of a sheep, or the firstling of a goat, thou shalt not redeem; they are holy: thou shalt sprinkle their blood upon the altar* (Numbers 18:17). The clean firstling is unredeemable because it is already holy to Yahuah — the same law that forbids vowing it in Leviticus 27:26, *it is the LORD''S*.'),
+    ('canon','leviticus',27,26,'canon','luke',2,23,'free',
+     E'*(As it is written in the law of Yahuah (Lord), Every male that openeth the womb shall be called holy to Yahuah (Lord);)* (Luke 2:23). When the parents present the infant Yahusha, the firstborn law of Leviticus 27:26 — the firstling that *is the LORD''S* — is fulfilled in him: the Son who opens the womb is rendered holy to Yahuah, already his.'),
+    -- THREAD 4: all the tithe is holy unto Yahuah (v30-33)
+    ('canon','leviticus',27,30,'canon','genesis',14,20,'free',
+     E'*And blessed be the El Elyon (most high God), which hath delivered thine enemies into thy hand. And he gave him tithes of all* (Genesis 14:20). Long before Sinai, Abram gives the tenth to Melek Tsadiq (Melchizedek); the law now declares why — *all the tithe of the land... is the LORD''S: it is holy unto Yahuah (LORD)* (Leviticus 27:30). The tithe was always his.'),
+    ('canon','leviticus',27,30,'canon','genesis',28,22,'free',
+     E'*And this stone, which I have set for a pillar, shall be Elohim''s (God''s) house: and of all that thou shalt give me I will surely give the tenth unto thee* (Genesis 28:22). Jacob vows the tenth at Beth-el, anticipating the Torah''s claim that *all the tithe of the land... is the LORD''S* (Leviticus 27:30) — the patriarch already renders to Yahuah the holy tenth.'),
+    ('canon','leviticus',27,30,'canon','malachi',3,8,'free',
+     E'*Will a man rob Elohim (God)? Yet ye have robbed me. But ye say, Wherein have we robbed thee? In tithes and offerings* (Malachi 3:8). Because *all the tithe of the land... is the LORD''S: it is holy unto Yahuah (LORD)* (Leviticus 27:30), to withhold it is not mere stinginess but robbery of Elohim — the prophet presses the very ownership Leviticus declares.'),
+    ('canon','leviticus',27,30,'canon','malachi',3,10,'free',
+     E'*Bring ye all the tithes into the storehouse, that there may be meat in mine house, and prove me now herewith, saith Yahuah Tseva''ot (LORD of hosts), if I will not open you the windows of heaven, and pour you out a blessing* (Malachi 3:10). The remedy for robbing Yahuah of his own tithe (Leviticus 27:30, *it is holy unto Yahuah*) is to bring the whole tenth in — and the windows of heaven open over the obedient.'),
+    ('canon','leviticus',27,30,'canon','matthew',23,23,'free',
+     E'*Woe unto you, scribes and Pharisees, hypocrites! for ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law, judgment, mercy, and faith: these ought ye to have done, and not to leave the other undone* (Matthew 23:23). Yahusha AFFIRMS the tithe of Leviticus 27:30 — *these ought ye to have done* — while refusing to let it crowd out the weightier matters; the holy tenth still stands, the heart of the law with it.'),
+    ('canon','leviticus',27,30,'canon','hebrews',7,5,'free',
+     E'*And verily they that are of the sons of Levi, who receive the office of the priesthood, have a commandment to take tithes of the people according to the law, that is, of their brethren, though they come out of the loins of Abraham* (Hebrews 7:5). The Levitical tithe is a *commandment... according to the law* — the very statute of Leviticus 27:30 that *all the tithe... is the LORD''S* — administered by the priesthood for Yahuah.'),
+    ('canon','leviticus',27,30,'canon','hebrews',7,8,'free',
+     E'*And here men that die receive tithes; but there he receiveth them, of whom it is witnessed that he liveth* (Hebrews 7:8). The tithe that *is holy unto Yahuah (LORD)* (Leviticus 27:30) is taken on earth by dying Levites, but reaches up to the living priest after Melek Tsadiq — Abraham''s tithe to Melchizedek (Genesis 14:20) shown to outrank the law''s own collectors.'),
+    -- THREAD 5: the colophon of Leviticus (v34)
+    ('canon','leviticus',27,34,'canon','leviticus',26,46,'free',
+     E'*These are the statutes and judgments and laws, which Yahuah (LORD) made between him and the children of Yashar''el (Israel) in mount Sinai by the hand of Moses* (Leviticus 26:46). The book seals itself twice over: its closing word — *These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai* (Leviticus 27:34) — echoes the colophon of the chapter before; all of it Sinai-given, binding, by the hand of Moses.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-27-the-singular-vow-binding',
+       E'The singular vow — binding, graded to ability',
+       E'When a man makes *a singular vow, the persons shall be for Yahuah (LORD) by thy estimation* (Leviticus 27:2), and the valuation is graded by age and sex — yet the poor are not shut out: *according to his ability that vowed shall the priest value him* (Leviticus 27:8). The whole Tanakh treats the vow as a debt to Yahuah that may not be broken: *he shall not break his word, he shall do according to all that proceedeth out of his mouth* (Numbers 30:2); *thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee* (Deuteronomy 23:21); *that which is gone out of thy lips thou shalt keep and perform* (Deuteronomy 23:23). The wisdom-writer says the same — *defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4), and *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). It carries forward to Ananias: the thing once devoted was no longer his to lie about — *thou hast not lied unto men, but unto Elohim (God)* (Acts 5:4). Vows taken with deadly seriousness, then and now.',
+       sv.verse_id, ev.verse_id, 'free', 23350
+  FROM _s311_lev27_lookup sv, _s311_lev27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=27 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-27-the-vowed-field-returns-at-the-jubilee',
+       E'The vowed field returns at the jubilee',
+       E'The valuation of a vowed field is measured entirely by the years to the jubilee: *If he sanctify his field from the year of jubile, according to thy estimation it shall stand* (Leviticus 27:17); and if later, *the priest shall reckon unto him the money according to the years that remain, even unto the year of the jubile* (Leviticus 27:18). And the bought field cannot be held past it — *In the year of the jubile the field shall return unto him of whom it was bought, even to him to whom the possession of the land did belong* (Leviticus 27:24). This is the jubilee reckoning of the chapter before: *ye shall return every man unto his possession, and ye shall return every man unto his family* (Leviticus 25:10); *In the year of this jubile ye shall return every man unto his possession* (Leviticus 25:13); *According to the number of years after the jubile thou shalt buy of thy neighbour* (Leviticus 25:15). No vow may override the jubilee return of the inheritance — the land is Yahuah''s, held in trust.',
+       sv.verse_id, ev.verse_id, 'free', 23353
+  FROM _s311_lev27_lookup sv, _s311_lev27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=27 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-27-the-firstling-is-already-yahuahs',
+       E'The firstling is already Yahuah''s — it cannot be vowed',
+       E'A man may not vow what already belongs to Yahuah: *Only the firstling of the beasts, which should be the LORD''S firstling, no man shall sanctify it; whether it be ox, or sheep: it is the LORD''S* (Leviticus 27:26). The firstborn was claimed at the exodus — *Sanctify unto me all the firstborn, whatsoever openeth the womb... both of man and of beast: it is mine* (Exodus 13:2); *every firstling that cometh of a beast which thou hast; the males shall be the LORD''S* (Exodus 13:12) — and the clean firstling is unredeemable because already holy: *the firstling of a cow, or the firstling of a sheep, or the firstling of a goat, thou shalt not redeem; they are holy* (Numbers 18:17). The devoted thing (cherem) likewise is *most holy unto Yahuah (LORD)* (Leviticus 27:28), not sold or redeemed. It carries forward to the presentation of the infant Messiah: *(As it is written in the law of Yahuah (Lord), Every male that openeth the womb shall be called holy to Yahuah (Lord);)* (Luke 2:23) — the firstborn Son rendered holy to Yahuah, already his.',
+       sv.verse_id, ev.verse_id, 'free', 23356
+  FROM _s311_lev27_lookup sv, _s311_lev27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=27 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-27-all-the-tithe-is-holy-unto-yahuah',
+       E'All the tithe is holy unto Yahuah',
+       E'The closing law sets the tithe apart as Yahuah''s own: *And all the tithe of the land, whether of the seed of the land, or of the fruit of the tree, is the LORD''S: it is holy unto Yahuah (LORD)* (Leviticus 27:30); *the tenth shall be holy unto Yahuah (LORD)* (Leviticus 27:32). The roots run back before Sinai — Abram *gave him tithes of all* to Melek Tsadiq (Genesis 14:20), and Jacob vowed *of all that thou shalt give me I will surely give the tenth unto thee* (Genesis 28:22). It runs forward unbroken: to withhold it is robbery — *Will a man rob Elohim (God)?... In tithes and offerings* (Malachi 3:8) — with the remedy, *Bring ye all the tithes into the storehouse... and prove me now herewith... if I will not open you the windows of heaven* (Malachi 3:10). Yahusha AFFIRMS it: *ye pay tithe of mint and anise and cummin, and have omitted the weightier matters of the law... these ought ye to have done, and not to leave the other undone* (Matthew 23:23). And the priesthood takes it *according to the law* (Hebrews 7:5), the dying Levites'' tithe reaching up to the living priest after Melek Tsadiq — *there he receiveth them, of whom it is witnessed that he liveth* (Hebrews 7:8). The holy tenth stands.',
+       sv.verse_id, ev.verse_id, 'free', 23359
+  FROM _s311_lev27_lookup sv, _s311_lev27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=27 AND ev.verse_number=33
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'leviticus-27-these-are-the-commandments-the-colophon',
+       E'These are the commandments — the colophon of Leviticus',
+       E'The book seals itself: *These are the commandments, which Yahuah (LORD) commanded Moses for the children of Yashar''el (Israel) in mount Sinai* (Leviticus 27:34). It echoes the colophon of the chapter before — *These are the statutes and judgments and laws, which Yahuah (LORD) made between him and the children of Yashar''el (Israel) in mount Sinai by the hand of Moses* (Leviticus 26:46). The whole of Leviticus is bound up as Sinai-given commandment, by the hand of Moses, to the covenant people — the living instruction of Yahuah, not a defunct relic.',
+       sv.verse_id, ev.verse_id, 'free', 23362
+  FROM _s311_lev27_lookup sv, _s311_lev27_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=34
+   AND ev.edition_slug='canon' AND ev.book_slug='leviticus' AND ev.chapter_number=27 AND ev.verse_number=34
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD_MEMBERS ============================
+-- THREAD 1: the singular vow is binding
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 30:2 — *he shall not break his word, he shall do according to all that proceedeth out of his mouth* — the vow binds the soul.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-singular-vow-binding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 23:21 — *thou shalt not slack to pay it... it would be sin in thee* — the vow is a debt Yahuah will surely require.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-singular-vow-binding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 23:23 — *that which is gone out of thy lips thou shalt keep and perform* — promised with the mouth, so kept.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-singular-vow-binding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ecclesiastes 5:4 — *defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* — the wisdom echo.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-singular-vow-binding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Ecclesiastes 5:5 — *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* — safer never to vow than to default.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=2
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-singular-vow-binding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Acts 5:4 — *thou hast not lied unto men, but unto Elohim (God)* — Ananias and the devoted thing held back; the vow still binds.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=8
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-singular-vow-binding'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+-- THREAD 2: the vowed field returns at the jubilee
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 25:10 — *proclaim liberty throughout all the land... ye shall return every man unto his possession* — the jubilee the field valuation hangs on.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=17
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-vowed-field-returns-at-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 25:15 — *According to the number of years after the jubile thou shalt buy of thy neighbour* — value measured by the years remaining.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=18
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-vowed-field-returns-at-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 25:13 — *In the year of this jubile ye shall return every man unto his possession* — the bought field goes back; no vow overrides it.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=24
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-vowed-field-returns-at-the-jubilee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+-- THREAD 3: the firstling is already Yahuah's
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 13:2 — *Sanctify unto me all the firstborn... it is mine* — the firstborn claimed at the exodus.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-firstling-is-already-yahuahs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 13:12 — *every firstling that cometh of a beast... the males shall be the LORD''S* — already his, so not vowable.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-firstling-is-already-yahuahs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 18:17 — *the firstling of a cow... thou shalt not redeem; they are holy* — the clean firstling unredeemable.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-firstling-is-already-yahuahs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Luke 2:23 — *Every male that openeth the womb shall be called holy to Yahuah (Lord)* — the firstborn Son presented, already his.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=26
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-the-firstling-is-already-yahuahs'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+-- THREAD 4: all the tithe is holy unto Yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 14:20 — *And he gave him tithes of all* — Abram tithes to Melek Tsadiq before Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=14 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Genesis 28:22 — *of all that thou shalt give me I will surely give the tenth unto thee* — Jacob''s vow of the tithe at Beth-el.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=28 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Malachi 3:8 — *Will a man rob Elohim (God)?... In tithes and offerings* — withholding the holy tenth is robbery of Elohim.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Malachi 3:10 — *Bring ye all the tithes into the storehouse... if I will not open you the windows of heaven* — the remedy and the blessing.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Matthew 23:23 — *these ought ye to have done, and not to leave the other undone* — Yahusha affirms the tithe and the weightier matters together.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Hebrews 7:5 — *have a commandment to take tithes of the people according to the law* — the Levitical tithe administered by the law.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Hebrews 7:8 — *there he receiveth them, of whom it is witnessed that he liveth* — the tithe reaching up to the living priest after Melek Tsadiq.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=30
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=7 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-all-the-tithe-is-holy-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+-- THREAD 5: the colophon of Leviticus
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 26:46 — *These are the statutes and judgments and laws, which Yahuah (LORD) made... in mount Sinai by the hand of Moses* — the twin colophon sealing the book.'
+  FROM cross_reference_threads t
+  JOIN _s311_lev27_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='leviticus' AND sv.chapter_number=27 AND sv.verse_number=34
+  JOIN _s311_lev27_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=46
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='leviticus-27-these-are-the-commandments-the-colophon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session311 — Leviticus cross-references complete.'
