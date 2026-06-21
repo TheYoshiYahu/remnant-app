@@ -4660,6 +4660,2177 @@ SELECT t.id, cr.id, 4, E'*of one, and him as good as dead, so many as the stars 
  WHERE t.slug='deuteronomy-10-21-22-threescore-and-ten-made-as-the-stars-of-heaven'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_deuteronomy_11.sql (Deuteronomy 11) -----
+-- Chapter: Deuteronomy 11 — THE COVENANT OF THE LAND: love, hearken, and live. Moses sets the
+-- whole logic of the inheritance before the people: *Therefore thou shalt love Yahuah Elohayka
+-- (the LORD thy God), and keep his charge, and his statutes, and his judgments, and his
+-- commandments, alway* (11:1). The land is not Egypt watered by foot, but *a land of hills and
+-- valleys, and drinketh water of the rain of heaven* (11:11) — utterly dependent on Yahuah, who
+-- gives *the first rain and the latter rain* IF the people hearken (11:13-15), and shuts up heaven
+-- if they turn aside (11:16-17). It re-sounds the Shema: *lay up these my words in your heart...
+-- bind them for a sign upon your hand... teach them your children* (11:18-19). It promises the
+-- inheritance to those who *cleave unto him* (11:22) — every place the sole of the foot treads
+-- (11:24). And it sets the great covenant choice that frames Deut 27-30: *Behold, I set before you
+-- this day a blessing and a curse* (11:26), enacted on Gerizim and Ebal (11:29). The lens: Torah
+-- is the covenant inheritance and never the curse — the curse is the Deut 28 exile-judgment for
+-- covenant-breaking; the blessing-and-curse is the living choice, not Torah-as-burden.
+-- Tag: deu11   Temp view: _s310_deu11_lookup
+-- Sort band: base 24750, step 3 -> threads at 24750, 24753, 24756, 24759, 24762, 24765, 24768 (7 threads)
+-- Source of EVERY row: 'canon','deuteronomy',11,v
+--
+-- Deuteronomy 11 coverage:
+--   v.1 (love Yahuah, keep his charge, statutes, judgments, commandments alway)
+--        NT:     none warranted distinct (the love=keep-commandments principle is the chapter's
+--                spine; carried in prose, John 14:15 / 1 John 5:3 weight woven, not forced to a row)
+--        Extras: none warranted
+--        Tanakh: held in prose — re-stated through v.13, v.22 (love + keep); not a separate add
+--   v.2-7 (the chastisement of Yahuah... Dathan and Abiram... the earth opened her mouth)
+--        NT:     none warranted distinct
+--        Extras: none warranted (clean canon witness in Numbers 16 preferred)
+--        Tanakh: ★ Numbers 16:31-33 (the ground clave asunder... the earth opened her mouth, and
+--                swallowed them up) — THREAD 7 (the great acts your eyes have seen)
+--   ★ v.10-15 (a land... drinketh water of the rain of heaven... the first rain and the latter rain)
+--        NT:     ★ James 5:7 (the husbandman waiteth for the precious fruit of the earth... until he
+--                receive the early and latter rain) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★ Joel 2:23 (the former rain, and the latter rain in the first month), Leviticus
+--                26:3-4 (If ye walk in my statutes... Then I will give you rain in due season),
+--                Hosea 6:3 (he shall come unto us as the rain, as the latter and former rain) — THREAD 1
+--   ★ v.13-17 (if ye shall hearken... THEN rain; ELSE he shut up the heaven, that there be no rain)
+--        NT:     ★ James 5:17-18 (Elias... prayed earnestly that it might not rain... and the heaven
+--                gave rain) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★ Leviticus 26:3-4 + Deuteronomy 28:1-2, 28:15 (the obedience/blessing covenant
+--                logic) — THREAD 2
+--   ★ v.18-21 (lay up these my words in your heart... bind them... teach them your children)
+--        NT:     none warranted distinct (the bind/teach pattern is Torah-internal; held in prose)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 6:6-9 (these words... shall be in thine heart... bind them... teach
+--                them diligently unto thy children), Proverbs 6:21-22 (Bind them continually upon
+--                thine heart) — THREAD 3
+--   ★ v.22-25 (if ye shall diligently keep... to cleave unto him... every place... the sole of your
+--          feet shall tread shall be yours... no man able to stand before you)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Joshua 1:3-5 (Every place that the sole of your foot shall tread upon, that have
+--                I given unto you... There shall not any man be able to stand before thee),
+--                Deuteronomy 30:20 (cleave unto him: for he is thy life) — THREAD 4
+--   ★★ v.26-28 (Behold, I set before you this day a blessing and a curse)
+--        NT:     none warranted distinct (the covenant choice is the Torah's own framing; held in prose)
+--        Extras: none warranted
+--        Tanakh: ★★ Deuteronomy 30:15, 30:19 (I have set before you life and death, blessing and
+--                cursing: therefore choose life), Deuteronomy 28:1-2, 28:15 (the blessing if... the
+--                curse if not) — THREAD 5
+--   ★ v.29-30 (the blessing upon mount Gerizim, and the curse upon mount Ebal)
+--        NT:     none warranted distinct
+--        Extras: none warranted
+--        Tanakh: ★ Deuteronomy 27:11-13 (These shall stand upon mount Gerizim to bless... and these
+--                upon mount Ebal to curse), Joshua 8:33-34 (half over against mount Gerizim, and half
+--                over against mount Ebal... he read all the words of the law, the blessings and
+--                cursings) — THREAD 6
+--   v.31-32 (ye shall pass over Jordan... observe to do all the statutes and judgments)
+--        NT/Extras/Tanakh: woven into THREAD 6 (the entry-into-the-land, the doing of the statutes);
+--                no separate add
+--
+-- Threads (slug — target libraries):
+--   1. deuteronomy-11-the-rain-of-heaven-the-first-rain-and-the-latter-rain
+--        — NT (James 5) + Tanakh (Joel 2, Leviticus 26, Hosea 6) [free]
+--        (★ the land that drinks the rain of heaven; early and latter rain on the hearkening people)
+--   2. deuteronomy-11-if-ye-hearken-then-rain-else-heaven-shut-up
+--        — NT (James 5) + Tanakh (Leviticus 26, Deuteronomy 28) [free]
+--        (★ the obedience/blessing covenant logic; the heaven shut up for turning aside)
+--   3. deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children
+--        — Tanakh (Deuteronomy 6, Proverbs 6) [free]
+--        (★★ the Shema re-sounded; the word in the heart, on the hand, taught to the children)
+--   4. deuteronomy-11-cleave-unto-him-every-place-the-sole-of-your-foot
+--        — Tanakh (Joshua 1, Deuteronomy 30) [free]
+--        (★ cleave and possess; the inheritance Joshua receives, no man able to stand)
+--   5. deuteronomy-11-a-blessing-and-a-curse-set-before-you
+--        — Tanakh (Deuteronomy 30, Deuteronomy 28) [free]
+--        (★★ the covenant choice that frames Deut 27-30; therefore choose life)
+--   6. deuteronomy-11-the-blessing-on-gerizim-the-curse-on-ebal
+--        — Tanakh (Deuteronomy 27, Joshua 8) [free]
+--        (★ the two mountains; the blessings and cursings enacted at the entry into the land)
+--   7. deuteronomy-11-the-great-acts-your-eyes-have-seen-dathan-and-abiram
+--        — Tanakh (Numbers 16) [free]
+--        (★ the chastisement Yahuah did; the earth that opened her mouth on the rebels)
+--
+-- Framing notes:
+--   ★ THE RAIN OF HEAVEN (THREAD 1): the land is not Egypt watered by the foot but a land that
+--      *drinketh water of the rain of heaven* (11:11) — wholly dependent on Yahuah, who gives *the
+--      first rain and the latter rain, that thou mayest gather in thy corn, and thy wine, and thine
+--      oil* (11:14) for the people who *hearken diligently... to love Yahuah Elohaychem (the LORD
+--      your God), and to serve him* (11:13). The early-and-latter-rain is the covenant's own image:
+--      Joel 2:23, Leviticus 26:3-4, Hosea 6:3, and forward to James 5:7 (the husbandman who waits
+--      for it). The blessing of the land is conduct-within-the-covenant, never magic.
+--   ★ THE COVENANT LOGIC (THREAD 2): *if ye shall hearken... THEN... rain* (11:13-14); ELSE *he
+--      shut up the heaven, that there be no rain... and lest ye perish quickly from off the good
+--      land* (11:16-17). This is the Leviticus 26 / Deuteronomy 28 blessing-curse covenant — and
+--      Torah is NOT the curse: the curse is the exile-judgment for covenant-breaking. James 5:17-18
+--      shows the principle enacted in Elijah's prayer (the heaven shut, then giving rain).
+--   ★★ THE SHEMA RE-SOUNDED (THREAD 3): *lay up these my words in your heart and in your soul, and
+--      bind them for a sign upon your hand... And ye shall teach them your children* (11:18-19) is
+--      Deuteronomy 6:6-9 again — the word internalized, signed on the body, written on the gates,
+--      taught to the next generation, *that your days may be multiplied* (11:21). Proverbs 6:21-22
+--      sings the same: bind them continually upon thine heart. This is Torah on the heart, the very
+--      thing the new covenant writes deeper (Jer 31:33), never Torah replaced.
+--   ★ CLEAVE AND POSSESS (THREAD 4): *if ye shall diligently keep all these commandments... to
+--      love Yahuah... and to cleave unto him* (11:22), then *every place whereon the soles of your
+--      feet shall tread shall be yours... There shall no man be able to stand before you* (11:24-25)
+--      — the promise Joshua 1:3-5 hands directly to Joshua, and the cleaving Deut 30:20 names as
+--      life itself (*cleave unto him: for he is thy life*).
+--   ★★ THE BLESSING AND THE CURSE (THREAD 5): *Behold, I set before you this day a blessing and a
+--      curse* (11:26-28) is the covenant choice Moses lays out fully in Deut 30:15,19 (*I have set
+--      before you life and death, blessing and cursing: therefore choose life*) and Deut 28 (the
+--      blessing if, the curse if not). The choice is conduct, never fate; victims-not-enemies — the
+--      door stands open to obedience.
+--   ★ GERIZIM AND EBAL (THREAD 6): *thou shalt put the blessing upon mount Gerizim, and the curse
+--      upon mount Ebal* (11:29) is fulfilled in the staging of Deut 27:11-13 (the tribes on the two
+--      mountains) and enacted in Joshua 8:33-34 (all Yashar'el, the stranger as the homeborn, with
+--      the law read aloud, the blessings and cursings). The entry into the land (11:31-32) is the
+--      doing of the statutes the chapter calls for.
+--   ★ DATHAN AND ABIRAM (THREAD 7): the *chastisement of Yahuah... his greatness, his mighty hand*
+--      (11:2) the people's own eyes had seen includes *what he did unto Dathan and Abiram... how the
+--      earth opened her mouth, and swallowed them up* (11:6) — Numbers 16:31-33, the rebels who
+--      went down alive into the pit. The witnessed acts ground the call to keep the commandments.
+--   VERSES WITH NO SEPARATE ADD: v.1 (love + keep — the chapter's spine, woven through THREADS 1-5),
+--      v.8-9 (keep, possess, prolong days — woven into THREADS 4 and 5), v.31-32 (the entry/doing —
+--      woven into THREAD 6).
+
+CREATE TEMP VIEW _s310_deu11_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): The rain of heaven — the first rain and the latter rain
+    ('canon','deuteronomy',11,11,'canon','james',5,7,'free',
+      E'*Be patient therefore, brethren, unto the coming of Yahuah (Lord). Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain* (James 5:7). The land that *drinketh water of the rain of heaven* (Deuteronomy 11:11) is the husbandman''s whole hope — he *waiteth... until he receive the early and latter rain*. The covenant image of the land''s dependence on Yahuah''s rain carries forward as the patience of the people who wait on Him.'),
+    ('canon','deuteronomy',11,14,'canon','joel',2,23,'free',
+      E'*Be glad then, ye children of Zion, and rejoice in Yahuah Elohaychem (the LORD your God): for he hath given you the former rain moderately, and he will cause to come down for you the rain, the former rain, and the latter rain in the first month* (Joel 2:23). The promise *I will give you the rain of your land in his due season, the first rain and the latter rain* (Deuteronomy 11:14) is Joel''s very gladness — *the former rain, and the latter rain in the first month*. The same covenant rain that fills the corn, wine, and oil is the joy of restored Zion.'),
+    ('canon','deuteronomy',11,14,'canon','leviticus',26,4,'free',
+      E'*Then I will give you rain in due season, and the land shall yield her increase, and the trees of the field shall yield their fruit* (Leviticus 26:4). The rain *in his due season* of Deuteronomy 11:14 is the Leviticus 26 covenant blessing word for word — *rain in due season, and the land shall yield her increase* — granted to those who *walk in my statutes, and keep my commandments* (Leviticus 26:3). The two passages speak one covenant: hearken, and the land is fed from heaven.'),
+    ('canon','deuteronomy',11,14,'canon','hosea',6,3,'free',
+      E'*Then shall we know, if we follow on to know Yahuah (LORD): his going forth is prepared as the morning; and he shall come unto us as the rain, as the latter and former rain unto the earth* (Hosea 6:3). The *first rain and the latter rain* of Deuteronomy 11:14 becomes Hosea''s figure of Yahuah Himself coming to His people — *as the latter and former rain unto the earth*. The rain that waters the land is the coming of the One who gives it.'),
+
+    -- THREAD 2 (★): If ye hearken then rain; else heaven shut up — the covenant logic
+    ('canon','deuteronomy',11,13,'canon','leviticus',26,3,'free',
+      E'*If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3). The condition *if ye shall hearken diligently unto my commandments... to love Yahuah Elohaychem (the LORD your God), and to serve him with all your heart* (Deuteronomy 11:13) is the same covenant IF as Leviticus 26 — *If ye walk in my statutes, and keep my commandments, and do them*. The blessing of the land is hung on hearkening, the obedience-and-blessing logic of the whole Torah.'),
+    ('canon','deuteronomy',11,17,'canon','deuteronomy',28,15,'free',
+      E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). The ELSE of Deuteronomy 11:17 — *and then the LORD''S wrath be kindled against you, and he shut up the heaven, that there be no rain... lest ye perish quickly from off the good land* — is the Deuteronomy 28 curse-for-turning-aside spelled out. The curse is the exile-judgment for covenant-breaking, never the Torah itself.'),
+    ('canon','deuteronomy',11,17,'canon','james',5,17,'free',
+      E'*Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months* (James 5:17). The threat *he shut up the heaven, that there be no rain* (Deuteronomy 11:17) is the very judgment Elijah''s prayer enacts — *it rained not on the earth by the space of three years and six months*. The shut heaven of the covenant warning becomes history in the days of Ahab''s apostasy.'),
+    ('canon','deuteronomy',11,14,'canon','james',5,18,'free',
+      E'*And he prayed again, and the heaven gave rain, and the earth brought forth her fruit* (James 5:18). When the people turn back, the promise of Deuteronomy 11:14 — *I will give you the rain of your land in his due season* — returns: *the heaven gave rain, and the earth brought forth her fruit*. The same heaven that is shut for turning aside is opened again to the hearkening; the covenant rain is restored.'),
+
+    -- THREAD 3 (★★): Lay up these my words — the Shema re-sounded
+    ('canon','deuteronomy',11,18,'canon','deuteronomy',6,6,'free',
+      E'*And these words, which I command thee this day, shall be in thine heart* (Deuteronomy 6:6). *Therefore shall ye lay up these my words in your heart and in your soul* (Deuteronomy 11:18) re-sounds the Shema''s own charge — the word *in thine heart*. The first sounding (Deut 6) and this re-sounding (Deut 11) are one command: the Torah is to live in the heart, not on a shelf.'),
+    ('canon','deuteronomy',11,18,'canon','deuteronomy',6,8,'free',
+      E'*And thou shalt bind them for a sign upon thine hand, and they shall be as frontlets between thine eyes* (Deuteronomy 6:8). *Bind them for a sign upon your hand, that they may be as frontlets between your eyes* (Deuteronomy 11:18) is word for word the Shema — the word signed on the hand and the eyes. The instruction is woven into the body so it is never out of sight.'),
+    ('canon','deuteronomy',11,19,'canon','deuteronomy',6,7,'free',
+      E'*And thou shalt teach them diligently unto thy children, and shalt talk of them when thou sittest in thine house, and when thou walkest by the way, and when thou liest down, and when thou risest up* (Deuteronomy 6:7). *And ye shall teach them your children, speaking of them when thou sittest in thine house, and when thou walkest by the way, when thou liest down, and when thou risest up* (Deuteronomy 11:19) is the Shema''s teaching-charge repeated exactly — the covenant handed to the next generation in every hour of the day.'),
+    ('canon','deuteronomy',11,20,'canon','deuteronomy',6,9,'free',
+      E'*And thou shalt write them upon the posts of thy house, and on thy gates* (Deuteronomy 6:9). *And thou shalt write them upon the door posts of thine house, and upon thy gates* (Deuteronomy 11:20) is the Shema''s final clause again — the word written on the doorposts and gates. The household and the city itself are marked with the instruction of Yahuah.'),
+    ('canon','deuteronomy',11,18,'canon','proverbs',6,21,'free',
+      E'*Bind them continually upon thine heart, and tie them about thy neck* (Proverbs 6:21). Wisdom takes up the Shema''s very language: the command to *lay up these my words in your heart... and bind them for a sign upon your hand* (Deuteronomy 11:18) is sung as *Bind them continually upon thine heart*. The father''s commandment and the mother''s law are the Torah carried in the heart, the same binding Moses charged.'),
+    ('canon','deuteronomy',11,19,'canon','proverbs',6,22,'free',
+      E'*When thou goest, it shall lead thee; when thou sleepest, it shall keep thee; and when thou awakest, it shall talk with thee* (Proverbs 6:22). The Torah taught *when thou sittest in thine house, and when thou walkest by the way, when thou liest down, and when thou risest up* (Deuteronomy 11:19) becomes Wisdom''s companion through every hour — *when thou goest... when thou sleepest... when thou awakest*. The word taught to the children walks with them all their days.'),
+
+    -- THREAD 4 (★): Cleave unto him — every place the sole of your foot
+    ('canon','deuteronomy',11,24,'canon','joshua',1,3,'free',
+      E'*Every place that the sole of your foot shall tread upon, that have I given unto you, as I said unto Moses* (Joshua 1:3). The promise *Every place whereon the soles of your feet shall tread shall be yours* (Deuteronomy 11:24) is handed directly to Joshua — *that have I given unto you, as I said unto Moses*. The word Moses spoke is the word Yahuah confirms to the one who leads the people in.'),
+    ('canon','deuteronomy',11,24,'canon','joshua',1,4,'free',
+      E'*From the wilderness and this Lebanon even unto the great river, the river Euphrates, all the land of the Hittites, and unto the great sea toward the going down of the sun, shall be your coast* (Joshua 1:4). The borders of Deuteronomy 11:24 — *from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea* — are repeated to Joshua exactly: *from the wilderness and this Lebanon even unto the great river, the river Euphrates... unto the great sea*. The inheritance Moses named is the inheritance Joshua enters.'),
+    ('canon','deuteronomy',11,25,'canon','joshua',1,5,'free',
+      E'*There shall not any man be able to stand before thee all the days of thy life: as I was with Moses, so I will be with thee: I will not fail thee, nor forsake thee* (Joshua 1:5). The promise *There shall no man be able to stand before you* (Deuteronomy 11:25) is given again to Joshua — *There shall not any man be able to stand before thee... I will not fail thee, nor forsake thee*. The dread Yahuah lays on the nations is His own presence going before the people.'),
+    ('canon','deuteronomy',11,22,'canon','deuteronomy',30,20,'free',
+      E'*That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days: that thou mayest dwell in the land which Yahuah (LORD) sware unto thy fathers* (Deuteronomy 30:20). The charge *to love Yahuah Elohaychem (the LORD your God), to walk in all his ways, and to cleave unto him* (Deuteronomy 11:22) is named in Deut 30:20 as life itself — *cleave unto him: for he is thy life, and the length of thy days*. To cleave is to live and to dwell in the land.'),
+
+    -- THREAD 5 (★★): A blessing and a curse set before you
+    ('canon','deuteronomy',11,26,'canon','deuteronomy',30,19,'free',
+      E'*I call heaven and earth to record this day against you, that I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). *Behold, I set before you this day a blessing and a curse* (Deuteronomy 11:26) is the same covenant choice Moses presses home in Deut 30:19 — *I have set before you life and death, blessing and cursing: therefore choose life*. The blessing-and-curse is not fate but a door; the call is to choose life, that the seed may live.'),
+    ('canon','deuteronomy',11,26,'canon','deuteronomy',30,15,'free',
+      E'*See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15). The *blessing and a curse* set before the people in Deuteronomy 11:26 is Deut 30:15''s *life and good, and death and evil* — the two ways laid open this day. The covenant is conduct and choice, set before each one to walk in.'),
+    ('canon','deuteronomy',11,27,'canon','deuteronomy',28,2,'free',
+      E'*And all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (Deuteronomy 28:2). *A blessing, if ye obey the commandments of Yahuah Elohaychem (the LORD your God)* (Deuteronomy 11:27) is the heading Deut 28 unfolds in full — *all these blessings shall come on thee, and overtake thee, if thou shalt hearken*. The blessing chases down the obedient.'),
+    ('canon','deuteronomy',11,28,'canon','deuteronomy',28,15,'free',
+      E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes which I command thee this day; that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). *And a curse, if ye will not obey the commandments... but turn aside out of the way* (Deuteronomy 11:28) is the heading Deut 28:15 unfolds — *if thou wilt not hearken... all these curses shall come upon thee*. The curse is the judgment for turning aside, never the Torah itself.'),
+
+    -- THREAD 6 (★): The blessing on Gerizim, the curse on Ebal
+    ('canon','deuteronomy',11,29,'canon','deuteronomy',27,12,'free',
+      E'*These shall stand upon mount Gerizim to bless the people, when ye are come over Jordan; Simeon, and Levi, and Yahudah (Judah), and Issachar, and Joseph, and Benjamin* (Deuteronomy 27:12). The charge to *put the blessing upon mount Gerizim* (Deuteronomy 11:29) is staged in Deut 27:12 — the six tribes who *stand upon mount Gerizim to bless the people*. The two mountains of the chapter are given their tribes and their words.'),
+    ('canon','deuteronomy',11,29,'canon','deuteronomy',27,13,'free',
+      E'*And these shall stand upon mount Ebal to curse; Reuben, Gad, and Asher, and Zebulun, Dan, and Naphtali* (Deuteronomy 27:13). The charge to put *the curse upon mount Ebal* (Deuteronomy 11:29) is staged in Deut 27:13 — the tribes who *stand upon mount Ebal to curse*. The blessing and the curse of v.26 are given their place on the two facing mountains.'),
+    ('canon','deuteronomy',11,29,'canon','joshua',8,33,'free',
+      E'*And all Yashar''el (Israel), and their elders, and officers, and their judges, stood on this side the ark and on that side before the priests the Levites... half of them over against mount Gerizim, and half of them over against mount Ebal; as Moses the servant of Yahuah (LORD) had commanded before, that they should bless the people of Yashar''el (Israel)* (Joshua 8:33). The command of Deuteronomy 11:29 — *the blessing upon mount Gerizim, and the curse upon mount Ebal* — is enacted in Joshua 8:33: *half... over against mount Gerizim, and half... over against mount Ebal, as Moses the servant of Yahuah (LORD) had commanded*. The stranger stands with the homeborn; the whole people receives the word.'),
+    ('canon','deuteronomy',11,32,'canon','joshua',8,34,'free',
+      E'*And afterward he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law* (Joshua 8:34). The charge *ye shall observe to do all the statutes and judgments which I set before you this day* (Deuteronomy 11:32) is answered in Joshua 8:34: *he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law*. The entry into the land is the doing of the Torah this chapter sets before them.'),
+
+    -- THREAD 7 (★): The great acts your eyes have seen — Dathan and Abiram
+    ('canon','deuteronomy',11,6,'canon','numbers',16,32,'free',
+      E'*And the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods* (Numbers 16:32). The chastisement the people''s own eyes had seen — *what he did unto Dathan and Abiram... how the earth opened her mouth, and swallowed them up, and their households* (Deuteronomy 11:6) — is the judgment of Numbers 16:32, *the earth opened her mouth, and swallowed them up*. The witnessed acts of Yahuah ground Moses'' call to keep the commandments.'),
+    ('canon','deuteronomy',11,6,'canon','numbers',16,33,'free',
+      E'*They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33). The rebels Deuteronomy 11:6 names — *and their tents, and all the substance that was in their possession, in the midst of all Yashar''el (Israel)* — *went down alive into the pit* (Numbers 16:33). The greatness, the mighty hand, and the stretched out arm (11:2) include this terror the eyes of the people had beheld.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-the-rain-of-heaven-the-first-rain-and-the-latter-rain',
+       E'The rain of heaven — the first rain and the latter rain',
+       E'The land of promise is unlike Egypt, watered by the foot from the river: *the land, whither ye go to possess it, is a land of hills and valleys, and drinketh water of the rain of heaven: A land which Yahuah Elohayka (the LORD thy God) careth for: the eyes of Yahuah Elohayka (the LORD thy God) are always upon it* (Deuteronomy 11:11-12). It lives wholly from heaven, and the rain is hung on hearkening: *if ye shall hearken diligently unto my commandments... to love Yahuah Elohaychem (the LORD your God), and to serve him with all your heart... That I will give you the rain of your land in his due season, the first rain and the latter rain, that thou mayest gather in thy corn, and thy wine, and thine oil* (Deuteronomy 11:13-14). The early-and-latter-rain is the covenant''s own image of blessing on the obedient people. Leviticus binds it to the same IF: *If ye walk in my statutes, and keep my commandments... Then I will give you rain in due season, and the land shall yield her increase* (Leviticus 26:3-4). Joel turns it to the joy of restored Zion: *for he hath given you the former rain moderately, and he will cause to come down for you the rain, the former rain, and the latter rain in the first month* (Joel 2:23). Hosea makes the rain a figure of Yahuah Himself coming: *he shall come unto us as the rain, as the latter and former rain unto the earth* (Hosea 6:3). And the apostle takes up the image forward: *the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain* (James 5:7). One covenant rain, from the land of hills and valleys to the patience of the people who wait on Him.',
+       sv.verse_id, ev.verse_id, 'free', 24750
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-if-ye-hearken-then-rain-else-heaven-shut-up',
+       E'If ye hearken, then rain; else heaven shut up — the covenant logic',
+       E'The chapter sets the whole covenant logic in two clauses. The IF: *if ye shall hearken diligently unto my commandments... to love Yahuah Elohaychem (the LORD your God), and to serve him with all your heart and with all your soul, That I will give you the rain of your land in his due season... And I will send grass in thy fields for thy cattle, that thou mayest eat and be full* (Deuteronomy 11:13-15). The ELSE: *Take heed to yourselves, that your heart be not deceived, and ye turn aside, and serve other gods... And then the LORD''S wrath be kindled against you, and he shut up the heaven, that there be no rain, and that the land yield not her fruit; and lest ye perish quickly from off the good land which Yahuah (LORD) giveth you* (Deuteronomy 11:16-17). This is the Leviticus 26 and Deuteronomy 28 covenant exactly — *If ye walk in my statutes, and keep my commandments, and do them* (Leviticus 26:3) for the blessing, and *if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God)... that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15) for the judgment. Torah is never the curse; the curse is the exile-judgment for breaking covenant. The principle stands enacted in Elijah''s days: *he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months* (James 5:17), and then *he prayed again, and the heaven gave rain, and the earth brought forth her fruit* (James 5:18). The shut heaven and the opened heaven are the two ends of one covenant.',
+       sv.verse_id, ev.verse_id, 'free', 24753
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children',
+       E'Lay up these my words — the Shema re-sounded, bound and taught',
+       E'The chapter re-sounds the Shema (Deuteronomy 6:6-9) almost word for word: *Therefore shall ye lay up these my words in your heart and in your soul, and bind them for a sign upon your hand, that they may be as frontlets between your eyes. And ye shall teach them your children, speaking of them when thou sittest in thine house, and when thou walkest by the way, when thou liest down, and when thou risest up. And thou shalt write them upon the door posts of thine house, and upon thy gates* (Deuteronomy 11:18-20). Set beside the first sounding it is the same charge: *these words, which I command thee this day, shall be in thine heart... thou shalt bind them for a sign upon thine hand... thou shalt teach them diligently unto thy children... thou shalt write them upon the posts of thy house, and on thy gates* (Deuteronomy 6:6-9). The word is to live in the heart, be signed on the body, written on the doorposts, and taught to the next generation, *That your days may be multiplied, and the days of your children* (Deuteronomy 11:21). Wisdom sings the same in the father''s instruction: *Bind them continually upon thine heart, and tie them about thy neck. When thou goest, it shall lead thee; when thou sleepest, it shall keep thee; and when thou awakest, it shall talk with thee* (Proverbs 6:21-22). This is Torah on the heart — the very thing the new covenant writes deeper still (Jeremiah 31:33) — never Torah replaced, but the covenant instruction carried in the inner man and handed down.',
+       sv.verse_id, ev.verse_id, 'free', 24756
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-cleave-unto-him-every-place-the-sole-of-your-foot',
+       E'Cleave unto him — every place the sole of your foot shall tread',
+       E'The inheritance is promised to the people who hold fast: *For if ye shall diligently keep all these commandments which I command you, to do them, to love Yahuah Elohaychem (the LORD your God), to walk in all his ways, and to cleave unto him; Then will Yahuah (LORD) drive out all these nations from before you... Every place whereon the soles of your feet shall tread shall be yours: from the wilderness and Lebanon, from the river, the river Euphrates, even unto the uttermost sea shall your coast be. There shall no man be able to stand before you* (Deuteronomy 11:22-25). This exact promise is handed to Joshua at the entry: *Every place that the sole of your foot shall tread upon, that have I given unto you, as I said unto Moses... From the wilderness and this Lebanon even unto the great river, the river Euphrates... shall be your coast... There shall not any man be able to stand before thee all the days of thy life... I will not fail thee, nor forsake thee* (Joshua 1:3-5). The borders, the tread of the foot, the no-man-able-to-stand — all carried straight from Moses'' word to Joshua''s commission. And the cleaving the chapter asks is named elsewhere as life itself: *that thou mayest love Yahuah Elohayka (the LORD thy God)... and that thou mayest cleave unto him: for he is thy life, and the length of thy days: that thou mayest dwell in the land* (Deuteronomy 30:20). To cleave unto Him is to possess the land and to live.',
+       sv.verse_id, ev.verse_id, 'free', 24759
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-a-blessing-and-a-curse-set-before-you',
+       E'A blessing and a curse — the covenant choice set before you',
+       E'Here Moses sets the great covenant choice that frames Deuteronomy 27-30: *Behold, I set before you this day a blessing and a curse; A blessing, if ye obey the commandments of Yahuah Elohaychem (the LORD your God), which I command you this day: And a curse, if ye will not obey the commandments of Yahuah Elohaychem (the LORD your God), but turn aside out of the way which I command you this day, to go after other gods* (Deuteronomy 11:26-28). The same choice is pressed home at the book''s close: *See, I have set before thee this day life and good, and death and evil* (Deuteronomy 30:15), and *I have set before you life and death, blessing and cursing: therefore choose life, that both thou and thy seed may live* (Deuteronomy 30:19). The two headings unfold in full in Deuteronomy 28 — *all these blessings shall come on thee, and overtake thee, if thou shalt hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (Deuteronomy 28:2), and *if thou wilt not hearken... all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). The blessing-and-curse is not fate but a door held open; the call is to choose life. Read in the lens, the curse is the judgment for turning aside to other gods — never the Torah, which is the inheritance and the life of the people who obey.',
+       sv.verse_id, ev.verse_id, 'free', 24762
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-the-blessing-on-gerizim-the-curse-on-ebal',
+       E'The blessing on Gerizim, the curse on Ebal — enacted in the land',
+       E'The blessing and the curse are to be set on two facing mountains at the entry: *thou shalt put the blessing upon mount Gerizim, and the curse upon mount Ebal* (Deuteronomy 11:29), in the land beyond Jordan *over against Gilgal, beside the plains of Moreh* (11:30); *For ye shall pass over Jordan to go in to possess the land... And ye shall observe to do all the statutes and judgments which I set before you this day* (11:31-32). Moses gives the two mountains their tribes: *These shall stand upon mount Gerizim to bless the people... Simeon, and Levi, and Yahudah (Judah), and Issachar, and Joseph, and Benjamin* (Deuteronomy 27:12), *And these shall stand upon mount Ebal to curse; Reuben, Gad, and Asher, and Zebulun, Dan, and Naphtali* (Deuteronomy 27:13). And Joshua enacts it once they are in the land: *half of them over against mount Gerizim, and half of them over against mount Ebal; as Moses the servant of Yahuah (LORD) had commanded before, that they should bless the people of Yashar''el (Israel)* (Joshua 8:33), *And afterward he read all the words of the law, the blessings and cursings, according to all that is written in the book of the law* (Joshua 8:34). The stranger stands with the homeborn; the whole people hears the Torah read; the doing of the statutes (11:32) is the very thing the chapter set before them.',
+       sv.verse_id, ev.verse_id, 'free', 24765
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 7 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-11-the-great-acts-your-eyes-have-seen-dathan-and-abiram',
+       E'The great acts your eyes have seen — Dathan and Abiram swallowed',
+       E'Moses grounds the call to obedience in what the people themselves had witnessed: *And know ye this day: for I speak not with your children which have not known... the chastisement of Yahuah Elohaychem (the LORD your God), his greatness, his mighty hand, and his stretched out arm* (Deuteronomy 11:2), among which is *what he did unto Dathan and Abiram, the sons of Eliab, the son of Reuben: how the earth opened her mouth, and swallowed them up, and their households, and their tents, and all the substance that was in their possession, in the midst of all Yashar''el (Israel)* (Deuteronomy 11:6); *But your eyes have seen all the great acts of Yahuah (LORD) which he did* (11:7). The judgment is recorded in Numbers: *the earth opened her mouth, and swallowed them up, and their houses, and all the men that appertained unto Korah, and all their goods* (Numbers 16:32), and *They, and all that appertained to them, went down alive into the pit, and the earth closed upon them: and they perished from among the congregation* (Numbers 16:33). The terror the people''s own eyes beheld is the witness behind Moses'' charge: *Therefore shall ye keep all the commandments which I command you this day* (11:8). The acts of Yahuah seen with their eyes are the ground of the covenant they are called to keep.',
+       sv.verse_id, ev.verse_id, 'free', 24768
+  FROM _s310_deu11_lookup sv, _s310_deu11_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=11 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== THREAD MEMBERS =====
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'James 5:7 — *the husbandman waiteth... until he receive the early and latter rain*; the land''s dependence on the rain of heaven carried forward.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=11
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-rain-of-heaven-the-first-rain-and-the-latter-rain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joel 2:23 — *the former rain, and the latter rain in the first month*; the rain of 11:14 is restored Zion''s joy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-rain-of-heaven-the-first-rain-and-the-latter-rain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 26:4 — *rain in due season, and the land shall yield her increase*; the same covenant blessing on the obedient.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-rain-of-heaven-the-first-rain-and-the-latter-rain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Hosea 6:3 — *he shall come unto us as the rain, as the latter and former rain*; the rain becomes a figure of Yahuah''s own coming.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hosea' AND tv.chapter_number=6 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-rain-of-heaven-the-first-rain-and-the-latter-rain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 26:3 — *If ye walk in my statutes, and keep my commandments, and do them*; the same covenant IF as 11:13.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=13
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-if-ye-hearken-then-rain-else-heaven-shut-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 28:15 — *if thou wilt not hearken... all these curses shall come upon thee*; the ELSE of 11:17 spelled out, the curse for turning aside.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=17
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-if-ye-hearken-then-rain-else-heaven-shut-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'James 5:17 — *it rained not on the earth by the space of three years and six months*; the shut heaven of 11:17 enacted in Elijah''s days.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=17
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-if-ye-hearken-then-rain-else-heaven-shut-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'James 5:18 — *the heaven gave rain, and the earth brought forth her fruit*; the promise of 11:14 restored to the returning people.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=14
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-if-ye-hearken-then-rain-else-heaven-shut-up'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 6:6 — *these words... shall be in thine heart*; the Shema''s charge re-sounded in 11:18.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=18
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 6:8 — *bind them for a sign upon thine hand... frontlets between thine eyes*; word for word with 11:18.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=18
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 6:7 — *teach them diligently unto thy children... when thou sittest... walkest... liest down... risest up*; the teaching-charge of 11:19 repeated.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 6:9 — *write them upon the posts of thy house, and on thy gates*; the Shema''s final clause repeated in 11:20.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=20
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Proverbs 6:21 — *Bind them continually upon thine heart*; Wisdom takes up the Shema''s binding-language of 11:18.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=18
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Proverbs 6:22 — *When thou goest, it shall lead thee... when thou awakest, it shall talk with thee*; the word taught in 11:19 walks with the children all their days.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=19
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=6 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-lay-up-these-my-words-bind-them-teach-your-children'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Joshua 1:3 — *Every place that the sole of your foot shall tread upon, that have I given unto you, as I said unto Moses*; the promise of 11:24 handed to Joshua.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=24
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-cleave-unto-him-every-place-the-sole-of-your-foot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Joshua 1:4 — *from the wilderness and this Lebanon even unto the great river, the river Euphrates*; the borders of 11:24 repeated to Joshua.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=24
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-cleave-unto-him-every-place-the-sole-of-your-foot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Joshua 1:5 — *There shall not any man be able to stand before thee... I will not fail thee, nor forsake thee*; the no-man-stand promise of 11:25 given to Joshua.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=25
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=1 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-cleave-unto-him-every-place-the-sole-of-your-foot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 30:20 — *cleave unto him: for he is thy life, and the length of thy days*; the cleaving of 11:22 named as life itself.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=22
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-cleave-unto-him-every-place-the-sole-of-your-foot'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 30:19 — *I have set before you life and death, blessing and cursing: therefore choose life*; the covenant choice of 11:26 pressed home.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=26
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-a-blessing-and-a-curse-set-before-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 30:15 — *I have set before thee this day life and good, and death and evil*; the two ways of 11:26 laid open.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=26
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-a-blessing-and-a-curse-set-before-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 28:2 — *all these blessings shall come on thee, and overtake thee, if thou shalt hearken*; the blessing-heading of 11:27 unfolded.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=27
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-a-blessing-and-a-curse-set-before-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 28:15 — *if thou wilt not hearken... all these curses shall come upon thee*; the curse-heading of 11:28 unfolded, the judgment for turning aside.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=28
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-a-blessing-and-a-curse-set-before-you'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 27:12 — *These shall stand upon mount Gerizim to bless the people*; the blessing-mountain of 11:29 given its tribes.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-blessing-on-gerizim-the-curse-on-ebal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 27:13 — *And these shall stand upon mount Ebal to curse*; the curse-mountain of 11:29 given its tribes.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=27 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-blessing-on-gerizim-the-curse-on-ebal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Joshua 8:33 — *half... over against mount Gerizim, and half... over against mount Ebal, as Moses... had commanded*; the command of 11:29 enacted in the land.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=29
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-blessing-on-gerizim-the-curse-on-ebal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Joshua 8:34 — *he read all the words of the law, the blessings and cursings*; the doing of the statutes charged in 11:32.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=32
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=8 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-blessing-on-gerizim-the-curse-on-ebal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 16:32 — *the earth opened her mouth, and swallowed them up*; the judgment on Dathan and Abiram the people''s eyes had seen (11:6).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-great-acts-your-eyes-have-seen-dathan-and-abiram'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 16:33 — *went down alive into the pit... and they perished from among the congregation*; the rebels of 11:6 swallowed in the sight of all Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu11_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=11 AND sv.verse_number=6
+  JOIN _s310_deu11_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=16 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-11-the-great-acts-your-eyes-have-seen-dathan-and-abiram'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_12.sql (Deuteronomy 12) -----
+-- Chapter: Deuteronomy 12  |  tag: deu12  |  session prefix: s310
+-- Sort band base: 24775, step 3  (24775, 24778, 24781, 24784, 24787, 24790)
+-- Temp view: _s310_deu12_lookup
+--
+-- FRAMING: Deuteronomy 12 is the central-sanctuary / pure-worship charter. Yahuah's people
+-- must (1) tear down the idolatrous high places and NOT serve the true El by the false nations'
+-- forms; (2) seek the ONE place where Yahuah chooses to put his Name; (3) rejoice before him in
+-- covenant joy; (4) keep the life-in-the-blood standing; and (5) worship him HIS way, neither
+-- adding to nor diminishing from the Torah. Each thread weaves FORWARD to the NT fulfillment and
+-- LATERALLY across the Tanakh; no extras member warranted this chapter (all threads 'free').
+--
+-- Deuteronomy 12 coverage:
+--   v.1   NT: none warranted | Extras: none warranted | Tanakh: covered by v.32 canon-guard thread
+--   v.2-4 NT: none warranted | Extras: none warranted | Tanakh: Deut 7:5; 2 Kings 17:9-12 (high-places thread)
+--   v.5   NT: John 4:20-24 (forward) | Extras: none warranted | Tanakh: 1 Kings 8:29; 2 Chron 6:6; Ps 132:13-14 (the-place-his-Name thread)
+--   v.6   NT: none warranted | Extras: none warranted | Tanakh: rolled into v.5/v.11 (offerings at the chosen place)
+--   v.7   NT: none warranted | Extras: none warranted | Tanakh: Deut 14:26; Neh 8:10 (covenant-joy thread)
+--   v.11  NT: Rev 21:3 (forward, Name-habitation consummated) | Extras: none warranted | Tanakh: 1 Kings 8:29; Ps 132:13-14 (the-place-his-Name thread)
+--   v.12  NT: none warranted | Extras: none warranted | Tanakh: Deut 14:26; Neh 8:10 (covenant-joy thread)
+--   v.14  NT: none warranted | Extras: none warranted | Tanakh: rolled into the-place-his-Name thread
+--   v.16  NT: Acts 15:20,29 (forward) | Extras: none warranted | Tanakh: Lev 17:11-14; Gen 9:4 (life-in-the-blood thread)
+--   v.18  NT: none warranted | Extras: none warranted | Tanakh: Deut 14:26; Neh 8:10 (covenant-joy thread)
+--   v.21  NT: none warranted | Extras: none warranted | Tanakh: rolled into the-place-his-Name thread
+--   v.23-25 NT: Acts 15:20,29 (forward) | Extras: none warranted | Tanakh: Lev 17:11-14; Gen 9:4 (life-in-the-blood thread)
+--   v.29-31 NT: none warranted | Extras: none warranted | Tanakh: Deut 7:5; 2 Kings 17:9-12 (enquire-not-after-their-gods, folded into high-places + canon-guard threads)
+--   v.32  NT: Matt 15:9; Mark 7:7-9 (forward) | Extras: none warranted | Tanakh: Deut 4:2; Prov 30:6; Rev 22:18-19 (canon-guard thread)
+--
+-- THREADS (6):
+--   deuteronomy-12-utterly-destroy-the-high-places-of-the-nations  [free; Tanakh] v.2-4 -> Deut 7:5, 2 Kings 17:9-12
+--   deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name  [free; Tanakh+NT] v.5-21 -> 1 Kings 8:29, 2 Chron 6:6, Ps 132:13-14, John 4:20-24, Rev 21:3
+--   deuteronomy-12-rejoice-before-yahuah-in-all-thou-puttest-thine-hand-unto  [free; Tanakh] v.7-18 -> Deut 14:26, Neh 8:10
+--   deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life  [free; Tanakh+NT] v.16-25 -> Lev 17:11-14, Gen 9:4, Acts 15:20,29
+--   deuteronomy-12-enquire-not-after-their-gods-thou-shalt-not-do-so-unto-yahuah  [free; Tanakh] v.29-31 -> Deut 7:5, 2 Kings 17:9-12
+--   deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it  [free; Tanakh+NT] v.32 -> Deut 4:2, Prov 30:6, Matt 15:9, Mark 7:7-9, Rev 22:18-19
+--
+-- Contested/load-bearing framing notes:
+--   * v.16,23-25 the blood prohibition is NOT abolished in the NT; the apostolic decree
+--     (Acts 15:20,29) UPHOLDS it for the gathered. Life-in-the-blood standing (Lev 17 / Gen 9).
+--   * v.32 the canon-guard ("add not / diminish not") is the Torah's own anti-add/anti-subtract
+--     seal; Matt 15:9 / Mark 7:7-9 condemn human TRADITION supplanting the commandment, NOT the
+--     commandment itself — the verses guard the Torah, they do not retire it.
+
+CREATE TEMP VIEW _s310_deu12_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ B. cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (
+    VALUES
+    -- THREAD 1: high places of the nations
+    ('canon','deuteronomy',12,2,'canon','deuteronomy',7,5,'free',
+     E'*But thus shall ye deal with them; ye shall destroy their altars, and break down their images, and cut down their groves, and burn their graven images with fire.* (Deuteronomy 7:5). The same Torah charge that here commands *ye shall utterly destroy all the places, wherein the nations which ye shall possess served their gods, upon the high mountains, and upon the hills, and under every green tree* (Deuteronomy 12:2) — the altars of the false gods are razed, not repurposed.'),
+    ('canon','deuteronomy',12,3,'canon','2-kings',17,10,'free',
+     E'*And they set them up images and groves in every high hill, and under every green tree:* (2 Kings 17:10). The northern house of Yashar''el (Israel) did the very thing the Torah forbade — they kept the high places the charge to *overthrow their altars, and break their pillars, and burn their groves with fire; and ye shall hew down the graven images of their gods* (Deuteronomy 12:3) had outlawed; the unexecuted command became the seed of the exile.'),
+    ('canon','deuteronomy',12,4,'canon','2-kings',17,12,'free',
+     E'*For they served idols, whereof Yahuah (LORD) had said unto them, Ye shall not do this thing.* (2 Kings 17:12). This is the breaking of *Ye shall not do so unto Yahuah Elohaychem (the LORD your God)* (Deuteronomy 12:4) — the true El must not be served by the forms of the false; the north blurred the line and was carried away.'),
+    -- THREAD 2: the place which Yahuah shall choose to put his Name
+    ('canon','deuteronomy',12,5,'canon','1-kings',8,29,'free',
+     E'*That thine eyes may be open toward this house night and day, even toward the place of which thou hast said, My name shall be there: that thou mayest hearken unto the prayer which thy servant shall make toward this place.* (1 Kings 8:29). Solomon''s dedication is the keeping of *the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there* (Deuteronomy 12:5) — the chosen Name-place is now the temple on Zion.'),
+    ('canon','deuteronomy',12,5,'canon','2-chronicles',6,6,'free',
+     E'*But I have chosen Jerusalem, that my name might be there; and have chosen David to be over my people Yashar''el (Israel).* (2 Chronicles 6:6). Yahuah names the chosen place outright — Jerusalem — fulfilling *the place which Yahuah Elohaychem (the LORD your God) shall choose... to put his name there* (Deuteronomy 12:5); the Name and the Davidic king are bound to one location.'),
+    ('canon','deuteronomy',12,5,'canon','psalms',132,13,'free',
+     E'*For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation.* (Psalm 132:13). The Psalm sings the choosing that Deuteronomy foretold — *his habitation shall ye seek, and thither thou shalt come* (Deuteronomy 12:5); Zion is the seek-and-come dwelling of the Name.'),
+    ('canon','deuteronomy',12,11,'canon','psalms',132,14,'free',
+     E'*This is my rest for ever: here will I dwell; for I have desired it.* (Psalm 132:14). The chosen place is the place *which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there* (Deuteronomy 12:11) — the Name dwells where Yahuah has set his everlasting rest.'),
+    ('canon','deuteronomy',12,5,'canon','john',4,21,'free',
+     E'*Yahusha (Jesus) saith unto her, Woman, believe me, the hour cometh, when ye shall neither in this mountain, nor yet at Jerusalem, worship the Father.* (John 4:21). The Formed Son does not abolish the chosen place but fulfills it — *the place which Yahuah Elohaychem (the LORD your God) shall choose... to put his name there* (Deuteronomy 12:5) opens into the hour when *the true worshippers shall worship the Father in spirit and in truth* (John 4:23); the Name-bearing worship is carried in him.'),
+    ('canon','deuteronomy',12,5,'canon','john',4,23,'free',
+     E'*But the hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth: for the Father seeketh such to worship him.* (John 4:23). The Name once put in one chosen place (*to put his name there* — Deuteronomy 12:5) is, in the Formed Son, worshipped in spirit and in truth — the place transcended, never the Name set aside.'),
+    ('canon','deuteronomy',12,11,'canon','revelation',21,3,'free',
+     E'*And I heard a great voice out of heaven saying, Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people, and Elohim (God) himself shall be with them, and be their Elohim (God).* (Revelation 21:3). The consummation of *the place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there* (Deuteronomy 12:11) — the chosen dwelling expands until Yahuah himself tabernacles with his people.'),
+    -- THREAD 3: rejoice before Yahuah, covenant joy
+    ('canon','deuteronomy',12,7,'canon','deuteronomy',14,26,'free',
+     E'*And thou shalt bestow that money for whatsoever thy soul lusteth after, for oxen, or for sheep, or for wine, or for strong drink, or for whatsoever thy soul desireth: and thou shalt eat there before Yahuah Elohayka (the LORD thy God), and thou shalt rejoice, thou, and thine household,* (Deuteronomy 14:26). The same Torah-joy as *there ye shall eat before Yahuah Elohaychem (the LORD your God), and ye shall rejoice in all that ye put your hand unto, ye and your households* (Deuteronomy 12:7) — covenant gladness eaten in his presence.'),
+    ('canon','deuteronomy',12,12,'canon','nehemiah',8,10,'free',
+     E'*Then he said unto them, Go your way, eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared: for this day is holy unto our Lord: neither be ye sorry; for the joy of Yahuah (LORD) is your strength.* (Nehemiah 8:10). The returned remnant lives out *ye shall rejoice before Yahuah Elohaychem (the LORD your God), ye, and your sons, and your daughters* (Deuteronomy 12:12) — joy before Yahuah is the strength of the covenant household.'),
+    ('canon','deuteronomy',12,18,'canon','nehemiah',8,10,'free',
+     E'*for this day is holy unto our Lord: neither be ye sorry; for the joy of Yahuah (LORD) is your strength.* (Nehemiah 8:10). Echoing *thou shalt rejoice before Yahuah Elohayka (the LORD thy God) in all that thou puttest thine hands unto* (Deuteronomy 12:18) — the worship at the chosen place is meant to overflow in rejoicing, not dread.'),
+    -- THREAD 4: ye shall not eat the blood, the blood is the life
+    ('canon','deuteronomy',12,16,'canon','leviticus',17,11,'free',
+     E'*For the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.* (Leviticus 17:11). The ground of *Only ye shall not eat the blood; ye shall pour it upon the earth as water* (Deuteronomy 12:16) — the blood is reserved because the life is in it and atonement is by it.'),
+    ('canon','deuteronomy',12,16,'canon','leviticus',17,14,'free',
+     E'*For it is the life of all flesh; the blood of it is for the life thereof: therefore I said unto the children of Yashar''el (Israel), Ye shall eat the blood of no manner of flesh: for the life of all flesh is the blood thereof: whosoever eateth it shall be cut off.* (Leviticus 17:14). The identical standing: *ye shall not eat the blood; ye shall pour it upon the earth as water* (Deuteronomy 12:16) — the life-in-the-blood is poured out, never consumed.'),
+    ('canon','deuteronomy',12,23,'canon','genesis',9,4,'free',
+     E'*But flesh with the life thereof, which is the blood thereof, shall ye not eat.* (Genesis 9:4). The Noahic charge older than Sinai grounds *Only be sure that thou eat not the blood: for the blood is the life; and thou mayest not eat the life with the flesh* (Deuteronomy 12:23) — the life-in-the-blood was set apart for all flesh from the days of Noah.'),
+    ('canon','deuteronomy',12,23,'canon','acts',15,20,'free',
+     E'*But that we write unto them, that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood.* (Acts 15:20). The apostolic decree UPHOLDS the standing of *the blood is the life; and thou mayest not eat the life with the flesh* (Deuteronomy 12:23) — abstaining from blood is carried forward to the gathered, not retired.'),
+    ('canon','deuteronomy',12,25,'canon','acts',15,29,'free',
+     E'*That ye abstain from meats offered to idols, and from blood, and from things strangled, and from fornication: from which if ye keep yourselves, ye shall do well. Fare ye well.* (Acts 15:29). The promise *that it may go well with thee, and with thy children after thee, when thou shalt do that which is right in the sight of Yahuah (LORD)* (Deuteronomy 12:25) is echoed in the apostles'' *ye shall do well* — the blood standing endures, and well-being follows obedience.'),
+    -- THREAD 5: enquire not after their gods
+    ('canon','deuteronomy',12,30,'canon','2-kings',17,9,'free',
+     E'*And the children of Yashar''el (Israel) did secretly those things that were not right against Yahuah (LORD) their Elohim (God), and they built them high places in all their cities, from the tower of the watchmen to the fenced city.* (2 Kings 17:9). The very snare *Take heed to thyself that thou be not snared by following them... and that thou enquire not after their gods* (Deuteronomy 12:30) warned of — the north secretly took up the nations'' worship and built their high places.'),
+    ('canon','deuteronomy',12,31,'canon','2-kings',17,11,'free',
+     E'*And there they burnt incense in all the high places, as did the heathen whom Yahuah (LORD) carried away before them; and wrought wicked things to provoke Yahuah (LORD) to anger:* (2 Kings 17:11). They did exactly what *Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods* (Deuteronomy 12:31) forbade — adopting the heathen forms to serve Yahuah, and provoking him.'),
+    ('canon','deuteronomy',12,31,'canon','deuteronomy',7,5,'free',
+     E'*But thus shall ye deal with them; ye shall destroy their altars, and break down their images, and cut down their groves, and burn their graven images with fire.* (Deuteronomy 7:5). The answer to the snare of *enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise* (Deuteronomy 12:30) — the nations'' worship is not to be studied and copied but destroyed.'),
+    -- THREAD 6: thou shalt not add thereto nor diminish from it
+    ('canon','deuteronomy',12,32,'canon','deuteronomy',4,2,'free',
+     E'*Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God) which I command you.* (Deuteronomy 4:2). The twin canon-guard of *What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32) — the Torah seals itself against both addition and subtraction.'),
+    ('canon','deuteronomy',12,32,'canon','proverbs',30,6,'free',
+     E'*Add thou not unto his words, lest he reprove thee, and thou be found a liar.* (Proverbs 30:6). Wisdom restates *thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32) — to add to Yahuah''s words is to make oneself a liar against him.'),
+    ('canon','deuteronomy',12,32,'canon','matthew',15,9,'free',
+     E'*But in vain they do worship me, teaching for doctrines the commandments of men.* (Matthew 15:9). The Formed Son enforces the canon-guard: *thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32) condemns the tradition of men set over the commandment — worship by human additions is vain, the Torah itself stands.'),
+    ('canon','deuteronomy',12,32,'canon','mark',7,9,'free',
+     E'*And he said unto them, Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition.* (Mark 7:9). To add tradition is to diminish the command — the very thing *thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32) forbids; Yahusha (Jesus) guards the Torah, he does not retire it.'),
+    ('canon','deuteronomy',12,32,'canon','revelation',22,18,'free',
+     E'*For I testify unto every man that heareth the words of the prophecy of this book, If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book:* (Revelation 22:18). The canon closes as it was charged at Sinai — *thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32); the seal against adding and diminishing brackets the whole library.'),
+    ('canon','deuteronomy',12,32,'canon','revelation',22,19,'free',
+     E'*And if any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life... and from the things which are written in this book.* (Revelation 22:19). The diminishing half of the guard: *thou shalt not... diminish from it* (Deuteronomy 12:32) — to take away from Yahuah''s words is to be taken away from the book of life.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ C. threads ============================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-12-utterly-destroy-the-high-places-of-the-nations',
+  E'Utterly destroy the high places of the nations',
+  E'The land is entered under a charge of demolition: *Ye shall utterly destroy all the places, wherein the nations which ye shall possess served their gods, upon the high mountains, and upon the hills, and under every green tree* (Deuteronomy 12:2), *And ye shall overthrow their altars, and break their pillars, and burn their groves with fire; and ye shall hew down the graven images of their gods* (Deuteronomy 12:3), with the line drawn sharp: *Ye shall not do so unto Yahuah Elohaychem (the LORD your God)* (Deuteronomy 12:4) — the true El is never to be served by the forms of the false. This is the same charge given earlier: *ye shall destroy their altars, and break down their images, and cut down their groves, and burn their graven images with fire* (Deuteronomy 7:5). And it is the precise command the northern house of Yashar''el (Israel) failed to keep: *they set them up images and groves in every high hill, and under every green tree* (2 Kings 17:10), serving idols *whereof Yahuah (LORD) had said unto them, Ye shall not do this thing* (2 Kings 17:12). The unrazed high places became the seed of the exile.',
+  sv.verse_id, ev.verse_id, 'free', 24775
+  FROM _s310_deu12_lookup sv, _s310_deu12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=12 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name',
+  E'The place which Yahuah shall choose to put his Name',
+  E'Against the scattered shrines of the nations stands the ONE chosen place: *the place which Yahuah Elohaychem (the LORD your God) shall choose out of all your tribes to put his name there, even unto his habitation shall ye seek, and thither thou shalt come* (Deuteronomy 12:5), *a place which Yahuah Elohaychem (the LORD your God) shall choose to cause his name to dwell there* (Deuteronomy 12:11). The chosen place is named and dedicated in the kingdom: *the place of which thou hast said, My name shall be there* (1 Kings 8:29); *I have chosen Jerusalem, that my name might be there; and have chosen David to be over my people Yashar''el (Israel)* (2 Chronicles 6:6); *For Yahuah (LORD) hath chosen Zion; he hath desired it for his habitation* (Psalm 132:13), *This is my rest for ever: here will I dwell; for I have desired it* (Psalm 132:14). The Formed Son does not abolish the chosen place but carries the Name beyond it: *the hour cometh, when ye shall neither in this mountain, nor yet at Jerusalem, worship the Father* (John 4:21), *when the true worshippers shall worship the Father in spirit and in truth* (John 4:23). And the choosing reaches its consummation when the dwelling fills all things: *Behold, the tabernacle of Elohim (God) is with men, and he will dwell with them, and they shall be his people* (Revelation 21:3). One Name, one place, opening into the Father dwelling with his people for ever.',
+  sv.verse_id, ev.verse_id, 'free', 24778
+  FROM _s310_deu12_lookup sv, _s310_deu12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=12 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-12-rejoice-before-yahuah-in-all-thou-puttest-thine-hand-unto',
+  E'Rejoice before Yahuah in all thou puttest thine hand unto',
+  E'Worship at the chosen place is meant to overflow in gladness: *there ye shall eat before Yahuah Elohaychem (the LORD your God), and ye shall rejoice in all that ye put your hand unto, ye and your households, wherein Yahuah Elohayka (the LORD thy God) hath blessed thee* (Deuteronomy 12:7); *ye shall rejoice before Yahuah Elohaychem (the LORD your God), ye, and your sons, and your daughters* (Deuteronomy 12:12); *thou shalt rejoice before Yahuah Elohayka (the LORD thy God) in all that thou puttest thine hands unto* (Deuteronomy 12:18). The Torah''s very economy makes room for this joy: *thou shalt eat there before Yahuah Elohayka (the LORD thy God), and thou shalt rejoice, thou, and thine household* (Deuteronomy 14:26). And the returned remnant under Ezra lives it out: *eat the fat, and drink the sweet, and send portions unto them for whom nothing is prepared... neither be ye sorry; for the joy of Yahuah (LORD) is your strength* (Nehemiah 8:10). Covenant obedience is not dread but feast — joy before Yahuah is the strength of his household.',
+  sv.verse_id, ev.verse_id, 'free', 24781
+  FROM _s310_deu12_lookup sv, _s310_deu12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=12 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life',
+  E'Only ye shall not eat the blood, for the blood is the life',
+  E'Even where flesh may be eaten freely, one standing is reserved: *Only ye shall not eat the blood; ye shall pour it upon the earth as water* (Deuteronomy 12:16), *Only be sure that thou eat not the blood: for the blood is the life; and thou mayest not eat the life with the flesh* (Deuteronomy 12:23), *that it may go well with thee, and with thy children after thee, when thou shalt do that which is right in the sight of Yahuah (LORD)* (Deuteronomy 12:25). The ground is given in Leviticus: *the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls* (Leviticus 17:11), *for the life of all flesh is the blood thereof: whosoever eateth it shall be cut off* (Leviticus 17:14). It reaches back further still, to the days of Noah: *flesh with the life thereof, which is the blood thereof, shall ye not eat* (Genesis 9:4). And it is carried forward, not retired, by the apostolic decree: *that they abstain from pollutions of idols, and from fornication, and from things strangled, and from blood* (Acts 15:20), *from which if ye keep yourselves, ye shall do well* (Acts 15:29) — the same "it shall go well" that crowns the command in Deuteronomy. The life-in-the-blood is poured out before Yahuah, never consumed.',
+  sv.verse_id, ev.verse_id, 'free', 24784
+  FROM _s310_deu12_lookup sv, _s310_deu12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=12 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-12-enquire-not-after-their-gods-thou-shalt-not-do-so-unto-yahuah',
+  E'Enquire not after their gods; thou shalt not do so unto Yahuah',
+  E'When the nations are cut off, a subtler snare remains than their idols — their methods: *Take heed to thyself that thou be not snared by following them, after that they be destroyed from before thee; and that thou enquire not after their gods, saying, How did these nations serve their gods? even so will I do likewise* (Deuteronomy 12:30), *Thou shalt not do so unto Yahuah Elohayka (the LORD thy God): for every abomination to Yahuah (LORD), which he hateth, have they done unto their gods* (Deuteronomy 12:31). The northern house fell into exactly this trap: *the children of Yashar''el (Israel) did secretly those things that were not right against Yahuah (LORD) their Elohim (God), and they built them high places in all their cities* (2 Kings 17:9), *there they burnt incense in all the high places, as did the heathen whom Yahuah (LORD) carried away before them* (2 Kings 17:11) — borrowing the heathen forms to serve Yahuah and provoking him. The answer is not to study the nations'' worship but to destroy it: *ye shall destroy their altars, and break down their images, and cut down their groves* (Deuteronomy 7:5). Yahuah is to be worshipped HIS way, never theirs.',
+  sv.verse_id, ev.verse_id, 'free', 24787
+  FROM _s310_deu12_lookup sv, _s310_deu12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=29
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=12 AND ev.verse_number=31
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it',
+  E'Thou shalt not add thereto, nor diminish from it',
+  E'The chapter seals with the canon-guard: *What thing soever I command you, observe to do it: thou shalt not add thereto, nor diminish from it* (Deuteronomy 12:32). The Torah twice seals itself this way: *Ye shall not add unto the word which I command you, neither shall ye diminish ought from it, that ye may keep the commandments of Yahuah Elohaychem (the LORD your God)* (Deuteronomy 4:2), and wisdom restates it: *Add thou not unto his words, lest he reprove thee, and thou be found a liar* (Proverbs 30:6). The Formed Son enforces the guard against the tradition of men: *in vain they do worship me, teaching for doctrines the commandments of men* (Matthew 15:9), *Full well ye reject the commandment of Elohim (God), that ye may keep your own tradition* (Mark 7:9) — to add tradition is to diminish the command; Yahusha (Jesus) guards the Torah, he does not retire it. And the whole library closes as it was charged at Sinai: *If any man shall add unto these things, Elohim (God) shall add unto him the plagues that are written in this book* (Revelation 22:18), *if any man shall take away from the words of the book of this prophecy, Elohim (God) shall take away his part out of the book of life* (Revelation 22:19). Worship Yahuah HIS way — neither added to nor diminished from.',
+  sv.verse_id, ev.verse_id, 'free', 24790
+  FROM _s310_deu12_lookup sv, _s310_deu12_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=12 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ D. thread_members ============================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 7:5 — the same Torah charge to destroy the altars, break the images, burn the groves of the nations.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=2
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-utterly-destroy-the-high-places-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 17:10 — the north did the forbidden thing, setting up images and groves under every green tree.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=3
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-utterly-destroy-the-high-places-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Kings 17:12 — they served idols of which Yahuah had said, Ye shall not do this thing; the broken line that brought the exile.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=4
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-utterly-destroy-the-high-places-of-the-nations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 8:29 — Solomon dedicates the temple as the place of which Yahuah said, My name shall be there.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=8 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 6:6 — Yahuah names the chosen place: I have chosen Jerusalem, that my name might be there, and David over Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=6 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 132:13 — Yahuah hath chosen Zion; he hath desired it for his habitation, the seek-and-come dwelling of the Name.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 132:14 — This is my rest for ever: here will I dwell; the everlasting rest where the Name dwells.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=11
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=132 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'John 4:21 — the Formed Son: the hour cometh when ye shall worship the Father neither in this mountain nor at Jerusalem; the place fulfilled, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'John 4:23 — the true worshippers worship the Father in spirit and in truth; the Name-bearing worship carried in the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=5
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=4 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Revelation 21:3 — the consummation: the tabernacle of Elohim is with men; the chosen dwelling expands until Yahuah himself dwells with his people.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=11
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-the-place-which-yahuah-shall-choose-to-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 14:26 — eat before Yahuah and rejoice, thou and thine household; the same Torah-joy at the chosen place.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=7
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=14 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-rejoice-before-yahuah-in-all-thou-puttest-thine-hand-unto'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Nehemiah 8:10 — the returned remnant: the joy of Yahuah is your strength; covenant joy before him.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=12
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-rejoice-before-yahuah-in-all-thou-puttest-thine-hand-unto'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Nehemiah 8:10 (again, anchored at v.18) — neither be ye sorry; the worship at the chosen place overflows in rejoicing.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=18
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-rejoice-before-yahuah-in-all-thou-puttest-thine-hand-unto'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 17:11 — the life of the flesh is in the blood, given upon the altar to make atonement; the ground of the prohibition.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=16
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 17:14 — the life of all flesh is the blood thereof; whosoever eateth it shall be cut off; the identical standing.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=16
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 9:4 — the Noahic charge older than Sinai: flesh with the life thereof, the blood, ye shall not eat.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=23
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 15:20 — the apostolic decree upholds it: abstain from blood; the standing carried forward to the gathered.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=23
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Acts 15:29 — abstain from blood; if ye keep yourselves, ye shall do well; the same "it shall go well" of Deuteronomy 12:25.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=25
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=15 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-only-ye-shall-not-eat-the-blood-for-the-blood-is-the-life'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 17:9 — the north fell into the snare, secretly building high places in all their cities.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=30
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-enquire-not-after-their-gods-thou-shalt-not-do-so-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 17:11 — they burnt incense in the high places as did the heathen, provoking Yahuah; the forbidden imitation.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=31
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-enquire-not-after-their-gods-thou-shalt-not-do-so-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 7:5 — the answer to the snare: not study the nations'' worship but destroy their altars, images, and groves.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=31
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=7 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-enquire-not-after-their-gods-thou-shalt-not-do-so-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 4:2 — the twin canon-guard: ye shall not add unto the word, neither diminish from it.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Proverbs 30:6 — Add thou not unto his words, lest thou be found a liar; wisdom restates the guard.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 15:9 — in vain they worship, teaching for doctrines the commandments of men; the Formed Son guards the Torah against human addition.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Mark 7:9 — Full well ye reject the commandment that ye may keep your tradition; to add tradition is to diminish the command.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=7 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Revelation 22:18 — if any man add unto these things, Elohim shall add the plagues; the canon closes as it was sealed at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Revelation 22:19 — if any man take away from the words, Elohim shall take away his part out of the book of life; the diminishing half of the guard.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu12_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=12 AND sv.verse_number=32
+  JOIN _s310_deu12_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=22 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-12-thou-shalt-not-add-thereto-nor-diminish-from-it'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_13.sql (Deuteronomy 13) -----
+-- Book: Deuteronomy   Chapter: 13   Tag: deu13   Session: s310
+-- Sort band: base 24800, step 3  (24800, 24803, 24806, 24809, 24812)
+-- Tier: every member of every thread is canon (Tanakh + NT) -> all threads 'free'.
+--
+-- FRAMING (lens applied per MINION_BRIEF_TANAKH.md):
+--   Deuteronomy 13 is the Torah's loyalty-test chapter: the false prophet/dreamer (13:1-5),
+--   the secret enticer (13:6-11), the apostate city (13:12-18). The framework reading:
+--   - A true sign/wonder does NOT validate a false message — Yahuah PROVES the people to know
+--     whether they love him (seed-loyalty test, conduct not ethnicity). Weaves FORWARD to the
+--     NT's whole false-prophet/lying-wonders apparatus (Matt 24:24, 2 Thess 2:9-11, Gal 1:8,
+--     1 John 4:1) — the very test the apostles inherit.
+--   - "Walk after / fear / keep his commandments / obey / cleave" (13:4) = the Torah-walk,
+--     Deuteronomy's signature loyalty formula (lateral Deut 10:20; 30:20).
+--   - "Put the evil away from the midst of thee" (13:5) is the EXACT formula Paul quotes at
+--     1 Cor 5:13 — the apostle reaching back to Torah, not abolishing it (lateral Deut 17:7).
+--   - The secret enticer (13:6-11): loyalty to Yahuah ABOVE closest kin when kin entices to
+--     idolatry — conduct, not ethnic hatred; the enemy is the enticement. FORWARD Matt 10:37
+--     (love father/mother more than me); lateral Deut 33:9 (Levi who did not acknowledge kin
+--     to keep the covenant). Victims-not-enemies: the seed-war is against idolatry, not persons.
+--   - The apostate city (13:12-18): inquire diligently, herem only on the confirmed system —
+--     judgment on the apostasy-SYSTEM, the inhabitants drawn away are victims of the children
+--     of Belial; lateral the parallel inquiry-and-execution due-process of Deut 17:2-5.
+--
+-- COVERAGE CHECKLIST:
+--   v.1-3  NT:     Matt 24:24 (false prophets shew great signs/wonders to deceive elect);
+--                  2 Thess 2:9 (coming after working of Satan, lying wonders); 2 Thess 2:11
+--                  (Elohim sends strong delusion to believe a lie); Gal 1:8 (though an angel
+--                  preach another gospel, accursed); 1 John 4:1 (try the spirits, many false
+--                  prophets) -> thread 1
+--          Extras: none warranted
+--          Tanakh: Deut 8:2 (led to PROVE thee, to know thine heart) -> thread 1 (lateral)
+--   v.4    NT:     none warranted (Torah-walk formula; NT echoes carried via thread 1's filter)
+--          Extras: none warranted
+--          Tanakh: Deut 10:20 (fear/serve/cleave/swear by his name); Deut 30:20 (love/obey/
+--                  cleave, he is thy life) -> thread 2 (lateral)
+--   v.5    NT:     1 Cor 5:13 (put away from among yourselves that wicked person — the very
+--                  Deut formula) -> thread 3
+--          Extras: none warranted
+--          Tanakh: Deut 17:7 (so thou shalt put the evil away from among you) -> thread 3 (lateral)
+--   v.6-11 NT:     Matt 10:37 (loveth father/mother/son/daughter more than me) -> thread 4
+--          Extras: none warranted
+--          Tanakh: Deut 33:9 (Levi: did not acknowledge kin, kept thy covenant) -> thread 4 (lateral)
+--   v.12-18 NT:    none warranted (covenant judicial procedure)
+--          Extras: none warranted
+--          Tanakh: Deut 17:2,3,4,5 (parallel idolatry inquiry-and-execution due-process)
+--                  -> thread 5 (lateral)
+--
+-- THREADS (5):
+--   1. deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet  (v.1-3) [canon: NT + Tanakh] free
+--   2. deuteronomy-13-walk-after-yahuah-and-cleave-unto-him                         (v.4)    [canon: Tanakh] free
+--   3. deuteronomy-13-so-shalt-thou-put-the-evil-away-from-the-midst-of-thee        (v.5)    [canon: NT + Tanakh] free
+--   4. deuteronomy-13-the-secret-enticer-loyalty-to-yahuah-above-closest-kin        (v.6-11) [canon: NT + Tanakh] free
+--   5. deuteronomy-13-the-city-drawn-away-judgment-on-the-apostasy-system           (v.12-18)[canon: Tanakh] free
+-- ----------------------------------------------------------------------------------
+
+CREATE TEMP VIEW _s310_deu13_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===== B. cross_references =====
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the sign that comes to pass does not validate the false prophet (13:1-3)
+    ('canon','deuteronomy',13,3,'canon','matthew',24,24,'free',
+      E'*For there shall arise false Christs, and false prophets, and shall shew great signs and wonders; insomuch that, if it were possible, they shall deceive the very elect.* (Matthew 24:24) Yahusha (Jesus) inherits the very test of Deuteronomy 13: a sign that comes to pass is no proof of a true message. The Torah already warned *Thou shalt not hearken unto the words of that prophet... for Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God)* (Deuteronomy 13:3) — the wonder is the proving, not the proof.'),
+    ('canon','deuteronomy',13,3,'canon','2-thessalonians',2,9,'free',
+      E'*Even him, whose coming is after the working of Satan with all power and signs and lying wonders,* (2 Thessalonians 2:9) Paul names the deceiver precisely by his works of power — yet the works do not authenticate the message, because the Torah taught that *the sign or the wonder come to pass... saying, Let us go after other gods* (Deuteronomy 13:2) is itself the proving of the heart, not a credential.'),
+    ('canon','deuteronomy',13,3,'canon','2-thessalonians',2,11,'free',
+      E'*And for this cause Elohim (God) shall send them strong delusion, that they should believe a lie:* (2 Thessalonians 2:11) The same Hand that *proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart and with all your soul* (Deuteronomy 13:3) sends the delusion as the test made manifest — those who refuse the love of the truth are given over to the lie they preferred.'),
+    ('canon','deuteronomy',13,3,'canon','galatians',1,8,'free',
+      E'*But though we, or an angel from heaven, preach any other gospel unto you than that which we have preached unto you, let him be accursed.* (Galatians 1:8) Not even a heavenly sign-bearer overrides the standard — the exact logic of Deuteronomy 13: *Thou shalt not hearken unto the words of that prophet, or that dreamer of dreams* (Deuteronomy 13:3), no matter how great the wonder, if the message turns from Yahuah.'),
+    ('canon','deuteronomy',13,3,'canon','1-john',4,1,'free',
+      E'*Beloved, believe not every spirit, but try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world.* (1 John 4:1) John commands the Deuteronomy 13 discernment for the assembly: weigh the message against Yahuah, do not be swayed by the messenger — for the chapter''s warning is *for Yahuah Elohaychem (the LORD your God) proveth you* (Deuteronomy 13:3).'),
+    ('canon','deuteronomy',13,3,'canon','deuteronomy',8,2,'free',
+      E'*And thou shalt remember all the way which Yahuah Elohayka (the LORD thy God) led thee these forty years in the wilderness, to humble thee, and to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no.* (Deuteronomy 8:2) The same Deuteronomic word: the wilderness and the wonder alike are a proving — *to prove thee, to know what was in thine heart* answers *proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God)* (Deuteronomy 13:3).'),
+
+    -- Thread 2: walk after Yahuah and cleave unto him (13:4)
+    ('canon','deuteronomy',13,4,'canon','deuteronomy',10,20,'free',
+      E'*Thou shalt fear Yahuah Elohayka (the LORD thy God); him shalt thou serve, and to him shalt thou cleave, and swear by his name.* (Deuteronomy 10:20) The same loyalty formula stands against the false prophet''s pull: *Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4) — fear, serve, cleave is the Torah-walk that holds when the wonder-worker says go after other gods.'),
+    ('canon','deuteronomy',13,4,'canon','deuteronomy',30,20,'free',
+      E'*That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days...* (Deuteronomy 30:20) Love, obey, cleave — the covenant-renewal echoes the answer to the proving of Deuteronomy 13: *keep his commandments, and obey his voice... and cleave unto him* (Deuteronomy 13:4) is not a burden but life itself.'),
+
+    -- Thread 3: put the evil away from the midst of thee (13:5)
+    ('canon','deuteronomy',13,5,'canon','1-corinthians',5,13,'free',
+      E'*But them that are without Elohim (God) judgeth. Therefore put away from among yourselves that wicked person.* (1 Corinthians 5:13) Paul quotes the very Deuteronomy formula word for word: *So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). The apostle reaches BACK into the Torah to govern the assembly — not abolishing it but applying it, guarding the body from the one who turns it away from Yahuah.'),
+    ('canon','deuteronomy',13,5,'canon','deuteronomy',17,7,'free',
+      E'*The hands of the witnesses shall be first upon him to put him to death, and afterward the hands of all the people. So thou shalt put the evil away from among you.* (Deuteronomy 17:7) The same closing formula and the same procedure — the witnesses'' hand first — binds the idolater of chapter 17 to the false prophet of chapter 13: *that prophet, or that dreamer of dreams, shall be put to death... So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5).'),
+
+    -- Thread 4: the secret enticer — loyalty above closest kin (13:6-11)
+    ('canon','deuteronomy',13,6,'canon','matthew',10,37,'free',
+      E'*He that loveth father or mother more than me is not worthy of me: and he that loveth son or daughter more than me is not worthy of me.* (Matthew 10:37) Yahusha (Jesus) draws on the Deuteronomy 13 demand that loyalty to Yahuah outranks the dearest kin when that kin entices to idolatry: *If thy brother, the son of thy mother, or thy son, or thy daughter, or the wife of thy bosom... entice thee secretly, saying, Let us go and serve other gods... thou shalt not consent unto him* (Deuteronomy 13:6, 8) — the enemy is the enticement, never the person as such.'),
+    ('canon','deuteronomy',13,6,'canon','deuteronomy',33,9,'free',
+      E'*Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren, nor knew his own children: for they have observed thy word, and kept thy covenant.* (Deuteronomy 33:9) Levi''s blessing is the lived pattern of Deuteronomy 13: covenant-loyalty to Yahuah above the claims of nearest blood — answering *neither shall thine eye pity him, neither shalt thou spare, neither shalt thou conceal him* (Deuteronomy 13:8) when the kin draws the heart to other gods.'),
+
+    -- Thread 5: the city drawn away — judgment on the apostasy-system (13:12-18)
+    ('canon','deuteronomy',13,14,'canon','deuteronomy',17,2,'free',
+      E'*If there be found among you, within any of thy gates which Yahuah Elohayka (the LORD thy God) giveth thee, man or woman, that hath wrought wickedness in the sight of Yahuah Elohayka (the LORD thy God), in transgressing his covenant,* (Deuteronomy 17:2) The parallel idolatry case opens with the same care for evidence as the apostate city: *Then shalt thou enquire, and make search, and ask diligently; and, behold, if it be truth, and the thing certain* (Deuteronomy 13:14) — no judgment without proof.'),
+    ('canon','deuteronomy',13,13,'canon','deuteronomy',17,3,'free',
+      E'*And hath gone and served other gods, and worshipped them, either the sun, or moon, or any of the host of heaven, which I have not commanded;* (Deuteronomy 17:3) The offense is identical — turning to serve other gods — matching *Certain men, the children of Belial, are gone out from among you, and have withdrawn the inhabitants of their city, saying, Let us go and serve other gods* (Deuteronomy 13:13); the inhabitants are victims drawn away by the sons of Belial, the system itself the abomination.'),
+    ('canon','deuteronomy',13,14,'canon','deuteronomy',17,4,'free',
+      E'*And it be told thee, and thou hast heard of it, and enquired diligently, and, behold, it be true, and the thing certain, that such abomination is wrought in Yashar''el (Israel):* (Deuteronomy 17:4) Word for word the same diligent inquiry guards both cases against rumor: *Then shalt thou enquire, and make search, and ask diligently; and, behold, if it be truth, and the thing certain, that such abomination is wrought among you* (Deuteronomy 13:14).'),
+    ('canon','deuteronomy',13,15,'canon','deuteronomy',17,5,'free',
+      E'*Then shalt thou bring forth that man or that woman, which have committed that wicked thing, unto thy gates, even that man or that woman, and shalt stone them with stones, till they die.* (Deuteronomy 17:5) Only after proof does the sentence fall — the individual idolater stoned, the confirmed apostate city devoted: *Thou shalt surely smite the inhabitants of that city with the edge of the sword, destroying it utterly* (Deuteronomy 13:15); the judgment is on the established apostasy, not on the uninvestigated.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===== C. cross_reference_threads =====
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet',
+       E'A Sign That Comes to Pass Does Not Validate a False Prophet',
+       E'Deuteronomy 13 opens the Torah''s deepest test of discernment: *If there arise among you a prophet, or a dreamer of dreams, and giveth thee a sign or a wonder, And the sign or the wonder come to pass, whereof he spake unto thee, saying, Let us go after other gods... Thou shalt not hearken unto the words of that prophet* (Deuteronomy 13:1-3). The wonder may be real — and still the message be false. The reason is given: *for Yahuah Elohaychem (the LORD your God) proveth you, to know whether ye love Yahuah Elohaychem (the LORD your God) with all your heart and with all your soul* (Deuteronomy 13:3). The sign is the proving, not the proof. This is the same proving of the wilderness: *to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no* (Deuteronomy 8:2). The whole New Testament inherits this test. Yahusha (Jesus) warns *there shall arise false Christs, and false prophets, and shall shew great signs and wonders; insomuch that, if it were possible, they shall deceive the very elect* (Matthew 24:24). Paul names the deceiver by his power — *whose coming is after the working of Satan with all power and signs and lying wonders* (2 Thessalonians 2:9) — and shows the proving made manifest: *Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11) upon those who refused the love of the truth. The standard outranks even a heavenly messenger: *though we, or an angel from heaven, preach any other gospel... let him be accursed* (Galatians 1:8). And John makes it the assembly''s daily work: *believe not every spirit, but try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1). The message is weighed against Yahuah; the messenger''s wonders prove nothing.',
+       sv.verse_id, ev.verse_id, 'free', 24800
+  FROM _s310_deu13_lookup sv, _s310_deu13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=13 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-13-walk-after-yahuah-and-cleave-unto-him',
+       E'Walk After Yahuah and Cleave unto Him',
+       E'Against the pull of the wonder-working deceiver stands the Torah-walk itself: *Ye shall walk after Yahuah Elohaychem (the LORD your God), and fear him, and keep his commandments, and obey his voice, and ye shall serve him, and cleave unto him* (Deuteronomy 13:4). Fear, keep, obey, serve, cleave — this is Deuteronomy''s signature loyalty formula, the answer to every enticement. The same words gather elsewhere in the book: *Thou shalt fear Yahuah Elohayka (the LORD thy God); him shalt thou serve, and to him shalt thou cleave, and swear by his name* (Deuteronomy 10:20), and in the great covenant-renewal, *That thou mayest love Yahuah Elohayka (the LORD thy God), and that thou mayest obey his voice, and that thou mayest cleave unto him: for he is thy life, and the length of thy days* (Deuteronomy 30:20). Cleaving to Yahuah and keeping his commandments are not a burden but life itself — the love that the proving of verse 3 was testing for.',
+       sv.verse_id, ev.verse_id, 'free', 24803
+  FROM _s310_deu13_lookup sv, _s310_deu13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=13 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-13-so-shalt-thou-put-the-evil-away-from-the-midst-of-thee',
+       E'So Shalt Thou Put the Evil Away from the Midst of Thee',
+       E'The false prophet who turns the people away is judged: *And that prophet, or that dreamer of dreams, shall be put to death; because he hath spoken to turn you away from Yahuah Elohaychem (the LORD your God)... to thrust thee out of the way which Yahuah Elohayka (the LORD thy God) commanded thee to walk in. So shalt thou put the evil away from the midst of thee* (Deuteronomy 13:5). That closing formula — *put the evil away* — is the Torah''s standing charge to guard the covenant body, sharing the very procedure of the idolater''s case: *The hands of the witnesses shall be first upon him to put him to death, and afterward the hands of all the people. So thou shalt put the evil away from among you* (Deuteronomy 17:7). Paul reaches straight back into this formula to govern the assembly: *Therefore put away from among yourselves that wicked person* (1 Corinthians 5:13) — the apostle applying the Torah, not abolishing it, to keep the body from the one who would thrust it out of the way Yahuah commanded.',
+       sv.verse_id, ev.verse_id, 'free', 24806
+  FROM _s310_deu13_lookup sv, _s310_deu13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=13 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-13-the-secret-enticer-loyalty-to-yahuah-above-closest-kin',
+       E'The Secret Enticer: Loyalty to Yahuah Above Closest Kin',
+       E'The hardest test comes from the dearest: *If thy brother, the son of thy mother, or thy son, or thy daughter, or the wife of thy bosom, or thy friend, which is as thine own soul, entice thee secretly, saying, Let us go and serve other gods... Thou shalt not consent unto him, nor hearken unto him; neither shall thine eye pity him* (Deuteronomy 13:6, 8). The enemy here is the enticement to idolatry, never the person as a person — this is conduct within the covenant, the seed-war against turning from Yahuah, not hatred of kin. Levi''s blessing is the lived pattern: *Who said unto his father and to his mother, I have not seen him; neither did he acknowledge his brethren, nor knew his own children: for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9) — covenant-loyalty above the claims of blood. Yahusha (Jesus) draws on the same demand: *He that loveth father or mother more than me is not worthy of me: and he that loveth son or daughter more than me is not worthy of me* (Matthew 10:37). Loyalty to Yahuah outranks the nearest tie when that tie would draw the heart to other gods.',
+       sv.verse_id, ev.verse_id, 'free', 24809
+  FROM _s310_deu13_lookup sv, _s310_deu13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=13 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-13-the-city-drawn-away-judgment-on-the-apostasy-system',
+       E'The City Drawn Away: Judgment on the Apostasy-System',
+       E'The third case is a whole city: *Certain men, the children of Belial, are gone out from among you, and have withdrawn the inhabitants of their city, saying, Let us go and serve other gods, which ye have not known* (Deuteronomy 13:13). The instigators are the children of Belial; the inhabitants are the withdrawn, the drawn-away — victims of the system before they are its servants. And no judgment falls on rumor: *Then shalt thou enquire, and make search, and ask diligently; and, behold, if it be truth, and the thing certain, that such abomination is wrought among you* (Deuteronomy 13:14). Only the confirmed apostasy is devoted to destruction (Deuteronomy 13:15). The parallel case of the single idolater holds the same due-process: *If there be found among you... man or woman, that hath wrought wickedness in the sight of Yahuah Elohayka (the LORD thy God), in transgressing his covenant, And hath gone and served other gods* (Deuteronomy 17:2-3), and only *when... thou hast enquired diligently, and, behold, it be true, and the thing certain* (Deuteronomy 17:4) does the sentence come (Deuteronomy 17:5). The judgment in both is on the established turning-away — the apostasy-system itself the abomination — never on the uninvestigated.',
+       sv.verse_id, ev.verse_id, 'free', 24812
+  FROM _s310_deu13_lookup sv, _s310_deu13_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=13 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===== D. thread_members =====
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*there shall arise false Christs, and false prophets, and shall shew great signs and wonders* (Matthew 24:24) — Yahusha (Jesus) inherits the Deuteronomy 13 test: the wonder may be real and the prophet still false.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*whose coming is after the working of Satan with all power and signs and lying wonders* (2 Thessalonians 2:9) — the deceiver named by his works of power, which still do not authenticate the message.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Elohim (God) shall send them strong delusion, that they should believe a lie* (2 Thessalonians 2:11) — the proving made manifest: the lie is given to those who refused the love of the truth.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-thessalonians' AND tv.chapter_number=2 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*though we, or an angel from heaven, preach any other gospel... let him be accursed* (Galatians 1:8) — not even a heavenly sign-bearer overrides the standard, the exact logic of Deuteronomy 13:3.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=1 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*try the spirits whether they are of Elohim (God): because many false prophets are gone out into the world* (1 John 4:1) — John makes the Deuteronomy 13 discernment the assembly''s daily work.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*to prove thee, to know what was in thine heart, whether thou wouldest keep his commandments, or no* (Deuteronomy 8:2) — the same Deuteronomic proving: the wilderness and the wonder alike test the heart.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=3
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=8 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-a-sign-that-comes-to-pass-does-not-validate-a-false-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*him shalt thou serve, and to him shalt thou cleave, and swear by his name* (Deuteronomy 10:20) — the same fear-serve-cleave formula that holds against the deceiver''s pull.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=4
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=10 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-walk-after-yahuah-and-cleave-unto-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*that thou mayest love Yahuah Elohayka... obey his voice... cleave unto him: for he is thy life* (Deuteronomy 30:20) — love, obey, cleave is not a burden but life itself.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=4
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-walk-after-yahuah-and-cleave-unto-him'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*put away from among yourselves that wicked person* (1 Corinthians 5:13) — Paul quotes the very Deuteronomy formula to govern the assembly, applying the Torah, not abolishing it.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-so-shalt-thou-put-the-evil-away-from-the-midst-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The hands of the witnesses shall be first upon him... So thou shalt put the evil away from among you* (Deuteronomy 17:7) — the same closing formula and procedure binds the idolater to the false prophet.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=5
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-so-shalt-thou-put-the-evil-away-from-the-midst-of-thee'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*He that loveth father or mother more than me is not worthy of me* (Matthew 10:37) — Yahusha (Jesus) draws on the Deuteronomy 13 demand that loyalty to Yahuah outranks the dearest kin.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=10 AND tv.verse_number=37
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-the-secret-enticer-loyalty-to-yahuah-above-closest-kin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*neither did he acknowledge his brethren... for they have observed thy word, and kept thy covenant* (Deuteronomy 33:9) — Levi''s blessing is the lived pattern: covenant-loyalty above the claims of blood.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=6
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=33 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-the-secret-enticer-loyalty-to-yahuah-above-closest-kin'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*man or woman, that hath wrought wickedness... in transgressing his covenant* (Deuteronomy 17:2) — the parallel idolatry case opens with the same care for evidence as the apostate city.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-the-city-drawn-away-judgment-on-the-apostasy-system'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*And hath gone and served other gods, and worshipped them, either the sun, or moon, or any of the host of heaven* (Deuteronomy 17:3) — the identical offense; the inhabitants drawn away by the sons of Belial are victims, the system itself the abomination.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=13
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-the-city-drawn-away-judgment-on-the-apostasy-system'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou hast heard of it, and enquired diligently, and, behold, it be true, and the thing certain* (Deuteronomy 17:4) — word for word the same diligent inquiry guards both cases against rumor.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=14
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-the-city-drawn-away-judgment-on-the-apostasy-system'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*shalt stone them with stones, till they die* (Deuteronomy 17:5) — only after proof does the sentence fall; the judgment is on the established apostasy, never the uninvestigated.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu13_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=13 AND sv.verse_number=15
+  JOIN _s310_deu13_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=17 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-13-the-city-drawn-away-judgment-on-the-apostasy-system'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_14.sql (Deuteronomy 14) -----
+--
+-- Book: Deuteronomy | Chapter: 14 | Tag: deu14 | Session prefix: s310
+-- Sort band base 24825, step 3 -> 24825, 24828, 24831, 24834, 24837
+-- Temp view: _s310_deu14_lookup
+--
+-- KEYSTONE chapter: the clean/unclean food laws as STANDING Torah (NOT abolished). Moses opens
+-- with holy sonship distinguishing Yashar'el from pagan mourning rites ("a peculiar people"),
+-- then restates for the new generation the SAME dietary law as Leviticus 11 -- the clean beasts
+-- (parted hoof + cheweth cud), the unclean (swine, camel, hare, coney), clean/unclean fish
+-- (fins and scales), clean/unclean birds, no carrion -- the difference between holy and common.
+-- He then forbids the kid-in-milk pagan rite, commands the festival tithe eaten in joy before
+-- Yahuah at the chosen place, and the third-year welfare-tithe for the Levite, stranger,
+-- fatherless, and widow.
+--
+-- Deuteronomy 14 coverage:
+--   v.1-2  (children of Yahuah; no cutting/baldness for the dead; an holy/peculiar people)
+--          NT:     1 Peter 2:9 (a chosen generation, a peculiar people), Titus 2:14 (purify
+--                  unto himself a peculiar people), 1 Thessalonians 4:13 (sorrow not as others
+--                  which have no hope) -- THREADED
+--          Extras: none warranted
+--          Tanakh: Leviticus 19:28 (no cuttings in your flesh for the dead), Exodus 19:5-6
+--                  (a peculiar treasure, a kingdom of priests, an holy nation) -- THREADED
+--   v.3-21a ***KEYSTONE*** (eat no abominable thing; clean/unclean beasts/fish/birds; carrion)
+--          NT:     Acts 10:14-15,28 (Peter's vision -- interpreted by Peter HIMSELF as "I
+--                  should not call any MAN common or unclean", people not food) -- THREADED
+--          Extras: none warranted (the canon chain carries it)
+--          Tanakh: Leviticus 11:2-3,7,9,44,47 (the SAME law: parted hoof + cud, swine, fins
+--                  and scales, holy/difference clean and unclean), Genesis 7:2 (clean and
+--                  unclean known before Sinai), Isaiah 65:4 / 66:17 (those eating swine's
+--                  flesh judged at the end) -- THREADED
+--   v.21b  (eat not that which dieth of itself; seethe not a kid in his mother's milk)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 23:19 / Exodus 34:26 (seethe not a kid in his mother's milk),
+--                  Leviticus 17:15 (eateth that which died of itself shall wash) -- THREADED
+--   v.22-27 (tithe of corn/wine/oil eaten before Yahuah at the chosen place, rejoicing)
+--          NT:     none warranted (the joy-of-giving weight carried under v.28-29)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 12:17-18 (eat them before Yahuah in the chosen place, rejoice),
+--                  Proverbs 3:9 (honour Yahuah with thy substance and firstfruits) -- THREADED
+--   v.28-29 ***welfare-tithe*** (third-year tithe in the gates for Levite/stranger/fatherless/
+--          widow, that Yahuah may bless thee in all the work of thine hand)
+--          NT:     James 1:27 (pure religion: visit the fatherless and widows), 2 Corinthians
+--                  9:7 (Elohim loveth a cheerful giver) -- THREADED
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 26:12-13 (the third year, the year of tithing, given to the
+--                  Levite, stranger, fatherless, widow) -- THREADED
+--
+-- Threads (5):
+--   deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah        [free] Lev19, Ex19, 1Pet2, Titus2, 1Thess4
+--   deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah           [free] Lev11(x6), Gen7, Acts10(x3), Isa65, Isa66
+--   deuteronomy-14-21-the-kid-in-its-mothers-milk-and-that-which-dieth-of-itself  [free] Ex23, Ex34, Lev17
+--   deuteronomy-14-22-27-the-tithe-eaten-before-yahuah-in-the-chosen-place [free] Deut12(x2), Prov3
+--   deuteronomy-14-28-29-the-third-year-tithe-for-the-levite-stranger-fatherless-widow  [free] Deut26, James1, 2Cor9
+--
+-- Existing-slug check: no deuteronomy-14-* slug appears in EXISTING_SLUGS.txt (greenfield).
+-- All members canon (Tanakh + NT) -> every thread tier 'free'; no extras warranted this chapter.
+
+CREATE TEMP VIEW _s310_deu14_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- =====================================================================
+-- B. cross_references
+-- =====================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: a peculiar people, an holy people unto Yahuah (v.1-2)
+    ('canon','deuteronomy',14,1,'canon','leviticus',19,28,'free',
+     E'*Ye shall not make any cuttings in your flesh for the dead, nor print any marks upon you: I am Yahuah (LORD).* (Leviticus 19:28). Deuteronomy 14:1 forbids the same pagan mourning rite — *ye shall not cut yourselves, nor make any baldness between your eyes for the dead* — because the children of Yahuah do not grieve like the nations; their bodies bear no heathen mark. The two Torah witnesses agree word for word.'),
+    ('canon','deuteronomy',14,2,'canon','exodus',19,5,'free',
+     E'*Now therefore, if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people: for all the earth is mine.* (Exodus 19:5). Deuteronomy 14:2 names the same standing — *thou art an holy people unto Yahuah Elohayka (the LORD thy God), and Yahuah (LORD) hath chosen thee to be a peculiar people unto himself, above all the nations* — election bound to obedience, the covenant-people set apart, never replaced.'),
+    ('canon','deuteronomy',14,2,'canon','exodus',19,6,'free',
+     E'*And ye shall be unto me a kingdom of priests, and an holy nation. These are the words which thou shalt speak unto the children of Yashar''el (Israel).* (Exodus 19:6). The holiness Deuteronomy 14:2 reaffirms — *thou art an holy people unto Yahuah Elohayka (the LORD thy God)* — is priestly vocation: a whole nation set apart to Yahuah, the calling the dietary distinctions of this chapter daily enact.'),
+    ('canon','deuteronomy',14,2,'canon','1-peter',2,9,'free',
+     E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shew forth the praises of him who hath called you out of darkness into his marvellous light.* (1 Peter 2:9). Peter lifts the very phrases of Deuteronomy 14:2 — *an holy people... a peculiar people unto himself* — and of Exodus 19:6; the restored two-house remnant is the SAME peculiar people, the calling carried forward, never a new people grafted in by confession alone.'),
+    ('canon','deuteronomy',14,2,'canon','titus',2,14,'free',
+     E'*Who gave himself for us, that he might redeem us from all iniquity, and purify unto himself a peculiar people, zealous of good works.* (Titus 2:14). The redemption purifies *unto himself a peculiar people* — the exact standing of Deuteronomy 14:2, *a peculiar people unto himself* — and the mark of that people is zeal for good works (Torah obedience), not freedom from it; grace UNTO the peculiar-people walk, never instead of it.'),
+    ('canon','deuteronomy',14,1,'canon','1-thessalonians',4,13,'free',
+     E'*But I would not have you to be ignorant, brethren, concerning them which are asleep, that ye sorrow not, even as others which have no hope.* (1 Thessalonians 4:13). Deuteronomy 14:1 already separated the children of Yahuah from heathen mourning — *ye shall not cut yourselves, nor make any baldness... for the dead* — for the sons of Yahuah do not grieve as the hopeless nations do; Paul writes the same distinction forward into the resurrection hope.'),
+
+    -- THREAD 2: the clean and the unclean -- STANDING Torah (v.3-21a)  ***KEYSTONE***
+    ('canon','deuteronomy',14,3,'canon','leviticus',11,47,'free',
+     E'*To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten.* (Leviticus 11:47). Deuteronomy 14:3 opens the same law for the new generation — *Thou shalt not eat any abominable thing* — and Leviticus states its purpose: the food law exists *to make a difference between the unclean and the clean*; holiness is a daily, edible distinction, not an abolished one.'),
+    ('canon','deuteronomy',14,6,'canon','leviticus',11,3,'free',
+     E'*Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud, among the beasts, that shall ye eat.* (Leviticus 11:3). Deuteronomy 14:6 gives the identical test — *every beast that parteth the hoof, and cleaveth the cleft into two claws, and cheweth the cud among the beasts, that ye shall eat* — the SAME two signs, restated unchanged a generation later.'),
+    ('canon','deuteronomy',14,8,'canon','leviticus',11,7,'free',
+     E'*And the swine, though he divide the hoof, and be clovenfooted, yet he cheweth not the cud; he is unclean to you.* (Leviticus 11:7). Deuteronomy 14:8 repeats it verbatim in force — *And the swine, because it divideth the hoof, yet cheweth not the cud, it is unclean unto you: ye shall not eat of their flesh, nor touch their dead carcase* — the pig is the standing emblem of the unclean across both Torah witnesses.'),
+    ('canon','deuteronomy',14,9,'canon','leviticus',11,9,'free',
+     E'*These shall ye eat of all that are in the waters: whatsoever hath fins and scales in the waters, in the seas, and in the rivers, them shall ye eat.* (Leviticus 11:9). Deuteronomy 14:9 keeps the same water-test exactly — *These ye shall eat of all that are in the waters: all that have fins and scales shall ye eat* — fins and scales the unchanged measure for clean fish.'),
+    ('canon','deuteronomy',14,2,'canon','leviticus',11,44,'free',
+     E'*For I am Yahuah Elohaychem (the LORD your God): ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy: neither shall ye defile yourselves with any manner of creeping thing.* (Leviticus 11:44). The dietary law is grounded in holiness — *for I am holy* — the very reason Deuteronomy 14:2 gives, *thou art an holy people unto Yahuah Elohayka (the LORD thy God)*; eating clean is being holy as He is holy, the heart of the whole chapter.'),
+    ('canon','deuteronomy',14,7,'canon','leviticus',11,4,'free',
+     E'*Nevertheless these shall ye not eat of them that chew the cud, or of them that divide the hoof: as the camel, because he cheweth the cud, but divideth not the hoof; he is unclean unto you.* (Leviticus 11:4). Deuteronomy 14:7 names the same beasts that fail one of the two tests — *the camel, and the hare, and the coney: for they chew the cud, but divide not the hoof; therefore they are unclean unto you* — the unclean list carried over intact.'),
+    ('canon','deuteronomy',14,4,'canon','genesis',7,2,'free',
+     E'*Of every clean beast thou shalt take to thee by sevens, the male and his female: and of beasts that are not clean by two, the male and his female.* (Genesis 7:2). Long before Sinai, the clean/unclean distinction was already known and binding at the ark — Noah sorts the beasts by it. Deuteronomy 14:4 simply names *the beasts which ye shall eat*; the categories Moses codifies are older than the nation, woven into creation order, not a temporary ceremonial add-on.'),
+    ('canon','deuteronomy',14,8,'canon','acts',10,14,'free',
+     E'*But Peter said, Not so, Yahuah (Lord); for I have never eaten any thing that is common or unclean.* (Acts 10:14). Peter, years after the resurrection, still keeps the food law of Deuteronomy 14 — *ye shall not eat of their flesh* — and refuses unclean flesh by reflex; his conscience proves the dietary distinction was never understood by the apostles to be repealed.'),
+    ('canon','deuteronomy',14,8,'canon','acts',10,28,'free',
+     E'*And he said unto them... Elohim (God) hath shewed me that I should not call any man common or unclean.* (Acts 10:28). Peter himself gives the vision''s meaning, and it is about PEOPLE, not pork: the sheet of beasts taught him not to reckon the Gentile-born of Yashar''el unclean — the two-house ingathering. It is not a cancelling of Deuteronomy 14:8, *ye shall not eat of their flesh*; Peter still holds the food law (Acts 10:14) even as he receives the men.'),
+    ('canon','deuteronomy',14,3,'canon','acts',10,15,'free',
+     E'*And the voice spake unto him again the second time, What Elohim (God) hath cleansed, that call not thou common.* (Acts 10:15). Read by Peter''s own interpretation (Acts 10:28), what Elohim has cleansed is the people once held at a distance, not the swine of Deuteronomy 14:3, *Thou shalt not eat any abominable thing*. The vision opens the door of the covenant to the scattered, it does not open the menu.'),
+    ('canon','deuteronomy',14,8,'canon','isaiah',65,4,'free',
+     E'*Which remain among the graves, and lodge in the monuments, which eat swine''s flesh, and broth of abominable things is in their vessels.* (Isaiah 65:4). The prophet indicts swine-eating as rebellion against Yahuah right alongside grave-cult idolatry — the same flesh Deuteronomy 14:8 forbids, *ye shall not eat of their flesh*. Centuries after Moses the dietary line still stands; breaking it is named provocation, not liberty.'),
+    ('canon','deuteronomy',14,8,'canon','isaiah',66,17,'free',
+     E'*They that sanctify themselves, and purify themselves in the gardens behind one tree in the midst, eating swine''s flesh, and the abomination, and the mouse, shall be consumed together, saith Yahuah (LORD).* (Isaiah 66:17). At the very end — the new heavens and new earth of Isaiah 66 — those who eat *swine''s flesh, and the abomination* are judged. Deuteronomy 14:8''s prohibition, *ye shall not eat of their flesh*, is not retired in the age to come; it runs to the consummation.'),
+
+    -- THREAD 3: the kid in its mother's milk, and that which dieth of itself (v.21b)
+    ('canon','deuteronomy',14,21,'canon','exodus',23,19,'free',
+     E'*The first of the firstfruits of thy land thou shalt bring into the house of Yahuah Elohayka (the LORD thy God). Thou shalt not seethe a kid in his mother''s milk.* (Exodus 23:19). Deuteronomy 14:21 repeats the command exactly — *Thou shalt not seethe a kid in his mother''s milk* — a guard against a Canaanite fertility rite; the third Torah witness to the same word, marking Yashar''el off from the nations'' worship.'),
+    ('canon','deuteronomy',14,21,'canon','exodus',34,26,'free',
+     E'*The first of the firstfruits of thy land thou shalt bring unto the house of Yahuah Elohayka (the LORD thy God). Thou shalt not seethe a kid in his mother''s milk.* (Exodus 34:26). The command stands a third time at the covenant renewal — identical to Deuteronomy 14:21, *Thou shalt not seethe a kid in his mother''s milk* — three witnesses establishing it; the holy people will not mingle the source of life with the taking of it as the heathen do.'),
+    ('canon','deuteronomy',14,21,'canon','leviticus',17,15,'free',
+     E'*And every soul that eateth that which died of itself, or that which was torn with beasts, whether it be one of your own country, or a stranger, he shall both wash his clothes, and bathe himself in water, and be unclean until the even: then shall he be clean.* (Leviticus 17:15). Deuteronomy 14:21 forbids the holy people the carrion — *Ye shall not eat of any thing that dieth of itself... for thou art an holy people* — while Leviticus sets the cleansing for one who does; the blood undrained makes such flesh unfit for those set apart.'),
+
+    -- THREAD 4: the tithe eaten before Yahuah in the chosen place (v.22-27)
+    ('canon','deuteronomy',14,23,'canon','deuteronomy',12,18,'free',
+     E'*But thou must eat them before Yahuah Elohayka (the LORD thy God) in the place which Yahuah Elohayka (the LORD thy God) shall choose... and thou shalt rejoice before Yahuah Elohayka (the LORD thy God) in all that thou puttest thine hands unto.* (Deuteronomy 12:18). Deuteronomy 14:23 commands the same festival meal — *thou shalt eat before Yahuah Elohayka (the LORD thy God), in the place which he shall choose to place his name there, the tithe of thy corn, of thy wine, and of thine oil* — worship is gathered to the chosen place and eaten in His presence, that the people *learn to fear Yahuah*.'),
+    ('canon','deuteronomy',14,22,'canon','deuteronomy',12,17,'free',
+     E'*Thou mayest not eat within thy gates the tithe of thy corn, or of thy wine, or of thy oil, or the firstlings of thy herds or of thy flock, nor any of thy vows.* (Deuteronomy 12:17). Deuteronomy 14:22 opens the tithe command — *Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year* — and 12:17 fixes where it may not be consumed; the corn, wine, oil, and firstlings belong before Yahuah, not casually at home.'),
+    ('canon','deuteronomy',14,22,'canon','proverbs',3,9,'free',
+     E'*Honour Yahuah (LORD) with thy substance, and with the firstfruits of all thine increase.* (Proverbs 3:9). The wisdom of the tithe distilled: Deuteronomy 14:22 commands it — *Thou shalt truly tithe all the increase of thy seed* — and Proverbs makes it a posture of the heart, honouring Yahuah with the first and best, the obedient response that draws His blessing.'),
+
+    -- THREAD 5: the third-year tithe for the Levite, stranger, fatherless, widow (v.28-29)
+    ('canon','deuteronomy',14,28,'canon','deuteronomy',26,12,'free',
+     E'*When thou hast made an end of tithing all the tithes of thine increase the third year, which is the year of tithing, and hast given it unto the Levite, the stranger, the fatherless, and the widow, that they may eat within thy gates, and be filled.* (Deuteronomy 26:12). This is the same welfare-tithe Deuteronomy 14:28-29 institutes — *At the end of three years thou shalt bring forth all the tithe... and the Levite... and the stranger, and the fatherless, and the widow... shall come, and shall eat and be satisfied* — the third-year provision for the landless and the poor, the covenant''s built-in care.'),
+    ('canon','deuteronomy',14,29,'canon','james',1,27,'free',
+     E'*Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.* (James 1:27). James names the very objects of the third-year tithe — *the fatherless, and the widow* of Deuteronomy 14:29 — as the measure of true worship; the Torah''s welfare-care is not abolished but carried forward as the heart of pure religion.'),
+    ('canon','deuteronomy',14,29,'canon','2-corinthians',9,7,'free',
+     E'*Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* (2 Corinthians 9:7). Deuteronomy 14:29 binds the welfare-tithe to a promise — *that Yahuah Elohayka (the LORD thy God) may bless thee in all the work of thine hand which thou doest* — and Paul gives the same Torah-rooted principle: open-handed, joyful giving to the needy is met by the blessing of Elohim, who loves the cheerful giver.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- =====================================================================
+-- C. cross_reference_threads
+-- =====================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah',
+       E'A peculiar people, an holy people unto Yahuah',
+       E'The chapter opens with holy sonship: *Ye are the children of Yahuah Elohaychem (the LORD your God): ye shall not cut yourselves, nor make any baldness between your eyes for the dead. For thou art an holy people unto Yahuah Elohayka (the LORD thy God), and Yahuah (LORD) hath chosen thee to be a peculiar people unto himself, above all the nations that are upon the earth* (Deuteronomy 14:1-2). The children of Yahuah do not gash their flesh in heathen grief — the Torah elsewhere forbids the identical rite: *Ye shall not make any cuttings in your flesh for the dead, nor print any marks upon you: I am Yahuah (LORD)* (Leviticus 19:28). This *peculiar people* standing is the covenant given at Sinai: *if ye will obey my voice indeed, and keep my covenant, then ye shall be a peculiar treasure unto me above all people* (Exodus 19:5), *a kingdom of priests, and an holy nation* (Exodus 19:6). The New Testament does not transfer this title to a new people — it presses it upon the restored remnant in the SAME words: *ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people* (1 Peter 2:9); Messiah died *to purify unto himself a peculiar people, zealous of good works* (Titus 2:14) — grace unto the peculiar-people walk, not instead of it. And because they are sons with hope, they sorrow differently: *that ye sorrow not, even as others which have no hope* (1 Thessalonians 4:13) — the same separation from heathen mourning that opens the chapter.',
+       sv.verse_id, ev.verse_id, 'free', 24825
+  FROM _s310_deu14_lookup sv, _s310_deu14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=14 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah',
+       E'The clean and the unclean: standing Torah, not abolished',
+       E'*Thou shalt not eat any abominable thing* (Deuteronomy 14:3). What follows is not a new law but the SAME dietary instruction of Leviticus 11, restated for the generation entering the land: the clean beasts *that parteth the hoof... and cheweth the cud* (Deuteronomy 14:6; cf. *Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud... that shall ye eat* — Leviticus 11:3); the unclean *camel, and the hare, and the coney* and *the swine... it is unclean unto you: ye shall not eat of their flesh* (Deuteronomy 14:7-8; cf. Leviticus 11:4,7); clean fish *all that have fins and scales* (Deuteronomy 14:9; cf. Leviticus 11:9); and the unclean birds and creeping things. The purpose is holiness itself — *ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy* (Leviticus 11:44) — the very reason given here, *thou art an holy people unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 14:2); the law exists *to make a difference between the unclean and the clean* (Leviticus 11:47). This distinction is older than Sinai: Noah already knew it — *Of every clean beast thou shalt take to thee by sevens... and of beasts that are not clean by two* (Genesis 7:2). It is NOT repealed in the book of Acts: when Peter sees the sheet of beasts he still refuses unclean flesh — *I have never eaten any thing that is common or unclean* (Acts 10:14) — and he himself declares the vision''s meaning, which is about PEOPLE, not pork: *Elohim (God) hath shewed me that I should not call any man common or unclean* (Acts 10:28); *What Elohim (God) hath cleansed, that call not thou common* (Acts 10:15) opens the covenant to the scattered of Yashar''el, the two-house ingathering, not the menu. And the dietary line runs to the very end: the prophet indicts *eating swine''s flesh, and broth of abominable things* (Isaiah 65:4), and at the new heavens and new earth *they that... eating swine''s flesh, and the abomination, and the mouse, shall be consumed together* (Isaiah 66:17). The difference between holy and common is binding from creation to the consummation.',
+       sv.verse_id, ev.verse_id, 'free', 24828
+  FROM _s310_deu14_lookup sv, _s310_deu14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=14 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-14-21-the-kid-in-its-mothers-milk-and-that-which-dieth-of-itself',
+       E'The kid in its mother''s milk, and that which dieth of itself',
+       E'*Ye shall not eat of any thing that dieth of itself: thou shalt give it unto the stranger that is in thy gates... for thou art an holy people unto Yahuah Elohayka (the LORD thy God). Thou shalt not seethe a kid in his mother''s milk* (Deuteronomy 14:21). Both prohibitions guard the holiness of the set-apart people. The kid-in-milk command — a fence against a Canaanite fertility rite that mingled the source of life with the taking of it — stands a third time here, established by the mouth of three Torah witnesses: *Thou shalt not seethe a kid in his mother''s milk* (Exodus 23:19) and again *Thou shalt not seethe a kid in his mother''s milk* (Exodus 34:26). The carrion ban is matched in Leviticus, which sets the cleansing for any who eat it: *every soul that eateth that which died of itself, or that which was torn with beasts... shall both wash his clothes, and bathe himself in water, and be unclean until the even* (Leviticus 17:15) — the blood left undrained makes such flesh unfit for those whom Yahuah has made holy.',
+       sv.verse_id, ev.verse_id, 'free', 24831
+  FROM _s310_deu14_lookup sv, _s310_deu14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=14 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-14-22-27-the-tithe-eaten-before-yahuah-in-the-chosen-place',
+       E'The tithe eaten before Yahuah in the chosen place',
+       E'*Thou shalt truly tithe all the increase of thy seed, that the field bringeth forth year by year. And thou shalt eat before Yahuah Elohayka (the LORD thy God), in the place which he shall choose to place his name there, the tithe of thy corn, of thy wine, and of thine oil... that thou mayest learn to fear Yahuah Elohayka (the LORD thy God) always* (Deuteronomy 14:22-23). The festival tithe is gathered to the chosen place and eaten in Yahuah''s presence with rejoicing — the same instruction laid down already: *Thou mayest not eat within thy gates the tithe of thy corn, or of thy wine, or of thy oil* (Deuteronomy 12:17), *but thou must eat them before Yahuah Elohayka (the LORD thy God) in the place which Yahuah Elohayka (the LORD thy God) shall choose... and thou shalt rejoice before Yahuah Elohayka (the LORD thy God) in all that thou puttest thine hands unto* (Deuteronomy 12:18). Worship is centred where He sets His name, and the heart that obeys honours Him with its best: *Honour Yahuah (LORD) with thy substance, and with the firstfruits of all thine increase* (Proverbs 3:9). The giving is joy, and its end is the fear of Yahuah learned by the whole household, the Levite not forgotten.',
+       sv.verse_id, ev.verse_id, 'free', 24834
+  FROM _s310_deu14_lookup sv, _s310_deu14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=14 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-14-28-29-the-third-year-tithe-for-the-levite-stranger-fatherless-widow',
+       E'The third-year tithe for the Levite, stranger, fatherless, widow',
+       E'*At the end of three years thou shalt bring forth all the tithe of thine increase the same year, and shalt lay it up within thy gates: And the Levite... and the stranger, and the fatherless, and the widow, which are within thy gates, shall come, and shall eat and be satisfied; that Yahuah Elohayka (the LORD thy God) may bless thee in all the work of thine hand which thou doest* (Deuteronomy 14:28-29). This is the covenant''s built-in welfare: the third-year tithe stored in the gates to feed the landless Levite and the most vulnerable. The command is restated and confessed in Deuteronomy 26: *When thou hast made an end of tithing all the tithes of thine increase the third year, which is the year of tithing, and hast given it unto the Levite, the stranger, the fatherless, and the widow, that they may eat within thy gates, and be filled* (Deuteronomy 26:12). The New Testament carries the same care forward as the very measure of true worship: *Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction* (James 1:27) — the exact objects of this tithe. And the promised blessing — *that Yahuah... may bless thee in all the work of thine hand* — is the principle Paul names: *Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7). Open-handed care for the poor is Torah, and it draws the blessing of Yahuah.',
+       sv.verse_id, ev.verse_id, 'free', 24837
+  FROM _s310_deu14_lookup sv, _s310_deu14_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=28
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=14 AND ev.verse_number=29
+ON CONFLICT (slug) DO NOTHING;
+
+-- =====================================================================
+-- D. cross_reference_thread_members
+-- =====================================================================
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Ye shall not make any cuttings in your flesh for the dead, nor print any marks upon you: I am Yahuah (LORD).* (Leviticus 19:28) — the same pagan mourning rite forbidden; the holy people bear no heathen mark.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*then ye shall be a peculiar treasure unto me above all people: for all the earth is mine.* (Exodus 19:5) — the Sinai source of the peculiar-people standing, election bound to obedience.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And ye shall be unto me a kingdom of priests, and an holy nation.* (Exodus 19:6) — the holiness reaffirmed here is priestly vocation, a whole nation set apart.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=19 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*But ye are a chosen generation, a royal priesthood, an holy nation, a peculiar people.* (1 Peter 2:9) — the exact title pressed on the restored remnant; the same people, never replaced.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*purify unto himself a peculiar people, zealous of good works.* (Titus 2:14) — grace UNTO the peculiar-people walk, zeal for good works, not instead of it.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='titus' AND tv.chapter_number=2 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*that ye sorrow not, even as others which have no hope.* (1 Thessalonians 4:13) — the sons of Yahuah grieve differently; the same separation from heathen mourning that opens the chapter.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=1
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-thessalonians' AND tv.chapter_number=4 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-1-2-a-peculiar-people-an-holy-people-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*To make a difference between the unclean and the clean, and between the beast that may be eaten and the beast that may not be eaten.* (Leviticus 11:47) — the law''s stated purpose: holiness as a daily, edible distinction.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=47
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Whatsoever parteth the hoof, and is clovenfooted, and cheweth the cud... that shall ye eat.* (Leviticus 11:3) — the identical two-sign test for clean beasts, restated unchanged.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=6
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And the swine... yet he cheweth not the cud; he is unclean to you.* (Leviticus 11:7) — the pig the standing emblem of the unclean across both Torah witnesses.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*These shall ye eat of all that are in the waters: whatsoever hath fins and scales... them shall ye eat.* (Leviticus 11:9) — the same fins-and-scales measure for clean fish.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=9
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*ye shall therefore sanctify yourselves, and ye shall be holy; for I am holy.* (Leviticus 11:44) — the dietary law grounded in holiness, the very reason given here: an holy people.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=2
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*as the camel, because he cheweth the cud, but divideth not the hoof; he is unclean unto you.* (Leviticus 11:4) — the same beasts failing one test; the unclean list carried over intact.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=7
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*Of every clean beast thou shalt take to thee by sevens... and of beasts that are not clean by two.* (Genesis 7:2) — the clean/unclean distinction known and binding before Sinai, at the ark.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=4
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=7 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*Not so, Yahuah (Lord); for I have never eaten any thing that is common or unclean.* (Acts 10:14) — Peter, after the resurrection, still keeps the food law; the apostles never read it as repealed.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 9, E'*Elohim (God) hath shewed me that I should not call any man common or unclean.* (Acts 10:28) — Peter''s OWN interpretation: the vision is about people (the two-house ingathering), not a repeal of food law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 10, E'*What Elohim (God) hath cleansed, that call not thou common.* (Acts 10:15) — read by Peter''s interpretation, what is cleansed is the people once held at a distance, not the swine.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=3
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 11, E'*which eat swine''s flesh, and broth of abominable things is in their vessels.* (Isaiah 65:4) — centuries later swine-eating is still named rebellion; the dietary line stands.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=65 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 12, E'*eating swine''s flesh, and the abomination, and the mouse, shall be consumed together, saith Yahuah (LORD).* (Isaiah 66:17) — at the new heavens and new earth, the prohibition runs to the very consummation.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=8
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=66 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-3-21-the-clean-and-the-unclean-standing-torah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Thou shalt not seethe a kid in his mother''s milk.* (Exodus 23:19) — the identical command, a guard against a Canaanite fertility rite; the second of three witnesses.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-21-the-kid-in-its-mothers-milk-and-that-which-dieth-of-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou shalt not seethe a kid in his mother''s milk.* (Exodus 34:26) — the command stands a third time at the covenant renewal; three witnesses establish it.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=34 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-21-the-kid-in-its-mothers-milk-and-that-which-dieth-of-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And every soul that eateth that which died of itself... shall both wash his clothes, and bathe himself in water, and be unclean until the even.* (Leviticus 17:15) — the carrion ban matched; undrained blood makes flesh unfit for the holy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=21
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=17 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-21-the-kid-in-its-mothers-milk-and-that-which-dieth-of-itself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*But thou must eat them before Yahuah Elohayka (the LORD thy God) in the place which... he shall choose... and thou shalt rejoice.* (Deuteronomy 12:18) — the same festival meal, worship gathered to the chosen place in joy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=23
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-22-27-the-tithe-eaten-before-yahuah-in-the-chosen-place'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Thou mayest not eat within thy gates the tithe of thy corn, or of thy wine, or of thy oil.* (Deuteronomy 12:17) — fixes where the tithe may not be consumed; it belongs before Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=22
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=12 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-22-27-the-tithe-eaten-before-yahuah-in-the-chosen-place'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Honour Yahuah (LORD) with thy substance, and with the firstfruits of all thine increase.* (Proverbs 3:9) — the tithe as a posture of the heart, honouring Yahuah with the first and best.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=22
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=3 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-22-27-the-tithe-eaten-before-yahuah-in-the-chosen-place'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the third year, which is the year of tithing... given it unto the Levite, the stranger, the fatherless, and the widow, that they may eat within thy gates, and be filled.* (Deuteronomy 26:12) — the same welfare-tithe, restated and confessed.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=28
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=26 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-28-29-the-third-year-tithe-for-the-levite-stranger-fatherless-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Pure religion and undefiled... is this, To visit the fatherless and widows in their affliction.* (James 1:27) — the exact objects of the third-year tithe become the measure of true worship.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=29
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-28-29-the-third-year-tithe-for-the-levite-stranger-fatherless-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* (2 Corinthians 9:7) — the same Torah-rooted principle; open-handed giving met by the blessing of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu14_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=14 AND sv.verse_number=29
+  JOIN _s310_deu14_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-14-28-29-the-third-year-tithe-for-the-levite-stranger-fatherless-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_15.sql (Deuteronomy 15) -----
+-- Book: Deuteronomy   Chapter: 15   Tag: deu15   Session prefix: s310
+-- Sort band base: 24850, step 3  ->  24850, 24853, 24856, 24859, 24862
+-- Temp view: _s310_deu15_lookup
+--
+-- FRAMING: The shemittah chapter — the seventh-year release of debts, the open
+-- hand to the poor, the Hebrew bondservant freed not-empty (and the willing servant
+-- whose ear is bored to the door = the Formed-Son type), and the firstling males
+-- sanctified unto Yahuah (the firstborn-Heir type). The interest-free brotherly
+-- economy of the covenant land, all rooted in Torah and reaching forward to the
+-- Messiah and the early assembly that "lacked nothing." Torah is the covenant
+-- inheritance here, never the curse.
+--
+-- Deuteronomy 15 coverage:
+--   v.1-3  (the seventh-year release of debts — Yahuah's release)
+--          NT:     none warranted (servant/poor themes threaded at vv.7-18)
+--          Extras: none warranted (Sirach 29 threaded at the open-hand block)
+--          Tanakh: Deuteronomy 31:10 (release in the feast of tabernacles); Leviticus 25:1-7 (the land's sabbath, seventh-year rest); Deuteronomy 23:19-20 (no usury to thy brother)  -> THREAD 1
+--   v.4-6  (no poor among you IF thou hearken; Yahuah blesseth, lend not borrow)
+--          NT:     none warranted (blessing-of-obedience folded into thread 1 prose)
+--          Extras: none warranted
+--          Tanakh: bound into THREAD 1 (the release frame) and THREAD 2 (no poor / poor never cease tension)  -> THREAD 1 / THREAD 2
+--   v.7-11 (open thine hand wide; heart not grieved; the poor shall never cease)
+--          NT:     Matthew 26:11 / John 12:8 (the poor ye have always — Yahusha citing v.11); Acts 4:34 (none lacked); 2 Corinthians 9:7 (cheerful giver); 1 John 3:17 (shutteth up bowels of compassion)  -> THREAD 2
+--          Extras: Ecclesiasticus (Sirach) 29:1,9 (he that is merciful will lend; help the poor for the commandment's sake)  -> THREAD 2
+--          Tanakh: Proverbs 19:17 (pity on the poor lendeth unto Yahuah)  -> THREAD 2
+--   v.12-15,18 (Hebrew bondservant freed in the seventh year, furnished liberally, remember Egypt)
+--          NT:     none warranted (servant-type carried in thread 4)
+--          Extras: none warranted
+--          Tanakh: Exodus 21:2 (six years serve, seventh go free); Leviticus 25:39-43,42 (not as bondman, my servants brought out of Egypt)  -> THREAD 3
+--   v.16-17 (loveth his master, the ear bored to the door, servant for ever)
+--          NT:     Psalm 40:6->Hebrews 10:5-7 (mine ears opened / a body prepared / Lo I come to do thy will); Philippians 2:7 (took upon him the form of a servant)
+--          Extras: none warranted
+--          Tanakh: Exodus 21:6 (bore his ear through with an aul, serve for ever); Psalm 40:6 (mine ears hast thou opened)  -> THREAD 4
+--   v.19-23 (firstling males sanctified, no work of the firstling, eaten before Yahuah, blood not eaten)
+--          NT:     Luke 2:23 (every male that openeth the womb called holy); Colossians 1:15,18 (firstborn of every creature / firstborn from the dead — the firstborn-Heir, NOT first creature)
+--          Extras: none warranted
+--          Tanakh: Exodus 13:2,12 (sanctify all the firstborn that openeth the womb); Numbers 18:17 (firstling of cow/sheep/goat are holy)  -> THREAD 5
+--
+-- THREADS (5):
+--   1. deuteronomy-15-the-seventh-year-release-because-it-is-called-yahuahs-release  [free] tanakh: deut31, lev25, deut23
+--   2. deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease               [extras] tanakh: prov19; NT: matt26/john12/acts4/2cor9/1john3; extras: ecclesiasticus(sirach)29
+--   3. deuteronomy-15-the-hebrew-bondservant-freed-not-empty                        [free] tanakh: exod21, lev25
+--   4. deuteronomy-15-the-bored-ear-the-willing-bondservant-for-ever                [free] tanakh: exod21, psalm40; NT: hebrews10, philippians2
+--   5. deuteronomy-15-the-firstling-males-sanctified-unto-yahuah                    [free] tanakh: exod13, numbers18; NT: luke2, colossians1
+--
+-- CONTESTED/LOAD-BEARING FRAMING:
+--   * v.4 "no poor among you" vs v.11 "the poor shall never cease" = covenant-promise
+--     CONDITIONED on obedience vs the realism of a fallen land; Yahusha cites v.11
+--     (Matt 26:11/John 12:8) NOT to dismiss the poor but pressing the very next clause,
+--     "thou shalt open thine hand wide." Framed as Torah affirmed, not relaxed.
+--   * vv.16-17 willing bondservant with bored ear -> the Formed-Son who emptied himself
+--     and "took upon him the form of a servant" (Phil 2:7), the "body prepared" of
+--     Heb 10:5-7 (mine ears hast thou opened, Ps 40:6). Framed as TYPE; the Son is
+--     Yahuah-Formed who has a Father, NOT a co-equal person.
+--   * vv.19-23 firstling/firstborn -> Col 1:15,18 "firstborn of every creature... the
+--     beginning, the firstborn from the dead." Framed as the firstborn-HEIR, agent and
+--     head of creation (1:16-18), the Preeminent one — NOT the first created thing.
+
+CREATE TEMP VIEW _s310_deu15_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the seventh-year release
+    ('canon','deuteronomy',15,1,'canon','deuteronomy',31,10,'free',
+      E'*And Moses commanded them, saying, At the end of every seven years, in the solemnity of the year of release, in the feast of tabernacles,* (Deuteronomy 31:10). The same release Moses opens here — *At the end of every seven years thou shalt make a release* (Deuteronomy 15:1) — is set on the festal calendar: the shemittah falls in the year of release at the feast of tabernacles, and that is when the law is read aloud to all Yashar''el (Israel). The debt-release and the appointed time are one covenant order, not two.'),
+    ('canon','deuteronomy',15,2,'canon','leviticus',25,4,'free',
+      E'*But in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD): thou shalt neither sow thy field, nor prune thy vineyard.* (Leviticus 25:4). The seventh-year release of debts — *Every creditor that lendeth ought unto his neighbour shall release it... because it is called the LORD''S release* (Deuteronomy 15:2) — is the manward face of the same sabbatical seventh year that rests the land in Leviticus 25: the land rests, and the debtor is loosed, both unto Yahuah.'),
+    ('canon','deuteronomy',15,2,'canon','leviticus',25,2,'free',
+      E'*Speak unto the children of Yashar''el (Israel), and say unto them, When ye come into the land which I give you, then shall the land keep a sabbath unto Yahuah (LORD).* (Leviticus 25:2). The release belongs to the land Yahuah gives — *because it is called the LORD''S release* (Deuteronomy 15:2) — the seventh year a sabbath kept unto him, the rhythm of rest written over field and creditor alike.'),
+    ('canon','deuteronomy',15,3,'canon','deuteronomy',23,20,'free',
+      E'*Unto a stranger thou mayest lend upon usury; but unto thy brother thou shalt not lend upon usury: that Yahuah Elohayka (the LORD thy God) may bless thee in all that thou settest thine hand to in the land whither thou goest to possess it.* (Deuteronomy 23:20). The same brother/foreigner line drawn in Deuteronomy 15:3 — *Of a foreigner thou mayest exact it again: but that which is thine with thy brother thine hand shall release* — is the interest-free brotherly economy of the covenant: no usury of the brother, and his debt released in the seventh year, that Yahuah may bless the work of the open hand.'),
+
+    -- THREAD 2: open thine hand wide / the poor shall never cease
+    ('canon','deuteronomy',15,7,'canon','proverbs',19,17,'free',
+      E'*He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again.* (Proverbs 19:17). Where Moses forbids the closed fist — *thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (Deuteronomy 15:7) — Proverbs names the unseen creditor: pity on the poor is a loan to Yahuah himself, and he repays. The open hand loses nothing.'),
+    ('canon','deuteronomy',15,8,'canon','2-corinthians',9,7,'free',
+      E'*Every man according as he purposeth in his heart, so let him give; not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver.* (2 Corinthians 9:7). Paul carries Moses'' very command forward — *thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need* (Deuteronomy 15:8), and *thine heart shall not be grieved when thou givest* (15:10) — into the assembly: give from the heart, not grudgingly, for Yahuah loves the cheerful giver. Same Torah, same open hand.'),
+    ('canon','deuteronomy',15,10,'canon','acts',4,34,'free',
+      E'*Neither was there any among them that lacked: for as many as were possessors of lands or houses sold them, and brought the prices of the things that were sold,* (Acts 4:34). The promise hung on the open hand — *Save when there shall be no poor among you* (Deuteronomy 15:4), if Yashar''el will *open thine hand wide* (15:10) — is what Luke records of the first assembly: when the people gave freely, none among them lacked. The shemittah ideal lived out.'),
+    ('canon','deuteronomy',15,11,'canon','matthew',26,11,'free',
+      E'*For ye have the poor always with you; but me ye have not always.* (Matthew 26:11). Yahusha (Jesus) is citing this very verse — *For the poor shall never cease out of the land* (Deuteronomy 15:11) — not to dismiss the poor but to press the clause that follows it: *therefore I command thee... Thou shalt open thine hand wide unto thy brother.* The poor remain; therefore the hand stays open.'),
+    ('canon','deuteronomy',15,11,'canon','john',12,8,'free',
+      E'*For the poor always ye have with you; but me ye have not always.* (John 12:8). John records the same word of Yahusha (Jesus) drawn straight from Moses — *For the poor shall never cease out of the land* (Deuteronomy 15:11) — the enduring poor being the standing occasion for the enduring command to open the hand wide unto the brother.'),
+    ('canon','deuteronomy',15,11,'canon','1-john',3,17,'free',
+      E'*But whoso hath this world''s good, and seeth his brother have need, and shutteth up his bowels of compassion from him, how dwelleth the love of Elohim (God) in him?* (1 John 3:17). John makes Moses'' closed fist the test of love itself: where Deuteronomy 15:11 commands *Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy*, John asks how the love of Elohim can dwell in one who sees the brother''s need and shuts up his compassion. The command and the heart are one.'),
+    ('canon','deuteronomy',15,8,'apocrypha','ecclesiasticus',29,1,'extras',
+      E'*He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments.* (Ecclesiasticus 29:1). Ben Sira reads the open-hand law of Deuteronomy 15:8 — *thou shalt open thine hand wide unto him, and shalt surely lend him sufficient for his need* — as commandment-keeping itself: to lend in mercy is to keep the Torah, the strengthened hand and the kept commandment being the same act.'),
+    ('canon','deuteronomy',15,11,'apocrypha','ecclesiasticus',29,9,'extras',
+      E'*Help the poor for the commandment''s sake, and turn him not away because of his poverty.* (Ecclesiasticus 29:9). Ben Sira echoes the enduring command of Deuteronomy 15:11 — *Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy* — naming its ground plainly: help the poor *for the commandment''s sake*, the Torah itself the reason the hand stays open.'),
+
+    -- THREAD 3: the Hebrew bondservant freed not empty
+    ('canon','deuteronomy',15,12,'canon','exodus',21,2,'free',
+      E'*If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing.* (Exodus 21:2). The same seventh-year freedom Moses repeats here — *if thy brother, an Hebrew man, or an Hebrew woman... serve thee six years; then in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12) — first given at Sinai; Deuteronomy adds the charge to send him out furnished, not bare.'),
+    ('canon','deuteronomy',15,14,'canon','leviticus',25,39,'free',
+      E'*And if thy brother that dwelleth by thee be waxen poor, and be sold unto thee; thou shalt not compel him to serve as a bondservant:* (Leviticus 25:39). The liberal furnishing of Deuteronomy 15:14 — *Thou shalt furnish him liberally out of thy flock, and out of thy floor, and out of thy winepress* — flows from the same dignity Leviticus guards: the poor brother is no bondman but a brother, never to be ruled with rigour.'),
+    ('canon','deuteronomy',15,15,'canon','leviticus',25,42,'free',
+      E'*For they are my servants, which I brought forth out of the land of Egypt: they shall not be sold as bondmen.* (Leviticus 25:42). Moses grounds the release in the same memory — *thou shalt remember that thou wast a bondman in the land of Egypt, and Yahuah Elohayka (the LORD thy God) redeemed thee: therefore I command thee this thing* (Deuteronomy 15:15) — the redeemed people may not hold the brother as Egypt held them, for they are Yahuah''s own servants, bought out of bondage.'),
+
+    -- THREAD 4: the bored ear / the willing bondservant for ever (the Formed-Son type)
+    ('canon','deuteronomy',15,17,'canon','exodus',21,6,'free',
+      E'*Then his master shall bring him unto the judges; he shall also bring him to the door, or unto the door post; and his master shall bore his ear through with an aul; and he shall serve him for ever.* (Exodus 21:6). The same rite Moses repeats here — *then thou shalt take an aul, and thrust it through his ear unto the door, and he shall be thy servant for ever* (Deuteronomy 15:17) — the servant who loves his master choosing willing, perpetual service, the ear at the door sealing a love-bond, not a chain.'),
+    ('canon','deuteronomy',15,16,'canon','psalms',40,6,'free',
+      E'*Sacrifice and offering thou didst not desire; mine ears hast thou opened: burnt offering and sin offering hast thou not required.* (Psalm 40:6). The bored ear of the willing servant — who says *I will not go away from thee; because he loveth thee* (Deuteronomy 15:16) — becomes David''s figure of the opened ear given over wholly to Yahuah''s will; the willing servant''s pierced ear and the *opened ear* of obedient delight are the same posture of love-bound service.'),
+    ('canon','deuteronomy',15,16,'canon','hebrews',10,5,'free',
+      E'*Wherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me:* (Hebrews 10:5). Hebrews puts Psalm 40 (the opened ear) on the lips of the Messiah entering the world, the willing servant of Deuteronomy 15:16 — *because he loveth thee... he is well with thee* — fulfilled in the Formed Son who comes saying *Lo, I come... to do thy will, O Elohim (God)* (Hebrews 10:7): the bored ear becomes the prepared body, willing service unto the Father.'),
+    ('canon','deuteronomy',15,16,'canon','philippians',2,7,'free',
+      E'*But made himself of no reputation, and took upon him the form of a servant, and was made in the likeness of men:* (Philippians 2:7). The servant who refuses his freedom for love — *I will not go away from thee; because he loveth thee and thine house* (Deuteronomy 15:16) — is the type of the Formed Son who emptied himself and *took upon him the form of a servant*, willing bond-service unto the Father; the Son is Yahuah-Formed who has a Father, not a co-equal person, choosing the door and the bored ear of perfect love.'),
+
+    -- THREAD 5: the firstling males sanctified
+    ('canon','deuteronomy',15,19,'canon','exodus',13,2,'free',
+      E'*Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel), both of man and of beast: it is mine.* (Exodus 13:2). The firstlings Moses sets apart here — *All the firstling males that come of thy herd and of thy flock thou shalt sanctify unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 15:19) — are claimed back at the exodus: every opener of the womb belongs to Yahuah, redeemed firstborn for a redeemed people.'),
+    ('canon','deuteronomy',15,19,'canon','exodus',13,12,'free',
+      E'*That thou shalt set apart unto Yahuah (LORD) all that openeth the matrix, and every firstling that cometh of a beast which thou hast; the males shall be the LORD''S.* (Exodus 13:12). The firstling males set apart in Deuteronomy 15:19 are *the LORD''S* by the law of the exodus: the male opener of the womb belongs to Yahuah, not to be worked nor shorn but sanctified to him.'),
+    ('canon','deuteronomy',15,21,'canon','numbers',18,17,'free',
+      E'*But the firstling of a cow, or the firstling of a sheep, or the firstling of a goat, thou shalt not redeem; they are holy: thou shalt sprinkle their blood upon the altar, and shalt burn their fat for an offering made by fire, for a sweet savour unto Yahuah (LORD).* (Numbers 18:17). The blemished firstling that may not be offered in Deuteronomy 15:21 is the shadow-side of Numbers 18: the unblemished firstling is holy, its blood for the altar — and Deuteronomy 15:23 keeps the blood sacred even when eaten at home, *thou shalt pour it upon the ground as water.*'),
+    ('canon','deuteronomy',15,19,'canon','luke',2,23,'free',
+      E'*(As it is written in the law of Yahuah (Lord), Every male that openeth the womb shall be called holy to Yahuah (Lord);)* (Luke 2:23). Luke names the very statute behind Deuteronomy 15:19 when the firstborn Son is brought to the temple: the law of the firstling male — *every male that openeth the womb shall be called holy* — is kept upon Yahusha (Jesus) himself, the firstborn presented unto Yahuah.'),
+    ('canon','deuteronomy',15,19,'canon','colossians',1,18,'free',
+      E'*And he is the head of the body, the church: who is the beginning, the firstborn from the dead; that in all things he might have the preeminence.* (Colossians 1:18). The sanctified firstling of Deuteronomy 15:19 — set apart wholly unto Yahuah, doing no common work — opens toward the Formed Son the *firstborn from the dead*, the firstborn-Heir who has the preeminence in all things, not a first creature but the head and beginning (Colossians 1:15-16, *the image of the invisible Elohim (God), the firstborn of every creature*).')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. threads
+-- ============================================================
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-15-the-seventh-year-release-because-it-is-called-yahuahs-release',
+       E'The Seventh-Year Release — Because It Is Called Yahuah''s Release',
+       E'*At the end of every seven years thou shalt make a release* (Deuteronomy 15:1), and the manner of it is mercy made law: *Every creditor that lendeth ought unto his neighbour shall release it; he shall not exact it of his neighbour, or of his brother; because it is called the LORD''S release* (15:2). This is the shemittah — the brotherly, interest-free economy of the covenant land. It is no isolated rule. The seventh-year release rests on the same sabbatical seventh year that rests the land: *in the seventh year shall be a sabbath of rest unto the land, a sabbath for Yahuah (LORD)* (Leviticus 25:4), the land''s sabbath *unto Yahuah* (25:2). And it stands on the festal calendar: *At the end of every seven years, in the solemnity of the year of release, in the feast of tabernacles* (Deuteronomy 31:10), the very season the Torah is read aloud to all Yashar''el (Israel). The brother/foreigner line of 15:3 — *Of a foreigner thou mayest exact it again: but that which is thine with thy brother thine hand shall release* — is the same line drawn against usury: *unto thy brother thou shalt not lend upon usury: that Yahuah Elohayka (the LORD thy God) may bless thee in all that thou settest thine hand to* (Deuteronomy 23:20). The land rests, the debtor is loosed, the brother is not bled — one covenant order, and Yahuah''s blessing on the open hand of the one who keeps it.',
+       sv.verse_id, ev.verse_id, 'free', 24850
+  FROM _s310_deu15_lookup sv, _s310_deu15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=15 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease',
+       E'Open Thine Hand Wide — The Poor Shall Never Cease',
+       E'The promise and the realism sit side by side. *Save when there shall be no poor among you; for Yahuah (LORD) shall greatly bless thee in the land* (Deuteronomy 15:4) — but only *if thou carefully hearken unto the voice of Yahuah Elohayka (the LORD thy God)* (15:5); and where the people fall short, the truth stands: *For the poor shall never cease out of the land: therefore I command thee... Thou shalt open thine hand wide unto thy brother, to thy poor, and to thy needy* (15:11). The command is the open hand: *thou shalt not harden thine heart, nor shut thine hand from thy poor brother* (15:7), but *open thine hand wide... and surely lend him sufficient for his need* (15:8), and *thine heart shall not be grieved when thou givest* (15:10). Proverbs names the unseen creditor: *He that hath pity upon the poor lendeth unto Yahuah (LORD); and that which he hath given will he pay him again* (Proverbs 19:17). Ben Sira makes it Torah itself: *He that is merciful will lend to his neighbour; and he that strengtheneth his hand keepeth the commandments* (Ecclesiasticus 29:1); *Help the poor for the commandment''s sake* (29:9). Yahusha (Jesus) cites this very verse — *For ye have the poor always with you; but me ye have not always* (Matthew 26:11; John 12:8) — not to dismiss the poor but to press the clause that follows in Moses: the poor remain, therefore the hand stays open. Paul carries the same heart forward — *not grudgingly, or of necessity: for Elohim (God) loveth a cheerful giver* (2 Corinthians 9:7) — and Luke records the shemittah ideal lived out in the first assembly: *Neither was there any among them that lacked* (Acts 4:34). John makes the closed fist the test of love: *whoso... seeth his brother have need, and shutteth up his bowels of compassion from him, how dwelleth the love of Elohim (God) in him?* (1 John 3:17). The command and the heart are one Torah.',
+       sv.verse_id, ev.verse_id, 'extras', 24853
+  FROM _s310_deu15_lookup sv, _s310_deu15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=15 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-15-the-hebrew-bondservant-freed-not-empty',
+       E'The Hebrew Bondservant Freed — Not Sent Away Empty',
+       E'*If thy brother, an Hebrew man, or an Hebrew woman, be sold unto thee, and serve thee six years; then in the seventh year thou shalt let him go free from thee* (Deuteronomy 15:12). This is the Sinai law repeated: *If thou buy an Hebrew servant, six years he shall serve: and in the seventh he shall go out free for nothing* (Exodus 21:2). But Deuteronomy adds the open hand to the freed man: *when thou sendest him out free from thee, thou shalt not let him go away empty: thou shalt furnish him liberally out of thy flock, and out of thy floor, and out of thy winepress* (15:13-14). The dignity is the same Leviticus guards — *if thy brother that dwelleth by thee be waxen poor, and be sold unto thee; thou shalt not compel him to serve as a bondservant* (Leviticus 25:39) — because the people are Yahuah''s own redeemed: *For they are my servants, which I brought forth out of the land of Egypt: they shall not be sold as bondmen* (25:42). Moses grounds it all in memory: *thou shalt remember that thou wast a bondman in the land of Egypt, and Yahuah Elohayka (the LORD thy God) redeemed thee: therefore I command thee this thing* (15:15). The redeemed may not hold the brother as Egypt held them.',
+       sv.verse_id, ev.verse_id, 'free', 24856
+  FROM _s310_deu15_lookup sv, _s310_deu15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=15 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-15-the-bored-ear-the-willing-bondservant-for-ever',
+       E'The Bored Ear — The Willing Bondservant For Ever',
+       E'Not every freed servant leaves. *If he say unto thee, I will not go away from thee; because he loveth thee and thine house, because he is well with thee* (Deuteronomy 15:16), then comes the rite of willing, perpetual love: *thou shalt take an aul, and thrust it through his ear unto the door, and he shall be thy servant for ever* (15:17) — the same aul and door of Exodus 21:6, *his master shall bore his ear through with an aul; and he shall serve him for ever*. The bored ear at the door is no chain; it is love sealed. It becomes David''s figure of the obedient, opened ear given wholly to Yahuah''s will: *Sacrifice and offering thou didst not desire; mine ears hast thou opened* (Psalm 40:6). And Hebrews puts that very psalm on the lips of the Messiah entering the world: *Wherefore when he cometh into the world, he saith, Sacrifice and offering thou wouldest not, but a body hast thou prepared me* (Hebrews 10:5), saying *Lo, I come... to do thy will, O Elohim (God)* (10:7) — the opened ear become the prepared body. This is the willing-bondservant type fulfilled in the Formed Son who *made himself of no reputation, and took upon him the form of a servant* (Philippians 2:7). The Son is Yahuah-Formed who has a Father, not a co-equal person; for love of the Father and his house he chose the door, the bored ear, the form of a servant — service for ever, freely given.',
+       sv.verse_id, ev.verse_id, 'free', 24859
+  FROM _s310_deu15_lookup sv, _s310_deu15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=15 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-15-the-firstling-males-sanctified-unto-yahuah',
+       E'The Firstling Males Sanctified Unto Yahuah',
+       E'*All the firstling males that come of thy herd and of thy flock thou shalt sanctify unto Yahuah Elohayka (the LORD thy God): thou shalt do no work with the firstling of thy bullock, nor shear the firstling of thy sheep* (Deuteronomy 15:19). These are claimed back at the exodus: *Sanctify unto me all the firstborn, whatsoever openeth the womb among the children of Yashar''el (Israel), both of man and of beast: it is mine* (Exodus 13:2); *all that openeth the matrix... the males shall be the LORD''S* (13:12). The unblemished firstling is holy to the altar — *the firstling of a cow, or the firstling of a sheep, or the firstling of a goat, thou shalt not redeem; they are holy* (Numbers 18:17) — and even when eaten before Yahuah the blood stays sacred: *Only thou shalt not eat the blood thereof; thou shalt pour it upon the ground as water* (Deuteronomy 15:23). Luke keeps this very statute upon the Son: *(As it is written in the law of Yahuah (Lord), Every male that openeth the womb shall be called holy to Yahuah (Lord);)* (Luke 2:23). And the firstling/firstborn opens toward the Formed Son — *who is the beginning, the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18), *the image of the invisible Elohim (God), the firstborn of every creature* (1:15). Read with care: he is the firstborn-Heir, the head and beginning, the agent of creation (1:16) — NOT the first created thing, but the Preeminent one to whom the firstling pointed.',
+       sv.verse_id, ev.verse_id, 'free', 24862
+  FROM _s310_deu15_lookup sv, _s310_deu15_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=15 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. thread_members
+-- ============================================================
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 31:10 — *in the solemnity of the year of release, in the feast of tabernacles*; the shemittah set on the festal calendar.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=1
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=31 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-seventh-year-release-because-it-is-called-yahuahs-release'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 25:4 — *in the seventh year shall be a sabbath of rest unto the land*; the debt-release is the manward face of the land''s sabbath.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-seventh-year-release-because-it-is-called-yahuahs-release'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 25:2 — *then shall the land keep a sabbath unto Yahuah (LORD)*; the release belongs to the land Yahuah gives.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=2
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-seventh-year-release-because-it-is-called-yahuahs-release'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 23:20 — *unto thy brother thou shalt not lend upon usury*; the same brother/foreigner line, the interest-free brotherly economy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=3
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=23 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-seventh-year-release-because-it-is-called-yahuahs-release'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Proverbs 19:17 — *He that hath pity upon the poor lendeth unto Yahuah (LORD)*; the open hand loses nothing, Yahuah repays.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=7
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=19 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Ecclesiasticus (Sirach) 29:1 — *he that strengtheneth his hand keepeth the commandments*; merciful lending is Torah-keeping itself.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=8
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=29 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Corinthians 9:7 — *Elohim (God) loveth a cheerful giver*; Paul carries the un-grieved heart of Deut 15:10 forward.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=8
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Acts 4:34 — *Neither was there any among them that lacked*; the shemittah ideal of Deut 15:4 lived out in the first assembly.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=10
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=4 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Ecclesiasticus (Sirach) 29:9 — *Help the poor for the commandment''s sake*; the Torah itself the reason the hand stays open.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=11
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='apocrypha' AND tv.book_slug='ecclesiasticus' AND tv.chapter_number=29 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Matthew 26:11 — *ye have the poor always with you*; Yahusha (Jesus) citing Deut 15:11, pressing the open-hand clause that follows.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=11
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=26 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'John 12:8 — *the poor always ye have with you*; the same word of Yahusha (Jesus) drawn straight from Deut 15:11.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=11
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=12 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'1 John 3:17 — *shutteth up his bowels of compassion*; the closed fist of Deut 15:11 made the test of the love of Elohim (God).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=11
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-john' AND tv.chapter_number=3 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-open-thine-hand-wide-the-poor-shall-never-cease'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 21:2 — *six years he shall serve: and in the seventh he shall go out free for nothing*; the Sinai law Deut 15:12 repeats.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=12
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-hebrew-bondservant-freed-not-empty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 25:39 — *thou shalt not compel him to serve as a bondservant*; the same dignity the liberal furnishing of Deut 15:14 honours.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=14
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-hebrew-bondservant-freed-not-empty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Leviticus 25:42 — *they are my servants, which I brought forth out of the land of Egypt*; the redeemed may not hold the brother as Egypt held them (Deut 15:15).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=15
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=42
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-hebrew-bondservant-freed-not-empty'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 21:6 — *bore his ear through with an aul; and he shall serve him for ever*; the same aul-and-door rite Deut 15:17 repeats.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=17
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-bored-ear-the-willing-bondservant-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 40:6 — *mine ears hast thou opened*; the bored ear become David''s figure of obedience given wholly to Yahuah''s will.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=40 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-bored-ear-the-willing-bondservant-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Hebrews 10:5 — *a body hast thou prepared me*; Psalm 40''s opened ear on the lips of the Messiah, the willing servant''s ear become the prepared body (10:7, *Lo, I come... to do thy will*).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-bored-ear-the-willing-bondservant-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Philippians 2:7 — *took upon him the form of a servant*; the willing-bondservant type fulfilled in the Formed Son who emptied himself for love of the Father.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=16
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='philippians' AND tv.chapter_number=2 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-bored-ear-the-willing-bondservant-for-ever'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 13:2 — *Sanctify unto me all the firstborn, whatsoever openeth the womb... it is mine*; the firstlings of Deut 15:19 claimed back at the exodus.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-firstling-males-sanctified-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 13:12 — *every firstling... the males shall be the LORD''S*; the firstling males of Deut 15:19 belong to Yahuah by exodus law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=13 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-firstling-males-sanctified-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Numbers 18:17 — *they are holy: thou shalt sprinkle their blood upon the altar*; the unblemished firstling holy, the shadow-side of Deut 15:21''s blemish exclusion.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=21
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=18 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-firstling-males-sanctified-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Luke 2:23 — *Every male that openeth the womb shall be called holy to Yahuah (Lord)*; the firstling statute of Deut 15:19 kept upon the Son at the temple.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-firstling-males-sanctified-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Colossians 1:18 — *the firstborn from the dead; that in all things he might have the preeminence*; the firstling opens toward the firstborn-Heir (1:15-16), the Preeminent — NOT the first creature.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu15_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=15 AND sv.verse_number=19
+  JOIN _s310_deu15_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-15-the-firstling-males-sanctified-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session310 — Deuteronomy cross-references complete.'
