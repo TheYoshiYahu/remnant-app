@@ -5888,6 +5888,1428 @@ SELECT t.id, cr.id, 4, E'Proverbs 21:22 — *A wise man scaleth the city of the 
  WHERE t.slug='2-samuel-20-the-wise-woman-who-saved-the-city'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2-samuel_21.sql (2 Samuel 21) -----
+-- 2 Samuel 21 — full-library cross-references. Tag: 2sa21. View: _s341_2sa21_lookup.
+-- SORT BAND: base 37750, step 3 (37750, 37753, 37756).
+-- SOURCE rows all 'canon','2-samuel',21,v.
+--
+-- THREADS (3):
+--   2-samuel-21-the-sworn-oath-binds-and-innocent-blood-defiles-the-land  [Tanakh: Joshua 9, Numbers 35, Deuteronomy 21]  tier=free
+--   2-samuel-21-rizpah-s-vigil-and-the-honour-of-the-anointed-dead        [Tanakh: 1 Samuel 31, 2 Samuel 1]               tier=free
+--   2-samuel-21-the-last-of-the-giants-fall-and-the-seed-war-is-cleared   [Tanakh: 1 Samuel 17, 1 Chronicles 20, Genesis 6, Numbers 13, Genesis 3]  tier=free
+--
+-- PER-CHAPTER COVERAGE CHECKLIST:
+--   v.1-2  (famine for Saul's bloody house; oath sworn to Gibeonites)
+--          NT:     none warranted
+--          Extras: none warranted (Jasher Gibeon-league not a clean numbered witness here)
+--          Tanakh: Joshua 9:15,19-20 (the sworn league that bound Yashar'el) — USED
+--   v.3-6  (atonement; seven sons given to be hanged before Yahuah)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Numbers 35:33 (blood defiles the land, cleansed only by blood) — USED;
+--                  Deuteronomy 21:8-9 (put away the guilt of innocent blood) — USED
+--   v.7-9  (Mephibosheth spared for Jonathan's oath; seven hanged)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: oath-keeping woven into Thread 1 (v.7 the LORD's oath honoured)
+--   v.10   (★ Rizpah spreads sackcloth, guards the bodies night and day)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: bound to Thread 2 (her vigil moves David to honour the dead)
+--   v.11-14 (David gathers bones of Saul and Jonathan, buries them; Elohim intreated)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Samuel 31:11-13 (Jabesh-gilead rescued the bodies) — USED;
+--                  2 Samuel 1:14 (David's reverence for the LORD's anointed) — USED;
+--                  Deuteronomy 21:23 (a hanged man buried that day, land not defiled) — USED
+--   v.15-17 (Ishbi-benob of the giant; David faint; the light of Yashar'el)
+--          NT:     none warranted
+--          Extras: none warranted (1 Enoch/Jubilees giants = pre-flood Nephilim, not these Rephaim by clean witness; named in prose only)
+--          Tanakh: 1 Samuel 17 David's first giant — USED in Thread 3
+--   v.18-22 (Saph, Goliath's brother, the six-fingered man; four giants fall)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Chronicles 20:4-8 (parallel record) — USED; Genesis 6:4 / Numbers 13:33
+--                  (the giants/Anak seed) — USED; Genesis 3:15 (the seed-enmity) — USED
+--
+-- NO-ADD verses: v.2,4,5,7,8,11,13 carried within the threads above (oath/atonement/burial
+--   detail) — no separate library add warranted (recorded "none warranted" above).
+
+CREATE TEMP VIEW _s341_2sa21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the sworn oath binds; innocent blood defiles the land
+    ('canon','2-samuel',21,1,'canon','joshua',9,15,'free',
+     E'The famine is *for Saul, and for his bloody house, because he slew the Gibeonites* (2 Samuel 21:1). Generations before, *Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them* (Joshua 9:15). Saul''s violence broke a standing covenant-oath of Yashar''el (Israel) — the oath itself, once sworn before Yahuah, binds the nation across kings and centuries.'),
+    ('canon','2-samuel',21,1,'canon','joshua',9,19,'free',
+     E'The princes had answered the murmuring congregation, *We have sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel): now therefore we may not touch them* (Joshua 9:19). The oath stood above the deception that won it; even a sojourner-people sheltered under the Name could not be touched. Saul''s *zeal* (2 Samuel 21:2) trampled that very oath, and the land bore the cost.'),
+    ('canon','2-samuel',21,1,'canon','joshua',9,20,'free',
+     E'*This we will do to them; we will even let them live, lest wrath be upon us, because of the oath which we sware unto them* (Joshua 9:20). The princes feared exactly the wrath that now falls in David''s day — *a famine... three years, year after year* (2 Samuel 21:1). The oath was never void; breaking it brought the *wrath* the elders foresaw.'),
+    ('canon','2-samuel',21,3,'canon','numbers',35,33,'free',
+     E'David asks *wherewith shall I make the atonement, that ye may bless the inheritance of Yahuah (LORD)?* (2 Samuel 21:3). The Torah answers why atonement is required: *ye shall not pollute the land wherein ye are: for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). Unatoned innocent blood defiles the soil itself — the famine is the defiled land, and only requital cleanses it.'),
+    ('canon','2-samuel',21,6,'canon','numbers',35,33,'free',
+     E'The Gibeonites ask that *seven men of his sons be delivered unto us, and we will hang them up unto Yahuah (LORD)* (2 Samuel 21:6) — the blood of the slayer''s house answering for the slain. This is the Torah principle that *the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). The seven hanged before Yahuah are the requital that lifts the bloodguilt from the land.'),
+    ('canon','2-samuel',21,14,'canon','deuteronomy',21,8,'free',
+     E'Only *after that Elohim (God) was intreated for the land* (2 Samuel 21:14) does the famine break. The heifer-rite of the Torah voices the same plea: *Be merciful, O Yahuah (LORD), unto thy people Yashar''el (Israel), whom thou hast redeemed, and lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge. And the blood shall be forgiven them* (Deuteronomy 21:8). The land defiled by Saul''s bloodshed is at last cleansed and the people forgiven.'),
+    ('canon','2-samuel',21,14,'canon','deuteronomy',21,9,'free',
+     E'*So shalt thou put away the guilt of innocent blood from among you, when thou shalt do that which is right in the sight of Yahuah (LORD)* (Deuteronomy 21:9). David''s requital and honourable burial *put away* the bloodguilt exactly as the Torah commands — and the famine ends when right is done in Yahuah''s sight (2 Samuel 21:14).'),
+
+    -- Thread 2: Rizpah's vigil and the honour of the anointed dead
+    ('canon','2-samuel',21,12,'canon','1-samuel',31,11,'free',
+     E'David takes *the bones of Saul and the bones of Jonathan his son from the men of Jabesh-gilead* (2 Samuel 21:12), because those men had first dared the rescue: *when the inhabitants of Jabesh-gilead heard of that which the Philistines had done to Saul* (1 Samuel 31:11). Their loyalty to the fallen king becomes the thread David now picks up — covenant-love for the anointed dead, even years on.'),
+    ('canon','2-samuel',21,12,'canon','1-samuel',31,12,'free',
+     E'The valiant men of Jabesh *arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan* (1 Samuel 31:12) — the very wall where *the Philistines had hanged them* (2 Samuel 21:12). David''s gathering of the bones honours both the king and the men who would not leave him to the enemy''s shame.'),
+    ('canon','2-samuel',21,14,'canon','deuteronomy',21,23,'free',
+     E'David buries the bones *in the sepulchre of Kish his father* (2 Samuel 21:14) — and even the seven hanged sons are gathered and buried, not left exposed. The Torah commands it: *his body shall not remain all night upon the tree, but thou shalt in any wise bury him that day... that thy land be not defiled* (Deuteronomy 21:23). Honourable burial is itself part of cleansing the land of blood.'),
+    ('canon','2-samuel',21,14,'canon','2-samuel',1,14,'free',
+     E'David''s reverence for Saul''s bones flows from a settled conviction. When the Amalekite boasted of killing the king, David answered, *How wast thou not afraid to stretch forth thine hand to destroy the LORD''S anointed?* (2 Samuel 1:14). Even toward the king who hunted him, David honours the anointing of Yahuah — gathering and burying his bones is the same fear of touching the LORD''s anointed.'),
+
+    -- Thread 3: the last of the giants fall; the seed-war is cleared
+    ('canon','2-samuel',21,19,'canon','1-samuel',17,4,'free',
+     E'Elhanan *slew the brother of Goliath the Gittite, the staff of whose spear was like a weaver''s beam* (2 Samuel 21:19). The first Goliath is unforgettable: *there went out a champion out of the camp of the Philistines, named Goliath, of Gath, whose height was six cubits and a span* (1 Samuel 17:4). These Gath-giants are a line; David''s house finishes the war David began as a youth.'),
+    ('canon','2-samuel',21,19,'canon','1-samuel',17,50,'free',
+     E'*And the staff of his spear was like a weaver''s beam* (2 Samuel 21:19) — the same emblem that marked the first champion, whom David felled: *so David prevailed over the Philistine with a sling and with a stone, and smote the Philistine, and slew him; but there was no sword in the hand of David* (1 Samuel 17:50). The giant''s brother falls by David''s servant; the enmity runs in both bloodlines until it is cleared.'),
+    ('canon','2-samuel',21,18,'canon','1-chronicles',20,4,'free',
+     E'*Sibbechai the Hushathite slew Saph, which was of the sons of the giant* (2 Samuel 21:18). The chronicler records the same: *there arose war at Gezer with the Philistines; at which time Sibbechai the Hushathite slew Sippai, that was of the children of the giant: and they were subdued* (1 Chronicles 20:4). Two witnesses to the felling of the giant-seed.'),
+    ('canon','2-samuel',21,22,'canon','1-chronicles',20,8,'free',
+     E'*These four were born to the giant in Gath, and fell by the hand of David, and by the hand of his servants* (2 Samuel 21:22). The chronicler closes with the same verdict: *these were born unto the giant in Gath; and they fell by the hand of David, and by the hand of his servants* (1 Chronicles 20:8). The Rephaim line of Gath is wiped out under the Davidic kingdom.'),
+    ('canon','2-samuel',21,16,'canon','genesis',6,4,'free',
+     E'Ishbi-benob *was of the sons of the giant* (2 Samuel 21:16). The giants are an ancient seed-line: *there were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown* (Genesis 6:4). *And also after that* — the giant-clans the flood did not end persist in Canaan, and fall at last before David.'),
+    ('canon','2-samuel',21,20,'canon','numbers',13,33,'free',
+     E'The man of *great stature... had on every hand six fingers, and on every foot six toes* (2 Samuel 21:20) — born to the giant of Gath. These are the dread of Yashar''el''s wilderness years: *there we saw the giants, the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers* (Numbers 13:33). What once made Yashar''el feel like grasshoppers now falls before David''s servants.'),
+    ('canon','2-samuel',21,22,'canon','genesis',3,15,'free',
+     E'The four giants of Gath *fell by the hand of David, and by the hand of his servants* (2 Samuel 21:22) — and the war runs back to the first word of enmity: *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). The serpent''s seed and the woman''s seed war on; the Davidic king crushing the giant-line is the seed-war advancing toward the promised Seed who bruises the head.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-21-the-sworn-oath-binds-and-innocent-blood-defiles-the-land',
+       E'The sworn oath binds, and innocent blood defiles the land',
+       E'*Then there was a famine in the days of David three years, year after year; and David enquired of Yahuah (LORD). And Yahuah (LORD) answered, It is for Saul, and for his bloody house, because he slew the Gibeonites* (2 Samuel 21:1). The wound is an oath broken. Generations earlier *Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them* (Joshua 9:15) — and when the deception came to light, the princes still held the oath inviolable: *We have sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel): now therefore we may not touch them* (Joshua 9:19), *lest wrath be upon us, because of the oath which we sware unto them* (Joshua 9:20). That feared wrath is the very famine of David''s day; an oath sworn before the Name binds across kings and centuries, even toward a sojourner-people. Saul''s *zeal* trampled it, and unatoned blood defiles the very ground: *ye shall not pollute the land wherein ye are: for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). So David asks *wherewith shall I make the atonement* (21:3), and the seven of Saul''s house are *hang[ed]... up unto Yahuah (LORD)* (21:6) — the requital that lifts the bloodguilt. Only *after that Elohim (God) was intreated for the land* (21:14), exactly as the heifer-rite pleads: *lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge. And the blood shall be forgiven them* (Deuteronomy 21:8), *so shalt thou put away the guilt of innocent blood from among you, when thou shalt do that which is right in the sight of Yahuah (LORD)* (Deuteronomy 21:9). The oath is Torah-honoured; the land is cleansed.',
+       sv.verse_id, ev.verse_id, 'free', 37750
+  FROM _s341_2sa21_lookup sv, _s341_2sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-21-rizpah-s-vigil-and-the-honour-of-the-anointed-dead',
+       E'Rizpah''s vigil and the honour of the anointed dead',
+       E'*And Rizpah the daughter of Aiah took sackcloth, and spread it for her upon the rock, from the beginning of harvest until water dropped upon them out of heaven, and suffered neither the birds of the air to rest on them by day, nor the beasts of the field by night* (2 Samuel 21:10). A bereaved mother keeps the long watch — covenant-love guarding the dignity of the dead through months of grief until the rains come. *And it was told David what Rizpah the daughter of Aiah, the concubine of Saul, had done* (21:11), and her faithfulness moves the king. David goes and takes *the bones of Saul and the bones of Jonathan his son from the men of Jabesh-gilead* (21:12) — the men who first dared the rescue, for *when the inhabitants of Jabesh-gilead heard of that which the Philistines had done to Saul* (1 Samuel 31:11), the valiant *arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan* (1 Samuel 31:12). David buries them honourably *in the sepulchre of Kish his father* (21:14), gathering even the seven who were hanged — for the Torah says *his body shall not remain all night upon the tree, but thou shalt in any wise bury him that day... that thy land be not defiled* (Deuteronomy 21:23). All of it flows from David''s settled fear of touching the anointing of Yahuah: *How wast thou not afraid to stretch forth thine hand to destroy the LORD''S anointed?* (2 Samuel 1:14). Toward the king who hunted him, David still honours the LORD''s anointed — and a mother''s vigil and a king''s reverence together give the fallen their rest.',
+       sv.verse_id, ev.verse_id, 'free', 37753
+  FROM _s341_2sa21_lookup sv, _s341_2sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-21-the-last-of-the-giants-fall-and-the-seed-war-is-cleared',
+       E'The last of the giants fall, and the seed-war is cleared',
+       E'*Moreover the Philistines had yet war again with Yashar''el (Israel)* (2 Samuel 21:15), and four giants of Gath come out one by one: Ishbi-benob, who *was of the sons of the giant* (21:16); Saph (21:18); *the brother of Goliath the Gittite, the staff of whose spear was like a weaver''s beam* (21:19); and the man of *great stature, that had on every hand six fingers, and on every foot six toes* (21:20). They are an ancient seed-line — *there were giants in the earth in those days; and also after that, when the sons of Elohim (God) came in unto the daughters of men, and they bare children to them, the same became mighty men which were of old, men of renown* (Genesis 6:4); the very dread of the wilderness spies, *the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers* (Numbers 13:33). David first met that line as a youth: the champion *whose height was six cubits and a span* (1 Samuel 17:4), whom he felled when *David prevailed over the Philistine with a sling and with a stone... but there was no sword in the hand of David* (1 Samuel 17:50). Now his house finishes the war, and the chronicler bears double witness — Sibbechai *slew Sippai, that was of the children of the giant* (1 Chronicles 20:4); *these were born unto the giant in Gath; and they fell by the hand of David, and by the hand of his servants* (1 Chronicles 20:8). The whole war traces back to the first word of enmity: *I will put enmity between thee and the woman, and between thy seed and her seed; it shall bruise thy head, and thou shalt bruise his heel* (Genesis 3:15). *These four... fell by the hand of David, and by the hand of his servants* (21:22) — the Davidic king crushing the giant-seed is the seed-war advancing toward the promised Seed who bruises the serpent''s head.',
+       sv.verse_id, ev.verse_id, 'free', 37756
+  FROM _s341_2sa21_lookup sv, _s341_2sa21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=21 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=21 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (21,1,'canon','joshua',9,15,1,E'*Joshua made peace with them, and made a league with them, to let them live: and the princes of the congregation sware unto them* (Joshua 9:15) — the oath Saul broke.'),
+    (21,1,'canon','joshua',9,19,2,E'*We have sworn unto them by Yahuah Elohim (the LORD God) of Yashar''el (Israel): now therefore we may not touch them* (Joshua 9:19) — the oath held inviolable.'),
+    (21,1,'canon','joshua',9,20,3,E'*lest wrath be upon us, because of the oath which we sware unto them* (Joshua 9:20) — the very wrath now falling as famine.'),
+    (21,3,'canon','numbers',35,33,4,E'*blood it defileth the land... cannot be cleansed... but by the blood of him that shed it* (Numbers 35:33) — why atonement is required.'),
+    (21,6,'canon','numbers',35,33,5,E'The seven hanged before Yahuah requite the shed blood, cleansing the land per Numbers 35:33.'),
+    (21,14,'canon','deuteronomy',21,8,6,E'*lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge. And the blood shall be forgiven them* (Deuteronomy 21:8) — the plea answered when Elohim is intreated.'),
+    (21,14,'canon','deuteronomy',21,9,7,E'*So shalt thou put away the guilt of innocent blood from among you, when thou shalt do that which is right* (Deuteronomy 21:9) — the famine ends when right is done.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s341_2sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s341_2sa21_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='2-samuel-21-the-sworn-oath-binds-and-innocent-blood-defiles-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (21,12,'canon','1-samuel',31,11,1,E'*when the inhabitants of Jabesh-gilead heard of that which the Philistines had done to Saul* (1 Samuel 31:11) — the men whose loyalty David now picks up.'),
+    (21,12,'canon','1-samuel',31,12,2,E'They *arose, and went all night, and took the body of Saul and the bodies of his sons from the wall of Beth-shan* (1 Samuel 31:12) — the rescue David honours.'),
+    (21,14,'canon','deuteronomy',21,23,3,E'*his body shall not remain all night upon the tree... that thy land be not defiled* (Deuteronomy 21:23) — burial as part of cleansing the land.'),
+    (21,14,'canon','2-samuel',1,14,4,E'*How wast thou not afraid to stretch forth thine hand to destroy the LORD''S anointed?* (2 Samuel 1:14) — David''s reverence for the anointed dead.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s341_2sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s341_2sa21_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='2-samuel-21-rizpah-s-vigil-and-the-honour-of-the-anointed-dead'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, m.sort_order, m.member_note
+  FROM (VALUES
+    (21,16,'canon','genesis',6,4,1,E'*there were giants in the earth in those days; and also after that...* (Genesis 6:4) — the ancient giant-seed Ishbi-benob springs from.'),
+    (21,18,'canon','1-chronicles',20,4,2,E'*Sibbechai the Hushathite slew Sippai, that was of the children of the giant* (1 Chronicles 20:4) — the chronicler''s parallel of Saph''s fall.'),
+    (21,19,'canon','1-samuel',17,4,3,E'*there went out a champion... named Goliath, of Gath, whose height was six cubits and a span* (1 Samuel 17:4) — the first of the Gath-giants.'),
+    (21,19,'canon','1-samuel',17,50,4,E'*David prevailed over the Philistine with a sling and with a stone... but there was no sword in the hand of David* (1 Samuel 17:50) — the war David began as a youth.'),
+    (21,20,'canon','numbers',13,33,5,E'*the sons of Anak, which come of the giants: and we were in our own sight as grasshoppers* (Numbers 13:33) — the six-fingered giant''s dread lineage.'),
+    (21,22,'canon','1-chronicles',20,8,6,E'*these were born unto the giant in Gath; and they fell by the hand of David, and by the hand of his servants* (1 Chronicles 20:8) — the chronicler''s closing witness.'),
+    (21,22,'canon','genesis',3,15,7,E'*I will put enmity... between thy seed and her seed; it shall bruise thy head* (Genesis 3:15) — the seed-war the Davidic king advances.')
+  ) AS m(src_ch,src_v,tgt_ed,tgt_slug,tgt_ch,tgt_v,sort_order,member_note)
+  JOIN _s341_2sa21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=m.src_ch AND sv.verse_number=m.src_v
+  JOIN _s341_2sa21_lookup tv ON tv.edition_slug=m.tgt_ed AND tv.book_slug=m.tgt_slug AND tv.chapter_number=m.tgt_ch AND tv.verse_number=m.tgt_v
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+  JOIN cross_reference_threads t ON t.slug='2-samuel-21-the-last-of-the-giants-fall-and-the-seed-war-is-cleared'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_22.sql (2 Samuel 22) -----
+--
+-- 2 Samuel 22 — DAVID'S SONG OF DELIVERANCE, the near-twin of Psalm 18. A keystone chapter:
+--   the king, delivered out of the hand of all his enemies and out of the hand of Saul, sings of
+--   the ROCK who delivered him. *Yahuah (LORD) is my rock, and my fortress, and my deliverer* — the
+--   Rock is the Formed Son (1 Samuel 2:2; Deuteronomy 32:4). The theophany — *he bowed the heavens
+--   also, and came down* — is Yahuah descending to deliver, the visible Glory, the Formed Son who
+--   HAS a Father (NOT co-equal-trinity, NOT Arian). The song ends in the Davidic-covenant doxology:
+--   mercy to David and to his seed for evermore — the everlasting King. Tag 2sa22.
+--   Sort band base 37775, step 3.
+--
+-- FRAMEWORK: The Rock = the Formed Son (1 Sam 2:2 / Deut 32:4); the descent to deliver = the visible
+--   Glory who bowed the heavens (theophany, Ps 18); Yahuah meets each as they walk (mercy/pure/froward);
+--   the tried word that is a buckler to them that trust (Prov 30:5); the praise carried among the
+--   heathen as the nations come in (Rom 15:9 quotes 22:50 / Ps 18:49; Deut 32:43); mercy to David's
+--   SEED for evermore = the everlasting Davidic King, the horn of salvation (Luke 1:54-55,69), the
+--   Son who says *I will put my trust in him* (Heb 2:13). Never replacement — the throne over
+--   Yashar'el's everlasting line; the heathen brought IN to praise, not in Israel's stead.
+--
+-- 2 Samuel 22 coverage:
+--   v.1     NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Psalm 18 superscription/v.1 weave carried by the rock thread (the day Yahuah delivered him)
+--   v.2-4   NT:     none warranted (the Rock weaves Tanakh-laterally + the twin)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:2 (Yahuah is my rock... the horn of my salvation); 1 Samuel 2:2 (neither is
+--                   there any rock like our Elohim); Deuteronomy 32:4 (He is the Rock, his work is perfect);
+--                   Psalm 144:2 (my fortress; my high tower, and my deliverer; my shield)
+--   v.5-7   NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Psalm 18:4 (the sorrows of death compassed me); Psalm 18:5 (the snares of death);
+--                   Psalm 18:6 (he heard my voice out of his temple); Psalm 116:3 (the sorrows of death
+--                   compassed me, the pains of hell); Psalm 116:4 (then called I upon the name of Yahuah)
+--   v.8-16  NT:     none warranted (the theophany; the Formed Glory descending — Tanakh-lateral to the twin)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:7 (the earth shook); Psalm 18:9 (he bowed the heavens... and came down);
+--                   Psalm 18:10 (he rode upon a cherub... upon the wings of the wind)
+--   v.17-20 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Psalm 18:16 (he drew me out of many waters); Psalm 18:17 (delivered me from my strong
+--                   enemy); Psalm 18:19 (he brought me forth into a large place; he delighted in me)
+--   v.21-25 NT:     none warranted (David's righteousness = covenant-walk; carried by surrounding threads)
+--           Extras: none warranted
+--           Tanakh: woven into the rock/mercy threads (kept the ways of Yahuah; his statutes; cleanness of hands)
+--   v.26-28 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Psalm 18:25 (with the merciful thou wilt shew thyself merciful); Psalm 18:26 (with the
+--                   pure... with the froward); Psalm 18:27 (thou wilt save the afflicted; bring down high looks)
+--   v.29-30 NT:     none warranted (lamp/run-through-a-troop carried in the mercy thread close)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:28 (thou wilt light my candle); Psalm 18:29 (by thee I have run through a troop)
+--   v.31-33 NT:     none warranted (the tried word -> Proverbs lateral)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:30 (his way is perfect; the word of Yahuah is tried); Psalm 18:31 (who is a
+--                   rock save our Elohim); Proverbs 30:5 (every word of Elohim is pure: a shield);
+--                   Deuteronomy 32:4 (He is the Rock, his work is perfect)
+--   v.34-49 NT:     none warranted (the war/victory verses; carried by the surrounding deliverance frame)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:32-48 parallels (the twin runs verse for verse; not separately threaded)
+--   v.50    NT:     Romans 15:9 (I will confess to thee among the Gentiles, and sing unto thy name — Paul quotes this)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:49 (I will give thanks unto thee among the heathen); Deuteronomy 32:43
+--                   (Rejoice, O ye nations, with his people)
+--   v.51    NT:     Luke 1:54 (he hath holpen his servant Yashar'el); Luke 1:55 (to Abraham, and to his
+--                   seed for ever); Luke 1:69 (an horn of salvation in the house of his servant David);
+--                   Hebrews 2:13 (I will put my trust in him... the children Elohim hath given me)
+--           Extras: none warranted
+--           Tanakh: Psalm 18:50 (great deliverance giveth he to his king; sheweth mercy to David, and to
+--                   his seed for evermore)
+--
+-- THREADS (7):
+--   2-samuel-22-yahuah-is-my-rock-my-fortress-and-my-deliverer        [Tanakh] the Rock = the Formed Son
+--   2-samuel-22-the-snares-of-death-and-he-heard-my-voice             [Tanakh] death's sorrows; he hears out of his temple
+--   2-samuel-22-he-bowed-the-heavens-also-and-came-down               [Tanakh] the theophany, the Formed Glory descending
+--   2-samuel-22-he-delivered-me-because-he-delighted-in-me            [Tanakh] drawn from many waters into a large place
+--   2-samuel-22-with-the-merciful-thou-wilt-shew-thyself-merciful     [Tanakh] Yahuah meets each as they walk
+--   2-samuel-22-his-way-is-perfect-the-word-of-yahuah-is-tried        [Tanakh] the tried word, a buckler to them that trust
+--   2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed [Tanakh+NT] praise among the nations; mercy to David's seed for ever
+
+CREATE TEMP VIEW _s341_2sa22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Yahuah is my rock, my fortress, and my deliverer
+    ('canon','2-samuel',22,2,'canon','psalms',18,2,'free',
+      E'*Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower* (Psalm 18:2). The eighteenth psalm is the twin of this song, and the second verse stands almost word for word with ''*Yahuah (LORD) is my rock, and my fortress, and my deliverer*'' (2 Samuel 22:2): the same Rock, the same horn of salvation, the same high tower. The king sings the one deliverer twice over.'),
+    ('canon','2-samuel',22,3,'canon','1-samuel',2,2,'free',
+      E'*There is none holy as Yahuah (LORD): for there is none beside thee: neither is there any rock like our Elohim (God)* (1 Samuel 2:2). Hannah''s song opens the books of Samuel as David''s song closes them, and both rest on the same confession behind ''*The Elohim (God) of my rock; in him will I trust*'' (2 Samuel 22:3): there is no rock like our Elohim. The Rock is no metaphor for stone but the unchanging One — the Formed Son who is the rock of salvation.'),
+    ('canon','2-samuel',22,3,'canon','deuteronomy',32,4,'free',
+      E'*He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). Moses'' song first names Yahuah the Rock, and David takes the name up: ''*The Elohim (God) of my rock; in him will I trust*'' (2 Samuel 22:3). The Rock whose work is perfect, who led Yashar''el through the wilderness, is the deliverer David trusts — the Formed Son, the rock of his salvation.'),
+    ('canon','2-samuel',22,2,'canon','psalms',144,2,'free',
+      E'*My goodness, and my fortress; my high tower, and my deliverer; my shield, and he in whom I trust; who subdueth my people under me* (Psalm 144:2). David''s later psalm gathers the very titles of this song — ''*Yahuah (LORD) is my rock, and my fortress, and my deliverer*'' (2 Samuel 22:2): fortress, high tower, deliverer, shield. The king never tires of the one refuge; every battle drives him back to the same Rock.'),
+    -- Thread 2: The snares of death, and he heard my voice out of his temple
+    ('canon','2-samuel',22,5,'canon','psalms',18,4,'free',
+      E'*The sorrows of death compassed me, and the floods of ungodly men made me afraid* (Psalm 18:4). The twin sings the same encircling terror as ''*When the waves of death compassed me, the floods of ungodly men made me afraid*'' (2 Samuel 22:5): death like a flood, the ungodly like a rising tide. The deliverance is praised only because the danger was real.'),
+    ('canon','2-samuel',22,6,'canon','psalms',18,5,'free',
+      E'*The sorrows of hell compassed me about: the snares of death prevented me* (Psalm 18:5). Word for word with ''*The sorrows of hell compassed me about; the snares of death prevented me*'' (2 Samuel 22:6): the grave''s cords drawn tight, the trap sprung. From inside that snare the king cries — and is heard.'),
+    ('canon','2-samuel',22,7,'canon','psalms',18,6,'free',
+      E'*In my distress I called upon Yahuah (LORD), and cried unto my Elohim (God): he heard my voice out of his temple, and my cry came before him, even into his ears* (Psalm 18:6). The twin gives the same answered cry as ''*In my distress I called upon Yahuah (LORD)... and he did hear my voice out of his temple, and my cry did enter into his ears*'' (2 Samuel 22:7): the voice from the snare of death reaches the temple of heaven, and the deliverer bends to hear.'),
+    ('canon','2-samuel',22,6,'canon','psalms',116,3,'free',
+      E'*The sorrows of death compassed me, and the pains of hell gat hold upon me: I found trouble and sorrow* (Psalm 116:3). Another psalm of deliverance takes up the same words as ''*The sorrows of hell compassed me about; the snares of death prevented me*'' (2 Samuel 22:6): the grave''s hold, the trouble and sorrow — the common cry of the delivered, that the dead-end was real before the rescue.'),
+    ('canon','2-samuel',22,7,'canon','psalms',116,4,'free',
+      E'*Then called I upon the name of Yahuah (LORD); O Yahuah (LORD), I beseech thee, deliver my soul* (Psalm 116:4). The single act that answers the snare of death is the same in both: ''*In my distress I called upon Yahuah (LORD)*'' (2 Samuel 22:7) / *Then called I upon the name of Yahuah*. Calling on the Name is the door out of the grave; the deliverer waits to be called on.'),
+    -- Thread 3: He bowed the heavens also, and came down
+    ('canon','2-samuel',22,8,'canon','psalms',18,7,'free',
+      E'*Then the earth shook and trembled; the foundations also of the hills moved and were shaken, because he was wroth* (Psalm 18:7). The twin opens the theophany the same way as ''*Then the earth shook and trembled; the foundations of heaven moved and shook, because he was wroth*'' (2 Samuel 22:8): the whole creation quakes when the deliverer rises to wrath. The God who hears does not stay seated.'),
+    ('canon','2-samuel',22,10,'canon','psalms',18,9,'free',
+      E'*He bowed the heavens also, and came down: and darkness was under his feet* (Psalm 18:9). Word for word with ''*He bowed the heavens also, and came down; and darkness was under his feet*'' (2 Samuel 22:10). This is the heart of the theophany: Yahuah does not deliver from a distance — he bends the heavens and descends, the visible Glory with darkness under his feet. The One who came down is the Formed Son, Yahuah who has a Father, the deliverer who steps into the storm to save his servant.'),
+    ('canon','2-samuel',22,11,'canon','psalms',18,10,'free',
+      E'*And he rode upon a cherub, and did fly: yea, he did fly upon the wings of the wind* (Psalm 18:10). The same descent as ''*And he rode upon a cherub, and did fly: and he was seen upon the wings of the wind*'' (2 Samuel 22:11): the cherub-throne, the wings of the wind. The Glory that dwelt between the cherubim above the ark rides out to deliver — the Formed Son in his chariot of cloud, *seen* upon the wind.'),
+    -- Thread 4: He delivered me, because he delighted in me
+    ('canon','2-samuel',22,17,'canon','psalms',18,16,'free',
+      E'*He sent from above, he took me, he drew me out of many waters* (Psalm 18:16). The twin gives the same rescue as ''*He sent from above, he took me; he drew me out of many waters*'' (2 Samuel 22:17): the hand reaching down from on high into the flood of death, drawing the drowning king out. The descent of the storm is for this — to take hold of the one sinking and lift him.'),
+    ('canon','2-samuel',22,18,'canon','psalms',18,17,'free',
+      E'*He delivered me from my strong enemy, and from them which hated me: for they were too strong for me* (Psalm 18:17). Word for word with ''*He delivered me from my strong enemy, and from them that hated me: for they were too strong for me*'' (2 Samuel 22:18): the enemy too strong for David, never too strong for the Rock. The deliverer takes the battle the servant could not win.'),
+    ('canon','2-samuel',22,20,'canon','psalms',18,19,'free',
+      E'*He brought me forth also into a large place; he delivered me, because he delighted in me* (Psalm 18:19). The same close as ''*He brought me forth also into a large place: he delivered me, because he delighted in me*'' (2 Samuel 22:20): out of the narrow snare into a wide place. And the ground of the rescue is named — *because he delighted in me*: deliverance flows from Yahuah''s delight in his servant, not from the servant''s strength.'),
+    -- Thread 5: With the merciful thou wilt shew thyself merciful
+    ('canon','2-samuel',22,26,'canon','psalms',18,25,'free',
+      E'*With the merciful thou wilt shew thyself merciful; with an upright man thou wilt shew thyself upright* (Psalm 18:25). The twin sings the same law of the Rock''s dealing as ''*With the merciful thou wilt shew thyself merciful, and with the upright man thou wilt shew thyself upright*'' (2 Samuel 22:26): Yahuah meets each man as that man has walked. Mercy is answered with mercy, uprightness with uprightness — the covenant-walk reflected back.'),
+    ('canon','2-samuel',22,27,'canon','psalms',18,26,'free',
+      E'*With the pure thou wilt shew thyself pure; and with the froward thou wilt shew thyself froward* (Psalm 18:26). Almost word for word with ''*With the pure thou wilt shew thyself pure; and with the froward thou wilt shew thyself unsavoury*'' (2 Samuel 22:27): purity met with purity, the twisted met with the twisting back of judgment. Yahuah is not mocked; the way a man takes toward the Rock is the way the Rock turns toward him.'),
+    ('canon','2-samuel',22,28,'canon','psalms',18,27,'free',
+      E'*For thou wilt save the afflicted people; but wilt bring down high looks* (Psalm 18:27). The twin states the same two-edged outcome as ''*And the afflicted people thou wilt save: but thine eyes are upon the haughty, that thou mayest bring them down*'' (2 Samuel 22:28): the afflicted lifted, the haughty brought low. The deliverer who meets each as they walk saves the lowly and humbles the proud — Hannah''s very theme (1 Samuel 2:7-8).'),
+    -- Thread 6: His way is perfect; the word of Yahuah is tried
+    ('canon','2-samuel',22,31,'canon','psalms',18,30,'free',
+      E'*As for Elohim (God), his way is perfect: the word of Yahuah (LORD) is tried: he is a buckler to all those that trust in him* (Psalm 18:30). Word for word with ''*As for Elohim (God), his way is perfect; the word of Yahuah (LORD) is tried: he is a buckler to all them that trust in him*'' (2 Samuel 22:31): the way perfect, the word tested-and-true, the shield held over all who trust. The tried word is the covenant-word — proven, never failing them that take refuge in it.'),
+    ('canon','2-samuel',22,32,'canon','psalms',18,31,'free',
+      E'*For who is Elohim (God) save Yahuah (LORD)? or who is a rock save our Elohim (God)?* (Psalm 18:31). The same challenge as ''*For who is Elohim (God), save Yahuah (LORD)? and who is a rock, save our Elohim (God)?*'' (2 Samuel 22:32): there is no other Rock. The buckler of the tried word rests on the one God who alone is the rock of salvation.'),
+    ('canon','2-samuel',22,31,'canon','proverbs',30,5,'free',
+      E'*Every word of Elohim (God) is pure: he is a shield unto them that put their trust in him* (Proverbs 30:5). Agur says of the word exactly what David sings of it: ''*the word of Yahuah (LORD) is tried: he is a buckler to all them that trust in him*'' (2 Samuel 22:31). The tried word and the pure word are one — and to both, the same promise: a shield, a buckler, to all who trust.'),
+    ('canon','2-samuel',22,31,'canon','deuteronomy',32,4,'free',
+      E'*He is the Rock, his work is perfect: for all his ways are judgment: a Elohim (God) of truth and without iniquity, just and right is he* (Deuteronomy 32:4). Moses sang that the Rock''s work is perfect; David sings ''*As for Elohim (God), his way is perfect*'' (2 Samuel 22:31). The perfect way and the perfect work are the same testimony — the Rock of truth, without iniquity, whose tried word is a buckler to all that trust.'),
+    -- Thread 7: I will give thanks among the heathen, and mercy to his seed for evermore
+    ('canon','2-samuel',22,50,'canon','psalms',18,49,'free',
+      E'*Therefore will I give thanks unto thee, O Yahuah (LORD), among the heathen, and sing praises unto thy name* (Psalm 18:49). Word for word with ''*Therefore I will give thanks unto thee, O Yahuah (LORD), among the heathen, and I will sing praises unto thy name*'' (2 Samuel 22:50): the praise carried out beyond Yashar''el, among the nations — the seed of the song that the nations themselves would one day take up.'),
+    ('canon','2-samuel',22,50,'canon','romans',15,9,'free',
+      E'*And that the Gentiles might glorify Elohim (God) for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9). Paul quotes this very verse — ''*I will give thanks unto thee, O Yahuah (LORD), among the heathen, and I will sing praises unto thy name*'' (2 Samuel 22:50) — as the written proof that the nations are brought IN to praise Yahuah with his people. David''s song among the heathen becomes the heathen''s own song; not Israel replaced, but the wild branches gathered to sing the Davidic praise.'),
+    ('canon','2-samuel',22,50,'canon','deuteronomy',32,43,'free',
+      E'*Rejoice, O ye nations, with his people: for he will avenge the blood of his servants, and will render vengeance to his adversaries, and will be merciful unto his land, and to his people* (Deuteronomy 32:43). Moses'' song already calls the nations to rejoice *with* Yahuah''s people — the same ingathering David''s ''*I will give thanks... among the heathen*'' (2 Samuel 22:50) foreshadows. The nations praise alongside Yashar''el, not in her stead.'),
+    ('canon','2-samuel',22,51,'canon','psalms',18,50,'free',
+      E'*Great deliverance giveth he to his king; and sheweth mercy to his anointed, to David, and to his seed for evermore* (Psalm 18:50). The twin seals the song with the same doxology as ''*He is the tower of salvation for his king: and sheweth mercy to his anointed, unto David, and to his seed for evermore*'' (2 Samuel 22:51): mercy to David, and — the weight of the whole — *to his seed for evermore*. The deliverance of the one king opens into the everlasting mercy upon David''s line.'),
+    ('canon','2-samuel',22,51,'canon','luke',1,69,'free',
+      E'*And hath raised up an horn of salvation for us in the house of his servant David* (Luke 1:69). Zacharias names the seed the song reaches for: the mercy *to David, and to his seed for evermore* (2 Samuel 22:51) is fulfilled in the horn of salvation raised up in David''s house — the everlasting King the doxology promised, the Formed Son who took flesh as David''s seed.'),
+    ('canon','2-samuel',22,51,'canon','luke',1,54,'free',
+      E'*He hath holpen his servant Yashar''el (Israel), in remembrance of his mercy* (Luke 1:54). The mercy David sings — *sheweth mercy to his anointed, unto David, and to his seed for evermore* (2 Samuel 22:51) — is the mercy Mary blesses: Yahuah helping his servant Yashar''el, remembering the covenant. The everlasting mercy to David''s seed is mercy to the whole people, not a setting aside of them.'),
+    ('canon','2-samuel',22,51,'canon','luke',1,55,'free',
+      E'*As he spake to our fathers, to Abraham, and to his seed for ever* (Luke 1:55). The *for evermore* of ''*to his seed for evermore*'' (2 Samuel 22:51) reaches back to the promise to Abraham and his seed for ever — one unbroken covenant-line from Abraham through David to the everlasting King. The mercy is sworn, ancient, and never withdrawn.'),
+    ('canon','2-samuel',22,51,'canon','hebrews',2,13,'free',
+      E'*And again, I will put my trust in him. And again, Behold I and the children which Elohim (God) hath given me* (Hebrews 2:13). The letter puts the trust of the Davidic song into the mouth of the Messiah himself — the seed of *David, and... his seed for evermore* (2 Samuel 22:51) who, made the captain of salvation, says *I will put my trust in him* and stands with the children Yahuah has given him. The king who trusted the Rock is the type of the Son who trusts his Father and is not ashamed to call his people brethren.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-yahuah-is-my-rock-my-fortress-and-my-deliverer',
+       E'Yahuah is my rock, and my fortress, and my deliverer',
+       E'David''s song of deliverance opens on the one refuge: *Yahuah (LORD) is my rock, and my fortress, and my deliverer; The Elohim (God) of my rock; in him will I trust: he is my shield, and the horn of my salvation, my high tower, and my refuge* (2 Samuel 22:2-3). The eighteenth psalm sings it twin: *Yahuah (LORD) is my rock, and my fortress, and my deliverer; my Elohim (God), my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower* (Psalm 18:2). The Rock is no figure of stone but the unchanging deliverer — Hannah confessed him at the opening of these books, *neither is there any rock like our Elohim (God)* (1 Samuel 2:2), and Moses named him first, *He is the Rock, his work is perfect* (Deuteronomy 32:4). David never tires of the titles; his later psalm gathers them again — *My goodness, and my fortress; my high tower, and my deliverer; my shield, and he in whom I trust* (Psalm 144:2). The Rock who is the horn of salvation is the Formed Son, the rock of David''s salvation, in whom he trusts.',
+       sv.verse_id, ev.verse_id, 'free', 37775
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-the-snares-of-death-and-he-heard-my-voice',
+       E'The snares of death, and he heard my voice out of his temple',
+       E'The deliverance is praised because the danger was real: *When the waves of death compassed me, the floods of ungodly men made me afraid; The sorrows of hell compassed me about; the snares of death prevented me* (2 Samuel 22:5-6). The twin sings it the same — *The sorrows of death compassed me, and the floods of ungodly men made me afraid... the snares of death prevented me* (Psalm 18:4-5) — and a third psalm of the delivered takes up the very words, *The sorrows of death compassed me, and the pains of hell gat hold upon me: I found trouble and sorrow* (Psalm 116:3). From inside that snare comes the one act that opens the grave: *In my distress I called upon Yahuah (LORD), and cried to my Elohim (God): and he did hear my voice out of his temple, and my cry did enter into his ears* (2 Samuel 22:7) / *Then called I upon the name of Yahuah (LORD); O Yahuah (LORD), I beseech thee, deliver my soul* (Psalm 116:4). Calling on the Name is the door out of death — the voice from the trap reaches the temple of heaven, and the deliverer bends to hear.',
+       sv.verse_id, ev.verse_id, 'free', 37778
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-he-bowed-the-heavens-also-and-came-down',
+       E'He bowed the heavens also, and came down',
+       E'The God who hears does not stay seated: *Then the earth shook and trembled; the foundations of heaven moved and shook, because he was wroth* (2 Samuel 22:8). The twin opens the theophany the same — *Then the earth shook and trembled; the foundations also of the hills moved and were shaken, because he was wroth* (Psalm 18:7). Then comes the heart of it: *He bowed the heavens also, and came down; and darkness was under his feet. And he rode upon a cherub, and did fly: and he was seen upon the wings of the wind* (2 Samuel 22:10-11) / *He bowed the heavens also, and came down... yea, he did fly upon the wings of the wind* (Psalm 18:9-10). Yahuah does not deliver from a distance; he bends the heavens and descends, the visible Glory that dwelt between the cherubim above the ark, riding out in his chariot of cloud — *seen* upon the wind. This is the Formed Son, Yahuah who has a Father, stepping into the storm to take hold of his servant. The whole creation quakes when the deliverer comes down to save.',
+       sv.verse_id, ev.verse_id, 'free', 37781
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-he-delivered-me-because-he-delighted-in-me',
+       E'He delivered me, because he delighted in me',
+       E'The descent of the storm is for one purpose — to take hold of the one sinking: *He sent from above, he took me; he drew me out of many waters; He delivered me from my strong enemy, and from them that hated me: for they were too strong for me* (2 Samuel 22:17-18). The twin gives the same hand reaching down — *He sent from above, he took me, he drew me out of many waters* (Psalm 18:16) — and the same enemy too strong for the servant but never for the Rock (Psalm 18:17). Then the close, with the ground of it all laid bare: *He brought me forth also into a large place: he delivered me, because he delighted in me* (2 Samuel 22:20) / *he delivered me, because he delighted in me* (Psalm 18:19). Out of the narrow snare into a wide place — and the rescue flows not from the servant''s strength but from Yahuah''s delight in him. The deliverer takes the battle the servant could not win because he loves the one he saves.',
+       sv.verse_id, ev.verse_id, 'free', 37784
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-with-the-merciful-thou-wilt-shew-thyself-merciful',
+       E'With the merciful thou wilt shew thyself merciful',
+       E'The song names the law of the Rock''s dealing with men: *With the merciful thou wilt shew thyself merciful, and with the upright man thou wilt shew thyself upright; With the pure thou wilt shew thyself pure; and with the froward thou wilt shew thyself unsavoury* (2 Samuel 22:26-27). The twin sings it nearly word for word — *With the merciful thou wilt shew thyself merciful; with an upright man thou wilt shew thyself upright; With the pure thou wilt shew thyself pure; and with the froward thou wilt shew thyself froward* (Psalm 18:25-26). Yahuah meets each man as that man has walked: mercy answered with mercy, purity with purity, the twisted with the turning-back of judgment. He is not mocked. And the outcome is two-edged: *And the afflicted people thou wilt save: but thine eyes are upon the haughty, that thou mayest bring them down* (2 Samuel 22:28) / *thou wilt save the afflicted people; but wilt bring down high looks* (Psalm 18:27) — the lowly lifted, the proud humbled, Hannah''s very theme at the opening of these books.',
+       sv.verse_id, ev.verse_id, 'free', 37787
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=28
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-his-way-is-perfect-the-word-of-yahuah-is-tried',
+       E'His way is perfect; the word of Yahuah is tried',
+       E'The song rests on the tested word: *As for Elohim (God), his way is perfect; the word of Yahuah (LORD) is tried: he is a buckler to all them that trust in him. For who is Elohim (God), save Yahuah (LORD)? and who is a rock, save our Elohim (God)?* (2 Samuel 22:31-32). The twin keeps it word for word (Psalm 18:30-31). The word *tried* is the covenant-word proven in the fire — and to it the same promise Agur makes: *Every word of Elohim (God) is pure: he is a shield unto them that put their trust in him* (Proverbs 30:5). The tried word and the pure word are one, and both hold a shield over all who take refuge. The perfect way is the Rock''s own — *He is the Rock, his work is perfect... a Elohim (God) of truth and without iniquity* (Deuteronomy 32:4) — the same Rock Moses sang, without iniquity, just and right, whose proven word never fails them that trust in him.',
+       sv.verse_id, ev.verse_id, 'free', 37790
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=31
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 7
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed',
+       E'I will give thanks among the heathen; mercy to his seed for evermore',
+       E'The song ends turned outward and forward. Outward: *Therefore I will give thanks unto thee, O Yahuah (LORD), among the heathen, and I will sing praises unto thy name* (2 Samuel 22:50) — the twin word for word (Psalm 18:49). Moses had already called the nations to *Rejoice, O ye nations, with his people* (Deuteronomy 32:43), and Paul quotes David''s very line as the written proof the nations are brought IN to praise: *For this cause I will confess to thee among the Gentiles, and sing unto thy name* (Romans 15:9) — the wild branches gathered to sing the Davidic praise, never Yashar''el replaced. Forward: the Davidic-covenant doxology, *He is the tower of salvation for his king: and sheweth mercy to his anointed, unto David, and to his seed for evermore* (2 Samuel 22:51) / *Great deliverance giveth he to his king; and sheweth mercy to his anointed, to David, and to his seed for evermore* (Psalm 18:50). The mercy *to his seed for evermore* is the everlasting King: *an horn of salvation for us in the house of his servant David* (Luke 1:69), the help of *his servant Yashar''el (Israel)* in remembrance of mercy (Luke 1:54), the covenant sworn *to Abraham, and to his seed for ever* (Luke 1:55). And the Son, made the captain of salvation, takes the king''s own trust on his lips — *I will put my trust in him. And again, Behold I and the children which Elohim (God) hath given me* (Hebrews 2:13). The king who trusted the Rock is the type of the Son who trusts his Father and is not ashamed to call his people brethren.',
+       sv.verse_id, ev.verse_id, 'free', 37793
+  FROM _s341_2sa22_lookup sv, _s341_2sa22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=50
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=22 AND ev.verse_number=51
+ON CONFLICT (slug) DO NOTHING;
+
+-- Members thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:2 — *Yahuah is my rock, and my fortress, and my deliverer... the horn of my salvation, and my high tower*: the twin song, almost word for word.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=2
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-yahuah-is-my-rock-my-fortress-and-my-deliverer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Samuel 2:2 — *neither is there any rock like our Elohim*: Hannah''s confession opens these books as David''s song closes them — the Rock unlike any other.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=3
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-yahuah-is-my-rock-my-fortress-and-my-deliverer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 32:4 — *He is the Rock, his work is perfect*: Moses first names Yahuah the Rock; David takes the name up — the Formed Son, the rock of salvation.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=3
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-yahuah-is-my-rock-my-fortress-and-my-deliverer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 144:2 — *my fortress; my high tower, and my deliverer; my shield*: David gathers the very titles again; every battle drives him back to the one Rock.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=2
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=144 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-yahuah-is-my-rock-my-fortress-and-my-deliverer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:4 — *The sorrows of death compassed me, and the floods of ungodly men made me afraid*: the twin''s encircling terror, death like a flood.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=5
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-the-snares-of-death-and-he-heard-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:5 — *The sorrows of hell compassed me about: the snares of death prevented me*: word for word — the grave''s cords drawn tight.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=6
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-the-snares-of-death-and-he-heard-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:6 — *he heard my voice out of his temple*: the cry from the snare reaches the temple of heaven, and the deliverer bends to hear.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-the-snares-of-death-and-he-heard-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 116:3 — *the sorrows of death compassed me, and the pains of hell gat hold upon me*: another psalm of the delivered takes up the same dead-end before the rescue.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=6
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-the-snares-of-death-and-he-heard-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Psalm 116:4 — *Then called I upon the name of Yahuah; O Yahuah, I beseech thee, deliver my soul*: calling on the Name is the door out of the grave.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=7
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=116 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-the-snares-of-death-and-he-heard-my-voice'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:7 — *Then the earth shook and trembled... because he was wroth*: the twin opens the theophany the same — creation quakes when the deliverer rises.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-he-bowed-the-heavens-also-and-came-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:9 — *He bowed the heavens also, and came down: and darkness was under his feet*: the heart of the theophany, word for word — the Formed Glory descends to deliver.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=10
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-he-bowed-the-heavens-also-and-came-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:10 — *he rode upon a cherub... upon the wings of the wind*: the cherub-throne above the ark rides out — the Formed Son in his chariot of cloud, seen upon the wind.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=11
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-he-bowed-the-heavens-also-and-came-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:16 — *He sent from above, he took me, he drew me out of many waters*: the hand reaching down from on high into the flood of death.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-he-delivered-me-because-he-delighted-in-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:17 — *He delivered me from my strong enemy... for they were too strong for me*: the enemy too strong for David, never too strong for the Rock.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=18
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-he-delivered-me-because-he-delighted-in-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:19 — *he delivered me, because he delighted in me*: the ground of the rescue — Yahuah''s delight in his servant, not the servant''s strength.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-he-delivered-me-because-he-delighted-in-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:25 — *With the merciful thou wilt shew thyself merciful*: the twin''s law of the Rock''s dealing — mercy answered with mercy.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=26
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-with-the-merciful-thou-wilt-shew-thyself-merciful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:26 — *With the pure thou wilt shew thyself pure; and with the froward thou wilt shew thyself froward*: Yahuah is not mocked; the way a man takes is the way the Rock turns.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=27
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-with-the-merciful-thou-wilt-shew-thyself-merciful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 18:27 — *thou wilt save the afflicted people; but wilt bring down high looks*: the afflicted lifted, the haughty humbled — Hannah''s very theme.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=28
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-with-the-merciful-thou-wilt-shew-thyself-merciful'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:30 — *his way is perfect: the word of Yahuah is tried: he is a buckler to all those that trust in him*: word for word — the proven covenant-word, a shield.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=31
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-his-way-is-perfect-the-word-of-yahuah-is-tried'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 18:31 — *who is a rock save our Elohim?*: the buckler of the tried word rests on the one God who alone is the rock of salvation.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=32
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-his-way-is-perfect-the-word-of-yahuah-is-tried'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Proverbs 30:5 — *Every word of Elohim is pure: he is a shield unto them that put their trust in him*: Agur says of the word what David sings — tried and pure are one.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=31
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-his-way-is-perfect-the-word-of-yahuah-is-tried'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Deuteronomy 32:4 — *He is the Rock, his work is perfect*: the perfect way and the perfect work are one testimony — the Rock without iniquity, just and right.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=31
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-his-way-is-perfect-the-word-of-yahuah-is-tried'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 7
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Psalm 18:49 — *I will give thanks unto thee, O Yahuah, among the heathen, and sing praises unto thy name*: the twin word for word — praise carried out among the nations.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=50
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=49
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Romans 15:9 — *I will confess to thee among the Gentiles, and sing unto thy name*: Paul quotes this very verse — the nations brought IN to praise with his people, not Yashar''el replaced.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=50
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='romans' AND tv.chapter_number=15 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 32:43 — *Rejoice, O ye nations, with his people*: Moses already calls the nations to praise alongside Yashar''el — the ingathering David foreshadows.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=50
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=32 AND tv.verse_number=43
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Psalm 18:50 — *sheweth mercy to his anointed, to David, and to his seed for evermore*: the twin seals the song with the Davidic-covenant doxology.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=51
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=18 AND tv.verse_number=50
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Luke 1:69 — *an horn of salvation for us in the house of his servant David*: the mercy to David''s seed for ever fulfilled in the everlasting King.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=51
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=69
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Luke 1:54 — *He hath holpen his servant Yashar''el, in remembrance of his mercy*: the everlasting mercy to David''s seed is mercy to the whole people, not their setting aside.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=51
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=54
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Luke 1:55 — *to Abraham, and to his seed for ever*: the *for evermore* reaches back to the ancient sworn covenant — one unbroken line, Abraham to David to the King.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=51
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=1 AND tv.verse_number=55
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'Hebrews 2:13 — *I will put my trust in him... Behold I and the children which Elohim hath given me*: the Son takes the king''s own trust on his lips, not ashamed to call his people brethren.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=22 AND sv.verse_number=51
+  JOIN _s341_2sa22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=2 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-22-i-will-give-thanks-among-the-heathen-mercy-to-his-seed'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_23.sql (2 Samuel 23) -----
+-- 2 Samuel 23 — The Last Words of David (keystone) + the mighty men + the well of Beth-lehem
+-- Tag: 2sa23   View: _s341_2sa23_lookup   Sort band: 37800, step 3 (37800..37812)
+-- Framework: David the inspired PROPHET (the Spirit of Yahuah spake BY me → NT doctrine of
+--   inspiration); the everlasting Davidic covenant ordered and sure (2 Sam 7 / Ps 89 / Isa 55);
+--   the just ruler = the morning light = the Messianic King (Mal 4:2 / John 8:12 / Isa 11);
+--   the sons of Belial as thorns burned = the seed-war harvest (Matt 13); the well of
+--   Beth-lehem poured out = costly devotion, the city of David/Messiah.
+--
+-- 2 Samuel 23 coverage:
+--   v.1-2  NT:     Acts 2:30 (being a prophet); 2 Pet 1:21 (holy men spake by Ruach HaKodesh); 2 Tim 3:16 (all scripture by inspiration)
+--          Extras: none warranted
+--          Tanakh: none warranted (handled in the inspiration thread)
+--   v.3-4  NT:     John 8:12 (light of the world); Mal 4:2 (Sun of righteousness — Tanakh)
+--          Extras: none warranted
+--          Tanakh: Isaiah 11:1-4 (the righteous Branch judging); Malachi 4:2 (Sun of righteousness)
+--   v.5    NT:     Acts 2:30 (the oath, fruit of his loins)
+--          Extras: none warranted
+--          Tanakh: 2 Samuel 7:12-16 (the everlasting covenant); Psalm 89:3-4,28-29 (sure, ordered); Isaiah 55:3 (sure mercies of David)
+--   v.6-7  NT:     Matthew 13:30,40-42 (tares gathered and burned)
+--          Extras: none warranted
+--          Tanakh: Malachi 4:1 (the proud as stubble burned)
+--   v.8-14 NT:     none warranted (narrative roster — folded into the well thread at v.13-14)
+--          Extras: none warranted
+--          Tanakh: 1 Chronicles 11:15-18 (parallel)
+--   v.15-17 NT:    none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Chronicles 11:17-18 (parallel); Micah 5:2 (Beth-lehem, the ruler of old)
+--   v.18-39 NT:    none warranted (roll of the mighty men; ends Uriah the Hittite)
+--          Extras: none warranted
+--          Tanakh: 1 Chronicles 11 (parallel roster) — not separately threaded
+--
+-- Threads (5):
+--   2-samuel-23-the-spirit-of-yahuah-spake-by-me-david-the-prophet        [canon NT]   free
+--   2-samuel-23-the-just-ruler-is-the-light-of-the-morning-without-clouds  [canon Tanakh+NT] free
+--   2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure     [canon Tanakh+NT] free
+--   2-samuel-23-the-sons-of-belial-as-thorns-utterly-burned-with-fire      [canon Tanakh+NT] free
+--   2-samuel-23-the-water-of-the-well-of-beth-lehem-poured-out-unto-yahuah [canon Tanakh] free
+
+CREATE TEMP VIEW _s341_2sa23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: David the inspired prophet (the Spirit spake BY him)
+    ('canon','2-samuel',23,2,'canon','acts',2,30,'free',E'*Therefore being a prophet, and knowing that Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). David''s own claim — *The Spirit of Yahuah (LORD) spake by me, and his word was in my tongue* (2 Samuel 23:2) — is read forward by Peter as the testimony of David THE PROPHET. The last words are not a king''s memoir but inspired oracle: the Spirit of Yahuah speaking by him.'),
+    ('canon','2-samuel',23,2,'canon','2-peter',1,21,'free',E'*For the prophecy came not in old time by the will of man: but holy men of Elohim (God) spake as they were moved by the Ruach HaKodesh (Holy Spirit)* (2 Peter 1:21). This is the very mechanism David names of himself: *The Spirit of Yahuah (LORD) spake by me, and his word was in my tongue* (2 Samuel 23:2) — moved by the Ruach HaKodesh, the word given, the man the instrument. The Formed Son''s Spirit speaks through the prophet; the Father is the formless Source. Not the will of man.'),
+    ('canon','2-samuel',23,2,'canon','2-timothy',3,16,'free',E'*All scripture is given by inspiration of Elohim (God), and is profitable for doctrine, for reproof, for correction, for instruction in righteousness* (2 Timothy 3:16). The doctrine of inspiration stands on testimonies like David''s: *The Spirit of Yahuah (LORD) spake by me, and his word was in my tongue* (2 Samuel 23:2). The Tanakh is breathed out by Elohim through His prophets — not superseded, but the very pattern the apostle calls profitable and binding.'),
+    ('canon','2-samuel',23,1,'canon','acts',2,30,'free',E'*Therefore being a prophet, and knowing that Elohim (God) had sworn with an oath to him* (Acts 2:30). The opening — *the man who was raised up on high, the anointed of the Elohim (God) of Jacob, and the sweet psalmist of Yashar''el (Israel)* (2 Samuel 23:1) — names David as anointed psalmist and oracle-bearer, exactly the prophet Peter invokes when he reads David''s psalms as foreseeing the Messiah.'),
+
+    -- Thread 2: The just ruler = the light of the morning = the Messianic King
+    ('canon','2-samuel',23,3,'canon','isaiah',11,3,'free',E'*And shall make him of quick understanding in the fear of Yahuah (LORD): and he shall not judge after the sight of his eyes, neither reprove after the hearing of his ears* (Isaiah 11:3). David''s oracle of the ideal ruler — *He that ruleth over men must be just, ruling in the fear of Elohim (God)* (2 Samuel 23:3) — finds its full figure in the Branch out of Jesse''s stem, the righteous King judging in the fear of Yahuah. Both texts make the fear of Elohim the very ground of the just throne.'),
+    ('canon','2-samuel',23,3,'canon','isaiah',11,4,'free',E'*But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of his lips shall he slay the wicked* (Isaiah 11:4). The just ruler David foresees — *He that ruleth over men must be just* (2 Samuel 23:3) — is the Davidic Branch whose righteous judgment is the hope of the meek. The seed of David, ruling in the fear of Elohim, is the Messianic King.'),
+    ('canon','2-samuel',23,4,'canon','malachi',4,2,'free',E'*But unto you that fear my name shall the Sun of righteousness arise with healing in his wings; and ye shall go forth, and grow up as calves of the stall* (Malachi 4:2). David''s figure — *as the light of the morning, when the sun riseth, even a morning without clouds* (2 Samuel 23:4) — is the rising Sun of righteousness, the dawning of the just King upon those that fear the Name. The morning without clouds is the day the Messiah brings.'),
+    ('canon','2-samuel',23,4,'canon','john',8,12,'free',E'*Then spake Yahusha (Jesus) again unto them, saying, I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). The just ruler shines *as the light of the morning, when the sun riseth, even a morning without clouds* (2 Samuel 23:4); the Formed Son, the seed of David, is that morning light made flesh — the light of life for all who follow.'),
+
+    -- Thread 3: The everlasting covenant ordered and sure
+    ('canon','2-samuel',23,5,'canon','2-samuel',7,12,'free',E'*And when thy days be fulfilled, and thou shalt sleep with thy fathers, I will set up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom* (2 Samuel 7:12). David''s dying hope — *yet he hath made with me an everlasting covenant, ordered in all things, and sure* (2 Samuel 23:5) — looks back to the oath of 2 Samuel 7: the seed established, the throne for ever. This is the everlasting covenant he leans his whole salvation upon.'),
+    ('canon','2-samuel',23,5,'canon','2-samuel',7,16,'free',E'*And thine house and thy kingdom shall be established for ever before thee: thy throne shall be established for ever* (2 Samuel 7:16). When David says the covenant is *ordered in all things, and sure: for this is all my salvation, and all my desire* (2 Samuel 23:5), the surety is this very word — the house and throne established for ever. Though *my house be not so with Elohim (God)*, the covenant does not fail.'),
+    ('canon','2-samuel',23,5,'canon','psalms',89,29,'free',E'*His seed also will I make to endure for ever, and his throne as the days of heaven* (Psalm 89:29). The everlasting covenant *ordered in all things, and sure* (2 Samuel 23:5) is sung in Psalm 89: the seed enduring, the throne as the days of heaven — *My covenant will I not break, nor alter the thing that is gone out of my lips* (Psalm 89:34). The two-house King''s line is the unbreakable oath.'),
+    ('canon','2-samuel',23,5,'canon','psalms',89,3,'free',E'*I have made a covenant with my chosen, I have sworn unto David my servant, Thy seed will I establish for ever, and build up thy throne to all generations* (Psalm 89:3-4). David''s confidence that the covenant is *ordered in all things, and sure* (2 Samuel 23:5) rests on this sworn word: the seed established for ever. The promise to David is paternal seed AND covenant-word together, never one alone.'),
+    ('canon','2-samuel',23,5,'canon','isaiah',55,3,'free',E'*Incline your ear, and come unto me: hear, and your soul shall live; and I will make an everlasting covenant with you, even the sure mercies of David* (Isaiah 55:3). The very phrase — *an everlasting covenant, ordered in all things, and sure* (2 Samuel 23:5) — is taken up by Isaiah as *the sure mercies of David*, offered now to the whole gathered people. David''s sure covenant becomes Yashar''el''s sure invitation.'),
+    ('canon','2-samuel',23,5,'canon','acts',2,30,'free',E'*Therefore being a prophet, and knowing that Elohim (God) had sworn with an oath to him, that of the fruit of his loins, according to the flesh, he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). David''s *everlasting covenant, ordered in all things, and sure* (2 Samuel 23:5) is the oath Peter names — the fruit of David''s loins raised up to the throne. All his salvation and all his desire is the promised Seed.'),
+
+    -- Thread 4: The sons of Belial as thorns utterly burned
+    ('canon','2-samuel',23,6,'canon','malachi',4,1,'free',E'*For, behold, the day cometh, that shall burn as an oven; and all the proud, yea, and all that do wickedly, shall be stubble: and the day that cometh shall burn them up, saith Yahuah Tseva''ot (LORD of hosts), that it shall leave them neither root nor branch* (Malachi 4:1). David''s last words set *the sons of Belial* over against the just King — *as thorns thrust away, because they cannot be taken with hands* (2 Samuel 23:6) — and Malachi names their end: the proud as stubble, burned up in the day of Yahuah.'),
+    ('canon','2-samuel',23,7,'canon','matthew',13,30,'free',E'*Let both grow together until the harvest: and in the time of harvest I will say to the reapers, Gather ye together first the tares, and bind them in bundles to burn them: but gather the wheat into my barn* (Matthew 13:30). The serpent''s seed — the sons of Belial — *shall be utterly burned with fire in the same place* (2 Samuel 23:7); the Son of Adam''s harvest gathers the tares into bundles to burn. The seed-war of Genesis 3:15 runs to this fire.'),
+    ('canon','2-samuel',23,7,'canon','matthew',13,40,'free',E'*As therefore the tares are gathered and burned in the fire; so shall it be in the end of this world* (Matthew 13:40). David''s thorns *shall be utterly burned with fire in the same place* (2 Samuel 23:7); Yahusha (Jesus) names the same end — *The Son of Adam shall send forth his angels, and they shall gather out of his kingdom all things that offend, and them which do iniquity* (Matthew 13:41). The wicked dismantled, never the lost sheep hated.'),
+
+    -- Thread 5: The water of the well of Beth-lehem poured out
+    ('canon','2-samuel',23,16,'canon','1-chronicles',11,18,'free',E'*And the three brake through the host of the Philistines, and drew water out of the well of Beth-lehem, that was by the gate, and took it, and brought it to David: but David would not drink of it, but poured it out to Yahuah (LORD)* (1 Chronicles 11:18). The parallel record confirms the act: the costly water *poured it out unto Yahuah (LORD)* (2 Samuel 23:16) — David will not drink what cost his men''s blood, but offers it as a drink-offering before Yahuah.'),
+    ('canon','2-samuel',23,17,'canon','1-chronicles',11,17,'free',E'*And David longed, and said, Oh that one would give me drink of the water of the well of Beth-lehem, that is at the gate!* (1 Chronicles 11:17). David''s refusal — *is not this the blood of the men that went in jeopardy of their lives?* (2 Samuel 23:17) — treats the longed-for water as life poured out; the Chronicler preserves the same longing, the same poured offering, the costly devotion at the gate of Beth-lehem.'),
+    ('canon','2-samuel',23,15,'canon','micah',5,2,'free',E'*But thou, Beth-lehem Ephratah, though thou be little among the thousands of Yahudah (Judah), yet out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting* (Micah 5:2). David''s longing is for *the water of the well of Beth-lehem, which is by the gate* (2 Samuel 23:15) — the city of David, from whose well the ruler of Yashar''el would one day come forth. The poured water at Beth-lehem foreshadows the life poured at the city of the King.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-23-the-spirit-of-yahuah-spake-by-me-david-the-prophet', E'The Spirit of Yahuah Spake By Me — David the Prophet',
+ E'David''s dying words are not a king''s memoir but inspired oracle. *David the son of Jesse said, and the man who was raised up on high, the anointed of the Elohim (God) of Jacob, and the sweet psalmist of Yashar''el (Israel), said, The Spirit of Yahuah (LORD) spake by me, and his word was in my tongue* (2 Samuel 23:1-2). The Spirit speaks BY him — the word given, the man the instrument. Peter reads David exactly so: *Therefore being a prophet, and knowing that Elohim (God) had sworn with an oath to him* (Acts 2:30). And the mechanism David names is the apostolic doctrine of inspiration: *holy men of Elohim (God) spake as they were moved by the Ruach HaKodesh (Holy Spirit)* (2 Peter 1:21); *All scripture is given by inspiration of Elohim (God)* (2 Timothy 3:16). The Formed Son''s Spirit speaks through the prophet; the Father is the formless Source. The Tanakh is breathed out — not the will of man, never superseded.',
+ sv.verse_id, ev.verse_id, 'free', 37800
+  FROM _s341_2sa23_lookup sv, _s341_2sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=23 AND ev.verse_number=2
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-23-the-just-ruler-is-the-light-of-the-morning-without-clouds', E'The Just Ruler Is the Light of the Morning Without Clouds',
+ E'David''s oracle paints the ideal King: *He that ruleth over men must be just, ruling in the fear of Elohim (God). And he shall be as the light of the morning, when the sun riseth, even a morning without clouds* (2 Samuel 23:3-4). This is the Messianic Branch — the seed of David who rules in the fear of Yahuah. *And there shall come forth a rod out of the stem of Jesse... he shall not judge after the sight of his eyes... but with righteousness shall he judge the poor* (Isaiah 11:1,3-4). The morning light is the rising Messiah: *unto you that fear my name shall the Sun of righteousness arise with healing in his wings* (Malachi 4:2); *I am the light of the world: he that followeth me shall not walk in darkness, but shall have the light of life* (John 8:12). The just King David foresaw is the Formed Son, the morning without clouds.',
+ sv.verse_id, ev.verse_id, 'free', 37803
+  FROM _s341_2sa23_lookup sv, _s341_2sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=23 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure', E'An Everlasting Covenant, Ordered in All Things, and Sure',
+ E'David''s whole hope, dying, is one covenant: *Although my house be not so with Elohim (God); yet he hath made with me an everlasting covenant, ordered in all things, and sure: for this is all my salvation, and all my desire* (2 Samuel 23:5). The surety is the oath of 2 Samuel 7: *I will set up thy seed after thee... thine house and thy kingdom shall be established for ever* (2 Samuel 7:12,16). Psalm 89 sings it: *I have sworn unto David my servant, Thy seed will I establish for ever* (89:3-4); *His seed also will I make to endure for ever, and his throne as the days of heaven* (89:29); *My covenant will I not break* (89:34). Isaiah hands the same surety to the gathered people: *I will make an everlasting covenant with you, even the sure mercies of David* (Isaiah 55:3). And Peter names the oath fulfilled: *that of the fruit of his loins... he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30). The promised Seed — paternal line and covenant-word together — is all David''s salvation.',
+ sv.verse_id, ev.verse_id, 'free', 37806
+  FROM _s341_2sa23_lookup sv, _s341_2sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=23 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-23-the-sons-of-belial-as-thorns-utterly-burned-with-fire', E'The Sons of Belial as Thorns Utterly Burned With Fire',
+ E'Set against the just King are the seed of the serpent: *the sons of Belial shall be all of them as thorns thrust away, because they cannot be taken with hands... they shall be utterly burned with fire in the same place* (2 Samuel 23:6-7). This is the enmity of Genesis 3:15 running to its harvest. Malachi names their end: *the day that cometh shall burn them up... that it shall leave them neither root nor branch* (Malachi 4:1). And the Son of Adam reaps the same field: *Gather ye together first the tares, and bind them in bundles to burn them* (Matthew 13:30); *so shall it be in the end of this world* (Matthew 13:40). The wicked system is dismantled and burned — never the lost sheep hated, never a people attacked; the thorns are conduct in the seed-war, judged by the righteous King.',
+ sv.verse_id, ev.verse_id, 'free', 37809
+  FROM _s341_2sa23_lookup sv, _s341_2sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=23 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-23-the-water-of-the-well-of-beth-lehem-poured-out-unto-yahuah', E'The Water of the Well of Beth-lehem Poured Out Unto Yahuah',
+ E'The three mighty men break through the Philistine host for one longing: *Oh that one would give me drink of the water of the well of Beth-lehem, which is by the gate!* (2 Samuel 23:15). They draw it and bring it; but David will not drink it: *he would not drink thereof, but poured it out unto Yahuah (LORD)... is not this the blood of the men that went in jeopardy of their lives?* (2 Samuel 23:16-17). What cost his men''s blood he offers as a drink-offering before Yahuah. The Chronicler preserves the same costly devotion: *but David would not drink of it, but poured it out to Yahuah (LORD)* (1 Chronicles 11:18). And the well is at Beth-lehem — the city of David, the city of the King to come: *But thou, Beth-lehem Ephratah... out of thee shall he come forth unto me that is to be ruler in Yashar''el (Israel); whose goings forth have been from of old, from everlasting* (Micah 5:2). The water poured at Beth-lehem''s gate foreshadows the life poured out at the city of the Messiah.',
+ sv.verse_id, ev.verse_id, 'free', 37812
+  FROM _s341_2sa23_lookup sv, _s341_2sa23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=23 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- Thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Therefore being a prophet* (Acts 2:30) — Peter reads David''s last words as the oracle of David THE PROPHET, the Spirit speaking by him.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-spirit-of-yahuah-spake-by-me-david-the-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*holy men of Elohim (God) spake as they were moved by the Ruach HaKodesh* (2 Peter 1:21) — the exact mechanism David names of himself: moved by the Spirit, the word given.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-peter' AND tv.chapter_number=1 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-spirit-of-yahuah-spake-by-me-david-the-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*All scripture is given by inspiration of Elohim (God)* (2 Timothy 3:16) — the Tanakh breathed out through prophets like David; profitable and binding, never superseded.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-timothy' AND tv.chapter_number=3 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-spirit-of-yahuah-spake-by-me-david-the-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Therefore being a prophet* (Acts 2:30) — the anointed sweet psalmist of Yashar''el (2 Samuel 23:1) is the prophet Peter invokes.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=1
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-spirit-of-yahuah-spake-by-me-david-the-prophet'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*he shall not judge after the sight of his eyes* (Isaiah 11:3) — the Branch out of Jesse judging in the fear of Yahuah, the just ruler David foresaw.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-just-ruler-is-the-light-of-the-morning-without-clouds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*with righteousness shall he judge the poor* (Isaiah 11:4) — the righteous Davidic King, the hope of the meek; David''s just ruler made full.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=11 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-just-ruler-is-the-light-of-the-morning-without-clouds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the Sun of righteousness arise with healing in his wings* (Malachi 4:2) — the morning light of 2 Samuel 23:4 is the rising Messiah upon those that fear the Name.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-just-ruler-is-the-light-of-the-morning-without-clouds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I am the light of the world* (John 8:12) — the Formed Son, seed of David, is the morning without clouds made flesh, the light of life.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=8 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-just-ruler-is-the-light-of-the-morning-without-clouds'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I will set up thy seed after thee* (2 Samuel 7:12) — the oath behind the everlasting covenant David leans on, the seed established.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thy throne shall be established for ever* (2 Samuel 7:16) — the surety that makes the covenant "ordered and sure" though David''s house be not so.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-samuel' AND tv.chapter_number=7 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*His seed also will I make to endure for ever* (Psalm 89:29) — the covenant Yahuah will not break, sung over David''s sure throne.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I have sworn unto David my servant, Thy seed will I establish for ever* (Psalm 89:3) — the sworn word; seed AND covenant-word together, never one alone.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=89 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*an everlasting covenant with you, even the sure mercies of David* (Isaiah 55:3) — David''s sure covenant handed to the whole gathered people.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=55 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*the fruit of his loins... he would raise up Messiah (Christ) to sit on his throne* (Acts 2:30) — the oath fulfilled in the promised Seed, all David''s salvation.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=5
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=2 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-an-everlasting-covenant-ordered-in-all-things-and-sure'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the proud... shall be stubble; and the day that cometh shall burn them up* (Malachi 4:1) — the end of the sons of Belial, neither root nor branch.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=6
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=4 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-sons-of-belial-as-thorns-utterly-burned-with-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Gather ye together first the tares, and bind them in bundles to burn them* (Matthew 13:30) — the seed-war harvest; the thorns burned in the same place.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=7
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-sons-of-belial-as-thorns-utterly-burned-with-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the tares are gathered and burned in the fire; so shall it be in the end of this world* (Matthew 13:40) — the Son of Adam''s reaping; the wicked dismantled, never the lost sheep hated.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=7
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=40
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-sons-of-belial-as-thorns-utterly-burned-with-fire'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*but David would not drink of it, but poured it out to Yahuah (LORD)* (1 Chronicles 11:18) — the parallel record of the costly drink-offering at Beth-lehem.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=11 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-water-of-the-well-of-beth-lehem-poured-out-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Oh that one would give me drink of the water of the well of Beth-lehem* (1 Chronicles 11:17) — the same longing preserved; the water treated as life poured out.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=11 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-water-of-the-well-of-beth-lehem-poured-out-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*But thou, Beth-lehem Ephratah... out of thee shall he come forth... that is to be ruler in Yashar''el* (Micah 5:2) — the well is at the city of David, the city of the King to come.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=23 AND sv.verse_number=15
+  JOIN _s341_2sa23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-23-the-water-of-the-well-of-beth-lehem-poured-out-unto-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-samuel_24.sql (2 Samuel 24) -----
+--
+-- 2 Samuel 24 — THE CENSUS, THE PLAGUE, AND THE THRESHINGFLOOR THAT IS MOUNT MORIAH. The final
+--   chapter of 2 Samuel and the climactic close of the Former-Prophets Davidic arc. David is moved
+--   to NUMBER Yashar''el — a census in pride/self-reliance, against the trust due to Yahuah; the
+--   parallel 1 Chronicles 21:1 names the satan/adversary as the inciter (dual agency); Exodus 30:12
+--   shows the ransom that should have covered the numbering, neglected here, *that there be no
+--   plague among them*. The plague falls; David chooses to fall into the merciful hand of Yahuah
+--   rather than man (24:14); the angel of Yahuah with the drawn sword is stretched over Jerusalem
+--   (the Formed Son who bears the Name, NOT co-equal-trinity, NOT Arian); David the shepherd-king
+--   offers himself for the flock — *these sheep, what have they done? let thine hand be against me*
+--   (24:17), a faint Messianic shadow; Gad sends him to rear an altar in the threshingfloor of
+--   Araunah; David insists on costly worship — *neither will I offer... of that which doth cost me
+--   nothing* (24:24); and the plague stays at that threshingfloor — which 2 Chronicles 3:1 names as
+--   MOUNT MORIAH, the place of Abraham''s offering of Isaac (Genesis 22:2) and the site of Solomon''s
+--   temple. The Akedah mount becomes the altar where wrath is stayed by sacrifice, which becomes the
+--   temple. Tag 2sa24. Sort band base 37825, step 3.
+--
+-- FRAMEWORK: pride of self-numbering vs trust in Yahuah (the ransom of Exodus 30:12 neglected, the
+--   restraint of 1 Chronicles 27:23-24 abandoned); falling into Yahuah''s merciful hand; the Formed
+--   Son as the angel of Yahuah with the drawn sword; the shepherd-king''s self-offering for the sheep
+--   (John 10; Isaiah 53); costly worship (Psalm 51 — the broken and contrite heart that Yahuah will
+--   not despise, not cheap sacrifice); and the threshingfloor = Moriah = the temple site, the
+--   mercy-place where judgment is stayed by sacrifice becomes the house of Yahuah.
+--
+-- 2 Samuel 24 coverage:
+--   v.1-9   NT:     none warranted (census-narrative; dual agency + ransom run Tanakh-laterally)
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 21:1 (Satan stood up and provoked David to number Yashar''el);
+--                   1 Chronicles 21:5 (the sum of the number); Exodus 30:12 (a ransom for his soul...
+--                   that there be no plague when thou numberest them); 1 Chronicles 27:23 (David took
+--                   not the number from twenty years old and under); 1 Chronicles 27:24 (the wrath fell)
+--   v.10,14 NT:     none warranted (David''s confession + choice of mercy; Psalm 51 carries it)
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 21:13 (let me fall now into the hand of Yahuah; very great are his
+--                   mercies); Psalm 51:1 (have mercy... according to the multitude of thy tender mercies)
+--   v.16    NT:     none warranted (the angel of Yahuah = the Formed Son, woven Tanakh-laterally)
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 21:15 (the angel... It is enough, stay now thine hand); 1 Chronicles
+--                   21:16 (the angel of Yahuah... a drawn sword in his hand stretched out over Jerusalem);
+--                   Genesis 22:11 (the angel of Yahuah called out of heaven)
+--   v.17    NT:     John 10:11 (the good shepherd giveth his life for the sheep); John 10:15 (I lay
+--                   down my life for the sheep)
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 21:17 (let thine hand be on me... but not on thy people); Isaiah 53:6
+--                   (all we like sheep have gone astray... Yahuah hath laid on him the iniquity of us all)
+--   v.24    NT:     none warranted (costly worship; Psalm 51 carries the broken-heart sacrifice)
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 21:24 (I will not take that which is thine... nor offer without cost);
+--                   Psalm 51:16 (thou desirest not sacrifice; thou delightest not in burnt offering);
+--                   Psalm 51:17 (the sacrifices of Elohim are a broken spirit)
+--   v.18,25 NT:     none warranted (the threshingfloor/altar = Moriah = the temple, woven Tanakh-laterally)
+--           Extras: none warranted
+--           Tanakh: 1 Chronicles 21:18 (set up an altar in the threshingfloor of Ornan); 1 Chronicles
+--                   21:26 (he answered him from heaven by fire upon the altar); 2 Chronicles 3:1 (the
+--                   house of Yahuah in mount Moriah... in the threshingfloor of Ornan); Genesis 22:2 (get
+--                   thee into the land of Moriah; offer him there); Genesis 22:14 (Yahuah Yireh... in the
+--                   mount of Yahuah it shall be seen)
+--   v.2-9,11-13,15,19-23 NT/Extras/Tanakh: none warranted (Joab''s objection, Gad''s three options,
+--                   the route, Araunah''s offer — narrative bridges carried by the surrounding threads)
+--
+-- THREADS (6):
+--   2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom   [Tanakh] self-numbering vs trust; dual agency; the ransom of Exodus 30 neglected
+--   2-samuel-24-let-us-fall-into-the-hand-of-yahuah-for-his-mercies        [Tanakh] David chooses the merciful hand of Yahuah over man
+--   2-samuel-24-the-angel-of-yahuah-with-the-drawn-sword-over-jerusalem    [Tanakh] the Formed Son, the angel who bears the Name, the staying hand
+--   2-samuel-24-these-sheep-what-have-they-done-let-thine-hand-be-against-me [Tanakh+NT] the shepherd-king offers himself for the flock
+--   2-samuel-24-neither-will-i-offer-of-that-which-cost-me-nothing         [Tanakh] costly worship; the broken and contrite heart
+--   2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site         [Tanakh] the Akedah mount = the altar where wrath is stayed = the temple
+
+CREATE TEMP VIEW _s341_2sa24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: Go, number Yashar'el — the census and the neglected ransom
+    ('canon','2-samuel',24,1,'canon','1-chronicles',21,1,'free',
+      E'*And Satan stood up against Yashar''el (Israel), and provoked David to number Yashar''el (Israel)* (1 Chronicles 21:1). The Chronicler names the inciter the older account leaves veiled in ''*he moved David against them to say, Go, number Yashar''el (Israel) and Yahudah (Judah)*'' (2 Samuel 24:1): the adversary stands up to provoke the count. The dual agency is no contradiction — Yahuah''s kindled anger gives the tempter room, and David''s own pride of self-reckoning is the sin; the satan only stirs what was already in the king''s heart.'),
+    ('canon','2-samuel',24,9,'canon','1-chronicles',21,5,'free',
+      E'*And Joab gave the sum of the number of the people unto David. And all they of Yashar''el (Israel) were a thousand thousand and an hundred thousand men that drew sword: and Yahudah (Judah) was four hundred threescore and ten thousand men that drew sword* (1 Chronicles 21:5). The same tally Joab grudgingly delivers — ''*there were in Yashar''el (Israel) eight hundred thousand valiant men that drew the sword; and the men of Yahudah (Judah) were five hundred thousand*'' (2 Samuel 24:9). The numbers count *men that drew sword*: David has measured his strength in swords, the very self-reliance the count betrays.'),
+    ('canon','2-samuel',24,2,'canon','exodus',30,12,'free',
+      E'*When thou takest the sum of the children of Yashar''el (Israel) after their number, then shall they give every man a ransom for his soul unto Yahuah (LORD), when thou numberest them; that there be no plague among them, when thou numberest them* (Exodus 30:12). The Torah had set the terms for any census: a ransom-price *that there be no plague*. David''s command ''*number ye the people, that I may know the number of the people*'' (2 Samuel 24:2) numbers without the ransom — and the plague the Torah warned of breaks out. The numbering itself was never forbidden; numbering in pride, without the atonement-money that confesses the people are Yahuah''s and not the king''s, is.'),
+    ('canon','2-samuel',24,2,'canon','1-chronicles',27,23,'free',
+      E'*But David took not the number of them from twenty years old and under: because Yahuah (LORD) had said he would increase Yashar''el (Israel) like to the stars of the heavens* (1 Chronicles 27:23). The Chronicler remembers a time David knew better — he would not count the young because the people''s increase rested on Yahuah''s promise to Abraham (*as the stars of the heaven*, Genesis 22:17), not on a king''s tally. The census of ''*number ye the people, that I may know the number*'' (2 Samuel 24:2) abandons that trust: to number the seed of promise as one''s own asset is to forget whose they are.'),
+    ('canon','2-samuel',24,1,'canon','1-chronicles',27,24,'free',
+      E'*Joab the son of Zeruiah began to number, but he finished not, because there fell wrath for it against Yashar''el (Israel); neither was the number put in the account of the chronicles of king David* (1 Chronicles 27:24). The Chronicler''s aside seals the verdict on the count that ''*the anger of Yahuah (LORD) was kindled against Yashar''el (Israel)*'' provoked (2 Samuel 24:1): wrath fell for it, and the number was struck from the royal record — a tally Yahuah would not let stand, the sin of self-reckoning blotted from the books.'),
+    -- Thread 2: Let us fall into the hand of Yahuah, for his mercies are great
+    ('canon','2-samuel',24,14,'canon','1-chronicles',21,13,'free',
+      E'*And David said unto Gad, I am in a great strait: let me fall now into the hand of Yahuah (LORD); for very great are his mercies: but let me not fall into the hand of man* (1 Chronicles 21:13). The choice is one in both books — ''*let us fall now into the hand of Yahuah (LORD); for his mercies are great: and let me not fall into the hand of man*'' (2 Samuel 24:14). Brought to the strait by his own pride, David casts himself not on the mercy of foes but on the mercy of Yahuah, which he knows to be *great*: better the hand that wounds and heals than the hand of man that only destroys.'),
+    ('canon','2-samuel',24,10,'canon','psalms',51,1,'free',
+      E'*Have mercy upon me, O Elohim (God), according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions* (Psalm 51:1). David''s heart-smitten cry ''*I have sinned greatly in that I have done... take away the iniquity of thy servant; for I have done very foolishly*'' (2 Samuel 24:10) is the same penitence the psalm pours out: a man who has sinned greatly throwing himself wholly on the *multitude of tender mercies* — the same great mercy he then chooses to fall into rather than the hand of man.'),
+    -- Thread 3: The angel of Yahuah with the drawn sword stretched over Jerusalem
+    ('canon','2-samuel',24,16,'canon','1-chronicles',21,15,'free',
+      E'*And Elohim (God) sent an angel unto Jerusalem to destroy it: and as he was destroying, Yahuah (LORD) beheld, and he repented him of the evil, and said to the angel that destroyed, It is enough, stay now thine hand. And the angel of Yahuah (LORD) stood by the threshingfloor of Ornan the Jebusite* (1 Chronicles 21:15). The Chronicler tells the same staying of the hand — ''*It is enough: stay now thine hand. And the angel of Yahuah (LORD) was by the threshingplace of Araunah*'' (2 Samuel 24:16). At the very threshingfloor where the temple will stand, the destroying hand is halted by the word of Yahuah; mercy stops the sword at the mercy-place.'),
+    ('canon','2-samuel',24,16,'canon','1-chronicles',21,16,'free',
+      E'*And David lifted up his eyes, and saw the angel of Yahuah (LORD) stand between the earth and the heaven, having a drawn sword in his hand stretched out over Jerusalem* (1 Chronicles 21:16). The Chronicler shows what stood by the threshingfloor: the angel of Yahuah between heaven and earth, *a drawn sword... stretched out over Jerusalem*. This is the Angel who bears the Name — the Formed Son, the visible One who met Abraham and Jacob and led Yashar''el — Yahuah who has a Father, neither a co-equal person in a triad nor a mere creature, the bearer of the Name whose hand the Father stays.'),
+    ('canon','2-samuel',24,16,'canon','genesis',22,11,'free',
+      E'*And the angel of Yahuah (LORD) called unto him out of heaven, and said, Abraham, Abraham: and he said, Here am I* (Genesis 22:11). The same Angel of Yahuah who once stayed Abraham''s knife on this very mountain now stands with the drawn sword over Jerusalem and is told ''*stay now thine hand*'' (2 Samuel 24:16). On Moriah the Angel halts a hand from the slaying and a hand from the smiting — the Formed Son, the One who bears the Name, present at the binding and present at the plague, both stayed at the place of the altar.'),
+    -- Thread 4: These sheep, what have they done? let thine hand be against me
+    ('canon','2-samuel',24,17,'canon','1-chronicles',21,17,'free',
+      E'*And David said unto Elohim (God), Is it not I that commanded the people to be numbered? even I it is that have sinned and done evil indeed; but as for these sheep, what have they done? let thine hand, I pray thee, O Yahuah (LORD) my Elohim (God), be on me, and on my father''s house; but not on thy people, that they should be plagued* (1 Chronicles 21:17). The Chronicler fills out David''s plea — the same offering of himself as ''*Lo, I have sinned, and I have done wickedly: but these sheep, what have they done? let thine hand, I pray thee, be against me, and against my father''s house*'' (2 Samuel 24:17). The shepherd-king stands between the sword and the flock and asks that the stroke fall on him: the faint shadow of the Shepherd who would.'),
+    ('canon','2-samuel',24,17,'canon','john',10,11,'free',
+      E'*I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11). David''s cry ''*these sheep, what have they done? let thine hand, I pray thee, be against me*'' (2 Samuel 24:17) is the shepherd-king reaching for what only the true Shepherd accomplishes: David offers to bear the stroke for the flock, but the plague is stayed by sacrifice at the altar — the Good Shepherd lays down his very life for the sheep, the thing David could only pray.'),
+    ('canon','2-samuel',24,17,'canon','john',10,15,'free',
+      E'*As the Father knoweth me, even so know I the Father: and I lay down my life for the sheep* (John 10:15). The Shepherd who knows the Father — the Formed Son who HAS a Father — does in full what David asked in part: ''*let thine hand, I pray thee, be against me*'' (2 Samuel 24:17). David would shield *these sheep*; the Son lays down his life for them, the stroke fallen on the Shepherd that the flock might live.'),
+    ('canon','2-samuel',24,17,'canon','isaiah',53,6,'free',
+      E'*All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all* (Isaiah 53:6). David names himself the sinner and the people *these sheep*; Isaiah names the whole flock astray and the iniquity laid not on the sheep but on the Servant. ''*Let thine hand, I pray thee, be against me*'' (2 Samuel 24:17) is the shepherd-king''s instinct fulfilled in the One on whom Yahuah lays the iniquity of all the straying sheep.'),
+    -- Thread 5: Neither will I offer of that which doth cost me nothing
+    ('canon','2-samuel',24,24,'canon','1-chronicles',21,24,'free',
+      E'*And king David said to Ornan, Nay; but I will verily buy it for the full price: for I will not take that which is thine for Yahuah (LORD), nor offer burnt offerings without cost* (1 Chronicles 21:24). The Chronicler keeps David''s refusal of cheap worship word for word with ''*neither will I offer burnt offerings unto Yahuah Elohai (the LORD my God) of that which doth cost me nothing*'' (2 Samuel 24:24). Araunah offers the floor, the oxen, the wood for nothing; David will not lay before Yahuah a sacrifice that cost him nothing. True worship is never free to the worshipper.'),
+    ('canon','2-samuel',24,24,'canon','psalms',51,16,'free',
+      E'*For thou desirest not sacrifice; else would I give it: thou delightest not in burnt offering* (Psalm 51:16). David''s insistence on a costly offering ''*of that which doth cost me nothing*'' (2 Samuel 24:24) is no contradiction of the psalm but its very heart: the burnt offering Yahuah delights in is not the carcass but the cost — the surrendered self behind it. David will not bring a sacrifice that costs nothing because the offering Yahuah desires is the one that costs the offerer everything.'),
+    ('canon','2-samuel',24,24,'canon','psalms',51,17,'free',
+      E'*The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17). The costliness David guards in ''*neither will I offer... of that which doth cost me nothing*'' (2 Samuel 24:24) is named here: the sacrifice that costs is the broken and contrite heart. The same penitent king who had sinned greatly in numbering will not cheapen worship — the altar he builds is paid for in silver and in a humbled spirit.'),
+    -- Thread 6: The threshingfloor is mount Moriah, the temple site
+    ('canon','2-samuel',24,18,'canon','1-chronicles',21,18,'free',
+      E'*Then the angel of Yahuah (LORD) commanded Gad to say to David, that David should go up, and set up an altar unto Yahuah (LORD) in the threshingfloor of Ornan the Jebusite* (1 Chronicles 21:18). The Chronicler keeps the same command of ''*Go up, rear an altar unto Yahuah (LORD) in the threshingfloor of Araunah the Jebusite*'' (2 Samuel 24:18). The altar is placed exactly where the destroying angel stood — the spot of judgment is made the spot of sacrifice, and that spot is the threshingfloor that will become the temple mount.'),
+    ('canon','2-samuel',24,25,'canon','1-chronicles',21,26,'free',
+      E'*And David built there an altar unto Yahuah (LORD), and offered burnt offerings and peace offerings, and called upon Yahuah (LORD); and he answered him from heaven by fire upon the altar of burnt offering* (1 Chronicles 21:26). Where 2 Samuel says simply ''*So Yahuah (LORD) was intreated for the land, and the plague was stayed*'' (2 Samuel 24:25), the Chronicler adds the sign: fire from heaven on the altar — Yahuah''s own seal that this threshingfloor is the chosen place, the answer-by-fire that marks where the house of Yahuah will rise.'),
+    ('canon','2-samuel',24,18,'canon','2-chronicles',3,1,'free',
+      E'*Then Solomon began to build the house of Yahuah (LORD) at Jerusalem in mount Moriah, where Yahuah (LORD) appeared unto David his father, in the place that David had prepared in the threshingfloor of Ornan the Jebusite* (2 Chronicles 3:1). The threshingfloor where David is told to ''*rear an altar*'' (2 Samuel 24:18) is named outright: mount Moriah, the place David prepared, where Solomon builds the temple. The mercy-place where the plague was stayed by sacrifice becomes the house of Yahuah itself.'),
+    ('canon','2-samuel',24,18,'canon','genesis',22,2,'free',
+      E'*And he said, Take now thy son, thine only son Isaac, whom thou lovest, and get thee into the land of Moriah; and offer him there for a burnt offering upon one of the mountains which I will tell thee of* (Genesis 22:2). The same *land of Moriah* where Abraham bound Isaac for a burnt offering is the threshingfloor where David is sent to ''*rear an altar*'' (2 Samuel 24:18) and where Solomon builds the house (2 Chronicles 3:1). One mountain holds the binding of the only son, the staying of the plague by sacrifice, and the temple — the long line of the place where the offering is provided.'),
+    ('canon','2-samuel',24,25,'canon','genesis',22,14,'free',
+      E'*And Abraham called the name of that place Yahuah Yireh (Jehovah-jireh): as it is said to this day, In the mount of Yahuah (LORD) it shall be seen* (Genesis 22:14). Abraham named Moriah *in the mount of Yahuah it shall be seen*, and on that mount it is seen again: ''*the plague was stayed from Yashar''el (Israel)*'' when David built the altar and offered there (2 Samuel 24:25). At the mount where Yahuah provides, wrath is turned by the offered sacrifice — the same provision Abraham trusted, fulfilled at last where the Lamb of Yahuah would be lifted up.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom',
+       E'Go, number Yashar''el — the census and the neglected ransom',
+       E'The book closes where pride opens it: *And again the anger of Yahuah (LORD) was kindled against Yashar''el (Israel), and he moved David against them to say, Go, number Yashar''el (Israel) and Yahudah (Judah)* (2 Samuel 24:1). The Chronicler lifts the veil on the agency — *And Satan stood up against Yashar''el (Israel), and provoked David to number Yashar''el (Israel)* (1 Chronicles 21:1): Yahuah''s kindled anger gives the adversary room, and the king''s own pride of self-reckoning is the sin the satan only stirs. The tally itself betrays the heart — *eight hundred thousand valiant men that drew the sword; and the men of Yahudah (Judah) were five hundred thousand* (2 Samuel 24:9) / *a thousand thousand and an hundred thousand men that drew sword* (1 Chronicles 21:5) — David has measured his strength in swords. And the Torah had set the terms: *then shall they give every man a ransom for his soul unto Yahuah (LORD), when thou numberest them; that there be no plague among them* (Exodus 30:12). Numbering was never forbidden — numbering in pride, without the atonement-money that confesses the people are Yahuah''s and not the king''s, is. David himself had once known this: *David took not the number of them from twenty years old and under: because Yahuah (LORD) had said he would increase Yashar''el (Israel) like to the stars of the heavens* (1 Chronicles 27:23). And so the count was struck from the books: *there fell wrath for it against Yashar''el (Israel); neither was the number put in the account of the chronicles of king David* (1 Chronicles 27:24).',
+       sv.verse_id, ev.verse_id, 'free', 37825
+  FROM _s341_2sa24_lookup sv, _s341_2sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=24 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-24-let-us-fall-into-the-hand-of-yahuah-for-his-mercies',
+       E'Let us fall into the hand of Yahuah, for his mercies are great',
+       E'David''s heart smites him before the plague even falls: *I have sinned greatly in that I have done... I beseech thee, O Yahuah (LORD), take away the iniquity of thy servant; for I have done very foolishly* (2 Samuel 24:10) — the very penitence the great psalm of confession pours out, *Have mercy upon me, O Elohim (God), according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions* (Psalm 51:1). Offered three judgments by Gad, David will not choose the hand of man: *I am in a great strait: let us fall now into the hand of Yahuah (LORD); for his mercies are great: and let me not fall into the hand of man* (2 Samuel 24:14) / *let me fall now into the hand of Yahuah (LORD); for very great are his mercies* (1 Chronicles 21:13). Brought low by his own pride, the king casts himself not on the mercy of foes but on the mercy of Yahuah, which he knows to be *great* — better the hand that wounds and heals than the hand of man that only destroys. The trust the census abandoned, the strait restores.',
+       sv.verse_id, ev.verse_id, 'free', 37828
+  FROM _s341_2sa24_lookup sv, _s341_2sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=24 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-24-the-angel-of-yahuah-with-the-drawn-sword-over-jerusalem',
+       E'The angel of Yahuah with the drawn sword over Jerusalem',
+       E'The plague runs until the destroyer reaches the holy city, and there the hand is stayed: *And when the angel stretched out his hand upon Jerusalem to destroy it, Yahuah (LORD) repented him of the evil, and said to the angel that destroyed the people, It is enough: stay now thine hand. And the angel of Yahuah (LORD) was by the threshingplace of Araunah the Jebusite* (2 Samuel 24:16). The Chronicler shows what David saw — *the angel of Yahuah (LORD) stand between the earth and the heaven, having a drawn sword in his hand stretched out over Jerusalem* (1 Chronicles 21:16) — and the staying word, *It is enough, stay now thine hand. And the angel of Yahuah (LORD) stood by the threshingfloor of Ornan the Jebusite* (1 Chronicles 21:15). This is the Angel who bears the Name: the Formed Son, the visible One who met Abraham and Jacob and led Yashar''el — Yahuah who has a Father, neither a co-equal person in a triad nor a mere creature. The same Angel who once called from heaven on this very mountain, *the angel of Yahuah (LORD) called unto him out of heaven, and said, Abraham, Abraham* (Genesis 22:11), and stayed Abraham''s knife, now stands with the drawn sword over Jerusalem and is told to stay his hand — at Moriah, both the slaying and the smiting are halted at the place of the altar.',
+       sv.verse_id, ev.verse_id, 'free', 37831
+  FROM _s341_2sa24_lookup sv, _s341_2sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=24 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-24-these-sheep-what-have-they-done-let-thine-hand-be-against-me',
+       E'These sheep, what have they done? Let thine hand be against me',
+       E'Seeing the angel that smote the people, the shepherd-king steps between the sword and the flock: *Lo, I have sinned, and I have done wickedly: but these sheep, what have they done? let thine hand, I pray thee, be against me, and against my father''s house* (2 Samuel 24:17). The Chronicler fills out the plea — *Is it not I that commanded the people to be numbered?... but as for these sheep, what have they done? let thine hand, I pray thee, O Yahuah (LORD) my Elohim (God), be on me... but not on thy people* (1 Chronicles 21:17). David names himself the sinner and the people innocent *sheep*, and asks that the stroke fall on him — the faint shadow of the Shepherd who would. For this is the instinct the true Shepherd carries to the end: *I am the good shepherd: the good shepherd giveth his life for the sheep* (John 10:11); *I lay down my life for the sheep* (John 10:15) — the Shepherd who knows the Father, the Formed Son who HAS a Father. What David could only pray, the Son accomplishes, for Isaiah had already laid the iniquity where it falls: *All we like sheep have gone astray; we have turned every one to his own way; and Yahuah (LORD) hath laid on him the iniquity of us all* (Isaiah 53:6). The stroke David begged to bear for the flock is borne in full by the Shepherd given for the sheep.',
+       sv.verse_id, ev.verse_id, 'free', 37834
+  FROM _s341_2sa24_lookup sv, _s341_2sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=24 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-24-neither-will-i-offer-of-that-which-cost-me-nothing',
+       E'Neither will I offer of that which doth cost me nothing',
+       E'Araunah offers the king everything for nothing — the threshingfloor, the oxen for burnt sacrifice, the threshing instruments for wood — but David will not bring Yahuah a cheap sacrifice: *Nay; but I will surely buy it of thee at a price: neither will I offer burnt offerings unto Yahuah Elohai (the LORD my God) of that which doth cost me nothing* (2 Samuel 24:24). The Chronicler keeps it — *I will not take that which is thine for Yahuah (LORD), nor offer burnt offerings without cost* (1 Chronicles 21:24). True worship is never free to the worshipper. And this is no contradiction of the great penitential psalm but its very heart: *thou desirest not sacrifice; else would I give it: thou delightest not in burnt offering* (Psalm 51:16) — for the offering Yahuah delights in is not the carcass but the cost behind it, *The sacrifices of Elohim (God) are a broken spirit: a broken and a contrite heart, O Elohim (God), thou wilt not despise* (Psalm 51:17). The same king who had sinned greatly in numbering will not cheapen the altar that ends the plague: it is paid for in silver and in a humbled, broken spirit.',
+       sv.verse_id, ev.verse_id, 'free', 37837
+  FROM _s341_2sa24_lookup sv, _s341_2sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=24 AND ev.verse_number=24
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 6
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site',
+       E'The threshingfloor is mount Moriah — the temple site',
+       E'Gad sends David to the very spot where the destroyer stood: *Go up, rear an altar unto Yahuah (LORD) in the threshingfloor of Araunah the Jebusite* (2 Samuel 24:18) / *the angel of Yahuah (LORD) commanded Gad to say to David, that David should go up, and set up an altar... in the threshingfloor of Ornan the Jebusite* (1 Chronicles 21:18). The place of judgment is made the place of sacrifice, and the plague is stayed — *So Yahuah (LORD) was intreated for the land, and the plague was stayed from Yashar''el (Israel)* (2 Samuel 24:25) — with the Chronicler adding Yahuah''s own seal, *he answered him from heaven by fire upon the altar of burnt offering* (1 Chronicles 21:26). Then the place is named outright: *Then Solomon began to build the house of Yahuah (LORD) at Jerusalem in mount Moriah, where Yahuah (LORD) appeared unto David his father, in the place that David had prepared in the threshingfloor of Ornan the Jebusite* (2 Chronicles 3:1). This is the mountain of the Akedah — *get thee into the land of Moriah; and offer him there for a burnt offering* (Genesis 22:2) — where Abraham named the place *In the mount of Yahuah (LORD) it shall be seen* (Genesis 22:14). One mountain holds the binding of the only son, the staying of the plague by the offered sacrifice, and the house of Yahuah: the mercy-place where wrath is turned by the offering provided, fulfilled at last where the Lamb of Yahuah would be lifted up.',
+       sv.verse_id, ev.verse_id, 'free', 37840
+  FROM _s341_2sa24_lookup sv, _s341_2sa24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='2-samuel' AND ev.chapter_number=24 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- Members thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 21:1 — *Satan stood up against Yashar''el, and provoked David to number Yashar''el*: the dual agency; the adversary stirs the pride already in the king''s heart.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Chronicles 21:5 — *a thousand thousand and an hundred thousand men that drew sword*: the same tally; David has measured his strength in swords.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 30:12 — *a ransom for his soul... that there be no plague among them, when thou numberest them*: the atonement-money David neglected, and the plague the Torah warned of.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=30 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Chronicles 27:23 — *David took not the number from twenty years old and under: because Yahuah had said he would increase Yashar''el like to the stars*: the trust the census abandoned.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=27 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Chronicles 27:24 — *there fell wrath for it... neither was the number put in the account of the chronicles of king David*: the count Yahuah would not let stand, blotted from the books.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=27 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-go-number-yashar-el-the-census-and-the-neglected-ransom'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 21:13 — *let me fall now into the hand of Yahuah; for very great are his mercies*: the same choice of the merciful hand over the hand of man.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-let-us-fall-into-the-hand-of-yahuah-for-his-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 51:1 — *according unto the multitude of thy tender mercies blot out my transgressions*: the penitence of the king who has sinned greatly, throwing himself on the great mercy.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=10
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-let-us-fall-into-the-hand-of-yahuah-for-his-mercies'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 21:15 — *It is enough, stay now thine hand. And the angel of Yahuah stood by the threshingfloor of Ornan*: mercy halts the sword at the mercy-place.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-angel-of-yahuah-with-the-drawn-sword-over-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Chronicles 21:16 — *the angel of Yahuah stand between the earth and the heaven, having a drawn sword... stretched out over Jerusalem*: the Angel who bears the Name, the Formed Son.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-angel-of-yahuah-with-the-drawn-sword-over-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Genesis 22:11 — *the angel of Yahuah called unto him out of heaven*: the same Angel who stayed Abraham''s knife on this mountain now stayed from the smiting.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-angel-of-yahuah-with-the-drawn-sword-over-jerusalem'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 21:17 — *as for these sheep, what have they done? let thine hand... be on me... but not on thy people*: the shepherd-king offering himself for the flock.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-these-sheep-what-have-they-done-let-thine-hand-be-against-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'John 10:11 — *the good shepherd giveth his life for the sheep*: the true Shepherd accomplishes what David could only pray.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-these-sheep-what-have-they-done-let-thine-hand-be-against-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'John 10:15 — *I lay down my life for the sheep*: the Shepherd who knows the Father, the Formed Son who HAS a Father, the stroke fallen on him.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=10 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-these-sheep-what-have-they-done-let-thine-hand-be-against-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 53:6 — *all we like sheep have gone astray... Yahuah hath laid on him the iniquity of us all*: the iniquity laid not on the sheep but on the Servant.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=17
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=53 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-these-sheep-what-have-they-done-let-thine-hand-be-against-me'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 21:24 — *I will not take that which is thine for Yahuah, nor offer burnt offerings without cost*: David refuses cheap worship, word for word.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=24
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-neither-will-i-offer-of-that-which-cost-me-nothing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 51:16 — *thou desirest not sacrifice... thou delightest not in burnt offering*: the offering Yahuah delights in is the cost, not the carcass.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=24
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-neither-will-i-offer-of-that-which-cost-me-nothing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Psalm 51:17 — *The sacrifices of Elohim are a broken spirit: a broken and a contrite heart... thou wilt not despise*: the costly sacrifice is the humbled heart.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=24
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=51 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-neither-will-i-offer-of-that-which-cost-me-nothing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Chronicles 21:18 — *set up an altar unto Yahuah in the threshingfloor of Ornan*: the altar placed where the destroying angel stood — judgment made sacrifice.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=18
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Chronicles 21:26 — *he answered him from heaven by fire upon the altar of burnt offering*: Yahuah''s own seal that this threshingfloor is the chosen place.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=25
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=21 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Chronicles 3:1 — *Solomon began to build the house of Yahuah... in mount Moriah... in the threshingfloor of Ornan*: the threshingfloor named outright as the temple site.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=18
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Genesis 22:2 — *get thee into the land of Moriah; and offer him there for a burnt offering*: the mountain of the Akedah is the same threshingfloor.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=18
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Genesis 22:14 — *In the mount of Yahuah it shall be seen*: where Yahuah provides, wrath is turned by the offered sacrifice, fulfilled where the Lamb would be lifted up.'
+  FROM cross_reference_threads t
+  JOIN _s341_2sa24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-samuel' AND sv.chapter_number=24 AND sv.verse_number=25
+  JOIN _s341_2sa24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=22 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-samuel-24-the-threshingfloor-is-mount-moriah-the-temple-site'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session341 — 2 Samuel cross-references complete.'
