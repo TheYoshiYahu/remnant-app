@@ -11424,6 +11424,1134 @@ SELECT t.id, cr.id, 1, E'★ *he as Elohim (God) sitteth in the temple of Elohim
  WHERE t.slug='ezekiel-28-i-am-a-god-i-sit-in-the-seat-of-god'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_ezekiel_29.sql (Ezekiel 29) -----
+-- Chapter: Ezekiel 29 — the first oracle against Egypt. ★★ Pharaoh the GREAT DRAGON of the Nile who
+-- says *My river is mine own, and I have made it for myself* — the chaos-leviathan of human pride
+-- aping the Creator, hooked in the jaws and dragged out to die. ★★ Egypt the BROKEN REED that pierces
+-- the hand of whoever leans on it — the arm of flesh that fails the house of Yashar''el (Israel) when
+-- they trust it instead of Yahuah. ★ Egypt humbled to a BASE KINGDOM so the covenant people no longer
+-- make it their confidence — better to trust in Yahuah than in man.
+-- Tag: ezek29   Temp view: _s308_ezek29_lookup   Session: s308
+-- Sort band: base 32700, step 3 -> threads at 32700, 32703, 32706 (3 threads)
+-- Source of EVERY row: 'canon','ezekiel',29,v
+--
+-- Ezekiel 29 coverage:
+--   v.1-2 (in the tenth year... set thy face against Pharaoh king of Egypt, and prophesy against him)
+--        NT:     none warranted (the date/commission framing; preface to the dragon oracle)
+--        Extras: none warranted
+--        Tanakh: none separate (woven into THREAD 1 prose)
+--   ★★ v.3-5 (Behold, I am against thee, Pharaoh... the great dragon that lieth in the midst of his
+--          rivers, which hath said, My river is mine own, and I have made it for myself... I will put
+--          hooks in thy jaws... I will leave thee thrown into the wilderness... given thee for meat)
+--        NT:     ★★ Revelation 12:9 (the great dragon... that old serpent), ★ Revelation 20:2 (he laid
+--                hold on the dragon, that old serpent... bound him) — THREAD 1
+--        Extras: none warranted (clean canon chaos-dragon weave; no extras forced)
+--        Tanakh: ★★ Isaiah 51:9 (art thou not it that hath cut Rahab, and wounded the dragon?), ★★ Psalm
+--                74:13-14 (thou brakest the heads of the dragons... the heads of leviathan), ★ Job 41:1
+--                (canst thou draw out leviathan with an hook?) — THREAD 1
+--   ★★ v.6-7 (they shall know that I am Yahuah, because they have been a staff of reed to the house of
+--          Yashar''el... when they leaned upon thee, thou brakest, and madest all their loins to be at a
+--          stand)
+--        NT:     none warranted (the broken-reed/arm-of-flesh weave is wholly OT; the trust-not-in-man
+--                principle held in the Tanakh witnesses)
+--        Extras: none warranted
+--        Tanakh: ★★ 2 Kings 18:21 (thou trustest upon the staff of this bruised reed, even upon Egypt...
+--                it will go into his hand, and pierce it), ★★ Isaiah 36:6 (the staff of this broken reed,
+--                on Egypt), ★ Isaiah 31:1 (woe to them that go down to Egypt for help), ★ Jeremiah 17:5
+--                (cursed be the man that trusteth in man, and maketh flesh his arm) — THREAD 2
+--   v.8-12 (I will bring a sword upon thee... the land of Egypt shall be desolate and waste... forty
+--          years... I will scatter the Egyptians among the nations)
+--        NT:     none warranted (the desolation/scattering judgment; the self-creation boast of v.9
+--                repeats v.3 and is woven into THREAD 1 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the forty-years desolation; woven in prose where it bears on the boast)
+--   ★ v.13-16 (I will bring again the captivity of Egypt... they shall be there a base kingdom. It shall
+--          be the basest of the kingdoms; neither shall it exalt itself any more above the nations...
+--          And it shall be no more the confidence of the house of Yashar''el)
+--        NT:     none warranted (the humbling of Egypt so the covenant people no longer trust it; the
+--                trust-in-Yahuah principle held in the Tanakh witnesses)
+--        Extras: none warranted
+--        Tanakh: ★ Psalm 118:8-9 (it is better to trust in Yahuah than to put confidence in man... in
+--                princes), ★ Isaiah 2:22 (cease ye from man, whose breath is in his nostrils) — THREAD 3
+--   v.17-21 (Nebuchadrezzar king of Babylon... I will give the land of Egypt unto Nebuchadrezzar... In
+--          that day will I cause the horn of the house of Yashar''el to bud forth)
+--        NT:     none warranted (the later Babylon-as-wages oracle; v.21 horn-budding is a distinct
+--                messianic seed not in this chapter's Egypt-frame — held to its own Davidic-horn lateral)
+--        Extras: none warranted
+--        Tanakh: none warranted in this Egypt-against frame (the horn of v.21 belongs to the Davidic-horn
+--                thread of Psalm 132:17 / Luke 1:69, out of scope for the Egypt oracle)
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own — NT (Revelation 12, Revelation 20) + Tanakh (Isaiah 51, Psalm 74, Job 41) [free]
+--      (★★ Pharaoh the chaos-dragon/leviathan claiming self-creation, hooked and dragged out; the old serpent of pride)
+--   2. ezekiel-29-egypt-the-broken-reed-that-pierces-the-hand — Tanakh (2 Kings 18, Isaiah 36, Isaiah 31, Jeremiah 17) [free]
+--      (★★ the arm of flesh that fails those who lean on it; trusting Egypt instead of Yahuah pierces the hand)
+--   3. ezekiel-29-egypt-a-base-kingdom-no-more-the-confidence-of-yasharel — Tanakh (Psalm 118, Isaiah 2) [free]
+--      (★ Egypt humbled to the basest of kingdoms so the covenant people cease making it their confidence)
+--
+-- Framing notes:
+--   ★★ THE GREAT DRAGON OF THE NILE (THREAD 1): *Behold, I am against thee, Pharaoh king of Egypt, the
+--      great dragon that lieth in the midst of his rivers, which hath said, My river is mine own, and I
+--      have made it for myself* (29:3). The proud dragon/leviathan of the Nile claims self-creation —
+--      the creature aping the Creator — and Yahuah answers: *I will put hooks in thy jaws... and I will
+--      bring thee up out of the midst of thy rivers* (29:4), thrown to the wilderness for meat (29:5).
+--      This is the chaos-dragon Yahuah has always broken: *Art thou not it that hath cut Rahab, and
+--      wounded the dragon?* (Isaiah 51:9 — Rahab being a name for Egypt); *thou brakest the heads of the
+--      dragons in the waters. Thou brakest the heads of leviathan in pieces* (Psalm 74:13-14); the
+--      leviathan no man can master but Yahuah hooks at will — *Canst thou draw out leviathan with an
+--      hook?* (Job 41:1). And at the canon's end the dragon is named outright and bound: *the great
+--      dragon... that old serpent, called the Devil, and Satan* (Revelation 12:9); *he laid hold on the
+--      dragon, that old serpent... and bound him* (Revelation 20:2). Pharaoh's self-creating pride is the
+--      serpent-spirit of Genesis 3, hooked and dragged out to die.
+--   ★★ THE BROKEN REED (THREAD 2): *they shall know that I am Yahuah (LORD), because they have been a
+--      staff of reed to the house of Yashar''el (Israel). When they took hold of thee by thy hand, thou
+--      didst break, and rend all their shoulder: and when they leaned upon thee, thou brakest* (29:6-7).
+--      Egypt is the reed that snaps and pierces the hand of whoever leans on it — the arm of flesh that
+--      fails. The Assyrian field-commander mocked Hezekiah with the same figure: *thou trustest upon the
+--      staff of this bruised reed, even upon Egypt, on which if a man lean, it will go into his hand, and
+--      pierce it* (2 Kings 18:21; Isaiah 36:6). Isaiah pronounces the woe: *Woe to them that go down to
+--      Egypt for help... but they look not unto the Holy One of Yashar''el (Israel)* (Isaiah 31:1). And
+--      Jeremiah names the root curse: *Cursed be the man that trusteth in man, and maketh flesh his arm*
+--      (Jeremiah 17:5). The covenant people are to lean on Yahuah, not on the flesh that breaks beneath
+--      them.
+--   ★ A BASE KINGDOM (THREAD 3): *I will bring again the captivity of Egypt... and they shall be there a
+--      base kingdom. It shall be the basest of the kingdoms; neither shall it exalt itself any more above
+--      the nations... And it shall be no more the confidence of the house of Yashar''el (Israel)*
+--      (29:14-16). Egypt is humbled precisely so the covenant people stop trusting it — the lesson the
+--      Psalmist sings: *It is better to trust in Yahuah (LORD) than to put confidence in man. It is
+--      better to trust in Yahuah (LORD) than to put confidence in princes* (Psalm 118:8-9); and Isaiah:
+--      *Cease ye from man, whose breath is in his nostrils: for wherein is he to be accounted of?*
+--      (Isaiah 2:22). The proud kingdom brought low is a mercy to the house that leaned on it.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the date/commission — woven THREAD 1 prose), v.8-12 (the
+--      forty-years desolation and scattering; v.9 self-creation boast repeats v.3, woven THREAD 1),
+--      v.17-21 (the later Babylon-as-wages oracle; v.21 horn-of-the-house budding = a distinct Davidic-horn
+--      seed, Psalm 132:17 / Luke 1:69, out of scope for this Egypt-against frame). All recorded above.
+
+CREATE TEMP VIEW _s308_ezek29_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the great dragon of the Nile — My river is mine own, and I have made it
+    ('canon','ezekiel',29,3,'canon','isaiah',51,9,'free',
+      E'*Awake, awake, put on strength, O arm of Yahuah (LORD); awake, as in the ancient days, in the generations of old. Art thou not it that hath cut Rahab, and wounded the dragon?* (Isaiah 51:9). Pharaoh, *the great dragon that lieth in the midst of his rivers, which hath said, My river is mine own, and I have made it for myself* (Ezekiel 29:3), is the same chaos-dragon Yahuah cut down of old — Rahab being a name for proud Egypt. The arm of Yahuah that wounded the dragon in the ancient days now puts hooks in this dragon''s jaws.'),
+    ('canon','ezekiel',29,3,'canon','psalms',74,13,'free',
+      E'*Thou didst divide the sea by thy strength: thou brakest the heads of the dragons in the waters* (Psalm 74:13). The boast of *the great dragon that lieth in the midst of his rivers* (Ezekiel 29:3) is answered by the Maker who has always broken the dragons of the waters. Pharaoh''s Nile is no defense; the One who divided the sea breaks the heads of the dragons in it.'),
+    ('canon','ezekiel',29,3,'canon','psalms',74,14,'free',
+      E'*Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness* (Psalm 74:14). The dragon of the Nile who claims *I have made it for myself* (Ezekiel 29:3) is leviathan, whom Yahuah breaks and gives *to be meat* — exactly as Pharaoh is *given... for meat to the beasts of the field and to the fowls of the heaven* (Ezekiel 29:5). The self-creating monster is dragged out and made carrion.'),
+    ('canon','ezekiel',29,4,'canon','job',41,1,'free',
+      E'*Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?* (Job 41:1). No man can hook leviathan — but Yahuah does it at will: *I will put hooks in thy jaws... and I will bring thee up out of the midst of thy rivers* (Ezekiel 29:4). The monster that no human hand can master is hooked and hauled out by the Maker, the proud dragon of the Nile drawn out to die.'),
+    ('canon','ezekiel',29,3,'canon','revelation',12,9,'free',
+      E'*And the great dragon was cast out, that old serpent, called the Devil, and Satan, which deceiveth the whole world: he was cast out into the earth, and his angels were cast out with him* (Revelation 12:9). Pharaoh *the great dragon* who says *My river is mine own, and I have made it for myself* (Ezekiel 29:3) bears the spirit of the old serpent — the self-exalting pride of Genesis 3 that apes the Creator. The dragon Ezekiel hooks is, at the canon''s end, named outright and cast down.'),
+    ('canon','ezekiel',29,4,'canon','revelation',20,2,'free',
+      E'*And he laid hold on the dragon, that old serpent, which is the Devil, and Satan, and bound him a thousand years* (Revelation 20:2). The hooking and hauling out of *the great dragon* (Ezekiel 29:3-4) — *I will put hooks in thy jaws... and I will bring thee up out of the midst of thy rivers* — foreshadows the final laying-hold on the old serpent. The dragon of human pride and the dragon bound at the end are one defiant spirit, mastered by Yahuah''s hand.'),
+
+    -- THREAD 2 (★★): Egypt the broken reed that pierces the hand
+    ('canon','ezekiel',29,7,'canon','2-kings',18,21,'free',
+      E'*Now, behold, thou trustest upon the staff of this bruised reed, even upon Egypt, on which if a man lean, it will go into his hand, and pierce it: so is Pharaoh king of Egypt unto all that trust on him* (2 Kings 18:21). The figure Yahuah gives — *a staff of reed to the house of Yashar''el (Israel). When they took hold of thee by thy hand, thou didst break, and rend all their shoulder* (Ezekiel 29:6-7) — is the very reed the Assyrian field-commander mocked. Egypt the broken reed pierces the hand of whoever leans on it instead of Yahuah.'),
+    ('canon','ezekiel',29,7,'canon','isaiah',36,6,'free',
+      E'*Lo, thou trustest in the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand, and pierce it: so is Pharaoh king of Egypt to all that trust in him* (Isaiah 36:6). Isaiah records the same taunt against Hezekiah''s hope in Egypt — the broken reed that *will go into his hand, and pierce it* is exactly Ezekiel''s reed that breaks when *they leaned upon thee, thou brakest* (Ezekiel 29:7). The arm of flesh fails and wounds those who trust it.'),
+    ('canon','ezekiel',29,6,'canon','isaiah',31,1,'free',
+      E'*Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots, because they are many... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). The whole indictment of Ezekiel — Egypt *a staff of reed to the house of Yashar''el (Israel)* (Ezekiel 29:6) — is Isaiah''s woe against going down to Egypt for help. The reed breaks because it was never to be leaned on; the house was to seek Yahuah, not Egypt.'),
+    ('canon','ezekiel',29,7,'canon','jeremiah',17,5,'free',
+      E'*Thus saith Yahuah (LORD); Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5). The broken reed of *when they leaned upon thee, thou brakest, and madest all their loins to be at a stand* (Ezekiel 29:7) is the curse Jeremiah names: to make flesh one''s arm is to lean on what breaks. Egypt is the arm of flesh, and the heart that trusts it has departed from Yahuah.'),
+
+    -- THREAD 3 (★): Egypt a base kingdom — no more the confidence of the house of Yashar'el
+    ('canon','ezekiel',29,16,'canon','psalms',118,8,'free',
+      E'*It is better to trust in Yahuah (LORD) than to put confidence in man* (Psalm 118:8). Egypt is humbled to a base kingdom so that *it shall be no more the confidence of the house of Yashar''el (Israel)* (Ezekiel 29:16). The Psalmist sings the lesson the humbling teaches: better to trust in Yahuah than to put confidence in man. The covenant people are weaned from the proud kingdom they once leaned on.'),
+    ('canon','ezekiel',29,16,'canon','psalms',118,9,'free',
+      E'*It is better to trust in Yahuah (LORD) than to put confidence in princes* (Psalm 118:9). When Egypt is made *the basest of the kingdoms* and *no more the confidence of the house of Yashar''el (Israel)* (Ezekiel 29:15-16), the Psalmist''s second line answers: better to trust in Yahuah than to put confidence in princes. The diminished kingdom can no longer be the prince the house relies on.'),
+    ('canon','ezekiel',29,15,'canon','isaiah',2,22,'free',
+      E'*Cease ye from man, whose breath is in his nostrils: for wherein is he to be accounted of?* (Isaiah 2:22). Egypt brought low — *neither shall it exalt itself any more above the nations: for I will diminish them* (Ezekiel 29:15) — enacts Isaiah''s call to cease from man. The kingdom whose breath is in its nostrils is not to be accounted of; let the house cease from leaning on it.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own',
+       E'The great dragon of the Nile — My river is mine own, and I have made it',
+       E'The first oracle against Egypt opens on the proud monster of the river: *Thus saith Adonai Yahuah (the Lord GOD); Behold, I am against thee, Pharaoh king of Egypt, the great dragon that lieth in the midst of his rivers, which hath said, My river is mine own, and I have made it for myself* (29:3). Here is the creature aping the Creator — the chaos-dragon, leviathan of the Nile, claiming self-creation, the very lie of the serpent. Yahuah answers with the hook: *But I will put hooks in thy jaws, and I will cause the fish of thy rivers to stick unto thy scales, and I will bring thee up out of the midst of thy rivers* (29:4), and the monster is *thrown into the wilderness... given... for meat to the beasts of the field and to the fowls of the heaven* (29:5). This is the dragon Yahuah has always broken. Isaiah sings it: *Awake, awake, put on strength, O arm of Yahuah (LORD)... Art thou not it that hath cut Rahab, and wounded the dragon?* (Isaiah 51:9) — Rahab a name for proud Egypt. The Psalmist sings it: *Thou brakest the heads of the dragons in the waters. Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness* (Psalm 74:13-14) — leviathan broken and given for meat, exactly as Pharaoh is. And Job names the monster no man can master, whom Yahuah hooks at will: *Canst thou draw out leviathan with an hook?* (Job 41:1). At the canon''s end the dragon is named outright and cast down — *the great dragon... that old serpent, called the Devil, and Satan, which deceiveth the whole world* (Revelation 12:9) — and bound: *he laid hold on the dragon, that old serpent... and bound him a thousand years* (Revelation 20:2). Pharaoh''s self-creating boast is the spirit of the old serpent of Genesis 3, and the Maker hooks it in the jaws and drags it out to die.',
+       sv.verse_id, ev.verse_id, 'free', 32700
+  FROM _s308_ezek29_lookup sv, _s308_ezek29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=29 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-29-egypt-the-broken-reed-that-pierces-the-hand',
+       E'Egypt the broken reed — when they leaned upon thee, thou brakest',
+       E'Why is Yahuah against Egypt? Because the house of Yashar''el (Israel) leaned on her instead of on him: *And all the inhabitants of Egypt shall know that I am Yahuah (LORD), because they have been a staff of reed to the house of Yashar''el (Israel). When they took hold of thee by thy hand, thou didst break, and rend all their shoulder: and when they leaned upon thee, thou brakest, and madest all their loins to be at a stand* (29:6-7). Egypt is the reed that snaps and pierces the hand of whoever leans on it — the arm of flesh that fails. The Assyrian field-commander hurled the very figure at Hezekiah''s hope: *thou trustest upon the staff of this bruised reed, even upon Egypt, on which if a man lean, it will go into his hand, and pierce it: so is Pharaoh king of Egypt unto all that trust on him* (2 Kings 18:21; the same words at Isaiah 36:6). Isaiah pronounced the woe over it: *Woe to them that go down to Egypt for help; and stay on horses, and trust in chariots... but they look not unto the Holy One of Yashar''el (Israel), neither seek Yahuah (LORD)!* (Isaiah 31:1). And Jeremiah names the root curse beneath it all: *Cursed be the man that trusteth in man, and maketh flesh his arm, and whose heart departeth from Yahuah (LORD)* (Jeremiah 17:5). To lean on Egypt is to make flesh one''s arm — and the reed of flesh always breaks beneath the weight, rending the shoulder of the one who trusted it. The house is to lean on Yahuah alone.',
+       sv.verse_id, ev.verse_id, 'free', 32703
+  FROM _s308_ezek29_lookup sv, _s308_ezek29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=29 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-29-egypt-a-base-kingdom-no-more-the-confidence-of-yasharel',
+       E'Egypt a base kingdom — no more the confidence of the house of Yashar''el',
+       E'The judgment ends not in annihilation but in humbling: *I will bring again the captivity of Egypt, and will cause them to return into the land of Pathros, into the land of their habitation; and they shall be there a base kingdom. It shall be the basest of the kingdoms; neither shall it exalt itself any more above the nations: for I will diminish them, that they shall no more rule over the nations* (29:14-15). And the purpose is named: *And it shall be no more the confidence of the house of Yashar''el (Israel), which bringeth their iniquity to remembrance, when they shall look after them* (29:16). Egypt is brought low precisely so the covenant people stop making it their confidence — the proud kingdom diminished is a mercy to the house that leaned on it. The Psalmist sings the lesson the humbling teaches: *It is better to trust in Yahuah (LORD) than to put confidence in man. It is better to trust in Yahuah (LORD) than to put confidence in princes* (Psalm 118:8-9). And Isaiah calls the same: *Cease ye from man, whose breath is in his nostrils: for wherein is he to be accounted of?* (Isaiah 2:22). The kingdom whose breath is in its nostrils, diminished and base, can no longer be the confidence the house turns to — they are weaned from the arm of flesh and taught to trust in Yahuah alone.',
+       sv.verse_id, ev.verse_id, 'free', 32706
+  FROM _s308_ezek29_lookup sv, _s308_ezek29_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=29 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Art thou not it that hath cut Rahab, and wounded the dragon?* (Isaiah 51:9) — the arm of Yahuah cut down the chaos-dragon of old; Rahab is a name for proud Egypt, the same dragon Ezekiel 29:3 hooks.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=3
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=51 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *thou brakest the heads of the dragons in the waters* (Psalm 74:13) — the Maker who divided the sea breaks the dragons in it; Pharaoh''s Nile is no defense.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=3
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=74 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Thou brakest the heads of leviathan in pieces, and gavest him to be meat* (Psalm 74:14) — leviathan broken and made meat, exactly as Pharaoh is given for meat to the beasts (Ezekiel 29:5).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=3
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=74 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Canst thou draw out leviathan with an hook?* (Job 41:1) — no man can hook leviathan, but Yahuah does it at will: *I will put hooks in thy jaws* (Ezekiel 29:4).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='job' AND tv.chapter_number=41 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *the great dragon... that old serpent, called the Devil, and Satan* (Revelation 12:9) — Pharaoh''s self-creating boast (Ezekiel 29:3) bears the spirit of the old serpent; the dragon named and cast down at the canon''s end.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=3
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=12 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *he laid hold on the dragon, that old serpent... and bound him* (Revelation 20:2) — the hooking and hauling-out of the dragon (Ezekiel 29:4) foreshadows the final laying-hold on the old serpent.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=4
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-the-great-dragon-of-the-nile-my-river-is-mine-own'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *thou trustest upon the staff of this bruised reed, even upon Egypt... it will go into his hand, and pierce it* (2 Kings 18:21) — the very reed of Ezekiel 29:6-7; Egypt pierces the hand that leans on it.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=18 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-the-broken-reed-that-pierces-the-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the staff of this broken reed, on Egypt; whereon if a man lean, it will go into his hand* (Isaiah 36:6) — Isaiah records the same taunt; the reed breaks when leaned upon (Ezekiel 29:7).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=36 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-the-broken-reed-that-pierces-the-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Woe to them that go down to Egypt for help... but they look not unto the Holy One of Yashar''el (Israel)* (Isaiah 31:1) — the woe over the reed of Ezekiel 29:6; the house was to seek Yahuah, not Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=6
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=31 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-the-broken-reed-that-pierces-the-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *Cursed be the man that trusteth in man, and maketh flesh his arm* (Jeremiah 17:5) — the root curse beneath leaning on Egypt (Ezekiel 29:7); the arm of flesh always breaks.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=7
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=17 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-the-broken-reed-that-pierces-the-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *It is better to trust in Yahuah (LORD) than to put confidence in man* (Psalm 118:8) — the lesson Egypt''s humbling teaches; no more the confidence of the house (Ezekiel 29:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=16
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-a-base-kingdom-no-more-the-confidence-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *It is better to trust in Yahuah (LORD) than to put confidence in princes* (Psalm 118:9) — the diminished kingdom can no longer be the prince the house relies on (Ezekiel 29:15-16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=16
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=118 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-a-base-kingdom-no-more-the-confidence-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *Cease ye from man, whose breath is in his nostrils* (Isaiah 2:22) — Egypt diminished (Ezekiel 29:15) enacts the call to cease from man; the kingdom of flesh is not to be accounted of.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek29_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=29 AND sv.verse_number=15
+  JOIN _s308_ezek29_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=2 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-29-egypt-a-base-kingdom-no-more-the-confidence-of-yasharel'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_30.sql (Ezekiel 30) -----
+-- Chapter: Ezekiel 30 — THE DAY OF YAHUAH AGAINST EGYPT. Howl ye, Woe worth the day! the day of Yahuah
+-- (LORD) is near, a cloudy day, the time of the heathen; the sword comes upon Egypt and her allies
+-- (Ethiopia, Libya, Lydia, Chub); her idols destroyed out of Noph, her cities (Pathros, Zoan, No, Sin,
+-- Aven, Pi-beseth, Tehaphnehes) set on fire and given to captivity; and the two-fold sign of Yahuah's
+-- sovereignty over the empires: I have BROKEN the arm of Pharaoh, and I will STRENGTHEN the arms of the
+-- king of Babylon and put my sword in his hand. The arm of flesh broken; the nations are tools in
+-- Yahuah's hand; the day-of-Yahuah motif extended from Israel to the heathen.
+-- Tag: ezek30   Temp view: _s308_ezek30_lookup
+-- Sort band: base 32725, step 3 -> threads at 32725, 32728 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',30,v
+--
+-- Ezekiel 30 coverage:
+--   ★★ v.2-5 (Howl ye, Woe worth the day! the day of Yahuah is near, a cloudy day; it shall be the time
+--          of the heathen; the sword upon Egypt and Ethiopia/Libya/Lydia/Chub)
+--        NT:     none warranted (the day-of-Yahuah motif against the nations is woven canon/Tanakh; the
+--                NT day-of-the-Lord weave is held to its proper anchors — 1 Thess 5, 2 Pet 3 — not forced
+--                onto Egypt's oracle)
+--        Extras: none warranted
+--        Tanakh: ★★★ Joel 2:1-2 (the day of Yahuah cometh... a day of clouds and of thick darkness),
+--                ★★ Joel 3:14 (the day of Yahuah is near in the valley of decision), ★★ Zephaniah 1:14-15
+--                (the great day of Yahuah is near... a day of clouds and thick darkness), ★★ Obadiah 1:15
+--                (the day of Yahuah is near upon all the heathen), ★ Amos 5:18 (the day of Yahuah is
+--                darkness, and not light) — THREAD 1
+--   v.6-9 (they that uphold Egypt shall fall; desolate cities; I have set a fire in Egypt; messengers in
+--          ships to make the careless Ethiopians afraid) — the execution of the day; woven into THREAD 1
+--          prose (NT none / Extras none / Tanakh none separate).
+--   v.10-12 (I will make the multitude of Egypt to cease by the hand of Nebuchadrezzar king of Babylon...
+--          sell the land into the hand of the wicked) — the Babylon-as-instrument named first; carried into
+--          THREAD 2 prose (NT none / Extras none / Tanakh held with the v.24-25 weave).
+--   v.13-19 (I will destroy the idols out of Noph; no more a prince of Egypt; fire in Zoan, judgments in
+--          No, fury upon Sin; the cities into captivity; the day darkened at Tehaphnehes, a cloud cover
+--          her) — the idols cast down and the cities burned; the cloud/darkness echoes the cloudy day of
+--          v.3, woven in THREAD 1 prose (NT none / Extras none / Tanakh none separate forced).
+--   ★ v.21-25 (I have broken the arm of Pharaoh... I will strengthen the arms of the king of Babylon, and
+--          put my sword in his hand... they shall know that I am Yahuah when I put my sword into the hand
+--          of the king of Babylon)
+--        NT:     none warranted (the sovereignty-over-empires motif is Tanakh-anchored; no NT verse forced)
+--        Extras: none warranted
+--        Tanakh: ★★ Psalm 75:7 (he putteth down one, and setteth up another), ★★ Daniel 2:21 (he removeth
+--                kings, and setteth up kings), ★★ Jeremiah 27:6 (I have given all these lands into the
+--                hand of Nebuchadnezzar... my servant), ★ Isaiah 10:5 (O Assyrian, the rod of mine anger)
+--                — THREAD 2
+--   v.20 (the eleventh year, the first month, the seventh day — the dating formula for the broken-arm
+--          oracle) — chronological preface to v.21-25; no separate add (NT/Extras/Tanakh none warranted).
+--   v.23,26 (I will scatter the Egyptians among the nations, and disperse them through the countries) — the
+--          dispersal of Egypt; woven into THREAD 2 prose as the outworking of the broken arm; no separate
+--          add (NT none / Extras none / Tanakh none warranted distinct).
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen — Tanakh (Joel 2, Joel 3, Zephaniah 1, Obadiah 1, Amos 5) [free]
+--      (★★ the day-of-Yahuah motif extended to Egypt and the nations; the cloudy day of reckoning on the heathen)
+--   2. ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon — Tanakh (Psalm 75, Daniel 2, Jeremiah 27, Isaiah 10) [free]
+--      (★ Yahuah breaks Pharaoh's arm and strengthens Babylon's; the arm of flesh broken; the empires are his instruments)
+--
+-- Framing notes:
+--   ★★ THE DAY OF YAHUAH UPON THE HEATHEN (THREAD 1): *Howl ye, Woe worth the day! For the day is near,
+--      even the day of Yahuah (LORD) is near, a cloudy day; it shall be the time of the heathen* (Ezekiel
+--      30:2-3). The day of Yahuah — the prophets' great day of reckoning, first proclaimed against Israel's
+--      own sin — is here extended to Egypt and the nations. The *cloudy day* is the shared signature: Joel
+--      sounds it *for the day of Yahuah (LORD) cometh... A day of darkness and of gloominess, a day of
+--      clouds and of thick darkness* (Joel 2:1-2); *the day of Yahuah (LORD) is near in the valley of
+--      decision* (Joel 3:14); Zephaniah doubles it — *The great day of Yahuah (LORD) is near... That day is
+--      a day of wrath... a day of clouds and thick darkness* (Zephaniah 1:14-15); Obadiah names its reach —
+--      *the day of Yahuah (LORD) is near upon all the heathen* (Obadiah 1:15); and Amos warns it is *darkness,
+--      and not light* (Amos 5:18). Egypt's *cloud shall cover her* (30:18) is one storm-front of the same
+--      cloudy day. The reckoning that begins at the house of Yahuah goes out upon all the nations.
+--   ★ THE ARM OF PHARAOH BROKEN / BABYLON STRENGTHENED (THREAD 2): *Son of Adam, I have broken the arm of
+--      Pharaoh king of Egypt* (30:21); *And I will strengthen the arms of the king of Babylon, and put my
+--      sword in his hand: but I will break Pharaoh''s arms* (30:24); *they shall know that I am Yahuah (LORD),
+--      when I shall put my sword into the hand of the king of Babylon* (30:25). The arm is the symbol of
+--      power; Yahuah breaks one empire's arm and strengthens another's — the empires are tools in his hand,
+--      not masters of their own rise. The Psalmist sang it: *Elohim (God) is the judge: he putteth down one,
+--      and setteth up another* (Psalm 75:7); Daniel blessed Yahuah for it — *he removeth kings, and setteth
+--      up kings* (Daniel 2:21); Jeremiah named the very instrument — *I have given all these lands into the
+--      hand of Nebuchadnezzar the king of Babylon, my servant* (Jeremiah 27:6); and Isaiah named the pattern —
+--      *O Assyrian, the rod of mine anger* (Isaiah 10:5), the conqueror who *meaneth not so* (Isaiah 10:7) yet
+--      serves the purpose of the One who wields him. The arm of flesh is broken; the sword belongs to Yahuah.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the word-came formula), v.6-9 / v.13-19 (the execution of the day —
+--      allies fallen, idols cast down, cities burned and taken captive; woven in THREAD 1), v.10-12 (Babylon
+--      named the instrument; carried into THREAD 2), v.20 (the dating formula), v.23/26 (Egypt scattered
+--      among the nations; woven in THREAD 2). All verses recorded above; every block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek30_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the day of Yahuah is near, a cloudy day, the time of the heathen
+    ('canon','ezekiel',30,3,'canon','joel',2,1,'free',
+      E'*Blow ye the trumpet in Zion, and sound an alarm in my holy mountain: let all the inhabitants of the land tremble: for the day of Yahuah (LORD) cometh, for it is nigh at hand* (Joel 2:1). Ezekiel''s cry over Egypt — *the day is near, even the day of Yahuah (LORD) is near, a cloudy day* (Ezekiel 30:3) — is the same great day Joel sounds the alarm for; the trumpet that warns Zion warns the nations too. The day of Yahuah is near, and it is at hand upon the heathen.'),
+    ('canon','ezekiel',30,3,'canon','joel',2,2,'free',
+      E'*A day of darkness and of gloominess, a day of clouds and of thick darkness, as the morning spread upon the mountains* (Joel 2:2). The *cloudy day* of Ezekiel 30:3 is named in full by Joel: *a day of clouds and of thick darkness*. The signature of the day of Yahuah is the cloud of reckoning; Egypt''s own *cloud shall cover her* (Ezekiel 30:18) is one front of that same storm of judgment.'),
+    ('canon','ezekiel',30,3,'canon','joel',3,14,'free',
+      E'*Multitudes, multitudes in the valley of decision: for the day of Yahuah (LORD) is near in the valley of decision* (Joel 3:14). Where Ezekiel says of Egypt *the day of Yahuah (LORD) is near* (Ezekiel 30:3), Joel sees the nations gathered for that nearness — *the day of Yahuah (LORD) is near in the valley of decision*. The day is near upon Egypt because it is near upon all the heathen drawn to the place of judgment.'),
+    ('canon','ezekiel',30,3,'canon','zephaniah',1,14,'free',
+      E'*The great day of Yahuah (LORD) is near, it is near, and hasteth greatly, even the voice of the day of Yahuah (LORD): the mighty man shall cry there bitterly* (Zephaniah 1:14). Zephaniah echoes Ezekiel''s *the day of Yahuah (LORD) is near* (Ezekiel 30:3) with the same urgency — *near, it is near, and hasteth greatly* — and the same bitter cry of the strong man, as Egypt is told to *Howl ye, Woe worth the day!* (Ezekiel 30:2). The great day hastens upon the proud.'),
+    ('canon','ezekiel',30,3,'canon','zephaniah',1,15,'free',
+      E'*That day is a day of wrath, a day of trouble and distress, a day of wasteness and desolation, a day of darkness and gloominess, a day of clouds and thick darkness* (Zephaniah 1:15). Zephaniah names the *cloudy day* of Ezekiel 30:3 with the very phrase — *a day of clouds and thick darkness*. The day of Yahuah upon Egypt and the day of Yahuah upon Yahudah (Judah) wear the same cloud; the reckoning is one.'),
+    ('canon','ezekiel',30,3,'canon','obadiah',1,15,'free',
+      E'*For the day of Yahuah (LORD) is near upon all the heathen: as thou hast done, it shall be done unto thee; thy reward shall return upon thine own head* (Obadiah 1:15). Obadiah states plainly what Ezekiel''s oracle against Egypt enacts: *it shall be the time of the heathen* (Ezekiel 30:3) — *the day of Yahuah (LORD) is near upon all the heathen*. The day first proclaimed against Israel''s sin reaches every nation; each is repaid as it has done.'),
+    ('canon','ezekiel',30,3,'canon','amos',5,18,'free',
+      E'*Woe unto you that desire the day of Yahuah (LORD)! to what end is it for you? the day of Yahuah (LORD) is darkness, and not light* (Amos 5:18). Amos warns that the day of Yahuah is no comfort to the guilty — *darkness, and not light* — and so it falls on Egypt: *a cloudy day* of *Woe worth the day!* (Ezekiel 30:2-3). The day longed for by the careless is the day of clouds for the heathen; there is no brightness in it for those under judgment.'),
+
+    -- THREAD 2 (★): I have broken the arm of Pharaoh; I will strengthen Babylon's arms
+    ('canon','ezekiel',30,24,'canon','psalms',75,7,'free',
+      E'*But Elohim (God) is the judge: he putteth down one, and setteth up another* (Psalm 75:7). The double sign of Ezekiel — *I will strengthen the arms of the king of Babylon... but I will break Pharaoh''s arms* (Ezekiel 30:24) — is the Psalmist''s confession enacted on the empires: Yahuah *putteth down one, and setteth up another*. Egypt is put down and Babylon raised because Elohim, not the sword, is the judge over the nations.'),
+    ('canon','ezekiel',30,24,'canon','daniel',2,21,'free',
+      E'*And he changeth the times and the seasons: he removeth kings, and setteth up kings: he giveth wisdom unto the wise, and knowledge to them that know understanding* (Daniel 2:21). Daniel blesses Yahuah for the very thing Ezekiel announces — Pharaoh''s arm broken and Babylon''s strengthened (Ezekiel 30:24): *he removeth kings, and setteth up kings*. The rise and fall of Egypt and Babylon is the work of the One who changes the times.'),
+    ('canon','ezekiel',30,24,'canon','jeremiah',27,6,'free',
+      E'*And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant; and the beasts of the field have I given him also to serve him* (Jeremiah 27:6). The sword Ezekiel puts in Babylon''s hand — *I will strengthen the arms of the king of Babylon, and put my sword in his hand* (Ezekiel 30:24) — is the same commission Jeremiah names: the lands given *into the hand of Nebuchadnezzar... my servant*. Babylon is no master of its own conquest, but the servant-instrument of Yahuah''s hand.'),
+    ('canon','ezekiel',30,25,'canon','jeremiah',27,6,'free',
+      E'*And now have I given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant; and the beasts of the field have I given him also to serve him* (Jeremiah 27:6). When Ezekiel says *they shall know that I am Yahuah (LORD), when I shall put my sword into the hand of the king of Babylon* (Ezekiel 30:25), the sword in Babylon''s hand is the lands given into Nebuchadnezzar''s hand in Jeremiah''s word — the same servant wielding the same sword for the same Yahuah. The knowing comes when the instrument is recognized as Yahuah''s.'),
+    ('canon','ezekiel',30,24,'canon','isaiah',10,5,'free',
+      E'*O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation* (Isaiah 10:5). Isaiah named the pattern Ezekiel applies to Babylon: the conqueror is a *rod* in Yahuah''s hand — *Howbeit he meaneth not so, neither doth his heart think so* (Isaiah 10:7), yet he serves the purpose. So the king of Babylon, whose arms Yahuah strengthens to break Pharaoh (Ezekiel 30:24), is the rod of Yahuah''s anger against Egypt, wielded and then to be judged himself.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen',
+       E'Woe worth the day! — the day of Yahuah is near, a cloudy day, the time of the heathen',
+       E'The oracle against Egypt opens with the prophets'' great cry of reckoning: *Son of Adam, prophesy and say, Thus saith Adonai Yahuah (the Lord GOD); Howl ye, Woe worth the day! For the day is near, even the day of Yahuah (LORD) is near, a cloudy day; it shall be the time of the heathen* (Ezekiel 30:2-3). The day of Yahuah — that day of darkness and judgment the prophets first proclaimed against Israel''s own sin — is here turned upon Egypt and the nations: *the time of the heathen*. And the signature that binds all these oracles together is the cloud. Joel sounds the trumpet for it: *Blow ye the trumpet in Zion... for the day of Yahuah (LORD) cometh, for it is nigh at hand; A day of darkness and of gloominess, a day of clouds and of thick darkness* (Joel 2:1-2), and sees the nations gathered for it — *the day of Yahuah (LORD) is near in the valley of decision* (Joel 3:14). Zephaniah doubles the very phrase: *The great day of Yahuah (LORD) is near, it is near, and hasteth greatly... a day of wrath... a day of darkness and gloominess, a day of clouds and thick darkness* (Zephaniah 1:14-15). Obadiah names its reach: *the day of Yahuah (LORD) is near upon all the heathen: as thou hast done, it shall be done unto thee* (Obadiah 1:15). And Amos strips away every false comfort: *Woe unto you that desire the day of Yahuah (LORD)!... the day of Yahuah (LORD) is darkness, and not light* (Amos 5:18). Egypt feels the storm: her allies fall by the sword (30:4-5), her idols are cast down out of Noph (30:13), her cities are set on fire and carried into captivity, and *a cloud shall cover her* (30:18) — one front of the one cloudy day. The reckoning that begins at the house of Yahuah goes out upon all the nations; there is no brightness in it for the proud.',
+       sv.verse_id, ev.verse_id, 'free', 32725
+  FROM _s308_ezek30_lookup sv, _s308_ezek30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=30 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon',
+       E'I have broken the arm of Pharaoh, and strengthened the arms of Babylon — the empires in Yahuah''s hand',
+       E'A second word comes with its date, and a sign-image of pure sovereignty: *Son of Adam, I have broken the arm of Pharaoh king of Egypt; and, lo, it shall not be bound up to be healed... to make it strong to hold the sword* (Ezekiel 30:21). The arm is the symbol of a king''s power, and Yahuah has snapped it: *Behold, I am against Pharaoh king of Egypt, and will break his arms, the strong, and that which was broken; and I will cause the sword to fall out of his hand* (30:22). Then the other half of the sign — Yahuah does not merely break one empire, he raises another for his purpose: *And I will strengthen the arms of the king of Babylon, and put my sword in his hand: but I will break Pharaoh''s arms, and he shall groan before him with the groanings of a deadly wounded man... and they shall know that I am Yahuah (LORD), when I shall put my sword into the hand of the king of Babylon* (30:24-25). The empires are tools in his hand, not masters of their own rise and fall. The Psalmist sang the principle: *Elohim (God) is the judge: he putteth down one, and setteth up another* (Psalm 75:7). Daniel blessed Yahuah for it from within Babylon itself: *he changeth the times and the seasons: he removeth kings, and setteth up kings* (Daniel 2:21). Jeremiah named the very instrument as a servant: *I have given all these lands into the hand of Nebuchadnezzar the king of Babylon, my servant* (Jeremiah 27:6) — the same sword Ezekiel puts in Babylon''s hand. And Isaiah named the pattern with an earlier rod: *O Assyrian, the rod of mine anger* (Isaiah 10:5), who *meaneth not so* (Isaiah 10:7) yet serves the purpose, and is judged in his turn. So Egypt is scattered among the nations (30:23,26) and Babylon exalted — for a season — because the arm of flesh is broken and the sword belongs to Yahuah alone.',
+       sv.verse_id, ev.verse_id, 'free', 32728
+  FROM _s308_ezek30_lookup sv, _s308_ezek30_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=30 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★★ *the day of Yahuah (LORD) cometh, for it is nigh at hand* (Joel 2:1) — the trumpet sounded for the same near day; the alarm for Zion warns the heathen too.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★★ *a day of clouds and of thick darkness* (Joel 2:2) — names the *cloudy day* of Ezekiel 30:3 in full; the cloud is the signature of the day of Yahuah.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *the day of Yahuah (LORD) is near in the valley of decision* (Joel 3:14) — the nations gathered for the same near day Ezekiel proclaims over Egypt.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *The great day of Yahuah (LORD) is near, it is near, and hasteth greatly* (Zephaniah 1:14) — the same urgency as *the day is near* (Ezekiel 30:3); the great day hastens upon the proud.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *a day of clouds and thick darkness* (Zephaniah 1:15) — the *cloudy day* of Ezekiel 30:3 word for word; Egypt''s day and Yahudah''s day wear the same cloud.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='zephaniah' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *the day of Yahuah (LORD) is near upon all the heathen* (Obadiah 1:15) — states plainly what Ezekiel 30:3 enacts: *it shall be the time of the heathen*; each nation repaid as it has done.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='obadiah' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★ *the day of Yahuah (LORD) is darkness, and not light* (Amos 5:18) — no brightness in the day for the guilty; Egypt''s *Woe worth the day!* (Ezekiel 30:2) is the cloudy day, not comfort.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=3
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-woe-worth-the-day-the-day-of-yahuah-is-near-upon-the-heathen'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *he putteth down one, and setteth up another* (Psalm 75:7) — the Psalmist''s confession enacted on the empires; Egypt down, Babylon up, because Elohim is the judge.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=75 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *he removeth kings, and setteth up kings* (Daniel 2:21) — Daniel blesses Yahuah from within Babylon for the very rise/fall Ezekiel 30:24 announces.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=2 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *I have given all these lands into the hand of Nebuchadnezzar... my servant* (Jeremiah 27:6) — the sword put in Babylon''s hand (Ezekiel 30:24) is Babylon as servant-instrument, no master of its own conquest.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=27 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *I have given all these lands into the hand of Nebuchadnezzar... my servant* (Jeremiah 27:6) — the sword put into Babylon''s hand (Ezekiel 30:25) is the same servant wielding the same sword; the knowing comes when the instrument is seen as Yahuah''s.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=25
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=27 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *O Assyrian, the rod of mine anger* (Isaiah 10:5) — the pattern Ezekiel applies to Babylon: the conqueror is a rod in Yahuah''s hand, wielded and then judged himself.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek30_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=30 AND sv.verse_number=24
+  JOIN _s308_ezek30_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=10 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-30-i-have-broken-the-arm-of-pharaoh-and-strengthened-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_31.sql (Ezekiel 31) -----
+-- Chapter: Ezekiel 31 — THE GREAT EMPIRE-TREE. A word to Pharaoh king of Egypt: whom art thou like in
+-- thy greatness? Behold, the Assyrian — a cedar in Lebanon with fair branches, of an high stature, his
+-- top among the thick boughs; the waters made him great; his height exalted above all the trees of the
+-- field; all the fowls of heaven nesting in his boughs, all great nations dwelling under his shadow; fair
+-- in his greatness, nor any tree in the garden of Elohim like unto him in his beauty. Then, BECAUSE his
+-- heart is lifted up in his height, delivered to the mighty one of the heathen, cut down by the terrible
+-- of the nations, cast down to hell, to the nether parts of the earth, with them that go down to the pit
+-- — that none of all the trees exalt themselves. This is Pharaoh and all his multitude. The towering
+-- empire-tree, fair and sheltering, exalted above all — then felled for its self-exaltation and cast to
+-- the pit; a warning to Pharaoh, the perennial pattern of every proud kingdom-tree brought low.
+-- Tag: ezek31   Temp view: _s308_ezek31_lookup
+-- Sort band: base 32750, step 3 -> threads at 32750, 32753 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',31,v
+--
+-- Ezekiel 31 coverage:
+--   v.1-2 (the word of Yahuah; speak unto Pharaoh king of Egypt... Whom art thou like in thy greatness?)
+--        NT:     none warranted (the framing question; answered by the whole tree-oracle)
+--        Extras: none warranted
+--        Tanakh: none separate (preface to the cedar-image of v.3-9; woven in THREAD 1 prose)
+--   ★★ v.3-9 (the Assyrian a cedar in Lebanon, fair branches, of high stature, top among the thick boughs;
+--          the waters made him great; his height exalted above all the trees of the field; all the fowls
+--          of heaven made their nests in his boughs... all great nations dwelt under his shadow; fair in
+--          his greatness; nor any tree in the garden of Elohim was like unto him in his beauty)
+--        NT:     ★ Matthew 13:32 (it becometh a tree, so that the birds of the air come and lodge in the
+--                branches thereof — the kingdom-tree the birds lodge in) — THREAD 1
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 4:11-12 (the tree... the height thereof reached unto heaven... the fowls of
+--                the heaven dwelt in the boughs thereof — Nebuchadnezzar's tree, the same image),
+--                ★★ Daniel 4:22 (It is thou, O king... thy greatness is grown, and reacheth unto heaven),
+--                ★★ Ezekiel 17:23 (a goodly cedar... under it shall dwell all fowl of every wing — the
+--                Messianic CONTRAST, the tree Yahuah plants) — THREAD 1
+--   ★★ v.10-18 (Because thou hast lifted up thyself in height... his heart is lifted up; I have therefore
+--          delivered him into the hand of the mighty one of the heathen; strangers, the terrible of the
+--          nations, have cut him off; I made the nations to shake at the sound of his fall, when I cast him
+--          down to hell with them that descend into the pit; to the end that none of all the trees exalt
+--          themselves; This is Pharaoh and all his multitude)
+--        NT:     ★★ Luke 14:11 (whosoever exalteth himself shall be abased), ★ James 4:6 (Elohim resisteth
+--                the proud, but giveth grace unto the humble) — THREAD 2
+--        Extras: none warranted
+--        Tanakh: ★★ Daniel 4:30-31 (Is not this great Babylon, that I have built... by the might of my
+--                power... there fell a voice from heaven... The kingdom is departed from thee),
+--                ★★ Daniel 4:33 (he was driven from men, and did eat grass as oxen — the pride of
+--                Nebuchadnezzar abased), ★★ Isaiah 14:13-15 (I will exalt my throne... I will be like the
+--                El Elyon... yet thou shalt be brought down to hell, to the sides of the pit),
+--                ★★ Proverbs 16:18 (Pride goeth before destruction, and an haughty spirit before a fall) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees — NT (Matthew 13) + Tanakh (Daniel 4, Ezekiel 17) [free]
+--      (★★ the towering empire-tree, fair and sheltering, exalted above all; the fowls nest in its boughs;
+--       Nebuchadnezzar's tree the same image; Ezekiel 17 the Messianic CONTRAST — the tree Yahuah plants)
+--   2. ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height — NT (Luke 14, James 4) + Tanakh (Daniel 4, Isaiah 14, Proverbs 16) [free]
+--      (★★ the proud tree felled and cast to the pit for its self-exaltation; a warning to Pharaoh;
+--       pride goeth before destruction; whosoever exalteth himself shall be abased)
+--
+-- Framing notes:
+--   ★★ THE EMPIRE-TREE (THREAD 1): *Behold, the Assyrian was a cedar in Lebanon with fair branches... and
+--      of an high stature; and his top was among the thick boughs* (31:3); *his height was exalted above all
+--      the trees of the field* (31:5); *All the fowls of heaven made their nests in his boughs... and under
+--      his shadow dwelt all great nations* (31:6); *nor any tree in the garden of Elohim (God) was like unto
+--      him in his beauty* (31:8). The great empire, fair and sheltering, towering above all. Daniel sees the
+--      SAME image given to Nebuchadnezzar — *a tree in the midst of the earth, and the height thereof was
+--      great... the height thereof reached unto heaven... the fowls of the heaven dwelt in the boughs
+--      thereof* (Daniel 4:10-12), and the meaning is the king himself: *It is thou, O king... thy greatness
+--      is grown, and reacheth unto heaven* (Daniel 4:22). Against this towering self-exalting tree stands
+--      the CONTRAST: the tree Yahuah HIMSELF plants — *I will also take of the highest branch of the high
+--      cedar... and will plant it upon an high mountain... and it shall... be a goodly cedar: and under it
+--      shall dwell all fowl of every wing* (Ezekiel 17:22-23), the Messianic kingdom-tree. And the Formed
+--      Son names the kingdom-tree the birds lodge in: *it becometh a tree, so that the birds of the air come
+--      and lodge in the branches thereof* (Matthew 13:32). One image, two trees: the empire that exalts
+--      itself and is felled, and the kingdom Yahuah plants that stands.
+--   ★★ CAST DOWN TO THE PIT (THREAD 2): *Because thou hast lifted up thyself in height... and his heart is
+--      lifted up in his height; I have therefore delivered him into the hand of the mighty one of the
+--      heathen* (31:10-11); *I made the nations to shake at the sound of his fall, when I cast him down to
+--      hell with them that descend into the pit* (31:16); the lesson — *To the end that none of all the
+--      trees by the waters exalt themselves for their height... for they are all delivered unto death... with
+--      them that go down to the pit* (31:14); and the application — *This is Pharaoh and all his multitude*
+--      (31:18). The high tree brought low for its pride. Daniel sees it enacted in Nebuchadnezzar: *Is not
+--      this great Babylon, that I have built... by the might of my power, and for the honour of my majesty?*
+--      (Daniel 4:30) — and at once *there fell a voice from heaven... The kingdom is departed from thee*
+--      (Daniel 4:31), *and he was driven from men, and did eat grass as oxen* (Daniel 4:33). Isaiah names the
+--      same self-exalting heart and the same end: *I will exalt my throne above the stars of Elohim (God)...
+--      I will be like the El Elyon (most High). Yet thou shalt be brought down to hell, to the sides of the
+--      pit* (Isaiah 14:13-15). The proverb states the law: *Pride goeth before destruction, and an haughty
+--      spirit before a fall* (Proverbs 16:18). And the Formed Son and his brother seal it: *whosoever
+--      exalteth himself shall be abased* (Luke 14:11); *Elohim (God) resisteth the proud, but giveth grace
+--      unto the humble* (James 4:6). The cedar that lifted up its heart is cast to the pit — a warning to
+--      Pharaoh, and to every kingdom-tree that exalts itself.
+--   VERSES WITH NO SEPARATE ADD: v.1-2 (the framing question, Whom art thou like in thy greatness? — woven
+--      into THREAD 1 prose; NT none / Extras none / Tanakh none warranted). All meaningful verses recorded
+--      in the coverage checklist; every block carries a thread.
+
+CREATE TEMP VIEW _s308_ezek31_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★★): the Assyrian a cedar in Lebanon — the towering empire-tree
+    ('canon','ezekiel',31,11,'canon','daniel',4,11,'free',
+      E'*The tree grew, and was strong, and the height thereof reached unto heaven, and the sight thereof to the end of all the earth* (Daniel 4:11). Daniel sees the same towering tree given to Nebuchadnezzar that Ezekiel sets over Assyria — *Behold, the Assyrian was a cedar in Lebanon... and of an high stature; and his top was among the thick boughs* (Ezekiel 31:3), *his height was exalted above all the trees of the field* (Ezekiel 31:5). The empire that reaches to heaven is one recurring image: the kingdom-tree grown too great in its own eyes.'),
+    ('canon','ezekiel',31,6,'canon','daniel',4,12,'free',
+      E'*The leaves thereof were fair, and the fruit thereof much, and in it was meat for all: the beasts of the field had shadow under it, and the fowls of the heaven dwelt in the boughs thereof, and all flesh was fed of it* (Daniel 4:12). This is Ezekiel''s cedar word for word — *All the fowls of heaven made their nests in his boughs, and under his branches did all the beasts of the field bring forth their young, and under his shadow dwelt all great nations* (Ezekiel 31:6). The sheltering empire-tree, fair and feeding the nations, is the same vision twice: Assyria''s cedar and Nebuchadnezzar''s tree.'),
+    ('canon','ezekiel',31,5,'canon','daniel',4,22,'free',
+      E'*It is thou, O king, that art grown and become strong: for thy greatness is grown, and reacheth unto heaven, and thy dominion to the end of the earth* (Daniel 4:22). Daniel names the tree the king himself — and so it is with Ezekiel''s cedar, whose *height was exalted above all the trees of the field* (Ezekiel 31:5). The tree IS the proud empire grown great; the question *Whom art thou like in thy greatness?* (Ezekiel 31:2) is answered by the towering tree that the king has become.'),
+    ('canon','ezekiel',31,3,'canon','ezekiel',17,23,'free',
+      E'*In the mountain of the height of Yashar''el (Israel) will I plant it: and it shall bring forth boughs, and bear fruit, and be a goodly cedar: and under it shall dwell all fowl of every wing; in the shadow of the branches thereof shall they dwell* (Ezekiel 17:23). Set this beside the Assyrian cedar that *exalted itself* and was felled (Ezekiel 31:3,10): here is the CONTRAST — the cedar Yahuah HIMSELF plants on the high mountain, the Messianic kingdom-tree under whose branches every fowl dwells. The empire-tree exalts itself and falls; the tree Yahuah plants is made goodly and stands.'),
+    ('canon','ezekiel',31,6,'canon','matthew',13,32,'free',
+      E'*Which indeed is the least of all seeds: but when it is grown, it is the greatest among herbs, and becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:32). The Formed Son names the kingdom-tree the birds lodge in — the image of Ezekiel''s cedar, where *All the fowls of heaven made their nests in his boughs* (Ezekiel 31:6). But the kingdom of heaven rises from the least of seeds, not from a tree that exalts itself; the sheltering branches belong to the kingdom Yahuah grows, not to the empire that lifts up its heart.'),
+
+    -- THREAD 2 (★★): cast down to the pit for the pride of his height
+    ('canon','ezekiel',31,10,'canon','daniel',4,30,'free',
+      E'*The king spake, and said, Is not this great Babylon, that I have built for the house of the kingdom by the might of my power, and for the honour of my majesty?* (Daniel 4:30). Here is the lifted-up heart of Ezekiel''s cedar enacted — *Because thou hast lifted up thyself in height... and his heart is lifted up in his height* (Ezekiel 31:10). The proud boast of *the might of my power* is the self-exaltation that fells the tree; Nebuchadnezzar speaks aloud the very pride the Assyrian cedar embodied.'),
+    ('canon','ezekiel',31,11,'canon','daniel',4,31,'free',
+      E'*While the word was in the king''s mouth, there fell a voice from heaven, saying, O king Nebuchadnezzar, to thee it is spoken; The kingdom is departed from thee* (Daniel 4:31). As the boast leaves his lips, judgment falls — the same delivering-over Ezekiel sees: *I have therefore delivered him into the hand of the mighty one of the heathen; he shall surely deal with him* (Ezekiel 31:11). The kingdom departs from the proud tree the moment it lifts up its heart; the height it trusted is taken away.'),
+    ('canon','ezekiel',31,16,'canon','daniel',4,33,'free',
+      E'*The same hour was the thing fulfilled upon Nebuchadnezzar: and he was driven from men, and did eat grass as oxen, and his body was wet with the dew of heaven, till his hairs were grown like eagles'' feathers, and his nails like birds'' claws* (Daniel 4:33). The towering king is brought low to the beasts — as Ezekiel''s cedar is cast down: *I made the nations to shake at the sound of his fall, when I cast him down to hell with them that descend into the pit* (Ezekiel 31:16). The high tree abased; the proud empire driven down from its height.'),
+    ('canon','ezekiel',31,10,'canon','isaiah',14,13,'free',
+      E'*For thou hast said in thine heart, I will ascend into heaven, I will exalt my throne above the stars of Elohim (God): I will sit also upon the mount of the congregation, in the sides of the north* (Isaiah 14:13). Isaiah names the same self-exalting heart that fells Ezekiel''s cedar — *his heart is lifted up in his height* (Ezekiel 31:10). The throne lifted above the stars and the cedar exalted above all the trees are one pride: the creature reaching to take the height that is not its own.'),
+    ('canon','ezekiel',31,16,'canon','isaiah',14,15,'free',
+      E'*Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The end of the proud throne is the end of the proud cedar — *when I cast him down to hell with them that descend into the pit* (Ezekiel 31:16). The one who would *be like the El Elyon (most High)* (Isaiah 14:14) and the tree exalted above all the trees go down to the same place: the sides of the pit, the nether parts of the earth.'),
+    ('canon','ezekiel',31,14,'canon','proverbs',16,18,'free',
+      E'*Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). The proverb states the law the whole oracle enacts — the tree exalts itself in height and is felled, *To the end that none of all the trees by the waters exalt themselves for their height... for they are all delivered unto death* (Ezekiel 31:14). The haughty spirit goes before the fall; the cedar''s pride is the seed of its ruin.'),
+    ('canon','ezekiel',31,10,'canon','luke',14,11,'free',
+      E'*For whosoever exalteth himself shall be abased; and he that humbleth himself shall be exalted* (Luke 14:11). The Formed Son names the law that brings down the cedar — *Because thou hast lifted up thyself in height... and his heart is lifted up in his height* (Ezekiel 31:10), therefore he is cast to the pit. The tree that exalted itself is abased; the principle that fells empires fells every self-exalting heart.'),
+    ('canon','ezekiel',31,10,'canon','james',4,6,'free',
+      E'*But he giveth more grace. Wherefore he saith, Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). The cedar whose *heart is lifted up in his height* (Ezekiel 31:10) meets the resistance of Yahuah himself — *Elohim (God) resisteth the proud*. The empire-tree is delivered to the mighty one of the heathen because the Most High sets himself against the proud; grace is for the humble, not for the tree that exalts itself above all.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees',
+       E'The Assyrian a cedar in Lebanon — fair, sheltering, exalted above all the trees',
+       E'To Pharaoh comes the question that frames the chapter: *Son of Adam, speak unto Pharaoh king of Egypt, and to his multitude; Whom art thou like in thy greatness?* (31:2) — and the answer is a tree. *Behold, the Assyrian was a cedar in Lebanon with fair branches, and with a shadowing shroud, and of an high stature; and his top was among the thick boughs* (31:3); *The waters made him great* (31:4); *Therefore his height was exalted above all the trees of the field* (31:5); *All the fowls of heaven made their nests in his boughs, and under his branches did all the beasts of the field bring forth their young, and under his shadow dwelt all great nations* (31:6); *nor any tree in the garden of Elohim (God) was like unto him in his beauty* (31:8). The great empire — fair, towering, sheltering the nations under its shadow, exalted above every other tree. Daniel sees the very same image given to Nebuchadnezzar: *I saw, and behold a tree in the midst of the earth, and the height thereof was great. The tree grew, and was strong, and the height thereof reached unto heaven... The leaves thereof were fair, and the fruit thereof much... and the fowls of the heaven dwelt in the boughs thereof* (Daniel 4:10-12) — and the tree is the king himself: *It is thou, O king... thy greatness is grown, and reacheth unto heaven, and thy dominion to the end of the earth* (Daniel 4:22). Against this self-exalting empire-tree stands the CONTRAST — the cedar Yahuah HIMSELF plants: *I will also take of the highest branch of the high cedar... and will plant it upon an high mountain and eminent... and it shall... be a goodly cedar: and under it shall dwell all fowl of every wing* (Ezekiel 17:22-23). And the Formed Son names the kingdom-tree the birds lodge in, but grown from the least of seeds, not from a tree that lifts up its own heart: *when it is grown... it becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:32). One image, two destinies: the empire that exalts itself and is felled, and the kingdom Yahuah plants that stands for ever.',
+       sv.verse_id, ev.verse_id, 'free', 32750
+  FROM _s308_ezek31_lookup sv, _s308_ezek31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=31 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height',
+       E'Cast down to the pit for the pride of his height — this is Pharaoh and all his multitude',
+       E'Because the cedar lifted up its heart, it is felled: *Because thou hast lifted up thyself in height, and he hath shot up his top among the thick boughs, and his heart is lifted up in his height; I have therefore delivered him into the hand of the mighty one of the heathen* (31:10-11). *And strangers, the terrible of the nations, have cut him off* (31:12); *I made the nations to shake at the sound of his fall, when I cast him down to hell with them that descend into the pit* (31:16). The lesson is plain: *To the end that none of all the trees by the waters exalt themselves for their height... for they are all delivered unto death, to the nether parts of the earth... with them that go down to the pit* (31:14). And the warning lands: *This is Pharaoh and all his multitude, saith Adonai Yahuah (the Lord GOD)* (31:18). Daniel sees the same pride and the same fall in Nebuchadnezzar: *Is not this great Babylon, that I have built... by the might of my power, and for the honour of my majesty?* (Daniel 4:30) — and at once *there fell a voice from heaven... The kingdom is departed from thee* (Daniel 4:31), *and he was driven from men, and did eat grass as oxen* (Daniel 4:33). Isaiah names the self-exalting heart and its end: *I will exalt my throne above the stars of Elohim (God)... I will be like the El Elyon (most High). Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:13-15). The proverb sets it as law: *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18). And the Formed Son and his brother seal it: *whosoever exalteth himself shall be abased* (Luke 14:11); *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6). The cedar that exalted itself above all the trees is cast to the pit — a warning to Pharaoh, and to every kingdom-tree and every heart that lifts itself up.',
+       sv.verse_id, ev.verse_id, 'free', 32753
+  FROM _s308_ezek31_lookup sv, _s308_ezek31_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=31 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *the height thereof reached unto heaven, and the sight thereof to the end of all the earth* (Daniel 4:11) — Nebuchadnezzar''s tree is Ezekiel''s cedar: the empire-tree grown too great, reaching to heaven.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=11
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *the fowls of the heaven dwelt in the boughs thereof, and all flesh was fed of it* (Daniel 4:12) — word for word Ezekiel 31:6; the sheltering empire-tree feeding the nations, the same vision twice.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *It is thou, O king... thy greatness is grown, and reacheth unto heaven* (Daniel 4:22) — Daniel names the tree the king himself; the cedar IS the proud empire, answering *Whom art thou like in thy greatness?* (Ezekiel 31:2).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=5
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *and be a goodly cedar: and under it shall dwell all fowl of every wing* (Ezekiel 17:23) — the CONTRAST: the cedar Yahuah HIMSELF plants on the high mountain, the Messianic kingdom-tree that stands while the empire-tree falls.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=3
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=17 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *it... becometh a tree, so that the birds of the air come and lodge in the branches thereof* (Matthew 13:32) — the kingdom-tree the birds lodge in, but grown from the least of seeds, not the tree that exalts itself.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=6
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=13 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-the-assyrian-a-cedar-in-lebanon-exalted-above-all-the-trees'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Is not this great Babylon, that I have built... by the might of my power* (Daniel 4:30) — the lifted-up heart of Ezekiel 31:10 spoken aloud; the proud boast that fells the tree.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=10
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *there fell a voice from heaven... The kingdom is departed from thee* (Daniel 4:31) — judgment falls as the boast leaves his lips, the delivering-over of Ezekiel 31:11; the height is taken away.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=11
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *he was driven from men, and did eat grass as oxen* (Daniel 4:33) — the towering king brought low to the beasts, as the cedar is cast down to the pit (Ezekiel 31:16).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=16
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=4 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★★ *I will exalt my throne above the stars of Elohim (God)* (Isaiah 14:13) — the same self-exalting heart that fells the cedar (Ezekiel 31:10); the throne lifted above the stars and the tree above the trees are one pride.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=10
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★★ *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15) — the proud throne and the proud cedar go down to the same place (Ezekiel 31:16); the nether parts of the earth.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=16
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *Pride goeth before destruction, and an haughty spirit before a fall* (Proverbs 16:18) — the proverb states the law the whole oracle enacts (Ezekiel 31:14); the cedar''s pride is the seed of its ruin.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=14
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=16 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *whosoever exalteth himself shall be abased* (Luke 14:11) — the Formed Son names the law that brings down the cedar (Ezekiel 31:10); the tree that exalted itself is abased.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=10
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'★ *Elohim (God) resisteth the proud, but giveth grace unto the humble* (James 4:6) — the cedar whose heart is lifted up (Ezekiel 31:10) meets the resistance of Yahuah himself; grace is for the humble, not the tree exalted above all.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek31_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=31 AND sv.verse_number=10
+  JOIN _s308_ezek31_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=4 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-31-cast-down-to-the-pit-for-the-pride-of-his-height'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_ezekiel_32.sql (Ezekiel 32) -----
+-- Chapter: Ezekiel 32 — a LAMENTATION for Pharaoh king of Egypt. ★ Pharaoh the young lion / the whale (the
+-- sea-monster) in the seas, troubling the waters with his feet; Yahuah spreads out his NET over him and
+-- brings him up, leaves him on the open field for the fowls and beasts; and at his fall the COSMIC DARKENING
+-- — the heaven covered, the stars darkened, the sun covered with a cloud, the moon withholding her light
+-- (the day-of-Yahuah judgment-signs at the fall of the proud power). ★★ Then the descent to SHEOL / the pit:
+-- Egypt cast down to the nether parts of the earth with them that go down into the pit, laid with the
+-- UNCIRCUMCISED and the slain — and the company of fallen empires already there to greet her: Asshur, Elam,
+-- Meshech-Tubal, Edom, the princes of the north, the Zidonians — all gone down, all bearing their shame in
+-- the grave together. The grave gathers the proud nations.
+-- Tag: ezek32   Temp view: _s308_ezek32_lookup
+-- Sort band: base 32775, step 3 -> threads at 32775, 32778 (2 threads)
+-- Source of EVERY row: 'canon','ezekiel',32,v
+--
+-- Ezekiel 32 coverage:
+--   v.1 (the date-formula; the word of Yahuah comes) — none warranted (the lament's preface; woven in prose)
+--   ★ v.2-8 (Thou art as a whale in the seas... thou camest forth with thy rivers, and troubledst the waters
+--          with thy feet; I will spread out my net over thee... will leave thee upon the land... I will cover
+--          the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall
+--          not give her light; all the bright lights of heaven will I make dark over thee)
+--        NT:     ★ Matthew 24:29 (the sun shall be darkened, and the moon shall not give her light, and the
+--                stars shall fall from heaven, and the powers of the heavens shall be shaken) — THREAD 1
+--        Extras: none warranted (clean canon prophet-weave; the netted sea-monster and the day-of-Yahuah
+--                darkening are wholly within the Tanakh/NT witness)
+--        Tanakh: ★ Ezekiel 29:3-4 (the great dragon that lieth in the midst of his rivers... I will put hooks
+--                in thy jaws... bring thee up out of the midst of thy rivers — lateral, the same Pharaoh-
+--                monster netted), ★ Isaiah 13:10 (the stars of heaven... shall not give their light: the sun
+--                shall be darkened in his going forth, and the moon shall not cause her light to shine),
+--                ★ Joel 2:31 (the sun shall be turned into darkness, and the moon into blood), ★ Joel 3:15
+--                (the sun and the moon shall be darkened, and the stars shall withdraw their shining) — THREAD 1
+--   v.9-16 (I will vex the hearts of many people... the sword of the king of Babylon shall come upon thee...
+--          they shall spoil the pomp of Egypt; the lamentation wherewith they shall lament her)
+--        NT:     none warranted (the Babylon-sword agent of the fall; the funeral-dirge framing; woven in
+--                THREAD 1/THREAD 2 prose)
+--        Extras: none warranted
+--        Tanakh: none separate (the historical Babylonian execution of the judgment; preface to the descent)
+--   ★★ v.17-32 (cast them down... unto the nether parts of the earth, with them that go down into the pit...
+--          go down, and be thou laid with the uncircumcised... out of the midst of hell... There is Asshur
+--          and all her company... There is Elam... There is Meshech, Tubal... There is Edom, her kings...
+--          the princes of the north... all the Zidonians... they shall lie with the uncircumcised, and with
+--          them that be slain by the sword)
+--        NT:     ★★ Revelation 20:13 (the sea gave up the dead which were in it; and death and hell delivered
+--                up the dead which were in them), ★★ Revelation 20:14 (death and hell were cast into the lake
+--                of fire. This is the second death), ★ Luke 16:23 (in hell he lift up his eyes, being in
+--                torments) — THREAD 2
+--        Extras: none warranted (the descent-to-sheol gathering of the empires is fully borne by the
+--                Tanakh-NT witness; no extras forced)
+--        Tanakh: ★★ Isaiah 14:9 (Hell from beneath is moved for thee to meet thee at thy coming... all the
+--                chief ones of the earth... all the kings of the nations), ★★ Isaiah 14:11 (Thy pomp is
+--                brought down to the grave... the worm is spread under thee), ★★ Isaiah 14:15 (thou shalt be
+--                brought down to hell, to the sides of the pit), ★ Psalm 9:17 (The wicked shall be turned
+--                into hell, and all the nations that forget Elohim) — THREAD 2
+--
+-- Threads (slug — target libraries):
+--   1. ezekiel-32-the-whale-netted-and-the-heaven-darkened — NT (Matthew 24) + Tanakh (Ezekiel 29, Isaiah 13,
+--      Joel 2, Joel 3) [free]
+--      (★ Pharaoh the sea-monster taken in Yahuah's net; the cosmic darkening at the fall of the proud power
+--      — the day-of-Yahuah judgment-signs)
+--   2. ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain — NT (Revelation 20, Luke 16) + Tanakh
+--      (Isaiah 14, Psalm 9) [free]
+--      (★★ the descent to sheol/the pit; the company of fallen empires laid in the grave together — Asshur,
+--      Elam, Meshech-Tubal, Edom; the grave gathers the proud nations)
+--
+-- Framing notes:
+--   ★ THE WHALE NETTED / THE HEAVEN DARKENED (THREAD 1): the lament opens with Pharaoh as the sea-monster —
+--      *Thou art like a young lion of the nations, and thou art as a whale in the seas: and thou camest forth
+--      with thy rivers, and troubledst the waters with thy feet, and fouledst their rivers* (32:2). Yahuah
+--      takes him as a hunter takes the beast: *I will therefore spread out my net over thee with a company of
+--      many people; and they shall bring thee up in my net* (32:3). This is the same Pharaoh-monster of the
+--      chapter before — *the great dragon that lieth in the midst of his rivers... I will put hooks in thy
+--      jaws... and I will bring thee up out of the midst of thy rivers* (Ezek 29:3-4) — the proud power that
+--      claimed the river as its own, hauled up and cast on the open field. And at his fall the heavens go
+--      dark: *And when I shall put thee out, I will cover the heaven, and make the stars thereof dark; I will
+--      cover the sun with a cloud, and the moon shall not give her light. All the bright lights of heaven
+--      will I make dark over thee* (32:7-8). The darkening that attends the day-of-Yahuah judgment on every
+--      proud power — *the stars of heaven... shall not give their light: the sun shall be darkened in his
+--      going forth, and the moon shall not cause her light to shine* (Isa 13:10, over Babylon); *the sun
+--      shall be turned into darkness, and the moon into blood, before the great and the terrible day of
+--      Yahuah (LORD) come* (Joel 2:31); *The sun and the moon shall be darkened, and the stars shall withdraw
+--      their shining* (Joel 3:15); and the Formed Son sets the same signs at the end — *the sun shall be
+--      darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers
+--      of the heavens shall be shaken* (Matt 24:29). The fall of Egypt is a rehearsal of the great Day.
+--   ★★ DOWN TO THE PIT (THREAD 2): the second oracle is a descent into sheol — *Son of Adam, wail for the
+--      multitude of Egypt, and cast them down... unto the nether parts of the earth, with them that go down
+--      into the pit. Whom dost thou pass in beauty? go down, and be thou laid with the uncircumcised* (32:18-
+--      19). And the grave is already peopled with the fallen empires, who rise to greet the newcomer: *There
+--      is Asshur and all her company* (32:22), *There is Elam and all her multitude* (32:24), *There is
+--      Meshech, Tubal, and all her multitude* (32:26), *There is Edom, her kings, and all her princes...
+--      they shall lie with the uncircumcised, and with them that go down to the pit* (32:29), *the princes of
+--      the north, all of them, and all the Zidonians* (32:30) — every proud nation laid in the dust together,
+--      *slain by the sword*, bearing their shame. Isaiah sang the same descent over Babylon's king: *Hell
+--      from beneath is moved for thee to meet thee at thy coming: it stirreth up the dead for thee, even all
+--      the chief ones of the earth; it hath raised up from their thrones all the kings of the nations* (Isa
+--      14:9), *Thy pomp is brought down to the grave... the worm is spread under thee, and the worms cover
+--      thee* (Isa 14:11), *Yet thou shalt be brought down to hell, to the sides of the pit* (Isa 14:15). The
+--      Psalmist names the end of every godless empire: *The wicked shall be turned into hell, and all the
+--      nations that forget Elohim (God)* (Ps 9:17). And the New Testament carries the descent to its last
+--      assize: the rich man *in hell he lift up his eyes, being in torments* (Luke 16:23); and at the white
+--      throne *death and hell delivered up the dead which were in them; and they were judged every man
+--      according to their works* (Rev 20:13), *And death and hell were cast into the lake of fire. This is
+--      the second death* (Rev 20:14). The pit that gathers the proud nations is opened at the last to the
+--      judgment of works.
+--   VERSES WITH NO SEPARATE ADD: v.1 (the date-formula, the word of Yahuah coming — the lament's preface),
+--      v.9-16 (the king of Babylon the sword-agent of the fall; the funeral-dirge of the daughters of the
+--      nations — woven into THREAD 1/THREAD 2 prose, no library forced). All blocks recorded; every block
+--      carries a thread.
+
+CREATE TEMP VIEW _s308_ezek32_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 (★): the whale netted; the heaven darkened at the fall of the proud power
+    ('canon','ezekiel',32,3,'canon','ezekiel',29,3,'free',
+      E'*Speak, and say, Thus saith Adonai Yahuah (the Lord GOD); Behold, I am against thee, Pharaoh king of Egypt, the great dragon that lieth in the midst of his rivers, which hath said, My river is mine own, and I have made it for myself* (Ezekiel 29:3). The whale Yahuah nets in *I will therefore spread out my net over thee... and they shall bring thee up in my net* (Ezekiel 32:3) is the same Pharaoh-monster of the chapter before — the *great dragon* in the rivers, the proud power that claimed the river as its own. The lament repeats the netting of the dragon.'),
+    ('canon','ezekiel',32,3,'canon','ezekiel',29,4,'free',
+      E'*But I will put hooks in thy jaws, and I will cause the fish of thy rivers to stick unto thy scales, and I will bring thee up out of the midst of thy rivers* (Ezekiel 29:4). The promise *they shall bring thee up in my net* (Ezekiel 32:3) is the hooks-in-the-jaws of the earlier oracle: the river-dragon hauled up out of his own waters by Yahuah''s hand and cast on the open field. The same Pharaoh, the same sea-monster, taken and dragged from his rivers.'),
+    ('canon','ezekiel',32,7,'canon','isaiah',13,10,'free',
+      E'*For the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine* (Isaiah 13:10). The darkening at Pharaoh''s fall — *I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light* (Ezekiel 32:7) — is the very sign Isaiah set over Babylon''s day of judgment. The heavens go black at the fall of the proud power; the day-of-Yahuah darkening is one and the same over every empire.'),
+    ('canon','ezekiel',32,7,'canon','joel',2,31,'free',
+      E'*The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come* (Joel 2:31). The covered sun and withheld moon of *I will cover the sun with a cloud, and the moon shall not give her light* (Ezekiel 32:7) are Joel''s signs of the great Day: sun to darkness, moon to blood. Egypt''s overthrow is a rehearsal of the terrible day of Yahuah.'),
+    ('canon','ezekiel',32,7,'canon','joel',3,15,'free',
+      E'*The sun and the moon shall be darkened, and the stars shall withdraw their shining* (Joel 3:15). The same triad — sun, moon, stars — that goes dark at Pharaoh''s fall in *I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light* (Ezekiel 32:7) is Joel''s sign in the valley of decision, *for the day of Yahuah (LORD) is near* (Joel 3:14). The cosmic darkening attends the judgment of the nations.'),
+    ('canon','ezekiel',32,7,'canon','matthew',24,29,'free',
+      E'*Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken* (Matthew 24:29). The Formed Son sets at the end the very signs spoken over Pharaoh — *I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light* (Ezekiel 32:7). The darkening of the heavens that fell on Egypt is the signature of the great Day, gathered up into the coming of the Son of Adam.'),
+
+    -- THREAD 2 (★★): down to the pit with the uncircumcised and the slain — the company of the fallen empires
+    ('canon','ezekiel',32,18,'canon','isaiah',14,9,'free',
+      E'*Hell from beneath is moved for thee to meet thee at thy coming: it stirreth up the dead for thee, even all the chief ones of the earth; it hath raised up from their thrones all the kings of the nations* (Isaiah 14:9). Ezekiel''s command to *cast them down... unto the nether parts of the earth, with them that go down into the pit* (Ezekiel 32:18) is Isaiah''s descent: sheol stirred up to meet the falling king, the dead empires roused to greet the newcomer. The grave is peopled with the chief ones of the earth who went down before.'),
+    ('canon','ezekiel',32,19,'canon','isaiah',14,15,'free',
+      E'*Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The summons *go down, and be thou laid with the uncircumcised* (Ezekiel 32:19) is Isaiah''s same sentence on the proud king: brought down to hell, to the sides of the pit. The exalted power that vaunted itself is laid in the lowest part of the grave.'),
+    ('canon','ezekiel',32,18,'canon','isaiah',14,11,'free',
+      E'*Thy pomp is brought down to the grave, and the noise of thy viols: the worm is spread under thee, and the worms cover thee* (Isaiah 14:11). The wail over *the multitude of Egypt* cast down *unto the nether parts of the earth* (Ezekiel 32:18) is the bringing-down of the pomp that Isaiah names: the splendour of the empire laid in the grave, the worm its bed. The glory of the nations comes to the dust.'),
+    ('canon','ezekiel',32,29,'canon','psalms',9,17,'free',
+      E'*The wicked shall be turned into hell, and all the nations that forget Elohim (God)* (Psalm 9:17). The roll of the fallen empires gathered in the pit — *There is Edom, her kings, and all her princes... they shall lie with the uncircumcised, and with them that go down to the pit* (Ezekiel 32:29) — is the Psalmist''s verdict on every godless power: the nations that forget Elohim are turned into hell. Asshur, Elam, Meshech, Tubal, Edom — the nations that forgot Yahuah, all in the grave together.'),
+    ('canon','ezekiel',32,21,'canon','luke',16,23,'free',
+      E'*And in hell he lift up his eyes, being in torments, and seeth Abraham afar off, and Lazarus in his bosom* (Luke 16:23). The mighty who *speak to him out of the midst of hell* (Ezekiel 32:21) are the dead conscious in sheol — as the rich man *in hell... lift up his eyes, being in torments*. The pit is no mere silence; the fallen speak from the midst of hell, awake to their estate.'),
+    ('canon','ezekiel',32,18,'canon','revelation',20,13,'free',
+      E'*And the sea gave up the dead which were in it; and death and hell delivered up the dead which were in them: and they were judged every man according to their works* (Revelation 20:13). The descent of Egypt and the empires *with them that go down into the pit* (Ezekiel 32:18) is carried to its last assize: death and hell deliver up their dead, *and they were judged every man according to their works*. The grave that gathered the proud nations is itself opened at the white throne.'),
+    ('canon','ezekiel',32,18,'canon','revelation',20,14,'free',
+      E'*And death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14). The pit into which Egypt and Asshur and Elam are cast down (Ezekiel 32:18) is not the end: at the last, death and hell themselves *were cast into the lake of fire. This is the second death*. The grave that holds the fallen empires is finally swallowed up, and the wicked pass into the second death.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1 (★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-32-the-whale-netted-and-the-heaven-darkened',
+       E'Thou art as a whale in the seas — I will spread out my net over thee, and cover the heaven',
+       E'The lamentation for Pharaoh opens with the king of Egypt as the sea-monster: *Son of Adam, take up a lamentation for Pharaoh king of Egypt, and say unto him, Thou art like a young lion of the nations, and thou art as a whale in the seas: and thou camest forth with thy rivers, and troubledst the waters with thy feet, and fouledst their rivers* (32:2). Yahuah takes the monster as a hunter takes the beast: *I will therefore spread out my net over thee with a company of many people; and they shall bring thee up in my net. Then will I leave thee upon the land, I will cast thee forth upon the open field* (32:3-4). This is the same Pharaoh-dragon of the chapter before — *the great dragon that lieth in the midst of his rivers, which hath said, My river is mine own, and I have made it for myself. But I will put hooks in thy jaws... and I will bring thee up out of the midst of thy rivers* (Ezekiel 29:3-4) — the proud power that claimed the river as its own, hooked and hauled from its waters. And when the monster is put out, the heavens go dark: *And when I shall put thee out, I will cover the heaven, and make the stars thereof dark; I will cover the sun with a cloud, and the moon shall not give her light. All the bright lights of heaven will I make dark over thee, and set darkness upon thy land* (32:7-8). This is the day-of-Yahuah darkening that attends the fall of every proud power. Isaiah set it over Babylon: *the stars of heaven and the constellations thereof shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine* (Isaiah 13:10). Joel made it the sign of the great Day: *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come* (Joel 2:31); *The sun and the moon shall be darkened, and the stars shall withdraw their shining* (Joel 3:15). And the Formed Son set the same signs at the end of the age: *Immediately after the tribulation of those days shall the sun be darkened, and the moon shall not give her light, and the stars shall fall from heaven, and the powers of the heavens shall be shaken* (Matthew 24:29). The netting of the whale and the blackening of the heavens make Egypt''s overthrow a rehearsal of the great and terrible Day.',
+       sv.verse_id, ev.verse_id, 'free', 32775
+  FROM _s308_ezek32_lookup sv, _s308_ezek32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=32 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2 (★★)
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain',
+       E'Cast them down to the nether parts of the earth — there is Asshur, Elam, Meshech, Tubal, Edom',
+       E'The second oracle is a descent into sheol. Yahuah commands the prophet: *Son of Adam, wail for the multitude of Egypt, and cast them down, even her, and the daughters of the famous nations, unto the nether parts of the earth, with them that go down into the pit. Whom dost thou pass in beauty? go down, and be thou laid with the uncircumcised* (32:18-19). And the grave is already peopled with the fallen empires, who rise from the midst of hell to greet the newcomer: *The strong among the mighty shall speak to him out of the midst of hell* (32:21); *Asshur is there and all her company* (32:22); *There is Elam and all her multitude round about her grave, all of them slain, fallen by the sword* (32:24); *There is Meshech, Tubal, and all her multitude* (32:26); *There is Edom, her kings, and all her princes... they shall lie with the uncircumcised, and with them that go down to the pit* (32:29); *There be the princes of the north, all of them, and all the Zidonians* (32:30) — every proud nation laid in the dust together, slain by the sword, bearing their shame. Isaiah sang the same descent over Babylon''s king: *Hell from beneath is moved for thee to meet thee at thy coming: it stirreth up the dead for thee, even all the chief ones of the earth; it hath raised up from their thrones all the kings of the nations* (Isaiah 14:9); *Thy pomp is brought down to the grave... the worm is spread under thee, and the worms cover thee* (Isaiah 14:11); *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15). The Psalmist names the end of every godless empire: *The wicked shall be turned into hell, and all the nations that forget Elohim (God)* (Psalm 9:17). And the New Testament carries the descent to its last assize: the fallen are awake in their estate — *in hell he lift up his eyes, being in torments* (Luke 16:23) — and at the white throne *death and hell delivered up the dead which were in them; and they were judged every man according to their works* (Revelation 20:13), *And death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14). The grave gathers the proud nations together; and the grave itself is opened at the last to the judgment of works.',
+       sv.verse_id, ev.verse_id, 'free', 32778
+  FROM _s308_ezek32_lookup sv, _s308_ezek32_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='ezekiel' AND ev.chapter_number=32 AND ev.verse_number=32
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members (★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★ *the great dragon that lieth in the midst of his rivers... My river is mine own, and I have made it for myself* (Ezekiel 29:3) — the netted whale of 32:3 is the same Pharaoh-dragon of the chapter before, the river claimed as his own.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=3
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=29 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-the-whale-netted-and-the-heaven-darkened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★ *I will put hooks in thy jaws... and I will bring thee up out of the midst of thy rivers* (Ezekiel 29:4) — *they shall bring thee up in my net* (32:3) is the hooks-in-the-jaws: the river-dragon hauled from his own waters.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=3
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=29 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-the-whale-netted-and-the-heaven-darkened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★ *the sun shall be darkened in his going forth, and the moon shall not cause her light to shine* (Isaiah 13:10) — the darkening at Pharaoh''s fall (32:7) is the day-of-Yahuah sign Isaiah set over Babylon.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=7
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=13 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-the-whale-netted-and-the-heaven-darkened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The sun shall be turned into darkness, and the moon into blood, before the great and the terrible day of Yahuah (LORD) come* (Joel 2:31) — the covered sun and withheld moon of 32:7 are Joel''s signs of the great Day.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=7
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=2 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-the-whale-netted-and-the-heaven-darkened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *The sun and the moon shall be darkened, and the stars shall withdraw their shining* (Joel 3:15) — the same triad goes dark at Pharaoh''s fall (32:7); Joel''s sign in the valley of decision.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=7
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joel' AND tv.chapter_number=3 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-the-whale-netted-and-the-heaven-darkened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★ *the sun shall be darkened, and the moon shall not give her light, and the stars shall fall from heaven* (Matthew 24:29) — the Formed Son sets at the end the very darkening spoken over Pharaoh (32:7).'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=7
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=24 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-the-whale-netted-and-the-heaven-darkened'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members (★★)
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'★★ *Hell from beneath is moved for thee to meet thee at thy coming... all the chief ones of the earth... all the kings of the nations* (Isaiah 14:9) — the casting-down to the pit (32:18) is Isaiah''s sheol stirred up to greet the falling power.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=18
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'★★ *Yet thou shalt be brought down to hell, to the sides of the pit* (Isaiah 14:15) — *go down, and be thou laid with the uncircumcised* (32:19) is Isaiah''s same sentence on the proud king.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=19
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'★★ *Thy pomp is brought down to the grave... the worm is spread under thee, and the worms cover thee* (Isaiah 14:11) — the wail over Egypt cast down (32:18) is the bringing-down of the empire''s pomp to the dust.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=18
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=14 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'★ *The wicked shall be turned into hell, and all the nations that forget Elohim (God)* (Psalm 9:17) — the roll of empires in the pit (32:29; Asshur, Elam, Meshech, Tubal, Edom) is the Psalmist''s verdict on every godless power.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=29
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=9 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'★ *in hell he lift up his eyes, being in torments* (Luke 16:23) — the mighty who *speak to him out of the midst of hell* (32:21) are the dead awake in sheol, conscious of their estate.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=21
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=16 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'★★ *death and hell delivered up the dead which were in them: and they were judged every man according to their works* (Revelation 20:13) — the pit that gathers the empires (32:18) is opened at the white throne.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=18
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'★★ *And death and hell were cast into the lake of fire. This is the second death* (Revelation 20:14) — the grave that holds the fallen empires (32:18) is itself finally swallowed up.'
+  FROM cross_reference_threads t
+  JOIN _s308_ezek32_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='ezekiel' AND sv.chapter_number=32 AND sv.verse_number=18
+  JOIN _s308_ezek32_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=20 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='ezekiel-32-down-to-the-pit-with-the-uncircumcised-and-the-slain'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session308 — Ezekiel cross-references complete.'
