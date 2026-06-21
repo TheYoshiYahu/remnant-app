@@ -5658,6 +5658,1521 @@ SELECT t.id, cr.id, 2, E'2 Kings 17:23 — *Yashar''el (Israel) carried away out
  WHERE t.slug='2-kings-20-the-northern-stick-scattered-now-the-southern-foretold'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_2-kings_21.sql (2 Kings 21) -----
+-- Book: 2 Kings, chapter 21 — Manasseh the worst king of Yahudah, and Amon his son
+-- Tag: 2ki21   View: _s343_2ki21_lookup   Sort band: 39000 step 3 (39000..39009)
+-- Source rows all: 'canon','2-kings',21,v
+--
+-- 2 Kings 21 coverage:
+--   v.1     NT: none warranted   Extras: none warranted   Tanakh: 2Chr 33:1 (parallel regnal note) — recorded, folded into thread 1 frame not a member
+--   v.2     NT: none warranted   Extras: none warranted   Tanakh: 2Chr 33:2 — folded into thread 1
+--   v.3     NT: none warranted   Extras: none warranted   Tanakh: 2Chr 33:3 (parallel) — MEMBER thread 1
+--   v.4     NT: none warranted   Extras: none warranted   Tanakh: 1Kgs 9:3 (the promise contradicted) — MEMBER thread 1
+--   v.5     NT: none warranted   Extras: none warranted   Tanakh: (host of heaven in two courts) — folded into thread 1
+--   v.6     NT: none warranted   Extras: none warranted   Tanakh: Deut 18:10, Deut 18:11, Deut 18:12 (the named abominations) — MEMBERS thread 2; 2Chr 33:6 parallel folded
+--   v.7     NT: none warranted   Extras: none warranted   Tanakh: 1Kgs 9:3 / 1Kgs 9:7 (put-my-name / cut-off warning) — MEMBERS thread 1
+--   v.8     NT: none warranted   Extras: none warranted   Tanakh: 2Chr 33:8 (Torah-condition restated) — folded into thread 1 frame; the if-they-observe-Torah clause
+--   v.9     NT: none warranted   Extras: none warranted   Tanakh: (seduced them) — folded into thread 3
+--   v.10-12 NT: none warranted   Extras: none warranted   Tanakh: (prophets' sentence) — frame for thread 3
+--   v.13    NT: none warranted   Extras: none warranted   Tanakh: 2Kgs 24:3 (line of Samaria / measured by the same plummet, exile sealed) — MEMBER thread 3
+--   v.14-15 NT: none warranted   Extras: none warranted   Tanakh: (forsake the remnant) — frame for thread 3
+--   v.16    NT: none warranted   Extras: none warranted   Tanakh: 2Kgs 24:4 (innocent blood Yahuah would not pardon) + Jer 15:4 (removed because of Manasseh) — MEMBERS thread 3; 2Chr 33:12, 2Chr 33:13 (the late mercy) — MEMBERS thread 4
+--   v.17    NT: none warranted   Extras: none warranted   Tanakh: none warranted (chronicle formula)
+--   v.18    NT: none warranted   Extras: none warranted   Tanakh: none warranted (burial)
+--   v.19-22 NT: none warranted   Extras: none warranted   Tanakh: 2Chr 33:22-23 (Amon did evil, humbled not himself) — folded into thread 4 frame
+--   v.23-26 NT: none warranted   Extras: none warranted   Tanakh: none warranted (conspiracy/burial/Josiah succeeds)
+--
+-- Threads (all canon → tier_required 'free'):
+--   1. 2-kings-21-altars-in-the-house-where-yahuah-put-his-name   [Tanakh: 1 Kings, 2 Chronicles]  v.3,4,7
+--   2. 2-kings-21-pass-through-the-fire-and-familiar-spirits-the-deut-18-abominations  [Tanakh: Deuteronomy]  v.6
+--   3. 2-kings-21-the-line-of-samaria-and-the-innocent-blood-that-sealed-the-exile  [Tanakh: 2 Kings, Jeremiah]  v.13,16
+--   4. 2-kings-21-even-the-worst-who-humbleth-himself-the-mercy-of-manassehs-captivity  [Tanakh: 2 Chronicles]  v.16
+-- Framework-load-bearing: v.4/7 the deepest desecration = idols in Yahuah's OWN house where He swore to put His name (1Kgs 9:3), contradicting the very covenant-word; the Torah-condition of v.8 ('only if they will observe to do... all the law that my servant Moses commanded') stands — the land is held BY the covenant, Torah never the curse. v.16 the INNOCENT BLOOD is the named cause of the exile the reform cannot avert (2Kgs 24:3-4; Jer 15:4). Thread 4 records, for honesty, the mercy even to the worst king who humbled himself in captivity (2Chr 33:12-13) — the Father's reach.
+
+CREATE TEMP VIEW _s343_2ki21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: altars in the house where Yahuah put His name
+    ('canon','2-kings',21,4,'canon','1-kings',9,3,'free',E'*And Yahuah (LORD) said unto him, I have heard thy prayer and thy supplication, that thou hast made before me: I have hallowed this house, which thou hast built, to put my name there for ever; and mine eyes and mine heart shall be there perpetually.* (1 Kings 9:3) This is the very word Manasseh contradicts. Yahuah had hallowed the house and set His name there *for ever*; Manasseh *built altars in the house of Yahuah (LORD), of which Yahuah (LORD) said, In Jerusalem will I put my name* (2 Kings 21:4). The deepest desecration is not idolatry on a hill but a graven image inside the one house chosen to carry the Name.'),
+    ('canon','2-kings',21,7,'canon','1-kings',9,3,'free',E'*I have hallowed this house, which thou hast built, to put my name there for ever; and mine eyes and mine heart shall be there perpetually.* (1 Kings 9:3) Manasseh *set a graven image of the grove that he had made in the house, of which Yahuah (LORD) said to David, and to Solomon his son, In this house... which I have chosen out of all tribes of Yashar''el (Israel), will I put my name for ever* (2 Kings 21:7) — he answers the eternal Name-promise with an idol planted in the holy place.'),
+    ('canon','2-kings',21,7,'canon','1-kings',9,7,'free',E'*Then will I cut off Yashar''el (Israel) out of the land which I have given them; and this house, which I have hallowed for my name, will I cast out of my sight; and Yashar''el (Israel) shall be a proverb and a byword among all people* (1 Kings 9:7). The same chapter that gave the Name-promise gave its condition: defile the house and it is cast out of His sight. Manasseh''s altars (2 Kings 21:7) trigger exactly this clause — the house chosen *for ever* will be wiped (2 Kings 21:13).'),
+    ('canon','2-kings',21,3,'canon','2-chronicles',33,3,'free',E'*For he built again the high places which Hezekiah his father had broken down, and he reared up altars for Baalim, and made groves, and worshipped all the host of heaven, and served them.* (2 Chronicles 33:3) The Chronicler tells the same descent: Manasseh *built up again the high places which Hezekiah his father had destroyed; and he reared up altars for Baal, and made a grove* (2 Kings 21:3) — every reform of the godly father undone by the son.'),
+    -- Thread 2: the Deut 18 abominations
+    ('canon','2-kings',21,6,'canon','deuteronomy',18,10,'free',E'*There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10). Manasseh does the very catalogue the Torah forbids: *he made his son pass through the fire, and observed times, and used enchantments* (2 Kings 21:6). The king becomes the abomination Yahuah drove the nations out for.'),
+    ('canon','2-kings',21,6,'canon','deuteronomy',18,11,'free',E'*Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer.* (Deuteronomy 18:11) Manasseh *dealt with familiar spirits and wizards* (2 Kings 21:6), reaching to the dead and the unclean spirits the Torah names by name — the Torah is not silent on this; he knew the list and crossed every line of it.'),
+    ('canon','2-kings',21,6,'canon','deuteronomy',18,12,'free',E'*For all that do these things are an abomination unto Yahuah (LORD): and because of these abominations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee.* (Deuteronomy 18:12) This is the verdict over Manasseh''s whole practice: *he wrought much wickedness in the sight of Yahuah (LORD), to provoke him to anger* (2 Kings 21:6). The nations were cast out for these very things; now a son of Yahudah does them, and the same drive-out hangs over Jerusalem.'),
+    -- Thread 3: line of Samaria + innocent blood seal the exile
+    ('canon','2-kings',21,13,'canon','2-kings',24,3,'free',E'*Surely at the commandment of Yahuah (LORD) came this upon Yahudah (Judah), to remove them out of his sight, for the sins of Manasseh, according to all that he did* (2 Kings 24:3). The plummet that levelled the north is stretched over the south: *I will stretch over Jerusalem the line of Samaria, and the plummet of the house of Ahab: and I will wipe Jerusalem as a man wipeth a dish* (2 Kings 21:13). Judah is measured by the same line that condemned Yashar''el (Israel) — the south follows the north into exile, and the sins of Manasseh are named as the cause.'),
+    ('canon','2-kings',21,16,'canon','2-kings',24,4,'free',E'*And also for the innocent blood that he shed: for he filled Jerusalem with innocent blood; which Yahuah (LORD) would not pardon.* (2 Kings 24:4) Here is the unforgiven thing: *Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another* (2 Kings 21:16). This bloodguilt is the decisive cause of the Babylonian judgment even Josiah''s reform cannot reverse — the blood cries from the ground that Yahuah *would not pardon*.'),
+    ('canon','2-kings',21,16,'canon','jeremiah',15,4,'free',E'*And I will cause them to be removed into all kingdoms of the earth, because of Manasseh the son of Hezekiah king of Yahudah (Judah), for that which he did in Jerusalem.* (Jeremiah 15:4) A generation later the prophet still names him: the scattering *into all kingdoms of the earth* is laid to Manasseh, who *filled Jerusalem from one end to another* with innocent blood (2 Kings 21:16). The reform of his grandson Josiah delays but cannot undo it.'),
+    -- Thread 4: mercy even to the worst who humbles himself
+    ('canon','2-kings',21,16,'canon','2-chronicles',33,12,'free',E'*And when he was in affliction, he besought Yahuah Elohav (the LORD his God), and humbled himself greatly before the Elohim (God) of his fathers* (2 Chronicles 33:12). 2 Kings sets down only the crimes of the worst king — *Manasseh shed innocent blood very much* (2 Kings 21:16); the Chronicler adds the honest sequel: dragged to Babylon with hooks, the worst of all kings *humbled himself greatly*. The seed-promise reaches even here, where a man bows.'),
+    ('canon','2-kings',21,16,'canon','2-chronicles',33,13,'free',E'*And prayed unto him: and he was intreated of him, and heard his supplication, and brought him again to Jerusalem into his kingdom. Then Manasseh knew that Yahuah (LORD) he was Elohim (God).* (2 Chronicles 33:13) The king who *filled Jerusalem from one end to another* with innocent blood (2 Kings 21:16) is, in captivity, *intreated of* and *brought again* — Yahuah hears the man who humbles himself, even the worst, though the bloodguilt over the city still stands. Mercy to the penitent and judgment on the blood are not at war; both are true.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-21-altars-in-the-house-where-yahuah-put-his-name',
+       E'Altars in the house where Yahuah put His name',
+       E'Solomon''s house was hallowed by a covenant-word: *I have hallowed this house, which thou hast built, to put my name there for ever; and mine eyes and mine heart shall be there perpetually* (1 Kings 9:3). Manasseh answers that word with desecration in the holy place itself: he *built altars in the house of Yahuah (LORD), of which Yahuah (LORD) said, In Jerusalem will I put my name* (2 Kings 21:4), and *set a graven image of the grove that he had made in the house... which I have chosen out of all tribes of Yashar''el (Israel), will I put my name for ever* (2 Kings 21:7). The deepest idolatry is not on the high places (though *he built up again the high places which Hezekiah his father had destroyed*, 2 Kings 21:3 — the same descent recorded in 2 Chronicles 33:3) but inside the one chosen house. And the same chapter that gave the Name-promise gave its condition: *this house, which I have hallowed for my name, will I cast out of my sight* (1 Kings 9:7). The covenant holds the land and the house — *only if they will observe to do according to all that I have commanded them, and according to all the law that my servant Moses commanded them* (2 Kings 21:8). Break that, defile that house, and the eternal Name-promise becomes the warrant for the wiping that follows.',
+       sv.verse_id, ev.verse_id, 'free', 39000
+  FROM _s343_2ki21_lookup sv, _s343_2ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=21 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-21-pass-through-the-fire-and-familiar-spirits-the-deut-18-abominations',
+       E'Pass through the fire and familiar spirits — the Deuteronomy 18 abominations',
+       E'In one verse Manasseh runs the whole catalogue the Torah forbids: *And he made his son pass through the fire, and observed times, and used enchantments, and dealt with familiar spirits and wizards: he wrought much wickedness in the sight of Yahuah (LORD), to provoke him to anger* (2 Kings 21:6). Deuteronomy 18 names every item by name: *There shall not be found among you any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times, or an enchanter, or a witch* (Deuteronomy 18:10); *Or a charmer, or a consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11). And the verdict: *For all that do these things are an abomination unto Yahuah (LORD): and because of these abominations Yahuah Elohayka (the LORD thy God) doth drive them out from before thee* (Deuteronomy 18:12). The nations were cast out of the land for these very practices; now a king of Yahudah (Judah) does them all, and the drive-out the Torah pronounced comes round upon Jerusalem.',
+       sv.verse_id, ev.verse_id, 'free', 39003
+  FROM _s343_2ki21_lookup sv, _s343_2ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=6
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=21 AND ev.verse_number=6
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-21-the-line-of-samaria-and-the-innocent-blood-that-sealed-the-exile',
+       E'The line of Samaria, and the innocent blood that sealed the exile',
+       E'Yahuah passes sentence by the prophets, and the figure is a builder''s tools turned to demolition: *I will stretch over Jerusalem the line of Samaria, and the plummet of the house of Ahab: and I will wipe Jerusalem as a man wipeth a dish, wiping it, and turning it upside down* (2 Kings 21:13). Judah will be measured by the same line and plummet that condemned the northern house — the south following the north into exile. The decisive cause is named twice: *Moreover Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another* (2 Kings 21:16). When the Babylonian judgment falls, the historian looks back to this very man: *Surely at the commandment of Yahuah (LORD) came this upon Yahudah (Judah), to remove them out of his sight, for the sins of Manasseh, according to all that he did* (2 Kings 24:3); *And also for the innocent blood that he shed: for he filled Jerusalem with innocent blood; which Yahuah (LORD) would not pardon* (2 Kings 24:4). The prophet Jeremiah, a generation on, says the same: *I will cause them to be removed into all kingdoms of the earth, because of Manasseh the son of Hezekiah king of Yahudah (Judah), for that which he did in Jerusalem* (Jeremiah 15:4). Josiah''s great reform delays but cannot avert it; shed innocent blood is the guilt the land itself will not hold.',
+       sv.verse_id, ev.verse_id, 'free', 39006
+  FROM _s343_2ki21_lookup sv, _s343_2ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=21 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-21-even-the-worst-who-humbleth-himself-the-mercy-of-manassehs-captivity',
+       E'Even the worst who humbleth himself — the mercy of Manasseh''s captivity',
+       E'2 Kings sets down only the crimes — *Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another* (2 Kings 21:16) — and lets the worst king of Yahudah (Judah) sleep with his fathers under judgment. The Chronicler, for honesty, records the sequel the king-list omits: carried captive to Babylon among the thorns, *when he was in affliction, he besought Yahuah Elohav (the LORD his God), and humbled himself greatly before the Elohim (God) of his fathers* (2 Chronicles 33:12). And the answer: *And prayed unto him: and he was intreated of him, and heard his supplication, and brought him again to Jerusalem into his kingdom. Then Manasseh knew that Yahuah (LORD) he was Elohim (God)* (2 Chronicles 33:13). The Father''s reach extends even to the man who filled the city with blood — He hears the one who bows. This is not the bloodguilt pardoned (that judgment over Jerusalem still came); it is mercy to the penitent man set beside judgment on the city''s sin, both held true at once — the warning against any reading that thinks the worst is past Yahuah''s reach.',
+       sv.verse_id, ev.verse_id, 'free', 39009
+  FROM _s343_2ki21_lookup sv, _s343_2ki21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=21 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- Members thread 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*I have hallowed this house... to put my name there for ever* (1 Kings 9:3) — the very promise Manasseh''s altars in the house (2 Kings 21:4) defy.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=4
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-altars-in-the-house-where-yahuah-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'The eternal Name-promise (1 Kings 9:3) again — answered by *a graven image... in the house... will I put my name for ever* (2 Kings 21:7).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-altars-in-the-house-where-yahuah-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*This house... will I cast out of my sight* (1 Kings 9:7) — the Name-promise''s condition, triggered by the idols of 2 Kings 21:7.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=9 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-altars-in-the-house-where-yahuah-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*He built again the high places which Hezekiah his father had broken down* (2 Chronicles 33:3) — the Chronicler''s parallel to the undone reform of 2 Kings 21:3.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=3
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=33 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-altars-in-the-house-where-yahuah-put-his-name'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Any one that maketh his son or his daughter to pass through the fire, or that useth divination, or an observer of times* (Deuteronomy 18:10) — named in the Torah, done by Manasseh in 2 Kings 21:6.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-pass-through-the-fire-and-familiar-spirits-the-deut-18-abominations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*A consulter with familiar spirits, or a wizard, or a necromancer* (Deuteronomy 18:11) — the dead-consulting Manasseh *dealt with familiar spirits and wizards* (2 Kings 21:6).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-pass-through-the-fire-and-familiar-spirits-the-deut-18-abominations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*All that do these things are an abomination unto Yahuah... doth drive them out from before thee* (Deuteronomy 18:12) — the verdict over Manasseh''s much wickedness (2 Kings 21:6).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=6
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=18 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-pass-through-the-fire-and-familiar-spirits-the-deut-18-abominations'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*For the sins of Manasseh... to remove them out of his sight* (2 Kings 24:3) — Judah measured by the line of Samaria (2 Kings 21:13).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=13
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-the-line-of-samaria-and-the-innocent-blood-that-sealed-the-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*The innocent blood that he shed... which Yahuah would not pardon* (2 Kings 24:4) — the bloodguilt of 2 Kings 21:16 named as the unforgiven cause of exile.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=16
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=24 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-the-line-of-samaria-and-the-innocent-blood-that-sealed-the-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Removed into all kingdoms of the earth, because of Manasseh* (Jeremiah 15:4) — the prophet, a generation on, still names the blood of 2 Kings 21:16.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=16
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-the-line-of-samaria-and-the-innocent-blood-that-sealed-the-exile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Members thread 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*When he was in affliction... humbled himself greatly* (2 Chronicles 33:12) — the sequel to the crimes of 2 Kings 21:16 the king-list omits.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=16
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=33 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-even-the-worst-who-humbleth-himself-the-mercy-of-manassehs-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*He was intreated of him... brought him again to Jerusalem... Then Manasseh knew that Yahuah he was Elohim* (2 Chronicles 33:13) — mercy to the worst penitent, set beside the unpardoned blood of 2 Kings 21:16.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=21 AND sv.verse_number=16
+  JOIN _s343_2ki21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=33 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-21-even-the-worst-who-humbleth-himself-the-mercy-of-manassehs-captivity'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_22.sql (2 Kings 22) -----
+--
+-- Chapter: 2 Kings 22 — Josiah finds the Book of the Torah in the house of Yahuah
+-- Tag: 2ki22   |  Session prefix: s343   |  View: _s343_2ki22_lookup
+-- Sort band: base 39025, step 3  (39025, 39028, 39031, 39034)
+--
+-- FRAME (per MINION_BRIEF_TANAKH.md): the recovered Word/Torah — the lost book found, the
+-- covenant neglected through idolatry then restored. The Torah here is the WORD that convicts
+-- and renews the tender heart, NEVER the curse (Deut 28 is the exile-judgment for covenant-
+-- BREAKING; the book itself is the covenant inheritance they broke and must return to).
+-- Josiah, doer-not-hearer (Jas 1), rends his clothes at the living Word (Heb 4:12); Huldah's
+-- oracle = mercy to the one who humbles himself at the Word (Deut 30 return-and-compassion).
+--
+-- 2 Kings 22 coverage:
+--   v.1-7  (Josiah right; temple repair, faithful workmen)
+--          NT:     none warranted (narrative setting)
+--          Extras: none warranted
+--          Tanakh: 2 Chron 34:1-13 parallel (held for the book-found thread, v.8)
+--   v.8,10 (Hilkiah FINDS the book of the law; Shaphan reads it)  ★★★
+--          NT:     none warranted directly (the Word-recovered weaves through the heart thread)
+--          Extras: none warranted
+--          Tanakh: 2 Chron 34:14-15 (book found, parallel); Neh 8:1-3 (Torah read again to all);
+--                  Deut 30:11-14 (the word very nigh — not hidden, not lost in heaven)  → THREAD 1
+--   v.2    (Josiah did right, turned not to the right or left)
+--          covered as anchor within thread 1 prose
+--   v.11   (the king rent his clothes at the words of the book)  ★★
+--          NT:     Heb 4:12 (the word quick and powerful, piercing); Jas 1:22-25 (doers not hearers)
+--          Extras: none warranted
+--          Tanakh: Ps 119:130 (entrance of thy words giveth light); Ps 119:18 (wondrous things)
+--                                                                                   → THREAD 2
+--   v.13   (great is the wrath... our fathers have not hearkened... to do all written)  ★
+--          NT:     none warranted (the doers-not-hearers note carried in thread 2)
+--          Extras: none warranted
+--          Tanakh: Deut 28:58 (words of this law in this book); Deut 28:15 / 28:45 (curse for not
+--                  hearkening); Deut 29:25-27 (forsook the covenant → anger kindled)  → THREAD 3
+--   v.16-17 (I will bring evil... because they have forsaken me, burned incense to other gods)
+--          covered within thread 3 (the covenant-breaking sentence, not the Torah cursing)
+--   v.18-20 (Huldah: because thine heart was tender and thou humbledst thyself... peace)  ★
+--          NT:     none warranted (Deut return/mercy carries it; Jas 4:6/4:10 considered, held —
+--                  Tanakh witnesses are the load-bearing ones for the humbled-heart oracle)
+--          Extras: none warranted
+--          Tanakh: 2 Chron 34:27-28 (parallel oracle); Deut 30:2-3 (return → compassion/gather)
+--                                                                                   → THREAD 4
+--
+-- Threads (4):
+--   2-kings-22-the-book-of-the-law-found-in-the-house     [Tanakh] free
+--   2-kings-22-the-word-rends-the-tender-heart            [Tanakh+NT] free
+--   2-kings-22-great-is-the-wrath-our-fathers-hearkened-not [Tanakh] free
+--   2-kings-22-mercy-to-the-one-who-humbles-himself       [Tanakh] free
+--
+
+CREATE TEMP VIEW _s343_2ki22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ cross_references ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the book of the law found in the house
+    ('canon','2-kings',22,8,'canon','2-chronicles',34,14,'free',
+     E'*And when they brought out the money that was brought into the house of Yahuah (LORD), Hilkiah the priest found a book of the law of Yahuah (LORD) given by Moses* (2 Chronicles 34:14). The Chronicler names what 2 Kings declares — *I have found the book of the law in the house of Yahuah (LORD)* (2 Kings 22:8): the very Torah given by Moses, neglected and buried through the idolatrous reigns, recovered amid the temple repair. The covenant-word was never abolished — only lost from the people who forsook it, and now found again in his house.'),
+    ('canon','2-kings',22,8,'canon','2-chronicles',34,15,'free',
+     E'*And Hilkiah answered and said to Shaphan the scribe, I have found the book of the law in the house of Yahuah (LORD). And Hilkiah delivered the book to Shaphan* (2 Chronicles 34:15). The same announcement as *I have found the book of the law in the house of Yahuah (LORD)* (2 Kings 22:8) — the high priest is the one who recovers the lost Torah and hands it on, that it may be read and obeyed.'),
+    ('canon','2-kings',22,8,'canon','nehemiah',8,1,'free',
+     E'*And all the people gathered themselves together as one man into the street that was before the water gate; and they spake unto Ezra the scribe to bring the book of the law of Moses, which Yahuah (LORD) had commanded to Yashar''el (Israel)* (Nehemiah 8:1). What Josiah recovers, the returned remnant calls for again after the exile — the same *book of the law*, the same covenant instruction commanded to Yashar''el (Israel). The Torah is the people''s perpetual inheritance, returned to whenever the heart turns back.'),
+    ('canon','2-kings',22,10,'canon','nehemiah',8,3,'free',
+     E'*And he read therein before the street that was before the water gate from the morning until midday... and the ears of all the people were attentive unto the book of the law* (Nehemiah 8:3). As *Shaphan read it before the king* (2 Kings 22:10), so Ezra reads the same book before all the people — the recovered Word read aloud is the hinge of every covenant-renewal, the doors of the heart opened by the reading.'),
+    ('canon','2-kings',22,8,'canon','deuteronomy',30,11,'free',
+     E'*For this commandment which I command thee this day, it is not hidden from thee, neither is it far off* (Deuteronomy 30:11). Moses had said the word would never be truly lost — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deut 30:14). Hilkiah''s finding of *the book of the law in the house of Yahuah (LORD)* (2 Kings 22:8) proves it: neglected, yes, but never far off, recovered the moment the house is sought again.'),
+    -- THREAD 2: the word rends the tender heart
+    ('canon','2-kings',22,11,'canon','hebrews',4,12,'free',
+     E'*For the word of Elohim (God) is quick, and powerful, and sharper than any twoedged sword, piercing even to the dividing asunder of soul and spirit... and is a discerner of the thoughts and intents of the heart* (Hebrews 4:12). When *the king had heard the words of the book of the law, that he rent his clothes* (2 Kings 22:11): the recovered Word is not dead parchment but the living sword that pierces — it discerns the heart, and the tender heart is cut to repentance.'),
+    ('canon','2-kings',22,11,'canon','james',1,22,'free',
+     E'*But be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22). Josiah does not merely hear — *he rent his clothes* (2 Kings 22:11) and moves to obey. He is the doer, not the deceived hearer, the very pattern James commands.'),
+    ('canon','2-kings',22,11,'canon','james',1,25,'free',
+     E'*But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed* (James 1:25). The law James calls *perfect... of liberty* is the very book Josiah heard; his rending of his clothes (2 Kings 22:11) and renewed covenant make him the doer-of-the-work who is blessed — the Torah looked into and kept, never the Torah set aside.'),
+    ('canon','2-kings',22,11,'canon','psalms',119,130,'free',
+     E'*The entrance of thy words giveth light; it giveth understanding unto the simple* (Psalm 119:130). The instant the words of the book entered Josiah''s ears he saw — and *he rent his clothes* (2 Kings 22:11). The recovered Word giving light to the king is the psalmist''s entrance-of-thy-words made history.'),
+    ('canon','2-kings',22,11,'canon','psalms',119,18,'free',
+     E'*Open thou mine eyes, that I may behold wondrous things out of thy law* (Psalm 119:18). The reading of the book opened the king''s eyes to the covenant he had broken; his torn clothes (2 Kings 22:11) are the answered prayer of one whose eyes are opened by the Torah.'),
+    -- THREAD 3: great is the wrath — our fathers hearkened not
+    ('canon','2-kings',22,13,'canon','deuteronomy',28,58,'free',
+     E'*If thou wilt not observe to do all the words of this law that are written in this book, that thou mayest fear this glorious and fearful name, THE Yahuah (LORD) THY GOD* (Deuteronomy 28:58). This is the very *book that is found* (2 Kings 22:13). Josiah''s dread — *great is the wrath of Yahuah (LORD)... because our fathers have not hearkened unto the words of this book* — is the warning of this book felt at last: the curse fell because the words written in it were not done, never because the words themselves were a curse.'),
+    ('canon','2-kings',22,13,'canon','deuteronomy',28,15,'free',
+     E'*But it shall come to pass, if thou wilt not hearken unto the voice of Yahuah Elohayka (the LORD thy God), to observe to do all his commandments and his statutes... that all these curses shall come upon thee, and overtake thee* (Deuteronomy 28:15). Josiah names the cause exactly — *because our fathers have not hearkened unto the words of this book* (2 Kings 22:13). The wrath is the announced consequence of covenant-breaking, the Torah''s own stated terms, not the Torah condemning the obedient.'),
+    ('canon','2-kings',22,13,'canon','deuteronomy',28,45,'free',
+     E'*Moreover all these curses shall come upon thee... because thou hearkenedst not unto the voice of Yahuah Elohayka (the LORD thy God), to keep his commandments and his statutes which he commanded thee* (Deuteronomy 28:45). The wrath Josiah fears (2 Kings 22:13) is this clause coming due — the curse pursues those who would not keep, and the remedy is to return and keep, which is exactly what Josiah moves to do.'),
+    ('canon','2-kings',22,17,'canon','deuteronomy',29,25,'free',
+     E'*Then men shall say, Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers, which he made with them when he brought them forth out of the land of Egypt* (Deuteronomy 29:25). Huldah''s sentence — *Because they have forsaken me, and have burned incense unto other gods* (2 Kings 22:17) — is Moses'' covenant-lawsuit fulfilled to the letter: the forsaking of the covenant, not its keeping, kindles the wrath.'),
+    ('canon','2-kings',22,17,'canon','deuteronomy',29,27,'free',
+     E'*And the anger of Yahuah (LORD) was kindled against this land, to bring upon it all the curses that are written in this book* (Deuteronomy 29:27). The oracle Josiah hears — *therefore my wrath shall be kindled against this place, and shall not be quenched* (2 Kings 22:17) — speaks Moses'' very words back: the kindled anger is the covenant''s own clause against forsaking him, the victims being the idolatrous fathers'' generation that broke faith.'),
+    -- THREAD 4: mercy to the one who humbles himself at the Word
+    ('canon','2-kings',22,19,'canon','2-chronicles',34,27,'free',
+     E'*Because thine heart was tender, and thou didst humble thyself before Elohim (God)... and didst rend thy clothes, and weep before me; I have even heard thee also, saith Yahuah (LORD)* (2 Chronicles 34:27). The Chronicler echoes Huldah word for word (2 Kings 22:19): mercy is not earned by power but answered to the tender, humbled, weeping heart that trembles at the Word.'),
+    ('canon','2-kings',22,20,'canon','2-chronicles',34,28,'free',
+     E'*Behold, I will gather thee to thy fathers, and thou shalt be gathered to thy grave in peace, neither shall thine eyes see all the evil that I will bring upon this place* (2 Chronicles 34:28). The same promise as *thou shalt be gathered into thy grave in peace* (2 Kings 22:20): the one who humbled himself is spared the evil — judgment deferred for the sake of a tender heart.'),
+    ('canon','2-kings',22,19,'canon','deuteronomy',30,2,'free',
+     E'*And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice according to all that I command thee this day, thou and thy children, with all thine heart, and with all thy soul* (Deuteronomy 30:2). Josiah''s tender heart and humbling (2 Kings 22:19) is the very turning-back Moses foretold — the heart returning with all its soul to obey the recovered word.'),
+    ('canon','2-kings',22,19,'canon','deuteronomy',30,3,'free',
+     E'*That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). The compassion promised to the returning heart answers Josiah''s weeping with mercy — *I also have heard thee* (2 Kings 22:19) — and looks beyond him to the two-house ingathering of all that was scattered, the same compassion to all who humble themselves and return.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ threads ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-22-the-book-of-the-law-found-in-the-house',
+       E'The Book of the Torah Found in the House of Yahuah',
+       E'For two idolatrous reigns the Torah lay neglected and lost in the very house of Yahuah (LORD). Then, amid the temple repair, *Hilkiah the high priest said unto Shaphan the scribe, I have found the book of the law in the house of Yahuah (LORD). And Hilkiah gave the book to Shaphan, and he read it* (2 Kings 22:8), and *Shaphan read it before the king* (2 Kings 22:10). The Chronicler tells the same: *Hilkiah the priest found a book of the law of Yahuah (LORD) given by Moses* (2 Chronicles 34:14) — the Torah given by Moses, not abolished, only buried by the people who forsook it. The covenant-word was never far off. Moses had promised, *For this commandment which I command thee this day, it is not hidden from thee, neither is it far off* (Deuteronomy 30:11) — *the word is very nigh unto thee, in thy mouth, and in thy heart, that thou mayest do it* (Deut 30:14, in v.11''s context). And the same recovered book is read again after the exile: *they spake unto Ezra the scribe to bring the book of the law of Moses, which Yahuah (LORD) had commanded to Yashar''el (Israel)* (Nehemiah 8:1), and *he read therein... and the ears of all the people were attentive unto the book of the law* (Nehemiah 8:3). The found book, read aloud, is the hinge of every return to the covenant.',
+       sv.verse_id, ev.verse_id, 'free', 39025
+  FROM _s343_2ki22_lookup sv, _s343_2ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=22 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-22-the-word-rends-the-tender-heart',
+       E'The Word Rends the Tender Heart',
+       E'*And it came to pass, when the king had heard the words of the book of the law, that he rent his clothes* (2 Kings 22:11). The recovered Torah is no dead parchment; it is the living word that pierces. *For the word of Elohim (God) is quick, and powerful, and sharper than any twoedged sword, piercing even to the dividing asunder of soul and spirit... and is a discerner of the thoughts and intents of the heart* (Hebrews 4:12). Josiah does not merely listen — *be ye doers of the word, and not hearers only, deceiving your own selves* (James 1:22) — he is the doer who acts on what he hears, *not a forgetful hearer, but a doer of the work* who *shall be blessed in his deed* (James 1:25), looking into the *perfect law of liberty* and continuing therein, the Torah kept, never set aside. This is the entrance of the Word giving light: *The entrance of thy words giveth light; it giveth understanding unto the simple* (Psalm 119:130) and *Open thou mine eyes, that I may behold wondrous things out of thy law* (Psalm 119:18). The king''s torn clothes are the answered prayer of one whose eyes the Torah has opened.',
+       sv.verse_id, ev.verse_id, 'free', 39028
+  FROM _s343_2ki22_lookup sv, _s343_2ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=11
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=22 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-22-great-is-the-wrath-our-fathers-hearkened-not',
+       E'Great Is the Wrath — Because Our Fathers Hearkened Not',
+       E'*Go ye, enquire of Yahuah (LORD) for me... for great is the wrath of Yahuah (LORD) that is kindled against us, because our fathers have not hearkened unto the words of this book, to do according unto all that which is written concerning us* (2 Kings 22:13). Josiah names the cause precisely: the wrath is for NOT hearkening — the Torah was broken, not binding-as-a-curse. The book he just heard had said so itself: *If thou wilt not observe to do all the words of this law that are written in this book... that all these curses shall come upon thee* (Deuteronomy 28:58, 28:15), *because thou hearkenedst not unto the voice of Yahuah Elohayka (the LORD thy God), to keep his commandments and his statutes* (Deuteronomy 28:45). Huldah''s oracle is Moses'' covenant-lawsuit come due: *Because they have forsaken me, and have burned incense unto other gods... therefore my wrath shall be kindled against this place, and shall not be quenched* (2 Kings 22:17) — exactly *Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25), so that *the anger of Yahuah (LORD) was kindled against this land, to bring upon it all the curses that are written in this book* (Deuteronomy 29:27). The curse fell on the forsaking, never on the obedience; the cure is to return to the very words and do them.',
+       sv.verse_id, ev.verse_id, 'free', 39031
+  FROM _s343_2ki22_lookup sv, _s343_2ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=22 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-22-mercy-to-the-one-who-humbles-himself',
+       E'Mercy to the One Who Humbles Himself at the Word',
+       E'The sentence stands against the place, yet to the king himself comes mercy: *Because thine heart was tender, and thou hast humbled thyself before Yahuah (LORD)... and hast rent thy clothes, and wept before me; I also have heard thee, saith Yahuah (LORD)* (2 Kings 22:19), *Behold therefore, I will gather thee unto thy fathers, and thou shalt be gathered into thy grave in peace; and thine eyes shall not see all the evil* (2 Kings 22:20). The Chronicler repeats the oracle word for word — *Because thine heart was tender, and thou didst humble thyself before Elohim (God)... I have even heard thee also* (2 Chronicles 34:27), *I will gather thee to thy fathers, and thou shalt be gathered to thy grave in peace* (2 Chronicles 34:28). This is Moses'' promise to the returning heart: *And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice... with all thine heart, and with all thy soul* (Deuteronomy 30:2), *That then Yahuah Elohayka (the LORD thy God) will turn thy captivity, and have compassion upon thee, and will return and gather thee from all the nations, whither Yahuah Elohayka (the LORD thy God) hath scattered thee* (Deuteronomy 30:3). Mercy answers the tender, humbled, weeping heart — and the same compassion reaches beyond Josiah to the two-house ingathering of all that was scattered, all who tremble at the Word and return.',
+       sv.verse_id, ev.verse_id, 'free', 39034
+  FROM _s343_2ki22_lookup sv, _s343_2ki22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=22 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ thread_members ============================
+-- THREAD 1: the book of the law found in the house
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Hilkiah the priest found a book of the law of Yahuah (LORD) given by Moses* (2 Chronicles 34:14) — the parallel naming the recovered book as the Torah of Moses.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=34 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-book-of-the-law-found-in-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*I have found the book of the law in the house of Yahuah (LORD)* (2 Chronicles 34:15) — the high priest hands on the recovered Word.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=34 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-book-of-the-law-found-in-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*the book of the law of Moses, which Yahuah (LORD) had commanded to Yashar''el (Israel)* (Nehemiah 8:1) — the same book called for again by the returned remnant.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-book-of-the-law-found-in-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*the ears of all the people were attentive unto the book of the law* (Nehemiah 8:3) — as Shaphan read before the king, so Ezra reads before the people.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=10
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-book-of-the-law-found-in-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*it is not hidden from thee, neither is it far off* (Deuteronomy 30:11) — Moses'' promise that the word is never truly lost, only neglected.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-book-of-the-law-found-in-the-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: the word rends the tender heart
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the word of Elohim (God) is quick, and powerful, and sharper than any twoedged sword* (Hebrews 4:12) — the living Word that pierces and discerns the heart.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=11
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=4 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-word-rends-the-tender-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*be ye doers of the word, and not hearers only* (James 1:22) — Josiah acts on what he hears, the doer not the deceived hearer.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=11
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-word-rends-the-tender-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*whoso looketh into the perfect law of liberty... a doer of the work, this man shall be blessed in his deed* (James 1:25) — the Torah looked into and kept, never abolished.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=11
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-word-rends-the-tender-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*The entrance of thy words giveth light* (Psalm 119:130) — the Word entering Josiah''s ears gave instant light.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=11
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=130
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-word-rends-the-tender-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*Open thou mine eyes, that I may behold wondrous things out of thy law* (Psalm 119:18) — the king''s torn clothes are the answered prayer of opened eyes.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=11
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=119 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-the-word-rends-the-tender-heart'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: great is the wrath — our fathers hearkened not
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*If thou wilt not observe to do all the words of this law that are written in this book* (Deuteronomy 28:58) — the very book Josiah heard naming the consequence of not doing it.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=58
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-great-is-the-wrath-our-fathers-hearkened-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*if thou wilt not hearken... that all these curses shall come upon thee* (Deuteronomy 28:15) — the curse is for not hearkening, exactly Josiah''s charge against the fathers.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-great-is-the-wrath-our-fathers-hearkened-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*because thou hearkenedst not... to keep his commandments and his statutes* (Deuteronomy 28:45) — the curse pursues the breaking, and the cure is to return and keep.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=13
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=45
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-great-is-the-wrath-our-fathers-hearkened-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Because they have forsaken the covenant of Yahuah Elohim (the LORD God) of their fathers* (Deuteronomy 29:25) — Huldah''s "they have forsaken me" is Moses'' lawsuit fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-great-is-the-wrath-our-fathers-hearkened-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*the anger of Yahuah (LORD) was kindled against this land, to bring upon it all the curses that are written in this book* (Deuteronomy 29:27) — the kindled wrath of 2 Kings 22:17 is the covenant''s own clause.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=17
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=29 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-great-is-the-wrath-our-fathers-hearkened-not'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: mercy to the one who humbles himself
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Because thine heart was tender, and thou didst humble thyself before Elohim (God)... I have even heard thee also* (2 Chronicles 34:27) — the parallel oracle, mercy to the tender heart.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=34 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-mercy-to-the-one-who-humbles-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt be gathered to thy grave in peace, neither shall thine eyes see all the evil* (2 Chronicles 34:28) — judgment deferred for the humbled king.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=20
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=34 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-mercy-to-the-one-who-humbles-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*And shalt return unto Yahuah Elohayka (the LORD thy God), and shalt obey his voice... with all thine heart* (Deuteronomy 30:2) — Josiah''s tender heart is the turning-back Moses foretold.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-mercy-to-the-one-who-humbles-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*will have compassion upon thee, and will return and gather thee from all the nations* (Deuteronomy 30:3) — mercy to the returning heart, reaching to the two-house ingathering of all that was scattered.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=22 AND sv.verse_number=19
+  JOIN _s343_2ki22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=30 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-22-mercy-to-the-one-who-humbles-himself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_23.sql (2 Kings 23) -----
+-- Chapter: 2 Kings 23 — Josiah's great reform (keystone)
+-- Tag: 2ki23   View: _s343_2ki23_lookup   Sort band: 39050 step 3 (39050,39053,39056,39059,39062)
+-- Source rows ALWAYS 'canon','2-kings',23,v. All targets canon → tier 'free'; all threads tier_required 'free'.
+--
+-- 2 Kings 23 coverage:
+--   v.2-3  (read all the words of the book of the covenant; the king made a covenant before Yahuah, to walk after him and keep his commandments... and ALL the people stood to the covenant)
+--          NT:     none warranted (covenant-renewal-at-the-Word is a Tanakh form; the wholehearted love-command FORWARD is woven at v.25 → Deut 6:5)
+--          Extras: none warranted
+--          Tanakh: Joshua 24:25 (Joshua's covenant at Shechem), Nehemiah 8:1+8:3 (Ezra reads the book of the law, all the people gathered as one man), 2 Chronicles 34:30-31 (the parallel account), Deuteronomy 6:5 (love with all the heart and all the soul) → THREAD 1
+--   v.15-18 (the altar at Beth-el broken; bones burned upon it ACCORDING TO THE WORD OF YAHUAH which the man of Elohim proclaimed; Josiah spares that prophet's bones)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 1 Kings 13:2 (the named-Josiah prophecy ~300 yrs old), 1 Kings 13:32 (the saying shall surely come to pass) → THREAD 2
+--   v.21-23 (Keep the passover unto Yahuah, AS IT IS WRITTEN in the book of this covenant; surely there was not holden such a passover from the days of the judges)
+--          NT:     1 Corinthians 5:7 (Messiah our passover sacrificed for us — the feast filled not abolished), Luke 22:15 (with desire I have desired to eat this passover) → woven FORWARD
+--          Extras: none warranted (1 Maccabees feast-restoration is Hanukkah, not Passover)
+--          Tanakh: Exodus 12:14 (keep it a feast by an ordinance for ever), Deuteronomy 16:1 (observe the month of Abib, keep the passover), 2 Chronicles 35:1 + 35:18 (the parallel — no passover like it from the days of Samuel) → THREAD 3
+--   v.24-25 (like unto him was there no king before him that turned to Yahuah with all his heart... according to all the Torah of Moses)
+--          NT:     none warranted (the love-command's NT echo Mark 12:30 left to the gospels' own apparatus)
+--          Extras: none warranted
+--          Tanakh: Deuteronomy 6:5 (love Yahuah with all thine heart, soul, might) → THREAD 4
+--   v.26-27 (NOTWITHSTANDING Yahuah turned not from his great wrath... because of the provocations Manasseh provoked him withal; I will remove Yahudah as I removed Yashar'el)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 21:16 (Manasseh shed innocent blood very much), 2 Kings 24:3 + 24:4 (came upon Yahudah for the sins of Manasseh, the innocent blood Yahuah would not pardon) → THREAD 5
+--   v.4-14,19-20,24 (the thoroughness of the reform — vessels of Baal, Topheth, the high places, familiar spirits) carried inside threads 1/2 as the body of the reform; no separate thread warranted.
+--   v.28-37 (Josiah's death at Megiddo; Jehoahaz, Jehoiakim) regnal-frame narrative; none warranted.
+--
+-- THREADS (all targets canon → tier_required 'free'):
+--   2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant   [Tanakh]  sort 39050
+--   2-kings-23-the-altar-at-bethel-broken-the-sure-word-fulfilled        [Tanakh]  sort 39053
+--   2-kings-23-keep-the-passover-as-it-is-written                        [Tanakh + NT]  sort 39056
+--   2-kings-23-no-king-turned-to-yahuah-with-all-his-heart-like-josiah   [Tanakh]  sort 39059
+--   2-kings-23-yet-yahuah-turned-not-from-his-great-wrath                [Tanakh]  sort 39062
+
+CREATE TEMP VIEW _s343_2ki23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================ CROSS_REFERENCES ============================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: the covenant renewal at the Word (vv.2-3)
+    ('canon','2-kings',23,2,'canon','nehemiah',8,1,'free',
+      E'*And all the people gathered themselves together as one man into the street that was before the water gate; and they spake unto Ezra the scribe to bring the book of the law of Moses, which Yahuah (LORD) had commanded to Yashar''el (Israel).* (Nehemiah 8:1). When *he read in their ears all the words of the book of the covenant which was found in the house of Yahuah* (2 Kings 23:2), Josiah does what Ezra would do after the exile — the whole people gathered to the Word, the book of the law of Moses at the centre. The reform begins not with the king''s decree but with the reading of the covenant.'),
+    ('canon','2-kings',23,2,'canon','nehemiah',8,3,'free',
+      E'*And he read therein before the street that was before the water gate from the morning until midday, before the men and the women, and those that could understand; and the ears of all the people were attentive unto the book of the law.* (Nehemiah 8:3). Josiah''s gathering of *all the men of Yahudah (Judah) and all the inhabitants of Jerusalem... both small and great* to hear *all the words of the book of the covenant* (2 Kings 23:2) is the same posture — the ears of the whole people attentive to the Torah, the Word read aloud as the act of restoration.'),
+    ('canon','2-kings',23,3,'canon','joshua',24,25,'free',
+      E'*So Joshua made a covenant with the people that day, and set them a statute and an ordinance in Shechem.* (Joshua 24:25). When *the king stood by a pillar, and made a covenant before Yahuah (LORD), to walk after Yahuah... And all the people stood to the covenant* (2 Kings 23:3), Josiah stands in Joshua''s place — *choose you this day whom ye will serve... as for me and my house, we will serve Yahuah* (Joshua 24:15). The covenant is never invented anew; it is renewed, the people bound again to the Torah they already received.'),
+    ('canon','2-kings',23,3,'canon','2-chronicles',34,31,'free',
+      E'*And the king stood in his place, and made a covenant before Yahuah (LORD), to walk after Yahuah (LORD), and to keep his commandments, and his testimonies, and his statutes, with all his heart, and with all his soul, to perform the words of the covenant which are written in this book.* (2 Chronicles 34:31). The Chronicler''s witness is the twin of *the king stood by a pillar, and made a covenant before Yahuah... to keep his commandments and his testimonies and his statutes with all their heart and all their soul* (2 Kings 23:3) — two scrolls preserving one act: the king binds himself and the people to perform the words already written.'),
+    ('canon','2-kings',23,3,'canon','deuteronomy',6,5,'free',
+      E'*And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* (Deuteronomy 6:5). The covenant Josiah swears — *to keep his commandments and his testimonies and his statutes with all their heart and all their soul* (2 Kings 23:3) — is the Shema spoken back to Yahuah. The book found in the house is Deuteronomy''s own charge; the king answers it in its own words.'),
+    -- THREAD 2: the altar at Beth-el broken — the sure word fulfilled (vv.15-18)
+    ('canon','2-kings',23,16,'canon','1-kings',13,2,'free',
+      E'*And he cried against the altar in the word of Yahuah (LORD), and said, O altar, altar, thus saith Yahuah (LORD); Behold, a child shall be born unto the house of David, Josiah by name; and upon thee shall he offer the priests of the high places that burn incense upon thee, and men''s bones shall be burnt upon thee.* (1 Kings 13:2). Some three hundred years before, the man of Elohim named Josiah to the altar itself. Now *he... took the bones out of the sepulchres, and burned them upon the altar, and polluted it, according to the word of Yahuah (LORD) which the man of Elohim (God) proclaimed* (2 Kings 23:16) — the sure word of Yahuah falling exactly, the king fulfilling a prophecy that bore his name before he was born.'),
+    ('canon','2-kings',23,17,'canon','1-kings',13,2,'free',
+      E'*Behold, a child shall be born unto the house of David, Josiah by name; and upon thee shall he offer the priests of the high places that burn incense upon thee* (1 Kings 13:2). When the men of the city tell Josiah *It is the sepulchre of the man of Elohim (God), which came from Yahudah (Judah), and proclaimed these things that thou hast done against the altar of Beth-el* (2 Kings 23:17), the king learns whose word he has just performed — the very prophet from Judah who named him at the altar. He spares the prophet''s bones: *Let him alone; let no man move his bones* (23:18).'),
+    ('canon','2-kings',23,18,'canon','1-kings',13,32,'free',
+      E'*For the saying which he cried by the word of Yahuah (LORD) against the altar in Beth-el, and against all the houses of the high places which are in the cities of Samaria, shall surely come to pass.* (1 Kings 13:32). The old prophet had asked to be buried beside the man of Elohim, certain the word would stand. So Josiah *let his bones alone, with the bones of the prophet that came out of Samaria* (2 Kings 23:18) — the two graves preserved together because *the saying... shall surely come to pass*, and it had.'),
+    -- THREAD 3: keep the passover as it is written (vv.21-23)
+    ('canon','2-kings',23,21,'canon','exodus',12,14,'free',
+      E'*And this day shall be unto you for a memorial; and ye shall keep it a feast to Yahuah (LORD) throughout your generations; ye shall keep it a feast by an ordinance for ever.* (Exodus 12:14). When the king commands *Keep the passover unto Yahuah Elohaychem (the LORD your God), as it is written in the book of this covenant* (2 Kings 23:21), he is restoring the feast Yahuah ordained *for ever* — not founding a new rite. The appointed time had lapsed; Josiah brings it back to the page where it was first commanded.'),
+    ('canon','2-kings',23,21,'canon','deuteronomy',16,1,'free',
+      E'*Observe the month of Abib, and keep the passover unto Yahuah Elohayka (the LORD thy God): for in the month of Abib Yahuah Elohayka (the LORD thy God) brought thee forth out of Egypt by night.* (Deuteronomy 16:1). *Keep the passover... as it is written in the book of this covenant* (2 Kings 23:21) — and the book of the covenant just found in the house is Deuteronomy, which fixes the passover at the place Yahuah chooses to place his name. Josiah keeps it in Jerusalem precisely *as it is written*.'),
+    ('canon','2-kings',23,22,'canon','2-chronicles',35,1,'free',
+      E'*Moreover Josiah kept a passover unto Yahuah (LORD) in Jerusalem: and they killed the passover on the fourteenth day of the first month.* (2 Chronicles 35:1). The Chronicler tells the same passover the book of Kings calls unmatched — *Surely there was not holden such a passover from the days of the judges* (2 Kings 23:22). The lamb killed on the fourteenth day of the first month, exactly the day Exodus 12 sets; the feast kept by the book, in its season.'),
+    ('canon','2-kings',23,22,'canon','2-chronicles',35,18,'free',
+      E'*And there was no passover like to that kept in Yashar''el (Israel) from the days of Samuel the prophet; neither did all the kings of Yashar''el (Israel) keep such a passover as Josiah kept, and the priests, and the Levites, and all Yahudah (Judah) and Yashar''el (Israel) that were present* (2 Chronicles 35:18). The twin of *there was not holden such a passover from the days of the judges... nor of the kings of Yahudah* (2 Kings 23:22). Note both houses are named present — *all Yahudah and Yashar''el* — a foretaste of the gathered people keeping the feast as one.'),
+    ('canon','2-kings',23,21,'canon','1-corinthians',5,7,'free',
+      E'*Purge out therefore the old leaven, that ye may be a new lump, as ye are unleavened. For even Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7). The feast Josiah restores — *Keep the passover unto Yahuah Elohaychem... as it is written* (2 Kings 23:21) — is the very feast the Messiah fills, not abolishes. Sha''ul still reasons *let us keep the feast* (5:8); the passover lamb of Exodus 12, restored by Josiah, finds its fulfillment in the Lamb, the appointed time still kept.'),
+    ('canon','2-kings',23,23,'canon','luke',22,15,'free',
+      E'*And he said unto them, With desire I have desired to eat this passover with you before I suffer:* (Luke 22:15). *This passover was holden to Yahuah (LORD) in Jerusalem* in Josiah''s eighteenth year (2 Kings 23:23); the same Jerusalem, the same appointed feast, is where the Formed Son keeps it before he suffers. The passover never lapses from the calendar of Yahuah — Josiah restores it, and the Messiah eats it as it is written.'),
+    -- THREAD 4: no king turned with all his heart like Josiah (vv.24-25)
+    ('canon','2-kings',23,25,'canon','deuteronomy',6,5,'free',
+      E'*And thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might.* (Deuteronomy 6:5). The verdict on Josiah is Deuteronomy''s commandment kept in full: *like unto him was there no king... that turned to Yahuah (LORD) with all his heart, and with all his soul, and with all his might, according to all the law of Moses* (2 Kings 23:25). Heart, soul, might — the three measures of the Shema — and *according to all the Torah of Moses*: the wholehearted return the covenant always called for.'),
+    -- THREAD 5: yet Yahuah turned not from his great wrath (vv.26-27)
+    ('canon','2-kings',23,26,'canon','2-kings',21,16,'free',
+      E'*Moreover Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another; beside his sin wherewith he made Yahudah (Judah) to sin, in doing that which was evil in the sight of Yahuah (LORD).* (2 Kings 21:16). Even the greatest reform cannot unspill this: *Notwithstanding Yahuah (LORD) turned not from the fierceness of his great wrath... because of all the provocations that Manasseh had provoked him withal* (2 Kings 23:26). The sentence Manasseh sealed stands; Josiah''s wholehearted return delays the judgment but does not reverse it.'),
+    ('canon','2-kings',23,26,'canon','2-kings',24,3,'free',
+      E'*Surely at the commandment of Yahuah (LORD) came this upon Yahudah (Judah), to remove them out of his sight, for the sins of Manasseh, according to all that he did;* (2 Kings 24:3). The word spoken in Josiah''s day — *I will remove Yahudah (Judah) also out of my sight, as I have removed Yashar''el (Israel)* (2 Kings 23:27) — comes to pass in his sons'' day, *for the sins of Manasseh*. The two houses share one judgment: as the north was removed, so now the south.'),
+    ('canon','2-kings',23,27,'canon','2-kings',24,4,'free',
+      E'*And also for the innocent blood that he shed: for he filled Jerusalem with innocent blood; which Yahuah (LORD) would not pardon.* (2 Kings 24:4). *I will... cast off this city Jerusalem which I have chosen, and the house of which I said, My name shall be there* (2 Kings 23:27) — and the reason the exile finally falls is the *innocent blood... which Yahuah would not pardon*. The covenant''s curse is the judgment for blood and idolatry, never the Torah itself; the Torah is the very thing Josiah kept.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================ THREADS ============================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant',
+  E'The King Read All the Words of the Book of the Covenant',
+  E'The reform begins not with a decree but with a reading. *He read in their ears all the words of the book of the covenant which was found in the house of Yahuah (LORD)* (2 Kings 23:2), and then *the king stood by a pillar, and made a covenant before Yahuah (LORD), to walk after Yahuah (LORD), and to keep his commandments and his testimonies and his statutes with all their heart and all their soul, to perform the words of this covenant... And all the people stood to the covenant* (23:3). This is the covenant-renewal form of the whole Tanakh. It is Joshua at Shechem: *So Joshua made a covenant with the people that day, and set them a statute and an ordinance* (Joshua 24:25), having charged them *choose you this day whom ye will serve* (24:15). It is Ezra after the exile: *all the people gathered themselves together as one man... to bring the book of the law of Moses* (Nehemiah 8:1), and *the ears of all the people were attentive unto the book of the law* (8:3). The Chronicler preserves the twin of Josiah''s own oath — *to keep his commandments, and his testimonies, and his statutes, with all his heart, and with all his soul, to perform the words of the covenant which are written in this book* (2 Chronicles 34:31). And the words the king swears are the Shema''s own: *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). The covenant is never invented; it is renewed — the people bound again to the Torah already given, the book read, the whole congregation standing to it.',
+  sv.verse_id, ev.verse_id, 'free', 39050
+  FROM _s343_2ki23_lookup sv, _s343_2ki23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=23 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-23-the-altar-at-bethel-broken-the-sure-word-fulfilled',
+  E'The Altar at Beth-el Broken — the Sure Word Fulfilled',
+  E'Some three hundred years before Josiah was born, a man of Elohim from Judah stood before Jeroboam''s altar at Beth-el and named him: *Behold, a child shall be born unto the house of David, Josiah by name; and upon thee shall he offer the priests of the high places that burn incense upon thee, and men''s bones shall be burnt upon thee* (1 Kings 13:2). The word waited. Now Josiah comes to that very altar, *and as Josiah turned himself, he spied the sepulchres that were there in the mount, and sent, and took the bones out of the sepulchres, and burned them upon the altar, and polluted it, according to the word of Yahuah (LORD) which the man of Elohim (God) proclaimed* (2 Kings 23:16). The king learns whose prophecy he has just performed — *It is the sepulchre of the man of Elohim (God), which came from Yahudah (Judah), and proclaimed these things that thou hast done against the altar of Beth-el* (23:17) — and spares the prophet''s bones (23:18). The old prophet of Beth-el had been certain: *the saying which he cried by the word of Yahuah (LORD)... shall surely come to pass* (1 Kings 13:32), and asked to be buried beside him. So the two graves are preserved together, *with the bones of the prophet that came out of Samaria* (2 Kings 23:18). This is the sure word of Yahuah — named, dated, and exact across three centuries.',
+  sv.verse_id, ev.verse_id, 'free', 39053
+  FROM _s343_2ki23_lookup sv, _s343_2ki23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=23 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-23-keep-the-passover-as-it-is-written',
+  E'Keep the Passover As It Is Written',
+  E'*And the king commanded all the people, saying, Keep the passover unto Yahuah Elohaychem (the LORD your God), as it is written in the book of this covenant* (2 Kings 23:21). The appointed time had lapsed; Josiah does not found a new rite but restores the one Yahuah ordained *for ever*: *ye shall keep it a feast to Yahuah (LORD) throughout your generations; ye shall keep it a feast by an ordinance for ever* (Exodus 12:14). The book just found in the house is Deuteronomy, which fixes the feast — *Observe the month of Abib, and keep the passover unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 16:1) — at the place Yahuah chooses to place his name, and so Josiah keeps it in Jerusalem, *as it is written*. The Chronicler tells the same passover: *they killed the passover on the fourteenth day of the first month* (2 Chronicles 35:1), the exact day Exodus 12 sets; and *there was no passover like to that kept in Yashar''el (Israel) from the days of Samuel the prophet... and all Yahudah (Judah) and Yashar''el (Israel) that were present* (35:18) — both houses named at one table. The book of Kings agrees: *Surely there was not holden such a passover from the days of the judges that judged Yashar''el (Israel), nor in all the days of the kings of Yashar''el (Israel), nor of the kings of Yahudah (Judah)* (2 Kings 23:22). And the feast is not abolished forward but filled: *Messiah (Christ) our passover is sacrificed for us* (1 Corinthians 5:7), so *let us keep the feast* (5:8); the Formed Son himself keeps it in that same Jerusalem — *With desire I have desired to eat this passover with you before I suffer* (Luke 22:15). The appointed time stands, restored by the king, kept by the Messiah, as it is written.',
+  sv.verse_id, ev.verse_id, 'free', 39056
+  FROM _s343_2ki23_lookup sv, _s343_2ki23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=23 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-23-no-king-turned-to-yahuah-with-all-his-heart-like-josiah',
+  E'No King Turned to Yahuah with All His Heart Like Josiah',
+  E'After the abominations were put away *that he might perform the words of the law which were written in the book that Hilkiah the priest found in the house of Yahuah (LORD)* (2 Kings 23:24), the verdict falls: *And like unto him was there no king before him, that turned to Yahuah (LORD) with all his heart, and with all his soul, and with all his might, according to all the law of Moses; neither after him arose there any like him* (23:25). The measure is Deuteronomy''s own — *thou shalt love Yahuah Elohayka (the LORD thy God) with all thine heart, and with all thy soul, and with all thy might* (Deuteronomy 6:5). Heart, soul, might: the three measures of the Shema, kept *according to all the Torah of Moses*. This is no abolition of the law and no merit of the flesh; it is the wholehearted return the covenant always called for, the king turning to Yahuah with everything he is — the very obedience the new covenant promises to write upon the heart.',
+  sv.verse_id, ev.verse_id, 'free', 39059
+  FROM _s343_2ki23_lookup sv, _s343_2ki23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=23 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-23-yet-yahuah-turned-not-from-his-great-wrath',
+  E'Yet Yahuah Turned Not from His Great Wrath',
+  E'Even the greatest reform in the history of the kings cannot reverse what was already sealed. *Notwithstanding Yahuah (LORD) turned not from the fierceness of his great wrath, wherewith his anger was kindled against Yahudah (Judah), because of all the provocations that Manasseh had provoked him withal* (2 Kings 23:26). The provocation was blood: *Moreover Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another* (2 Kings 21:16). So the sentence stands — *I will remove Yahudah (Judah) also out of my sight, as I have removed Yashar''el (Israel), and will cast off this city Jerusalem which I have chosen* (23:27) — and it falls in Josiah''s sons'' day: *Surely at the commandment of Yahuah (LORD) came this upon Yahudah (Judah), to remove them out of his sight, for the sins of Manasseh, according to all that he did; and also for the innocent blood that he shed: for he filled Jerusalem with innocent blood; which Yahuah (LORD) would not pardon* (2 Kings 24:3-4). The two houses share one judgment — as the north was removed, so now the south. Josiah''s wholehearted return delays the exile but does not avert it; the reform comes true and good, yet too late to turn the sentence Manasseh''s blood had set. And the curse that falls is the covenant''s judgment for blood and idolatry — never the Torah itself, which is the very thing Josiah kept.',
+  sv.verse_id, ev.verse_id, 'free', 39062
+  FROM _s343_2ki23_lookup sv, _s343_2ki23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=26
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=23 AND ev.verse_number=27
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================ THREAD_MEMBERS ============================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Nehemiah 8:1 — *all the people gathered themselves together as one man... to bring the book of the law of Moses*: the post-exilic twin of the whole people gathered to the Word.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Nehemiah 8:3 — *the ears of all the people were attentive unto the book of the law*: the same posture as Josiah''s gathering, small and great, to hear the covenant read.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=2
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=8 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Joshua 24:25 — *So Joshua made a covenant with the people that day*: Josiah stands in Joshua''s place, the covenant renewed not invented.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='joshua' AND tv.chapter_number=24 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Chronicles 34:31 — the Chronicler''s twin of the king''s oath: *to keep his commandments... with all his heart, and with all his soul, to perform the words of the covenant which are written in this book*.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=34 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Deuteronomy 6:5 — *love Yahuah... with all thine heart, and with all thy soul, and with all thy might*: the Shema spoken back, the book found in the house answered in its own words.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-king-read-all-the-words-of-the-book-of-the-covenant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Kings 13:2 — *a child shall be born unto the house of David, Josiah by name*: the named prophecy, ~300 years before, against this very altar.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=16
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-altar-at-bethel-broken-the-sure-word-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Kings 13:2 — Josiah learns whose word he has performed: the man of Elohim from Judah who named him; he spares the prophet''s bones.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-altar-at-bethel-broken-the-sure-word-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Kings 13:32 — *the saying... shall surely come to pass*: the old prophet''s certainty, why the two graves are preserved together.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=18
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-kings' AND tv.chapter_number=13 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-the-altar-at-bethel-broken-the-sure-word-fulfilled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 12:14 — *ye shall keep it a feast by an ordinance for ever*: the passover Josiah restores was ordained for ever, not founded anew.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=21
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-keep-the-passover-as-it-is-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Deuteronomy 16:1 — *keep the passover unto Yahuah Elohayka*: the book of the covenant just found fixes the feast at the place Yahuah names; Josiah keeps it there.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=21
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=16 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-keep-the-passover-as-it-is-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 5:7 — *Messiah our passover is sacrificed for us*: the feast filled forward, not abolished — *let us keep the feast*.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=21
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-keep-the-passover-as-it-is-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Chronicles 35:1 — the Chronicler''s twin: *they killed the passover on the fourteenth day of the first month*, the exact day Exodus 12 sets.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=22
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=35 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-keep-the-passover-as-it-is-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Chronicles 35:18 — *no passover like to that... from the days of Samuel*, with *all Yahudah and Yashar''el that were present*: both houses at one table.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=22
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=35 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-keep-the-passover-as-it-is-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Luke 22:15 — *With desire I have desired to eat this passover with you before I suffer*: the Formed Son keeps the same feast in the same Jerusalem.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=23
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=22 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-keep-the-passover-as-it-is-written'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Deuteronomy 6:5 — *with all thine heart, and with all thy soul, and with all thy might*: the three measures of the Shema, the verdict on Josiah kept *according to all the Torah of Moses*.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=25
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=6 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-no-king-turned-to-yahuah-with-all-his-heart-like-josiah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 21:16 — *Manasseh shed innocent blood very much, till he had filled Jerusalem*: the provocation even the greatest reform cannot unspill.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=26
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=21 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-yet-yahuah-turned-not-from-his-great-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 24:3 — *came this upon Yahudah... for the sins of Manasseh*: the word of 23:27 comes to pass in Josiah''s sons'' day; the two houses share one judgment.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=26
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=24 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-yet-yahuah-turned-not-from-his-great-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Kings 24:4 — *the innocent blood... which Yahuah would not pardon*: the reason the exile finally falls; the curse is for blood and idolatry, never the Torah Josiah kept.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=23 AND sv.verse_number=27
+  JOIN _s343_2ki23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=24 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-23-yet-yahuah-turned-not-from-his-great-wrath'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_24.sql (2 Kings 24) -----
+-- 2 Kings 24 — Nebuchadnezzar king of Babylon comes up; Jehoiakim servant then rebel;
+--   bands of Chaldees/Syrians/Moabites/Ammon sent against Yahudah for the SINS OF
+--   MANASSEH and the INNOCENT BLOOD Yahuah would not pardon; Jehoiachin (Jeconiah/Coniah)
+--   three months then the FIRST GREAT DEPORTATION to Babylon — king, princes, mighty men,
+--   craftsmen and smiths, ten thousand captives, and the TREASURES of the house of Yahuah
+--   cut up; Zedekiah made puppet-king, who also rebels.
+-- Tag: 2ki24   View: _s343_2ki24_lookup   Sort band: 39075 step 3 (39075,39078,39081)
+--
+-- 2 Kings 24 coverage:
+--   v.1    (Nebuchadnezzar comes up; Jehoiakim servant three years then rebels)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 36:6 (Nebuchadnezzar bound him to carry to Babylon) ; Daniel 1:1 (third year of Jehoiakim, Nebuchadnezzar besieged) — THREAD 2 (Daniel)
+--   v.2-4  (bands sent against Yahudah; SURELY at the commandment of Yahuah, for the SINS
+--           OF MANASSEH and the INNOCENT BLOOD which Yahuah would NOT pardon; remove them out of his sight)
+--          NT:     none warranted (innocent-blood/bloodguilt is a Tanakh covenant-lawsuit theme here)
+--          Extras: none warranted
+--          Tanakh: 2 Kings 21:16 (Manasseh shed innocent blood, filled Jerusalem) ; Jeremiah 15:4 (removed because of Manasseh) ;
+--                  2 Kings 17:18,23 (NORTH removed out of sight — two-house pattern) ; 2 Chronicles 36:16 (no remedy) ;
+--                  Deuteronomy 28:36,64 (the covenant exile-sanction) — THREAD 1
+--   v.5-6  (rest of acts of Jehoiakim; slept with fathers; Jehoiachin reigns) — folded: 6 into THREAD 3 (succession)
+--   v.7    (king of Egypt came no more; Babylon took from river of Egypt to Euphrates) — Tanakh: Jeremiah 46:2 — none warranted (adequately covered by chapter frame)
+--   v.8-9  (Jehoiachin 18yr, reigned 3 months; did evil) — THREAD 3 (Coniah)
+--   v.10-12 (Nebuchadnezzar's servants besiege; Jehoiachin goes out; king of Babylon takes him 8th year)
+--          NT:     Matthew 1:11 (Josias begat Jechonias... carried away to Babylon) — THREAD 3
+--          Extras: none warranted
+--          Tanakh: Daniel 1:1-2 (besieged, vessels carried) ; Jeremiah 22:24-25 (Coniah plucked, given to Nebuchadrezzar) — THREAD 2 + THREAD 3
+--   v.13   (carried out ALL the TREASURES of the house of Yahuah; cut in pieces the vessels of gold Solomon made, AS Yahuah had said)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 20:17 (all carried into Babylon, nothing left — Isaiah's word to Hezekiah) ;
+--                  Daniel 1:2 (vessels into the treasure house of his god) ; 2 Chronicles 36:18 — THREAD 2
+--   v.14-16 (carried away all Jerusalem, princes, mighty men, ten thousand, craftsmen and smiths;
+--            Jehoiachin + king's mother/wives/officers to Babylon — the FIRST deportation, Daniel/Ezekiel among them)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Kings 20:18 (thy sons shall be eunuchs in the palace of Babylon) ; Daniel 1:3-6 (king's seed, children of Yahudah) ;
+--                  Jeremiah 25:11 (these nations shall serve the king of Babylon seventy years) — THREAD 2
+--   v.17-20 (Mattaniah made king, named Zedekiah; did evil; rebels — the last puppet of the house of David)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: 2 Chronicles 36:13 (Zedekiah rebelled, stiffened his neck) ; Jeremiah 52:3 (through anger of Yahuah, Zedekiah rebelled) — THREAD 1 (member v.20, the anger / cast out of his presence)
+--
+-- Threads:
+--   2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon  [canon: 2 Kings, Jeremiah, 2 Chronicles, Deuteronomy] tier free
+--   2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah  [canon: 2 Kings, Daniel, Jeremiah, 2 Chronicles] tier free
+--   2-kings-24-jehoiachin-coniah-carried-captive-yet-the-davidic-seed-preserved  [canon: Jeremiah, Matthew] tier free
+--
+-- Contested/load-bearing framing:
+--   * v.3-4 the sealed sentence "for the sins of Manasseh... the innocent blood which Yahuah
+--     would NOT pardon" is the 21:16 bloodguilt / Jer 15:4 verdict NOW falling — the SOUTH
+--     removed out of his sight as the NORTH was (17:18,23), the two-house exile pattern; the
+--     Deut 28 curse is the exile-SANCTION for covenant-breaking, never the Torah itself.
+--   * v.13 the treasures cut up "AS Yahuah had said" = Isaiah's word to Hezekiah (20:17) fulfilled.
+--   * THREAD 3: Jer 22:30 "Write this man childless" reads against Matt 1:11-12 — Coniah's
+--     SEED is barred from the throne by FLESH-succession, yet the royal LINE is preserved
+--     THROUGH him (Salathiel) toward Messiah: judgment on the man, the seed-promise kept by Yahuah.
+
+CREATE TEMP VIEW _s343_2ki24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the sins of Manasseh / the innocent blood Yahuah would not pardon
+    ('canon','2-kings',24,3,'canon','2-kings',21,16,'free',E'*Moreover Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another; beside his sin wherewith he made Yahudah (Judah) to sin, in doing that which was evil in the sight of Yahuah (LORD).* (2 Kings 21:16). This is the very crime now bringing the judgment: where 24:3-4 says the bands came *for the sins of Manasseh... And also for the innocent blood that he shed: for he filled Jerusalem with innocent blood; which Yahuah (LORD) would not pardon*, the sealed sentence pronounced in chapter 21 has come to the door.'),
+    ('canon','2-kings',24,3,'canon','jeremiah',15,4,'free',E'*And I will cause them to be removed into all kingdoms of the earth, because of Manasseh the son of Hezekiah king of Yahudah (Judah), for that which he did in Jerusalem.* (Jeremiah 15:4). Jeremiah names the same verdict Kings records — *to remove them out of his sight, for the sins of Manasseh* (2 Kings 24:3) — the bloodguilt of one king ripening into the scattering of the whole southern house *into all kingdoms of the earth.*'),
+    ('canon','2-kings',24,3,'canon','2-kings',17,18,'free',E'*Therefore Yahuah (LORD) was very angry with Yashar''el (Israel), and removed them out of his sight: there was none left but the tribe of Yahudah (Judah) only.* (2 Kings 17:18). The northern stick of Yashar''el (Israel) was already *removed out of his sight* through Assyria; now the same words fall on the southern stick of Yahudah (Judah) — *to remove them out of his sight* (2 Kings 24:3) — the two houses under one covenant-judgment, both to be gathered again.'),
+    ('canon','2-kings',24,3,'canon','2-kings',17,23,'free',E'*Until Yahuah (LORD) removed Yashar''el (Israel) out of his sight, as he had said by all his servants the prophets. So was Yashar''el (Israel) carried away out of their own land to Assyria unto this day.* (2 Kings 17:23). The north was carried away *as he had said by all his servants the prophets*; the south falls *according to the word of Yahuah (LORD), which he spake by his servants the prophets* (2 Kings 24:2) — the identical formula binds Ephraim''s exile and Yahudah''s into the one two-house pattern of removal and promised regathering.'),
+    ('canon','2-kings',24,4,'canon','2-chronicles',36,16,'free',E'*But they mocked the messengers of Elohim (God), and despised his words, and misused his prophets, until the wrath of Yahuah (LORD) arose against his people, till there was no remedy.* (2 Chronicles 36:16). The Chronicler tells why the blood *which Yahuah (LORD) would not pardon* (2 Kings 24:4) could no longer be stayed — long mercy spurned *till there was no remedy*: not Yahuah''s unwillingness to forgive the penitent, but a people who would not turn.'),
+    ('canon','2-kings',24,2,'canon','deuteronomy',28,36,'free',E'*Yahuah (LORD) shall bring thee, and thy king which thou shalt set over thee, unto a nation which neither thou nor thy fathers have known; and there shalt thou serve other gods, wood and stone.* (Deuteronomy 28:36). The bands sent against Yahudah *according to the word of Yahuah (LORD)* (2 Kings 24:2) are the covenant exile-sanction Moses set down centuries before — the king and the people carried to *a nation which neither thou nor thy fathers have known*. The curse is the penalty for breaking covenant, never the Torah itself.'),
+    ('canon','2-kings',24,20,'canon','deuteronomy',28,64,'free',E'*And Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other; and there thou shalt serve other gods, which neither thou nor thy fathers have known, even wood and stone.* (Deuteronomy 28:64). When 24:20 says *through the anger of Yahuah (LORD) it came to pass... until he had cast them out from his presence*, it is this scattering-sanction of Deuteronomy 28 falling — the threatened scattering *among all people* now executed on the house cast out from his presence.'),
+    -- THREAD 2 — the first deportation to Babylon / the treasures of the house of Yahuah
+    ('canon','2-kings',24,1,'canon','daniel',1,1,'free',E'*In the third year of the reign of Jehoiakim king of Yahudah (Judah) came Nebuchadnezzar king of Babylon unto Jerusalem, and besieged it.* (Daniel 1:1). Daniel opens his book at the very hour 2 Kings 24:1 records — *In his days Nebuchadnezzar king of Babylon came up* — and Daniel himself is one of the captives this chapter carries away, the witness from inside the exile.'),
+    ('canon','2-kings',24,13,'canon','daniel',1,2,'free',E'*And Yahuah (Lord) gave Jehoiakim king of Yahudah (Judah) into his hand, with part of the vessels of the house of Elohim (God): which he carried into the land of Shinar to the house of his god; and he brought the vessels into the treasure house of his god.* (Daniel 1:2). Daniel records the same plunder Kings names — *he carried out thence all the treasures of the house of Yahuah (LORD)... as Yahuah (LORD) had said* (2 Kings 24:13) — the holy vessels set in a Babylonian idol-house, the very cups that would one day be profaned at Belshazzar''s feast.'),
+    ('canon','2-kings',24,13,'canon','2-kings',20,17,'free',E'*Behold, the days come, that all that is in thine house, and that which thy fathers have laid up in store unto this day, shall be carried into Babylon: nothing shall be left, saith Yahuah (LORD).* (2 Kings 20:17). The word given to Hezekiah is now fulfilled to the letter: *he carried out thence all the treasures of the house of Yahuah (LORD)... as Yahuah (LORD) had said* (2 Kings 24:13) — the prophecy spoken generations earlier comes home, *nothing shall be left.*'),
+    ('canon','2-kings',24,15,'canon','2-kings',20,18,'free',E'*And of thy sons that shall issue from thee, which thou shalt beget, shall they take away; and they shall be eunuchs in the palace of the king of Babylon.* (2 Kings 20:18). Isaiah''s further word to Hezekiah is fulfilled in this deportation — *he carried away Jehoiachin to Babylon, and the king''s mother, and the king''s wives, and his officers* (2 Kings 24:15) — the royal sons taken to serve *in the palace of the king of Babylon*, as Daniel and his companions were.'),
+    ('canon','2-kings',24,14,'canon','daniel',1,3,'free',E'*And the king spake unto Ashpenaz the master of his eunuchs, that he should bring certain of the children of Yashar''el (Israel), and of the king''s seed, and of the princes;* (Daniel 1:3). The *all the princes, and all the mighty men of valour... craftsmen and smiths* of 2 Kings 24:14 are the company from which Babylon drew *the king''s seed, and... the princes* — Daniel, Hananiah, Mishael and Azariah among the very captives this chapter carries off.'),
+    ('canon','2-kings',24,16,'canon','jeremiah',25,11,'free',E'*And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years.* (Jeremiah 25:11). The captives Babylon brought *captive to Babylon* (2 Kings 24:16) entered the seventy-year servitude Jeremiah had measured out — a fixed term of judgment, not an endless casting-off, for at its end the land would keep her sabbaths and the remnant return.'),
+    -- THREAD 3 — Jehoiachin / Coniah carried captive, yet the Davidic seed preserved
+    ('canon','2-kings',24,12,'canon','jeremiah',22,24,'free',E'*As I live, saith Yahuah (LORD), though Coniah the son of Jehoiakim king of Yahudah (Judah) were the signet upon my right hand, yet would I pluck thee thence;* (Jeremiah 22:24). The king who *went out to the king of Babylon... and the king of Babylon took him* (2 Kings 24:12) is the Coniah Jeremiah saw plucked off like a signet ring — the crown of the house of David torn from the hand and carried into captivity.'),
+    ('canon','2-kings',24,15,'canon','jeremiah',22,30,'free',E'*Thus saith Yahuah (LORD), Write ye this man childless, a man that shall not prosper in his days: for no man of his seed shall prosper, sitting upon the throne of David, and ruling any more in Yahudah (Judah).* (Jeremiah 22:30). The Jehoiachin *carried into captivity from Jerusalem to Babylon* (2 Kings 24:15) is the man written *childless* as to the throne: no son of his flesh would reign in Yahudah (Judah) — judgment sealed on the line as a ruling dynasty, yet the seed itself preserved through the captivity.'),
+    ('canon','2-kings',24,12,'canon','matthew',1,11,'free',E'*And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon:* (Matthew 1:11). The genealogy of Messiah marks this very deportation — *the king of Babylon took him in the eighth year of his reign* (2 Kings 24:12) — Jechonias (Jehoiachin/Coniah) standing at the hinge of the generations, *about the time they were carried away to Babylon*, the royal line passing through the judgment.'),
+    ('canon','2-kings',24,15,'canon','matthew',1,12,'free',E'*And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel;* (Matthew 1:12). Though Coniah was written childless as to the throne, the line did not perish — *Jechonias begat Salathiel* in the very exile to which 2 Kings 24:15 *carried away Jehoiachin to Babylon*. The seed of David, plucked off and carried captive, is kept by Yahuah straight through the judgment toward Messiah.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon',
+       E'The sins of Manasseh — the innocent blood Yahuah would not pardon',
+       E'2 Kings 24 names plainly WHY Babylon came up against Yahudah (Judah): *Surely at the commandment of Yahuah (LORD) came this upon Yahudah (Judah), to remove them out of his sight, for the sins of Manasseh, according to all that he did; And also for the innocent blood that he shed: for he filled Jerusalem with innocent blood; which Yahuah (LORD) would not pardon* (2 Kings 24:3-4). The crime was sealed two chapters earlier — *Moreover Manasseh shed innocent blood very much, till he had filled Jerusalem from one end to another* (2 Kings 21:16) — and Jeremiah pronounces the same verdict: *I will cause them to be removed into all kingdoms of the earth, because of Manasseh the son of Hezekiah king of Yahudah (Judah), for that which he did in Jerusalem* (Jeremiah 15:4). This is no arbitrary wrath. The blood cried, mercy was spurned *till there was no remedy* (2 Chronicles 36:16), and the long-threatened covenant-sanction fell. Hear the two-house pattern in the very wording: the northern stick of Yashar''el (Israel) had already been *removed out of his sight* through Assyria — *there was none left but the tribe of Yahudah (Judah) only* (2 Kings 17:18), carried away *as he had said by all his servants the prophets* (2 Kings 17:23) — and now the southern stick is removed by the same formula, *according to the word of Yahuah (LORD), which he spake by his servants the prophets* (2 Kings 24:2). Both houses fall under one covenant-judgment, both to be gathered again. And this scattering is the exile-sanction Moses set down long before: *Yahuah (LORD) shall bring thee, and thy king which thou shalt set over thee, unto a nation which neither thou nor thy fathers have known* (Deuteronomy 28:36); *Yahuah (LORD) shall scatter thee among all people, from the one end of the earth even unto the other* (Deuteronomy 28:64) — fulfilled when *through the anger of Yahuah (LORD) it came to pass... until he had cast them out from his presence* (2 Kings 24:20). The curse is the penalty for breaking covenant; it is never the Torah itself, which remains the inheritance the scattered will one day keep again.',
+       sv.verse_id, ev.verse_id, 'free', 39075
+  FROM _s343_2ki24_lookup sv, _s343_2ki24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=2
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=24 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah',
+       E'The first deportation to Babylon — the treasures of the house of Yahuah carried away',
+       E'Here begins the great exile. *In his days Nebuchadnezzar king of Babylon came up* (2 Kings 24:1) — the same hour at which Daniel opens his book: *In the third year of the reign of Jehoiakim king of Yahudah (Judah) came Nebuchadnezzar king of Babylon unto Jerusalem, and besieged it* (Daniel 1:1). When the city fell, *he carried out thence all the treasures of the house of Yahuah (LORD), and the treasures of the king''s house, and cut in pieces all the vessels of gold which Solomon king of Yashar''el (Israel) had made in the temple of Yahuah (LORD), as Yahuah (LORD) had said* (2 Kings 24:13). That last phrase — *as Yahuah (LORD) had said* — points back to the word given to Hezekiah a century before: *all that is in thine house... shall be carried into Babylon: nothing shall be left* (2 Kings 20:17); *and of thy sons that shall issue from thee... they shall be eunuchs in the palace of the king of Babylon* (2 Kings 20:18). Both halves of that prophecy now come true. Daniel saw the vessels go: *which he carried into the land of Shinar to the house of his god; and he brought the vessels into the treasure house of his god* (Daniel 1:2) — the holy cups set among idols. And the captives went with them: *he carried away all Jerusalem, and all the princes, and all the mighty men of valour, even ten thousand captives, and all the craftsmen and smiths* (2 Kings 24:14), the very company from which Babylon drew *certain of the children of Yashar''el (Israel), and of the king''s seed, and of the princes* (Daniel 1:3) — Daniel and his three companions among them, Ezekiel soon to follow. This was no endless casting-off but a measured term: *these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11). At the end of it the land would keep her sabbaths and a remnant return. The judgment is severe, the word of Yahuah exact, the mercy already counted in years.',
+       sv.verse_id, ev.verse_id, 'free', 39078
+  FROM _s343_2ki24_lookup sv, _s343_2ki24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=24 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-24-jehoiachin-coniah-carried-captive-yet-the-davidic-seed-preserved',
+       E'Jehoiachin (Coniah) carried captive — yet the Davidic seed preserved toward Messiah',
+       E'The crown of the house of David is torn off and carried into Babylon. *Jehoiachin the king of Yahudah (Judah) went out to the king of Babylon, he, and his mother, and his servants, and his princes, and his officers: and the king of Babylon took him in the eighth year of his reign* (2 Kings 24:12); *and he carried away Jehoiachin to Babylon... those carried he into captivity from Jerusalem to Babylon* (2 Kings 24:15). This is the Coniah Jeremiah saw plucked off like a ring from the hand: *though Coniah the son of Jehoiakim king of Yahudah (Judah) were the signet upon my right hand, yet would I pluck thee thence* (Jeremiah 22:24), and over him the hard word was written: *Write ye this man childless, a man that shall not prosper in his days: for no man of his seed shall prosper, sitting upon the throne of David, and ruling any more in Yahudah (Judah)* (Jeremiah 22:30). Judgment fell on the man and on his line as a reigning dynasty — no son of his flesh would sit and rule in Yahudah. And yet the seed itself was not destroyed. The genealogy of Messiah marks this very deportation as a hinge of the generations: *And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon* (Matthew 1:11), and then, in the exile itself, *after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12). The man written childless as to the throne still fathered the line that ran to the Formed Son — the seed of David, plucked off and carried captive, kept by Yahuah straight through the judgment. The dynasty was cut down; the promise was not. The One who would sit on David''s throne for ever came not by the prospering of Coniah''s flesh but by the faithfulness of Yahuah to his word.',
+       sv.verse_id, ev.verse_id, 'free', 39081
+  FROM _s343_2ki24_lookup sv, _s343_2ki24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=24 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Kings 21:16 — *Manasseh shed innocent blood very much, till he had filled Jerusalem* — the crime now bringing the judgment.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=21 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 15:4 — *removed... because of Manasseh* — the same verdict, the southern house scattered into all kingdoms.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Kings 17:18 — the NORTH *removed out of his sight* — the same words now fall on the south (two-house pattern).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Kings 17:23 — *as he had said by all his servants the prophets* — same formula as 24:2 binds both houses'' exile.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=3
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=17 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'2 Chronicles 36:16 — mercy spurned *till there was no remedy* — why the blood could no longer be pardoned.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Deuteronomy 28:36 — the king carried *unto a nation which neither thou nor thy fathers have known* — the exile-sanction.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=2
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Deuteronomy 28:64 — *Yahuah shall scatter thee among all people* — fulfilled as he *cast them out from his presence* (24:20).'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=20
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=64
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-sins-of-manasseh-the-innocent-blood-yahuah-would-not-pardon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Daniel 1:1 — Daniel opens at this very siege: *came Nebuchadnezzar... and besieged it* — the witness from inside the exile.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Kings 20:17 — Isaiah''s word to Hezekiah: *all... shall be carried into Babylon: nothing shall be left* — now fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Daniel 1:2 — the holy vessels *into the treasure house of his god* — the very cups later profaned at Belshazzar''s feast.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'2 Kings 20:18 — *thy sons... shall be eunuchs in the palace of the king of Babylon* — fulfilled as Jehoiachin is carried off.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=20 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Daniel 1:3 — *the king''s seed, and... the princes* — Daniel and his companions among the very captives of v.14.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='daniel' AND tv.chapter_number=1 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Jeremiah 25:11 — *these nations shall serve the king of Babylon seventy years* — a measured term, not an endless casting-off.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-the-first-deportation-to-babylon-the-treasures-of-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 22:24 — Coniah *the signet upon my right hand* plucked off — the king taken in 24:12.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-jehoiachin-coniah-carried-captive-yet-the-davidic-seed-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 22:30 — *Write ye this man childless* as to the throne — judgment on the man, the seed yet preserved.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-jehoiachin-coniah-carried-captive-yet-the-davidic-seed-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 1:11 — *Jechonias... about the time they were carried away to Babylon* — this deportation in Messiah''s genealogy.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-jehoiachin-coniah-carried-captive-yet-the-davidic-seed-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 1:12 — *Jechonias begat Salathiel* in the exile — the Davidic line kept straight through the judgment toward Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s343_2ki24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-24-jehoiachin-coniah-carried-captive-yet-the-davidic-seed-preserved'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_2-kings_25.sql (2 Kings 25) -----
+-- 2 Kings 25 — THE FALL OF JERUSALEM, the END of the monarchy: the siege and famine, the
+--   last Davidic king (Zedekiah) blinded and carried to Babylon; Nebuzar-adan BURNS the house
+--   of Yahuah, the king's house, and all Jerusalem, and breaks down the walls; the temple
+--   pillars, the brasen sea, and the vessels broken up and borne to Babylon; the land emptied,
+--   Gedaliah slain, the remnant fled to Egypt; and the FINAL NOTE OF HOPE — Jehoiachin lifted
+--   from prison and given a daily portion at the king's table: the Davidic seed preserved in
+--   exile, the lamp still burning toward the regathering and the Messiah.
+-- Tag: 2ki25   View: _s343_2ki25_lookup   Sort band: 39100 step 3 (39100,39103,39106,39109,39112)
+--
+-- 2 Kings 25 coverage:
+--   v.1-7  (Nebuchadnezzar besieges; famine; city broken up; Zedekiah flees, taken, sons slain
+--           before his eyes, eyes put out, bound and carried to Babylon)
+--          NT:     none warranted (the Davidic break — fulfillment is the seed preserved, THREAD 5)
+--          Extras: none warranted
+--          Tanakh: Jeremiah 39:4-7 (parallel) ; Jeremiah 52:7-11 (parallel) ; Ezekiel 12:13
+--                  (I will bring him to Babylon... yet shall he not see it) ; Deuteronomy 28:36
+--                  (thy king... unto a nation... thou hast not known) — THREAD 1
+--   v.8-17 (Nebuzar-adan burns the house of Yahuah, the king's house, all Jerusalem; breaks
+--           down the walls; pillars/brasen sea/vessels broken up and carried to Babylon)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Jeremiah 52:13 (burned the house of Yahuah) ; 2 Chronicles 36:19 (burnt the
+--                  house of Elohim, brake down the wall) ; Deuteronomy 28:52 (besiege thee... till
+--                  thy high and fenced walls come down) ; Lamentations 1:1 (how doth the city sit
+--                  solitary) ; Lamentations 2:9 (her gates are sunk... the law is no more) ;
+--                  Psalm 137:1 (by the rivers of Babylon... we wept) — THREAD 2
+--   v.18-21 (chief priest Seraiah etc. slain at Riblah; so Yahudah carried away out of their land)
+--          Tanakh: folded into THREAD 2 (v.21 the carrying-away) and THREAD 4 (seventy years)
+--   v.22-26 (poorest left vinedressers; Gedaliah made ruler, then murdered; remnant flees to Egypt)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Jeremiah 52:16 (left of the poor for vinedressers) ; Jeremiah 39:10 (left of
+--                  the poor... gave them vineyards) ; Deuteronomy 28:68 (Yahuah shall bring thee
+--                  into Egypt again) — THREAD 3
+--   v.21,11 (so Yahudah was carried away out of their land — the captivity that has an appointed end)
+--          NT:     none warranted (regathering kept in Tanakh witnesses here)
+--          Extras: none warranted
+--          Tanakh: Jeremiah 29:10 (after seventy years... I will cause you to return) ;
+--                  2 Chronicles 36:21 (until the land had enjoyed her sabbaths... threescore and
+--                  ten years) ; Jeremiah 25:11 (these nations shall serve... seventy years) — THREAD 4
+--   v.27-30 (Evil-merodach lifts up the head of Jehoiachin out of prison; throne above the kings;
+--           changed his prison garments; bread continually before him; a daily allowance for life)
+--          NT:     Matthew 1:11-12 (Josias begat Jechonias... and after they were brought to
+--                  Babylon, Jechonias begat Salathiel) — the preserved seed runs to Messiah — THREAD 5
+--          Extras: none warranted
+--          Tanakh: Jeremiah 52:31-34 (the parallel close) ; Ezekiel 37:24 (David my servant
+--                  king over them — the line gathered and made one) — THREAD 5
+--
+-- Threads:
+--   2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon   [canon: Jeremiah, Ezekiel, Deuteronomy] tier free
+--   2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down        [canon: Jeremiah, 2 Chronicles, Deuteronomy, Lamentations, Psalms] tier free
+--   2-kings-25-the-land-emptied-gedaliah-slain-the-remnant-to-egypt    [canon: Jeremiah, Deuteronomy] tier free
+--   2-kings-25-the-seventy-years-the-captivity-that-is-not-the-end     [canon: Jeremiah, 2 Chronicles] tier free
+--   2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept  [canon: Jeremiah, Ezekiel, Matthew] tier free
+
+CREATE TEMP VIEW _s343_2ki25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1 — the last Davidic king blinded and carried to Babylon
+    ('canon','2-kings',25,4,'canon','jeremiah',39,4,'free',E'*And it came to pass, that when Zedekiah the king of Yahudah (Judah) saw them, and all the men of war, then they fled, and went forth out of the city by night, by the way of the king''s garden, by the gate betwixt the two walls: and he went out the way of the plain.* (Jeremiah 39:4). Jeremiah''s record of the same flight: *the city was broken up, and all the men of war fled by night by the way of the gate between two walls, which is by the king''s garden* (2 Kings 25:4) — the last king of David''s line slipping out by night, the throne abandoned to the besieger.'),
+    ('canon','2-kings',25,5,'canon','jeremiah',52,8,'free',E'*But the army of the Chaldeans pursued after the king, and overtook Zedekiah in the plains of Jericho; and all his army was scattered from him.* (Jeremiah 52:8). Word for word with 2 Kings 25:5 — *the army of the Chaldees pursued after the king, and overtook him in the plains of Jericho: and all his army were scattered from him* — there is no escape from the covenant-sentence; the king is run down in the open plain.'),
+    ('canon','2-kings',25,7,'canon','jeremiah',39,6,'free',E'*Then the king of Babylon slew the sons of Zedekiah in Riblah before his eyes: also the king of Babylon slew all the nobles of Yahudah (Judah).* (Jeremiah 39:6). The horror of 2 Kings 25:7 in Jeremiah''s hand — *they slew the sons of Zedekiah before his eyes* — the last sight the Davidic king is permitted before the dark: his own seed cut down, then his own eyes put out.'),
+    ('canon','2-kings',25,7,'canon','jeremiah',52,11,'free',E'*Then he put out the eyes of Zedekiah; and the king of Babylon bound him in chains, and carried him to Babylon, and put him in prison till the day of his death.* (Jeremiah 52:11). Jeremiah seals the end of 2 Kings 25:7 — *put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* — the anointed of David''s house blinded, fettered, and shut in a Babylonian prison till he died: the monarchy goes out in chains.'),
+    ('canon','2-kings',25,7,'canon','ezekiel',12,13,'free',E'*My net also will I spread upon him, and he shall be taken in my snare: and I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there.* (Ezekiel 12:13). The prophet had spoken the very riddle now fulfilled in 2 Kings 25:7 — the king *brought to Babylon... yet shall he not see it*: carried to Babylon with his eyes put out, he reached the city he would never look upon, the word of Yahuah accomplished to the letter.'),
+    ('canon','2-kings',25,7,'canon','deuteronomy',28,36,'free',E'*Yahuah (LORD) shall bring thee, and thy king which thou shalt set over thee, unto a nation which neither thou nor thy fathers have known; and there shalt thou serve other gods, wood and stone.* (Deuteronomy 28:36). This is no random ruin but the covenant-sanction spoken at Sinai''s renewal: *thy king... unto a nation which... thou hast not known*. The carrying away of Zedekiah in 2 Kings 25:7 is the Deuteronomy 28 curse for covenant-breaking come due — the breach-consequence, never the Torah itself.'),
+    -- THREAD 2 — the house of Yahuah burned, the walls broken down (the desolation)
+    ('canon','2-kings',25,9,'canon','jeremiah',52,13,'free',E'*And burned the house of Yahuah (LORD), and the king''s house; and all the houses of Jerusalem, and all the houses of the great men, burned he with fire:* (Jeremiah 52:13). The same fire as 2 Kings 25:9 — *he burnt the house of Yahuah (LORD), and the king''s house, and all the houses of Jerusalem* — Solomon''s temple, the dwelling of the Name, given to the flames; the glory departed, the holy place a ruin.'),
+    ('canon','2-kings',25,9,'canon','2-chronicles',36,19,'free',E'*And they burnt the house of Elohim (God), and brake down the wall of Jerusalem, and burnt all the palaces thereof with fire, and destroyed all the goodly vessels thereof.* (2 Chronicles 36:19). The Chronicler''s parallel to 2 Kings 25:9-10 — *burnt the house of Elohim (God), and brake down the wall* — names the whole undoing: house, wall, and vessels alike consumed, the city stripped of every defence and every holy thing.'),
+    ('canon','2-kings',25,10,'canon','deuteronomy',28,52,'free',E'*And he shall besiege thee in all thy gates, until thy high and fenced walls come down, wherein thou trustedst, throughout all thy land: and he shall besiege thee in all thy gates throughout all thy land, which Yahuah Elohayka (the LORD thy God) hath given thee.* (Deuteronomy 28:52). The breaking down of the walls in 2 Kings 25:10 is the very curse foretold — *until thy high and fenced walls come down, wherein thou trustedst* — and the famine of the siege (25:3) fulfils the same chapter''s siege-horror; the covenant-sanction, not a fate apart from it.'),
+    ('canon','2-kings',25,9,'canon','lamentations',1,1,'free',E'*How doth the city sit solitary, that was full of people! how is she become as a widow! she that was great among the nations, and princess among the provinces, how is she become tributary!* (Lamentations 1:1). The mourning over the very desolation 2 Kings 25:9-10 records: the burned, broken city *sit solitary... as a widow*; the chronicle states the ruin, the lament weeps over it, the comforter far off.'),
+    ('canon','2-kings',25,9,'canon','lamentations',2,9,'free',E'*Her gates are sunk into the ground; he hath destroyed and broken her bars: her king and her princes are among the Gentiles: the law is no more; her prophets also find no vision from Yahuah (LORD).* (Lamentations 2:9). The grief answering 2 Kings 25:9 — the gates and bars broken, *her king and her princes are among the Gentiles* — Zedekiah blinded in Babylon, the temple burned, the appointed solemn feasts forgotten (Lamentations 2:6): the visible covenant-life of Zion brought to silence.'),
+    ('canon','2-kings',25,11,'canon','psalms',137,1,'free',E'*By the rivers of Babylon, there we sat down, yea, we wept, when we remembered Zion.* (Psalm 137:1). The captives whom Nebuzar-adan *carried away* (2 Kings 25:11) are the very mourners of this psalm — *by the rivers of Babylon... we wept, when we remembered Zion* — torn from the burned city, hanging their harps on the willows, unable to sing the LORD''S song in a strange land.'),
+    -- THREAD 3 — the land emptied: Gedaliah slain, the remnant flees to Egypt
+    ('canon','2-kings',25,12,'canon','jeremiah',52,16,'free',E'*But Nebuzar-adan the captain of the guard left certain of the poor of the land for vinedressers and for husbandmen.* (Jeremiah 52:16). The same remnant as 2 Kings 25:12 — *the poor of the land to be vinedressers and husbandmen* — only the landless poor left to tend the emptied fields, the people of the covenant scattered and the land all but stripped of its inhabitants.'),
+    ('canon','2-kings',25,12,'canon','jeremiah',39,10,'free',E'*But Nebuzar-adan the captain of the guard left of the poor of the people, which had nothing, in the land of Yahudah (Judah), and gave them vineyards and fields at the same time.* (Jeremiah 39:10). Jeremiah''s record of the same emptying behind 2 Kings 25:12 — *left of the poor of the people, which had nothing... and gave them vineyards and fields* — the land that flowed with milk and honey now a near-empty waste held by the poorest, the warning of the prophets come fully due.'),
+    ('canon','2-kings',25,26,'canon','deuteronomy',28,68,'free',E'*And Yahuah (LORD) shall bring thee into Egypt again with ships, by the way whereof I spake unto thee, Thou shalt see it no more again: and there ye shall be sold unto your enemies for bondmen and bondwomen, and no man shall buy you.* (Deuteronomy 28:68). The flight of the remnant in 2 Kings 25:26 — *came to Egypt: for they were afraid of the Chaldees* — turns the Exodus backward: redeemed once out of Egypt, the covenant-breakers are driven *into Egypt again*, the curse of Deuteronomy 28 closing the circle the people had run from.'),
+    -- THREAD 4 — the seventy years: the captivity that is not the end
+    ('canon','2-kings',25,21,'canon','jeremiah',29,10,'free',E'*For thus saith Yahuah (LORD), That after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place.* (Jeremiah 29:10). The carrying away of 2 Kings 25:21 — *So Yahudah (Judah) was carried away out of their land* — is not Yahuah''s last word. To these same captives the prophet wrote *thoughts of peace, and not of evil, to give you an expected end* (Jeremiah 29:11): the exile has a measured term, and at its end a return.'),
+    ('canon','2-kings',25,21,'canon','2-chronicles',36,21,'free',E'*To fulfil the word of Yahuah (LORD) by the mouth of Jeremiah, until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years.* (2 Chronicles 36:21). The Chronicler reads the desolation of 2 Kings 25:21 as the land keeping the sabbaths Yahudah would not — *to fulfil threescore and ten years* — the appointed rest the people withheld, exacted from the land itself, with the term fixed and the end already in view (2 Chronicles 36:22-23, Cyrus''s decree).'),
+    ('canon','2-kings',25,21,'canon','jeremiah',25,11,'free',E'*And this whole land shall be a desolation, and an astonishment; and these nations shall serve the king of Babylon seventy years.* (Jeremiah 25:11). The desolation of 2 Kings 25:21 was spoken beforehand with its limit set: *seventy years*. The judgment is real and the land is emptied, yet the number itself is a mercy — a captivity with a counted end, not an everlasting casting-off.'),
+    -- THREAD 5 — the final lamp: Jehoiachin lifted up, the Davidic seed preserved
+    ('canon','2-kings',25,27,'canon','jeremiah',52,31,'free',E'*And it came to pass in the seven and thirtieth year of the captivity of Jehoiachin king of Yahudah (Judah), in the twelfth month, in the five and twentieth day of the month, that Evil-merodach king of Babylon in the first year of his reign lifted up the head of Jehoiachin king of Yahudah (Judah), and brought him forth out of prison,* (Jeremiah 52:31). Jeremiah closes his book on the same scene that closes 2 Kings — *did lift up the head of Jehoiachin king of Yahudah (Judah) out of prison* (2 Kings 25:27) — the Davidic heir raised from the dungeon: judgment is not the last word.'),
+    ('canon','2-kings',25,28,'canon','jeremiah',52,32,'free',E'*And spake kindly unto him, and set his throne above the throne of the kings that were with him in Babylon,* (Jeremiah 52:32). The same lifting-up as 2 Kings 25:28 — *he spake kindly to him, and set his throne above the throne of the kings that were with him in Babylon* — the seed of David honoured even in exile, set above the captive kings, the lamp of the house of David not extinguished.'),
+    ('canon','2-kings',25,29,'canon','jeremiah',52,33,'free',E'*And changed his prison garments: and he did continually eat bread before him all the days of his life.* (Jeremiah 52:33). Word for word with 2 Kings 25:29 — *changed his prison garments: and he did eat bread continually before him all the days of his life* — the prison rags exchanged, a place at the king''s table, a daily portion: the surviving Davidic seed kept and sustained until the day of return draws near.'),
+    ('canon','2-kings',25,27,'canon','matthew',1,11,'free',E'*And Josias begat Jechonias and his brethren, about the time they were carried away to Babylon:* (Matthew 1:11). The very Jehoiachin (Jechonias) lifted from prison in 2 Kings 25:27 stands in the line of the Messiah at the hinge of the generations — *about the time they were carried away to Babylon* — the carrying-away marks the turn, and the preserved seed carries the promise through.'),
+    ('canon','2-kings',25,29,'canon','matthew',1,12,'free',E'*And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel;* (Matthew 1:12). The bread given daily to Jehoiachin in exile (2 Kings 25:29) kept alive the line that runs on through *Jechonias begat Salathiel* unto *the carrying away into Babylon unto Messiah (Christ)* (Matthew 1:17): the lamp preserved in Babylon is the seed of David out of whom the Messiah comes.'),
+    ('canon','2-kings',25,29,'canon','ezekiel',37,24,'free',E'*And David my servant shall be king over them; and they all shall have one shepherd: they shall also walk in my judgments, and observe my statutes, and do them.* (Ezekiel 37:24). The seed kept at the Babylonian table in 2 Kings 25:29 looks beyond the captivity to the promised *David my servant* — the two sticks of Yahudah and Joseph made one in his hand (Ezekiel 37:19), the scattered houses gathered, the throne the exile could not destroy raised up for ever.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- THREAD 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon',
+       E'The Last Davidic King — Blinded and Carried to Babylon',
+       E'In the ninth year of Zedekiah''s reign Nebuchadnezzar lays siege, *and the city was besieged unto the eleventh year* (2 Kings 25:2); the famine prevails *and there was no bread for the people of the land* (25:3); then *the city was broken up, and all the men of war fled by night by the way of the gate between two walls* (25:4). Jeremiah records the same flight — *they fled, and went forth out of the city by night, by the way of the king''s garden* (Jeremiah 39:4) — and the same pursuit: *the army of the Chaldeans... overtook Zedekiah in the plains of Jericho; and all his army was scattered from him* (Jeremiah 52:8). There is no escape from the covenant-sentence. The horror at Riblah is total: *they slew the sons of Zedekiah before his eyes, and put out the eyes of Zedekiah, and bound him with fetters of brass, and carried him to Babylon* (25:7; Jeremiah 39:6; 52:11) — the last sight the anointed of David''s house is given is his own seed cut down, then darkness. And the prophet had spoken the very riddle: *I will bring him to Babylon to the land of the Chaldeans; yet shall he not see it, though he shall die there* (Ezekiel 12:13). This is not random ruin but the sanction sworn at Sinai''s renewal — *Yahuah (LORD) shall bring thee, and thy king which thou shalt set over thee, unto a nation which neither thou nor thy fathers have known* (Deuteronomy 28:36): the Deuteronomy 28 curse for covenant-breaking come due. The Torah is never the curse; the breaking of it is. The monarchy of David goes out in chains — yet the seed is not finished (THREAD 5).',
+       sv.verse_id, ev.verse_id, 'free', 39100
+  FROM _s343_2ki25_lookup sv, _s343_2ki25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=25 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down',
+       E'The House of Yahuah Burned, the Walls Broken Down — the Desolation',
+       E'Nebuzar-adan comes, and the dwelling of the Name is given to the fire: *he burnt the house of Yahuah (LORD), and the king''s house, and all the houses of Jerusalem* (2 Kings 25:9; Jeremiah 52:13), *and brake down the walls of Jerusalem round about* (25:10). The Chronicler gathers the whole undoing — *they burnt the house of Elohim (God), and brake down the wall of Jerusalem, and burnt all the palaces thereof with fire* (2 Chronicles 36:19) — and the very pillars Solomon raised, Jachin and Boaz, the brasen sea, the vessels, are *broken in pieces* and the brass borne to Babylon (25:13-17). Solomon''s temple is a ruin; the glory departed. This too was sworn beforehand: *he shall besiege thee in all thy gates, until thy high and fenced walls come down, wherein thou trustedst* (Deuteronomy 28:52) — the siege, the famine, the breached wall, the covenant-sanction to the letter. Where the chronicle records the ruin, the lament weeps over it: *How doth the city sit solitary, that was full of people! how is she become as a widow!* (Lamentations 1:1); *Her gates are sunk into the ground... her king and her princes are among the Gentiles: the law is no more* (Lamentations 2:9), and *Yahuah (LORD) hath caused the solemn feasts and sabbaths to be forgotten in Zion* (Lamentations 2:6). And by the waters of exile the captives Nebuzar-adan carried away (25:11) sit and weep: *By the rivers of Babylon, there we sat down, yea, we wept, when we remembered Zion* (Psalm 137:1). The visible covenant-life of Zion is brought to silence — for covenant-breaking, never because the covenant itself failed.',
+       sv.verse_id, ev.verse_id, 'free', 39103
+  FROM _s343_2ki25_lookup sv, _s343_2ki25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=25 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-25-the-land-emptied-gedaliah-slain-the-remnant-to-egypt',
+       E'The Land Emptied — Gedaliah Slain, the Remnant Fled to Egypt',
+       E'The land is all but stripped of its people: *the captain of the guard left of the poor of the land to be vinedressers and husbandmen* (2 Kings 25:12; Jeremiah 52:16) — only the landless poor remain to tend the emptied fields, *the poor of the people, which had nothing... and gave them vineyards and fields* (Jeremiah 39:10). Over this thin remnant Nebuchadnezzar sets Gedaliah, who counsels them, *Fear not to be the servants of the Chaldees: dwell in the land... and it shall be well with you* (25:24). But *Ishmael the son of Nethaniah... of the seed royal, came, and ten men with him, and smote Gedaliah, that he died* (25:25), and in terror the people *arose, and came to Egypt: for they were afraid of the Chaldees* (25:26). The last act turns the Exodus backward: the nation redeemed once out of the house of bondage is driven *into Egypt again* — the very curse spoken at Sinai''s renewal: *Yahuah (LORD) shall bring thee into Egypt again with ships, by the way whereof I spake unto thee, Thou shalt see it no more again* (Deuteronomy 28:68). The land that flowed with milk and honey lies near empty; the people of the covenant are scattered to Babylon and to Egypt alike — yet the scattering is never the end of the promise (THREAD 4, THREAD 5).',
+       sv.verse_id, ev.verse_id, 'free', 39106
+  FROM _s343_2ki25_lookup sv, _s343_2ki25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=25 AND ev.verse_number=26
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-25-the-seventy-years-the-captivity-that-is-not-the-end',
+       E'The Seventy Years — the Captivity That Is Not the End',
+       E'*So Yahudah (Judah) was carried away out of their land* (2 Kings 25:21). The chronicle states the bare fact of the exile — but Yahuah had measured its term beforehand, and that measure is itself a mercy. To these same captives Jeremiah wrote: *after seventy years be accomplished at Babylon I will visit you, and perform my good word toward you, in causing you to return to this place* (Jeremiah 29:10), for *I know the thoughts that I think toward you, saith Yahuah (LORD), thoughts of peace, and not of evil, to give you an expected end* (29:11). He had named the number from the first: *these nations shall serve the king of Babylon seventy years* (Jeremiah 25:11). The Chronicler reads the very desolation of 2 Kings 25 as the land keeping the sabbaths the people withheld — *until the land had enjoyed her sabbaths: for as long as she lay desolate she kept sabbath, to fulfil threescore and ten years* (2 Chronicles 36:21) — and closes on the decree of Cyrus that sends the captives home (36:22-23). The carrying-away is real and the city is desolate, but it is a captivity with a counted end, not an everlasting casting-off; the regathering is already written into the judgment.',
+       sv.verse_id, ev.verse_id, 'free', 39109
+  FROM _s343_2ki25_lookup sv, _s343_2ki25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=25 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT '2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept',
+       E'The Final Lamp — Jehoiachin Lifted Up, the Davidic Seed Preserved',
+       E'The book of Kings does not close on the burned temple or the blinded king. Its last word is a door left open. *In the seven and thirtieth year of the captivity of Jehoiachin king of Yahudah (Judah)... Evil-merodach king of Babylon... did lift up the head of Jehoiachin king of Yahudah (Judah) out of prison* (2 Kings 25:27); *he spake kindly to him, and set his throne above the throne of the kings that were with him in Babylon* (25:28; Jeremiah 52:32); *And changed his prison garments: and he did eat bread continually before him all the days of his life* (25:29; Jeremiah 52:33), *a daily rate for every day, all the days of his life* (25:30). The Davidic heir is raised from the dungeon, robed, seated above the captive kings, and given bread at the king''s own table: a faint lamp still burning. For this is the very Jehoiachin who stands in the line of the Messiah — *Josias begat Jechonias and his brethren, about the time they were carried away to Babylon* (Matthew 1:11), *And after they were brought to Babylon, Jechonias begat Salathiel; and Salathiel begat Zorobabel* (Matthew 1:12), the line that runs *from the carrying away into Babylon unto Messiah (Christ)* (Matthew 1:17). The seed preserved at the Babylonian table looks beyond the captivity to the promised one — *David my servant shall be king over them; and they all shall have one shepherd* (Ezekiel 37:24), the two sticks of Yahudah and Joseph made one in his hand (37:19), the scattered houses gathered, the dry bones raised to live (37:5,10). Judgment is not the last word; the covenant-promise survives the exile, and the throne the fire could not destroy is kept for the seed of David for ever.',
+       sv.verse_id, ev.verse_id, 'free', 39112
+  FROM _s343_2ki25_lookup sv, _s343_2ki25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=27
+   AND ev.edition_slug='canon' AND ev.book_slug='2-kings' AND ev.chapter_number=25 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- THREAD 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 39:4 — *they fled... by the way of the king''s garden*; the same night flight of the last king.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 52:8 — *overtook Zedekiah in the plains of Jericho... all his army was scattered*; no escape from the sentence.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=5
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 39:6 — *slew the sons of Zedekiah in Riblah before his eyes*; the last sight before the dark.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Jeremiah 52:11 — *put out the eyes of Zedekiah... and put him in prison till the day of his death*; the monarchy in chains.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Ezekiel 12:13 — *I will bring him to Babylon... yet shall he not see it*; the riddle fulfilled in the blinded king.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=12 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Deuteronomy 28:36 — *thy king... unto a nation which... thou hast not known*; the covenant-sanction, not the Torah, is the curse.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=7
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-last-davidic-king-blinded-and-carried-to-babylon'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 52:13 — *burned the house of Yahuah (LORD), and the king''s house*; Solomon''s temple to the flames.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 36:19 — *burnt the house of Elohim (God), and brake down the wall*; house, wall, and vessels alike consumed.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 28:52 — *until thy high and fenced walls come down, wherein thou trustedst*; the siege-curse foretold.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=10
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=52
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Lamentations 1:1 — *How doth the city sit solitary... how is she become as a widow!*; the lament over the burned city.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=1 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Lamentations 2:9 — *her gates are sunk... her king and her princes are among the Gentiles: the law is no more*; Zion silenced.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='lamentations' AND tv.chapter_number=2 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Psalm 137:1 — *By the rivers of Babylon... we wept, when we remembered Zion*; the carried-away captives mourning.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=11
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=137 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-house-of-yahuah-burned-the-walls-broken-down'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 52:16 — *left certain of the poor of the land for vinedressers and for husbandmen*; only the landless poor remain.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-land-emptied-gedaliah-slain-the-remnant-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 39:10 — *left of the poor of the people, which had nothing... and gave them vineyards and fields*; the land all but emptied.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=12
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=39 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-land-emptied-gedaliah-slain-the-remnant-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Deuteronomy 28:68 — *Yahuah (LORD) shall bring thee into Egypt again*; the Exodus run backward as covenant-curse.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=26
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=28 AND tv.verse_number=68
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-land-emptied-gedaliah-slain-the-remnant-to-egypt'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 29:10 — *after seventy years... I will cause you to return*; the exile has a measured, merciful term.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=29 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-seventy-years-the-captivity-that-is-not-the-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Chronicles 36:21 — *until the land had enjoyed her sabbaths... threescore and ten years*; the term fixed, Cyrus''s decree near.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-chronicles' AND tv.chapter_number=36 AND tv.verse_number=21
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-seventy-years-the-captivity-that-is-not-the-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 25:11 — *these nations shall serve the king of Babylon seventy years*; the number set from the first.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=21
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=25 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-seventy-years-the-captivity-that-is-not-the-end'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Jeremiah 52:31 — *lifted up the head of Jehoiachin king of Yahudah (Judah)... out of prison*; Jeremiah closes on the same scene.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=27
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Jeremiah 52:32 — *set his throne above the throne of the kings... in Babylon*; the Davidic seed honoured in exile.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=28
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=32
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Jeremiah 52:33 — *changed his prison garments: and he did continually eat bread before him*; a place at the king''s table.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=29
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=52 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 1:11 — *Josias begat Jechonias... about the time they were carried away to Babylon*; the preserved seed in Messiah''s line.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=27
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Matthew 1:12 — *Jechonias begat Salathiel; and Salathiel begat Zorobabel*; the line runs on to the Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=29
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=1 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Ezekiel 37:24 — *David my servant shall be king over them... one shepherd*; the seed gathered, the two houses made one.'
+  FROM cross_reference_threads t
+  JOIN _s343_2ki25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='2-kings' AND sv.chapter_number=25 AND sv.verse_number=29
+  JOIN _s343_2ki25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=37 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='2-kings-25-the-final-lamp-jehoiachin-lifted-the-davidic-seed-kept'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session343 — 2 Kings cross-references complete.'
