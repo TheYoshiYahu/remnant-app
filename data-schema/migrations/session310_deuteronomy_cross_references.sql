@@ -8960,6 +8960,2009 @@ SELECT t.id, cr.id, 2, E'*Have planted all manner of trees for food... count the
  WHERE t.slug='deuteronomy-20-the-tree-of-the-field-is-mans-life-spare-the-fruit-trees'
 ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
 
+-- ----- fragment: minion_deuteronomy_21.sql (Deuteronomy 21) -----
+--
+-- Book: Deuteronomy | Chapter: 21 | Tag: deu21 | Session prefix: s310
+-- Sort band base: 25000, step 3 (25000, 25003, 25006, 25009, 25012)
+-- Temp view: _s310_deu21_lookup
+--
+-- FRAMING: Deuteronomy 21 is the chapter of cleansing the land of innocent blood, the
+-- dignity owed even to the captive, the inviolable right of the firstborn, the gravity of
+-- honour owed father and mother, and — the keystone — the body hanged on a tree that may
+-- not remain overnight because "he that is hanged is accursed of Elohim." This last is the
+-- Torah-ground the Messiah's death is read through: the Formed Son bore the Deuteronomy 28
+-- death-curse for covenant-breaking, NOT the Torah itself made a curse.
+--
+-- Deuteronomy 21 coverage:
+--   v.1-9 (unsolved murder, heifer, washed hands, innocent blood cleared):
+--        NT:     Matthew 27:24-25 (Pilate washes his hands of the innocent blood) — threaded
+--        Extras: none warranted
+--        Tanakh: Numbers 35:33 (blood defileth the land); Genesis 9:6 (image of Elohim) — threaded
+--   v.10-14 (captive woman, month to mourn, never sold/made merchandise):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Deuteronomy 5:15 (remember thou wast a servant — the mercy principle) — threaded
+--   v.15-17 (firstborn's double portion not denied the son of the hated wife):
+--        NT:     Colossians 1:15,18 (the firstborn = the Heir, NOT first creature) — threaded
+--        Extras: none warranted
+--        Tanakh: Genesis 49:3 (Reuben, beginning of strength); 1 Chronicles 5:1-2 (birthright forfeited, two-house) — threaded
+--   v.18-21 (stubborn and rebellious son brought to the elders, stoned):
+--        NT:     none warranted
+--        Extras: none warranted
+--        Tanakh: Exodus 21:15,17 (smiteth/curseth father or mother); Proverbs 30:17 (the eye that mocketh); Deuteronomy 5:16 (honour, inverse) — threaded
+--   v.22-23 (hanged on a tree, not remain overnight, accursed of Elohim):
+--        NT:     Galatians 3:13; Acts 5:30; Acts 10:39; John 19:31; 1 Peter 2:24 — threaded
+--        Extras: none warranted
+--        Tanakh: (the curse = Deut 28 death-penalty borne; framed in prose)
+--
+-- THREADS (5):
+--   deuteronomy-21-the-innocent-blood-cleared-from-the-land            [free]  -> canon Numbers 35, Genesis 9, Matthew 27
+--   deuteronomy-21-mercy-to-the-captive-remember-thou-wast-a-servant   [free]  -> canon Deuteronomy 5
+--   deuteronomy-21-the-right-of-the-firstborn-the-double-portion       [free]  -> canon Genesis 49, 1 Chronicles 5, Colossians 1
+--   deuteronomy-21-honour-the-stubborn-and-rebellious-son              [free]  -> canon Exodus 21, Proverbs 30, Deuteronomy 5
+--   deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne       [free]  -> canon Galatians 3, Acts 5, Acts 10, John 19, 1 Peter 2
+--
+-- CONTESTED/LOAD-BEARING: v.23 "accursed of Elohim" framed as the Deuteronomy 28 death-curse
+-- borne by the Formed Son (Gal 3:13), NOT the Torah itself made a curse. v.15-17 firstborn
+-- double portion → Colossians 1:15,18 firstborn = the Heir / preeminent One, NOT a first
+-- created thing.
+
+CREATE TEMP VIEW _s310_deu21_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. CROSS_REFERENCES
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: innocent blood cleared from the land (vv.1-9)
+    ('canon','deuteronomy',21,8,'canon','numbers',35,33,'free',
+     E'*So ye shall not pollute the land wherein ye are: for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it.* (Numbers 35:33). Deuteronomy''s plea *Be merciful, O Yahuah (LORD), unto thy people Yashar''el (Israel)... and lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge* (Deuteronomy 21:8) rests on this law: unatoned blood defiles the very ground, and the land must be cleared of it.'),
+    ('canon','deuteronomy',21,9,'canon','numbers',35,33,'free',
+     E'*...the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it.* (Numbers 35:33). The heifer beheaded in the rough valley answers the unsolved case: *So shalt thou put away the guilt of innocent blood from among you, when thou shalt do that which is right in the sight of Yahuah (LORD)* (Deuteronomy 21:9).'),
+    ('canon','deuteronomy',21,7,'canon','genesis',9,6,'free',
+     E'*Whoso sheddeth man''s blood, by man shall his blood be shed: for in the image of Elohim (God) made he man.* (Genesis 9:6). The elders'' oath *Our hands have not shed this blood, neither have our eyes seen it* (Deuteronomy 21:7) reaches back to the Noahic charge: man is made in the image of Elohim (God), so shed blood demands a reckoning.'),
+    ('canon','deuteronomy',21,7,'canon','matthew',27,24,'free',
+     E'*When Pilate saw that he could prevail nothing, but that rather a tumult was made, he took water, and washed his hands before the multitude, saying, I am innocent of the blood of this just person: see ye to it.* (Matthew 27:24). Pilate seizes the Deuteronomy gesture — *Our hands have not shed this blood* (Deuteronomy 21:7) — but the ritual cannot clear what the heart has consented to.'),
+    ('canon','deuteronomy',21,8,'canon','matthew',27,25,'free',
+     E'*Then answered all the people, and said, His blood be on us, and on our children.* (Matthew 27:25). Where Deuteronomy pleads *lay not innocent blood unto thy people* (Deuteronomy 21:8), the crowd does the opposite — yet the very blood they invoke is the blood that, poured out, atones; this is the lost sheep''s cry, not a charge to be hung on a people forever.'),
+
+    -- Thread 2: mercy to the captive (vv.10-14)
+    ('canon','deuteronomy',21,14,'canon','deuteronomy',5,15,'free',
+     E'*And remember that thou wast a servant in the land of Egypt, and that Yahuah Elohayka (the LORD thy God) brought thee out thence through a mighty hand and by a stretched out arm...* (Deuteronomy 5:15). The captive woman may not be sold or *made merchandise* (Deuteronomy 21:14) for the same reason Yashar''el (Israel) keeps the Sabbath: a people once enslaved must remember bondage and show mercy to the one in their power.'),
+
+    -- Thread 3: the right of the firstborn (vv.15-17)
+    ('canon','deuteronomy',21,17,'canon','genesis',49,3,'free',
+     E'*Reuben, thou art my firstborn, my might, and the beginning of my strength, the excellency of dignity, and the excellency of power* (Genesis 49:3). Deuteronomy''s law uses Jacob''s very words — the firstborn *is the beginning of his strength; the right of the firstborn is his* (Deuteronomy 21:17) — codifying the dignity of the double portion that may not be transferred by a father''s favouritism.'),
+    ('canon','deuteronomy',21,17,'canon','1-chronicles',5,1,'free',
+     E'*Now the sons of Reuben the firstborn of Yashar''el (Israel), (for he was the firstborn; but, forasmuch as he defiled his father''s bed, his birthright was given unto the sons of Joseph the son of Yashar''el (Israel)...* (1 Chronicles 5:1). The birthright is the firstborn''s by right — *the right of the firstborn is his* (Deuteronomy 21:17) — yet it can be FORFEITED by the firstborn''s own sin, as Reuben forfeited it to Joseph.'),
+    ('canon','deuteronomy',21,17,'canon','1-chronicles',5,2,'free',
+     E'*For Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s* (1 Chronicles 5:2). The double portion of Deuteronomy 21:17 becomes the two-house structure: the chief ruler (the sceptre) to Yahudah (Judah), the birthright (the double portion of the firstborn) to Joseph — the very two sticks to be made one again.'),
+    ('canon','deuteronomy',21,17,'canon','colossians',1,15,'free',
+     E'*Who is the image of the invisible Elohim (God), the firstborn of every creature* (Colossians 1:15). The Torah''s firstborn — *the beginning of his strength* (Deuteronomy 21:17) — points to the Formed Son, the firstborn as Heir and rank, not as a first created thing, for *by him were all things created* (Colossians 1:16).'),
+    ('canon','deuteronomy',21,17,'canon','colossians',1,18,'free',
+     E'*And he is the head of the body, the church: who is the beginning, the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18). As the firstborn receives the double portion and the preeminence of rank (Deuteronomy 21:17), so the Formed Son is the firstborn from the dead, given preeminence in all things by the Father.'),
+
+    -- Thread 4: honour / the stubborn and rebellious son (vv.18-21)
+    ('canon','deuteronomy',21,18,'canon','exodus',21,15,'free',
+     E'*And he that smiteth his father, or his mother, shall be surely put to death.* (Exodus 21:15). The rebellious son who *will not obey the voice of his father, or the voice of his mother* (Deuteronomy 21:18) stands under the same gravity Exodus attaches to violence against parents — the assault on the family order is a capital matter.'),
+    ('canon','deuteronomy',21,20,'canon','exodus',21,17,'free',
+     E'*And he that curseth his father, or his mother, shall surely be put to death.* (Exodus 21:17). When the elders hear *This our son is stubborn and rebellious, he will not obey our voice* (Deuteronomy 21:20), it is the cursing-of-parents transgression of Exodus 21:17 brought into open judgment.'),
+    ('canon','deuteronomy',21,21,'canon','proverbs',30,17,'free',
+     E'*The eye that mocketh at his father, and despiseth to obey his mother, the ravens of the valley shall pick it out, and the young eagles shall eat it.* (Proverbs 30:17). Wisdom echoes the Torah''s sentence — *all the men of his city shall stone him with stones, that he die* (Deuteronomy 21:21) — that contempt for father and mother ends in ruin.'),
+    ('canon','deuteronomy',21,18,'canon','deuteronomy',5,16,'free',
+     E'*Honour thy father and thy mother, as Yahuah Elohayka (the LORD thy God) hath commanded thee; that thy days may be prolonged...* (Deuteronomy 5:16). The fifth word promises long life to the son who honours; the stubborn son who *will not obey the voice of his father* (Deuteronomy 21:18) is its dark inverse — the dishonour that cuts life short.'),
+
+    -- Thread 5: he that is hanged is accursed (vv.22-23)
+    ('canon','deuteronomy',21,23,'canon','galatians',3,13,'free',
+     E'*Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13). Paul quotes Deuteronomy 21:23 directly — *he that is hanged is accursed of Elohim (God)*. The curse borne is the Deuteronomy 28 death-penalty for covenant-breaking, taken upon the Formed Son; the Torah is not made a curse — the death-sentence under it is.'),
+    ('canon','deuteronomy',21,22,'canon','acts',5,30,'free',
+     E'*The Elohim (God) of our fathers raised up Yahusha (Jesus), whom ye slew and hanged on a tree.* (Acts 5:30). The phrase *thou hang him on a tree* (Deuteronomy 21:22) becomes the apostles'' testimony of the manner of the Messiah''s death and the Father''s raising of him.'),
+    ('canon','deuteronomy',21,22,'canon','acts',10,39,'free',
+     E'*And we are witnesses of all things which he did both in the land of the Yahudim (Jews), and in Jerusalem; whom they slew and hanged on a tree* (Acts 10:39). Again the Deuteronomy 21:22 hanging-on-a-tree is named as eyewitness fact — the Formed Son under the very statute that marks the accursed death.'),
+    ('canon','deuteronomy',21,23,'canon','john',19,31,'free',
+     E'*The Yahudim (Jews) therefore, because it was the preparation, that the bodies should not remain upon the cross on the sabbath day, (for that sabbath day was an high day,) besought Pilate that their legs might be broken, and that they might be taken away.* (John 19:31). John records the keeping of Deuteronomy 21:23 — *His body shall not remain all night upon the tree* — the body taken down before the Sabbath, the Torah honoured even at the cross.'),
+    ('canon','deuteronomy',21,23,'canon','1-peter',2,24,'free',
+     E'*Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.* (1 Peter 2:24). The accursed tree of Deuteronomy 21:23 becomes the place where the Formed Son bears sin in his own body — the curse exhausted, that the redeemed might live unto righteousness, that is, unto the Torah written on the heart.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. THREADS
+-- ============================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-21-the-innocent-blood-cleared-from-the-land',
+       E'The innocent blood cleared from the land',
+       E'When a slain man is found and the murderer is unknown, the elders of the nearest city behead a heifer in a rough valley and wash their hands, pleading *Be merciful, O Yahuah (LORD), unto thy people Yashar''el (Israel)... and lay not innocent blood unto thy people of Yashar''el''s (Israel''s) charge* (Deuteronomy 21:8). The land itself is at stake: *for blood it defileth the land: and the land cannot be cleansed of the blood that is shed therein, but by the blood of him that shed it* (Numbers 35:33). The reckoning is owed because man bears the Maker''s likeness — *for in the image of Elohim (God) made he man* (Genesis 9:6). Centuries later Pilate seizes the very gesture: *he took water, and washed his hands before the multitude, saying, I am innocent of the blood of this just person* (Matthew 27:24) — but no ritual clears blood the heart has consented to, and the crowd''s answer, *His blood be on us, and on our children* (Matthew 27:25), invokes the one blood that, poured out, actually atones.',
+       sv.verse_id, ev.verse_id, 'free', 25000
+  FROM _s310_deu21_lookup sv, _s310_deu21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=21 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-21-mercy-to-the-captive-remember-thou-wast-a-servant',
+       E'Mercy to the captive — remember thou wast a servant',
+       E'Even the woman taken in war is given dignity: she shaves her head, pares her nails, puts off the raiment of her captivity, and *bewail her father and her mother a full month* before she is taken to wife (Deuteronomy 21:13). And if there is no delight in her, *thou shalt not sell her at all for money, thou shalt not make merchandise of her, because thou hast humbled her* (Deuteronomy 21:14). The mercy rests on memory: *And remember that thou wast a servant in the land of Egypt, and that Yahuah Elohayka (the LORD thy God) brought thee out thence through a mighty hand* (Deuteronomy 5:15). A people once enslaved and redeemed may not deal in human merchandise; the one in their power must be treated as they themselves were not.',
+       sv.verse_id, ev.verse_id, 'free', 25003
+  FROM _s310_deu21_lookup sv, _s310_deu21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=21 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-21-the-right-of-the-firstborn-the-double-portion',
+       E'The right of the firstborn — the double portion',
+       E'A father may not deny the firstborn his portion to favour the son of a beloved wife: *he shall acknowledge the son of the hated for the firstborn, by giving him a double portion of all that he hath: for he is the beginning of his strength; the right of the firstborn is his* (Deuteronomy 21:17). The phrase is Jacob''s own over Reuben — *thou art my firstborn, my might, and the beginning of my strength* (Genesis 49:3). Yet the right can be forfeited by the firstborn''s sin: Reuben *defiled his father''s bed, his birthright was given unto the sons of Joseph* (1 Chronicles 5:1), so that *Yahudah (Judah) prevailed above his brethren, and of him came the chief ruler; but the birthright was Joseph''s* (1 Chronicles 5:2) — the two-house structure, sceptre to Yahudah, double portion to Joseph, two sticks to be made one. And the firstborn-right finds its fullness in the Formed Son: *the firstborn of every creature* (Colossians 1:15) — firstborn as Heir and rank, NOT a first created thing, for *by him were all things created* (Colossians 1:16) — *the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18).',
+       sv.verse_id, ev.verse_id, 'free', 25006
+  FROM _s310_deu21_lookup sv, _s310_deu21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=15
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=21 AND ev.verse_number=17
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-21-honour-the-stubborn-and-rebellious-son',
+       E'Honour — the stubborn and rebellious son',
+       E'The stubborn son *which will not obey the voice of his father, or the voice of his mother* (Deuteronomy 21:18) is brought to the elders and the gate, declared *a glutton, and a drunkard* (Deuteronomy 21:20), and stoned, *so shalt thou put evil away from among you; and all Yashar''el (Israel) shall hear, and fear* (Deuteronomy 21:21). The gravity is the Torah''s consistent weight on the family order: *he that smiteth his father, or his mother, shall be surely put to death* (Exodus 21:15) and *he that curseth his father, or his mother, shall surely be put to death* (Exodus 21:17). Wisdom seals it — *The eye that mocketh at his father, and despiseth to obey his mother, the ravens of the valley shall pick it out* (Proverbs 30:17). All of it is the dark inverse of the fifth word: *Honour thy father and thy mother... that thy days may be prolonged* (Deuteronomy 5:16) — the honour that lengthens life, refused, cuts it short.',
+       sv.verse_id, ev.verse_id, 'free', 25009
+  FROM _s310_deu21_lookup sv, _s310_deu21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=18
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=21 AND ev.verse_number=21
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne',
+       E'He that is hanged is accursed — the curse borne',
+       E'*And if a man have committed a sin worthy of death... and thou hang him on a tree: His body shall not remain all night upon the tree, but thou shalt in any wise bury him that day; (for he that is hanged is accursed of Elohim (God);)* (Deuteronomy 21:22-23). This is the Torah-ground the Messiah''s death is read through. Paul quotes it word for word: *Messiah (Christ) hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree* (Galatians 3:13) — the curse borne is the Deuteronomy 28 death-penalty for covenant-breaking taken upon the Formed Son, NOT the Torah itself made a curse. The apostles testify to the manner: *whom ye slew and hanged on a tree* (Acts 5:30); *whom they slew and hanged on a tree* (Acts 10:39). And the statute that the body not remain overnight is kept to the letter at the cross — *the bodies should not remain upon the cross on the sabbath day* (John 19:31). There, on the accursed tree, *his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed* (1 Peter 2:24) — the curse exhausted, the redeemed freed to walk in the Torah written on the heart.',
+       sv.verse_id, ev.verse_id, 'free', 25012
+  FROM _s310_deu21_lookup sv, _s310_deu21_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=22
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=21 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. THREAD MEMBERS
+-- ============================================================================
+-- Thread 1: innocent blood
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...for blood it defileth the land...* (Numbers 35:33) — the law beneath the plea of Deuteronomy 21:8.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-innocent-blood-cleared-from-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...cannot be cleansed... but by the blood of him that shed it* (Numbers 35:33) — answering Deuteronomy 21:9, put away the guilt.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=9
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=35 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-innocent-blood-cleared-from-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...for in the image of Elohim (God) made he man* (Genesis 9:6) — why shed blood demands a reckoning (Deuteronomy 21:7).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=9 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-innocent-blood-cleared-from-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*I am innocent of the blood of this just person* (Matthew 27:24) — Pilate seizes the Deuteronomy 21:7 gesture.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=7
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-innocent-blood-cleared-from-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*His blood be on us, and on our children* (Matthew 27:25) — the lost sheep''s cry over the blood that atones (Deuteronomy 21:8).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=8
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=27 AND tv.verse_number=25
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-innocent-blood-cleared-from-the-land'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: mercy to the captive
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...remember that thou wast a servant in the land of Egypt...* (Deuteronomy 5:15) — the memory beneath the mercy of Deuteronomy 21:14.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=14
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-mercy-to-the-captive-remember-thou-wast-a-servant'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: the right of the firstborn
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...my firstborn... the beginning of my strength* (Genesis 49:3) — Jacob''s words, the language of Deuteronomy 21:17.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=49 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-right-of-the-firstborn-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...his birthright was given unto the sons of Joseph* (1 Chronicles 5:1) — the firstborn-right forfeited by sin.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-right-of-the-firstborn-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...the chief ruler; but the birthright was Joseph''s* (1 Chronicles 5:2) — the two-house split of the double portion.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-chronicles' AND tv.chapter_number=5 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-right-of-the-firstborn-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...the firstborn of every creature* (Colossians 1:15) — the Heir and rank, NOT first creature; fullness of Deuteronomy 21:17.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-right-of-the-firstborn-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*...the firstborn from the dead; that in all things he might have the preeminence* (Colossians 1:18) — the double-portion preeminence.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=17
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='colossians' AND tv.chapter_number=1 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-the-right-of-the-firstborn-the-double-portion'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: honour / rebellious son
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...he that smiteth his father, or his mother...* (Exodus 21:15) — the family order''s gravity behind Deuteronomy 21:18.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=18
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=15
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-honour-the-stubborn-and-rebellious-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...he that curseth his father, or his mother...* (Exodus 21:17) — the transgression behind Deuteronomy 21:20.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=20
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-honour-the-stubborn-and-rebellious-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*The eye that mocketh at his father... the ravens of the valley shall pick it out* (Proverbs 30:17) — wisdom''s seal on Deuteronomy 21:21.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=21
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=30 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-honour-the-stubborn-and-rebellious-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Honour thy father and thy mother... that thy days may be prolonged* (Deuteronomy 5:16) — the fifth word, inverted by the rebellious son.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=18
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='deuteronomy' AND tv.chapter_number=5 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-honour-the-stubborn-and-rebellious-son'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: he that is hanged is accursed
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*...Cursed is every one that hangeth on a tree* (Galatians 3:13) — Deuteronomy 21:23 quoted; the Deut 28 death-curse borne, NOT the Torah cursed.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=23
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=3 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*...whom ye slew and hanged on a tree* (Acts 5:30) — the manner of death named from Deuteronomy 21:22.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=22
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=5 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*...whom they slew and hanged on a tree* (Acts 10:39) — eyewitness testimony of the Deuteronomy 21:22 death.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=22
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=10 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*...the bodies should not remain upon the cross on the sabbath day* (John 19:31) — Deuteronomy 21:23 kept to the letter at the cross.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=23
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='john' AND tv.chapter_number=19 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*...bare our sins in his own body on the tree...* (1 Peter 2:24) — the accursed tree of Deuteronomy 21:23 made the place of atonement.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu21_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=21 AND sv.verse_number=23
+  JOIN _s310_deu21_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-peter' AND tv.chapter_number=2 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-21-he-that-is-hanged-is-accursed-the-curse-borne'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_22.sql (Deuteronomy 22) -----
+-- Book: Deuteronomy  Chapter: 22  | tag: deu22 | session prefix: s310
+-- temp view: _s310_deu22_lookup
+-- sort band base: 25025  step: 3  → 25025, 25028, 25031, 25034, 25037, 25040
+--
+-- FRAMING: Deuteronomy 22 is covenant instruction for daily life — love of neighbour
+-- in action (restoring the lost, lifting the fallen), the creation-order distinction of
+-- male and female, the safeguarding of life, the SEPARATION/unmingling principle (holy
+-- from common, the seed-line not mixed), the Torah-reminder worn (tzitzit), and the laws
+-- of sexual purity. Torah is the living covenant inheritance, never the curse; the NT
+-- fills and affirms each of these, never abolishes them (1 John 2:3-4 filter).
+--
+-- Deuteronomy 22 coverage:
+--   v.1-4  (brother's ox/sheep astray; ass fallen; thou mayest not hide thyself)
+--          NT:     Luke 15:4-6 (lost sheep sought), Matthew 5:44 (love), Galatians 6:1-2 (restore/bear burdens)
+--          Extras: none warranted
+--          Tanakh: Exodus 23:4-5 (even the enemy's ox)
+--   v.5    (woman not wear man's garment / man a woman's — abomination)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Genesis 1:27 (male and female created he them)
+--   v.6-7  (bird's nest / let the dam go — that it may be well, prolong thy days)
+--          NT:     none warranted   Extras: none warranted   Tanakh: none warranted (mercy/long-days motif folded conceptually, no separate thread)
+--   v.8    (battlement for thy roof — bring not blood upon thine house)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 21:33-34 (the uncovered pit — liability for a death-trap)
+--   v.9-11 (mingled seed; ox and ass; woollen and linen — sha'atnez, the unmingling)
+--          NT:     2 Corinthians 6:14-17 (be ye not unequally yoked / come out and be separate)
+--          Extras: none warranted
+--          Tanakh: Leviticus 19:19 (the same statute — diverse kind, mingled seed, linen and woollen)
+--   v.12   (fringes upon the four quarters of thy vesture — the tzitzit)
+--          NT:     Matthew 9:20 / 14:36 (the hem of his garment), Matthew 23:5 (enlarge the borders)
+--          Extras: none warranted
+--          Tanakh: Numbers 15:38-40 (fringes to remember ALL the commandments)
+--   v.13-30 (tokens of virginity; adultery; the betrothed; father's wife — purity laws)
+--          NT:     Matthew 5:27-28 (looketh to lust = adultery in heart), 1 Corinthians 6:9 + 6:18 (flee fornication), Hebrews 13:4 (bed undefiled)
+--          Extras: none warranted
+--          Tanakh: (curated into one purity thread — sub-cases not individually threaded)
+--
+-- THREADS (6):
+--   1. deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself  [free]  v.1-4  → canon NT (Luke,Matthew,Galatians) + canon Tanakh (Exodus)
+--   2. deuteronomy-22-the-woman-shall-not-wear-that-which-pertaineth-to-a-man [free] v.5   → canon Tanakh (Genesis)
+--   3. deuteronomy-22-a-battlement-for-thy-roof-bring-not-blood-on-thine-house [free] v.8  → canon Tanakh (Exodus)
+--   4. deuteronomy-22-mingled-seed-and-woollen-and-linen-the-unmingling      [free]  v.9-11 → canon Tanakh (Leviticus) + canon NT (2 Corinthians)
+--   5. deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered    [free]  v.12   → canon Tanakh (Numbers) + canon NT (Matthew)
+--   6. deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled              [free]  v.13-30 → canon NT (Matthew, 1 Corinthians, Hebrews)
+-- ============================================================================
+
+CREATE TEMP VIEW _s310_deu22_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. cross_references
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: thy brother gone astray — thou mayest not hide thyself (v.1-4)
+    ('canon','deuteronomy',22,1,'canon','luke',15,4,'free',
+      E'*What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?* (Luke 15:4). The Torah''s command — *Thou shalt not see thy brother''s ox or his sheep go astray, and hide thyself from them: thou shalt in any case bring them again unto thy brother* (Deuteronomy 22:1) — is the very grammar Yahusha (Jesus) takes up: the shepherd who will not hide himself from the strayed but goes after the lost sheep until he finds it.'),
+    ('canon','deuteronomy',22,1,'canon','luke',15,6,'free',
+      E'*And when he cometh home, he calleth together his friends and neighbours, saying unto them, Rejoice with me; for I have found my sheep which was lost* (Luke 15:6). The Torah does not merely tolerate the strayed sheep — *thou shalt in any case bring them again unto thy brother* (Deuteronomy 22:1) — and the parable ends in the same restoration: the lost found, brought home, the two-house people gathered, not abandoned.'),
+    ('canon','deuteronomy',22,1,'canon','matthew',5,44,'free',
+      E'*But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you* (Matthew 5:44). The command not to hide thyself from thy brother''s straying ox — *thou shalt in any case bring them again unto thy brother* (Deuteronomy 22:1) — is love of neighbour made concrete, and Yahusha (Jesus) stretches it to its furthest reach, the love that will not turn away even from the one who hates.'),
+    ('canon','deuteronomy',22,4,'canon','galatians',6,1,'free',
+      E'*Brethren, if a man be overtaken in a fault, ye which are spiritual, restore such an one in the spirit of meekness; considering thyself, lest thou also be tempted* (Galatians 6:1). The Torah''s *thou shalt surely help him to lift them up again* (Deuteronomy 22:4) — the fallen ass lifted, not passed by — becomes, in Paul, the restoring of the fallen brother: the same lifting-up, now of the soul.'),
+    ('canon','deuteronomy',22,4,'canon','galatians',6,2,'free',
+      E'*Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)* (Galatians 6:2). To help thy brother *lift them up again* (Deuteronomy 22:4) is to bear his burden; Paul calls this fulfilling the law — not its abolition but its doing, the Torah of love carried out in the body of the people.'),
+    ('canon','deuteronomy',22,4,'canon','exodus',23,4,'free',
+      E'*If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back to him again* (Exodus 23:4). The same statute stands at Sinai, and there it reaches even the enemy: where Deuteronomy says *thou shalt surely help him to lift them up again* (Deuteronomy 22:4), Exodus widens the brother to the one that hateth thee.'),
+    ('canon','deuteronomy',22,4,'canon','exodus',23,5,'free',
+      E'*If thou see the ass of him that hateth thee lying under his burden, and wouldest forbear to help him, thou shalt surely help with him* (Exodus 23:5). The fallen ass of Deuteronomy 22:4 is the fallen ass of the one that hateth thee — *thou shalt surely help him to lift them up again* — proving the command is no mere neighbourliness but the love that crosses enmity itself.'),
+
+    -- THREAD 2: the woman shall not wear that which pertaineth unto a man (v.5)
+    ('canon','deuteronomy',22,5,'canon','genesis',1,27,'free',
+      E'*So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them* (Genesis 1:27). The garment-distinction — *The woman shall not wear that which pertaineth unto a man, neither shall a man put on a woman''s garment: for all that do so are abomination unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 22:5) — guards the creation-order itself: the male-and-female distinction set in the image of Elohim from the beginning is not to be blurred or erased.'),
+
+    -- THREAD 3: a battlement for thy roof — bring not blood upon thine house (v.8)
+    ('canon','deuteronomy',22,8,'canon','exodus',21,33,'free',
+      E'*And if a man shall open a pit, or if a man shall dig a pit, and not cover it, and an ox or an ass fall therein* (Exodus 21:33). The duty to fence the roof — *When thou buildest a new house, then thou shalt make a battlement for thy roof, that thou bring not blood upon thine house, if any man fall from thence* (Deuteronomy 22:8) — is the same Torah of safeguarding life: the uncovered pit and the unfenced roof are both death-traps the righteous man is bound to remove.'),
+    ('canon','deuteronomy',22,8,'canon','exodus',21,34,'free',
+      E'*The owner of the pit shall make it good, and give money unto the owner of them; and the dead beast shall be his* (Exodus 21:34). Liability follows the careless owner: as the battlement spares blood upon thine house — *that thou bring not blood upon thine house, if any man fall from thence* (Deuteronomy 22:8) — so the pit-digger must make good the harm his negligence allowed. The Torah holds life precious and lays the cost upon the one who failed to guard it.'),
+
+    -- THREAD 4: mingled seed, ox and ass, woollen and linen — the unmingling (v.9-11)
+    ('canon','deuteronomy',22,9,'canon','leviticus',19,19,'free',
+      E'*Ye shall keep my statutes. Thou shalt not let thy cattle gender with a diverse kind: thou shalt not sow thy field with mingled seed: neither shall a garment mingled of linen and woollen come upon thee* (Leviticus 19:19). This is the same statute Deuteronomy gives — *Thou shalt not sow thy vineyard with divers seeds... Thou shalt not wear a garment of divers sorts, as of woollen and linen together* (Deuteronomy 22:9,11) — the separation principle written twice: the holy kept from the common, the kinds and the seed-line not mingled.'),
+    ('canon','deuteronomy',22,9,'canon','2-corinthians',6,14,'free',
+      E'*Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?* (2 Corinthians 6:14). Paul reaches straight back to the unmingling Torah — *Thou shalt not plow with an ox and an ass together* (Deuteronomy 22:10) — and reads it forward: the same refusal of the mixed yoke, now of righteousness with unrighteousness, light with darkness.'),
+    ('canon','deuteronomy',22,10,'canon','2-corinthians',6,17,'free',
+      E'*Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing; and I will receive you* (2 Corinthians 6:17). The vineyard not sown with divers seeds, the ox not yoked with the ass — *Thou shalt not plow with an ox and an ass together* (Deuteronomy 22:10) — is the bodily picture of the call to come out and be separate, the defiling mixture refused so the people may be received as holy.'),
+
+    -- THREAD 5: fringes upon the four quarters — the Torah remembered (v.12)
+    ('canon','deuteronomy',22,12,'canon','numbers',15,38,'free',
+      E'*Speak unto the children of Yashar''el (Israel), and bid them that they make them fringes in the borders of their garments throughout their generations, and that they put upon the fringe of the borders a ribband of blue* (Numbers 15:38). The command *Thou shalt make thee fringes upon the four quarters of thy vesture, wherewith thou coverest thyself* (Deuteronomy 22:12) is the same tzitzit given at Sinai — the garment itself made to carry a sign upon its borders.'),
+    ('canon','deuteronomy',22,12,'canon','numbers',15,39,'free',
+      E'*And it shall be unto you for a fringe, that ye may look upon it, and remember all the commandments of Yahuah (LORD), and do them; and that ye seek not after your own heart and your own eyes, after which ye use to go a whoring* (Numbers 15:39). Here is what the fringes of Deuteronomy 22:12 are FOR: not ornament but memory — the worn reminder to remember all the commandments and do them, the Torah carried on the body against the wandering eye.'),
+    ('canon','deuteronomy',22,12,'canon','matthew',9,20,'free',
+      E'*And, behold, a woman, which was diseased with an issue of blood twelve years, came behind him, and touched the hem of his garment* (Matthew 9:20). Yahusha (Jesus) wore the fringes the Torah commands — *Thou shalt make thee fringes upon the four quarters of thy vesture* (Deuteronomy 22:12) — and it was the hem, the tzitzit-bearing border, that the woman reached for; the Messiah keeps the very statute, the Torah-reminder upon his own garment.'),
+    ('canon','deuteronomy',22,12,'canon','matthew',14,36,'free',
+      E'*And besought him that they might only touch the hem of his garment: and as many as touched were made perfectly whole* (Matthew 14:36). Again the hem — the fringe of Deuteronomy 22:12 — is the place of reaching; the Torah-keeping Messiah wears the commanded borders, and through that obedient garment healing flows to the whole.'),
+    ('canon','deuteronomy',22,12,'canon','matthew',23,5,'free',
+      E'*But all their works they do for to be seen of men: they make broad their phylacteries, and enlarge the borders of their garments* (Matthew 23:5). The fault is not the fringes — *Thou shalt make thee fringes upon the four quarters of thy vesture* (Deuteronomy 22:12) is Yahuah''s own command — but the enlarging of the borders for show; Yahusha (Jesus) rebukes the vanity, not the Torah, the sign worn to be seen rather than to remember and do.'),
+
+    -- THREAD 6: the tokens of virginity — the marriage bed undefiled (v.13-30)
+    ('canon','deuteronomy',22,22,'canon','matthew',5,27,'free',
+      E'*Ye have heard that it was said by them of old time, Thou shalt not commit adultery* (Matthew 5:27). The purity laws of Deuteronomy 22 — *If a man be found lying with a woman married to an husband, then they shall both of them die... so shalt thou put away evil from Yashar''el (Israel)* (Deuteronomy 22:22) — are the very Torah Yahusha (Jesus) takes up, naming the commandment against adultery he is about to deepen, not dissolve.'),
+    ('canon','deuteronomy',22,22,'canon','matthew',5,28,'free',
+      E'*But I say unto you, That whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:28). Where the Torah judges the adulterous act — *so shalt thou put away evil from Yashar''el (Israel)* (Deuteronomy 22:22) — Yahusha (Jesus) drives the same holiness inward to the heart and the eye, the Torah written within, not lowered but raised.'),
+    ('canon','deuteronomy',22,21,'canon','1-corinthians',6,9,'free',
+      E'*Know ye not that the unrighteous shall not inherit the kingdom of Elohim (God)? Be not deceived: neither fornicators, nor idolaters, nor adulterers, nor effeminate, nor abusers of themselves with mankind* (1 Corinthians 6:9). The Torah''s sentence on whoredom — *because she hath wrought folly in Yashar''el (Israel), to play the whore in her father''s house: so shalt thou put evil away from among you* (Deuteronomy 22:21) — stands fast in Paul: the fornicator does not inherit the kingdom; the holiness of the body is no Sinai relic.'),
+    ('canon','deuteronomy',22,21,'canon','1-corinthians',6,18,'free',
+      E'*Flee fornication. Every sin that a man doeth is without the body; but he that committeth fornication sinneth against his own body* (1 Corinthians 6:18). The chapter that puts the whore''s evil away — *so shalt thou put evil away from among you* (Deuteronomy 22:21) — is heard again in Paul''s flee fornication; the same Torah-holiness of the body, the evil of fornication put far off.'),
+    ('canon','deuteronomy',22,22,'canon','hebrews',13,4,'free',
+      E'*Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). The whole weight of Deuteronomy 22''s marriage and purity laws — the adulterer judged, *so shalt thou put away evil from Yashar''el (Israel)* (Deuteronomy 22:22) — is gathered into one line: the bed undefiled, the whoremongers and adulterers under the judgment of Elohim, the Torah''s honour of marriage unbroken.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. threads
+-- ============================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself',
+       E'Thy brother gone astray — thou mayest not hide thyself',
+       E'Deuteronomy 22 opens with love of neighbour made concrete: *Thou shalt not see thy brother''s ox or his sheep go astray, and hide thyself from them: thou shalt in any case bring them again unto thy brother* (Deuteronomy 22:1), and *Thou shalt not see thy brother''s ass or his ox fall down by the way, and hide thyself from them: thou shalt surely help him to lift them up again* (Deuteronomy 22:4). The lost is to be sought and restored; the fallen lifted; *thou mayest not hide thyself* (Deuteronomy 22:3). Sinai had already widened this even to the enemy: *If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back to him again* (Exodus 23:4), and *thou shalt surely help with him* (Exodus 23:5). Yahusha (Jesus) takes up the very same shepherd-grammar: *What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?* (Luke 15:4) — and the joy of restoration, *Rejoice with me; for I have found my sheep which was lost* (Luke 15:6) — the strayed of the two-house people sought, not abandoned. He stretches it to its furthest reach, *Love your enemies* (Matthew 5:44); and Paul makes the lifting-up the restoring of the fallen brother, *restore such an one in the spirit of meekness* (Galatians 6:1), *Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)* (Galatians 6:2). Not the abolition of the Torah but its doing — the Torah of love carried out in the body of the people.',
+       sv.verse_id, ev.verse_id, 'free', 25025
+  FROM _s310_deu22_lookup sv, _s310_deu22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=22 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-22-the-woman-shall-not-wear-that-which-pertaineth-to-a-man',
+       E'The woman shall not wear that which pertaineth unto a man — male and female',
+       E'*The woman shall not wear that which pertaineth unto a man, neither shall a man put on a woman''s garment: for all that do so are abomination unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 22:5). The statute is not arbitrary custom; it guards the creation-order itself. From the beginning: *So Elohim (God) created man in his own image, in the image of Elohim (God) created he him; male and female created he them* (Genesis 1:27). The male-and-female distinction is set in the image of Elohim, and the Torah will not have it blurred, erased, or counterfeited in the garment. To honour the line between man and woman is to honour the Maker who drew it.',
+       sv.verse_id, ev.verse_id, 'free', 25028
+  FROM _s310_deu22_lookup sv, _s310_deu22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=22 AND ev.verse_number=5
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-22-a-battlement-for-thy-roof-bring-not-blood-on-thine-house',
+       E'A battlement for thy roof — bring not blood upon thine house',
+       E'*When thou buildest a new house, then thou shalt make a battlement for thy roof, that thou bring not blood upon thine house, if any man fall from thence* (Deuteronomy 22:8). The Torah holds human life precious and lays upon the builder the duty of safeguarding it: a death-trap left unguarded brings blood-guilt upon the house. The same principle was already given at Sinai for the uncovered pit: *And if a man shall open a pit, or if a man shall dig a pit, and not cover it, and an ox or an ass fall therein* (Exodus 21:33) — *The owner of the pit shall make it good* (Exodus 21:34). Both the unfenced roof and the uncovered pit are hazards the righteous man is bound to remove, and the cost of negligence falls upon the one who failed to guard. Torah-righteousness is not abstract; it builds a parapet.',
+       sv.verse_id, ev.verse_id, 'free', 25031
+  FROM _s310_deu22_lookup sv, _s310_deu22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=22 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-22-mingled-seed-and-woollen-and-linen-the-unmingling',
+       E'Mingled seed, ox and ass, woollen and linen — the unmingling',
+       E'*Thou shalt not sow thy vineyard with divers seeds: lest the fruit of thy seed which thou hast sown, and the fruit of thy vineyard, be defiled. Thou shalt not plow with an ox and an ass together. Thou shalt not wear a garment of divers sorts, as of woollen and linen together* (Deuteronomy 22:9-11). This is the separation principle worn and worked in the body of daily life — the holy kept from the common, the kinds and the seed-line not mingled. It is the same statute given at Sinai: *Thou shalt not let thy cattle gender with a diverse kind: thou shalt not sow thy field with mingled seed: neither shall a garment mingled of linen and woollen come upon thee* (Leviticus 19:19). Paul reaches straight back to this unmingling Torah and reads it forward: *Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?* (2 Corinthians 6:14) — the ox-and-ass yoke refused now becomes the refusal of the mixed yoke of righteousness with unrighteousness — *Wherefore come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing* (2 Corinthians 6:17). The bodily picture in the Torah is the abiding shape of the call to be holy and separate.',
+       sv.verse_id, ev.verse_id, 'free', 25034
+  FROM _s310_deu22_lookup sv, _s310_deu22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=22 AND ev.verse_number=11
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered',
+       E'Fringes upon the four quarters — the Torah remembered',
+       E'*Thou shalt make thee fringes upon the four quarters of thy vesture, wherewith thou coverest thyself* (Deuteronomy 22:12). The tzitzit is the same sign commanded at Sinai: *bid them that they make them fringes in the borders of their garments throughout their generations, and that they put upon the fringe of the borders a ribband of blue* (Numbers 15:38) — and Numbers tells us what the fringes are FOR: *that ye may look upon it, and remember all the commandments of Yahuah (LORD), and do them; and that ye seek not after your own heart and your own eyes, after which ye use to go a whoring* (Numbers 15:39). The Torah is to be worn against the wandering eye — memory made visible. Yahusha (Jesus) kept this very command: it was *the hem of his garment* the woman reached for (Matthew 9:20), and *as many as touched were made perfectly whole* (Matthew 14:36) — the Torah-keeping Messiah wearing the commanded borders. His only rebuke falls on the vanity that *enlarge the borders of their garments* (Matthew 23:5) — not the fringes, which are Yahuah''s own command, but the sign worn to be seen of men rather than to remember and do.',
+       sv.verse_id, ev.verse_id, 'free', 25037
+  FROM _s310_deu22_lookup sv, _s310_deu22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=12
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=22 AND ev.verse_number=12
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled',
+       E'The tokens of virginity — the marriage bed undefiled',
+       E'The latter half of Deuteronomy 22 is the Torah of sexual purity — the tokens of the damsel''s virginity, the slander of a wife answered, adultery judged, the betrothed defended, the father''s wife not uncovered. Its refrain is the putting-away of evil: *because she hath wrought folly in Yashar''el (Israel), to play the whore in her father''s house: so shalt thou put evil away from among you* (Deuteronomy 22:21), and *If a man be found lying with a woman married to an husband, then they shall both of them die... so shalt thou put away evil from Yashar''el (Israel)* (Deuteronomy 22:22). Yahusha (Jesus) takes up this very commandment — *Ye have heard that it was said by them of old time, Thou shalt not commit adultery* (Matthew 5:27) — and drives its holiness inward: *whosoever looketh on a woman to lust after her hath committed adultery with her already in his heart* (Matthew 5:28). The Torah is not lowered but raised, written within. Paul keeps the same weight: *neither fornicators... shall inherit the kingdom of Elohim (God)* (1 Corinthians 6:9), *Flee fornication... he that committeth fornication sinneth against his own body* (1 Corinthians 6:18). And Hebrews gathers the whole chapter into one line: *Marriage is honourable in all, and the bed undefiled: but whoremongers and adulterers Elohim (God) will judge* (Hebrews 13:4). The Torah''s honour of marriage stands unbroken.',
+       sv.verse_id, ev.verse_id, 'free', 25040
+  FROM _s310_deu22_lookup sv, _s310_deu22_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=22 AND ev.verse_number=30
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. thread_members
+-- ============================================================================
+-- THREAD 1
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Luke 15:4 — the shepherd leaves the ninety and nine and goes after the lost sheep *until he find it*, the very not-hiding of Deuteronomy 22:1.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Luke 15:6 — *Rejoice with me; for I have found my sheep which was lost*: the restoration the Torah demands, the strayed brought home.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=15 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 5:44 — *Love your enemies*: love of neighbour stretched to its furthest reach, the not-hiding pressed even toward the one who hates.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=1
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=44
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Galatians 6:1 — *restore such an one in the spirit of meekness*: the lifting-up of the fallen ass becomes the restoring of the fallen brother.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=4
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Galatians 6:2 — *Bear ye one another''s burdens, and so fulfil the law of Messiah (Christ)*: to lift the fallen is to bear the burden, the Torah of love done not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=4
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='galatians' AND tv.chapter_number=6 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Exodus 23:4 — *If thou meet thine enemy''s ox or his ass going astray, thou shalt surely bring it back*: the same Sinai statute, widened to the enemy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=4
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Exodus 23:5 — *the ass of him that hateth thee lying under his burden... thou shalt surely help with him*: the fallen ass lifted even for the one that hates.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=4
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-thy-brother-gone-astray-thou-mayest-not-hide-thyself'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 1:27 — *male and female created he them*: the garment-distinction guards the creation-order set in the image of Elohim from the beginning.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=5
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-the-woman-shall-not-wear-that-which-pertaineth-to-a-man'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 21:33 — the uncovered pit *and an ox or an ass fall therein*: the same Torah of safeguarding life, the death-trap the righteous must remove.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-a-battlement-for-thy-roof-bring-not-blood-on-thine-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 21:34 — *The owner of the pit shall make it good*: liability falls on the careless owner, as the battlement spares blood upon thine house.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=8
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=34
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-a-battlement-for-thy-roof-bring-not-blood-on-thine-house'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 19:19 — *Ye shall keep my statutes*: the diverse kind, the mingled seed, the linen-and-woollen — the same separation statute given twice.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=9
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-mingled-seed-and-woollen-and-linen-the-unmingling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Corinthians 6:14 — *Be ye not unequally yoked together with unbelievers*: the ox-and-ass yoke refused, now the mixed yoke of righteousness with unrighteousness.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=9
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-mingled-seed-and-woollen-and-linen-the-unmingling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'2 Corinthians 6:17 — *come out from among them, and be ye separate... touch not the unclean thing*: the unmingling Torah read forward into holiness and separation.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=10
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-mingled-seed-and-woollen-and-linen-the-unmingling'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Numbers 15:38 — *make them fringes in the borders of their garments... a ribband of blue*: the same tzitzit commanded at Sinai.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=15 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Numbers 15:39 — *remember all the commandments of Yahuah (LORD), and do them*: what the fringes are for — memory worn against the wandering eye.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=15 AND tv.verse_number=39
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Matthew 9:20 — *touched the hem of his garment*: Yahusha (Jesus) wore the commanded fringes, and the hem was the place of reaching.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=9 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 14:36 — *they might only touch the hem of his garment... were made perfectly whole*: the Torah-bearing border of the obedient Messiah.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=14 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Matthew 23:5 — *enlarge the borders of their garments*: the rebuke falls on the vanity, not the fringes which are Yahuah''s own command.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=12
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=23 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-fringes-upon-the-four-quarters-the-torah-remembered'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Matthew 5:27 — *Thou shalt not commit adultery*: the very Torah commandment of Deuteronomy 22:22 taken up to be deepened, not dissolved.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 5:28 — *whosoever looketh on a woman to lust after her hath committed adultery... in his heart*: the same holiness driven inward, the Torah raised.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=28
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Corinthians 6:9 — *neither fornicators... shall inherit the kingdom of Elohim (God)*: the Torah''s sentence on whoredom standing fast in Paul.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Corinthians 6:18 — *Flee fornication... sinneth against his own body*: the same Torah-holiness of the body, the evil of fornication put far off.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=21
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=6 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Hebrews 13:4 — *Marriage is honourable in all, and the bed undefiled*: the whole chapter''s purity gathered into one line, the Torah''s honour of marriage unbroken.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu22_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=22 AND sv.verse_number=22
+  JOIN _s310_deu22_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='hebrews' AND tv.chapter_number=13 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-22-the-tokens-of-virginity-the-bed-undefiled'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_23.sql (Deuteronomy 23) -----
+-- Book: Deuteronomy  Chapter: 23  Tag: deu23  Session: s310
+-- Sort band: base 25050, step 3  (25050, 25053, 25056, 25059, 25062, 25065)
+-- Temp view: _s310_deu23_lookup
+--
+-- FRAMING: Deuteronomy 23 sets the boundaries of the qahal/assembly of Yahuah --
+-- who may enter, the holiness of the camp where Yahuah walks, the brotherly
+-- interest-free economy, the binding word of the vow, and the gleaning-in-passing
+-- allowance. The fence around the congregation is not exclusion for its own sake
+-- but holiness for the sake of the indwelling Presence; the prophets later open
+-- that gate to the joined stranger and the eunuch (Isa 56), and the Formed Son
+-- breaks the middle wall and gathers the sojourner INTO the one covenant people
+-- (Eph 2) -- one-law inclusion, never a separate people.
+--
+-- Deuteronomy 23 coverage:
+--   v.1-8  (congregation/boundaries, stranger admitted in third generation)
+--          NT:     Acts 8:27-39 (Ethiopian eunuch baptized); Eph 2:12-19 (no more strangers)
+--          Extras: none warranted (Neh covers the lateral; Balaam already in Num)
+--          Tanakh: Isa 56:3-8 (eunuch/stranger joined); Neh 13:1-3 (the law read, Ammonite/Moabite)
+--   v.9-14 (camp holy, Yahuah walketh in the midst)
+--          NT:     2 Cor 6:16 (ye are the temple, I will walk in them); Rev 21:27 (no unclean thing enters)
+--          Extras: none warranted
+--          Tanakh: Lev 26:11-12 (I will walk among you, be your Elohim)
+--   v.15-16 (escaped servant not delivered back)
+--          NT:     none warranted (Philemon is a stretch; mercy principle, no clean anchor)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.17-18 (no whore/sodomite, no harlot's hire into the house)
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Lev 19:29 (do not prostitute thy daughter, lest the land fall to whoredom)
+--   v.19-20 (no usury to thy brother)
+--          NT:     Luke 6:35 (lend, hoping for nothing again)
+--          Extras: none warranted
+--          Tanakh: Lev 25:35-37; Ps 15:5; Ezek 18:8,17; Neh 5:7
+--   v.21-23 (the vow -- that which is gone out of thy lips thou shalt keep)
+--          NT:     Matt 5:33-37 (swear not at all... let your yea be yea)
+--          Extras: none warranted
+--          Tanakh: Eccl 5:4-5 (defer not to pay it; better not to vow)
+--   v.24-25 (eat thy fill in the vineyard / pluck the ears with thine hand)
+--          NT:     Matt 12:1; Mark 2:23; Luke 6:1 (disciples plucking the ears on the sabbath)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--
+-- Threads (6):
+--   deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in   [free; Isa, Neh, Acts, Eph]   25050
+--   deuteronomy-23-yahuah-walketh-in-the-midst-of-thy-camp               [free; Lev, 2Cor, Rev]        25053
+--   deuteronomy-23-no-harlots-hire-into-the-house-of-yahuah              [free; Lev]                   25056
+--   deuteronomy-23-no-usury-to-thy-brother                               [free; Lev, Ps, Ezek, Neh, Luke] 25059
+--   deuteronomy-23-the-vow-that-is-gone-out-of-thy-lips                  [free; Eccl, Matt]            25062
+--   deuteronomy-23-pluck-the-ears-with-thine-hand                        [free; Matt, Mark, Luke]      25065
+
+-- ============================================================================
+-- A. Temp view
+-- ============================================================================
+CREATE TEMP VIEW _s310_deu23_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================================
+-- B. cross_references INSERT
+-- ============================================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: the congregation of Yahuah -- the stranger gathered in
+    ('canon','deuteronomy',23,3,'canon','nehemiah',13,1,'free',
+     E'*On that day they read in the book of Moses in the audience of the people; and therein was found written, that the Ammonite and the Moabite should not come into the congregation of Elohim (God) for ever* (Nehemiah 13:1). Generations after Moses spoke it, Nehemiah finds this very statute -- *An Ammonite or Moabite shall not enter into the congregation of Yahuah (LORD)... even to their tenth generation* (Deuteronomy 23:3) -- read aloud and obeyed: the boundary of the qahal stands as living Torah, not a dead letter.'),
+    ('canon','deuteronomy',23,4,'canon','nehemiah',13,2,'free',
+     E'*Because they met not the children of Yashar''el (Israel) with bread and with water, but hired Balaam against them, that he should curse them: howbeit our Elohim (God) turned the curse into a blessing* (Nehemiah 13:2). Nehemiah names the same grounds Moses gave -- *because they met you not with bread and with water in the way... and because they hired against thee Balaam the son of Beor... to curse thee* (Deuteronomy 23:4) -- and the same mercy, *Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee* (Deuteronomy 23:5).'),
+    ('canon','deuteronomy',23,8,'canon','isaiah',56,3,'free',
+     E'*Neither let the son of the stranger, that hath joined himself to Yahuah (LORD), speak, saying, Yahuah (LORD) hath utterly separated me from his people: neither let the eunuch say, Behold, I am a dry tree* (Isaiah 56:3). Moses had already cracked the gate -- *The children that are begotten of them shall enter into the congregation of Yahuah (LORD) in their third generation* (Deuteronomy 23:8) -- and Isaiah swings it open: the joined stranger and the very eunuch barred in 23:1 are now welcomed, *the eunuchs that keep my sabbaths... take hold of my covenant* (Isaiah 56:4).'),
+    ('canon','deuteronomy',23,8,'canon','isaiah',56,7,'free',
+     E'*Even them will I bring to my holy mountain, and make them joyful in my house of prayer... for mine house shall be called an house of prayer for all people* (Isaiah 56:7). The congregation guarded in Deuteronomy 23 is the same house Isaiah throws open to the joined-in sojourner -- not a new people, but the stranger gathered INTO Yashar''el; *Adonai Yahuah (The Lord GOD) which gathereth the outcasts of Yashar''el (Israel)... Yet will I gather others to him* (Isaiah 56:8).'),
+    ('canon','deuteronomy',23,8,'canon','acts',8,38,'free',
+     E'*And he commanded the chariot to stand still: and they went down both into the water, both Philip and the eunuch; and he baptized him* (Acts 8:38). The eunuch of Deuteronomy 23:1 -- once *wounded in the stones* and so barred -- reading Isaiah on the road, is washed into the assembly: the third-generation opening of *shall enter into the congregation of Yahuah (LORD)* (Deuteronomy 23:8) made flesh in the Formed Son''s gospel.'),
+    ('canon','deuteronomy',23,8,'canon','ephesians',2,19,'free',
+     E'*Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of Elohim (God)* (Ephesians 2:19). The sojourner once *aliens from the commonwealth of Yashar''el (Israel)* (Ephesians 2:12) is brought near, the dividing barrier broken -- *he... hath broken down the middle wall of partition* (Ephesians 2:14) -- exactly the inclusion the third-generation clause of *shall enter into the congregation of Yahuah (LORD)* (Deuteronomy 23:8) foreshadowed: one-law gathering, not replacement.'),
+
+    -- Thread 2: Yahuah walketh in the midst of thy camp -- be holy
+    ('canon','deuteronomy',23,14,'canon','leviticus',26,12,'free',
+     E'*And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12). The same indwelling that makes the camp holy in Deuteronomy -- *Yahuah Elohayka (the LORD thy God) walketh in the midst of thy camp... therefore shall thy camp be holy* (Deuteronomy 23:14) -- is Yahuah''s standing covenant promise to dwell with a holy people, *I will set my tabernacle among you* (Leviticus 26:11).'),
+    ('canon','deuteronomy',23,14,'canon','2-corinthians',6,16,'free',
+     E'*for ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16). The camp where Yahuah *walketh in the midst* (Deuteronomy 23:14) becomes the body of the assembly; the holiness commanded -- *that he see no unclean thing in thee* -- is why *come out from among them, and be ye separate... touch not the unclean thing* (2 Corinthians 6:17).'),
+    ('canon','deuteronomy',23,14,'canon','revelation',21,27,'free',
+     E'*And there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie* (Revelation 21:27). The law of the holy camp -- *that he see no unclean thing in thee* (Deuteronomy 23:14) -- reaches its consummation in the city where the *tabernacle of Elohim (God) is with men* (Revelation 21:3): the Presence dwells, so nothing unclean may enter.'),
+
+    -- Thread 3: no harlot''s hire into the house of Yahuah
+    ('canon','deuteronomy',23,17,'canon','leviticus',19,29,'free',
+     E'*Do not prostitute thy daughter, to cause her to be a whore; lest the land fall to whoredom, and the land become full of wickedness* (Leviticus 19:29). The ban on *no whore of the daughters of Yashar''el (Israel), nor a sodomite of the sons of Yashar''el (Israel)* (Deuteronomy 23:17) is the same Torah guard against profaning the holy people; what is *abomination unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 23:18) defiles the land itself.'),
+
+    -- Thread 4: no usury to thy brother
+    ('canon','deuteronomy',23,19,'canon','leviticus',25,36,'free',
+     E'*Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36). Leviticus and Deuteronomy speak one law -- *Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals* (Deuteronomy 23:19) -- the interest-free brotherly economy that lets the poor *live with thee* (Leviticus 25:35) inside the covenant household.'),
+    ('canon','deuteronomy',23,19,'canon','psalms',15,5,'free',
+     E'*He that putteth not out his money to usury, nor taketh reward against the innocent. He that doeth these things shall never be moved* (Psalm 15:5). The Psalm of who may *abide in thy tabernacle* (Psalm 15:1) names the no-usury man -- the same fence as *unto thy brother thou shalt not lend upon usury* (Deuteronomy 23:20): the lender who refuses increase belongs in the holy hill.'),
+    ('canon','deuteronomy',23,19,'canon','ezekiel',18,8,'free',
+     E'*He that hath not given forth upon usury, neither hath taken any increase, that hath withdrawn his hand from iniquity... he shall surely live* (Ezekiel 18:8-9). Ezekiel sets the just man by the very statute of Deuteronomy 23:19 -- the wicked son by contrast *hath given forth upon usury, and hath taken increase* (Ezekiel 18:13) -- proving the no-usury law load-bearing for life within the covenant.'),
+    ('canon','deuteronomy',23,20,'canon','ezekiel',18,17,'free',
+     E'*That hath taken off his hand from the poor, that hath not received usury nor increase, hath executed my judgments, hath walked in my statutes; he shall not die* (Ezekiel 18:17). The righteous heir keeps *unto thy brother thou shalt not lend upon usury* (Deuteronomy 23:20); refusing increase is named among walking in Yahuah''s statutes, the blessing-bearing obedience.'),
+    ('canon','deuteronomy',23,19,'canon','nehemiah',5,7,'free',
+     E'*Then I consulted with myself, and I rebuked the nobles, and the rulers, and said unto them, Ye exact usury, every one of his brother. And I set a great assembly against them* (Nehemiah 5:7). Nehemiah enforces Deuteronomy 23:19 against the restored community -- the very sin is *usury... of his brother*, and he leaves it off, *I pray you, let us leave off this usury* (Nehemiah 5:10).'),
+    ('canon','deuteronomy',23,20,'canon','luke',6,35,'free',
+     E'*But love ye your enemies, and do good, and lend, hoping for nothing again; and your reward shall be great, and ye shall be the children of the Highest* (Luke 6:35). The Formed Son deepens the brotherly-lending law of *unto thy brother thou shalt not lend upon usury... that Yahuah Elohayka (the LORD thy God) may bless thee* (Deuteronomy 23:20): not only no increase, but lend hoping for nothing again -- and the blessing of the Highest follows.'),
+
+    -- Thread 5: the vow -- that which is gone out of thy lips thou shalt keep
+    ('canon','deuteronomy',23,21,'canon','ecclesiastes',5,4,'free',
+     E'*When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4). The Preacher repeats Moses'' charge -- *When thou shalt vow a vow unto Yahuah Elohayka (the LORD thy God), thou shalt not slack to pay it* (Deuteronomy 23:21) -- and the mercy of the option, *if thou shalt forbear to vow, it shall be no sin* (Deuteronomy 23:22), echoes in *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5).'),
+    ('canon','deuteronomy',23,23,'canon','matthew',5,33,'free',
+     E'*Again, ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33). The Formed Son cites this very Torah of the binding vow -- *That which is gone out of thy lips thou shalt keep and perform* (Deuteronomy 23:23) -- then cuts beneath it, *Swear not at all... let your communication be, Yea, yea; Nay, nay* (Matthew 5:34,37): the word kept so faithfully that no oath is needed.'),
+
+    -- Thread 6: pluck the ears with thine hand -- the gleaning-in-passing allowance
+    ('canon','deuteronomy',23,25,'canon','matthew',12,1,'free',
+     E'*At that time Yahusha (Jesus) went on the sabbath day through the corn; and his disciples were an hungred, and began to pluck the ears of corn, and to eat* (Matthew 12:1). The disciples are exercising the very right Moses gave -- *When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle* (Deuteronomy 23:25): no theft, only the Torah''s gleaning-in-passing allowance, the Pharisees'' charge falling against their own added fence, not the law.'),
+    ('canon','deuteronomy',23,25,'canon','mark',2,23,'free',
+     E'*And it came to pass, that he went through the corn fields on the sabbath day; and his disciples began, as they went, to pluck the ears of corn* (Mark 2:23). Mark records the same scene: the hand-plucking of *thou mayest pluck the ears with thine hand* (Deuteronomy 23:25) is lawful, the dispute only over the sabbath, never over the gleaning right itself.'),
+    ('canon','deuteronomy',23,25,'canon','luke',6,1,'free',
+     E'*And it came to pass on the second sabbath after the first, that he went through the corn fields; and his disciples plucked the ears of corn, and did eat, rubbing them in their hands* (Luke 6:1). Luke''s detail -- *rubbing them in their hands* -- is precisely the *pluck the ears with thine hand; but thou shalt not move a sickle* (Deuteronomy 23:25) of the Torah: the by-hand allowance honored, the harvest-tool restraint kept.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================================
+-- C. threads INSERT
+-- ============================================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in',
+       E'The Congregation of Yahuah: the Stranger Gathered In',
+       E'Deuteronomy 23 fences the qahal of Yahuah: the wounded, the bastard, and to the tenth generation the Ammonite and Moabite *shall not enter into the congregation of Yahuah (LORD)* (Deuteronomy 23:1-3) -- *because they met you not with bread and with water in the way... and because they hired against thee Balaam... to curse thee* (Deuteronomy 23:4), yet *Yahuah Elohayka (the LORD thy God) turned the curse into a blessing unto thee, because Yahuah Elohayka (the LORD thy God) loved thee* (Deuteronomy 23:5). But the fence has a gate -- *Thou shalt not abhor an Edomite; for he is thy brother: thou shalt not abhor an Egyptian; because thou wast a stranger in his land* (Deuteronomy 23:7) -- *The children that are begotten of them shall enter into the congregation of Yahuah (LORD) in their third generation* (Deuteronomy 23:8). Generations later Nehemiah finds the same statute read aloud and kept: *therein was found written, that the Ammonite and the Moabite should not come into the congregation of Elohim (God) for ever; because they met not the children of Yashar''el (Israel) with bread... but hired Balaam* (Nehemiah 13:1-2) -- living Torah, not dead letter. Then Isaiah swings the gate wide to the very ones first barred: *neither let the eunuch say, Behold, I am a dry tree* (Isaiah 56:3), for *the eunuchs that keep my sabbaths... and take hold of my covenant* are given *a place and a name better than of sons and of daughters* (Isaiah 56:4-5), and *mine house shall be called an house of prayer for all people* (Isaiah 56:7), for Yahuah *gathereth the outcasts of Yashar''el (Israel)... Yet will I gather others to him* (Isaiah 56:8). The gospel makes it flesh: a wounded Ethiopian eunuch reading Isaiah on the road is washed into the assembly -- *they went down both into the water... and he baptized him* (Acts 8:38) -- and the sojourner once *aliens from the commonwealth of Yashar''el (Israel)* (Ephesians 2:12) is brought near in the Formed Son, who *hath broken down the middle wall of partition* (Ephesians 2:14), *no more strangers and foreigners, but fellowcitizens... and of the household of Elohim (God)* (Ephesians 2:19). The stranger is gathered INTO the one covenant people of Yashar''el -- one-law inclusion, never a separate people, never replacement.',
+       sv.verse_id, ev.verse_id, 'free', 25050
+  FROM _s310_deu23_lookup sv, _s310_deu23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=23 AND ev.verse_number=8
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-23-yahuah-walketh-in-the-midst-of-thy-camp',
+       E'Yahuah Walketh in the Midst of Thy Camp: Be Holy',
+       E'The holiness of the camp is not arbitrary tidiness; it is the holiness demanded by the Presence that dwells within it. *When the host goeth forth against thine enemies, then keep thee from every wicked thing* (Deuteronomy 23:9), and the reason is given plain: *For Yahuah Elohayka (the LORD thy God) walketh in the midst of thy camp, to deliver thee... therefore shall thy camp be holy: that he see no unclean thing in thee, and turn away from thee* (Deuteronomy 23:14). This is Yahuah''s standing covenant promise -- *I will set my tabernacle among you... And I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:11-12). The Formed Son''s assembly is the same dwelling: *ye are the temple of the living Elohim (God); as Elohim (God) hath said, I will dwell in them, and walk in them; and I will be their Elohim (God), and they shall be my people* (2 Corinthians 6:16) -- and so the same charge follows, *come out from among them, and be ye separate, saith Yahuah (Lord), and touch not the unclean thing* (2 Corinthians 6:17). It reaches its consummation in the city where *the tabernacle of Elohim (God) is with men, and he will dwell with them* (Revelation 21:3): because the Presence dwells, *there shall in no wise enter into it any thing that defileth, neither whatsoever worketh abomination, or maketh a lie* (Revelation 21:27). The same law from camp to city: where Yahuah walks, holiness is not optional.',
+       sv.verse_id, ev.verse_id, 'free', 25053
+  FROM _s310_deu23_lookup sv, _s310_deu23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=9
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=23 AND ev.verse_number=14
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-23-no-harlots-hire-into-the-house-of-yahuah',
+       E'No Harlot''s Hire into the House of Yahuah',
+       E'The holiness of the offerings guards the holiness of the people. *There shall be no whore of the daughters of Yashar''el (Israel), nor a sodomite of the sons of Yashar''el (Israel)* (Deuteronomy 23:17), and what is earned in that defilement is barred from the altar: *Thou shalt not bring the hire of a whore, or the price of a dog, into the house of Yahuah Elohayka (the LORD thy God) for any vow: for even both these are abomination unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 23:18). It is the same Torah guard that forbids feeding daughters into harlotry: *Do not prostitute thy daughter, to cause her to be a whore; lest the land fall to whoredom, and the land become full of wickedness* (Leviticus 19:29). What defiles the people defiles the land, and may not be carried into the house of the Holy One.',
+       sv.verse_id, ev.verse_id, 'free', 25056
+  FROM _s310_deu23_lookup sv, _s310_deu23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=23 AND ev.verse_number=18
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-23-no-usury-to-thy-brother',
+       E'No Usury to Thy Brother: the Interest-Free Covenant Economy',
+       E'Deuteronomy 23 sets the lending law of a Torah-keeping people: *Thou shalt not lend upon usury to thy brother; usury of money, usury of victuals, usury of any thing that is lent upon usury* (Deuteronomy 23:19) -- *unto thy brother thou shalt not lend upon usury: that Yahuah Elohayka (the LORD thy God) may bless thee in all that thou settest thine hand to* (Deuteronomy 23:20). This is the one Torah voiced across the books: *Take thou no usury of him, or increase: but fear thy Elohim (God); that thy brother may live with thee* (Leviticus 25:36), the poor brother kept alive *with thee* inside the household. The Psalm of who may abide in Yahuah''s tabernacle names this very man -- *He that putteth not out his money to usury... shall never be moved* (Psalm 15:5). Ezekiel makes it a marker of life and death: the just man *hath not given forth upon usury, neither hath taken any increase... he shall surely live* (Ezekiel 18:8-9), while the wicked son who *hath given forth upon usury, and hath taken increase* dies (Ezekiel 18:13), and the righteous heir who *hath not received usury nor increase, hath executed my judgments, hath walked in my statutes; he shall not die* (Ezekiel 18:17). Nehemiah enforces it on the restored community -- *Ye exact usury, every one of his brother... let us leave off this usury* (Nehemiah 5:7,10). The Formed Son carries the law to its root: not only no increase, but *love ye your enemies, and do good, and lend, hoping for nothing again; and your reward shall be great, and ye shall be the children of the Highest* (Luke 6:35). The interest-free brotherly economy is no relic; it is the obedience the blessing rests upon.',
+       sv.verse_id, ev.verse_id, 'free', 25059
+  FROM _s310_deu23_lookup sv, _s310_deu23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=19
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=23 AND ev.verse_number=20
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-23-the-vow-that-is-gone-out-of-thy-lips',
+       E'That Which Is Gone Out of Thy Lips Thou Shalt Keep',
+       E'The vow binds the one who makes it. *When thou shalt vow a vow unto Yahuah Elohayka (the LORD thy God), thou shalt not slack to pay it: for Yahuah Elohayka (the LORD thy God) will surely require it of thee; and it would be sin in thee* (Deuteronomy 23:21) -- yet vowing is not commanded, *But if thou shalt forbear to vow, it shall be no sin in thee* (Deuteronomy 23:22) -- and once spoken it is owed: *That which is gone out of thy lips thou shalt keep and perform; even a freewill offering... which thou hast promised with thy mouth* (Deuteronomy 23:23). The Preacher repeats both the charge and the mercy: *When thou vowest a vow unto Elohim (God), defer not to pay it; for he hath no pleasure in fools: pay that which thou hast vowed* (Ecclesiastes 5:4), and *Better is it that thou shouldest not vow, than that thou shouldest vow and not pay* (Ecclesiastes 5:5). The Formed Son cites this very Torah -- *ye have heard that it hath been said by them of old time, Thou shalt not forswear thyself, but shalt perform unto Yahuah (Lord) thine oaths* (Matthew 5:33) -- and then cuts beneath it to the heart: *Swear not at all... But let your communication be, Yea, yea; Nay, nay: for whatsoever is more than these cometh of evil* (Matthew 5:34,37). The word kept so faithfully that no oath is needed -- the law of the lips fulfilled, not abolished.',
+       sv.verse_id, ev.verse_id, 'free', 25062
+  FROM _s310_deu23_lookup sv, _s310_deu23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=21
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=23 AND ev.verse_number=23
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-23-pluck-the-ears-with-thine-hand',
+       E'Pluck the Ears with Thine Hand: the Gleaning-in-Passing Allowance',
+       E'The Torah provides for the hungry traveller in his neighbour''s field, with a fence against greed. *When thou comest into thy neighbour''s vineyard, then thou mayest eat grapes thy fill at thine own pleasure; but thou shalt not put any in thy vessel* (Deuteronomy 23:24); *When thou comest into the standing corn of thy neighbour, then thou mayest pluck the ears with thine hand; but thou shalt not move a sickle unto thy neighbour''s standing corn* (Deuteronomy 23:25). Eat your fill by hand; carry nothing off by tool. Centuries later the disciples exercise this exact right: *his disciples were an hungred, and began to pluck the ears of corn, and to eat* (Matthew 12:1); *his disciples began, as they went, to pluck the ears of corn* (Mark 2:23); and Luke''s precise detail -- *his disciples plucked the ears of corn, and did eat, rubbing them in their hands* (Luke 6:1) -- is the very *pluck the ears with thine hand; but thou shalt not move a sickle* (Deuteronomy 23:25). No theft, only Torah''s gleaning-in-passing allowance honored; the dispute that follows is over the sabbath, never over the lawful right itself -- the Pharisees'' added fence falling, not the law of Moses.',
+       sv.verse_id, ev.verse_id, 'free', 25065
+  FROM _s310_deu23_lookup sv, _s310_deu23_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=24
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=23 AND ev.verse_number=25
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================================
+-- D. thread_members INSERT
+-- ============================================================================
+-- Thread 1: the congregation of Yahuah -- the stranger gathered in
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Nehemiah 13:1 -- the law of the congregation read aloud and kept generations later: *therein was found written, that the Ammonite and the Moabite should not come into the congregation of Elohim (God) for ever* (Nehemiah 13:1).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=3
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=13 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Nehemiah 13:2 -- the same grounds and the same mercy: *they... hired Balaam against them... howbeit our Elohim (God) turned the curse into a blessing* (Nehemiah 13:2).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=4
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=13 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Isaiah 56:3 -- the gate opened to the very ones barred: *neither let the eunuch say, Behold, I am a dry tree* (Isaiah 56:3).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Isaiah 56:7 -- the congregation thrown open: *mine house shall be called an house of prayer for all people* (Isaiah 56:7), the stranger gathered INTO Yashar''el.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='isaiah' AND tv.chapter_number=56 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Acts 8:38 -- the wounded eunuch of 23:1 washed into the assembly: *he baptized him* (Acts 8:38).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='acts' AND tv.chapter_number=8 AND tv.verse_number=38
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Ephesians 2:19 -- the sojourner brought near in the Formed Son: *no more strangers and foreigners, but fellowcitizens... of the household of Elohim (God)* (Ephesians 2:19) -- one-law inclusion, not replacement.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=8
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ephesians' AND tv.chapter_number=2 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-congregation-of-yahuah-the-stranger-gathered-in'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2: Yahuah walketh in the midst of thy camp
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 26:12 -- Yahuah''s standing promise to dwell with a holy people: *I will walk among you, and will be your Elohim (God), and ye shall be my people* (Leviticus 26:12).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=26 AND tv.verse_number=12
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-yahuah-walketh-in-the-midst-of-thy-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'2 Corinthians 6:16 -- the assembly is the dwelling: *ye are the temple of the living Elohim (God)... I will dwell in them, and walk in them* (2 Corinthians 6:16) -- so *come out... and be ye separate* (6:17).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=6 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-yahuah-walketh-in-the-midst-of-thy-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Revelation 21:27 -- the consummation of the holy camp: *there shall in no wise enter into it any thing that defileth* (Revelation 21:27), for the tabernacle of Elohim is with men.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=14
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='revelation' AND tv.chapter_number=21 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-yahuah-walketh-in-the-midst-of-thy-camp'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3: no harlot''s hire into the house of Yahuah
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 19:29 -- the same Torah guard against profaning the people: *Do not prostitute thy daughter... lest the land fall to whoredom* (Leviticus 19:29).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=17
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-harlots-hire-into-the-house-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4: no usury to thy brother
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 25:36 -- one law: *Take thou no usury of him, or increase... that thy brother may live with thee* (Leviticus 25:36).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=25 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-usury-to-thy-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Psalm 15:5 -- who may abide in the tabernacle: *He that putteth not out his money to usury... shall never be moved* (Psalm 15:5).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='psalms' AND tv.chapter_number=15 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-usury-to-thy-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ezekiel 18:8 -- the just man lives: *He that hath not given forth upon usury, neither hath taken any increase... he shall surely live* (Ezekiel 18:8-9).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-usury-to-thy-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Ezekiel 18:17 -- the righteous heir walks in the statutes: *hath not received usury nor increase... hath walked in my statutes; he shall not die* (Ezekiel 18:17).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=20
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=17
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-usury-to-thy-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Nehemiah 5:7 -- enforced on the restored community: *Ye exact usury, every one of his brother* (Nehemiah 5:7) -- *let us leave off this usury* (5:10).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=19
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='nehemiah' AND tv.chapter_number=5 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-usury-to-thy-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Luke 6:35 -- the Formed Son to the root: *lend, hoping for nothing again; and your reward shall be great* (Luke 6:35).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=20
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-no-usury-to-thy-brother'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5: the vow -- that which is gone out of thy lips
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Ecclesiastes 5:4 -- the Preacher repeats the charge and the mercy: *defer not to pay it... pay that which thou hast vowed* (Ecclesiastes 5:4); *Better... not vow, than... vow and not pay* (5:5).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=21
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ecclesiastes' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-vow-that-is-gone-out-of-thy-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Matthew 5:33 -- the Formed Son cites the vow-law then deepens it: *Thou shalt not forswear thyself, but shalt perform... thine oaths* (Matthew 5:33) -- *Swear not at all... let your yea be yea* (5:34,37).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=23
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=33
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-the-vow-that-is-gone-out-of-thy-lips'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 6: pluck the ears with thine hand
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Matthew 12:1 -- the disciples exercise the Torah right: *his disciples... began to pluck the ears of corn, and to eat* (Matthew 12:1).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=25
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=12 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-pluck-the-ears-with-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Mark 2:23 -- the same scene: *his disciples began, as they went, to pluck the ears of corn* (Mark 2:23) -- the by-hand allowance, lawful.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=25
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=2 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-pluck-the-ears-with-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Luke 6:1 -- the precise detail matching the statute: *rubbing them in their hands* (Luke 6:1) -- *pluck the ears with thine hand; but... not... a sickle* (Deuteronomy 23:25).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu23_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=23 AND sv.verse_number=25
+  JOIN _s310_deu23_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='luke' AND tv.chapter_number=6 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-23-pluck-the-ears-with-thine-hand'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_24.sql (Deuteronomy 24) -----
+-- Book: Deuteronomy  | Chapter: 24  | session prefix: s310  | tag: deu24
+-- temp view: _s310_deu24_lookup
+-- sort band base: 25075 step 3  (25075, 25078, 25081, 25084, 25087, 25090, 25093)
+-- All slugs prefixed deuteronomy-24-  (checked against EXISTING_SLUGS.txt — none present)
+--
+-- THREADS (7):
+--   25075 deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal
+--          [free] Matt5:31-32, Matt19:7-9, Mark10:4-9 (NT) + Gen2:24, Jer3:1, Jer3:8, Mal2:16 (Tanakh)
+--   25078 deuteronomy-24-he-that-stealeth-a-man-shall-die-the-law-against-manstealing
+--          [free] 1Tim1:10 (NT) + Exod21:16 (Tanakh)
+--   25081 deuteronomy-24-remember-what-yahuah-did-unto-miriam-the-plague-of-leprosy
+--          [free] Num12:10, Num12:14 (Tanakh) — none warranted NT/extras
+--   25084 deuteronomy-24-restore-the-pledged-garment-by-sundown-mercy-to-the-debtor
+--          [free] Exod22:26, Amos2:8, Ezek18:7, Ezek18:16 (Tanakh)
+--   25087 deuteronomy-24-give-the-hired-servant-his-hire-the-labourers-wage-not-held-back
+--          [free] Jas5:4 (NT) + Lev19:13, Mal3:5, Jer22:13 (Tanakh)
+--   25090 deuteronomy-24-every-man-shall-die-for-his-own-sin-individual-responsibility
+--          [free] Ezek18:20, 2Kings14:6, Jer31:29, Jer31:30 (Tanakh)
+--   25093 deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow
+--          [free] Jas1:27 (NT) + Lev19:9, Lev23:22, Ruth2:2, Ruth2:16 (Tanakh)
+--
+-- PER-CHAPTER COVERAGE CHECKLIST:
+--   v.1-4   NT:     Matt5:31-32, Matt19:7-9, Mark10:4-9 (the divorce concession) — THREADED
+--           Extras: none warranted
+--           Tanakh: Gen2:24 (one flesh ideal), Jer3:1/3:8 (Yahuah's bill to the north house), Mal2:16 (he hateth putting away) — THREADED
+--   v.5     NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Deut20:7 (betrothed man free from war) — weighed, single thin lateral, FOLDED (not threaded)
+--   v.6     NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: none warranted (dignity-of-livelihood; covered by pledge thread theme) — no add
+--   v.7     NT:     1Tim1:10 (menstealers) — THREADED
+--           Extras: none warranted
+--           Tanakh: Exod21:16 (he that stealeth a man shall die) — THREADED
+--   v.8-9   NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Num12:10/12:14 (Miriam's leprosy), Lev13-14 (priest's instruction) — Num12 THREADED
+--   v.10-13 NT:     none warranted
+--           Extras: none warranted
+--           Tanakh: Exod22:26 (raiment to pledge by sundown), Amos2:8, Ezek18:7/18:16 (restored the debtor's pledge) — THREADED
+--   v.14-15 NT:     Jas5:4 (the hire kept back crieth) — THREADED
+--           Extras: none warranted
+--           Tanakh: Lev19:13 (wages not abide till morning), Mal3:5, Jer22:13 (service without wages) — THREADED
+--   v.16    NT:     none warranted (principle stands; Ezek18 the deep lateral)
+--           Extras: none warranted
+--           Tanakh: Ezek18:20 (soul that sinneth shall die), 2Kings14:6 (Amaziah obeys this law), Jer31:29-30 — THREADED
+--   v.17-22 NT:     Jas1:27 (visit the fatherless and widows) — THREADED
+--           Extras: none warranted
+--           Tanakh: Lev19:9-10, Lev23:22 (corners/gleanings), Ruth2:2/2:16 (Ruth gleaning) — THREADED
+--
+-- FRAMEWORK NOTE on v.1-4: framed as Yahusha's own reading — Moses suffered the bill BECAUSE
+-- OF THE HARDNESS OF YOUR HEARTS (Matt19:8); the concession regulates a tragedy, it is not the
+-- creation ideal of Gen2:24 (one flesh). Jer3:1/3:8 supplies the two-house backdrop: Yahuah Himself
+-- gave backsliding Yashar'el (the northern house) a bill of divorce, yet calls her to return —
+-- the Goel/ingathering hope that runs to Ezekiel 37. Torah-affirmed throughout, never abolished.
+
+CREATE TEMP VIEW _s310_deu24_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ============================================================
+-- B. cross_references
+-- ============================================================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- THREAD 1: 24:1-4 bill of divorcement
+    ('canon','deuteronomy',24,1,'canon','matthew',5,31,'free',
+     E'*It hath been said, Whosoever shall put away his wife, let him give her a writing of divorcement* (Matthew 5:31). Yahusha (Jesus) takes up the very provision of *let him write her a bill of divorcement, and give it in her hand* (Deuteronomy 24:1) — quoting the Torah He came not to destroy but to fill (Matthew 5:17).'),
+    ('canon','deuteronomy',24,1,'canon','matthew',19,8,'free',
+     E'*He saith unto them, Moses because of the hardness of your hearts suffered you to put away your wives: but from the beginning it was not so* (Matthew 19:8). Yahusha (Jesus) reads *then let him write her a bill of divorcement* (Deuteronomy 24:1) exactly as it stands — a concession to hard hearts that regulates a tragedy, never the creation design.'),
+    ('canon','deuteronomy',24,1,'canon','matthew',19,7,'free',
+     E'*They say unto him, Why did Moses then command to give a writing of divorcement, and to put her away?* (Matthew 19:7). The Pharisees cite *let him write her a bill of divorcement* (Deuteronomy 24:1) as if it commanded divorce; Yahusha (Jesus) corrects them — Moses *suffered* it, He did not command it.'),
+    ('canon','deuteronomy',24,1,'canon','mark',10,4,'free',
+     E'*And they said, Moses suffered to write a bill of divorcement, and to put her away* (Mark 10:4). The same *bill of divorcement* of *then let him write her a bill of divorcement, and give it in her hand* (Deuteronomy 24:1) — and Yahusha (Jesus) answers, *For the hardness of your heart he wrote you this precept* (Mark 10:5).'),
+    ('canon','deuteronomy',24,1,'canon','genesis',2,24,'free',
+     E'*Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh* (Genesis 2:24). This is *the beginning* Yahusha (Jesus) points back to: the one-flesh creation ideal that the divorce concession of *then let him write her a bill of divorcement* (Deuteronomy 24:1) only governs, never replaces.'),
+    ('canon','deuteronomy',24,4,'canon','jeremiah',3,1,'free',
+     E'*They say, If a man put away his wife, and she go from him, and become another man''s, shall he return unto her again? shall not that land be greatly polluted?... yet return again to me, saith Yahuah (LORD)* (Jeremiah 3:1). Jeremiah quotes this very law — *her former husband, which sent her away, may not take her again to be his wife, after that she is defiled* (Deuteronomy 24:4) — and then Yahuah, who has every legal ground NOT to take Yashar''el back, calls her to return anyway.'),
+    ('canon','deuteronomy',24,4,'canon','jeremiah',3,8,'free',
+     E'*And I saw, when for all the causes whereby backsliding Yashar''el (Israel) committed adultery I had put her away, and given her a bill of divorce; yet her treacherous sister Yahudah (Judah) feared not* (Jeremiah 3:8). Yahuah Himself wrote *a bill of divorcement* (Deuteronomy 24:1) to the northern house — the two-house backdrop: divorced and scattered, yet wooed home (Ezekiel 37; Hosea 2).'),
+    ('canon','deuteronomy',24,4,'canon','malachi',2,16,'free',
+     E'*For Yahuah (LORD), the Elohim (God) of Yashar''el (Israel), saith that he hateth putting away: for one covereth violence with his garment, saith Yahuah Tseva''ot (LORD of hosts)* (Malachi 2:16). The concession of *then let him write her a bill of divorcement* (Deuteronomy 24:1) is not Yahuah''s delight — *he hateth putting away*; it tolerates what He grieves over.'),
+    -- THREAD 2: 24:7 manstealing
+    ('canon','deuteronomy',24,7,'canon','1-timothy',1,10,'free',
+     E'*For whoremongers, for them that defile themselves with mankind, for menstealers, for liars, for perjured persons, and if there be any other thing that is contrary to sound doctrine* (1 Timothy 1:10). Paul lists *menstealers* among those the law condemns — straight from *if a man be found stealing any of his brethren... and maketh merchandise of him, or selleth him; then that thief shall die* (Deuteronomy 24:7). The Torah strikes the slave-trade at its root.'),
+    ('canon','deuteronomy',24,7,'canon','exodus',21,16,'free',
+     E'*And he that stealeth a man, and selleth him, or if he be found in his hand, he shall surely be put to death* (Exodus 21:16). The twin statute to *if a man be found stealing any of his brethren of the children of Yashar''el (Israel), and maketh merchandise of him, or selleth him; then that thief shall die* (Deuteronomy 24:7) — kidnapping a man for sale is a capital crime.'),
+    -- THREAD 3: 24:8-9 Miriam / leprosy
+    ('canon','deuteronomy',24,9,'canon','numbers',12,10,'free',
+     E'*And the cloud departed from off the tabernacle; and, behold, Miriam became leprous, white as snow* (Numbers 12:10). This is what *remember what Yahuah Elohayka (the LORD thy God) did unto Miriam by the way* (Deuteronomy 24:9) calls Yashar''el to remember — the plague of leprosy struck for speaking against Moses.'),
+    ('canon','deuteronomy',24,9,'canon','numbers',12,14,'free',
+     E'*And Yahuah (LORD) said unto Moses, If her father had but spit in her face, should she not be ashamed seven days? let her be shut out from the camp seven days, and after that let her be received in again* (Numbers 12:14). The remembered judgment of *remember what Yahuah... did unto Miriam by the way* (Deuteronomy 24:9) — even she was shut out and quarantined under the priestly law of the plague (Deuteronomy 24:8).'),
+    -- THREAD 4: 24:10-13 the pledge / mercy to debtor
+    ('canon','deuteronomy',24,13,'canon','exodus',22,26,'free',
+     E'*If thou at all take thy neighbour''s raiment to pledge, thou shalt deliver it unto him by that the sun goeth down* (Exodus 22:26). The same mercy as *in any case thou shalt deliver him the pledge again when the sun goeth down, that he may sleep in his own raiment, and bless thee* (Deuteronomy 24:13) — the poor man''s only covering is never kept overnight.'),
+    ('canon','deuteronomy',24,12,'canon','amos',2,8,'free',
+     E'*And they lay themselves down upon clothes laid to pledge by every altar, and they drink the wine of the condemned in the house of their god* (Amos 2:8). Amos indicts Yashar''el for trampling this very law — they keep the poor man''s pledge and lounge on it, instead of *thou shalt not sleep with his pledge* (Deuteronomy 24:12).'),
+    ('canon','deuteronomy',24,13,'canon','ezekiel',18,7,'free',
+     E'*And hath not oppressed any, but hath restored to the debtor his pledge, hath spoiled none by violence... and hath covered the naked with a garment* (Ezekiel 18:7). Ezekiel''s portrait of the righteous man keeps *thou shalt deliver him the pledge again when the sun goeth down, that he may sleep in his own raiment* (Deuteronomy 24:13) — restoring the pledge marks the just.'),
+    ('canon','deuteronomy',24,13,'canon','ezekiel',18,16,'free',
+     E'*Neither hath oppressed any, hath not withholden the pledge, neither hath spoiled by violence, but hath given his bread to the hungry, and hath covered the naked with a garment* (Ezekiel 18:16). The same righteousness as *it shall be righteousness unto thee before Yahuah Elohayka (the LORD thy God)* (Deuteronomy 24:13) — the man who restores the pledge does right.'),
+    -- THREAD 5: 24:14-15 wages not held
+    ('canon','deuteronomy',24,15,'canon','james',5,4,'free',
+     E'*Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). James fulfils the warning of *lest he cry against thee unto Yahuah (LORD), and it be sin unto thee* (Deuteronomy 24:15) — the withheld wage cries straight to Yahuah''s ears.'),
+    ('canon','deuteronomy',24,15,'canon','leviticus',19,13,'free',
+     E'*Thou shalt not defraud thy neighbour, neither rob him: the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13). The twin command to *at his day thou shalt give him his hire, neither shall the sun go down upon it* (Deuteronomy 24:15) — the labourer''s pay is settled the same day.'),
+    ('canon','deuteronomy',24,14,'canon','malachi',3,5,'free',
+     E'*And I will come near to you to judgment; and I will be a swift witness... against those that oppress the hireling in his wages, the widow, and the fatherless, and that turn aside the stranger from his right* (Malachi 3:5). Yahuah Himself is the witness against breaking *thou shalt not oppress an hired servant that is poor and needy* (Deuteronomy 24:14).'),
+    ('canon','deuteronomy',24,14,'canon','jeremiah',22,13,'free',
+     E'*Woe unto him that buildeth his house by unrighteousness, and his chambers by wrong; that useth his neighbour''s service without wages, and giveth him not for his work* (Jeremiah 22:13). The prophet''s woe lands on the very sin of oppressing *an hired servant that is poor and needy* (Deuteronomy 24:14) — labour taken, wage withheld.'),
+    -- THREAD 6: 24:16 individual responsibility
+    ('canon','deuteronomy',24,16,'canon','ezekiel',18,20,'free',
+     E'*The soul that sinneth, it shall die. The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son: the righteousness of the righteous shall be upon him, and the wickedness of the wicked shall be upon him* (Ezekiel 18:20). Ezekiel makes a whole chapter of *every man shall be put to death for his own sin* (Deuteronomy 24:16) — guilt is never inherited.'),
+    ('canon','deuteronomy',24,16,'canon','2-kings',14,6,'free',
+     E'*But the children of the murderers he slew not: according unto that which is written in the book of the law of Moses... The fathers shall not be put to death for the children, nor the children be put to death for the fathers; but every man shall be put to death for his own sin* (2 Kings 14:6). Amaziah obeys *the fathers shall not be put to death for the children* (Deuteronomy 24:16) by name — the Torah cited as binding law in the kingdom.'),
+    ('canon','deuteronomy',24,16,'canon','jeremiah',31,29,'free',
+     E'*In those days they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on edge* (Jeremiah 31:29). In the new-covenant promise the proverb of inherited guilt ends — the principle of *every man shall be put to death for his own sin* (Deuteronomy 24:16) made plain.'),
+    ('canon','deuteronomy',24,16,'canon','jeremiah',31,30,'free',
+     E'*But every one shall die for his own iniquity: every man that eateth the sour grape, his teeth shall be set on edge* (Jeremiah 31:30). The new covenant restates *every man shall be put to death for his own sin* (Deuteronomy 24:16) — each soul answers for itself, the Torah principle carried forward, not abolished.'),
+    -- THREAD 7: 24:17-22 gleanings welfare
+    ('canon','deuteronomy',24,19,'canon','james',1,27,'free',
+     E'*Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world* (James 1:27). James names as pure religion the very care of *it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19) — the gleaning law made the heart of true worship.'),
+    ('canon','deuteronomy',24,19,'canon','leviticus',19,9,'free',
+     E'*And when ye reap the harvest of your land, thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest* (Leviticus 19:9). The twin gleaning law to *when thou cuttest down thine harvest in thy field, and hast forgot a sheaf... it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19).'),
+    ('canon','deuteronomy',24,19,'canon','leviticus',23,22,'free',
+     E'*And when ye reap the harvest of your land, thou shalt not make clean riddance of the corners of thy field when thou reapest, neither shalt thou gather any gleaning of thy harvest: thou shalt leave them unto the poor, and to the stranger* (Leviticus 23:22). Set among the feasts, this is the same welfare statute as *it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19) — the harvest never wholly the owner''s.'),
+    ('canon','deuteronomy',24,19,'canon','ruth',2,2,'free',
+     E'*And Ruth the Moabitess said unto Naomi, Let me now go to the field, and glean ears of corn after him in whose sight I shall find grace. And she said unto her, Go, my daughter* (Ruth 2:2). Ruth lives out *thou shalt not go again to fetch it: it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19) — the stranger and the widow gleaning in Boaz''s field.'),
+    ('canon','deuteronomy',24,19,'canon','ruth',2,16,'free',
+     E'*And let fall also some of the handfuls of purpose for her, and leave them, that she may glean them, and rebuke her not* (Ruth 2:16). Boaz keeps the gleaning law generously — deliberately leaving handfuls, fulfilling *it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19) toward Ruth the Moabitess.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ============================================================
+-- C. cross_reference_threads
+-- ============================================================
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal',
+ E'The Bill of Divorcement — a Concession to Hard Hearts, Not the Creation Ideal',
+ E'*When a man hath taken a wife, and married her, and it come to pass that she find no favour in his eyes, because he hath found some uncleanness in her: then let him write her a bill of divorcement, and give it in her hand, and send her out of his house* (Deuteronomy 24:1). The law regulates a tragedy; it does not invent it. When the Pharisees cite it — *Why did Moses then command to give a writing of divorcement, and to put her away?* (Matthew 19:7) — Yahusha (Jesus) corrects the reading: *Moses because of the hardness of your hearts suffered you to put away your wives: but from the beginning it was not so* (Matthew 19:8); *For the hardness of your heart he wrote you this precept* (Mark 10:5). The beginning is *they shall be one flesh* (Genesis 2:24) — the creation ideal the concession only governs. He affirms the Torah, not abolishes it: *It hath been said, Whosoever shall put away his wife, let him give her a writing of divorcement* (Matthew 5:31). And the two-house backdrop sounds beneath it all: Yahuah Himself, who *given her a bill of divorce* to *backsliding Yashar''el (Israel)* (Jeremiah 3:8), still pleads, *yet return again to me, saith Yahuah (LORD)* (Jeremiah 3:1) — for *he hateth putting away* (Malachi 2:16). The divorced northern house is wooed home; the concession is never His delight.',
+ sv.verse_id, ev.verse_id, 'free', 25075
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-he-that-stealeth-a-man-shall-die-the-law-against-manstealing',
+ E'He That Stealeth a Man Shall Die — the Torah Strikes the Slave-Trade at Its Root',
+ E'*If a man be found stealing any of his brethren of the children of Yashar''el (Israel), and maketh merchandise of him, or selleth him; then that thief shall die; and thou shalt put evil away from among you* (Deuteronomy 24:7). Kidnapping a man to sell him is a capital crime — the same statute stands in *he that stealeth a man, and selleth him, or if he be found in his hand, he shall surely be put to death* (Exodus 21:16). Centuries later Paul reaches for this very law to show the Torah is good when used lawfully (1 Timothy 1:8): *for menstealers, for liars, for perjured persons, and if there be any other thing that is contrary to sound doctrine* (1 Timothy 1:10). The law of Yahuah condemns the man-trade at the root — not slavery''s reform but the seller''s death.',
+ sv.verse_id, ev.verse_id, 'free', 25078
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=7
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=7
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-remember-what-yahuah-did-unto-miriam-the-plague-of-leprosy',
+ E'Remember What Yahuah Did Unto Miriam — the Plague of Leprosy',
+ E'*Take heed in the plague of leprosy, that thou observe diligently, and do according to all that the priests the Levites shall teach you* (Deuteronomy 24:8); *Remember what Yahuah Elohayka (the LORD thy God) did unto Miriam by the way, after that ye were come forth out of Egypt* (Deuteronomy 24:9). The memorial points back to Numbers: *and the cloud departed from off the tabernacle; and, behold, Miriam became leprous, white as snow* (Numbers 12:10) — struck for speaking against Moses. Even Moses'' own sister was not spared the law of the plague: *let her be shut out from the camp seven days, and after that let her be received in again* (Numbers 12:14). The priestly quarantine binds the highest as the lowest.',
+ sv.verse_id, ev.verse_id, 'free', 25081
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=8
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=9
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-restore-the-pledged-garment-by-sundown-mercy-to-the-debtor',
+ E'Restore the Pledged Garment by Sundown — Mercy to the Debtor',
+ E'*And if the man be poor, thou shalt not sleep with his pledge: in any case thou shalt deliver him the pledge again when the sun goeth down, that he may sleep in his own raiment, and bless thee: and it shall be righteousness unto thee before Yahuah Elohayka (the LORD thy God)* (Deuteronomy 24:12-13). The poor man''s only covering is never kept overnight — the same mercy commanded in *if thou at all take thy neighbour''s raiment to pledge, thou shalt deliver it unto him by that the sun goeth down* (Exodus 22:26). Amos indicts Yashar''el for trampling it: *and they lay themselves down upon clothes laid to pledge by every altar* (Amos 2:8). And Ezekiel makes restoring the pledge the very mark of the just man — *hath restored to the debtor his pledge... and hath covered the naked with a garment* (Ezekiel 18:7); *hath not withholden the pledge... but hath given his bread to the hungry, and hath covered the naked with a garment* (Ezekiel 18:16). The debtor''s blessing becomes the lender''s righteousness.',
+ sv.verse_id, ev.verse_id, 'free', 25084
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=10
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=13
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-give-the-hired-servant-his-hire-the-labourers-wage-not-held-back',
+ E'Give the Hired Servant His Hire — the Labourer''s Wage Not Held Back',
+ E'*Thou shalt not oppress an hired servant that is poor and needy, whether he be of thy brethren, or of thy strangers... At his day thou shalt give him his hire, neither shall the sun go down upon it; for he is poor, and setteth his heart upon it: lest he cry against thee unto Yahuah (LORD), and it be sin unto thee* (Deuteronomy 24:14-15). The wage is settled the same day — the twin of *the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13). When it is withheld, the cry runs straight to heaven, and James fulfils the warning: *Behold, the hire of the labourers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4). Yahuah Himself stands as witness against the oppressor — *I will be a swift witness... against those that oppress the hireling in his wages* (Malachi 3:5) — and the prophet''s woe lands on it: *that useth his neighbour''s service without wages, and giveth him not for his work* (Jeremiah 22:13).',
+ sv.verse_id, ev.verse_id, 'free', 25087
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=14
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=15
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-every-man-shall-die-for-his-own-sin-individual-responsibility',
+ E'Every Man Shall Die for His Own Sin — Guilt Is Never Inherited',
+ E'*The fathers shall not be put to death for the children, neither shall the children be put to death for the fathers: every man shall be put to death for his own sin* (Deuteronomy 24:16). King Amaziah obeys it by name, sparing *the children of the murderers... according unto that which is written in the book of the law of Moses* (2 Kings 14:6) — the Torah cited as binding law in the kingdom. Ezekiel builds a whole chapter on it: *The soul that sinneth, it shall die. The son shall not bear the iniquity of the father, neither shall the father bear the iniquity of the son* (Ezekiel 18:20). And in the new-covenant promise the proverb of inherited guilt ends: *In those days they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on edge* (Jeremiah 31:29); *But every one shall die for his own iniquity* (Jeremiah 31:30). Each soul answers for itself — the Torah principle carried forward, never abolished.',
+ sv.verse_id, ev.verse_id, 'free', 25090
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=16
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow',
+ E'The Gleanings Left for the Stranger, the Fatherless, and the Widow',
+ E'*When thou cuttest down thine harvest in thy field, and hast forgot a sheaf in the field, thou shalt not go again to fetch it: it shall be for the stranger, for the fatherless, and for the widow* (Deuteronomy 24:19) — and so also the olive boughs and the vine (Deuteronomy 24:20-21), *and thou shalt remember that thou wast a bondman in the land of Egypt* (Deuteronomy 24:22). The harvest is never wholly the owner''s. The same welfare statute stands in *thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings of thy harvest* (Leviticus 19:9), set even among the feasts: *thou shalt leave them unto the poor, and to the stranger* (Leviticus 23:22). Ruth the Moabitess lives it out — *let me now go to the field, and glean ears of corn after him in whose sight I shall find grace* (Ruth 2:2) — and Boaz keeps it generously, *let fall also some of the handfuls of purpose for her... and rebuke her not* (Ruth 2:16). James names this the heart of true worship: *Pure religion and undefiled before Elohim (God) and the Father is this, To visit the fatherless and widows in their affliction* (James 1:27).',
+ sv.verse_id, ev.verse_id, 'free', 25093
+  FROM _s310_deu24_lookup sv, _s310_deu24_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=24 AND ev.verse_number=22
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================================
+-- D. cross_reference_thread_members
+-- ============================================================
+-- THREAD 1: bill of divorcement
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*It hath been said, Whosoever shall put away his wife, let him give her a writing of divorcement* (Matthew 5:31) — Yahusha (Jesus) quotes the Torah He came to fill, not destroy.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=5 AND tv.verse_number=31
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*Moses because of the hardness of your hearts suffered you to put away your wives: but from the beginning it was not so* (Matthew 19:8) — a concession, not the design.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*Why did Moses then command to give a writing of divorcement, and to put her away?* (Matthew 19:7) — the Pharisees'' misreading Yahusha (Jesus) corrects.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=19 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Moses suffered to write a bill of divorcement... For the hardness of your heart he wrote you this precept* (Mark 10:4-5) — the same ruling in Mark.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=10 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*they shall be one flesh* (Genesis 2:24) — the creation ideal *from the beginning* that the concession only governs.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=1
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=2 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'*shall he return unto her again?... yet return again to me, saith Yahuah (LORD)* (Jeremiah 3:1) — the law applied to Yahuah''s own pleading for Yashar''el (Israel).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'*I had put her away, and given her a bill of divorce* (Jeremiah 3:8) — Yahuah''s bill to backsliding Yashar''el (Israel), the two-house backdrop.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=3 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 8, E'*he hateth putting away* (Malachi 2:16) — the concession is never Yahuah''s delight.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=4
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-bill-of-divorcement-a-concession-not-the-creation-ideal'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 2: manstealing
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*for menstealers... if there be any other thing that is contrary to sound doctrine* (1 Timothy 1:10) — Paul cites this law as still binding.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=1 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-he-that-stealeth-a-man-shall-die-the-law-against-manstealing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*he that stealeth a man, and selleth him... he shall surely be put to death* (Exodus 21:16) — the twin capital statute.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=7
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=21 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-he-that-stealeth-a-man-shall-die-the-law-against-manstealing'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 3: Miriam / leprosy
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Miriam became leprous, white as snow* (Numbers 12:10) — the judgment Yashar''el is told to remember.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=12 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-remember-what-yahuah-did-unto-miriam-the-plague-of-leprosy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*let her be shut out from the camp seven days* (Numbers 12:14) — even Moses'' sister kept under the priestly law of the plague.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=9
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='numbers' AND tv.chapter_number=12 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-remember-what-yahuah-did-unto-miriam-the-plague-of-leprosy'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 4: the pledge
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*thou shalt deliver it unto him by that the sun goeth down* (Exodus 22:26) — the same mercy, the raiment returned at sundown.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=22 AND tv.verse_number=26
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-restore-the-pledged-garment-by-sundown-mercy-to-the-debtor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*they lay themselves down upon clothes laid to pledge by every altar* (Amos 2:8) — Yashar''el indicted for trampling the law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=12
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=2 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-restore-the-pledged-garment-by-sundown-mercy-to-the-debtor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*hath restored to the debtor his pledge... and hath covered the naked with a garment* (Ezekiel 18:7) — the mark of the righteous man.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-restore-the-pledged-garment-by-sundown-mercy-to-the-debtor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*hath not withholden the pledge... and hath covered the naked with a garment* (Ezekiel 18:16) — restoring the pledge marks the just.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=13
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-restore-the-pledged-garment-by-sundown-mercy-to-the-debtor'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 5: wages
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*the hire of the labourers... kept back by fraud, crieth... entered into the ears of Yahuah (Lord) of sabaoth* (James 5:4) — the warning fulfilled.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=5 AND tv.verse_number=4
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-give-the-hired-servant-his-hire-the-labourers-wage-not-held-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the wages of him that is hired shall not abide with thee all night until the morning* (Leviticus 19:13) — the twin same-day wage law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=15
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-give-the-hired-servant-his-hire-the-labourers-wage-not-held-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*I will be a swift witness... against those that oppress the hireling in his wages* (Malachi 3:5) — Yahuah Himself the witness.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='malachi' AND tv.chapter_number=3 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-give-the-hired-servant-his-hire-the-labourers-wage-not-held-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*that useth his neighbour''s service without wages, and giveth him not for his work* (Jeremiah 22:13) — the prophet''s woe on the wage-withholder.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=14
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=22 AND tv.verse_number=13
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-give-the-hired-servant-his-hire-the-labourers-wage-not-held-back'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 6: individual responsibility
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*The soul that sinneth, it shall die. The son shall not bear the iniquity of the father* (Ezekiel 18:20) — the principle made a whole chapter.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ezekiel' AND tv.chapter_number=18 AND tv.verse_number=20
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-every-man-shall-die-for-his-own-sin-individual-responsibility'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*the children of the murderers he slew not: according unto... the law of Moses* (2 Kings 14:6) — Amaziah obeys this verse by name.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-kings' AND tv.chapter_number=14 AND tv.verse_number=6
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-every-man-shall-die-for-his-own-sin-individual-responsibility'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*they shall say no more, The fathers have eaten a sour grape, and the children''s teeth are set on edge* (Jeremiah 31:29) — the proverb of inherited guilt ended in the new covenant.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=29
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-every-man-shall-die-for-his-own-sin-individual-responsibility'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*every one shall die for his own iniquity* (Jeremiah 31:30) — the Torah principle carried forward, not abolished.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=16
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='jeremiah' AND tv.chapter_number=31 AND tv.verse_number=30
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-every-man-shall-die-for-his-own-sin-individual-responsibility'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- THREAD 7: gleanings
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'*Pure religion... To visit the fatherless and widows in their affliction* (James 1:27) — the gleaning law made the heart of true worship.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='james' AND tv.chapter_number=1 AND tv.verse_number=27
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'*thou shalt not wholly reap the corners of thy field, neither shalt thou gather the gleanings* (Leviticus 19:9) — the twin gleaning law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'*thou shalt leave them unto the poor, and to the stranger* (Leviticus 23:22) — the same statute set among the feasts.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=23 AND tv.verse_number=22
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'*Let me now go to the field, and glean ears of corn* (Ruth 2:2) — the widow and stranger living out the law.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=2 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'*let fall also some of the handfuls of purpose for her... and rebuke her not* (Ruth 2:16) — Boaz keeps the gleaning law generously.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu24_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=24 AND sv.verse_number=19
+  JOIN _s310_deu24_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=2 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-24-the-gleanings-left-for-the-stranger-fatherless-and-widow'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- ----- fragment: minion_deuteronomy_25.sql (Deuteronomy 25) -----
+-- Chapter: Deuteronomy 25  | tag: deu25 | session prefix: s310
+-- Sort band: base 25100, step 3  (25100, 25103, 25106, 25109, 25112)
+-- Temp view: _s310_deu25_lookup
+--
+-- FRAMING (the lens — Torah is the living covenant inheritance, never the curse):
+--   Deuteronomy 25 is a cluster of justice/integrity statutes. The thread work weaves
+--   each FORWARD to the NT that quotes it AS binding scripture (the apostles never set
+--   the Torah aside — they reason FROM it) and LATERALLY across the Tanakh that echoes it.
+--
+-- PER-CHAPTER COVERAGE CHECKLIST:
+--   v.1-3  (measured stripes, brother not made vile):
+--          NT:     2 Corinthians 11:24 (Paul: forty stripes save one) — BUILT (thread 1)
+--          Extras: none warranted
+--          Tanakh: none warranted (statute is self-contained; the dignity-of-the-brother
+--                  ethic is the FORWARD weave)
+--   v.4    (muzzle not the ox treading the corn):
+--          NT:     1 Corinthians 9:9-10 + 1 Timothy 5:18 (Paul cites it for the labourer's
+--                  wage) — BUILT (thread 2)
+--          Extras: none warranted
+--          Tanakh: none warranted
+--   v.5-10 (levirate marriage / name not put out / loosed shoe / kinsman-redeemer):
+--          NT:     Matthew 22:24 + Mark 12:19 (Sadducees cite this law to Yahusha) —
+--                  BUILT (thread 3)
+--          Extras: none warranted
+--          Tanakh: Genesis 38:8 (Onan), Ruth 4:7 + 4:10 (Boaz the Goel / plucked shoe) —
+--                  BUILT (thread 3)
+--   v.11-12 (immodest intervention penalty): NT none / Extras none / Tanakh none warranted
+--           — a brief purity statute, no framework-bearing weave.
+--   v.13-16 (divers weights / perfect and just weight / abomination):
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Leviticus 19:35-36, Proverbs 11:1, Proverbs 20:10, Proverbs 20:23,
+--                  Micah 6:11, Amos 8:5 — BUILT (thread 4)
+--   v.17-19 (remember Amalek / blot out the remembrance / forget not):
+--          NT:     none warranted
+--          Extras: none warranted
+--          Tanakh: Exodus 17:8, Exodus 17:14, Exodus 17:16, 1 Samuel 15:2, 1 Samuel 15:3,
+--                  Esther 3:1 (Haman the Agagite) — BUILT (thread 5)
+--
+-- THREADS (slug -> target libraries):
+--   1. deuteronomy-25-forty-stripes-and-not-exceed-the-brother-not-made-vile  [NT]            free
+--   2. deuteronomy-25-thou-shalt-not-muzzle-the-ox-the-labourer-worthy-of-his-reward  [NT]    free
+--   3. deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer  [NT+Tanakh]  free
+--   4. deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah  [Tanakh]         free
+--   5. deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak  [Tanakh]  free
+--
+-- All members canon (NT + Tanakh) => every thread tier_required='free'.
+
+CREATE TEMP VIEW _s310_deu25_lookup AS
+SELECT e.slug AS edition_slug, b.slug AS book_slug, c.chapter_number, v.verse_number, v.id AS verse_id
+  FROM verses v JOIN chapters c ON v.chapter_id=c.id JOIN books b ON c.book_id=b.id
+  JOIN editions e ON b.edition_id=e.id
+ WHERE e.slug IN ('canon','enoch','jubilees','jasher','apocrypha','apocrypha-charles-vol1','pseudepigrapha','adam-eve-conflict','apocalypse-of-abraham','ascension-isaiah','sonnini-acts-29');
+
+-- ===================== B. cross_references =====================
+INSERT INTO cross_references (source_verse_id, target_verse_id, source, note, tier_required)
+SELECT sv.verse_id, tv.verse_id, 'manual', i.note, i.tier::content_tier
+  FROM (VALUES
+    -- Thread 1: forty stripes, not exceed, brother not made vile -> 2 Cor 11:24
+    ('canon','deuteronomy',25,3,'canon','2-corinthians',11,24,'free',
+     E'*Of the Yahudim (Jews) five times received I forty stripes save one* (2 Corinthians 11:24). Deuteronomy 25:3 sets the ceiling — *Forty stripes he may give him, and not exceed: lest, if he should exceed, and beat him above these with many stripes, then thy brother should seem vile unto thee*. The synagogue stopped at thirty-nine to guard against a miscount crossing the line; Paul, beaten under that very statute, attests the Torah''s measure was still kept. The law''s purpose is justice that never strips a man of his dignity — *thy brother* even under the rod.'),
+    -- Thread 2: muzzle not the ox -> 1 Cor 9:9-10 + 1 Tim 5:18
+    ('canon','deuteronomy',25,4,'canon','1-corinthians',9,9,'free',
+     E'*For it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn. Doth Elohim (God) take care for oxen?* (1 Corinthians 9:9). Paul reaches straight back to *Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4) and reasons FROM the standing Torah, not against it — the ox that does the work eats from the threshing-floor.'),
+    ('canon','deuteronomy',25,4,'canon','1-corinthians',9,10,'free',
+     E'*Or saith he it altogether for our sakes? For our sakes, no doubt, this is written: that he that ploweth should plow in hope; and that he that thresheth in hope should be partaker of his hope* (1 Corinthians 9:10). Paul draws the principle out of Deuteronomy 25:4 — *Thou shalt not muzzle the ox when he treadeth out the corn* — the worker shares in the harvest he labours over.'),
+    ('canon','deuteronomy',25,4,'canon','1-timothy',5,18,'free',
+     E'*For the scripture saith, Thou shalt not muzzle the ox that treadeth out the corn. And, The labourer is worthy of his reward* (1 Timothy 5:18). Here Paul quotes *Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4) as *the scripture* and binds it to the minister''s wage — the Torah cited as living authority, the elder who labours in the word fed like the treading ox.'),
+    -- Thread 3: levirate / name not put out / loosed shoe / goel
+    ('canon','deuteronomy',25,5,'canon','matthew',22,24,'free',
+     E'*Saying, Master, Moses said, If a man die, having no children, his brother shall marry his wife, and raise up seed unto his brother* (Matthew 22:24). The Sadducees bring Yahusha this very statute — *her husband''s brother shall go in unto her, and take her to him to wife, and perform the duty of an husband''s brother unto her* (Deuteronomy 25:5) — testing him on the resurrection; he answers from the living God of Abraham, Isaac, and Jacob, never disputing the law.'),
+    ('canon','deuteronomy',25,5,'canon','mark',12,19,'free',
+     E'*Master, Moses wrote unto us, If a man''s brother die, and leave his wife behind him, and leave no children, that his brother should take his wife, and raise up seed unto his brother* (Mark 12:19). Mark records the same Sadducee appeal to Deuteronomy 25:5, treating the levirate duty as the settled word of Moses — the line preserved so *that his name be not put out of Yashar''el (Israel)* (Deuteronomy 25:6).'),
+    ('canon','deuteronomy',25,6,'canon','genesis',38,8,'free',
+     E'*And Yahudah (Judah) said unto Onan, Go in unto thy brother''s wife, and marry her, and raise up seed to thy brother* (Genesis 38:8). The duty Deuteronomy 25 later codifies is already practiced in the seed-line of Yahudah (Judah) — *that the firstborn which she beareth shall succeed in the name of his brother which is dead, that his name be not put out of Yashar''el (Israel)* (Deuteronomy 25:6). Onan''s refusal to raise up his brother''s seed is the very crime the statute exists to prevent.'),
+    ('canon','deuteronomy',25,9,'canon','ruth',4,7,'free',
+     E'*Now this was the manner in former time in Yashar''el (Israel) concerning redeeming and concerning changing, for to confirm all things; a man plucked off his shoe, and gave it to his neighbour: and this was a testimony in Yashar''el (Israel)* (Ruth 4:7). The plucked shoe of Deuteronomy 25:9 — *loose his shoe from off his foot... So shall it be done unto that man that will not build up his brother''s house* — becomes the formal sign in the redemption at Boaz''s gate, the kinsman-redeemer (Goel) pattern carrying the dead man''s name.'),
+    ('canon','deuteronomy',25,6,'canon','ruth',4,10,'free',
+     E'*Moreover Ruth the Moabitess, the wife of Mahlon, have I purchased to be my wife, to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off from among his brethren, and from the gate of his place: ye are witnesses this day* (Ruth 4:10). Boaz does the very thing Deuteronomy 25:6 commands — *that his name be not put out of Yashar''el (Israel)* — the kinsman-redeemer raising up the dead man''s name, the Goel pattern that runs forward to the Formed Son who redeems his own and gives them his name.'),
+    -- Thread 4: just weights / abomination
+    ('canon','deuteronomy',25,15,'canon','leviticus',19,35,'free',
+     E'*Ye shall do no unrighteousness in judgment, in meteyard, in weight, or in measure* (Leviticus 19:35). The same Torah voice that says *thou shalt have a perfect and just weight, a perfect and just measure shalt thou have* (Deuteronomy 25:15) forbids the crooked scale in Leviticus — one law of integrity in the marketplace.'),
+    ('canon','deuteronomy',25,15,'canon','leviticus',19,36,'free',
+     E'*Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt* (Leviticus 19:36). Leviticus grounds the honest measure of Deuteronomy 25:15 — *a perfect and just weight... that thy days may be lengthened in the land* — in the Name and the redemption out of Egypt; the just balance is covenant faithfulness made tangible.'),
+    ('canon','deuteronomy',25,16,'canon','proverbs',11,1,'free',
+     E'*A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1). Wisdom echoes the Torah word for word — Deuteronomy 25:16 declares *all that do unrighteously, are an abomination unto Yahuah Elohayka (the LORD thy God)*; the crooked scale is loathsome, the honest weight is his joy.'),
+    ('canon','deuteronomy',25,13,'canon','proverbs',20,10,'free',
+     E'*Divers weights, and divers measures, both of them are alike abomination to Yahuah (LORD)* (Proverbs 20:10). Proverbs names the exact sin of Deuteronomy 25:13 — *Thou shalt not have in thy bag divers weights, a great and a small* — the two-faced merchant who weighs one way to buy and another to sell.'),
+    ('canon','deuteronomy',25,14,'canon','proverbs',20,23,'free',
+     E'*Divers weights are an abomination unto Yahuah (LORD); and a false balance is not good* (Proverbs 20:23). The doubled measure forbidden in Deuteronomy 25:14 — *Thou shalt not have in thine house divers measures, a great and a small* — is twice condemned in Proverbs, the false balance an offence to Yahuah (LORD).'),
+    ('canon','deuteronomy',25,13,'canon','micah',6,11,'free',
+     E'*Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11). Micah brings the covenant lawsuit using the very image of Deuteronomy 25:13 — *Thou shalt not have in thy bag divers weights, a great and a small* — the bag of deceitful weights stands as the indictment of a people who abandoned Torah integrity.'),
+    ('canon','deuteronomy',25,14,'canon','amos',8,5,'free',
+     E'*Saying, When will the new moon be gone, that we may sell corn? and the sabbath, that we may set forth wheat, making the ephah small, and the shekel great, and falsifying the balances by deceit?* (Amos 8:5). Amos exposes the same crooked measure Deuteronomy 25:14 forbids — *divers measures, a great and a small* — merchants who chafe at the Sabbath and rig the ephah, the appointed times and the just balance both trampled together.'),
+    -- Thread 5: remember Amalek / blot out / forget not
+    ('canon','deuteronomy',25,17,'canon','exodus',17,8,'free',
+     E'*Then came Amalek, and fought with Yashar''el (Israel) in Rephidim* (Exodus 17:8). Deuteronomy 25:17 calls Israel to *Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt* — the first unprovoked assault on the redeemed people, the seed-war opening its hand against the newly freed.'),
+    ('canon','deuteronomy',25,19,'canon','exodus',17,14,'free',
+     E'*And Yahuah (LORD) said unto Moses, Write this for a memorial in a book, and rehearse it in the ears of Joshua: for I will utterly put out the remembrance of Amalek from under heaven* (Exodus 17:14). The decree behind Deuteronomy 25:19 — *thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it* — is Yahuah''s own sentence on the spirit that preys on the weak, a conduct and type to be ended, not an ethnic people to hate.'),
+    ('canon','deuteronomy',25,19,'canon','exodus',17,16,'free',
+     E'*For he said, Because Yahuah (LORD) hath sworn that Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16). The standing war of Exodus 17:16 is what Deuteronomy 25:19 hands forward — *thou shalt not forget it* — the enmity of Genesis 3:15 against the serpent''s seed, the predator that smites the hindmost and the feeble.'),
+    ('canon','deuteronomy',25,17,'canon','1-samuel',15,2,'free',
+     E'*Thus saith Yahuah Tseva''ot (LORD of hosts), I remember that which Amalek did to Yashar''el (Israel), how he laid wait for him in the way, when he came up from Egypt* (1 Samuel 15:2). Generations later Yahuah holds to the charge of Deuteronomy 25:17-18 — *Remember what Amalek did... he smote the hindmost of thee, even all that were feeble behind thee* — the ambush of the weary never forgotten.'),
+    ('canon','deuteronomy',25,19,'canon','1-samuel',15,3,'free',
+     E'*Now go and smite Amalek, and utterly destroy all that they have, and spare them not; but slay both man and woman, infant and suckling, ox and sheep, camel and ass* (1 Samuel 15:3). Saul is given the commission Deuteronomy 25:19 foretold — *thou shalt blot out the remembrance of Amalek from under heaven* — the appointed war against the cruelty that struck down the feeble, a type of the predatory spirit to be utterly ended.'),
+    ('canon','deuteronomy',25,19,'canon','esther',3,1,'free',
+     E'*After these things did king Ahasuerus promote Haman the son of Hammedatha the Agagite, and advanced him, and set his seat above all the princes that were with him* (Esther 3:1). Haman the Agagite — of the line of Agag king of Amalek — rises to attempt genocide against the Yahudim (Jews), proving why Deuteronomy 25:19 said *thou shalt not forget it*; the unblotted remembrance becomes the enemy that hunts the covenant people again.')
+  ) AS i(src_edition,src_slug,src_ch,src_v,tgt_edition,tgt_slug,tgt_ch,tgt_v,tier,note)
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug=i.src_edition AND sv.book_slug=i.src_slug AND sv.chapter_number=i.src_ch AND sv.verse_number=i.src_v
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug=i.tgt_edition AND tv.book_slug=i.tgt_slug AND tv.chapter_number=i.tgt_ch AND tv.verse_number=i.tgt_v
+ WHERE sv.verse_id <> tv.verse_id
+ON CONFLICT (source_verse_id, target_verse_id, source) DO NOTHING;
+
+-- ===================== C. threads =====================
+-- Thread 1
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-25-forty-stripes-and-not-exceed-the-brother-not-made-vile',
+       E'Forty stripes, and not exceed: the brother not made vile',
+       E'Deuteronomy 25:1-3 sets a ceiling on punishment: *if the wicked man be worthy to be beaten, that the judge shall cause him to lie down, and to be beaten before his face, according to his fault, by a certain number. Forty stripes he may give him, and not exceed: lest, if he should exceed, and beat him above these with many stripes, then thy brother should seem vile unto thee*. Justice is measured, before the judge''s face, and capped — because even the guilty is still *thy brother* and must not be degraded. Paul, who carried that law in his own back, attests it was still kept: *Of the Yahudim (Jews) five times received I forty stripes save one* (2 Corinthians 11:24) — thirty-nine, the synagogue stopping short to guard the line. The Torah''s discipline is never cruelty; it preserves the dignity of the one it corrects.',
+       sv.verse_id, ev.verse_id, 'free', 25100
+  FROM _s310_deu25_lookup sv, _s310_deu25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=1
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=25 AND ev.verse_number=3
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 2
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-25-thou-shalt-not-muzzle-the-ox-the-labourer-worthy-of-his-reward',
+       E'Thou shalt not muzzle the ox: the labourer worthy of his reward',
+       E'*Thou shalt not muzzle the ox when he treadeth out the corn* (Deuteronomy 25:4). The ox that does the threshing eats from the floor it works — a single line of Torah that the apostle Paul carries forward as living, binding scripture. *For it is written in the law of Moses, Thou shalt not muzzle the mouth of the ox that treadeth out the corn. Doth Elohim (God) take care for oxen?* (1 Corinthians 9:9); *Or saith he it altogether for our sakes?... that he that thresheth in hope should be partaker of his hope* (1 Corinthians 9:10). He cites it again as *the scripture* and binds it to the minister''s wage: *Thou shalt not muzzle the ox that treadeth out the corn. And, The labourer is worthy of his reward* (1 Timothy 5:18). The Torah is not set aside — it is reasoned FROM, the principle of the just wage drawn straight out of Moses.',
+       sv.verse_id, ev.verse_id, 'free', 25103
+  FROM _s310_deu25_lookup sv, _s310_deu25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=4
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=25 AND ev.verse_number=4
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 3
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer',
+       E'Raise up seed to the dead: the loosed shoe and the kinsman-redeemer',
+       E'The levirate law guards the seed-line and the name: *her husband''s brother shall go in unto her... and perform the duty of an husband''s brother unto her* (Deuteronomy 25:5), *that the firstborn which she beareth shall succeed in the name of his brother which is dead, that his name be not put out of Yashar''el (Israel)* (Deuteronomy 25:6). The brother who refuses is shamed at the gate: *loose his shoe from off his foot... So shall it be done unto that man that will not build up his brother''s house* (Deuteronomy 25:9). This duty is already alive in the seed of Yahudah (Judah) — *raise up seed to thy brother* (Genesis 38:8) — and refusing it is Onan''s very sin. It is fulfilled in the kinsman-redeemer: the plucked shoe *was a testimony in Yashar''el (Israel)* (Ruth 4:7), and Boaz acts *to raise up the name of the dead upon his inheritance, that the name of the dead be not cut off* (Ruth 4:10) — the Goel pattern. The Sadducees bring this same statute to Yahusha: *Moses said, If a man die, having no children, his brother shall marry his wife, and raise up seed unto his brother* (Matthew 22:24; Mark 12:19). The redeemer who buys back the inheritance and carries the dead man''s name runs forward to the Formed Son, the kinsman who redeems his own.',
+       sv.verse_id, ev.verse_id, 'free', 25106
+  FROM _s310_deu25_lookup sv, _s310_deu25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=5
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=25 AND ev.verse_number=10
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 4
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah',
+       E'A perfect and just weight: the just balances of Yahuah',
+       E'*Thou shalt not have in thy bag divers weights, a great and a small. Thou shalt not have in thine house divers measures, a great and a small. But thou shalt have a perfect and just weight, a perfect and just measure shalt thou have: that thy days may be lengthened in the land* (Deuteronomy 25:13-15); *all that do unrighteously, are an abomination unto Yahuah Elohayka (the LORD thy God)* (Deuteronomy 25:16). The honest scale is covenant faithfulness made tangible, and the whole Tanakh repeats it. Leviticus joins it to the Name and the Exodus: *Just balances, just weights, a just ephah, and a just hin, shall ye have: I am Yahuah Elohaychem (the LORD your God), which brought you out of the land of Egypt* (Leviticus 19:35-36). Wisdom echoes it: *A false balance is abomination to Yahuah (LORD): but a just weight is his delight* (Proverbs 11:1); *Divers weights, and divers measures, both of them are alike abomination to Yahuah (LORD)* (Proverbs 20:10); *Divers weights are an abomination unto Yahuah (LORD); and a false balance is not good* (Proverbs 20:23). And the prophets prosecute its breach: *Shall I count them pure with the wicked balances, and with the bag of deceitful weights?* (Micah 6:11); *making the ephah small, and the shekel great, and falsifying the balances by deceit* (Amos 8:5) — the rigged measure and the despised Sabbath condemned together.',
+       sv.verse_id, ev.verse_id, 'free', 25109
+  FROM _s310_deu25_lookup sv, _s310_deu25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=13
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=25 AND ev.verse_number=16
+ON CONFLICT (slug) DO NOTHING;
+
+-- Thread 5
+INSERT INTO cross_reference_threads (slug, title, summary_md, anchor_verse_id_start, anchor_verse_id_end, tier_required, sort_order)
+SELECT 'deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak',
+       E'Remember what Amalek did: the war against the preyer on the weak',
+       E'*Remember what Amalek did unto thee by the way, when ye were come forth out of Egypt; How he met thee by the way, and smote the hindmost of thee, even all that were feeble behind thee, when thou wast faint and weary; and he feared not Elohim (God)... thou shalt blot out the remembrance of Amalek from under heaven; thou shalt not forget it* (Deuteronomy 25:17-19). Amalek is the predator that strikes the stragglers — the weary, the weak, the children at the back. The charge runs the whole canon. The first attack: *Then came Amalek, and fought with Yashar''el (Israel) in Rephidim* (Exodus 17:8); the sentence: *I will utterly put out the remembrance of Amalek from under heaven* (Exodus 17:14), *Yahuah (LORD) will have war with Amalek from generation to generation* (Exodus 17:16). Yahuah remembers it to Saul: *I remember that which Amalek did to Yashar''el (Israel), how he laid wait for him in the way* (1 Samuel 15:2), *Now go and smite Amalek... and spare them not* (1 Samuel 15:3). And the unblotted remnant rises again in *Haman the son of Hammedatha the Agagite* (Esther 3:1), who plots the destruction of the Yahudim (Jews). This is the standing seed-war of Genesis 3:15 against the spirit that preys on the helpless — a conduct and a type to be ended, never a living people to be hated; the covenant''s defence of the feeble, victims not enemies.',
+       sv.verse_id, ev.verse_id, 'free', 25112
+  FROM _s310_deu25_lookup sv, _s310_deu25_lookup ev
+ WHERE sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=17
+   AND ev.edition_slug='canon' AND ev.book_slug='deuteronomy' AND ev.chapter_number=25 AND ev.verse_number=19
+ON CONFLICT (slug) DO NOTHING;
+
+-- ===================== D. thread_members =====================
+-- Thread 1 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'2 Corinthians 11:24 — *five times received I forty stripes save one*: Paul attests the Deuteronomy 25:3 cap was still kept (thirty-nine to guard the line).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=3
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='2-corinthians' AND tv.chapter_number=11 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-forty-stripes-and-not-exceed-the-brother-not-made-vile'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 2 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'1 Corinthians 9:9 — Paul quotes *Thou shalt not muzzle... the ox* from the law of Moses and reasons FROM it for the worker''s share.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=9
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-thou-shalt-not-muzzle-the-ox-the-labourer-worthy-of-his-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'1 Corinthians 9:10 — *he that thresheth in hope should be partaker of his hope*: the principle drawn out of Deuteronomy 25:4.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-corinthians' AND tv.chapter_number=9 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-thou-shalt-not-muzzle-the-ox-the-labourer-worthy-of-his-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'1 Timothy 5:18 — *the scripture saith, Thou shalt not muzzle the ox... And, The labourer is worthy of his reward*: Deuteronomy 25:4 cited as living authority for the minister''s wage.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=4
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-timothy' AND tv.chapter_number=5 AND tv.verse_number=18
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-thou-shalt-not-muzzle-the-ox-the-labourer-worthy-of-his-reward'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 3 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Genesis 38:8 — *raise up seed to thy brother*: the levirate duty already alive in the seed of Yahudah (Judah); Onan''s refusal is the statute''s very crime.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='genesis' AND tv.chapter_number=38 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Ruth 4:10 — Boaz raises *the name of the dead upon his inheritance, that the name of the dead be not cut off*: the Goel doing exactly what Deuteronomy 25:6 commands.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=6
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Ruth 4:7 — the plucked shoe *was a testimony in Yashar''el (Israel)*: the sign of Deuteronomy 25:9 enacted at the redemption gate.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=9
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='ruth' AND tv.chapter_number=4 AND tv.verse_number=7
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Matthew 22:24 — *Moses said, If a man die, having no children, his brother shall marry his wife*: the Sadducees cite Deuteronomy 25:5 to Yahusha.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=5
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='matthew' AND tv.chapter_number=22 AND tv.verse_number=24
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Mark 12:19 — *Moses wrote unto us... raise up seed unto his brother*: the same Sadducee appeal to Deuteronomy 25:5 as the settled word of Moses.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=5
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='mark' AND tv.chapter_number=12 AND tv.verse_number=19
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-raise-up-seed-to-the-dead-the-loosed-shoe-and-the-kinsman-redeemer'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 4 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Leviticus 19:35 — *no unrighteousness... in weight, or in measure*: the same Torah voice forbidding the crooked scale.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=15
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=35
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Leviticus 19:36 — *Just balances, just weights... I am Yahuah Elohaychem*: the honest measure grounded in the Name and the Exodus.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=15
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='leviticus' AND tv.chapter_number=19 AND tv.verse_number=36
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Proverbs 11:1 — *A false balance is abomination to Yahuah... but a just weight is his delight*: Wisdom echoes Deuteronomy 25:16.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=16
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=11 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'Proverbs 20:10 — *Divers weights, and divers measures... abomination*: the exact two-faced merchant of Deuteronomy 25:13.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=13
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=10
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'Proverbs 20:23 — *Divers weights are an abomination... a false balance is not good*: the doubled measure of Deuteronomy 25:14 twice condemned.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=14
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='proverbs' AND tv.chapter_number=20 AND tv.verse_number=23
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Micah 6:11 — *the bag of deceitful weights*: the covenant lawsuit drawn from the very image of Deuteronomy 25:13.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=13
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='micah' AND tv.chapter_number=6 AND tv.verse_number=11
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 7, E'Amos 8:5 — *making the ephah small, and the shekel great, and falsifying the balances*: the rigged measure and the despised Sabbath condemned together (Deuteronomy 25:14).'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=14
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='amos' AND tv.chapter_number=8 AND tv.verse_number=5
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-a-perfect-and-just-weight-the-just-balances-of-yahuah'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+-- Thread 5 members
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 1, E'Exodus 17:8 — *Then came Amalek, and fought with Yashar''el*: the first unprovoked assault Deuteronomy 25:17 calls Israel to remember.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=17
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=8
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 2, E'Exodus 17:14 — *I will utterly put out the remembrance of Amalek from under heaven*: Yahuah''s own sentence behind Deuteronomy 25:19.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=19
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=14
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 3, E'Exodus 17:16 — *Yahuah will have war with Amalek from generation to generation*: the standing enmity handed forward in *thou shalt not forget it*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=19
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='exodus' AND tv.chapter_number=17 AND tv.verse_number=16
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 4, E'1 Samuel 15:2 — *I remember that which Amalek did... how he laid wait for him in the way*: the charge of Deuteronomy 25:17-18 still held generations later.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=17
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=2
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 5, E'1 Samuel 15:3 — *Now go and smite Amalek... and spare them not*: the appointed war Deuteronomy 25:19 foretold against the cruelty that struck the feeble.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=19
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='1-samuel' AND tv.chapter_number=15 AND tv.verse_number=3
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
+INSERT INTO cross_reference_thread_members (thread_id, cross_reference_id, sort_order, member_note)
+SELECT t.id, cr.id, 6, E'Esther 3:1 — *Haman the son of Hammedatha the Agagite*: the unblotted Amalekite line rises again against the Yahudim (Jews), proving *thou shalt not forget it*.'
+  FROM cross_reference_threads t
+  JOIN _s310_deu25_lookup sv ON sv.edition_slug='canon' AND sv.book_slug='deuteronomy' AND sv.chapter_number=25 AND sv.verse_number=19
+  JOIN _s310_deu25_lookup tv ON tv.edition_slug='canon' AND tv.book_slug='esther' AND tv.chapter_number=3 AND tv.verse_number=1
+  JOIN cross_references cr ON cr.source_verse_id=sv.verse_id AND cr.target_verse_id=tv.verse_id AND cr.source='manual'
+ WHERE t.slug='deuteronomy-25-remember-what-amalek-did-the-war-against-the-preyer-on-the-weak'
+ON CONFLICT (thread_id, cross_reference_id) DO NOTHING;
+
 
 COMMIT;
 \echo 'session310 — Deuteronomy cross-references complete.'
